@@ -95,6 +95,45 @@ body {
 }
 
 
+.nav{
+    width: 60px;
+    padding: 40px 0;
+    background-color: #222;
+}
+
+.nav .list{
+    height: 72px;
+    padding: 22px 10px;
+    border-radius: 0 8px 8px 0;
+}
+
+.nav .list img{
+    margin: 0 auto;
+    display: block;
+}
+
+.nav .list span{
+    display: block;
+    font-size: 10px;
+    color: #888;
+    text-align: center;
+}
+
+.nav .list.on{
+    width: 65px;
+    background: linear-gradient( to right ,#007A94, #003D4A);
+}
+
+.nav .list.on span{
+    color: #fff;
+}
+
+.nav .list:hover{
+    width: 65px;
+    background: linear-gradient( to right ,#007A94, #003D4A);
+}
+
+
 /*====================== 간호사 팝업 ======================*/
 /* 로그아웃 팝업 */
 .pop.logout{
@@ -181,7 +220,7 @@ body {
 }
 
 .pop .overlay .pop_cont .content p{
-    width: 80px;
+    width: 52px;
     margin: 10px 64px 0 0;
     font-size: 14px;
     vertical-align: middle;
@@ -224,14 +263,138 @@ body {
 }
 
 /* 병실생성 팝업 */
-.pop .overlay .pop_cont .room_box{
+.selectBox2 * { box-sizing: border-box; }
+.selectBox2 {
     position: relative;
     width: 120px;
     height: 48px;
     border-radius: 4px;
     background: #eee;
+    cursor: pointer;
 }
 
-.pop .overlay .pop_cont .room_box .list_name{
+.selectBox2:after {
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('../img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+}
+
+.selectBox2 .label {
     display: flex;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.selectBox2 .optionList {
+    width: 100%;
+    position: absolute; 
+    top: 48px;
+    left: 0;
+    font-size: 14px;
+    font-weight: normal;
+    background: #eee;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s ease-in;
+}
+
+.selectBox2.active .optionList {
+    max-height: 500px;
+}
+
+.selectBox2 .optionItem {
+    padding: 5px 15px 5px;
+    transition: .1s;
+}
+
+.selectBox2.active .optionList> :first-child{
+    border-top: 1px solid #007A94;
+}
+
+.selectBox2 .optionlist> :last-child {
+    border-radius:4px;
+}
+
+/* 병동 및 병실 삭제 */
+.pop.delete_ward .pop_cont,
+.pop.delete_room .pop_cont{
+    width: 600px;
+    height: 360px;
+    padding: 64px 0 48px;
+    text-align: center;
+}
+
+.pop.delete_ward .pop_cont> div,
+.pop.delete_room .pop_cont> div{
+    width: 46px;
+    height: 32px;
+    margin: 0 auto;
+}
+
+.pop.delete_ward .pop_cont> div img,
+.pop.delete_room .pop_cont> div img{
+    width: 100%;
+}
+
+.pop.delete_ward .pop_cont h3,
+.pop.delete_room .pop_cont h3{
+    margin: 48px 0 8px;
+    font-size: 16px;
+}
+
+.pop.delete_ward .pop_cont h2,
+.pop.delete_room .pop_cont h2{
+    font-size: 24px;
+    color: #940045;
+}
+
+.pop.delete_ward .pop_cont .btn_list,
+.pop.delete_room .pop_cont .btn_list{
+    width: 400px;
+    bottom: 64px;
+    left: 27px;
+    font-size: 16px;
+}
+
+.pop.delete_ward .pop_cont .btn_list .btn_no,
+.pop.delete_room .pop_cont .btn_list .btn_no{
+    width: 128px;
+    height: 48px;
+    margin-right: 16px;
+    border-radius: 4px;
+    background: #eee;
+    color: #888;
+}
+
+.pop.delete_ward .pop_cont .btn_list .btn_no:hover,
+.pop.delete_room .pop_cont .btn_list .btn_no:hover{
+    background: #CCC;
+}
+
+.pop.delete_ward .pop_cont .btn_list .btn_cut,
+.pop.delete_room .pop_cont .btn_list .btn_cut{
+    width: 128px;
+    height: 48px;
+    border-radius: 4px;
+    background: #940045;
+    color: #fff;
+}
+
+.pop.delete_ward .pop_cont .btn_list .btn_cut:hover,
+.pop.delete_room .pop_cont .btn_list .btn_cut:hover{
+    background: #4A0000;
 }

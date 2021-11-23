@@ -53,7 +53,7 @@
 
     <!-- 병실생성 팝업 -->
     <div class="pop new_room">
-        <div class="overlay" style="display: block;">
+        <div class="overlay">
             <div class="pop_cont">
                  <div class="title">
                     <h2>병실생성</h2>
@@ -68,20 +68,15 @@
                  <div class="content">
                     <p>병상 수 </p>
 
-                    <div class="room_box">
-                        <button type="button" class="list_name">6인실
-                            <div>
-                                <img src="../img/under_arrow.svg" alt="아래쪽 화살표 아이콘">
-                            </div>
-                        </button>
-
-                        <ul class="room_list">
-                            <li class="room_list_number">1인실</li>
-                            <li class="room_list_number">2인실</li>
-                            <li class="room_list_number">3인실</li>
-                            <li class="room_list_number">4인실</li>
-                            <li class="room_list_number">5인실</li>
-                            <li class="room_list_number">6인실</li>
+                    <div class="selectBox2 ">
+                        <button class="label">6인실</button>
+                        <ul class="optionList">
+                            <li class="optionItem">1인실</li>
+                            <li class="optionItem">2인실</li>
+                            <li class="optionItem">3인실</li>
+                            <li class="optionItem">4인실</li>
+                            <li class="optionItem">5인실</li>
+                            <li class="optionItem">6인실</li>
                         </ul>
                     </div>
                 </div>
@@ -90,6 +85,46 @@
                      <button type="button" class="btn_cancel">취소</button>
                      <button type="button" class="btn_check">확인</button>
                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 병동 삭제 -->
+    <div class="pop delete_ward">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="../img/logo.png" alt="로고">
+                </div>
+                
+                <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
+                <h2>삭제 하시겠습니까?</h2>
+
+    
+                <div class="btn_list">
+                    <button type="button" class="btn_no">아니요</button>
+                    <button type="button" class="btn_cut">네, 삭제합니다</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 병실 삭제 -->
+    <div class="pop delete_room">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="../img/logo.png" alt="로고">
+                </div>
+                    
+                <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
+                <h2>삭제 하시겠습니까?</h2>
+    
+        
+                <div class="btn_list">
+                    <button type="button" class="btn_no">아니요</button>
+                    <button type="button" class="btn_cut">네, 삭제합니다</button>
+                </div>
             </div>
         </div>
     </div>
@@ -207,7 +242,7 @@
                 </div>
 
                 <div class="cont">
-                    <div class="ward_list on">
+                    <div class="ward_list">
                         <p>심장병동</p>
 
                         <div class="ward_count">
@@ -238,10 +273,34 @@
                 <div class="title">
                     <div>
                         <h2>병실관리</h2>
-                        <button type="button" class="btn_new_room">+병실생성</button>
+                        <button type="button" class="btn_new_room" disabled>+병실생성</button>
                     </div>
                     
                     <p>병실의 인원을 설정하고 생성합니다.</p>
+                </div>
+
+                <div class="cont">
+                    <div class="ward_list">
+                        <p>
+                            <span>1301</span> 호실.
+                            <span>6</span>인실
+                        </p>
+
+                        <div class="ward_count">
+                            <p>
+                                <span>0</span> 명의 환자 입원 중
+                            </p>
+
+                            <p>
+                                <span>0</span> 개의 장치 운영 중
+                            </p>
+                        </div>
+
+                        <div class="btn_list">
+                            <button type="button" class="btn_modify">수정</button>
+                            <button type="button" class="btn_delete">삭제</button>
+                        </div>
+                    </div>
                 </div>
             </div>
           </section>
@@ -251,5 +310,29 @@
     </div>
     <!--// end wrap-->
 
+    <script>
+        /* 화살표 함수 */
+        const label = document.querySelector('.label');
+        const options = document.querySelectorAll('.optionItem');
+
+        // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+        const handleSelect = (item) => {
+        label.parentNode.classList.remove('active');
+        label.innerHTML = item.textContent;
+        }
+        // 옵션 클릭시 클릭한 옵션을 넘김
+        options.forEach(option => {
+            option.addEventListener('click', () => handleSelect(option))
+        })
+
+        // 라벨을 클릭시 옵션 목록이 열림/닫힘
+        label.addEventListener('click', () => {
+        if(label.parentNode.classList.contains('active')) {
+            label.parentNode.classList.remove('active');
+        } else {
+            label.parentNode.classList.add('active');
+        }
+        })
+    </script>
   </body>
 </html>
