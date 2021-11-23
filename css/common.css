@@ -1,0 +1,9 @@
+#footer{
+    width: 360px;
+    margin: 0 auto;
+}
+
+#footer .copyright{
+    font-size: 12px;
+    color: #000;
+}
