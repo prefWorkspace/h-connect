@@ -1,3 +1,89 @@
+body {
+    position: relative;
+}
+
+/*================= 헤더 =================*/
+.pc_header{
+    height: 80px;
+    padding: 14px 24px 12px 40px;
+    background: linear-gradient(to right, #004F60, #350039);
+    display: flex;
+    justify-content: space-between;
+}
+
+.pc_header .logo{
+    width: 46px;
+    height: 32px;
+    margin: 12px 0;
+    vertical-align: middle;
+}
+
+.pc_header .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.pc_header .header_title{
+    margin-right: 400px;
+}
+
+.pc_header .header_title h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.pc_header .header_title h3{
+    font-size: 12px;
+    color: #fff;
+}
+
+.pc_header .search_container{
+    width: 640px;
+    height: 40px;
+    margin-top: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+.pc_header .search_container input{
+    width: 580px;
+    height: 40px;
+    padding: 4px 0 4px 16px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.pc_header .search_container input::placeholder{
+    font-size: 14px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.pc_header .search_container button{
+    width: 48px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #eee;
+}
+
+.pc_header .btn_logout{
+    width: 133px;
+    height: 32px;
+    margin: 12px;
+    padding: 6px 7px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    background: none;
+    border: 1px solid #fff;
+}
+
+.pc_header .btn_logout:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 #footer{
     width: 360px;
     margin: 0 auto;
@@ -6,4 +92,146 @@
 #footer .copyright{
     font-size: 12px;
     color: #000;
+}
+
+
+/*====================== 간호사 팝업 ======================*/
+/* 로그아웃 팝업 */
+.pop.logout{
+    width: 304px;
+    height: 104px;
+    padding:32px 28px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 72px;
+    right: 34px;
+    display:none;
+}
+
+.pop.logout .wrap_inner{
+    display: flex;
+}
+
+.pop.logout .wrap_inner div p{
+    font-size: 12px;
+}
+
+.pop.logout .wrap_inner div h3{
+    font-size: 16px;
+}
+
+.pop.logout .wrap_inner .btn_bye{
+    width: 96px;
+    height: 40px;
+    padding: 10px 0;
+    margin-left: 23px;
+    font-size: 14px;
+    color: #940045;
+    border: 1px solid #940045;
+    border-radius: 4px;
+    background: none;
+}
+
+.pop.logout .wrap_inner .btn_bye:hover{
+    color: #fff;
+    background: #940045;
+}
+
+/* 병동생성 팝업 */
+.pop .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    overflow: hidden !important;
+    touch-action: none !important;
+
+    display: none;
+    z-index: 100;
+}
+
+.pop .overlay .pop_cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 480px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.pop .overlay .pop_cont .title{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #007A94;
+}
+
+.pop .overlay .pop_cont .title h2{
+    color: #007A94;
+} 
+
+.pop .overlay .pop_cont .content{
+    padding: 31px 0 0;
+    display: flex;
+}
+
+.pop .overlay .pop_cont .content p{
+    width: 80px;
+    margin: 10px 64px 0 0;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.pop .overlay .pop_cont .content input{
+    width: 420px;
+    height: 48px;
+    padding: 14px 16px;
+    border-radius: 4px;
+    background: #eee;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.pop .overlay .pop_cont .btn_list{
+    position:absolute;
+    bottom: 32px;
+    right: 32px;
+}
+
+.pop .overlay .pop_cont .btn_list .btn_cancel{
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    border:1px solid #940045;
+    background: none;
+    font-size: 14px;
+    color: #940045;
+}
+
+.pop .overlay .pop_cont .btn_list .btn_check{
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    border:1px solid #007A94;
+    background: #007A94;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* 병실생성 팝업 */
+.pop .overlay .pop_cont .room_box{
+    position: relative;
+    width: 120px;
+    height: 48px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.pop .overlay .pop_cont .room_box .list_name{
+    display: flex;
 }

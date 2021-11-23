@@ -18,9 +18,9 @@
 
 .main .login{
     width: 360px;
-}   
+} 
 
-.main .login> div input{
+.main .login .input_container input{
     width: 100%;
     height: 48px;
     margin-bottom:16px;
@@ -30,4 +30,310 @@
     font-size: 14px;
 }
 
-.main .login
+.main .check label{
+    vertical-align: middle;
+}
+
+.main .check label input[type="checkbox"]{
+    background-color: #007A94;
+    vertical-align: middle;
+}
+
+.main .login button{
+    width: 176px;
+    height: 48px;
+    margin: 64px auto 0;
+    border-radius: 4px;
+    background: linear-gradient(to right, #004F60, #350039);
+    color: #fff;
+    display: block;
+}
+
+/*================= 간호사 =================*/
+/* 메인 */
+.nurse{
+    display: flex;
+    background-color: #eee;
+}
+
+.nurse .nav{
+    width: 60px;
+    padding: 40px 0;
+    background-color: #222;
+}
+
+.nurse .nav .list{
+    height: 72px;
+    padding: 22px 10px;
+}
+
+.nurse .nav .list img{
+    margin: 0 auto;
+    display: block;
+}
+
+.nurse .nav .list span{
+    display: block;
+    font-size: 10px;
+    color: #888;
+    text-align: center;
+}
+
+.nurse .nav .list.on{
+    width: 65px;
+    border-radius:0 8px 8px 0 ;
+    background: linear-gradient( to right ,#007A94, #003D4A);
+}
+
+.nurse .nav .list.on span{
+    color: #fff;
+}
+
+.nurse .wrap_inner{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse section{
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.nurse .management{
+    width: 360px;
+    height: 100vh;
+    padding: 16px;
+}
+
+.nurse .management .title> div{
+    margin-bottom: 13px;
+}
+
+.nurse .management .title> div h2{
+    font-size: 16px;
+    color: #007A94;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nurse .management .title> div> div{
+    width: 16px;
+    height: 16px;
+    margin-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nurse .management .title> div> div img{
+    width: 100%;
+    height: 100%;
+    filter:invert(39%) sepia(74%) saturate(6980%) hue-rotate(174deg) brightness(90%) contrast(101%);
+}
+
+.nurse .management .title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.nurse .management .management_list{
+    padding: 16px;
+    margin-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.nurse .management .management_list .list{
+    width: 296px;
+    height: 48px;
+    padding: 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse .management .management_list .list p{
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.nurse .management .management_list .list div{
+    width: 6px;
+    height: 12px;
+    vertical-align: middle;
+}
+
+.nurse .management .management_list .list.on div img{
+    width: 100%;
+    height: 100%;
+}
+
+.nurse .management .management_list .list.on{
+    background-color: #007A94;
+    color: #fff;
+}
+
+.nurse .management .management_list .list.off{
+    border-bottom: 1px solid #eee;
+}
+
+.nurse .management .management_list .list.off div img{
+    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
+}
+
+/* 병동관리 */
+.nurse .ward{
+    width: 640px;
+    padding: 16px;
+}
+
+.nurse .ward .title,
+.nurse .hospital_room .title{
+    border-bottom: 1px solid #eee;
+    padding: 8px 15px 26px;
+}
+
+.nurse .ward .title div,
+.nurse .hospital_room .title div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse .ward .title h2,
+.nurse .hospital_room .title h2{
+    margin-top: 7px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+    vertical-align: middle;
+}
+
+.nurse .ward .title .btn_new_ward{
+    width: 96px;
+    height: 40px;
+    background: none;
+    border-radius: 4px;
+    border:1px solid #007A94;
+    font-size: 14px;
+    color: #007A94;
+    vertical-align: middle;
+}
+
+.nurse .ward .title p,
+.nurse .hospital_room .title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.nurse .ward .cont{
+    padding: 16px;
+    font-size: 12px;
+    display: none;
+}
+
+.nurse .ward .cont .ward_list{
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+}
+
+.nurse .ward .cont .ward_list .on{
+    background: #007A94;
+    color: #fff;
+}
+
+.nurse .ward .cont .ward_list.on{
+    background: #007A94;
+    color: #fff;
+}
+
+.nurse .ward .cont .ward_list> p{
+    margin-top: 8px;
+    margin-right: 84px;
+}
+
+.nurse .ward .cont .ward_list .ward_count{
+    display: flex;
+}
+
+.nurse .ward .cont .ward_list .ward_count p{
+    margin-right: 24px;
+    margin-top: 6px;
+}
+
+.nurse .ward .cont .ward_list .ward_count span{
+    color: #007A94;
+}
+
+.nurse .ward .cont .ward_list.on .ward_count span{
+    color: #fff;
+}
+
+.nurse .ward .cont .ward_list .btn_list button{
+    width: 56px;
+    height: 32px;
+    padding: 4px 0;
+    background: none;
+    border-radius: 4px;
+}
+
+.nurse .ward .cont .ward_list .btn_list .btn_modify{
+    margin:0 6px 0 24px;
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.nurse .ward .cont .ward_list .btn_list .btn_delete{
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.nurse .ward .cont .ward_list.on .btn_list .btn_modify{
+    margin:0 6px 0 24px;
+    border: 0;
+    background: #fff;
+}
+
+.nurse .ward .cont .ward_list.on .btn_list .btn_delete{
+    background: #fff;
+    border: 0;
+}
+
+.nurse .ward .cont .ward_list.on img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.nurse .ward .cont .ward_list> :last-child{
+    width: 6px;
+    height: 12px;
+    margin: 11px 0 0 20px;
+}
+
+.nurse .ward .cont .ward_list img{
+    width: 100%;
+    height: 100%;
+    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
+}
+
+
+
+
+/* 병실관리 */
+.nurse .hospital_room{
+    width: 640px;
+    margin-right: 50px;
+    padding: 16px;
+}
+
+.nurse .hospital_room .title .btn_new_room{
+    width: 96px;
+    height: 40px;
+    background: none;
+    border-radius: 4px;
+    border:1px solid #007A94;
+    font-size: 14px;
+    color: #007A94;
+    vertical-align: middle;
+}
