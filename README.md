@@ -1,1 +1,1 @@
-# sears
+# h-connect
