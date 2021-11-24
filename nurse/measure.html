@@ -210,7 +210,7 @@
      </header>
 
       <!--콘텐츠-->
-      <div id="wrap_content" class="nurse nurse_main">
+      <div id="wrap_content" class="nurse nurse_measure">
 
         <nav class="nav">
             <ul class="main_depth">
@@ -245,338 +245,699 @@
         </nav>
 
         <div class="wrap_inner">
-          <section class="section management">
-            <div class="container">
-                <div class="title">
-                    <div>
-                        <div>
-                            <img src="../img/header/clinic.svg" alt="사람모양 아이콘">
-                        </div>
-                        <h2>관리</h2>
-                    </div>
-                    
-                    <p>병동 및 환자를 관리하고, 장치를 등록합니다.</p>
-                </div>
-
-                <div class="management_list">
-                    <div class="list off" onclick="location.href='index.html'">
-                        <p>병동관리</p>
-                        <div>
-                            <img src="../img/right_arrow.svg" alt="오른쪽 화살표">
-                        </div>
-                    </div>
-
-                    <div class="list off" onclick="location.href='device_management.html'">
-                        <p>장치관리</p>
-                        <div>
-                            <img src="../img/right_arrow.svg" alt="오른쪽 화살표">
-                        </div>
-                    </div>
-
-                    <div class="list on" onclick="location.href='measure.html'">
-                        <p>측정관리</p>
-                        <div>
-                            <img src="../img/right_arrow.svg" alt="오른쪽 화살표">
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </section>
-
-          <section class="section new_device">
-            <div class="container">
-                <div class="title">
-                    <div>
-                        <h2>신규장치등록</h2>
-                        <button type="button" class="btn_new_device">+장치등록</button>
-                    </div>
-                    
-                    <p>생체신호 수집장치를 신규 등록합니다.</p>
-                </div>
-
-                <div class="cont" style="display: block;">
-                    <div class="device_count">
-                        <div>
-                            <p>심전도 패치</p>
-                            <h1>28</h1>
-                            <p class="use_line">사용가능</p>
-                        </div>
-
-                        <div>
-                            <p>산소포화도 측정장치</p>
-                            <h1>36</h1>
-                            <p class="use_line">사용가능</p>
-                        </div>
-
-                        <div>
-                            <p>체온 패치</p>
-                            <h1>32</h1>
-                            <p class="use_line">사용가능</p>
-                        </div>
-                    </div>
-
-                    <div class="device_list">
-                        <div class="device_search">
-
-                            <div class="selectBox">
-                                <button class="label">심전도 패치</button>
-                                <ul class="optionList">
-                                    <li class="optionItem">심전도 패치</li>
-                                    <li class="optionItem">산소포화도 측정장치</li>
-                                    <li class="optionItem">체온 패치</li>
-                                </ul>
+            <div>
+                <section class="section management">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <div>
+                                    <img src="../img/header/clinic.svg" alt="사람모양 아이콘">
+                                </div>
+                                <h2>관리</h2>
                             </div>
-
+                            
+                            <p>병동 및 환자를 관리하고, 장치를 등록합니다.</p>
+                        </div>
+        
+                        <div class="management_list">
+                            <div class="list off" onclick="location.href='index.html'">
+                                <p>병동관리</p>
+                                <div>
+                                    <img src="../img/right_arrow.svg" alt="오른쪽 화살표">
+                                </div>
+                            </div>
+        
+                            <div class="list off" onclick="location.href='device_management.html'">
+                                <p>장치관리</p>
+                                <div>
+                                    <img src="../img/right_arrow.svg" alt="오른쪽 화살표">
+                                </div>
+                            </div>
+        
+                            <div class="list on" onclick="location.href='measure.html'">
+                                <p>측정관리</p>
+                                <div>
+                                    <img src="../img/right_arrow.svg" alt="오른쪽 화살표">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+        
+                  <section class="section left measure_status">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>측정현황</h2>
+                            </div>
+                            
+                            <p>생체신호 수집장치를 신규 등록합니다.</p>
+                        </div>
+        
+                        <div class="cont" style="display: block;">
+                    
                             <div class="search_container">
-                                <input type="text" placeholder="serial no를 입력해주세요.">
-                                <button type="button">
-                                    <img src="../img/header/search.svg" alt="돋보기 아이콘">
+                                <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
+                
+                                <button type="button" class="btn_search">
+                                    <img src="../img/header/search.svg" alt="검색표시">
                                 </button>
                             </div>
+        
+                            <div class="search_select">
+                                    
+                                <div class="select_box select_ward">
+                                    <button class="label ward_label">심장병동</button>
+                                    <ul class="option ward_option">
+                                        <li class="option_item">심장병동</li>
+                                        <li class="option_item">12병동</li>
+                                    </ul>
+                                </div>
+        
+                                <div class="select_box select_room">
+                                    <button class="label ward_label">병실선택</button>
+                                    <ul class="option ward_option">
+                                        <li class="option_item">병실전체</li>
+                                        <li class="option_item"><span>1301</span> 호실</li>
+                                        <li class="option_item"><span>1302</span> 호실</li>
+                                        <li class="option_item"><span>1303</span> 호실</li>
+                                        <li class="option_item"><span>1304</span> 호실</li>
+                                        <li class="option_item"><span>1305</span> 호실</li>
+                                        <li class="option_item"><span>1306</span> 호실</li>
+                                        <li class="option_item"><span>1307</span> 호실</li>
+                                        <li class="option_item"><span>1308</span> 호실</li>
+                                        <li class="option_item"><span>1309</span> 호실</li>
+                                        <li class="option_item"><span>1310</span> 호실</li>
+                                        <li class="option_item"><span>1311</span> 호실</li>
+                                        <li class="option_item"><span>1312</span> 호실</li>
+                                    </ul>
+                                </div>
+        
+                                <p>
+                                    <span>42</span> 명의 환자를 모니터링 하고있습니다.
+                                </p>
+                            </div>
+        
+                            <div class="container">
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+        
+                                <div class="status_list">
+                                    <p>
+                                        <span>심장병동</span>.
+                                        <span>1301</span>호실.
+                                        <span>1</span>병상.
+                                    </p>
+        
+                                    <p>
+                                        <span>김환자</span>.
+                                        (<span>63</span>.
+                                        <span>남</span>.
+                                        <span>patient no</span>)
+                                    </p>
+        
+                                    <div class="device_list">
+                                        <div>심전도</div>
+                                        <div>산소포화도</div>
+                                        <div>체온</div>
+                                    </div>
+        
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_modify">수정</button>
+                                        <button type="button" class="btn_delete">삭제</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-
-                        <div class="device_item">
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
+                    </div> 
+                  </section>
+        
+                  <section class="section right new_hospital">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>신규 병상등록</h2>
+                                <button type="button" class="btn_new_hospital">+병상등록</button>
                             </div>
+                            
+                            <p>새로운 병상을 생성하고 모니터링을 실행합니다.</p>
+                        </div>
+        
+                        <div class="cont" style="display: block;">
+                            <div class="hospital_patient">
+                                <input type="text" placeholder="환자명">
+                                
+                                <div class="patient_info">
+                                    <input type="number" placeholder="환자나이">
 
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
+                                    <div class="select_box select_sex">
+                                        <button class="label sex_label">성별</button>
+                                        <ul class="option sex_option">
+                                            <li class="option_item">여자</li>
+                                            <li class="option_item">남자</li>
+                                        </ul>
+                                    </div>
 
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
+                                    <input type="text" placeholder="MRN code">
+                                </div>
+
+                                <div class="patient_room">
+                                    <div class="select_box select_ward">
+                                        <button class="label ward_label">      심장병동</button>
+                                        <ul class="option ward_option">
+                                            <li class="option_item">
+                                                <p>심장병동</p>
+                                                <span class="bed_count lot">+8 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>12 병동</p>
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="select_box select_room">
+                                        <button class="label room_label">병실선택</button>
+                                        <ul class="option room_option">
+                                            <li class="option_item">병실전체</li>
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1301</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+1 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1302</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+2 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1303</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1304</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1305</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1306</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+1 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1307</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+2 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1308</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="select_box select_bed">
+                                        <button class="label ward_label">병상선택</button>
+                                        <ul class="option ward_option">
+                                            <li class="option_item">6번 병상</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">심전도 패치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">사용가능</p>
-
-                                <button type="button" class="btn_delete">
-                                    삭제
-                                </button>
-                            </div>
+                            <p><span>8</span> 개의 여유병상</p>
                         </div>
                     </div>
-                </div>
-            </div> 
-          </section>
+                  </section>
 
-          <section class="section return_device">
-            <div class="container">
-                <div class="title">
-                    <div>
-                        <h2>사용한 장치 반납</h2>
-                        <button type="button" class="btn_use_device">장치반납</button>
-                    </div>
-                    
-                    <p>환자가 사용한 생체신호 수집장치를 반납합니다.</p>
-                </div>
-
-                <div class="cont" style="display: block;">
-                    <div class="device_count">
-                        <div>
-                            <p>심전도 패치</p>
-                            <h1>28</h1>
-                            <p class="use_line">반납완료</p>
+                  <section class="section right modifi_hospital" style="display: none;">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>병상정보 수정</h2>
+                                <button type="button" class="btn_new_hospital">수정완료</button>
+                            </div>
+                            
+                            <p>기존의 병상정보를 수정합니다.</p>
                         </div>
+        
+                        <div class="cont" style="display: block;">
+                            <div class="hospital_patient">
+                                <input type="text" placeholder="환자명">
+                                
+                                <div class="patient_info">
+                                    <input type="number" placeholder="환자나이">
 
-                        <div>
-                            <p>산소포화도 측정장치</p>
-                            <h1>36</h1>
-                            <p class="use_line">반납완료</p>
-                        </div>
+                                    <div class="select_box select_sex">
+                                        <button class="label sex_label">성별</button>
+                                        <ul class="option sex_option">
+                                            <li class="option_item">여자</li>
+                                            <li class="option_item">남자</li>
+                                        </ul>
+                                    </div>
 
-                        <div>
-                            <p>체온 패치</p>
-                            <h1>32</h1>
-                            <p class="use_line">반납완료</p>
-                        </div>
-                    </div>
+                                    <input type="text" placeholder="MRN code">
+                                </div>
 
-                    <div class="device_list">
-                        <div class="device_search">
-                            <div class="selectBox">
-                                <button class="label">산소포화도 측정장치</button>
-                                <ul class="optionList">
-                                    <li class="optionItem">심전도 패치</li>
-                                    <li class="optionItem">산소포화도 측정장치</li>
-                                    <li class="optionItem">체온 패치</li>
-                                </ul>
+                                <div class="patient_room">
+                                    <div class="select_box select_ward">
+                                        <button class="label ward_label">      심장병동</button>
+                                        <ul class="option ward_option">
+                                            <li class="option_item">
+                                                <p>심장병동</p>
+                                                <span class="bed_count lot">+8 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>12 병동</p>
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="select_box select_room">
+                                        <button class="label room_label">병실선택</button>
+                                        <ul class="option room_option">
+                                            <li class="option_item">병실전체</li>
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1301</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+1 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1302</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+2 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1303</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1304</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1305</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1306</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+1 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1307</span> 호실
+                                                </p>
+
+                                                <span class="bed_count lot">+2 여유</span>
+                                            </li>
+
+                                            <li class="option_item">
+                                                <p>
+                                                    <span>1308</span> 호실
+                                                </p>
+
+                                                <span class="bed_count none">없음</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="select_box select_bed">
+                                        <button class="label ward_label">병상선택</button>
+                                        <ul class="option ward_option">
+                                            <li class="option_item">6번 병상</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="search_container">
-                                <input type="text" placeholder="serial no를 입력해주세요.">
-                                <button type="button">
-                                    <img src="../img/header/search.svg" alt="돋보기 아이콘">
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="device_item">
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
-
-                            <div class="item_row">
-                                <p class="item_name">산소포화도 측정장치</p>
-                                <p class="item_num">serial no.</p>
-                                <p class="use_line">반납완료</p>
-
-                                <button type="button" class="btn_cancel">취소</button>
-                            </div>
+                            <p><span>8</span> 개의 여유병상</p>
                         </div>
                     </div>
-                </div>
+                  </section>
             </div>
-          </section>
         </div>
       </div>
 

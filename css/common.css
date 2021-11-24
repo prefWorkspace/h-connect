@@ -48,8 +48,8 @@ body {
 }
 
 .pc_header .search_container input{
-    width: 580px;
-    height: 40px;
+    width: 570px;
+    height: 37px;
     padding: 4px 0 4px 16px;
     background-color: #fff;
     border-radius: 4px;
@@ -64,6 +64,8 @@ body {
 .pc_header .search_container .btn_search{
     width: 48px;
     height: 32px;
+    margin-top: 5px;
+    margin-right: 16px;
     border-radius: 4px;
     background-color: #eee;
 }
@@ -220,6 +222,7 @@ body {
     border-radius: 8px;
     background: #fff;
     transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .pop .overlay .pop_cont .title{
@@ -311,7 +314,7 @@ body {
     background: transparent;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: normal;
     color: #000;
 }
 

@@ -154,32 +154,26 @@
 }
 
 /* 병동관리 */
-.nurse .ward,
-.nurse .new_device{
+.nurse .left{
     width: 640px;
     padding: 16px;
 }
 
-.nurse .ward .title,
-.nurse .hospital_room .title,
-.nurse .new_device .title,
-.nurse .return_device .title{
+.nurse .left .title,
+.nurse .right .title{
     border-bottom: 1px solid #eee;
     padding: 8px 15px 26px;
 }
 
-.nurse .ward .title div,
-.nurse .hospital_room .title div,
-.nurse .new_device .title div,
-.nurse .return_device .title div{
+.nurse .left .title div,
+.nurse .right .title div{
     display: flex;
     justify-content: space-between;
 }
 
-.nurse .ward .title h2,
-.nurse .hospital_room .title h2,
-.nurse .new_device .title h2,
-.nurse .return_device .title h2{
+
+.nurse .left .title h2,
+.nurse .right .title h2{
     margin-top: 7px;
     font-size: 16px;
     font-weight: 500;
@@ -187,9 +181,9 @@
     vertical-align: middle;
 }
 
-.nurse .ward .title .btn_new_ward,
-.nurse .new_device .title .btn_new_device,
-.nurse .return_device .title .btn_use_device{
+.nurse .btn_new_ward,
+.nurse .btn_new_device,
+.nurse .btn_use_device{
     width: 96px;
     height: 40px;
     background: none;
@@ -200,72 +194,68 @@
     vertical-align: middle;
 }
 
-.nurse .ward .title p,
-.nurse .hospital_room .title p,
-.nurse .new_device .title p,
-.nurse .return_device .title p{
+.nurse .left .title p,
+.nurse .right .title p{
     font-size: 12px;
     color: #444;
 }
 
-.nurse .ward .cont,
-.nurse .hospital_room .cont,
-.nurse .new_device .cont,
-.nurse .return_device .cont{
+.nurse .left .cont,
+.nurse .right .cont{
     padding: 16px;
     font-size: 12px;
     display: none;
 }
 
-.nurse .ward .cont .ward_list,
-.nurse .hospital_room .cont .ward_list{
+.nurse .left .cont .ward_list,
+.nurse .right .cont .ward_list{
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
     display: flex;
 }
 
-.nurse .ward .cont .ward_list:hover,
-.nurse .hospital_room .cont .ward_list:hover{
+.nurse .left .cont .ward_list:hover,
+.nurse .right .cont .ward_list:hover{
     background: #eee;
     cursor: pointer;
 }
 
-.nurse .ward .cont .ward_list .on{
+.nurse .left .cont .ward_list .on{
     background: #007A94;
     color: #fff;
 }
 
-.nurse .ward .cont .ward_list.on{
+.nurse .left .cont .ward_list.on{
     background: #007A94;
     color: #fff;
 }
 
-.nurse .ward .cont .ward_list> p{
+.nurse .left .cont .ward_list> p{
     margin-top: 8px;
     margin-right: 84px;
 }
 
-.nurse .ward .cont .ward_list .ward_count{
+.nurse .left .cont .ward_list .ward_count{
     display: flex;
 }
 
-.nurse .ward .cont .ward_list .ward_count p,
-.nurse .hospital_room .cont .ward_list .ward_count p{
+.nurse .left .cont .ward_list .ward_count p,
+.nurse .right .cont .ward_list .ward_count p{
     margin-right: 24px;
     margin-top: 6px;
 }
 
-.nurse .ward .cont .ward_list .ward_count span,
-.nurse .hospital_room .cont .ward_list .ward_count span{
+.nurse .left .cont .ward_list .ward_count span,
+.nurse .right .cont .ward_list .ward_count span{
     color: #007A94;
 }
 
-.nurse .ward .cont .ward_list.on .ward_count span{
+.nurse .left .cont .ward_list.on .ward_count span{
     color: #fff;
 }
 
-.nurse .ward .cont .ward_list .btn_list button,
-.nurse .hospital_room .cont .ward_list .btn_list button{
+.nurse .left .cont .ward_list .btn_list button,
+.nurse .right .cont .ward_list .btn_list button{
     width: 56px;
     height: 32px;
     padding: 4px 0;
@@ -273,8 +263,8 @@
     border-radius: 4px;
 }
 
-.nurse .ward .cont .ward_list .btn_list .btn_modify,
-.nurse .hospital_room .cont .ward_list .btn_list .btn_modify{
+.nurse .left .cont .ward_list .btn_list .btn_modify,
+.nurse .right .cont .ward_list .btn_list .btn_modify{
     margin:0 6px 0 24px;
     border:1px solid #007A94;
     color: #007A94;
@@ -284,36 +274,36 @@
     margin: 0 6px 0;
 }
 
-.nurse .ward .cont .ward_list .btn_list .btn_delete,
-.nurse .hospital_room .cont .ward_list .btn_list .btn_delete{
+.ward .cont .ward_list .btn_list .btn_delete,
+.hospital_room .cont .ward_list .btn_list .btn_delete{
     border: 1px solid #940045;
     color: #940045;
 }
 
-.nurse .ward .cont .ward_list.on .btn_list .btn_modify{
+.ward .cont .ward_list.on .btn_list .btn_modify{
     margin:0 6px 0 24px;
     border: 0;
     background: #fff;
 }
 
-.nurse .ward .cont .ward_list.on .btn_list .btn_delete{
+.ward .cont .ward_list.on .btn_list .btn_delete{
     background: #fff;
     border: 0;
 }
 
-.nurse .ward .cont .ward_list.on img{
+.ward .cont .ward_list.on img{
     width: 100%;
     height: 100%;
     filter: brightness(0) invert(1);
 }
 
-.nurse .ward .cont .ward_list> :last-child{
+.ward .cont .ward_list> :last-child{
     width: 6px;
     height: 12px;
     margin: 11px 0 0 20px;
 }
 
-.nurse .ward .cont .ward_list img{
+.ward .cont .ward_list img{
     width: 100%;
     height: 100%;
     filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
@@ -321,15 +311,13 @@
 
 
 /* 병실관리 */
-.nurse .hospital_room,
-.nurse .use_device,
-.nurse .return_device{
+.nurse .right{
     width: 640px;
     margin-right: 50px;
     padding: 16px;
 }
 
-.nurse .hospital_room .title .btn_new_room{
+.right .title .btn_new_room{
     width: 96px;
     height: 40px;
     background: none;
@@ -340,7 +328,7 @@
     vertical-align: middle;
 }
 
-.nurse .hospital_room .title .btn_new_room:disabled{
+.right .title .btn_new_room:disabled{
     width: 96px;
     height: 40px;
     background: #ccc;
@@ -351,65 +339,65 @@
     vertical-align: middle;
 }
 
-.nurse .hospital_room .cont{
+.hospital_room .cont{
     height: 592px;
     overflow-y: scroll;
 }
 
-.nurse .hospital_room .cont .ward_list> p{
+.hospital_room .cont .ward_list> p{
     margin-top: 8px;
     margin-right: 40px;
 }
 
-.nurse .hospital_room .cont .ward_list .ward_count{
+.hospital_room .cont .ward_list .ward_count{
     width: 250px;
     display: flex;
 }
 
-.nurse .hospital_room .cont::-webkit-scrollbar{
+.hospital_room .cont::-webkit-scrollbar{
     width: 8px;
 }
 
-.nurse .hospital_room .cont::-webkit-scrollbar-thumb{
+.hospital_room .cont::-webkit-scrollbar-thumb{
     height: 17%;
     border-radius: 10px;
     background: #ccc;
 }
 
 /* 신규장치등록 */
-.nurse .new_device .device_count,
-.nurse .return_device .device_count{
+.new_device .device_count,
+.return_device .device_count{
     padding: 8px 48px;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
 }
 
-.nurse .new_device .device_count div,
-.nurse .return_device .device_count div{
+.new_device .device_count div,
+.return_device .device_count div{
     width: 144px;
     height: 120px;
     padding: 16px;
     text-align: center;
 }
 
-.nurse .new_device .device_count div p,
-.nurse .return_device .device_count div p{
+.new_device .device_count div p,
+.return_device .device_count div p{
     font-size: 12px;
 }
 
-.nurse .new_device .device_count div h1,
-.nurse .return_device .device_count div h1{
+.new_device .device_count div h1,
+.return_device .device_count div h1{
     font-size: 36px;
     color: #007A94;
 }
 
-.nurse .new_device .device_count div .use_line{
+.new_device .device_count div .use_line{
     color: #007A94;
 }
 
-.nurse .new_device .device_search,
-.nurse .return_device .device_search{
+.new_device .device_search,
+.return_device .device_search{
     padding: 6px;
 }
 
@@ -481,8 +469,7 @@
     border-radius:4px;
 }
 
-.nurse .new_device .search_container,
-.nurse .return_device .search_container{
+.nurse .search_container{
     width: 392px;
     height: 36px;
     padding-left: 16px;
@@ -491,60 +478,58 @@
     display: inline-block;
 }
 
-.nurse .new_device .search_container input,
-.nurse .return_device .search_container input{
+.nurse .search_container input{
     background: #eee;
     height: 34px;
     float: left;
 }
 
-.nurse .new_device .search_container input::placeholder,
-.nurse .return_device .search_container input::placeholder{
+.nurse .search_container input::placeholder{
     font-size: 12px;
     color: #ccc;
 }
 
-.nurse .new_device .search_container button,
-.nurse .return_device .search_container button{
+.nurse .search_container button{
     float: right;
     height: 36px;
     padding: 5px 20px;
+    border-radius: 4px;
 }
 
-.nurse .new_device .item_row,
-.nurse .return_device .item_row{
+.new_device .item_row,
+.return_device .item_row{
     padding: 3px 5px 5px 15px;
     border-bottom: 1px solid #eee;
 }
 
-.nurse .new_device .item_row p,
-.nurse .return_device .item_row p{
+.new_device .item_row p,
+.return_device .item_row p{
     font-size: 12px;
     display: inline-block;
     vertical-align: middle;
 }
 
-.nurse .new_device .item_row .item_name,
-.nurse .return_device .item_row .item_name{
+.new_device .item_row .item_name,
+.return_device .item_row .item_name{
     width: 120px;
     margin-right: 50px;
 }
 
-.nurse .new_device .item_row .item_num,
-.nurse .return_device .item_row .item_num{
+.new_device .item_row .item_num,
+.return_device .item_row .item_num{
     width: 80px;
     margin-right: 140px;
 }
 
-.nurse .new_device .item_row .use_line,
-.nurse .return_device .item_row .use_line{
+.new_device .item_row .use_line,
+.return_device .item_row .use_line{
     width: 60px;
     margin-right: 38px;
     color: #007A94;
 }
 
-.nurse .new_device .item_row .btn_delete,
-.nurse .return_device .item_row .btn_cancel{
+.new_device .item_row .btn_delete,
+.return_device .item_row .btn_cancel{
     width: 56px;
     height: 24px;
     background: none;
@@ -556,13 +541,300 @@
 }
 
 /* 사용한 장치 반납 */
-.nurse .return_device .device_count div h1,
-.nurse .return_device .device_count div .use_line,
-.nurse .return_device .item_row .use_line{
+.return_device .device_count div h1,
+.return_device .device_count div .use_line,
+.return_device .item_row .use_line{
     color: #940045;
 }
 
-.nurse .return_device .title .btn_use_device{
+.return_device .title .btn_use_device{
     border: 1px solid #940045;
     color: #940045;
 }
+
+/* 측정 관리 */
+.nurse .measure_status{
+    width: 744px;
+    margin: 0 32px;
+}
+
+.nurse_measure .wrap_inner{
+    padding: 0;
+}
+
+.nurse_measure .wrap_inner> div{
+    width: 100%;
+    margin: 40px;
+    display: flex;
+}
+
+.nurse_measure .right{
+    width: 536px;
+}
+
+.measure_status .title div{
+    margin-bottom: 13px;
+}
+
+.measure_status .search_container{
+    width: 100%;
+    height: 40px;
+}
+
+.measure_status .search_container input{
+    width: 90%;
+    height: 40px;
+}
+
+.measure_status .search_container button{
+    height: 40px;
+}
+
+.measure_status .select_box{
+    width: 160px;
+    height: 36px;
+    margin: 16px 16px 0 0;
+    display: inline-block;
+}
+
+.measure_status .search_select p{
+    margin-top: 25px;
+    margin-left: 125px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.measure_status .search_select p span{
+    color: #007A94;
+}
+
+.measure_status .cont .container{
+    height: 476px;
+    margin-top: 16px;
+    overflow-y: scroll;
+}
+
+.measure_status .cont .container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.measure_status .cont .container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.measure_status .cont .container .status_list{
+    height: 40px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.measure_status .cont .container .status_list> :first-child{
+    margin-right: 16px;
+}
+
+.measure_status .cont .container .status_list p{
+    margin-right: 40px;
+}
+
+.measure_status .cont .container .status_list p,
+.measure_status .cont .container .status_list .device_list,
+.measure_status .cont .container .status_list .device_list div,
+.measure_status .cont .container .status_list .btn_list{
+    display: inline-block;
+    font-size: 12px;
+}
+
+.measure_status .cont .container .status_list .device_list{
+    display: inline-block;
+    margin-top: -9px;
+    margin-right: 20px;
+}
+
+.nurse .measure_status .cont .container .status_list .device_list div{
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list{
+    margin-top: -9px;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list button{
+    width: 48px;
+    height: 32px;
+    border-radius: 4px;
+    background: none;
+    font-size: 12px;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list .btn_modify{
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list .btn_delete{
+    border:1px solid #940045;
+    color: #940045;
+}
+
+.nurse .new_hospital .container{
+    border-bottom: 1px solid #eee;
+}
+
+.new_hospital .title .btn_new_hospital{
+    width: 96px;
+    height: 40px;
+    padding: 10px 17px;
+    border-radius: 4px;
+    border:1px solid #007A94;
+    background: none;
+    font-size: 14px;
+    color: #007A94;
+}
+
+.new_hospital .hospital_patient input{
+    width: 100%;
+    height: 36px;
+    margin-bottom: 16px;
+    padding: 10px 16px;
+    font-size: 12px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.new_hospital .hospital_patient input::placeholder{
+    color: #ccc;
+}
+
+.new_hospital .hospital_patient> div{
+    display: flex;
+}
+
+.new_hospital .hospital_patient .patient_info> :first-child{
+    width: 64px;
+    padding: 10px;
+}
+
+.new_hospital .hospital_patient .patient_info .select_sex{
+    width: 80px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.new_hospital .hospital_patient .patient_info .select_sex .sex_label{
+    color: #ccc;
+}
+
+.new_hospital .hospital_patient .patient_info> :last-child{
+    width: 296px;
+}
+
+.new_hospital .hospital_patient .patient_room .select_ward{
+    width: 160px;
+    height: 36px;
+}
+
+.new_hospital .hospital_patient .patient_room .select_room{
+    width: 160px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.new_hospital .hospital_patient .patient_room .select_bed{
+    width: 120px;
+    height: 36px;
+}
+
+
+.new_hospital .cont .select_box .label{
+    font-size: 12px;
+    font-weight: normal;
+    color: #000;
+}
+
+.new_hospital .cont> p{
+    margin-top: 12px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.new_hospital .cont> p span{
+    color: #007A94;
+}
+
+
+
+
+
+
+/* 셀렉트 박스 */
+.select_box * { box-sizing: border-box; }
+.select_box {
+    position: relative;
+    width: 120px;
+    height: 48px;
+    border-radius: 4px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.select_box:after {
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('../img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+}
+
+.select_box .label {
+    display: flex;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.select_box .option {
+    width: 100%;
+    position: absolute; 
+    top: 48px;
+    left: 0;
+    font-size: 14px;
+    font-weight: normal;
+    background: #eee;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s ease-in;
+}
+ 
+.select_box.active .ward_option {
+    max-height: 500px;
+}
+
+.select_box .option_item {
+    padding: 5px 15px 5px;
+    transition: .1s;
+}
+
+.select_box.active .ward_option> :first-child{
+    border-top: 1px solid #007A94;
+}
+
+.select_box .ward_option> :last-child {
+    border-radius:4px;
+}
+

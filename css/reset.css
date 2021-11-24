@@ -100,9 +100,9 @@ textarea { overflow:auto; vertical-align:top; resize:none}
 html,body{height:100%;}
 address{font-style:normal;}
 
-button, input, select, textarea { font-weight: normal;font-style: normal;font-family: 'NanumSquare', sans-serif; font-weight:normal;font-style: normal;}
+button, input, select, textarea { font-weight: normal;font-style: normal;font-family: 'Noto Sans KR', sans-serif; font-weight:normal;font-style: normal;}
 
-body { width: 100%;height: auto;font-family: 'NanumSquare', sans-serif; font-weight:normal;font-style: normal; background-color:#ffffff;}
+body { width: 100%;height: auto;font-family: 'Noto Sans KR', sans-serif; font-weight:normal;font-style: normal; background-color:#ffffff;}
 
 .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after, .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after{
 	display: none;
