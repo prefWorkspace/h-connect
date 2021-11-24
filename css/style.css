@@ -119,6 +119,11 @@
     justify-content: space-between;
 }
 
+.nurse .management .management_list .list:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
 .nurse .management .management_list .list p{
     font-size: 12px;
     vertical-align: middle;
@@ -149,25 +154,32 @@
 }
 
 /* 병동관리 */
-.nurse .ward{
+.nurse .ward,
+.nurse .new_device{
     width: 640px;
     padding: 16px;
 }
 
 .nurse .ward .title,
-.nurse .hospital_room .title{
+.nurse .hospital_room .title,
+.nurse .new_device .title,
+.nurse .return_device .title{
     border-bottom: 1px solid #eee;
     padding: 8px 15px 26px;
 }
 
 .nurse .ward .title div,
-.nurse .hospital_room .title div{
+.nurse .hospital_room .title div,
+.nurse .new_device .title div,
+.nurse .return_device .title div{
     display: flex;
     justify-content: space-between;
 }
 
 .nurse .ward .title h2,
-.nurse .hospital_room .title h2{
+.nurse .hospital_room .title h2,
+.nurse .new_device .title h2,
+.nurse .return_device .title h2{
     margin-top: 7px;
     font-size: 16px;
     font-weight: 500;
@@ -175,7 +187,9 @@
     vertical-align: middle;
 }
 
-.nurse .ward .title .btn_new_ward{
+.nurse .ward .title .btn_new_ward,
+.nurse .new_device .title .btn_new_device,
+.nurse .return_device .title .btn_use_device{
     width: 96px;
     height: 40px;
     background: none;
@@ -187,13 +201,17 @@
 }
 
 .nurse .ward .title p,
-.nurse .hospital_room .title p{
+.nurse .hospital_room .title p,
+.nurse .new_device .title p,
+.nurse .return_device .title p{
     font-size: 12px;
     color: #444;
 }
 
 .nurse .ward .cont,
-.nurse .hospital_room .cont{
+.nurse .hospital_room .cont,
+.nurse .new_device .cont,
+.nurse .return_device .cont{
     padding: 16px;
     font-size: 12px;
     display: none;
@@ -206,6 +224,12 @@
     display: flex;
 }
 
+.nurse .ward .cont .ward_list:hover,
+.nurse .hospital_room .cont .ward_list:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
 .nurse .ward .cont .ward_list .on{
     background: #007A94;
     color: #fff;
@@ -216,14 +240,12 @@
     color: #fff;
 }
 
-.nurse .ward .cont .ward_list> p,
-.nurse .hospital_room .cont .ward_list> p{
+.nurse .ward .cont .ward_list> p{
     margin-top: 8px;
     margin-right: 84px;
 }
 
-.nurse .ward .cont .ward_list .ward_count,
-.nurse .hospital_room .cont .ward_list .ward_count{
+.nurse .ward .cont .ward_list .ward_count{
     display: flex;
 }
 
@@ -298,10 +320,10 @@
 }
 
 
-
-
 /* 병실관리 */
-.nurse .hospital_room{
+.nurse .hospital_room,
+.nurse .use_device,
+.nurse .return_device{
     width: 640px;
     margin-right: 50px;
     padding: 16px;
@@ -327,4 +349,220 @@
     font-size: 14px;
     color: #fff;
     vertical-align: middle;
+}
+
+.nurse .hospital_room .cont{
+    height: 592px;
+    overflow-y: scroll;
+}
+
+.nurse .hospital_room .cont .ward_list> p{
+    margin-top: 8px;
+    margin-right: 40px;
+}
+
+.nurse .hospital_room .cont .ward_list .ward_count{
+    width: 250px;
+    display: flex;
+}
+
+.nurse .hospital_room .cont::-webkit-scrollbar{
+    width: 8px;
+}
+
+.nurse .hospital_room .cont::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+/* 신규장치등록 */
+.nurse .new_device .device_count,
+.nurse .return_device .device_count{
+    padding: 8px 48px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse .new_device .device_count div,
+.nurse .return_device .device_count div{
+    width: 144px;
+    height: 120px;
+    padding: 16px;
+    text-align: center;
+}
+
+.nurse .new_device .device_count div p,
+.nurse .return_device .device_count div p{
+    font-size: 12px;
+}
+
+.nurse .new_device .device_count div h1,
+.nurse .return_device .device_count div h1{
+    font-size: 36px;
+    color: #007A94;
+}
+
+.nurse .new_device .device_count div .use_line{
+    color: #007A94;
+}
+
+.nurse .new_device .device_search,
+.nurse .return_device .device_search{
+    padding: 6px;
+}
+
+.selectBox * { box-sizing: border-box; }
+.selectBox{
+    position: relative;
+    width: 160px;
+    height: 36px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #eee;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.selectBox:after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('../img/under_arrow.svg') no-repeat;
+    top: 48%; 
+    right: 15px;
+}
+
+.selectBox .label{
+    display: flex;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+}
+
+.selectBox .optionList{
+    width: 100%;
+    position: absolute; 
+    top: 48px;
+    left: 0;
+    font-size: 14px;
+    font-weight: normal;
+    background: #eee;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s ease-in;
+}
+
+.selectBox.active .optionList{
+    max-height: 500px;
+}
+
+.selectBox .optionItem{
+    padding: 5px 15px 5px;
+    transition: .1s;
+}
+
+.selectBox.active .optionList> :first-child{
+    border-top: 1px solid #007A94;
+}
+
+.selectBox .optionlist> :last-child {
+    border-radius:4px;
+}
+
+.nurse .new_device .search_container,
+.nurse .return_device .search_container{
+    width: 392px;
+    height: 36px;
+    padding-left: 16px;
+    border-radius: 4px;
+    background: #eee;
+    display: inline-block;
+}
+
+.nurse .new_device .search_container input,
+.nurse .return_device .search_container input{
+    background: #eee;
+    height: 34px;
+    float: left;
+}
+
+.nurse .new_device .search_container input::placeholder,
+.nurse .return_device .search_container input::placeholder{
+    font-size: 12px;
+    color: #ccc;
+}
+
+.nurse .new_device .search_container button,
+.nurse .return_device .search_container button{
+    float: right;
+    height: 36px;
+    padding: 5px 20px;
+}
+
+.nurse .new_device .item_row,
+.nurse .return_device .item_row{
+    padding: 3px 5px 5px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.nurse .new_device .item_row p,
+.nurse .return_device .item_row p{
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nurse .new_device .item_row .item_name,
+.nurse .return_device .item_row .item_name{
+    width: 120px;
+    margin-right: 50px;
+}
+
+.nurse .new_device .item_row .item_num,
+.nurse .return_device .item_row .item_num{
+    width: 80px;
+    margin-right: 140px;
+}
+
+.nurse .new_device .item_row .use_line,
+.nurse .return_device .item_row .use_line{
+    width: 60px;
+    margin-right: 38px;
+    color: #007A94;
+}
+
+.nurse .new_device .item_row .btn_delete,
+.nurse .return_device .item_row .btn_cancel{
+    width: 56px;
+    height: 24px;
+    background: none;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    color: #940045;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 사용한 장치 반납 */
+.nurse .return_device .device_count div h1,
+.nurse .return_device .device_count div .use_line,
+.nurse .return_device .item_row .use_line{
+    color: #940045;
+}
+
+.nurse .return_device .title .btn_use_device{
+    border: 1px solid #940045;
+    color: #940045;
 }

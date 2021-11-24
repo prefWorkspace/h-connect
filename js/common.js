@@ -1,6 +1,6 @@
 $(function () {
 
-    //---------------------- 간호사 ------------------------------- //
+    //---------------------- 간호사 ----------------------//
 
     // 로그아웃 팝업
     $('.pc_header .btn_logout').on('click', function () {
@@ -41,7 +41,7 @@ $(function () {
 
         // 병동관리 리스트 누르면 색 변함
         $('.nurse .ward .cont .ward_list').on('click', function(){
-            $('.nurse .ward .cont .ward_list').addClass('on');
+            $('.nurse .ward .cont .ward_list').toggleClass('on');
             $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
         });
 
@@ -93,7 +93,60 @@ $(function () {
             $('.pop.delete_room .overlay').hide();
         });
 
-    
+    // 환자검색
+        $('.pc_header .search_container').on('click', function(){
+            $('.pop.search_patient').toggle();
+            $('.pc_header .search_container .btn_search').toggleClass('on');
+        })
+
+        $('#wrap_content').on('click', function(){
+            $('.pop.search_patient').hide();
+            $('.pc_header .search_container .btn_search').removeClass('on');
+        })
+
+    //장치등록
+        $('.nurse .new_device .title .btn_new_device').on('click', function () {
+            $('.pop.regi_device .overlay').show();
+        });
+        $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
+            $('.pop.regi_device .overlay').hide();
+        });
+
+        // 장치삭제
+        $('.nurse .new_device .item_row .btn_delete').on('click', function () {
+            $('.pop.delete .overlay').show();
+        });
+            // 아니요
+        $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function(){
+            $('.pop.delete .overlay').hide();
+        });
+            // 네 삭제합니다.
+        $('.pop.delete .pop_cont .btn_list .btn_cut').on('click', function(){
+            // $('.nurse .new_device .item_row').hide();
+            $('.pop.delete .overlay').hide();
+        });
+
+   //장치반납
+        $('.nurse .return_device .title .btn_use_device').on('click', function () {
+            $('.pop.re_device .overlay').show();
+        });
+        $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
+            $('.pop.re_device .overlay').hide();
+        });
+
+        // 장치반납 취소
+        $('.nurse .return_device .item_row .btn_cancel').on('click', function () {
+            $('.pop.delete .overlay').show();
+        });
+            // 아니요
+        $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function(){
+            $('.pop.delete .overlay').hide();
+        });
+            // 네 삭제합니다.
+        $('.pop.delete .pop_cont .btn_list .btn_cut').on('click', function(){
+            // $('.nurse .new_device .item_row').hide();
+            $('.pop.delete .overlay').hide();
+        });
 
 
 });
