@@ -3,14 +3,25 @@ $(function () {
     //---------------------- 간호사 ----------------------//
 
     // 로그아웃 팝업
-    $('.pc_header .btn_logout').on('click', function () {
-        $('.pop.logout').toggle();
-    });
+        $('.pc_header .btn_logout').on('click', function () {
+            $('.pop.logout').toggle();
+        });
 
-    $('.pop.logout .wrap_inner .btn_bye').on('click', function () {
-        $('.pop.logout').hide();
-        location.href="../index.html";
-    });
+        $('.pop.logout .wrap_inner .btn_bye').on('click', function () {
+            $('.pop.logout').hide();
+            location.href="../index.html";
+        });
+
+    // 환자검색
+        $('.pc_header .search_container').on('click', function(){
+            $('.pop.search_patient').toggle();
+            $('.pc_header .search_container .btn_search').toggleClass('on');
+        })
+
+        $('#wrap_content').on('click', function(){
+            $('.pop.search_patient').hide();
+            $('.pc_header .search_container .btn_search').removeClass('on');
+        })
 
 
     // --------- 간호사 관리 --------- //
@@ -60,7 +71,6 @@ $(function () {
         });
 
 
-
     
     // 병실관리
         // 병실관리 팝업 열고 닫기
@@ -93,16 +103,6 @@ $(function () {
             $('.pop.delete_room .overlay').hide();
         });
 
-    // 환자검색
-        $('.pc_header .search_container').on('click', function(){
-            $('.pop.search_patient').toggle();
-            $('.pc_header .search_container .btn_search').toggleClass('on');
-        })
-
-        $('#wrap_content').on('click', function(){
-            $('.pop.search_patient').hide();
-            $('.pc_header .search_container .btn_search').removeClass('on');
-        })
 
     //장치등록
         $('.nurse .new_device .title .btn_new_device').on('click', function () {
@@ -149,4 +149,97 @@ $(function () {
         });
 
 
+        // 셀렉트
+            //장치관리- 장치추가
+            $('.selectBox2 .label').on('click', function(){
+                $('.left_option').slideToggle(200);
+            });
+            //장치관리- 장치반납
+            $('.selectBox2 .label').on('click', function(){
+                $('.right_option').slideToggle(200);
+            });
+
+            //장치관리- 장치리스트
+            $('.select_device .label').on('click', function(){
+                $('.select_device').toggleClass('on');
+                $('.device_option').slideToggle(200);
+            });
+
+            
+
+    //측정관리
+        // 환자검색
+        $('.nurse .measure_status .search_container').on('click', function(){
+            $('.pop.measure_patient').toggle();
+            $('.pc_header .search_container .btn_search').toggleClass('on');
+        });
+
+        $('#wrap_content').on('click', function(){
+             $('.pop.search_patient').hide();
+             $('.pc_header .search_container .btn_search').removeClass('on');
+        });
+
+        // 환자선택하면 배경색이 바뀜
+        $('nurse .measure_status .cont .container .status_list').on('click', function(){
+            // $('.measure_status .cont .container> :nth-child(1)').toggleClass('on');
+        });
+
+        // 측정 수정
+        $('.nurse .measure_status .cont .container .status_list .btn_list .btn_modify').on('click', function(){
+            $('.modifi_hospital').toggle();
+            $('.new_hospital').toggle();
+        })
+        $('.modifi_hospital .title .btn_new_hospital').on('click', function(){
+            $('.modifi_hospital').hide();
+            $('.new_hospital').show();
+        })
+
+        // 측정현황 생체신호 리스트 삭제 팝업
+        $('.nurse .measure_status .cont .container .status_list .btn_list .btn_delete').on('click', function(){
+            $('.pop.delete_measure .overlay').show();
+        })
+
+        // 병상정보 수정 디바이스 리스트 삭제
+        $('.modifi_hospital .device_room> div .btn_list .btn_delete').on('click', function(){
+            $('.pop.delete_new_measure .overlay').show();
+        })
+
+        // 신규병상 등록 생체신호 리스트 삭제 팝업
+        $('.new_hospital .device_room> div .btn_list .btn_delete').on('click', function(){
+            $('.pop.delete_new_measure .overlay').show();
+        })
+
+        // 장치추가
+        $('.new_hospital .device_room .btn_add').on('click', function(){
+            $('.pop.regi_device .overlay').show();
+        })
+
+    //모니터링
+        $('.patient_vital .all_patient .patient_moniter .empty_bed').on('click', function(){
+            location.href="index.html";
+        })
+
+        $('.patient_vital .all_patient .patient_moniter').on('click', function(){
+            location.href="patient.html";
+        })
+
+
+
+
+
 });
+
+// 모니터링 탭메뉴
+$(document).ready(function(){
+  
+    $('ul.tabs li').click(function(){
+      var tab_id = $(this).attr('data-tab');
+  
+      $('ul.tabs li').removeClass('current');
+      $('.tab-content').removeClass('current');
+  
+      $(this).addClass('current');
+      $("#"+tab_id).addClass('current');
+    })
+  
+  })

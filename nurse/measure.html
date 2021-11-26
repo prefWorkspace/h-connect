@@ -29,128 +29,59 @@
         </div>
     </div>
 
-    <!-- 장치등록 팝업 -->
-    <div class="pop regi_device">
-        <div class="overlay">
-            <div class="pop_cont">
-                 <div class="title">
-                    <h2>장치등록</h2>
-                 </div>
-
-                 <div class="content">
-                    <p>장치종류 </p>
-
-                    <!-- <div class="selectbox">
-                        <button type="button" class="label">산소포화도 측정장치</button>
-
-                        <div class="select_list">
-                            <button type="button" class="label">
-                                산소포화도 측정장치
-                            </button>
-
-                            <div>
-                               <ul>
-                                   <li>심전도 패치</li>
-                                   <li>산소포화도 측정장치</li>
-                                   <li>체온 패치</li>
-                               </ul>
-                            </div>                           
-                        </div>
-                    </div>-->
-
-                    
-                    <div class="selectBox2">
-                        <button class="label">산소포화도 측정장치</button>
-                        <ul class="optionList">
-                            <li class="optionItem">심전도 패치</li>
-                            <li class="optionItem">산소포화도 측정장치</li>
-                            <li class="optionItem">체온 패치</li>
-                        </ul>
-                    </div> 
-                 </div>
-
-                 <div class="content">
-                    <p>serial no.</p>
-                    <input type="text" placeholder="시리얼 넘버를 입력해주세요.">
-                 </div>
-
-                 <small>올바르지 않은 번호 입니다.</small>
-
-                 <div class="btn_list">
-                     <button type="button" class="btn_cancel">취소</button>
-                     <button type="button" class="btn_check">확인</button>
-                 </div>
-            </div>
+    <!-- 환자 검색 -->
+    <div class="pop search_patient measure_patient">
+        <div class="wrap_inner">
+            <p>
+                <span>김환자</span>
+                (<span>63</span>.<span>남</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1308</span>호실.
+                <span>3</span>병상
+            </p>
+    
+            <p>
+                <span>김환장</span>
+                (<span>74</span>.<span>여</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1302</span>호실.
+                <span>1</span>병상
+            </p>
+    
+            <p>
+                <span>김환정</span>
+                (<span>68</span>.<span>남</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1306</span>호실.
+                <span>6</span>병상
+            </p>
+    
+            <p>
+                <span>김환재</span>
+                (<span>59</span>.<span>남</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1304</span>호실.
+                <span>2</span>병상
+            </p>
         </div>
     </div>
 
-    <!-- 장치반납 팝업 -->
-    <div class="pop re_device">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div class="title">
-                    <h2>장치반납</h2>
-                </div>
-    
-                <div class="content">
-                    <p>장치종류 </p>
-    
-                    <!-- <div class="selectbox">
-                        <button type="button" class="label">산소포화도 측정장치</button>
-    
-                        <div class="select_list">
-                            <button type="button" class="label">
-                                산소포화도 측정장치
-                            </button>
-    
-                            <div>
-                                <ul>
-                                    <li>심전도 패치</li>
-                                    <li>산소포화도 측정장치</li>
-                                    <li>체온 패치</li>
-                                </ul>
-                            </div>                           
-                        </div>
-                    </div>-->
-    
-                        
-                    <div class="selectBox2">
-                        <button class="label2">산소포화도 측정장치</button>
-                        <ul class="optionList2">
-                            <li class="optionItem">심전도 패치</li>
-                            <li class="optionItem">산소포화도 측정장치</li>
-                            <li class="optionItem">체온 패치</li>
-                        </ul>
-                    </div> 
-                </div>
-    
-                <div class="content">
-                    <p>serial no.</p>
-                    <input type="text" placeholder="시리얼 넘버를 입력해주세요.">
-                </div>
-    
-                <small>올바르지 않은 번호 입니다.</small>
-    
-                <div class="btn_list">
-                    <button type="button" class="btn_cancel">취소</button>
-                    <button type="button" class="btn_check">확인</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 장치등록 삭제 -->
-    <div class="pop delete delete_regi">
+    <!-- 병동 삭제 -->
+    <div class="pop delete delete_measure">
         <div class="overlay">
             <div class="pop_cont">
                 <div>
                     <img src="../img/logo.png" alt="로고">
                 </div>
-                    
-                <h3>등록된 장치를 삭제하고 이전상태로 되돌아갑니다.</h3>
+                        
+                <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
                 <h2>삭제 하시겠습니까?</h2>
-    
         
+            
                 <div class="btn_list">
                     <button type="button" class="btn_no">아니요</button>
                     <button type="button" class="btn_cut">네, 삭제합니다</button>
@@ -159,21 +90,58 @@
         </div>
     </div>
 
-    <!-- 장치반납 취소 -->
-    <div class="pop delete delete_return">
+    <!-- 병상 장치 삭제 -->
+    <div class="pop delete delete_new_measure">
         <div class="overlay">
             <div class="pop_cont">
                 <div>
                     <img src="../img/logo.png" alt="로고">
                 </div>
-                    
-                <h3>장치반납을 취소하고 이전상태로 되돌아갑니다.</h3>
-                <h2>취소 하시겠습니까?</h2> 
-    
+                        
+                <h3>등록된 장치를 삭제하고 이전상태로 되돌아갑니다.</h3>
+                <h2>삭제 하시겠습니까?</h2>
         
+            
                 <div class="btn_list">
                     <button type="button" class="btn_no">아니요</button>
-                    <button type="button" class="btn_cut">네, 취소합니다.</button>
+                    <button type="button" class="btn_cut">네, 삭제합니다</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <!-- 장치등록 팝업 -->
+    <div class="pop regi_device">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div class="title">
+                    <h2>장치추가</h2>
+                </div>
+
+                <div class="content">
+                    <p>장치종류 </p>
+                    
+                    <div class="selectBox2">
+                        <button class="label left_label">산소포화도 측정장치</button>
+
+                        <ul class="optionList left_option" style="display: none;">
+                            <li class="optionItem left_list">심전도 패치</li>
+                            <li class="optionItem left_list">산소포화도 측정장치</li>
+                            <li class="optionItem left_list">체온 패치</li>
+                        </ul>
+                    </div> 
+                </div>
+
+                <div class="content">
+                    <p>serial no.</p>
+                    <input type="text" placeholder="시리얼 넘버를 입력해주세요.">
+                </div>
+
+                <small>올바르지 않은 번호 입니다.</small>
+
+                <div class="btn_list">
+                    <button type="button" class="btn_cancel">취소</button>
+                    <button type="button" class="btn_check">확인</button>
                 </div>
             </div>
         </div>
@@ -215,7 +183,7 @@
         <nav class="nav">
             <ul class="main_depth">
               <li class="list off">
-                <a class="link" href="#">
+                <a class="link" href="monitoring.html">
                     <img src="../img/header/monitoring.png" alt="모니터 아이콘">
                     <span>모니터링</span>
                 </a>
@@ -295,7 +263,7 @@
                         </div>
         
                         <div class="cont" style="display: block;">
-                    
+            
                             <div class="search_container">
                                 <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
                 
@@ -687,7 +655,7 @@
                         <div class="title">
                             <div>
                                 <h2>신규 병상등록</h2>
-                                <button type="button" class="btn_new_hospital">+병상등록</button>
+                                <bu tton type="button" class="btn_new_hospital">+병상등록</button>
                             </div>
                             
                             <p>새로운 병상을 생성하고 모니터링을 실행합니다.</p>
@@ -807,6 +775,22 @@
                             </div>
                             <p><span>8</span> 개의 여유병상</p>
                         </div>
+
+                        <div class="device_room">
+                            <div>
+                                <p>산소포화도 측정장치</p>
+                                <p>serial no.</p>
+
+                                <div class="btn_list">
+                                    <button type="button" class="btn_modify">수정</button>
+                                    <button type="button" class="btn_delete">삭제</button>
+                                </div>
+                            </div>
+
+                            <div class="btn_add">
+                                <a>+ 장치추가</a>
+                            </div>
+                        </div>
                     </div>
                   </section>
 
@@ -823,25 +807,25 @@
         
                         <div class="cont" style="display: block;">
                             <div class="hospital_patient">
-                                <input type="text" placeholder="환자명">
+                                <input type="text" placeholder="김환자" readonly>
                                 
                                 <div class="patient_info">
-                                    <input type="number" placeholder="환자나이">
+                                    <input type="number" placeholder="63" readonly>
 
                                     <div class="select_box select_sex">
-                                        <button class="label sex_label">성별</button>
+                                        <button class="label sex_label">남</button>
                                         <ul class="option sex_option">
-                                            <li class="option_item">여자</li>
-                                            <li class="option_item">남자</li>
+                                            <li class="option_item">여</li>
+                                            <li class="option_item">남</li>
                                         </ul>
                                     </div>
 
-                                    <input type="text" placeholder="MRN code">
+                                    <input type="text" placeholder="patient no" readonly>
                                 </div>
 
                                 <div class="patient_room">
                                     <div class="select_box select_ward">
-                                        <button class="label ward_label">      심장병동</button>
+                                        <button class="label ward_label">심장병동</button>
                                         <ul class="option ward_option">
                                             <li class="option_item">
                                                 <p>심장병동</p>
@@ -933,7 +917,42 @@
                                     </div>
                                 </div>
                             </div>
-                            <p><span>8</span> 개의 여유병상</p>
+                        </div>
+
+                        <div class="device_room">
+                            <div>
+                                <p>산소포화도 측정장치</p>
+                                <p>serial no.</p>
+
+                                <div class="btn_list">
+                                    <button type="button" class="btn_modify">수정</button>
+                                    <button type="button" class="btn_delete">삭제</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p>산소포화도 측정장치</p>
+                                <p>serial no.</p>
+
+                                <div class="btn_list">
+                                    <button type="button" class="btn_modify">수정</button>
+                                    <button type="button" class="btn_delete">삭제</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p>산소포화도 측정장치</p>
+                                <p>serial no.</p>
+
+                                <div class="btn_list">
+                                    <button type="button" class="btn_modify">수정</button>
+                                    <button type="button" class="btn_delete">삭제</button>
+                                </div>
+                            </div>
+
+                            <div class="btn_add">
+                                <a>+ 장치추가</a>
+                            </div>
                         </div>
                     </div>
                   </section>
@@ -944,52 +963,52 @@
     </div>
     <!--// end wrap-->
     <script>
-        /* 화살표 함수 */
-        const label = document.querySelector('.label');
-        const options = document.querySelectorAll('.optionItem');
+        // /* 화살표 함수 */
+        // const label = document.querySelector('.label');
+        // const options = document.querySelectorAll('.optionItem');
 
-        // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-        const handleSelect = (item) => {
-        label.parentNode.classList.remove('active');
-        label.innerHTML = item.textContent;
-        }
-        // 옵션 클릭시 클릭한 옵션을 넘김
-        options.forEach(option => {
-            option.addEventListener('click', () => handleSelect(option))
-        })
+        // // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+        // const handleSelect = (item) => {
+        // label.parentNode.classList.remove('active');
+        // label.innerHTML = item.textContent;
+        // }
+        // // 옵션 클릭시 클릭한 옵션을 넘김
+        // options.forEach(option => {
+        //     option.addEventListener('click', () => handleSelect(option))
+        // })
 
-        // 라벨을 클릭시 옵션 목록이 열림/닫힘
-        label.addEventListener('click', () => {
-        if(label.parentNode.classList.contains('active')) {
-            label.parentNode.classList.remove('active');
-        } else {
-            label.parentNode.classList.add('active');
-        }
-        })
+        // // 라벨을 클릭시 옵션 목록이 열림/닫힘
+        // label.addEventListener('click', () => {
+        // if(label.parentNode.classList.contains('active')) {
+        //     label.parentNode.classList.remove('active');
+        // } else {
+        //     label.parentNode.classList.add('active');
+        // }
+        // })
 
-        // 장치반납
-        /* 화살표 함수 */
-        const label2 = document.querySelector('.label2');
-        const options2 = document.querySelectorAll('.optionItem2');
+        // // 장치반납
+        // /* 화살표 함수 */
+        // const label2 = document.querySelector('.label2');
+        // const options2 = document.querySelectorAll('.optionItem2');
 
-        // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-        const handleSelect2 = (item) => {
-        label2.parentNode.classList.remove('active');
-        label2.innerHTML = item.textContent;
-        }
-        // 옵션 클릭시 클릭한 옵션을 넘김
-        options.forEach(option => {
-            option.addEventListener('click', () => handleSelect2(option))
-        })
+        // // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+        // const handleSelect2 = (item) => {
+        // label2.parentNode.classList.remove('active');
+        // label2.innerHTML = item.textContent;
+        // }
+        // // 옵션 클릭시 클릭한 옵션을 넘김
+        // options.forEach(option => {
+        //     option.addEventListener('click', () => handleSelect2(option))
+        // })
 
-        // 라벨을 클릭시 옵션 목록이 열림/닫힘
-        label2.addEventListener('click', () => {
-        if(label2.parentNode.classList.contains('active')) {
-            label2.parentNode.classList.remove('active');
-        } else {
-            label2.parentNode.classList.add('active');
-        }
-        })
+        // // 라벨을 클릭시 옵션 목록이 열림/닫힘
+        // label2.addEventListener('click', () => {
+        // if(label2.parentNode.classList.contains('active')) {
+        //     label2.parentNode.classList.remove('active');
+        // } else {
+        //     label2.parentNode.classList.add('active');
+        // }
+        // })
     </script>
    
   </body>

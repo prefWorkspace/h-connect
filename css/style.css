@@ -34,10 +34,37 @@
     vertical-align: middle;
 }
 
-.main .check label input[type="checkbox"]{
-    background-color: #007A94;
-    vertical-align: middle;
+.main .check{
+    display: flex;
+    justify-content: space-around;
 }
+
+.main .check input[type="checkbox"]+label span{
+    margin-top: 10px;
+}
+
+.main .check input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.main .check input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+.main .check input[type="checkbox"]{
+    display: none;
+}
+
+.check .wrap_inner .membership_cont .agree input[type='checkbox']:checked+label p{
+    color: #12203c;
+}
+
 
 .main .login button{
     width: 176px;
@@ -58,6 +85,7 @@
 
 .nurse .wrap_inner{
     width: 100%;
+    height: 889px;
     padding: 40px;
     display: flex;
     justify-content: space-between;
@@ -70,7 +98,7 @@
 
 .nurse .management{
     width: 360px;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 16px;
 }
 
@@ -498,7 +526,7 @@
 
 .new_device .item_row,
 .return_device .item_row{
-    padding: 3px 5px 5px 15px;
+    padding: 3px 0 5px 19px;
     border-bottom: 1px solid #eee;
 }
 
@@ -518,7 +546,7 @@
 .new_device .item_row .item_num,
 .return_device .item_row .item_num{
     width: 80px;
-    margin-right: 140px;
+    margin-right: 130px;
 }
 
 .new_device .item_row .use_line,
@@ -540,8 +568,30 @@
     vertical-align: middle;
 }
 
+.new_device .device_search,
+.return_device .device_search{
+    display: flex;
+}
+
+.new_device .device_search .select_device,
+.return_device .device_search .select_return{
+    width: 160px;
+    height: 36px;
+    margin-right: 8px;
+}
+
+
+.new_device .device_search .device_label,
+.return_device .device_search .return_label{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
 /* 사용한 장치 반납 */
-.return_device .device_count div h1,
+.return_device .device_count div h1{
+    color: #000;
+}
 .return_device .device_count div .use_line,
 .return_device .item_row .use_line{
     color: #940045;
@@ -551,6 +601,7 @@
     border: 1px solid #940045;
     color: #940045;
 }
+
 
 /* 측정 관리 */
 .nurse .measure_status{
@@ -597,6 +648,10 @@
     display: inline-block;
 }
 
+.measure_status .search_select .ward_label{
+    font-weight: normal;
+}
+
 .measure_status .search_select p{
     margin-top: 25px;
     margin-left: 125px;
@@ -630,6 +685,27 @@
     border-bottom: 1px solid #eee;
 }
 
+.measure_status .cont .container .status_list:hover{
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.measure_status .cont .container .status_list.on{
+    background-color: #007A94;
+}
+
+.nurse .measure_status .cont .container .status_list.on .device_list div{
+    border: 1px solid #fff;
+}
+
+.nurse .measure_status .cont .container .status_list.on p{
+    color: #fff;
+}
+
+.nurse .measure_status .cont .container .status_list.on .btn_list .btn_modify{
+    border: 1px solid #fff;
+}
+
 .measure_status .cont .container .status_list> :first-child{
     margin-right: 16px;
 }
@@ -656,6 +732,7 @@
     padding: 7px;
     border-radius: 4px;
     border: 1px solid #007A94;
+    background-color: #fff;
     color: #007A94;
 }
 
@@ -669,6 +746,7 @@
     border-radius: 4px;
     background: none;
     font-size: 12px;
+    background-color: #fff;
 }
 
 .nurse .measure_status .cont .container .status_list .btn_list .btn_modify{
@@ -679,10 +757,6 @@
 .nurse .measure_status .cont .container .status_list .btn_list .btn_delete{
     border:1px solid #940045;
     color: #940045;
-}
-
-.nurse .new_hospital .container{
-    border-bottom: 1px solid #eee;
 }
 
 .new_hospital .title .btn_new_hospital{
@@ -749,6 +823,9 @@
     height: 36px;
 }
 
+.new_hospital .cont{
+    border-bottom: 1px solid #eee;
+}
 
 .new_hospital .cont .select_box .label{
     font-size: 12px;
@@ -766,8 +843,210 @@
     color: #007A94;
 }
 
+.new_hospital .device_room{
+    padding: 16px;
+}
+
+.new_hospital .device_room> div{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px solid #eee;
+}
+
+.new_hospital .device_room> div p{
+    width: 110px;
+    margin-top: 8px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.new_hospital .device_room> div> :first-child{
+    margin-right: 58px;
+}
+
+.new_hospital .device_room> div .btn_list{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.new_hospital .device_room> div .btn_list button{
+    width: 64px;
+    height: 32px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.new_hospital .device_room> div .btn_list .btn_modify{
+    margin-right: 8px;
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.new_hospital .device_room> div .btn_list .btn_delete{
+    border:1px solid #940045;
+    color: #940045;
+}
+
+.new_hospital .device_room .btn_add{
+    padding: 16px;
+    text-align: right;
+    display: block;
+    cursor: pointer;
+}
+
+.new_hospital .device_room .btn_add a{
+    margin: 0;
+    font-size: 14px;
+    color: #007A94;
+}
+
+.new_hospital .device_room> div{
+    border-bottom: 1px solid #eee;
+}
+
+.modifi_hospital .title .btn_new_hospital{
+    width: 96px;
+    height: 40px;
+    border-radius: 4px;
+    background: #007A94;
+    font-size: 14px;
+    color: #fff;
+}
+
+.modifi_hospital .container .cont{
+    padding: 16px 16px 52px;
+    border-bottom: 1px solid #eee;
+}
+
+.modifi_hospital .cont .hospital_patient input{
+    width: 100%;
+    height: 36px;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    background: #eee;
+    font-size: 12px;
+}
+
+.modifi_hospital .cont .hospital_patient .patient_info{
+    display: flex;
+}
+
+.modifi_hospital .hospital_patient input::placeholder{
+    color: #000;
+}
+
+.modifi_hospital .hospital_patient> div{
+    display: flex;
+}
+
+.modifi_hospital .hospital_patient .patient_info> :first-child{
+    width: 64px;
+    padding: 0 16px;
+}
+
+.modifi_hospital .hospital_patient .patient_info .select_sex{
+    width: 80px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.modifi_hospital .hospital_patient .patient_info .select_sex .sex_label{
+    font-weight: normal;
+    color: #000;
+}
+
+.modifi_hospital .hospital_patient .patient_info> :last-child{
+    width: 296px;
+}
+
+.modifi_hospital .hospital_patient .patient_room .select_ward{
+    width: 160px;
+    height: 36px;
+}
+
+.modifi_hospital .hospital_patient .patient_room .select_room{
+    width: 160px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.modifi_hospital .hospital_patient .patient_room .select_bed{
+    width: 120px;
+    height: 36px;
+}
+
+.modifi_hospital .select_box .label{
+    font-size: 12px;
+    font-weight: normal;
+}
 
 
+.modifi_hospital .device_room{
+    padding: 16px;
+}
+
+.modifi_hospital .device_room> div{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px solid #eee;
+}
+
+.modifi_hospital .device_room> div p{
+    width: 110px;
+    margin-top: 8px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.modifi_hospital .device_room> div> :first-child{
+    margin-right: 58px;
+}
+
+.modifi_hospital .device_room> div .btn_list{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.modifi_hospital .device_room> div .btn_list button{
+    width: 64px;
+    height: 32px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.modifi_hospital .device_room> div .btn_list .btn_modify{
+    margin-right: 8px;
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.modifi_hospital .device_room> div .btn_list .btn_delete{
+    border:1px solid #940045;
+    color: #940045;
+}
+
+.modifi_hospital .device_room .btn_add{
+    padding: 16px;
+    text-align: right;
+    display: block;
+}
+
+.modifi_hospital .device_room .btn_add a{
+    margin: 0;
+    font-size: 14px;
+    color: #007A94;
+}
+
+.modifi_hospital .device_room> div{
+    border-bottom: 1px solid #eee;
+}
 
 
 
@@ -790,6 +1069,18 @@
     background: url('../img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
+}
+
+.select_box.on:after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('../img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+    transform: rotate(180deg);
+    transition: .3s;
 }
 
 .select_box .label {
@@ -827,7 +1118,7 @@
 
 .select_box .option_item {
     padding: 5px 15px 5px;
-    transition: .1s;
+    transition: .1s ease-in-out;
 }
 
 .select_box.active .ward_option> :first-child{
@@ -838,3 +1129,583 @@
     border-radius:4px;
 }
 
+.select_box.on{
+    background: #fff;
+    border:1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    border-bottom-right-radius:0px;
+    border-bottom-left-radius: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.select_box.on .optionList{
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    transition: 0;
+}
+
+.select_box .optionList {
+    width: 420px;
+    position: absolute; 
+    top: 46px;
+    left: -1px;
+    font-size: 14px;
+    font-weight: normal;
+    background: #fff;
+    border:1px solid #ccc;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.select_box .device_option{
+    width: 160px;
+    position: absolute; 
+    top: 35px;
+    left: -1px;
+    font-size: 14px;
+    font-weight: normal;
+    background: #fff;
+    border:1px solid #ccc;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+
+
+
+/* 모니터링 */
+.patient_vital{
+    background-color: #444;
+}
+
+.patient_vital .wrap_inner{
+    display: block;
+}
+
+.patient_vital .all_patient{
+    border-radius: 0;
+    background: none;
+}
+
+.patient_vital .all_patient .patient_moniter{
+    background-color: #000;
+    width: 240px;
+    height: 88px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.patient_vital .all_patient> :last-child{
+    margin: 0;
+}
+
+.patient_vital .all_patient .patient_moniter:hover{
+    background-color: #222;
+}
+
+.patient_vital .all_patient .patient_moniter .patient_info{
+    color: #fff;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter{
+    margin-top: 7px;
+    display: flex;
+    /* justify-content: space-between; */
+    color: #fff;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter div{
+    width: 40px;
+    height: 48px;
+    padding: 4px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter div h3{
+    font-size: 12px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter div p{
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .hr{
+    color: #00FF22;
+    margin: 0 4px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .sp{
+    color: #00FFFF;
+    margin-right: 4px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .resp{
+    color: #EEFF00;
+    margin-right: 4px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .temp{
+    color: #FF5499;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed{
+    width: 240px;
+    position: relative;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed p{
+    float: left;
+    font-size: 12px;
+    color: #444;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed div{
+    width: 64px;
+    height: 64px;
+    margin: 3px auto 0 80px;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed div img{
+    width: 100%;
+    height: 100%;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed .btn_hover{
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed .btn_hover:hover{
+    opacity: 1;
+    transition: .3s;
+}
+
+.patient_vital .all_patient .patient_moniter.active{
+    background-color: #f00;
+}
+
+.patient_vital .all_patient .patient_moniter.active .vital_moniter .ews{
+    background-color: #fff;
+    color: #f00;
+}
+
+.patient_vital .all_patient .patient_moniter.active .vital_moniter .hr{
+    background-color: #fff;
+    color: #f00;
+}
+
+/* 모니터링- 병실별 보기 */
+.patient_vital .wrap_inner{
+    /* width: auto; */
+}
+
+.patient_vital .wrap_inner> .container{
+    width: auto;
+    height: 780px;
+    padding-right: 25px;
+    overflow-y: scroll;
+}
+
+.patient_vital .wrap_inner> .container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.patient_vital .wrap_inner> .container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.patient_vital .room_view{
+    margin-bottom: 8px;
+}
+
+.patient_vital .room_view .container{
+    width: fit-content;
+    padding: 8px 8px 8px 32px;
+    background: linear-gradient(to right, #007A94,#003D4A);
+    border-radius: 8px;
+}
+
+.patient_vital .room_view .pateint_room{
+    width: 140px;
+    height: 64px;
+    margin: 12px 48px 0 0;
+    display: inline-block;
+}
+
+.patient_vital .room_view .pateint_room .room_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.patient_vital .room_view .pateint_room .room_num p{
+    font-size: 24px;
+    line-height: 35px;
+    color: #fff;
+}
+
+.patient_vital .room_view .pateint_room .room_count p{
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+}
+
+.patient_vital .room_view .pateint_room .room_num .btn_setting{
+    width: 32px;
+    height: 32px;
+    background: none;
+}
+
+.patient_vital .room_view .pateint_room .room_num .btn_setting:hover{
+    background: #004f60;
+    border-radius: 4px;
+}
+
+.patient_vital .room_view .patient_moniter{
+    margin-bottom:0;
+}
+
+
+/* 모니터링 환자 선택 */
+.monitoring_patient section{
+    background: none;
+}
+
+.monitoring_patient .patient{
+    padding: 0;
+}
+
+.monitoring_patient .patient .btn_list button{
+    width: 100%;
+    margin-bottom: 16px;
+    height: 72px;
+    border-radius: 8px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.monitoring_patient .patient .btn_list .btn_alarm{
+    background: #ccc;
+    color: #eee;
+}
+
+.monitoring_patient .patient .btn_list .btn_alarm.on{
+    background: linear-gradient(to right, #940045,#4A0000);
+}
+
+.monitoring_patient .patient .btn_list .emergency{
+    display: none;
+}
+
+.monitoring_patient .patient .btn_list .emergency .response{
+    background: #fff;
+    border: 1px solid #007A94;
+}
+
+.monitoring_patient .patient .btn_list .emergency .circum{
+    background: linear-gradient(to right, #940045,#4A0000);
+    font-size: 16px;
+    color: #fff;
+}
+
+.monitoring_patient .patient .btn_list .emergency .circum span{
+    font-size: 12px;
+}
+
+.monitoring_patient .patient> .container{
+    height: 630px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.monitoring_patient .patient .title{
+    padding: 32px 32px 26px;
+}
+
+.monitoring_patient .patient .title p{
+    display: inline-block;
+}
+
+.monitoring_patient .patient .title> :last-child{
+    float: right;
+}
+
+.monitoring_patient .patient .title::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.monitoring_patient .patient .container .container{
+    padding:0 16px 16px;
+}
+
+.monitoring_patient .patient .management_list{
+    margin: 0;
+    padding: 24px 8px;
+}
+
+.monitoring_patient .patient .management_list .list{
+    width: 100%;
+}
+
+.monitoring_patient .patient .management_list .list.off div img{
+    filter: none;
+}
+
+.monitoring_patient .vital_chart{
+    width: 1316px;
+    height: 720px;
+}
+
+.monitoring_patient .vital_chart .title{
+    width: 100%;
+    height: 40px;
+    padding: 11px 16px;
+    background: linear-gradient(to right, #004F60, #350039);
+    border-radius: 8px 8px 0 0;
+}
+
+.monitoring_patient .vital_chart .title p{
+    display: inline-block;
+    font-size: 12px;
+    color: #fff;
+}
+
+.monitoring_patient .vital_chart .title> p{
+    margin-right: 56px;
+}
+
+.monitoring_patient .vital_chart .title .chart_time{
+    display: inline-block;
+    float: right;
+}
+
+.monitoring_patient .vital_chart .title::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.monitoring_patient .vital_chart .cont{
+    padding: 32px;
+    background: #000;
+}
+
+.monitoring_patient ul.tabs li{
+    width: 144px;
+    height: 40px;
+    padding: 10px 15px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #888;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: #222;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.monitoring_patient ul.tabs li.current{
+    background: #007A94;
+    color: #fff;
+}
+  
+.monitoring_patient .tab-content{
+    display: none;
+    padding: 32px 15px;
+}
+  
+.monitoring_patient .tab-content.current{
+    display: inherit;
+}
+
+.monitoring_patient .cont .ecg,
+.monitoring_patient .cont .sp,
+.monitoring_patient .cont .resp{
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .cont .ecg p{
+    color: #00FF22;
+}
+
+.monitoring_patient .cont .sp p{
+    color: #00FFFF;
+}
+
+.monitoring_patient .cont .resp p{
+    color: #FFEE00;
+}
+
+.monitoring_patient .cont .ecg_graph> div,
+.monitoring_patient .cont .sp_graph> div,
+.monitoring_patient .cont .resp_graph> div{
+    margin-top: 20px;
+}
+
+.monitoring_patient .cont .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+}
+
+.monitoring_patient .cont .bell> div{
+    display: flex;
+}
+
+.monitoring_patient .cont .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .cont .bell_name p{
+    font-size: 14px;
+}
+
+.monitoring_patient .cont .bell_name input[type="checkbox"],
+.monitoring_patient .cont .bell_name input[type="checkbox"]{
+    display: none;
+}
+
+.monitoring_patient .cont .bell_name input[type="checkbox"]+label span{
+    margin-top: 10px;
+}
+
+.monitoring_patient .cont .ecg .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    filter: invert(57%) sepia(94%) saturate(2086%) hue-rotate(86deg) brightness(114%) contrast(120%);
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .sp .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .resp .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .bell_name input[type='checkbox']:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.monitoring_patient .cont .bell_namek input[type="checkbox"]{
+    display: none;
+}
+
+.monitoring_patient .cont .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .cont .bell_num> div{
+    margin-top: 13px;
+}
+
+.monitoring_patient .cont .bell_num p{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+}
+
+.monitoring_patient .cont .bell_num> p{
+    font-size: 48px;
+}
+
+.monitoring_patient .cont .control> div{
+    display: flex;
+}
+
+.monitoring_patient .cont .control .ews{
+    width: 88px;
+    padding: 16px;
+    color: #fff;
+}
+
+.monitoring_patient .cont .control .ews .bell_num{
+    width: 50px;
+}
+
+.monitoring_patient .cont .control .ews .bell_num> div{
+    margin: 0;
+}
+
+.monitoring_patient .cont .control .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .control .bell_name input[type='checkbox']:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.monitoring_patient .cont .control .mmhg{
+    width: 260px;
+    padding: 16px;
+    margin: 0 72px 0 64px;
+    color: #fff;
+}
+
+.monitoring_patient .cont .control .time div{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.monitoring_patient .cont .control .time p{
+    font-size: 11px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.monitoring_patient .cont .control .pulse{
+    width: 160px;
+    padding: 16px;
+    color: #00FFFF;
+}

@@ -29,106 +29,6 @@
         </div>
     </div>
 
-    <!-- 병동생성 팝업 -->
-    <div class="pop new_ward">
-        <div class="overlay">
-            <div class="pop_cont">
-                 <div class="title">
-                    <h2>병동생성</h2>
-                 </div>
-
-                 <div class="content">
-                     <p>병동이름 </p>
-
-                     <input type="text">
-                 </div>
-
-                 <div class="btn_list">
-                     <button type="button" class="btn_cancel">취소</button>
-                     <button type="button" class="btn_check">확인</button>
-                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 병실생성 팝업 -->
-    <div class="pop new_room">
-        <div class="overlay">
-            <div class="pop_cont">
-                 <div class="title">
-                    <h2>병실생성</h2>
-                 </div>
-
-                 <div class="content">
-                     <p>병실이름 </p>
-
-                     <input type="text">
-                 </div>
-
-                 <div class="content">
-                    <p>병상 수 </p>
-
-                    <div class="selectBox2 ">
-                        <button class="label">6인실</button>
-                        <ul class="optionList">
-                            <li class="optionItem">1인실</li>
-                            <li class="optionItem">2인실</li>
-                            <li class="optionItem">3인실</li>
-                            <li class="optionItem">4인실</li>
-                            <li class="optionItem">5인실</li>
-                            <li class="optionItem">6인실</li>
-                        </ul>
-                    </div>
-                </div>
-
-                 <div class="btn_list">
-                     <button type="button" class="btn_cancel">취소</button>
-                     <button type="button" class="btn_check">확인</button>
-                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 병동 삭제 -->
-    <div class="pop delete_ward">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div>
-                    <img src="../img/logo.png" alt="로고">
-                </div>
-                
-                <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
-                <h2>삭제 하시겠습니까?</h2>
-
-    
-                <div class="btn_list">
-                    <button type="button" class="btn_no">아니요</button>
-                    <button type="button" class="btn_cut">네, 삭제합니다</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 병실 삭제 -->
-    <div class="pop delete_room">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div>
-                    <img src="../img/logo.png" alt="로고">
-                </div>
-                    
-                <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
-                <h2>삭제 하시겠습니까?</h2>
-    
-        
-                <div class="btn_list">
-                    <button type="button" class="btn_no">아니요</button>
-                    <button type="button" class="btn_cut">네, 삭제합니다</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- 환자 검색 -->
     <div class="pop search_patient">
         <div class="wrap_inner">
@@ -185,8 +85,8 @@
             </div>
 
             <div class="patient_view">
-                <button type="button">전체환자 보기</button>
-                <button type="button">병실별로 보기</button>
+                <button type="button" class="btn_patient on" onclick="location.href='monitoring.html'">전체환자 보기</button>
+                <button type="button" class="btn_room" onclick="location.href='monitoring_room.html'">병실별로 보기</button>
             </div>
 
             <div class="search_container">
@@ -203,7 +103,7 @@
      </header>
 
       <!--콘텐츠-->
-      <div id="wrap_content" class="nurse nurse_main">
+      <div id="wrap_content" class="nurse patient_vital">
 
         <nav class="nav">
             <ul class="main_depth">
@@ -238,7 +138,2671 @@
         </nav>
 
         <div class="wrap_inner">
+            <section class="all_patient">
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
 
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="all_patient">
+                <div class="patient_moniter active">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>213</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="all_patient">
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="all_patient">
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="all_patient">
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="all_patient">
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="all_patient">
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
+                    <div class="patient_info">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed" style="display: none;">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="all_patient">
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient_moniter">
+                    <!-- 환자가 있을경우 patient_info , vital_moniter를 display block 해주세요 -->
+                    <div class="patient_info" style="display: none;">
+                        <p>
+                            <span>Patient ID</span>.
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+
+                    <div class="vital_moniter" style="display: none;">
+                        <div class="ews">
+                            <h3>EWS</h3>
+                            <p>3</p>
+                        </div>
+
+                        <div class="hr">
+                            <h3>HR</h3>
+                            <p>108</p>
+                        </div>
+
+                        <div class="sp">
+                            <h3>SP02</h3>
+                            <p>98</p>
+                        </div>
+
+                        <div class="resp">
+                            <h3>RESP</h3>
+                            <p>27</p>
+                        </div>
+
+                        <div class="temp">
+                            <h3>TEMP</h3>
+                            <p>36.5</p>
+                        </div>
+                    </div>
+
+                    <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+                    <div class="empty_bed">
+                        <p>empty_bed</p>
+
+                        <div class="btn_default">
+                            <img src="../img/icon/btn_add.png" alt="플러스 이미지">
+                        </div>
+
+                        <div class="btn_hover">
+                            <img src="../img/icon/btn_add_hover.png" alt="플러스 이미지">
+                        </div>
+                    </div>
+                </div>
+            </section>            
          
         </div>
       </div>

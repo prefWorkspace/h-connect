@@ -14,7 +14,7 @@ body {
 .pc_header .logo{
     width: 46px;
     height: 32px;
-    margin: 12px 0;
+    margin: 12px 30px 12px 0;
     vertical-align: middle;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .pc_header .header_title{
-    margin-right: 400px;
+    margin-right: 370px;
 }
 
 .pc_header .header_title h1{
@@ -92,6 +92,24 @@ body {
 
 .pc_header .btn_logout:hover{
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+.pc_header .patient_view{
+    margin-right: 30px;
+}
+
+.pc_header .patient_view button{
+    width: 144px;
+    height: 40px;
+    margin: 8px 8px 0 0;
+    border-radius: 4px;
+    color: #eee;
+    background: #aaa
+}
+
+.pc_header .patient_view button.on{
+    color: #007A94;
+    background-color: #fff;
 }
 
 
@@ -293,6 +311,22 @@ body {
     cursor: pointer;
 }
 
+.selectBox2.active{
+    background: #fff;
+    border:1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    border-bottom-right-radius:0px;
+    border-bottom-left-radius: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.selectBox2.on .optionList{
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    transition: 0;
+}
+
 .selectBox2:after {
     content: ''; 
     width: 12px;
@@ -301,6 +335,19 @@ body {
     background: url('../img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
+    transition: 0.3s;
+}
+
+.selectBox2.on:after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('../img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+    transform: rotate(180deg);
+    transition: .3s;
 }
 
 .selectBox2 .label {
@@ -334,17 +381,18 @@ body {
 }
 
 .selectBox2 .optionList {
-    width: 100%;
+    width: 420px;
     position: absolute; 
-    top: 48px;
-    left: 0;
+    top: 46px;
+    left: -1px;
     font-size: 14px;
     font-weight: normal;
-    background: #eee;
+    background: #fff;
+    border:1px solid #ccc;
     color: #000;
     overflow: hidden;
     max-height: 0;
-    transition: .3s ease-in;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .selectBox2 .optionList2 {
@@ -370,11 +418,7 @@ body {
 }
 .selectBox2 .optionItem {
     padding: 5px 15px 5px;
-    transition: .1s;
-}
-
-.selectBox2.active .optionList> :first-child{
-    border-top: 1px solid #007A94;
+    transition: .1s ease-in-out;
 }
 
 .selectBox2 .optionlist> :last-child {
@@ -451,8 +495,9 @@ body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 72px;
-    right: 217px;
+    right: 180px;
     display: none;
+    z-index: 99;
 }
 
 .pop.search_patient .wrap_inner p{
