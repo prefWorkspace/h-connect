@@ -1475,6 +1475,7 @@
 .monitoring_patient .vital_chart{
     width: 1316px;
     height: 720px;
+    margin:0 72px 0 32px;
 }
 
 .monitoring_patient .vital_chart .title{
@@ -1507,8 +1508,10 @@
 }
 
 .monitoring_patient .vital_chart .cont{
+    height: 680px;
     padding: 32px;
     background: #000;
+    border-radius: 0 0 8px 8px;
 }
 
 .monitoring_patient ul.tabs li{
@@ -1542,7 +1545,8 @@
 
 .monitoring_patient .cont .ecg,
 .monitoring_patient .cont .sp,
-.monitoring_patient .cont .resp{
+.monitoring_patient .cont .resp,
+.monitoring_patient .cont .control{
     display: flex;
     justify-content: space-between;
 }
@@ -1639,7 +1643,7 @@
 }
 
 .monitoring_patient .cont .bell_num> div{
-    margin-top: 13px;
+    margin-top: 11px;
 }
 
 .monitoring_patient .cont .bell_num p{
@@ -1651,7 +1655,11 @@
     font-size: 48px;
 }
 
-.monitoring_patient .cont .control> div{
+.monitoring_patient .cont .control{
+    margin-bottom: 39px;
+}
+
+.monitoring_patient .cont .control> div:not(.temp){
     display: flex;
 }
 
@@ -1661,12 +1669,23 @@
     color: #fff;
 }
 
+.monitoring_patient .cont .control .ews .bell_name p{
+    margin-right: 7px;
+}
+
 .monitoring_patient .cont .control .ews .bell_num{
     width: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: initial;
 }
 
 .monitoring_patient .cont .control .ews .bell_num> div{
-    margin: 0;
+    margin-top: -4px;
+}
+
+.monitoring_patient .cont .control .ews .bell_num> p{
+    margin-right: 8px;
 }
 
 .monitoring_patient .cont .control .bell_name input[type="checkbox"]+label span{
@@ -1699,6 +1718,8 @@
 }
 
 .monitoring_patient .cont .control .time p{
+    margin-top: -2px;
+    margin-right: 8px;
     font-size: 11px;
     display: inline-block;
     vertical-align: middle;
@@ -1708,4 +1729,139 @@
     width: 160px;
     padding: 16px;
     color: #00FFFF;
+}
+
+.monitoring_patient .cont .control .pulse .time p{
+    margin: 0 4px 0 0;
+}
+
+.monitoring_patient .cont .control .pulse .time> :last-child {
+    margin-right: 0px;
+}
+
+.monitoring_patient .cont .control .temp{
+    width: 160px;
+    padding: 16px;
+    color: #FF3184;
+}
+
+.monitoring_patient .cont .control .temp .bell_num> div {
+    margin-top: 7px;
+}
+
+.monitoring_patient .cont .control .temp .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_temp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .control .temp .bell_name input[type='checkbox']:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+/* tabular trend */
+.monitoring_patient .cont .tabular_table{
+}
+
+.monitoring_patient .cont .tabular_table .table_title{
+    height: 32px;
+    padding: 7px 16px;
+    background: #222;
+}
+
+.monitoring_patient .cont .tabular_table .table_title p {
+    margin-right: 83px;
+    display: inline-block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.monitoring_patient .cont .tabular_table .table_title .hr{
+    margin-right: 51px;
+}
+
+.monitoring_patient .cont .tabular_table .table_title .temp{
+    margin-right: 50px;
+}
+
+.monitoring_patient .cont .tabular_table .table_title .ews{
+    margin-right: 55px;
+}
+
+.monitoring_patient .cont .tabular_table .table_title .spo{
+    margin-right: 60px;
+}
+
+.monitoring_patient .cont .tabular_table .table_content{
+    height: 32px;
+    padding: 8px 16px 7px;
+    border-bottom: 1px solid #888;
+}
+
+.monitoring_patient .cont .tabular_table .table_content div{
+    display: inline-block;
+}
+
+.monitoring_patient .cont .tabular_table .table_content p{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.monitoring_patient .cont .tabular_table .table_content .date_time{
+    margin-right: 40px;
+}
+
+.monitoring_patient .cont .tabular_table .table_content .hr{
+    margin-right: 78px;
+}
+
+.monitoring_patient .cont .tabular_table .table_content .temp{
+    margin-right: 78px;
+}
+
+.monitoring_patient .cont .tabular_table .table_content .ews{
+    margin-right: 79px;
+}
+
+.monitoring_patient .cont .tabular_table .table_content .spo{
+    margin-right: 99px;
+}
+
+.monitoring_patient .cont .tabular_table .table_page ul{
+    margin-top: 56px    ;
+    text-align: center;
+}
+
+.monitoring_patient .cont .tabular_table .table_page ul li{
+    display: inline-block;
+    font-size: 11px;
+    color: #888;
+}
+
+.monitoring_patient .cont .tabular_table .table_page ul li.active{
+    color: #fff;
+}
+
+.monitoring_patient .cont .graphical .hr_chart{
+    display: flex;
+}
+
+.monitoring_patient .cont .graphical .hr_chart p{
+    color: #888;
+}
+
+.monitoring_patient .cont .graphical .hr_index p{
+    color: #fff;
+}
+
+.monitoring_patient .cont .graphical .hr_line{
+    width: 1136px;
+    margin-bottom: 31px;
+    border-bottom: 1px solid #eee;
 }

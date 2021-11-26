@@ -70,6 +70,62 @@
         </div>
     </div>
 
+    <!-- RESP setting menu -->
+    <div class="pop setting_menu">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div class="title">
+                    <h2>RESP Setting menu</h2>
+                </div>
+
+                <div class="content">
+                    <div>
+                        <p>Alarm</p>
+
+                        <input type="radio" id="btn_off" class="toggle toggle_off">
+                        <label for="btn_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
+                        <label for="btn_on" class="btn_resp_alarm">On</label>
+                    </div>
+
+                    <div>
+                        <p>RESP</p>
+
+                        <input type="number">
+
+                        <input type="number">
+                    </div>
+
+                    <div>
+                        <p>Alarm</p>
+
+                        <input type="radio" id="btn_off" class="toggle toggle_off">
+                        <label for="btn_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
+                        <label for="btn_on" class="btn_resp_alarm">On</label>
+                    </div>
+
+                    <div>
+                        <p>Alarm</p>
+
+                        <input type="radio" id="btn_off" class="toggle toggle_off">
+                        <label for="btn_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
+                        <label for="btn_on" class="btn_resp_alarm">On</label>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="wrap">
       <!--헤더 pc-->
       <header id="header" class="pc_header">
@@ -231,14 +287,14 @@
                     <div class="container">
 
                         <ul class="tabs">
-                            <li class="tab-link current" data-tab="tab-1">current vital</li>
+                            <li class="tab-link" data-tab="tab-1">current vital</li>
                             <li class="tab-link" data-tab="tab-2">Tabular Trend</li>
-                            <li class="tab-link" data-tab="tab-3">Graphical Trend</li>
+                            <li class="tab-link current" data-tab="tab-3">Graphical Trend</li>
                             <li class="tab-link" data-tab="tab-4">Event</li>
                         </ul>
                       
                         <!-- current vital -->
-                        <div id="tab-1" class="tab-content current">
+                        <div id="tab-1" class="tab-content">
                             
                             <div class="graph">
                                 <div class="ecg">
@@ -410,7 +466,7 @@
     
                                         <div class="time">
                                             <div>
-                                                <img src="../img/icon/clock.svg" alt="시계 아이콘">
+                                                <img src="../img/icon/pulse_clock.png" alt="시계 아이콘">
                                             </div>
     
                                             <p>
@@ -432,6 +488,11 @@
                                 <div class="temp">
                                     <div class="bell_name">
                                         <p>Temp.°C</p>
+
+                                        <input type="checkbox" id="temp_mute">
+                                        <label for="temp_mute">
+                                          <span></span>
+                                        </label>
                                     </div>
 
                                     <div class="bell_num">
@@ -448,10 +509,490 @@
                         </div>
 
                         <!-- Tabular Trend -->
-                        <div id="tab-2" class="tab-content">tab content2</div>
+                        <div id="tab-2" class="tab-content">
+                            
+                            <div class="ecg">
+                                <div class="ecg_graph">
+                                    <p>ECG</p>
+
+                                    <div>
+                                        <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                    </div>
+                                </div>
+                                
+                                <div class="bell">
+                                    <div class="bell_name">
+                                        <p>HR. bpm</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>120</p>
+                                            <p>50</p>
+                                        </div>
+
+                                        <p>108</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tabular_table">
+                                <div class="table_title">
+                                    <p class="date_time">date/time</p>
+                                    <p class="hr">HR (bpm)</p>
+                                    <p class="temp">Temp (°C)</p>
+                                    <p class="ews">EWS</p>
+                                    <p class="spo">SpO2 (%)</p>
+                                    <p class="error">Error</p>
+                                </div>
+
+                                <div class="table_body">
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="table_page">
+                                    <ul>
+                                        <li><a href=""><<</a></li>
+                                        <li><a href=""><</a></li>
+
+                                        <li class="active"><a href="">1.</a></li>
+                                        <li><a href="">2.</a></li>
+                                        <li><a href="">3.</a></li>
+                                        <li><a href="">4.</a></li>
+                                        <li><a href="">5.</a></li>
+                                        <li><a href="">6.</a></li>
+                                        <li><a href="">7.</a></li>
+                                        <li><a href="">8.</a></li>
+                                        <li><a href="">9.</a></li>
+                                        <li><a href="">10.</a></li>
+                                        <li><a href="">...</a></li>
+                                        <li><a href="">52.</a></li>
+
+                                        <li><a href="">></a></li>
+                                        <li><a href="">>></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        </div>
 
                         <!-- Graphical Trend -->
-                        <div id="tab-3" class="tab-content">tab content3</div>
+                        <div id="tab-3" class="tab-content current">
+                            <div class="ecg">
+                                <div class="ecg_graph">
+                                    <p>ECG</p>
+
+                                    <div>
+                                        <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                    </div>
+                                </div>
+                                
+                                <div class="bell">
+                                    <div class="bell_name">
+                                        <p>HR. bpm</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>120</p>
+                                            <p>50</p>
+                                        </div>
+
+                                        <p>108</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tabular_table graphical">
+                                <div class="table_title">
+                                    <p class="date_time">date/time</p>
+                                    <p class="hr">HR (bpm)</p>
+                                    <p class="temp">Temp (°C)</p>
+                                    <p class="ews">EWS</p>
+                                    <p class="spo">SpO2 (%)</p>
+                                    <p class="error">Error</p>
+                                </div>
+
+                                <div class="table_body">
+                                    <div class="table_content">
+                                        <div class="date_time">
+                                            <p>
+                                                <span>21</span>.
+                                                <span>09</span>.
+                                                <span>15</span>.
+                                            </p>
+    
+                                            <p>
+                                                <span>01</span>:
+                                                <span>44</span>:
+                                                <span>37</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="hr"><p>108</p></div>
+
+                                        <div class="temp">
+                                            <p>
+                                                <span>36</span>.
+                                                <span>5</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="ews"><p>4</p></div>
+                                        <div class="spo"><p>98</p></div>
+                                        <div class="error"><p>-</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="hr_chart">
+                                    <div class="hr_index">
+                                        <p>HR</p>
+                                        <p>(bpm)</p>
+                                    </div>
+
+                                    <div>
+                                        <div class="hr_line"></div>
+                                        <div class="hr_line"></div>
+                                        <div class="hr_line"></div>
+                                        <div class="hr_line"></div>
+                                        <div class="hr_line"></div>
+                                        <div class="hr_line"></div>
+                                        <div class="hr_line"></div>
+
+                                       <div class="hr_time">
+                                           <div>
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>
+                                                </p>
+                                           </div>
+
+                                            <p>
+                                                <span>00</span>:
+                                                <span>00</span>:
+                                                <span>00</span>
+                                            </p>
+
+                                            <p>
+                                                <span>00</span>:
+                                                <span>01</span>:
+                                                <span>00</span>
+                                            </p>
+
+                                            <p>
+                                                <span>00</span>:
+                                                <span>02</span>:
+                                                <span>00</span>
+                                            </p>
+
+                                            <p>
+                                                <span>00</span>:
+                                                <span>03</span>:
+                                                <span>00</span>
+                                            </p>
+
+                                            <p>
+                                                <span>00</span>:
+                                                <span>04</span>:
+                                                <span>00</span>
+                                            </p>
+                                            
+                                       </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
 
                         <!-- Event -->
                         <div id="tab-4" class="tab-content">tab content4</div>

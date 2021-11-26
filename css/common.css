@@ -593,3 +593,17 @@ body {
 .pop.re_device .overlay .pop_cont .title {
     border-bottom: 1px solid #940045;
 }
+
+
+/* resp setting menu */
+.pop.setting_menu input{
+    display: none;
+}
+
+.pop.setting_menu .overlay .content{
+    display: block;
+}
+
+.pop.setting_menu .content div> p{
+    display: inline-block;
+}
