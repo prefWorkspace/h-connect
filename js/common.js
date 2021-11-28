@@ -1,5 +1,11 @@
 $(function () {
 
+    // 공통팝업
+        // 팝업창 닫기    
+        $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
+            $('.pop .overlay').hide();
+        });
+
     //---------------------- 간호사 ----------------------//
 
     // 로그아웃 팝업
@@ -24,17 +30,13 @@ $(function () {
         })
 
 
+
     // --------- 간호사 관리 --------- //
     // 병동관리
         // 병동생성 팝업 열고 닫기
         $('.nurse .ward .title .btn_new_ward').on('click', function () {
             $('.pop.new_ward .overlay').show();
         });
-
-        $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-            $('.pop.new_ward .overlay').hide();
-        });
-
 
         // 병동생성 팝업에서 확인 누르면 나오게
         $('.pop .overlay .pop_cont .btn_list .btn_check').on('click', function () {
@@ -77,9 +79,9 @@ $(function () {
         $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
             $('.pop.new_room .overlay').show();
         });
-        $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-            $('.pop.new_room .overlay').hide();
-        });
+        // $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
+        //     $('.pop.new_room .overlay').hide();
+        // });
             //병실관리 확인 누르면 리스트 나오게
         $('.pop.new_room .overlay .pop_cont .btn_list .btn_check').on('click', function(){
             $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
@@ -108,9 +110,9 @@ $(function () {
         $('.nurse .new_device .title .btn_new_device').on('click', function () {
             $('.pop.regi_device .overlay').show();
         });
-        $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-            $('.pop.regi_device .overlay').hide();
-        });
+        // $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
+        //     $('.pop.regi_device .overlay').hide();
+        // });
 
         // 장치삭제
         $('.nurse .new_device .item_row .btn_delete').on('click', function () {
@@ -130,9 +132,9 @@ $(function () {
         $('.nurse .return_device .title .btn_use_device').on('click', function () {
             $('.pop.re_device .overlay').show();
         });
-        $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-            $('.pop.re_device .overlay').hide();
-        });
+        // $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
+        //     $('.pop.re_device .overlay').hide();
+        // });
 
         // 장치반납 취소
         $('.nurse .return_device .item_row .btn_cancel').on('click', function () {
@@ -221,6 +223,10 @@ $(function () {
 
         $('.patient_vital .all_patient .patient_moniter').on('click', function(){
             location.href="patient.html";
+        })
+
+        $('.monitoring_patient .cont .resp .bell').on('click', function(){
+            $('.pop.resp_set .overlay').show();
         })
 
 

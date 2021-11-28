@@ -71,7 +71,7 @@
     </div>
 
     <!-- RESP setting menu -->
-    <div class="pop setting_menu">
+    <div class="pop setting_menu resp_set">
         <div class="overlay">
             <div class="pop_cont">
                 <div class="title">
@@ -79,48 +79,274 @@
                 </div>
 
                 <div class="content">
-                    <div>
+                    <div class="alarm">
                         <p>Alarm</p>
 
-                        <input type="radio" id="btn_off" class="toggle toggle_off">
-                        <label for="btn_off" class="btn_resp_alarm">Off</label>
-
-                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
-                        <label for="btn_on" class="btn_resp_alarm">On</label>
+                        <div class="container">
+                            <input type="radio" name="resp_alarm" id="btn_off" class="alarm_off">
+                            <label for="btn_off" class="btn_resp_alarm">Off</label>
+    
+                            <input type="radio" name="resp_alarm" id="btn_on"  class="alarm_on" checked>
+                            <label for="btn_on" class="btn_resp_alarm">On</label>
+                        </div>
                     </div>
 
-                    <div>
+                    <div class="resp">
                         <p>RESP</p>
 
-                        <input type="number">
+                        <div class="container">
+                            <input type="number">
 
-                        <input type="number">
+                            <input type="number">
+                        </div>
                     </div>
 
-                    <div>
+
+                    <div class="sweep">
+                        <p>Sweep Speed</p>
+
+                        <div class="container">
+                            <div>
+                                <input type="radio" name="sweep" id="first" checked>
+                                <label for="first">
+                                  <span></span>
+                                  6.25 mm/s
+                                </label>
+    
+                                <input type="radio" name="sweep" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  12.5 mm/s
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="sweep" id="third">
+                                <label for="third">
+                                  <span></span>
+                                  25.0 mm/s
+                                </label>
+    
+                                <input type="radio" name="sweep" id="fourth">
+                                <label for="fourth">
+                                  <span></span>
+                                  50.0 mm/s
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="apnea">
+                        <p>Apnea Alarm</p>
+
+
+                        <div class="container">
+                            <div>
+                                <input type="radio" name="apnea" id="first" checked>
+                                <label for="first">
+                                  <span></span>
+                                  off
+                                </label>
+    
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  10s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  15s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  20s
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  25s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  30s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  35s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  40s
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+                
+                <div class="btn_list">
+                    <button type="button" class="btn_cancel">취소</button>
+                    <button type="button" class="btn_check">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ECG Setting menu -->
+    <div class="pop setting_menu resp_set">
+        <div class="overlay" style="display: none;">
+            <div class="pop_cont">
+                <div class="title">
+                    <h2>ECG Setting menu</h2>
+                </div>
+
+                <div class="content">
+                    <div class="alarm">
                         <p>Alarm</p>
 
-                        <input type="radio" id="btn_off" class="toggle toggle_off">
-                        <label for="btn_off" class="btn_resp_alarm">Off</label>
-
-                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
-                        <label for="btn_on" class="btn_resp_alarm">On</label>
+                        <div class="container">
+                            <input type="radio" name="alarm" id="btn_off" class="alarm_off">
+                            <label for="btn_off" class="btn_resp_alarm">Off</label>
+    
+                            <input type="radio" name="alarm" id="btn_on"  class="alarm_on" checked>
+                            <label for="btn_on" class="btn_resp_alarm">On</label>
+                        </div>
                     </div>
 
-                    <div>
-                        <p>Alarm</p>
+                    <div class="resp">
+                        <p>RESP</p>
 
-                        <input type="radio" id="btn_off" class="toggle toggle_off">
-                        <label for="btn_off" class="btn_resp_alarm">Off</label>
+                        <div class="container">
+                            <input type="number">
 
-                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
-                        <label for="btn_on" class="btn_resp_alarm">On</label>
+                            <input type="number">
+                        </div>
+                    </div>
+
+
+                    <div class="sweep">
+                        <p>Sweep Speed</p>
+
+                        <div class="container">
+                            <div>
+                                <input type="radio" name="sweep" id="first" checked>
+                                <label for="first">
+                                  <span></span>
+                                  6.25 mm/s
+                                </label>
+    
+                                <input type="radio" name="sweep" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  12.5 mm/s
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="sweep" id="third">
+                                <label for="third">
+                                  <span></span>
+                                  25.0 mm/s
+                                </label>
+    
+                                <input type="radio" name="sweep" id="fourth">
+                                <label for="fourth">
+                                  <span></span>
+                                  50.0 mm/s
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="apnea">
+                        <p>Apnea Alarm</p>
+
+
+                        <div class="container">
+                            <div>
+                                <input type="radio" name="apnea" id="first" checked>
+                                <label for="first">
+                                  <span></span>
+                                  off
+                                </label>
+    
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  10s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  15s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  20s
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  25s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  30s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  35s
+                                </label>
+
+                                <input type="radio" name="apnea" id="second">
+                                <label for="second">
+                                  <span></span>
+                                  40s
+                                </label>
+                            </div>
+                            
+                        </div>
                     </div>
 
                     
                     
 
                     
+                </div>
+                
+                <div class="btn_list">
+                    <button type="button" class="btn_cancel">취소</button>
+                    <button type="button" class="btn_check">확인</button>
                 </div>
             </div>
         </div>
@@ -287,14 +513,14 @@
                     <div class="container">
 
                         <ul class="tabs">
-                            <li class="tab-link" data-tab="tab-1">current vital</li>
+                            <li class="tab-link " data-tab="tab-1">current vital</li>
                             <li class="tab-link" data-tab="tab-2">Tabular Trend</li>
-                            <li class="tab-link current" data-tab="tab-3">Graphical Trend</li>
-                            <li class="tab-link" data-tab="tab-4">Event</li>
+                            <li class="tab-link" data-tab="tab-3">Graphical Trend</li>
+                            <li class="tab-link current" data-tab="tab-4">Event</li>
                         </ul>
                       
                         <!-- current vital -->
-                        <div id="tab-1" class="tab-content">
+                        <div id="tab-1" class="tab-content ">
                             
                             <div class="graph">
                                 <div class="ecg">
@@ -866,7 +1092,7 @@
                         </div>
 
                         <!-- Graphical Trend -->
-                        <div id="tab-3" class="tab-content current">
+                        <div id="tab-3" class="tab-content">
                             <div class="ecg">
                                 <div class="ecg_graph">
                                     <p>ECG</p>
@@ -940,13 +1166,16 @@
                                     </div>
 
                                     <div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
+                                        <div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                        </div>
+                                        
 
                                        <div class="hr_time">
                                            <div>
@@ -957,45 +1186,155 @@
                                                 </p>
                                            </div>
 
-                                            <p>
+                                            <p class="start_time">
                                                 <span>00</span>:
                                                 <span>00</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="second_time">
                                                 <span>00</span>:
                                                 <span>01</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="third_time">
                                                 <span>00</span>:
                                                 <span>02</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="fourth_time">
                                                 <span>00</span>:
                                                 <span>03</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="fifth_time">
                                                 <span>00</span>:
                                                 <span>04</span>:
                                                 <span>00</span>
                                             </p>
-                                            
                                        </div>
+                                    </div>
+
+                                    <div class="hr_img">
+                                        <img src="../img/graph/hr_dot.png" alt="점으로된 그래프">
+                                    </div>
+
+                                    <div class="time_line">
+                                        <p class="time">
+                                            <span>00</span>:
+                                            <span>02</span>:
+                                            <span>00</span>
+                                        </p>
+
+                                        <span class="tri"></span>
+                                        <span class="line"></span>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
 
+
                         <!-- Event -->
-                        <div id="tab-4" class="tab-content">tab content4</div>
+                        <div id="tab-4" class="tab-content current">
+                            <div class="ecg">
+                                <div class="ecg_graph">
+                                    <p>ECG</p>
+
+                                    <div>
+                                        <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                    </div>
+                                </div>
+                                
+                                <div class="bell">
+                                    <div class="bell_name">
+                                        <p>HR. bpm</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>120</p>
+                                            <p>50</p>
+                                        </div>
+
+                                        <p>216</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tabular_table graphical event">
+                                <div class="table_title">
+                                    <p class="date_time">date/time</p>
+                                    <p class="alarm_des">Alarm Description</p>
+                                    <p class="prior">Priority</p>
+                                </div>
+
+                                <div class="table_body">
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p>자세히</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="ecg">
+                                            <div class="ecg_graph">
+                                                <p>ECG</p>
+                
+                                                <div>
+                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                </div>
+                                            </div>
+                                                
+                                            <div class="bell">
+                                                <div class="bell_name">
+                                                    <p>HR. bpm</p>
+                                                </div>
+                
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>120</p>
+                                                        <p>50</p>
+                                                    </div>
+                
+                                                    <p>216</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="btn_list">
+                                            <button type="button" class="btn_confirm">confirm</button>
+                                            <button type="button" class="btn_delete">delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                       
                     </div>
                     
@@ -1009,6 +1348,14 @@
 
     </div>
     <!--// end wrap-->
+
+    <script>
+        $(".table_wrap").click(function() {
+            $(this).next(".table_content").stop().slideToggle(300);
+            $(this).toggleClass('on').siblings().removeClass('on');
+            $(this).next(".table_content").siblings(".table_content").slideUp(300); // 1개씩 펼치기
+        });
+    </script>
 
   </body>
 </html>

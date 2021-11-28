@@ -441,7 +441,7 @@
     display: inline-block;
 }
 
-.selectBox:after{
+.selectBox::after{
     content: ''; 
     width: 12px;
     height: 6px; 
@@ -1475,7 +1475,9 @@
 .monitoring_patient .vital_chart{
     width: 1316px;
     height: 720px;
-    margin:0 72px 0 32px;
+    /* margin:0 72px 0 32px; */
+    margin: 0 55px 0 32px;
+
 }
 
 .monitoring_patient .vital_chart .title{
@@ -1573,6 +1575,7 @@
     width: 160px;
     height: 104px;
     padding: 8px 16px;
+    cursor: pointer;
 }
 
 .monitoring_patient .cont .bell> div{
@@ -1765,7 +1768,12 @@
 }
 
 /* tabular trend */
+.monitoring_patient .wrap_inner{
+    overflow: hidden;
+}
+
 .monitoring_patient .cont .tabular_table{
+    border:1px solid red;
 }
 
 .monitoring_patient .cont .tabular_table .table_title{
@@ -1774,7 +1782,7 @@
     background: #222;
 }
 
-.monitoring_patient .cont .tabular_table .table_title p {
+.monitoring_patient .cont .tabular_table .table_title p{
     margin-right: 83px;
     display: inline-block;
     font-size: 12px;
@@ -1849,7 +1857,9 @@
 }
 
 .monitoring_patient .cont .graphical .hr_chart{
+    margin-top: 62px;
     display: flex;
+    position: relative;
 }
 
 .monitoring_patient .cont .graphical .hr_chart p{
@@ -1857,6 +1867,7 @@
 }
 
 .monitoring_patient .cont .graphical .hr_index p{
+    margin-right: 31px;
     color: #fff;
 }
 
@@ -1864,4 +1875,168 @@
     width: 1136px;
     margin-bottom: 31px;
     border-bottom: 1px solid #eee;
+}
+
+.monitoring_patient .cont .graphical .hr_chart> div> div> :last-child{
+    margin: 0;
+}
+
+.monitoring_patient .cont .graphical .hr_time{
+    padding: 27px 28px 0;
+    font-size: 12px;
+    position: relative;
+}
+
+.monitoring_patient .cont .graphical .hr_time> p{
+    margin-right: 177px;
+    display: inline-block;
+}
+
+.monitoring_patient .cont .graphical .hr_time> :last-child{
+    margin: 0;
+}
+
+.monitoring_patient .cont .graphical .hr_img{
+    width: 400px;
+    height: 36px;
+    position: absolute;
+    top: 23px;
+    left: 365px;
+    z-index: 999;
+}
+
+.monitoring_patient .cont .graphical .time_line{
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    margin-left: -10px;
+}
+
+.monitoring_patient .cont .graphical .time_line .time{
+    font-size: 12px;
+    text-align: center;
+    color: yellow;
+}
+
+.monitoring_patient .cont .graphical .time_line .line{
+    position: relative;
+}
+
+.monitoring_patient .cont .graphical .time_line .line::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 220px;
+    background-color: yellow;
+    top: -15px;
+    left: 0;
+}
+
+.monitoring_patient .cont .graphical .time_line .tri{
+    position: relative;
+}
+
+.monitoring_patient .cont .graphical .time_line .tri::after{
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background: url('../img/icon/trend_tri.png') no-repeat;
+    top: -25px;
+    left: -5px;
+}
+
+/* event */
+.monitoring_patient .cont .event .table_title .date_time{
+    margin-right: 83px;
+}
+
+.monitoring_patient .cont .event .table_title .alarm_des{
+    margin-right: 703px;
+}
+
+.monitoring_patient .cont .event .table_warp{
+    border: 1px solid red;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap{
+    height: 31px;
+    padding: 7px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap> div> div{
+    display: inline-block;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap .date_time{
+    margin-right: 42px;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap p,
+.monitoring_patient .cont .event .table_body .table_wrap span{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.monitoring_patient .cont .event .table_body .table_content{
+    height: 300px;
+    display: none;
+    overflow: hidden;
+}
+
+.monitoring_patient .cont .event .table_body .table_content> div{
+    display: inline-block;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg p{
+    color: #00FF22;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg .ecg_graph div{
+    width: 916px;
+    height: 104px;
+    overflow-x: scroll;
+}
+
+/* .monitoring_patient .cont .event .table_body .table_content .ecg .ecg_graph div::-webkit-scrollbar{
+    width: 8px;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg .ecg_graph div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+} */
+
+
+.monitoring_patient .cont .event .table_body .table_content .ecg .ecg_graph div img{
+    width: 100%;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg .bell> div{
+    display: flex;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg .bell_name p{
+    font-size: 14px;
 }
