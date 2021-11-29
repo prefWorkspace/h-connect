@@ -79,12 +79,14 @@
 /*================= 간호사 =================*/
 /* 메인 */
 .nurse{
+    min-width: 1880px;
     display: flex;
     background-color: #eee;
 }
 
 .nurse .wrap_inner{
     width: 100%;
+    min-width: 1820px;
     height: 889px;
     padding: 40px;
     display: flex;
@@ -1015,7 +1017,7 @@
 
 .modifi_hospital .device_room> div .btn_list button{
     width: 64px;
-    height: 32px;
+    height: 31px;
     border-radius: 4px;
     background: #fff;
     font-size: 12px;
@@ -1340,9 +1342,10 @@
 
 .patient_vital .room_view .container{
     width: fit-content;
-    padding: 8px 8px 8px 32px;
+    padding: 8px 0 8px 32px;
     background: linear-gradient(to right, #007A94,#003D4A);
     border-radius: 8px;
+    display: flex;
 }
 
 .patient_vital .room_view .pateint_room{
@@ -2065,4 +2068,170 @@
 
 .arteriotony .arteriotony_input .pre_record .record_table .table_page ul li.active{
     color: #007A94;
+}
+
+
+
+
+
+
+/*================= 응급상황실 =================*/
+.emergency .wrap_inner{
+    width: 100%;
+    padding: 40px;
+    background-color: #eee;
+    display: flex;
+}
+
+.emergency .emergency_recep{
+    width: 480px;
+    height: 360px;
+}
+
+.emergency .emergency_recep .container{
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.emergency .emergency_recep .title{
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.emergency .emergency_recep .title> div> div{
+    width: 16px;
+    height: 16px;
+    margin: 6px 16px 0 0;
+}
+
+.emergency .emergency_recep .title> div{
+    display: flex;
+}
+
+.emergency .emergency_recep .title> div h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #940045;
+}
+
+.emergency .emergency_recep .title .textbox{
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .emergency_recep .title .textbox p{
+    font-size: 12px;
+    color: #444;
+}
+
+.emergency .emergency_recep .title .textbox span{
+    color: #940045;
+}
+
+.emergency .emergency_recep .list_container{
+    height: 232px;
+    padding: 16px;
+    overflow-y: scroll;
+}
+
+.emergency .emergency_recep .list_container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.emergency .emergency_recep .list_container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.emergency .emergency_recep .list_container .list{
+    width: 400px;
+    height: 64px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.emergency .emergency_recep .list_container .list.on{
+    background-color: #940045;
+}
+
+.emergency .emergency_recep .list_container .list> div{
+    height: 32px;
+    padding: 15px 16px 17px;
+}
+
+.emergency .emergency_recep .list_container .list .now_time{
+    height: 15px;
+}
+
+.emergency .emergency_recep .list_container .list .now_time p{
+    font-size: 10px;
+    display: inline-block;
+}
+
+.emergency .emergency_recep .list_container .list.on .now_time p{
+    color: #fff;
+}
+
+.emergency .emergency_recep .list_container .list h3{
+    font-size: 12px;
+}
+
+.emergency .emergency_recep .list_container .list.on h3{
+    color: #fff;
+}
+
+.emergency .emergency_recep .list_container .arrival_time{
+    width: 50%;
+    margin-right: 16px;
+}
+
+.emergency .emergency_recep .list_container .list.on .arrival_time{
+    color: #fff;
+}
+
+.emergency .emergency_recep .list_container .arrival_time p{
+    font-size: 12px;
+    text-align: right;
+}
+
+.emergency .emergency_recep .list_container .arrival_time h3{
+    font-size: 12px;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+}
+
+.emergency .emergency_recep .list_container .list.on .arrival_time h3::after{
+    content: '';
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    background: url('../img/right_arrow.svg') no-repeat 0 0px / contain;
+    top: 3px;
+    right: -16px;
+}
+
+.emergency .emergency_recep .list_container .arrival_time h3::after{
+    content: '';
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    background: url('../img/icon/펼치기_black.png') no-repeat 0 0px / contain;
+    top: 3px;
+    right: -16px;
+}
+
+.emergency .emergency_recep .list_container .arrival_time> :last-child{
+    float: right;
+}
+
+.emergency .emergency_recep .list_container .arrival_time::after{
+    content: '';
+    display: block;
+    clear: both;
 }

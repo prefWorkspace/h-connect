@@ -2,8 +2,13 @@ body {
     position: relative;
 }
 
+#wrap_content{
+    display: flex;
+}
+
 /*================= 헤더 =================*/
 .pc_header{
+    min-width: 1880px;
     height: 80px;
     padding: 14px 24px 12px 40px;
     background: linear-gradient(to right, #004F60, #350039);
@@ -11,7 +16,19 @@ body {
     justify-content: space-between;
 }
 
-.pc_header> div{
+.pc_header .header_inner{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pc_header.emer{
+    height: 80px;
+    padding: 14px 24px 12px 40px;
+    background: linear-gradient(to right, #940045, #4A0000);
+}
+
+.pc_header .header_inner> div{
     z-index: 99;
     display: flex;
 }
@@ -48,16 +65,16 @@ body {
     height: 40px;
     margin-top: 8px;
     border-radius: 4px;
-    background-color: #fff;
     vertical-align: middle;
+    position: relative;
 }
 
 .pc_header .search_container input{
-    width: 570px;
-    height: 37px;
-    padding: 4px 0 4px 16px;
+    width: 100%;
+    height: 40px;
     background-color: #fff;
     border-radius: 4px;
+    padding: 4px 0 4px 16px
 }
 
 .pc_header .search_container input::placeholder{
@@ -67,9 +84,12 @@ body {
 }
 
 .pc_header .search_container .btn_search{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -4px;
     width: 48px;
     height: 32px;
-    margin-top: 5px;
     margin-right: 16px;
     border-radius: 4px;
     background-color: #eee;
@@ -87,7 +107,6 @@ body {
     width: 133px;
     height: 32px;
     margin: 12px;
-    padding: 6px 7px;
     font-size: 14px;
     color: #fff;
     border-radius: 4px;
@@ -154,7 +173,7 @@ body {
     text-align: center;
 }
 
-.nav .list.on{
+.nurse .nav .list.on{
     width: 65px;
     background: linear-gradient( to right ,#007A94, #003D4A);
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
@@ -164,7 +183,7 @@ body {
     color: #fff;
 }
 
-.nav .list:hover{
+.nurse .nav .list:hover{
     width: 65px;
     background: linear-gradient( to right ,#007A94, #003D4A);
     transition:  all 0.7s ease-out;
@@ -172,6 +191,18 @@ body {
 
 .nav .list:hover span{
     color: #fff;
+}
+
+.emergency .nav .list.on{
+    width: 65px;
+    background: linear-gradient( to right ,#940045, #4A0000);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav .list:hover{
+    width: 65px;
+    background: linear-gradient( to right ,#940045, #4A0000);
+    transition:  all 0.7s ease-out;
 }
 
 
