@@ -223,6 +223,18 @@ $(function () {
             location.href="patient.html";
         })
 
+        // 혈압 수동입력
+        $('.arteriotony .arteriotony_input .title .btn_arte_check').on('click', function(){
+            $('.pop.arteriotony_regi .overlay').show();
+        })
+
+        $('.pop.arteriotony_regi .btn_check').on('click', function(){
+            $('.pop.arteriotony_regi .overlay').hide();
+        })
+
+    // 담당의에게 메시지 보내기
+        
+
 
 
 
