@@ -73,34 +73,41 @@
     <div id="wrap">
       <!--헤더 pc-->
       <header id="header" class="pc_header">
-            <h1 class="logo">
-                <a class="link" href="#">
-                    <img class="img" src="../img/header/logo.png" alt="로고">
-                </a>
-            </h1>
-
-            <div class="header_title">
-                <h1>모니터링</h1>
-                <h3>담당 환자들의 생체신호를 실시간으로 모니터링 합니다.</h3>
+        <div class="header_inner">
+            <div>
+                <h1 class="logo">
+                    <a class="link" href="#">
+                        <img class="img" src="../img/header/logo.png" alt="로고">
+                    </a>
+                </h1>
+    
+                <div class="header_title">
+                    <h1>모니터링</h1>
+                    <h3>담당 환자들의 생체신호를 실시간으로 모니터링 합니다.</h3>
+                </div>
             </div>
-
-            <div class="patient_view">
-                <button type="button" class="btn_patient" onclick="location.href='monitoring.html'">전체환자 보기</button>
-                <button type="button" class="btn_room on" onclick="location.href='monitoring_room.html'">병실별로 보기</button>
-            </div>
-
-            <div class="search_container">
-                <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
-
-                <button type="button" class="btn_search">
-                    <img src="../img/header/search.svg" alt="검색표시">
+    
+            <div>
+                <div class="patient_view">
+                    <button type="button" class="btn_patient on" onclick="location.href='monitoring.html'">전체환자 보기</button>
+                    <button type="button" class="btn_room" onclick="location.href='monitoring_room.html'">병실별로 보기</button>
+                </div>
+    
+                <div class="search_container">
+                    <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
+    
+                    <button type="button" class="btn_search">
+                        <img src="../img/header/search.svg" alt="검색표시">
+                    </button>
+                </div>
+    
+                <button type="button" class="btn_logout">
+                    심장병동 간호사실
                 </button>
-            </div>
-
-            <button type="button" class="btn_logout">
-                심장병동 간호사실
-            </button>
+            </div>     
+        </div> 
      </header>
+
 
       <!--콘텐츠-->
       <div id="wrap_content" class="nurse patient_vital">

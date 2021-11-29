@@ -79,12 +79,14 @@
 /*================= 간호사 =================*/
 /* 메인 */
 .nurse{
+    min-width: 1880px;
     display: flex;
     background-color: #eee;
 }
 
 .nurse .wrap_inner{
     width: 100%;
+    min-width: 1820px;
     height: 889px;
     padding: 40px;
     display: flex;
@@ -1015,7 +1017,7 @@
 
 .modifi_hospital .device_room> div .btn_list button{
     width: 64px;
-    height: 32px;
+    height: 31px;
     border-radius: 4px;
     background: #fff;
     font-size: 12px;
@@ -1340,9 +1342,10 @@
 
 .patient_vital .room_view .container{
     width: fit-content;
-    padding: 8px 8px 8px 32px;
+    padding: 8px 0 8px 32px;
     background: linear-gradient(to right, #007A94,#003D4A);
     border-radius: 8px;
+    display: flex;
 }
 
 .patient_vital .room_view .pateint_room{
@@ -1877,6 +1880,7 @@
     border-bottom: 1px solid #eee;
 }
 
+<<<<<<< HEAD
 .monitoring_patient .cont .graphical .hr_chart> div> div> :last-child{
     margin: 0;
 }
@@ -1962,10 +1966,146 @@
 .monitoring_patient .cont .event .table_body .table_wrap{
     height: 31px;
     padding: 7px 16px;
+=======
+/* arteriotony */
+.arteriotony .arteriotony_input{
+    width: 1312px;
+    height: 720px;
+    padding: 16px 80px 32px 32px;
+    margin-right: 72px;
+    background-color: #fff;
+    display: flex;
+}  
+
+.arteriotony .arteriotony_input .manual_input{
+    width: 568px;
+}
+
+.arteriotony .arteriotony_input .manual_input .title{
+    margin-bottom: 48px;
     display: flex;
     justify-content: space-between;
 }
 
+.arteriotony .arteriotony_input .title h2{
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.arteriotony .arteriotony_input .title .btn_arte_check{
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #007A94;
+    font-size: 14px;
+    color: #fff;
+}
+
+.arteriotony .arteriotony_input .title .btn_arte_check:hover{
+    background-color: #004F60;
+}
+
+.arteriotony .arteriotony_input .form_arter{
+    height: 576px;
+    padding: 32px 32px 40px;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.arteriotony .arteriotony_input .form_arter .arter_title{
+    width: 100%;
+    padding-bottom: 24px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid #007a94;
+}
+
+.arteriotony .arteriotony_input .form_arter h2{
+    font-size: 16px;
+}
+
+.arteriotony .arteriotony_input .form_arter> div> div{
+    margin-bottom: 32px;
+}
+
+.arteriotony .arteriotony_input .form_arter .arter_input> :nth-child(2){
+    margin: 0;
+}
+
+.arteriotony .arteriotony_input .form_arter .arter_input> div> h2{
+    margin-bottom: 16px;
+}
+
+.arteriotony .arteriotony_input .form_arter input{
+    width: 100%;
+    height: 48px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.arteriotony .arteriotony_input .form_arter .pulse{
+    padding-top: 64px;
+}
+
+.arteriotony .arteriotony_input .form_arter .pulse .arter_title{
+    margin-bottom: 16px;
+}
+
+.arteriotony .arteriotony_input .form_arter .pulse .arter_title h2{
+    margin-bottom: 0;
+}
+
+.arteriotony .arteriotony_input .form_arter .pulse> div{
+    margin: 0;
+}
+
+.arteriotony .arteriotony_input .form_arter .pulse> div h2{
+    margin-bottom: 16px;
+}
+
+.arteriotony .arteriotony_input .pre_record{
+    margin-left: 55px;
+}
+
+.arteriotony .arteriotony_input .pre_record .title{
+    margin-bottom: 56px;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table{
+    width: 568px;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_title{
+    width: 100%;
+    padding: 16px 16px 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_title p{
+    margin-right: 22px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_title :first-child{
+    margin-right: 105px;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_title :nth-child(3){
+    margin-right: 39px;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div{
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+>>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
+    display: flex;
+    justify-content: space-between;
+}
+
+<<<<<<< HEAD
 .monitoring_patient .cont .event .table_body .table_wrap> div> div{
     display: inline-block;
 }
@@ -1993,10 +2133,124 @@
 
 .monitoring_patient .cont .event .table_body .table_content .ecg{
     border: 1px solid red;
+=======
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .text_box{
+    padding: 8px 0 0;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div> div p{
+    margin-right: 26px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div> div> :first-child{
+    margin-right: 0;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div> :first-child> :last-child{
+    margin-right: 0;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list{
+    display: flex;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list button{
+    width: 80px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 12px;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list .btn_modify{
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list .btn_delete{
+    margin-left: 8px;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_page{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_page ul li{
+    font-size: 12px;
+    color: #888;
+    display: inline-block;  
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_page ul> :nth-child(2){
+    margin: 0 2px 0 3px;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_page ul> :nth-child(15){
+    margin: 0 3px 0 2px;
+}
+
+.arteriotony .arteriotony_input .pre_record .record_table .table_page ul li.active{
+    color: #007A94;
+}
+
+
+
+
+
+
+/*================= 응급상황실 =================*/
+.emergency .wrap_inner{
+    width: 100%;
+    padding: 40px;
+    background-color: #eee;
+    display: flex;
+}
+
+.emergency .emergency_recep{
+    width: 480px;
+    height: 360px;
+}
+
+.emergency .emergency_recep .container{
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.emergency .emergency_recep .title{
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.emergency .emergency_recep .title> div> div{
+    width: 16px;
+    height: 16px;
+    margin: 6px 16px 0 0;
+}
+
+.emergency .emergency_recep .title> div{
+    display: flex;
+}
+
+.emergency .emergency_recep .title> div h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #940045;
+}
+
+.emergency .emergency_recep .title .textbox{
+    margin-top: 13px;
+>>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
     display: flex;
     justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .monitoring_patient .cont .event .table_body .table_content .ecg p{
     color: #00FF22;
 }
@@ -2039,4 +2293,119 @@
 
 .monitoring_patient .cont .event .table_body .table_content .ecg .bell_name p{
     font-size: 14px;
+=======
+.emergency .emergency_recep .title .textbox p{
+    font-size: 12px;
+    color: #444;
+}
+
+.emergency .emergency_recep .title .textbox span{
+    color: #940045;
+}
+
+.emergency .emergency_recep .list_container{
+    height: 232px;
+    padding: 16px;
+    overflow-y: scroll;
+}
+
+.emergency .emergency_recep .list_container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.emergency .emergency_recep .list_container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.emergency .emergency_recep .list_container .list{
+    width: 400px;
+    height: 64px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.emergency .emergency_recep .list_container .list.on{
+    background-color: #940045;
+}
+
+.emergency .emergency_recep .list_container .list> div{
+    height: 32px;
+    padding: 15px 16px 17px;
+}
+
+.emergency .emergency_recep .list_container .list .now_time{
+    height: 15px;
+}
+
+.emergency .emergency_recep .list_container .list .now_time p{
+    font-size: 10px;
+    display: inline-block;
+}
+
+.emergency .emergency_recep .list_container .list.on .now_time p{
+    color: #fff;
+}
+
+.emergency .emergency_recep .list_container .list h3{
+    font-size: 12px;
+}
+
+.emergency .emergency_recep .list_container .list.on h3{
+    color: #fff;
+}
+
+.emergency .emergency_recep .list_container .arrival_time{
+    width: 50%;
+    margin-right: 16px;
+}
+
+.emergency .emergency_recep .list_container .list.on .arrival_time{
+    color: #fff;
+}
+
+.emergency .emergency_recep .list_container .arrival_time p{
+    font-size: 12px;
+    text-align: right;
+}
+
+.emergency .emergency_recep .list_container .arrival_time h3{
+    font-size: 12px;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+}
+
+.emergency .emergency_recep .list_container .list.on .arrival_time h3::after{
+    content: '';
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    background: url('../img/right_arrow.svg') no-repeat 0 0px / contain;
+    top: 3px;
+    right: -16px;
+}
+
+.emergency .emergency_recep .list_container .arrival_time h3::after{
+    content: '';
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    background: url('../img/icon/펼치기_black.png') no-repeat 0 0px / contain;
+    top: 3px;
+    right: -16px;
+}
+
+.emergency .emergency_recep .list_container .arrival_time> :last-child{
+    float: right;
+}
+
+.emergency .emergency_recep .list_container .arrival_time::after{
+    content: '';
+    display: block;
+    clear: both;
+>>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
 }

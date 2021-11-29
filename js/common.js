@@ -225,10 +225,25 @@ $(function () {
             location.href="patient.html";
         })
 
+<<<<<<< HEAD
         $('.monitoring_patient .cont .resp .bell').on('click', function(){
             $('.pop.resp_set .overlay').show();
         })
 
+=======
+        // 혈압 수동입력
+        $('.arteriotony .arteriotony_input .title .btn_arte_check').on('click', function(){
+            $('.pop.arteriotony_regi .overlay').show();
+        })
+
+        $('.pop.arteriotony_regi .btn_check').on('click', function(){
+            $('.pop.arteriotony_regi .overlay').hide();
+        })
+
+    // 담당의에게 메시지 보내기
+        
+
+>>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
 
 
 
