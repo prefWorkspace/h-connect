@@ -1075,7 +1075,7 @@
                                             <input type="checkbox" id="test_left" checked>
                                             <label for="test_left">
                                                 <span></span>
-                                                정상
+                                                발생시간
                                             </label>
                                         </div>   
 
@@ -1083,7 +1083,7 @@
                                             <input type="checkbox" id="test_left" checked>
                                             <label for="test_left">
                                                 <span></span>
-                                                정상
+                                                추정
                                             </label>
                                         </div>   
                                     </div>
@@ -1103,11 +1103,330 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="symptome first_aid">
+                            <h2>응급처치</h2>
+
+                            <div class="aid_container">
+                                <div>
+                                    <div class="left">
+                                        <div class="free_airway">
+                                            <h2>기도확보</h2>
+
+                                            <div class="airway_container">
+                                                <div>
+                                                    <input type="checkbox" id="mainpulation" checked>
+                                                    <label for="mainpulation">
+                                                      <span></span>
+                                                      도수조작
+                                                    </label>
+                                                </div>
+    
+                                                <div>
+                                                    <input type="checkbox" id="artificial" checked>
+                                                    <label for="artificial">
+                                                      <span></span>
+                                                      기도유지기
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="cpr">
+                                            <h2>CPR</h2>
+                                            <p>해당사항 없음</p>
+                                        </div>
+
+                                        <div class="fixed">
+                                            <h2>고정</h2>
+                                            <p>해당사항 없음</p>
+                                        </div>
+
+                                        <div class="Treatment">
+                                            <h2>상처처치</h2>
+                                            <p>해당사항 없음</p>
+                                        </div>                                     
+                                    </div>
+
+
+                                    <div class="right">
+                                        <div class="oxygenation">
+                                            <div>
+                                                <h2>산소투여</h2>
+
+                                                <div>
+                                                    <input type="text">
+                                                    <p>l/min</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <p>해당사항 없음</p>
+                                        </div>
+
+                                        <div class="aed">
+                                            <h2>AED</h2>
+                                            <p>해당사항 없음</p>
+                                        </div>
+
+                                        <div class="cycle_assi">
+                                            <h2>순환보조</h2>
+                                            <p>해당사항 없음</p>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- 환자 바이탈 -->
-                    <div class="patient_vital">
+                    <div class="vital">
+                        <div class="vital_inner">
+                            <div class="vital_container">
+                                <div class="title">
+                                    <h2>환자 바이탈</h2>
+    
+                                    <div>
+                                        <p>full screen</p>
+                                        <button type="button">
+                                            <img src="../img/emergency/full.png" alt="네모 아이콘">
+                                        </button>
+                                    </div>
+                                </div>
 
+                                <div class="vital_monitor">
+                                    <div class="graph">
+                                        <div class="ecg">
+                                            <div class="ecg_graph">
+                                                <p>ECG</p>
+        
+                                                <div>
+                                                    <img src="../img/graph/ecg_small.png" alt="ecg그래프">
+                                                </div>
+                                            </div>
+                                        </div>
+        
+        
+                                        <div class="sp">
+                                            <div class="sp_graph">
+                                                <p>SpO2</p>
+        
+                                                <div>
+                                                    <img src="../img/graph/spO2_small.png" alt="ecg그래프">
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="resp">
+                                            <div class="resp_graph">
+                                                <p>RESP</p>
+        
+                                                <div>
+                                                    <img src="../img/graph/resp_small.png" alt="ecg그래프">
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="control">
+                                        <div class="control_inner">
+                                            <div class="hr">
+                                                <div class="bell_name">
+                                                    <p>HR. bpm</p>
+
+                                                    <div>
+                                                        <input type="checkbox" id="hr_mute">
+                                                        <label for="hr_mute">
+                                                        </label>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>120</p>
+                                                        <p>50</p>
+                                                    </div>
+            
+                                                    <p>108</p>
+                                                </div>
+                                            </div> 
+
+                                            <div class="sp">
+                                                <div class="bell_name">
+                                                    <p>SpO2. %</p>
+
+                                                    <div>
+                                                        <input type="checkbox" id="sp_mute">
+                                                        <label for="sp_mute">
+                                                        </label>
+                                                    </div>                                                    
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>100</p>
+                                                        <p>90</p>
+                                                    </div>
+            
+                                                    <p>98</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="resp">
+                                                <div class="bell_name">
+                                                    <p>RESP</p>
+            
+                                                    <div>
+                                                        <input type="checkbox" id="resp_mute">
+                                                        <label for="resp_mute">
+                                                        </label>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>30</p>
+                                                        <p>8</p>
+                                                    </div>
+            
+                                                    <p>15</p>
+                                                </div>
+                                            </div> 
+                                        </div>
+
+                                        <div class="control_inner">
+                                            <div class="mmhg">
+                                                <div class="bell_name">
+                                                    <p>NBP.mmHg</p>
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>160</p>
+                                                        <p>90</p>
+                                                    </div>
+            
+                                                    <p>128/77 (94)</p>
+                                                </div>
+            
+                                                <div class="time">
+                                                    <div>
+                                                        <img src="../img/icon/clock.svg" alt="시계 아이콘">
+                                                    </div>
+            
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>21</span>:
+                                                        <span>10</span>:
+                                                        <span>25</span>
+                                                    </p>
+                                                </div>
+                                                
+                                            </div>
+
+                                            <div class="ews">
+                                                <div class="bell_name">
+                                                    <p>EWS</p>
+
+                                                    <div>
+                                                        <input type="checkbox" id="ews_mute">
+                                                        <label for="ews_mute">
+                                                        </label>
+                                                    </div>                                                   
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <p>3</p>
+            
+                                                    <div>
+                                                        <div>
+                                                            <img src="../img/icon/up.png" alt="위를 향하는 화살표">
+                                                        </div>
+            
+                                                        <div>
+                                                            <img src="../img/icon/down.png" alt="아래를 향하는 화살표">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="temp">
+                                                <div class="bell_name">
+                                                    <p>Temp.°C</p>
+            
+                                                    <input type="checkbox" id="temp_mute">
+                                                    <label for="temp_mute">
+                                                      <span></span>
+                                                    </label>
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>39.0</p>
+                                                        <p>36.0</p>
+                                                    </div>
+            
+                                                    <p>36.5</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pulse">
+                                            <div class="bell_name">
+                                                <p>Pulse.bpm</p>
+                                            </div>
+        
+                                            <div class="bell_num">
+                                                <div>
+                                                    <p>120</p>
+                                                    <p>50</p>
+                                                </div>
+        
+                                                <p>184</p>
+                                            </div>
+        
+                                            <div class="time">
+                                                <div>
+                                                    <img src="../img/icon/pulse_clock.png" alt="시계 아이콘">
+                                                </div>
+        
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>21</span>:
+                                                    <span>10</span>:
+                                                    <span>25</span>
+                                                </p>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="picture">
+                                <div class="title">
+                                    <h2>응급상황 사진 및 동영상</h2>
+    
+                                    <div>
+                                        <p>full screen</p>
+                                        <button type="button">
+                                            <img src="../img/emergency/full.png" alt="네모 아이콘">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>          
                     </div>
                 </div>
             </div>

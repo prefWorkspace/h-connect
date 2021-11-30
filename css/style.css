@@ -2293,6 +2293,7 @@
 }
 
 .emergency .patient_status .title{
+    margin-bottom: 16px;
     padding-bottom: 25px;
     display: flex;
     justify-content: space-between;
@@ -2367,10 +2368,11 @@
 .emergency .patient_status .patient_inner{
     height: 560px;
     display: flex;
+    justify-content: space-between;
 }
 
 .emergency .patient_status .patient{
-    width: 592px;
+    width: 576px;
     padding: 16px;
     overflow-y: scroll;
 }
@@ -2511,7 +2513,7 @@
 
 .emergency .patient_status .patient .type .disease> :last-child input[type="checkbox"]+label {
     font-size: 14px;
-    margin-right: 32px;
+    margin-right: 30px;
 }
 
 .emergency .patient_status .patient .type .place{
@@ -3039,4 +3041,539 @@
 .emergency .patient_status .patient .symptome_info .pupil .pupil_container>div> div> label input{
     width: 20px;
     background: none;
+}
+
+.emergency .patient_status .patient .assessing .triage> div{
+    margin-bottom: 16px;
+    display: block;
+}
+
+.emergency .patient_status .patient .assessing .triage> div> div{
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.emergency .patient_status .patient .assessing .triage> div> div> :first-child{
+    margin-right: 44px;
+}
+
+.emergency .patient_status .patient .assessing .triage .triage_time> div{
+    display: flex;
+}
+
+.emergency .patient_status .patient .assessing .triage .triage_time input{
+    width: 64px;
+    padding: 4px;
+    margin-right: 8px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.emergency .patient_status .patient .first_aid .airway_container{
+    display: flex;
+}
+
+.emergency .patient_status .patient .first_aid .airway_container> :first-child{
+    margin-right: 44px;
+}
+
+.emergency .patient_status .patient .first_aid div> div{
+    margin-bottom: 16px;
+}
+
+.emergency .patient_status .patient .first_aid div .free_airway,
+.emergency .patient_status .patient .first_aid .airway_container {
+    margin: 0;
+}
+
+
+.emergency .patient_status .patient .first_aid .right .oxygenation> div{
+    margin: 0;
+}
+
+.emergency .patient_status .patient .first_aid .right .oxygenation> div,
+.emergency .patient_status .patient .first_aid .right .oxygenation> div> div{
+    display: flex;
+}
+
+.emergency .patient_status .patient .first_aid .right .oxygenation div> h2{
+    margin-right: 46px;
+}
+
+.emergency .patient_status .patient .first_aid .right .oxygenation div> div{
+    width: 100px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ccc;
+}
+
+.emergency .patient_status .patient .first_aid .right .oxygenation input{
+    width: 50px;
+    background: none;
+    text-align: center;
+    color: #ccc;
+}
+
+.emergency .patient_status .patient .first_aid .right .oxygenation> div p{
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* 환자 바이탈 */
+.emergency .patient_status .vital{
+    padding: 0 16px;
+    overflow-y: scroll;
+}
+
+.emergency .patient_status .vital::-webkit-scrollbar{
+    width: 8px;
+}
+
+.emergency .patient_status .vital::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.emergency .patient_status .vital .vital_container .title{
+    padding: 20px 0;
+    margin: 0;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_container .title h2{
+    font-size: 16px;
+    color: #940045;
+}
+
+.emergency .patient_status .vital .vital_container .title> div p{
+    font-size: 14px;
+    font-weight: normal;
+    color: #940045;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.emergency .patient_status .vital .vital_container .title> div button{
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    border-radius: 4px;
+    background: #940045;
+    vertical-align: middle;
+}
+
+.emergency .patient_status .vital .vital_monitor{
+    width: 520px;
+    height: 688px;
+    padding: 8px 16px 16px;
+    background: #000;
+    border-radius: 8px;
+}
+
+.emergency .patient_status .vital .vital_monitor p{
+    font-size: 14px;
+}
+
+.emergency .patient_status .vital .vital_monitor .ecg_graph p{
+    color: #00FF22;
+}
+
+.emergency .patient_status .vital .vital_monitor .sp_graph p{
+    color: #00F6FF;
+}
+
+.emergency .patient_status .vital .vital_monitor .resp_graph p{
+    color: #FFEE00;
+}
+
+.emergency .patient_status .vital .vital_monitor .graph> div{
+    height: 104px;
+}
+
+.emergency .patient_status .vital .vital_monitor .graph> div> div> div{
+    padding: 20px 0;
+}
+
+.emergency .patient_status .vital .control_inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .hr{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #00FF22;
+}
+
+.emergency .patient_status .vital .hr .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .hr .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .vital .hr .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    filter: invert(69%) sepia(77%) saturate(4082%) hue-rotate(86deg) brightness(118%) contrast(116%);
+    cursor: pointer;
+}
+
+.emergency .patient_status .vital .hr .bell_name input[type='checkbox']:checked+label{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.emergency .patient_status .vital .hr .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_monitor .bell_num p{
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .hr .bell_num> p{
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .hr .bell_num> div{
+    margin-top: 10px;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #00F6FF;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp .bell_name input[type='checkbox']:checked+label{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp .bell_num div p{
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .sp .bell_num p{
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+/* resp */
+.emergency .patient_status .vital .vital_monitor .control .resp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #FFEE00;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .resp .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .resp .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .resp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .resp .bell_name input[type='checkbox']:checked+label{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .resp .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .resp .bell_num div p{
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .resp .bell_num p{
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .hr .bell_num> div{
+    margin-top: 10px;
+}
+
+
+/* mmhg */
+.emergency .patient_status .vital .vital_monitor .control .mmhg{
+    width: 260px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name input[type='checkbox']:checked+label{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_num div p{
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_num p{
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .mmhg .bell_num> div{
+    margin-top: 10px;
+}
+
+.emergency .patient_status .vital .mmhg .time div{
+    display: inline-block;
+}
+
+.emergency .patient_status .vital .mmhg .time p{
+    font-size: 11px;
+    display: inline-block;
+}
+
+/* ews */
+.emergency .patient_status .vital .ews{
+    width: 88px;
+    padding: 16px;
+    color: #fff;
+}
+
+.emergency .patient_status .vital .ews .bell_name{
+    display: flex;
+}
+
+.emergency .patient_status .vital .ews .bell_name p{
+    margin-right: 7px;
+}
+
+.emergency .patient_status .vital .ews .bell_num{
+    width: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: initial;
+}
+
+.emergency .patient_status .vital .ews .bell_num> div{
+    margin-top: -4px;
+}
+
+.emergency .patient_status .vital .vital_monitor .ews .bell_num p {
+    margin-right: 8px;
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .ews .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .vital .ews .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .vital .ews .bell_name input[type='checkbox']:checked+label{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+/* temp */
+.emergency .patient_status .vital .temp{
+    width: 160px;
+    padding: 16px;
+    color: #FF3184;
+}
+
+.emergency .patient_status .vital .temp .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .temp .bell_name p{
+    margin-right: 7px;
+}
+
+.emergency .patient_status .vital .temp .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .temp .bell_num> div{
+    margin-top: -4px;
+}
+
+.emergency .patient_status .vital .temp .bell_num div p{
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .temp .bell_num p {
+    margin-right: 8px;
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .temp .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .vital .temp .bell_num> div {
+    margin-top: 7px;
+}
+
+.emergency .patient_status .vital .temp .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_temp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .vital .temp .bell_name input[type='checkbox']:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+/* pulse */
+.emergency .patient_status .vital .pulse{
+    width: 160px;
+    padding: 16px;
+    color: #00FFFF;
+}
+
+.emergency .patient_status .vital .pulse .time p{
+    margin: 0 4px 0 0;
+}
+
+.emergency .patient_status .vital .pulse .time> :last-child {
+    margin-right: 0px;
+}
+
+.emergency .patient_status .vital .pulse .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .pulse .bell_name p{
+    margin-right: 7px;
+}
+
+.emergency .patient_status .vital .pulse .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .vital .pulse .bell_num> div{
+    margin-top: -4px;
+}
+
+.emergency .patient_status .vital .pulse .bell_num div p{
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .pulse .bell_num p {
+    margin-right: 8px;
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.emergency .patient_status .vital .pulse .bell_num> div {
+    margin-top: 7px;
+}
+
+.emergency .patient_status .vital .pulse .time div{
+    display: inline-block;
+}
+
+.emergency .patient_status .vital .pulse .time p{
+    font-size: 11px;
+    display: inline-block;
 }

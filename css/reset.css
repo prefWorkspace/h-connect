@@ -61,7 +61,7 @@ audio, canvas, video { display:inline-block; *display:inline; *zoom: 1; }
 ul, ol, dl { list-style:none; }
 a { vertical-align:top; text-decoration:none; color:inherit; }
 table { border-collapse:collapse; border-spacing:0; }
-input, select, label { vertical-align:middle;}
+input, select, label { vertical-align:middle; 	font-family: 'Noto Sans KR', sans-serif;}
 button, input, select, textarea { margin:0; vertical-align:baseline; *vertical-align:middle;font-weight:normal;letter-spacing:normal;}
 button, input { line-height:normal;}
 button, select { text-transform:none; }
