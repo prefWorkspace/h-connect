@@ -3,6 +3,7 @@ body {
 }
 
 #wrap_content{
+    height: 100vh;
     display: flex;
 }
 
@@ -23,6 +24,7 @@ body {
 }
 
 .pc_header.emer{
+    min-width: 1880px;
     height: 80px;
     padding: 14px 24px 12px 40px;
     background: linear-gradient(to right, #940045, #4A0000);
