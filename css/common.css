@@ -1739,7 +1739,7 @@ body {
     filter: invert(43%) sepia(98%) saturate(4446%) hue-rotate(316deg) brightness(100%) contrast(102%);
 }
 
-.pop.full_vital .btn_close{
+.pop.full .btn_close{
     width: 32px;
     height: 32px;
     padding: 10px;
@@ -1750,3 +1750,36 @@ body {
     right: -20%;
     position: absolute;
 }
+
+
+/* 응급사진 full picture */
+.pop.full_picture .pop_cont{
+    width: 1467px;
+    height: 900px;
+    padding: 0;
+}
+
+.pop.full_picture .swiper-button-next{
+    width: 64px;
+    background: url('../img/icon/btn_next.png') no-repeat 0 0px / contain;
+    right: -128px;
+}
+
+.pop.full_picture .swiper-button-prev{
+    width: 64px;
+    background: url('../img/icon/btn_pre.png') no-repeat 0 0px / contain;
+    left:-128px;
+}
+
+.pop.full_picture .btn_close{
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    border-radius: 50%;
+    background: #940045;
+    cursor: pointer;
+    top: 5px;
+    right: -12%;
+    position: absolute;
+}
+

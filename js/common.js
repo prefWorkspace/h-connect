@@ -273,6 +273,15 @@ $(function () {
             $('.pop.full_vital .overlay').hide();
         })
 
+        // 응급사진 보기
+        $('.emergency .picture .title .btn_picture').on('click', function(){
+            $('.pop.full_picture .overlay').show();
+        })
+
+        $('.pop.full .btn_close').on('click', function(){
+            $('.pop.full_picture .overlay').hide();
+        })
+
 
 });
 
