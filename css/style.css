@@ -2526,6 +2526,10 @@
     background: #fff;
 }
 
+.emergency .patient_status .patient .symptome .part .swiper-scrollbar{
+    width: 10px;
+}
+
 .emergency .patient_status .patient .assessing .part_container::-webkit-scrollbar{
     height: 8px;
     background: #ccc;
@@ -2570,7 +2574,6 @@
 }
 
 .emergency .patient_status .patient .assessing .part_container .front_toggle{
-    z-index: 999999;
     position: absolute;
     top: 10px;
     left: 0;
@@ -2586,7 +2589,6 @@
 }
 
 .emergency .patient_status .patient .assessing .part_container .back_toggle{
-    z-index: 999999;
     position: absolute;
     top: 10px;
     left: 0;
@@ -2667,8 +2669,13 @@
 }
 
 .emergency .patient_status .patient .assessing .part_container .toggle15{
-    top: 138px;
+    top: 134px;
     left: 60px;
+}
+
+.emergency .patient_status .patient .assessing .part_container .back_toggle .toggle15{
+    top: 134px;
+    left: 45px;
 }
 
 .emergency .patient_status .patient .assessing .part_container .toggle16{
@@ -2707,7 +2714,6 @@
 }
 
 .emergency .patient_status .patient .assessing .part_container .left_toggle{
-    z-index: 999999;
     position: absolute;
     top: 10px;
     left: 0;
@@ -2793,7 +2799,6 @@
 }
 
 .emergency .patient_status .patient .assessing .part_container .right_toggle{
-    z-index: 999999;
     position: absolute;
     top: 10px;
     left: 0;
@@ -2879,7 +2884,6 @@
 }
 
 .emergency .patient_status .patient .assessing .part_container .body_toggle{
-    z-index: 999999;
     position: absolute;
     top: 10px;
     left: 0;
@@ -2940,22 +2944,22 @@
 }
 
 /* 의식상태 */
-.emergency .patient_status .patient .symptome_info{
+.emergency .patient .symptome_info{
     margin-top: 24px;
 }
 
-.emergency .patient_status .patient .symptome_info .container{
+.emergency  .patient .symptome_info .container{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check> div,
-.emergency .patient_status .patient .symptome_info .sensorium_check> div> div:not(.ure_list){
+.emergency  .patient .symptome_info .sensorium_check> div,
+.emergency .patient .symptome_info .sensorium_check> div> div:not(.ure_list){
     margin-bottom: 16px;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check> div input[type="checkbox"]+label span{
+.emergency .patient .symptome_info .sensorium_check> div input[type="checkbox"]+label span{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -2965,15 +2969,15 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check> div input[type='checkbox']:checked+label span{
+.emergency .patient .symptome_info .sensorium_check> div input[type='checkbox']:checked+label span{
     background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check .double_list input[type="checkbox"]+label{
+.emergency .patient .symptome_info .sensorium_check .double_list input[type="checkbox"]+label{
     color: #ccc;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check .double_list input[type="checkbox"]+label span{
+.emergency .patient .symptome_info .sensorium_check .double_list input[type="checkbox"]+label span{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -2984,51 +2988,51 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check> div> div input[type='checkbox']:checked+label span{
+.emergency .patient .symptome_info .sensorium_check> div> div input[type='checkbox']:checked+label span{
     background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check .double_list{
+.emergency .patient .symptome_info .sensorium_check .double_list{
     margin-left: 50px;
     display: flex;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check .double_list> :first-child{
+.emergency .patient .symptome_info .sensorium_check .double_list> :first-child{
     margin-right: 20px;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check .unre{
+.emergency .patient .symptome_info .sensorium_check .unre{
     display: flex;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check .unre> :first-child{
+.emergency .patient .symptome_info .sensorium_check .unre> :first-child{
     margin-right: 7px;
 }
 
-.emergency .patient_status .patient .symptome_info .sensorium_check .unre .ure_list{
+.emergency .patient .symptome_info .sensorium_check .unre .ure_list{
     margin-top: 5px;
     margin-left: 0;
 }
 
-.emergency .patient_status .patient .symptome_info .pupil{
+.emergency .patient .symptome_info .pupil{
     width: 50%;
 }
 
-.emergency .patient_status .patient .symptome_info .pupil .pupil_container,
-.emergency .patient_status .patient .symptome_info .pupil .pupil_container>div> div{
+.emergency  .patient .symptome_info .pupil .pupil_container,
+.emergency .patient .symptome_info .pupil .pupil_container>div> div{
     display: flex;
 }
 
-.emergency .patient_status .patient .symptome_info .pupil .pupil_container{
+.emergency .patient .symptome_info .pupil .pupil_container{
     justify-content: space-between;
 }
 
-.emergency .patient_status .patient .symptome_info .pupil> div h2{
+.emergency .patient .symptome_info .pupil> div h2{
     font-weight: normal;
     color: #000;
 }
 
-.emergency .patient_status .patient .symptome_info .pupil .pupil_container>div> div> label{
+.emergency .patient .symptome_info .pupil .pupil_container>div> div> label{
     width: 46px;
     margin-left: 8px;
     border-bottom: 1px solid #ccc;
@@ -3038,30 +3042,30 @@
     text-align: right;
 }
 
-.emergency .patient_status .patient .symptome_info .pupil .pupil_container>div> div> label input{
+.emergency .patient .symptome_info .pupil .pupil_container>div> div> label input{
     width: 20px;
     background: none;
 }
 
-.emergency .patient_status .patient .assessing .triage> div{
+.emergency .patient .assessing .triage> div{
     margin-bottom: 16px;
     display: block;
 }
 
-.emergency .patient_status .patient .assessing .triage> div> div{
+.emergency .patient .assessing .triage> div> div{
     margin-bottom: 16px;
     display: flex;
 }
 
-.emergency .patient_status .patient .assessing .triage> div> div> :first-child{
+.emergency .patient .assessing .triage> div> div> :first-child{
     margin-right: 44px;
 }
 
-.emergency .patient_status .patient .assessing .triage .triage_time> div{
+.emergency .patient .assessing .triage .triage_time> div{
     display: flex;
 }
 
-.emergency .patient_status .patient .assessing .triage .triage_time input{
+.emergency .patient .assessing .triage .triage_time input{
     width: 64px;
     padding: 4px;
     margin-right: 8px;
@@ -3070,72 +3074,72 @@
     text-align: center;
 }
 
-.emergency .patient_status .patient .first_aid .airway_container{
+.emergency .patient .first_aid .airway_container{
     display: flex;
 }
 
-.emergency .patient_status .patient .first_aid .airway_container> :first-child{
+.emergency .patient .first_aid .airway_container> :first-child{
     margin-right: 44px;
 }
 
-.emergency .patient_status .patient .first_aid div> div{
+.emergency .patient .first_aid div> div{
     margin-bottom: 16px;
 }
 
-.emergency .patient_status .patient .first_aid div .free_airway,
-.emergency .patient_status .patient .first_aid .airway_container {
+.emergency .patient .first_aid div .free_airway,
+.emergency .patient .first_aid .airway_container {
     margin: 0;
 }
 
 
-.emergency .patient_status .patient .first_aid .right .oxygenation> div{
+.emergency .patient .first_aid .right .oxygenation> div{
     margin: 0;
 }
 
-.emergency .patient_status .patient .first_aid .right .oxygenation> div,
-.emergency .patient_status .patient .first_aid .right .oxygenation> div> div{
+.emergency .patient .first_aid .right .oxygenation> div,
+.emergency .patient .first_aid .right .oxygenation> div> div{
     display: flex;
 }
 
-.emergency .patient_status .patient .first_aid .right .oxygenation div> h2{
+.emergency .patient .first_aid .right .oxygenation div> h2{
     margin-right: 46px;
 }
 
-.emergency .patient_status .patient .first_aid .right .oxygenation div> div{
+.emergency .patient .first_aid .right .oxygenation div> div{
     width: 100px;
     padding-bottom: 3px;
     border-bottom: 1px solid #ccc;
 }
 
-.emergency .patient_status .patient .first_aid .right .oxygenation input{
+.emergency .patient .first_aid .right .oxygenation input{
     width: 50px;
     background: none;
     text-align: center;
     color: #ccc;
 }
 
-.emergency .patient_status .patient .first_aid .right .oxygenation> div p{
+.emergency .patient .first_aid .right .oxygenation> div p{
     font-size: 14px;
     color: #ccc;
 }
 
 /* 환자 바이탈 */
-.emergency .patient_status .vital{
+.emergency .vital{
     padding: 0 16px;
     overflow-y: scroll;
 }
 
-.emergency .patient_status .vital::-webkit-scrollbar{
+.emergency .vital::-webkit-scrollbar{
     width: 8px;
 }
 
-.emergency .patient_status .vital::-webkit-scrollbar-thumb{
+.emergency .vital::-webkit-scrollbar-thumb{
     height: 17%;
     border-radius: 10px;
     background: #ccc;
 }
 
-.emergency .patient_status .vital .vital_container .title{
+.emergency .vital .vital_container .title{
     padding: 20px 0;
     margin: 0;
     border: 0;
@@ -3143,12 +3147,12 @@
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .vital_container .title h2{
+.emergency  .vital .vital_container .title h2{
     font-size: 16px;
     color: #940045;
 }
 
-.emergency .patient_status .vital .vital_container .title> div p{
+.emergency .vital .vital_container .title p{
     font-size: 14px;
     font-weight: normal;
     color: #940045;
@@ -3156,7 +3160,7 @@
     vertical-align: middle;
 }
 
-.emergency .patient_status .vital .vital_container .title> div button{
+.emergency .vital .vital_container .btn_vital{
     width: 32px;
     height: 32px;
     margin-left: 8px;
@@ -3165,7 +3169,11 @@
     vertical-align: middle;
 }
 
-.emergency .patient_status .vital .vital_monitor{
+.emergency .vital .vital_container .btn_vital:hover{
+    background: #4a0000;
+}
+
+.emergency .vital .vital_monitor{
     width: 520px;
     height: 688px;
     padding: 8px 16px 16px;
@@ -3173,52 +3181,52 @@
     border-radius: 8px;
 }
 
-.emergency .patient_status .vital .vital_monitor p{
+.emergency .vital .vital_monitor p{
     font-size: 14px;
 }
 
-.emergency .patient_status .vital .vital_monitor .ecg_graph p{
+.emergency .vital .vital_monitor .ecg_graph p{
     color: #00FF22;
 }
 
-.emergency .patient_status .vital .vital_monitor .sp_graph p{
+.emergency .vital .vital_monitor .sp_graph p{
     color: #00F6FF;
 }
 
-.emergency .patient_status .vital .vital_monitor .resp_graph p{
+.emergency .vital .vital_monitor .resp_graph p{
     color: #FFEE00;
 }
 
-.emergency .patient_status .vital .vital_monitor .graph> div{
+.emergency .vital .vital_monitor .graph> div{
     height: 104px;
 }
 
-.emergency .patient_status .vital .vital_monitor .graph> div> div> div{
+.emergency .vital .vital_monitor .graph> div> div> div{
     padding: 20px 0;
 }
 
-.emergency .patient_status .vital .control_inner{
+.emergency .vital .control_inner{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .hr{
+.emergency .vital .hr{
     width: 160px;
     height: 104px;
     padding: 8px 16px;
     color: #00FF22;
 }
 
-.emergency .patient_status .vital .hr .bell_name{
+.emergency .vital .hr .bell_name{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .hr .bell_name input{
+.emergency .vital .hr .bell_name input{
     display: none;
 }
 
-.emergency .patient_status .vital .hr .bell_name input[type="checkbox"]+label{
+.emergency .vital .hr .bell_name input[type="checkbox"]+label{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -3229,47 +3237,47 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .vital .hr .bell_name input[type='checkbox']:checked+label{
+.emergency .vital .hr .bell_name input[type='checkbox']:checked+label{
     background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
-.emergency .patient_status .vital .hr .bell_num{
+.emergency .vital .hr .bell_num{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .vital_monitor .bell_num p{
+.emergency .vital .vital_monitor .bell_num p{
     font-size: 18px;
     font-family: 'Bebas Neue', cursive;
 }
 
-.emergency .patient_status .vital .hr .bell_num> p{
+.emergency .vital .hr .bell_num> p{
     font-size: 48px;
     font-family: 'Bebas Neue', cursive;
 }
 
-.emergency .patient_status .vital .hr .bell_num> div{
+.emergency .vital .hr .bell_num> div{
     margin-top: 10px;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .sp{
+.emergency .vital .vital_monitor .control .sp{
     width: 160px;
     height: 104px;
     padding: 8px 16px;
     color: #00F6FF;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .sp .bell_name{
+.emergency .vital .vital_monitor .control .sp .bell_name{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .sp .bell_name input{
+.emergency .vital .vital_monitor .control .sp .bell_name input{
     display: none;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .sp .bell_name input[type="checkbox"]+label{
+.emergency .vital .vital_monitor .control .sp .bell_name input[type="checkbox"]+label{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -3279,12 +3287,12 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .sp .bell_name input[type='checkbox']:checked+label{
+.emergency .vital .vital_monitor .control .sp .bell_name input[type='checkbox']:checked+label{
     background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .sp .bell_num{
+.emergency .vital .vital_monitor .control .sp .bell_num{
     display: flex;
     justify-content: space-between;
 }
@@ -3294,7 +3302,7 @@
     font-family: 'Bebas Neue', cursive;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .sp .bell_num p{
+.emergency .vital .vital_monitor .control .sp .bell_num p{
     font-size: 48px;
     font-family: 'Bebas Neue', cursive;
 }
@@ -3576,4 +3584,105 @@
 .emergency .patient_status .vital .pulse .time p{
     font-size: 11px;
     display: inline-block;
+}
+
+/* 응급상황 사진 및 동영상 */
+.emergency .picture{
+    margin-top: 16px;
+}
+
+.emergency .picture .title{
+    margin: 0;
+    padding: 20px 0;
+    border: 0;
+}
+
+.emergency .picture .title div{
+    width: 107px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .picture .title h2{
+    font-size: 16px;
+    color: #940045;
+}
+
+.emergency .picture .title p{
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #940045;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.emergency .picture .title .btn_picture{
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: #940045;
+}
+
+.emergency .picture .title .btn_picture:hover{
+    background: #4a0000;
+}
+
+/* ccc .now_picture{
+    width: 520px;
+    height: 192px;
+    margin-bottom: 12px;
+}
+
+.emergency .picture .now_picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.emergency .picture .picture_slide{
+    width: 520px;
+}
+
+.emergency .picture .picture_container{
+    width: 94px;
+    height: 95px;
+}
+
+.emergency .picture .picture_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.emergency .picture .swiper-slide.active{
+    border: 4px solid red;
+} */
+
+/* 슬라이드 */
+.emergency .big_picture{
+    width: 520px;
+    height: 192px;
+}
+
+.emergency .big_picture img,
+.emergency .small_picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.emergency .small_picture{
+    width: 520px;
+    margin-top: 12px;
+}
+
+.emergency .small_picture .swiper-slide{
+    width: 95px;
+    height: 95px;
+    cursor: pointer;
+}
+
+.emergency .swiper-slide-thumb-active{
+    border: 4px solid #f00;
 }

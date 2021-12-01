@@ -1051,12 +1051,702 @@ body {
     cursor: pointer;
 }
 
-.pop.send_doctor .overlay .pop_cont .favorite_list .favorite_container input[type='checkbox']:checked+label span{
+.pop.send_doctor .overlay .favorite_list .favorite_container input[type='checkbox']:checked+label span{
     background: url('../img/icon/즐겨찾기추가.png') no-repeat 0 0px / contain;
     transition: .3s;
 }
 
-.pop.send_doctor .overlay .pop_cont .favorite_list .favorite_container{
+.pop.send_doctor .overlay .favorite_list .favorite_container{
     display: inline-block;
     float: right;
+}
+
+
+
+
+/*====================== 응급상황실 팝업 ======================*/
+/* 의료진 호출 */
+.pop.doctor_call .pop_cont{
+    width: 736px;
+    height: 640px;
+    padding: 16px 16px 32px;
+}
+
+.pop.doctor_call .pop_cont .emergency_title{
+    padding: 8px 16px;
+    border: 0;
+    color: #940045;
+}
+
+.pop.doctor_call .emergency_title div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.doctor_call .pop_cont .btn_list{
+    position: initial;
+}
+
+.pop.doctor_call .pop_cont .btn_list .btn_cancel{
+    width: 96px;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.pop.doctor_call .btn_doctor_call{
+    width: 96px;
+    padding: 11px 25px;
+    border-radius: 4px;
+    background: #940045;
+    font-size: 12px;
+    color: #fff;
+}
+
+.pop.doctor_call .btn_doctor_call img{
+    vertical-align: middle;
+}
+
+.pop.doctor_call .pop_cont .emergency_title h2{
+    color: #940045;
+}
+
+.pop.doctor_call .emergency_title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.pop.doctor_call .select_list{
+    width: 672px;
+    height: 48px;
+    margin: 18px auto 0;
+    padding: 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+
+.pop.doctor_call .select_list div{
+    width: 100px;
+    display: flex;
+}
+
+.pop.doctor_call .select_list p{
+    margin-top: -2px;
+    margin-right: 7px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.pop.doctor_call .select_list .btn_doctor_delete{
+    width: 16px;
+    height: 16px;
+    background: none;
+    vertical-align: middle;
+}
+
+.pop.doctor_call .container{
+    width: 672px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.doctor_call .container h2{
+    font-size: 12px;
+    margin-bottom: 11px;
+}
+
+.pop.doctor_call .favorite_list{
+    width: 312px;
+}
+
+.pop.doctor_call .group{
+    border-bottom: 1px solid #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.doctor_call .group> div{
+    width: 204px;
+    display: flex;
+}
+
+.pop.doctor_call .group .group_list{
+    margin-right: 4px;
+    padding: 7px 10px;
+    border-radius: 4px 4px 0 0;
+    background: #ccc;
+}
+
+.pop.doctor_call .group .group_list p{
+    font-size: 12px;
+    text-align: center;
+    color: #888;
+}
+
+.pop.doctor_call .group .group_list.on{
+    background: #940045;
+}
+
+.pop.doctor_call .group .group_list.on p{
+    color: #fff;
+}
+
+.pop.doctor_call .group .btn_next{
+    width: 24px;
+    padding: 5px 5px 0;
+    background: none;
+}
+
+.pop.doctor_call .group .btn_add{
+    background: none;
+    color: #940045;
+}
+
+.pop.doctor_call .favorite_list input{
+    display: none;
+}
+
+.pop.doctor_call .group_container{
+    padding: 16px;
+}
+
+.pop.doctor_call .group_container> div{
+    padding: 7px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.doctor_call .group_container label{
+    display: flex;
+    cursor: pointer;
+}
+
+.pop.doctor_call .group_container label p{
+    margin-right: 14px;
+}
+
+.pop.doctor_call .group_container .all_check{
+    padding-top: 0;
+}
+
+/* checkbox */
+.pop.doctor_call .group_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.pop.doctor_call .group_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+/* all_check */
+.pop.doctor_call .all_check input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/emergency/checkBox.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.pop.doctor_call .all_check input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+/* favorite check */
+.pop.doctor_call .favorite_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.pop.doctor_call .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
+}
+
+.pop.doctor_call .select_doctor{
+    width: 296px;
+}
+
+.pop.doctor_call .search_container{
+    position: relative;
+}
+
+.pop.doctor_call .search_container input{
+    width: 296px;
+    padding: 7px 30px 7px 7px;
+    background: #eee;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.pop.doctor_call .search_container input::placeholder{
+    font-weight: normal;
+    color: #ccc;
+}
+
+.pop.doctor_call .search_container .btn_search{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    width: 35px;
+    padding: 5px 0;
+}
+
+.pop.doctor_call .search_container .btn_search div{
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+}
+
+.pop.doctor_call .search_container .btn_search img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(278deg) brightness(135%) contrast(0);
+}
+
+.pop.doctor_call .list_inner{
+    height: 336px;
+    margin-top: 8px;
+    overflow-y: scroll;
+}
+
+.pop.doctor_call .list_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.pop.doctor_call .list_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.pop.doctor_call .list_inner div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.doctor_call .list_inner> div{
+    padding: 7px 7px;
+}
+
+.pop.doctor_call .list_inner label{
+    display: flex;
+}
+
+.pop.doctor_call .list_inner label p{
+    margin-right: 14px;
+}
+
+.pop.doctor_call .list_inner .favorite_container input{
+    display: none;
+}
+
+.pop.doctor_call .list_inner input{
+    display: none;
+}
+
+/* 의료진선택 checkbox */
+.pop.doctor_call .list_inner div input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.pop.doctor_call .list_inner div input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+/* 의료진선택 즐겨찾기 */
+.pop.doctor_call .list_inner .favorite_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.pop.doctor_call .list_inner .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
+}
+
+/* 응급상황 해제 */
+.pop.emergency_clear .pop_cont{
+    height: 360px;
+    padding: 64px 0 48px 0;
+}
+
+.pop.emergency_clear .pop_cont> div{
+    width: 46px;
+    height: 32px;
+    margin: 0 auto 48px;
+}
+
+.pop.emergency_clear .pop_cont> div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop.emergency_clear h3{
+    font-size: 16px;
+    text-align: center;
+}
+
+.pop.emergency_clear h1{
+    margin-top: 8px;
+    font-size: 24px;
+    text-align: center;
+    color: #940045;
+}
+
+.pop.emergency_clear .pop_cont .btn_list{
+    width: 272px;
+    height: 48px;
+    margin: 48px auto 0;
+    position: initial;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.emergency_clear .pop_cont .btn_list button{
+    width: 128px;
+    height: 48px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.pop.emergency_clear .pop_cont .btn_no{
+    background: #eee;
+    color: #888;
+}
+
+.pop.emergency_clear .pop_cont .btn_end{
+    background: #940045;
+    color: #fff;
+}
+
+/* 연결요청 */
+.pop.connect_para .pop_cont{
+    width: 720px;
+    height: 640px;
+    padding: 128px 0 96px;
+    background: linear-gradient(to right, #004F60, #350039);
+}
+
+.pop.connect_para .pop_cont> div{
+    width: 92px;
+    height: 64px;
+    margin: 0 auto;
+}
+
+.pop.connect_para h3{
+    margin-top: 96px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+}
+
+.pop.connect_para h1{
+    margin-top: 16px;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+}
+
+.pop.connect_para .pop_cont .btn_list{
+    position: initial;
+    width: 368px;
+    margin-top: 88px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.connect_para .pop_cont .btn_list> div{
+    position: relative;
+}
+
+.pop.connect_para .pop_cont .con_btn{
+    width: 80px;
+    height: 80px;
+}
+
+.pop.connect_para .pop_cont button{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.pop.connect_para .pop_cont .accept button{
+    background: linear-gradient(to right, #007A94, #003D4A);
+}
+
+.pop.connect_para .pop_cont .layer{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    padding: 28px 0;
+    border-radius: 50%;
+    top: 0;
+    background: linear-gradient(to right, #eee, #ccc);
+    opacity: 0;
+}
+
+.pop.connect_para .pop_cont .layer p{
+    font-size: 16px;
+    text-align: center;
+}
+
+.pop.connect_para .pop_cont .refuse_layer p{
+    color: #940045;
+}
+
+.pop.connect_para .pop_cont .mic_layer p,
+.pop.connect_para .pop_cont .cam_layer p{
+    color: #007A94;
+}
+
+.pop.connect_para .pop_cont .accept_layer p{
+    color: #fff;
+}
+
+.pop.connect_para .pop_cont .btn_list .accept_layer{
+    background: #004F60;
+}
+
+.pop.connect_para .pop_cont .refuse:hover .refuse_layer,
+.pop.connect_para .pop_cont .mic:hover .mic_layer,
+.pop.connect_para .pop_cont .cam:hover .cam_layer,
+.pop.connect_para .pop_cont .accept:hover .accept_layer{
+    opacity: 1;
+    cursor: pointer;
+    transition: .4s;
+}
+
+/* 바이탈 모니터 full screen */
+.pop.full_vital .pop_cont{
+    width: 1316px;
+    height: 640px;
+    padding: 0;
+    background: #000;
+}
+
+.pop.full_vital .pop_cont .monitor{
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(to right, #940045, #4A0000);
+    border-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}   
+
+.pop.full_vital .pop_cont .monitor p{
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.pop.full_vital .pop_cont .monitor div{
+    display: flex;
+}
+
+.pop.full_vital .pop_cont .monitor .name p{
+    margin-right: 56px;
+}
+
+.pop.full_vital .vital_inner{
+    padding: 64px 32px;
+}
+
+.pop.full_vital .graph_data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.full_vital .ecg{
+    color: #00FF22;
+}
+
+.pop.full_vital .sp{
+    color: #00F6FF;
+}
+
+.pop.full_vital .resp{
+    color: #FE0;
+}
+
+.pop.full_vital .graph_data p{
+    font-size: 14px;
+}
+
+.pop.full_vital .graph_data .graph_img{
+    padding: 20px 0;
+}
+
+.pop.full_vital .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+}
+
+.pop.full_vital .bell_name,
+.pop.full_vital .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.full_vital .bell_num p{
+    font-family: 'Bebas Neue', cursive;
+}
+
+.pop.full_vital .bell_name input{
+    display: none;
+}
+
+.pop.full_vital .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.pop.full_vital .ecg .bell_name input[type="checkbox"]+label span{
+    filter: invert(59%) sepia(39%) saturate(4799%) hue-rotate(90deg) brightness(123%) contrast(112%);
+}
+
+.pop.full_vital .sp .bell_name input[type="checkbox"]+label span{
+    background: url('../img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
+}
+
+.pop.full_vital .resp .bell_name input[type="checkbox"]+label span{
+    filter: invert(0) sepia(59%) saturate(1471%) hue-rotate(2deg) brightness(108%) contrast(104%);
+}
+
+.pop.full_vital .bell_name input[type='checkbox']:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.pop.full_vital .bell_num div{
+    margin-top: 9px;
+}
+
+.pop.full_vital .bell_num div p{
+    font-size: 18px;
+}
+
+.pop.full_vital .bell_num> p{
+    font-size: 48px;
+}
+
+.pop.full_vital .control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.full_vital .control> div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.full_vital .control_data{
+    padding: 16px;
+    color: #fff;
+}
+
+.pop.full_vital .ews{
+    width: 88px;
+    padding: 16px 12px;
+}
+
+.pop.full_vital .ews .bell_name input[type="checkbox"]+label span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 0 0 7px;
+    vertical-align: middle;
+    background: url(../img/icon/btn_alarmOn.svg) no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.pop.full_vital .ews .bell_num{
+    padding: 0 2px 0 21px;
+}
+
+.pop.full_vital .ews .bell_num div{
+    margin-top: -1px;
+}
+
+.pop.full_vital .mmhg{
+    width: 260px;
+    margin: 0 71px;
+}
+
+.pop.full_vital .control_data .time_data{
+    display: flex;
+}
+
+.pop.full_vital .control_data .time_data div{
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+}
+
+.pop.full_vital .control_data .time_data p{
+    font-size: 11px;
+}
+
+.pop.full_vital .pulse{
+    width: 160px;
+    color: #00F6FF;
+}
+
+.pop.full_vital .control .temp{
+    width: 160px;
+    padding: 16px;
+    color: #FF3184;
+    display: block;
+}
+
+.pop.full_vital .temp .bell_name input[type="checkbox"]+label span{
+    filter: invert(43%) sepia(98%) saturate(4446%) hue-rotate(316deg) brightness(100%) contrast(102%);
+}
+
+.pop.full_vital .btn_close{
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    border-radius: 50%;
+    background: #940045;
+    cursor: pointer;
+    top: -20%;
+    right: -20%;
+    position: absolute;
 }

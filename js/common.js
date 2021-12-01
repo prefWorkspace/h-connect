@@ -1,5 +1,9 @@
 $(function () {
 
+    $('.pop .pop_cont .btn_list .btn_cancel').on('click', function(){
+        $('.pop .overlay').hide();
+    })
+
     //---------------------- 간호사 ----------------------//
 
     // 로그아웃 팝업
@@ -233,10 +237,41 @@ $(function () {
         })
 
     // 담당의에게 메시지 보내기
-        
 
 
 
+
+
+
+
+
+    //---------------------- 응급상황실 ----------------------//
+        // 의료진호출
+        $('.emergency .patient_status .btn_call').on('click', function(){
+            $('.pop.doctor_call .overlay').show();
+        })
+            // 확인버튼 누름
+            $('.pop.doctor_call .btn_doctor_call').on('click', function(){
+                $('.pop.doctor_call .overlay').hide();
+            })
+
+        // 응급상황 종료
+        $('.emergency .patient_status .btn_end').on('click', function(){
+            $('.pop.emergency_clear .overlay').show();
+        })
+
+        $('.pop.emergency_clear .pop_cont .btn_no').on('click', function(){
+            $('.pop.emergency_clear .overlay').hide();
+        })
+
+        // 환자 바이탈 풀스크린
+        $('.emergency .vital .vital_container .btn_vital').on('click', function(){
+            $('.pop.full_vital .overlay').show();
+        })
+
+        $('.pop.full_vital .btn_close').on('click', function(){
+            $('.pop.full_vital .overlay').hide();
+        })
 
 
 });
