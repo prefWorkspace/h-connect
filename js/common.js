@@ -227,6 +227,21 @@ $(function () {
             location.href="patient.html";
         })
 
+        $('.monitoring_patient .patient .btn_list .btn_alarm').on('click', function(){
+            $('.monitoring_patient .patient .btn_list .btn_alarm_red').show();
+            $('.monitoring_patient .patient .btn_list .btn_alarm').hide();
+        })
+
+        $('.monitoring_patient .patient .btn_list .btn_alarm_red').on('click', function(){
+            $('.monitoring_patient .emergency_list').show();
+            $('.monitoring_patient .patient .btn_list .btn_alarm_red').hide();
+        })
+
+        $('.monitoring_patient .emergency_list .circum').on('click', function(){
+            $('.monitoring_patient .emergency_list').hide();
+            $('.monitoring_patient .patient .btn_list .btn_alarm').show();
+        })
+
         // 혈압 수동입력
         $('.arteriotony .arteriotony_input .title .btn_arte_check').on('click', function(){
             $('.pop.arteriotony_regi .overlay').show();
@@ -236,7 +251,39 @@ $(function () {
             $('.pop.arteriotony_regi .overlay').hide();
         })
 
-    // 담당의에게 메시지 보내기
+        // 담당의에게 메시지 보내기
+        $('.nurse .management .management_list .doctor_send').on('click', function(){
+            $('.pop.send_doctor .overlay').show();
+        })
+
+        // $('.pop.send_doctor .btn_send').on('click', function(){
+        //     $('.pop.send_doctor .overlay').hide();
+        // })
+
+        $('.pop.send_doctor .btn_exit').on('click', function(){
+            $('.pop.send_doctor .overlay').hide();
+        })
+
+        $('.pop.send_doctor .overlay .btn_send.on').on('click', function(){
+            $('.pop.nurse_view').show();
+        })
+
+            // 담당의 메시지 창
+            $('.pop.nurse_view .btn_close').on('click', function(){
+                $('.pop.nurse_view').hide();
+            })
+
+        // 담당의에게 메시지 보내는 버튼 활성화
+        $('#to_doctor').on('keyup', function() {
+            var inputVal = $('#to_doctor').val();
+            if (!(inputVal === "")) {
+              $('.btn_send').addClass('on');
+              $('.btn_send').attr('disabled', false);
+            } else {
+              $('.btn_send').removeClass('on');
+              $('.btn_send').attr('disabled', true);
+            }
+          });
 
 
 

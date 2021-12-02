@@ -88,10 +88,8 @@
 .nurse .wrap_inner{
     width: 100%;
     min-width: 1820px;
-    height: 889px;
     padding: 40px;
     display: flex;
-    justify-content: space-between;
 }
 
 .nurse section{
@@ -188,6 +186,7 @@
 .nurse .left{
     width: 640px;
     padding: 16px;
+    margin: 0 32px;
 }
 
 .nurse .left .title,
@@ -344,7 +343,6 @@
 /* 병실관리 */
 .nurse .right{
     width: 640px;
-    margin-right: 50px;
     padding: 16px;
 }
 
@@ -1188,6 +1186,7 @@
 }
 
 .patient_vital .wrap_inner{
+    min-width: 1840px;
     display: block;
 }
 
@@ -1398,11 +1397,15 @@
     padding: 0;
 }
 
+
 .monitoring_patient .patient .btn_list button{
     width: 100%;
     margin-bottom: 16px;
     height: 72px;
     border-radius: 8px;
+}
+
+.monitoring_patient .patient .btn_list .btn_alarm{
     font-size: 24px;
     text-align: center;
 }
@@ -1412,26 +1415,34 @@
     color: #eee;
 }
 
-.monitoring_patient .patient .btn_list .btn_alarm.on{
+.monitoring_patient .patient .btn_list .btn_alarm_red{
+    font-size: 24px;
+    color: #fff;
     background: linear-gradient(to right, #940045,#4A0000);
-}
-
-.monitoring_patient .patient .btn_list .emergency{
     display: none;
 }
 
-.monitoring_patient .patient .btn_list .emergency .response{
+.monitoring_patient .emergency_list{
+    width: 360px;
+    display: none;
+}
+
+.monitoring_patient .emergency_list .response{
     background: #fff;
     border: 1px solid #007A94;
 }
 
-.monitoring_patient .patient .btn_list .emergency .circum{
+.monitoring_patient .emergency_list .circum{
+    padding: 16px;
     background: linear-gradient(to right, #940045,#4A0000);
-    font-size: 16px;
     color: #fff;
 }
 
-.monitoring_patient .patient .btn_list .emergency .circum span{
+.monitoring_patient .emergency_list .circum p{
+    font-size: 16px;
+}
+
+.monitoring_patient .emergency_list .circum small{
     font-size: 12px;
 }
 
@@ -1875,7 +1886,7 @@
     width: 1312px;
     height: 720px;
     padding: 16px 80px 32px 32px;
-    margin-right: 72px;
+    margin-left: 32px;
     background-color: #fff;
     display: flex;
 }  
