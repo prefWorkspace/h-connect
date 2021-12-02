@@ -31,28 +31,359 @@
         </div>
     </div>
 
-    <!-- 의료진호출 -->
-    <div class="pop call doctor_call">
-        <div class="overlay">
-            <div class="pop_cont">
+
+    <div id="wrap">
+      <!--헤더 pc-->
+      <header id="header" class="pc_header emer">
+        <div class="header_inner">
+            <div>
+                <h1 class="logo">
+                    <a class="link" href="#">
+                        <img class="img" src="../img/header/logo.png" alt="로고">
+                    </a>
+                </h1>
+    
+                <div class="header_title">
+                    <h1>메세지</h1>
+                    <h3>의료진과 주고받은 메세지를 확인 합니다.</h3>
+                </div>
+            </div>
+    
+            <div>
+                <button type="button" class="btn_logout">
+                    응급상황실
+                </button>
+            </div>
+        </div>
+       
+     </header>
+
+      <!--콘텐츠-->
+      <div id="wrap_content" class="emergency para_message">
+
+        <nav class="nav">
+            <ul class="main_depth">
+              <li class="list off">
+                <a class="link" href="index.html">
+                    <img src="../img/header/call.png" alt="전화기 아이콘">
+                    <span>응급호출</span>
+                </a>
+              </li>
+
+              <li class="list on">
+                <a class="link" href="message.html">
+                    <img src="../img/header/message.png" alt="메세지 아이콘">
+                    <span>메세지</span>
+                </a>
+              </li>
+
+              <li class="list off">
+                <a class="link" href=".html">
+                    <img src="../img/header/dashboard.svg" alt="대시보드 아이콘">
+                    <span>대시보드</span>
+                </a>
+              </li>
+
+              <li class="list off">
+                <a class="link" href=".html">
+                    <img src="../img/header/setting.svg" alt="톱니바퀴 아이콘">
+                    <span>설정</span>
+                </a>
+              </li>
+
+            </ul>
+        </nav>
+
+        <div class="wrap_inner">
+
+            <!-- 메세지 목록 -->
+            <section class="section left message_list">
+                    <div class="title message_title">
+
+                        <div>
+                            <div class="title_text">
+                                <div>
+                                    <img src="../img/emergency/message.svg" alt="메세지 아이콘">
+                                </div>
+            
+                                <h2>메세지</h2>
+                            </div>
+
+                            <button type="button" class="btn_message">
+                                <img src="../img/emergency/message.svg" alt="메세지 아이콘">
+                                <p>새로운 메세지</p>
+                            </button>
+                        </div>
+                        
+                        <P>의료진과 주고받은 메세지를 확인합니다. 또한 새로운 메세지를 보낼 수 있습니다.</P>
+                    </div>
+
+                    <div class="search_container">
+                        <input type="text" placeholder="보낸사람 혹은 메세지 내용을 입력해주세요">
+
+                        <button type="button" class="btn_search">
+                            <div>
+                                <img src="../img/header/search.svg" alt="검색표시">
+                            </div>                           
+                        </button>
+                    </div>
+
+                    <div class="message talk_list">
+                        <div class="list on">
+                            <div class="left">
+                                <!-- 메세지가 오면 보이게 해주세요 -->
+                                <div class="message_bell">
+                                    <img src="../img/emergency/message/circle.svg" alt="동그라미 아이콘">
+                                </div>
+        
+                                <div class="message talk_time">
+                                    <p>
+                                        <span>21</span>.
+                                        <span>09</span>.
+                                        <span>15</span>.
+                                    </p>
+                                    &nbsp;
+                                    <p>
+                                        <span>10</span>:
+                                        <span>09</span>:
+                                        <span>25</span>
+                                    </p>
+                                </div>
+        
+                                <div class="message talk_name">
+                                    <p>김골절 교수님</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right preview">
+                                <p>네 고생하셨습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="list off">
+                            <div class="left">
+                                <!-- 메세지가 오면 보이게 해주세요 -->
+                                <div class="message_bell">
+                                    <img src="../img/emergency/message/circle.svg" alt="동그라미 아이콘">
+                                </div>
+        
+                                <div class="message talk_time">
+                                    <p>
+                                        <span>21</span>.
+                                        <span>09</span>.
+                                        <span>15</span>.
+                                    </p>
+                                    &nbsp;
+                                    <p>
+                                        <span>10</span>:
+                                        <span>09</span>:
+                                        <span>25</span>
+                                    </p>
+                                </div>
+        
+                                <div class="message talk_name">
+                                    <p>호흡기 내과 병동</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right preview">
+                                <p>진료요청 등록되었는지 확인 부탁드립니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="list off">
+                            <div class="left">
+
+                                <!-- 메세지가 오면 보이게 해주세요 -->
+                                <!-- <div class="message_bell">
+                                    <img src="../img/emergency/message/circle.svg" alt="동그라미 아이콘">
+                                </div> -->
+        
+                                <div class="message talk_time">
+                                    <p>
+                                        <span>21</span>.
+                                        <span>09</span>.
+                                        <span>15</span>.
+                                    </p>
+                                    &nbsp;
+                                    <p>
+                                        <span>10</span>:
+                                        <span>09</span>:
+                                        <span>25</span>
+                                    </p>
+                                </div>
+        
+                                <div class="message talk_name">
+                                    <p>김호흡 교수님</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right preview">
+                                <p>수고많으셨습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <!-- 대화창 -->
+            <section class="section right message_talk">
+                <div class="title talk_title">
+                        <p>김골절 교수님</p>
+                        <p>마지막 메세지.
+                            <span>21</span>.
+                            <span>09</span>.
+                            <span>15</span>.
+
+                            <span>09</span>:
+                            <span>48</span>:
+                            <span>43</span>
+                        </p>
+                </div>
+
+                <div class="search_container">
+                        <input type="text" placeholder="메세지 내용을 입력해주세요">
+
+                        <button type="button" class="btn_search">
+                            <div>
+                                <img src="../img/header/search.svg" alt="검색표시">
+                            </div>                            
+                        </button>
+                </div>
+
+                <div class="chat_container">                
+                    <div class="chat_inner">
+                        <!-- 내가 보낸 메시지 chat_me -->
+                        <div class="chat_me">
+                            <div>
+                                <div class="bouble">
+                                    <p>선별진료 준비되었습니다.</p>
+                                </div>
+                                
+                                <small>
+                                    <time datetime="21.09.15"><span>21.09.15</span></time>
+                                    .
+                                    <time datetime="09:48:43"><span>09:48:43</span></time>
+                                </small>
+                            </div>                        
+                        </div>
+
+                        <!-- 상대방이 보는 매세지 chat_you -->
+                        <div class="chat_you">
+                            <p>선별진료소 담당의</p>
+
+                            <div class="bouble">
+                                <p>이번 외래보고 선별진료 시작하겠습니다.</p>
+                            </div>
+                            
+                            <small>
+                                <time datetime="21.09.15"><span>21.09.15</span></time>
+                                .
+                                <time datetime="09:48:43"><span>09:48:43</span></time>
+                            </small>
+                        </div>
+
+                        <div class="chat_you">
+                            <p>선별진료소 담당의</p>
+
+                            <div class="bouble">
+                                <p>시작할께요</p>
+                            </div>
+                            
+                            <small>
+                                <time datetime="21.09.15"><span>21.09.15</span></time>
+                                .
+                                <time datetime="09:48:43"><span>09:48:43</span></time>
+                            </small>
+                        </div>
+
+                        <div class="chat_you">
+                            <p>선별진료소 담당의</p>
+
+                            <div class="bouble">
+                                <p>환자 체온 좀 재주세요</p>
+                            </div>
+                            
+                            <small>
+                                <time datetime="21.09.15"><span>21.09.15</span></time>
+                                .
+                                <time datetime="09:48:43"><span>09:48:43</span></time>
+                            </small>
+                        </div>
+
+                        <div class="chat_me">
+                            <div>
+                                <div class="bouble">
+                                    <p>37.7도입니다.</p>
+                                </div>
+                                
+                                <small>
+                                    <time datetime="21.09.15"><span>21.09.15</span></time>
+                                    .
+                                    <time datetime="09:48:43"><span>09:48:43</span></time>
+                                </small>
+                            </div>                        
+                        </div>
+
+                        <div class="chat_me">
+                            <div>
+                                <div class="bouble">
+                                    <p>고생하셨습니다.</p>
+                                </div>
+                                
+                                <small>
+                                    <time datetime="21.09.15"><span>21.09.15</span></time>
+                                    .
+                                    <time datetime="09:48:43"><span>09:48:43</span></time>
+                                </small>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat_window">
+                    <textarea placeholder="메세지 입력"></textarea>
+                    <button type="button" class="btn_send">전송</button>
+                </div>
+            </section>
+
+
+            <!-- 새로운 메세지를 누르면 나오는 화면 -->
+            <section class="section left select_medi">
                 <div class="title emergency_title">
                     <div>
                         <h2>의료진 선택</h2>
-
-                        <div class="btn_list">
-                            <button type="button" class="btn_cancel">취소</button>
-                            <button type="button" class="btn_doctor_call">
-                                <img src="../img/header/call.png" alt="전화기 아이콘"> 확인
-                            </button>
-                        </div>
                     </div>
 
-                    <p>호출한 의료진과 응급상황 정보를 공유하고 응급상황에 대응합니다.</p>
+                    <p>메세지를 전달할 의료진을 선택합니다.</p>
                 </div>
 
                 <div class="select_list">
                     <div>
                         <p>김협진 교수님</p>
+
+                        <button type="button" class="btn_doctor_delete">
+                            <img src="../img/emergency/delete.png" alt="빨간색 취소아이콘">
+                        </button>
+                    </div>
+
+                    <div>
+                        <p>다섯 글자자</p>
+
+                        <button type="button" class="btn_doctor_delete">
+                            <img src="../img/emergency/delete.png" alt="빨간색 취소아이콘">
+                        </button>
+                    </div>
+
+                    <div>
+                        <p>네글 자자</p>
+
+                        <button type="button" class="btn_doctor_delete">
+                            <img src="../img/emergency/delete.png" alt="빨간색 취소아이콘">
+                        </button>
+                    </div>
+
+                    <div>
+                        <p>세글자</p>
 
                         <button type="button" class="btn_doctor_delete">
                             <img src="../img/emergency/delete.png" alt="빨간색 취소아이콘">
@@ -104,11 +435,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite2" checked>
                                         <label for="favorite2">
@@ -123,11 +454,11 @@
                                         <span></span>
                                         
                                         <p>김협진 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite3" checked>
                                         <label for="favorite3">
@@ -142,11 +473,11 @@
                                         <span></span>
                                         
                                         <p>김흉부 교수님</p>
-    
+
                                         <p>흉부외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite4" checked>
                                         <label for="favorite4">
@@ -161,11 +492,11 @@
                                         <span></span>
                                         
                                         <p>박골절 교수님</p>
-    
+
                                         <p>정형외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite5" checked>
                                         <label for="favorite5">
@@ -180,11 +511,11 @@
                                         <span></span>
                                         
                                         <p>김두통 교수님</p>
-    
+
                                         <p>신경외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite6" checked>
                                         <label for="favorite6">
@@ -218,11 +549,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite">
                                         <label for="list_favorite">
@@ -237,11 +568,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite2">
                                         <label for="list_favorite2">
@@ -256,11 +587,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite3">
                                         <label for="list_favorite3">
@@ -275,11 +606,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite4">
                                         <label for="list_favorite4">
@@ -294,11 +625,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite5">
                                         <label for="list_favorite5">
@@ -313,11 +644,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite6">
                                         <label for="list_favorite6">
@@ -332,11 +663,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite7">
                                         <label for="list_favorite7">
@@ -351,11 +682,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite8">
                                         <label for="list_favorite8">
@@ -370,11 +701,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite9">
                                         <label for="list_favorite9">
@@ -389,11 +720,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite10">
                                         <label for="list_favorite10">
@@ -408,11 +739,11 @@
                                         <span></span>
                                         
                                         <p>강수술 교수님</p>
-    
+
                                         <p>일반외과</p>
-    
+
                                     </label>
-    
+
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite11">
                                         <label for="list_favorite11">
@@ -424,92 +755,49 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </section>
 
-    <!-- 응급상황 해제 -->
-    <div class="pop emergency_clear">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div>
-                    <img src="../img/logo.png" alt="로고">
+            <!-- 새로운 메세지를 누르면 나오는 화면 -->
+            <section class="section right send_message">
+                <div class="title">
+                    <h2>메세지 입력</h2>
+                    <p>메세지를 입력합니다.</p>
                 </div>
 
-                <h3>응급상황을 해제합니다.</h3>
-                <h1>종료 하시겠습니까?</h1>
+                <form>
+                    <textarea placeholder="메세지 입력"></textarea>
 
-                <div class="btn_list">
-                    <button type="button" class="btn_no">아니요</button>
-                    <button type="button" class="btn_end">네, 종료합니다.</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="wrap">
-      <!--헤더 pc-->
-      <header id="header" class="pc_header emer">
-        <div class="header_inner">
-            <div>
-                <h1 class="logo">
-                    <a class="link" href="#">
-                        <img class="img" src="../img/header/logo.png" alt="로고">
-                    </a>
-                </h1>
-    
-                <div class="header_title">
-                    <h1>응급상황실</h1>
-                    <h3>구급대원과 실시간으로 소통하여 응급상황에 대응합니다.</h3>
-                </div>
-            </div>
-    
-            <div>
-                <button type="button" class="btn_logout">
-                    응급상황실
-                </button>
-            </div>
-        </div>
-       
-     </header>
-
-      <!--콘텐츠-->
-      <div id="wrap_content" class="emergency emergency_main">
-
-        <nav class="nav">
-            <ul class="main_depth">
-              <li class="list off">
-                <a class="link" href="index.html">
-                    <img src="../img/header/call.png" alt="전화기 아이콘">
-                    <span>응급호출</span>
-                </a>
-              </li>
-
-              <li class="list on">
-                <a class="link" href="message.html">
-                    <img src="../img/header/message.png" alt="메세지 아이콘">
-                    <span>메세지</span>
-                </a>
-              </li>
-
-            </ul>
-        </nav>
-
-        <div class="wrap_inner">
-          <section class="section left emergency_recep">
-
-          </section>
-
-          <section class="section left patient_status">
-           
-          </section>
+                    <div class="btn_list">
+                        <button type="button" class="btn_cancel">취소</button>
+                        <button type="button" class="btn_send">전송</button>
+                    </div>                    
+                </form>
+            </section>
 
         </div>
       </div>
 
     </div>
     <!--// end wrap-->
-
+    <script>
+        // /* checkbox selectAll */
+        // function checkSelectAll(checkbox)  {
+        //   const selectall 
+        //   = document.querySelector('input[name="selectall"]');
+    
+        //   if(checkbox.checked === false)  {
+        //      selectall.checked = false;
+        //   }
+        // }
+    
+        // function selectAll(selectAll)  {
+        //   const checkboxes 
+        //   = document.getElementsByName('doctor');
+    
+        //   checkboxes.forEach((checkbox) => {
+        //     checkbox.checked = selectAll.checked
+        //   })
+        // }    
+    </script>
   </body>
 </html>

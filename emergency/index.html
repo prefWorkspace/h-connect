@@ -853,9 +853,23 @@
               </li>
 
               <li class="list off">
-                <a class="link" href=".html">
+                <a class="link" href="message.html">
                     <img src="../img/header/message.png" alt="메세지 아이콘">
                     <span>메세지</span>
+                </a>
+              </li>
+              
+              <li class="list off">
+                <a class="link" href=".html">
+                    <img src="../img/header/dashboard.svg" alt="대시보드 아이콘">
+                    <span>대시보드</span>
+                </a>
+              </li>
+
+              <li class="list off">
+                <a class="link" href=".html">
+                    <img src="../img/header/setting.svg" alt="톱니바퀴 아이콘">
+                    <span>설정</span>
                 </a>
               </li>
 
@@ -1072,6 +1086,11 @@
                     <!-- 환자 상태 -->
                     <div class="patient">
                         <h2>환자 상태</h2>
+
+                        <!-- 환자가 없을경우 -->
+                        <div class="no_patient">
+                            <p>입력된 환자 정보가 없습니다.</p>
+                        </div>
 
                         <!-- 환자 증상 -->
                         <div class="symptome">
@@ -1971,8 +1990,13 @@
     
                                     <div>
                                         <p>full screen</p>
+
+                                        <!-- 바이탈이 없으면 버튼 비활성화와 함께 no_signal_text를 보이게 해주세요
+                                        위에 있는 full screen은 숨겨주세요 -->
+                                        <p class="no_signal_text">full screen</p>
+
                                         <button type="button" class="btn_vital">
-                                            <img src="../img/emergency/full.png" alt="네모 아이콘">
+                                            <img src="../img/icon/full.svg" alt="네모 아이콘">
                                         </button>
                                     </div>
                                 </div>
@@ -2042,9 +2066,8 @@
                                                     <p>SpO2. %</p>
 
                                                     <div>
-                                                        <input type="checkbox" id="sp_mute">
-                                                        <label for="sp_mute">
-                                                        </label>
+                                                        <input type="checkbox" id="spo2_mute">
+                                                        <label for="spo2_mute"></label>
                                                     </div>                                                    
                                                 </div>
             
@@ -2064,8 +2087,8 @@
                                                     <p>RESP</p>
             
                                                     <div>
-                                                        <input type="checkbox" id="resp_mute">
-                                                        <label for="resp_mute">
+                                                        <input type="checkbox" id="res_mute">
+                                                        <label for="res_mute">
                                                         </label>
                                                     </div>
                                                 </div>
@@ -2124,8 +2147,8 @@
                                                     <p>EWS</p>
 
                                                     <div>
-                                                        <input type="checkbox" id="ews_mute">
-                                                        <label for="ews_mute">
+                                                        <input type="checkbox" id="ew_mute">
+                                                        <label for="ew_mute">
                                                         </label>
                                                     </div>                                                   
                                                 </div>
@@ -2150,8 +2173,8 @@
                                                 <div class="bell_name">
                                                     <p>Temp.°C</p>
             
-                                                    <input type="checkbox" id="temp_mute">
-                                                    <label for="temp_mute">
+                                                    <input type="checkbox" id="tempo_mute">
+                                                    <label for="tempo_mute">
                                                       <span></span>
                                                     </label>
                                                 </div>
@@ -2205,6 +2228,11 @@
                                     
                                     </div>
                                 </div>
+
+                                <!-- 바이탈 정보가 없으면 보이게 해주세요 -->
+                                <div class="vital_monitor no_signal">
+                                    <p>no signal</p>
+                                </div>
                             </div>
 
                             <div class="picture">
@@ -2213,12 +2241,24 @@
     
                                     <div>
                                         <p>full screen</p>
+
+                                        <!-- 바이탈이 없으면 버튼 비활성화와 함께 no_signal_text를 보이게 해주세요
+                                        위에 있는 full screen은 숨겨주세요 -->
+                                        <p class="no_signal_text">full screen</p>
+
                                         <button type="button" class="btn_picture">
-                                            <img src="../img/emergency/full.png" alt="네모 아이콘">
+                                            <img src="../img/icon/full.svg" alt="네모 아이콘">
                                         </button>
                                     </div>
                                 </div>
-                                
+
+                                <!-- 사진이 없으면 보이게 해주세요 -->
+                                <div class="no_picture">
+                                    <p>전송받은 사진이 없습니다.</p>
+                                </div>
+
+
+                                <!-- 사진이 있을 경우 -->
                                 <!-- 큰 사진 -->
                                 <div class="swiper big_picture" >
                                     <div class="swiper-wrapper">
@@ -2308,6 +2348,6 @@
             checkbox.checked = selectAll.checked
           })
         }    
-      </script>
+    </script>
   </body>
 </html>

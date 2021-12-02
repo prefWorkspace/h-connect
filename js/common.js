@@ -282,6 +282,34 @@ $(function () {
             $('.pop.full_picture .overlay').hide();
         })
 
+    // 메세지
+        // 새로운 메세지
+        $('.para_message .btn_message').on('click', function(){
+            $('.para_message .message_list').hide();
+            $('.para_message .message_talk').hide();
+
+            $('.para_message .select_medi').show();
+            $('.para_message .send_message').show();
+        })
+
+        // 메세지 보내기 창에서 다시 돌아가기(취소버튼 누름)
+        $('.para_message .send_message .btn_list .btn_cancel').on('click', function(){
+            $('.para_message .select_medi').hide();
+            $('.para_message .send_message').hide();
+
+            $('.para_message .message_list').show();
+            $('.para_message .message_talk').show();
+        })
+
+        // 메세지 보내기 창에서 다시 돌아가기(전송버튼 누름)
+        $('.para_message .send_message .btn_list .btn_send').on('click', function(){
+            $('.para_message .select_medi').hide();
+            $('.para_message .send_message').hide();
+
+            $('.para_message .message_list').show();
+            $('.para_message .message_talk').show();
+        })
+
 
 });
 

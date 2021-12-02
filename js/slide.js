@@ -10,7 +10,6 @@ $(function () {
     // });
 
     var swiper = new Swiper(".small_picture", {
-      loop: true,
       spaceBetween: 8,
       slidesPerView: 3,
       freeMode: true,
@@ -19,7 +18,6 @@ $(function () {
     });
 
     var swiper2 = new Swiper(".big_picture", {
-      loop: true,
       slidesPerView: 1,
       spaceBetween: 0,
       navigation: {
@@ -32,7 +30,7 @@ $(function () {
     });
 
     // 사고부위 슬라이드
-    var swiper = new Swiper(".part_accident", {
+    var swiper3 = new Swiper(".part_accident", {
       slidesPerView: 3,
       spaceBetween: 50,
       freeMode: true,
@@ -48,7 +46,7 @@ $(function () {
     });
 
     // 응급사진 팝업 슬라이드
-    var swiper = new Swiper(".full_view", {
+    var swiper4 = new Swiper(".full_view", {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,

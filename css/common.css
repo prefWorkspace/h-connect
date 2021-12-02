@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
 }
 
-.pc_header.emer{
+.emer{
     min-width: 1880px;
     height: 80px;
     padding: 14px 24px 12px 40px;
@@ -138,6 +138,51 @@ body {
     background-color: #fff;
 }
 
+/* 응급상황실 로딩 */
+.paramedic{
+    height: 64px;
+    min-width: 1920px;
+    padding: 23px 24px;
+    background: linear-gradient(to right, #940045, #4A0000);
+}
+
+.paramedic .title{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.paramedic .header_left,
+.paramedic .header_right{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.paramedic .header_left h4{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.paramedic .header_right h4{
+    font-size: 12px;
+    margin-left: 32px;
+}
+
+.paramedic .header_right .btn_list button{
+    background: #fff;
+    border-radius: 4px;
+    color: #940045;
+}
+
+.paramedic .header_right .btn_list .btn_attendee{
+    width: 96px;
+    padding: 6px 14px;
+}
+
+
+
+
 
 /*================= 푸터 =================*/
 #footer{
@@ -226,6 +271,7 @@ body {
 
 .pop.logout .wrap_inner{
     display: flex;
+    justify-content: space-between;
 }
 
 .pop.logout .wrap_inner div p{
