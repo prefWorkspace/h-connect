@@ -2476,6 +2476,10 @@
 }
 
 .ward_dashboard .graph{
+    padding: 2px;
+}
+
+.ward_dashboard .graph> div{
     padding: 8px 16px;
 }
 
@@ -2491,10 +2495,14 @@
     color: #fff;
 }
 
-.ward_dashboard .graph div{
+.ward_dashboard .img_container{
     width: 446px;
     height: 24px;
     overflow: hidden;
+}
+
+.ward_dashboard .character{
+    padding: 2px;
 }
 
 .ward_dashboard .character> div{
@@ -2540,6 +2548,23 @@
     font-size: 24px;
     align-items: center;
 }
+
+/* 병실 대시보드 */
+.ward_dashboard .active .graph> div{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #DE0076, #CB0000);
+    border-radius: 4px;
+}
+
+.ward_dashboard .active .ecg{
+    background: linear-gradient(to right, #DE0076, #CB0000);
+    border-radius: 4px;
+}
+
+
+
+
 
 
 
