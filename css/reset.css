@@ -3,6 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+.bell_num div p{font-size: 18px;font-family: 'Bebas Neue', cursive;}
+.bell_num p {font-size: 48px;font-family: 'Bebas Neue', cursive;}
+input[type="checkbox"]+label{cursor: pointer;}
+
+body {height: 100%;padding: 0;margin: 0;position: relative;}
+#wrap_content{min-height: 100%;display: flex;}
+html{height: 100%;}
+#wrap{height: 100%;}
+
 html, body,
 div, span,
 dl, dt, dd, ul, ol, li,
@@ -14,8 +23,6 @@ table, th, td, button {
 	padding:0;
   	font-family: 'Noto Sans KR', sans-serif;
 }
-
-body{height: 900px;}
 
 h1, h2, h3, h4, h5, h6 {
 	font-size:100%;
@@ -61,7 +68,7 @@ audio, canvas, video { display:inline-block; *display:inline; *zoom: 1; }
 ul, ol, dl { list-style:none; }
 a { vertical-align:top; text-decoration:none; color:inherit; }
 table { border-collapse:collapse; border-spacing:0; }
-input, select, label { vertical-align:middle;}
+input, select, label { vertical-align:middle; 	font-family: 'Noto Sans KR', sans-serif;}
 button, input, select, textarea { margin:0; vertical-align:baseline; *vertical-align:middle;font-weight:normal;letter-spacing:normal;}
 button, input { line-height:normal;}
 button, select { text-transform:none; }
@@ -104,7 +111,7 @@ address{font-style:normal;}
 
 button, input, select, textarea { font-weight: normal;font-style: normal;font-family: 'Noto Sans KR', sans-serif; font-weight:normal;font-style: normal;}
 
-body { width: 100%;height: auto;font-family: 'Noto Sans KR', sans-serif; font-weight:normal;font-style: normal; background-color:#ffffff;}
+body { width: 100%;font-family: 'Noto Sans KR', sans-serif; font-weight:normal;font-style: normal; background-color:#ffffff;}
 
 .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after, .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after{
 	display: none;

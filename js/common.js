@@ -1,10 +1,16 @@
 $(function () {
 
+<<<<<<< HEAD
     // 공통팝업
         // 팝업창 닫기    
         $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
             $('.pop .overlay').hide();
         });
+=======
+    $('.pop .pop_cont .btn_list .btn_cancel').on('click', function(){
+        $('.pop .overlay').hide();
+    })
+>>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
 
     //---------------------- 간호사 ----------------------//
 
@@ -226,11 +232,29 @@ $(function () {
         })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $('.monitoring_patient .cont .resp .bell').on('click', function(){
             $('.pop.resp_set .overlay').show();
         })
 
 =======
+=======
+        $('.monitoring_patient .patient .btn_list .btn_alarm').on('click', function(){
+            $('.monitoring_patient .patient .btn_list .btn_alarm_red').show();
+            $('.monitoring_patient .patient .btn_list .btn_alarm').hide();
+        })
+
+        $('.monitoring_patient .patient .btn_list .btn_alarm_red').on('click', function(){
+            $('.monitoring_patient .emergency_list').show();
+            $('.monitoring_patient .patient .btn_list .btn_alarm_red').hide();
+        })
+
+        $('.monitoring_patient .emergency_list .circum').on('click', function(){
+            $('.monitoring_patient .emergency_list').hide();
+            $('.monitoring_patient .patient .btn_list .btn_alarm').show();
+        })
+
+>>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
         // 혈압 수동입력
         $('.arteriotony .arteriotony_input .title .btn_arte_check').on('click', function(){
             $('.pop.arteriotony_regi .overlay').show();
@@ -240,12 +264,156 @@ $(function () {
             $('.pop.arteriotony_regi .overlay').hide();
         })
 
-    // 담당의에게 메시지 보내기
-        
+        // 담당의에게 메시지 보내기
+        $('.nurse .management .management_list .doctor_send').on('click', function(){
+            $('.pop.send_doctor .overlay').show();
+        })
 
+        // $('.pop.send_doctor .btn_send').on('click', function(){
+        //     $('.pop.send_doctor .overlay').hide();
+        // })
+
+        $('.pop.send_doctor .btn_exit').on('click', function(){
+            $('.pop.send_doctor .overlay').hide();
+        })
+
+<<<<<<< HEAD
 >>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
+=======
+        $('.pop.send_doctor .overlay .btn_send.on').on('click', function(){
+            $('.pop.nurse_view').show();
+        })
+>>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
+
+            // 담당의 메시지 창
+            $('.pop.nurse_view .btn_close').on('click', function(){
+                $('.pop.nurse_view').hide();
+            })
+
+        // 담당의에게 메시지 보내는 버튼 활성화
+        $('#to_doctor').on('keyup', function() {
+            var inputVal = $('#to_doctor').val();
+            if (!(inputVal === "")) {
+              $('.btn_send').addClass('on');
+              $('.btn_send').attr('disabled', false);
+            } else {
+              $('.btn_send').removeClass('on');
+              $('.btn_send').attr('disabled', true);
+            }
+        });
+
+        // 경보해제
+        $('.warning .emergency_list .circum').on('click', function(){
+            location.href="patient.html";
+        })
+
+        // 경보해제 페이지로 이동
+        $('.patient_vital .all_patient .patient_moniter.active').on('click', function(){
+            location.href="patient_warning.html";
+        })
 
 
+
+
+     //메세지
+        $('.nurse_message .btn_message').on('click', function(){
+            $('.nurse_message .message_list').hide();
+            $('.nurse_message .message_talk').hide();
+
+            $('.nurse_message .select_medi').show();
+            $('.nurse_message .send_message').show();
+        })
+
+        // 메세지 전송완료 팝업
+        $('.message .send_message .btn_list .btn_send').on('click', function(){
+            $('.pop.message_send .overlay').show();
+        })
+
+        $('.pop.message_send .btn_check').on('click', function(){
+            $('.pop.message_send .overlay').hide();
+
+            $('.nurse_message .message_list').show();
+            $('.nurse_message .message_talk').show();
+
+            $('.nurse_message .select_medi').hide();
+            $('.nurse_message .send_message').hide();
+        })
+
+        // 메세지 정렬 팝업
+        $('.nurse_message .message_talk .search_container .btn_sort').on('click', function () {
+            $('.pop.chat_sort').toggle();
+        });
+
+
+
+
+
+
+
+    //---------------------- 응급상황실 ----------------------//
+        // 의료진호출
+        $('.emergency .patient_status .btn_call').on('click', function(){
+            $('.pop.doctor_call .overlay').show();
+        })
+            // 확인버튼 누름
+            $('.pop.doctor_call .btn_doctor_call').on('click', function(){
+                $('.pop.doctor_call .overlay').hide();
+            })
+
+        // 응급상황 종료
+        $('.emergency .patient_status .btn_end').on('click', function(){
+            $('.pop.emergency_clear .overlay').show();
+        })
+
+        $('.pop.emergency_clear .pop_cont .btn_no').on('click', function(){
+            $('.pop.emergency_clear .overlay').hide();
+        })
+
+        // 환자 바이탈 풀스크린
+        $('.emergency .vital .vital_container .btn_vital').on('click', function(){
+            $('.pop.full_vital .overlay').show();
+        })
+
+        $('.pop.full_vital .btn_close').on('click', function(){
+            $('.pop.full_vital .overlay').hide();
+        })
+
+        // 응급사진 보기
+        $('.emergency .picture .title .btn_picture').on('click', function(){
+            $('.pop.full_picture .overlay').show();
+        })
+
+        $('.pop.full .btn_close').on('click', function(){
+            $('.pop.full_picture .overlay').hide();
+        })
+
+    // 메세지
+        // 새로운 메세지
+        $('.para_message .btn_message').on('click', function(){
+            $('.para_message .message_list').hide();
+            $('.para_message .message_talk').hide();
+
+            $('.para_message .select_medi').show();
+            $('.para_message .send_message').show();
+        })
+
+        // 메세지 보내기 창에서 다시 돌아가기(취소버튼 누름)
+        $('.para_message .send_message .btn_list .btn_cancel').on('click', function(){
+            $('.para_message .select_medi').hide();
+            $('.para_message .send_message').hide();
+
+            $('.para_message .message_list').show();
+            $('.para_message .message_talk').show();
+        })
+
+        // 메세지 보내기 창에서 다시 돌아가기(전송버튼 누름)
+        $('.para_message .send_message .btn_list .btn_send').on('click', function(){
+            $('.para_message .select_medi').hide();
+            $('.para_message .send_message').hide();
+
+            $('.para_message .message_list').show();
+            $('.para_message .message_talk').show();
+        })
 
 
 });
@@ -264,3 +432,16 @@ $(document).ready(function(){
     })
   
   })
+
+$(function(){
+    //  간호사 관리페이지 대시보드 아코디언
+    $(".ward_count").click(function() {
+        $(this).next(".patient_info").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".patient_info").siblings(".patient_info").slideUp(300); // 1개씩 펼치기
+    });
+
+    // $("").on('click',function(){
+    //     $(this).next(".con").slideToggle(100);
+    //   });
+})
