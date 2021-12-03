@@ -126,9 +126,9 @@
         </div>
     </div>
 
-    <!-- 담당의에게 메세지 보내기 -->
-    <div class="pop send_doctor">
-        <div class="overlay" style="display: none;">
+      <!-- 담당의에게 메세지 보내기 -->
+      <div class="pop send_doctor">
+        <div class="overlay">
             <div class="pop_cont">
                 <div class="title">
                     <h1>의료진 선택</h1>
@@ -587,8 +587,8 @@
                 </h1>
     
                 <div class="header_title">
-                    <h1>관리</h1>
-                    <h3>담당 병동, 병실, 병상을 생성하고 관리합니다. 또한 환자를 등록하고, 생체신호 장비를 관리합니다.</h3>
+                    <h1>모니터링</h1>
+                    <h3>담당 환자들의 생체신호를 실시간으로 모니터링 합니다.</h3>
                 </div>
             </div>
     
@@ -612,7 +612,7 @@
 
 
       <!--콘텐츠-->
-      <div id="wrap_content" class="nurse monitoring_patient">
+      <div id="wrap_content" class="nurse monitoring_patient warning">
 
         <nav class="nav">
             <ul class="main_depth">
@@ -649,7 +649,7 @@
         <div class="wrap_inner">
           <section class="section management patient">
               <div class="btn_list">
-                    <button type="button" class="btn_alarm" disabled>
+                    <button type="button" class="btn_alarm">
                         경보해제
                     </button>
 
@@ -759,7 +759,9 @@
                         <div id="tab-1" class="tab-content current">
                             
                             <div class="graph">
-                                <div class="ecg">
+
+                                <!-- 경보일때 active를 붙여주세요 -->
+                                <div class="ecg active">
                                     <div class="ecg_graph">
                                         <p>ECG</p>
 
@@ -774,7 +776,7 @@
 
                                             <input type="checkbox" id="ecg_mute">
                                             <label for="ecg_mute">
-                                              <span></span>
+                                                <span></span>
                                             </label>
                                         </div>
 
@@ -853,7 +855,7 @@
 
                             <div class="control">
                                 <div>
-                                    <div class="ews">
+                                    <div class="ews active">
                                         <div class="bell_name">
                                             <p>EWS</p>
     
@@ -947,7 +949,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="temp">
+                                <div class="temp active">
                                     <div class="bell_name">
                                         <p>Temp.°C</p>
 
@@ -1457,10 +1459,7 @@
                         </div>
 
                         <!-- Event -->
-                        <div id="tab-4" class="tab-content">
-                            
-                            
-                        </div>
+                        <div id="tab-4" class="tab-content">tab content4</div>
                       
                     </div>
                     

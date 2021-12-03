@@ -283,8 +283,49 @@ $(function () {
               $('.btn_send').removeClass('on');
               $('.btn_send').attr('disabled', true);
             }
-          });
+        });
 
+        // 경보해제
+        $('.warning .emergency_list .circum').on('click', function(){
+            location.href="patient.html";
+        })
+
+        // 경보해제 페이지로 이동
+        $('.patient_vital .all_patient .patient_moniter.active').on('click', function(){
+            location.href="patient_warning.html";
+        })
+
+
+
+
+     //메세지
+        $('.nurse_message .btn_message').on('click', function(){
+            $('.nurse_message .message_list').hide();
+            $('.nurse_message .message_talk').hide();
+
+            $('.nurse_message .select_medi').show();
+            $('.nurse_message .send_message').show();
+        })
+
+        // 메세지 전송완료 팝업
+        $('.message .send_message .btn_list .btn_send').on('click', function(){
+            $('.pop.message_send .overlay').show();
+        })
+
+        $('.pop.message_send .btn_check').on('click', function(){
+            $('.pop.message_send .overlay').hide();
+
+            $('.nurse_message .message_list').show();
+            $('.nurse_message .message_talk').show();
+
+            $('.nurse_message .select_medi').hide();
+            $('.nurse_message .send_message').hide();
+        })
+
+        // 메세지 정렬 팝업
+        $('.nurse_message .message_talk .search_container .btn_sort').on('click', function () {
+            $('.pop.chat_sort').toggle();
+        });
 
 
 
@@ -374,3 +415,16 @@ $(document).ready(function(){
     })
   
   })
+
+$(function(){
+    //  간호사 관리페이지 대시보드 아코디언
+    $(".ward_count").click(function() {
+        $(this).next(".patient_info").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".patient_info").siblings(".patient_info").slideUp(300); // 1개씩 펼치기
+    });
+
+    // $("").on('click',function(){
+    //     $(this).next(".con").slideToggle(100);
+    //   });
+})

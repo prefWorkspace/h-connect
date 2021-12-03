@@ -93,13 +93,13 @@
             <div>
                 <div style="width: 110px;"></div>
     
-                <div class="search_container">
+                <!-- <div class="search_container">
                     <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
     
                     <button type="button" class="btn_search">
                         <img src="../img/header/search.svg" alt="검색표시">
                     </button>
-                </div>
+                </div> -->
     
                 <button type="button" class="btn_logout">
                     심장병동 간호사실
@@ -116,19 +116,19 @@
             <ul class="main_depth">
               <li class="list off">
                 <a class="link" href="monitoring.html">
-                    <img src="../img/header/monitoring.png" alt="모니터 아이콘">
+                    <img src="../img/header/monitoring.svg" alt="모니터 아이콘">
                     <span>모니터링</span>
                 </a>
               </li>
 
-              <li class="list off">
+              <li class="list off clinic">
                 <a class="link" href="index.html">
                     <img src="../img/header/clinic.svg" alt="사람모양 아이콘">
                     <span>관리</span>
                 </a>
               </li>
 
-              <li class="list on">
+              <li class="list on dash">
                 <a class="link" href="dashboard.html">
                     <img src="../img/header/dashboard.svg" alt="대시보드 아이콘">
                     <span>대시보드</span>
@@ -136,7 +136,7 @@
               </li>
 
               <li class="list off">
-                <a class="link" href="#">
+                <a class="link" href="message.html">
                     <img src="../img/header/message.svg" alt="메세지 아이콘">
                     <span>메세지</span>
                 </a>
@@ -145,19 +145,779 @@
         </nav>
 
         <div class="wrap_inner">
-          <section class="section management patient">
-        
+          <section class="section left taget_list">
+              <div class="title">
+                <div>
+                  <div>
+                    <img src="../img/header/dashboard.svg" alt="대시보드 아이콘">
+                  </div>
+                  
+                  <h2>모니터링 대상</h2>
+                </div>
+                
+                <p>대시보드에 등록할 모니터링 대상자를 설정합니다.</p>
+                
+              </div>
+
+              <div class="taget_select">
+                <div class="select_head">
+                  <div>
+                    <input type="checkbox" id="ward_check">
+                    <label for="ward_check">
+                      <span></span>
+                      <p>병동선택</p>
+                    </label>
+                  </div>
+
+                  <div class="select_box select_ward">
+                    <button class="label ward_label">심장병동</button>
+
+                    <ul class="optionList ward_list" style="display: none;">
+                        <li class="optionItem ward_list">심장병동</li>
+                        <li class="optionItem ward_list">12 병동</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 호실별 대상 체크 -->
+                <div class="select_inner">
+                  <!-- 1301 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1301">
+                    <label for="ward_1301">
+                      <span></span>
+                      <p>1301호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no" id="patient_1">
+                      <label for="patient_1">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no" id="patient_2">
+                      <label for="patient_2">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no" id="patient_3">
+                      <label for="patient_3">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no" id="patient_4">
+                      <label for="patient_4">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1302 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1302">
+                    <label for="ward_1302">
+                      <span></span>
+                      <p>1302호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no2" id="patient_021">
+                      <label for="patient_021">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no2" id="patient_022">
+                      <label for="patient_022">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no2" id="patient_023">
+                      <label for="patient_023">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no2" id="patient_024">
+                      <label for="patient_024">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1303 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1303">
+                    <label for="ward_1303">
+                      <span></span>
+                      <p>1303호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no3" id="patient_031">
+                      <label for="patient_031">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no3" id="patient_032">
+                      <label for="patient_032">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no3" id="patient_033">
+                      <label for="patient_033">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no3" id="patient_034">
+                      <label for="patient_034">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1304 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1304">
+                    <label for="ward_1304">
+                      <span></span>
+                      <p>1304호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no4" id="patient_041">
+                      <label for="patient_041">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no4" id="patient_042">
+                      <label for="patient_042">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no4" id="patient_043">
+                      <label for="patient_043">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no4" id="patient_044">
+                      <label for="patient_044">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1305 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1305">
+                    <label for="ward_1305">
+                      <span></span>
+                      <p>1305호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no5" id="patient_051">
+                      <label for="patient_051">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no5" id="patient_052">
+                      <label for="patient_052">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no5" id="patient_053">
+                      <label for="patient_053">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no5" id="patient_054">
+                      <label for="patient_054">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1306 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1306">
+                    <label for="ward_1306">
+                      <span></span>
+                      <p>1306호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no6" id="patient_061">
+                      <label for="patient_061">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no6" id="patient_062">
+                      <label for="patient_062">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no6" id="patient_063">
+                      <label for="patient_063">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no6" id="patient_064">
+                      <label for="patient_064">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1307 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1307">
+                    <label for="ward_1307">
+                      <span></span>
+                      <p>1307호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox"  name="patient_no7" id="patient_071">
+                      <label for="patient_071">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox"  name="patient_no7" id="patient_072">
+                      <label for="patient_072">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox"  name="patient_no7" id="patient_073">
+                      <label for="patient_073">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox"  name="patient_no7" id="patient_074">
+                      <label for="patient_074">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1308 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1308">
+                    <label for="ward_1308">
+                      <span></span>
+                      <p>1308호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no8" id="patient_081">
+                      <label for="patient_081">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no8" id="patient_082">
+                      <label for="patient_082">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no8" id="patient_083">
+                      <label for="patient_083">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no8" id="patient_084">
+                      <label for="patient_084">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1309 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1309">
+                    <label for="ward_1309">
+                      <span></span>
+                      <p>1309호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no9" id="patient_091">
+                      <label for="patient_031">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no9" id="patient_092">
+                      <label for="patient_032">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no9" id="patient_093">
+                      <label for="patient_033">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no9" id="patient_094">
+                      <label for="patient_034">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1310 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1310">
+                    <label for="ward_1310">
+                      <span></span>
+                      <p>1310호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no10" id="patient_101">
+                      <label for="patient_031">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no10" id="patient_102">
+                      <label for="patient_032">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no10" id="patient_103">
+                      <label for="patient_033">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no10" id="patient_104">
+                      <label for="patient_034">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 1311 -->
+                  <div class="ward_count">
+                    <input type="checkbox" id="ward_1311">
+                    <label for="ward_1311">
+                      <span></span>
+                      <p>1311호실</p>
+                    </label>
+                  </div>
+
+                  <div class="patient_info">
+                    <div>
+                      <input type="checkbox" name="patient_no11" id="patient_111">
+                      <label for="patient_031">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no11" id="patient_112">
+                      <label for="patient_032">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no11" id="patient_113">
+                      <label for="patient_033">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" name="patient_no11" id="patient_114">
+                      <label for="patient_034">
+                        <span></span>
+                        <p>김환자
+                          (63.남.patient no)
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </section>
 
-          <section class="section arteriotony_input">
-        
+          <button type="button" class="btn_add">추가</button>
+
+          <section class="section right taget_view">
+            <div class="title">
+              <div>
+                <h2>대시보드 화면</h2>
+                
+                <div class="btn_list">
+                  <button type="button" class="btn_first on">1번 화면</button>
+                  <button type="button" class="btn_second">2번 화면</button>
+                  <button type="button" class="btn_addView">+ 화면추가</button>
+                </div>
+              </div>
+
+              <button type="button" class="btn_state" onclick="window.open('ward_dashboard.html')">현재상태 적용</button>
+            </div>
              
+            <div class="inpat">
+              <div class="left">
+                <div class="account">
+                  <p>H-Connect inpatient monitoring system</p>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+              </div>
+
+              <div class="center">
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+              </div>
+
+              <div class="right">
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+
+                <div class="check_pati">
+                  <input type="checkbox" id="inpati">
+                  <label for="inpati">Patient Type-Patient ID</label>
+                </div>
+              </div>
+
+
+            </div>
+
+              
+            </div>
           </section>
         </div>
       </div>
 
     </div>
     <!--// end wrap-->
+
+    <script>
+
+    </script>
 
   </body>
 </html>

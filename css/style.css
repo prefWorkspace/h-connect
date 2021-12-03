@@ -51,7 +51,6 @@
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
 .main .check input[type='checkbox']:checked+label span{
@@ -185,6 +184,7 @@
 /* 병동관리 */
 .nurse .left{
     width: 640px;
+    /* height: fit-content; */
     padding: 16px;
     margin: 0 32px;
 }
@@ -199,12 +199,12 @@
 .nurse .right .title div{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 
 .nurse .left .title h2,
 .nurse .right .title h2{
-    margin-top: 7px;
     font-size: 16px;
     font-weight: 500;
     color: #007A94;
@@ -343,6 +343,7 @@
 /* 병실관리 */
 .nurse .right{
     width: 640px;
+    /* height: fit-content; */
     padding: 16px;
 }
 
@@ -1397,25 +1398,24 @@
     padding: 0;
 }
 
-
-.monitoring_patient .patient .btn_list button{
+.monitoring_patient .btn_list button{
     width: 100%;
     margin-bottom: 16px;
     height: 72px;
     border-radius: 8px;
 }
 
-.monitoring_patient .patient .btn_list .btn_alarm{
+.monitoring_patient .btn_list .btn_alarm{
     font-size: 24px;
     text-align: center;
 }
 
-.monitoring_patient .patient .btn_list .btn_alarm{
+.monitoring_patient .btn_list .btn_alarm{
     background: #ccc;
     color: #eee;
 }
 
-.monitoring_patient .patient .btn_list .btn_alarm_red{
+.monitoring_patient .btn_list .btn_alarm_red{
     font-size: 24px;
     color: #fff;
     background: linear-gradient(to right, #940045,#4A0000);
@@ -1428,6 +1428,8 @@
 }
 
 .monitoring_patient .emergency_list .response{
+    font-size: 24px;
+    color: #007A94;
     background: #fff;
     border: 1px solid #007A94;
 }
@@ -1435,14 +1437,11 @@
 .monitoring_patient .emergency_list .circum{
     padding: 16px;
     background: linear-gradient(to right, #940045,#4A0000);
+    font-size: 16px;
     color: #fff;
 }
 
-.monitoring_patient .emergency_list .circum p{
-    font-size: 16px;
-}
-
-.monitoring_patient .emergency_list .circum small{
+.monitoring_patient .emergency_list .circum span{
     font-size: 12px;
 }
 
@@ -1474,12 +1473,12 @@
     padding:0 16px 16px;
 }
 
-.monitoring_patient .patient .management_list{
+.monitoring_patient .management_list{
     margin: 0;
     padding: 24px 8px;
 }
 
-.monitoring_patient .patient .management_list .list{
+.monitoring_patient .management_list .list{
     width: 100%;
 }
 
@@ -1490,7 +1489,7 @@
 .monitoring_patient .vital_chart{
     width: 1316px;
     height: 720px;
-    margin:0 72px 0 32px;
+    margin-left: 32px;
 }
 
 .monitoring_patient .vital_chart .title{
@@ -1511,7 +1510,7 @@
     margin-right: 56px;
 }
 
-.monitoring_patient .vital_chart .title .chart_time{
+.monitoring_patient .chart_time{
     display: inline-block;
     float: right;
 }
@@ -1558,61 +1557,61 @@
     display: inherit;
 }
 
-.monitoring_patient .cont .ecg,
-.monitoring_patient .cont .sp,
-.monitoring_patient .cont .resp,
-.monitoring_patient .cont .control{
+.monitoring_patient .ecg,
+.monitoring_patient .sp,
+.monitoring_patient .resp,
+.monitoring_patient .control{
     display: flex;
     justify-content: space-between;
 }
 
-.monitoring_patient .cont .ecg p{
+.monitoring_patient .ecg p{
     color: #00FF22;
 }
 
-.monitoring_patient .cont .sp p{
+.monitoring_patient .sp p{
     color: #00FFFF;
 }
 
-.monitoring_patient .cont .resp p{
+.monitoring_patient .resp p{
     color: #FFEE00;
 }
 
-.monitoring_patient .cont .ecg_graph> div,
-.monitoring_patient .cont .sp_graph> div,
-.monitoring_patient .cont .resp_graph> div{
+.monitoring_patient .ecg_graph> div,
+.monitoring_patient .sp_graph> div,
+.monitoring_patient .resp_graph> div{
     margin-top: 20px;
 }
 
-.monitoring_patient .cont .bell{
+.monitoring_patient .bell{
     width: 160px;
     height: 104px;
     padding: 8px 16px;
 }
 
-.monitoring_patient .cont .bell> div{
+.monitoring_patient .bell> div{
     display: flex;
 }
 
-.monitoring_patient .cont .bell_name{
+.monitoring_patient .bell_name{
     display: flex;
     justify-content: space-between;
 }
 
-.monitoring_patient .cont .bell_name p{
+.monitoring_patient .bell_name p{
     font-size: 14px;
 }
 
-.monitoring_patient .cont .bell_name input[type="checkbox"],
-.monitoring_patient .cont .bell_name input[type="checkbox"]{
+.monitoring_patient .bell_name input[type="checkbox"],
+.monitoring_patient .bell_name input[type="checkbox"]{
     display: none;
 }
 
-.monitoring_patient .cont .bell_name input[type="checkbox"]+label span{
+.monitoring_patient .bell_name input[type="checkbox"]+label span{
     margin-top: 10px;
 }
 
-.monitoring_patient .cont .ecg .bell_name input[type="checkbox"]+label span{
+.monitoring_patient .ecg .bell_name input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -1620,119 +1619,106 @@
     vertical-align: middle;
     background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
     filter: invert(57%) sepia(94%) saturate(2086%) hue-rotate(86deg) brightness(114%) contrast(120%);
-    cursor: pointer;
 }
 
-.monitoring_patient .cont .sp .bell_name input[type="checkbox"]+label span{
+.monitoring_patient .sp .bell_name input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
-.monitoring_patient .cont .resp .bell_name input[type="checkbox"]+label span{
+.monitoring_patient .resp .bell_name input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
-.monitoring_patient .cont .bell_name input[type='checkbox']:checked+label span{
+.monitoring_patient .bell_name input[type='checkbox']:checked+label span{
     background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
-.monitoring_patient .cont .bell_namek input[type="checkbox"]{
+.monitoring_patient .bell_namek input[type="checkbox"]{
     display: none;
 }
 
-.monitoring_patient .cont .bell_num{
+.monitoring_patient .bell_num{
     display: flex;
     justify-content: space-between;
 }
 
-.monitoring_patient .cont .bell_num> div{
-    margin-top: 11px;
+.monitoring_patient .bell_num> div{
+    align-self: center;
 }
 
-.monitoring_patient .cont .bell_num p{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 18px;
-}
-
-.monitoring_patient .cont .bell_num> p{
-    font-size: 48px;
-}
-
-.monitoring_patient .cont .control{
+.monitoring_patient .control{
     margin-bottom: 39px;
 }
 
-.monitoring_patient .cont .control> div:not(.temp){
+.monitoring_patient .control> div:not(.temp){
     display: flex;
 }
 
-.monitoring_patient .cont .control .ews{
+.monitoring_patient .control .ews{
     width: 88px;
     padding: 16px;
     color: #fff;
 }
 
-.monitoring_patient .cont .control .ews .bell_name p{
+.monitoring_patient .control .ews .bell_name p{
     margin-right: 7px;
 }
 
-.monitoring_patient .cont .control .ews .bell_num{
+.monitoring_patient .control .ews .bell_num{
     width: 50px;
     margin-left: 20px;
     display: flex;
     justify-content: initial;
 }
 
-.monitoring_patient .cont .control .ews .bell_num> div{
+.monitoring_patient .control .ews .bell_num> div{
     margin-top: -4px;
 }
 
-.monitoring_patient .cont .control .ews .bell_num> p{
+.monitoring_patient .control .ews .bell_num> p{
     margin-right: 8px;
 }
 
-.monitoring_patient .cont .control .bell_name input[type="checkbox"]+label span{
+.monitoring_patient .control .bell_name input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
-.monitoring_patient .cont .control .bell_name input[type='checkbox']:checked+label span{
+.monitoring_patient .control .bell_name input[type='checkbox']:checked+label span{
     background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
-.monitoring_patient .cont .control .mmhg{
+.monitoring_patient .mmhg{
     width: 260px;
     padding: 16px;
     margin: 0 72px 0 64px;
     color: #fff;
 }
 
-.monitoring_patient .cont .control .time div{
+.monitoring_patient .time div{
     width: 15px;
     height: 15px;
     display: inline-block;
     vertical-align: middle;
 }
 
-.monitoring_patient .cont .control .time p{
+.monitoring_patient .time p{
     margin-top: -2px;
     margin-right: 8px;
     font-size: 11px;
@@ -1740,146 +1726,221 @@
     vertical-align: middle;
 }
 
-.monitoring_patient .cont .control .pulse{
+.monitoring_patient .pulse{
     width: 160px;
     padding: 16px;
     color: #00FFFF;
 }
 
-.monitoring_patient .cont .control .pulse .time p{
+.monitoring_patient .pulse .time p{
     margin: 0 4px 0 0;
 }
 
-.monitoring_patient .cont .control .pulse .time> :last-child {
+.monitoring_patient .pulse .time> :last-child {
     margin-right: 0px;
 }
 
-.monitoring_patient .cont .control .temp{
+.monitoring_patient .temp{
     width: 160px;
     padding: 16px;
     color: #FF3184;
 }
 
-.monitoring_patient .cont .control .temp .bell_num> div {
-    margin-top: 7px;
-}
 
-.monitoring_patient .cont .control .temp .bell_name input[type="checkbox"]+label span{
+.monitoring_patient .temp .bell_name input[type="checkbox"]+ label span{
     display: inline-block;
     width: 24px;
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/icon/btn_temp_alarm.png') no-repeat 0 0px / contain;
-    cursor: pointer;
+
 }
 
-.monitoring_patient .cont .control .temp .bell_name input[type='checkbox']:checked+label span{
+.monitoring_patient .temp .bell_name input[type='checkbox']:checked+label span{
     background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
 /* tabular trend */
-.monitoring_patient .cont .tabular_table{
-}
-
-.monitoring_patient .cont .tabular_table .table_title{
+.monitoring_patient .tabular_table .table_title{
     height: 32px;
     padding: 7px 16px;
     background: #222;
 }
 
-.monitoring_patient .cont .tabular_table .table_title p {
+.monitoring_patient .tabular_table .table_title p {
     margin-right: 83px;
     display: inline-block;
     font-size: 12px;
     color: #ccc;
 }
 
-.monitoring_patient .cont .tabular_table .table_title .hr{
+.monitoring_patient .tabular_table .table_title .hr{
     margin-right: 51px;
 }
 
-.monitoring_patient .cont .tabular_table .table_title .temp{
-    margin-right: 50px;
+.monitoring_patient .tabular_table .table_title .temp{
+    padding: 0;
 }
 
-.monitoring_patient .cont .tabular_table .table_title .ews{
+.monitoring_patient .tabular_table .table_title .ews{
     margin-right: 55px;
 }
 
-.monitoring_patient .cont .tabular_table .table_title .spo{
+.monitoring_patient .tabular_table .table_title .spo{
     margin-right: 60px;
 }
 
-.monitoring_patient .cont .tabular_table .table_content{
+.monitoring_patient .tabular_table .table_content{
     height: 32px;
     padding: 8px 16px 7px;
     border-bottom: 1px solid #888;
 }
 
-.monitoring_patient .cont .tabular_table .table_content div{
+.monitoring_patient .tabular_table .table_content div{
     display: inline-block;
 }
 
-.monitoring_patient .cont .tabular_table .table_content p{
+.monitoring_patient .tabular_table .table_content p{
     font-size: 12px;
     color: #ccc;
     display: inline-block;
 }
 
-.monitoring_patient .cont .tabular_table .table_content .date_time{
+.monitoring_patient .tabular_table .table_content .date_time{
     margin-right: 40px;
 }
 
-.monitoring_patient .cont .tabular_table .table_content .hr{
+.monitoring_patient .tabular_table .table_content .hr{
     margin-right: 78px;
 }
 
-.monitoring_patient .cont .tabular_table .table_content .temp{
-    margin-right: 78px;
+.monitoring_patient .tabular_table .table_content .temp{
+    margin-right: 85px;
+    padding: 0;
 }
 
-.monitoring_patient .cont .tabular_table .table_content .ews{
+.monitoring_patient .tabular_table .table_content .ews{
     margin-right: 79px;
 }
 
-.monitoring_patient .cont .tabular_table .table_content .spo{
+.monitoring_patient .tabular_table .table_content .spo{
     margin-right: 99px;
 }
 
-.monitoring_patient .cont .tabular_table .table_page ul{
-    margin-top: 56px    ;
+.monitoring_patient .tabular_table .table_page ul{
+    margin-top: 56px;
     text-align: center;
 }
 
-.monitoring_patient .cont .tabular_table .table_page ul li{
+.monitoring_patient .tabular_table .table_page ul li{
     display: inline-block;
     font-size: 11px;
     color: #888;
 }
 
-.monitoring_patient .cont .tabular_table .table_page ul li.active{
+.monitoring_patient .tabular_table .table_page ul li.active{
     color: #fff;
 }
 
-.monitoring_patient .cont .graphical .hr_chart{
+.monitoring_patient .graphical .hr_chart{
     display: flex;
 }
 
-.monitoring_patient .cont .graphical .hr_chart p{
+.monitoring_patient .graphical .hr_chart p{
     color: #888;
 }
 
-.monitoring_patient .cont .graphical .hr_index p{
+.monitoring_patient .graphical .hr_index p{
     color: #fff;
 }
 
-.monitoring_patient .cont .graphical .hr_line{
+.monitoring_patient .graphical .hr_line{
     width: 1136px;
     margin-bottom: 31px;
     border-bottom: 1px solid #eee;
 }
+
+
+/* 모니터링 경보 warning */
+.warning .tabs{
+    margin-bottom: 32px;
+}
+
+.warning .btn_alarm{
+    display: none;
+}
+
+.warning .patient .btn_list .btn_alarm_red{
+    display: block;
+}
+
+.warning .tab-content{
+    padding: 0;
+}
+
+.warning .vital_chart .title{
+    background: linear-gradient(to right, #940045, #4A0000);
+}
+
+.warning .active .ecg_graph{
+    padding: 8px 16px;
+    background: #f00;
+    border-radius: 8px;
+}
+
+.warning .cont .active .bell{
+    background: #f00;
+    border-radius: 8px;
+}
+
+.warning .cont .active .bell_name p{
+    color: #fff;
+}
+
+.warning .cont .active .bell_num p{
+    color: #fff;
+}
+
+.warning .cont .active .bell_name input[type="checkbox"]+ label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(108%) contrast(101%); 
+}
+
+.warning .cont .active .bell_name input[type="checkbox"]:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.warning .cont .control .active{
+    height: 136px;
+    background: #f00;
+    border-radius: 8px;
+}
+
+.warning .cont .control .active input[type="checkbox"]+ label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(108%) contrast(101%);
+}
+.warning .cont .control .active input[type="checkbox"]:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+
+
+
 
 /* arteriotony */
 .arteriotony .arteriotony_input{
@@ -1908,7 +1969,7 @@
     color: #007A94;
 }
 
-.arteriotony .arteriotony_input .title .btn_arte_check{
+.arteriotony .arteriotony_input .btn_arte_check{
     width: 120px;
     height: 40px;
     border-radius: 4px;
@@ -1917,41 +1978,41 @@
     color: #fff;
 }
 
-.arteriotony .arteriotony_input .title .btn_arte_check:hover{
+.arteriotony .arteriotony_input .btn_arte_check:hover{
     background-color: #004F60;
 }
 
-.arteriotony .arteriotony_input .form_arter{
+.arteriotony .form_arter{
     height: 576px;
     padding: 32px 32px 40px;
     border-radius: 8px;
     background-color: #eee;
 }
 
-.arteriotony .arteriotony_input .form_arter .arter_title{
+.arteriotony .form_arter .arter_title{
     width: 100%;
     padding-bottom: 24px;
     margin-bottom: 23px;
     border-bottom: 1px solid #007a94;
 }
 
-.arteriotony .arteriotony_input .form_arter h2{
+.arteriotony .form_arter h2{
     font-size: 16px;
 }
 
-.arteriotony .arteriotony_input .form_arter> div> div{
+.arteriotony .form_arter> div> div{
     margin-bottom: 32px;
 }
 
-.arteriotony .arteriotony_input .form_arter .arter_input> :nth-child(2){
+.arteriotony .form_arter .arter_input> :nth-child(2){
     margin: 0;
 }
 
-.arteriotony .arteriotony_input .form_arter .arter_input> div> h2{
+.arteriotony .form_arter .arter_input> div> h2{
     margin-bottom: 16px;
 }
 
-.arteriotony .arteriotony_input .form_arter input{
+.arteriotony .form_arter input{
     width: 100%;
     height: 48px;
     padding: 12px 24px;
@@ -1959,88 +2020,93 @@
     font-size: 16px;
 }
 
-.arteriotony .arteriotony_input .form_arter .pulse{
-    padding-top: 64px;
+.arteriotony .form_arter .pulse{
+    width: 100%;
+    padding: 64px 0 0 0;
 }
 
-.arteriotony .arteriotony_input .form_arter .pulse .arter_title{
+.arteriotony .form_arter .pulse .arter_title{
+    width: 100%;
     margin-bottom: 16px;
 }
 
-.arteriotony .arteriotony_input .form_arter .pulse .arter_title h2{
+.arteriotony .form_arter .pulse .arter_title h2{
     margin-bottom: 0;
 }
 
-.arteriotony .arteriotony_input .form_arter .pulse> div{
+.arteriotony .form_arter .pulse> div{
     margin: 0;
 }
 
-.arteriotony .arteriotony_input .form_arter .pulse> div h2{
+.arteriotony .form_arter .pulse> div h2{
     margin-bottom: 16px;
+    color: #000;
 }
 
-.arteriotony .arteriotony_input .pre_record{
+.arteriotony .pre_record{
     margin-left: 55px;
 }
 
-.arteriotony .arteriotony_input .pre_record .title{
+.arteriotony .pre_record .title{
     margin-bottom: 56px;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table{
+.arteriotony .record_table{
     width: 568px;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_title{
+.arteriotony .table_title{
     width: 100%;
+    height: 48px;
     padding: 16px 16px 14px;
     border-bottom: 1px solid #eee;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_title p{
+.arteriotony .table_title p{
     margin-right: 22px;
     font-size: 12px;
     display: inline-block;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_title :first-child{
+.arteriotony .table_title :first-child{
     margin-right: 105px;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_title :nth-child(3){
+.arteriotony .table_title :nth-child(3){
     margin-right: 39px;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div{
+.arteriotony .table_body> div{
+    height: 48px;
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .text_box{
+.arteriotony .table_body> div .text_box{
     padding: 8px 0 0;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div> div p{
+.arteriotony .table_body> div> div p{
     margin-right: 26px;
     font-size: 12px;
     display: inline-block;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div> div> :first-child{
+.arteriotony .table_body> div> div> :first-child{
     margin-right: 0;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div> :first-child> :last-child{
+.arteriotony .table_body> div> :first-child> :last-child{
     margin-right: 0;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list{
+.arteriotony .table_body> div .btn_list{
     display: flex;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list button{
+.arteriotony .table_body> div .btn_list button{
     width: 80px;
     height: 32px;
     border-radius: 4px;
@@ -2048,41 +2114,432 @@
     font-size: 12px;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list .btn_modify{
+.arteriotony .table_body> div .btn_list .btn_modify{
     border: 1px solid #007A94;
     color: #007A94;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .btn_list .btn_delete{
+.arteriotony .table_body> div .btn_list .btn_delete{
     margin-left: 8px;
     border: 1px solid #940045;
     color: #940045;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_page{
+.arteriotony .table_page{
     margin-top: 15px;
     text-align: center;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_page ul li{
+.arteriotony .table_page ul li{
     font-size: 12px;
     color: #888;
     display: inline-block;  
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_page ul> :nth-child(2){
+.arteriotony .table_page ul> :nth-child(2){
     margin: 0 2px 0 3px;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_page ul> :nth-child(15){
+.arteriotony .table_page ul> :nth-child(15){
     margin: 0 3px 0 2px;
 }
 
-.arteriotony .arteriotony_input .pre_record .record_table .table_page ul li.active{
+.arteriotony .table_page ul li.active{
     color: #007A94;
 }
 
+/* 대시보드 */
+.dashboard .taget_list{
+    width: 360px;
+    height: 720px;
+    margin: 0;
+}
 
+.dashboard .taget_list .title{
+    margin-bottom: 13px;
+}
+
+.dashboard .taget_list .title div{
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboard .taget_list .title div img{
+    filter: invert(57%) sepia(50%) saturate(4029%) hue-rotate(176deg) brightness(69%) contrast(54%);
+}
+
+.dashboard .taget_list .title div div{
+    width: 16px;
+    height: 12px;
+}
+
+.dashboard .taget_list .title h2{
+    margin: 0 0 0 15px;
+}
+
+/* 대시보드 아코디언 */
+.dashboard .select_head{
+    padding: 14px 0 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard label{
+    display: flex;
+    align-items: center;
+}
+
+.dashboard input{
+    display: none;
+}
+
+.dashboard input[type="checkbox"]+label p{
+    font-size: 12px;
+}
+
+.dashboard input[type="checkbox"]+label span{
+    margin-top: 10px;
+}
+
+.dashboard input[type="checkbox"]+ label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 16px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+}
+
+.dashboard input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+.dashboard .select_head .select_box{
+    width: 160px;
+    height: 36px;
+}
+
+.dashboard .select_head .select_box .ward_label{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.dashboard .select_inner{
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.dashboard .select_inner::-webkit-scrollbar{
+    display: none;
+}
+
+.dashboard .select_inner .ward_count{
+    height: 40px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.dashboard .select_inner .ward_count::after{
+    content: '';
+    width: 12px;
+    height: 6px;
+    position: absolute;
+    background: url(../img/under_arrow.svg) no-repeat;
+    top: 50%;
+    right: 20px;
+}
+
+.dashboard .select_inner .ward_count.on::after{
+    content: '';
+    width: 12px;
+    height: 6px;
+    position: absolute;
+    background: url(../img/under_arrow.svg) no-repeat;
+    top: 50%;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.dashboard .patient_info{
+    display: none;
+}
+
+.dashboard .patient_info> div{
+    padding: 8px 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard .btn_add{
+    width: 104px;
+    height: fit-content;
+    margin: auto 32px;
+    padding: 12px 45px 12px 24px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    background: #fff;
+    font-size: 16px;
+    color: #007A94;
+    position: relative;
+}
+
+.dashboard .btn_add::after{
+    content: '';
+    width: 12px;
+    height: 16px;
+    position: absolute;
+    background: url(../img/icon/btn_add.svg) no-repeat;
+    top: 16px;
+    right: 24px;
+}
+
+.dashboard .taget_view{
+    width: 1176px;
+    height: 720px;
+}
+
+.dashboard .taget_view .title{
+    border: 0;
+    padding: 0;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard .taget_view .title div{
+    align-items: center;
+}
+
+.dashboard .taget_view .title .btn_list button{
+    width: 96px;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.dashboard .taget_view .btn_first{
+    margin-left: 68px;
+}
+
+.dashboard .taget_view .title .btn_list button.on{
+    background: #007A94;
+    color: #fff;
+}
+
+.dashboard .taget_view .btn_second{
+    margin: 0 32px 0 8px;
+}
+
+.dashboard .taget_view .btn_state{
+    width: 120px;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    background: #fff;
+    font-size: 12px;
+    color: #007A94;
+}
+
+.dashboard .inpat{
+    padding: 16px;
+    background: #eee;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard .inpat> div> :last-child{
+    margin-bottom: 0;
+}
+
+.dashboard .inpat .left,
+.dashboard .inpat .right{
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard .inpat .account{
+    width: 360px;
+    height: 48px;
+    padding: 17px;
+    margin-bottom: 16px;
+    background: #007A94;
+    color: #fff;
+}
+
+.dashboard .inpat .account p{
+    font-size: 10px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.dashboard .inpat .check_pati{
+    width: 360px;
+    height: 48px;
+    padding: 17px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    background: #444;
+    display: flex;
+}
+
+.dashboard .inpat .check_pati input{
+    margin-right: 8px;
+    display: block;
+}
+
+.dashboard .inpat .check_pati label{
+    font-size: 10px;
+    color: #fff;
+}
+
+
+/* 대시보드 전체화면 */
+.ward_dashboard{
+    /* height: 100%; */
+    background: #222;
+}
+
+.ward_dashboard .wrap_inner{
+    min-width: 1080px;
+    padding: 20px;
+    display: flex;
+}
+
+.ward_dashboard .wrap_inner> div> :last-child{
+    margin: 0;
+} 
+
+.ward_dashboard .wrap_inner> :nth-child(2){
+    margin: 0 4px;
+}
+
+
+.ward_dashboard .wrap_inner> div > div{
+    width: 624px;
+    height: 112px;
+}
+
+.ward_dashboard .system_title{
+    height: 100%;
+    padding: 32px;
+    margin-bottom: 4px;
+    background: linear-gradient(to right, #004F60, #350039);
+    display: flex;
+}
+
+.ward_dashboard .system_title div{
+    width: 69px;
+    height: 48px;
+}
+
+.ward_dashboard .system_title div img{
+    width: 100%;
+    height: 100%;
+}
+
+.ward_dashboard .system_title .text_box{
+    width: 100%;
+    margin-left: 43px;
+    color: #fff;
+}
+
+.ward_dashboard .text_box p{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.ward_dashboard .text_box h1{
+    font-size: 24px;
+    font-weight: 500;
+    font-weight: normal;
+}
+
+.ward_dashboard .text_box h1 span{
+    font-size: 18px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.ward_dashboard .sys_vital{
+    margin-bottom: 4px;
+    display: flex;
+    background: #000;
+}
+
+.ward_dashboard .graph{
+    padding: 8px 16px;
+}
+
+.ward_dashboard .graph_title{
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ward_dashboard .graph_title p{
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ward_dashboard .graph div{
+    width: 446px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.ward_dashboard .character> div{
+    display: flex;
+}
+
+.ward_dashboard .character> div> div{
+    width: 72px;
+    height: 56px;
+    padding: 4px 8px;
+}
+
+.ward_dashboard .character .ecg{
+    color: #0F2;
+}
+
+.ward_dashboard .character .sp{
+    color: #0FF;
+}
+
+.ward_dashboard .character .resp{
+    color: #ff0;
+}
+
+.ward_dashboard .character .temp{
+    color: #FF3184;
+}
+
+.ward_dashboard .bell_name{
+    font-size: 10px;
+}
+
+.ward_dashboard .bell_num{
+   display: flex;
+   justify-content: space-between;
+}
+
+.ward_dashboard .bell_num div p{
+    font-size: 10px;
+}
+
+.ward_dashboard .bell_num> p{
+    font-size: 24px;
+    align-items: center;
+}
 
 
 
@@ -2169,6 +2626,10 @@
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
+}
+
+.emergency .emergency_recep .list_container .list:hover{
+    background: #eee;
     cursor: pointer;
 }
 
@@ -2183,6 +2644,7 @@
 
 .emergency .emergency_recep .list_container .list .now_time{
     height: 15px;
+    color: #940045;
 }
 
 .emergency .emergency_recep .list_container .list .now_time p{
@@ -2190,7 +2652,7 @@
     display: inline-block;
 }
 
-.emergency .emergency_recep .list_container .list.on .now_time p{
+.emergency .list.on .now_time p{
     color: #fff;
 }
 
@@ -2198,32 +2660,40 @@
     font-size: 12px;
 }
 
-.emergency .emergency_recep .list_container .list.on h3{
+.emergency .emergency_recep .list.on h3{
     color: #fff;
 }
 
-.emergency .emergency_recep .list_container .arrival_time{
+.emergency .arrival_time{
     width: 50%;
     margin-right: 16px;
 }
 
-.emergency .emergency_recep .list_container .list.on .arrival_time{
+.emergency .arrival_time span{
+    color: #007A94;
+}
+
+.emergency .list.on .arrival_time span{
     color: #fff;
 }
 
-.emergency .emergency_recep .list_container .arrival_time p{
+.emergency .arrival_time p{
     font-size: 12px;
     text-align: right;
 }
 
-.emergency .emergency_recep .list_container .arrival_time h3{
+.emergency .list.on .arrival_time p{
+    color: #fff;
+}
+
+.emergency .arrival_time h3{
     font-size: 12px;
     text-align: right;
     display: inline-block;
     position: relative;
 }
 
-.emergency .emergency_recep .list_container .list.on .arrival_time h3::after{
+.emergency .list.on .arrival_time h3::after{
     content: '';
     width: 6px;
     height: 12px;
@@ -2233,7 +2703,7 @@
     right: -16px;
 }
 
-.emergency .emergency_recep .list_container .arrival_time h3::after{
+.emergency .arrival_time h3::after{
     content: '';
     width: 6px;
     height: 12px;
@@ -2243,21 +2713,21 @@
     right: -16px;
 }
 
-.emergency .emergency_recep .list_container .arrival_time> :last-child{
+.emergency .arrival_time> :last-child{
     float: right;
 }
 
-.emergency .emergency_recep .list_container .arrival_time::after{
+.emergency .arrival_time::after{
     content: '';
     display: block;
     clear: both;
 }
 
-.emergency .emergency_recep .emergency_map{
+.emergency .emergency_map{
     margin-top: 24px;
 }
 
-.emergency .emergency_recep .emergency_map .map_title{
+.emergency .map_title{
     padding: 24px 32px;
     background: #fff;
     border-radius: 8px 8px 0 0;
@@ -2265,32 +2735,32 @@
     justify-content: space-between;
 }
 
-.emergency .emergency_recep .emergency_map .map_title h2{
+.emergency .map_title h2{
     font-size: 16px;
     color: #940045;
     vertical-align: middle;
 }
 
-.emergency .emergency_recep .emergency_map .map_title div{
+.emergency .map_title div{
     vertical-align: middle;
 }
 
-.emergency .emergency_recep .emergency_map .map_title p{
+.emergency .map_title p{
     font-size: 14px;        
     display: inline-block;
     vertical-align: middle; 
 }
 
-.emergency .emergency_recep .emergency_map .map_title :first-child span{
+.emergency .map_title :first-child span{
     color: #007A94;
 }  
 
-.emergency .emergency_recep .emergency_map .map_container{
+.emergency .map_container{
     width: 480px;
     height: 264px;
 }
 
-.emergency .emergency_recep .emergency_map .map_container iframe{
+.emergency  .map_container iframe{
     width: 100%;
     height: 100%;
 }
@@ -2462,7 +2932,6 @@
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
 .emergency .patient_status .patient .symptome input[type='checkbox']:checked+label span{
@@ -2516,7 +2985,6 @@
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
 .emergency .patient_status .patient .type .disease> :first-child input[type='checkbox']:checked+label span{
@@ -2568,7 +3036,6 @@
     height: 24px;
     vertical-align: middle;
     background: url('../img/emergency/damage.png') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
 .emergency .patient_status .patient .assessing .part_container input[type='checkbox']:checked+label{
@@ -3005,25 +3472,24 @@
     margin-bottom: 16px;
 }
 
-.emergency .patient .symptome_info .sensorium_check> div input[type="checkbox"]+label span{
+.emergency .patient .symptome_info > div input[type="checkbox"]+label span{
     display: inline-block;
     width: 20px;
     height: 20px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
     background: url('../img/emergency/checkbox_border.png') no-repeat 0 0px / contain;
-    cursor: pointer;
 }
 
-.emergency .patient .symptome_info .sensorium_check> div input[type='checkbox']:checked+label span{
+.emergency .patient .symptome_info > div input[type='checkbox']:checked+label span{
     background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
-.emergency .patient .symptome_info .sensorium_check .double_list input[type="checkbox"]+label{
+.emergency .patient .symptome_info input[type="checkbox"]+label{
     color: #ccc;
 }
 
-.emergency .patient .symptome_info .sensorium_check .double_list input[type="checkbox"]+label span{
+.emergency .patient .symptome_info input[type="checkbox"]+label span{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -3031,54 +3497,53 @@
     vertical-align: middle;
     background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
     color: #eee;
-    cursor: pointer;
 }
 
-.emergency .patient .symptome_info .sensorium_check> div> div input[type='checkbox']:checked+label span{
+.emergency .patient .symptome_info > div> div input[type='checkbox']:checked+label span{
     background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
-.emergency .patient .symptome_info .sensorium_check .double_list{
+.emergency .patient .symptome_info .double_list{
     margin-left: 50px;
     display: flex;
 }
 
-.emergency .patient .symptome_info .sensorium_check .double_list> :first-child{
+.emergency .patient .symptome_info .double_list> :first-child{
     margin-right: 20px;
 }
 
-.emergency .patient .symptome_info .sensorium_check .unre{
+.emergency .patient .symptome_info .unre{
     display: flex;
 }
 
-.emergency .patient .symptome_info .sensorium_check .unre> :first-child{
+.emergency .patient .symptome_info .unre> :first-child{
     margin-right: 7px;
 }
 
-.emergency .patient .symptome_info .sensorium_check .unre .ure_list{
+.emergency .patient .symptome_info .unre .ure_list{
     margin-top: 5px;
     margin-left: 0;
 }
 
-.emergency .patient .symptome_info .pupil{
+.emergency .patient .pupil{
     width: 50%;
 }
 
-.emergency  .patient .symptome_info .pupil .pupil_container,
-.emergency .patient .symptome_info .pupil .pupil_container>div> div{
+.emergency .patient .pupil .pupil_container,
+.emergency .patient .pupil .pupil_container>div> div{
     display: flex;
 }
 
-.emergency .patient .symptome_info .pupil .pupil_container{
+.emergency .patient .pupil .pupil_container{
     justify-content: space-between;
 }
 
-.emergency .patient .symptome_info .pupil> div h2{
+.emergency .patient .pupil> div h2{
     font-weight: normal;
     color: #000;
 }
 
-.emergency .patient .symptome_info .pupil .pupil_container>div> div> label{
+.emergency .patient .pupil .pupil_container>div> div> label{
     width: 46px;
     margin-left: 8px;
     border-bottom: 1px solid #ccc;
@@ -3088,7 +3553,7 @@
     text-align: right;
 }
 
-.emergency .patient .symptome_info .pupil .pupil_container>div> div> label input{
+.emergency .patient .pupil .pupil_container>div> div> label input{
     width: 20px;
     background: none;
 }
@@ -3231,6 +3696,15 @@
     font-size: 14px;
 }
 
+.emergency .vital .vital_monitor .bell_num div p{
+    font-size: 18px;
+}
+
+.emergency .vital .vital_monitor .bell_num p {
+    font-size: 48px;
+}
+
+
 .emergency .ecg_graph p{
     color: #00FF22;
 }
@@ -3293,18 +3767,8 @@
     justify-content: space-between;
 }
 
-.emergency .vital .bell_num p{
-    font-size: 18px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .vital .hr .bell_num> p{
-    font-size: 48px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .vital .hr .bell_num> div{
-    margin-top: 10px;
+.emergency .bell_num> div{
+    align-items: center;
 }
 
 .emergency .vital .control .sp{
@@ -3341,17 +3805,6 @@
     display: flex;
     justify-content: space-between;
 }
-
-.emergency .patient_status .vital .control .sp .bell_num div p{
-    font-size: 18px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .vital .control .sp .bell_num p{
-    font-size: 48px;
-    font-family: 'Bebas Neue', cursive;
-}
-
 /* 바이탈 정보없음 */
 .emergency .vital .no_signal{
     width: 100%;
@@ -3415,21 +3868,6 @@
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .resp .bell_num div p{
-    font-size: 18px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .patient_status .vital .vital_monitor .control .resp .bell_num p{
-    font-size: 48px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .patient_status .vital .hr .bell_num> div{
-    margin-top: 10px;
-}
-
-
 /* mmhg */
 .emergency .patient_status .vital .vital_monitor .control .mmhg{
     width: 260px;
@@ -3465,20 +3903,6 @@
 .emergency .patient_status .vital .vital_monitor .control .mmhg .bell_num{
     display: flex;
     justify-content: space-between;
-}
-
-.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_num div p{
-    font-size: 18px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_num p{
-    font-size: 48px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .patient_status .vital .mmhg .bell_num> div{
-    margin-top: 10px;
 }
 
 .emergency .patient_status .vital .mmhg .time div{
@@ -3519,7 +3943,6 @@
 .emergency .patient_status .vital .vital_monitor .ews .bell_num p {
     margin-right: 8px;
     font-size: 48px;
-    font-family: 'Bebas Neue', cursive;
 }
 
 .emergency .patient_status .vital .ews .bell_name input{
@@ -3562,27 +3985,8 @@
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .temp .bell_num> div{
-    margin-top: -4px;
-}
-
-.emergency .patient_status .vital .temp .bell_num div p{
-    font-size: 18px;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.emergency .patient_status .vital .temp .bell_num p {
-    margin-right: 8px;
-    font-size: 48px;
-    font-family: 'Bebas Neue', cursive;
-}
-
 .emergency .patient_status .vital .temp .bell_name input{
     display: none;
-}
-
-.emergency .patient_status .vital .temp .bell_num> div {
-    margin-top: 7px;
 }
 
 .emergency .patient_status .vital .temp .bell_name input[type="checkbox"]+label span{
@@ -3635,13 +4039,11 @@
 
 .emergency .patient_status .vital .pulse .bell_num div p{
     font-size: 18px;
-    font-family: 'Bebas Neue', cursive;
 }
 
 .emergency .patient_status .vital .pulse .bell_num p {
     margin-right: 8px;
     font-size: 48px;
-    font-family: 'Bebas Neue', cursive;
 }
 
 .emergency .patient_status .vital .pulse .bell_num> div {
@@ -3756,54 +4158,92 @@
 }
 
 /* messasge */
-.para_message .message_list{
+.message .message_list{
     width: 1032px;
     height: 720px;
+    margin: 0;
     padding: 16px;
     border-radius: 8px;
     background: #fff;
 }
 
-.para_message .message_title{
+.nurse_message .message_list .message_title{
     padding: 8px 16px 24px;
+    border: 0;
 }
 
-.para_message .message_title> div,
-.para_message .title_text{
+.message .message_title> div,
+.message .title_text{
     display: flex;
     justify-content: space-between;
 }
 
-.para_message .message_title p{
+.message .message_list .title_text div{
+    display: initial;
+}
+
+.message .message_title{
+    padding: 8px 16px 24px;
+}
+
+.message .message_title p{
     font-size: 12px;
     font-weight: normal;
     color: #444;
 }
 
-.para_message .title_text {
+.message .title_text {
     width: 80px;
     padding: 10px 0;
 }
 
-.para_message .title_text div img{
+.message .title_text div{
+    align-items: center;
+}
+
+.message .title_text div img{
     margin-top: -4px;
     vertical-align: middle;
 }
 
-.para_message .title_text h2{
+.nurse_message .title_text div img{
+    filter: invert(27%) sepia(53%) saturate(7115%) hue-rotate(175deg) brightness(93%) contrast(102%);
+}
+
+.message .title_text h2{
     font-size: 16px;
     font-weight: 500;
-    color: #940045;
     vertical-align: middle;
 }
 
-.para_message .btn_message{
+.message .btn_message{
     width: 120px;
+    height: 40px;
     padding: 12px 13px;
-    background: #940045;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.para_message .title_text h2{
+    color: #940045;
+}
+
+.nurse_message .btn_message{
+    background: #007A94;
+}
+
+.nurse_message .title .btn_message p{
+    color: #fff;
+}
+
+.nurse_message .btn_message img{
+    filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(104deg) brightness(112%) contrast(101%);
+}
+
+.para_message .btn_message{
+    background: #940045;
 }
 
 .para_message .btn_message:hover{
@@ -3811,37 +4251,44 @@
 }
 
 .para_message .btn_message img{
-    margin-top: 3px;
-    vertical-align: middle;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(287deg) brightness(106%) contrast(102%);
 }
 
-.para_message .btn_message p{
-    margin-top: 2px;
+.message .btn_message p{
     font-size: 12px;
     font-weight: normal;
     vertical-align: middle;
     color: #fff;
 }
 
-.para_message .message_list .search_container{
+.nurse_message .message_list title{
+    padding: 0;
+}
+
+.message .message_list .search_container{
     height: 48px;
     padding: 8px 16px;
     background: #eee;
     position: relative;
 }
 
-.para_message .message_list .search_container input{
-    width: 480px;
-    padding: 7px 56px 7px 8px;
-    border-radius: 4px;
+.nurse_message .message_list .search_container{
+    width: 100%;
 }
 
-.para_message .message_list .search_container input::placeholder{
+.message .message_list .search_container input{
+    width: 480px;
+    height: 32px;
+    padding: 7px 56px 7px 8px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.message .message_list .search_container input::placeholder{
     color: #ccc;
 }
 
-.para_message .message_list .search_container .btn_search{
+.message .message_list .search_container .btn_search{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -3850,18 +4297,24 @@
     height: 32px;
     margin-right: 16px;
     border-radius: 4px;
-    background-color: #eee;
+    background-color: #fff;
+}
+
+.nurse_message .btn_search div{
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
 }
 
 .para_message .message_list .search_container .btn_search img{
     filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }
 
-.para_message .talk_list{
+.message .talk_list{
     padding: 16px;
 }
 
-.para_message .talk_list> div{
+.message .talk_list> div{
     height: 48px;
     padding: 18px;
     border-radius: 4px;
@@ -3869,31 +4322,49 @@
     cursor: pointer;
 }
 
-.para_message .talk_list> div:hover{
+.message .talk_list> div:hover{
     background: #eee;
 }
 
-.para_message .talk_list p{
+.message .talk_list p{
     margin-top: -2px;
     font-size: 12px;
 }
 
-.para_message .talk_list> div,
-.para_message .talk_list .left{
+.message .talk_list> div,
+.message .talk_list .left,
+.message .talk_list .message_info{
     display: flex;
     justify-content: space-between;
 }
 
-.para_message .talk_list .talk_time{
+.message .talk_list .message_bell{
+    width: 10px;
+}
+
+.message .talk_list .list.off .message_bell img{
+    filter: invert(68%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(93%) contrast(101%);
+}
+
+.message .talk_list .talk_time{
+    width: 130px;
     margin: 0 16px 0 12px;
     display: flex;
 }
 
-.para_message .talk_list .list.on{
+.message .talk_list .talk_name{
+    width: 100px;
+}
+
+.message .talk_list .list.on{
     background: #940045;
 }
 
-.para_message .talk_list .list.on p{
+.nurse_message .talk_list .list.on {
+    background: #007A94;
+}
+
+.message .talk_list .list.on p{
     color: #fff;
 }
 
@@ -3901,7 +4372,8 @@
     filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }
 
-.para_message .message_talk{
+/* 대화창 */
+.message .message_talk{
     width: 640px;
     height: 720px;
     margin-left: 32px;
@@ -3909,16 +4381,35 @@
     border-radius: 8px;
 }
 
-.para_message .talk_title{
+.nurse_message .message_talk{
+    padding: 0;
+}
+
+.message .talk_title{
     padding: 32px 32px 24px;
 }
 
-.para_message .talk_title> :first-child{
+.nurse_message .message_talk .title{
+    padding: 32px 32px 24px;
+    border: 0;
+}
+
+.nurse_message .message_talk .title> :first-child{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.nurse_message .message_talk .title> :last-child{
+    color: #000;
+}
+
+.message .talk_title> :first-child{
     font-size: 16px;
     font-weight: 500;
 }
 
-.para_message .talk_title :last-child{
+.message .talk_title :last-child{
     margin-top: 13px;
     font-size: 12px;
     font-weight: normal;
@@ -3931,49 +4422,93 @@
     position: relative;
 }
 
-.para_message .message_talk .search_container input{
-    width: 360px;
-    padding: 7px 56px 7px 8px;
-    border-radius: 4px;
+.nurse_message .message_talk .search_container{
+    width: 100%;
+    height: 48px;
+    padding: 8px 32px;
+    border-radius: 0;
+    background: linear-gradient(to right, #007A94, #003D4A);
+    position: relative;
 }
 
-.para_message .message_talk .search_container input::placeholder{
+.message .message_talk .search_container input{
+    width: 360px;
+    height: 32px;
+    padding: 7px 56px 7px 8px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.nurse_message .message_list .search_container input{
+    height: 32px;
+}
+
+.message .message_talk .search_container input::placeholder{
     font-size: 12px;
     font-weight: normal;
     color: #ccc;
 }
 
-.para_message .message_talk .search_container .btn_search{
+.message .message_talk .search_container .btn_search{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 53%;
     width: 48px;
     height: 30px;
-    margin-right: 16px;
+    margin-right: 21px;
     border-radius: 4px;
-    background-color: #eee;
+    background-color: #fff;
 }
 
+.nurse_message .message_talk .search_container .btn_search{
+    padding: 0;
+}
+
+.nurse_message .message_talk .search_container .btn_sort{
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    background: #fff;
+}
+
+.nurse_message .message_talk .search_container .btn_sort div{
+    width: 16px;
+    height: 15px;
+}
+
+
+
+
 /* 채팅 */
-.para_message .chat_inner{
+.message .chat_inner{
     height: 440px;
     padding: 8px 20px;
     background: #E3DBE6;
     overflow-y: scroll;
 }
 
-.para_message .chat_inner::-webkit-scrollbar{
+.nurse_message .chat_inner{
+    background: #C5D8DC;
+}
+
+.message .chat_inner::-webkit-scrollbar{
     width: 8px;
 }
 
-.para_message .chat_inner::-webkit-scrollbar-thumb{
+.message .chat_inner::-webkit-scrollbar-thumb{
     height: 17%;
     border-radius: 10px;
     background: #940045;
 }
 
-.para_message .chat_me{
+.nurse_message .chat_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #007A94;
+}
+
+.message .chat_me{
     width: 100%;
     margin-bottom: 16px;
     display: flex;
@@ -3981,7 +4516,12 @@
     align-items: stretch;
 }
 
-.para_message .chat_me .bouble{
+.message .chat_me p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.message .chat_me .bouble{
     position: relative;
     width: fit-content;
     padding: 14px 16px;
@@ -3990,7 +4530,7 @@
     color: #fff;
 }
 
-.para_message .chat_me .bouble:after{
+.message .chat_me .bouble:after{
     content: '';
     position: absolute;
     right: 0;
@@ -4004,16 +4544,34 @@
     margin-right: -8px;
 }
 
-.para_message .chat_you{
+.nurse_message .chat_me .bouble{
+	background: #007A94;
+}
+
+.nurse_message .chat_me .bouble:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: #007A94;
+    border-right: 0;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+
+.message .chat_you{
     width: 100%;
     margin-bottom: 16px;
 }
 
-.para_message .chat_you> p{
+.message .chat_you> p{
     font-size: 12px;
 }
 
-.para_message .chat_you .bouble{
+.message .chat_you .bouble{
     margin: 7px 0;
     position: relative;
     width: fit-content;
@@ -4023,7 +4581,7 @@
     color: #000;
 }
 
-.para_message .chat_you .bouble:after{
+.message .chat_you .bouble:after{
     content: '';
     position: absolute;
     left: 0;
@@ -4037,23 +4595,23 @@
     margin-left: -8px;
 }
 
-.para_message .chat_window{
+.message .chat_window{
     height: 122px;
     padding: 16px;
     display: flex;
     justify-content: space-between;
 }
 
-.para_message .chat_window textarea{
+.message .chat_window textarea{
     width: 90%;
 }
 
-.para_message .chat_window textarea::placeholder{
+.message .chat_window textarea::placeholder{
     font-size: 14px;
     color: #ccc;
 }
 
-.para_message .chat_window .btn_send{
+.message .chat_window .btn_send{
     width: 48px;
     height: 32px;
     border-radius: 4px;
@@ -4061,14 +4619,54 @@
     font-size: 14px;
     color: #fff;
 }
+
+.nurse_message .chat_window .btn_send{
+    background: #007A94;
+}
+
+.nurse_message .start_clinic{
+    width: 560px;
+    height: 48px;
+    margin: 0 auto 16px;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #007A94, #003D4A);
+    border-radius: 4px;
+    color: #fff;
+}
+
+.nurse_message .start_clinic p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.nurse_message .end_clinic{
+    width: 560px;
+    height: 48px;
+    margin: 0 auto 16px;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.nurse_message .end_clinic p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
 .message_list, .message_talk{display: block;}
 .select_medi, .send_message{display: none;}
 
 
 /* 새로운 메세지 보내기 */
-.para_message .select_medi{
+.message .select_medi{
     width: 1032px;
     height: 720px;
+    margin: 0;
     padding: 16px 16px 32px;
     background: #fff;
     border-radius: 8px;
@@ -4080,7 +4678,11 @@
     color: #940045;
 }
 
-.para_message .emergency_title div{
+.nurse_message .left .emergency_title{
+    border: 0;
+}
+
+.message .emergency_title div{
     margin-bottom: 13px;
     display: flex;
     justify-content: space-between;
@@ -4090,12 +4692,12 @@
     color: #940045;
 }
 
-.para_message .emergency_title p{
+.message .emergency_title p{
     font-size: 12px;
     color: #444;
 }
 
-.para_message .select_list{
+.message .select_list{
     width: 100%;
     height: 48px;
     margin: 18px auto 0;
@@ -4105,114 +4707,143 @@
     display: flex;
 }
 
-.para_message .select_list div{
+.nurse_message .select_list{
+    width: 968px;
+    margin: 0 auto;
+    border: 0;
+    background: #eee;
+}
+
+.message .select_list div{
     width: fit-content;
     margin-right: 20px;
     display: flex;
 }
 
-.para_message .select_list p{
+.message .select_list p{
     margin-top: -2px;
     margin-right: 7px;
     font-size: 12px;
     vertical-align: middle;
 }
 
-.para_message .select_list .btn_doctor_delete{
+.message .select_list .btn_doctor_delete{
     width: 16px;
     height: 16px;
     background: none;
     vertical-align: middle;
 }
 
-.para_message .container{
+.message .container{
     width: 100%;
     padding: 16px;
     display: flex;
     justify-content: space-between;
 }
 
-.para_message .container h2{
+.nurse_message .container{
+    padding: 16px 32px;
+}
+
+.message .container h2{
     font-size: 12px;
     margin-bottom: 11px;
 }
 
-.para_message .favorite_list{
+.message .favorite_list{
     width: 480px;
 }
 
-.para_message .group{
+.message .group{
     border-bottom: 1px solid #940045;
     display: flex;
     justify-content: space-between;
 }
 
-.para_message .group> div{
+.nurse_message .group{
+    border-bottom: 1px solid #007A94;
+}
+
+.message .group> div{
     width: 204px;
     display: flex;
 }
 
-.para_message .group .group_list{
+.message .group .group_list{
     margin-right: 4px;
     padding: 7px 10px;
     border-radius: 4px 4px 0 0;
     background: #ccc;
 }
 
-.para_message .group .group_list p{
+.message .group .group_list p{
     font-size: 12px;
     text-align: center;
     color: #888;
 }
 
-.para_message .group .group_list.on{
+.message .group .group_list.on{
     background: #940045;
 }
 
-.para_message .group .group_list.on p{
+
+.nurse_message .group .group_list.on{
+    background: #007A94;
+}
+
+.message .group .group_list.on p{
     color: #fff;
 }
 
-.para_message .group .btn_next{
+.message .group .btn_next{
     width: 24px;
     padding: 5px 5px 0;
     background: none;
 }
 
-.para_message .group .btn_add{
+.nurse_message .group .btn_next img{
+    filter: invert(124%) sepia(100%) saturate(5863%) hue-rotate(154deg) brightness(48%) contrast(97%);
+}
+
+.message .group .btn_add{
     background: none;
     color: #940045;
 }
 
-.para_message .favorite_list input{
+.nurse_message .group .btn_add{
+    background: none;
+    color: #007A94;
+}
+
+.message .favorite_list input{
     display: none;
 }
 
-.para_message .group_container{
+.message .group_container{
     padding: 16px;
 }
 
-.para_message .group_container> div{
+.message .group_container> div{
     padding: 7px 0;
     display: flex;
     justify-content: space-between;
 }
 
-.para_message .group_container label{
+.message .group_container label{
     display: flex;
     cursor: pointer;
 }
 
-.para_message .group_container label p{
+.message .group_container label p{
     margin-right: 14px;
 }
 
-.para_message .group_container .all_check{
+.message .group_container .all_check{
     padding-top: 0;
 }
 
 /* checkbox */
-.para_message .group_container input[type="checkbox"]+label> span{
+.message .group_container input[type="checkbox"]+label> span{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -4222,12 +4853,27 @@
     cursor: pointer;
 }
 
-.para_message .group_container input[type='checkbox']:checked+label span{
+.message .group_container input[type='checkbox']:checked+label span{
     background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
+.nurse_message .group_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/check.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.nurse_message .group_container input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+
 /* all_check */
-.para_message .all_check input[type="checkbox"]+label> span{
+.message .all_check input[type="checkbox"]+label> span{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -4237,12 +4883,26 @@
     cursor: pointer;
 }
 
-.para_message .all_check input[type='checkbox']:checked+label span{
+.message .all_check input[type='checkbox']:checked+label span{
     background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
+.nurse_message .all_check input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/check.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.nurse_message .all_check input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
 /* favorite check */
-.para_message .favorite_container input[type="checkbox"]+label> span{
+.message .favorite_container input[type="checkbox"]+label> span{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -4252,20 +4912,27 @@
     cursor: pointer;
 }
 
-.para_message .favorite_container input[type='checkbox']:checked+label span{
+.message .favorite_container input[type='checkbox']:checked+label span{
     background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
-.para_message .select_doctor{
+.nurse_message .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.message .select_doctor{
     width: 400px;
 }
 
-.para_message .search_container{
+.message .search_container{
+    width: 100%;
     position: relative;
+    padding: 0;
 }
 
-.para_message .search_container input{
+.message .search_container input{
     width: 100%;
     padding: 7px 30px 7px 7px;
     background: #eee;
@@ -4274,12 +4941,12 @@
     font-weight: normal;
 }
 
-.para_message .search_container input::placeholder{
+.message .search_container input::placeholder{
     font-weight: normal;
     color: #ccc;
 }
 
-.para_message .search_container .btn_search{
+.message .search_container .btn_search{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -4288,62 +4955,66 @@
     padding: 5px 0;
 }
 
-.para_message .search_container .btn_search div{
+.message .search_container .btn_search div{
     width: 16px;
     height: 16px;
     margin: 0 auto;
 }
 
-.para_message .search_container .btn_search img{
+.message .search_container .btn_search img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }
 
-.para_message .list_inner{
+.nurse_message .search_container .btn_search img{
+    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.message .list_inner{
     height: 336px;
     margin-top: 8px;
     overflow-y: scroll;
 }
 
-.para_message .list_inner::-webkit-scrollbar{
+.message .list_inner::-webkit-scrollbar{
     width: 8px;
 }
 
-.para_message .list_inner::-webkit-scrollbar-thumb{
+.message .list_inner::-webkit-scrollbar-thumb{
     height: 17%;
     border-radius: 10px;
     background: #ccc;
 }
 
-.para_message .list_inner div{
+.message .list_inner div{
     display: flex;
     justify-content: space-between;
 }
 
-.para_message .list_inner> div{
+.message .list_inner> div{
     padding: 7px 7px;
 }
 
-.para_message .list_inner label{
+.message .list_inner label{
     display: flex;
 }
 
-.para_message .list_inner label p{
+.message .list_inner label p{
     margin-right: 14px;
 }
 
-.para_message .list_inner .favorite_container input{
+.message .list_inner .favorite_container input{
     display: none;
 }
 
-.para_message .list_inner input{
+.message .list_inner input{
     display: none;
 }
 
 /* 의료진선택 checkbox */
-.para_message .list_inner div input[type="checkbox"]+label> span{
+.message .list_inner div input[type="checkbox"]+label> span{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -4353,12 +5024,16 @@
     cursor: pointer;
 }
 
-.para_message .list_inner div input[type='checkbox']:checked+label span{
+.message .list_inner div input[type='checkbox']:checked+label span{
     background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
+.nurse_message .list_inner div input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
 /* 의료진선택 즐겨찾기 */
-.para_message .list_inner .favorite_container input[type="checkbox"]+label> span{
+.message .list_inner .favorite_container input[type="checkbox"]+label> span{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -4368,12 +5043,17 @@
     cursor: pointer;
 }
 
-.para_message .list_inner .favorite_container input[type='checkbox']:checked+label span{
+.message .list_inner .favorite_container input[type='checkbox']:checked+label span{
     background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
-.para_message .send_message{
+.nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.message .send_message{
     width: 640px;
     height: 720px;
     padding: 16px;
@@ -4382,54 +5062,60 @@
     border-radius: 8px;
 }
 
-.para_message .send_message .title{
+.message .send_message .title{
     padding: 16px 16px 24px;
     margin-bottom: 16px;
     border-bottom: 1px solid #eee;
 }
 
-.para_message .send_message .title h2{
+.message .send_message .title h2{
     margin-bottom: 13px;
     font-size: 16px;
     color: #940045;
 }
 
-.para_message .send_message .title p{
+.nurse_message .send_message .title h2{
+    margin-bottom: 13px;
+    font-size: 16px;
+    color: #007A94;
+}
+
+.message .send_message .title p{
     font-size: 12px;
     color: #444;
 }
 
-.para_message .send_message form{
+.message .send_message form{
     padding: 0 16px;
 }
 
-.para_message .send_message form textarea{
+.message .send_message form textarea{
     width: 100%;
     height: 88px;
 }
 
-.para_message .send_message form textarea::placeholder{
+.message .send_message form textarea::placeholder{
     color: #ccc;
 }
 
-.para_message .send_message .btn_list{
+.message .send_message .btn_list{
     float: right;
 }
 
-.para_message .send_message .btn_list button{
+.message .send_message .btn_list button{
     width: 96px;
     height: 32px;
     border-radius: 4px;
     background: #fff;
 }
 
-.para_message .send_message .btn_list .btn_cancel{
+.message .send_message .btn_list .btn_cancel{
     margin-right: 8px;
     border: 1px solid #940045;
     color: #940045;
 }
 
-.para_message .send_message .btn_list .btn_send{
+.message .send_message .btn_list .btn_send{
     border: 1px solid #007A94;
     color: #007A94;
 }
@@ -4438,3 +5124,4 @@
 .para_connect, .para_connect .wrap_inner{
     min-width: 1920px;
 }
+

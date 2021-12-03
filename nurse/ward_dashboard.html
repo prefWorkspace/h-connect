@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>H-Connect</title>
+  <!--Import-->
+  <script type='text/javascript' src='../js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' src='../js/common.js'></script>
+  <script type='text/javascript' src='../js/index.js'></script>
+  <!--css-->
+  <link rel='stylesheet' href='../css/reset.css'>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+  <body>
+
+
+    <div id="wrap">
+
+        <!--콘텐츠-->
+        <div id="wrap_content" class="nurse dashboard ward_dashboard">
+            <div class="wrap_inner">
+                <!-- 왼쪽 -->
+                <div>
+                    <div class="system_title">
+                        <div>
+                            <img src="../img/logo_white.png" alt="하얀색 로고">
+                        </div>
+    
+                        <div class="text_box">
+                            <p>입원환자 모니터링 시스템</p>
+                            <h1>1 병동. 1/2 <span>(26 Monitoring)</span></h1>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- 가운데 -->
+                <div>
+                   
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- 오른쪽 -->
+                <div>
+                   
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sys_vital">
+                        <div class="graph">
+                            <div class="graph_title">
+                                <p>Patient Type - Patient ID</p>
+                                <p>EWS : 3</p>
+                            </div>
+                            
+
+                            <div>
+                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                            </div>
+                        </div>
+
+                        <div class="character">
+                            <div>
+                                <div class="ecg">                                    
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>HR. bpm</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>120</p>
+                                                <p>50</p>
+                                            </div>
+
+                                            <p>108</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>SpO2. %</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>100</p>
+                                                <p>90</p>
+                                            </div>
+
+                                            <p>98</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="resp">
+                                    <div class="bell">
+                                        <div class="bell_name">
+                                            <p>RESP</p>
+                                        </div>
+
+                                        <div class="bell_num">
+                                            <div>
+                                                <p>30</p>  
+                                                <p>8</p>
+                                            </div>
+
+                                            <p>15</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="temp">
+                                    <div class="bell_name">
+                                        <p>Temp.°C</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>39.0</p>
+                                            <p>36.  0</p>
+                                        </div>
+
+                                        <p>36.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+    </div>
+    <!--// end wrap-->
+  </body>
+</html>
+ 

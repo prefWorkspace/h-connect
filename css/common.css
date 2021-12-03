@@ -1,12 +1,3 @@
-body {
-    position: relative;
-}
-
-#wrap_content{
-    height: 100vh;
-    display: flex;
-}
-
 /*================= 헤더 =================*/
 .pc_header{
     min-width: 1880px;
@@ -238,6 +229,14 @@ body {
     filter: invert(0%) sepia(99%) saturate(36%) hue-rotate(0deg) brightness(215%) contrast(100%);
 }
 
+.nurse .nav .clinic img{
+    filter: invert(50%) sepia(0%) saturate(1688%) hue-rotate(14deg) brightness(108%) contrast(91%);
+}
+
+.nurse.patient_vital .nav .list:hover img{
+    filter: invert(0%) sepia(99%) saturate(36%) hue-rotate(0deg) brightness(215%) contrast(100%);
+}
+
 .nav .list.on span{
     color: #fff;
 }
@@ -252,14 +251,10 @@ body {
     filter: invert(0%) sepia(99%) saturate(36%) hue-rotate(0deg) brightness(215%) contrast(100%);
 }
 
-.nurse .nav .list.on:hover img{
-    filter: none;
-}
 
 .nav .list:hover span{
     color: #fff;
 }
-
 
 .emergency .nav .list.on{
     width: 65px;
@@ -267,11 +262,9 @@ body {
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* .nav .list:hover{
-    width: 65px;
-    background: linear-gradient( to right ,#940045, #4A0000);
-    transition:  all 0.7s ease-out;
-} */
+
+
+
 
 
 
@@ -1271,7 +1264,72 @@ body {
     height: 100%;
 }
 
+/* 메세지 전송 완료 */
+.pop.message_send .pop_cont{
+    width: 600px;
+    height: 360px;
+    padding: 64px 0 48px;
+}
 
+.pop.message_send .pop_cont div{
+    width: 46px;
+    height: 32px;
+    margin: 0 auto;
+}
+
+.pop.message_send .pop_cont div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop.message_send h3{
+    margin: 48px 0 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.pop.message_send h2{
+    font-size: 24px;
+    text-align: center;
+    color: #007A94;
+}
+
+.pop.message_send .pop_cont .btn_list{
+    width: 272px;
+    position: initial;
+}
+
+.pop.message_send .pop_cont .btn_list .btn_check{
+    width: 100%;
+    height: 48px;
+    margin-top: 48px;
+}
+
+/* 메세지 정렬 팝업 */
+.pop.chat_sort{
+    width: 144px;
+    height: 96px;
+    padding: 16px;
+    position: absolute;
+    top: 27%;
+    right: 130px;
+    z-index: 10;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.pop.chat_sort p{
+    font-size: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.pop.chat_sort :last-child{
+    margin: 0;
+}
 
 
 
