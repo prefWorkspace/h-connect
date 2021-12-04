@@ -1,18 +1,11 @@
-<<<<<<< HEAD
 body {
     position: relative;
 }
 
 #wrap_content{
-<<<<<<< HEAD
     overflow-y: hidden;
-=======
     display: flex;
->>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
 }
-
-=======
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
 /*================= 헤더 =================*/
 .pc_header{
     min-width: 1880px;
@@ -54,11 +47,8 @@ body {
 }
 
 .pc_header .header_title{
-<<<<<<< HEAD
     margin-right: 350px;
-=======
     /* margin-right: 370px; */
->>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
 }
 
 .pc_header .header_title h1{
@@ -725,8 +715,6 @@ body {
     display: inline-block;
 }
 
-
-<<<<<<< HEAD
 /* resp setting */
 .pop.resp_set .overlay .content{
 }
@@ -876,7 +864,7 @@ body {
 .pop.resp_set .overlay .content .apnea input[type="radio"]{
     display: none;
 }
-=======
+
 /* 혈압 수동입력 */
 .pop.arteriotony_regi .overlay .pop_cont{
     width: 600px;
@@ -1301,9 +1289,6 @@ body {
     display: inline-block;
     float: right;
 }
-<<<<<<< HEAD
->>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
-=======
 
 .pop.send_doctor .btn_send{
     width: 96px;
@@ -2224,5 +2209,3 @@ body {
     right: -12%;
     position: absolute;
 }
-
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73

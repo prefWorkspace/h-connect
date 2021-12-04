@@ -1489,13 +1489,9 @@
 .monitoring_patient .vital_chart{
     width: 1316px;
     height: 720px;
-<<<<<<< HEAD
     /* margin:0 72px 0 32px; */
     margin: 0 55px 0 32px;
-
-=======
     margin-left: 32px;
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
 }
 
 .monitoring_patient .vital_chart .title{
@@ -1770,7 +1766,6 @@
 }
 
 /* tabular trend */
-<<<<<<< HEAD
 .monitoring_patient .wrap_inner{
     overflow: hidden;
 }
@@ -1779,20 +1774,14 @@
     border:1px solid red;
 }
 
-.monitoring_patient .cont .tabular_table .table_title{
-=======
 .monitoring_patient .tabular_table .table_title{
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
     height: 32px;
     padding: 7px 16px;
     background: #222;
 }
 
-<<<<<<< HEAD
-.monitoring_patient .cont .tabular_table .table_title p{
-=======
 .monitoring_patient .tabular_table .table_title p {
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
+
     margin-right: 83px;
     display: inline-block;
     font-size: 12px;
@@ -1867,12 +1856,12 @@
     color: #fff;
 }
 
-<<<<<<< HEAD
 .monitoring_patient .cont .graphical .hr_chart{
     margin-top: 62px;
-=======
+}
+
 .monitoring_patient .graphical .hr_chart{
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
+
     display: flex;
     position: relative;
 }
@@ -1881,12 +1870,12 @@
     color: #888;
 }
 
-<<<<<<< HEAD
+
 .monitoring_patient .cont .graphical .hr_index p{
     margin-right: 31px;
-=======
+}
+
 .monitoring_patient .graphical .hr_index p{
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
     color: #fff;
 }
 
@@ -1896,8 +1885,6 @@
     border-bottom: 1px solid #eee;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .monitoring_patient .cont .graphical .hr_chart> div> div> :last-child{
     margin: 0;
 }
@@ -1983,8 +1970,7 @@
 .monitoring_patient .cont .event .table_body .table_wrap{
     height: 31px;
     padding: 7px 16px;
-=======
-=======
+}
 
 /* 모니터링 경보 warning */
 .warning .tabs{
@@ -2063,9 +2049,6 @@
 
 
 
-
-
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
 /* arteriotony */
 .arteriotony .arteriotony_input{
     width: 1312px;
@@ -2204,13 +2187,11 @@
     height: 48px;
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
->>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
     display: flex;
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 .monitoring_patient .cont .event .table_body .table_wrap> div> div{
     display: inline-block;
 }
@@ -2238,11 +2219,9 @@
 
 .monitoring_patient .cont .event .table_body .table_content .ecg{
     border: 1px solid red;
-=======
-.arteriotony .arteriotony_input .pre_record .record_table .table_body> div .text_box{
-=======
+}
+
 .arteriotony .table_body> div .text_box{
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
     padding: 8px 0 0;
 }
 
@@ -2373,15 +2352,12 @@
     background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
-<<<<<<< HEAD
 .emergency .emergency_recep .title .textbox{
     margin-top: 13px;
->>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
     display: flex;
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
 .monitoring_patient .cont .event .table_body .table_content .ecg p{
     color: #00FF22;
 }
@@ -2424,16 +2400,14 @@
 
 .monitoring_patient .cont .event .table_body .table_content .ecg .bell_name p{
     font-size: 14px;
-=======
-.emergency .emergency_recep .title .textbox p{
-=======
+}
+
 .dashboard .select_head .select_box{
     width: 160px;
     height: 36px;
 }
 
 .dashboard .select_head .select_box .ward_label{
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
     font-size: 12px;
     font-weight: normal;
 }
@@ -5370,5 +5344,3 @@
 .para_connect, .para_connect .wrap_inner{
     min-width: 1920px;
 }
-
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
