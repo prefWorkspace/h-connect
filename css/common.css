@@ -701,6 +701,21 @@ body {
     border-bottom: 1px solid #940045;
 }
 
+/* 이벤트 삭제 팝업 */
+.pop.event .pop_cont h1{
+    font-size: 24px;
+    color: #940045;
+}
+
+.pop.event .pop_cont .btn_delete{
+    width: 128px;
+    padding: 12px;
+    background: #940045;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+}
+
 
 /* resp setting menu */
 .pop.setting_menu input{
@@ -716,21 +731,18 @@ body {
 }
 
 /* resp setting */
-.pop.resp_set .overlay .content{
-}
-
-.pop.resp_set .overlay .content> div> p{
+.pop.setting_menu .content> div> p{
     width: 89px;
     margin-top: 2px;
     margin-right: 48px;
 }
 
-.pop.resp_set .overlay .content .alarm{
+.pop.setting_menu .content .alarm{
     margin-bottom: 16px;
     display: flex;
 }
 
-.pop.resp_set .overlay .content .alarm .container{
+.pop.setting_menu .content .alarm .container{
     width: 84px;
     height: 28px;
     padding: 1px;
@@ -742,7 +754,7 @@ body {
     vertical-align: middle;
 }
 
-.pop.resp_set .overlay .content .alarm .container input{
+.pop.setting_menu .content .alarm .container input{
     position: absolute;
 	height: 1px;
 	width: 1px;
@@ -750,7 +762,7 @@ body {
 	overflow: hidden;
 }
 
-.pop.resp_set .overlay .content .alarm .container label {
+.pop.setting_menu .content .alarm .container label {
     width: 40px;
     height: 24px;
     padding: 5px 11px;
@@ -763,65 +775,67 @@ body {
 }
 
 
-.pop.resp_set .overlay .content .alarm .container label:hover {
+.pop.setting_menu .content .alarm .container label:hover {
 	cursor: pointer;
 }
 
-.pop.resp_set .overlay .content .alarm .container input:checked + label {
+.pop.setting_menu .content .alarm .container input:checked + label {
     color: #fff;
     background-color: #007A94;
 	box-shadow: none;
 }
 
-.pop.resp_set .overlay .content .alarm .container label:first-of-type {
+.pop.setting_menu .content .alarm .container label:first-of-type {
 	border-radius: 4px 0 0 4px;
 }
 
-.pop.resp_set .overlay .content .alarm .container label:last-of-type {
+.pop.setting_menu .content .alarm .container label:last-of-type {
 	border-radius: 0 4px 4px 0;
 }
 
-.pop.resp_set .overlay .content .resp{
+.pop.setting_menu .content .input_num{
     margin-bottom: 16px;
 }
 
-.pop.resp_set .overlay .content .resp .container{
+.pop.setting_menu .content .input_num .container{
     display: inline-block;
 }
 
-.pop.resp_set .overlay .content .resp input{
+.pop.setting_menu .content .input_num input{
     width: 84px;
     height: 28px;
+    margin-right: 8px;
     display: inline-block;
 }
 
-.pop.resp_set .overlay .content .resp input[type=number]::-webkit-inner-spin-button, 
-.pop.resp_set .overlay .content .resp input[type=number]::-webkit-outer-spin-button {  
+.pop.setting_menu .content .input_num input[type=number]::-webkit-inner-spin-button, 
+.pop.setting_menu .content .input_num input[type=number]::-webkit-outer-spin-button {  
    -webkit-appearance: "Always Show Up/Down Arrows";
 }
 
-.pop.resp_set .overlay .content .sweep{
+.pop.setting_menu .content .sweep{
     margin-bottom: 16px;
 }
 
-.pop.resp_set .overlay .content .sweep p{
+.pop.setting_menu  .content .sweep p{
     width: 89px;
     margin-right: 48px;
 }
 
-.pop.resp_set .overlay .content .container{
+.pop.setting_menu .content .container{
     display: inline-block;
 }
 
-.pop.resp_set .overlay .content .sweep input[type="radio"]+label{
+.pop.setting_menu .content .sweep input[type="radio"]+label{
     cursor: pointer;
+    margin-right: 20px;
 }
 
-.pop.resp_set .overlay .content .sweep input[type="radio"]+label span{
+.pop.setting_menu .content .sweep input[type="radio"]+label span{
     margin-top: 10px;
 }
 
-.pop.resp_set .overlay .content .sweep input[type="radio"]+label span{
+.pop.setting_menu .content .sweep input[type="radio"]+label span{
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -831,23 +845,27 @@ body {
     cursor: pointer;
 }
 
-.pop.resp_set .overlay .content .sweep input[type='radio']:checked+label span{
+.pop.setting_menu .content .sweep input[type='radio']:checked+label span{
     background: url('../img/icon/radio_check.png') no-repeat 0 0px / contain;
 }
 
-.pop.resp_set .overlay .content .sweep input[type="radio"]{
+.pop.setting_menu .content .sweep input[type="radio"]{
     display: none;
 }
 
-.pop.resp_set .overlay .content .apnea input[type="radio"]+label{
+.pop.resp_set .content .sweep div{
+    margin-bottom: 10px;
+}
+
+.pop.resp_set .content .apnea input[type="radio"]+label{
     cursor: pointer;
 }
 
-.pop.resp_set .overlay .content .apnea input[type="radio"]+label span{
+.pop.resp_set .content .apnea input[type="radio"]+label span{
     margin-top: 10px;
 }
 
-.pop.resp_set .overlay .content .apnea input[type="radio"]+label span{
+.pop.resp_set .content .apnea input[type="radio"]+label span{
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -857,13 +875,88 @@ body {
     cursor: pointer;
 }
 
-.pop.resp_set .overlay .content .apnea input[type='radio']:checked+label span{
+.pop.resp_set .content .apnea input[type='radio']:checked+label span{
     background: url('../img/icon/radio_check.png') no-repeat 0 0px / contain;
 }
 
-.pop.resp_set .overlay .content .apnea input[type="radio"]{
+.pop.resp_set .content .apnea input[type="radio"]{
     display: none;
 }
+
+.pop.resp_set .content .apnea .container> div{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ECG setting menu */
+.pop.ecg_set .overlay .content> div> p{
+    width: 100px;
+}
+
+.pop.ecg_set .st_set{
+    display: flex;
+}
+
+.pop.ecg_set .st_set .toggle_container{
+    width: 84px;
+    height: 28px;
+    padding: 1px;
+    margin-right: 35px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    overflow: hidden;
+    display: flex;
+    vertical-align: middle;
+}
+
+.pop.ecg_set .st_set .toggle_container input{
+    position: absolute;
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.pop.ecg_set .st_set .toggle_container label {
+    width: 40px;
+    height: 24px;
+    padding: 5px 11px;
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	margin-right: -1px;
+	transition: all 0.1s ease-in-out;
+    color: #888;
+}
+
+
+.pop.ecg_set .st_set .toggle_container label:hover {
+	cursor: pointer;
+}
+
+.pop.ecg_set .st_set .toggle_container input:checked + label {
+    color: #fff;
+    background-color: #444;
+	box-shadow: none;
+}
+
+.pop.ecg_set .st_set .toggle_container label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.pop.ecg_set .st_set .toggle_container label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
+/* temp setting menu */
+.pop.temp_set .content .sweep p {
+    width: 89px;
+    margin-right: 32px;
+}
+
+
 
 /* 혈압 수동입력 */
 .pop.arteriotony_regi .overlay .pop_cont{

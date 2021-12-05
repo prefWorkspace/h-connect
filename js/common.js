@@ -1,16 +1,15 @@
 $(function () {
 
-<<<<<<< HEAD
     // 공통팝업
         // 팝업창 닫기    
         $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
             $('.pop .overlay').hide();
         });
-=======
+
     $('.pop .pop_cont .btn_list .btn_cancel').on('click', function(){
         $('.pop .overlay').hide();
     })
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
+
 
     //---------------------- 간호사 ----------------------//
 
@@ -231,14 +230,22 @@ $(function () {
             location.href="patient.html";
         })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         $('.monitoring_patient .cont .resp .bell').on('click', function(){
             $('.pop.resp_set .overlay').show();
         })
 
-=======
-=======
+        $('.monitoring_patient .cont .ecg .bell').on('click', function(){
+            $('.pop.ecg_set .overlay').show();
+        })
+
+        $('.monitoring_patient .cont .sp .bell').on('click', function(){
+            $('.pop.sp_set .overlay').show();
+        })
+
+        $('.monitoring_patient .temp').on('click', function(){
+            $('.pop.temp_set .overlay').show();
+        })
+
         $('.monitoring_patient .patient .btn_list .btn_alarm').on('click', function(){
             $('.monitoring_patient .patient .btn_list .btn_alarm_red').show();
             $('.monitoring_patient .patient .btn_list .btn_alarm').hide();
@@ -254,8 +261,16 @@ $(function () {
             $('.monitoring_patient .patient .btn_list .btn_alarm').show();
         })
 
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
-        // 혈압 수동입력
+        // 이벤트 삭제 팝업
+        $('.monitoring_patient .table_body .btn_delete').on('click', function(){
+            $('.pop.event .overlay').show();
+        })
+
+        $('.pop.event .btn_delete').on('click', function(){
+            $('.pop.event .overlay').hide();
+        })
+
+    // 혈압 수동입력
         $('.arteriotony .arteriotony_input .title .btn_arte_check').on('click', function(){
             $('.pop.arteriotony_regi .overlay').show();
         })
@@ -277,13 +292,10 @@ $(function () {
             $('.pop.send_doctor .overlay').hide();
         })
 
-<<<<<<< HEAD
->>>>>>> a2a6e9b8795eca86ad0f042833e1e7883bf6b76a
-=======
+
         $('.pop.send_doctor .overlay .btn_send.on').on('click', function(){
             $('.pop.nurse_view').show();
         })
->>>>>>> 917bfdc43a0f074a921ce9687c41a71b269e1c73
 
             // 담당의 메시지 창
             $('.pop.nurse_view .btn_close').on('click', function(){
