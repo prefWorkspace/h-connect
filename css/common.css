@@ -1,11 +1,13 @@
 body {
+    min-height: 100vh;
     position: relative;
 }
 
 #wrap_content{
-    overflow-y: hidden;
+    min-height: calc(100vh - 80px);
     display: flex;
 }
+
 /*================= 헤더 =================*/
 .pc_header{
     min-width: 1880px;
@@ -47,8 +49,7 @@ body {
 }
 
 .pc_header .header_title{
-    margin-right: 350px;
-    /* margin-right: 370px; */
+    width: 600px;
 }
 
 .pc_header .header_title h1{
@@ -122,6 +123,7 @@ body {
 
 .pc_header .patient_view{
     margin-right: 30px;
+    display: flex;
 }
 
 .pc_header .patient_view button{
@@ -1586,7 +1588,11 @@ body {
     width: 720px;
     height: 672px;
     padding: 0;
+    background: #000;
+    border-radius: 0 0 8px 8px;
 }
+
+.pop.monitor  .overlay .pop_cont .title{border:0;}
 
 .pop.monitor .title{
     height: 108px;
@@ -1612,6 +1618,29 @@ body {
     font-size: 24px;
     font-weight: normal;
     color: #940045;
+}
+
+.pop.monitor .btn_situ{
+    width: 180px;
+    height: 64px;
+    background: #888;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: normal;
+    color: #ccc;
+    display: none;
+}
+
+.pop.monitor .btn_response{
+    width: 180px;
+    height: 64px;
+    background: none;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: normal;
+    border: 1px solid #fff;
+    color: #fff;
+    display: none;
 }
 
 .pop.monitor ul{
@@ -1649,34 +1678,58 @@ body {
     display: inherit;
 }
 
-.pop.monitor #tab-1{
-    border: 1px solid red;
-}
-
-.pop.monitor #tab-1 .graph> div{
-    border: 1px solid blue;
+.pop.monitor .graph> div{
     display: flex;
     justify-content: space-between;
 }
 
+.pop.monitor #tab-1 .graph{
+    padding-bottom: 22px;
+    border-bottom: 2px solid #444;
+}
+
 .pop.monitor .ecg{
+    color: #00FF22;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.monitor #tab-1 .ecg{
     height: 95px;
     padding: 12px 8px;
     background: linear-gradient(#DE0076, #CB0000);
     border-radius: 8px;
-    color: #00FF22;
 }
 
+.pop.monitor #tab-1 .active{
+    border: 2px solid #fff;
+}
+
+.pop.monitor .sp,
+.pop.monitor .resp{
+    height: 95px;
+    padding: 12px 8px;
+    border-radius: 8px;
+}
+
+.pop.monitor .sp{margin:11px 0; color:#00F6FF;}
+.pop.monitor .resp{color:#ff0;}
+
 .pop.monitor .ecg_graph,
-.pop.monitor .sp_graph{
+.pop.monitor .sp_graph,
+.pop.monitor .resp_graph{
     width: 560px;
 }
 
-.pop.monitor .ecg_graph p{
+.pop.monitor .ecg_graph p,
+.pop.monitor .sp_graph p,
+.pop.monitor .resp_graph p{
     font-size: 12px;
 }
 
-.pop.monitor .ecg_graph div{
+.pop.monitor .ecg_graph div,
+.pop.monitor .sp_graph div,
+.pop.monitor .resp_graph div{
     width: 560px;
     height: 24px;
     margin-top: 15px;
@@ -1706,8 +1759,345 @@ body {
 
 .pop.monitor .bell_num> p{
     font-size: 32px;
+    font-weight: 500;
 }
 
+.pop.monitor .control{
+    padding-top: 23px;
+    color: #fff;
+}
+
+.pop.monitor .control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.monitor #tab-1 .ews{
+    width: 120px;
+    height: 95px;
+    padding: 6px 25px 13px 12px;
+    margin-top: 25px;
+    border-radius: 8px;
+    background: linear-gradient(#DE0076, #CB0000);
+}
+
+.pop.monitor .ews.on{
+    border: 2px solid #fff;
+}
+
+.pop.monitor .ews .bell_num{
+    width: 42px;
+    margin: 15px 0 0 35px;
+    display: flex;
+    justify-content: initial;
+}
+
+.pop.monitor .ews .bell_num> div{
+    height: 30px;
+    margin-left: 5px;
+}
+
+.pop.monitor .ews .bell_num> div div{
+    width: 16px;
+    height: 8px;
+    margin-bottom: 10px;
+}
+
+.pop.monitor .ews .bell_num> div div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop.monitor .mmhg{
+    width: 236px;
+}
+
+.pop.monitor .time{
+    width: 130px;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+}
+
+.pop.monitor .time div{
+    width: 15px;
+    height: 15px;
+}
+
+.pop.monitor .time p{
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+.pop.monitor .mmhg .bell_name,
+.pop.monitor .pulse .bell_name,
+.pop.monitor .temp .bell_name{
+    margin-bottom: 15px;
+}
+
+.pop.monitor .pulse{
+    color: #00F6FF;
+}
+
+.pop.monitor .pulse img{
+    filter: invert(0) sepia(34%) saturate(5258%) hue-rotate(132deg) brightness(105%) contrast(102%);
+}
+
+.pop.monitor #tab-1 .temp{
+    width: 110px;
+    margin-top: 35px;
+    color: #FF3184;
+}
+
+.pop.monitor #tab-2,
+.pop.monitor #tab-3,
+.pop.monitor #tab-4{
+    padding: 12px 8px;
+}
+
+.pop.monitor .table_title{
+    padding: 7px 100px 7px 18px;
+    margin-top: 24px;
+    font-size: 12px;
+    background: #222;
+    color: #ccc;
+    border-bottom: 1px solid #888;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.monitor .table_title .date_time{
+    margin-right: 83px;
+}
+
+.pop.monitor .table_content{
+    padding: 7px 16px;
+    display: flex;
+    color: #ccc;
+    border-bottom: 1px solid #888;
+}
+
+.pop.monitor .table_content p{
+    font-size: 12px;
+}
+
+.pop.monitor .table_content .date_time{
+    margin-right: 83px;
+}
+
+.pop.monitor .table_content .hr{
+    margin-right: 85px;
+}
+
+.pop.monitor .table_content .temp{
+    margin-right: 70px;
+}
+
+.pop.monitor .table_content .ews{
+    margin-right: 72px;
+}
+
+.pop.monitor .table_content .spo{
+    margin-right: 84px;
+}
+
+.pop.monitor .table_page{
+    width: 250px;
+    margin: 0 auto;
+}
+
+.pop.monitor .table_page .active{
+    color: #fff;
+}
+
+.pop.monitor .table_page ul{
+    background: #000;
+}
+
+.pop.monitor .table_page li{
+    font-size: 12px;
+    color: #888;
+    display: inline-block;
+}
+
+.pop.monitor .date_time{
+    display: flex;
+}
+
+.pop.monitor .hr_chart{
+    padding:  80px 18px 0;
+    display: flex;
+}
+
+.pop.monitor .hr_index{
+    margin-right: 30px;
+    color: #fff;
+}
+
+.pop.monitor .hr_line{
+    padding-top: 33px;
+    border-bottom: 1px solid #888;
+}
+
+.pop.monitor .hr_chart> :nth-child(2)> :first-child{
+    position: relative;
+}
+
+.pop.monitor .hr_img{
+    position: absolute;
+    top: 66%;
+    left: 148px;
+}
+
+.pop.monitor .hr_time{
+    padding: 10px 28px 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.pop.monitor .hr_time p{
+    display: inline-block;
+}
+
+.pop.monitor .hr_time> p{
+    margin-right: 63px;
+}
+
+.pop.monitor .hr_time> :last-child{
+    margin: 0;
+}
+
+.pop.monitor .time_line{
+    position: absolute;
+    top: 55%;
+    left: 49%;
+    margin-left: -2px;
+    color: #ff0;
+}
+
+.pop.monitor .time_line::before {
+    position: absolute;
+    content: '';
+    background: url(/img/icon/trend_tri.png)no-repeat 0 0px / contain;
+    width: 12px;
+    height: 8px;
+    top: 30px;
+    left: 24px;
+}
+
+.pop.monitor .time_line::after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 220px;
+    background-color: #ff0;
+    top: 49px;
+    left: 29px;
+}
+
+.pop.monitor .event .table_body{
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.pop.monitor .table_body::-webkit-scrollbar{
+    width: 8px;
+}
+
+.pop.monitor .table_body::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.pop.monitor .table_wrap{
+    padding: 7px 100px 7px 16px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #ccc;
+    display: flex;
+    cursor: pointer;
+    border-bottom: 1px solid #888;
+}
+
+.pop.monitor .table_wrap.on{
+    border-bottom: 0;
+}
+
+.pop.monitor .table_wrap .date_time{
+    margin-right: 83px;
+}
+
+.pop.monitor .table_wrap .hr{
+    margin-right: 85px;
+}
+
+.pop.monitor .table_wrap .temp{
+    margin-right: 70px;
+}
+
+.pop.monitor .table_wrap .ews{
+    margin-right: 72px;
+}
+
+.pop.monitor .table_wrap .spo {
+    margin-right: 84px;
+}
+
+.pop.monitor .event  .table_content{
+    padding: 20px 0;
+    display: none;
+}
+
+.pop.monitor .table_content .ecg_graph div{
+    width: 560px;
+    height: 74px;
+    margin-top: 15px;
+}
+
+.pop.monitor .table_content .ecg_graph .img_container{
+    width: 540px;
+}
+
+.pop.monitor .table_content .bell{
+    margin-top: 15px;
+}
+
+.pop.monitor .table_content .bell_name{
+    margin-bottom: 10px;
+}
+
+.pop.monitor .table_content .bell_num> p{
+    font-size: 32px;
+}
+
+
+/* 대응중 팝업 */
+.pop.respon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    height: 96px;
+    padding: 13px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+
+.pop.respon h1{
+    font-size: 32px;
+}
+
+.pop.respon h3{
+    font-size: 16px;
+}
 
 
 

@@ -1187,11 +1187,12 @@
 }
 
 .patient_vital .wrap_inner{
-    min-width: 1840px;
+    min-width: 1820px;
     display: block;
 }
 
 .patient_vital .all_patient{
+    width: 1758px;
     border-radius: 0;
     background: none;
 }
@@ -2632,19 +2633,14 @@
     padding: 16px;
     background: #eee;
     border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
 }
 
-.dashboard .inpat> div> :last-child{
-    margin-bottom: 0;
+.dashboard .inpat> div{
+    display: inline-block;
 }
 
-.dashboard .inpat .left,
-.dashboard .inpat .right{
-    width: fit-content;
-    padding: 0;
-    margin: 0;
+.dashboard .inpat> :nth-child(3n+2):not(:nth-child(6n)){
+    margin: 0 12px;
 }
 
 .dashboard .inpat .account{
@@ -2662,51 +2658,50 @@
     text-align: center;
 }
 
-.dashboard .inpat .check_pati{
+.dashboard .check_pati{
     width: 360px;
     height: 48px;
     padding: 17px;
     margin-bottom: 16px;
     border-radius: 4px;
     background: #444;
-    display: flex;
 }
 
-.dashboard .inpat .check_pati input{
+.dashboard .check_pati input{
     margin-right: 8px;
     display: block;
 }
 
-.dashboard .inpat .check_pati label{
+.dashboard .check_pati label{
     font-size: 10px;
     color: #fff;
+}
+
+.dashboard .pati_inner{
+    display: flex;
 }
 
 
 /* 대시보드 전체화면 */
 .ward_dashboard{
-    min-width: 1920px;
-    /* height: 100%; */
     background: #222;
 }
 
 .ward_dashboard .wrap_inner{
-    min-width: 1080px;
+    height: 100vh;
     padding: 20px;
-    display: flex;
+    background: url('../img/logo_gray.png') no-repeat 0 0px / contain;
+    background-position: 80% 95%;
+    background-size: 90px;
 }
 
-.ward_dashboard .wrap_inner> div> :last-child{
-    margin: 0;
-} 
-
-.ward_dashboard .wrap_inner> :nth-child(2){
-    margin: 0 4px;
+.ward_dashboard .sys_vital,
+.ward_dashboard .system_title{
+    display: inline-block;
 }
-
 
 .ward_dashboard .wrap_inner> div > div{
-    width: 624px;
+    width: 618px;
     height: 112px;
 }
 
@@ -2715,21 +2710,24 @@
     padding: 32px;
     margin-bottom: 4px;
     background: linear-gradient(to right, #004F60, #350039);
+}
+
+.ward_dashboard .title_inner{
     display: flex;
 }
 
-.ward_dashboard .system_title div{
+.ward_dashboard .title_inner div{
     width: 69px;
     height: 48px;
 }
 
-.ward_dashboard .system_title div img{
+.ward_dashboard .title_inner div img{
     width: 100%;
     height: 100%;
 }
 
-.ward_dashboard .system_title .text_box{
-    width: 100%;
+.ward_dashboard .title_inner .text_box{
+    width: 250px;
     margin-left: 43px;
     color: #fff;
 }
@@ -2753,11 +2751,15 @@
 
 .ward_dashboard .sys_vital{
     margin-bottom: 4px;
-    display: flex;
     background: #000;
 }
 
+.ward_dashboard .vital_inner{
+    display: flex;
+}
+
 .ward_dashboard .graph{
+    width: 470px;
     padding: 2px;
 }
 
@@ -2839,11 +2841,34 @@
     border-radius: 4px;
 }
 
+.ward_dashboard .active{
+    cursor: pointer;
+}
+
 .ward_dashboard .active .ecg{
     background: linear-gradient(to right, #DE0076, #CB0000);
     border-radius: 4px;
 }
 
+/* 병실 대시보드 데이터 없음 */
+.ward_dashboard .no_data,
+.ward_dashboard .no_bell{
+    display: none;
+}
+
+.ward_dashboard .no_data{
+    width: 480px;
+    color: #444;
+}
+
+.ward_dashboard .no_data div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ward_dashboard .no_bell{
+    color: #444;
+}
 
 
 

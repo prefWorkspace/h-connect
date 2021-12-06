@@ -328,10 +328,36 @@ $(function () {
             location.href="patient_warning.html";
         })
 
+        // 경보해제 페이지 팝업
+        $('.patient_vital .all_patient .patient_moniter.active').on('click', function(){
+            location.href="patient_warning.html";
+        })
+    
+    // 대시보드
+    $('.ward_dashboard .sys_vital.active').on('click', function(){
+        $('.pop.monitor .overlay').show();
+    })
+
+        // 상황해제 버튼 클릭함
+        $('.pop.monitor .btn_clear').on('click', function(){
+            $('.pop.monitor .btn_clear').hide();
+            $('.pop.monitor .btn_situ').show();
+        })
+
+        // 상황해제 버튼 클릭후 팝업 닫히고 active 꺼짐
+        $('.pop.monitor .btn_situ').on('click', function(){
+            $('.pop.monitor .overlay').hide();
+            $('.ward_dashboard .sys_vital').removeClass('active');
+        })
+
+        $('.pop.respon').on('click', function(){
+            $('.pop.respon').hide();
+            $('.pop.monitor .overlay').show();
+        })
 
 
 
-     //메세지
+    //메세지
         $('.nurse_message .btn_message').on('click', function(){
             $('.nurse_message .message_list').hide();
             $('.nurse_message .message_talk').hide();

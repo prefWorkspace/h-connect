@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect</title>
   <!--Import-->
-  <script type='text/javascript' src='../js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' src='../js/common.js'></script>
-  <script type='text/javascript' src='../js/index.js'></script>
+  <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' src='/js/common.js'></script>
+  <script type='text/javascript' src='/js/index.js'></script>
   <!--css-->
-  <link rel='stylesheet' href='../css/reset.css'>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel='stylesheet' href='/css/reset.css'>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
   <body>
@@ -70,510 +70,834 @@
         </div>
     </div>
 
-    <!-- RESP setting menu -->
-    <div class="pop setting_menu">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div class="title">
-                    <h2>RESP Setting menu</h2>
-                </div>
+<!-- 이벤트 삭제 팝업 -->
+<div class="pop delete event">
+    <div class="overlay">
+        <div class="pop_cont">
+            <div>
+                <img src="/img/logo.png" alt="로고">
+            </div>
 
-                <div class="content">
-                    <div>
-                        <p>Alarm</p>
+            <h3>선택한 이벤트를 삭제합니다.</h3>
+            <h1>삭제 하시겠습니까?</h1>
 
-                        <input type="radio" id="btn_off" class="toggle toggle_off">
-                        <label for="btn_off" class="btn_resp_alarm">Off</label>
-
-                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
-                        <label for="btn_on" class="btn_resp_alarm">On</label>
-                    </div>
-
-                    <div>
-                        <p>RESP</p>
-
-                        <input type="number">
-
-                        <input type="number">
-                    </div>
-
-                    <div>
-                        <p>Alarm</p>
-
-                        <input type="radio" id="btn_off" class="toggle toggle_off">
-                        <label for="btn_off" class="btn_resp_alarm">Off</label>
-
-                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
-                        <label for="btn_on" class="btn_resp_alarm">On</label>
-                    </div>
-
-                    <div>
-                        <p>Alarm</p>
-
-                        <input type="radio" id="btn_off" class="toggle toggle_off">
-                        <label for="btn_off" class="btn_resp_alarm">Off</label>
-
-                        <input type="radio" id="btn_on"  class="toggle toggle_on" checked>
-                        <label for="btn_on" class="btn_resp_alarm">On</label>
-                    </div>
-
-                    
-                    
-
-                    
-                </div>
+            <div class="btn_list">
+                <button type="button" class="btn_no">아니요</button>
+                <button type="button" class="btn_delete">네, 삭제합니다</button>
             </div>
         </div>
     </div>
+</div>
 
-      <!-- 담당의에게 메세지 보내기 -->
-      <div class="pop send_doctor">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div class="title">
-                    <h1>의료진 선택</h1>
+<!-- RESP setting menu -->
+<div class="pop setting_menu resp_set">
+    <div class="overlay">
+        <div class="pop_cont">
+            <div class="title">
+                <h2>RESP Setting menu</h2>
+            </div>
+
+            <div class="content">
+                <div class="alarm">
+                    <p>Alarm</p>
+
+                    <div class="container">
+                        <input type="radio" name="resp_alarm" id="btn_off" class="alarm_off">
+                        <label for="btn_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" name="resp_alarm" id="btn_on"  class="alarm_on" checked>
+                        <label for="btn_on" class="btn_resp_alarm">On</label>
+                    </div>
                 </div>
 
-                <div class="container">
-                    <div class="doctor_select">
-                        <div class="select_list">
+                <div class="resp">
+                    <p>RESP</p>
 
-                            <div>
-                                <p>
-                                    <span>김심장</span> 교수
-                                </p>
-    
-                                <button type="button">
-                                    <img src="../img/icon/delete.png" alt="빨간색 닫기 아이콘">
-                                </button>
-                            </div>
-                          
-                        </div>
+                    <div class="container">
+                        <input type="number">
 
-                        <div class="favorite_list">
-                            <h2>즐겨찾기</h2>
-
-                            <div>
-                                <div class="group">
-                                    <div>
-                                        <div class="group_list on">
-                                            <p>심장내과</p>
-                                        </div>
-    
-                                        <div class="group_list">
-                                            <p>그룹2</p>
-                                        </div>
-    
-                                        <div class="group_list">
-                                            <p>그룹3</p>
-                                        </div>
-                                    </div>
-
-                                    <button type="button">
-                                        <img src="../img/icon/펼치기.png" alt="오른쪽 화살표">
-                                    </button>
-
-                                    <div>
-                                        <p>+ 그룹추가</p>
-                                    </div>
-                                </div>
-
-                                <div class="group_container">
-                                    <div>
-                                        <input type="checkbox" id="check1" disabled>
-                                        <label for="check1">
-                                            <span></span>
-                                            
-                                            <p>강내과 교수님</p>
-        
-                                            <p>담당병과</p>
-        
-                                        </label>
-        
-                                        <div class="favorite_container">
-                                            <input type="checkbox" id="favorite1" checked>
-                                            <label for="favorite1">
-                                                <span></span>
-                                            </label>
-                                        </div>  
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" id="check2">
-                                        <label for="check2">
-                                            <span></span>
-                                            
-                                            <p>강내과 교수님</p>
-        
-                                            <p>담당병과</p>
-        
-                                        </label>
-        
-                                        <div class="favorite_container">
-                                            <input type="checkbox" id="favorite2" checked>
-                                            <label for="favorite2">
-                                                <span></span>
-                                            </label>
-                                        </div>  
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" id="check3">
-                                        <label for="check3">
-                                            <span></span>
-                                            
-                                            <p>강내과 교수님</p>
-        
-                                            <p>담당병과</p>
-        
-                                        </label>
-        
-                                        <div class="favorite_container">
-                                            <input type="checkbox" id="favorite3" checked>
-                                            <label for="favorite3">
-                                                <span></span>
-                                            </label>
-                                        </div>  
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" id="check4">
-                                        <label for="check4">
-                                            <span></span>
-                                            
-                                            <p>강내과 교수님</p>
-        
-                                            <p>담당병과</p>
-        
-                                        </label>
-        
-                                        <div class="favorite_container">
-                                            <input type="checkbox" id="favorite4" checked>
-                                            <label for="favorite4">
-                                                <span></span>
-                                            </label>
-                                        </div>  
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" id="check5">
-                                        <label for="check5">
-                                            <span></span>
-                                            
-                                            <p>강내과 교수님</p>
-        
-                                            <p>담당병과</p>
-        
-                                        </label>
-        
-                                        <div class="favorite_container">
-                                            <input type="checkbox" id="favorite5" checked>
-                                            <label for="favorite5">
-                                                <span></span>
-                                            </label>
-                                        </div>  
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" id="check6">
-                                        <label for="check6">
-                                            <span></span>
-                                            
-                                            <p>강내과 교수님</p>
-        
-                                            <p>담당병과</p>
-        
-                                        </label>
-        
-                                        <div class="favorite_container">
-                                            <input type="checkbox" id="favorite6" checked>
-                                            <label for="favorite6">
-                                                <span></span>
-                                            </label>
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <input type="number">
                     </div>
+                </div>
 
-                    <div class="doctor_search">
-                        <div class="search_container">
-                            <input type="text" placeholder="이름 혹은 담당병과명을 입력해주세요.">
-                            <button type="button">
-                                <img src="../img/icon/search.png" alt="돋보기 아이콘">
-                            </button>
+
+                <div class="sweep">
+                    <p>Sweep Speed</p>
+
+                    <div class="container">
+                        <div>
+                            <input type="radio" name="sweep" id="first" checked>
+                            <label for="first">
+                              <span></span>
+                              6.25 mm/s
+                            </label>
+
+                            <input type="radio" name="sweep" id="second">
+                            <label for="second">
+                              <span></span>
+                              12.5 mm/s
+                            </label>
                         </div>
 
-                        <div class="doctor_list">
-                            <div>
-                                <input type="checkbox" id="list_check">
-                                <label for="list_check">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
+                        <div>
+                            <input type="radio" name="sweep" id="third">
+                            <label for="third">
+                              <span></span>
+                              25.0 mm/s
+                            </label>
 
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list">
-                                    <label for="favorite_list">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check2">
-                                <label for="list_check2">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list2">
-                                    <label for="favorite_list2">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check3">
-                                <label for="list_check3">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list3">
-                                    <label for="favorite_list3">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check4">
-                                <label for="list_check4">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list4">
-                                    <label for="favorite_list4">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check5">
-                                <label for="list_check5">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list5">
-                                    <label for="favorite_list5">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check6">
-                                <label for="list_check6">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list6">
-                                    <label for="favorite_list6">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check7">
-                                <label for="list_check7">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list7">
-                                    <label for="favorite_list7">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check8">
-                                <label for="list_check8">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list8">
-                                    <label for="favorite_list8">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check9">
-                                <label for="list_check9">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list9">
-                                    <label for="favorite_list9">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="list_check10">
-                                <label for="list_check10">
-                                    <span></span>
-                                    
-                                    <p>강내과 교수님</p>
-
-                                    <p>담당병과</p>
-
-                                </label>
-
-                                <div class="favorite_container">
-                                    <input type="checkbox" id="favorite_list10">
-                                    <label for="favorite_list10">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="input_message">
-                        <textarea name="" id="to_doctor" cols="30" rows="10" placeholder="메세지를 입력해주세요."></textarea>
-
-                        <div class="btn_list">
-                            <button type="button" class="btn_cancel">취소</button>
-                            <button type="button" class="btn_send">보내기</button>
+                            <input type="radio" name="sweep" id="fourth">
+                            <label for="fourth">
+                              <span></span>
+                              50.0 mm/s
+                            </label>
                         </div>
                         
                     </div>
                 </div>
 
-                <button type="button" class="btn_exit">
-                    <img src="../img/icon/닫기.png" alt="닫기 버튼">
-                </button>
+                <div class="apnea">
+                    <p>Apnea Alarm</p>
 
-                <div class="pop delete_favorite">
-                    <p>즐겨찾기그룹 삭제</p>
-                </div>
 
-                 <!-- 메세지 창 -->
-                <div class="pop nurse_view"  style="display: block;">
-                    <div class="wrap_inner">
-                        <div class="title">
+                    <div class="container">
+                        <div>
                             <div>
-                                <p>강심장 교수님</p>
-
-                                <div class="btn_list">
-                                    <div class="btn_fold">
-                                        <img src="../img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                    </div>
-
-                                    <div class="btn_full">
-                                        <img src="../img/icon/nurse/full.svg" alt="풀화면 아이콘">
-                                    </div>
-
-                                    <div class="btn_close">
-                                        <img src="../img/icon/nurse/close.svg" alt="닫는 아이콘">
-                                    </div>
-                                </div>
+                                <input type="radio" name="apnea" id="ap_first" checked>
+                                <label for="ap_first">
+                                  <span></span>
+                                  off&nbsp
+                                </label>
                             </div>
                             
-                        </div>
-
-                        <div class="search_container">
                             <div>
-                                <input type="text" placeholder="메세지 내용을 입력해주세요">
-    
-                                <button type="button" class="btn_search">
-                                    <div>
-                                        <img src="../img/header/search.svg" alt="검색표시">
-                                    </div>                           
-                                </button>
-                            </div>                            
-
-                            <div class="sort">
-                                <img src="../img/icon/nurse/sorting.svg" alt="정렬아이콘">
+                                <input type="radio" name="apnea" id="ap_second">
+                                <label for="ap_second">
+                                  <span></span>
+                                  10s
+                                </label>
                             </div>
+                            
+                            <div>
+                                <input type="radio" name="apnea" id="ap_third">
+                                <label for="ap_third">
+                                  <span></span>
+                                  15s
+                                </label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="apnea" id="ap_fourth">
+                                <label for="ap_fourth">
+                                  <span></span>
+                                  20s
+                                </label>
+                            </div>                                
                         </div>
-                       
+
+                        <div>
+                            <div>
+                                <input type="radio" name="apnea" id="ap_fifth">
+                                <label for="ap_fifth">
+                                  <span></span>
+                                  25s
+                                </label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="apnea" id="ap_sixth">
+                                <label for="ap_sixth">
+                                  <span></span>
+                                  30s
+                                </label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="apnea" id="ap_seventh">
+                                <label for="ap_seventh">
+                                  <span></span>
+                                  35s
+                                </label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="apnea" id="ap_eighth">
+                                <label for="ap_eighth">
+                                <span></span>
+                                40s
+                                </label>
+                            </div>                                
+                        </div>
+                        
+                    </div>
+                </div>                   
+            </div>
+            
+            <div class="btn_list">
+                <button type="button" class="btn_cancel">취소</button>
+                <button type="button" class="btn_check">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ECG setting menu -->
+<div class="pop setting_menu ecg_set">
+    <div class="overlay">
+        <div class="pop_cont">
+            <div class="title">
+                <h2>ECG Setting menu</h2>
+            </div>
+
+            <div class="content">
+                <div class="alarm">
+                    <p>Alarm</p>
+
+                    <div class="container">
+                        <input type="radio" name="ecg_alarm" id="ecg_off" class="alarm_off">
+                        <label for="ecg_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" name="ecg_alarm" id="ecg_on"  class="alarm_on" checked>
+                        <label for="ecg_on" class="btn_resp_alarm">On</label>
+                    </div>
+                </div>
+
+                <div class="input_num hr">
+                    <p>HR</p>
+
+                    <div class="container">
+                        <input type="number">
+
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div class="input_num exta">
+                    <p>Extreme Tachy</p>
+
+                    <div class="container">
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div class="input_num exbr">
+                    <p>Extreme Brady</p>
+
+                    <div class="container">
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div class="st_set">
+                    <p>ST Setting</p>
+
+                    <div class="toggle_container">
+                        <input type="radio" name="st_alarm" id="st_off" class="alarm_off" checked>
+                        <label for="st_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" name="st_alarm" id="st_on"  class="alarm_on">
+                        <label for="st_on" class="btn_resp_alarm">On</label>
+                    </div>
+
+                    <div class="input_num">
+                        <div class="container">
+                            <input type="number">
+
+                            <input type="number">
+                        </div>
+                    </div>                        
+                </div>
+
+                
+            </div>
+            
+            <div class="btn_list">
+                <button type="button" class="btn_cancel">취소</button>
+                <button type="button" class="btn_check">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- spO2 setting menu -->
+<div class="pop setting_menu sp_set">
+    <div class="overlay">
+        <div class="pop_cont">
+            <div class="title">
+                <h2>SpO2  Setting menu</h2>
+            </div>
+
+            <div class="content">
+                <div class="alarm">
+                    <p>Alarm</p>
+
+                    <div class="container">
+                        <input type="radio" name="sp_alarm" id="sp_off" class="alarm_off">
+                        <label for="sp_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" name="sp_alarm" id="sp_on" class="alarm_on" checked>
+                        <label for="sp_on" class="btn_resp_alarm">On</label>
+                    </div>
+                </div>
+
+                <div class="input_num spo2">
+                    <p>SpO2</p>
+
+                    <div class="container">
+                        <input type="number">
+
+                        <input type="number">
                     </div>
                 </div>
 
             </div>
+            
+            <div class="btn_list">
+                <button type="button" class="btn_cancel">취소</button>
+                <button type="button" class="btn_check">확인</button>
+            </div>
         </div>
     </div>
+</div>
+
+<!-- temp setting menu -->
+<div class="pop setting_menu temp_set">
+    <div class="overlay">
+        <div class="pop_cont">
+            <div class="title">
+                <h2>Temp  Setting menu</h2>
+            </div>
+
+            <div class="content">
+                <div class="alarm">
+                    <p>Alarm</p>
+
+                    <div class="container">
+                        <input type="radio" name="temp_alarm" id="temp_off" class="alarm_off">
+                        <label for="temp_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" name="temp_alarm" id="temp_on" class="alarm_on" checked>
+                        <label for="temp_on" class="btn_resp_alarm">On</label>
+                    </div>
+                </div>
+
+                <div class="input_num resp">
+                    <p>resp</p>
+
+                    <div class="container">
+                        <input type="number">
+
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div class="sweep UNIT">
+                    <p>UNIT</p>
+
+                    <div class="container">
+                        <input type="radio" name="UNIT" id="unit_first">
+                        <label for="unit_first">
+                            <span></span>
+                            °F
+                        </label>
+
+                        <input type="radio" name="UNIT" id="unit_second" checked>
+                        <label for="unit_second">
+                            <span></span>
+                            °C
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="btn_list">
+                <button type="button" class="btn_cancel">취소</button>
+                <button type="button" class="btn_check">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ews setting menu -->
+<div class="pop setting_menu ews_set">
+    <div class="overlay">
+        <div class="pop_cont">
+            <div class="title">
+                <h2>EWS  Setting menu</h2>
+            </div>
+
+            <div class="content">
+                <div class="alarm">
+                    <p>Alarm</p>
+
+                    <div class="container">
+                        <input type="radio" name="ews_alarm" id="ews_off" class="alarm_off">
+                        <label for="ews_off" class="btn_resp_alarm">Off</label>
+
+                        <input type="radio" name="ews_alarm" id="ews_on"  class="alarm_on" checked>
+                        <label for="ews_on" class="btn_resp_alarm">On</label>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="btn_list">
+                <button type="button" class="btn_cancel">취소</button>
+                <button type="button" class="btn_check">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 담당의에게 메세지 보내기 -->
+<div class="pop send_doctor">
+    <div class="overlay" style="display: none;">
+        <div class="pop_cont">
+            <div class="title">
+                <h1>의료진 선택</h1>
+            </div>
+
+            <div class="container">
+                <div class="doctor_select">
+                    <div class="select_list">
+
+                        <div>
+                            <p>
+                                <span>김심장</span> 교수
+                            </p>
+
+                            <button type="button">
+                                <img src="/img/icon/delete.png" alt="빨간색 닫기 아이콘">
+                            </button>
+                        </div>
+                      
+                    </div>
+
+                    <div class="favorite_list">
+                        <h2>즐겨찾기</h2>
+
+                        <div>
+                            <div class="group">
+                                <div>
+                                    <div class="group_list on">
+                                        <p>심장내과</p>
+                                    </div>
+
+                                    <div class="group_list">
+                                        <p>그룹2</p>
+                                    </div>
+
+                                    <div class="group_list">
+                                        <p>그룹3</p>
+                                    </div>
+                                </div>
+
+                                <button type="button">
+                                    <img src="/img/icon/open.png" alt="오른쪽 화살표">
+                                </button>
+
+                                <div>
+                                    <p>+ 그룹추가</p>
+                                </div>
+                            </div>
+
+                            <div class="group_container">
+                                <div>
+                                    <input type="checkbox" id="check1" disabled>
+                                    <label for="check1">
+                                        <span></span>
+                                        
+                                        <p>강내과 교수님</p>
+    
+                                        <p>담당병과</p>
+    
+                                    </label>
+    
+                                    <div class="favorite_container">
+                                        <input type="checkbox" id="favorite1" checked>
+                                        <label for="favorite1">
+                                            <span></span>
+                                        </label>
+                                    </div>  
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="check2">
+                                    <label for="check2">
+                                        <span></span>
+                                        
+                                        <p>강내과 교수님</p>
+    
+                                        <p>담당병과</p>
+    
+                                    </label>
+    
+                                    <div class="favorite_container">
+                                        <input type="checkbox" id="favorite2" checked>
+                                        <label for="favorite2">
+                                            <span></span>
+                                        </label>
+                                    </div>  
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="check3">
+                                    <label for="check3">
+                                        <span></span>
+                                        
+                                        <p>강내과 교수님</p>
+    
+                                        <p>담당병과</p>
+    
+                                    </label>
+    
+                                    <div class="favorite_container">
+                                        <input type="checkbox" id="favorite3" checked>
+                                        <label for="favorite3">
+                                            <span></span>
+                                        </label>
+                                    </div>  
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="check4">
+                                    <label for="check4">
+                                        <span></span>
+                                        
+                                        <p>강내과 교수님</p>
+    
+                                        <p>담당병과</p>
+    
+                                    </label>
+    
+                                    <div class="favorite_container">
+                                        <input type="checkbox" id="favorite4" checked>
+                                        <label for="favorite4">
+                                            <span></span>
+                                        </label>
+                                    </div>  
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="check5">
+                                    <label for="check5">
+                                        <span></span>
+                                        
+                                        <p>강내과 교수님</p>
+    
+                                        <p>담당병과</p>
+    
+                                    </label>
+    
+                                    <div class="favorite_container">
+                                        <input type="checkbox" id="favorite5" checked>
+                                        <label for="favorite5">
+                                            <span></span>
+                                        </label>
+                                    </div>  
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="check6">
+                                    <label for="check6">
+                                        <span></span>
+                                        
+                                        <p>강내과 교수님</p>
+    
+                                        <p>담당병과</p>
+    
+                                    </label>
+    
+                                    <div class="favorite_container">
+                                        <input type="checkbox" id="favorite6" checked>
+                                        <label for="favorite6">
+                                            <span></span>
+                                        </label>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor_search">
+                    <div class="search_container">
+                        <input type="text" placeholder="이름 혹은 담당병과명을 입력해주세요.">
+                        <button type="button">
+                            <img src="/img/icon/search.png" alt="돋보기 아이콘">
+                        </button>
+                    </div>
+
+                    <div class="doctor_list">
+                        <div>
+                            <input type="checkbox" id="list_check">
+                            <label for="list_check">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list">
+                                <label for="favorite_list">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check2">
+                            <label for="list_check2">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list2">
+                                <label for="favorite_list2">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check3">
+                            <label for="list_check3">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list3">
+                                <label for="favorite_list3">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check4">
+                            <label for="list_check4">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list4">
+                                <label for="favorite_list4">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check5">
+                            <label for="list_check5">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list5">
+                                <label for="favorite_list5">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check6">
+                            <label for="list_check6">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list6">
+                                <label for="favorite_list6">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check7">
+                            <label for="list_check7">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list7">
+                                <label for="favorite_list7">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check8">
+                            <label for="list_check8">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list8">
+                                <label for="favorite_list8">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check9">
+                            <label for="list_check9">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list9">
+                                <label for="favorite_list9">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="list_check10">
+                            <label for="list_check10">
+                                <span></span>
+                                
+                                <p>강내과 교수님</p>
+
+                                <p>담당병과</p>
+
+                            </label>
+
+                            <div class="favorite_container">
+                                <input type="checkbox" id="favorite_list10">
+                                <label for="favorite_list10">
+                                    <span></span>
+                                </label>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="input_message">
+                    <textarea name="" id="to_doctor" cols="30" rows="10" placeholder="메세지를 입력해주세요."></textarea>
+
+                    <div class="btn_list">
+                        <button type="button" class="btn_cancel">취소</button>
+                        <button type="button" class="btn_send">보내기</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <button type="button" class="btn_exit">
+                <img src="/img/icon/close.png" alt="닫기 버튼">
+            </button>
+
+            <div class="pop delete_favorite">
+                <p>즐겨찾기그룹 삭제</p>
+            </div>
+
+             <!-- 메세지 창 -->
+            <div class="pop nurse_view"  style="display: block;">
+                <div class="wrap_inner">
+                    <div class="title">
+                        <div>
+                            <p>강심장 교수님</p>
+
+                            <div class="btn_list">
+                                <div class="btn_fold">
+                                    <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
+                                </div>
+
+                                <div class="btn_full">
+                                    <img src="/img/icon/nurse/full.svg" alt="풀화면 아이콘">
+                                </div>
+
+                                <div class="btn_close">
+                                    <img src="/img/icon/nurse/close.svg" alt="닫는 아이콘">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="search_container">
+                        <div>
+                            <input type="text" placeholder="메세지 내용을 입력해주세요">
+
+                            <button type="button" class="btn_search">
+                                <div>
+                                    <img src="/img/header/search.svg" alt="검색표시">
+                                </div>                           
+                            </button>
+                        </div>                            
+
+                        <div class="sort">
+                            <img src="/img/icon/nurse/sorting.svg" alt="정렬아이콘">
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
     <div id="wrap">
       <!--헤더 pc-->
@@ -581,8 +905,8 @@
         <div class="header_inner">
             <div>
                 <h1 class="logo">
-                    <a class="link" href="#">
-                        <img class="img" src="../img/header/logo.png" alt="로고">
+                    <a class="link" href="index.html">
+                        <img class="img" src="/img/header/logo.png" alt="로고">
                     </a>
                 </h1>
     
@@ -599,7 +923,7 @@
                     <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
     
                     <button type="button" class="btn_search">
-                        <img src="../img/header/search.svg" alt="검색표시">
+                        <img src="/img/header/search.svg" alt="검색표시">
                     </button>
                 </div>
     
@@ -618,28 +942,28 @@
             <ul class="main_depth">
               <li class="list on">
                 <a class="link" href="monitoring.html">
-                    <img src="../img/header/monitoring.svg" alt="모니터 아이콘">
+                    <img src="/img/header/monitoring.svg" alt="모니터 아이콘">
                     <span>모니터링</span>
                 </a>
               </li>
 
               <li class="list off clinic">
                 <a class="link" href="index.html">
-                    <img src="../img/header/clinic.svg" alt="사람모양 아이콘">
+                    <img src="/img/header/clinic.svg" alt="사람모양 아이콘">
                     <span>관리</span>
                 </a>
               </li>
 
               <li class="list off">
                 <a class="link" href="dashboard.html">
-                    <img src="../img/header/dashboard.svg" alt="대시보드 아이콘">
+                    <img src="/img/header/dashboard.svg" alt="대시보드 아이콘">
                     <span>대시보드</span>
                 </a>
               </li>
 
               <li class="list off">
                 <a class="link" href="message.html">
-                    <img src="../img/header/message.svg" alt="메세지 아이콘">
+                    <img src="/img/header/message.svg" alt="메세지 아이콘">
                     <span>메세지</span>
                 </a>
               </li>
@@ -708,7 +1032,7 @@
                             <p>담당의에게 메세지 보내기</p>
     
                             <div>
-                                <img src="../img/icon/share.png" alt="공유 아이콘">
+                                <img src="/img/icon/share.png" alt="공유 아이콘">
                             </div>
                         </div>
                     </div>
@@ -766,7 +1090,7 @@
                                         <p>ECG</p>
 
                                         <div>
-                                            <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
                                         </div>
                                     </div>
                                     
@@ -797,7 +1121,7 @@
                                         <p>SpO2</p>
 
                                         <div>
-                                            <img src="../img/graph/SpO2.png" alt="ecg그래프">
+                                            <img src="/img/graph/SpO2.png" alt="ecg그래프">
                                         </div>
                                     </div>
 
@@ -827,7 +1151,7 @@
                                         <p>RESP</p>
 
                                         <div>
-                                            <img src="../img/graph/RESP.png" alt="ecg그래프">
+                                            <img src="/img/graph/RESP.png" alt="ecg그래프">
                                         </div>    
                                     </div>
 
@@ -870,11 +1194,11 @@
     
                                             <div>
                                                 <div>
-                                                    <img src="../img/icon/up.png" alt="위를 향하는 화살표">
+                                                    <img src="/img/icon/up.png" alt="위를 향하는 화살표">
                                                 </div>
     
                                                 <div>
-                                                    <img src="../img/icon/down.png" alt="아래를 향하는 화살표">
+                                                    <img src="/img/icon/down.png" alt="아래를 향하는 화살표">
                                                 </div>
                                             </div>
                                         </div>
@@ -896,7 +1220,7 @@
     
                                         <div class="time">
                                             <div>
-                                                <img src="../img/icon/clock.svg" alt="시계 아이콘">
+                                                <img src="/img/icon/clock.svg" alt="시계 아이콘">
                                             </div>
     
                                             <p>
@@ -930,7 +1254,7 @@
     
                                         <div class="time">
                                             <div>
-                                                <img src="../img/icon/pulse_clock.png" alt="시계 아이콘">
+                                                <img src="/img/icon/pulse_clock.png" alt="시계 아이콘">
                                             </div>
     
                                             <p>
@@ -980,7 +1304,7 @@
                                     <p>ECG</p>
 
                                     <div>
-                                        <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                        <img src="/img/graph/ECG.png" alt="ecg그래프">
                                     </div>
                                 </div>
                                 
@@ -1336,7 +1660,7 @@
                                     <p>ECG</p>
 
                                     <div>
-                                        <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                        <img src="/img/graph/ECG.png" alt="ecg그래프">
                                     </div>
                                 </div>
                                 
@@ -1404,13 +1728,16 @@
                                     </div>
 
                                     <div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
-                                        <div class="hr_line"></div>
+                                        <div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                            <div class="hr_line"></div>
+                                        </div>
+                                        
 
                                        <div class="hr_time">
                                            <div>
@@ -1421,37 +1748,48 @@
                                                 </p>
                                            </div>
 
-                                            <p>
+                                            <p class="start_time">
                                                 <span>00</span>:
                                                 <span>00</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="second_time">
                                                 <span>00</span>:
                                                 <span>01</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="third_time">
                                                 <span>00</span>:
                                                 <span>02</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="fourth_time">
                                                 <span>00</span>:
                                                 <span>03</span>:
                                                 <span>00</span>
                                             </p>
 
-                                            <p>
+                                            <p class="fifth_time">
                                                 <span>00</span>:
                                                 <span>04</span>:
                                                 <span>00</span>
                                             </p>
-                                            
                                        </div>
+                                    </div>
+
+                                    <div class="hr_img">
+                                        <img src="/img/graph/hr_dot.png" alt="점으로된 그래프">
+                                    </div>
+
+                                    <div class="time_line">
+                                        <p class="time">
+                                            <span>00</span>:
+                                            <span>02</span>:
+                                            <span>00</span>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -1459,7 +1797,708 @@
                         </div>
 
                         <!-- Event -->
-                        <div id="tab-4" class="tab-content">tab content4</div>
+                        <div id="tab-4" class="tab-content">
+                            <div class="ecg">
+                                <div class="ecg_graph">
+                                    <p>ECG</p>
+
+                                    <div>
+                                        <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                    </div>
+                                </div>
+                                
+                                <div class="bell">
+                                    <div class="bell_name">
+                                        <p>HR. bpm</p>
+                                    </div>
+
+                                    <div class="bell_num">
+                                        <div>
+                                            <p>120</p>
+                                            <p>50</p>
+                                        </div>
+
+                                        <p>216</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tabular_table graphical event">
+                                <div class="table_title">
+                                    <p class="date_time">date/time</p>
+                                    <p class="alarm_des">Alarm Description</p>
+                                    <p class="prior">Priority</p>
+                                </div>
+
+                                <div class="table_body">
+                                    <!-- 1 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 2 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 3 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 4 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 5 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 6 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 7 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 8 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 9 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+
+                                    <!-- 10 -->
+                                    <div class="table_wrap">
+                                        <div>
+                                            <div class="date_time">
+                                                <p>
+                                                    <span>21</span>.
+                                                    <span>09</span>.
+                                                    <span>15</span>.
+                                                </p>
+        
+                                                <p>
+                                                    <span>01</span>:
+                                                    <span>44</span>:
+                                                    <span>37</span>
+                                                </p>
+                                            </div>
+    
+                                            <div class="alarm_des"><p>Manual Event</p></div>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="close">닫기</p>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table_content">
+                                        <div class="cont_inner">
+                                            <div class="ecg">
+                                                <div class="ecg_graph">
+                                                    <p>ECG</p>
+                    
+                                                    <div>
+                                                        <div class="img_container">
+                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="bell">
+                                                    <div class="bell_name">
+                                                        <p>HR. bpm</p>
+                                                    </div>
+                    
+                                                    <div class="bell_num">
+                                                        <div>
+                                                            <p>120</p>
+                                                            <p>50</p>
+                                                        </div>
+                    
+                                                        <p>216</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="btn_list">
+                                                <button type="button" class="btn_confirm">confirm</button>
+                                                <button type="button" class="btn_delete">delete</button>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                    <!-- pagenation -->
+                                    <div class="table_page">
+                                        <ul>
+                                            <li><a href=""><<</a></li>
+                                            <li><a href=""><</a></li>
+    
+                                            <li class="active"><a href="">1.</a></li>
+                                            <li><a href="">2.</a></li>
+                                            <li><a href="">3.</a></li>
+                                            <li><a href="">4.</a></li>
+                                            <li><a href="">5.</a></li>
+                                            <li><a href="">6.</a></li>
+                                            <li><a href="">7.</a></li>
+                                            <li><a href="">8.</a></li>
+                                            <li><a href="">9.</a></li>
+                                            <li><a href="">10.</a></li>
+                                            <li><a href="">...</a></li>
+                                            <li><a href="">52.</a></li>
+    
+                                            <li><a href="">></a></li>
+                                            <li><a href="">>></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                       
                     </div>
                     
