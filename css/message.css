@@ -1,0 +1,968 @@
+/* messasge */
+.message .message_list{
+    width: 1032px;
+    height: 720px;
+    margin: 0;
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.nurse_message .message_list .message_title{
+    padding: 8px 16px 24px;
+    border: 0;
+}
+
+.message .message_title> div,
+.message .title_text{
+    display: flex;
+    justify-content: space-between;
+}
+
+.message .message_list .title_text div{
+    display: initial;
+}
+
+.message .message_title{
+    padding: 8px 16px 24px;
+}
+
+.message .message_title p{
+    font-size: 12px;
+    font-weight: normal;
+    color: #444;
+}
+
+.message .title_text {
+    width: 80px;
+    padding: 10px 0;
+}
+
+.message .title_text div{
+    align-items: center;
+}
+
+.message .title_text div img{
+    margin-top: -4px;
+    vertical-align: middle;
+}
+
+.nurse_message .title_text div img{
+    filter: invert(27%) sepia(53%) saturate(7115%) hue-rotate(175deg) brightness(93%) contrast(102%);
+}
+
+.message .title_text h2{
+    font-size: 16px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.message .btn_message{
+    width: 120px;
+    height: 40px;
+    padding: 12px 13px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.para_message .title_text h2{
+    color: #940045;
+}
+
+.nurse_message .btn_message{
+    background: #007A94;
+}
+
+.nurse_message .title .btn_message p{
+    color: #fff;
+}
+
+.nurse_message .btn_message img{
+    filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(104deg) brightness(112%) contrast(101%);
+}
+
+.para_message .btn_message{
+    background: #940045;
+}
+
+.para_message .btn_message:hover{
+    background: #4A0000;
+}
+
+.para_message .btn_message img{
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(287deg) brightness(106%) contrast(102%);
+}
+
+.message .btn_message p{
+    font-size: 12px;
+    font-weight: normal;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.nurse_message .message_list title{
+    padding: 0;
+}
+
+.message .message_list .search_container{
+    height: 48px;
+    padding: 8px 16px;
+    background: #eee;
+    position: relative;
+}
+
+.nurse_message .message_list .search_container{
+    width: 100%;
+}
+
+.message .message_list .search_container input{
+    width: 480px;
+    height: 32px;
+    padding: 7px 56px 7px 8px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.message .message_list .search_container input::placeholder{
+    color: #ccc;
+}
+
+.message .message_list .search_container .btn_search{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50%;
+    width: 48px;
+    height: 32px;
+    margin-right: 16px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.nurse_message .btn_search div{
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+}
+
+.para_message .message_list .search_container .btn_search img{
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.message .talk_list{
+    padding: 16px;
+}
+
+.message .talk_list> div{
+    height: 48px;
+    padding: 18px;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.message .talk_list> div:hover{
+    background: #eee;
+}
+
+.message .talk_list p{
+    margin-top: -2px;
+    font-size: 12px;
+}
+
+.message .talk_list> div,
+.message .talk_list .left,
+.message .talk_list .message_info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.message .talk_list .message_bell{
+    width: 10px;
+}
+
+.message .talk_list .list.off .message_bell img{
+    filter: invert(68%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(93%) contrast(101%);
+}
+
+.message .talk_list .talk_time{
+    width: 130px;
+    margin: 0 16px 0 12px;
+    display: flex;
+}
+
+.message .talk_list .talk_name{
+    width: 100px;
+}
+
+.message .talk_list .list.on{
+    background: #940045;
+}
+
+.nurse_message .talk_list .list.on {
+    background: #007A94;
+}
+
+.message .talk_list .list.on p{
+    color: #fff;
+}
+
+.para_message .talk_list .list.off .message_bell img{
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+/* 대화창 */
+.message .message_talk{
+    width: 640px;
+    height: 720px;
+    margin-left: 32px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.nurse_message .message_talk{
+    padding: 0;
+}
+
+.message .talk_title{
+    padding: 32px 32px 24px;
+}
+
+.nurse_message .message_talk .title{
+    padding: 32px 32px 24px;
+    border: 0;
+}
+
+.nurse_message .message_talk .title> :first-child{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.nurse_message .message_talk .title> :last-child{
+    color: #000;
+}
+
+.message .talk_title> :first-child{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.message .talk_title :last-child{
+    margin-top: 13px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.para_message .message_talk .search_container{
+    height: 48px;
+    padding: 8px 32px;
+    background: linear-gradient(to right, #940045, #4A0000);
+    position: relative;
+}
+
+.nurse_message .message_talk .search_container{
+    width: 100%;
+    height: 48px;
+    padding: 8px 32px;
+    border-radius: 0;
+    background: linear-gradient(to right, #007A94, #003D4A);
+    position: relative;
+}
+
+.message .message_talk .search_container input{
+    width: 360px;
+    height: 32px;
+    padding: 7px 56px 7px 8px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.nurse_message .message_list .search_container input{
+    height: 32px;
+}
+
+.message .message_talk .search_container input::placeholder{
+    font-size: 12px;
+    font-weight: normal;
+    color: #ccc;
+}
+
+.message .message_talk .search_container .btn_search{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 53%;
+    width: 48px;
+    height: 30px;
+    margin-right: 21px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.nurse_message .message_talk .search_container .btn_search{
+    padding: 0;
+}
+
+.nurse_message .message_talk .search_container .btn_sort{
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    background: #fff;
+}
+
+.nurse_message .message_talk .search_container .btn_sort div{
+    width: 16px;
+    height: 15px;
+}
+
+
+
+
+/* 채팅 */
+.message .chat_inner{
+    height: 440px;
+    padding: 8px 20px;
+    background: #E3DBE6;
+    overflow-y: scroll;
+}
+
+.nurse_message .chat_inner{
+    background: #C5D8DC;
+}
+
+.message .chat_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.message .chat_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #940045;
+}
+
+.nurse_message .chat_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #007A94;
+}
+
+.message .chat_me{
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+}
+
+.message .chat_me p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.message .chat_me .bouble{
+    position: relative;
+    width: fit-content;
+    padding: 14px 16px;
+	background: #940045;
+	border-radius: .4em;
+    color: #fff;
+}
+
+.message .chat_me .bouble:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: #940045;
+    border-right: 0;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+
+.nurse_message .chat_me .bouble{
+	background: #007A94;
+}
+
+.nurse_message .chat_me .bouble:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: #007A94;
+    border-right: 0;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+
+.message .chat_you{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.message .chat_you> p{
+    font-size: 12px;
+}
+
+.message .chat_you .bouble{
+    margin: 7px 0;
+    position: relative;
+    width: fit-content;
+    padding: 14px 16px;
+	background: #fff;
+	border-radius: .4em;
+    color: #000;
+}
+
+.message .chat_you .bouble:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-right-color: #fff;
+    border-left: 0;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.message .chat_window{
+    height: 122px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message .chat_window textarea{
+    width: 90%;
+}
+
+.message .chat_window textarea::placeholder{
+    font-size: 14px;
+    color: #ccc;
+}
+
+.message .chat_window .btn_send{
+    width: 48px;
+    height: 32px;
+    border-radius: 4px;
+    background: #940045;
+    font-size: 14px;
+    color: #fff;
+}
+
+.nurse_message .chat_window .btn_send{
+    background: #007A94;
+}
+
+.nurse_message .start_clinic{
+    width: 560px;
+    height: 48px;
+    margin: 0 auto 16px;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #007A94, #003D4A);
+    border-radius: 4px;
+    color: #fff;
+}
+
+.nurse_message .start_clinic p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.nurse_message .end_clinic{
+    width: 560px;
+    height: 48px;
+    margin: 0 auto 16px;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.nurse_message .end_clinic p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+.message_list, .message_talk{display: block;}
+.select_medi, .send_message{display: none;}
+
+
+/* 새로운 메세지 보내기 */
+.message .select_medi{
+    width: 1032px;
+    height: 720px;
+    margin: 0;
+    padding: 16px 16px 32px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.para_message .emergency_title{
+    padding: 8px 16px;
+    border: 0;
+    color: #940045;
+}
+
+.nurse_message .left .emergency_title{
+    border: 0;
+}
+
+.message .emergency_title div{
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.para_message .emergency_title h2{
+    color: #940045;
+}
+
+.message .emergency_title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.message .select_list{
+    width: 100%;
+    height: 48px;
+    margin: 18px auto 0;
+    padding: 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    display: flex;
+}
+
+.nurse_message .select_list{
+    width: 968px;
+    margin: 0 auto;
+    border: 0;
+    background: #eee;
+}
+
+.message .select_list div{
+    width: fit-content;
+    margin-right: 20px;
+    display: flex;
+}
+
+.message .select_list p{
+    margin-top: -2px;
+    margin-right: 7px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.message .select_list .btn_doctor_delete{
+    width: 16px;
+    height: 16px;
+    background: none;
+    vertical-align: middle;
+}
+
+.message .container{
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse_message .container{
+    padding: 16px 32px;
+}
+
+.message .container h2{
+    font-size: 12px;
+    margin-bottom: 11px;
+}
+
+.message .favorite_list{
+    width: 480px;
+}
+
+.message .group{
+    border-bottom: 1px solid #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse_message .group{
+    border-bottom: 1px solid #007A94;
+}
+
+.message .group> div{
+    width: 204px;
+    display: flex;
+}
+
+.message .group .group_list{
+    margin-right: 4px;
+    padding: 7px 10px;
+    border-radius: 4px 4px 0 0;
+    background: #ccc;
+}
+
+.message .group .group_list p{
+    font-size: 12px;
+    text-align: center;
+    color: #888;
+}
+
+.message .group .group_list.on{
+    background: #940045;
+}
+
+
+.nurse_message .group .group_list.on{
+    background: #007A94;
+}
+
+.message .group .group_list.on p{
+    color: #fff;
+}
+
+.message .group .btn_next{
+    width: 24px;
+    padding: 5px 5px 0;
+    background: none;
+}
+
+.nurse_message .group .btn_next img{
+    filter: invert(124%) sepia(100%) saturate(5863%) hue-rotate(154deg) brightness(48%) contrast(97%);
+}
+
+.message .group .btn_add{
+    background: none;
+    color: #940045;
+}
+
+.nurse_message .group .btn_add{
+    background: none;
+    color: #007A94;
+}
+
+.message .favorite_list input{
+    display: none;
+}
+
+.message .group_container{
+    padding: 16px;
+}
+
+.message .group_container> div{
+    padding: 7px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message .group_container label{
+    display: flex;
+    cursor: pointer;
+}
+
+.message .group_container label p{
+    margin-right: 14px;
+}
+
+.message .group_container .all_check{
+    padding-top: 0;
+}
+
+/* checkbox */
+.message .group_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.message .group_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+.nurse_message .group_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/check.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.nurse_message .group_container input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+
+/* all_check */
+.message .all_check input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/emergency/checkBox.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.message .all_check input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+.nurse_message .all_check input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/check.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.nurse_message .all_check input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+/* favorite check */
+.message .favorite_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.message .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
+}
+
+.nurse_message .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.message .select_doctor{
+    width: 400px;
+}
+
+.message .search_container{
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+.message .search_container input{
+    width: 100%;
+    padding: 7px 30px 7px 7px;
+    background: #eee;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.message .search_container input::placeholder{
+    font-weight: normal;
+    color: #ccc;
+}
+
+.message .search_container .btn_search{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    width: 35px;
+    padding: 5px 0;
+}
+
+.message .search_container .btn_search div{
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+}
+
+.message .search_container .btn_search img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.nurse_message .search_container .btn_search img{
+    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.message .list_inner{
+    height: 336px;
+    margin-top: 8px;
+    overflow-y: scroll;
+}
+
+.message .list_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.message .list_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.message .list_inner div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.message .list_inner> div{
+    padding: 7px 7px;
+}
+
+.message .list_inner label{
+    display: flex;
+}
+
+.message .list_inner label p{
+    margin-right: 14px;
+}
+
+.message .list_inner .favorite_container input{
+    display: none;
+}
+
+.message .list_inner input{
+    display: none;
+}
+
+/* 의료진선택 checkbox */
+.message .list_inner div input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.message .list_inner div input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+.nurse_message .list_inner div input[type='checkbox']:checked+label span{
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+/* 의료진선택 즐겨찾기 */
+.message .list_inner .favorite_container input[type="checkbox"]+label> span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 15px 0 0;
+    vertical-align: middle;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.message .list_inner .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
+}
+
+.nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label span{
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.message .send_message{
+    width: 640px;
+    height: 720px;
+    padding: 16px;
+    margin-left: 32px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.message .send_message .title{
+    padding: 16px 16px 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.message .send_message .title h2{
+    margin-bottom: 13px;
+    font-size: 16px;
+    color: #940045;
+}
+
+.nurse_message .send_message .title h2{
+    margin-bottom: 13px;
+    font-size: 16px;
+    color: #007A94;
+}
+
+.message .send_message .title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.message .send_message form{
+    padding: 0 16px;
+}
+
+.message .send_message form textarea{
+    width: 100%;
+    height: 88px;
+}
+
+.message .send_message form textarea::placeholder{
+    color: #ccc;
+}
+
+.message .send_message .btn_list{
+    float: right;
+}
+
+.emergency .emergency_recep .list_container .arrival_time::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.message .send_message .btn_list button{
+    width: 96px;
+    height: 32px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.message .send_message .btn_list .btn_cancel{
+    margin-right: 8px;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.message .send_message .btn_list .btn_send{
+    border: 1px solid #007A94;
+    color: #007A94;
+}

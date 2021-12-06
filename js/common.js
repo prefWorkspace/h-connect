@@ -246,6 +246,10 @@ $(function () {
             $('.pop.temp_set .overlay').show();
         })
 
+        $('.monitoring_patient .ews').on('click', function(){
+            $('.pop.ews_set .overlay').show();
+        })
+
         $('.monitoring_patient .patient .btn_list .btn_alarm').on('click', function(){
             $('.monitoring_patient .patient .btn_list .btn_alarm_red').show();
             $('.monitoring_patient .patient .btn_list .btn_alarm').hide();

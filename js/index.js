@@ -168,4 +168,11 @@ $(document).ready(function(){
         else $("#ward_1311").prop("checked", true);
     });
 
+    //아코디언
+    $(".table_wrap").click(function() {
+        $(this).next(".table_content").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".table_content").siblings(".table_content").slideUp(300);
+    });
+
 })

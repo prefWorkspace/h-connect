@@ -254,10 +254,10 @@
                         <p>Alarm</p>
 
                         <div class="container">
-                            <input type="radio" name="alarm" id="ecg_off" class="alarm_off">
+                            <input type="radio" name="ecg_alarm" id="ecg_off" class="alarm_off">
                             <label for="ecg_off" class="btn_resp_alarm">Off</label>
     
-                            <input type="radio" name="alarm" id="ecg_on"  class="alarm_on" checked>
+                            <input type="radio" name="ecg_alarm" id="ecg_on"  class="alarm_on" checked>
                             <label for="ecg_on" class="btn_resp_alarm">On</label>
                         </div>
                     </div>
@@ -332,10 +332,10 @@
                         <p>Alarm</p>
 
                         <div class="container">
-                            <input type="radio" name="alarm" id="sp_off" class="alarm_off">
+                            <input type="radio" name="sp_alarm" id="sp_off" class="alarm_off">
                             <label for="sp_off" class="btn_resp_alarm">Off</label>
     
-                            <input type="radio" name="alarm" id="sp_on"  class="alarm_on" checked>
+                            <input type="radio" name="sp_alarm" id="sp_on" class="alarm_on" checked>
                             <label for="sp_on" class="btn_resp_alarm">On</label>
                         </div>
                     </div>
@@ -421,10 +421,10 @@
 
     <!-- ews setting menu -->
     <div class="pop setting_menu ews_set">
-        <div class="overlay" style="display: block;">
+        <div class="overlay">
             <div class="pop_cont">
                 <div class="title">
-                    <h2>EWs  Setting menu</h2>
+                    <h2>EWS  Setting menu</h2>
                 </div>
 
                 <div class="content">
@@ -2512,14 +2512,5 @@
 
     </div>
     <!--// end wrap-->
-
-    <script>
-        $(".table_wrap").click(function() {
-            $(this).next(".table_content").stop().slideToggle(300);
-            $(this).toggleClass('on').siblings().removeClass('on');
-            $(this).next(".table_content").siblings(".table_content").slideUp(300);
-        });
-    </script>
-
   </body>
 </html>

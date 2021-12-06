@@ -184,10 +184,6 @@ body {
     display: flex;
 }
 
-.paramedic .header_right .btn_list .btn_doctor_call img{
-
-}
-
 
 
 
@@ -871,12 +867,12 @@ body {
     height: 16px;
     margin: -3px 4px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/radio.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/radio.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.resp_set .content .apnea input[type='radio']:checked+label span{
-    background: url('../img/icon/radio_check.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/radio_check.png') no-repeat 0 0px / contain;
 }
 
 .pop.resp_set .content .apnea input[type="radio"]{
@@ -1211,12 +1207,12 @@ body {
     height: 16px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.send_doctor .doctor_search .doctor_list input[type='checkbox']:checked+label span{
-    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 .pop.send_doctor .doctor_search .doctor_list input[type="checkbox"]{
@@ -1240,13 +1236,13 @@ body {
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/즐겨찾기.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/즐겨찾기.png') no-repeat 0 0px / contain;
     transition: .3s;
     cursor: pointer;
 }
 
 .pop.send_doctor .doctor_list .favorite_container input[type='checkbox']:checked+label span{
-    background: url('../img/icon/즐겨찾기추가.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/즐겨찾기추가.png') no-repeat 0 0px / contain;
     transition: .3s;
 }
 
@@ -1341,12 +1337,12 @@ body {
     height: 16px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.send_doctor .favorite_list .group_container input[type='checkbox']:checked+label span{
-    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 .pop.send_doctor .favorite_list .group_container input[type="checkbox"]{
@@ -1358,7 +1354,7 @@ body {
 }
 
 .pop.send_doctor .favorite_list .group_container input[type="checkbox"]:disabled + label span{
-    background: url('../img/icon/check_disabled.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/check_disabled.png') no-repeat 0 0px / contain;
 }
 
 
@@ -1368,13 +1364,13 @@ body {
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/즐겨찾기.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/즐겨찾기.png') no-repeat 0 0px / contain;
     transition: .3s;
     cursor: pointer;
 }
 
 .pop.send_doctor .favorite_list .favorite_container input[type='checkbox']:checked+label span{
-    background: url('../img/icon/즐겨찾기추가.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/즐겨찾기추가.png') no-repeat 0 0px / contain;
     transition: .3s;
 }
 
@@ -1582,6 +1578,137 @@ body {
     margin: 0;
 }
 
+/* 대시보드 팝업 */
+
+.pop.monitor p{font-family: 'Noto Sans KR', sans-serif;}
+
+.pop.monitor .pop_cont{
+    width: 720px;
+    height: 672px;
+    padding: 0;
+}
+
+.pop.monitor .title{
+    height: 108px;
+    padding: 22px 24px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(to right, #004F60, #350039);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pop.monitor .title h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.pop.monitor .btn_clear{
+    width: 180px;
+    height: 64px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: normal;
+    color: #940045;
+}
+
+.pop.monitor ul{
+    padding: 8px 8px 0;
+    background: #222;
+}
+
+.pop.monitor ul.tabs li{
+    width: 120px;
+    height: 32px;
+    padding: 8px;
+    margin-right: 8px;
+    border-radius: 4px 4px 0 0;
+    background: #444;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    color: #666;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.pop.monitor ul.tabs li.current{
+    background: #000;
+    color: #fff;
+}
+  
+.pop.monitor .tab-content{
+    display: none;
+    padding: 8px;
+    background: #000;
+}
+  
+.pop.monitor .tab-content.current{
+    display: inherit;
+}
+
+.pop.monitor #tab-1{
+    border: 1px solid red;
+}
+
+.pop.monitor #tab-1 .graph> div{
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.monitor .ecg{
+    height: 95px;
+    padding: 12px 8px;
+    background: linear-gradient(#DE0076, #CB0000);
+    border-radius: 8px;
+    color: #00FF22;
+}
+
+.pop.monitor .ecg_graph,
+.pop.monitor .sp_graph{
+    width: 560px;
+}
+
+.pop.monitor .ecg_graph p{
+    font-size: 12px;
+}
+
+.pop.monitor .ecg_graph div{
+    width: 560px;
+    height: 24px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.pop.monitor .bell{
+    width: 110px;
+}
+
+.pop.monitor .bell_name{
+    font-size: 12px;
+}
+
+.pop.monitor .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.monitor .bell_num div{
+    margin-top: 8px;
+}
+
+.pop.monitor .bell_num div p{
+    font-size: 12px;
+}
+
+.pop.monitor .bell_num> p{
+    font-size: 32px;
+}
+
+
 
 
 /*====================== 응급상황실 팝업 ======================*/
@@ -1757,12 +1884,12 @@ body {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .group_container input[type='checkbox']:checked+label span{
-    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* all_check */
@@ -1772,12 +1899,12 @@ body {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/emergency/checkBox.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/checkBox.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .all_check input[type='checkbox']:checked+label span{
-    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* favorite check */
@@ -1787,12 +1914,12 @@ body {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .favorite_container input[type='checkbox']:checked+label span{
-    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
@@ -1888,12 +2015,12 @@ body {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .list_inner div input[type='checkbox']:checked+label span{
-    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* 의료진선택 즐겨찾기 */
@@ -1903,12 +2030,12 @@ body {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
@@ -2154,7 +2281,7 @@ body {
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
@@ -2163,7 +2290,7 @@ body {
 }
 
 .pop.full_vital .sp .bell_name input[type="checkbox"]+label span{
-    background: url('../img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
 }
 
 .pop.full_vital .resp .bell_name input[type="checkbox"]+label span{
@@ -2171,7 +2298,7 @@ body {
 }
 
 .pop.full_vital .bell_name input[type='checkbox']:checked+label span{
-    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -2213,7 +2340,7 @@ body {
     height: 24px;
     margin: -3px 0 0 7px;
     vertical-align: middle;
-    background: url(../img/icon/btn_alarmOn.svg) no-repeat 0 0px / contain;
+    background: url(/img/icon/btn_alarmOn.svg) no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
@@ -2281,13 +2408,13 @@ body {
 
 .pop.full_picture .swiper-button-next{
     width: 64px;
-    background: url('../img/icon/btn_next.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_next.png') no-repeat 0 0px / contain;
     right: -128px;
 }
 
 .pop.full_picture .swiper-button-prev{
     width: 64px;
-    background: url('../img/icon/btn_pre.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_pre.png') no-repeat 0 0px / contain;
     left:-128px;
 }
 
