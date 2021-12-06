@@ -20,7 +20,7 @@ $(function () {
 
         $('.pop.logout .wrap_inner .btn_bye').on('click', function () {
             $('.pop.logout').hide();
-            location.href="../index.html";
+            location.href="/index.html";
         });
 
     // 환자검색
@@ -411,6 +411,10 @@ $(function () {
             $('.pop.emergency_clear .overlay').hide();
         })
 
+        $('.pop.emergency_clear .pop_cont .btn_list button').on('click', function(){
+            $('.pop.emergency_clear .overlay').hide();
+        })
+
         // 환자 바이탈 풀스크린
         $('.emergency .vital .vital_container .btn_vital').on('click', function(){
             $('.pop.full_vital .overlay').show();
@@ -456,6 +460,35 @@ $(function () {
             $('.para_message .message_list').show();
             $('.para_message .message_talk').show();
         })
+    
+    // 구급대원에게 전화
+    $('.emergency .patient_status .btn_paramedic').on('click', function(){
+        location.href="call_paramedic.html";
+    })
+    
+    $('.para_connect .mic_layer').on('click', function(){
+        $('.para_connect .mic_off').show();
+    })
+
+    $('.para_connect .mic_off').on('click', function(){
+        $('.para_connect .mic_off').hide();
+    })
+
+    $('.para_connect .cam_layer').on('click', function(){
+        $('.para_connect .cam_off').show();
+    })
+
+    $('.para_connect .cam_off').on('click', function(){
+        $('.para_connect .cam_off').hide();
+    })
+
+    $('.para_connect .refuse_layer').on('click', function(){
+        location.href="index.html";
+    })
+
+    $('.paramedic .header_right .btn_attendee').on('click', function(){
+        $('.pop.attendee').toggle();
+    })
 
 
 });
