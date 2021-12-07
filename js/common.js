@@ -499,6 +499,48 @@ $(function () {
         $('.pop.doctor_call .overlay').show();
     })
 
+    // 화상창 켜기
+    $('.connect .emer_message .btn_video').on('click', function(){
+        $('.cam').show();
+        $('.connect .data').show();
+        $('.connect .no_data').hide();
+        $('.connect .emer_message .btn_video').hide();
+        $('.connect .emer_message .btn_novideo').show();
+    })
+
+    $('.connect .emer_message .btn_novideo').on('click', function(){
+        $('.cam').hide();
+        $('.connect .data').hide();
+        $('.connect .no_data').show();
+        $('.connect .emer_message .btn_novideo').hide();
+        $('.connect .emer_message .btn_video').show();
+    })
+
+    // 화상카메라 켜기
+    $('.cam .btn_cam').on('click', function(){
+        $('.cam .btn_cam').hide();
+        $('.cam .btn_cam_off').show();
+        $('.cam .my_cam .cam_parti').hide();
+        $('.cam .my_cam .nocam_parti').show();
+    })
+
+    $('.cam .btn_cam_off').on('click', function(){
+        $('.cam .btn_cam').show();
+        $('.cam .btn_cam_off').hide();
+        $('.cam .my_cam .cam_parti').show();
+        $('.cam .my_cam .nocam_parti').hide();
+    })
+
+    $('.connect .emer_message .title .btn_video').on('click', function(){
+        $('.connect .patient_view' ).width('1272px');
+    })
+
+    $('.connect .emer_message .title .btn_novideo').on('click', function(){
+        $('.connect .patient_view').width('1428px');
+    })
+
+    $('')
+
 
 });
 

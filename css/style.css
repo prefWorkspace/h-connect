@@ -4626,7 +4626,6 @@
 
 .connect .emer_message{
     width: 480px;
-    border: 1px solid red;
 }
 
 .connect .emer_message .title{
@@ -4637,12 +4636,569 @@
     align-items: center;
 }
 
-.connect .emer_message .btn_video{
+.connect .emer_message .title> div{
     width: 80px;
-    padding: 3px 11px;
+    height: 32px;
+    padding: 7px 10px;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    align-items: center;
+    background: #940045;
+}
+
+.connect .emer_message .title> div p{
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.connect .emer_message .title> div div{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.connect .emer_message .title> div div img{
+    filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(106%) contrast(105%);
+}
+
+.connect .emer_message .title button{
+    width: 80px;
+    height: 24px;
+    padding: 3px 10px;
+    margin-bottom: 8px;
     border-radius: 4px;
     background: #fff;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
     color: #940045;
+}
+
+.connect .emer_message .title .btn_novideo{
+    padding: 3px 16px;
+    display: none;
+}
+
+.connect .emer_message .btn_novideo img{
+    transform: rotate(180deg);
+}
+
+.connect .emer_message .btn_video div{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px;
+}
+
+.connect .emer_message .btn_novideo> div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.connect .emer_message .btn_novideo> div div{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px
+}
+
+.connect .emer_message .view{
+    height: 737px;
+    padding: 16px;
+    background: #E3DBE6;
+}
+
+.connect .emer_message .notice{
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .emer_message .notice p{
+    font-size: 14px;
+}
+
+.connect .emer_message .notice .btn_doctor_call{
+    width: 140px;
+    font-size: 14px;
+    font-weight: 500;
+    background: none;
+    color: #940045;
+}
+
+.connect .emer_message .notice .btn_doctor_call:hover{
+    color: #4A0000;
+}
+
+.connect .emer_message .input_message{
+    position: relative;
+}
+
+.connect .emer_message textarea{
+    width: 100%;
+    height: 120px;
+    padding: 16px 60px 16px 16px;
+}
+
+.connect .emer_message .btn_send{
+    width: 48px;
+    padding: 7px 11px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #fff;
+    background: #940045;
+    position: absolute; 
+    top: 8px;
+    right: 8px;
+}
+
+.connect .data{
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+.connect .data_inner> :last-child{
+    margin: 0;
+}
+
+.connect .data_inner{
+    width: 100%;
+    height: 696px;
+    padding-right: 16px;
+    overflow-y: scroll;
+    position: absolute;
+    bottom: 0;
+}
+
+.connect .data_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.connect .data_inner::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #C56F97;
+}
+
+.connect .data_inner> div{
+    width: 100%;
+    /* height: 696px; */
+}
+
+/* .connect .data_inner> div::-webkit-scrollbar{
+    width: 8px;
+}
+
+.connect .data_inner> div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #C56F97;
+} */
+
+
+.connect .chatting{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.connect .chatting p{
+    font-size: 12px;
+}
+
+.connect .top{
+    margin-bottom: 17px;
+    display: flex;
+}
+
+.connect .top time{
+    font-size: 12px;
+}
+
+.connect .top p{
+    margin-left: 8px;
+}
+
+/* 화상보기 */
+.cam{
+    width: 156px;
+    height: 897px;
+    padding: 8px 6px;
+    background: #444;
+    display: none;
+}
+
+.cam> :first-child{
+    height: 24px;
+    margin-bottom: 24px;
+}
+
+.cam div button{
+    width: 24px;
+    height: 24px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    float: right;
+}
+
+.cam .btn_cam{
+    background: #940045;
+}
+
+.cam .btn_cam_off{
+    background: #666;
+    display: none;
+}
+
+.cam div button div{
+    width: 12px;
+    height: 16px;
+}
+
+.cam .cam_inner{
+    clear: both;
+}
+
+.cam button img{
+    width: 100%;
+    height: 100%;
+}
+
+.cam .btn_cam img{
+    filter: invert(265%) sepia(1%) saturate(0%) hue-rotate(127deg) brightness(106%) contrast(318%);
+}
+
+.cam .btn_cam_off img{
+    filter: invert(30%) sepia(1%) saturate(0%) hue-rotate(127deg) brightness(106%) contrast(30%);
+}
+
+.cam .cam_inner> div{
+    width: 144px;
+    height: 81px;
+    margin: 0 0 4px;
+    position: relative;
+}
+
+.cam .cam_inner> div div{
+    width: 144px;
+    height: 81px;   
+}
+
+.cam .cam_inner> div div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.cam .cam_inner> div .name{
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+.cam .cam_inner .my_cam {
+    margin-bottom: 16px;
+}
+
+.cam .cam_inner .nocam_parti{
+    display: none;
+}
+
+.cam .cam_inner .nocam_parti{
+    padding: 24px 56px;
+    border-radius: 4px;
+    background: #000;
+}
+
+.cam .cam_inner .nocam_parti div{
+    width: 32px;
+    height: 32px;
+}
+
+.cam .cam_inner .nocam_parti div img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 오른쪽 환자 화면 */
+.connect .patient_view{
+    width: 1428px;
+    margin-left: 4px;
+}
+
+.connect .patient_view> .title{
+    width: 100%;
+    height: 40px;
+    padding: 7px 16px;
+    margin-bottom: 4px;
+    background: #888;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .patient_view .btn_list button{
+    width: 80px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #940045;
+}
+
+.connect .patient_view .btn_list> :last-child{
+    margin: 0;
+}
+
+.connect .patient_view .view_list,
+.connect .patient_view .view_list> div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .patient_view .view_list p{
+    margin-right: 26px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* .connect .patient_view .view_list button{
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    background: none;
+    border-radius: 4px;
+}
+
+.connect .patient_view .view_list button.on{
+    background: #fff;
+}
+
+.connect .patient_view .view_list button.on img{
+    filter: invert(9%) sepia(62%) saturate(6511%) hue-rotate(322deg) brightness(60%) contrast(106%);
+}
+
+.connect .patient_view .view_list .btn_tab{
+    margin: 0 8px;
+} */
+
+.connect .view_list .tabs{
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .view_list .tab-link{
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.connect .view_list .tab-link div{
+    width: 12px;
+    height: 12px;
+}
+
+.connect .view_list .tab-link div img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .view_list .tab-link.current{
+    background: #fff;
+    cursor: pointer;
+}
+
+.connect .view_list .tab-link.current img{
+    filter: invert(9%) sepia(62%) saturate(6511%) hue-rotate(322deg) brightness(60%) contrast(106%);
+}
+
+/* 탭으로 보기 */
+.connect .several{
+    width: 100%;
+    height: 853px;
+    border: 1px solid red;
+}
+
+.connect .several .title{
+    width: 100%;
+    height: 40px;
+    padding: 11px 16px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .several .title p{
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.connect .several .title .btn_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .several .title .btn_list button{
+    width: 10px;
+    height: 10px;
+    background: none;
+}
+
+.connect .several .title .btn_list button div{
+    width: 10px;
+    height: 10px;
+}
+
+.connect .several .title .btn_list button div img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .several .title .btn_list .btn_full{
+    margin: 0 32px;
+}
+
+.connect .pati_stat{
+    width: 736px;
+    height: 800px;
+}
+
+.connect .patient_status{
+    width: 736px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.connect .patient_status .patient_inner{
+    height: 710px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.connect .patient_status .patient{
+    width: 100%;
+}
+
+.connect .patient .title{
+    padding: 0;
+    border: 0;
+    background: none;
+    justify-content: initial;
+    align-items: center;
+}
+
+.connect .patient .title div{
+    width: 16px;
+    height: 17px;
+    margin-right: 8px;
+}
+
+.connect .patient .title div img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .patient .title h2{
+    margin: 0;
+}
+
+.connect .pati_stat{
+    display: none;
+}
+
+.connect .connect_video{
+    width: 720px;
+    height: 472px;
+    display: none;
+}
+
+.connect .video_view{
+    position: relative;
+}
+
+.connect .para_cam{
+    width: 720px;
+    height: 432px;
+}
+
+.connect .para_cam img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .video_view .my_cam{
+    width: 240px;
+    height: 135px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.connect .video_view .my_cam img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.connect .video_view .para_name{
+    width: 180px;
+    height: 40px;
+    padding: 8px 18px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.connect .video_view .para_name p{
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.connect .vital{
+    width: 1200px;
+    height: 600px;
+    padding: 0;
+    overflow-y: initial;
+}
+
+.connect .vital .graph{
+    width: 100%;
+    height: 560px;
+    padding: 30px;
+    background: #000;
+}
+
+.connect .vital .graph> div{
+    display: flex;
+}
+
+.connect .vital .graph> div> :first-child div{
+    width: 920px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.connect .vital .graph> div> :first-child div img{
+    width: 100%;
+}
+
+.connect .vital .ecg{
+    color:#00FF22;
 }

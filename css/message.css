@@ -362,7 +362,7 @@
     font-weight: normal;
 }
 
-.message .chat_me .bouble{
+.message .chat_me .bubble{
     position: relative;
     width: fit-content;
     padding: 14px 16px;
@@ -371,7 +371,7 @@
     color: #fff;
 }
 
-.message .chat_me .bouble:after{
+.message .chat_me .bubble:after{
     content: '';
     position: absolute;
     right: 0;
@@ -385,11 +385,11 @@
     margin-right: -8px;
 }
 
-.nurse_message .chat_me .bouble{
+.nurse_message .chat_me .bubble{
 	background: #007A94;
 }
 
-.nurse_message .chat_me .bouble:after{
+.nurse_message .chat_me .bubble:after{
     content: '';
     position: absolute;
     right: 0;
@@ -412,7 +412,7 @@
     font-size: 12px;
 }
 
-.message .chat_you .bouble{
+.message .chat_you .bubble{
     margin: 7px 0;
     position: relative;
     width: fit-content;
@@ -422,7 +422,7 @@
     color: #000;
 }
 
-.message .chat_you .bouble:after{
+.message .chat_you .bubble:after{
     content: '';
     position: absolute;
     left: 0;
