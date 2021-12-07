@@ -739,12 +739,12 @@ body {
 }
 
 /* 이벤트 삭제 팝업 */
-.pop.event .pop_cont h1{
+.pop.delete .pop_cont h1{
     font-size: 24px;
     color: #940045;
 }
 
-.pop.event .pop_cont .btn_delete{
+.pop.delete .pop_cont .btn_delete{
     width: 128px;
     padding: 12px;
     background: #940045;

@@ -483,6 +483,11 @@ $(function () {
     })
 
     $('.para_connect .refuse_layer').on('click', function(){
+        $('.pop.connect .overlay').show();
+    })
+
+    $('.pop.connect .btn_delete').on('click', function(){
+        $('.pop.connect .overlay').hide();
         location.href="index.html";
     })
 
