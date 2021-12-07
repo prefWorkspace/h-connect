@@ -3,7 +3,7 @@ body {
     position: relative;
 }
 
-#wrap_content{
+.nurse{
     min-height: calc(100vh - 80px);
     display: flex;
 }
@@ -143,7 +143,7 @@ body {
 /* 응급상황실 로딩 */
 .paramedic{
     height: 64px;
-    min-width: 1920px;
+    min-width: 1880px;
     padding: 23px 24px;
     background: linear-gradient(to right, #940045, #4A0000);
 }
@@ -196,6 +196,10 @@ body {
     align-items: center;
 }
 
+.paramedic .header_right .btn_doctor_call:hover{
+    background: #F5EEF1;
+}
+
 .paramedic .header_right .btn_doctor_call div{
     width: 16px;
     height: 16px;
@@ -225,6 +229,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 
 
 
@@ -2467,6 +2472,17 @@ body {
     background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
+
+/* 구급대원 전화시 팝업창 위치 */
+.pop.emer_call .overlay .pop_cont{
+    top: 30%;
+    left: 73%;
+    position: fixed;
+    margin-top: 130px;
+}
+
+
+
 
 /* 응급상황 해제 */
 .pop.emergency_clear .pop_cont{

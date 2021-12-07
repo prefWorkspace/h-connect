@@ -2879,6 +2879,7 @@
 /*================= 응급상황실 =================*/
 .emergency{
     min-width: 1880px;
+    min-height: calc(100vh - 64px);
     background-color: #eee;
 }
 
@@ -4615,4 +4616,33 @@
     background: linear-gradient(to right, #eee, #ccc);
     display: none;
     cursor: pointer;
+}
+
+/* 구급대원과 연결 */
+.connect .wrap_inner{
+    padding: 4px;
+    background: #222;
+}
+
+.connect .emer_message{
+    width: 480px;
+    border: 1px solid red;
+}
+
+.connect .emer_message .title{
+    padding: 8px 8px 0;
+    background: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .emer_message .btn_video{
+    width: 80px;
+    padding: 3px 11px;
+    border-radius: 4px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    color: #940045;
 }

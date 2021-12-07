@@ -495,6 +495,10 @@ $(function () {
         $('.pop.attendee').toggle();
     })
 
+    $('.paramedic .header_right .btn_doctor_call').on('click', function(){
+        $('.pop.doctor_call .overlay').show();
+    })
+
 
 });
 
