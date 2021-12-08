@@ -2940,3 +2940,9 @@ body {
 .pop.attendee .name p.on{
     color: #ccc;
 }
+
+/* 의료진 호출 */
+.pop.conn_call .pop_cont{
+    margin-top: -83px;
+    margin-left: 442px;
+}

@@ -3868,6 +3868,7 @@
 .emergency .patient .pupil .pupil_container,
 .emergency .patient .pupil .pupil_container>div> div{
     display: flex;
+    align-items: center;
 }
 
 .emergency .patient .pupil .pupil_container{
@@ -4039,7 +4040,6 @@
 .emergency .vital .vital_monitor .bell_num p {
     font-size: 48px;
 }
-
 
 .emergency .ecg_graph p{
     color: #00FF22;
@@ -4600,7 +4600,7 @@
 
 .para_connect .refuse:hover .refuse_layer,
 .para_connect .mic:hover .mic_layer,
-.para_connect .cam:hover .cam_layer{
+.para_connect .webcam:hover .cam_layer{
     opacity: 1;
     cursor: pointer;
     transition: .4s;
@@ -5025,7 +5025,7 @@
 .connect .several{
     width: 100%;
     height: 853px;
-    border: 1px solid red;
+    position: relative;
 }
 
 .connect .several .title{
@@ -5072,12 +5072,14 @@
 .connect .pati_stat{
     width: 736px;
     height: 800px;
+    position: absolute;
+    z-index: 2;
 }
 
 .connect .patient_status{
     width: 736px;
     margin: 0;
-    padding: 0;
+    padding: 0 2px 0 0;
     border-radius: 0;
 }
 
@@ -5087,8 +5089,19 @@
     display: block;
 }
 
+.connect .patient_status .patient_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.connect .patient_status .patient_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #940045;
+}
+
 .connect .patient_status .patient{
     width: 100%;
+    background: #eee;
 }
 
 .connect .patient .title{
@@ -5114,14 +5127,13 @@
     margin: 0;
 }
 
-.connect .pati_stat{
-    display: none;
-}
-
 .connect .connect_video{
     width: 720px;
     height: 472px;
-    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    right: 0;
 }
 
 .connect .video_view{
@@ -5171,14 +5183,38 @@
     color: #fff;
 }
 
+.connect .patient_status .patient .symptome{
+    background: #fff;
+}
+
+.connect .swiper.part_accident{
+    background: #eee;
+}
+
+.emergency .patient_status .patient .symptome> div> div> div{
+    width: 300px;
+}
+
+.connect .pupil_left,
+.connect .pupil_right{
+    width: 144px;
+    height: 80px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #eee;
+}
+
 .connect .vital{
     width: 1200px;
     height: 600px;
     padding: 0;
     overflow-y: initial;
+    position: absolute;
+    top: 20px;
+    right: 0;
 }
 
-.connect .vital .graph{
+.connect .vital> :last-child{
     width: 100%;
     height: 560px;
     padding: 30px;
@@ -5187,11 +5223,13 @@
 
 .connect .vital .graph> div{
     display: flex;
+    justify-content: space-between;
 }
 
 .connect .vital .graph> div> :first-child div{
     width: 920px;
-    height: 40px;
+    height: 42px;
+    padding: 20px 0;
     overflow: hidden;
 }
 
@@ -5199,6 +5237,268 @@
     width: 100%;
 }
 
+.connect .graph> div> div> div{
+    padding: 0;
+}
+
 .connect .vital .ecg{
     color:#00FF22;
+}
+
+.connect .vital .ecg_graph,
+.connect .vital .sp_graph,
+.connect .vital .resp_graph{
+    padding: 8px 16px;
+}
+
+.connect .vital .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+}
+
+.connect .vital .bell_name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .vital .bell_num{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .vital .sp{
+    color: #00F6FF;
+}
+
+.connect .vital .resp{
+    color: #ff0;
+}
+
+.connect .vital .control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .vital .control> :first-child{
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .vital .control .ews{
+    width: 88px;
+    height: 136px;
+    padding: 16px;
+    color: #fff;
+}
+
+.connect .vital .control .mmhg{
+    width: 260px;
+    height: 136px;
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.connect .vital .control .pulse{
+    width: 160px;
+    height: 136px;
+    padding: 8px 16px;
+    color: #00F6FF;
+}
+
+.connect .vital .control .temp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #FF3184;
+}
+
+.connect .vital .control .time{
+    display: flex;
+    align-items: center;
+}
+
+.connect .vital .control .time div{
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.connect .vital .control .time p{
+    font-size: 11px;
+}
+
+.connect .vital .bell_name input{
+    display: none;
+}
+
+.connect .vital .ecg .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    filter: invert(53%) sepia(73%) saturate(3112%) hue-rotate(94deg) brightness(127%) contrast(112%);
+    cursor: pointer;
+}
+
+.connect .vital .ecg .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.connect .vital .resp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.connect .vital .resp .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.connect .vital .temp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    filter: invert(47%) sepia(74%) saturate(6074%) hue-rotate(317deg) brightness(101%) contrast(101%);
+    cursor: pointer;
+}
+
+.connect .vital .temp .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.connect .scene_picture{
+    width: 300px;
+    height: fit-content;
+    position: absolute;
+    bottom:0;
+    background: #eee;
+    z-index: 5;
+}
+
+.connect .scene_picture .swiper{
+    width: 300px;
+    display: none;
+}
+
+/* 탭으로 보기 */
+.connect .tab_view{
+    position: relative;
+}
+
+.connect .tab_view .connect_video{
+    display: none;
+}
+
+.connect .tab_view .vital{
+    display: none;
+}
+
+.connect_tab .patient_view> .title{
+    padding: 0 16px;
+    margin: 0;
+}
+
+.connect_tab .patient_view> .title .btn_list{
+    padding-top: 7px;
+}
+
+.connect_tab .patient_view .title .btn_list button{
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+    background: #CCC;
+    color: #888;
+}
+
+.connect_tab .patient_view .title .btn_list .on{
+    background: #940045;
+    color: #fff;
+}
+
+.connect_tab .tab_view .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+}
+
+.connect_tab .tab_view .title p{
+    font-size: 12px;
+    color: #fff;
+}
+
+.connect_tab .tab_view .pati_stat,
+.connect_tab .tab_view .patient_status{
+    width: 100%;
+}
+
+.connect_tab .patient_status .patient{
+    padding: 10px;
+}
+
+.connect_tab .tab_view .patient .title{
+    background: none;
+}
+
+.connect_tab .patient_status,
+.connect_tab .patient_status .patient_inner{
+    height: 817px;
+}
+
+.connect_tab .patient_status .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_tab .patient_status .patient .pati_container> div{
+    width: 688px;
+    height: fit-content;
+}
+
+.connect_tab .vital{
+    position: initial;
+    width: 100%;
+}
+
+.connect_tab .vital> :last-child {
+    height: 817px;
+}
+
+.connect_tab .connect_video{
+    width: 100%;
+}
+
+.connect_tab .connect_video .para_cam{
+    width: 100%;
+    height: 817px;
+}
+
+.connect_tab .scene_picture{
+    position: initial;
+    height: 857px;
+    display: none;
+    background: #eee;
+}
+
+.connect_tab .scene_picture .swiper{
+    width: 100%;
+    display: block;
+}
+
+.connect_tab .scene_picture .big_picture{
+    height: 692px;
 }
