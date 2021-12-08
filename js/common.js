@@ -634,6 +634,41 @@ $(function () {
             $('.connect_tab .btn_patient, .connect_tab .btn_vital, .connect_tab .btn_videocall').removeClass('on');
         })
 
+    // view별로 보기(스크롤)
+    $('.connect_scroll .pati_stat .btn_close').on('click', function(){
+        $('.connect_scroll .pati_stat').hide();
+    })
+
+    $('.connect_scroll .vital .btn_close').on('click', function(){
+        $('.connect_scroll .vital').hide();
+    })
+
+    $('.connect_scroll .connect_video .btn_close').on('click', function(){
+        $('.connect_scroll .connect_video').hide();
+    })
+
+    $('.connect_scroll .scene_picture .btn_close').on('click', function(){
+        $('.connect_scroll .scene_picture').hide();
+    })
+
+
+    $('.connect_scroll .btn_patient').on('click', function(){
+        $('.connect_scroll .pati_stat').show();
+    })
+
+    $('.connect_scroll .btn_vital').on('click', function(){
+        $('.connect_scroll .vital').show();
+    })
+
+    $('.connect_scroll .btn_videocall').on('click', function(){
+        $('.connect_scroll .connect_video').show();
+    })
+
+    $('.connect_scroll .btn_picture').on('click', function(){
+        $('.connect_scroll .scene_picture').show();
+    })
+
+
 
 });
 

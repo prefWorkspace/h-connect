@@ -3098,6 +3098,8 @@
     height: 100%;
 }
 
+.gm-style .place-card-medium{display: none;}
+
 .emergency .patient_status{
     width: 1192px;
     height: 720px;
@@ -5091,6 +5093,7 @@
 
 .connect .patient_status .patient_inner::-webkit-scrollbar{
     width: 8px;
+    background: #eee;
 }
 
 .connect .patient_status .patient_inner::-webkit-scrollbar-thumb{
@@ -5401,11 +5404,11 @@
     position: relative;
 }
 
-.connect .tab_view .connect_video{
+.connect_tab .tab_view .connect_video{
     display: none;
 }
 
-.connect .tab_view .vital{
+.connect_tab .tab_view .vital{
     display: none;
 }
 
@@ -5488,6 +5491,7 @@
 }
 
 .connect_tab .scene_picture{
+    width: 100%;
     position: initial;
     height: 857px;
     display: none;
@@ -5500,5 +5504,135 @@
 }
 
 .connect_tab .scene_picture .big_picture{
+    height: 692px;
+}
+
+/* connect_scroll */
+.connect_scroll .tab_view{
+    height: 857px;
+    overflow-y: scroll;
+}
+
+.connect_scroll .tab_view::-webkit-scrollbar{
+    display: none;
+}
+
+.connect_scroll .patient_view> .title{
+    margin: 0;
+}
+
+.connect_scroll .pati_stat{
+    width: 100%;
+    height: fit-content;
+    position: initial;
+    display: block;
+}
+
+.connect_scroll .pati_stat> .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .pati_stat .title p{
+    font-size: 12px;
+    color: #fff;
+}
+
+.connect_scroll .tab_view .title button{
+    width: 20px;
+    height: 20px;
+    background: none;
+}
+
+.connect_scroll .pati_stat .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .pati_stat .patient_status .pati_container> div{
+    width: 673px;
+}
+
+.connect_scroll .patient_status .patient .first_aid{
+    height: fit-content;
+}
+
+.connect_scroll .patient_status{
+    width: 100%;
+    height: 816px;
+}
+
+.connect_scroll .patient_status .patient_inner {
+    height: 816px;
+}
+
+.connect_scroll .vital{
+    width: 100%;
+    position: initial;
+}
+
+.connect_scroll .vital .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+}
+
+.connect_scroll .vital .title p{
+    color: #fff;
+}
+
+.connect_scroll .connect_video{
+    width: 100%;
+    height: 100%;
+    position: initial;
+}
+
+.connect_scroll .connect_video .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .connect_video .title p{
+    color: #fff;
+}
+
+.connect_scroll .connect_video .video_view{
+    height: 808px;
+}
+
+.connect_scroll .connect_video .para_cam{
+    width: 100%;
+    height: 100%;
+}
+
+.connect_scroll .scene_picture{
+    width: 100%;
+    position: initial;
+}
+
+.connect_scroll .scene_picture .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .scene_picture .title p{
+    color: #fff;
+}
+
+.connect_scroll .scene_picture .swiper{
+    width: 100%;
+    display: block;
+}
+
+.connect_scroll .scene_picture .big_picture{
     height: 692px;
 }
