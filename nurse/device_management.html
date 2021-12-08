@@ -61,7 +61,7 @@
                     <div class="selectBox2">
                         <button class="label left_label">산소포화도 측정장치</button>
 
-                        <ul class="optionList left_option" style="display: none;">
+                        <ul class="optionList left_option">
                             <li class="optionItem left_list">심전도 패치</li>
                             <li class="optionItem left_list">산소포화도 측정장치</li>
                             <li class="optionItem left_list">체온 패치</li>
@@ -97,7 +97,7 @@
                         
                     <div class="selectBox2">
                         <button class="label right_label">산소포화도 측정장치</button>
-                        <ul class="optionList right_option" style="display: none;">
+                        <ul class="optionList right_option">
                             <li class="optionItem right_list">심전도 패치</li>
                             <li class="optionItem right_list">산소포화도 측정장치</li>
                             <li class="optionItem right_list">체온 패치</li>
@@ -180,13 +180,13 @@
             <div>
                 <div style="width: 110px;"></div>
     
-                <div class="search_container">
+                <!-- <div class="search_container">
                     <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
     
                     <button type="button" class="btn_search">
                         <img src="/img/header/search.svg" alt="검색표시">
                     </button>
-                </div>
+                </div> -->
     
                 <button type="button" class="btn_logout">
                     심장병동 간호사실
@@ -305,10 +305,10 @@
                     <div class="device_list">
                         <div class="device_search">
 
-                            <div class="select_box select_device">
+                            <div class="selectBox2 select_device">
                                 <button class="label device_label">심전도 패치</button>
 
-                                <ul class="optionList device_option" style="display: none;">
+                                <ul class="optionList device_option">
                                     <li class="optionItem device_optionItem">심전도 패치</li>
                                     <li class="optionItem device_optionItem">산소포화도 측정장치</li>
                                     <li class="optionItem device_optionItem">체온 패치</li>
@@ -467,9 +467,9 @@
                             <div class="select_box select_return">
                                 <button class="label return_label">산소포화도 측정장치</button>
                                 <ul class="option return_option">
-                                    <li class="optionItem">심전도 패치</li>
-                                    <li class="optionItem">산소포화도 측정장치</li>
-                                    <li class="optionItem">체온 패치</li>
+                                    <li class="optionItem return_list">심전도 패치</li>
+                                    <li class="optionItem return_list">산소포화도 측정장치</li>
+                                    <li class="optionItem return_list">체온 패치</li>
                                 </ul>
                             </div>
 
@@ -618,7 +618,7 @@
             }
             })
 
-        //신규장치 등록 리스트 셀렉트 
+       //신규장치 등록 리스트 셀렉트 
             const deviceLabel = document.querySelector('.device_label');
             const deviceOption = document.querySelectorAll('.device_option');
 
@@ -641,7 +641,28 @@
             }
             })
 
+        //신규장치 등록 리스트 셀렉트 
+            const returnLabel = document.querySelector('.return_label');
+            const returnOption = document.querySelectorAll('.return_option');
 
+            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+            const returnSelect = (item) => {
+                returnLabel.parentNode.classList.remove('active');
+                returnLabel.innerHTML = item.textContent;
+            }
+            // 옵션 클릭시 클릭한 옵션을 넘김
+            returnOption.forEach(option => {
+                option.addEventListener('click', () => returnSelect(option))
+            })
+
+            // 라벨을 클릭시 옵션 목록이 열림/닫힘
+            returnLabel.addEventListener('click', () => {
+            if(returnLabel.parentNode.classList.contains('active')) {
+                returnLabel.parentNode.classList.remove('active');
+            } else {
+                returnLabel.parentNode.classList.add('active');
+            }
+            })
         
     </script>
    

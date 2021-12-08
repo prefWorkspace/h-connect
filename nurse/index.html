@@ -69,14 +69,14 @@
                     <p>병상 수 </p>
 
                     <div class="selectBox2">
-                        <button class="label">6인실</button>
-                        <ul class="optionList">
-                            <li class="optionItem">1인실</li>
-                            <li class="optionItem">2인실</li>
-                            <li class="optionItem">3인실</li>
-                            <li class="optionItem">4인실</li>
-                            <li class="optionItem">5인실</li>
-                            <li class="optionItem">6인실</li>
+                        <button class="label room_label">6인실</button>
+                        <ul class="optionList room_list">
+                            <li class="optionItem room_option">1인실</li>
+                            <li class="optionItem room_option">2인실</li>
+                            <li class="optionItem room_option">3인실</li>
+                            <li class="optionItem room_option">4인실</li>
+                            <li class="optionItem room_option">5인실</li>
+                            <li class="optionItem room_option">6인실</li>
                         </ul>
                     </div>
                 </div>
@@ -650,9 +650,8 @@
     <!--// end wrap-->
 
     <script>
-        /* 화살표 함수 */
-        const label = document.querySelector('.label');
-        const options = document.querySelectorAll('.optionItem');
+        const label = document.querySelector('.room_label');
+        const options = document.querySelectorAll('.room_option');
 
         // 클릭한 옵션의 텍스트를 라벨 안에 넣음
         const handleSelect = (item) => {

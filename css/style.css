@@ -2105,9 +2105,9 @@
     font-size: 14px;
 }
 
-.monitoring_patient .table_body .btn_list{
+/* .monitoring_patient .table_body .btn_list{
     padding: 40px 0;
-}
+} */
 
 .monitoring_patient .table_body .btn_list button{
     width: 80px;
@@ -3343,7 +3343,7 @@
 }
 
 .emergency .patient_status .patient .symptome .part .swiper-scrollbar{
-    width: 490px;
+    width: 100%;
     background: #ccc;
 }
 
@@ -5071,11 +5071,11 @@
     margin: 0 32px;
 }
 
+/* 환자상태 */
 .connect .pati_stat{
     width: 736px;
-    height: 800px;
     position: absolute;
-    z-index: 2;
+    z-index: 5;
 }
 
 .connect .patient_status{
@@ -5130,6 +5130,62 @@
     margin: 0;
 }
 
+.connect .pupil_left,
+.connect .pupil_right{
+    width: 144px;
+    height: 80px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+
+/* 환자상태 full 화면 */
+.connect .pati_stat.on{
+    width: 100%;
+    height: 816px;
+    z-index: 5;
+}
+
+.connect .pati_stat.on .title{
+    width: 100%;
+}
+
+.connect .pati_stat.on .patient_status {
+    width: 100%;
+    height: 816px;
+}
+
+.connect .pati_stat.on .pati_stat{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .pati_stat.on .patient_status .patient_inner {
+    height: 813px;
+}
+
+.connect .pati_stat.on .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .pati_stat.on .patient_status .patient .symptome{
+    width: 683px;
+}
+
+.connect .pati_stat.on .part_accident{
+    display: block;
+}
+
+.connect .pati_stat.on .swiper-scrollbar-drag {
+    height: 8px;
+    margin-bottom: 2px;
+    background: #940045;
+}
+
+
+/* 화상연결 */
 .connect .connect_video{
     width: 720px;
     height: 472px;
@@ -5198,15 +5254,20 @@
     width: 300px;
 }
 
-.connect .pupil_left,
-.connect .pupil_right{
-    width: 144px;
-    height: 80px;
-    padding: 8px;
-    border-radius: 4px;
-    background: #eee;
+/* 화상연결 full */
+.connect .connect_video.on{
+    width: 100%;
+    top: 0;
+    z-index: 7;
 }
 
+.connect .connect_video.on .para_cam{
+    width: 100%;
+    height: 813px;
+}
+
+
+/* 바이탈 */
 .connect .vital{
     width: 1200px;
     height: 600px;
@@ -5391,13 +5452,32 @@
     position: absolute;
     bottom:0;
     background: #eee;
-    z-index: 5;
+    z-index: 4;
 }
 
 .connect .scene_picture .swiper{
     width: 300px;
     display: none;
 }
+
+/* 현장사진 full */
+.connect .scene_picture.on{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .scene_picture.on .big_picture{
+    width: 100%;
+    height: 700px;
+}
+
+.connect .scene_picture.on .small_picture{
+    width: 100%;
+    padding-left: 8px;
+}
+
+
+
 
 /* 탭으로 보기 */
 .connect .tab_view{

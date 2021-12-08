@@ -1,14 +1,13 @@
 $(function () {
 
-    // 공통팝업
         // 팝업창 닫기    
         $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
             $('.pop .overlay').hide();
         });
 
-    $('.pop .pop_cont .btn_list .btn_cancel').on('click', function(){
-        $('.pop .overlay').hide();
-    })
+        $('.pop .pop_cont .btn_list .btn_cancel').on('click', function(){
+            $('.pop .overlay').hide();
+        })
 
 
     //---------------------- 간호사 ----------------------//
@@ -84,9 +83,7 @@ $(function () {
         $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
             $('.pop.new_room .overlay').show();
         });
-        // $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-        //     $('.pop.new_room .overlay').hide();
-        // });
+
             //병실관리 확인 누르면 리스트 나오게
         $('.pop.new_room .overlay .pop_cont .btn_list .btn_check').on('click', function(){
             $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
@@ -115,9 +112,6 @@ $(function () {
         $('.nurse .new_device .title .btn_new_device').on('click', function () {
             $('.pop.regi_device .overlay').show();
         });
-        // $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-        //     $('.pop.regi_device .overlay').hide();
-        // });
 
         // 장치삭제
         $('.nurse .new_device .item_row .btn_delete').on('click', function () {
@@ -137,9 +131,6 @@ $(function () {
         $('.nurse .return_device .title .btn_use_device').on('click', function () {
             $('.pop.re_device .overlay').show();
         });
-        // $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-        //     $('.pop.re_device .overlay').hide();
-        // });
 
         // 장치반납 취소
         $('.nurse .return_device .item_row .btn_cancel').on('click', function () {
@@ -158,19 +149,19 @@ $(function () {
 
         // 셀렉트
             //장치관리- 장치추가
-            $('.selectBox2 .label').on('click', function(){
-                $('.left_option').slideToggle(200);
-            });
+            // $('.selectBox2 .label').on('click', function(){
+            //     $('.left_option').slideToggle(200);
+            // });
             //장치관리- 장치반납
-            $('.selectBox2 .label').on('click', function(){
-                $('.right_option').slideToggle(200);
-            });
+            // $('.selectBox2 .label').on('click', function(){
+            //     $('.right_option').slideToggle(200);
+            // });
 
             //장치관리- 장치리스트
-            $('.select_device .label').on('click', function(){
-                $('.select_device').toggleClass('on');
-                $('.device_option').slideToggle(200);
-            });
+            // $('.select_device .label').on('click', function(){
+            //     $('.select_device').toggleClass('on');
+            //     $('.device_option').slideToggle(200);
+            // });
 
             
 
@@ -554,6 +545,11 @@ $(function () {
         $('.several .patient_status').toggle();
     })
 
+    $('.several .pati_stat .title .btn_full').on('click', function(){
+        $('.several .pati_stat').toggleClass('on');
+        $('.several .patient_status').show();
+    })
+
     $('.several .pati_stat .title .btn_close').on('click', function(){
         $('.several .pati_stat').hide();
     })
@@ -573,8 +569,13 @@ $(function () {
 
 
      // 화상연결
-     $('.several .connect_video .title .btn_fold').on('click', function(){
+    $('.several .connect_video .title .btn_fold').on('click', function(){
         $('.several .video_view').toggle();
+    })
+
+    $('.several .connect_video .title .btn_full').on('click', function(){
+        $('.several .connect_video').toggleClass('on');
+        $('.several .video_view').show();
     })
 
     $('.several .connect_video .title .btn_close').on('click', function(){
@@ -588,6 +589,11 @@ $(function () {
     // 현장사진
     $('.several .scene_picture .title .btn_fold').on('click', function(){
         $('.several .swiper').toggle();
+    })
+
+    $('.several .scene_picture .title .btn_full').on('click', function(){
+        $('.several .scene_picture').toggleClass('on');
+        $('.several .swiper').show();
     })
 
     $('.several .scene_picture .title .btn_close').on('click', function(){
