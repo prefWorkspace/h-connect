@@ -34,6 +34,7 @@ body {
 .pc_header .header_inner> div{
     /* z-index: 99; */
     display: flex;
+    align-items: center;
 }
 
 .pc_header .logo{
@@ -106,8 +107,24 @@ body {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(53deg) brightness(103%) contrast(101%);
 }
 
+.pc_header .btn_red{
+    width: 120px;
+    height: 32px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    color: #940045;
+    display: flex;
+    align-items: center;
+}
+
+.pc_header .btn_red div{
+    margin-right: 8px;
+}
+
 .pc_header .btn_logout{
-    width: 133px;
+    width: 120px;
     height: 32px;
     margin: 12px;
     font-size: 14px;
