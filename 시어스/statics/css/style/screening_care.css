@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* card */
+.card {
+    flex: 1;
+}
+
+.care_card2 {
+    min-width: 800px;
+    flex: 2;
+}
+
+.care_card3 {
+    min-width: 480px;
+}
+
+
+
+/* care_card1 */
+/* card_header */
+.care_card1 .card_header {
+    border: none;
+    align-items: center;
+}
+
+.care_card1 .card_title {
+    background-image: url('../../images/list.svg');
+    background-position: left top 6px;
+    margin-bottom: 0;
+}
+
+.care_card1 .medi_regist_btn {
+    background-color: #007A94;
+    border-color: #007A94;
+    line-height: 38px;
+}
