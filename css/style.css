@@ -5811,38 +5811,85 @@
 
 .doctor .section{
     width: 360px;
+    height: 640px;
 }
 
-.doctor .btn_section{
+.doctor .schedule button{
     width: 100%;
     padding: 20px 16px;
     margin-bottom: 32px;
     border-radius: 8px;
-    background: #ccc;
     display: flex;
+    align-items: center;
+}
+
+.doctor .schedule button .img_container{
+    width: 46px;
+    height: 32px;
+    margin-right: 30px;
+}
+
+.doctor .schedule .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor .schedule .btn_section{
+    background: #ccc;
     font-size: 16px;
     font-weight: 500;
     color: #fff;
     align-items: center;
 }
 
-.doctor .btn_section div{
-    width: 46px;
-    height: 32px;
-    margin-right: 30px;
+.doctor .schedule .btn_today{
+    background: linear-gradient(TO right, #004F60, #350039);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    display: none;
 }
 
-.doctor .btn_section div img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.doctor .schedule .btn_today .img_container{
+    margin-right: 22px;
+}
+
+.doctor .schedule .btn_today> :last-child{
+    text-align: left;
+    color: #fff;
+    position: relative;
+}
+
+.doctor .schedule .btn_today div::after{
+    content: ''; 
+    width: 9px;
+    height: 18px; 
+    position: absolute; 
+    background: url('/img/right_arrow.svg') no-repeat 0 0px /contain;
+    top: 50%; 
+    transform: translateY(-50%);
+    right: -50px;
+
+}
+
+.doctor .schedule .btn_today h2{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.doctor .schedule .btn_today p{
+    font-size: 12px;
 }
 
 .doctor .container{
     width: 100%;
+    height: 100%;
     padding: 16px;
     border-radius: 8px;
     background: #fff;
+}
+
+.doctor .schedule .container{
+    height: 536px;
 }
 
 .doctor .schedule .title{
@@ -5965,4 +6012,119 @@
 
 .doctor .my_plan .title .btn_list button.on img{
     filter: none;
+}
+
+.doctor .my_plan .plan_list{
+    height: 520px;
+    overflow-y: scroll;
+}
+
+.doctor .my_plan .plan_list::-webkit-scrollbar{
+    display: none;
+}
+
+
+.doctor .my_plan .calendar_con{
+    width: 296px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .my_plan .calendar_con h2{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.doctor .my_plan .calendar_con p{
+    margin-right: 25px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #007A94;
+    position: relative;
+    cursor: pointer;
+}
+
+.doctor .my_plan .calendar_con p::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: -20px;
+}
+
+.doctor .my_plan .calendar_con .close::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: -20px;
+    transform: rotate(180deg);
+}
+
+.doctor .my_plan .calendar_con .close{
+    display: none;
+}
+
+.doctor .my_plan .calendar{
+    width: 100%;
+    height: 328px;
+}
+
+.doctor .today_plan .title{
+    width: 296px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-bottom: 0;
+}
+
+.doctor .today_plan .title h2{
+    color: #000;
+}
+
+.doctor .today_plan .title p{
+    font-size: 12px;
+}
+
+.doctor .today_plan .title p span{
+    color: #007A94;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list{
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list div{
+    display: flex;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list div :first-child{
+    margin-right: 16px;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list p{
+    font-size: 12px;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list.on{
+    border-radius: 4px;
+    background: #007A94;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list.on p{
+    color: #fff;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list .send_me{
+    color: #007A94;
 }
