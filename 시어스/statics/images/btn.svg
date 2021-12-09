@@ -1,0 +1,4 @@
+<svg id="btn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="div" width="24" height="24" rx="4" fill="none"/>
+  <path id="_1x_search_fff" data-name="@1x search #fff" d="M15.561,13.439l-3.182-3.182-.531.531L10.736,9.675a6.014,6.014,0,1,0-1.061,1.061l1.113,1.112-.531.531,3.182,3.182a1.5,1.5,0,0,0,2.122-2.122ZM1,6a5,5,0,1,1,5,5A5.006,5.006,0,0,1,1,6Z" transform="translate(4 4)" fill="#007a94"/>
+</svg>
