@@ -320,8 +320,56 @@
 
 
 
-
 /* 채팅 */
+.nurse_message .chat_container{
+    height: 440px;
+    display: flex;
+    justify-content: space-between;
+    background: #C5D8DC;
+}
+
+.nurse_message .timeLine{
+    width: 32px;
+    height: 440px;
+    padding: 8px 10px;
+}
+
+.nurse_message .timeLine a{
+    width: 12px;
+    margin-bottom: 8px;
+    background: #007A94;
+    display: block;
+}
+
+.nurse_message .timeLine> :nth-child(2n-1){
+    background: #eee;
+}
+
+.nurse_message .timeLine> :last-child{
+    margin: 0;
+}
+
+.nurse_message .timeLine .first{
+    height: 140px;
+}
+
+.nurse_message .timeLine .second{
+    height: 40px;
+}
+
+.nurse_message .timeLine .third{
+    height: 80px;
+}
+
+.nurse_message .timeLine .fourth{
+    height: 60px;
+}
+
+.nurse_message .timeLine .fifth{
+    height: 72px;
+}
+
+
 .message .chat_inner{
     height: 440px;
     padding: 8px 20px;

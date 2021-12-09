@@ -49,15 +49,6 @@
         </div>
     </div>
 
-    <!-- 메세지 정렬 팝업 -->
-    <div class="pop chat_sort">
-        <div class="wrap_inner">
-            <p>전체 메세지 보기</p>
-            <p>진료 중 메세지 보기</p>
-            <p>진료 제외 메세지 보기</p>
-        </div>
-    </div>
-
     <div id="wrap">
       <!--헤더 pc-->
       <header id="header" class="pc_header">
@@ -289,13 +280,30 @@
                         <div>
                             <img src="/img/icon/nurse/sorting.svg" alt="정렬아이콘">
                         </div>
-                    </button>                        
+                    </button>
+                    
+                    <!-- 메세지 정렬 팝업 -->
+                    <div class="pop chat_sort">
+                        <div class="wrap_inner">
+                            <p>전체 메세지 보기</p>
+                            <p>진료 중 메세지 보기</p>
+                            <p>진료 제외 메세지 보기</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="chat_container">                
+                <div class="chat_container"> 
+                    <div class="timeLine">
+                        <a class="first" href="#first_taget"></a>
+                        <a class="second" href="#second_taget"></a>
+                        <a class="third" href="#third_taget"></a>
+                        <a class="fourth" href="#fourth_taget"></a>
+                        <a class="fifth" href="#fifth_taget"></a>
+                    </div>               
+
                     <div class="chat_inner">
                         <!-- 상대방이 보낸 매세지 chat_you -->
-                        <div class="chat_you">
+                        <div class="chat_you" id="second_taget">
                             <p>김심장 교수님</p>
 
                             <div class="bubble">
@@ -310,7 +318,7 @@
                         </div>
 
                         <!-- 내가 보낸 메시지 chat_me -->
-                        <div class="chat_me">
+                        <div class="chat_me" id="fifth_taget">
                             <div>
                                 <div class="bubble">
                                     <p>네 준비하겠습니다.</p>
@@ -339,7 +347,7 @@
                         </div>
 
                         <!-- 진료 시작 -->
-                        <div class="start_clinic">
+                        <div class="start_clinic" id="fourth_taget">
                             <p>박입원님. 진료가 시작되었습니다.</p>
                             <p>
                                 <time datetime="21.09.15"><span>21.09.15</span></time>
@@ -364,7 +372,7 @@
                         </div>
 
                         <!-- 내가 보낸 메시지 chat_me -->
-                        <div class="chat_me">
+                        <div class="chat_me" id="first_taget">
                             <div>
                                 <div class="bubble">
                                     <p>5분전에 쟀을때 ㅁㅁㅁ였습니다.</p>
@@ -379,7 +387,7 @@
                         </div>
 
                         <!-- 진료 종료 -->
-                        <div class="end_clinic">
+                        <div class="end_clinic" id="third_taget">
                             <p>박입원님. 진료가 종료되었습니다.</p>
                             <p>
                                 <time datetime="21.09.15"><span>21.09.15</span></time>
@@ -410,7 +418,6 @@
                     <button type="button" class="btn_send">전송</button>
                 </div>
             </section>
-
 
             <!-- 새로운 메세지를 누르면 나오는 화면 / 의료진 선택 -->
             <section class="section left select_medi">

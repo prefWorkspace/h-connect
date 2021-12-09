@@ -309,6 +309,7 @@
                                 <button class="label device_label">심전도 패치</button>
 
                                 <ul class="optionList device_option">
+                                    <!-- button에 li 텍스트 오류 ㅠㅠ (못잡겠어요) -->
                                     <li class="optionItem device_optionItem">심전도 패치</li>
                                     <li class="optionItem device_optionItem">산소포화도 측정장치</li>
                                     <li class="optionItem device_optionItem">체온 패치</li>
@@ -464,9 +465,10 @@
                     <div class="device_list">
                         <div class="device_search">
 
-                            <div class="select_box select_return">
+                            <div class="selectBox2 select_return">
+                                <!-- button에 li 텍스트 오류 ㅠㅠ (못잡겠어요) -->
                                 <button class="label return_label">산소포화도 측정장치</button>
-                                <ul class="option return_option">
+                                <ul class="optionList return_option">
                                     <li class="optionItem return_list">심전도 패치</li>
                                     <li class="optionItem return_list">산소포화도 측정장치</li>
                                     <li class="optionItem return_list">체온 패치</li>
@@ -623,13 +625,13 @@
             const deviceOption = document.querySelectorAll('.device_option');
 
             // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-            const handleSelect3 = (item) => {
+            const deviceSelect = (item) => {
                 deviceLabel.parentNode.classList.remove('active');
                 deviceLabel.innerHTML = item.textContent;
             }
             // 옵션 클릭시 클릭한 옵션을 넘김
             deviceOption.forEach(option => {
-                option.addEventListener('click', () => handleSelect3(option))
+                option.addEventListener('click', () => deviceSelect(option))
             })
 
             // 라벨을 클릭시 옵션 목록이 열림/닫힘
@@ -650,6 +652,7 @@
                 returnLabel.parentNode.classList.remove('active');
                 returnLabel.innerHTML = item.textContent;
             }
+
             // 옵션 클릭시 클릭한 옵션을 넘김
             returnOption.forEach(option => {
                 option.addEventListener('click', () => returnSelect(option))

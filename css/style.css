@@ -499,6 +499,11 @@
     border-radius:4px;
 }
 
+.selectBox2 .return_option{
+    width: 160px;
+    top: 35px;
+}
+
 .nurse .search_container{
     width: 392px;
     height: 36px;
@@ -625,40 +630,62 @@
     width: 536px;
 }
 
-.measure_status .title div{
+.nurse_measure .measure_status .title div{
     margin-bottom: 13px;
 }
 
-.measure_status .search_container{
+.nurse_measure .measure_status .search_container{
     width: 100%;
     height: 40px;
 }
 
-.measure_status .search_container input{
+.nurse_measure .measure_status .search_container input{
     width: 90%;
     height: 40px;
 }
 
-.measure_status .search_container button{
+.nurse_measure .measure_status .search_container button{
     height: 40px;
 }
 
-.measure_status .select_box{
-    width: 160px;
-    height: 36px;
-    margin: 16px 16px 0 0;
-    display: inline-block;
+.nurse_measure .label{
+    font-size: 12px;
 }
 
-.measure_status .search_select .ward_label{
+.nurse_measure .optionItem{
+    padding: 10px 15px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse_measure .measure_status .search_select{
+    margin-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nurse_measure .measure_status .selectBox2{
+    width: 160px;
+    height: 36px;
+    margin: 0 16px 0 0;
+}
+
+.nurse_measure .optionList{
+    width: 160px;
+    top: 35px;
+}
+
+.nurse_measure .measure_status .search_select .ward_label{
     font-weight: normal;
 }
 
-.measure_status .search_select p{
-    margin-top: 25px;
+.nurse_measure  .measure_status .search_select p{
     margin-left: 125px;
     font-size: 12px;
-    display: inline-block;
 }
 
 .measure_status .search_select p span{
@@ -795,14 +822,20 @@
     padding: 10px;
 }
 
-.new_hospital .hospital_patient .patient_info .select_sex{
+.new_hospital .sex_select{
     width: 80px;
     height: 36px;
     margin: 0 16px;
 }
 
-.new_hospital .hospital_patient .patient_info .select_sex .sex_label{
+.new_hospital .sex_label{
     color: #ccc;
+}
+
+.new_hospital .sex_option{
+    width: 80px;
+    top: 35px;
+    z-index: 1;
 }
 
 .new_hospital .hospital_patient .patient_info> :last-child{
@@ -814,15 +847,27 @@
     height: 36px;
 }
 
+.nurse_measure .hospital_patient .patient_room .bed_count.lot{
+    color: #007A94;
+}
+
+.nurse_measure .hospital_patient .patient_room .bed_count.none{
+    color: #ccc;
+}
+
 .new_hospital .hospital_patient .patient_room .select_room{
     width: 160px;
     height: 36px;
     margin: 0 16px;
 }
 
-.new_hospital .hospital_patient .patient_room .select_bed{
+.nurse_measure .select_bed{
     width: 120px;
     height: 36px;
+}
+
+.new_hospital .hospital_patient .patient_room .bed_option{
+    width: 120px;
 }
 
 .new_hospital .cont{
@@ -919,7 +964,7 @@
 }
 
 .modifi_hospital .container .cont{
-    padding: 16px 16px 52px;
+    padding: 16px 16px 45px;
     border-bottom: 1px solid #eee;
 }
 
@@ -976,9 +1021,8 @@
     margin: 0 16px;
 }
 
-.modifi_hospital .hospital_patient .patient_room .select_bed{
+.modifi_hospital .select_option{
     width: 120px;
-    height: 36px;
 }
 
 .modifi_hospital .select_box .label{
@@ -1017,7 +1061,7 @@
 
 .modifi_hospital .device_room> div .btn_list button{
     width: 64px;
-    height: 31px;
+    height: 32px;
     border-radius: 4px;
     background: #fff;
     font-size: 12px;
@@ -1048,6 +1092,11 @@
 
 .modifi_hospital .device_room> div{
     border-bottom: 1px solid #eee;
+}
+
+.modifi_hospital .sex_option2{
+    width: 80px;
+    z-index: 2;
 }
 
 
@@ -1177,6 +1226,7 @@
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
     z-index: 999;
 }
+
 
 
 
@@ -2451,6 +2501,26 @@
 
 .dashboard .taget_list .title h2{
     margin: 0 0 0 15px;
+}
+
+.dashboard .select_ward{
+    width: 160px;
+    height: 36px;
+}
+
+.dashboard .label{
+    font-size: 12px;
+}
+
+.dashboard .ward_option{
+    width: 160px;
+    top: 35px;
+    font-size: 12px;
+}
+
+.dashboard .ward_option{
+    padding: 10px 0;
+    z-index: 2;
 }
 
 /* 대시보드 아코디언 */

@@ -297,6 +297,19 @@ $(function () {
                 $('.pop.nurse_view').hide();
             })
 
+            $('.pop.nurse_view .search_container .sort').on('click', function(){
+                $('.pop.chat_sort').toggle();
+            })
+
+            $('.pop.nurse_view .btn_fold').on('click', function(){
+                $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').toggle();
+                $('.pop.nurse_view').toggleClass('on');
+            })
+
+            $('.pop.nurse_view .btn_full').on('click', function(){
+                $('.pop.nurse_view').toggleClass('active');
+            })
+
         // 담당의에게 메시지 보내는 버튼 활성화
         $('#to_doctor').on('keyup', function() {
             var inputVal = $('#to_doctor').val();
@@ -377,6 +390,9 @@ $(function () {
             $('.pop.chat_sort').toggle();
         });
 
+        $('.pop.chat_sort p').on('click', function () {
+            $('.pop.chat_sort').hide();
+        });
 
 
 
