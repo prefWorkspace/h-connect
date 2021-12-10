@@ -1,3 +1,12 @@
+.fc-daygrid{
+  border:none;
+}
+
+.fc-daygrid-day-number{color:#fff;}
+
+
+
+
 /* classes attached to <body> */
 /* TODO: make fc-event selector work when calender in shadow DOM */
 .fc-not-allowed,
@@ -54,11 +63,15 @@
   direction: rtl;
   text-align: right;
 }
+
+/* border 삭제 */
 .fc-theme-standard td,
   .fc-theme-standard th {
-    border: 1px solid #ddd;
-    border: 1px solid var(--fc-border-color, #ddd);
-  }
+    /* border: 1px solid #ddd;
+    border: 1px solid var(--fc-border-color, #ddd); */
+    border: none;
+}
+
 /* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
 /* inner-wrappers are responsible for being absolute */
 /* TODO: best place for this? */
@@ -728,9 +741,18 @@ A HORIZONTAL event
 
 }
 .fc .fc-daygrid-day-top {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* .fc .fc-daygrid-day-top {
     display: flex;
     flex-direction: row-reverse;
-  }
+  } */
 .fc .fc-day-other .fc-daygrid-day-top {
     opacity: 0.3;
   }

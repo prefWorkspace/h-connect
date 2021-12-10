@@ -6077,6 +6077,16 @@
 .doctor .my_plan .calendar{
     width: 100%;
     height: 328px;
+    /* background: linear-gradient(to right, #004F60, #350039); */
+    position: relative;
+}
+
+.doctor .my_plan .calendar::before{
+    content: '';
+    position:absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #004F60, #350039);
 }
 
 .fc-col-header{
@@ -6087,7 +6097,8 @@
     height: 50px;
 }
 
-.fc-scroller-liquid-absolute{
+.fc-scroller-liquid-absolute,
+.fc-daygrid-body{
     width: 360px;
     height: 264px;
     overflow: hidden;
@@ -6109,6 +6120,9 @@
     border-bottom-right-radius: 0;
     /* display: none; */
 }
+
+
+
 
 
 /* 오늘의 일정목록 */
