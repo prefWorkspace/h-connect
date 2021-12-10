@@ -1,4 +1,4 @@
-window.addEventListener('onload', () => {
+window.addEventListener('DOMContentLoaded', () => {
    // modal on 기능 
    function md() {
         const modalBtn = document.querySelectorAll('.modal_btn');

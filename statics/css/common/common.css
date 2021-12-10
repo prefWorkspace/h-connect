@@ -13,7 +13,7 @@
 .btn1 {
     background: none;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 14px;
     width: 120px;
     line-height: 32px;
     border: 1px solid #fff;
@@ -51,7 +51,7 @@
 }
 
 .card_btn > span {
-    font-size: 1.2rem;
+    font-size: 12px;
     display: inline-block;
 }
 
@@ -95,7 +95,7 @@
 }
 
 .form_box > span {
-    font-size: 1.4rem;
+    font-size: 14px;
     width: 110px;
     margin-right: 10px;
     display: inline-block;
@@ -113,7 +113,7 @@
     line-height: 45px;
     border-radius: 4px;
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 14px;
 }
 
 
@@ -177,7 +177,7 @@
 .common_table tr > td > span {
     display: block;
     line-height: 47px;
-    font-size: 1.2rem;
+    font-size: 12px;
 
 }
 
@@ -232,7 +232,7 @@
 #contents_wrap {
     position: relative;
     height: 100vh;
-    min-height: 800px;
+    min-height: 900px;
     background: #EEEEEE;
     overflow: auto;
     padding-top: 80px;
@@ -245,7 +245,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    min-width: 1880px;
+    width: 100%;
     height: 80px;
     background: linear-gradient(to right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
@@ -280,13 +281,13 @@
 }
 
 .pahe_title {
-    font-size: 2.4rem;
+    font-size: 24px;
     font-weight: 500;
     padding-bottom: 2px;
 }
 
 .page_ex_text {
-    font-size: 1.2rem;
+    font-size: 12px;
 }
 
 
@@ -323,7 +324,7 @@
 
 /* pro_info */
 .info_text {
-    font-size: 1.2rem;
+    font-size: 12px;
 }
 
 /* login_btn */
@@ -355,7 +356,7 @@
     position: relative;
     display: block;
     color: #888888;
-    font-size: 1rem;
+    font-size: 10px;
     width: 60px;
     height: 60px;
     text-align: center;
@@ -447,13 +448,13 @@
 /* main */
 #main {
     height: 100%;
+    min-width: 1800px;
     width: 100%;
     overflow-y: auto;
 }
 
 /* main - section */
 #section {
-    min-width: 1800px;
     padding: 40px 40px 60px;
     display: flex;
     height: 100%;
@@ -480,7 +481,7 @@
 }
 
 .card_ex_text {
-    font-size: 1.2rem;
+    font-size: 12px;
 }
 
 .first_card_title .card_title {
@@ -493,7 +494,7 @@
     color: #007A94;
     line-height: 38px;
     height: 40px;
-    font-size: 1.4rem;
+    font-size: 14px;
 }
 
 /* hover */
@@ -530,7 +531,7 @@
 .re_del_btn {
     width: 56px;
     line-height: 32px;
-    font-size: 1.2rem;
+    font-size: 12px;
 }
 
 .retouch_btn {
@@ -680,7 +681,7 @@
     color: #940045;
     display: block;
     padding-top: 10px;
-    font-size: 2.4rem;
+    font-size: 24px;
 }
 
 .check_modal .modal_footer {
