@@ -5,10 +5,6 @@
 
 *, :after, :before {margin: 0; padding: 0;}
 
-html {
-  font-size: 62.5%;
-} 
-
 html, body,
 div, span,
 dl, dt, dd, ul, ol, li,
@@ -105,7 +101,7 @@ address{font-style:normal;}
 
 button, input, select, textarea { font-weight: 400; font-style: normal; font-family: "noto-sans-cjk-kr", sans-serif;}
 
-body { width: 100%; height: auto; font-family: "noto-sans-cjk-kr", sans-serif; font-weight: 400; font-style: normal; background-color:#ffffff; color: #222222; font-size: 1.6rem;}
+body { width: 100%; height: auto; font-family: "noto-sans-cjk-kr", sans-serif; font-weight: 400; font-style: normal; background-color:#ffffff; color: #222222; font-size: 16px;}
 
 .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after, .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after{
 	display: none;
