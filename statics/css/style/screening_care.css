@@ -256,8 +256,7 @@
 }
 
 
-
-
+/* bot_table */
 .common_table.bot_table tr > td:nth-child(1), 
 .common_table.bot_table tr > th:nth-child(1) {
     flex: 3;
@@ -287,8 +286,18 @@
     transform: rotate(180deg);
 }
 
-
-
 .inner_card .page_box {
     bottom: 10px;
 }
+
+
+/* care_card3 */
+.care_card3 {
+ padding: 24px 0 0;
+}
+
+.care_card3 .card_header {
+    padding: 0 24px 24px;
+    border: none;
+}
+

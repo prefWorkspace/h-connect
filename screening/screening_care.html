@@ -32,7 +32,7 @@
                        </div>
                    </div>
                    <div class="header_btn_box">
-                       <button type="button" class="header_btn btn1">선별진료소</button>
+                       <button type="button" class="header_btn btn1 popup_btn">선별진료소</button>
                        <div class="profile_popup">
                            <div class="pro_info">
                                <p class="info_text">선별진료소</p>
@@ -63,6 +63,7 @@
            <main id="main">
 
                <section id="section">
+
                     <!-- card1 -->
                    <div class="card card1 care_card1">
                         <div class="card_header">
@@ -225,8 +226,10 @@
                             <li class="page">2.</li>
                         </ul>
                    </div>
+
                    <!-- card2 -->
                    <div class="card card2 care_card2">
+                       <!-- inner card1 -->
                         <div class="inner_card room4_card">
                             <div class="room_card_header">
                                 <h2 class="room_title">선별진료소 4호실</h2>
@@ -253,7 +256,7 @@
                                                             <span class="cancel">환자호출취소</span> 
                                                             <span class="call">환자호출</span> 
                                                         </button>
-                                                        <a href="#" class="call_doc_btn on"><span>의사호출</span></a>
+                                                        <a href="/screening/screening_care_start.html" class="call_doc_btn on"><span>의사호출</span></a>
                                                     </span>
                                                 </th>
                                             </tr>
@@ -376,6 +379,8 @@
                                 <li class="page">2.</li>
                             </ul>
                         </div>
+
+                         <!-- inner card2 -->
                         <div class="inner_card room5_card">
                             <div class="room_card_header">
                                 <h2 class="room_title">선별진료소 5호실</h2>
@@ -402,7 +407,7 @@
                                                             <span class="cancel">환자호출취소</span> 
                                                             <span class="call">환자호출</span> 
                                                         </button>
-                                                        <a href="#" class="call_doc_btn"><span>의사호출</span></a>
+                                                        <a href="/screening/screening_care_start.html" class="call_doc_btn"><span>의사호출</span></a>
                                                     </span>
                                                 </th>
                                             </tr>
@@ -486,17 +491,88 @@
                             </div>
                         </div>
                    </div>
+
                    <!-- card3 -->
                    <div class="card card3 care_card3">
-                    <div class="card_header">
-                        <div class="card_head_text">
-                            <h2 class="card_title">선별진료소 담당의</h2>
-                            <p class="card_ex_text">마지막 메세지. <span class="last_mess_time">21.09.15. 09:48:43</span></p>
+                        <div class="card_header">
+                            <div class="card_head_text">
+                                <h2 class="card_title">선별진료소 담당의</h2>
+                                <p class="card_ex_text">마지막 메세지. <span class="last_mess_time">21.09.15. 09:48:43</span></p>
+                            </div>
                         </div>
-                    </div>
+                        <div class="messge_cont_box">
+                            <div class="mess_header">
+                                <label for="" class="search_box">
+                                    <input type="text" placeholder="메세지 내용을 입력해주세요">
+                                </label>
+                                <div class="filter_box">
+                                    <button type="button" class="filter_btn popup_btn">필터</button>
+                                    <div class="profile_popup mess_popup">
+                                        <button type="button" class="look_mess">전체 메세지 보기</button>
+                                        <button type="button" class="look_mess">진료 중 메세지 보기</button>
+                                        <button type="button" class="look_mess">진료 제외 메세지 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mess_text_box">
+                                <ul class="mess_text_wrap">
+                                    <!-- li를 위에 넣어야 아래에서 부터 나옴 -->
+                                    <!-- my_send -->
+                                    <li class="mess_text_list my_send">
+                                        <span class="sender"></span>
+                                        <div class="mess_text">
+                                            <span class="mess">ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- another_send -->
+                                    <li class="mess_text_list another_send">
+                                        <span class="sender">선별진료소 담당의</span>
+                                        <div class="mess_text">
+                                            <span class="mess">sssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- screening_start -->
+                                    <li class="mess_text_list screening_start">
+                                        <span class="patient_name">한선별</span><span>님. 선별진료가 시작되었습니다.</span><span class="start_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- my_send -->
+                                    <li class="mess_text_list my_send">
+                                        <span class="sender"></span>
+                                        <div class="mess_text">
+                                            <span class="mess">ssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- another_send -->
+                                    <li class="mess_text_list another_send">
+                                        <span class="sender">선별진료소 담당의</span>
+                                        <div class="mess_text">
+                                            <span class="mess">sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mess_send_box">
+                                <div class="my_send_text">
+                                    <textarea placeholder="메세지 입력"></textarea>
+                                </div>
+                                <button type="button" class="mess_send_btn">전송</button>
+                            </div>
+                        </div>
                    </div>
+
                </section>
            </main>
+
+           <!-- modal -->
             <div class="modal select_clinic_modal check_modal" id="deleteList">
                 <div class="modal_box">
                     <div class="modal_header">

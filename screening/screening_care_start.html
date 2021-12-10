@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선별 진료소</title>
+    <!--Import-->
+    <script src="/statics/js/common.js"></script>
+    <script src="/statics/js/font.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="/statics/css/common/reset.css">
+    <link rel="stylesheet" href="/statics/css/common/common.css">
+    <link rel="stylesheet" href="/statics/css/style/screening_care_start.css">
+
+</head>
+<body>
+   <div id="wrap">
+       <div id="contents_wrap">
+        
+           <!-- header -->
+           <header id="header">
+               <div class="header_wrap">
+                   <div class="header_box">
+                       <div class="logo">
+                           <img src="/statics/images/care_icon.png" alt="진료아이콘">
+                       </div>
+                       <div class="page_info_box">
+                           <h2 class="pahe_title">선별진료소 <span class="care_room">4</span>호실. <span class="patient_info">한선별 (44. 여)</span></h2>
+                       </div>
+                   </div>
+                   <div class="header_btn_box">
+                       <div class="start_time_box">
+                           <div class="care_start_time">
+                               <span>선별진료 시작 : </span>
+                               <span class="start_time">21.12.10. 00:00:00</span>
+                           </div>
+                           <div class="caring_time">
+                               <span class="caring">
+                                   <span class="hour">00</span> : <span class="min">00</span> : <span class="sec">00</span> 경과
+                               </span>
+                           </div>
+                       </div>
+                       <span class="care_end_btn">
+                            <button type="button" class="call_doc_btn modal_btn" data-modal="disCare">
+                                <span>진료종료</span>
+                            </button>
+                       </span>
+                   </div>
+               </div>
+           </header>
+           <section id="care_sect">
+                <div class="care_cont">
+                    <div class="care_ready">
+                        <h2 class="ready_title">선별진료를 준비중입니다.</h2>
+                        <p class="care_connect">연결중...</p>
+                        <span class="loader"></span>
+                    </div>
+                    <div class="care_ui">
+                        <button type="button" class="care_btn dis_btn">
+                            <span>종료</span>
+                        </button>
+                        <div class="mute_box">
+                            <input type="checkbox" id="muteCare">
+                            <label for="muteCare" class="care_btn mute_btn">
+                                <span>마이크</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+           </section>
+       </div>
+
+           <!-- modal -->
+           <div class="modal select_clinic_modal check_modal" id="disCare">
+            <div class="modal_box">
+                <div class="modal_header">
+                   <img src="/statics/images/logo_black.png" alt="로고">
+                </div>
+                <div class="modal_cont">
+                    <div class="modal_form">
+                        <p class="check_ex_text">
+                            선별진료가 종료됩니다.<br>
+                            <span class="sure_text">종료 하시겠습니까?</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <button type="button" class="btn1 delete_btn cancel_btn">아니오</button>
+                    <a href="/screening/screening_care.html" class="btn1 sure_btn">네, 종료합니다</a>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
