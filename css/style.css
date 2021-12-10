@@ -6340,3 +6340,25 @@
     margin-left: 8px;
     color: #007A94;
 }
+
+/* 실시간 원격 협진 */
+.connect_remote,
+.connect_opinion{
+    height: calc(100vh - 64px);
+    background: #222;
+}
+.connect_remote .wrap_inner,
+.connect_opinion .wrap_inner{
+    width: 100%;
+    min-width: 1248px;
+}
+.doctor .call_connect{
+    height: fit-content;
+    margin: 240px auto 0;
+}
+
+/* 소견 요청 협진 */
+.connect_opinion .call_control .con_btn {
+    width: 80px;
+    margin: 0 auto;
+}

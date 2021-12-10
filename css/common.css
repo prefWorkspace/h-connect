@@ -267,6 +267,22 @@ body {
     object-fit: cover;
 }
 
+/* 의사 연결 헤더 */
+.doc_connect{
+    height: 64px;
+}
+
+.doc_connect h4{
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+}
+
+
+
+
+
 
 
 /*================= 푸터 =================*/

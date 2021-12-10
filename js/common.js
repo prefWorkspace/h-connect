@@ -692,6 +692,19 @@ $(function () {
 
 
 
+    
+    //---------------------- 의사 ----------------------//
+    // 협진시작 버튼
+    $('.doctor .btn_colla').on('click', function(){
+        location.href="connect_opinion.html";
+    })
+
+
+
+
+
+
+
 });
 
 // 모니터링 탭메뉴
