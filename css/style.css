@@ -5786,3 +5786,345 @@
 .connect_scroll .scene_picture .big_picture{
     height: 692px;
 }
+
+
+
+
+
+/*================= 의사 =================*/
+/* 의사 메인 (h-works) */
+.doctor{
+    min-width: 1248px;
+    height: calc(100vh - 80px);
+    background: #eee;
+}
+
+.doctor .wrap_inner{
+    padding: 40px;
+    display: flex;
+}
+
+/* h-works */
+.doctor .btn_section{
+    width: 360px;
+}
+
+.doctor .section{
+    width: 360px;
+    height: 640px;
+}
+
+.doctor .schedule button{
+    width: 100%;
+    padding: 20px 16px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.doctor .schedule button .img_container{
+    width: 46px;
+    height: 32px;
+    margin-right: 30px;
+}
+
+.doctor .schedule .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor .schedule .btn_section{
+    background: #ccc;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    align-items: center;
+}
+
+.doctor .schedule .btn_today{
+    background: linear-gradient(TO right, #004F60, #350039);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.doctor .schedule .btn_today .img_container{
+    margin-right: 22px;
+}
+
+.doctor .schedule .btn_today> :last-child{
+    text-align: left;
+    color: #fff;
+    position: relative;
+}
+
+.doctor .schedule .btn_today div::after{
+    content: ''; 
+    width: 9px;
+    height: 18px; 
+    position: absolute; 
+    background: url('/img/right_arrow.svg') no-repeat 0 0px /contain;
+    top: 50%; 
+    transform: translateY(-50%);
+    right: -50px;
+
+}
+
+.doctor .schedule .btn_today h2{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.doctor .schedule .btn_today p{
+    font-size: 12px;
+}
+
+.doctor .container{
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor .schedule .container{
+    height: 536px;
+}
+
+.doctor .schedule .title{
+    padding: 16px 16px 26px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor .schedule .title> div{
+    margin-bottom: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.doctor .schedule .title> div div{
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+}
+
+.doctor .schedule .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor .schedule .title p{
+    font-size: 12px;
+}
+
+.doctor .schedule .schedule_list{
+    height: 530px;
+    padding: 16px;
+}
+
+.doctor .schedule .schedule_list .list{
+    padding: 16px;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .schedule .schedule_list .list.on{
+    border-bottom: 0;
+    background: #007A94;
+}
+
+.doctor .schedule .schedule_list .list p{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.doctor .schedule .schedule_list .list.on p{
+    color: #fff;
+}
+
+.doctor .schedule .schedule_list .list> div {
+    display: flex;
+    align-items: center;
+}
+
+.doctor .schedule .schedule_list .list> div div{
+    width: 6px;
+    height: 12px;
+    margin-left: 16px;
+}
+
+.doctor .schedule .schedule_list .list.on> div div img{
+    filter: none;
+}
+
+.doctor .schedule .schedule_list .list> div div img{
+    width: 100%;
+    height: 100%;
+    filter: invert(73%) sepia(74%) saturate(1646%) hue-rotate(163deg) brightness(98%) contrast(101%);
+}
+
+/* 나의 일정 */
+.doctor .my_plan{
+    margin: 0 16px;
+}
+
+.doctor .my_plan .title{
+    padding: 16px 16px 40px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .my_plan .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor .my_plan .title .btn_list button{
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    border-radius: 4px;
+    background: #ccc;
+}
+
+.doctor .my_plan .title .btn_list button div{
+    width: 15px;
+    height: 15px;
+}
+
+.doctor .my_plan .title .btn_list button img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(69%) sepia(1%) saturate(3298%) hue-rotate(342deg) brightness(78%) contrast(83%);
+}
+
+.doctor .my_plan .title .btn_list button.on{
+    background: #FF8800;
+}
+
+.doctor .my_plan .title .btn_list button.on img{
+    filter: none;
+}
+
+.doctor .my_plan .plan_list{
+    height: 520px;
+    overflow-y: scroll;
+}
+
+.doctor .my_plan .plan_list::-webkit-scrollbar{
+    display: none;
+}
+
+
+.doctor .my_plan .calendar_con{
+    width: 296px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .my_plan .calendar_con h2{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.doctor .my_plan .calendar_con p{
+    margin-right: 25px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #007A94;
+    position: relative;
+    cursor: pointer;
+}
+
+.doctor .my_plan .calendar_con p::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: -20px;
+}
+
+.doctor .my_plan .calendar_con .close::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: -20px;
+    transform: rotate(180deg);
+}
+
+.doctor .my_plan .calendar_con .close{
+    display: none;
+}
+
+.doctor .my_plan .calendar{
+    width: 100%;
+    height: 328px;
+}
+
+.doctor .today_plan .title{
+    width: 296px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-bottom: 0;
+}
+
+.doctor .today_plan .title h2{
+    color: #000;
+}
+
+.doctor .today_plan .title p{
+    font-size: 12px;
+}
+
+.doctor .today_plan .title p span{
+    color: #007A94;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list{
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list div{
+    display: flex;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list div :first-child{
+    margin-right: 16px;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list p{
+    font-size: 12px;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list.on{
+    border-radius: 4px;
+    background: #007A94;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list.on p{
+    color: #fff;
+}
+
+.doctor .my_plan .today_plan .schedule_list .list .send_me{
+    color: #007A94;
+}

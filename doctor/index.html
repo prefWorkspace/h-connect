@@ -9,10 +9,13 @@
   <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
   <script type='text/javascript' src='/js/common.js'></script>
   <script type='text/javascript' src='/js/index.js'></script>
+  <script type='text/javascript' src='/js/fullcalendar.js'></script>
+  
   <!--css-->
   <link rel='stylesheet' href='/css/reset.css'>
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="/css/fullcalendar.css">
 
 </head>
   <body>
@@ -29,150 +32,9 @@
         </div>
     </div>
 
-    <!-- 병동생성 팝업 -->
-    <div class="pop new_ward">
-        <div class="overlay">
-            <div class="pop_cont">
-                 <div class="title">
-                    <h2>병동생성</h2>
-                 </div>
-
-                 <div class="content">
-                     <p>병동이름 </p>
-
-                     <input type="text">
-                 </div>
-
-                 <div class="btn_list">
-                     <button type="button" class="btn_cancel">취소</button>
-                     <button type="button" class="btn_check">확인</button>
-                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 병실생성 팝업 -->
-    <div class="pop new_room">
-        <div class="overlay">
-            <div class="pop_cont">
-                 <div class="title">
-                    <h2>병실생성</h2>
-                 </div>
-
-                 <div class="content">
-                     <p>병실이름 </p>
-
-                     <input type="text">
-                 </div>
-
-                 <div class="content">
-                    <p>병상 수 </p>
-
-                    <div class="selectBox2">
-                        <button class="label room_label">6인실</button>
-                        <ul class="optionList room_list">
-                            <li class="optionItem room_option">1인실</li>
-                            <li class="optionItem room_option">2인실</li>
-                            <li class="optionItem room_option">3인실</li>
-                            <li class="optionItem room_option">4인실</li>
-                            <li class="optionItem room_option">5인실</li>
-                            <li class="optionItem room_option">6인실</li>
-                        </ul>
-                    </div>
-                </div>
-
-                 <div class="btn_list">
-                     <button type="button" class="btn_cancel">취소</button>
-                     <button type="button" class="btn_check">확인</button>
-                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 병동 삭제 -->
-    <div class="pop delete delete_ward">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div>
-                    <img src="/img/logo.png" alt="로고">
-                </div>
-                
-                <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
-                <h2>삭제 하시겠습니까?</h2>
-
-    
-                <div class="btn_list">
-                    <button type="button" class="btn_no">아니요</button>
-                    <button type="button" class="btn_cut">네, 삭제합니다</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 병실 삭제 -->
-    <div class="pop delete delete_room">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div>
-                    <img src="/img/logo.png" alt="로고">
-                </div>
-                    
-                <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
-                <h2>삭제 하시겠습니까?</h2>
-    
-        
-                <div class="btn_list">
-                    <button type="button" class="btn_no">아니요</button>
-                    <button type="button" class="btn_cut">네, 삭제합니다</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 환자 검색 -->
-    <div class="pop search_patient">
-        <div class="wrap_inner">
-            <p>
-                <span>김환자</span>
-                (<span>63</span>.<span>남</span>).
-                <span>patient ID</span>.
-                <span>심장병동</span>.
-                <span>1308</span>호실.
-                <span>3</span>병상
-            </p>
-
-            <p>
-                <span>김환장</span>
-                (<span>74</span>.<span>여</span>).
-                <span>patient ID</span>.
-                <span>심장병동</span>.
-                <span>1302</span>호실.
-                <span>1</span>병상
-            </p>
-
-            <p>
-                <span>김환정</span>
-                (<span>68</span>.<span>남</span>).
-                <span>patient ID</span>.
-                <span>심장병동</span>.
-                <span>1306</span>호실.
-                <span>6</span>병상
-            </p>
-
-            <p>
-                <span>김환재</span>
-                (<span>59</span>.<span>남</span>).
-                <span>patient ID</span>.
-                <span>심장병동</span>.
-                <span>1304</span>호실.
-                <span>2</span>병상
-            </p>
-        </div>
-    </div>
-
     <div id="wrap">
       <!--헤더 pc-->
-      <header id="header" class="pc_header">
+      <header id="header" class="pc_header doc_header">
         <div class="header_inner">
             <div>
                 <h1 class="logo">
@@ -214,446 +76,251 @@
      </header>
 
       <!--콘텐츠-->
-      <div id="wrap_content" class="nurse nurse_main">
+      <div id="wrap_content" class="doctor doctor_main">
+        <nav class="nav" id="nav">
+            <ul class="main_depth gnb">
+                <li class="gnb_list on">
+                    <a class="link" href="index.html">
+                        H-Works
+                    </a>
+                </li>
 
-        <nav class="nav">
-            <ul class="main_depth">
-              <li class="list off">
-                <a class="link" href="monitoring.html">
-                    <img src="/img/header/monitoring.svg" alt="모니터 아이콘">
-                    <span>모니터링</span>
-                </a>
-              </li>
+                <li class="gnb_list clinic">
+                    <a class="link" href=".html">
+                        <!-- <img src="/img/header/clinic.svg" alt="사람모양 아이콘"> -->
+                       원격협진
+                    </a>
+                  </li>
 
-              <li class="list on clinic">
-                <a class="link" href="index.html">
-                    <img src="/img/header/clinic.svg" alt="사람모양 아이콘">
-                    <span>관리</span>
-                </a>
-              </li>
+                <li class="gnb_list off">
+                    <a class="link" href=".html">
+                        <!-- <img src="/img/header/monitoring.svg" alt="모니터 아이콘"> -->
+                        모니터링
+                    </a>
+                </li>
 
-              <li class="list off">
-                <a class="link" href="dashboard.html">
-                    <img src="/img/header/dashboard.svg" alt="대시보드 아이콘">
-                    <span>대시보드</span>
-                </a>
-              </li>
+                <li class="gnb_list off">
+                    <a class="link" href=".html">
+                        <!-- <img src="/img/header/remote.svg" alt="청진기 아이콘"> -->
+                        선별진료
+                    </a>
+                </li>
 
-              <li class="list off">
-                <a class="link" href="message.html">
-                    <img src="/img/header/message.svg" alt="메세지 아이콘">
-                    <span>메세지</span>
-                </a>
-              </li>
+                <li class="gnb_list off">
+                    <a class="link" href=".html">
+                        <!-- <img src="/img/header/message.svg" alt="메세지 아이콘"> -->
+                        메세지
+                    </a>
+                </li>
             </ul>
         </nav>
 
         <div class="wrap_inner">
-          <section class="section management">
-            <div class="container">
-                <div class="title">
-                    <div>
-                        <div>
-                            <img src="/img/header/clinic.svg" alt="사람모양 아이콘">
-                        </div>
-                        <h2>관리</h2>
+            <!-- h-works -->
+            <section class="section schedule">
+                <!-- 진행중인 세션이 없을때 -->
+                <button type="button" class="btn_section">
+                    <div class="img_container">
+                        <img src="/img/logo.png" alt="로고">
+                    </div>
+                    진행중인 세션이 없습니다.
+                </button>
+
+                <!-- 진행중인 세션이 있을때 -->
+                <button type="button" class="btn_today">
+                    <div class="img_container">
+                        <img src="/img/logo_white.png" alt="로고">
                     </div>
                     
-                    <p>병동 및 환자를 관리하고, 장치를 등록합니다.</p>
-                </div>
-
-                <div class="management_list">
-                    <div class="list on" onclick="location.href='index.html'">
-                        <p>병동관리</p>
-                        <div>
-                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
-                        </div>
-                    </div>
-
-                    <div class="list off" onclick="location.href='device_management.html'">
-                        <p>장치관리</p>
-                        <div>
-                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
-                        </div>
-                    </div>
-
-                    <div class="list off" onclick="location.href='measure.html'">
-                        <p>측정관리</p>
-                        <div>
-                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </section>
-
-          <section class="section left ward">
-            <div class="container">
-                <div class="title">
                     <div>
-                        <h2>병동관리</h2>
-                        <button type="button" class="btn_new_ward">+병동생성</button>
+                        <h2>5개의 세션이 진행중입니다.</h2>
+                        <p>현재 진행중인 세션에 바로 참가 합니다.</p>
                     </div>
-                    
-                    <p>병동을 생성하고 관리합니다.</p>
-                </div>
+                </button>
 
-                <div class="cont">
-                    <div class="ward_list">
-                        <p>심장병동</p>
+                <div class="container">
+                    <div class="title">
+                        <div> 
+                            <div>
+                                <img src="/img/doctor/h.svg" alt="로고">
+                            </div>
 
-                        <div class="ward_count">
-                            <p>
-                                <span>0</span> 명의 환자 입원 중
-                            </p>
-
-                            <p>
-                                <span>0</span> 개의 장치 운영 중
-                            </p>
+                            <h2>H-Works</h2>
                         </div>
+
+                        <p>오늘의 일정 및 새로운 알림을 확인 합니다.</p>
+                    </div>
+
+                    <div class="schedule_list">
+                        <div class="list on">   
+                            <p>나의 일정</p>
+
+                            <div>
+                                <p>오늘 <span>5</span> 개의 일정</p>
+
+                                <div>
+                                    <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list">   
+                            <p>원격협진 알림</p>
+
+                            <div>
+                                <p><span>3</span> 개의 알림</p>
+
+                                <div>
+                                    <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list">   
+                            <p>확인하지 않은 환자 알람</p>
+
+                            <div>
+                                <p><span>15</span> 개의 알람</p>
+
+                                <div>
+                                    <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list">   
+                            <p>선별진료 요청</p>
+
+                            <div>
+                                <p><span>5</span> 개의 요청</p>
+
+                                <div>
+                                    <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 나의 일정 -->
+            <section class="section left my_plan">
+               <div class="container">
+                    <div class="title">
+                        <h2>나의 일정</h2>
 
                         <div class="btn_list">
-                            <button type="button" class="btn_modify">수정</button>
-                            <button type="button" class="btn_delete">삭제</button>
-                        </div>
+                            <button type="button" class="btn_list on">
+                                <div>
+                                    <img src="/img/doctor/list.svg" alt="리스트 아이콘">
+                                </div>
+                            </button>
 
-                        <div>
-                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표 아이콘">
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </section>
-
-          <section class="section right hospital_room">
-            <div class="container">
-                <div class="title">
-                    <div>
-                        <h2>병실관리</h2>
-                        <button type="button" class="btn_new_room" disabled>+병실생성</button>
-                    </div>
-                    
-                    <p>병실의 인원을 설정하고 생성합니다.</p>
-                </div>
-
-                <div class="cont">
-                    <div class="container">
-                        <div class="ward_list">
-                            <p>
-                                <span>1301</span> 호실.
-                                <span>6</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>0</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>0</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
-
-                        <div class="ward_list">
-                            <p>
-                                <span>1302</span> 호실.
-                                <span>6</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
+                            <button type="button" class="btn_time">
+                                <div>
+                                    <img src="/img/icon/clock.svg" alt="시계 아이콘">
+                                </div>
+                            </button>
                         </div>
                         
-                        <div class="ward_list">
-                            <p>
-                                <span>1303</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
+                    </div>
+
+                    <div class="plan_list">
+                        <div class="calendar_con">
+                            <h2>날짜선택</h2>
+
+                            <div>
+                                <p class="open">달력열기</p>
+                                <p class="close">달력닫기</p>
                             </div>
                         </div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
+                        <div class="calendar" id='calendar'></div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
+                        <!-- 오늘의 일정 목록 -->
+                        <div class="today_plan">
+                            <div class="title">
+                                <h2>9월 15일 일정 목록</h2>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
+                                <p><span>5</span> 개의 일정</p>
                             </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
+                            <div class="schedule_list">
+                                <div class="list on">
+                                    <div>
+                                        <p>10:30</p>
+                                        <p>협진시작</p>
+                                    </div>
+                                    <p>박협진 교수님 외 5명</p>
+                                </div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
+                                <div class="list">
+                                    <div>
+                                        <p>11:00</p>
+                                        <p>협진일정 요청</p>
+                                    </div>
+                                    <p>최일정 교수님</p>
+                                </div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
+                                <div class="list">
+                                    <div>
+                                        <p>13:00</p>
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
+                                <div class="list">
+                                    <div>
+                                        <p>13:25</p>
+                                        <p>소견요청협진 마감</p>
+                                    </div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
+                                    <p>김소견 교수님 외 4명</p>
+                                </div>
 
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
-
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
-                            </div>
-                        </div>
-
-                        <div class="ward_list">
-                            <p>
-                                <span>1304</span> 호실.
-                                <span>4</span>인실
-                            </p>
-    
-                            <div class="ward_count">
-                                <p>
-                                    <span>4</span> 명의 환자 입원 중
-                                </p>
-    
-                                <p>
-                                    <span>12</span> 개의 장치 운영 중
-                                </p>
-                            </div>
-    
-                            <div class="btn_list">
-                                <button type="button" class="btn_modify">수정</button>
-                                <button type="button" class="btn_delete">삭제</button>
+                                <div class="list">
+                                    <div>
+                                        <p>18:00</p>
+                                        <p>협진일정 요청</p>
+                                    </div>
+                                    
+                                    <!-- 내가 작성한 일정은 send_me 를 붙여주세요 -->
+                                    <p class="send_me">내가 보냄</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+               </div>
+            </section>
 
+            <section class="section right collabor">
+                <div class="title">
+                    <div>
+                        <h2>협진 시작</h2>
+                        <p>박협진 교수님 외 5명</p>
+                    </div>
+                    
+                    <button type="button"></button>
                 </div>
-            </div>
-          </section>
+            </section>
         </div>
       </div>
 
     </div>
     <!--// end wrap-->
+
+    <script>
+        
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          locale: "ko",
+          center: 'title',
+          left: 'prev,next today',
+        });
+        calendar.render();
+      });
+    </script>
   </body>
 </html>

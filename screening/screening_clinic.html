@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선별 진료소</title>
+   <!--Import-->
+   <script src="/statics/js/common.js"></script>
+   <script src="/statics/js/font.js"></script>
+
+   <!--css-->
+   <link rel="stylesheet" href="/statics/css/common/reset.css">
+   <link rel="stylesheet" href="/statics/css/common/common.css">
+   <link rel="stylesheet" href="/statics/css/style/screening_care.css">
+</head>
+<body>
+   <div id="wrap">
+       <div id="contents_wrap">
+           <!-- header -->
+           <header id="header">
+               <div class="header_box">
+                   <div class="logo">
+                       <a href="#"><img src="/statics/images/logo.png" alt="로고"></a>
+                   </div>
+                   <div class="page_info_box">
+                       <h2 class="pahe_title">설정</h2>
+                       <p class="page_ex_text">담당하는 선별진료소를 생성하고 관리합니다.</p>
+                   </div>
+               </div>
+               <div class="header_btn_box">
+                   <button type="button" class="header_btn btn1">선별진료소</button>
+                   <div class="profile_popup">
+                       <div class="pro_info">
+                           <p class="info_text">선별진료소</p>
+                           <p class="info_title">선별진료소</p>
+                       </div>
+                       <button type="button" class="login_btn btn1">로그아웃</button>
+                   </div>
+               </div>
+           </header>
+           <!-- nav -->
+           <nav id="nav">
+                <ul class="gnb">
+                    <li class="gnb_list">
+                        <a href="/screening_care/screening_care.html">선별진료</a>
+                    </li>
+                    <li class="gnb_list">
+                        <a href="#">메세지</a>
+                    </li>
+                    <li class="gnb_list active">
+                        <a href="/screening_clinic/screening_clinic.html">설정</a>
+                    </li>
+                </ul>
+           </nav>
+           <!-- main -->
+           <main id="main">
+               <section id="section">
+                    <!-- card1 -->
+                   <div class="card card1">
+                        <div class="card_header">
+                            <div class="card_head_text first_card_title">
+                                <h2 class="card_title">선별진료소 설정</h2>
+                                <p class="card_ex_text">담당하는 선별진료소를 생성하고 관리합니다.</p>
+                            </div>
+                        </div>
+                        <ul class="card_cont_box">
+                            <li class="card_cont_list card_btn btn_active">
+                                <span>선별진료소 생성</span>
+                            </li>
+                        </ul>
+                   </div>
+                   <!-- card2 -->
+                   <div class="card card2">
+                    <div class="card_header">
+                        <div class="card_head_text">
+                            <h2 class="card_title">선별진료소 생성</h2>
+                            <p class="card_ex_text">선별진료소 생성합니다.</p>
+                        </div>
+                        <button type="button" class="btn1 create_btn modal_btn" data-modal="selectClinic">+ 선별진료소 생성</button>
+                    </div>
+                    <ul class="card_cont_box" id='selClicList'>
+                        <!-- <li class="card_cont_list card_btn">
+                            <span>선별진료소1</span>
+                            <div class="re_del_box">
+                                <button type="button" class="retouch_btn re_del_btn btn1">수정</button>
+                                <button type="button" class="delete_btn re_del_btn btn1">삭제</button>
+                            </div>
+                        </li> -->
+                    </ul>
+                   </div>
+                   <!-- card3 -->
+                   <div class="card card3">
+                    <div class="card_header">
+                        <div class="card_head_text">
+                            <h2 class="card_title">진료소 관리</h2>
+                            <p class="card_ex_text">선별진료소의 진료소 수량을 설정합니다.</p>
+                        </div>
+                        <button type="button" class="btn1 create_btn modal_btn off" data-modal="clinicCare">+ 진료소 생성</button>
+                    </div>
+                    <!-- <li class="no_arrow_list card_cont_list card_btn">
+                            <span>3호실</span>
+                            <div class="re_del_box">
+                                <button type="button" class="retouch_btn re_del_btn btn1">수정</button>
+                                <button type="button" class="delete_btn re_del_btn btn1">삭제</button>
+                            </div>
+                        </li>
+                    </ul> -->
+                   </div>
+               </section>
+           </main>
+           <div class="modal select_clinic_modal data_modal" id="selectClinic" data-box="selClicList">
+                <div class="modal_box">
+                    <div class="modal_header">
+                        <h2 class="modal_title card_title">선별진료소 생성</h2>
+                    </div>
+                    <div class="modal_cont">
+                        <div class="modal_form">
+                            <div class="form_box">
+                                <span>선별진료소 이름</span>
+                                <label for="">
+                                    <input type="text" class="clinic_name">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal_footer">
+                        <button type="button" class="btn1 delete_btn cancel_btn">취소</button>
+                        <button type="button" class="btn1 sure_btn">확인</button>
+                    </div>
+                </div>
+           </div>
+           <div class="modal clinic_care_modal data_modal" id="clinicCare">
+                <div class="modal_box">
+                    <div class="modal_header">
+                        <h2 class="modal_title card_title">진료소 생성</h2>
+                    </div>
+                    <div class="modal_cont">
+                        <div class="modal_form">
+                            <div class="form_box">
+                                <span>진료소 이름</span>
+                                <label for="">
+                                    <input type="text" class="clinic_name">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal_footer">
+                        <button type="button" class="btn1 delete_btn cancel_btn">취소</button>
+                        <button type="button" class="btn1 sure_btn">확인</button>
+                    </div>
+                </div>
+           </div>
+           <div class="modal select_clinic_modal data_modal" id="retouch">
+                <div class="modal_box">
+                    <div class="modal_header">
+                        <h2 class="modal_title card_title">선별진료소 수정</h2>
+                    </div>
+                    <div class="modal_cont">
+                        <div class="modal_form">
+                            <div class="form_box">
+                                <span>선별진료소 이름</span>
+                                <label for="">
+                                    <input type="text" class="clinic_name">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal_footer">
+                        <button type="button" class="btn1 delete_btn cancel_btn">취소</button>
+                        <button type="button" class="btn1 sure_btn">확인</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal select_clinic_modal check_modal" id="deleteList">
+                <div class="modal_box">
+                    <div class="modal_header">
+                       <img src="/statics/images/logo_black.png" alt="로고">
+                    </div>
+                    <div class="modal_cont">
+                        <div class="modal_form">
+                            <p class="check_ex_text">
+                                선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.<br>
+                                <span class="sure_text">삭제 하시겠습니까?</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal_footer">
+                        <button type="button" class="btn1 delete_btn cancel_btn">아니오</button>
+                        <button type="button" class="btn1 sure_btn">네, 삭제합니다</button>
+                    </div>
+                </div>
+            </div>
+
+       </div>
+   </div>
+</body>
+</html>
