@@ -250,12 +250,22 @@
     height: 80px;
     background: linear-gradient(to right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    padding: 0 50px 0 25px;
-    justify-content: space-between;
     z-index: 999;
 }
+
+
+/* header_wrap */
+.header_wrap {
+    min-width: 1780px;
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 50px 0 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 /* header_box */
 .header_box {
@@ -448,9 +458,9 @@
 /* main */
 #main {
     height: 100%;
-    min-width: 1800px;
+    min-width: 1763px;
+    max-width: 1880px;
     width: 100%;
-    overflow-y: auto;
 }
 
 /* main - section */
