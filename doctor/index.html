@@ -224,84 +224,210 @@
                         </div>
                         
                     </div>
+               </div>
 
-                    <div class="plan_list">
+                <div class="plan_list">
+                    <div>
                         <div class="calendar_con">
                             <h2>날짜선택</h2>
-
+    
                             <div>
                                 <p class="open">달력열기</p>
                                 <p class="close">달력닫기</p>
                             </div>
                         </div>
+    
+                        <div class="calendar_container">
+                            <div class="calendar" id='calendar'></div>
+                        </div>
+                        
+                    </div>
 
-                        <div class="calendar" id='calendar'></div>
+                    <!-- 오늘의 일정 목록 -->
+                    <div class="today_plan">
+                        <div class="title">
+                            <h2>9월 15일 일정 목록</h2>
 
-                        <!-- 오늘의 일정 목록 -->
-                        <div class="today_plan">
-                            <div class="title">
-                                <h2>9월 15일 일정 목록</h2>
+                            <p><span>5</span> 개의 일정</p>
+                        </div>
 
-                                <p><span>5</span> 개의 일정</p>
+                        <div class="schedule_list">
+                            <div class="list on">
+                                <div>
+                                    <p>10:30</p>
+                                    <p>협진시작</p>
+                                </div>
+                                <p>박협진 교수님 외 5명</p>
                             </div>
 
-                            <div class="schedule_list">
-                                <div class="list on">
-                                    <div>
-                                        <p>10:30</p>
-                                        <p>협진시작</p>
-                                    </div>
-                                    <p>박협진 교수님 외 5명</p>
+                            <div class="list">
+                                <div>
+                                    <p>11:00</p>
+                                    <p>협진일정 요청</p>
+                                </div>
+                                <p>최일정 교수님</p>
+                            </div>
+
+                            <div class="list">
+                                <div>
+                                    <p>13:00</p>
+                                    <p>외래진료</p>
+                                </div>
+                            </div>
+
+                            <div class="list">
+                                <div>
+                                    <p>13:25</p>
+                                    <p>소견요청협진 마감</p>
                                 </div>
 
-                                <div class="list">
-                                    <div>
-                                        <p>11:00</p>
-                                        <p>협진일정 요청</p>
-                                    </div>
-                                    <p>최일정 교수님</p>
-                                </div>
+                                <p>김소견 교수님 외 4명</p>
+                            </div>
 
-                                <div class="list">
-                                    <div>
-                                        <p>13:00</p>
-                                        <p>외래진료</p>
-                                    </div>
+                            <div class="list">
+                                <div>
+                                    <p>18:00</p>
+                                    <p>협진일정 요청</p>
                                 </div>
-
-                                <div class="list">
-                                    <div>
-                                        <p>13:25</p>
-                                        <p>소견요청협진 마감</p>
-                                    </div>
-
-                                    <p>김소견 교수님 외 4명</p>
-                                </div>
-
-                                <div class="list">
-                                    <div>
-                                        <p>18:00</p>
-                                        <p>협진일정 요청</p>
-                                    </div>
-                                    
-                                    <!-- 내가 작성한 일정은 send_me 를 붙여주세요 -->
-                                    <p class="send_me">내가 보냄</p>
-                                </div>
+                                
+                                <!-- 내가 작성한 일정은 send_me 를 붙여주세요 -->
+                                <p class="send_me">내가 보냄</p>
                             </div>
                         </div>
                     </div>
-               </div>
+                </div>
             </section>
 
+            <!-- 협진시작 -->
             <section class="section right collabor">
-                <div class="title">
-                    <div>
-                        <h2>협진 시작</h2>
-                        <p>박협진 교수님 외 5명</p>
+                <div class="container">
+                    <div class="title">
+                        <div>
+                            <h2>협진 시작</h2>
+                            <p>박협진 교수님 외 5명</p>
+                        </div>
+                        
+                        <button type="button" class="btn_colla">
+                            <div>
+                                <img src="/img/header/Hlogo_gray.svg" alt="로고">
+                            </div>
+                            시작하기
+                        </button>
                     </div>
-                    
-                    <button type="button"></button>
-                </div>
+
+                    <div class="collabor_wrap">
+                        <!-- 협진 시간 -->
+                        <div class="time">
+                            <h2>협진 시간</h2>
+
+                            <p><time datetime="2021.09.15">21.09.15</time> <time datetime="10:30">10:30</time>~<time datetime="12:00">12:00</time></p>
+                        </div>
+
+                        <!-- 협진 내용 -->
+                        <div class="cont">
+                            <div class="title">
+                                <h2>협진 내용</h2>
+
+                                <p>실시간 원격 협진</p>
+                            </div>
+
+                            <div class="cont_list">
+                                <div class="case first">
+                                    <div>
+                                        <p>Case 1.</p>
+                                        <p>김원자 환자의 대장암 검사입니다.</p>
+                                    </div>
+
+                                    <div>
+                                        <p>자세히</p>
+
+                                        <div class="img_container">
+                                            <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="case_cont first">
+                                    <p>대장암 검사입니다.</p>
+                                </div>
+
+                                <div class="case second">
+                                    <div>
+                                        <p>Case 1.</p>
+                                        <p>김원자 환자의 대장암 검사입니다.</p>
+                                    </div>
+
+                                    <div>
+                                        <p>자세히</p>
+
+                                        <div class="img_container">
+                                            <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="case_cont second">
+                                    <p>대장암 검사입니다.</p>
+                                </div>
+
+                                <div class="case third">
+                                    <div>
+                                        <p>Case 1.</p>
+                                        <p>김원자 환자의 대장암 검사입니다.</p>
+                                    </div>
+
+                                    <div>
+                                        <p>자세히</p>
+
+                                        <div class="img_container">
+                                            <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="case_cont third">
+                                    <p>대장암 검사입니다.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- 협진 참여자 -->
+                        <div class="member">
+                            <div class="title">
+                                <h2>협진 참여자 정보</h2>
+                            </div>
+
+                            <div class="cont_list">
+                                <div class="case first">
+                                    <div>
+                                        <p>현재 참석 인원.</p>
+                                        <p>4명</p>
+                                    </div>
+
+                                    <div>
+                                        <p>자세히</p>
+
+                                        <div class="img_container">
+                                            <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="case_cont first">
+                                    <p>참석자의 이름이 나옵니다.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                </div>               
             </section>
         </div>
       </div>
@@ -315,10 +441,36 @@
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
+            initialView: 'dayGridMonth',
+            timeZone: 'local',
+            defaultDate: '2018-06-01',
         //   locale: "ko",
-          center: 'title',
-          left: 'prev,next today',
+
+            monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+            monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+            dayNames: ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"],
+            dayNamesShort: ["일","월","화","수","목","금","토"],
+
+            header:{
+                center: 'title',
+                left: 'prev',
+                right: 'next today'
+            },          
+            events:[{
+                title: '협진시작',
+                start: '2021-12-10T10:00:00',
+                constraint: 'businessHours'
+            },
+            { title: '협진시작',
+                start: '2021-12-15T10:00:00',
+                constraint: 'businessHours'
+            },
+
+            { title: '협진시작',
+                start: '2021-12-16T10:00:00',
+                constraint: 'businessHours'
+            },
+            ]
         });
         calendar.render();
       });

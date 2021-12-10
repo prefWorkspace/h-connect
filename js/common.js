@@ -720,4 +720,18 @@ $(function(){
     // $("").on('click',function(){
     //     $(this).next(".con").slideToggle(100);
     //   });
+
+    //  doctor 메인 캘린더 아코디언
+    $(".calendar_con").click(function() {
+        $(this).next(".calendar_container").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".calendar_container").siblings(".calendar_container").slideUp(300); // 1개씩 펼치기
+    });
+
+    //  doctor 메인 협진내용 아코디언
+    $(".case").click(function() {
+        $(this).next(".case_cont").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".case_cont").siblings(".case_cont").slideUp(300); // 1개씩 펼치기
+    });
 })

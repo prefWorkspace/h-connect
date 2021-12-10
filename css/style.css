@@ -5970,6 +5970,12 @@
 /* 나의 일정 */
 .doctor .my_plan{
     margin: 0 16px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.doctor .my_plan .container{
+    height: fit-content;
 }
 
 .doctor .my_plan .title{
@@ -6015,7 +6021,8 @@
 }
 
 .doctor .my_plan .plan_list{
-    height: 520px;
+    height: 500px;
+    padding-bottom: 190px;
     overflow-y: scroll;
 }
 
@@ -6076,17 +6083,25 @@
 /* 캘린더 */
 .doctor .my_plan .calendar{
     width: 100%;
-    height: 328px;
-    /* background: linear-gradient(to right, #004F60, #350039); */
+    height: 340px;
+    background: linear-gradient(to right, #004F60, #350039);
     position: relative;
+    display: block;
 }
+.doctor .my_plan .calendar_container{display: none;}
 
 .doctor .my_plan .calendar::before{
     content: '';
     position:absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, #004F60, #350039);
+    width: 360px;
+    height: 100%;
+    /* background: linear-gradient(to right, #004F60, #350039); */
+}
+
+.doctor .my_plan .calendar_container.on{
+    display: block;
 }
 
 .fc-col-header{
@@ -6094,7 +6109,8 @@
 }
 
 .fc .fc-daygrid-day-frame{
-    height: 50px;
+    width: 42px;
+    height: 42px;
 }
 
 .fc-scroller-liquid-absolute,
@@ -6126,6 +6142,9 @@
 
 
 /* 오늘의 일정목록 */
+.doctor .today_plan .schedule_list{
+    padding: 0 32px;
+}
 .doctor .today_plan .title{
     width: 296px;
     padding: 20px 0;
@@ -6177,3 +6196,147 @@
     color: #007A94;
 }
 
+
+/* 협진시작 */
+.doctor .collabor .title{
+    padding: 16px 16px 23px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .collabor .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor .collabor .title p{
+    margin-top: 13px;
+    font-size: 12px;
+}
+
+.doctor .collabor .title button{
+    width: 120px;
+    padding: 12px 18px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #004F60, #350039);
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.doctor .collabor .title button div{
+    width: 16px;
+    height: 15px;
+    margin-right: 9px;
+}
+
+.doctor .collabor .title button img{
+    filter: invert(100%) sepia(6%) saturate(1%) hue-rotate(56deg) brightness(9999%) contrast(99%);
+}
+
+.doctor .collabor_wrap{
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.doctor .collabor_wrap::-webkit-scrollbar{
+    display: none;
+}
+
+.doctor .collabor .time{
+    padding: 20px 17px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .collabor .time h2{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.doctor .collabor .cont .title{
+    border:none;
+    display: flex;
+}
+
+.doctor .collabor .cont .title h2{
+    color: #000;
+}
+
+.doctor .collabor .cont .title p{
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+}
+
+.doctor .collabor .cont_list .case,
+.doctor .collabor .cont_list .case div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .collabor .cont_list> :first-child{
+    margin: 0 auto 0;
+}
+
+.doctor .collabor .case{
+    width: 296px;
+    padding: 16px;
+    margin: 16px auto 0;
+    border-radius: 4px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.doctor .collabor .case p{
+    font-size: 12px;
+}
+
+.doctor .collabor .case> :first-child :last-child{
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.doctor .collabor .case> :last-child p{
+    color: #007A94;
+}
+
+.doctor .collabor .case .img_container{
+    width: 12px;
+    height: 6px;
+    margin-left: 8px;
+}
+
+.doctor .collabor .case_cont{
+    width: 296px;
+    padding: 16px;
+    margin: 0 auto;
+    background-color: #eee;
+    display: none;
+}
+
+.doctor .collabor .case_cont p{
+    font-size: 12px;
+}
+
+.doctor .collabor .member .title{
+    padding: 20px 16px;
+}
+
+.doctor .collabor .member .title h2{
+    color: #000;
+}
+
+.doctor .collabor .member .case> :first-child> :last-child{
+    width: fit-content;
+    margin-left: 8px;
+    color: #007A94;
+}
