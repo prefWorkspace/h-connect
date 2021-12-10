@@ -173,19 +173,6 @@
 }
 
 
-
-
-/* th */
-.common_table tr > th {
-
-}
-
-/* td */
-.common_table tr > td {
-
-}
-
-
 .common_table tr > th > span,
 .common_table tr > td > span {
     display: block;
@@ -193,6 +180,39 @@
     font-size: 1.2rem;
 
 }
+
+
+/* 라디오 버튼 */
+/* 
+    <label for="" class="common_radio">
+        <input type="radio" name="" id="" class="radio">
+    </label> 
+*/
+.common_radio {
+    top: 4px;
+    position: relative;
+}
+
+.common_radio .radio[type="radio"] {
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 1px solid #CCCCCC;
+    width: 24px;
+    height: 24px;
+    transition: 0.2s all;
+    border-radius: 4px;
+}
+
+.common_radio > .radio[type="radio"]:checked {
+    background-color: #007A94;
+    border-color: #007A94;
+}
+
 
 
 

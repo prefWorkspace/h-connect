@@ -3,6 +3,9 @@
 .card {
     flex: 1;
 }
+.care_card1 {
+    position: relative;
+}
 
 .care_card2 {
     min-width: 800px;
@@ -12,7 +15,6 @@
 .care_card3 {
     min-width: 480px;
 }
-
 
 
 /* care_card1 */
@@ -32,4 +34,261 @@
     background-color: #007A94;
     border-color: #007A94;
     line-height: 38px;
+}
+
+
+.care_card1 .table_box {
+    padding: 0 15px;
+}
+
+/* page_box */
+.page_box {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.page_box .page {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #CCCCCC;
+    transition: 0.2s all;
+}
+
+.page_box .page:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+.page_box .page.on {
+    color: #007A94;
+}
+
+
+
+
+/* care_card2 */
+.care_card2 {
+    display: flex;
+}
+
+/* inner_card */
+.care_card2 .inner_card {
+    position: relative;
+    min-width: 368px;
+}
+
+.care_card2 .inner_card:not(:last-child) {
+    margin-right: 27px;
+}
+
+/* inner_card - room_card_header */
+.care_card2 .room_card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 14px;
+    height: 64px;
+    background: linear-gradient(to right, #004F60, #350039);
+    border-radius: 4px;
+}
+
+.room_card_header .room_title {
+    color: #fff;
+    font-weight: 500;
+    padding-left: 30px;
+    background: url('../../images/clinic_white.svg') no-repeat left 5px top 5px;
+}
+
+.room_card_header .room_radi_box {
+    display: flex;
+}
+
+
+/* radi_box */
+.radi_box:not(:last-child) {
+    margin-right: 10px;
+}
+
+.radi_box > input[type="radio"] {
+    display: none;
+}
+
+.radi_box > label {
+    display: block;
+    width: 64px;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 24px;
+    font-size: 1.2rem;
+    border: 1px solid #CCCCCC;
+    background-color: #CCCCCC;
+    color: #888888;
+    transition: 0.2s all;
+}
+
+.radi_box > input[type="radio"]:checked + label {
+    background-color: #007A94;
+    border-color: #fff;
+    color: #fff;
+}
+
+
+/* room_cont_box */
+.room_cont_box {
+    padding: 30px 10px 10px;
+}
+
+.next_table_box {
+    margin-bottom: 50px;
+}
+
+.table_title {
+    color: #007A94;
+    font-weight: 500;
+}
+
+.next_patient {
+    font-weight: 500;
+}
+
+
+
+.common_table.card2_table tr > td:nth-child(1), 
+.common_table.card2_table tr > th:nth-child(1) {
+    flex: 2;
+}
+
+.common_table.card2_table tr > td:first-child > span, 
+.common_table.card2_table tr > th:first-child > span {
+    padding-left: 10px;
+    text-align: left;
+} 
+
+.common_table.card2_table tr > td:last-child > span, 
+.common_table.card2_table tr > th:last-child > span {
+    text-align: right;
+    padding-right: 11px;
+}
+
+
+
+/* btn_thead */
+.btn_thead {
+    display: flex;
+    align-items: bottom;
+    justify-content: right;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* call_btn */
+.btn_thead .call_btn {
+    width: 80px;
+    margin-right: 10px;
+    transition: 0.2s all;
+}
+
+.btn_thead .call_btn > span {
+    font-size: 1.2rem;
+}
+
+.btn_thead .call_btn .cancel {
+    display: none;
+}
+
+.btn_thead .call_btn .call {
+    display: block;
+}
+
+/* on */
+.btn_thead .call_btn.on {
+    border-color: #940045;
+    color: #940045;
+}
+
+.btn_thead .call_btn.on .cancel {
+    display: block;
+}
+
+.btn_thead .call_btn.on .call {
+    display: none;
+}
+
+
+/* call_doc_btn */
+.btn_thead .call_doc_btn {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    width: 96px;
+    line-height: 34px;
+    border-radius: 4px;
+    color: #EEEEEE;
+    text-align: center;
+    background: #CCCCCC;
+    pointer-events: none;
+    transition: 0.2s all;
+}
+
+.btn_thead .call_doc_btn > span {
+    background: url('../../images/btn_logo.png') no-repeat left 12px top 10px;
+    display: block;
+    padding-left: 20px;
+}
+
+/* on */
+.btn_thead .call_doc_btn.on {
+    pointer-events: auto;
+    background: linear-gradient(to right, #004F60, #350039);
+    color: #fff;
+}
+
+
+/* td_btn */
+.td_btn {
+    background: none;
+    margin-right: 4px;
+    font-size: 1.2rem;
+    color: #940045;
+}
+
+
+
+
+.common_table.bot_table tr > td:nth-child(1), 
+.common_table.bot_table tr > th:nth-child(1) {
+    flex: 3;
+}
+
+.common_table.bot_table tr > td:first-child > span {
+    display: flex;
+    align-items: center;
+}
+
+.wait_name {
+    margin-right: 20px;
+}
+
+.upDown {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url('../../images/up_arrow.svg') no-repeat;
+}
+
+.up {
+    margin-right: 10px;
+}
+
+.down {
+    transform: rotate(180deg);
+}
+
+
+
+.inner_card .page_box {
+    bottom: 10px;
 }
