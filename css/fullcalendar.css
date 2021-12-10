@@ -1,4 +1,3 @@
-
 /* classes attached to <body> */
 /* TODO: make fc-event selector work when calender in shadow DOM */
 .fc-not-allowed,
@@ -213,6 +212,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-color: #1a252f;
     border-color: var(--fc-button-hover-border-color, #1a252f);
   }
+  /* today_btn */
 .fc .fc-button-primary:disabled { /* not DRY */
    display: none;
     color: #fff;
@@ -268,12 +268,12 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    display: none;
+    /* display: none; */
   }
 .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    display: none;
+    /* display: none; */
   }
 .fc-direction-rtl .fc-button-group > .fc-button:not(:first-child) {
     margin-right: -1px;

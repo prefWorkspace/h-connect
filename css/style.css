@@ -6023,7 +6023,7 @@
     display: none;
 }
 
-
+/* 캘린더 아코디언 */
 .doctor .my_plan .calendar_con{
     width: 296px;
     padding: 20px 0;
@@ -6073,11 +6073,45 @@
     display: none;
 }
 
+/* 캘린더 */
 .doctor .my_plan .calendar{
     width: 100%;
     height: 328px;
 }
 
+.fc-col-header{
+    display: none;
+}
+
+.fc .fc-daygrid-day-frame{
+    height: 50px;
+}
+
+.fc-scroller-liquid-absolute{
+    width: 360px;
+    height: 264px;
+    overflow: hidden;
+}
+
+.fc-scrollgrid-sync-table tbody> :last-child{
+    display: none;
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* display: none; */
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* display: none; */
+}
+
+
+/* 오늘의 일정목록 */
 .doctor .today_plan .title{
     width: 296px;
     padding: 20px 0;
@@ -6128,3 +6162,4 @@
 .doctor .my_plan .today_plan .schedule_list .list .send_me{
     color: #007A94;
 }
+

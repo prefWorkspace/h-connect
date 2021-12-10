@@ -79,7 +79,7 @@
       <div id="wrap_content" class="doctor doctor_main">
         <nav class="nav" id="nav">
             <ul class="main_depth gnb">
-                <li class="gnb_list on">
+                <li class="gnb_list active">
                     <a class="link" href="index.html">
                         H-Works
                     </a>
@@ -310,12 +310,13 @@
     <!--// end wrap-->
 
     <script>
-        
+    
+    // fullcalendar library
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
-          locale: "ko",
+        //   locale: "ko",
           center: 'title',
           left: 'prev,next today',
         });
