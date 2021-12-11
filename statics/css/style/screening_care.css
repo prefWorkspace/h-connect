@@ -189,6 +189,9 @@
     width: 80px;
     margin-right: 10px;
     transition: 0.2s all;
+    color: #fff;
+    background-color: #007A94;
+    border-color: #007A94;
 }
 
 .btn_thead .call_btn > span {
@@ -205,6 +208,7 @@
 
 /* on */
 .btn_thead .call_btn.on {
+    background-color: #fff;
     border-color: #940045;
     color: #940045;
 }

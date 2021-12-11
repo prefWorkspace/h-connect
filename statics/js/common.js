@@ -3,6 +3,31 @@ window.onload = function() {
     console.log(thisIndexName);
 
 
+    // 환자 호출 cancel 기능
+    const callCancelBtn = document.querySelectorAll('.call_btn');
+
+    callCancelBtn.forEach(btn => {
+        let callDoc = btn.nextElementSibling;
+        let span = btn.querySelectorAll('span');
+        
+        span.forEach(text => {
+            
+            text.addEventListener('click', () => {
+                let has = btn.classList.contains('on');
+
+                if(has) {
+                    btn.classList.remove('on');
+                    callDoc.classList.remove('on');
+                } else {
+                    btn.classList.add('on');
+                    callDoc.classList.add('on');
+                };
+            });
+        });
+    });
+
+
+
     //  btn - popup
     const PopuprBrn = document.querySelectorAll('.popup_btn');
     
@@ -25,28 +50,28 @@ window.onload = function() {
     };
 
     // popup off 기능
-    const popup = document.querySelectorAll('.profile_popup');
+    // const popup = document.querySelectorAll('.profile_popup');
 
-    if(popup.length !== 0) {
-        popup.forEach(pop => {
-            let thisClass = pop.className;
+    // if(popup.length !== 0) {
+    //     popup.forEach(pop => {
+    //         let thisClass = pop.className;
 
-            pop.addEventListener('click', (e) => {
-                let target = e.target;
-                let currtarget = e.currentTarget.querySelector('.profile_popup');
-                let tarClass = target.className;
+    //         document.addEventListener('click', (e) => {
+    //             let target = e.target;
+    //             let currtarget = e.currentTarget.querySelector('.profile_popup');
+    //             let tarClass = target.className;
 
-                console.log(currtarget, target);
+    //             console.log(currtarget, target);
 
-                if(tarClass !== thisClass) {return};
-                pop.classList.remove('active');
+    //             if(tarClass !== thisClass) {return};
+    //             pop.classList.remove('active');
 
-                setTimeout(() => {
-                    pop.style.display = 'none';
-                }, 300);
-            });
-        });
-    };
+    //             setTimeout(() => {
+    //                 pop.style.display = 'none';
+    //             }, 300);
+    //         });
+    //     });
+    // };
 
 
     // gnb menu
