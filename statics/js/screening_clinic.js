@@ -18,6 +18,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function modalFuc(e) {
         let target = e.target;
         let dataId = target.getAttribute('data-modal');
+        target.setAttribute('data-rethis', 'this');
+
         
         if(dataId === 'retouch') {
             let par = target.parentNode.parentNode.getElementsByTagName('span')[0];
@@ -28,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
             id.classList.add('on');
             input.value = par.innerText;
             
-            sureBtn.addEventListener('click', () => {reModalClick(par, input, id)});
+            sureBtn.addEventListener('click', reModalClick);
 
         } else {
             let id = document.getElementById(dataId);
@@ -36,14 +38,30 @@ window.addEventListener('DOMContentLoaded', () => {
         };
     };
 
-    function reModalClick(p, inp, i) {
-        if(inp.value === '') {
+    function reModalClick(e) {
+        const _modalBtn = document.querySelectorAll('.modal_btn');
+        
+        let _target = e.target;
+        let _modal = _target.parentNode.parentNode.parentNode;
+        let _input = _target.parentNode.parentNode.getElementsByTagName('input')[0];
+        let _span;
+        let _btn;
+        
+        _modalBtn.forEach(item => {
+            let has = item.getAttribute('data-rethis');
+            if(has === 'this') {
+                _span = item.parentNode.parentNode.getElementsByTagName('span')[0];
+                _btn = item;
+            };
+        });
+        
+        if(_input.value === '') {
             alert('글자을 입력해주세요');
             return;
         } else {
-            console.log(p);
-            p.innerText = inp.value;
-            i.classList.remove('on');
+            _span.innerText = _input.value;
+            _modal.classList.remove('on');
+            _btn.removeAttribute('data-rethis');
         };
     };
 
@@ -91,8 +109,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     let bool = item.getAttribute('data-bool');
                     
                     if(idx === 1) {
-                        // listFuc(bool, item, idx, card, 1);
-
                         if(bool === null) {
                             item.setAttribute('data-bool', 'yes'); 
                             item.addEventListener('click', () => {
@@ -104,8 +120,6 @@ window.addEventListener('DOMContentLoaded', () => {
                             return;
                         };
                     } else {
-                        // listFuc(bool, item, idx, card, 2);
-
                         if(bool === null) {
                             item.setAttribute('data-bool', 'yes'); 
                             item.addEventListener('click', () => {
