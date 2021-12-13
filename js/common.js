@@ -699,6 +699,35 @@ $(function () {
         location.href="connect_opinion.html";
     })
 
+    // 응급호출 요청
+    $('.doc_header .red_alarm').on('click', function(){
+        $('.pop.connect_doctor .overlay').show();
+    })
+
+    $('.pop.connect_doctor .refuse').on('click', function(){
+        $('.pop.connect_doctor .overlay').hide();
+        $('.doc_header .red_alarm').hide();
+    })
+
+    $('.pop.connect_doctor .mic_layer').on('click', function(){
+        $('.pop.connect_doctor .mic_off').show();
+    })
+
+    $('.pop.connect_doctor .mic_off').on('click', function(){
+        $('.pop.connect_doctor .mic_off').hide();
+    })
+
+    $('.pop.connect_doctor .cam_layer').on('click', function(){
+        $('.pop.connect_doctor .cam_off').show();
+    })
+
+    $('.pop.connect_doctor .cam_off').on('click', function(){
+        $('.pop.connect_doctor .cam_off').hide();
+    })
+
+    $('.pop.connect_doctor .accept').on('click', function(){
+        location.href="connect_doctor.html";
+    })
 
 
 

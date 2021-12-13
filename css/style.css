@@ -6065,7 +6065,7 @@
     right: -20px;
 }
 
-.doctor .my_plan .calendar_con .close::after{
+.doctor .my_plan .calendar_con.on p::after{
     content: ''; 
     width: 12px;
     height: 6px; 
@@ -6074,11 +6074,70 @@
     top: 50%; 
     right: -20px;
     transform: rotate(180deg);
+    transition: 0.3s;
 }
 
 .doctor .my_plan .calendar_con .close{
     display: none;
 }
+
+.doctor .my_plan .calendar_con.on .open{
+    display: none;
+}
+
+.doctor .my_plan .calendar_con.on .close{
+    display: block;
+}
+
+.doctor .select{
+    margin: 8px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.doctor .month_box{
+    margin: 0 32px 0 8px;
+}
+
+.doctor .year_box, .doctor .month_box{
+    width: 96px;
+    height: 32px;
+    background: #fff;
+    border: 1px solid #000;
+}
+
+.doctor .selectBox2.active .optionList {
+    width: 96px;
+    top: 30px;
+    z-index: 5;
+    border: 1px solid #000;
+    border-top: 1px solid #fff;
+    border-radius: 0 0 4px 4px;
+}
+
+.doctor .selectBox2:after {
+    content: '';
+    width: 12px;
+    height: 6px;
+    position: absolute;
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 45%;
+    right: 15px;
+    transition: 0.3s;
+}
+
+.doctor .selectBox2.active:after {
+    content: '';
+    width: 12px;
+    height: 6px;
+    position: absolute;
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 45%;
+    right: 15px;
+    transform: rotate(180deg);
+    transition: .3s;
+}
+
 
 /* 캘린더 */
 .doctor .my_plan .calendar{
@@ -6088,7 +6147,8 @@
     position: relative;
     display: block;
 }
-.doctor .my_plan .calendar_container{display: none;}
+
+/* .doctor .my_plan .calendar_container{display: none;} */
 
 .doctor .my_plan .calendar::before{
     content: '';
@@ -6137,6 +6197,47 @@
     /* display: none; */
 }
 
+/* 주간 달력 */
+.doctor .week_plan{height: 500px;}
+.tui-view-7,.tui-view-8, .tui-view-9,.tui-view-11,
+.tui-full-calendar-splitter,.tui-full-calendar-daygrid-layout,
+.tui-view-37, .tui-view-43{display: none !important;}
+
+.doctor .tui-view-4{
+    overflow-y: hidden;
+}
+
+.doctor .tui-full-calendar-dayname-date{font-size: 12px;}
+
+
+.tui-full-calendar-timegrid-schedules{
+    overflow: scroll hidden;
+}
+
+.tui-full-calendar-timegrid-schedules::-webkit-scrollbar{
+    width: 8px;
+}
+
+.tui-full-calendar-timegrid-schedules::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+
+.doctor .tui-full-calendar-timegrid-container{overflow: hidden;}
+
+.doctor .tui-full-calendar-vlayout-area .tui-view-13{height: 500px;}
+
+.tui-full-calendar-daynamem{
+    margin-right: 16px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.doctor .tui-full-calendar-dayname-date-area{
+    margin-left: 11px;
+}
 
 
 
@@ -6341,6 +6442,8 @@
     color: #007A94;
 }
 
+
+
 /* 실시간 원격 협진 */
 .connect_remote,
 .connect_opinion{
@@ -6361,4 +6464,81 @@
 .connect_opinion .call_control .con_btn {
     width: 80px;
     margin: 0 auto;
+}
+
+
+/* 원격협진알림 */
+.doctor .remote_alarm{
+    width: 700px;
+    padding: 16px;
+    margin-left: 32px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor .remote_alarm .title{
+    padding: 16px 16px 23px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor .remote_alarm .title h2{
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor .remote_alarm .title p{
+   font-size: 12px;
+   font-weight: normal;
+   color: #444;
+}
+
+.doctor .remote_alarm .left .title{
+    padding: 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .remote_alarm .left .title h2{
+    margin: 0;
+    color: #000;
+}
+
+.doctor .remote_alarm .left .title span{
+    color: #007a94;
+}
+
+.doctor .remote_alarm .row{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee; 
+}
+
+.doctor .remote_alarm .row p{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.doctor .remote_alarm .time{
+    width: 150px;
+}
+
+.doctor .remote_alarm .time,
+.doctor .remote_alarm .check{
+    color: #007a94;
+}
+
+.doctor .remote_alarm .answer{
+    width: 100px;
+}
+
+.doctor .remote_alarm .reply{
+    width: 200px;
+}
+
+.doctor .remote_alarm .no_check{
+    color: #940045;
 }

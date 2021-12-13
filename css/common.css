@@ -198,6 +198,11 @@ body {
     align-items: center;
 }
 
+.paramedic .header_left div{
+    width: 16px;
+    height: 16px;
+}
+
 .paramedic .header_left h4{
     margin-left: 20px;
     font-size: 14px;
@@ -267,6 +272,30 @@ body {
     object-fit: cover;
 }
 
+
+/* 의사 헤더 */
+.doc_header .header_inner> :last-child{
+    position: relative;
+}
+
+.doc_header .red_alarm{
+    position: absolute;
+    top: 0;
+    left: 88px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #940045;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
 /* 의사 연결 헤더 */
 .doc_connect{
     height: 64px;
@@ -322,8 +351,8 @@ body {
     content: '';
     position: absolute;
     left: 50%;
-    top: calc(50% - 8px);
-    transform: translate(-30%, -50%);
+    top: 50%;
+    transform: translate(-55%, -100%);
     width: 16px;
     height: 16px;
     transition: 0.2s all;
@@ -411,7 +440,7 @@ body {
 }
 
 .doctor .gnb_list:nth-child(5)> a:after{
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     background: url('/img/header/message.svg') no-repeat;
 }
 
@@ -3063,10 +3092,10 @@ body {
     background: #004F60;
 }
 
-.pop.connect_para .pop_cont .refuse:hover .refuse_layer,
-.pop.connect_para .pop_cont .mic:hover .mic_layer,
-.pop.connect_para .pop_cont .cam:hover .cam_layer,
-.pop.connect_para .pop_cont .accept:hover .accept_layer{
+.pop.connect .pop_cont .refuse:hover .refuse_layer,
+.pop.connect .pop_cont .mic:hover .mic_layer,
+.pop.connect .pop_cont .webcam:hover .cam_layer,
+.pop.connect .pop_cont .accept:hover .accept_layer{
     opacity: 1;
     cursor: pointer;
     transition: .4s;
@@ -3378,4 +3407,31 @@ body {
 .pop.conn_call .pop_cont{
     margin-top: -83px;
     margin-left: 442px;
+}
+
+
+/*====================== 의사 ======================*/
+/* 응급호출 */
+.pop.connect_doctor h2{
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+}
+
+.pop.connect_doctor h3{
+    margin-top: 64px;
+}
+
+.pop.connect_doctor .toggle_layer{
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    padding: 24px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #eee, #ccc);
+    display: none;
+    cursor: pointer;
 }
