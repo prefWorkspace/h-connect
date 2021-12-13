@@ -18,10 +18,10 @@ window.addEventListener('DOMContentLoaded', () => {
     function modalFuc(e) {
         let target = e.target;
         let dataId = target.getAttribute('data-modal');
-        target.setAttribute('data-rethis', 'this');
-
+        
         
         if(dataId === 'retouch') {
+            target.setAttribute('data-rethis', 'this');
             let par = target.parentNode.parentNode.getElementsByTagName('span')[0];
             let id = document.getElementById(dataId);
             let input = id.getElementsByTagName('input')[0];
@@ -32,12 +32,23 @@ window.addEventListener('DOMContentLoaded', () => {
             
             sureBtn.addEventListener('click', reModalClick);
 
+        } else if(dataId === 'deleteList') {
+            target.setAttribute('data-delthis', 'this');
+            
+            let id = document.getElementById(dataId);
+            let sureBtn = id.querySelector('.sure_btn');
+
+            id.classList.add('on');
+            sureBtn.addEventListener('click', delModalClick);
+
+
         } else {
             let id = document.getElementById(dataId);
             id.classList.add('on');
         };
     };
 
+    // 수정 모달 기능
     function reModalClick(e) {
         const _modalBtn = document.querySelectorAll('.modal_btn');
         
@@ -62,6 +73,39 @@ window.addEventListener('DOMContentLoaded', () => {
             _span.innerText = _input.value;
             _modal.classList.remove('on');
             _btn.removeAttribute('data-rethis');
+        };
+    };
+
+    // 삭제 모달 기능
+    function delModalClick(e) {
+        const _modalBtn = document.querySelectorAll('.modal_btn');
+        let target = e.target;
+        let parent = target.parentNode.parentNode.parentNode;
+        let list, ulId, _btn;
+        
+        _modalBtn.forEach(item => {
+            let has = item.getAttribute('data-delthis');
+            if(has === 'this') {
+                _btn = item;
+                list = item.parentNode.parentNode;
+                
+                let _has = item.parentNode.parentNode.getAttribute('data-clinic');
+
+                let _dataId = has !== null ? ulId = _has :  ulId = null;
+            };
+        });
+
+        if(ulId !== null) {
+            let thisUl = document.getElementById(ulId);
+
+            _btn.removeAttribute('data-delthis');
+            list.remove();
+            thisUl.remove();
+            parent.classList.remove('on');
+        } else {
+            _btn.removeAttribute('data-delthis');
+            list.remove();
+            parent.classList.remove('on');
         };
     };
 

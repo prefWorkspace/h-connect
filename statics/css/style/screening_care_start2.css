@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+#contents_wrap {
+    display: block;
+    padding-top: 64px;
+    background-color: #222222;
+}
+
+
+/* header */
+#header {
+    height: 64px;
+}
+
+.logo {
+    width: 16px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.pahe_title {
+    font-size: 14px;
+}
+
+/* header_btn_box */
+.header_btn_box {
+    display: flex;
+    align-items: center;
+}
+
+/* start_time_box */
+.start_time_box {
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    margin-right: 25px;
+}
+
+.start_time_box .care_start_time {
+    margin-right: 25px;
+}
+
+
+/* care_end_btn */
+.care_end_btn {
+    display: inline-block;
+}
+
+.care_end_btn .call_doc_btn {
+    display: inline-block;
+    width: 120px;
+    line-height: 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    padding-left: 20px;
+    color: #007A94;
+    text-align: center;
+    background: #fff url('../../images/btn_logo_green.svg') no-repeat left 18px center;
+}
+
+
+/* care_sect */
+#care_sect {
+    max-width: 1920px;
+    min-width: 1880px;
+    height: auto;
+    background-color: #222222;
+    padding: 5px;
+}
+
+.care_cont_box {
+    display: flex;
+}
+
+.care_start_card {
+    height: 888px;
+}
+
+/* care_start_card1 */
+.care_start_card1 {
+    flex: 3;
+    min-width: 600px;
+    max-width: 600px;
+    background-color: #444444;
+    margin-right: 5px;
+}
+
+.care_header {
+    display: flex;
+    align-items: flex-end;
+    height: 40px;
+}
+
+/* care_tab */
+.care_tab {
+    display: flex;
+    padding: 0 10px;
+}
+
+.care_tab_list {
+    background-color: #007A94;
+    padding: 0 10px 0 30px;
+    border-radius: 4px 4px 0 0;
+}
+
+.care_tab_list > span {
+    display: block;
+    line-height: 32px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.mess_tab {
+    background: #007A94 url('/statics/images/message_white.svg') no-repeat left 8px top 9px;
+}
+
+/* messge_cont_box */
+.messge_cont_box {
+    background-color: #C5D8DC;
+}
+
+.mess_text_box {
+    height: 728px;
+}
+
+.messge_cont_box .mess_send_box {
+    border-radius: 0;
+}
+
+
+/* care_start_card2 */
+.care_start_card2 {
+    flex: 5;
+    min-width: 1308px;
+    max-width: 1308px;
+    background-color: #EEEEEE;
+}
+
+.care_start_card2 .card_cont_box {
+    padding: 0 32px 32px;
+}
+
+.care_start_card2 .care_header {
+    background-color: #007A94;
+    align-items: center;
+    padding: 0 0 0 30px;
+}
+
+.care_start_card2 .care_card_title {
+    color: #fff;
+    font-size: 12px;
+}
+
+/* cont_header */
+.care_start_card2 .cont_header {
+    width: 100%;
+    display: flex;
+    height: 96px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.care_start_card2 .cont_patient {
+    font-weight: 500;
+}
+
+/* right_cont_header */
+.care_start_card2 .right_cont_header {
+    display: flex;
+    align-items: center;
+}
+
+.right_cont_header .manage_doc {
+    margin-right: 20px;
+}
+
+.right_cont_header .import_btn {
+    line-height: 40px;
+    background-color: #007A94;
+    color: #fff;
+    display: inline-block;
+    padding: 0 15px 0 35px;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #007A94 url('/statics/images/care_icon.png') no-repeat left 12px center;
+}
+
+/* prescription_box */
+.care_start_card2 .prescription_box {
+    background-color: #fff;
+    border: 32px solid #fff;
+    height: 718px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.prescription_box .prescription {
+    width: 100%;
+    background-color: #EEEEEE;
+    height: 1000px;
+}
+
+
+
+
+
+/* 스크롤 바 */
+.prescription_box::-webkit-scrollbar { 
+    width: 5px;
+} 
+.prescription_box::-webkit-scrollbar-track {
+}
+/* 실질적 스크롤 바 */
+.prescription_box::-webkit-scrollbar-thumb { 
+    border-radius: 50px;
+    background: #00799477; 
+} 
+/* 실질적 스크롤 바 위에 마우스를 올려다 둘 때 */
+.prescription_box::-webkit-scrollbar-thumb:hover { 
+    background: #00698177; 
+} 
+/* 실질적 스크롤 바를 클릭할 때 */
+.prescription_box::-webkit-scrollbar-thumb:active { 
+    background: #00698179; 
+}
+/* 스크롤 바 상 하단 버튼 */ 
+.prescription_box::-webkit-scrollbar-button { 
+    display: none; 
+} 
+
+
+
+.modal_footer .sure_btn {
+    display: inline-block;
+}

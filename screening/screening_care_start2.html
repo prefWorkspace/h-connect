@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선별 진료소</title>
+    <!--Import-->
+    <script src="/statics/js/font.js"></script>
+    <script src="/statics/js/common.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="/statics/css/common/reset.css">
+    <link rel="stylesheet" href="/statics/css/common/common.css">
+    <link rel="stylesheet" href="/statics/css/style/screening_care_start2.css">
+
+</head>
+<body>
+   <div id="wrap">
+       <div id="contents_wrap">
+        
+           <!-- header -->
+           <header id="header">
+               <div class="header_wrap">
+                   <div class="header_box">
+                       <div class="logo">
+                           <img src="/statics/images/care_icon.png" alt="진료아이콘">
+                       </div>
+                       <div class="page_info_box">
+                           <h2 class="pahe_title">선별진료소 <span class="care_room">4</span>호실. <span class="patient_info">한선별 (44. 여)</span></h2>
+                       </div>
+                   </div>
+                   <div class="header_btn_box">
+                       <div class="start_time_box">
+                           <div class="care_start_time">
+                               <span>선별진료 시작 : </span>
+                               <span class="start_time">21.12.10. 00:00:00</span>
+                           </div>
+                           <div class="caring_time">
+                               <span class="caring">
+                                   <span class="hour">00</span> : <span class="min">00</span> : <span class="sec">00</span> 경과
+                               </span>
+                           </div>
+                       </div>
+                       <span class="care_end_btn">
+                            <button type="button" class="call_doc_btn modal_btn" data-modal="disCare">
+                                <span>진료종료</span>
+                            </button>
+                       </span>
+                   </div>
+               </div>
+           </header>
+           <section id="care_sect">
+                <div class="care_cont_box">
+                    <div class="care_start_card care_start_card1">
+                        <div class="care_header">
+                            <ul class="care_tab">
+                                <li class="care_tab_list mess_tab" data-caretab="care_mess">
+                                    <span>메세지</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="messge_cont_box">
+                            <div class="mess_text_box">
+                                <ul class="mess_text_wrap">
+                                    <!-- li를 위에 넣어야 아래에서 부터 나옴 -->
+                                    <!-- my_send -->
+                                    <li class="mess_text_list my_send">
+                                        <span class="sender"></span>
+                                        <div class="mess_text">
+                                            <span class="mess">ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- another_send -->
+                                    <li class="mess_text_list another_send">
+                                        <span class="sender">선별진료소 담당의</span>
+                                        <div class="mess_text">
+                                            <span class="mess">sssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- screening_start -->
+                                    <li class="mess_text_list screening_start">
+                                        <span class="patient_name">한선별</span><span>님. 선별진료가 시작되었습니다.</span><span class="start_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- my_send -->
+                                    <li class="mess_text_list my_send">
+                                        <span class="sender"></span>
+                                        <div class="mess_text">
+                                            <span class="mess">ssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                    <!-- another_send -->
+                                    <li class="mess_text_list another_send">
+                                        <span class="sender">선별진료소 담당의</span>
+                                        <div class="mess_text">
+                                            <span class="mess">sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
+                                        </div>
+                                        <span class="mess_send_time">21.12.10. 00:00:00</span>
+                                    </li>
+
+                                </ul>
+                                <ul class="left_bar">
+                                    <li class="bar white"></li>
+                                    <li class="bar green"></li>
+                                    <li class="bar white"></li>
+                                    <li class="bar green"></li>
+                                    <li class="bar white"></li>
+                                </ul>
+                            </div>
+                            <div class="mess_send_box">
+                                <div class="my_send_text">
+                                    <textarea placeholder="소견 및 메세지 입력"></textarea>
+                                </div>
+                                <button type="button" class="mess_send_btn">전송</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="care_start_card care_start_card2">
+                        <div class="care_header">
+                            <p class="care_card_title">진단 및 처방</p>
+                        </div>
+                        <div class="card_cont_box">
+                            <div class="cont_header">
+                                <h2 class="cont_patient">한선별 (44. 여)</h2>
+                                <div class="right_cont_header">
+                                    <p class="manage_doc">담당의 : <span>선별진료 담당의</span></p>
+                                    <button type="button" class="import_btn">
+                                        <span>처방기록 가져오기</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prescription_box">
+                                <div class="prescription">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </section>
+       </div>
+
+           <!-- modal -->
+           <div class="modal select_clinic_modal check_modal" id="disCare">
+            <div class="modal_box">
+                <div class="modal_header">
+                   <img src="/statics/images/logo_black.png" alt="로고">
+                </div>
+                <div class="modal_cont">
+                    <div class="modal_form">
+                        <p class="check_ex_text">
+                            선별진료가 종료됩니다.<br>
+                            <span class="sure_text">종료 하시겠습니까?</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <button type="button" class="btn1 delete_btn cancel_btn">아니오</button>
+                    <a href="/screening/screening_care.html" class="btn1 sure_btn">네, 종료합니다</a>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
