@@ -5796,6 +5796,7 @@
 .doctor{
     min-width: 1248px;
     height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     background: #eee;
 }
 
@@ -6476,6 +6477,10 @@
     background: #fff;
 }
 
+.doctor .remote_alarm .inner{
+    /* display: flex; */
+}
+
 .doctor .remote_alarm .title{
     padding: 16px 16px 23px;
     border-bottom: 1px solid #eee;
@@ -6523,7 +6528,7 @@
 }
 
 .doctor .remote_alarm .time{
-    width: 150px;
+    /* width: 150px; */
 }
 
 .doctor .remote_alarm .time,
@@ -6532,13 +6537,365 @@
 }
 
 .doctor .remote_alarm .answer{
-    width: 100px;
+    /* width: 100px; */
 }
 
 .doctor .remote_alarm .reply{
-    width: 200px;
+    /* width: 200px; */
 }
 
 .doctor .remote_alarm .no_check{
     color: #940045;
+}
+
+
+/* 응급호출 */
+.doctor_emergency .message_list{
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor_emergency .message_list .title{
+    padding: 16px 16px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor_emergency .message_list .title .inner,
+.doctor_emergency .message_list .title .inner div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_emergency .message_list .inner .img_container{
+    width: 16px;
+    height: 16px;
+}
+
+.doctor_emergency .message_list .inner .img_container img{
+    width: 100%;
+    height: 100%;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.doctor_emergency .message_list .title h2{
+    margin-left: 16px;
+    font-size: 16px;
+    color: #940045;
+}
+
+.doctor_emergency .message_list .title .btn_call{
+    width: 144px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #940045;
+}
+
+.doctor_emergency .message_list .title .btn_call:hover{
+    background: #F5EEF1;
+}
+
+.doctor_emergency .message_list .title p{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #444;
+}
+
+.doctor_emergency .message_list .list{
+    padding: 16px;
+}
+
+.doctor_emergency .message_list .row{
+    width: 296px;
+    padding: 16px;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor_emergency .message_list .row:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
+.doctor_emergency .message_list .row> p{
+    font-size: 10px;
+    color: #940045;
+}
+
+.doctor_emergency .message_list .row div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_emergency .message_list .row div p{
+    font-size: 12px;
+}
+
+.doctor_emergency .message_list .row .img_container{
+    width: 6px;
+    height: 12px;
+    margin-left: 16px;
+}
+
+.doctor_emergency .message_list .row .img_container img{
+    width: 100%;
+    height: 100%;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.doctor_emergency .message_list .row.on{
+    background: #940045;
+}
+
+.doctor_emergency .message_list .row.on p{
+    color: #fff;
+}
+
+.doctor_emergency .message_list .row.on .img_container img{
+    filter: none;
+}
+
+.doctor_emergency .detail_ep{
+    width: 736px;
+    margin-left: 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor_emergency .detail_ep .title{
+    padding: 24px  32px 26px 48px;
+}
+
+.doctor_emergency .detail_ep .title div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_emergency .detail_ep .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #940045;
+}
+
+.doctor_emergency .detail_ep .title .btn_check{
+    width: 80px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #007a94;
+    color: #007a94;
+}
+
+.doctor_emergency .detail_ep .title p{
+    font-size: 12px;
+}
+
+.doctor_emergency .detail_ep .title> :last-child{
+    justify-content: initial;
+}
+
+.doctor_emergency .detail_ep .title div> :first-child{
+    margin-right: 16px;
+    color: #940045;
+}
+
+.doctor_emergency .inner> .control{
+    width: 672px;
+    margin: 0 auto;
+    padding: 8px 16px 8px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+}
+
+.doctor_emergency .control div{
+    display: flex;
+}
+
+.doctor_emergency .control p{
+    font-size: 12px;
+}
+
+.doctor_emergency .control span{
+    color: #007a94;
+}
+
+.doctor_emergency ul.tabs li{
+    width: 96px;
+    height: 32px;
+    padding: 8px 15px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #ccc;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    color: #888;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.doctor_emergency ul.tabs li.current{
+    background: #f80;
+    color: #fff;
+}
+  
+.doctor_emergency .tab-content{
+    display: none;
+    padding: 32px 0;
+}
+  
+.doctor_emergency .tab-content.current{
+    display: inherit;
+}
+
+.doctor_emergency .patient_status{
+    width: 672px;
+    height: 432px;
+}
+
+.doctor_emergency .patient_status .patient{
+    width: 672px;
+    height: 432px;
+    padding: 0;
+}
+
+.doctor_emergency .patient_status .patient .symptome{
+    background: #fff;
+}
+
+.doctor_emergency .patient_status .patient .symptome .part .swiper-scrollbar{
+    width: 100%;
+}
+
+.doctor_emergency .swiper.part_accident{
+    background: #eee;
+}
+
+.doctor_emergency .pupil_container> div{
+    width: 144px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+
+/* tab-2 */
+.doctor_emergency .vital{
+    height: 485px;
+    padding: 0;
+    border-radius: 0 0 8px 8px;
+    background: #000;
+    overflow: hidden;
+}
+
+.doctor_emergency .vital .graph> div{
+    padding: 8px 16px;
+}
+
+.doctor_emergency .vital .inner{
+    width: 492px;
+    overflow: hidden;
+}
+
+.doctor_emergency .graph> div> div> div{padding: 0;}
+
+.doctor_emergency .control{
+    padding: 8px 16px 8px 0;
+}
+
+.doctor_emergency .vital .control> div> div{
+    display: initial;
+}
+
+.doctor_emergency .control .bell_num p{
+    font-size: 48px;
+}
+
+.doctor_emergency .mmhg{
+    margin: 0 ;
+}
+
+.doctor_emergency .mmhg .time span{
+    color: #fff;
+}
+
+.doctor_emergency .pulse {
+    width: 165px;
+}
+
+.doctor_emergency .pulse .time{
+    align-items: center;
+}
+
+.doctor_emergency .pulse .time span{
+    color: #00F6FF;
+}
+
+.doctor_emergency .mmhg .bell_num div,
+.doctor_emergency .pulse .bell_num div,
+.doctor_emergency .temp .bell_num div{
+    display: initial;
+}
+
+.doctor_emergency .mmhg .bell_num div p,
+.doctor_emergency .pulse .bell_num div p,
+.doctor_emergency .temp .bell_num div p{
+    font-size: 18px;
+}
+
+.doctor_emergency .vital .temp{
+    display: initial;
+}
+
+.doctor_emergency .vital .temp .bell_name,
+.doctor_emergency .vital .temp .bell_num{
+    display: flex;
+}
+
+.doctor_emergency .patient_picture{
+    padding: 16px;
+}
+
+.doctor_emergency .big_picture{
+    width: 672px;
+    height: 336px;
+}
+
+.doctor_emergency .detail_ep .patient_picture{
+    position: relative;
+}
+
+.doctor_emergency .small_picture{
+    width: 100%;
+    margin: 8px 16px;
+}
+
+.doctor_emergency .full{
+    position: absolute;
+    top: 32px;
+    right: 48px;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #fff;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.doctor_emergency .full img{
+    width: 100%;
+    height: 100%;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }

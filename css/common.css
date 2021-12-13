@@ -310,6 +310,11 @@ body {
 
 
 
+/* 의사 응급호출 헤더 */
+.doc_emer{
+    min-width: 1248px;
+}
+
 
 
 
@@ -3323,6 +3328,7 @@ body {
     width: 64px;
     background: url('/img/icon/btn_pre.png') no-repeat 0 0px / contain;
     left:-128px;
+    cursor: pointer;
 }
 
 .pop.full_picture .btn_close{
@@ -3434,4 +3440,33 @@ body {
     background: linear-gradient(to right, #eee, #ccc);
     display: none;
     cursor: pointer;
+}
+
+
+/* 환자사진 보기 */
+.pop.doc_full .pop_cont,
+.pop.doc_full .swiper-wrapper{
+    /* width: 100vw;
+    height: 98vh; */
+}
+
+.pop.doc_full img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop.doc_full .swiper-button-prev{
+    left: 0;
+    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+    transform: rotate(180deg);
+}
+
+.pop.doc_full .swiper-button-next{
+    right: 0;
+    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+}
+
+.pop.doc_full .btn_close{
+    z-index: 99;
 }
