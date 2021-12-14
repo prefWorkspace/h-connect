@@ -3,11 +3,6 @@ body {
     position: relative;
 }
 
-.nurse{
-    min-height: calc(100vh - 80px);
-    display: flex;
-}
-
 /*================= 헤더 =================*/
 .pc_header{
     min-width: 1880px;
@@ -32,8 +27,10 @@ body {
     z-index: -1;
 }
 
+.doc_emer::after{display: none;}
+
 .doc_header{
-    min-width: 1248px;
+    /* min-width: 1248px; */
     position: relative;
     z-index: 10;
 }
@@ -306,23 +303,24 @@ body {
 
 
 /* 의사 헤더 */
-.doc_header .header_inner> :last-child{
+.doc_header .btn_list{
+    margin-left: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
 .doc_header .red_alarm{
-    position: absolute;
-    top: 0;
-    left: 88px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     background: #940045;
+    position: absolute;
+    top:0;
+    left: -21px;
     border: 1px solid #fff;
-    cursor: pointer;
 }
-
-
 
 
 
@@ -333,9 +331,7 @@ body {
     height: 64px;
 }
 
-.doc_header::after {
-    box-shadow: none;
-}
+.doc_connect::after{display: none;}
 
 .doc_connect h4{
     margin-right: 5px;
@@ -412,7 +408,7 @@ body {
     transition: 0.2s all;
 }
 
-.gnb_list > a:before {
+.gnb_list > a:before{
     content: '';
     position: absolute;
     left: 0;
@@ -433,6 +429,19 @@ body {
     height: 100%;
     width: 0%;
     background: linear-gradient(to right, #940045, #4A0000);
+    transition: 0.3s all;
+    z-index: -1;
+    border-radius: 0 4px 4px 0;
+}
+
+.doctor_emergency .gnb_list > a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #007A94, #003D4A);
     transition: 0.3s all;
     z-index: -1;
     border-radius: 0 4px 4px 0;

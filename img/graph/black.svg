@@ -1,0 +1,314 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1115" height="24" viewBox="0 0 1115 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1115" height="24" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="2399" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="스크롤_그룹_16" data-name="스크롤 그룹 16" clip-path="url(#clip-path)" style="isolation: isolate">
+    <g id="pulse_ECG" data-name="pulse ECG" clip-path="url(#clip-path-2)">
+      <g id="pulse_ECG-2" data-name="pulse ECG" transform="translate(-476 -171)">
+        <g id="pulse">
+          <rect id="pulse_area" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-3" data-name="pulse ECG" transform="translate(-428 -171)">
+        <g id="pulse-2" data-name="pulse">
+          <rect id="pulse_area-2" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-2" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-4" data-name="pulse ECG" transform="translate(-380 -171)">
+        <g id="pulse-3" data-name="pulse">
+          <rect id="pulse_area-3" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-3" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-5" data-name="pulse ECG" transform="translate(-332 -171)">
+        <g id="pulse-4" data-name="pulse">
+          <rect id="pulse_area-4" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-4" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-6" data-name="pulse ECG" transform="translate(-284 -171)">
+        <g id="pulse-5" data-name="pulse">
+          <rect id="pulse_area-5" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-5" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-7" data-name="pulse ECG" transform="translate(-236 -171)">
+        <g id="pulse-6" data-name="pulse">
+          <rect id="pulse_area-6" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-6" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-8" data-name="pulse ECG" transform="translate(-188 -171)">
+        <g id="pulse-7" data-name="pulse">
+          <rect id="pulse_area-7" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-7" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-9" data-name="pulse ECG" transform="translate(-140 -171)">
+        <g id="pulse-8" data-name="pulse">
+          <rect id="pulse_area-8" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-8" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-10" data-name="pulse ECG" transform="translate(-92 -171)">
+        <g id="pulse-9" data-name="pulse">
+          <rect id="pulse_area-9" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-9" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-11" data-name="pulse ECG" transform="translate(-44 -171)">
+        <g id="pulse-10" data-name="pulse">
+          <rect id="pulse_area-10" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-10" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-12" data-name="pulse ECG" transform="translate(4 -171)">
+        <g id="pulse-11" data-name="pulse">
+          <rect id="pulse_area-11" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-11" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-13" data-name="pulse ECG" transform="translate(52 -171)">
+        <g id="pulse-12" data-name="pulse">
+          <rect id="pulse_area-12" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-12" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-14" data-name="pulse ECG" transform="translate(100 -171)">
+        <g id="pulse-13" data-name="pulse">
+          <rect id="pulse_area-13" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-13" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-15" data-name="pulse ECG" transform="translate(148 -171)">
+        <g id="pulse-14" data-name="pulse">
+          <rect id="pulse_area-14" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-14" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-16" data-name="pulse ECG" transform="translate(196 -171)">
+        <g id="pulse-15" data-name="pulse">
+          <rect id="pulse_area-15" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-15" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-17" data-name="pulse ECG" transform="translate(244 -171)">
+        <g id="pulse-16" data-name="pulse">
+          <rect id="pulse_area-16" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-16" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-18" data-name="pulse ECG" transform="translate(292 -171)">
+        <g id="pulse-17" data-name="pulse">
+          <rect id="pulse_area-17" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-17" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-19" data-name="pulse ECG" transform="translate(340 -171)">
+        <g id="pulse-18" data-name="pulse">
+          <rect id="pulse_area-18" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-18" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-20" data-name="pulse ECG" transform="translate(388 -171)">
+        <g id="pulse-19" data-name="pulse">
+          <rect id="pulse_area-19" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-19" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-21" data-name="pulse ECG" transform="translate(436 -171)">
+        <g id="pulse-20" data-name="pulse">
+          <rect id="pulse_area-20" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-20" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-22" data-name="pulse ECG" transform="translate(484 -171)">
+        <g id="pulse-21" data-name="pulse">
+          <rect id="pulse_area-21" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-21" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-23" data-name="pulse ECG" transform="translate(532 -171)">
+        <g id="pulse-22" data-name="pulse">
+          <rect id="pulse_area-22" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-22" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-24" data-name="pulse ECG" transform="translate(580 -171)">
+        <g id="pulse-23" data-name="pulse">
+          <rect id="pulse_area-23" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-23" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-25" data-name="pulse ECG" transform="translate(628 -171)">
+        <g id="pulse-24" data-name="pulse">
+          <rect id="pulse_area-24" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-24" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-26" data-name="pulse ECG" transform="translate(676 -171)">
+        <g id="pulse-25" data-name="pulse">
+          <rect id="pulse_area-25" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-25" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-27" data-name="pulse ECG" transform="translate(724 -171)">
+        <g id="pulse-26" data-name="pulse">
+          <rect id="pulse_area-26" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-26" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-28" data-name="pulse ECG" transform="translate(772 -171)">
+        <g id="pulse-27" data-name="pulse">
+          <rect id="pulse_area-27" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-27" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-29" data-name="pulse ECG" transform="translate(820 -171)">
+        <g id="pulse-28" data-name="pulse">
+          <rect id="pulse_area-28" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-28" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-30" data-name="pulse ECG" transform="translate(868 -171)">
+        <g id="pulse-29" data-name="pulse">
+          <rect id="pulse_area-29" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-29" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-31" data-name="pulse ECG" transform="translate(916 -171)">
+        <g id="pulse-30" data-name="pulse">
+          <rect id="pulse_area-30" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-30" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-32" data-name="pulse ECG" transform="translate(964 -171)">
+        <g id="pulse-31" data-name="pulse">
+          <rect id="pulse_area-31" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-31" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-33" data-name="pulse ECG" transform="translate(1012 -171)">
+        <g id="pulse-32" data-name="pulse">
+          <rect id="pulse_area-32" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-32" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-34" data-name="pulse ECG" transform="translate(1060 -171)">
+        <g id="pulse-33" data-name="pulse">
+          <rect id="pulse_area-33" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-33" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-35" data-name="pulse ECG" transform="translate(1108 -171)">
+        <g id="pulse-34" data-name="pulse">
+          <rect id="pulse_area-34" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-34" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-36" data-name="pulse ECG" transform="translate(1156 -171)">
+        <g id="pulse-35" data-name="pulse">
+          <rect id="pulse_area-35" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-35" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-37" data-name="pulse ECG" transform="translate(1204 -171)">
+        <g id="pulse-36" data-name="pulse">
+          <rect id="pulse_area-36" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-36" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-38" data-name="pulse ECG" transform="translate(1252 -171)">
+        <g id="pulse-37" data-name="pulse">
+          <rect id="pulse_area-37" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-37" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-39" data-name="pulse ECG" transform="translate(1300 -171)">
+        <g id="pulse-38" data-name="pulse">
+          <rect id="pulse_area-38" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-38" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-40" data-name="pulse ECG" transform="translate(1348 -171)">
+        <g id="pulse-39" data-name="pulse">
+          <rect id="pulse_area-39" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-39" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-41" data-name="pulse ECG" transform="translate(1396 -171)">
+        <g id="pulse-40" data-name="pulse">
+          <rect id="pulse_area-40" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-40" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-42" data-name="pulse ECG" transform="translate(1444 -171)">
+        <g id="pulse-41" data-name="pulse">
+          <rect id="pulse_area-41" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-41" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-43" data-name="pulse ECG" transform="translate(1492 -171)">
+        <g id="pulse-42" data-name="pulse">
+          <rect id="pulse_area-42" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-42" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-44" data-name="pulse ECG" transform="translate(1540 -171)">
+        <g id="pulse-43" data-name="pulse">
+          <rect id="pulse_area-43" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-43" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-45" data-name="pulse ECG" transform="translate(1588 -171)">
+        <g id="pulse-44" data-name="pulse">
+          <rect id="pulse_area-44" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-44" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-46" data-name="pulse ECG" transform="translate(1636 -171)">
+        <g id="pulse-45" data-name="pulse">
+          <rect id="pulse_area-45" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-45" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-47" data-name="pulse ECG" transform="translate(1684 -171)">
+        <g id="pulse-46" data-name="pulse">
+          <rect id="pulse_area-46" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-46" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-48" data-name="pulse ECG" transform="translate(1732 -171)">
+        <g id="pulse-47" data-name="pulse">
+          <rect id="pulse_area-47" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-47" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-49" data-name="pulse ECG" transform="translate(1780 -171)">
+        <g id="pulse-48" data-name="pulse">
+          <rect id="pulse_area-48" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-48" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-50" data-name="pulse ECG" transform="translate(1828 -171)">
+        <g id="pulse-49" data-name="pulse">
+          <rect id="pulse_area-49" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-49" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="pulse_ECG-51" data-name="pulse ECG" transform="translate(1876 -171)">
+        <g id="pulse-50" data-name="pulse">
+          <rect id="pulse_area-50" data-name="pulse area" width="48" height="24" transform="translate(476 171)" fill="none"/>
+          <path id="ECG-50" data-name="ECG" d="M900,261.866h8.854c1.272,0,1.818-1.812,3.77-1.812s1.727,1.812,3.224,1.812h2.585c.863,0,.544,2.932,1.511,2.932,2.44,0,1.581-19.3,3.4-19.3s.768,21,2.857,21c1.907,0,.268-2.939,2.72-2.939s5.064-.365,5.953-1.7c.953-1.426.413-4.09,2.139-4.09,1.948,0,.727,4.09,3.951,4.09H948" transform="translate(-424 -73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

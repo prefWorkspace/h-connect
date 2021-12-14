@@ -175,35 +175,31 @@
             <nav class="nav" id="nav">
                 <ul class="main_depth gnb">
                     <li class="gnb_list">
-                        <a class="link" href="index.html">
+                        <a class="link" href="../index.html">
                             H-Works
                         </a>
                     </li>
 
                     <li class="gnb_list clinic">
                         <a class="link" href=".html">
-                            <!-- <img src="/img/header/clinic.svg" alt="사람모양 아이콘"> -->
                         원격협진
                         </a>
                     </li>
 
                     <li class="gnb_list off">
-                        <a class="link" href=".html">
-                            <!-- <img src="/img/header/monitoring.svg" alt="모니터 아이콘"> -->
+                        <a class="link" href="../monitoring.html">
                             모니터링
                         </a>
                     </li>
 
                     <li class="gnb_list off">
-                        <a class="link" href=".html">
-                            <!-- <img src="/img/header/remote.svg" alt="청진기 아이콘"> -->
+                        <a class="link" href="../screening.html">
                             선별진료
                         </a>
                     </li>
 
                     <li class="gnb_list off">
-                        <a class="link" href=".html">
-                            <!-- <img src="/img/header/message.svg" alt="메세지 아이콘"> -->
+                        <a class="link" href="../message.html">
                             메세지
                         </a>
                     </li>
@@ -432,7 +428,7 @@
                                         <div class="part">
                                             <h2>사고부위</h2>
                                             
-                                            <div class="swiper part_accident">
+                                            <div class="swiper part_accident_no">
                                                 <div class="swiper-wrapper part_container">
                                                     <div class="swiper-slide part_front">
                                                       
@@ -946,7 +942,7 @@
                                                     </div>
                                                 </div>
             
-                                                <div class="swiper-scrollbar"></div>
+                                                <!-- <div class="swiper-scrollbar"></div> -->
                                             </div>
                                        </div>
             
@@ -1086,54 +1082,56 @@
                                                     </div>
             
                                                 </div>
+
+                                                <!-- 환자분류 -->
+                                                <div class="triage">
+                                                    <h2>환자분류</h2>
+                    
+                                                    <div>
+                                                        <input type="checkbox" id="test_left" checked>
+                                                        <label for="test_left">
+                                                            <span></span>
+                                                            준응급
+                                                        </label>
+                                                    </div> 
+                                                    
+                                                    <div>
+                                                        <div>
+                                                            <div>
+                                                                <input type="checkbox" id="test_left" checked>
+                                                                <label for="test_left">
+                                                                    <span></span>
+                                                                    발생시간
+                                                                </label>
+                                                            </div>   
+                    
+                                                            <div>
+                                                                <input type="checkbox" id="test_left" checked>
+                                                                <label for="test_left">
+                                                                    <span></span>
+                                                                    추정
+                                                                </label>
+                                                            </div>   
+                                                        </div>
+                    
+                                                        <div class="triage_time">
+                                                            <div>
+                                                                <input type="text">
+                                                                <p>시</p>
+                                                            </div>
+                    
+                                                            <div>
+                                                                <input type="text">
+                                                                <p>분</p>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
                                             </div>                                    
                                         </div>
             
-                                        <!-- 환자분류 -->
-                                        <div class="triage">
-                                            <h2>환자분류</h2>
-            
-                                            <div>
-                                                <input type="checkbox" id="test_left" checked>
-                                                <label for="test_left">
-                                                    <span></span>
-                                                    준응급
-                                                </label>
-                                            </div> 
-                                            
-                                            <div>
-                                                <div>
-                                                    <div>
-                                                        <input type="checkbox" id="test_left" checked>
-                                                        <label for="test_left">
-                                                            <span></span>
-                                                            발생시간
-                                                        </label>
-                                                    </div>   
-            
-                                                    <div>
-                                                        <input type="checkbox" id="test_left" checked>
-                                                        <label for="test_left">
-                                                            <span></span>
-                                                            추정
-                                                        </label>
-                                                    </div>   
-                                                </div>
-            
-                                                <div class="triage_time">
-                                                    <div>
-                                                        <input type="text">
-                                                        <p>시</p>
-                                                    </div>
-            
-                                                    <div>
-                                                        <input type="text">
-                                                        <p>분</p>
-                                                    </div>
-                                                </div>
-                                               
-                                            </div>
-                                        </div>
+                                        
                                     </div>
             
                                     <!-- 응급처치 -->
@@ -1173,12 +1171,7 @@
                                                     <div class="fixed">
                                                         <h2>고정</h2>
                                                         <p>해당사항 없음</p>
-                                                    </div>
-            
-                                                    <div class="Treatment">
-                                                        <h2>상처처치</h2>
-                                                        <p>해당사항 없음</p>
-                                                    </div>                                     
+                                                    </div>                                 
                                                 </div>
             
             
@@ -1206,6 +1199,11 @@
                                                         <p>해당사항 없음</p>
                                                     </div> 
                                                 </div>
+
+                                                <div class="treatment">
+                                                    <h2>상처처치</h2>
+                                                    <p>해당사항 없음</p>
+                                                </div>    
                                             </div>
                                         </div>
                                     </div>

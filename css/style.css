@@ -80,8 +80,9 @@
 /* 메인 */
 .nurse{
     min-width: 1880px;
+    min-height: calc(100vh - 80px);
     display: flex;
-    background-color: #eee;
+    background-color: #eee;   
 }
 
 .nurse .wrap_inner{
@@ -3423,19 +3424,19 @@
     background: #940045;
 }
 
-.emergency .patient_status .patient .assessing .part_container> div{
+.emergency .patient_status .part_container> div{
     margin-right: 48px;
 }
 
-.emergency .patient_status .patient .assessing .part_container> div:not(.part_front, .part_back, .part_body){
+.emergency .patient_status .part_container> div:not(.part_front, .part_back, .part_body){
     margin-top: 56px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .part_body{
+.emergency .patient_status .part_body{
     margin: 44px 0 0 0;
 }
 
-.emergency .patient_status .patient .assessing .part_container input[type="checkbox"]+label{
+.emergency .patient_status .part_container input[type="checkbox"]+label{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -3443,405 +3444,405 @@
     background: url('/img/emergency/damage.png') no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .assessing .part_container input[type='checkbox']:checked+label{
+.emergency .patient_status .part_container input[type='checkbox']:checked+label{
     background: url('/img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
 }
 
 
 /* 사고부위 버튼 */
 /* part_front */
-.emergency .patient_status .patient .assessing .part_container .part_front{
+.emergency .patient_status .part_front{
     position: relative;
     width: 144px;
     height: 340px;
     background: url('/img/emergency/front.png')no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .assessing .part_container .front_toggle{
+.emergency .patient_status .front_toggle{
     position: absolute;
     top: 10px;
     left: 0;
 }
 
-.emergency .patient_status .patient .assessing .part_container .front_toggle div{
+.emergency .patient_status .front_toggle div{
     position: absolute;
 }
 
 
 /* part_back */
-.emergency .patient_status .patient .assessing .part_container .part_back{
+.emergency .patient_status .part_back{
     position: relative;
     width: 144px;
     height: 340px;
     background: url('/img/emergency/back.png')no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .assessing .part_container .back_toggle{
+.emergency .patient_status .back_toggle{
     position: absolute;
     top: 10px;
     left: 0;
 }
 
-.emergency .patient_status .patient .assessing .part_container .back_toggle div{
+.emergency .patient_status .back_toggle div{
     position: absolute;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle1{
+.emergency .patient_status .toggle1{
     top: -21px;
     left: 60px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle2{
+.emergency .patient_status .toggle2{
     top: 3px;
     left: 60px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle3{
+.emergency .patient_status .toggle3{
     top: 32px;
     left: 60px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle4{
+.emergency .patient_status .toggle4{
     top: 40px;
     left: 100px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle5{
+.emergency .patient_status .toggle5{
     top: 80px;
     left: 102px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle6{
+.emergency .patient_status .toggle6{
     top: 118px;
     left: 109px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle7{
+.emergency .patient_status .toggle7{
     top: 150px;
     left: 120px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle8{
+.emergency .patient_status .toggle8{
     top: 40px;
     left: 20px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle9{
+.emergency .patient_status .toggle9{
     top: 80px;
     left: 18px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle10{
+.emergency .patient_status .toggle10{
     top: 118px;
     left: 11px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle11{
+.emergency .patient_status .toggle11{
     top: 150px;
     left: 0px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle12{
+.emergency .patient_status .toggle12{
     top: 63px;
     left: 76px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle13{
+.emergency .patient_status .toggle13{
     top: 63px;
     left: 44px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle14{
+.emergency .patient_status .toggle14{
     top: 95px;
     left: 59px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle15{
+.emergency .patient_status .toggle15{
     top: 134px;
     left: 60px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .back_toggle .toggle15{
+.emergency .patient_status .back_toggle .toggle15{
     top: 134px;
     left: 45px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle16{
+.emergency .patient_status .toggle16{
     top: 167px;
     left: 77px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle17{
+.emergency .patient_status .toggle17{
     top: 167px;
     left: 43px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle18{
+.emergency .patient_status .toggle18{
     top: 235px;
     left: 74px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle19{
+.emergency .patient_status .toggle19{
     top: 235px;
     left: 46px
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle20{
+.emergency .patient_status .toggle20{
     top: 291px;
     left: 74px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .toggle21{
+.emergency .patient_status .toggle21{
     top: 291px;
     left: 45px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .back_toggle .toggle22{
+.emergency .patient_status .back_toggle .toggle22{
     top: 134px;
     left: 75px;
 }
 
 
 /* part_left */
-.emergency .patient_status .patient .assessing .part_container .part_left{
+.emergency .patient_status .part_left{
     position: relative;
     width: 144px;
     height: 340px;
     background: url('/img/emergency/head left.png')no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle{
+.emergency .patient_status .left_toggle{
     position: absolute;
     top: 10px;
     left: 0;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle div{
+.emergency .patient_status .left_toggle div{
     position: absolute;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle1{
+.emergency .patient_status .left_toggle .toggle1{
     top: -17px;
     left: 48px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle2{
+.emergency .patient_status .left_toggle .toggle2{
     top: 17px;
     left: 6px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle3{
+.emergency .patient_status .left_toggle .toggle3{
     top: 0px;
     left: 84px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle4{
+.emergency .patient_status .left_toggle .toggle4{
     top: 25px;
     left: 48px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle5{
+.emergency .patient_status .left_toggle .toggle5{
     top: 38px;
     left: 112px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle6{
+.emergency .patient_status .left_toggle .toggle6{
     top: 90px;
     left: 112px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle7{
+.emergency .patient_status .left_toggle .toggle7{
     top: 146px;
     left: 89px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle8{
+.emergency .patient_status .left_toggle .toggle8{
     top: 56px;
     left: 5px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle9{
+.emergency .patient_status .left_toggle .toggle9{
     top: 83px;
     left: -8px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle10{
+.emergency .patient_status .left_toggle .toggle10{
     top: 113px;
     left: 20px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle11{
+.emergency .patient_status .left_toggle .toggle11{
     top: 156px;
     left: 53px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle12{
+.emergency .patient_status .left_toggle .toggle12{
     top: 60px;
     left: 84px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle13{
+.emergency .patient_status .left_toggle .toggle13{
     top: 78px;
     left: 41px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .left_toggle .toggle14{
+.emergency .patient_status .left_toggle .toggle14{
     top: 103px;
     left: 76px;
 }
 
 /* part_right */
-.emergency .patient_status .patient .assessing .part_container .part_right{
+.emergency .patient_status .part_right{
     position: relative;
     width: 144px;
     height: 340px;
     background: url('/img/emergency/head right.png')no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle{
+.emergency .patient_status .right_toggle{
     position: absolute;
     top: 10px;
     left: 0;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle div{
+.emergency .patient_status .right_toggle div{
     position: absolute;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle1{
+.emergency .patient_status .right_toggle .toggle1{
     top: -19px;
     left: 64px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle2{
+.emergency .patient_status .right_toggle .toggle2{
     top: 19px;
     left: 105px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle3{
+.emergency .patient_status .right_toggle .toggle3{
     top: 1px;
     left: 29px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle4{
+.emergency .patient_status .right_toggle .toggle4{
     top: 25px;
     left: 61px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle5{
+.emergency .patient_status .right_toggle .toggle5{
     top: 36px;
     left: 7px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle6{
+.emergency .patient_status .right_toggle .toggle6{
     top: 87px;
     left: 6px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle7{
+.emergency .patient_status .right_toggle .toggle7{
     top: 146px;
     left: 31px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle8{
+.emergency .patient_status .right_toggle .toggle8{
     top: 53px;
     left: 114px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle9{
+.emergency .patient_status .right_toggle .toggle9{
     top: 82px;
     left: 130px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle10{
+.emergency .patient_status .right_toggle .toggle10{
     top: 116px;
     left: 101px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle11{
+.emergency .patient_status .right_toggle .toggle11{
     top: 157px;
     left: 65px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle12{
+.emergency .patient_status .right_toggle .toggle12{
     top: 60px;
     left: 33px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle13{
+.emergency .patient_status .right_toggle .toggle13{
     top: 77px;
     left: 78px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .right_toggle .toggle14{
+.emergency .patient_status .right_toggle .toggle14{
     top: 105px;
     left: 46px;
 }
 
 /* part_body */
-.emergency .patient_status .patient .assessing .part_container .part_body{
+.emergency .patient_status .part_body{
     position: relative;
     width: 144px;
     height: 340px;
     background: url('/img/emergency/body.png')no-repeat 0 0px / contain;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle{
+.emergency .patient_status .body_toggle{
     position: absolute;
     top: 10px;
     left: 0;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle div{
+.emergency .patient_status .body_toggle div{
     position: absolute;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle1{
+.emergency .patient_status .body_toggle .toggle1{
     top: 12px;
     left: 60px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle2{
+.emergency .patient_status .body_toggle .toggle2{
     top: 40px;
     left: 86px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle3{
+.emergency .patient_status .body_toggle .toggle3{
     top: 41px;
     left: 35px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle4{
+.emergency .patient_status .body_toggle .toggle4{
     top: 71px;
     left: 26px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle5{
+.emergency .patient_status .body_toggle .toggle5{
     top: 72px;
     left: 94px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle6{
+.emergency .patient_status .body_toggle .toggle6{
     top: 80px;
     left: 61px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle7{
+.emergency .patient_status .body_toggle .toggle7{
     top: 106px;
     left: 31px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle8{
+.emergency .patient_status .body_toggle .toggle8{
     top: 107px;
     left: 89px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle9{
+.emergency .patient_status .body_toggle .toggle9{
     top: 126px;
     left: 60px;
 }
 
-.emergency .patient_status .patient .assessing .part_container .body_toggle .toggle10{
+.emergency .patient_status .body_toggle .toggle10{
     top: 154px;
     left: 60px;
 }
@@ -4213,6 +4214,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 /* 바이탈 정보없음 */
 .emergency .vital .no_signal{
     width: 100%;
@@ -4240,23 +4242,23 @@
 
 
 /* resp */
-.emergency .patient_status .vital .vital_monitor .control .resp{
+.emergency .patient_status .resp{
     width: 160px;
     height: 104px;
     padding: 8px 16px;
     color: #FFEE00;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .resp .bell_name{
+.emergency .patient_status .resp .bell_name{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .resp .bell_name input{
+.emergency .patient_status .resp .bell_name input{
     display: none;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .resp .bell_name input[type="checkbox"]+label{
+.emergency .patient_status .resp .bell_name input[type="checkbox"]+label{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -4266,34 +4268,34 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .resp .bell_name input[type='checkbox']:checked+label{
+.emergency .patient_status .resp .bell_name input[type='checkbox']:checked+label{
     background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .resp .bell_num{
+.emergency .patient_status .resp .bell_num{
     display: flex;
     justify-content: space-between;
 }
 
 /* mmhg */
-.emergency .patient_status .vital .vital_monitor .control .mmhg{
+.emergency .patient_status .mmhg{
     width: 260px;
     height: 104px;
     padding: 8px 16px;
     color: #fff;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name{
+.emergency .patient_status .mmhg .bell_name{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name input{
+.emergency .patient_status .mmhg .bell_name input{
     display: none;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name input[type="checkbox"]+label{
+.emergency .patient_status .mmhg .bell_name input[type="checkbox"]+label{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -4303,61 +4305,61 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_name input[type='checkbox']:checked+label{
+.emergency .patient_status .mmhg .bell_name input[type='checkbox']:checked+label{
     background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
-.emergency .patient_status .vital .vital_monitor .control .mmhg .bell_num{
+.emergency .patient_status .mmhg .bell_num{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .mmhg .time div{
+.emergency .patient_status .mmhg .time div{
     display: inline-block;
 }
 
-.emergency .patient_status .vital .mmhg .time p{
+.emergency .patient_status .mmhg .time p{
     font-size: 11px;
     display: inline-block;
 }
 
 /* ews */
-.emergency .patient_status .vital .ews{
+.emergency .patient_status .ews{
     width: 88px;
     padding: 16px;
     color: #fff;
 }
 
-.emergency .patient_status .vital .ews .bell_name{
+.emergency .patient_status .ews .bell_name{
     display: flex;
 }
 
-.emergency .patient_status .vital .ews .bell_name p{
+.emergency .patient_status .ews .bell_name p{
     margin-right: 7px;
 }
 
-.emergency .patient_status .vital .ews .bell_num{
+.emergency .patient_status .ews .bell_num{
     width: 50px;
     margin-left: 20px;
     display: flex;
     justify-content: initial;
 }
 
-.emergency .patient_status .vital .ews .bell_num> div{
+.emergency .patient_status .ews .bell_num> div{
     margin-top: -4px;
 }
 
-.emergency .patient_status .vital .vital_monitor .ews .bell_num p {
+.emergency .patient_status .ews .bell_num p {
     margin-right: 8px;
     font-size: 48px;
 }
 
-.emergency .patient_status .vital .ews .bell_name input{
+.emergency .patient_status .ews .bell_name input{
     display: none;
 }
 
-.emergency .patient_status .vital .ews .bell_name input[type="checkbox"]+label{
+.emergency .patient_status .ews .bell_name input[type="checkbox"]+label{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -4367,37 +4369,37 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .vital .ews .bell_name input[type='checkbox']:checked+label{
+.emergency .patient_status .ews .bell_name input[type='checkbox']:checked+label{
     background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
 /* temp */
-.emergency .patient_status .vital .temp{
+.emergency .patient_status .temp{
     width: 160px;
     padding: 16px;
     color: #FF3184;
 }
 
-.emergency .patient_status .vital .temp .bell_name{
+.emergency .patient_status .temp .bell_name{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .temp .bell_name p{
+.emergency .patient_status .temp .bell_name p{
     margin-right: 7px;
 }
 
-.emergency .patient_status .vital .temp .bell_num{
+.emergency .patient_status .temp .bell_num{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .temp .bell_name input{
+.emergency .patient_status .temp .bell_name input{
     display: none;
 }
 
-.emergency .patient_status .vital .temp .bell_name input[type="checkbox"]+label span{
+.emergency .patient_status .temp .bell_name input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -4407,62 +4409,62 @@
     cursor: pointer;
 }
 
-.emergency .patient_status .vital .temp .bell_name input[type='checkbox']:checked+label span{
+.emergency .patient_status .temp .bell_name input[type='checkbox']:checked+label span{
     background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
 /* pulse */
-.emergency .patient_status .vital .pulse{
+.emergency .patient_status .pulse{
     width: 160px;
     padding: 16px;
     color: #00FFFF;
 }
 
-.emergency .patient_status .vital .pulse .time p{
+.emergency .patient_status .pulse .time p{
     margin: 0 4px 0 0;
 }
 
-.emergency .patient_status .vital .pulse .time> :last-child {
+.emergency .patient_status .pulse .time> :last-child {
     margin-right: 0px;
 }
 
-.emergency .patient_status .vital .pulse .bell_name{
+.emergency .patient_status .pulse .bell_name{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .pulse .bell_name p{
+.emergency .patient_status .pulse .bell_name p{
     margin-right: 7px;
 }
 
-.emergency .patient_status .vital .pulse .bell_num{
+.emergency .patient_status .pulse .bell_num{
     display: flex;
     justify-content: space-between;
 }
 
-.emergency .patient_status .vital .pulse .bell_num> div{
+.emergency .patient_status .pulse .bell_num> div{
     margin-top: -4px;
 }
 
-.emergency .patient_status .vital .pulse .bell_num div p{
+.emergency .patient_status .pulse .bell_num div p{
     font-size: 18px;
 }
 
-.emergency .patient_status .vital .pulse .bell_num p {
+.emergency .patient_status .pulse .bell_num p {
     margin-right: 8px;
     font-size: 48px;
 }
 
-.emergency .patient_status .vital .pulse .bell_num> div {
+.emergency .patient_status .pulse .bell_num> div {
     margin-top: 7px;
 }
 
-.emergency .patient_status .vital .pulse .time div{
+.emergency .patient_status .pulse .time div{
     display: inline-block;
 }
 
-.emergency .patient_status .vital .pulse .time p{
+.emergency .patient_status .pulse .time p{
     font-size: 11px;
     display: inline-block;
 }
@@ -4532,7 +4534,7 @@
     filter: invert(29%) sepia(6%) saturate(15%) hue-rotate(2deg) brightness(90%) contrast(87%);
 }
 
-.emergency .vital .title .no_signal_text{
+.emergency .no_signal_text{
     color: #888;
 }
 
@@ -5794,13 +5796,16 @@
 /*================= 의사 =================*/
 /* 의사 메인 (h-works) */
 .doctor{
+    width: 100%;
     min-width: 1248px;
+    /* min-width: 1880px; */
     height: calc(100vh - 80px);
     min-height: calc(100vh - 80px);
     background: #eee;
 }
 
 .doctor .wrap_inner{
+    width: 100%;
     padding: 40px;
     display: flex;
 }
@@ -5811,8 +5816,8 @@
 }
 
 .doctor .section{
-    width: 360px;
-    height: 640px;
+    /* width: 360px;
+    height: 640px; */
 }
 
 .doctor .schedule button{
@@ -6532,7 +6537,12 @@
 }
 
 /* 응급호출 */
+.doctor_emergency .section{
+    height: 720px;
+}
+
 .doctor_emergency .message_list{
+    width: 480px;
     padding: 16px;
     border-radius: 8px;
     background: #fff;
@@ -6591,11 +6601,23 @@
 }
 
 .doctor_emergency .message_list .list{
+    height: 600px;
     padding: 16px;
+    overflow-y: scroll;
+}
+
+.doctor_emergency .message_list .list::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor_emergency .message_list .list::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
 }
 
 .doctor_emergency .message_list .row{
-    width: 296px;
+    /* width: 296px; */
     padding: 16px;
     border-radius: 4px;
     border-bottom: 1px solid #eee;
@@ -6646,7 +6668,8 @@
 }
 
 .doctor_emergency .detail_ep{
-    width: 736px;
+    /* width: 736px; */
+    width: 1192px;
     margin-left: 16px;
     border-radius: 8px;
     background: #fff;
@@ -6731,7 +6754,8 @@
 }
 
 .doctor_emergency .inner> .control{
-    width: 672px;
+    /* width: 672px; */
+    width: 1128px;
     margin: 0 auto;
     padding: 8px 16px 8px 8px;
     display: flex;
@@ -6773,8 +6797,9 @@
 }
   
 .doctor_emergency .tab-content{
+    width: 100%;
     display: none;
-    padding: 32px 0;
+    padding: 32px;
 }
   
 .doctor_emergency .tab-content.current{
@@ -6782,13 +6807,17 @@
 }
 
 .doctor_emergency .patient_status{
-    width: 672px;
+    /* width: 672px; */
+    width: 100%;
     height: 432px;
+    margin: 0;
 }
 
 .doctor_emergency .patient_status .patient{
-    width: 672px;
-    height: 432px;
+    /* width: 672px; */
+    width: 100%;
+    height: 500px;
+    /* height: 432px; */
     padding: 0;
 }
 
@@ -6796,12 +6825,88 @@
     background: #fff;
 }
 
-.doctor_emergency .patient_status .patient .symptome .part .swiper-scrollbar{
+.doctor_emergency .patient_status .patient .symptome> div{
+    display: flex;
+}
+
+.doctor_emergency .patient_status .sign{
+    padding: 0;
+}
+
+.doctor_emergency .patient_status .swiper-scrollbar{
     width: 100%;
 }
 
-.doctor_emergency .swiper.part_accident{
+.doctor_emergency .patient_status .part_body {
+    position: relative;
+    width: 160px;
+    height: 240px;
+    background: url(/img/emergency/body.png)no-repeat 0 0px / contain;
+    background-size: cover;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle1{
+    top: 12px;
+    left: 67px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle2{
+    top: 47px;
+    left: 93px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle3{
+    top: 47px;
+    left: 40px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle4{
+    top: 80px;
+    left: 30px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle5{
+    top: 80px;
+    left: 105px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle6{
+    top: 90px;
+    left: 68px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle7{
+    top: 120px;
+    left: 39px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle8{
+    top: 120px;
+    left: 95px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle9{
+    top: 136px;
+    left: 67px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle10{
+    top: 172px;
+    left: 67px;
+}
+
+.doctor_emergency .patient_status .patient .symptome .part{
+    display: initial;
+}
+
+.doctor_emergency .symptome_info .container{
+    padding: 0;
+}
+
+.doctor_emergency .swiper.part_accident_no{
+    padding: 40px 70px;
     background: #eee;
+    border-radius: 4px;
 }
 
 .doctor_emergency .pupil_container> div{
@@ -6811,23 +6916,36 @@
     background: #eee;
 }
 
+.doctor_emergency .first_aid .aid_container> div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_emergency .treatment{
+    margin-top: 155px;
+}
+
 
 /* tab-2 */
 .doctor_emergency .vital{
-    height: 470px;
+    /* height: 470px; */
+    width: 1128px;
+    height: 528px;
+    margin: 0 auto;
     padding: 0;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 4px 4px;
     background: #000;
     overflow: hidden;
     position: relative; 
 }
 
 .doctor_emergency .vital .graph> div{
-    padding: 8px 16px;
+    padding: 8px 16px 8px 32px;
 }
 
 .doctor_emergency .vital .inner{
-    width: 492px;
+    width: 872px;
     overflow: hidden;
 }
 
@@ -6859,7 +6977,7 @@
 .doctor_emergency .graph> div> div> div{padding: 0;}
 
 .doctor_emergency .control{
-    padding: 8px 16px 8px 0;
+    padding: 8px 16px;
 }
 
 .doctor_emergency .vital .control> div> div{
@@ -6911,14 +7029,20 @@
     display: flex;
 }
 
+.doctor_emergency .ews .bell_num> div{
+    display: initial;
+}
+
 /* 환자사진 */
 .doctor_emergency .patient_picture{
     padding: 16px;
 }
 
 .doctor_emergency .big_picture{
-    width: 672px;
-    height: 336px;
+    /* width: 672px;
+    height: 336px; */
+    width: 1128px;
+    height: 408px;
 }
 
 .doctor_emergency .detail_ep .patient_picture{
@@ -6950,9 +7074,11 @@
 }
 
 .doctor_emergency .patient_picture .no_data{
-    width: 672px;
-    height: 72px;
-    padding: 26px 32px;
+    /* width: 672px; */
+    width: 1128px;
+    /* height: 72px; */
+    height: 120px;
+    padding: 50px 32px;
     margin: 0 auto;
     border-radius: 8px;
     background: #eee;
@@ -6984,4 +7110,97 @@
 
 .connect_emergency .section{
     width: fit-content;
+}
+
+.connect_screening{
+    height: calc(100vh - 64px);
+}
+
+
+/* 입원환자 모니터링 */
+.doctor_monitor .new_patient{
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor_monitor .new_patient .title{
+    padding: 16px 16px 26px;
+}
+
+.doctor_monitor .new_patient .title> div{
+    margin-bottom: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.doctor_monitor .new_patient .title .img_container{
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+}
+
+.doctor_monitor .new_patient .title .img_container img{
+    filter: invert(24%) sepia(66%) saturate(2827%) hue-rotate(171deg) brightness(64%) contrast(69%);
+}
+
+.doctor_monitor .new_patient .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor_monitor .new_patient .title p{
+    font-size: 12px;
+    color: #444;   
+}
+
+.doctor_monitor .rhythm{
+    width: 1312px;
+    height: 720px;
+    padding: 16px 32px;
+    margin-left: 32px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor_monitor .rhythm .title{
+    padding: 16px 16px 26px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_monitor .rhythm .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor_monitor .rhythm .title p{
+    margin-top: 13px;
+    font-size: 12px;
+    color: #444;
+}
+
+.doctor_monitor .rhythm .btn_monitor{
+    width: 120px;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #007A94;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.doctor_monitor .rhythm .btn_monitor .img_container{
+    width: 16px;
+    height: 16px; 
+    margin-right: 8px;
+}
+
+.doctor_monitor .rhythm .btn_monitor .img_container img{
+    filter:invert(40%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(110%) contrast(311%);
 }

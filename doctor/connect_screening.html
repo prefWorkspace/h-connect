@@ -9,7 +9,6 @@
   <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
   <script type='text/javascript' src='/js/common.js'></script>
   <script type='text/javascript' src='/js/index.js'></script>
-  <script type='text/javascript' src='/js/slide.js'></script>
   
   <!--css-->
   <link rel='stylesheet' href='/css/reset.css'>
@@ -27,49 +26,6 @@
             </div>
 
             <button type="button" class="btn_bye">로그아웃</button>  
-        </div>
-    </div>
-
-    <!-- 참석자 명단 팝업 -->
-    <div class="pop attendee">
-        <div class="wrap_inner">
-            <!-- 참석자 없을때 -->
-            <div class="no_atten">
-                <p>응급협진에 참여중인 의료진이 없습니다.</p>
-            </div>
-
-            <!-- 참석자 있을 때 -->
-            <div class="atten">
-                <div class="count">
-                    <div>
-                        <!-- 참석하는 경우 attend를 넣어주세요 -->
-                        <p class="attend">참석 : 5명</p>
-
-                        <!-- 미참석하는 경우 no_attend를 넣어주세요 -->
-                        <p class="no_attend">미참석 : 1명</p>
-
-                        <!-- 대응불가인 경우 unrespon를 넣어주세요 -->
-                        <p class="unrespon">대응불가 : 1명</p>
-                    </div>
-                    
-                    <p>
-                        <span>5명</span> 참여중
-                    </p>
-                </div>
-
-                <div class="name">
-                    <p>김응급 교수님</p>
-                    <p>김한림 교수님</p>
-                    <p>최협진 교수님</p>
-                    <p>이연차 전공의</p>
-                    <p>박협진 교수님</p>
-
-                    <!-- 불참하는 인원에는 addClass on을 해주세요 -->
-                    <p class="on">박불참 교수님</p>
-                    <p class="on">권바쁨 교수님(대응불가)</p>
-                </div>
-            </div>
-            
         </div>
     </div>
 
@@ -93,7 +49,7 @@
     </div>
 
 
-    <!-- 소견 요청 협진 -->
+    <!-- 선별진료 준비 -->
     <div id="wrap">
         <!--헤더 pc-->
         <header id="header" class="pc_header doc_header doc_connect">
@@ -128,7 +84,7 @@
         </header>
 
       <!--콘텐츠-->
-      <div id="wrap_content" class="doctor para_connect connect_opinion">
+      <div id="wrap_content" class="doctor para_connect connect_screening">
         <div class="wrap_inner">
             <section class="section call_connect">
                 <div class="img_container">
@@ -141,7 +97,7 @@
                 <div class="loading_con">
                     <img class="img_loading" src="/img/icon/loading.png" alt="로딩중">
                 </div>
-
+               
                 <div class="call_control">
                     <div class="con_btn refuse">
                         <button type="button" class="btn_refuse">
@@ -150,6 +106,34 @@
     
                         <div class="layer refuse_layer">
                             <p>거절</p>
+                        </div>
+                    </div>
+    
+                    <div class="con_btn mic">
+                        <button type="button" class="btn_mic">
+                            <img src="/img/emergency/mic.svg" alt="마이크 아이콘">
+                        </button>
+    
+                        <div class="layer mic_layer">
+                            <p>마이크</p>
+                        </div>
+
+                        <div class="toggle_layer mic_off">
+                            <img src="/img/icon/mic_off.svg" alt="마이크 끄는 아이콘">
+                        </div>
+                    </div>
+    
+                    <div class="con_btn webcam">
+                        <button type="button" class="btn_cam">
+                            <img src="/img/emergency/cam.svg" alt="화상카메라 아이콘">
+                        </button>
+    
+                        <div class="layer cam_layer">
+                            <p>화상캠</p>
+                        </div>
+
+                        <div class="toggle_layer cam_off">
+                            <img src="/img/icon/cam_off.svg" alt="캠끄는 아이콘">
                         </div>
                     </div>
                 </div>

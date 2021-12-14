@@ -9,7 +9,6 @@
   <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
   <script type='text/javascript' src='/js/common.js'></script>
   <script type='text/javascript' src='/js/index.js'></script>
-  <script type='text/javascript' src='/js/slide.js'></script>
   
   <!--css-->
   <link rel='stylesheet' href='/css/reset.css'>
@@ -30,48 +29,6 @@
         </div>
     </div>
 
-    <!-- 참석자 명단 팝업 -->
-    <div class="pop attendee">
-        <div class="wrap_inner">
-            <!-- 참석자 없을때 -->
-            <div class="no_atten">
-                <p>응급협진에 참여중인 의료진이 없습니다.</p>
-            </div>
-
-            <!-- 참석자 있을 때 -->
-            <div class="atten">
-                <div class="count">
-                    <div>
-                        <!-- 참석하는 경우 attend를 넣어주세요 -->
-                        <p class="attend">참석 : 5명</p>
-
-                        <!-- 미참석하는 경우 no_attend를 넣어주세요 -->
-                        <p class="no_attend">미참석 : 1명</p>
-
-                        <!-- 대응불가인 경우 unrespon를 넣어주세요 -->
-                        <p class="unrespon">대응불가 : 1명</p>
-                    </div>
-                    
-                    <p>
-                        <span>5명</span> 참여중
-                    </p>
-                </div>
-
-                <div class="name">
-                    <p>김응급 교수님</p>
-                    <p>김한림 교수님</p>
-                    <p>최협진 교수님</p>
-                    <p>이연차 전공의</p>
-                    <p>박협진 교수님</p>
-
-                    <!-- 불참하는 인원에는 addClass on을 해주세요 -->
-                    <p class="on">박불참 교수님</p>
-                    <p class="on">권바쁨 교수님(대응불가)</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
 
     <!-- 연결 종료 팝업 -->
     <div class="pop delete connect">
@@ -104,16 +61,24 @@
                     <h4>Patient ID.</h4>
                     <h4>심장병동. 1308호실. 3병상</h4>
                 </div>
-        
-                <div>
+                
+                <div class="header_right">
                     <div style="width: 110px;"></div>
 
+                    <h5>연결시작시간 :
+                        <time datetime="21.09.15">21.09.15</time>.
+                        <time datetime="10:18:50">10:18:50</time>
+                    </h5>
+
+                    <h5>
+                        <time datetime="00:03:05">00:03:05</time> 경과
+                    </h5>
 
                     <button type="button" class="btn_red">
                         <div>
-                            <img src="/img/header/call_color.png" alt="전화기 아이콘">
+                            <img src="/img/doctor/h.svg" alt="로고">
                         </div>
-                        응급호출
+                        연결종료
                     </button>
                 </div>
             </div>        

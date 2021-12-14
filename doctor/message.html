@@ -30,20 +30,85 @@
         </div>
     </div>
 
-    <!-- 연결 종료 팝업 -->
-    <div class="pop delete connect">
+    <!-- 메세지 전송 완료 팝업 -->
+    <div class="pop message_send">
         <div class="overlay">
             <div class="pop_cont">
                 <div>
                     <img src="/img/logo.png" alt="로고">
                 </div>
+                        
+                <h3>메세지 전송 완료</h3>
+                <h2>전송 되었습니다.</h2>
+    
+            
+                <div class="btn_list">
+                    <button type="button" class="btn_check">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <h3>응급협진을 종료합니다.</h3>
-                <h1>연결을 종료 하시겠습니까?</h1>
+    <!-- 연결요청 -->
+    <div class="pop connect connect_para connect_doctor">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/img/logo_white.png" alt="화이트 로고">
+                </div>
+
+                <h3>이연차 전공의로 부터 응급호출 요청을 받았습니다.</h3>
+                <h2>김환자 (63. 남) Patient ID. 심장병동. 1308호실. 3병상</h2>
+                <h1>연결 하시겠습니까?</h1>
 
                 <div class="btn_list">
-                    <button type="button" class="btn_no">아니요</button>
-                    <button type="button" class="btn_delete">네, 종료합니다</button>
+                    <div class="con_btn refuse">
+                        <button type="button" class="btn_refuse">
+                            <img src="/img/emergency/refuse.svg" alt="통화거절 아이콘">
+                        </button>
+
+                        <div class="layer refuse_layer">
+                            <p>대응불가</p>
+                        </div>
+                    </div>
+
+                    <div class="con_btn mic">
+                        <button type="button" class="btn_mic">
+                            <img src="/img/emergency/mic.svg" alt="마이크 아이콘">
+                        </button>
+
+                        <div class="layer mic_layer">
+                            <p>마이크</p>
+                        </div>
+                        
+                        <div class="toggle_layer mic_off">
+                            <img src="/img/icon/mic_off.svg" alt="마이크 끄는 아이콘">
+                        </div>
+                    </div>
+
+                    <div class="con_btn webcam">
+                        <button type="button" class="btn_cam">
+                            <img src="/img/emergency/cam.svg" alt="화상카메라 아이콘">
+                        </button>
+
+                        <div class="layer cam_layer">
+                            <p>화상캠</p>
+                        </div>
+
+                        <div class="toggle_layer cam_off">
+                            <img src="/img/icon/cam_off.svg" alt="캠끄는 아이콘">
+                        </div>
+                    </div>
+
+                    <div class="con_btn accept">
+                        <button type="button" class="btn_accept">
+                            <img src="/img/icon/call.svg" alt="전화기 아이콘">                        
+                        </button>
+
+                        <div class="layer accept_layer">
+                            <p>연결</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,8 +127,8 @@
                     </h1>
         
                     <div class="header_title">
-                        <h1>선별진료</h1>
-                        <p>선별진료 요청을 확인하고 진료를 시작합니다.</p>
+                        <h1>메세지</h1>
+                        <h3>의료진과 주고받은 메세지를 확인 합니다.</h3>
                     </div>
                 </div>
         
@@ -78,22 +143,23 @@
                         </button>
                     </div> -->
 
-                    <button type="button" class="btn_red">
-                        <div>
-                            <img src="/img/header/call_color.png" alt="전화기 아이콘">
-                        </div>
-                        응급호출
-                    </button>
-        
-                    <button type="button" class="btn_logout">
-                        김한림 교수님
-                    </button>
+                    <div class="btn_list">
+                        <button type="button" class="btn_red">
+                            <div>
+                                <img src="/img/header/call_color.png" alt="전화기 아이콘">
+                            </div>
+                            응급호출
+                        </button>
+            
+                        <button type="button" class="btn_logout">
+                            김한림 교수님
+                        </button>
 
-                    <!-- 응급호출이 있을때 보이게 해주세요 -->
-                    <div class="red_alarm">
-                    </div>
+                        <!-- 응급호출이 있을때 보이게 해주세요 -->
+                        <div class="red_alarm"></div>
+                    </div>                          
                 </div>
-            </div>            
+            </div>
         </header>
 
       <!--콘텐츠-->
@@ -113,7 +179,7 @@
                 </li>
 
                 <li class="gnb_list">
-                    <a class="link" href=".html">
+                    <a class="link" href="monitoring.html">
                         모니터링
                     </a>
                 </li>
@@ -125,7 +191,7 @@
                 </li>
 
                 <li class="gnb_list active">
-                    <a class="link" href=".html">
+                    <a class="link" href="message.html">
                         메세지
                     </a>
                 </li>
@@ -134,7 +200,7 @@
 
         <div class="wrap_inner">
             <!-- 메세지 목록 -->
-            <section class="section left message_list" style="display: none;">
+            <section class="section left message_list">
                 <div class="title">
 
                     <div>
@@ -263,7 +329,7 @@
             </section>
 
             <!-- 대화창 -->
-            <section class="section right message_talk" style="display: none;">
+            <section class="section right message_talk">
                 <div class="title">
                     <h2>선별진료소 3호실</h2>
                     <p>마지막 메세지.
@@ -432,7 +498,7 @@
             </section>
 
             <!-- 새로운 메세지를 누르면 나오는 화면 / 의료진 선택 -->
-            <section class="section left select_medi" style="display: block;">
+            <section class="section left select_medi">
                 <div class="title">
                     <h2>의료진 선택</h2>
 
@@ -840,7 +906,7 @@
             </section>
 
             <!-- 새로운 메세지를 누르면 나오는 화면 / 메세지 입력 -->
-            <section class="section right send_message" style="display: block;">
+            <section class="section right send_message">
                 <div class="title">
                     <h2>메세지 입력</h2>
                     <p>메세지를 입력합니다.</p>

@@ -878,6 +878,7 @@
 .message .list_inner div{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .message .list_inner> div{
@@ -1021,10 +1022,10 @@
     display: block;
 }
 
-.doctor_message .select_medi{
+/* .doctor_message .select_medi{
     width: 736px;
     height: 640px;
-}
+} */
 
 .doctor_message .select_medi .title{
     padding: 16px 16px 26px;
@@ -1036,16 +1037,19 @@
     color: #940045;
 }
 
-.doctor_message .select_list{
+.doctor_message .list_inner label p{
+    font-size: 12px;
+}
+/* .doctor_message .select_list{
     width: 672px;
     margin: 0 auto;
-}
+} */
 
 .doctor_message .container{
     height: initial;
 }
 
-.doctor_message .favorite_list{
+/* .doctor_message .favorite_list{
     width: 312px;
 }
 
@@ -1056,7 +1060,7 @@
 .doctor_message .send_message{
     width: 360px;
     height: 640px;
-}
+} */
 
 .doctor_message .send_message .title> div{
     display: flex;
@@ -1089,7 +1093,8 @@
     margin-bottom: 20px;
 }
 
-.doctor_message .send_message h4{
+.doctor_message .send_message h4,
+.doctor_message .group_container label p{
     font-size: 12px;
 }
 
@@ -1098,7 +1103,8 @@
 }
 
 .doctor_message .send_message .search_container input{
-    width: 296px;
+    /* width: 296px; */
+    width: 100%;
     height: 40px;
     padding: 0 40px 0 16px ;
 }
@@ -1139,16 +1145,17 @@
 }
 
 .doctor_message .connect h4{
-    width: 100%;
     color: #888;
 }
 
 .doctor_message .connect span{
+    font-size: 12px;
     color: #000;
 }
 
 .doctor_message .connect> div{
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -1170,6 +1177,10 @@
     border: 1px solid #940045;
     color: #940045;
 }
+.doctor_message .connect> div> div{
+    display: flex;
+    align-items: center;
+}
 
 .doctor_message .connect .mic{
     margin: 19px 0;
@@ -1177,10 +1188,10 @@
 
 
 /* 선별진료 */
-.screening .message_list{
+/* .screening .message_list{
     width: 616px;
     height: 640px;
-}
+} */
 
 .screening .message_list .title{
     padding: 16px 16px 26px;
@@ -1282,11 +1293,11 @@
     filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(181deg) brightness(96%) contrast(96%);
 }
 
-.screening .message_talk{
+/* .screening .message_talk{
     width: 480px;
     height: 640px;
     margin-left: 16px;
-}
+} */
 
 .screening .message_talk .title h2{
     margin-bottom: 13px;
@@ -1305,7 +1316,7 @@
 .screening .message_talk .btn_sort{
     border-radius: 4px ;
 }
-
+/* 
 .screening .message_talk .search_container .btn_search {
     left: 71%;
 }
@@ -1345,7 +1356,7 @@
 
 .screening .timeLine .fifth{
     height: 20%;
-}
+} */
 
 /* 의사 메세지 */
 .doc_message .message_list .title> div{
@@ -1359,14 +1370,14 @@
     color: #fff;
 }
 
-.doc_message .message_list .search_container .btn_search{
+/* .doc_message .message_list .search_container .btn_search{
     right: 13%;
-}
+} */
 
-.doc_message .select_medi{
+/* .doc_message .select_medi{
     width: 736px;
     height: 640px;
-}
+} */
 
 .doc_message .select_medi .title{
     padding: 16px 16px 26px;
@@ -1385,21 +1396,26 @@
 }
 
 .doc_message .select_list{
-    width: 672px;
+    /* width: 672px; */
     border: 1px solid #000;
     background: #fff;
 }
 
-.doc_message .favorite_list,
+.doc_message .send_message .btn_list .btn_send{
+    background: #007A94;
+    color: #fff;
+}
+
+/* .doc_message .favorite_list,
 .doc_message .select_doctor{
     width: 320px;
-}
+} */
 
 .doc_message .container{
     height: fit-content;
     padding: 28px 16px 16px;
 }
-
+/* 
 .doc_message .list_inner label p{
     font-size: 12px;
 }
@@ -1415,11 +1431,11 @@
 
 .doc_message .list_inner .favorite_container input[type="checkbox"]+label> span{
     width: 16px;
-    height: 16px;
+    height: 16px; */
 }
 
-.doc_message .send_message{
+/* .doc_message .send_message{
     width: 360px;
     height: 640px;
     margin-left: 16px;
-}
+} */

@@ -762,6 +762,23 @@ $(function () {
     $('.doctor_message .send_message .title .btn_call').on('click', function(){
         location.href="connect_doctor.html"
     })
+    
+    $('.doctor_emergency .full').on('click', function(){
+        $('.pop.doc_full .overlay').show();
+    })
+
+    // 선별진료
+    $('.screening .waiting .btn_treat').on('click', function(){
+        location.href="connect_screening.html"
+    })
+
+    // $('.connect_screening .refuse').on('click', function(){
+    //     location.href="connect_screening.html"
+    // })
+
+    $('.pc_header .btn_red').on('click', function(){
+        location.href="emergency/index.html"
+    })
 
 
 
