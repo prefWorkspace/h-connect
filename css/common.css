@@ -16,10 +16,39 @@ body {
     background: linear-gradient(to right, #004F60, #350039);
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.pc_header::after{
+    min-width: 1880px;
+    height: 80px;
+    content: '';
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 .doc_header{
     min-width: 1248px;
+    position: relative;
+    z-index: 10;
+}
+
+.doc_header::after{
+    width: 100%;
+    min-width: 1248px;
+    height: 80px;
+    content: '';
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 .pc_header .header_inner{
@@ -36,7 +65,6 @@ body {
 }
 
 .pc_header .header_inner> div{
-    /* z-index: 99; */
     display: flex;
     align-items: center;
 }
@@ -51,6 +79,7 @@ body {
 .pc_header .logo img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .pc_header .header_title{
@@ -80,7 +109,6 @@ body {
 .pc_header .search_container{
     width: 640px;
     height: 40px;
-    margin-top: 8px;
     border-radius: 4px;
     vertical-align: middle;
     position: relative;
@@ -166,7 +194,7 @@ body {
 .pc_header .patient_view button{
     width: 144px;
     height: 40px;
-    margin: 8px 8px 0 0;
+    margin: 0 8px 0 0;
     border-radius: 4px;
     color: #eee;
     background: #aaa
@@ -272,6 +300,10 @@ body {
     object-fit: cover;
 }
 
+.paramedic::after{
+    box-shadow: none;
+}
+
 
 /* 의사 헤더 */
 .doc_header .header_inner> :last-child{
@@ -301,6 +333,10 @@ body {
     height: 64px;
 }
 
+.doc_header::after {
+    box-shadow: none;
+}
+
 .doc_connect h4{
     margin-right: 5px;
     font-size: 14px;
@@ -308,6 +344,19 @@ body {
     color: #fff;
 }
 
+.doc_connect h5{
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.doc_connect .header_right> :nth-child(3){
+    margin:0 48px 0 31px;
+}
+
+.doc_connect .btn_red img{
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
 
 
 /* 의사 응급호출 헤더 */
@@ -2675,20 +2724,19 @@ body {
 .pop.doctor_call .select_list div{
     width: 100px;
     display: flex;
+    align-items: center;
 }
 
 .pop.doctor_call .select_list p{
     margin-top: -2px;
     margin-right: 7px;
     font-size: 12px;
-    vertical-align: middle;
 }
 
 .pop.doctor_call .select_list .btn_doctor_delete{
     width: 16px;
     height: 16px;
     background: none;
-    vertical-align: middle;
 }
 
 .pop.doctor_call .container{
@@ -3355,6 +3403,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
     display: none;
+    z-index: 10;
 }
 
 .pop.attendee .atten{

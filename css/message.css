@@ -48,7 +48,7 @@
 }
 
 .nurse_message .title_text div img{
-    filter: invert(27%) sepia(53%) saturate(7115%) hue-rotate(175deg) brightness(93%) contrast(102%);
+    filter: invert(54%) sepia(53%) saturate(7115%) hue-rotate(175deg) brightness(73%) contrast(58%);
 }
 
 .message .title_text h2{
@@ -607,20 +607,18 @@
     width: fit-content;
     margin-right: 20px;
     display: flex;
+    align-items: center;
 }
 
 .message .select_list p{
-    margin-top: -2px;
     margin-right: 7px;
     font-size: 12px;
-    vertical-align: middle;
 }
 
 .message .select_list .btn_doctor_delete{
     width: 16px;
     height: 16px;
     background: none;
-    vertical-align: middle;
 }
 
 .message .container{
@@ -720,7 +718,7 @@
 
 .message .group_container label{
     display: flex;
-    cursor: pointer;
+    align-items: center;
 }
 
 .message .group_container label p{
@@ -736,7 +734,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 4px 15px 0 0;
+    margin: 0 15px 0 0;
     vertical-align: middle;
     background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
@@ -750,7 +748,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 4px 15px 0 0;
+    margin: 0 15px 0 0;
     vertical-align: middle;
     background: url('../img/icon/check.svg') no-repeat 0 0px / contain;
     cursor: pointer;
@@ -888,6 +886,7 @@
 
 .message .list_inner label{
     display: flex;
+    align-items: center;
 }
 
 .message .list_inner label p{
@@ -907,7 +906,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 4px 15px 0 0;
+    margin: 0 15px 0 0;
     vertical-align: middle;
     background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
@@ -926,7 +925,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 4px 15px 0 0;
+    margin: 0    15px 0 0;
     vertical-align: middle;
     background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
@@ -1174,4 +1173,253 @@
 
 .doctor_message .connect .mic{
     margin: 19px 0;
+}
+
+
+/* 선별진료 */
+.screening .message_list{
+    width: 616px;
+    height: 640px;
+}
+
+.screening .message_list .title{
+    padding: 16px 16px 26px;
+    border-bottom: 1px solid #eee;
+}
+
+.screening .title_text{
+    width: 100%;
+    justify-content: initial;
+    color: #007A94;
+}
+
+.screening .title_text> div{
+    margin-right: 15px;
+}
+
+.screening .message_list .title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.screening .waiting{
+    padding: 16px;
+}
+
+.screening .waiting .row,
+.screening .waiting .img{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.screening .waiting .row{
+    height: 48px;
+    padding: 7px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.screening .waiting .row p{
+    font-size: 12px;
+}
+
+.screening .waiting .img{
+    width: 40px;
+}
+
+.screening .waiting .img> :first-child{
+    width: 12px;
+    height: 15px;
+}
+
+.screening .waiting .img> :first-child img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.screening .waiting .img> :last-child{
+    width: 16px;
+    height: 16px;
+}
+
+.screening .waiting .img> :last-child img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.screening .waiting .btn_treat{
+    width: 120px;
+    padding: 7px 24px;
+    margin-left: 60px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #004F60, #350039);
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.screening .waiting .btn_treat .img_container{
+    width: 16px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.screening .waiting .btn_treat .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.screening .waiting .btn_treat:disabled{
+    background: #ccc;
+    color: #888;
+}
+
+.screening .waiting .btn_treat:disabled img{
+    filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(181deg) brightness(96%) contrast(96%);
+}
+
+.screening .message_talk{
+    width: 480px;
+    height: 640px;
+    margin-left: 16px;
+}
+
+.screening .message_talk .title h2{
+    margin-bottom: 13px;
+    font-size: 16px;
+}
+
+.screening .message_talk .title p{
+    font-size: 12px;
+}
+
+.screening .message_talk .search_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.screening .message_talk .btn_sort{
+    border-radius: 4px ;
+}
+
+.screening .message_talk .search_container .btn_search {
+    left: 71%;
+}
+
+.screening .message_talk .chat_container{
+    height: 360px;
+}
+
+.screening .chat_inner{
+    width: 100%;
+    height: 360px;
+}
+
+.screening .clinic{
+    width: 100%;
+}
+
+.screening .timeLine{
+    height: 360px;
+}
+
+.screening .timeLine .first{
+    height: 26%;
+}
+
+.screening .timeLine .second{
+    height: 10%;
+}
+
+.screening .timeLine .third{
+    height: 14%;
+}
+
+.screening .timeLine .fourth{
+    height: 20%;
+}
+
+.screening .timeLine .fifth{
+    height: 20%;
+}
+
+/* 의사 메세지 */
+.doc_message .message_list .title> div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.doc_message .message_list .title .btn_message{
+    width: 140px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.doc_message .message_list .search_container .btn_search{
+    right: 13%;
+}
+
+.doc_message .select_medi{
+    width: 736px;
+    height: 640px;
+}
+
+.doc_message .select_medi .title{
+    padding: 16px 16px 26px;
+}
+
+.doc_message .select_medi .title h2{
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doc_message .select_medi .title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.doc_message .select_list{
+    width: 672px;
+    border: 1px solid #000;
+    background: #fff;
+}
+
+.doc_message .favorite_list,
+.doc_message .select_doctor{
+    width: 320px;
+}
+
+.doc_message .container{
+    height: fit-content;
+    padding: 28px 16px 16px;
+}
+
+.doc_message .list_inner label p{
+    font-size: 12px;
+}
+
+.doc_message .group_container label p{
+    font-size: 12px;
+}
+
+.doc_message .favorite_container input[type='checkbox']:checked+label span{
+    width: 16px;
+    height: 16px;
+}
+
+.doc_message .list_inner .favorite_container input[type="checkbox"]+label> span{
+    width: 16px;
+    height: 16px;
+}
+
+.doc_message .send_message{
+    width: 360px;
+    height: 640px;
+    margin-left: 16px;
 }
