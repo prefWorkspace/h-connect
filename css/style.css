@@ -5869,7 +5869,6 @@
     top: 50%; 
     transform: translateY(-50%);
     right: -50px;
-
 }
 
 .doctor .schedule .btn_today h2{
@@ -6477,10 +6476,6 @@
     background: #fff;
 }
 
-.doctor .remote_alarm .inner{
-    /* display: flex; */
-}
-
 .doctor .remote_alarm .title{
     padding: 16px 16px 23px;
     border-bottom: 1px solid #eee;
@@ -6527,27 +6522,14 @@
     font-weight: normal;
 }
 
-.doctor .remote_alarm .time{
-    /* width: 150px; */
-}
-
 .doctor .remote_alarm .time,
 .doctor .remote_alarm .check{
     color: #007a94;
 }
 
-.doctor .remote_alarm .answer{
-    /* width: 100px; */
-}
-
-.doctor .remote_alarm .reply{
-    /* width: 200px; */
-}
-
 .doctor .remote_alarm .no_check{
     color: #940045;
 }
-
 
 /* 응급호출 */
 .doctor_emergency .message_list{
@@ -6557,7 +6539,7 @@
 }
 
 .doctor_emergency .message_list .title{
-    padding: 16px 16px 25px;
+    padding: 16px 0 25px 16px;
     border-bottom: 1px solid #eee;
 }
 
@@ -6686,15 +6668,6 @@
     color: #940045;
 }
 
-.doctor_emergency .detail_ep .title .btn_check{
-    width: 80px;
-    padding: 10px 20px;
-    border-radius: 4px;
-    background: #fff;
-    border: 1px solid #007a94;
-    color: #007a94;
-}
-
 .doctor_emergency .detail_ep .title p{
     font-size: 12px;
 }
@@ -6703,9 +6676,58 @@
     justify-content: initial;
 }
 
-.doctor_emergency .detail_ep .title div> :first-child{
+.doctor_emergency .detail_ep .title> div> :first-child{
     margin-right: 16px;
     color: #940045;
+}
+
+.doctor_emergency .detail_ep .title .btn_check{
+    width: 80px;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #007a94;
+    color: #007a94;
+}
+
+.doctor_emergency .detail_ep .title .btn_respond{
+    width: 80px;
+    height: 40px;
+    border: 1px solid #940045;
+    color: #940045;
+    background: #fff;
+    border-radius: 4px;
+    display: none;
+}
+
+.doctor_emergency .detail_ep .title .btn_respond:hover{
+    background: #F5EEF1;
+}
+
+.doctor_emergency .detail_ep .title .btn_respond.active{
+    background: #ccc;
+    color: #888;
+}
+
+.doctor_emergency .detail_ep .title .btn_emer{
+    width: 180px;
+    height: 40px;
+    margin-left: 8px;
+    padding: 10px 25px;
+    border-radius: 4px;
+    background: #940045;
+    color: #fff;
+    display: none;
+}
+
+.doctor_emergency .detail_ep .title .btn_emer:hover{
+    background: #4A0000;
+}
+
+.doctor_emergency .detail_ep .title .btn_emer img{
+    vertical-align: middle;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(106%) contrast(103%);
 }
 
 .doctor_emergency .inner> .control{
@@ -6792,11 +6814,12 @@
 
 /* tab-2 */
 .doctor_emergency .vital{
-    height: 485px;
+    height: 470px;
     padding: 0;
     border-radius: 0 0 8px 8px;
     background: #000;
     overflow: hidden;
+    position: relative; 
 }
 
 .doctor_emergency .vital .graph> div{
@@ -6806,6 +6829,31 @@
 .doctor_emergency .vital .inner{
     width: 492px;
     overflow: hidden;
+}
+
+.doctor_emergency .vital .no_data{
+    padding: 32px;
+    display: none;
+}
+
+.doctor_emergency .vital .no_data p{
+    color: #888;
+}
+
+.doctor_emergency .vital .no_data .img_container{
+    width: 138px;
+    height: 96px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.doctor_emergency .vital .no_data .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(0%) sepia(0%) saturate(27%) hue-rotate(411deg) brightness(83%) contrast(130%);
 }
 
 .doctor_emergency .graph> div> div> div{padding: 0;}
@@ -6863,6 +6911,7 @@
     display: flex;
 }
 
+/* 환자사진 */
 .doctor_emergency .patient_picture{
     padding: 16px;
 }
@@ -6898,4 +6947,41 @@
     width: 100%;
     height: 100%;
     filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.doctor_emergency .patient_picture .no_data{
+    width: 672px;
+    height: 72px;
+    padding: 26px 32px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #eee;
+    display: none;
+}
+
+.doctor_emergency .patient_picture .no_data p{
+    font-size: 14px;
+    color: #888;
+}
+
+
+
+/* 응급협진하기 - 로딩 */
+.connect_emergency{
+    height: calc(100vh - 64px);
+    background: #222;
+}
+
+.connect_emergency .wrap_inner{
+    width: 100%;
+    min-width: 1248px;
+    padding: 240px 0 0 0;
+}
+
+.connect_emergency .call_connect{
+    margin: 0 auto;
+}
+
+.connect_emergency .section{
+    width: fit-content;
 }

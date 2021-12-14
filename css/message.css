@@ -1014,3 +1014,164 @@
     border: 1px solid #007A94;
     color: #007A94;
 }
+
+
+/* 응급호출 */
+.doctor_message .select_medi,
+.doctor_message .send_message{
+    display: block;
+}
+
+.doctor_message .select_medi{
+    width: 736px;
+    height: 640px;
+}
+
+.doctor_message .select_medi .title{
+    padding: 16px 16px 26px;
+}
+
+.doctor_message .select_medi .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #940045;
+}
+
+.doctor_message .select_list{
+    width: 672px;
+    margin: 0 auto;
+}
+
+.doctor_message .container{
+    height: initial;
+}
+
+.doctor_message .favorite_list{
+    width: 312px;
+}
+
+.doctor_message .select_doctor{
+    width: 296px;
+}
+
+.doctor_message .send_message{
+    width: 360px;
+    height: 640px;
+}
+
+.doctor_message .send_message .title> div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_message .send_message .title .btn_list{
+    display: flex;
+}
+
+.doctor_message .send_message .title .btn_list button{
+    width: 64px;
+}
+
+.doctor_message .send_message .title .btn_cancel:hover{
+    background: #F5EEF1;
+}
+
+.doctor_message .send_message .title .btn_call{
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.doctor_message .send_message .title .btn_call:hover{
+    background: #C5D8DC;
+}
+
+.doctor_message .send_message .patient_select{
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.doctor_message .send_message h4{
+    font-size: 12px;
+}
+
+.doctor_message .send_message .search_container{
+    margin: 19px 0 16px 0;
+}
+
+.doctor_message .send_message .search_container input{
+    width: 296px;
+    height: 40px;
+    padding: 0 40px 0 16px ;
+}
+
+.doctor_message .send_message .btn_search{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+.doctor_message .send_message .btn_search img{
+    filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(181deg) brightness(96%) contrast(96%);
+}
+
+.doctor_message .send_message .result{
+    padding: 12px;  
+    border-radius: 4px;  
+    border: 1px solid #707070;
+}
+
+.doctor_message .send_message .result p{
+    font-size: 12px;   
+}
+
+.doctor_message .send_message textarea{
+    width: 296px;
+    height: 100px;
+    margin-top: 19px;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #707070;
+    font-size: 12px;
+}
+
+.doctor_message .connect{
+    padding: 16px 14px;
+}
+
+.doctor_message .connect h4{
+    width: 100%;
+    color: #888;
+}
+
+.doctor_message .connect span{
+    color: #000;
+}
+
+.doctor_message .connect> div{
+    display: flex;
+    align-items: center;
+}
+
+.doctor_message .connect> div p{
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+.doctor_message .connect label{
+    width: 216px;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background: #eee;
+    font-size: 12px;
+}
+
+.doctor_message .connect label.on{
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.doctor_message .connect .mic{
+    margin: 19px 0;
+}

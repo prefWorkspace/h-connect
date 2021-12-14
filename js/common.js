@@ -729,8 +729,39 @@ $(function () {
         location.href="connect_doctor.html";
     })
 
+    // 응급호출 데이터 백그라운드 컬러
+    $('.doctor_emergency .message_list .row').on('click', function(){
+        $(this).addClass('on');
+        $('.doctor_emergency .message_list .row.on').not(this).removeClass('on');
+    })
 
+    // 응급호출 버튼 숨기기
+    $('.doctor_emergency .message_list .row').on('click', function(){
+        $(this).addClass('on');
+        $('.doctor_emergency .message_list .row.on').not(this).removeClass('on');
+        $('.doctor_emergency .detail_ep .title button').toggle();
+        $('.doctor_emergency .data').toggle();
+        $('.doctor_emergency .no_data').toggle();
+    })
 
+    // 응급호출 창
+    $('.doctor_emergency .detail_ep .title .btn_emer').on('click', function(){
+        location.href="connect_emergency.html";
+    })
+
+    // 응급협진 시작하기
+    $('.connect_emergency .pop.connect .overlay .btn_no').on('click', function(){
+        location.href="emergency.html";
+    })
+
+    // 응급호출- 의료진호출하기
+    $('.doctor_emergency .message_list .title .btn_call').on('click', function(){
+        location.href="message.html"
+    })
+
+    $('.doctor_message .send_message .title .btn_call').on('click', function(){
+        location.href="connect_doctor.html"
+    })
 
 
 
