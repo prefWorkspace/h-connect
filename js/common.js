@@ -781,6 +781,61 @@ $(function () {
     })
 
 
+    // 모니터링
+        // 모니터링 버튼 클릭시 링크 이동
+        $('.doctor_monitor .rhythm .btn_monitor').on('click', function(){
+            location.href="patient.html"
+        })
+
+        // 신규 알람 -> 지난 알람
+        $('.doctor_monitor .new_patient .btn_pre').on('click', function(){
+            $('.doctor_monitor .new_patient').hide();
+            $('.doctor_monitor .pre_patient').show();
+            $('.doctor_monitor .rhythm').hide();
+            $('.doctor_monitor .pre_rhythm').show();
+        })
+
+        // 지난 알람 -> 신규 알람
+         $('.doctor_monitor .pre_patient .btn_new').on('click', function(){
+            $('.doctor_monitor .new_patient').show();
+            $('.doctor_monitor .pre_patient').hide();
+            $('.doctor_monitor .rhythm').show();
+            $('.doctor_monitor .pre_rhythm').hide();
+        })
+
+        // 삭제
+        $('.doctor_monitor .rhythm .event .btn_delete').on('click', function(){
+            $('.pop.alarm .overlay').show();
+        })
+
+        $('.pop.alarm .btn_delete').on('click', function(){
+            $('.pop.alarm .overlay').hide();
+        })
+
+        // vital sign 저장 팝업
+        $('.doctor_patient .vital_chart .btn_re').on('click', function(){
+            $('.pop.record .overlay').show();
+        })
+
+        $('.pop.record .btn_check').on('click', function(){
+            $('.pop.record .overlay').hide();
+        })
+
+        $('.doctor_patient .pacs .row').on('click', function(){
+            location.href="pacs_img.html"
+        })
+
+        // pacs full img 닫기
+        $('.patient_img .btn_full').on('click', function(){
+            $('.pop.full_pacs .overlay').show();
+        })
+
+        $('.pop.full_pacs .btn_close').on('click', function(){
+            $('.pop.full_pacs .overlay').hide();
+        })
+
+
+
 
 });
 

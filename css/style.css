@@ -5797,8 +5797,8 @@
 /* 의사 메인 (h-works) */
 .doctor{
     width: 100%;
-    min-width: 1248px;
-    /* min-width: 1880px; */
+    /* min-width: 1248px; */
+    min-width: 1880px;
     height: calc(100vh - 80px);
     min-height: calc(100vh - 80px);
     background: #eee;
@@ -7119,12 +7119,15 @@
 
 /* 입원환자 모니터링 */
 .doctor_monitor .new_patient{
+    width: 360px;
+    height: 720px;
     padding: 16px;
     border-radius: 8px;
     background: #fff;
 }
 
 .doctor_monitor .new_patient .title{
+    height: 96px;
     padding: 16px 16px 26px;
 }
 
@@ -7153,6 +7156,152 @@
 .doctor_monitor .new_patient .title p{
     font-size: 12px;
     color: #444;   
+}
+
+.doctor_monitor .new_patient .alarm{
+    width: 100%;
+    height: 48px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_monitor .new_patient .alarm p{
+    font-size: 12px;
+}
+
+.doctor_monitor .new_patient .alarm span{
+    color: #007A94;
+}
+
+.doctor_monitor .new_patient .alarm button{
+    font-size: 12px;
+    font-weight: normal;
+    color: #ccc;
+}
+
+.doctor_monitor .new_patient .alarm button.on{
+    color: #007A94;
+}
+
+.doctor_monitor .new_patient .alarm .btn_new{
+    margin-right: 5px;
+    position: relative;
+}
+
+.doctor_monitor .new_patient .alarm .btn_new::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 12px;
+    background: #ccc;
+    top: 4px;
+    right: -4px;
+}
+
+.doctor_monitor .new_patient .ecglist{
+    height: 515px;
+    padding: 16px;
+    overflow-y: scroll;
+}
+
+.doctor_monitor .new_patient .ecglist::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor_monitor .new_patient .ecglist::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor_monitor .new_patient .row{
+    padding: 17px 16px;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.doctor_monitor .new_patient .row:hover{
+    background: #eee;
+}
+
+.doctor_monitor .new_patient .row> p{
+    font-size: 10px;
+}
+
+.doctor_monitor .new_patient .row p{
+    font-size: 12px;
+}
+
+.doctor_monitor .new_patient .row> div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_monitor .new_patient .row> div div{
+    display: flex;
+    align-items: center;
+}
+
+.doctor_monitor .new_patient .row .img_container{
+    width: 6px;
+    height: 12px;
+    margin-left: 16px;
+}
+
+.doctor_monitor .new_patient .row .img_container img{
+    width: 100%;
+    height: 100%;
+    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
+}
+
+.doctor_monitor .new_patient .row.on{
+    background: #007A94;
+    color: #fff;
+    border-bottom: none;
+}
+
+.doctor_monitor .new_patient .row.on .img_container img{
+    filter: none;
+}
+
+.doctor_monitor .new_patient .search_container{
+    position: relative;
+}
+
+.doctor_monitor .new_patient .search_container input{
+    width: 152px;
+    padding: 8px 39px 8px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.doctor_monitor .new_patient .search_container input::placeholder{
+    color: #ccc;
+}
+
+.doctor_monitor .new_patient .search_container button{
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: #ccc;
+}
+
+.doctor_monitor .new_patient .search_container button img{
+    filter:invert(46%) sepia(0%) saturate(7500%) hue-rotate(116deg) brightness(223%) contrast(175%);
+}
+
+.doctor_monitor .pre_patient{
+    display: none;
 }
 
 .doctor_monitor .rhythm{
@@ -7203,4 +7352,570 @@
 
 .doctor_monitor .rhythm .btn_monitor .img_container img{
     filter:invert(40%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(110%) contrast(311%);
+}
+
+.doctor_monitor .rhythm .event .title{
+    padding: 20px 16px; 
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_monitor .rhythm .event .title .left{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_monitor .rhythm .event .title .left div{
+    display: flex;
+}
+
+.doctor_monitor .rhythm .event .title .left h2{
+    font-weight: normal;
+    color: #000;
+}
+
+.doctor_monitor .rhythm .event button{
+    width: 80px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.doctor_monitor .rhythm .event button:hover{
+    background: #eee;
+}
+
+.doctor_monitor .rhythm .event .btn_delete{
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.doctor_monitor .rhythm .event .btn_con{
+    padding: 10px;
+    margin-left: 8px;
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.doctor_monitor .rhythm .event_inner{
+    height: 500px;
+    padding-right: 8px;
+    overflow-y: scroll;
+}
+
+.doctor_monitor .rhythm .event_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor_monitor .rhythm .event_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor_monitor .rhythm .graph{
+    padding: 12px 16px 20px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.doctor_monitor .rhythm .graph> p{
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.doctor_monitor .rhythm .graph_wrap{
+    width: 1192px;
+    height: 64px;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    background: url('/img/graph/grid.svg') no-repeat 0 0px / cover;
+    display: flex;
+    align-items: center;
+}
+
+.doctor_monitor .rhythm .graph_wrap .left{
+    width: 44px;
+    height: 40px; 
+    margin: 11px 15px;
+}
+
+.doctor_monitor .rhythm .graph_wrap .left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor_monitor .rhythm .size{
+    width: 160px;
+    margin: 16px 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_monitor .rhythm .size button{
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    background: #007A94;
+    color: #fff;
+    position: relative;
+}
+
+.doctor_monitor .rhythm .size button span{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.doctor_monitor .rhythm .size label{
+    padding: 4px 11px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.doctor_monitor .rhythm .info{
+    padding: 23px 20px;
+    border-top: 1px solid #eee;
+}
+
+.doctor_monitor .rhythm .info h2{
+    margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.doctor_monitor .rhythm .info p{
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.doctor_monitor .pre_rhythm{display: none;}
+
+/* 모니터링 - 환자 상세화면 */
+.doctor_patient .patient{
+    width: 360px;
+    height: 720px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.doctor_patient .patient .title{
+    padding: 16px 0 26px 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_patient .patient .title h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor_patient .patient .title p{
+    margin-top: 13px;
+    font-size: 12px;
+    color: #444;
+}
+
+.doctor_patient .patient .title button{
+    width: 120px;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #004F60, #350039);
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.doctor_patient .patient .title .img_container{
+    width: 16px;
+    height: 15px;
+    margin-right: 9px;
+}
+
+.doctor_patient .patient .title::after{display: none;}
+
+.doctor_patient .patient .management_list .list{
+    height: 48px;
+    padding: 16px;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.doctor_patient .patient .management_list .list p{
+    font-size: 12px;
+    color: #000;
+}
+
+.doctor_patient .patient .management_list .list div{
+    width: 6px;
+    height: 12px;
+}
+
+.doctor_patient .patient .management_list .list img{
+    width: 100%;
+    height: 100%;
+    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
+}
+
+.doctor_patient .patient .management_list .doctor_send div{
+    width: 16px;
+    height: 16px;
+}
+
+.doctor_patient .patient .management_list .doctor_send img{
+    filter: none;
+}
+
+.doctor_patient .patient .management_list .list.on{
+    background: #007A94;
+}
+
+.doctor_patient .patient .management_list .list.on p{
+    color: #fff;
+}
+
+.doctor_patient .patient .management_list .list.on img{
+    filter: none;
+}
+
+.doctor_patient .container{
+    padding: 0;
+    background: #000;
+}
+
+.doctor_patient .vital_chart .menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_patient .vital_chart .menu .btn_list button{
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+
+/* pacs */
+.doctor_patient .pacs{
+    width: 1312px;
+    height: 720px;
+    padding: 16px;
+    margin-left: 32px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor_patient .pacs .title{
+    padding: 20px 16px 22px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor_patient .pacs .title h2{
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #007A94;
+}
+
+.doctor_patient .pacs .title p{
+    font-size: 12px;
+    color: #444;
+}
+
+.doctor_patient .pacs .row,
+.doctor_patient .pacs .row div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_patient .pacs .list{
+    padding: 16px;
+}
+
+.doctor_patient .pacs .row{
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.doctor_patient .pacs .row:hover{
+    background: #eee;
+}
+
+.doctor_patient .pacs .row p{
+    font-size: 12px;
+}
+
+.doctor_patient .pacs .row div div{
+    width: 6px;
+    height: 12px;
+}
+
+.doctor_patient .pacs .row div p{
+    width: 80px;
+    text-align: right;
+}
+
+.doctor_patient .pacs .row div img{
+    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
+}
+
+.doctor_patient .pacs .row> :first-child{
+    width: 150px;
+}
+
+.doctor_patient .pacs .row> :nth-child(2){
+    width: 170px;
+}
+
+.doctor_patient .pacs .row> :nth-child(3),
+.doctor_patient .pacs .row> :nth-child(4),
+.doctor_patient .pacs .row> :nth-child(5){
+    width: 200px;
+}
+
+.doctor_patient .pacs .row> :last-child{
+    width: 100px;
+    margin-left: 80px;
+}
+
+
+/* pacs_img */
+.patient_img{
+    background: #000;
+    position: relative;
+}
+
+.patient_img .wrap_inner{
+    min-width: 1248px;
+    padding: 16px;
+}
+
+.patient_img .pati_info{
+    width: 320px;
+    position: absolute;
+    top: 40px;
+    color: #fff;
+}
+
+.patient_img .pati_info .back{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.patient_img .pati_info .back div{
+    width: 6px;
+    height: 12px;
+    transform: rotate(180deg);
+}
+
+.patient_img .pati_info .back p{
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.patient_img .btn_full{
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 4px;
+    position: absolute;
+    top: 16px;
+    right: 80px;
+    background: #007a94;
+}
+
+.patient_img .pacs_info p{
+    margin-top: 32px;
+    font-size: 11px;
+}
+
+.patient_img .pacs_info h2{
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.patient_img .pacs_img{
+    width: 1704px;
+    height: 796px;
+    margin: 0 auto;
+}
+
+.patient_img .pacs_big{
+    width: 1000px;
+    height: 652px;
+}
+
+.patient_img .pacs_big img,
+.patient_img .pacs_small img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.patient_img .pacs_small{
+    width: 100%;
+    margin-top: 12px;
+}
+
+.patient_img .pacs_small .swiper-slide{
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+.patient_img .swiper-slide-thumb-active{
+    border: 4px solid #FFB300;
+}
+
+.patient_img .control{
+    width: 640px;
+    height: 64px;
+    padding: 20px;
+    margin: 8px auto;
+    background: #004F60;
+    border-radius: 8px;
+    position: relative;
+}
+
+.patient_img .control .next{
+    width: 17px;
+    height: 17px;
+    top: 45%;
+    right: 150px;
+    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    transform: translateY(81%);
+}
+
+.patient_img .control .prev{
+    width: 17px;
+    height: 17px;
+    top: 45%;
+    left: 150px;
+    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    transform: rotate(180deg) translateY(-100%);
+}
+
+.patient_img .control .last{
+    width: 30px;
+    height: 17px;
+    top: 45%;
+    right: 100px;
+    background: url('/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    transform: translateY(81%);
+}
+
+.patient_img .control .first{
+    width: 30px;
+    height: 17px;
+    top: 45%;
+    left: 100px;
+    background: url('/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    transform: rotate(180deg) translateY(-100%);
+}
+
+/* .patient_img .control .line{
+    width: 210px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.patient_img .swiper-scrollbar{
+    width: 210px;
+    height: 2px;
+    background: #007A94;
+    border: 1px solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.patient_img .swiper-scrollbar-drag{
+    position: absolute;
+    top: -11px;
+    width: 40px !important;
+    height: 24px;
+    background: #007A94;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+/* lab 조회 */
+.doctor_patient .lab_list,
+.doctor_patient .emr_list,
+.doctor_patient .ocs_list{
+    width: 296px;
+    height: 720px;
+    margin: 0 32px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.doctor_patient .section .list_inner{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.doctor_patient .section .list_inner div{
+    height: 800px;
+    padding: 50px 0;
+    background: rgba(255, 0, 119, 0.5);
+    text-align: center;
+}
+
+.doctor_patient .section .list_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor_patient .section .list_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor_patient .lab_result,
+.doctor_patient .emr_result,
+.doctor_patient .ocs_result{
+    width: 856px;
+    height: 720px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #fff;
 }

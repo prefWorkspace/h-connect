@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>H-Connect</title>
+  <!--Import-->
+  <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' src='/js/common.js'></script>
+  <script type='text/javascript' src='/js/index.js'></script>
+  <!--css-->
+  <link rel='stylesheet' href='/css/reset.css'>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+  <body>
+
+    <!-- 로그아웃 팝업 -->
+    <div class="pop logout">
+        <div class="wrap_inner">
+            <div>
+                <p>심장병동</p>
+                <h3>심장병동 간호사실</h3>
+            </div>
+
+            <button type="button" class="btn_bye">로그아웃</button>  
+        </div>
+    </div>
+
+    <!-- 환자 검색 -->
+    <div class="pop search_patient">
+        <div class="wrap_inner">
+            <p>
+                <span>김환자</span>
+                (<span>63</span>.<span>남</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1308</span>호실.
+                <span>3</span>병상
+            </p>
+
+            <p>
+                <span>김환장</span>
+                (<span>74</span>.<span>여</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1302</span>호실.
+                <span>1</span>병상
+            </p>
+
+            <p>
+                <span>김환정</span>
+                (<span>68</span>.<span>남</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1306</span>호실.
+                <span>6</span>병상
+            </p>
+
+            <p>
+                <span>김환재</span>
+                (<span>59</span>.<span>남</span>).
+                <span>patient ID</span>.
+                <span>심장병동</span>.
+                <span>1304</span>호실.
+                <span>2</span>병상
+            </p>
+        </div>
+    </div>
+
+    <!-- 메세지 창 -->
+    <div class="pop nurse_view">
+        <div class="wrap_inner">
+            <div class="title">
+                <div>
+                    <p>강심장 교수님</p>
+
+                    <div class="btn_list">
+                        <div class="btn_fold">
+                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
+                        </div>
+
+                        <div class="btn_full">
+                            <img src="/img/icon/nurse/full.svg" alt="풀화면 아이콘">
+                        </div>
+
+                        <div class="btn_close">
+                            <img src="/img/icon/nurse/close.svg" alt="닫는 아이콘">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="search_container">
+                <div>
+                    <input type="text" placeholder="메세지 내용을 입력해주세요">
+
+                    <button type="button" class="btn_search">
+                        <div>
+                            <img src="/img/header/search.svg" alt="검색표시">
+                        </div>                           
+                    </button>
+                </div>                            
+
+                <div class="sort">
+                    <img src="/img/icon/nurse/sorting.svg" alt="정렬아이콘">
+                </div>
+
+                 
+                <!-- 메세지 정렬 팝업 -->
+                <div class="pop chat_sort">
+                    <div class="wrap_inner">
+                        <p>전체 메세지 보기</p>
+                        <p>진료 중 메세지 보기</p>
+                        <p>진료 제외 메세지 보기</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat_container"> 
+                <div class="timeLine">
+                    <a class="first" href="#first_taget"></a>
+                    <a class="second" href="#second_taget"></a>
+                    <a class="third" href="#third_taget"></a>
+                    <a class="fourth" href="#fourth_taget"></a>
+                    <a class="fifth" href="#fifth_taget"></a>
+                </div>               
+
+                <div class="chat_inner">
+                    <!-- 상대방이 보낸 매세지 chat_you -->
+                    <div class="chat_you" id="second_taget">
+                        <p>김심장 교수님</p>
+
+                        <div class="bubble">
+                            <p>박입원님 병상연결 부탁드립니다.</p>
+                        </div>
+                        
+                        <small>
+                            <time datetime="21.09.15"><span>21.09.15</span></time>
+                            .
+                            <time datetime="09:48:43"><span>09:48:43</span></time>
+                        </small>
+                    </div>
+
+                    <!-- 내가 보낸 메시지 chat_me -->
+                    <div class="chat_me" id="fifth_taget">
+                        <div>
+                            <div class="bubble">
+                                <p>네 준비하겠습니다.</p>
+                            </div>
+                            
+                            <small>
+                                <time datetime="21.09.15"><span>21.09.15</span></time>
+                                .
+                                <time datetime="09:48:43"><span>09:48:43</span></time>
+                            </small>
+                        </div>                        
+                    </div>
+
+                    <div class="chat_me">
+                        <div>
+                            <div class="bubble">
+                                <p>교수님 지금 연결하겠습니다.</p>
+                            </div>
+                            
+                            <small>
+                                <time datetime="21.09.15"><span>21.09.15</span></time>
+                                .
+                                <time datetime="09:48:43"><span>09:48:43</span></time>
+                            </small>
+                        </div>                        
+                    </div>
+
+                    <!-- 진료 시작 -->
+                    <div class="start_clinic" id="fourth_taget">
+                        <p>박입원님. 진료가 시작되었습니다.</p>
+                        <p>
+                            <time datetime="21.09.15"><span>21.09.15</span></time>
+                            .
+                            <time datetime="09:48:43"><span>09:48:43</span></time>
+                        </p>
+                    </div>
+
+                    <!-- 상대방이 보낸 매세지 chat_you -->
+                    <div class="chat_you">
+                        <p>김심장 교수님</p>
+
+                        <div class="bubble">
+                            <p>환자 OOO 수치가 어떤가요?</p>
+                        </div>
+                        
+                        <small>
+                            <time datetime="21.09.15"><span>21.09.15</span></time>
+                            .
+                            <time datetime="09:48:43"><span>09:48:43</span></time>
+                        </small>
+                    </div>
+
+                    <!-- 내가 보낸 메시지 chat_me -->
+                    <div class="chat_me" id="first_taget">
+                        <div>
+                            <div class="bubble">
+                                <p>5분전에 쟀을때 ㅁㅁㅁ였습니다.</p>
+                            </div>
+                            
+                            <small>
+                                <time datetime="21.09.15"><span>21.09.15</span></time>
+                                .
+                                <time datetime="09:48:43"><span>09:48:43</span></time>
+                            </small>
+                        </div>                        
+                    </div>
+
+                    <!-- 진료 종료 -->
+                    <div class="end_clinic" id="third_taget">
+                        <p>박입원님. 진료가 종료되었습니다.</p>
+                        <p>
+                            <time datetime="21.09.15"><span>21.09.15</span></time>
+                            .
+                            <time datetime="09:48:43"><span>09:48:43</span></time>
+                        </p>
+                    </div>
+                    
+
+                    <div class="chat_me">
+                        <div>
+                            <div class="bubble">
+                                <p>고생하셨습니다.</p>
+                            </div>
+                            
+                            <small>
+                                <time datetime="21.09.15"><span>21.09.15</span></time>
+                                .
+                                <time datetime="09:48:43"><span>09:48:43</span></time>
+                            </small>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat_window">
+                <textarea placeholder="메세지 입력"></textarea>
+                <button type="button" class="btn_send">전송</button>
+            </div>
+           
+        </div>
+    </div>
+
+    <div id="wrap">
+        <!--헤더 pc-->
+        <header id="header" class="pc_header doc_header">
+            <div class="header_inner">
+                <div>
+                    <h1 class="logo">
+                        <a class="link" href="index.html">
+                            <img class="img" src="/img/header/logo.png" alt="로고">
+                        </a>
+                    </h1>
+        
+                    <div class="header_title">
+                        <h1>입원환자 모니터링</h1>
+                        <h3>환자를 모니터링 하고, 발생한 알람을 확인합니다.</h3>
+                    </div>
+                </div>
+        
+                <div>
+                    <div style="width: 110px;"></div>
+        
+                    <div class="search_container">
+                        <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
+        
+                        <button type="button" class="btn_search">
+                            <img src="/img/header/search.svg" alt="검색표시">
+                        </button>
+                    </div>
+
+                    <div class="btn_list">
+                        <button type="button" class="btn_red">
+                            <div>
+                                <img src="/img/header/call_color.png" alt="전화기 아이콘">
+                            </div>
+                            응급호출
+                        </button>
+            
+                        <button type="button" class="btn_logout">
+                            김한림 교수님
+                        </button>
+
+                        <!-- 응급호출이 있을때 보이게 해주세요 -->
+                        <div class="red_alarm"></div>
+                    </div>                          
+                </div>
+            </div>
+        </header>
+
+
+      <!--콘텐츠-->
+      <div id="wrap_content" class="doctor monitoring_patient doctor_patient">
+
+        <nav class="nav" id="nav">
+            <ul class="main_depth gnb">
+                <li class="gnb_list">
+                    <a class="link" href="index.html">
+                        H-Works
+                    </a>
+                </li>
+
+                <li class="gnb_list">
+                    <a class="link" href=".html">
+                    원격협진
+                    </a>
+                </li>
+
+                <li class="gnb_list active">
+                    <a class="link" href="monitoring.html">
+                        모니터링
+                    </a>
+                </li>
+
+                <li class="gnb_list">
+                    <a class="link" href="screening.html">
+                        선별진료
+                    </a>
+                </li>
+
+                <li class="gnb_list">
+                    <a class="link" href="message.html">
+                        메세지
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="wrap_inner">
+            <!-- 환자 정보 -->
+            <section class="section management patient">
+                <div class="title">
+                    <div>
+                        <h2>
+                            <span>김환자</span>
+                            (<span>63</span>.
+                            <span>남</span>)
+                        </h2>
+                        
+                        <p>
+                            <span>Patient ID</span> - 
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+                   
+                    <button type="button">
+                        <div class="img_container">
+                            <img src="/img/H-Connect logo.png" alt="로고">
+                        </div>
+                        병상연결
+                    </button>
+                </div>  
+
+                <div class="management_list">
+                    <div class="list" onclick="location.href='patient.html'">
+                        <p>환자 모니터링</p>
+                        
+                        <div>
+                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                        </div>
+                    </div>
+
+                    <div class="list" onclick="location.href='pacs.html'">
+                        <p>PACS 보기</p>
+
+                        <div>
+                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                        </div>
+                    </div>
+
+                    <div class="list on" onclick="location.href='lab.html'">
+                        <p>LAB 조회</p>
+
+                        <div>
+                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                        </div>
+                    </div>
+
+                    <div class="list" onclick="location.href='emr.html'">
+                        <p>EMR</p>
+
+                        <div>
+                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                        </div>
+                    </div>
+
+                    <div class="list" onclick="location.href='ocs.html'">
+                        <p>OCS</p>
+
+                        <div>
+                            <img src="/img/right_arrow.svg" alt="오른쪽 화살표">
+                        </div>
+                    </div>
+
+                    <div class="list doctor_send">
+                        <p>담당의에게 메세지 보내기</p>
+
+                        <div>
+                            <img src="/img/icon/share.png" alt="공유 아이콘">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- lab 조회 목록 영역 -->
+            <section class="section lab_list">
+                <div class="list_inner">
+                    <div>
+                        스마트 리포맥스 LAB 조회 목록 영역
+                    </div>
+                </div>
+            </section>
+
+            <!-- lab 결과 표시 영역 -->
+            <section class="section lab_result">
+                <div class="list_inner">
+                    <div>
+                        스마트 리포맥스 LAB 결과 표시 영역
+                    </div>
+                </div>
+            </section>
+        </div>
+      </div>
+
+    </div>
+    <!--// end wrap-->
+  </body>
+</html>

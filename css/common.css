@@ -320,6 +320,7 @@ body {
     top:0;
     left: -21px;
     border: 1px solid #fff;
+    cursor: pointer;
 }
 
 
@@ -1007,17 +1008,21 @@ body {
 
 
 /* resp setting menu */
-.pop.setting_menu input{
+/* .pop.setting_menu input{
     display: none;
-}
+} */
 
 .pop.setting_menu .overlay .content{
     display: block;
 }
 
+.pop.setting_menu .overlay .content> div{
+    display: flex;
+}
+/* 
 .pop.setting_menu .content div> p{
     display: inline-block;
-}
+} */
 
 /* resp setting */
 .pop.setting_menu .content> div> p{
@@ -1086,10 +1091,6 @@ body {
     margin-bottom: 16px;
 }
 
-.pop.setting_menu .content .input_num .container{
-    display: inline-block;
-}
-
 .pop.setting_menu .content .input_num input{
     width: 84px;
     height: 28px;
@@ -1106,13 +1107,10 @@ body {
     margin-bottom: 16px;
 }
 
-.pop.setting_menu  .content .sweep p{
+.pop.setting_menu  .content .sweep p,
+.pop.setting_menu  .content .apnea p{
     width: 89px;
-    margin-right: 48px;
-}
-
-.pop.setting_menu .content .container{
-    display: inline-block;
+    margin-right: 29px;
 }
 
 .pop.setting_menu .content .sweep input[type="radio"]+label{
@@ -1146,6 +1144,10 @@ body {
     margin-bottom: 10px;
 }
 
+.pop.resp_set .content .sweep> div> :last-child{
+    margin: 0;
+}
+
 .pop.resp_set .content .apnea input[type="radio"]+label{
     cursor: pointer;
 }
@@ -1174,8 +1176,21 @@ body {
 
 .pop.resp_set .content .apnea .container> div{
     width: 250px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+.pop.setting_menu .resp .container{
+    width: 180px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pop.setting_menu .overlay .resp input{
+    width: 84px;
+    height: 28px;
 }
 
 /* ECG setting menu */
@@ -1243,6 +1258,10 @@ body {
 .pop.temp_set .content .sweep p {
     width: 89px;
     margin-right: 32px;
+}
+
+.pop.temp_set .content .input_num{
+    margin: 0;
 }
 
 
@@ -3527,4 +3546,84 @@ body {
 
 .pop.doc_full .btn_close{
     z-index: 99;
+}
+
+
+/* vital sign 저장 */
+.pop.record .pop_cont{
+    width: 600px;
+    height: 360px;
+    padding: 64px 0 48px;
+}
+
+.pop.record .pop_cont div{
+    width: 46px;
+    height: 32px;
+    margin: 0 auto 32px;
+}
+
+.pop.record .pop_cont div img{
+    width: 100%;
+    height: 100%;
+}
+
+.pop.record h2{
+    margin-bottom: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.pop.record .color{
+    margin-bottom: 16px;
+    color: #007A94;
+}
+
+.pop.record .btn_check{
+    width: 272px;
+    margin: 46px auto 0;
+    padding: 12px;
+    border-radius: 4px;
+    background: #007A94;
+    color: #fff;
+    display: block;
+}
+
+
+/* pacs 사진 크게보기 full picture */
+.pop.full_pacs .pop_cont{
+    width: 1380px;
+    height: 100vh;
+    padding: 0;
+}
+
+.pop.full_pacs .picture_view{
+    width: 100%;
+    height: 100vh;
+}
+
+
+.pop.full_pacs .picture_view img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop.full_pacs .swiper-button-next{
+    right: 64px;
+    background: url('/img/right_arrow.svg') no-repeat 0 0px/ contain;
+}
+
+.pop.full_pacs .swiper-button-prev{
+    left: 64px;
+    background: url('/img/right_arrow.svg') no-repeat 0 0px/ contain;
+    transform: rotate(180deg);
+}
+
+.pop.full_pacs .btn_close{
+    width: 32px;
+    height: 32px;
+    background: #007A94;
+    top: 32px;
+    right: 32px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
