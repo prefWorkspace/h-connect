@@ -68,12 +68,12 @@ $(function(){
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
 		},
-		// pagination:{
-		// 	el: '.swiper-scrollbar-drag',
-		// 	renderBullet: function (index, className) {
-		// 		return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// 	}
-		// },
+		pagination:{
+			el: '.swiper-scrollbar-drag',
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '">' + (index + 1) + '</span>';
+			}
+		},
 		scrollbar: {
 			el: ".swiper-scrollbar",
 			// hide: true,
@@ -82,16 +82,16 @@ $(function(){
 		thumbs: {
 			swiper: swiper5,
 		},
-		// on: {
-		// 	slideChangeTransitionEnd: function(){
-		// 		// alert(this.activeIndex);
-		// 		SetPageNumber(this.activeIndex+1);
-		// 	}
-		// }
+		on: {
+			slideChangeTransitionEnd: function(){
+				// alert(this.activeIndex);
+				SetPageNumber(this.activeIndex+1);
+			}
+		}
 	});
 
-	// function SetPageNumber(nPageNumber){
-	// 	document.getElementsByClassName(".swiper-pagination").innerHTML = nPageNumber;
-	// }
+	function SetPageNumber(nPageNumber){
+		document.getElementsByClassName(".swiper-pagination").innerHTML = nPageNumber;
+	}
 
 });

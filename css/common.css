@@ -3627,3 +3627,8 @@ body {
     right: 32px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
+
+/* 환자 검색 */
+.pop.doc_search{
+    right: 350px;
+}

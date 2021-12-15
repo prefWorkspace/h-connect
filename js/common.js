@@ -735,6 +735,12 @@ $(function () {
         $('.doctor_emergency .message_list .row.on').not(this).removeClass('on');
     })
 
+    // 응급호출 확인버튼 누름
+    $('.doctor_emergency .detail_ep .title .btn_check').on('click', function(){
+        $('.doctor_emergency .message_list .row.on').hide();
+        $('.doctor_emergency .detail_ep').hide();
+    })
+
     // 응급호출 버튼 숨기기
     $('.doctor_emergency .message_list .row').on('click', function(){
         $(this).addClass('on');
@@ -742,6 +748,7 @@ $(function () {
         $('.doctor_emergency .detail_ep .title button').toggle();
         $('.doctor_emergency .data').toggle();
         $('.doctor_emergency .no_data').toggle();
+        $('.doctor_emergency .detail_ep').show();
     })
 
     // 응급호출 창
@@ -772,10 +779,6 @@ $(function () {
         location.href="connect_screening.html"
     })
 
-    // $('.connect_screening .refuse').on('click', function(){
-    //     location.href="connect_screening.html"
-    // })
-
     $('.pc_header .btn_red').on('click', function(){
         location.href="emergency/index.html"
     })
@@ -787,18 +790,34 @@ $(function () {
             location.href="patient.html"
         })
 
+        // 병상연결
+        $('.doctor_patient .patient .title button').on('click', function(){
+            location.href="connect_nurse.html"
+        })
+
+        // 리스트 클릭시 배경색 바뀜
+        $('.doctor_monitor .new .row').on('click', function(){
+            $(this).addClass('on');
+            $('.doctor_monitor .new .row.on').not(this).removeClass('on');
+        })
+
+        $('.doctor_monitor .pre .row').on('click', function(){
+            $(this).addClass('on');
+            $('.doctor_monitor .pre .row.on').not(this).removeClass('on');
+        })
+
         // 신규 알람 -> 지난 알람
-        $('.doctor_monitor .new_patient .btn_pre').on('click', function(){
-            $('.doctor_monitor .new_patient').hide();
-            $('.doctor_monitor .pre_patient').show();
+        $('.doctor_monitor .new .btn_pre').on('click', function(){
+            $('.doctor_monitor .new').hide();
+            $('.doctor_monitor .pre').show();
             $('.doctor_monitor .rhythm').hide();
             $('.doctor_monitor .pre_rhythm').show();
         })
 
         // 지난 알람 -> 신규 알람
-         $('.doctor_monitor .pre_patient .btn_new').on('click', function(){
-            $('.doctor_monitor .new_patient').show();
-            $('.doctor_monitor .pre_patient').hide();
+         $('.doctor_monitor .pre .btn_new').on('click', function(){
+            $('.doctor_monitor .new').show();
+            $('.doctor_monitor .pre').hide();
             $('.doctor_monitor .rhythm').show();
             $('.doctor_monitor .pre_rhythm').hide();
         })
@@ -810,6 +829,15 @@ $(function () {
 
         $('.pop.alarm .btn_delete').on('click', function(){
             $('.pop.alarm .overlay').hide();
+        })
+
+        // confirm 버튼 클릭
+        $('.doctor_monitor .rhythm .event .btn_con').on('click', function(){
+            $('.doctor_monitor .new .row.on').hide();
+            $('.doctor_monitor .new').hide();
+            $('.doctor_monitor .pre').show();
+            $('.doctor_monitor .rhythm').hide();
+            $('.doctor_monitor .pre_rhythm').show();
         })
 
         // vital sign 저장 팝업
@@ -833,6 +861,7 @@ $(function () {
         $('.pop.full_pacs .btn_close').on('click', function(){
             $('.pop.full_pacs .overlay').hide();
         })
+
 
 
 
