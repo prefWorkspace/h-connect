@@ -69,7 +69,8 @@ $(function(){
 			prevEl: ".swiper-button-prev",
 		},
 		pagination:{
-			el: '.swiper-scrollbar-drag',
+			el: '.swiper-pagination',
+			type: 'fraction',
 			renderBullet: function (index, className) {
 				return '<span class="' + className + '">' + (index + 1) + '</span>';
 			}
@@ -90,8 +91,13 @@ $(function(){
 		}
 	});
 
-	function SetPageNumber(nPageNumber){
-		document.getElementsByClassName(".swiper-pagination").innerHTML = nPageNumber;
-	}
+	// $('.patient_img .last').click(function(){
+	// 	swiper.slideTo(1, 1000, false);
+	// });
+	
+
+	// function SetPageNumber(nPageNumber){
+	// 	document.getElementsByClassName(".swiper-pagination").innerHTML = nPageNumber;
+	// }
 
 });

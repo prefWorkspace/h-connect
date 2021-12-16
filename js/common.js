@@ -796,9 +796,9 @@ $(function () {
         })
 
         // 리스트 클릭시 배경색 바뀜
-        $('.doctor_monitor .new .row').on('click', function(){
+        $('.row').on('click', function(){
             $(this).addClass('on');
-            $('.doctor_monitor .new .row.on').not(this).removeClass('on');
+            $('.row.on').not(this).removeClass('on');
         })
 
         $('.doctor_monitor .pre .row').on('click', function(){
@@ -861,7 +861,6 @@ $(function () {
         $('.pop.full_pacs .btn_close').on('click', function(){
             $('.pop.full_pacs .overlay').hide();
         })
-
 
 
 
