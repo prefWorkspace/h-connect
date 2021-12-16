@@ -5851,12 +5851,13 @@
     font-weight: 500;
     color: #fff;
     align-items: center;
+    display: none;
 }
 
 .doctor .schedule .btn_today{
     background: linear-gradient(TO right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    display: none;
+    /* display: none; */
 }
 
 .doctor .schedule .btn_today .img_container{
@@ -5869,7 +5870,7 @@
     position: relative;
 }
 
-.doctor .schedule .btn_today div::after{
+.doctor .schedule .btn_today> :last-child:after{
     content: ''; 
     width: 9px;
     height: 18px; 
@@ -5933,7 +5934,7 @@
     padding: 16px;
 }
 
-.doctor .schedule .schedule_list .list{
+.doctor .schedule .schedule_list .row{
     padding: 16px;
     border-radius: 4px;
     border-bottom: 1px solid #eee;
@@ -5942,36 +5943,35 @@
     cursor: pointer;
 }
 
-.doctor .schedule .schedule_list .list.on{
-    border-bottom: 0;
+.doctor .schedule .schedule_list .row.on{
     background: #007A94;
 }
 
-.doctor .schedule .schedule_list .list p{
+.doctor .schedule .schedule_list .row p{
     font-size: 12px;
     font-weight: normal;
 }
 
-.doctor .schedule .schedule_list .list.on p{
+.doctor .schedule .schedule_list .row.on p{
     color: #fff;
 }
 
-.doctor .schedule .schedule_list .list> div {
+.doctor .schedule .schedule_list .row> div {
     display: flex;
     align-items: center;
 }
 
-.doctor .schedule .schedule_list .list> div div{
+.doctor .schedule .schedule_list .row> div div{
     width: 6px;
     height: 12px;
     margin-left: 16px;
 }
 
-.doctor .schedule .schedule_list .list.on img{
+.doctor .schedule .schedule_list .row.on img{
     filter: none;
 }
 
-.doctor .schedule .schedule_list .list img{
+.doctor .schedule .schedule_list .row img{
     width: 100%;
     height: 100%;
     filter: invert(73%) sepia(74%) saturate(1646%) hue-rotate(163deg) brightness(98%) contrast(101%);
@@ -5980,7 +5980,7 @@
 /* 나의 일정 */
 .doctor .my_plan{
     width: 1312px;
-    margin: 0 16px;
+    margin: 0 32px;
     background-color: #fff;
     border-radius: 8px;
 }
@@ -6354,23 +6354,23 @@
     font-weight: 500;
 }
 
-.doctor .collabor .cont .title{
+.doctor .right .cont .title{
     border:none;
     display: flex;
 }
 
-.doctor .collabor .cont .title h2{
+.doctor .right .cont .title h2{
     color: #000;
 }
 
-.doctor .collabor .cont .title p{
+.doctor .right .cont .title p:not(.case_inner p){
     margin: 0;
     font-size: 16px;
     color: #007A94;
 }
 
-.doctor .collabor .cont_list{
-    padding: 16px;
+.doctor .right .cont_list{
+    padding: 0 16px 16px;
 }
 
 .doctor .right .cont_list .case,
@@ -6424,7 +6424,7 @@
     background-color: #eee;
 }
 
-.doctor .collabor .case_inner{
+.doctor .right .case_inner{
     width: 352px;
     margin: 0 auto;
     padding: 16px 0;
@@ -6432,25 +6432,24 @@
     border-radius: 0 0 4px 4px;
 }
 
-.doctor .collabor .case_inner> div{
+.doctor .right .case_inner> div{
     margin-bottom: 16px;
 }
 
-.doctor .collabor .case_inner> :last-child{
+.doctor .right .case_inner> :last-child{
     margin: 0;
 }
 
-.doctor .collabor .case_inner .title{
+.doctor .right .case_inner .title{
     padding: 0;
     display: inherit;
 }
 
-.doctor .collabor .case_inner .title p{
+.doctor .right .case_inner .title p{
     font-size: 12px;
-    line-height: 18px;
 }
 
-.doctor .collabor .case_inner> div div{
+.doctor .right .case_inner> div div{
     height: fit-content;
     padding: 16px;
     border-radius: 4px;
@@ -6458,7 +6457,7 @@
     font-size: 12px;
 }
 
-.doctor .collabor .case_inner p{
+.doctor .right .case_inner p{
     display: initial;
     font-size: 12px;
 }
@@ -6495,6 +6494,7 @@
 .doctor .right .member .count{
     width: fit-content;
     margin-left: 8px;
+    font-weight: 500;
     color: #007A94;
 }
 
@@ -6554,6 +6554,22 @@
     padding: 0 16px;
 }
 
+.doctor .opinion .collabor_wrap .title:not(.case_inner .title){
+    padding: 0 16px;
+}
+
+.doctor .opinion .collabor_wrap> div:not(.time){
+    padding: 20px 0;
+}
+
+
+.doctor .opinion .time :first-child{
+    margin-bottom: 16px;
+}
+
+.doctor .opinion .member .red{
+    color: #940045;
+}
 
 
 
@@ -6730,6 +6746,7 @@
 }
 
 .doctor .now_section .row{
+    height: 48px;
     padding: 16px;
     border-radius: 4px;
     border-bottom: 1px solid #eee;
@@ -7617,6 +7634,10 @@
     color: #000;
 }
 
+.doctor_monitor .rhythm .btn_list{
+    width: fit-content;
+}
+
 .doctor_monitor .rhythm .event button{
     width: 80px;
     padding: 10px 15px;
@@ -7676,6 +7697,7 @@
     background: url('/img/graph/grid.svg') no-repeat 0 0px / cover;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .doctor_monitor .rhythm .graph_wrap .left{
@@ -7692,7 +7714,11 @@
 
 .doctor_monitor .rhythm .graph_scroll{
     width: 1100px;
+    padding-bottom: 100px;
     overflow-x: scroll;
+    position: absolute;
+    top: 25%;
+    left: 84px;
 }
 
 .doctor_monitor .rhythm .graph_scroll::-webkit-scrollbar{
@@ -8195,3 +8221,6 @@
     border-radius: 8px;
     background: #fff;
 }
+
+
+/*  원격협진  */

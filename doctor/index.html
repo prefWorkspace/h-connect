@@ -114,8 +114,8 @@
                     </h1>
         
                     <div class="header_title">
-                        <h1>입원환자 모니터링</h1>
-                        <h3>환자를 모니터링 하고, 발생한 알람을 확인합니다.</h3>
+                        <h1>H-Works</h1>
+                        <h3>김한림 교수님 의 일정을 확인합니다</h3>
                     </div>
                 </div>
         
@@ -157,30 +157,45 @@
                         <a class="link" href="index.html">
                             H-Works
                         </a>
+
+                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                        <span></span>
                     </li>
 
                     <li class="gnb_list clinic">
                         <a class="link" href=".html">
                         원격협진
                         </a>
+
+                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                        <span></span>
                     </li>
 
                     <li class="gnb_list off">
                         <a class="link" href="monitoring.html">
                             모니터링
                         </a>
+
+                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                        <span></span>
                     </li>
 
                     <li class="gnb_list off">
                         <a class="link" href="screening.html">
                             선별진료
                         </a>
+
+                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                        <span></span>
                     </li>
 
                     <li class="gnb_list off">
                         <a class="link" href="message.html">
                             메세지
                         </a>
+
+                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                        <span></span>
                     </li>
                 </ul>
             </nav>
@@ -222,7 +237,7 @@
                         </div>
 
                         <div class="schedule_list">
-                            <div class="list on">   
+                            <div class="row on my">   
                                 <p>나의 일정</p>
 
                                 <div>
@@ -234,7 +249,7 @@
                                 </div>
                             </div>
 
-                            <div class="list">   
+                            <div class="row collabor">   
                                 <p>원격협진 알림</p>
 
                                 <div>
@@ -246,7 +261,7 @@
                                 </div>
                             </div>
 
-                            <div class="list">   
+                            <div class="row no_check">   
                                 <p>확인하지 않은 환자 알람</p>
 
                                 <div>
@@ -262,7 +277,7 @@
                 </section>
 
                 <!-- 나의 일정 -->
-                <section class="section left my_plan" style="display: none;">
+                <section class="section left my_plan">
                     <div class="container">
                         <div class="title">
                             <h2>나의 일정</h2>
@@ -407,8 +422,7 @@
     
                             <div class="list">
                                 <div class="row">
-                                    <p class="time"><time datetime="2021.09.15">21.09.15</time>.
-                                        <time datetime="11:00">11:00</time> 까지</p>
+                                    <p class="time">21.09.15.11:00 까지</p>
             
                                     <p class="answer">협진일정 요청 수신</p>
             
@@ -442,8 +456,7 @@
     
                             <div class="list">
                                 <div class="row">
-                                    <p class="time"><time datetime="2021.09.15">21.09.15</time>.
-                                        <time datetime="11:00">11:00</time> 까지</p>
+                                    <p class="time">21.09.15. 11:00 까지</p>
             
                                     <p class="answer">협진일정 요청 수신</p>
             
@@ -453,8 +466,7 @@
                                 </div>
     
                                 <div class="row">
-                                    <p class="time"><time datetime="2021.09.15">21.09.15</time>.
-                                        <time datetime="18:00">18:00</time> 까지</p>
+                                    <p class="time">21.09.15. 18:00 까지</p>
             
                                     <p class="answer">협진일정 회신</p>
             
@@ -474,7 +486,7 @@
 
                 <!-- 세션 진행 버튼 눌렀을때 -->
                 <!-- 진행중인 세션 목룍 -->
-                <section class="section now_section">
+                <section class="section now_section" style="display: none;">
                     <div class="title">
                         <h2>진행중인 세션 목록</h2>
                         <p>목록을 클릭하면 세션의 내용을 확인하고, 세션을 시작할 수 있습니다.</p>
@@ -537,7 +549,7 @@
                             <p>이선별 님 (44. 여)</p>
                         </div>
 
-                        <div class="row clinic">
+                        <div class="row opi">
                             <div>
                                 <div class="img_container">
                                     <img src="/img/header/clinic.svg" alt="청진기 아이콘">
@@ -873,7 +885,7 @@
                 </section>
 
                 <!-- 소견요청 협진 -->
-                <section class="section right opinion">
+                <section class="section right opinion"style="display: none;">
                     <div class="container">
                         <div class="title">
                             <div>
@@ -905,7 +917,7 @@
                                 <div class="title">
                                     <h2>협진 내용</h2>
 
-                                    <p>실시간 원격 협진</p>
+                                    <p>소견 요청 협진</p>
                                 </div>
 
                                 <div class="cont_list">
@@ -1064,9 +1076,10 @@
                                 </div>
 
                                 <div class="cont_list">
+                                    <!-- 참여인원 -->
                                     <div class="case">
                                         <div>
-                                            <p>현재 참석 인원.</p>
+                                            <p>참여 인원.</p>
                                             <p class="count">4명</p>
                                         </div>
 
@@ -1077,8 +1090,7 @@
                                             <div class="img_container">
                                                 <img src="/img/under_arrow.svg" alt="아래 화살표">
                                             </div>
-                                        </div>
-                                        
+                                        </div>                                        
                                     </div>
 
                                     <div class="case_cont">
@@ -1090,6 +1102,28 @@
                                         </div>
                                     </div>
 
+                                    <!-- 미참여 -->
+                                    <div class="case">
+                                        <div>
+                                            <p>미참여.</p>
+                                            <p class="count red">1명</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div> 
@@ -1102,84 +1136,81 @@
     <!--// end wrap-->
 
     <script>
-    
-    // fullcalendar library
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            timeZone: 'local',
-            // defaultDate: '2018-06-01',
-        //   locale: "ko",
+        // fullcalendar library
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                timeZone: 'local',
+                // defaultDate: '2018-06-01',
+            //   locale: "ko",
 
-            header:{
-                center: 'title',
-                left: 'prev',
-                right: 'next today'
-            },          
-            events:[{
-                title: '협진시작',
-                start: '2021-12-10T10:00:00',
-                constraint: 'businessHours'
-            },
-            { title: '협진시작',
-                start: '2021-12-15T10:00:00',
-                constraint: 'businessHours'
-            },
+                header:{
+                    center: 'title',
+                    left: 'prev',
+                    right: 'next today'
+                },          
+                events:[{
+                    title: '협진시작',
+                    start: '2021-12-10T10:00:00',
+                    constraint: 'businessHours'
+                },
+                { title: '협진시작',
+                    start: '2021-12-15T10:00:00',
+                    constraint: 'businessHours'
+                },
 
-            { title: '협진시작',
-                start: '2021-12-16T10:00:00',
-                constraint: 'businessHours'
-            },
-            ]
+                { title: '협진시작',
+                    start: '2021-12-16T10:00:00',
+                    constraint: 'businessHours'
+                },
+                ]
+            });
+            calendar.render();
         });
-        calendar.render();
-      });
 
 
-    //   년도 선택
-        const yearLabel = document.querySelector('.year_label');
-        const yearOptions = document.querySelectorAll('.year_option');
+        //   년도 선택
+            const yearLabel = document.querySelector('.year_label');
+            const yearOptions = document.querySelectorAll('.year_option');
 
-        const yearSelect = (item) => {
-            yearLabel.parentNode.classList.remove('active');
-            yearLabel.innerHTML = item.textContent;
-        }
+            const yearSelect = (item) => {
+                yearLabel.parentNode.classList.remove('active');
+                yearLabel.innerHTML = item.textContent;
+            }
 
-        yearOptions.forEach(option => {
-            option.addEventListener('click', () => yearSelect(option))
-        })
+            yearOptions.forEach(option => {
+                option.addEventListener('click', () => yearSelect(option))
+            })
 
-        yearLabel.addEventListener('click', () => {
-        if(yearLabel.parentNode.classList.contains('active')) {
-            yearLabel.parentNode.classList.remove('active');
-        } else {
-            yearLabel.parentNode.classList.add('active');
-        }
-        })
+            yearLabel.addEventListener('click', () => {
+            if(yearLabel.parentNode.classList.contains('active')) {
+                yearLabel.parentNode.classList.remove('active');
+            } else {
+                yearLabel.parentNode.classList.add('active');
+            }
+            })
 
-    // 월 선택
-        const monthLabel = document.querySelector('.month_label');
-        const monthOptions = document.querySelectorAll('.month_option');
+        // 월 선택
+            const monthLabel = document.querySelector('.month_label');
+            const monthOptions = document.querySelectorAll('.month_option');
 
-        const monthSelect = (item) => {
-            monthLabel.parentNode.classList.remove('active');
-            monthLabel.innerHTML = item.textContent;
-        }
+            const monthSelect = (item) => {
+                monthLabel.parentNode.classList.remove('active');
+                monthLabel.innerHTML = item.textContent;
+            }
 
-        monthOptions.forEach(option => {
-            option.addEventListener('click', () => monthSelect(option))
-        })
+            monthOptions.forEach(option => {
+                option.addEventListener('click', () => monthSelect(option))
+            })
 
-        monthLabel.addEventListener('click', () => {
-        if(monthLabel.parentNode.classList.contains('active')) {
-            monthLabel.parentNode.classList.remove('active');
-        } else {
-            monthLabel.parentNode.classList.add('active');
-        }
-        })
-
-
+            monthLabel.addEventListener('click', () => {
+            if(monthLabel.parentNode.classList.contains('active')) {
+                monthLabel.parentNode.classList.remove('active');
+            } else {
+                monthLabel.parentNode.classList.add('active');
+            }
+            })
     </script>
   </body>
 </html>

@@ -673,7 +673,6 @@ $(function () {
         $('.connect_scroll .scene_picture').hide();
     })
 
-
     $('.connect_scroll .btn_patient').on('click', function(){
         $('.connect_scroll .pati_stat').show();
     })
@@ -697,6 +696,42 @@ $(function () {
     // 협진시작 버튼
     $('.doctor .btn_colla').on('click', function(){
         location.href="connect_opinion.html";
+    })
+
+    // 세션 진행중
+    $('.btn_today').on('click', function(){
+        $('.doctor .my_plan').hide();
+        $('.doctor .now_section').show();
+        $('.doctor .waiting').show();
+    })
+
+    // 선별진료실 리스트
+    $('.doctor .now_section').click(function(){
+        $('.doctor .now_section').show();
+    })
+
+    // 선별진료 대기실
+    $('.doctor .list .remote').click(function(){
+        $('.doctor .waiting').show();
+        $('.doctor .right').not('.waiting').hide();
+    })
+
+    // 실시간 원격 협진
+    $('.doctor .list .clinic').click(function(){
+        $('.doctor .collabor').show();
+        $('.doctor .right').not('.collabor').hide();
+    })
+
+    // 실시간 원격 협진
+    $('.doctor .list .red').click(function(){
+        $('.doctor .emergency_section').show();
+        $('.doctor .right').not('.emergency_section').hide();
+    })
+
+    // 실시간 원격 협진
+    $('.doctor .list .opi').click(function(){
+        $('.doctor .opinion').show();
+        $('.doctor .right').not('.opinion').hide();
     })
 
     // 응급호출 요청
@@ -729,11 +764,34 @@ $(function () {
         location.href="connect_doctor.html";
     })
 
-    // 응급호출 데이터 백그라운드 컬러
+    // 리스트 on
     $('.doctor_emergency .message_list .row').on('click', function(){
         $(this).addClass('on');
         $('.doctor_emergency .message_list .row.on').not(this).removeClass('on');
     })
+
+    // h-works 리스트 나의 일정
+    $('.doctor .my').click(function(){
+        $('.doctor .my_plan').show();
+        $('.doctor .section').not('.schedule, .my_plan').hide();
+    })
+
+    // h-works 리스트 원격협진 알림
+    $('.doctor .collabor').click(function(){
+        $('.doctor .remote_alarm').show();
+        $('.doctor .section').not('.schedule, .remote_alarm').hide();
+    })
+
+    // h-works 리스트 환자 알람
+    $('.doctor .no_check').click(function(){
+        location.href="monitoring.html";
+    })
+
+    // 원격협진으로 넘어가기
+    $('.doctor .remote_alarm .row').click(function(){
+        location.href="remote.html";
+    })
+    
 
     // 응급호출 확인버튼 누름
     $('.doctor_emergency .detail_ep .title .btn_check').on('click', function(){
