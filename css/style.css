@@ -8548,11 +8548,11 @@
     background: #ccc;
 }
 
-.doctor .request .collabor_wrap .time{
+.doctor_remote .collabor_wrap .time{
     padding: 24px 30px;
 }
 
-.doctor .request .collabor_wrap> div .title{
+.doctor_remote .collabor_wrap> div .title{
     padding: 24px 30px;
 }
 
@@ -8592,7 +8592,7 @@
     width: 40px;
     height: 32px;
     padding: 8px 12px;
-    margin-right: 8px;
+    margin-left: 8px;
     border-radius: 4px;
     background: #ccc;
     font-size: 14px;
@@ -8834,3 +8834,116 @@
     top: 231px;
     left: 0;
 }
+
+.doctor .me_request .btn_list{
+    display: flex;
+}
+
+.doctor .me_request .btn_list button{
+    width: 64px;
+    padding: 10px 15px;
+    font-size: 14px;
+    display: initial;
+    background: #fff;
+    box-shadow: none;
+}
+
+.doctor .me_request .title .btn_modify{
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.doctor .me_request .title .btn_modify:hover{
+    background: #eee;
+}
+
+.doctor .me_request .title .btn_delete{
+    margin: 0 8px;
+    background: #940045;
+}
+
+.doctor .me_request .title .btn_delete:hover{
+    background: #4A0000;
+}
+
+.doctor .me_request .title .btn_decide{
+    width: 96px;
+    background: #007A94;
+}
+
+.doctor .me_request .title .btn_decide:disabled{
+    background: #ccc;
+    color: #888;
+}
+
+.doctor .me_request .list_view{
+    padding: 0 0 24px;
+}
+
+.doctor .me_request .list_view .check{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .me_request .list_view .check> span{
+    font-size: 12px;
+    color: #007A94;
+}
+
+.doctor .me_request .list_view .people{
+    padding: 14px 16px;
+    margin-top: 16px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.doctor .me_request .list_view .people p{
+    width: 100px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.doctor .me_request .inner> :nth-child(2), 
+.doctor .me_request .inner> :nth-child(2) .title {
+    width: 48px;
+}
+
+.doctor .me_request .inner> :nth-child(2)> :nth-child(2){
+    top: 233px;
+}
+
+.doctor .me_request .inner> :nth-child(2) .possible :first-child{
+    line-height: 96px;
+}
+
+.doctor .me_request .inner> :nth-child(2) .possible :last-child{
+    line-height: 48px;
+}
+
+.doctor .me_request .inner> :nth-child(3)> :nth-child(2){
+    height: 143px;
+    top: 41px;
+}
+
+.doctor .me_request .inner> :nth-child(3) .possible :first-child{
+    line-height: 47px;
+}
+
+.doctor .me_request .inner> :nth-child(3) .possible :last-child{
+    line-height: 96px;
+}
+
+.doctor .me_request .inner> :nth-child(4)> :nth-child(2){
+    top: 185px;
+}
+
+.doctor .me_request .member .title{
+    padding: 0 30px;
+}
+
+.doctor .me_request .member .red{
+    color: #940045;
+}
+

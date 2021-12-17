@@ -282,11 +282,13 @@
                                     <div class="selectBox2 year_box">
                                         <button class="label year_label">2021 년</button>
  
-                                        <ul class="optionList year_list">
-                                            <li class="optionItem year_option">2020 년</li>
-                                            <li class="optionItem year_option">2021 년</li>
-                                            <li class="optionItem year_option">2022 년</li>
-                                        </ul>
+                                        <div>
+                                            <ul class="optionList year_list">
+                                                <li class="optionItem year_option">2020 년</li>
+                                                <li class="optionItem year_option">2021 년</li>
+                                                <li class="optionItem year_option">2022 년</li>
+                                            </ul>
+                                        </div>                                        
                                     </div>
         
                                     <!-- 달 선택 -->
@@ -312,10 +314,6 @@
                             </div>
 
                             <div class="calendar" id="calendar"></div>
-
-                            <!-- <div class="img_container">
-                                <img src="/img/H-Connect logo.svg" alt="로고">
-                            </div> -->
                         </div>
 
                         <!-- 협진 일정목록 -->
@@ -377,7 +375,7 @@
                 </section>
 
                 <!-- 협진시작 -->
-                <section class="section right collabor">
+                <section class="section right collabor" style="display: none;">
                     <div class="container">
                         <div class="title">
                             <div>
@@ -1038,7 +1036,7 @@
                 </section>
 
                 <!-- 소견 요청 협진 진행중 -->
-                <section class="section right opinion" style="display: none;">
+                <section class="section right opinion" style="display: none;" >
                     <div class="container">
                         <div class="title">
                             <div>
@@ -1282,6 +1280,663 @@
                         </div> 
                     </div>               
                 </section>
+
+                <!-- 협진 일정 요청(내가 보냄) -->
+                <section class="section right me_request">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>협진 일정 요청</h2>
+                                <p>내가 보냄</p>
+                            </div>
+
+                            <div class="btn_list">
+                                <button type="button" class="btn_modify">수정</button>
+                                <button type="button" class="btn_delete">삭제</button>
+                                <button type="button" class="btn_decide" disabled>일정확정</button>
+                            </div>
+                        </div>
+
+                        <div class="collabor_wrap">
+                            <!-- 일정 요청 마감일자 -->
+                            <div class="time">
+                                <h2>일정 요청 마감일자</h2>
+
+                                <p>21.09.15. 11:00 까지</p>
+                            </div>
+
+                            <!-- 협진 내용 -->
+                            <div class="cont">
+                                <div class="title">
+                                    <h2>협진 내용</h2>
+
+                                    <p>실시간 원격 협진</p>
+                                </div>
+
+                                <div class="cont_list">
+                                    <div class="case">
+                                        <div>
+                                            <p>Case 1.</p>
+                                            <p>김입원 환자의 대장암 검사입니다.</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div class="case_inner">
+                                            <div class="title">
+                                                <p>Case 1.</p>
+
+                                                <div>
+                                                    김입원 환자의 대장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
+                                                </div>
+                                            </div>
+
+                                            <div class="pati_name">
+                                                <p>환자명.</p>
+
+                                                <div>
+                                                    김입원 (68. 여).patient number
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <p>협진 내용.</p>
+
+                                                <div>
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="case">
+                                        <div>
+                                            <p>Case 2.</p>
+                                            <p>최입원 환자의 간암 검사입니다.</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div class="case_inner">
+                                            <div class="title">
+                                                <p>Case 2.</p>
+
+                                                <div>
+                                                    최입원 환자의 간암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
+                                                </div>
+                                            </div>
+
+                                            <div class="pati_name">
+                                                <p>환자명.</p>
+
+                                                <div>
+                                                    최입원 (68. 여).patient number
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <p>협진 내용.</p>
+
+                                                <div>
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="case">
+                                        <div>
+                                            <p>Case 3.</p>
+                                            <p>정입원 환자의 췌장암 검사입니다.</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div class="case_inner">
+                                            <div class="title">
+                                                <p>Case 3.</p>
+
+                                                <div>
+                                                    정입원 환자의 췌장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
+                                                </div>
+                                            </div>
+
+                                            <div class="pati_name">
+                                                <p>환자명.</p>
+
+                                                <div>
+                                                    정입원 (68. 여).patient number
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <p>협진 내용.</p>
+
+                                                <div>
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- 협진 가능시간 선택 -->
+                            <div class="time_select">
+                                <div class="title">
+                                    <h2>협진 가능시간 선택</h2>
+
+                                    <ul class="tabs">
+                                        <li class="tab-link current" data-tab="metab-1">
+                                            <div>
+                                                <img src="/img/doctor/list.svg" alt="리스트 아이콘">
+                                            </div>
+                                        </li>
+
+                                        <li class="tab-link" data-tab="metab-2">
+                                            <div>
+                                                <img src="/img/icon/clock.svg" alt="시계 아이콘">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 리스트로 보기 -->
+                                <div id="metab-1" class="tab-content list_view current">
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time1">
+                                                <label for="time1">
+                                                <span></span>
+                                                <p>21.09.22. 월요일. 09:00 ~ 10:00</p>
+                                                </label>
+                                            </div>                                            
+
+                                            <span>3명 참석</span>
+                                        </div>
+
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time2">
+                                                <label for="time2">
+                                                <span></span>
+                                                <p>21.09.22. 월요일. 10:00 ~ 11:00</p>
+                                                </label>
+                                            </div>                                            
+
+                                            <span>4명 참석</span>
+                                        </div>
+
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time3">
+                                                <label for="time3">
+                                                <span></span>
+                                                <p>21.09.22. 월요일. 11:00 ~ 12:00</p>
+                                                </label>
+                                            </div>                                            
+
+                                            <span>5명 참석</span>
+                                        </div>
+
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time4">
+                                                <label for="time4">
+                                                <span></span>
+                                                <p>21.09.22. 화요일. 13:00 ~ 15:00</p>
+                                                </label>
+                                            </div>                                            
+
+                                            <span>6명 참석</span>
+                                        </div>                                        
+
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time5">
+                                                <label for="time5">
+                                                <span></span>
+                                                <p>21.09.22. 화요일. 15:00 ~ 16:00</p>
+                                                </label>
+                                            </div>                                              
+                                            
+                                            <span>6명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time6">
+                                                <label for="time6">
+                                                <span></span>
+                                                <p>21.09.22. 화요일. 16:00 ~ 17:00</p>
+                                                </label>  
+                                            </div>                                              
+
+                                            <span>7명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>장협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>장협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time7">
+                                                <label for="time7">
+                                                <span></span>
+                                                <p>21.09.22. 화요일. 17:00 ~ 18:00</p>
+                                                </label>
+                                            </div>                                            
+                                            
+                                            <span>6명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>장협진 교수님</p>
+                                            <p>한협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time8">
+                                                <label for="time8">
+                                                <span></span>
+                                                <p>21.09.22. 목요일. 09:00 ~ 10:00</p>
+                                                </label>
+                                            </div>
+                                            
+                                            <span>6명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>장협진 교수님</p>
+                                            <p>한협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time9">
+                                                <label for="time9">
+                                                <span></span>
+                                                <p>21.09.22. 목요일. 10:00 ~ 12:00</p>
+                                                </label>
+                                            </div>
+                                            
+                                            <span>5명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>한협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time10">
+                                                <label for="time10">
+                                                <span></span>
+                                                <p>21.09.22. 금요일. 13:00 ~ 14:00</p>
+                                                </label>
+                                            </div>
+                                            
+                                            <span>6명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>한협진 교수님</p>
+                                            <p>강협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time11">
+                                                <label for="time11">
+                                                <span></span>
+                                                <p>21.09.22. 금요일. 14:00 ~ 15:00</p>
+                                                </label>
+                                            </div>
+                                            
+                                            <span>5명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                            <p>강협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time12">
+                                                <label for="time12">
+                                                <span></span>
+                                                <p>21.09.22. 금요일. 15:00 ~ 16:00</p>
+                                                </label>
+                                            </div>
+                                            
+                                            <span>4명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time13">
+                                                <label for="time13">
+                                                <span></span>
+                                                <p>21.09.22. 금요일. 16:00 ~ 17:00</p>
+                                                </label>
+                                            </div>
+                                            
+                                            <span>3명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                            <p>오협진 교수님</p>
+                                        </div> 
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <div>
+                                                <input type="checkbox" id="time14">
+                                                <label for="time14">
+                                                <span></span>
+                                                <p>21.09.22. 금요일. 17:00 ~ 18:00</p>
+                                                </label>
+                                            </div>
+                                            
+                                            <span>2명 참석</span>
+                                        </div>
+                                        
+                                        <div class="people">
+                                            <p>강협진 교수님</p>
+                                            <p>김협진 교수님</p>
+                                        </div> 
+                                    </div>
+                                </div>
+
+                                <!-- weekly로 보기 -->
+                                <div id="metab-2" class="tab-content week_view">
+                                    <!-- 시간 time -->
+                                    <div class="time">
+                                        <div><p>09:00</p></div>
+                                        <div><p>10:00</p></div>
+                                        <div><p>11:00</p></div>
+                                        <div><p>12:00</p></div>
+                                        <div><p>13:00</p></div>
+                                        <div><p>14:00</p></div>
+                                        <div><p>15:00</p></div>
+                                        <div><p>16:00</p></div>
+                                        <div><p>17:00</p></div>
+                                        <div><p>18:00</p></div>
+                                    </div>
+
+                                    <div class="inner">
+                                        <div class="day today">
+                                            <div class="title">
+                                                <p>22.월 </p>
+                                            </div>
+
+                                            <!-- 협진요청 -->
+                                            <div class="plan start">
+                                                <div class="possible">
+                                                    <p>3명</p>
+                                                    <p>4명</p>
+                                                    <p>5명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>23. 화 </p>
+                                            </div>
+            
+                                            <!-- 협진요청 -->
+                                            <div class="plan start">                                                
+                                                <div class="possible">
+                                                    <p>6명</p>
+                                                    <p>6명</p>
+                                                    <p>7명</p>
+                                                    <p>6명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>25. 목</p>
+                                            </div>
+
+                                            <!-- 협진요청 -->
+                                            <div class="plan start">
+                                                <div class="possible">
+                                                    <p>6명</p>
+                                                    <p>5명</p>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>26. 금</p>
+                                            </div>
+
+                                            <!-- 협진요청 -->
+                                            <div class="plan start">
+                                                <div class="possible">
+                                                    <p>6명</p>
+                                                    <p>5명</p>
+                                                    <p>4명</p>
+                                                    <p>3명</p>
+                                                    <p>2명</p>
+                                                </div>
+                                            </div>                                           
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- 협진 참여자 -->
+                            <div class="member">
+                                <div class="title">
+                                    <h2>협진 참여자 정보</h2>
+
+                                    <p>협진 참여 요청. <span>8명</span></p>
+                                </div>
+
+                                <div class="cont_list">
+                                    <div class="case">
+                                        <div>
+                                            <p>응답 인원</p>
+                                            <p class="count">7명</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="case">
+                                        <div>
+                                            <p>미응답</p>
+                                            <p class="count red">1명</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> 
+                    </div>               
+                </section>
             </div>
         </div>
 
@@ -1324,6 +1979,49 @@
             });
             calendar.render();
         });
+
+
+        //   년도 선택
+            const yearLabel = document.querySelector('.year_label');
+            const yearOptions = document.querySelectorAll('.year_option');
+
+            const yearSelect = (item) => {
+                yearLabel.parentNode.classList.remove('active');
+                yearLabel.innerHTML = item.textContent;
+            }
+
+            yearOptions.forEach(option => {
+                option.addEventListener('click', () => yearSelect(option))
+            })
+
+            yearLabel.addEventListener('click', () => {
+            if(yearLabel.parentNode.classList.contains('active')) {
+                yearLabel.parentNode.classList.remove('active');
+            } else {
+                yearLabel.parentNode.classList.add('active');
+            }
+            })
+
+        // 월 선택
+            const monthLabel = document.querySelector('.month_label');
+            const monthOptions = document.querySelectorAll('.month_option');
+
+            const monthSelect = (item) => {
+                monthLabel.parentNode.classList.remove('active');
+                monthLabel.innerHTML = item.textContent;
+            }
+
+            monthOptions.forEach(option => {
+                option.addEventListener('click', () => monthSelect(option))
+            })
+
+            monthLabel.addEventListener('click', () => {
+            if(monthLabel.parentNode.classList.contains('active')) {
+                monthLabel.parentNode.classList.remove('active');
+            } else {
+                monthLabel.parentNode.classList.add('active');
+            }
+            })
     </script>
   </body>
 </html>

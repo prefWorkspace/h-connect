@@ -856,6 +856,11 @@ $(function () {
         location.href="emergency/index.html"
     })
 
+    // 가능
+    $('.doctor .time_select .possible').on('click', function(){
+        $('.doctor .time_select .possible p').show();
+    })
+
 
     // 모니터링
         // 모니터링 버튼 클릭시 링크 이동
