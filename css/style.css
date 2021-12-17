@@ -6118,7 +6118,7 @@
     color: #000;
 }
 
-.doctor .my_plan .weekly .day .plan{
+.doctor .plan{
     width: 48px;
     font-size: 10px;
     color: #fff;
@@ -6129,7 +6129,7 @@
     flex-direction: column;
 }
 
-.doctor .my_plan .weekly .day .plan p{
+.doctor .plan p{
     width: 45px;
 }
 
@@ -6148,23 +6148,23 @@
 
 .doctor .my_plan .weekly .today .title p{color: #fff;}
 
-.doctor .my_plan .start{
+.doctor .start{
     background: rgba(0, 122, 148, 0.8);
 }
 
-.doctor .my_plan .ambul{
+.doctor .ambul{
     background: rgba(53, 0, 57, 0.8);
 }
 
-.doctor .my_plan .request{
+.doctor .request{
     background: rgba(226, 42, 116, 0.8);
 }
 
-.doctor .my_plan .opinion{
+.doctor .opinion{
     background: rgba(255, 128, 0, 0.8);
 }
 
-.doctor .my_plan .holiday{
+.doctor .holiday{
     background: rgba(68, 68, 68, 0.8);
 }
 
@@ -6179,26 +6179,26 @@
 }
 
 .doctor .my_plan .today :nth-child(4){
-    height: 94px;
-    top: 40px;
+    height: 96px;
+    top: 41px;
     left: 52px;
 }
 
 .doctor .my_plan .today :nth-child(5){
-    height: 286px;
-    top: 40px;
+    height: 288px;
+    top: 41px;
     left: 104px;
 }
 
 .doctor .my_plan .today :nth-child(6){
     height: 433px;
-    top: 40px;
+    top: 41px;
     left: 156px;
 }
 
 .doctor .my_plan .inner> :nth-child(2) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .inner> :nth-child(2) :nth-child(3){
@@ -6213,12 +6213,12 @@
 
 .doctor .my_plan .inner> :nth-child(3) :nth-child(2){
     height: 63px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .inner> :nth-child(3) :nth-child(3){
     height: 433px;
-    top: 40px;
+    top: 41px;
     left: 52px;
 }
 
@@ -6239,13 +6239,13 @@
 
 .doctor .my_plan .inner> :nth-child(4) :nth-child(4){
     height: 286px;
-    top: 40px;
+    top: 41px;
     left: 52px;
 }
 
 .doctor .my_plan .inner> :nth-child(5) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .inner> :nth-child(8) :nth-child(2){
@@ -6255,12 +6255,12 @@
 
 .doctor .my_plan .inner> :nth-child(9) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .inner> :nth-child(10) :nth-child(2){
     height: 433px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .inner> :nth-child(11) :nth-child(2){
@@ -6270,7 +6270,7 @@
 
 .doctor .my_plan .inner> :nth-child(12) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .four .wrap> :nth-child(1) :nth-child(2){
@@ -6280,12 +6280,12 @@
 
 .doctor .my_plan .four .wrap> :nth-child(2) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .four .wrap> :nth-child(3) :nth-child(2){
     height: 433px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .four .wrap> :nth-child(4) :nth-child(2){
@@ -6295,7 +6295,7 @@
 
 .doctor .my_plan .four .wrap> :nth-child(5) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .four .wrap> :nth-child(8) :nth-child(2){
@@ -6305,12 +6305,12 @@
 
 .doctor .my_plan .four .wrap> :nth-child(9) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .four .wrap> :nth-child(10) :nth-child(2){
     height: 433px;
-    top: 40px;
+    top: 41px;
 }
 
 .doctor .my_plan .four .wrap> :nth-child(11) :nth-child(2){
@@ -6320,73 +6320,8 @@
 
 .doctor .my_plan .four .wrap> :nth-child(12) :nth-child(2){
     height: 142px;
-    top: 40px;
+    top: 41px;
 }
-
-
-
-
-
-
-
-/* 캘린더 아코디언 */
-/* .doctor .my_plan .calendar_con{
-    width: 296px;
-    padding: 20px 0;
-    margin: 0 auto;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.doctor .my_plan .calendar_con h2{
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.doctor .my_plan .calendar_con p{
-    margin-right: 25px;
-    font-size: 12px;
-    font-weight: normal;
-    color: #007A94;
-    position: relative;
-    cursor: pointer;
-}
-
-.doctor .my_plan .calendar_con p::after{
-    content: ''; 
-    width: 12px;
-    height: 6px; 
-    position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
-    top: 50%; 
-    right: -20px;
-}
-
-.doctor .my_plan .calendar_con.on p::after{
-    content: ''; 
-    width: 12px;
-    height: 6px; 
-    position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
-    top: 50%; 
-    right: -20px;
-    transform: rotate(180deg);
-    transition: 0.3s;
-}
-
-.doctor .my_plan .calendar_con .close{
-    display: none;
-}
-
-.doctor .my_plan .calendar_con.on .open{
-    display: none;
-}
-
-.doctor .my_plan .calendar_con.on .close{
-    display: block;
-} */
 
 .doctor .select{
     margin: 8px 0;
@@ -6439,101 +6374,36 @@
 
 
 /* 캘린더 */
-/* .doctor .my_plan .calendar{
-    width: 100%;
+.doctor .calendar{
+    width: 360px;
     height: 340px;
     background: linear-gradient(to right, #004F60, #350039);
+    border-radius: 4px;
     position: relative;
     display: block;
 }
 
-.doctor .my_plan .calendar::before{
+.doctor .calendar::after{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
     content: '';
-    position:absolute;
+    width: 46px;
+    height: 32px;
+    margin-left: -22px;
+    background: url('/img/H-Connect logo.svg') no-repeat 0 0px / contain;
+    filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg) brightness(103%) contrast(96%);
+}
+
+.doctor .cal_container .img_container{
+    position: absolute;
     top: 0;
     left: 0;
-    width: 360px;
-    height: 100%;
 }
 
-.doctor .my_plan .calendar_container.on{
-    display: block;
+.doctor_remote .select{
+    margin-left: 95px;
 }
-
-.fc-col-header{
-    display: none;
-}
-
-.fc .fc-daygrid-day-frame{
-    width: 42px;
-    height: 42px;
-}
-
-.fc-scroller-liquid-absolute,
-.fc-daygrid-body{
-    width: 360px;
-    height: 264px;
-    overflow: hidden;
-}
-
-.fc-scrollgrid-sync-table tbody> :last-child{
-    display: none;
-}
-
-.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
-    margin-left: -1px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-} */
-
-/* 주간 달력 */
-/* .doctor .week_plan{height: 500px;}
-.tui-view-7,.tui-view-8, .tui-view-9,.tui-view-11,
-.tui-full-calendar-splitter,.tui-full-calendar-daygrid-layout,
-.tui-view-37, .tui-view-43{display: none !important;}
-
-.doctor .tui-view-4{
-    overflow-y: hidden;
-}
-
-.doctor .tui-full-calendar-dayname-date{font-size: 12px;}
-
-
-.tui-full-calendar-timegrid-schedules{
-    overflow: scroll hidden;
-}
-
-.tui-full-calendar-timegrid-schedules::-webkit-scrollbar{
-    width: 8px;
-}
-
-.tui-full-calendar-timegrid-schedules::-webkit-scrollbar-thumb{
-    height: 17%;
-    border-radius: 10px;
-    background: #ccc;
-}
-
-
-.doctor .tui-full-calendar-timegrid-container{overflow: hidden;}
-
-.doctor .tui-full-calendar-vlayout-area .tui-view-13{height: 500px;}
-
-.tui-full-calendar-daynamem{
-    margin-right: 16px;
-    border-radius: 4px;
-    background: #eee;
-}
-
-.doctor .tui-full-calendar-dayname-date-area{
-    margin-left: 11px;
-}
- */
-
 
 
 /* 오늘의 일정목록 */
@@ -6884,6 +6754,7 @@
 .doctor .call_connect{
     height: fit-content;
     margin: 240px auto 0;
+    background: none;
 }
 
 /* 소견 요청 협진 */
@@ -8509,6 +8380,7 @@
 
 .doctor .status .title{
     padding: 16px 0 26px 16px;
+    border-bottom: 1px solid #eee;
 }
 
 .doctor .status .title div{
@@ -8622,7 +8494,11 @@
     justify-content: space-between;
 }
 
-.doctor .cal_view> div{
+.doctor .cal_view .cal_view{
+    width: 360px;
+}
+
+.doctor .cal_view .cal_list{
     width: 344px;
 }
 
@@ -8672,6 +8548,18 @@
     background: #ccc;
 }
 
+.doctor .request .collabor_wrap .time{
+    padding: 24px 30px;
+}
+
+.doctor .request .collabor_wrap> div .title{
+    padding: 24px 30px;
+}
+
+.doctor .request .collabor_wrap .case_inner .title{
+    padding: 0;
+}
+
 .doctor .request .title button{
     padding: 10px 34px;
     background: #ccc;
@@ -8692,8 +8580,12 @@
 }
 
 .doctor .time_select .title{
-    padding: 24px 36px;
+    padding: 24px 33px;
     border: 0;
+}
+
+.doctor .time_select .title h2{
+    color: #000;
 }
 
 .doctor .time_select ul.tabs li{
@@ -8731,6 +8623,22 @@
     display: inherit;
 }
 
+.doctor .time_select .list_view> div{
+    width: 384px;
+    padding: 12px 16px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.doctor .time_select .dupli{
+    margin-left: 40px;
+    font-size: 12px;
+    color: #940045;
+    display: none;
+}
+
 .doctor .time_select .check label{
     display: flex;
     align-items: center;
@@ -8750,4 +8658,179 @@
 
 .doctor .time_select input[type="checkbox"]{
     display: none;
+}
+
+.doctor .time_select .check p{
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.doctor .time_select .list_view> :nth-child(3) .dupli{
+    display: block;
+}
+
+.doctor .time_select .week_view{
+    width: 384px;
+    height: 530px;
+    padding-left: 36px;
+    /* display: flex; */
+    position: relative;
+}
+
+.doctor .time_select .week_view .time{
+    width: 100%;
+    padding: 0;
+    display: initial;
+    position: absolute;
+}
+
+.doctor .time_select .week_view .time div{
+    width: 100%;
+    height: 48px;
+}
+
+.doctor .time_select .week_view .time p{
+    font-size: 12px;
+    position: relative;
+}
+
+.doctor .time_select .week_view .time p::after{
+    position: absolute;
+    content: '';
+    width: 300px;
+    height: 1px;
+    background: #eee;
+    top: 50%;
+    right: 41px;
+}
+
+.doctor .time_select .inner{
+    width: 315px;
+    height: 505px;
+    padding-bottom: 22px;
+    top: 0;
+    left: 80px;
+    overflow: scroll hidden;
+    display: flex;
+    position: absolute;
+}
+
+.doctor .time_select .inner::-webkit-scrollbar{
+    width: 8px;
+    /* display: inherit; */
+}
+
+.doctor .time_select .inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor .time_select .inner .day .title{
+    width: 48px;
+    padding: 8px;
+    display: inherit;
+}
+
+.doctor .time_select .inner .day .title p{
+    margin: 0 ;
+    text-align: center;
+}
+
+.doctor .time_select .inner .day{
+    width: 48px;
+    margin-right: 16px;
+    position: relative;
+}
+
+.doctor .time_select .inner .plan p{
+    color: #fff;
+    /* z-index: 2; */
+}
+
+.doctor .time_select .inner .plan> p{
+    color: #fff;
+    z-index: 2;
+    position: absolute;
+}
+
+.doctor .time_select .inner .title{
+    width: 48px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.doctor .time_select .possible{
+    opacity: 0;
+}
+
+.doctor .time_select .possible p{
+    width: 48px;
+    line-height: 46px;
+    background: #004F60;
+    border: 1px solid red;
+}
+
+.doctor .time_select .possible.active p{
+    opacity: 1;
+    transition: .3s;
+    background: #004F60;
+}
+
+.doctor .time_select .inner> :first-child{
+    width: 48px;
+}
+
+.doctor .time_select .inner> :first-child> :nth-child(2){
+    top: 41px;
+}
+
+.doctor .time_select .inner> :first-child> :nth-child(3){
+    height: 242px;
+    top: 231px;
+}
+
+.doctor .time_select .inner> :nth-child(2),
+.doctor .time_select .inner> :nth-child(2) .title{
+    width: 100px;
+}
+
+.doctor .time_select .inner> :nth-child(2)> :nth-child(2){
+    top: 41px;
+    height: 146px;
+}
+
+.doctor .time_select .inner> :nth-child(2)> :nth-child(3){
+    top: 41px;
+    left: 52px;
+}
+
+.doctor .time_select .inner> :nth-child(2)> :nth-child(4){
+    top: 233px;
+    left: 52px;
+}
+
+.doctor .time_select .inner> :nth-child(3)> :nth-child(2){
+    top: 41px;
+    height: 432px;
+}
+
+.doctor .time_select .inner> :nth-child(4)> :nth-child(2){
+    top: 41px;
+}
+
+.doctor .time_select .inner> :nth-child(4)> :nth-child(3){
+    top: 231px;
+    height: 242px;
+}
+
+.doctor .time_select .inner> :nth-child(5)> :nth-child(2){
+    top: 41px;
+    left: 0;
+    height: 142px;
+}
+
+.doctor .time_select .inner> :nth-child(5)> :nth-child(3){
+    top: 231px;
+    left: 0;
 }
