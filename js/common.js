@@ -777,9 +777,9 @@ $(function () {
     })
 
     // h-works 리스트 원격협진 알림
-    $('.doctor .collabor').click(function(){
-        $('.doctor .remote_alarm').show();
-        $('.doctor .section').not('.schedule, .remote_alarm').hide();
+    $('.doctor_main .collabor').click(function(){
+        $('.doctor_main .remote_alarm').show();
+        $('.doctor_main .section').not('.schedule, .remote_alarm').hide();
     })
 
     // h-works 리스트 환자 알람
@@ -790,6 +790,21 @@ $(function () {
     // 원격협진으로 넘어가기
     $('.doctor .remote_alarm .row').click(function(){
         location.href="remote.html";
+    })
+
+    // 주간일정 보기
+    $('.doctor .my_plan .inner .title button').on('click', function(){
+        $(this).addClass('on');
+        $('.doctor .my_plan .inner .title button').not(this).removeClass('on');
+    })
+
+    $('.doctor .my_plan .btn_two').on('click', function(){
+        $('.doctor .two').show();
+        $('.doctor .four').hide();
+    })
+
+    $('.doctor .my_plan .btn_four').on('click', function(){
+        $('.doctor .four').show();
     })
     
 
@@ -856,13 +871,18 @@ $(function () {
         // 리스트 클릭시 배경색 바뀜
         $('.row').on('click', function(){
             $(this).addClass('on');
-            $('.row.on').not(this).removeClass('on');
+            $('.row').not(this).removeClass('on');
         })
 
-        $('.doctor_monitor .pre .row').on('click', function(){
-            $(this).addClass('on');
-            $('.doctor_monitor .pre .row.on').not(this).removeClass('on');
-        })
+        // $('.doctor_monitor .new_patient .row').on('click', function(){
+        //     $(this).addClass('on');
+        //     $('.doctor_monitor .new_patient .row.on').not(this,'.doctor_monitor .pre .row.on').removeClass('on');
+        // })
+
+        // $('.doctor_monitor .pre .row').on('click', function(){
+        //     $(this).addClass('on');
+        //     $('.doctor_monitor .pre .row.on').not(this).removeClass('on');
+        // })
 
         // 신규 알람 -> 지난 알람
         $('.doctor_monitor .new .btn_pre').on('click', function(){

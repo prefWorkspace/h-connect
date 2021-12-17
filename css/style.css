@@ -129,7 +129,6 @@
 }
 
 .nurse .management .title p{
-    font-size: 12px;
     color: #444;
 }
 
@@ -206,8 +205,6 @@
 
 .nurse .left .title h2,
 .nurse .right .title h2{
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
     vertical-align: middle;
 }
@@ -227,7 +224,6 @@
 
 .nurse .left .title p,
 .nurse .right .title p{
-    font-size: 12px;
     color: #444;
 }
 
@@ -1556,7 +1552,6 @@
 
 .monitoring_patient .vital_chart .title p{
     display: inline-block;
-    font-size: 12px;
     color: #fff;
 }
 
@@ -2291,8 +2286,6 @@
 
 .arteriotony .arteriotony_input .title h2{
     margin-top: 16px;
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
@@ -3189,12 +3182,7 @@
 }
 
 .emergency .patient_status .title h2{
-    font-size: 16px;
     color: #940045;
-}
-
-.emergency .patient_status .title p{
-    font-size: 12px;   
 }
 
 .emergency .patient_status .title div> div{
@@ -4069,7 +4057,6 @@
 }
 
 .emergency  .vital .title h2{
-    font-size: 16px;
     color: #940045;
 }
 
@@ -4487,7 +4474,6 @@
 }
 
 .emergency .picture .title h2{
-    font-size: 16px;
     color: #940045;
 }
 
@@ -5112,8 +5098,6 @@
 }
 
 .connect .several .title p{
-    font-size: 12px;
-    font-weight: normal;
     color: #fff;
 }
 
@@ -5592,7 +5576,6 @@
 }
 
 .connect_tab .tab_view .title p{
-    font-size: 12px;
     color: #fff;
 }
 
@@ -5689,7 +5672,6 @@
 }
 
 .connect_scroll .pati_stat .title p{
-    font-size: 12px;
     color: #fff;
 }
 
@@ -5818,10 +5800,12 @@
 .doctor .section{
     height: 720px;
     border-radius: 8px;
+    background: #fff;
 }
 
 .doctor .schedule{
     width: 360px;
+    background: none;
 }
 
 .doctor .schedule button{
@@ -5920,13 +5904,7 @@
 }
 
 .doctor .schedule .title h2{
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
-}
-
-.doctor .schedule .title p{
-    font-size: 12px;
 }
 
 .doctor .schedule_list{
@@ -5943,8 +5921,16 @@
     cursor: pointer;
 }
 
+.doctor .schedule_list .row span{
+    color: #007A94;
+}
+
 .doctor .schedule_list .row.on{
     background: #007A94;
+}
+
+.doctor .schedule_list .row.on span{
+    color: #fff;
 }
 
 .doctor .schedule_list .row p{
@@ -5982,8 +5968,6 @@
     width: 1312px;
     margin: 0 32px;
     padding: 16px;
-    background: #fff;
-    border-radius: 8px;
 }
 
 .doctor .my_plan .title{
@@ -5994,13 +5978,10 @@
 
 .doctor .my_plan .title h2{
     margin-bottom: 13px;
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor .my_plan .title p{
-    font-size: 12px;
     color: #444;
 }
 
@@ -6048,7 +6029,8 @@
 
 /* 2주보기 주간달력 */
 .doctor .my_plan .weekly{
-    width: 1216px;
+    width: 1248px;
+    height: 512px;
     padding: 16px;
     position: relative;
 }
@@ -6084,24 +6066,44 @@
 
 .doctor .my_plan .weekly .inner{
     width: 1140px;
-    height: 474px;
+    height: 512px;
     display: flex;
     top: 16px;
     left: 56px;
     position: absolute;
+    overflow: scroll hidden;
+}
+
+/* .doctor .my_plan .weekly .two::-webkit-scrollbar{display: none;} */
+
+.doctor .my_plan .weekly .four{display: none;}
+
+.doctor .my_plan .weekly .four> div{display: flex;}
+
+.doctor .my_plan .weekly .inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor .my_plan .weekly .inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
 }
 
 .doctor .my_plan .weekly .day{
+    width: 48px;
     height: 473px;
     margin-right: 16px;
     position: relative;
 }
 
+.doctor .my_plan .inner> :nth-child(14),
 .doctor .my_plan .weekly .inner> :last-child{
     margin: 0;
 }
 
 .doctor .my_plan .weekly .day .title{
+    width: 48px;
     height: 32px;
     padding: 8px;
     border: none;
@@ -6118,19 +6120,25 @@
 
 .doctor .my_plan .weekly .day .plan{
     width: 48px;
-    padding: 5px;
     font-size: 10px;
     color: #fff;
     text-align: center;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .doctor .my_plan .weekly .day .plan p{
-    margin-top: 50%;
+    width: 45px;
 }
 
 .doctor .my_plan .weekly .weekend .title p{
     color: #888;
+}
+
+.doctor .my_plan .weekly .today{
+    width: 204px;
 }
 
 .doctor .my_plan .weekly .today .title{
@@ -6198,7 +6206,8 @@
     top: 232px;
 }
 
-.doctor .my_plan .inner> :nth-child(3){
+.doctor .my_plan .inner> :nth-child(3),
+.doctor .my_plan .inner> :nth-child(3) .title{
     width: 100px;
 }
 
@@ -6213,7 +6222,8 @@
     left: 52px;
 }
 
-.doctor .my_plan .inner> :nth-child(4){
+.doctor .my_plan .inner> :nth-child(4),
+.doctor .my_plan .inner> :nth-child(4) .title{
     width: 100px;
 }
 
@@ -6263,6 +6273,55 @@
     top: 40px;
 }
 
+.doctor .my_plan .four .wrap> :nth-child(1) :nth-child(2){
+    height: 242px;
+    top: 232px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(2) :nth-child(2){
+    height: 142px;
+    top: 40px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(3) :nth-child(2){
+    height: 433px;
+    top: 40px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(4) :nth-child(2){
+    height: 242px;
+    top: 232px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(5) :nth-child(2){
+    height: 142px;
+    top: 40px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(8) :nth-child(2){
+    height: 242px;
+    top: 232px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(9) :nth-child(2){
+    height: 142px;
+    top: 40px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(10) :nth-child(2){
+    height: 433px;
+    top: 40px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(11) :nth-child(2){
+    height: 242px;
+    top: 232px;
+}
+
+.doctor .my_plan .four .wrap> :nth-child(12) :nth-child(2){
+    height: 142px;
+    top: 40px;
+}
 
 
 
@@ -6380,15 +6439,13 @@
 
 
 /* 캘린더 */
-.doctor .my_plan .calendar{
+/* .doctor .my_plan .calendar{
     width: 100%;
     height: 340px;
     background: linear-gradient(to right, #004F60, #350039);
     position: relative;
     display: block;
 }
-
-/* .doctor .my_plan .calendar_container{display: none;} */
 
 .doctor .my_plan .calendar::before{
     content: '';
@@ -6397,7 +6454,6 @@
     left: 0;
     width: 360px;
     height: 100%;
-    /* background: linear-gradient(to right, #004F60, #350039); */
 }
 
 .doctor .my_plan .calendar_container.on{
@@ -6428,17 +6484,15 @@
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    /* display: none; */
 }
 
 .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    /* display: none; */
-}
+} */
 
 /* 주간 달력 */
-.doctor .week_plan{height: 500px;}
+/* .doctor .week_plan{height: 500px;}
 .tui-view-7,.tui-view-8, .tui-view-9,.tui-view-11,
 .tui-full-calendar-splitter,.tui-full-calendar-daygrid-layout,
 .tui-view-37, .tui-view-43{display: none !important;}
@@ -6478,7 +6532,7 @@
 .doctor .tui-full-calendar-dayname-date-area{
     margin-left: 11px;
 }
-
+ */
 
 
 
@@ -6495,10 +6549,6 @@
 
 .doctor .today_plan .title h2{
     color: #000;
-}
-
-.doctor .today_plan .title p{
-    font-size: 12px;
 }
 
 .doctor .today_plan .title p span{
@@ -6551,14 +6601,11 @@
 }
 
 .doctor .right .title h2{
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor .right .title p{
     margin-top: 13px;
-    font-size: 12px;
 }
 
 .doctor .right .title button{
@@ -6702,10 +6749,6 @@
     display: inherit;
 }
 
-.doctor .right .case_inner .title p{
-    font-size: 12px;
-}
-
 .doctor .right .case_inner> div div{
     height: fit-content;
     padding: 16px;
@@ -6738,10 +6781,6 @@
 
 .doctor .right .member .title h2{
     color: #000;
-}
-
-.doctor .right .member .title p{
-    font-size: 12px;
 }
 
 .doctor .right .member .title p span{
@@ -6857,11 +6896,8 @@
 /* 원격협진알림 */
 .doctor .remote_alarm{
     width: 1312px;
-    height: 720px;
     padding: 16px;
     margin-left: 32px;
-    border-radius: 8px;
-    background: #fff;
 }
 
 .doctor .remote_alarm .title{
@@ -6871,14 +6907,10 @@
 
 .doctor .remote_alarm .title h2{
     margin-bottom: 13px;
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor .remote_alarm .title p{
-   font-size: 12px;
-   font-weight: normal;
    color: #444;
 }
 
@@ -6951,7 +6983,6 @@
     width: 800px;
     margin: 0 32px;
     padding: 16px;
-    background: #fff;
 }
 
 .doctor .now_section .title{
@@ -6961,13 +6992,10 @@
 
 .doctor .now_section .title h2{
     margin-bottom: 13px;
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor .now_section .title p{
-    font-size: 12px;
     color: #444;
 }
 
@@ -7058,8 +7086,6 @@
 .doctor_emergency .message_list{
     width: 480px;
     padding: 16px;
-    border-radius: 8px;
-    background: #fff;
 }
 
 .doctor_emergency .message_list .title{
@@ -7087,7 +7113,6 @@
 
 .doctor_emergency .message_list .title h2{
     margin-left: 16px;
-    font-size: 16px;
     color: #940045;
 }
 
@@ -7110,7 +7135,6 @@
 
 .doctor_emergency .message_list .title p{
     margin-top: 5px;
-    font-size: 12px;
     color: #444;
 }
 
@@ -7186,7 +7210,6 @@
     width: 1192px;
     margin-left: 16px;
     border-radius: 8px;
-    background: #fff;
 }
 
 .doctor_emergency .detail_ep .title{
@@ -7200,13 +7223,7 @@
 }
 
 .doctor_emergency .detail_ep .title h2{
-    font-size: 16px;
-    font-weight: 500;
     color: #940045;
-}
-
-.doctor_emergency .detail_ep .title p{
-    font-size: 12px;
 }
 
 .doctor_emergency .detail_ep .title> :last-child{
@@ -7634,10 +7651,7 @@
 /* 입원환자 모니터링 */
 .doctor_monitor .new_patient{
     width: 360px;
-    height: 720px;
     padding: 16px;
-    border-radius: 8px;
-    background: #fff;
 }
 
 .doctor_monitor .new_patient .title{
@@ -7662,13 +7676,10 @@
 }
 
 .doctor_monitor .new_patient .title h2{
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor_monitor .new_patient .title p{
-    font-size: 12px;
     color: #444;   
 }
 
@@ -7823,8 +7834,6 @@
     height: 720px;
     padding: 16px 32px;
     margin-left: 32px;
-    border-radius: 8px;
-    background: #fff;
 }
 
 .doctor_monitor .rhythm .title{
@@ -7835,14 +7844,11 @@
 }
 
 .doctor_monitor .rhythm .title h2{
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor_monitor .rhythm .title p{
     margin-top: 13px;
-    font-size: 12px;
     color: #444;
 }
 
@@ -8041,10 +8047,7 @@
 /* 모니터링 - 환자 상세화면 */
 .doctor_patient .patient{
     width: 360px;
-    height: 720px;
     padding: 16px;
-    background: #fff;
-    border-radius: 8px;
 }
 
 .doctor_patient .patient .title{
@@ -8055,14 +8058,11 @@
 }
 
 .doctor_patient .patient .title h2{
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor_patient .patient .title p{
     margin-top: 13px;
-    font-size: 12px;
     color: #444;
 }
 
@@ -8159,8 +8159,6 @@
     height: 720px;
     padding: 16px;
     margin-left: 32px;
-    border-radius: 8px;
-    background: #fff;
 }
 
 .doctor_patient .pacs .title{
@@ -8170,13 +8168,10 @@
 
 .doctor_patient .pacs .title h2{
     margin-bottom: 13px;
-    font-size: 16px;
-    font-weight: 500;
     color: #007A94;
 }
 
 .doctor_patient .pacs .title p{
-    font-size: 12px;
     color: #444;
 }
 
@@ -8440,11 +8435,8 @@
 .doctor_patient .emr_list,
 .doctor_patient .ocs_list{
     width: 296px;
-    height: 720px;
     margin: 0 32px;
     padding: 32px;
-    border-radius: 8px;
-    background: #fff;
 }
 
 .doctor_patient .section .list_inner{
@@ -8473,16 +8465,14 @@
 .doctor_patient .emr_result,
 .doctor_patient .ocs_result{
     width: 856px;
-    height: 720px;
     padding: 32px;
-    border-radius: 8px;
-    background: #fff;
 }
 
 
 /*  원격협진  */
 .doctor .status{
     width: 360px;
+    background: none;
 }
 
 .doctor .status_label{
@@ -8566,4 +8556,198 @@
 
 .doctor .status_list span{
     color: #007A94;
+}
+
+/* 전체 협진 일정보기 */
+.doctor .all_plan{
+    width: 800px;
+    margin: 0 32px;
+    padding: 32px;
+}
+
+.doctor .all_plan .title{
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .all_plan .title h2{
+    color: #007A94;
+}  
+
+.doctor .all_plan .title .btn_list{
+    width: 248px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .all_plan .title button{
+    width: 120px;
+    height: 40px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background: #ccc;
+    font-size: 14px;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .all_plan .title button.on{
+    background: #f80;
+    color: #fff;
+}
+
+.doctor .all_plan .title button div{
+    width: 15px;
+    height: 15px;
+}
+
+.doctor .all_plan .title button div img{
+    filter: invert(58%) sepia(0%) saturate(5644%) hue-rotate(134deg) brightness(98%) contrast(49%); 
+}
+
+.doctor .all_plan .title button.on div img{
+    filter: none;
+}
+
+.doctor .all_plan .title .btn_list .btn_cal{
+    padding: 10px 20px;
+}
+
+.doctor .cal_view{
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor .cal_view> div{
+    width: 344px;
+}
+
+.doctor .cal_view .title{
+    height: 64px;
+    border: none;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.doctor .cal_view .title h2{
+    color: #000;
+}
+
+.doctor .cal_view .title button{
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 0 0 15px;
+    background: none;
+    color: #000;
+}
+
+.doctor .cal_list .title span{
+    color: #007A94;
+}
+
+.doctor .cal_list .row div :first-child {
+    margin-right: 16px;
+}
+
+.doctor .cal_list .row .me{
+    color: #007A94;
+}
+
+.doctor .request .collabor_wrap{
+    overflow-y:scroll
+}
+
+.doctor .request .collabor_wrap::-webkit-scrollbar{
+    width: 8px;
+    display: inherit;
+}
+
+.doctor .request .collabor_wrap::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor .request .title button{
+    padding: 10px 34px;
+    background: #ccc;
+    box-shadow: none;
+    font-size: 14px;
+    color: #888;
+}
+
+.doctor .time_select .tab-link div{
+    width: 15px;
+    height: 15px;
+}
+
+.doctor .time_select .tab-link div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor .time_select .title{
+    padding: 24px 36px;
+    border: 0;
+}
+
+.doctor .time_select ul.tabs li{
+    width: 40px;
+    height: 32px;
+    padding: 8px 12px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #ccc;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.doctor .time_select ul.tabs li img{
+    filter: invert(58%) sepia(0%) saturate(5644%) hue-rotate(134deg) brightness(98%) contrast(49%); 
+}
+  
+.doctor .time_select ul.tabs li.current{
+    background: #f80;
+}
+
+.doctor .time_select ul.tabs li.current img{
+    filter: none;
+}
+  
+.doctor .time_select .tab-content{
+    display: none;
+    padding: 32px 0;
+}
+  
+.doctor .tab-content.current{
+    display: inherit;
+}
+
+.doctor .time_select .check label{
+    display: flex;
+    align-items: center;
+}
+
+.doctor .time_select input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 16px 0 0;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+}
+
+.doctor .time_select input[type='checkbox']:checked+label span{
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+.doctor .time_select input[type="checkbox"]{
+    display: none;
 }
