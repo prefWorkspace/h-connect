@@ -1,0 +1,2759 @@
+
+/*================= 간호사 =================*/
+/* 메인 */
+.nurse{
+    min-width: 1880px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    background-color: #eee;   
+}
+
+.nurse .wrap_inner{
+    width: 100%;
+    min-width: 1820px;
+    padding: 40px;
+    display: flex;
+}
+
+.nurse section{
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.nurse .management{
+    width: 360px;
+    /* height: 100vh; */
+    padding: 16px;
+}
+
+.nurse .management .title> div{
+    margin-bottom: 13px;
+}
+
+.nurse .management .title> div h2{
+    color: #007A94;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nurse .management .title> div> div{
+    width: 16px;
+    height: 16px;
+    margin-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nurse .management .title> div> div img{
+    width: 100%;
+    height: 100%;
+    filter:invert(39%) sepia(74%) saturate(6980%) hue-rotate(174deg) brightness(90%) contrast(101%);
+}
+
+.nurse .management .title p{
+    color: #444;
+}
+
+.nurse .management .management_list{
+    padding: 16px;
+    margin-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.nurse .management .management_list .list{
+    width: 296px;
+    height: 48px;
+    padding: 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse .management .management_list .list:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
+.nurse .management .management_list .list p{
+    vertical-align: middle;
+}
+
+.nurse .management .management_list .list div{
+    width: 6px;
+    height: 12px;
+    vertical-align: middle;
+}
+
+.nurse .management .management_list .list.on div img{
+    width: 100%;
+    height: 100%;
+}
+
+.nurse .management .management_list .list.on{
+    background-color: #007A94;
+    color: #fff;
+}
+
+.nurse .management .management_list .list.off{
+    border-bottom: 1px solid #eee;
+}
+
+.nurse .management .management_list .list.off div img{
+    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
+}
+
+/* 병동관리 */
+.nurse .left{
+    width: 640px;
+    /* height: fit-content; */
+    padding: 16px;
+    margin: 0 32px;
+}
+
+.nurse .left .title,
+.nurse .right .title{
+    border-bottom: 1px solid #eee;
+    padding: 8px 15px 26px;
+}
+
+.nurse .left .title div,
+.nurse .right .title div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nurse .left .title h2,
+.nurse .right .title h2{
+    color: #007A94;
+    vertical-align: middle;
+}
+
+.nurse .btn_new_ward,
+.nurse .btn_new_device,
+.nurse .btn_use_device{
+    width: 96px;
+    height: 40px;
+    background: none;
+    border-radius: 4px;
+    border:1px solid #007A94;
+    font-size: 14px;
+    color: #007A94;
+    vertical-align: middle;
+}
+
+.nurse .left .title p,
+.nurse .right .title p{
+    color: #444;
+}
+
+.nurse .left .cont,
+.nurse .right .cont{
+    padding: 16px;
+    font-size: 12px;
+    display: none;
+}
+
+.nurse .left .cont .ward_list,
+.nurse .right .cont .ward_list{
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+}
+
+.nurse .left .cont .ward_list:hover,
+.nurse .right .cont .ward_list:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
+.nurse .left .cont .ward_list .on{
+    background: #007A94;
+    color: #fff;
+}
+
+.nurse .left .cont .ward_list.on{
+    background: #007A94;
+    color: #fff;
+}
+
+.nurse .left .cont .ward_list> p{
+    margin-top: 8px;
+    margin-right: 84px;
+}
+
+.nurse .left .cont .ward_list .ward_count{
+    display: flex;
+}
+
+.nurse .left .cont .ward_list .ward_count p,
+.nurse .right .cont .ward_list .ward_count p{
+    margin-right: 24px;
+    margin-top: 6px;
+}
+
+.nurse .left .cont .ward_list .ward_count span,
+.nurse .right .cont .ward_list .ward_count span{
+    color: #007A94;
+}
+
+.nurse .left .cont .ward_list.on .ward_count span{
+    color: #fff;
+}
+
+.nurse .left .cont .ward_list .btn_list button,
+.nurse .right .cont .ward_list .btn_list button{
+    width: 56px;
+    height: 32px;
+    padding: 4px 0;
+    background: none;
+    border-radius: 4px;
+}
+
+.nurse .left .cont .ward_list .btn_list .btn_modify,
+.nurse .right .cont .ward_list .btn_list .btn_modify{
+    margin:0 6px 0 24px;
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.nurse .hospital_room .cont .ward_list .btn_list .btn_modify{
+    margin: 0 6px 0;
+}
+
+.ward .cont .ward_list .btn_list .btn_delete,
+.hospital_room .cont .ward_list .btn_list .btn_delete{
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.ward .cont .ward_list.on .btn_list .btn_modify{
+    margin:0 6px 0 24px;
+    border: 0;
+    background: #fff;
+}
+
+.ward .cont .ward_list.on .btn_list .btn_delete{
+    background: #fff;
+    border: 0;
+}
+
+.ward .cont .ward_list.on img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.ward .cont .ward_list> :last-child{
+    width: 6px;
+    height: 12px;
+    margin: 11px 0 0 20px;
+}
+
+.ward .cont .ward_list img{
+    width: 100%;
+    height: 100%;
+    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
+}
+
+
+/* 병실관리 */
+.nurse .right{
+    width: 640px;
+    /* height: fit-content; */
+    padding: 16px;
+}
+
+.right .title .btn_new_room{
+    width: 96px;
+    height: 40px;
+    background: none;
+    border-radius: 4px;
+    border:1px solid #007A94;
+    font-size: 14px;
+    color: #007A94;
+    vertical-align: middle;
+}
+
+.right .title .btn_new_room:disabled{
+    width: 96px;
+    height: 40px;
+    background: #ccc;
+    border-radius: 4px;
+    border: 0;
+    font-size: 14px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.hospital_room .cont{
+    height: 592px;
+    overflow-y: scroll;
+}
+
+.hospital_room .cont .ward_list> p{
+    margin-top: 8px;
+    margin-right: 40px;
+}
+
+.hospital_room .cont .ward_list .ward_count{
+    width: 250px;
+    display: flex;
+}
+
+.hospital_room .cont::-webkit-scrollbar{
+    width: 8px;
+}
+
+.hospital_room .cont::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+/* 신규장치등록 */
+.new_device .device_count,
+.return_device .device_count{
+    padding: 8px 48px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_device .device_count div,
+.return_device .device_count div{
+    width: 144px;
+    height: 120px;
+    padding: 16px;
+    text-align: center;
+}
+
+.new_device .device_count div h1,
+.return_device .device_count div h1{
+    font-size: 36px;
+    color: #007A94;
+}
+
+.new_device .device_count div .use_line{
+    color: #007A94;
+}
+
+.new_device .device_search,
+.return_device .device_search{
+    padding: 6px;
+}
+
+.selectBox * { box-sizing: border-box; }
+.selectBox{
+    position: relative;
+    width: 160px;
+    height: 36px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #eee;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.selectBox::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 48%; 
+    right: 15px;
+}
+
+.selectBox .label{
+    display: flex;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+}
+
+.selectBox .optionList{
+    width: 100%;
+    position: absolute; 
+    top: 48px;
+    left: 0;
+    font-size: 14px;
+    font-weight: normal;
+    background: #eee;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s ease-in;
+}
+
+.selectBox.active .optionList{
+    max-height: 500px;
+}
+
+.selectBox .optionItem{
+    padding: 5px 15px 5px;
+    transition: .1s;
+}
+
+.selectBox.active .optionList> :first-child{
+    border-top: 1px solid #007A94;
+}
+
+.selectBox .optionlist> :last-child {
+    border-radius:4px;
+}
+
+.selectBox2 .return_option{
+    width: 160px;
+    top: 35px;
+}
+
+.nurse .search_container{
+    width: 392px;
+    height: 36px;
+    padding-left: 16px;
+    border-radius: 4px;
+    background: #eee;
+    display: inline-block;
+}
+
+.nurse .search_container input{
+    background: #eee;
+    height: 34px;
+    float: left;
+}
+
+.nurse .search_container input::placeholder{
+    font-size: 12px;
+    color: #ccc;
+}
+
+.nurse .search_container button{
+    float: right;
+    height: 36px;
+    padding: 5px 20px;
+    border-radius: 4px;
+}
+
+.new_device .item_row,
+.return_device .item_row{
+    padding: 3px 0 5px 19px;
+    border-bottom: 1px solid #eee;
+}
+
+.new_device .item_row p,
+.return_device .item_row p{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.new_device .item_row .item_name,
+.return_device .item_row .item_name{
+    width: 120px;
+    margin-right: 50px;
+}
+
+.new_device .item_row .item_num,
+.return_device .item_row .item_num{
+    width: 80px;
+    margin-right: 130px;
+}
+
+.new_device .item_row .use_line,
+.return_device .item_row .use_line{
+    width: 60px;
+    margin-right: 38px;
+    color: #007A94;
+}
+
+.new_device .item_row .btn_delete,
+.return_device .item_row .btn_cancel{
+    width: 56px;
+    height: 24px;
+    background: none;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    color: #940045;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.new_device .device_search,
+.return_device .device_search{
+    display: flex;
+}
+
+.new_device .device_search .select_device,
+.return_device .device_search .select_return{
+    width: 160px;
+    height: 36px;
+    margin-right: 8px;
+}
+
+
+.new_device .device_search .device_label,
+.return_device .device_search .return_label{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/* 사용한 장치 반납 */
+.return_device .device_count div h1{
+    color: #000;
+}
+.return_device .device_count div .use_line,
+.return_device .item_row .use_line{
+    color: #940045;
+}
+
+.return_device .title .btn_use_device{
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+
+/* 측정 관리 */
+.nurse .measure_status{
+    width: 744px;
+    margin: 0 32px;
+}
+
+.nurse_measure .wrap_inner{
+    padding: 0;
+}
+
+.nurse_measure .wrap_inner> div{
+    width: 100%;
+    margin: 40px;
+    display: flex;
+}
+
+.nurse_measure .right{
+    width: 536px;
+}
+
+.nurse_measure .measure_status .title div{
+    margin-bottom: 13px;
+}
+
+.nurse_measure .measure_status .search_container{
+    width: 100%;
+    height: 40px;
+}
+
+.nurse_measure .measure_status .search_container input{
+    width: 90%;
+    height: 40px;
+}
+
+.nurse_measure .measure_status .search_container button{
+    height: 40px;
+}
+
+.nurse_measure .label{
+    font-size: 12px;
+}
+
+.nurse_measure .optionItem{
+    padding: 10px 15px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nurse_measure .measure_status .search_select{
+    margin-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nurse_measure .measure_status .selectBox2{
+    width: 160px;
+    height: 36px;
+    margin: 0 16px 0 0;
+}
+
+.nurse_measure .optionList{
+    width: 160px;
+    top: 35px;
+}
+
+.nurse_measure .measure_status .search_select .ward_label{
+    font-weight: normal;
+}
+
+.nurse_measure  .measure_status .search_select p{
+    margin-left: 125px;
+}
+
+.measure_status .search_select p span{
+    color: #007A94;
+}
+
+.measure_status .cont .container{
+    height: 476px;
+    margin-top: 16px;
+    overflow-y: scroll;
+}
+
+.measure_status .cont .container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.measure_status .cont .container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.measure_status .cont .container .status_list{
+    height: 40px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.measure_status .cont .container .status_list:hover{
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.measure_status .cont .container .status_list.on{
+    background-color: #007A94;
+}
+
+.nurse .measure_status .cont .container .status_list.on .device_list div{
+    border: 1px solid #fff;
+}
+
+.nurse .measure_status .cont .container .status_list.on p{
+    color: #fff;
+}
+
+.nurse .measure_status .cont .container .status_list.on .btn_list .btn_modify{
+    border: 1px solid #fff;
+}
+
+.measure_status .cont .container .status_list> :first-child{
+    margin-right: 16px;
+}
+
+.measure_status .cont .container .status_list p{
+    margin-right: 40px;
+}
+
+.measure_status .cont .container .status_list p,
+.measure_status .cont .container .status_list .device_list,
+.measure_status .cont .container .status_list .device_list div,
+.measure_status .cont .container .status_list .btn_list{
+    display: inline-block;
+    font-size: 12px;
+}
+
+.measure_status .cont .container .status_list .device_list{
+    display: inline-block;
+    margin-top: -9px;
+    margin-right: 20px;
+}
+
+.nurse .measure_status .cont .container .status_list .device_list div{
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    background-color: #fff;
+    color: #007A94;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list{
+    margin-top: -9px;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list button{
+    width: 48px;
+    height: 32px;
+    border-radius: 4px;
+    background: none;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list .btn_modify{
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.nurse .measure_status .cont .container .status_list .btn_list .btn_delete{
+    border:1px solid #940045;
+    color: #940045;
+}
+
+.new_hospital .title .btn_new_hospital{
+    width: 96px;
+    height: 40px;
+    padding: 10px 17px;
+    border-radius: 4px;
+    border:1px solid #007A94;
+    background: none;
+    font-size: 14px;
+    color: #007A94;
+}
+
+.new_hospital .hospital_patient input{
+    width: 100%;
+    height: 36px;
+    margin-bottom: 16px;
+    padding: 10px 16px;
+    font-size: 12px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.new_hospital .hospital_patient input::placeholder{
+    color: #ccc;
+}
+
+.new_hospital .hospital_patient> div{
+    display: flex;
+}
+
+.new_hospital .hospital_patient .patient_info> :first-child{
+    width: 64px;
+    padding: 10px;
+}
+
+.new_hospital .sex_select{
+    width: 80px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.new_hospital .sex_label{
+    color: #ccc;
+}
+
+.new_hospital .sex_option{
+    width: 80px;
+    top: 35px;
+    z-index: 1;
+}
+
+.new_hospital .hospital_patient .patient_info> :last-child{
+    width: 296px;
+}
+
+.new_hospital .hospital_patient .patient_room .select_ward{
+    width: 160px;
+    height: 36px;
+}
+
+.nurse_measure .hospital_patient .patient_room .bed_count.lot{
+    color: #007A94;
+}
+
+.nurse_measure .hospital_patient .patient_room .bed_count.none{
+    color: #ccc;
+}
+
+.new_hospital .hospital_patient .patient_room .select_room{
+    width: 160px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.nurse_measure .select_bed{
+    width: 120px;
+    height: 36px;
+}
+
+.new_hospital .hospital_patient .patient_room .bed_option{
+    width: 120px;
+}
+
+.new_hospital .cont{
+    border-bottom: 1px solid #eee;
+}
+
+.new_hospital .cont .select_box .label{
+    font-size: 12px;
+    font-weight: normal;
+    color: #000;
+}
+
+.new_hospital .cont> p{
+    margin-top: 12px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.new_hospital .cont> p span{
+    color: #007A94;
+}
+
+.new_hospital .device_room{
+    padding: 16px;
+}
+
+.new_hospital .device_room> div{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px solid #eee;
+}
+
+.new_hospital .device_room> div p{
+    width: 110px;
+    margin-top: 8px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.new_hospital .device_room> div> :first-child{
+    margin-right: 58px;
+}
+
+.new_hospital .device_room> div .btn_list{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.new_hospital .device_room> div .btn_list button{
+    width: 64px;
+    height: 32px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.new_hospital .device_room> div .btn_list .btn_modify{
+    margin-right: 8px;
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.new_hospital .device_room> div .btn_list .btn_delete{
+    border:1px solid #940045;
+    color: #940045;
+}
+
+.new_hospital .device_room .btn_add{
+    padding: 16px;
+    text-align: right;
+    display: block;
+    cursor: pointer;
+}
+
+.new_hospital .device_room .btn_add a{
+    margin: 0;
+    font-size: 14px;
+    color: #007A94;
+}
+
+.new_hospital .device_room> div{
+    border-bottom: 1px solid #eee;
+}
+
+.modifi_hospital .title .btn_new_hospital{
+    width: 96px;
+    height: 40px;
+    border-radius: 4px;
+    background: #007A94;
+    font-size: 14px;
+    color: #fff;
+}
+
+.modifi_hospital .container .cont{
+    padding: 16px 16px 45px;
+    border-bottom: 1px solid #eee;
+}
+
+.modifi_hospital .cont .hospital_patient input{
+    width: 100%;
+    height: 36px;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    background: #eee;
+    font-size: 12px;
+}
+
+.modifi_hospital .cont .hospital_patient .patient_info{
+    display: flex;
+}
+
+.modifi_hospital .hospital_patient input::placeholder{
+    color: #000;
+}
+
+.modifi_hospital .hospital_patient> div{
+    display: flex;
+}
+
+.modifi_hospital .hospital_patient .patient_info> :first-child{
+    width: 64px;
+    padding: 0 16px;
+}
+
+.modifi_hospital .hospital_patient .patient_info .select_sex{
+    width: 80px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.modifi_hospital .hospital_patient .patient_info .select_sex .sex_label{
+    font-weight: normal;
+    color: #000;
+}
+
+.modifi_hospital .hospital_patient .patient_info> :last-child{
+    width: 296px;
+}
+
+.modifi_hospital .hospital_patient .patient_room .select_ward{
+    width: 160px;
+    height: 36px;
+}
+
+.modifi_hospital .hospital_patient .patient_room .select_room{
+    width: 160px;
+    height: 36px;
+    margin: 0 16px;
+}
+
+.modifi_hospital .select_option{
+    width: 120px;
+}
+
+.modifi_hospital .select_box .label{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+.modifi_hospital .device_room{
+    padding: 16px;
+}
+
+.modifi_hospital .device_room> div{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px solid #eee;
+}
+
+.modifi_hospital .device_room> div p{
+    width: 110px;
+    margin-top: 8px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.modifi_hospital .device_room> div> :first-child{
+    margin-right: 58px;
+}
+
+.modifi_hospital .device_room> div .btn_list{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.modifi_hospital .device_room> div .btn_list button{
+    width: 64px;
+    height: 32px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.modifi_hospital .device_room> div .btn_list .btn_modify{
+    margin-right: 8px;
+    border:1px solid #007A94;
+    color: #007A94;
+}
+
+.modifi_hospital .device_room> div .btn_list .btn_delete{
+    border:1px solid #940045;
+    color: #940045;
+}
+
+.modifi_hospital .device_room .btn_add{
+    padding: 16px;
+    text-align: right;
+    display: block;
+}
+
+.modifi_hospital .device_room .btn_add a{
+    margin: 0;
+    font-size: 14px;
+    color: #007A94;
+}
+
+.modifi_hospital .device_room> div{
+    border-bottom: 1px solid #eee;
+}
+
+.modifi_hospital .sex_option2{
+    width: 80px;
+    z-index: 2;
+}
+
+
+
+/* 셀렉트 박스 */
+.select_box * { box-sizing: border-box; }
+.select_box {
+    position: relative;
+    width: 120px;
+    height: 48px;
+    border-radius: 4px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.select_box:after {
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+}
+
+.select_box.on:after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+    transform: rotate(180deg);
+    transition: .3s;
+}
+
+.select_box .label {
+    display: flex;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.select_box .option {
+    width: 100%;
+    position: absolute; 
+    top: 48px;
+    left: 0;
+    font-size: 14px;
+    font-weight: normal;
+    background: #eee;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s ease-in;
+}
+ 
+.select_box.active .ward_option {
+    max-height: 500px;
+}
+
+.select_box .option_item {
+    padding: 5px 15px 5px;
+    transition: .1s ease-in-out;
+}
+
+.select_box.active .ward_option> :first-child{
+    border-top: 1px solid #007A94;
+}
+
+.select_box .ward_option> :last-child {
+    border-radius:4px;
+}
+
+.select_box.on{
+    background: #fff;
+    border:1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    border-bottom-right-radius:0px;
+    border-bottom-left-radius: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.select_box.on .optionList{
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    transition: 0;
+}
+
+.select_box .optionList {
+    width: 420px;
+    position: absolute; 
+    top: 46px;
+    left: -1px;
+    font-size: 14px;
+    font-weight: normal;
+    background: #fff;
+    border:1px solid #ccc;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.select_box .device_option{
+    width: 160px;
+    position: absolute; 
+    top: 35px;
+    left: -1px;
+    font-size: 14px;
+    font-weight: normal;
+    background: #fff;
+    border:1px solid #ccc;
+    color: #000;
+    overflow: hidden;
+    max-height: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+
+
+
+
+/* 모니터링 */
+.patient_vital{
+    background-color: #444;
+}
+
+.patient_vital .wrap_inner{
+    min-width: 1820px;
+    display: block;
+}
+
+.patient_vital .all_patient{
+    width: 1758px;
+    border-radius: 0;
+    background: none;
+}
+
+.patient_vital .all_patient .patient_moniter{
+    background-color: #000;
+    width: 240px;
+    height: 88px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.patient_vital .all_patient> :last-child{
+    margin: 0;
+}
+
+.patient_vital .all_patient .patient_moniter:hover{
+    background-color: #222;
+}
+
+.patient_vital .all_patient .patient_moniter .patient_info{
+    color: #fff;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter{
+    margin-top: 7px;
+    display: flex;
+    /* justify-content: space-between; */
+    color: #fff;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter div{
+    width: 40px;
+    height: 48px;
+    padding: 4px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter div h3{
+    font-size: 12px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter div p{
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .hr{
+    color: #00FF22;
+    margin: 0 4px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .sp{
+    color: #00FFFF;
+    margin-right: 4px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .resp{
+    color: #EEFF00;
+    margin-right: 4px;
+}
+
+.patient_vital .all_patient .patient_moniter .vital_moniter .temp{
+    color: #FF5499;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed{
+    width: 240px;
+    position: relative;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed p{
+    float: left;
+    color: #444;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed div{
+    width: 64px;
+    height: 64px;
+    margin: 3px auto 0 80px;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed div img{
+    width: 100%;
+    height: 100%;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed .btn_hover{
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0;
+}
+
+.patient_vital .all_patient .patient_moniter .empty_bed .btn_hover:hover{
+    opacity: 1;
+    transition: .3s;
+}
+
+.patient_vital .all_patient .patient_moniter.active{
+    background-color: #f00;
+}
+
+.patient_vital .all_patient .patient_moniter.active .vital_moniter .ews{
+    background-color: #fff;
+    color: #f00;
+}
+
+.patient_vital .all_patient .patient_moniter.active .vital_moniter .hr{
+    background-color: #fff;
+    color: #f00;
+}
+
+/* 모니터링- 병실별 보기 */
+.patient_vital .wrap_inner{
+    /* width: auto; */
+}
+
+.patient_vital .wrap_inner> .container{
+    width: auto;
+    height: 780px;
+    padding-right: 25px;
+    overflow-y: scroll;
+}
+
+.patient_vital .wrap_inner> .container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.patient_vital .wrap_inner> .container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.patient_vital .room_view{
+    margin-bottom: 8px;
+}
+
+.patient_vital .room_view .container{
+    width: fit-content;
+    padding: 8px 0 8px 32px;
+    background: linear-gradient(to right, #007A94,#003D4A);
+    border-radius: 8px;
+    display: flex;
+}
+
+.patient_vital .room_view .pateint_room{
+    width: 140px;
+    height: 64px;
+    margin: 12px 48px 0 0;
+    display: inline-block;
+}
+
+.patient_vital .room_view .pateint_room .room_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.patient_vital .room_view .pateint_room .room_num p{
+    font-size: 24px;
+    line-height: 35px;
+    color: #fff;
+}
+
+.patient_vital .room_view .pateint_room .room_count p{
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+}
+
+.patient_vital .room_view .pateint_room .room_num .btn_setting{
+    width: 32px;
+    height: 32px;
+    background: none;
+}
+
+.patient_vital .room_view .pateint_room .room_num .btn_setting:hover{
+    background: #004f60;
+    border-radius: 4px;
+}
+
+.patient_vital .room_view .patient_moniter{
+    margin-bottom:0;
+}
+
+
+/* 모니터링 환자 선택 */
+.monitoring_patient section{
+    background: none;
+}
+
+.monitoring_patient .patient{
+    padding: 0;
+}
+
+.monitoring_patient .btn_list button{
+    width: 100%;
+    margin-bottom: 16px;
+    height: 72px;
+    border-radius: 8px;
+}
+
+.monitoring_patient .btn_list .btn_alarm{
+    font-size: 24px;
+    text-align: center;
+}
+
+.monitoring_patient .btn_list .btn_alarm{
+    background: #ccc;
+    color: #eee;
+}
+
+.monitoring_patient .btn_list .btn_alarm_red{
+    font-size: 24px;
+    color: #fff;
+    background: linear-gradient(to right, #940045,#4A0000);
+    display: none;
+}
+
+.monitoring_patient .emergency_list{
+    width: 360px;
+    display: none;
+}
+
+.monitoring_patient .emergency_list .response{
+    font-size: 24px;
+    color: #007A94;
+    background: #fff;
+    border: 1px solid #007A94;
+}
+
+.monitoring_patient .emergency_list .circum{
+    padding: 16px;
+    background: linear-gradient(to right, #940045,#4A0000);
+    font-size: 16px;
+    color: #fff;
+}
+
+.monitoring_patient .emergency_list .circum span{
+    font-size: 12px;
+}
+
+.monitoring_patient .patient> .container{
+    height: 630px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.monitoring_patient .patient .title{
+    padding: 32px 32px 26px;
+}
+
+.monitoring_patient .patient .title p{
+    display: inline-block;
+}
+
+.monitoring_patient .patient .title> :last-child{
+    float: right;
+}
+
+.monitoring_patient .patient .title::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.monitoring_patient .patient .container .container{
+    padding:0 16px 16px;
+}
+
+.monitoring_patient .management_list{
+    margin: 0;
+    padding: 24px 8px;
+}
+
+.monitoring_patient .management_list .list{
+    width: 100%;
+}
+
+.monitoring_patient .patient .management_list .list.off div img{
+    filter: none;
+}
+
+.monitoring_patient .vital_chart{
+    width: 1316px;
+    height: 720px;
+    /* margin:0 72px 0 32px; */
+    margin: 0 55px 0 32px;
+    margin-left: 32px;
+}
+
+.monitoring_patient .vital_chart .title{
+    width: 100%;
+    height: 40px;
+    padding: 11px 16px;
+    background: linear-gradient(to right, #004F60, #350039);
+    border-radius: 8px 8px 0 0;
+}
+
+.monitoring_patient .vital_chart .title p{
+    display: inline-block;
+    color: #fff;
+}
+
+.monitoring_patient .vital_chart .title> p{
+    margin-right: 56px;
+}
+
+.monitoring_patient .chart_time{
+    display: inline-block;
+    float: right;
+}
+
+.monitoring_patient .vital_chart .title::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.monitoring_patient .vital_chart .cont{
+    width: 1316px;
+    height: 680px;
+    padding: 32px;
+    background: #000;
+    border-radius: 0 0 8px 8px;
+}
+
+.monitoring_patient ul.tabs li{
+    width: 144px;
+    height: 40px;
+    padding: 10px 15px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #888;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: #222;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.monitoring_patient ul.tabs li.current{
+    background: #007A94;
+    color: #fff;
+}
+  
+.monitoring_patient .tab-content{
+    display: none;
+    padding: 32px 0;
+}
+  
+.monitoring_patient .tab-content.current{
+    display: inherit;
+}
+
+.monitoring_patient .ecg,
+.monitoring_patient .sp,
+.monitoring_patient .resp,
+.monitoring_patient .control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .sp{
+    margin: 10px 0;
+}
+
+.monitoring_patient .ecg p{
+    color: #00FF22;
+}
+
+.monitoring_patient .sp p{
+    color: #00FFFF;
+}
+
+.monitoring_patient .resp p{
+    color: #FFEE00;
+}
+
+.monitoring_patient .ecg_graph> div,
+.monitoring_patient .sp_graph> div,
+.monitoring_patient .resp_graph> div{
+    margin-top: 20px;
+}
+
+.monitoring_patient .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.monitoring_patient .bell_name p{
+    font-size: 14px;
+}
+
+.monitoring_patient .ecg .bell_name input[type="checkbox"]+label span{
+    filter: invert(57%) sepia(94%) saturate(2086%) hue-rotate(86deg) brightness(114%) contrast(120%);
+}
+
+.monitoring_patient .sp .bell_name input[type="checkbox"]+label span{
+    filter: invert(8%) sepia(74%) saturate(950%) hue-rotate(101deg) brightness(105%) contrast(107%);
+}
+
+.monitoring_patient .resp .bell_name input[type="checkbox"]+label span{
+    filter: invert(8%) sepia(32%) saturate(2960%) hue-rotate(2deg) brightness(105%) contrast(108%);
+}
+
+.monitoring_patient .bell_name input[type='checkbox']:checked+label span{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.monitoring_patient .control{
+    margin-bottom: 39px;
+}
+
+.monitoring_patient .control> div:not(.temp){
+    display: flex;
+}
+
+.monitoring_patient .control .ews{
+    width: 88px;
+    padding: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.monitoring_patient .control .ews .bell_name p{
+    margin-right: 7px;
+}
+
+.monitoring_patient .control .ews .bell_num{
+    width: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: initial;
+}
+
+.monitoring_patient .control .ews .bell_num> div{
+    margin-top: -4px;
+}
+
+.monitoring_patient .control .ews .bell_num> p{
+    margin-right: 8px;
+}
+
+.monitoring_patient .control .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+}
+
+.monitoring_patient .mmhg{
+    width: 260px;
+    padding: 16px;
+    margin: 0 72px 0 64px;
+    color: #fff;
+}
+
+.monitoring_patient .time div{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.monitoring_patient .time p{
+    margin-top: -2px;
+    margin-right: 8px;
+    font-size: 11px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.monitoring_patient .pulse{
+    width: 160px;
+    padding: 16px;
+    color: #00FFFF;
+}
+
+.monitoring_patient .pulse .time p{
+    margin: 0 4px 0 0;
+}
+
+.monitoring_patient .pulse .time> :last-child {
+    margin-right: 0px;
+}
+
+.monitoring_patient .temp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #FF3184;
+    cursor: pointer;
+}
+
+.monitoring_patient .temp .bell_name input[type="checkbox"]+ label span{
+    filter: invert(41%) sepia(49%) saturate(7067%) hue-rotate(317deg) brightness(102%) contrast(101%);
+}
+
+/* tabular trend */
+.monitoring_patient .wrap_inner{
+    overflow: hidden;
+}
+
+.monitoring_patient .tabular_table .table_title{
+    height: 32px;
+    padding: 7px 16px;
+    background: #222;
+}
+
+.monitoring_patient .tabular_table .table_title p {
+
+    margin-right: 83px;
+    display: inline-block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.monitoring_patient .tabular_table .table_title .hr{
+    margin-right: 51px;
+}
+
+.monitoring_patient .tabular_table .table_title .temp{
+    padding: 0;
+}
+
+.monitoring_patient .tabular_table .table_title .ews{
+    margin-right: 55px;
+}
+
+.monitoring_patient .tabular_table .table_title .spo{
+    margin-right: 60px;
+}
+
+.monitoring_patient .tabular_table .table_content{
+    height: 32px;
+    padding: 8px 16px 7px;
+    border-bottom: 1px solid #888;
+}
+
+.monitoring_patient .tabular_table .table_content div{
+    display: inline-block;
+}
+
+.monitoring_patient .tabular_table .table_content p{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.monitoring_patient .tabular_table .table_content .date_time{
+    margin-right: 40px;
+}
+
+.monitoring_patient .tabular_table .table_content .hr{
+    margin-right: 78px;
+}
+
+.monitoring_patient .tabular_table .table_content .temp{
+    margin-right: 85px;
+    padding: 0;
+}
+
+.monitoring_patient .tabular_table .table_content .ews{
+    margin-right: 79px;
+}
+
+.monitoring_patient .tabular_table .table_content .spo{
+    margin-right: 99px;
+}
+
+.monitoring_patient .tabular_table .table_page ul{
+    margin-top: 56px;
+    text-align: center;
+}
+
+.monitoring_patient .tabular_table .table_page ul li{
+    display: inline-block;
+    font-size: 11px;
+    color: #888;
+}
+
+.monitoring_patient .tabular_table .table_page ul li.active{
+    color: #fff;
+}
+
+.monitoring_patient .cont .graphical .hr_chart{
+    margin-top: 62px;
+}
+
+.monitoring_patient .graphical .hr_chart{
+
+    display: flex;
+    position: relative;
+}
+
+.monitoring_patient .graphical .hr_chart p{
+    color: #888;
+}
+
+.monitoring_patient .cont .graphical .hr_index p{
+    margin-right: 31px;
+}
+
+.monitoring_patient .graphical .hr_index p{
+    color: #fff;
+}
+
+.monitoring_patient .graphical .hr_line{
+    width: 1136px;
+    margin-bottom: 31px;
+    border-bottom: 1px solid #eee;
+}
+
+.monitoring_patient .cont .graphical .hr_chart> div> div> :last-child{
+    margin: 0;
+}
+
+.monitoring_patient .cont .graphical .hr_time{
+    padding: 27px 28px 0;
+    font-size: 12px;
+    position: relative;
+}
+
+.monitoring_patient .cont .graphical .hr_time> p{
+    margin-right: 177px;
+    display: inline-block;
+}
+
+.monitoring_patient .cont .graphical .hr_time> :last-child{
+    margin: 0;
+}
+
+.monitoring_patient .cont .graphical .hr_img{
+    width: 400px;
+    height: 36px;
+    position: absolute;
+    top: 23px;
+    left: 365px;
+    z-index: 999;
+}
+
+.monitoring_patient .cont .graphical .time_line{
+    position: absolute;
+    top: -38px;
+    left: 50%;
+    margin-left: -38px;
+}
+
+.monitoring_patient .cont .graphical .time_line .time{
+    font-size: 12px;
+    text-align: center;
+    color: yellow;
+}
+
+.monitoring_patient .cont .graphical .time_line::after{
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 220px;
+    background-color: #ff0;
+    top: 29px;
+    left: 29px;
+}
+
+.monitoring_patient .cont .graphical .time_line::before{
+    position: absolute;
+    content: '';
+    background: url('/img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    width: 12px;
+    height: 8px;
+    top: 19px;
+    left: 24px;
+}
+
+/* event */
+.monitoring_patient .cont .event .table_title .date_time{
+    margin-right: 83px;
+}
+
+.monitoring_patient .cont .event .table_title .alarm_des{
+    margin-right: 703px;
+}
+
+.monitoring_patient .cont .event .table_body {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.monitoring_patient .cont .event .table_body::-webkit-scrollbar{
+    width: 8px;
+}
+
+.monitoring_patient .cont .event .table_body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap{
+    height: 31px;
+    padding: 7px 45px 7px 16px;
+    border-bottom: 1px solid #888;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap.on{
+    border-bottom: 0px solid #888;
+}
+
+
+.monitoring_patient .cont .event .table_body .table_wrap .close{
+    display: none;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap> :last-child span{
+    position: relative;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap> :last-child span::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%;
+    right: -35px;
+    transition: .3s;
+    margin-top: 7px;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap.on> :last-child span::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/img/under_arrow.svg') no-repeat;
+    top: 50%;
+    right: -35px;
+    transition: .3s;
+    margin-top: 7px;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    transform: rotate(180deg);
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap> div> div{
+    display: inline-block;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap .date_time{
+    margin-right: 42px;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap p,
+.monitoring_patient .cont .event .table_body .table_wrap span{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.monitoring_patient .cont .event .table_body .table_content{
+    height: 195px;
+    overflow: hidden;
+    display: none;
+}
+
+.monitoring_patient .table_body .table_content .cont_inner{
+    display: flex;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.monitoring_patient .table_body .table_content .ecg p{
+    font-size: 14px;
+    color: #00FF22;
+    display: block;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell{
+    width: 160px;
+    height: 104px;
+    padding: 40px 16px;
+    cursor: pointer;
+}
+
+.monitoring_patient .table_body .table_content .ecg .ecg_graph> div{
+    width: 916px;
+    height: 104px;
+    padding: 30px 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.monitoring_patient .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar{
+    width: 3px;
+}
+
+.monitoring_patient .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.monitoring_patient .img_container{
+    width: 1090px;
+    height: 64px;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell> div{
+    display: flex;
+}
+
+.monitoring_patient .table_body .table_content .bell_num div p{
+    font-size: 18px;
+}
+
+.monitoring_patient .table_body .table_content .bell_num> p{
+    font-size: 48px;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell_name p{
+    font-size: 14px;
+}
+
+.monitoring_patient .table_body .btn_list button{
+    width: 80px;
+    height: 32px;
+    padding: 6px 15px;
+    border-radius: 4px;
+}
+
+.monitoring_patient .table_body .btn_confirm{
+    background: #007A94;
+    color: #fff;
+}
+
+.monitoring_patient  .table_body .btn_confirm:hover{
+    background: #004F60;
+}
+
+.monitoring_patient .table_body .btn_confirm:disabled{
+    background: #888;
+    color: #444;
+}
+
+.monitoring_patient .table_body .btn_delete{
+    background: #940045;
+    color: #fff;
+}
+
+.monitoring_patient .table_body .btn_delete:hover{
+    background: #60002D;
+}
+
+
+/* 모니터링 경보 warning */
+.warning .tabs{
+    margin-bottom: 32px;
+}
+
+.warning .btn_alarm{
+    display: none;
+}
+
+.warning .patient .btn_list .btn_alarm_red{
+    display: block;
+}
+
+.warning .tab-content{
+    padding: 0;
+}
+
+.warning .vital_chart .title{
+    background: linear-gradient(to right, #940045, #4A0000);
+}
+
+.warning .active .ecg_graph{
+    padding: 8px 16px;
+    background: #f00;
+    border-radius: 8px;
+}
+
+.warning .cont .active .bell{
+    background: #f00;
+    border-radius: 8px;
+}
+
+.warning .cont .active .bell_name p{
+    color: #fff;
+}
+
+.warning .cont .active .bell_num p{
+    color: #fff;
+}
+
+.warning .cont .active .bell_name input[type="checkbox"]+ label span{
+    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(108%) contrast(101%); 
+}
+
+.warning .cont .control .active{
+    height: 136px;
+    background: #f00;
+    border-radius: 8px;
+}
+
+.warning .cont .control .active input[type="checkbox"]+ label span{
+    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(108%) contrast(101%);
+}
+
+
+
+/* arteriotony */
+.arteriotony .arteriotony_input{
+    width: 1312px;
+    height: 720px;
+    padding: 16px 80px 32px 32px;
+    margin-left: 32px;
+    background-color: #fff;
+    display: flex;
+}  
+
+.arteriotony .arteriotony_input .manual_input{
+    width: 568px;
+}
+
+.arteriotony .arteriotony_input .manual_input .title{
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arteriotony .arteriotony_input .title h2{
+    margin-top: 16px;
+    color: #007A94;
+}
+
+.arteriotony .arteriotony_input .btn_arte_check{
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #007A94;
+    font-size: 14px;
+    color: #fff;
+}
+
+.arteriotony .arteriotony_input .btn_arte_check:hover{
+    background-color: #004F60;
+}
+
+.arteriotony .form_arter{
+    height: 576px;
+    padding: 32px 32px 40px;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.arteriotony .form_arter .arter_title{
+    width: 100%;
+    padding-bottom: 24px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid #007a94;
+}
+
+.arteriotony .form_arter h2{
+    font-size: 16px;
+}
+
+.arteriotony .form_arter> div> div{
+    margin-bottom: 32px;
+}
+
+.arteriotony .form_arter .arter_input> :nth-child(2){
+    margin: 0;
+}
+
+.arteriotony .form_arter .arter_input> div> h2{
+    margin-bottom: 16px;
+}
+
+.arteriotony .form_arter input{
+    width: 100%;
+    height: 48px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.arteriotony .form_arter .pulse{
+    width: 100%;
+    padding: 64px 0 0 0;
+}
+
+.arteriotony .form_arter .pulse .arter_title{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.arteriotony .form_arter .pulse .arter_title h2{
+    margin-bottom: 0;
+}
+
+.arteriotony .form_arter .pulse> div{
+    margin: 0;
+}
+
+.arteriotony .form_arter .pulse> div h2{
+    margin-bottom: 16px;
+    color: #000;
+}
+
+.arteriotony .pre_record{
+    margin-left: 55px;
+}
+
+.arteriotony .pre_record .title{
+    margin-bottom: 56px;
+}
+
+.arteriotony .record_table{
+    width: 568px;
+}
+
+.arteriotony .table_title{
+    width: 100%;
+    height: 48px;
+    padding: 16px 16px 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.arteriotony .table_title p{
+    margin-right: 22px;
+    display: inline-block;
+}
+
+.arteriotony .table_title :first-child{
+    margin-right: 105px;
+}
+
+.arteriotony .table_title :nth-child(3){
+    margin-right: 39px;
+}
+
+.arteriotony .table_body> div{
+    height: 48px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arteriotony .table_body> div .text_box{
+    padding: 8px 0 0;
+}
+
+.arteriotony .table_body> div> div p{
+    margin-right: 26px;
+    display: inline-block;
+}
+
+.arteriotony .table_body> div> div> :first-child{
+    margin-right: 0;
+}
+
+.arteriotony .table_body> div> :first-child> :last-child{
+    margin-right: 0;
+}
+
+.arteriotony .table_body> div .btn_list{
+    display: flex;
+}
+
+.arteriotony .table_body> div .btn_list button{
+    width: 80px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 12px;
+}
+
+.arteriotony .table_body> div .btn_list .btn_modify{
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.arteriotony .table_body> div .btn_list .btn_delete{
+    margin-left: 8px;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.arteriotony .table_page{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.arteriotony .table_page ul li{
+    font-size: 12px;
+    color: #888;
+    display: inline-block;  
+}
+
+.arteriotony .table_page ul> :nth-child(2){
+    margin: 0 2px 0 3px;
+}
+
+.arteriotony .table_page ul> :nth-child(15){
+    margin: 0 3px 0 2px;
+}
+
+.arteriotony .table_page ul li.active{
+    color: #007A94;
+}
+
+/* 대시보드 */
+.dashboard .taget_list{
+    width: 360px;
+    height: 720px;
+    margin: 0;
+}
+
+.dashboard .taget_list .title{
+    margin-bottom: 13px;
+}
+
+.dashboard .taget_list .title div{
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboard .taget_list .title div img{
+    filter: invert(57%) sepia(50%) saturate(4029%) hue-rotate(176deg) brightness(69%) contrast(54%);
+}
+
+.dashboard .taget_list .title div div{
+    width: 16px;
+    height: 12px;
+}
+
+.dashboard .taget_list .title h2{
+    margin: 0 0 0 15px;
+}
+
+.dashboard .select_ward{
+    width: 160px;
+    height: 36px;
+}
+
+.dashboard .label{
+    font-size: 12px;
+}
+
+.dashboard .ward_option{
+    width: 160px;
+    top: 35px;
+    font-size: 12px;
+}
+
+.dashboard .ward_option{
+    padding: 10px 0;
+    z-index: 2;
+}
+
+/* 대시보드 아코디언 */
+.dashboard .select_head{
+    padding: 14px 0 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard label{
+    display: flex;
+    align-items: center;
+}
+
+.dashboard input{
+    display: none;
+}
+
+.dashboard input[type="checkbox"]+label p{
+    font-size: 12px;
+}
+
+.dashboard input[type="checkbox"]+label span{
+    margin-top: 10px;
+}
+
+.dashboard input[type="checkbox"]+ label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 16px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+}
+
+.dashboard input[type='checkbox']:checked+label span{
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+.emergency .emergency_recep .title .textbox{
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard .select_head .select_box{
+    width: 160px;
+    height: 36px;
+}
+
+.dashboard .select_head .select_box .ward_label{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.dashboard .select_inner{
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.dashboard .select_inner::-webkit-scrollbar{
+    display: none;
+}
+
+.dashboard .select_inner .ward_count{
+    height: 40px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.dashboard .select_inner .ward_count::after{
+    content: '';
+    width: 12px;
+    height: 6px;
+    position: absolute;
+    background: url(/img/under_arrow.svg) no-repeat;
+    top: 50%;
+    right: 20px;
+}
+
+.dashboard .select_inner .ward_count.on::after{
+    content: '';
+    width: 12px;
+    height: 6px;
+    position: absolute;
+    background: url(/img/under_arrow.svg) no-repeat;
+    top: 50%;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.dashboard .patient_info{
+    display: none;
+}
+
+.dashboard .patient_info> div{
+    padding: 8px 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard .btn_add{
+    width: 104px;
+    height: fit-content;
+    margin: auto 32px;
+    padding: 12px 45px 12px 24px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    background: #fff;
+    font-size: 16px;
+    color: #007A94;
+    position: relative;
+}
+
+.dashboard .btn_add::after{
+    content: '';
+    width: 12px;
+    height: 16px;
+    position: absolute;
+    background: url(/img/icon/btn_add.svg) no-repeat;
+    top: 16px;
+    right: 24px;
+}
+
+.dashboard .taget_view{
+    width: 1176px;
+    height: 720px;
+}
+
+.dashboard .taget_view .title{
+    border: 0;
+    padding: 0;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard .taget_view .title div{
+    align-items: center;
+}
+
+.dashboard .taget_view .title .btn_list button{
+    width: 96px;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.dashboard .taget_view .btn_first{
+    margin-left: 68px;
+}
+
+.dashboard .taget_view .title .btn_list button.on{
+    background: #007A94;
+    color: #fff;
+}
+
+.dashboard .taget_view .btn_second{
+    margin: 0 32px 0 8px;
+}
+
+.dashboard .taget_view .btn_state{
+    width: 120px;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    background: #fff;
+    font-size: 12px;
+    color: #007A94;
+}
+
+.dashboard .inpat{
+    padding: 16px;
+    background: #eee;
+    border-radius: 8px;
+}
+
+.dashboard .inpat> div{
+    display: inline-block;
+}
+
+.dashboard .inpat> :nth-child(3n+2):not(:nth-child(6n)){
+    margin: 0 12px;
+}
+
+.dashboard .inpat .account{
+    width: 360px;
+    height: 48px;
+    padding: 17px;
+    margin-bottom: 16px;
+    background: #007A94;
+    color: #fff;
+}
+
+.dashboard .inpat .account p{
+    font-size: 10px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.dashboard .check_pati{
+    width: 360px;
+    height: 48px;
+    padding: 17px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    background: #444;
+}
+
+.dashboard .check_pati input{
+    margin-right: 8px;
+    display: block;
+}
+
+.dashboard .check_pati label{
+    font-size: 10px;
+    color: #fff;
+}
+
+.dashboard .pati_inner{
+    display: flex;
+}
+
+
+/* 대시보드 전체화면 */
+.ward_dashboard{
+    background: #222;
+}
+
+.ward_dashboard .wrap_inner{
+    height: 100vh;
+    padding: 20px;
+    background: url('../img/logo_gray.png') no-repeat 0 0px / contain;
+    background-position: 80% 95%;
+    background-size: 90px;
+}
+
+.ward_dashboard .sys_vital,
+.ward_dashboard .system_title{
+    display: inline-block;
+}
+
+.ward_dashboard .wrap_inner> div > div{
+    width: 618px;
+    height: 112px;
+}
+
+.ward_dashboard .system_title{
+    height: 100%;
+    padding: 32px;
+    margin-bottom: 4px;
+    background: linear-gradient(to right, #004F60, #350039);
+}
+
+.ward_dashboard .title_inner{
+    display: flex;
+}
+
+.ward_dashboard .title_inner div{
+    width: 69px;
+    height: 48px;
+}
+
+.ward_dashboard .title_inner div img{
+    width: 100%;
+    height: 100%;
+}
+
+.ward_dashboard .title_inner .text_box{
+    width: 250px;
+    margin-left: 43px;
+    color: #fff;
+}
+
+.ward_dashboard .text_box p{
+    font-weight: normal;
+}
+
+.ward_dashboard .text_box h1{
+    font-size: 24px;
+    font-weight: 500;
+    font-weight: normal;
+}
+
+.ward_dashboard .text_box h1 span{
+    font-size: 18px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.ward_dashboard .sys_vital{
+    margin-bottom: 4px;
+    background: #000;
+}
+
+.ward_dashboard .vital_inner{
+    display: flex;
+}
+
+.ward_dashboard .graph{
+    width: 470px;
+    padding: 2px;
+}
+
+.ward_dashboard .graph> div{
+    padding: 8px 16px;
+}
+
+.ward_dashboard .graph_title{
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ward_dashboard .graph_title p{
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ward_dashboard .img_container{
+    width: 446px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.ward_dashboard .character{
+    padding: 2px;
+}
+
+.ward_dashboard .character> div{
+    display: flex;
+}
+
+.ward_dashboard .character> div> div{
+    width: 72px;
+    height: 56px;
+    padding: 4px 8px;
+}
+
+.ward_dashboard .character .ecg{
+    color: #0F2;
+}
+
+.ward_dashboard .character .sp{
+    color: #0FF;
+}
+
+.ward_dashboard .character .resp{
+    color: #ff0;
+}
+
+.ward_dashboard .character .temp{
+    color: #FF3184;
+}
+
+.ward_dashboard .bell_name{
+    font-size: 10px;
+}
+
+.ward_dashboard .bell_num{
+   display: flex;
+   justify-content: space-between;
+}
+
+.ward_dashboard .bell_num div p{
+    font-size: 10px;
+}
+
+.ward_dashboard .bell_num> p{
+    font-size: 24px;
+    align-items: center;
+}
+
+/* 병실 대시보드 긴급 */
+.ward_dashboard .active .graph> div{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #DE0076, #CB0000);
+    border-radius: 4px;
+}
+
+.ward_dashboard .active{
+    cursor: pointer;
+}
+
+.ward_dashboard .active .ecg{
+    background: linear-gradient(to right, #DE0076, #CB0000);
+    border-radius: 4px;
+}
+
+/* 병실 대시보드 데이터 없음 */
+.ward_dashboard .no_data,
+.ward_dashboard .no_bell{
+    display: none;
+}
+
+.ward_dashboard .no_data{
+    width: 480px;
+    color: #444;
+}
+
+.ward_dashboard .no_data div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ward_dashboard .no_bell{
+    color: #444;
+}

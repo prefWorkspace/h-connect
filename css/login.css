@@ -1,0 +1,80 @@
+
+
+
+/*================= 로그인 =================*/
+.main .wrap_inner{
+    width: 360px;
+    margin: 0 auto;
+    padding: 240px 0;
+}
+
+.main .logo{
+    width: 138px;
+    height: 96px;
+    margin: 0 auto 50px;
+}
+
+.main .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.main .login{
+    width: 360px;
+} 
+
+.main .login .input_container input{
+    width: 100%;
+    height: 48px;
+    margin-bottom:16px;
+    padding: 14px 16px;
+    border-radius: 4px;
+    background-color: #eee;
+    font-size: 14px;
+}
+
+.main .check label{
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.main .check{
+    display: flex;
+    justify-content: space-around;
+}
+
+.main .check input[type="checkbox"]+label span{
+    margin-top: 10px;
+}
+
+.main .check input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+}
+
+.main .check input[type='checkbox']:checked+label span{
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+.main .check input[type="checkbox"]{
+    display: none;
+}
+
+.check .wrap_inner .membership_cont .agree input[type='checkbox']:checked+label p{
+    color: #12203c;
+}
+
+.main .login button{
+    width: 176px;
+    height: 48px;
+    margin: 64px auto 0;
+    border-radius: 4px;
+    background: linear-gradient(to right, #004F60, #350039);
+    color: #fff;
+    display: block;
+}
+

@@ -1,0 +1,2833 @@
+/*================= 응급상황실 =================*/
+.emergency{
+    min-width: 1880px;
+    min-height: calc(100vh - 64px);
+    background-color: #eee;
+}
+
+.emergency .wrap_inner{
+    width: 100%;
+    min-width: 1820px;
+    padding: 40px;
+    display: flex;
+}
+
+.emergency .emergency_recep{
+    width: 480px;
+    height: 360px;
+}
+
+.emergency .emergency_recep .container{
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.emergency .emergency_recep .title{
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.emergency .emergency_recep .title> div> div{
+    width: 16px;
+    height: 16px;
+    margin: 6px 16px 0 0;
+}
+
+.emergency .emergency_recep .title> div{
+    display: flex;
+}
+
+.emergency .emergency_recep .title> div h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #940045;
+}
+
+.emergency .emergency_recep .title .textbox{
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .emergency_recep .title .textbox p{
+    font-size: 12px;
+    color: #444;
+}
+
+.emergency .emergency_recep .title .textbox span{
+    color: #940045;
+}
+
+.emergency .emergency_recep .list_container{
+    height: 232px;
+    padding: 16px;
+    overflow-y: scroll;
+}
+
+.emergency .emergency_recep .list_container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.emergency .emergency_recep .list_container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.emergency .emergency_recep .list_container .list{
+    width: 400px;
+    height: 64px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .emergency_recep .list_container .list:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
+.emergency .emergency_recep .list_container .list.on{
+    background-color: #940045;
+}
+
+.emergency .emergency_recep .list_container .list> div{
+    height: 32px;
+    padding: 15px 16px 17px;
+}
+
+.emergency .emergency_recep .list_container .list .now_time{
+    height: 15px;
+    color: #940045;
+}
+
+.emergency .emergency_recep .list_container .list .now_time p{
+    font-size: 10px;
+    display: inline-block;
+}
+
+.emergency .list.on .now_time p{
+    color: #fff;
+}
+
+.emergency .emergency_recep .list_container .list h3{
+    font-size: 12px;
+}
+
+.emergency .emergency_recep .list.on h3{
+    color: #fff;
+}
+
+.emergency .arrival_time{
+    width: 50%;
+    margin-right: 16px;
+}
+
+.emergency .arrival_time span{
+    color: #007A94;
+}
+
+.emergency .list.on .arrival_time span{
+    color: #fff;
+}
+
+.emergency .arrival_time p{
+    font-size: 12px;
+    text-align: right;
+}
+
+.emergency .list.on .arrival_time p{
+    color: #fff;
+}
+
+.emergency .arrival_time h3{
+    font-size: 12px;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+}
+
+.emergency .list.on .arrival_time h3::after{
+    content: '';
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+    top: 3px;
+    right: -16px;
+}
+
+.emergency .arrival_time h3::after{
+    content: '';
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    background: url('/img/icon/open_black.png') no-repeat 0 0px / contain;
+    top: 3px;
+    right: -16px;
+}
+
+.emergency .arrival_time> :last-child{
+    float: right;
+}
+
+.emergency .arrival_time::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.emergency .emergency_map{
+    margin-top: 24px;
+}
+
+.emergency .map_title{
+    padding: 24px 32px;
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .map_title h2{
+    font-size: 16px;
+    color: #940045;
+    vertical-align: middle;
+}
+
+.emergency .map_title div{
+    vertical-align: middle;
+}
+
+.emergency .map_title p{
+    font-size: 14px;        
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.emergency .map_title :first-child span{
+    color: #007A94;
+}  
+
+.emergency .map_container{
+    width: 480px;
+    height: 264px;
+}
+
+.emergency  .map_container iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.gm-style .place-card-medium{display: none;}
+
+.emergency .patient_status{
+    width: 1192px;
+    height: 720px;
+    padding: 16px 32px 32px;
+    margin-left: 32px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.emergency .patient_status .title{
+    margin-bottom: 16px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.emergency .patient_status .title h2{
+    color: #940045;
+}
+
+.emergency .patient_status .title div> div{
+    margin-top: 13px;
+    display: flex;
+}
+
+.emergency .patient_status .title div> div> :first-child{
+    margin-right: 16px;
+    color: #940045;
+}
+
+.emergency .patient_status .btn_end{
+    width: 120px;
+    padding: 10px 20px;
+    background: none;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.emergency .patient_status .btn_end:hover,
+.emergency .patient_status .btn_call:hover{
+    background: #f5eef1;
+}
+
+.emergency .patient_status .btn_call{
+    width: 180px;
+    padding: 11px 33px;
+    margin: 0 8px 0 32px;
+    background: none;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.emergency .patient_status .btn_call img{
+    vertical-align: middle;
+}
+
+.emergency .patient_status .btn_paramedic{
+    width: 180px;
+    padding: 11px 23px;
+    background: #940045;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    color: #fff;
+}
+
+.emergency .patient_status .btn_paramedic:hover{
+    background: #4a0000;
+}
+
+.emergency .patient_status .btn_paramedic img{
+    margin-right: 9px;
+    vertical-align: middle;
+}
+
+.emergency .patient_status .patient_inner{
+    height: 560px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .patient{
+    width: 576px;
+    padding: 16px;
+    overflow-y: scroll;
+}
+
+.emergency .patient_status .patient::-webkit-scrollbar{
+    width: 8px;
+}
+
+.emergency .patient_status .patient::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.emergency .patient_status .patient h2{
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #940045;
+}
+
+.emergency .patient_status .patient .symptome{
+    width: 100%;
+    padding: 24px 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background: #eee;
+}
+
+.emergency .patient_status .patient .symptome> h2{
+    color: #000;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.emergency .patient_status .patient .symptome> h2::after{
+    position: absolute;
+    content: '';
+    width: 32px;
+    height: 4px;
+    background: linear-gradient(to right, #940045, #4A0000);
+    top: -8px;
+    left: 0;
+}
+
+.emergency .patient_status .patient .symptome> div> div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .patient .symptome> div> div> div{
+    width: 256px;
+}
+
+.emergency .patient_status .patient .symptome> div h2{
+    margin-bottom: 16px;
+}
+
+.emergency .patient_status .patient .symptome .injury p{
+    font-size: 14px;
+}
+
+.emergency .patient_status .patient .symptome input[type="checkbox"]+label{
+    font-size: 14px;
+}
+
+.emergency .patient_status .patient .symptome input[type="checkbox"]+label span{
+    margin-top: 10px;
+}
+
+.emergency .patient_status .patient .symptome input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .patient .symptome input[type='checkbox']:checked+label span{
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .patient .symptome input[type="checkbox"]{
+    display: none;
+}
+
+.emergency .patient_status .patient .symptome .sign{
+    padding-top: 24px;
+    display: block;
+}
+
+.emergency .patient_status .patient .symptome .sign> div{
+    width: 300px;
+    display: flex;
+}
+
+.emergency .patient_status .patient .symptome .sign> div> div{
+    margin-right: 44px;
+}
+
+.emergency .patient_status .patient .type .disease{
+    margin-bottom: 24px;
+}
+
+.emergency .patient_status .patient .type .disease> div{
+    display: flex;
+}
+
+.emergency .patient_status .patient .type .disease> :first-child h2{
+    margin-right: 24px;
+    vertical-align: middle;
+}
+
+.emergency .patient_status .patient .type .disease> :first-child input{
+    vertical-align: middle;
+}
+
+.emergency .patient_status .patient .type .disease> :first-child input[type="checkbox"]+label{
+    margin-top: 3px;
+    color: #940045;
+}
+
+.emergency .patient_status .patient .type .disease> :first-child input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .patient .type .disease> :first-child input[type='checkbox']:checked+label span{
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .patient .type .disease> :last-child input[type="checkbox"]+label {
+    font-size: 14px;
+    margin-right: 30px;
+}
+
+.emergency .patient_status .patient .type .place{
+    display: block;
+}
+
+.emergency .swiper.part_accident{
+    width: 100%;
+    height: 380px;
+    padding: 20px;
+    background: #fff;
+}
+
+.emergency .patient_status .patient .symptome .part .swiper-scrollbar{
+    width: 100%;
+    background: #ccc;
+}
+
+.emergency .patient_status .patient .symptome .swiper-scrollbar-drag{
+    height: 8px;
+    margin-bottom: 2px;
+    background: #940045;
+}
+
+.emergency .patient_status .part_container> div{
+    margin-right: 48px;
+}
+
+.emergency .patient_status .part_container> div:not(.part_front, .part_back, .part_body){
+    margin-top: 56px;
+}
+
+.emergency .patient_status .part_body{
+    margin: 44px 0 0 0;
+}
+
+.emergency .patient_status .part_container input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: url('/img/emergency/damage.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .part_container input[type='checkbox']:checked+label{
+    background: url('/img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
+}
+
+
+/* 사고부위 버튼 */
+/* part_front */
+.emergency .patient_status .part_front{
+    position: relative;
+    width: 144px;
+    height: 340px;
+    background: url('/img/emergency/front.png')no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .front_toggle{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.emergency .patient_status .front_toggle div{
+    position: absolute;
+}
+
+
+/* part_back */
+.emergency .patient_status .part_back{
+    position: relative;
+    width: 144px;
+    height: 340px;
+    background: url('/img/emergency/back.png')no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .back_toggle{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.emergency .patient_status .back_toggle div{
+    position: absolute;
+}
+
+.emergency .patient_status .toggle1{
+    top: -21px;
+    left: 60px;
+}
+
+.emergency .patient_status .toggle2{
+    top: 3px;
+    left: 60px;
+}
+
+.emergency .patient_status .toggle3{
+    top: 32px;
+    left: 60px;
+}
+
+.emergency .patient_status .toggle4{
+    top: 40px;
+    left: 100px;
+}
+
+.emergency .patient_status .toggle5{
+    top: 80px;
+    left: 102px;
+}
+
+.emergency .patient_status .toggle6{
+    top: 118px;
+    left: 109px;
+}
+
+.emergency .patient_status .toggle7{
+    top: 150px;
+    left: 120px;
+}
+
+.emergency .patient_status .toggle8{
+    top: 40px;
+    left: 20px;
+}
+
+.emergency .patient_status .toggle9{
+    top: 80px;
+    left: 18px;
+}
+
+.emergency .patient_status .toggle10{
+    top: 118px;
+    left: 11px;
+}
+
+.emergency .patient_status .toggle11{
+    top: 150px;
+    left: 0px;
+}
+
+.emergency .patient_status .toggle12{
+    top: 63px;
+    left: 76px;
+}
+
+.emergency .patient_status .toggle13{
+    top: 63px;
+    left: 44px;
+}
+
+.emergency .patient_status .toggle14{
+    top: 95px;
+    left: 59px;
+}
+
+.emergency .patient_status .toggle15{
+    top: 134px;
+    left: 60px;
+}
+
+.emergency .patient_status .back_toggle .toggle15{
+    top: 134px;
+    left: 45px;
+}
+
+.emergency .patient_status .toggle16{
+    top: 167px;
+    left: 77px;
+}
+
+.emergency .patient_status .toggle17{
+    top: 167px;
+    left: 43px;
+}
+
+.emergency .patient_status .toggle18{
+    top: 235px;
+    left: 74px;
+}
+
+.emergency .patient_status .toggle19{
+    top: 235px;
+    left: 46px
+}
+
+.emergency .patient_status .toggle20{
+    top: 291px;
+    left: 74px;
+}
+
+.emergency .patient_status .toggle21{
+    top: 291px;
+    left: 45px;
+}
+
+.emergency .patient_status .back_toggle .toggle22{
+    top: 134px;
+    left: 75px;
+}
+
+
+/* part_left */
+.emergency .patient_status .part_left{
+    position: relative;
+    width: 144px;
+    height: 340px;
+    background: url('/img/emergency/head left.png')no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .left_toggle{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.emergency .patient_status .left_toggle div{
+    position: absolute;
+}
+
+.emergency .patient_status .left_toggle .toggle1{
+    top: -17px;
+    left: 48px;
+}
+
+.emergency .patient_status .left_toggle .toggle2{
+    top: 17px;
+    left: 6px;
+}
+
+.emergency .patient_status .left_toggle .toggle3{
+    top: 0px;
+    left: 84px;
+}
+
+.emergency .patient_status .left_toggle .toggle4{
+    top: 25px;
+    left: 48px;
+}
+
+.emergency .patient_status .left_toggle .toggle5{
+    top: 38px;
+    left: 112px;
+}
+
+.emergency .patient_status .left_toggle .toggle6{
+    top: 90px;
+    left: 112px;
+}
+
+.emergency .patient_status .left_toggle .toggle7{
+    top: 146px;
+    left: 89px;
+}
+
+.emergency .patient_status .left_toggle .toggle8{
+    top: 56px;
+    left: 5px;
+}
+
+.emergency .patient_status .left_toggle .toggle9{
+    top: 83px;
+    left: -8px;
+}
+
+.emergency .patient_status .left_toggle .toggle10{
+    top: 113px;
+    left: 20px;
+}
+
+.emergency .patient_status .left_toggle .toggle11{
+    top: 156px;
+    left: 53px;
+}
+
+.emergency .patient_status .left_toggle .toggle12{
+    top: 60px;
+    left: 84px;
+}
+
+.emergency .patient_status .left_toggle .toggle13{
+    top: 78px;
+    left: 41px;
+}
+
+.emergency .patient_status .left_toggle .toggle14{
+    top: 103px;
+    left: 76px;
+}
+
+/* part_right */
+.emergency .patient_status .part_right{
+    position: relative;
+    width: 144px;
+    height: 340px;
+    background: url('/img/emergency/head right.png')no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .right_toggle{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.emergency .patient_status .right_toggle div{
+    position: absolute;
+}
+
+.emergency .patient_status .right_toggle .toggle1{
+    top: -19px;
+    left: 64px;
+}
+
+.emergency .patient_status .right_toggle .toggle2{
+    top: 19px;
+    left: 105px;
+}
+
+.emergency .patient_status .right_toggle .toggle3{
+    top: 1px;
+    left: 29px;
+}
+
+.emergency .patient_status .right_toggle .toggle4{
+    top: 25px;
+    left: 61px;
+}
+
+.emergency .patient_status .right_toggle .toggle5{
+    top: 36px;
+    left: 7px;
+}
+
+.emergency .patient_status .right_toggle .toggle6{
+    top: 87px;
+    left: 6px;
+}
+
+.emergency .patient_status .right_toggle .toggle7{
+    top: 146px;
+    left: 31px;
+}
+
+.emergency .patient_status .right_toggle .toggle8{
+    top: 53px;
+    left: 114px;
+}
+
+.emergency .patient_status .right_toggle .toggle9{
+    top: 82px;
+    left: 130px;
+}
+
+.emergency .patient_status .right_toggle .toggle10{
+    top: 116px;
+    left: 101px;
+}
+
+.emergency .patient_status .right_toggle .toggle11{
+    top: 157px;
+    left: 65px;
+}
+
+.emergency .patient_status .right_toggle .toggle12{
+    top: 60px;
+    left: 33px;
+}
+
+.emergency .patient_status .right_toggle .toggle13{
+    top: 77px;
+    left: 78px;
+}
+
+.emergency .patient_status .right_toggle .toggle14{
+    top: 105px;
+    left: 46px;
+}
+
+/* part_body */
+.emergency .patient_status .part_body{
+    position: relative;
+    width: 144px;
+    height: 340px;
+    background: url('/img/emergency/body.png')no-repeat 0 0px / contain;
+}
+
+.emergency .patient_status .body_toggle{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.emergency .patient_status .body_toggle div{
+    position: absolute;
+}
+
+.emergency .patient_status .body_toggle .toggle1{
+    top: 12px;
+    left: 60px;
+}
+
+.emergency .patient_status .body_toggle .toggle2{
+    top: 40px;
+    left: 86px;
+}
+
+.emergency .patient_status .body_toggle .toggle3{
+    top: 41px;
+    left: 35px;
+}
+
+.emergency .patient_status .body_toggle .toggle4{
+    top: 71px;
+    left: 26px;
+}
+
+.emergency .patient_status .body_toggle .toggle5{
+    top: 72px;
+    left: 94px;
+}
+
+.emergency .patient_status .body_toggle .toggle6{
+    top: 80px;
+    left: 61px;
+}
+
+.emergency .patient_status .body_toggle .toggle7{
+    top: 106px;
+    left: 31px;
+}
+
+.emergency .patient_status .body_toggle .toggle8{
+    top: 107px;
+    left: 89px;
+}
+
+.emergency .patient_status .body_toggle .toggle9{
+    top: 126px;
+    left: 60px;
+}
+
+.emergency .patient_status .body_toggle .toggle10{
+    top: 154px;
+    left: 60px;
+}
+
+/* 환자가 없을 경우 */
+.emergency .patient_status .patient .no_patient{
+    height: 64px;
+    padding: 22px 32px;
+    border-radius: 8px;
+    background: #eee;
+    display: none;
+}
+
+.emergency .patient_status .patient .no_patient p{
+    font-size: 14px;
+    color: #888;
+}
+
+/* 의식상태 */
+.emergency .patient .symptome_info{
+    margin-top: 24px;
+}
+
+.emergency  .patient .symptome_info .container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency  .patient .symptome_info .sensorium_check> div,
+.emergency .patient .symptome_info .sensorium_check> div> div:not(.ure_list){
+    margin-bottom: 16px;
+}
+
+.emergency .patient .symptome_info > div input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/emergency/checkbox_border.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient .symptome_info > div input[type='checkbox']:checked+label span{
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient .symptome_info input[type="checkbox"]+label{
+    color: #000;
+}
+
+.emergency .patient .symptome_info input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    color: #eee;
+}
+
+.emergency .patient .symptome_info > div> div input[type='checkbox']:checked+label span{
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+}
+
+.emergency .patient .symptome_info .double_list{
+    margin-left: 50px;
+    display: flex;
+}
+
+.emergency .patient .symptome_info .double_list input[type="checkbox"]+label{
+    color: #ccc;
+}
+
+.emergency .patient .symptome_info .double_list> :first-child{
+    margin-right: 11px;
+}
+
+.emergency .patient .symptome_info .unre{
+    display: flex;
+}
+
+.emergency .patient .symptome_info .unre> :first-child{
+    margin-right: 7px;
+}
+
+.emergency .patient .symptome_info .unre .ure_list{
+    margin-top: 5px;
+    margin-left: 0;
+}
+
+.emergency .patient .pupil{
+    width: 50%;
+}
+
+.emergency .patient .pupil .pupil_container,
+.emergency .patient .pupil .pupil_container>div> div{
+    display: flex;
+    align-items: center;
+}
+
+.emergency .patient .pupil .pupil_container{
+    justify-content: space-between;
+}
+
+.emergency .patient .pupil> div h2{
+    font-weight: normal;
+    color: #000;
+}
+
+.emergency .patient .pupil .pupil_container>div> div> label{
+    width: 46px;
+    margin-left: 8px;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    font-weight: normal;
+    color: #ccc;
+    text-align: right;
+}
+
+.emergency .patient .pupil .pupil_container>div> div> label input{
+    width: 20px;
+    background: none;
+}
+
+.emergency .patient_status .patient .assessing .triage> div{
+    margin-bottom: 16px;
+    display: block;
+}
+
+.emergency .patient .assessing .triage> div> div{
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.emergency .patient .assessing .triage> div> div> :first-child{
+    margin-right: 44px;
+}
+
+.emergency .patient .assessing .triage .triage_time> div{
+    display: flex;
+}
+
+.emergency .patient .assessing .triage .triage_time input{
+    width: 64px;
+    padding: 4px;
+    margin-right: 8px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.emergency .patient .first_aid .airway_container{
+    display: flex;
+}
+
+.emergency .patient .first_aid .airway_container> :first-child{
+    margin-right: 44px;
+}
+
+.emergency .patient .first_aid div> div{
+    margin-bottom: 16px;
+}
+
+.emergency .patient .first_aid div .free_airway,
+.emergency .patient .first_aid .airway_container {
+    margin: 0;
+}
+
+
+.emergency .patient .first_aid .right .oxygenation> div{
+    margin: 0;
+}
+
+.emergency .patient .first_aid .right .oxygenation> div,
+.emergency .patient .first_aid .right .oxygenation> div> div{
+    display: flex;
+}
+
+.emergency .patient .first_aid .right .oxygenation div> h2{
+    margin-right: 46px;
+}
+
+.emergency .patient .first_aid .right .oxygenation div> div{
+    width: 100px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ccc;
+}
+
+.emergency .patient .first_aid .right .oxygenation input{
+    width: 50px;
+    background: none;
+    text-align: center;
+    color: #ccc;
+}
+
+.emergency .patient .first_aid .right .oxygenation> div p{
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* 환자 바이탈 */
+.emergency .vital{
+    padding: 0 16px;
+    overflow-y: scroll;
+}
+
+.emergency .vital::-webkit-scrollbar{
+    width: 8px;
+}
+
+.emergency .vital::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.emergency .vital .title{
+    padding: 20px 0;
+    margin: 0;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency  .vital .title h2{
+    color: #940045;
+}
+
+.emergency .vital .title p{
+    font-size: 14px;
+    font-weight: normal;
+    color: #940045;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.emergency .vital .btn_vital{
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    border-radius: 4px;
+    background: #940045;
+    vertical-align: middle;
+}
+
+.emergency .vital .btn_vital:hover{
+    background: #4a0000;
+}
+
+.emergency .vital .vital_monitor{
+    width: 520px;
+    height: 688px;
+    padding: 8px 16px 16px;
+    background: #000;
+    border-radius: 8px;
+}
+
+.emergency .vital .vital_monitor p{
+    font-size: 14px;
+}
+
+.emergency .vital .vital_monitor .bell_num div p{
+    font-size: 18px;
+}
+
+.emergency .vital .vital_monitor .bell_num p {
+    font-size: 48px;
+}
+
+.emergency .ecg_graph p{
+    color: #00FF22;
+}
+
+.emergency .sp_graph p{
+    color: #00F6FF;
+}
+
+.emergency .resp_graph p{
+    color: #FFEE00;
+}
+
+.emergency .graph> div{
+    height: 104px;
+}
+
+.emergency .graph> div> div> div{
+    padding: 20px 0;
+}
+
+.emergency .control_inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .vital .hr{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #00FF22;
+}
+
+.emergency .hr .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .hr .bell_name input{
+    display: none;
+}
+
+.emergency .hr .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    filter: invert(69%) sepia(77%) saturate(4082%) hue-rotate(86deg) brightness(118%) contrast(116%);
+    cursor: pointer;
+}
+
+.emergency .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.emergency .vital .hr .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .bell_num> div{
+    align-items: center;
+}
+
+.emergency .vital .control .sp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #00F6FF;
+}
+
+.emergency .vital .control .sp .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .vital .control .sp .bell_name input{
+    display: none;
+}
+
+.emergency .sp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .bell_name input[type='checkbox']:checked + label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+}
+
+.emergency .vital .control .sp .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 바이탈 정보없음 */
+.emergency .vital .no_signal{
+    width: 100%;
+    height: 64px;
+    padding: 22px 32px;
+    display: none;
+}
+
+.emergency .vital .no_signal p{
+    color: #fff;
+}
+
+.emergency .vital .btn_vital:disabled{
+    background: #ccc;
+}
+
+.emergency .vital .btn_vital:disabled img{
+    filter: invert(29%) sepia(6%) saturate(15%) hue-rotate(2deg) brightness(90%) contrast(87%);
+}
+
+.emergency .vital .title .no_signal_text{
+    color: #888;
+    display: none;
+}
+
+
+/* resp */
+.emergency .patient_status .resp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #FFEE00;
+}
+
+.emergency .patient_status .resp .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .resp .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .resp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .resp .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.emergency .patient_status .resp .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* mmhg */
+.emergency .patient_status .mmhg{
+    width: 260px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.emergency .patient_status .mmhg .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .mmhg .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .mmhg .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .mmhg .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.emergency .patient_status .mmhg .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .mmhg .time div{
+    display: inline-block;
+}
+
+.emergency .patient_status .mmhg .time p{
+    font-size: 11px;
+    display: inline-block;
+}
+
+/* ews */
+.emergency .patient_status .ews{
+    width: 88px;
+    padding: 16px;
+    color: #fff;
+}
+
+.emergency .patient_status .ews .bell_name{
+    display: flex;
+}
+
+.emergency .patient_status .ews .bell_name p{
+    margin-right: 7px;
+}
+
+.emergency .patient_status .ews .bell_num{
+    width: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: initial;
+}
+
+.emergency .patient_status .ews .bell_num> div{
+    margin-top: -4px;
+}
+
+.emergency .patient_status .ews .bell_num p {
+    margin-right: 8px;
+    font-size: 48px;
+}
+
+.emergency .patient_status .ews .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .ews .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .ews .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+/* temp */
+.emergency .patient_status .temp{
+    width: 160px;
+    padding: 16px;
+    color: #FF3184;
+}
+
+.emergency .patient_status .temp .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .temp .bell_name p{
+    margin-right: 7px;
+}
+
+.emergency .patient_status .temp .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .temp .bell_name input{
+    display: none;
+}
+
+.emergency .patient_status .temp .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_temp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.emergency .patient_status .temp .bell_name input[type='checkbox']:checked+label span{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+/* pulse */
+.emergency .patient_status .pulse{
+    width: 160px;
+    padding: 16px;
+    color: #00FFFF;
+}
+
+.emergency .patient_status .pulse .time p{
+    margin: 0 4px 0 0;
+}
+
+.emergency .patient_status .pulse .time> :last-child {
+    margin-right: 0px;
+}
+
+.emergency .patient_status .pulse .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .pulse .bell_name p{
+    margin-right: 7px;
+}
+
+.emergency .patient_status .pulse .bell_num{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .patient_status .pulse .bell_num> div{
+    margin-top: -4px;
+}
+
+.emergency .patient_status .pulse .bell_num div p{
+    font-size: 18px;
+}
+
+.emergency .patient_status .pulse .bell_num p {
+    margin-right: 8px;
+    font-size: 48px;
+}
+
+.emergency .patient_status .pulse .bell_num> div {
+    margin-top: 7px;
+}
+
+.emergency .patient_status .pulse .time div{
+    display: inline-block;
+}
+
+.emergency .patient_status .pulse .time p{
+    font-size: 11px;
+    display: inline-block;
+}
+
+/* 응급상황 사진 및 동영상 */
+.emergency .picture{
+    margin-top: 16px;
+}
+
+.emergency .picture .title{
+    margin: 0;
+    padding: 20px 0;
+    border: 0;
+}
+
+.emergency .picture .title div{
+    width: 107px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emergency .picture .title h2{
+    color: #940045;
+}
+
+.emergency .picture .title p{
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #940045;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.emergency .picture .title .btn_picture{
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: #940045;
+}
+
+.emergency .picture .title .btn_picture:hover{
+    background: #4a0000;
+}
+
+/* 응급사진 없을때 */
+.emergency .no_picture{
+    width: 100%;
+    height: 64px;
+    padding: 22px 32px;
+    border-radius: 8px;
+    background: #eee;
+    display: none;
+}
+
+.emergency .no_picture p{
+    font-size: 14px;
+    color: #888;
+}
+
+.emergency .picture .title .btn_picture:disabled{
+    background: #ccc;
+}
+
+.emergency .picture .title .btn_picture:disabled img{
+    filter: invert(29%) sepia(6%) saturate(15%) hue-rotate(2deg) brightness(90%) contrast(87%);
+}
+
+.emergency .no_signal_text{
+    color: #888;
+}
+
+
+/* 슬라이드 */
+.emergency .big_picture{
+    width: 520px;
+    height: 192px;
+}
+
+.emergency .big_picture img,
+.emergency .small_picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.emergency .small_picture{
+    width: 520px;
+    margin-top: 12px;
+}
+
+.emergency .small_picture .swiper-slide{
+    width: 95px;
+    height: 95px;
+    cursor: pointer;
+}
+
+.emergency .swiper-slide-thumb-active{
+    border: 4px solid #f00;
+}
+
+
+/* 구급대원연결 */
+.para_connect{
+    height: calc(100vh - 64px);
+}
+.para_connect .wrap_inner{
+    padding-top: 240px;
+    display: initial;
+}
+
+.para_connect, .para_connect .wrap_inner{
+    min-width: 1920px;
+    background: #222;
+}
+
+.para_connect .call_connect .img_container{
+    width: 117px;
+    height: 82px;
+    margin: 0 auto;
+}
+
+.para_connect .call_connect .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.para_connect .call_connect h1{
+    margin: 72px 0 12px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.para_connect .call_connect h3{
+    margin-bottom: 48px;
+    font-size: 16px;
+    text-align: center;
+    color: #888;
+}
+
+.para_connect .loading_con{
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+}
+
+.para_connect .loading_con img{
+    width: 100%;
+    height: 100%;
+}
+
+.para_connect .img_loading {
+    -webkit-animation: spin 2s infinite linear;
+            animation: spin 2s infinite linear;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+.para_connect .call_control{
+    width: 272px;
+    height: 80px;
+    margin: 140px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.para_connect .call_control button{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.para_connect .call_control .con_btn{
+    position: relative;
+}
+
+.para_connect .layer{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    padding: 28px 0;
+    border-radius: 50%;
+    top: 0;
+    background: linear-gradient(to right, #eee, #ccc);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.para_connect .layer p{
+    font-size: 16px;
+    text-align: center;
+}
+
+.para_connect .layer p{
+    color: #007A94;
+}
+
+.para_connect .refuse_layer p{
+    color: #940045;
+}
+
+.para_connect .refuse:hover .refuse_layer,
+.para_connect .mic:hover .mic_layer,
+.para_connect .webcam:hover .cam_layer{
+    opacity: 1;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.para_connect .toggle_layer{
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    padding: 24px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #eee, #ccc);
+    display: none;
+    cursor: pointer;
+}
+
+/* 구급대원과 연결 */
+.connect .wrap_inner{
+    padding: 4px;
+    background: #222;
+}
+
+.connect .emer_message{
+    width: 480px;
+}
+
+.connect .emer_message .title{
+    padding: 8px 8px 0;
+    background: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .emer_message .title> div{
+    width: 80px;
+    height: 32px;
+    padding: 7px 10px;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    align-items: center;
+    background: #940045;
+}
+
+.connect .emer_message .title> div p{
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.connect .emer_message .title> div div{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.connect .emer_message .title> div div img{
+    filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(106%) contrast(105%);
+}
+
+.connect .emer_message .title button{
+    width: 80px;
+    height: 24px;
+    padding: 3px 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #940045;
+}
+
+.connect .emer_message .title .btn_novideo{
+    padding: 3px 16px;
+    display: none;
+}
+
+.connect .emer_message .btn_novideo img{
+    transform: rotate(180deg);
+}
+
+.connect .emer_message .btn_video div{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px;
+}
+
+.connect .emer_message .btn_novideo> div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.connect .emer_message .btn_novideo> div div{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px
+}
+
+.connect .emer_message .view{
+    height: 737px;
+    padding: 16px;
+    background: #E3DBE6;
+}
+
+.connect .emer_message .notice{
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .emer_message .notice p{
+    font-size: 14px;
+}
+
+.connect .emer_message .notice .btn_doctor_call{
+    width: 140px;
+    font-size: 14px;
+    font-weight: 500;
+    background: none;
+    color: #940045;
+}
+
+.connect .emer_message .notice .btn_doctor_call:hover{
+    color: #4A0000;
+}
+
+.connect .emer_message .input_message{
+    position: relative;
+}
+
+.connect .emer_message textarea{
+    width: 100%;
+    height: 120px;
+    padding: 16px 60px 16px 16px;
+}
+
+.connect .emer_message .btn_send{
+    width: 48px;
+    padding: 7px 11px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #fff;
+    background: #940045;
+    position: absolute; 
+    top: 8px;
+    right: 8px;
+}
+
+.connect .data{
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+.connect .data_inner> :last-child{
+    margin: 0;
+}
+
+.connect .data_inner{
+    width: 100%;
+    height: 696px;
+    padding-right: 16px;
+    overflow-y: scroll;
+    position: absolute;
+    bottom: 0;
+}
+
+.connect .data_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.connect .data_inner::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #C56F97;
+}
+
+.connect .data_inner> div{
+    width: 100%;
+    /* height: 696px; */
+}
+
+/* .connect .data_inner> div::-webkit-scrollbar{
+    width: 8px;
+}
+
+.connect .data_inner> div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #C56F97;
+} */
+
+
+.connect .chatting{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.connect .chatting p{
+    font-size: 12px;
+}
+
+.connect .top{
+    margin-bottom: 17px;
+    display: flex;
+}
+
+.connect .top time{
+    font-size: 12px;
+}
+
+.connect .top p{
+    margin-left: 8px;
+}
+
+/* 화상보기 */
+.cam{
+    width: 156px;
+    height: 897px;
+    padding: 8px 6px;
+    background: #444;
+    display: none;
+}
+
+.cam> :first-child{
+    height: 24px;
+    margin-bottom: 24px;
+}
+
+.cam div button{
+    width: 24px;
+    height: 24px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    float: right;
+}
+
+.cam .btn_cam{
+    background: #940045;
+}
+
+.cam .btn_cam_off{
+    background: #666;
+    display: none;
+}
+
+.cam div button div{
+    width: 12px;
+    height: 16px;
+}
+
+.cam .cam_inner{
+    clear: both;
+}
+
+.cam button img{
+    width: 100%;
+    height: 100%;
+}
+
+.cam .btn_cam img{
+    filter: invert(265%) sepia(1%) saturate(0%) hue-rotate(127deg) brightness(106%) contrast(318%);
+}
+
+.cam .btn_cam_off img{
+    filter: invert(30%) sepia(1%) saturate(0%) hue-rotate(127deg) brightness(106%) contrast(30%);
+}
+
+.cam .cam_inner> div{
+    width: 144px;
+    height: 81px;
+    margin: 0 0 4px;
+    position: relative;
+}
+
+.cam .cam_inner> div div{
+    width: 144px;
+    height: 81px;   
+}
+
+.cam .cam_inner> div div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.cam .cam_inner> div .name{
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+.cam .cam_inner .my_cam {
+    margin-bottom: 16px;
+}
+
+.cam .cam_inner .nocam_parti{
+    display: none;
+}
+
+.cam .cam_inner .nocam_parti{
+    padding: 24px 56px;
+    border-radius: 4px;
+    background: #000;
+}
+
+.cam .cam_inner .nocam_parti div{
+    width: 32px;
+    height: 32px;
+}
+
+.cam .cam_inner .nocam_parti div img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 오른쪽 환자 화면 */
+.connect .patient_view{
+    width: 1428px;
+    margin-left: 4px;
+}
+
+.connect .patient_view> .title{
+    width: 100%;
+    height: 40px;
+    padding: 7px 16px;
+    margin-bottom: 4px;
+    background: #888;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .patient_view .btn_list button{
+    width: 80px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #940045;
+}
+
+.connect .patient_view .btn_list> :last-child{
+    margin: 0;
+}
+
+.connect .patient_view .view_list,
+.connect .patient_view .view_list> div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .patient_view .view_list p{
+    margin-right: 26px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* .connect .patient_view .view_list button{
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    background: none;
+    border-radius: 4px;
+}
+
+.connect .patient_view .view_list button.on{
+    background: #fff;
+}
+
+.connect .patient_view .view_list button.on img{
+    filter: invert(9%) sepia(62%) saturate(6511%) hue-rotate(322deg) brightness(60%) contrast(106%);
+}
+
+.connect .patient_view .view_list .btn_tab{
+    margin: 0 8px;
+} */
+
+.connect .view_list .tabs{
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .view_list .tab-link{
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.connect .view_list .tab-link div{
+    width: 12px;
+    height: 12px;
+}
+
+.connect .view_list .tab-link div img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .view_list .tab-link.current{
+    background: #fff;
+    cursor: pointer;
+}
+
+.connect .view_list .tab-link.current img{
+    filter: invert(9%) sepia(62%) saturate(6511%) hue-rotate(322deg) brightness(60%) contrast(106%);
+}
+
+/* 탭으로 보기 */
+.connect .several{
+    width: 100%;
+    height: 853px;
+    position: relative;
+}
+
+.connect .several .title{
+    width: 100%;
+    height: 40px;
+    padding: 11px 16px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .several .title p{
+    color: #fff;
+}
+
+.connect .several .title .btn_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .several .title .btn_list button{
+    width: 10px;
+    height: 10px;
+    background: none;
+}
+
+.connect .several .title .btn_list button div{
+    width: 10px;
+    height: 10px;
+}
+
+.connect .several .title .btn_list button div img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .several .title .btn_list .btn_full{
+    margin: 0 32px;
+}
+
+/* 환자상태 */
+.connect .pati_stat{
+    width: 736px;
+    position: absolute;
+    z-index: 5;
+}
+
+.connect .patient_status{
+    width: 736px;
+    margin: 0;
+    padding: 0 2px 0 0;
+    border-radius: 0;
+}
+
+.connect .patient_status .patient_inner{
+    height: 710px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.connect .patient_status .patient_inner::-webkit-scrollbar{
+    width: 8px;
+    background: #eee;
+}
+
+.connect .patient_status .patient_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #940045;
+}
+
+.connect .patient_status .patient{
+    width: 100%;
+    background: #eee;
+}
+
+.connect .patient .title{
+    padding: 0;
+    border: 0;
+    background: none;
+    justify-content: initial;
+    align-items: center;
+}
+
+.connect .patient .title div{
+    width: 16px;
+    height: 17px;
+    margin-right: 8px;
+}
+
+.connect .patient .title div img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .patient .title h2{
+    margin: 0;
+}
+
+.connect .pupil_left,
+.connect .pupil_right{
+    width: 144px;
+    height: 80px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+
+/* 환자상태 full 화면 */
+.connect .pati_stat.on{
+    width: 100%;
+    height: 816px;
+    z-index: 5;
+}
+
+.connect .pati_stat.on .title{
+    width: 100%;
+}
+
+.connect .pati_stat.on .patient_status {
+    width: 100%;
+    height: 816px;
+}
+
+.connect .pati_stat.on .pati_stat{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .pati_stat.on .patient_status .patient_inner {
+    height: 813px;
+}
+
+.connect .pati_stat.on .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .pati_stat.on .patient_status .patient .symptome{
+    width: 683px;
+}
+
+.connect .pati_stat.on .part_accident{
+    display: block;
+}
+
+.connect .pati_stat.on .swiper-scrollbar-drag {
+    height: 8px;
+    margin-bottom: 2px;
+    background: #940045;
+}
+
+
+/* 화상연결 */
+.connect .connect_video{
+    width: 720px;
+    height: 472px;
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    right: 0;
+}
+
+.connect .video_view{
+    position: relative;
+}
+
+.connect .para_cam{
+    width: 720px;
+    height: 432px;
+}
+
+.connect .para_cam img{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .video_view .my_cam{
+    width: 240px;
+    height: 135px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.connect .video_view .my_cam img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.connect .video_view .para_name{
+    width: 180px;
+    height: 40px;
+    padding: 8px 18px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.connect .video_view .para_name p{
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.connect .patient_status .patient .symptome{
+    background: #fff;
+}
+
+.connect .swiper.part_accident{
+    background: #eee;
+}
+
+.emergency .patient_status .patient .symptome> div> div> div{
+    width: 300px;
+}
+
+/* 화상연결 full */
+.connect .connect_video.on{
+    width: 100%;
+    top: 0;
+    z-index: 7;
+}
+
+.connect .connect_video.on .para_cam{
+    width: 100%;
+    height: 813px;
+}
+
+
+/* 바이탈 */
+.connect .vital{
+    width: 1200px;
+    height: 600px;
+    padding: 0;
+    overflow-y: initial;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.connect .vital> :last-child{
+    width: 100%;
+    height: 560px;
+    padding: 30px;
+    background: #000;
+}
+
+.connect .vital .graph> div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .vital .graph> div> :first-child div{
+    width: 920px;
+    height: 42px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.connect .vital .graph> div> :first-child div img{
+    width: 100%;
+}
+
+.connect .graph> div> div> div{
+    padding: 0;
+}
+
+.connect .vital .ecg{
+    color:#00FF22;
+}
+
+.connect .vital .ecg_graph,
+.connect .vital .sp_graph,
+.connect .vital .resp_graph{
+    padding: 8px 16px;
+}
+
+.connect .vital .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+}
+
+.connect .vital .bell_name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .vital .bell_num{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect .vital .sp{
+    color: #00F6FF;
+}
+
+.connect .vital .resp{
+    color: #ff0;
+}
+
+.connect .vital .control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .vital .control> :first-child{
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect .vital .control .ews{
+    width: 88px;
+    height: 136px;
+    padding: 16px;
+    color: #fff;
+}
+
+.connect .vital .control .mmhg{
+    width: 260px;
+    height: 136px;
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.connect .vital .control .pulse{
+    width: 160px;
+    height: 136px;
+    padding: 8px 16px;
+    color: #00F6FF;
+}
+
+.connect .vital .control .temp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #FF3184;
+}
+
+.connect .vital .control .time{
+    display: flex;
+    align-items: center;
+}
+
+.connect .vital .control .time div{
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.connect .vital .control .time p{
+    font-size: 11px;
+}
+
+.connect .vital .bell_name input{
+    display: none;
+}
+
+.connect .vital .ecg .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    filter: invert(53%) sepia(73%) saturate(3112%) hue-rotate(94deg) brightness(127%) contrast(112%);
+    cursor: pointer;
+}
+
+.connect .vital .ecg .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.connect .vital .resp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.connect .vital .resp .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.connect .vital .temp .bell_name input[type="checkbox"]+label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    filter: invert(47%) sepia(74%) saturate(6074%) hue-rotate(317deg) brightness(101%) contrast(101%);
+    cursor: pointer;
+}
+
+.connect .vital .temp .bell_name input[type='checkbox']:checked+label{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+.connect .scene_picture{
+    width: 300px;
+    height: fit-content;
+    position: absolute;
+    bottom:0;
+    background: #eee;
+    z-index: 4;
+}
+
+.connect .scene_picture .swiper{
+    width: 300px;
+    display: none;
+}
+
+/* 현장사진 full */
+.connect .scene_picture.on{
+    width: 100%;
+    height: 100%;
+}
+
+.connect .scene_picture.on .big_picture{
+    width: 100%;
+    height: 700px;
+}
+
+.connect .scene_picture.on .small_picture{
+    width: 100%;
+    padding-left: 8px;
+}
+
+
+
+
+/* 탭으로 보기 */
+.connect .tab_view{
+    position: relative;
+}
+
+.connect_tab .tab_view .connect_video{
+    display: none;
+}
+
+.connect_tab .tab_view .vital{
+    display: none;
+}
+
+.connect_tab .patient_view> .title{
+    padding: 0 16px;
+    margin: 0;
+}
+
+.connect_tab .patient_view> .title .btn_list{
+    padding-top: 7px;
+}
+
+.connect_tab .patient_view .title .btn_list button{
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+    background: #CCC;
+    color: #888;
+}
+
+.connect_tab .patient_view .title .btn_list .on{
+    background: #940045;
+    color: #fff;
+}
+
+.connect_tab .tab_view .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+}
+
+.connect_tab .tab_view .title p{
+    color: #fff;
+}
+
+.connect_tab .tab_view .pati_stat,
+.connect_tab .tab_view .patient_status{
+    width: 100%;
+}
+
+.connect_tab .patient_status .patient{
+    padding: 10px;
+}
+
+.connect_tab .tab_view .patient .title{
+    background: none;
+}
+
+.connect_tab .patient_status,
+.connect_tab .patient_status .patient_inner{
+    height: 817px;
+}
+
+.connect_tab .patient_status .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_tab .patient_status .patient .pati_container> div{
+    width: 688px;
+    height: fit-content;
+}
+
+.connect_tab .vital{
+    position: initial;
+    width: 100%;
+}
+
+.connect_tab .vital> :last-child {
+    height: 817px;
+}
+
+.connect_tab .connect_video{
+    width: 100%;
+}
+
+.connect_tab .connect_video .para_cam{
+    width: 100%;
+    height: 817px;
+}
+
+.connect_tab .scene_picture{
+    width: 100%;
+    position: initial;
+    height: 857px;
+    display: none;
+    background: #eee;
+}
+
+.connect_tab .scene_picture .swiper{
+    width: 100%;
+    display: block;
+}
+
+.connect_tab .scene_picture .big_picture{
+    height: 692px;
+}
+
+/* connect_scroll */
+.connect_scroll .tab_view{
+    height: 857px;
+    overflow-y: scroll;
+}
+
+.connect_scroll .tab_view::-webkit-scrollbar{
+    display: none;
+}
+
+.connect_scroll .patient_view> .title{
+    margin: 0;
+}
+
+.connect_scroll .pati_stat{
+    width: 100%;
+    height: fit-content;
+    position: initial;
+    display: block;
+}
+
+.connect_scroll .pati_stat> .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .pati_stat .title p{
+    color: #fff;
+}
+
+.connect_scroll .tab_view .title button{
+    width: 20px;
+    height: 20px;
+    background: none;
+}
+
+.connect_scroll .pati_stat .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .pati_stat .patient_status .pati_container> div{
+    width: 673px;
+}
+
+.connect_scroll .patient_status .patient .first_aid{
+    height: fit-content;
+}
+
+.connect_scroll .patient_status{
+    width: 100%;
+    height: 816px;
+}
+
+.connect_scroll .patient_status .patient_inner {
+    height: 816px;
+}
+
+.connect_scroll .vital{
+    width: 100%;
+    position: initial;
+}
+
+.connect_scroll .vital .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+}
+
+.connect_scroll .vital .title p{
+    color: #fff;
+}
+
+.connect_scroll .connect_video{
+    width: 100%;
+    height: 100%;
+    position: initial;
+}
+
+.connect_scroll .connect_video .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .connect_video .title p{
+    color: #fff;
+}
+
+.connect_scroll .connect_video .video_view{
+    height: 808px;
+}
+
+.connect_scroll .connect_video .para_cam{
+    width: 100%;
+    height: 100%;
+}
+
+.connect_scroll .scene_picture{
+    width: 100%;
+    position: initial;
+}
+
+.connect_scroll .scene_picture .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .scene_picture .title p{
+    color: #fff;
+}
+
+.connect_scroll .scene_picture .swiper{
+    width: 100%;
+    display: block;
+}
+
+.connect_scroll .scene_picture .big_picture{
+    height: 692px;
+}
+
+
+
