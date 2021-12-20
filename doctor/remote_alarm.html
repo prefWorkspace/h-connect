@@ -133,7 +133,7 @@
         </header>
 
         <!--콘텐츠-->
-        <div id="wrap_content" class="doctor doctor_remote">
+        <div id="wrap_content" class="doctor doctor_remote doctor_remote2">
             <nav class="nav" id="nav">
                 <ul class="main_depth gnb">
                     <li class="gnb_list">
@@ -221,7 +221,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">   
+                            <div class="row" onclick="location.href='remote_check.html'">   
                                 <p>확인하지 않은 소견</p>
 
                                 <div>
@@ -248,243 +248,83 @@
                             <p><span>2</span> 개의 알림</p>
                         </div>
 
-                        <div class="row">
-                            <p class="time">
-                                <span>21.09.15</span>.
-                                <span>11:00</span> 까지
-                            </p>
+                        <div class="row on no_return">
+                            <div>
+                                <p class="time">
+                                    <span>21.09.15</span>.
+                                    <span>11:00</span> 까지
+                                </p>
+    
+                                <p class="you_or">협진일정 요청 수신</p>
+                                <p class="me_or">회신하지 않음</p>
+                            </div>
+                           
+                            <p class="who">최일정 교수님</p>
+                        </div>
 
-                            <p class="you_or">협진일정 요청 수신</p>
-                            <p class="me_or">회신하지 않음</p>
-                            <p>최일정 교수님</p>
+                        <div class="row my_return">
+                            <div>
+                                <p class="time">
+                                    <span>21.09.15</span>.
+                                    <span>11:00</span> 까지
+                                </p>
+    
+                                <p class="you_or">협진일정 회신</p>
+                                <p class="me_or">
+                                    <span class="green">회신 7명.</span>
+                                    <span class="red">미회신 1명.</span>
+                                </p>
+                            </div>
+                           
+                            <p class="who send_me">내가 보냄</p>
+                        </div>
+
+                        <div class="row clear_return">
+                            <div>
+                                <p class="time">
+                                    <span>21.09.15</span>.
+                                    <span>11:00</span> 까지
+                                </p>
+    
+                                <p class="you_or">협진일정 요청 수신</p>
+                                <p class="me_or done">회신완료</p>
+                            </div>
+                           
+                            <p class="who">전협진 교수님</p>
+                        </div>
+
+                        <div class="row">
+                            <div>
+                                <p class="time">
+                                    <span>21.09.15</span>.
+                                    <span>11:00</span> 까지
+                                </p>
+    
+                                <p class="you_or">협진일정 요청 수신</p>
+                                <p class="me_or done">회신완료</p>
+                            </div>
+                           
+                            <p class="who">성협진 교수님</p>
+                        </div>
+
+                        <div class="row">
+                            <div>
+                                <p class="time">
+                                    <span>21.09.15</span>.
+                                    <span>11:00</span> 까지
+                                </p>
+    
+                                <p class="you_or">협진일정 요청 수신</p>
+                                <p class="me_or done">회신완료</p>
+                            </div>
+                           
+                            <p class="who">곽협진 교수님</p>
                         </div>
                     </div>
                 </section>
 
-
-
-                <!-- 협진시작 -->
-                <section class="section right collabor">
-                    <div class="container">
-                        <div class="title">
-                            <div>
-                                <h2>협진 시작</h2>
-                                <p>박협진 교수님 외 5명</p>
-                            </div>
-                            
-                            <button type="button" class="btn_colla">
-                                <div>
-                                    <img src="/img/header/Hlogo_gray.svg" alt="로고">
-                                </div>
-                                시작하기
-                            </button>
-                        </div>
-
-                        <div class="collabor_wrap">
-                            <!-- 협진 시간 -->
-                            <div class="time">
-                                <h2>협진 시간</h2>
-
-                                <p><time datetime="2021.09.15">21.09.15</time> <time datetime="10:30">10:30</time>~<time datetime="12:00">12:00</time></p>
-                            </div>
-
-                            <!-- 협진 내용 -->
-                            <div class="cont">
-                                <div class="title">
-                                    <h2>협진 내용</h2>
-
-                                    <p>실시간 원격 협진</p>
-                                </div>
-
-                                <div class="cont_list">
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 1.</p>
-                                            <p>김입원 환자의 대장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 1.</p>
-
-                                                <div>
-                                                    김입원 환자의 대장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    김입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 2.</p>
-                                            <p>최입원 환자의 간암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 2.</p>
-
-                                                <div>
-                                                    최입원 환자의 간암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    최입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 3.</p>
-                                            <p>정입원 환자의 췌장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 3.</p>
-
-                                                <div>
-                                                    정입원 환자의 췌장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    정입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- 협진 참여자 -->
-                            <div class="member">
-                                <div class="title">
-                                    <h2>협진 참여자 정보</h2>
-                                </div>
-
-                                <div class="cont_list">
-                                    <div class="case">
-                                        <div>
-                                            <p>현재 참석 인원.</p>
-                                            <p class="count">4명</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div> 
-                    </div>               
-                </section>
-
                 <!-- 협진 일정 요청 -->
-                <section class="section right ask_request">
+                <section class="section right ask_request" >
                     <div class="container">
                         <div class="title">
                             <div>
@@ -924,254 +764,8 @@
                     </div>               
                 </section>
 
-                <!-- 소견 요청 협진 진행중 -->
-                <section class="section right opinion_ing">
-                    <div class="container">
-                        <div class="title">
-                            <div>
-                                <h2>소견 요청 협진 진행중</h2>
-                                <p>김소견 교수님 외 4명</p>
-                            </div>
-                            
-                            <button type="button" class="btn_colla">
-                                <div>
-                                    <img src="/img/header/Hlogo_gray.svg" alt="로고">
-                                </div>
-                                시작하기
-                            </button>
-                        </div>
-
-                        <div class="collabor_wrap">
-                            <!-- 협진 시간 -->
-                            <div class="time">
-                                <h2>소견요청 협진 기간</h2>
-
-                                <div>
-                                    <p>시작시간. 21.09.11. 09:00</p>
-                                    <p>마감시간. 21.09.15. 13:25</p>
-                                </div>
-                            </div>  
-
-                            <!-- 협진 내용 -->
-                            <div class="cont">
-                                <div class="title">
-                                    <h2>협진 내용</h2>
-
-                                    <p>소견 요청 협진</p>
-                                </div>
-
-                                <div class="cont_list">
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 1.</p>
-                                            <p>김입원 환자의 대장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 1.</p>
-
-                                                <div>
-                                                    김입원 환자의 대장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    김입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 2.</p>
-                                            <p>최입원 환자의 간암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 2.</p>
-
-                                                <div>
-                                                    최입원 환자의 간암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    최입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 3.</p>
-                                            <p>정입원 환자의 췌장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 3.</p>
-
-                                                <div>
-                                                    정입원 환자의 췌장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    정입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- 협진 참여자 -->
-                            <div class="member">
-                                <div class="title">
-                                    <h2>협진 참여자 정보</h2>
-                                    <p>협진 참여 요청. <span>5명</span></p>
-                                </div>
-
-                                <div class="cont_list">
-                                    <!-- 참여인원 -->
-                                    <div class="case">
-                                        <div>
-                                            <p>참여 인원.</p>
-                                            <p class="count">4명</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- 미참여 -->
-                                    <div class="case">
-                                        <div>
-                                            <p>미참여.</p>
-                                            <p class="count red">1명</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div>
-                                            <p>박협진 교수님</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>               
-                </section>
-
                 <!-- 협진 일정 요청(내가 보냄) -->
-                <section class="section right me_request">
+                <section class="section right me_request" style="display: none;">
                     <div class="container">
                         <div class="title">
                             <div>
@@ -1371,7 +965,7 @@
                                 </div>
 
                                 <!-- 리스트로 보기 -->
-                                <div id="metab-1" class="tab-content list_view ">
+                                <div id="metab-1" class="tab-content list_view">
                                     <div>
                                         <div class="check">
                                             <div>
@@ -1682,7 +1276,7 @@
                                 <!-- weekly로 보기 -->
                                 <div id="metab-2" class="tab-content week_view current">
                                    <!-- 협진 가능시간 클릭하면 선택한 시간의 정보가 보임 -->
-                                    <div class="select_week">
+                                    <!-- <div class="select_week">
                                         <div>
                                             <div class="check">
                                                 <div>
@@ -1721,7 +1315,7 @@
                                                 <p>김협진 교수님</p>
                                             </div> 
                                         </div>
-                                    </div>
+                                    </div> -->
                                     
                                     <div class="week_wrap">
                                         <!-- 시간 time -->
@@ -1869,54 +1463,393 @@
                         </div> 
                     </div>               
                 </section>
+
+                <!-- 협진 일정 요청 수신(회신 완료) -->
+                <section class="section right done_request" style="display: none;">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>협진 일정 요청</h2>
+                                <p>내가 보냄</p>
+                            </div>
+
+                            <div class="btn_list">
+                                <button type="button" class="btn_done" disabled>회신완료</button>
+                                <button type="button" class="btn_accept">회신하기</button>
+                            </div>
+                        </div>
+
+                        <div class="collabor_wrap">
+                            <!-- 일정 요청 마감일자 -->
+                            <div class="time">
+                                <h2>일정 요청 마감일자</h2>
+
+                                <p>21.09.16. 16:00 까지</p>
+                            </div>
+
+                            <!-- 협진 내용 -->
+                            <div class="cont">
+                                <div class="title">
+                                    <h2>협진 내용</h2>
+
+                                    <p>다학제 통합 진료</p>
+                                </div>
+
+                                <div class="cont_list">
+                                    <div class="case">
+                                        <div>
+                                            <p>Case 1.</p>
+                                            <p>김입원 환자의 대장암 검사입니다.</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div class="case_inner">
+                                            <div class="title">
+                                                <p>Case 1.</p>
+
+                                                <div>
+                                                    김입원 환자의 대장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
+                                                </div>
+                                            </div>
+
+                                            <div class="pati_name">
+                                                <p>환자명.</p>
+
+                                                <div>
+                                                    김입원 (68. 여).patient number
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <p>협진 내용.</p>
+
+                                                <div>
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="case">
+                                        <div>
+                                            <p>Case 2.</p>
+                                            <p>최입원 환자의 간암 검사입니다.</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div class="case_inner">
+                                            <div class="title">
+                                                <p>Case 2.</p>
+
+                                                <div>
+                                                    최입원 환자의 간암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
+                                                </div>
+                                            </div>
+
+                                            <div class="pati_name">
+                                                <p>환자명.</p>
+
+                                                <div>
+                                                    최입원 (68. 여).patient number
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <p>협진 내용.</p>
+
+                                                <div>
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="case">
+                                        <div>
+                                            <p>Case 3.</p>
+                                            <p>정입원 환자의 췌장암 검사입니다.</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div class="case_inner">
+                                            <div class="title">
+                                                <p>Case 3.</p>
+
+                                                <div>
+                                                    정입원 환자의 췌장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
+                                                </div>
+                                            </div>
+
+                                            <div class="pati_name">
+                                                <p>환자명.</p>
+
+                                                <div>
+                                                    정입원 (68. 여).patient number
+                                                </div>
+                                            </div>
+
+                                            <div class="content">
+                                                <p>협진 내용.</p>
+
+                                                <div>
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
+                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
+                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- 협진 가능시간 선택 -->
+                            <div class="time_select">
+                                <div class="title">
+                                    <h2>협진 가능시간 선택</h2>
+
+                                    <ul class="tabs">
+                                        <li class="tab-link current" data-tab="done-1">
+                                            <div>
+                                                <img src="/img/doctor/list.svg" alt="리스트 아이콘">
+                                            </div>
+                                        </li>
+
+                                        <li class="tab-link" data-tab="done-2">
+                                            <div>
+                                                <img src="/img/icon/clock.svg" alt="시계 아이콘">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 리스트로 보기 -->
+                                <div id="done-1" class="tab-content list_view current">
+                                    <div>
+                                        <div class="check">
+                                            <input type="checkbox" id="me_first">
+                                            <label for="me_first">
+                                            <span></span>
+                                            <p>21.09.22. 금요일. 09:00 ~ 12:00</p>
+                                            </label>    
+                                        </div>
+                                        
+                                        <!-- 일정 중복시 보이게 해주세요 -->
+                                        <p class="dupli">※ 외래진료 일정과 중복됩니다.</p>
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <input type="checkbox" id="me_second">
+                                            <label for="me_second">
+                                            <span></span>
+                                            <p>21.09.22. 금요일. 09:00 ~ 12:00</p>
+                                            </label>    
+                                        </div>
+                                        
+                                        <!-- 일정 중복시 보이게 해주세요 -->
+                                        <p class="dupli">※ 외래진료 일정과 중복됩니다.</p>
+                                    </div>
+
+                                    <div>
+                                        <div class="check">
+                                            <input type="checkbox" id="me_third">
+                                            <label for="me_third">
+                                            <span></span>
+                                            <p>21.09.22. 금요일. 09:00 ~ 12:00</p>
+                                            </label>    
+                                        </div>
+                                        
+                                        <!-- 일정 중복시 보이게 해주세요 -->
+                                        <p class="dupli">※ 외래진료 일정과 중복됩니다.</p>
+                                    </div>
+                                </div>
+
+                                <!-- weekly로 보기 -->
+                                <div id="done-2" class="tab-content week_view">
+                                    <div class="week_wrap">
+                                        <!-- 시간 time -->
+                                        <div class="time">
+                                            <div><p>09:00</p></div>
+                                            <div><p>10:00</p></div>
+                                            <div><p>11:00</p></div>
+                                            <div><p>12:00</p></div>
+                                            <div><p>13:00</p></div>
+                                            <div><p>14:00</p></div>
+                                            <div><p>15:00</p></div>
+                                            <div><p>16:00</p></div>
+                                            <div><p>17:00</p></div>
+                                            <div><p>18:00</p></div>
+                                        </div>
+
+                                        <div class="inner">
+                                            <div class="day today">
+                                                <div class="title">
+                                                    <p>22.월 </p>
+                                                </div>
+
+                                                <!-- 협진요청 -->
+                                                <div class="plan start">
+                                                    <p>협진요청</p>
+    
+                                                    <div class="possible">
+                                                        <p>가능</p>
+                                                        <p>가능</p>
+                                                        <p>가능</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 외래진료 -->
+                                                <div class="plan ambul">
+                                                    <p>외래진료</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="day">
+                                                <div class="title">
+                                                    <p>23. 화 </p>
+                                                </div>
+
+                                                <!-- 외래진료 -->
+                                                <div class="plan ambul">
+                                                    <p>외래진료</p>
+                                                </div>
+
+                                                <!-- 협진요청 -->
+                                                <div class="plan start">
+                                                    <p>협진요청</p>
+    
+                                                    <div class="possible">
+                                                        <p>가능</p>
+                                                        <p>가능</p>
+                                                        <p>가능</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 협진요청 -->
+                                                <div class="plan start">
+                                                    <p>협진요청</p>
+    
+                                                    <div class="possible">
+                                                        <p>가능</p>
+                                                        <p>가능</p>
+                                                        <p>가능</p>
+                                                    </div>
+                                                </div>                                             
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <!-- 협진 참여자 -->
+                            <div class="member">
+                                <div class="title">
+                                    <h2>협진 참여자 정보</h2>
+
+                                    <p>협진 참여 요청. <span>8명</span></p>
+                                </div>
+
+                                <div class="cont_list">
+                                    <div class="case">
+                                        <div>
+                                            <p>응답 인원</p>
+                                            <p class="count">7명</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="case">
+                                        <div>
+                                            <p>미응답</p>
+                                            <p class="count red">1명</p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/img/under_arrow.svg" alt="아래 화살표">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="case_cont">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> 
+                    </div>               
+                </section>
             </div>
         </div>
 
     </div>
     <!--// end wrap-->
-
-    <script>
-        //   년도 선택
-            const yearLabel = document.querySelector('.year_label');
-            const yearOptions = document.querySelectorAll('.year_option');
-
-            const yearSelect = (item) => {
-                yearLabel.parentNode.classList.remove('active');
-                yearLabel.innerHTML = item.textContent;
-            }
-
-            yearOptions.forEach(option => {
-                option.addEventListener('click', () => yearSelect(option))
-            })
-
-            yearLabel.addEventListener('click', () => {
-            if(yearLabel.parentNode.classList.contains('active')) {
-                yearLabel.parentNode.classList.remove('active');
-            } else {
-                yearLabel.parentNode.classList.add('active');
-            }
-            })
-
-        // 월 선택
-            const monthLabel = document.querySelector('.month_label');
-            const monthOptions = document.querySelectorAll('.month_option');
-
-            const monthSelect = (item) => {
-                monthLabel.parentNode.classList.remove('active');
-                monthLabel.innerHTML = item.textContent;
-            }
-
-            monthOptions.forEach(option => {
-                option.addEventListener('click', () => monthSelect(option))
-            })
-
-            monthLabel.addEventListener('click', () => {
-            if(monthLabel.parentNode.classList.contains('active')) {
-                monthLabel.parentNode.classList.remove('active');
-            } else {
-                monthLabel.parentNode.classList.add('active');
-            }
-            })
-    </script>
   </body>
 </html>

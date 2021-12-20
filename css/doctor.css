@@ -764,6 +764,7 @@
 .doctor .right .cont .title p:not(.case_inner p){
     margin: 0;
     font-size: 16px;
+    font-weight: 500;
     color: #007A94;
 }
 
@@ -868,7 +869,7 @@
 }
 
 .doctor .right .member .title{
-    padding: 20px 16px;
+    padding: 20px 32px;
     border: none;
     align-items: center;
 }
@@ -1094,17 +1095,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* 소견 요청 협진 */
 .connect_opinion .call_control .con_btn {
     width: 80px;
@@ -1279,12 +1269,6 @@
 .doctor .now_section .red.on img{
     filter: none;
 }
-
-
-
-
-
-
 
 
 
@@ -2441,12 +2425,13 @@
 .doctor .time_select .week_view{
     width: 384px;
     margin: 0 auto;
-    height: fit-content;
+    height: 550px;
     /* padding-left: 36px; */
     /* display: flex; */   
+    position: relative;
 }
 
-.doctor .time_select .week_view .select_week{margin-bottom: 60px;}
+.doctor .time_select .week_view .select_week{margin-bottom: 10px;}
 
 .doctor .time_select .week_view .select_week> div{
     width: 100%;
@@ -2490,6 +2475,7 @@
     padding: 0;
     display: initial;
     position: absolute;
+    top: 43px
 }
 
 .doctor .time_select .week_view .time div{
@@ -2515,7 +2501,7 @@
     width: 315px;
     height: 505px;
     padding-bottom: 22px;
-    top: -31px;
+    top: 10px;
     left: 50px;
     overflow: scroll hidden;
     display: flex;
@@ -2573,7 +2559,7 @@
 
 .doctor .time_select .possible p{
     width: 48px;
-    line-height: 46px;
+    line-height: 48px;
     background: #004F60;
     cursor: pointer;
 }
@@ -2601,6 +2587,7 @@
 }
 
 .doctor .time_select .inner> :first-child> :nth-child(2){
+    height: 146px;
     top: 41px;
 }
 
@@ -2620,11 +2607,13 @@
 }
 
 .doctor .time_select .inner> :nth-child(2)> :nth-child(3){
+    height: 146px;
     top: 41px;
     left: 52px;
 }
 
 .doctor .time_select .inner> :nth-child(2)> :nth-child(4){
+    height: 240px;
     top: 233px;
     left: 52px;
 }
@@ -2635,6 +2624,7 @@
 }
 
 .doctor .time_select .inner> :nth-child(4)> :nth-child(2){
+    height: 146px;
     top: 41px;
 }
 
@@ -2650,6 +2640,7 @@
 }
 
 .doctor .time_select .inner> :nth-child(5)> :nth-child(3){
+    height: 242px;
     top: 231px;
     left: 0;
 }
@@ -2990,7 +2981,296 @@
 
 .remote_request .list .row{
     padding: 16px;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+}
+
+.remote_request .list .row div{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remote_request .list .row .you_or{
+    width: 100px;
+}
+
+.remote_request .list .row .me_or{
+    width: 115px;
+}
+
+.remote_request .list .row .me_or .green{
+    color: #007A94;
+}
+
+.remote_request .list .row .me_or .red{
+    color: #940045;
+}
+
+.remote_request .list .row .me_or.done{
+    color: #888;
+}
+
+.remote_request .list .row .send_me{
+    color: #007A94;
+}
+
+.remote_request .list .row.on{
+    background: #007A94;
+}
+
+.remote_request .list .row.on p,
+.remote_request .list .row.on .me_or .red,
+.remote_request .list .row.on .me_or .green,
+.remote_request .list .row.on .me_or.done{
+    color: #fff;
+}
+
+.doctor_remote2 .ask_request{display: block;}
+
+.doctor_remote2 .time_select .possible p{
+   opacity: 0;
+}
+
+.doctor_remote2 .time_select .possible p.active{
+    opacity: 1;
+    z-index: 99999999;
+}
+
+.doctor_remote2 .me_request .time_select .possible p{
+   opacity: 1;
+}
+
+.doctor .done_request .title .btn_list button{
+    padding: 10px;
+    font-size: 14px;
+    display: initial;
+    box-shadow: none;
+}
+
+.doctor .done_request .title .btn_done:disabled{
+    color: #888;
+    background: #ccc;
+    display: none;
+}
+
+.doctor .done_request .title .btn_accept{
+    background: #007A94;
+    color: #fff;
+}
+
+.doctor .remote_check .count span{
+    color: #007A94;
+}
+
+.doctor .remote_check .row.on .count span{
+    color: #fff;
+}
+
+.doctor .find_request .time div h2{
+    font-weight: normal;
+}
+
+.doctor .no_opinion .title{
+    border: none;
+}
+
+.doctor .no_opinion .title h2{color: #000;}
+
+.doctor .no_opinion .cont{
+    width: 384px;
+    margin: 0 auto;
+    padding: 16px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.doctor .no_opinion .cont span{
+    color: #007A94;
+}
+
+/* 신규협진 생성 */
+.new_remote {
+    width: 540px;
+    padding: 32px;
+}
+
+.new_remote .title{
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.new_remote .title> div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new_remote .title .img_container{
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+}
+
+.new_remote .title .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+}
+
+.new_remote .title> div> div{
+    display: flex;
+    align-items: center;
+}
+
+.new_remote .title p{
+    margin-top: 13px;
+    color: #444;
+}
+
+.new_remote .title .btn_list{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_remote .title button{
+    width: 96px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.new_remote .title .btn_cancel{
+    background: #fff;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.new_remote .title .btn_creat{
+    background: #007A94;
+    color: #fff;
+}
+
+.new_remote .title .btn_creat:disabled{
+    background: #ccc;
+    color: #888;
+}
+
+.new_remote .inner{
+    width: 476px;
+    height: 576px;
+    overflow-y: scroll;
+}
+
+.new_remote .inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.new_remote .inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.new_remote .type{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new_remote .type .surgery_box{
+    width: 184px;
+    height: 32px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.new_remote .type .surgery_label{
+    width: 184px;
+    height: 32px;
+    padding: 6px 16px;
+}
+
+.new_remote .type .surgery_list{
+    width: 184px;
+}
+
+.new_remote .surgery_box.active{
+    border-bottom: none;
+}
+
+.new_remote .surgery_box.active .surgery_list{
+    width: 184px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.new_remote .type .surgery_option{
+    width: 184px;
+}
+
+.new_remote .content{
+    padding: 20px 16px;
+}
+
+.new_remote .content form{
+    padding: 16px;
+    margin-top: 20px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.new_remote .content p{
+    margin-bottom: 15px;
+}
+
+.new_remote .content input{
+    width: 100%;
+    padding: 8px 50px 8px 16px;
+    border-radius: 4px;
+}
+
+.new_remote .content input::placeholder{
+    font-size: 12px;
+    color: #ccc;
+}
+
+.new_remote .content .case{
+    margin-bottom: 52px;
+}
+
+.new_remote .content .search_container{
+    position: relative;
+}
+
+.new_remote .content .btn_search{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: #fff;
+    width: 32px;
+    padding: 7px;
+}
+
+.new_remote .content .btn_search img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(10%) sepia(99998%) saturate(999%) hue-rotate(264deg) brightness(9999%) contrast(8%);
+}
+
+.new_remote .content .patient_select span{
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: #fff;
+    display: block;
 }

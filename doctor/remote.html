@@ -10,13 +10,11 @@
   <script type='text/javascript' src='/js/common.js'></script>
   <script type='text/javascript' src='/js/index.js'></script>
   <script type='text/javascript' src='/js/fullcalendar.js'></script>
-  <!-- <script type='text/javascript' src='/js/calendar.js'></script> -->
   
   <!--css-->
   <link rel='stylesheet' href='/css/reset.css'>
   <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link  rel="stylesheet" href="/css/fullcalendar.css">
+  <link rel="stylesheet" href="/css/fullcalendar.css">
   <link rel="stylesheet" href="/css/doctor.css">
 
 </head>
@@ -94,6 +92,26 @@
                             <p>연결</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 요청한 일정 삭제 -->
+    <div class="pop delete delete_schedule">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/img/logo.png" alt="로고">
+                </div>
+                    
+                <h3>요청한 일정 및 작성한 협진내용이 모두 삭제됩니다.</h3>
+                <h2>삭제 하시겠습니까?</h2>
+    
+        
+                <div class="btn_list">
+                    <button type="button" class="btn_no">아니요</button>
+                    <button type="button" class="btn_cut">네, 삭제합니다</button>
                 </div>
             </div>
         </div>
@@ -224,7 +242,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">   
+                            <div class="row" onclick="location.href='remote_check.html'">   
                                 <p>확인하지 않은 소견</p>
 
                                 <div>

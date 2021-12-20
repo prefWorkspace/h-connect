@@ -63,17 +63,17 @@ $(function () {
         });
 
         // 병동삭제
-        $('.nurse .ward .cont .ward_list .btn_list .btn_delete').on('click', function () {
-            $('.pop.delete_ward .overlay').show();
+        $('.btn_delete').on('click', function () {
+            $('.pop.delete .overlay').show();
         });
             // 아니요
-        $('.pop.delete_ward .pop_cont .btn_list .btn_no').on('click', function(){
+        $('.pop.delete .btn_no').on('click', function(){
             $('.pop.delete_ward .overlay').hide();
         });
             // 네 삭제합니다.
-        $('.pop.delete_ward .pop_cont .btn_list .btn_cut').on('click', function(){
+        $('.pop.delete .btn_cut').on('click', function(){
             $('.nurse .ward .cont .ward_list').hide();
-            $('.pop.delete_ward .overlay').hide();
+            $('.pop.delete .overlay').hide();
         });
 
 
@@ -865,6 +865,22 @@ $(function () {
         $('.doctor .time_select .possible p').show();
     })
 
+    $('.doctor .my_return').on('click', function(){
+        $('.doctor .me_request').show();
+        $('.doctor .right').not('.me_request').hide();
+    })
+
+    $('.doctor .no_return').on('click', function(){
+        $('.doctor .ask_request').show();
+        $('.doctor .right').not('.ask_request').hide();
+    })
+
+    $('.doctor .clear_return').on('click', function(){
+        $('.doctor .done_request').show();
+        $('.doctor .right').not('.done_request').hide();
+    })
+   
+
     // 메세지
     $('.doctor_message .send_message .search_container').on('click', function(){
         $('.doctor_message .send_message .search_container').toggleClass('on');
@@ -876,6 +892,7 @@ $(function () {
         $('.doctor_remote .time_select .possible p').on('click', function(){
             $(this).toggleClass('active');
             $('.doctor_remote .select_week> :first-child').toggle();
+            // $('.doctor .possible p.on').css("opacity", '1');
         })
 
         // 리스트 클릭시 배경색 바뀜
@@ -889,12 +906,12 @@ $(function () {
             $('.doctor .all_list .row').not(this).removeClass('on');
         })
 
-        $('.doctor_remote .start_remote, .doctor_remote .start').on('click', function(){
+        $('.doctor_remote .start_remote').on('click', function(){
             $('.doctor_remote .collabor').show();
             $('.doctor_remote .right').not('.collabor').hide();
         })
 
-        $('.doctor_remote .remote_ask, .doctor_remote .request').on('click', function(){
+        $('.doctor_remote .remote_ask').on('click', function(){
             $('.doctor_remote .ask_request').show();
             $('.doctor_remote .right').not('.ask_request').hide();
         })
@@ -904,7 +921,7 @@ $(function () {
             $('.doctor_remote .right').not('.opinion_ing').hide();
         })
 
-        $('.doctor_remote .request_remote, .doctor_remote .opinion').on('click', function(){
+        $('.doctor_remote .request_remote').on('click', function(){
             $('.doctor_remote .me_request').show();
             $('.doctor_remote .right').not('.me_request').hide();
         })
@@ -927,6 +944,15 @@ $(function () {
             $(this).addClass('on');
             $('.doctor .all_plan> .title button').not(this).removeClass('on');
         })
+
+        // remote_alarm
+        $('.remote_request .list .row').on('click', function(){
+            $(this).addClass('on');
+            $('.remote_request .list .row').not(this).removeClass('on');
+        })
+
+
+
 
 
 
@@ -978,7 +1004,7 @@ $(function () {
         })
 
         // 삭제
-        $('.doctor_monitor .rhythm .event .btn_delete').on('click', function(){
+        $('.doctor_monitor .btn_delete').on('click', function(){
             $('.pop.alarm .overlay').show();
         })
 
