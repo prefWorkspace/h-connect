@@ -1211,22 +1211,15 @@
 }
 
 .patient_vital .all_patient .patient_moniter .vital_moniter .hr{
-    color: #00FF22;
-    margin: 0 4px;
+     margin: 0 4px;
 }
 
 .patient_vital .all_patient .patient_moniter .vital_moniter .sp{
-    color: #00FFFF;
     margin-right: 4px;
 }
 
 .patient_vital .all_patient .patient_moniter .vital_moniter .resp{
-    color: #EEFF00;
     margin-right: 4px;
-}
-
-.patient_vital .all_patient .patient_moniter .vital_moniter .temp{
-    color: #FF5499;
 }
 
 .patient_vital .all_patient .patient_moniter .empty_bed{
@@ -1533,7 +1526,7 @@
     margin: 10px 0;
 }
 
-.monitoring_patient .ecg p{
+/* .monitoring_patient .ecg p{
     color: #00FF22;
 }
 
@@ -1543,7 +1536,7 @@
 
 .monitoring_patient .resp p{
     color: #FFEE00;
-}
+} */
 
 .monitoring_patient .ecg_graph> div,
 .monitoring_patient .sp_graph> div,
@@ -1562,7 +1555,7 @@
     font-size: 14px;
 }
 
-.monitoring_patient .ecg .bell_name input[type="checkbox"]+label span{
+/* .monitoring_patient .ecg .bell_name input[type="checkbox"]+label span{
     filter: invert(57%) sepia(94%) saturate(2086%) hue-rotate(86deg) brightness(114%) contrast(120%);
 }
 
@@ -1577,7 +1570,7 @@
 .monitoring_patient .bell_name input[type='checkbox']:checked+label span{
     background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
-}
+} */
 
 .monitoring_patient .control{
     margin-bottom: 39px;

@@ -798,13 +798,17 @@ $(function () {
         $('.doctor .my_plan .inner .title button').not(this).removeClass('on');
     })
 
-    $('.doctor .my_plan .btn_two').on('click', function(){
+    $('.doctor .btn_two').on('click', function(){
         $('.doctor .two').show();
         $('.doctor .four').hide();
+        $(this).addClass('on');
+        $('.doctor .btn_four').removeClass('on');
     })
 
-    $('.doctor .my_plan .btn_four').on('click', function(){
+    $('.doctor .btn_four').on('click', function(){
         $('.doctor .four').show();
+        $(this).addClass('on');
+        $('.doctor .btn_two').removeClass('on');
     })
     
 
@@ -861,6 +865,74 @@ $(function () {
         $('.doctor .time_select .possible p').show();
     })
 
+    // 메세지
+    $('.doctor_message .send_message .search_container').on('click', function(){
+        $('.doctor_message .send_message .search_container').toggleClass('on');
+        $('.doctor_message .pop.search_patient').toggleClass('on');
+    })
+
+    // 원격협진
+        // 스케줄 클릭 하면 배경색 활성화
+        $('.doctor_remote .time_select .possible p').on('click', function(){
+            $(this).toggleClass('active');
+            $('.doctor_remote .select_week> :first-child').toggle();
+        })
+
+        // 리스트 클릭시 배경색 바뀜
+        $('.doctor .status_list .row').on('click', function(){
+            $(this).addClass('on');
+            $('.doctor .status_list .row').not(this).removeClass('on');
+        })
+
+        $('.doctor .all_list .row').on('click', function(){
+            $(this).addClass('on');
+            $('.doctor .all_list .row').not(this).removeClass('on');
+        })
+
+        $('.doctor_remote .start_remote, .doctor_remote .start').on('click', function(){
+            $('.doctor_remote .collabor').show();
+            $('.doctor_remote .right').not('.collabor').hide();
+        })
+
+        $('.doctor_remote .remote_ask, .doctor_remote .request').on('click', function(){
+            $('.doctor_remote .ask_request').show();
+            $('.doctor_remote .right').not('.ask_request').hide();
+        })
+
+        $('.doctor_remote .end_remote').on('click', function(){
+            $('.doctor_remote .opinion_ing').show();
+            $('.doctor_remote .right').not('.opinion_ing').hide();
+        })
+
+        $('.doctor_remote .request_remote, .doctor_remote .opinion').on('click', function(){
+            $('.doctor_remote .me_request').show();
+            $('.doctor_remote .right').not('.me_request').hide();
+        })
+
+        $('.doctor_remote .plan').on('click', function(){
+            $(this).addClass('active');
+            $('.doctor_remote .plan').not(this).removeClass('active');
+        })
+
+        $('.doctor .all_plan .title .btn_week').on('click', function(){
+            $('.doctor_remote .cal_view').hide();
+            $('.doctor_remote .week').show();
+            $(this).addClass('on');
+            $('.doctor .all_plan> .title button').not(this).removeClass('on');
+        })
+
+        $('.doctor .all_plan .title .btn_cal').on('click', function(){
+            $('.doctor_remote .cal_view').show();
+            $('.doctor_remote .week').hide();
+            $(this).addClass('on');
+            $('.doctor .all_plan> .title button').not(this).removeClass('on');
+        })
+
+
+
+
+
+
 
     // 모니터링
         // 모니터링 버튼 클릭시 링크 이동
@@ -873,11 +945,11 @@ $(function () {
             location.href="connect_nurse.html"
         })
 
-        // 리스트 클릭시 배경색 바뀜
-        $('.row').on('click', function(){
-            $(this).addClass('on');
-            $('.row').not(this).removeClass('on');
-        })
+        // // 리스트 클릭시 배경색 바뀜
+        // $('.row').on('click', function(){
+        //     $(this).addClass('on');
+        //     $('.row').not(this).removeClass('on');
+        // })
 
         // $('.doctor_monitor .new_patient .row').on('click', function(){
         //     $(this).addClass('on');

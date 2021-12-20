@@ -60,6 +60,36 @@ body {
     align-items: center;
 }
 
+.hr, .ecg{ color: #00FF22;}
+.sp{ color: #00FFFF;}
+.resp{ color: #EEFF00;}
+.temp{ color: #FF5499;}
+.mmhg, .ews{color: #fff;}
+.pulse{color: #00F6FF;}
+
+.ecg .bell_name input[type="checkbox"]+label span{
+    filter: invert(57%) sepia(94%) saturate(2086%) hue-rotate(86deg) brightness(114%) contrast(120%);
+}
+
+.sp .bell_name input[type="checkbox"]+label span{
+    filter: invert(8%) sepia(74%) saturate(950%) hue-rotate(101deg) brightness(105%) contrast(107%);
+}
+
+.resp .bell_name input[type="checkbox"]+label span{
+    filter: invert(8%) sepia(32%) saturate(2960%) hue-rotate(2deg) brightness(105%) contrast(108%);
+}
+
+.temp .bell_name input[type="checkbox"]+ label span{
+    filter: invert(41%) sepia(49%) saturate(7067%) hue-rotate(317deg) brightness(102%) contrast(101%);
+}
+
+.bell_name input[type='checkbox']:checked+label span{
+    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+}
+
+
+
 
 /* btn1 - header 버튼 스타일 */
 /* 
@@ -323,37 +353,10 @@ body {
     align-items: center;
 }
 
-.pc_header::after{
-    min-width: 1880px;
-    height: 80px;
-    content: '';
-    top: 0;
-    left: 0;
-    display: block;
-    position: absolute;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    z-index: -1;
-}
-
-.doc_emer::after{display: none;}
-
 .doc_header{
     /* min-width: 1248px; */
     position: relative;
-    z-index: 10;
-}
-
-.doc_header::after{
-    width: 100%;
-    min-width: 1248px;
-    height: 80px;
-    content: '';
-    top: 0;
-    left: 0;
-    display: block;
-    position: absolute;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    z-index: -1;
+    /* z-index: 10; */
 }
 
 .pc_header .header_inner{
@@ -362,7 +365,7 @@ body {
     justify-content: space-between;
 }
 
-.emer{
+#header.emer{
     min-width: 1880px;
     height: 80px;
     padding: 14px 24px;
@@ -374,13 +377,6 @@ body {
     align-items: center;
 }
 
-.pc_header .logo{
-    width: 46px;
-    height: 32px;
-    margin: 12px 30px 12px 0;
-    vertical-align: middle;
-}
-
 .pc_header .logo img{
     width: 100%;
     height: 100%;
@@ -389,6 +385,7 @@ body {
 
 .pc_header .header_title{
     width: 600px;
+    padding-bottom: 5px;
 }
 
 .pc_header .header_title h1{
@@ -511,10 +508,10 @@ body {
 }
 
 /* 응급상황실 로딩 */
-.paramedic{
+#header.paramedic{
     height: 64px;
     min-width: 1880px;
-    padding: 23px 24px;
+    padding: 15px 24px;
     background: linear-gradient(to right, #940045, #4A0000);
 }
 
@@ -525,9 +522,9 @@ body {
 
 .paramedic .header_left,
 .paramedic .header_right{
+    color: #fff;
     display: flex;
     justify-content: space-between;
-    color: #fff;
     align-items: center;
 }
 
@@ -537,7 +534,7 @@ body {
 }
 
 .paramedic .header_left h4{
-    margin-left: 20px;
+    margin-left: 8px;
     font-size: 14px;
     font-weight: normal;
 }
@@ -605,11 +602,6 @@ body {
     object-fit: cover;
 }
 
-.paramedic::after{
-    box-shadow: none;
-}
-
-
 /* 의사 헤더 */
 .doc_header .btn_list{
     margin-left: 64px;
@@ -632,16 +624,7 @@ body {
 }
 
 
-
-
-
 /* 의사 연결 헤더 */
-.doc_connect{
-    height: 64px;
-}
-
-.doc_connect::after{display: none;}
-
 .doc_connect h4{
     margin-right: 5px;
     font-size: 14px;
@@ -663,11 +646,21 @@ body {
     filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }
 
-
-/* 의사 응급호출 헤더 */
-.doc_emer{
-    min-width: 1248px;
+/* connect header */
+#header.con_header{
+    height: 64px;
+    padding: 16px 24px;
 }
+
+#header.con_header{
+    box-shadow: none;
+}
+
+
+
+
+
+
 
 /* logo */
 .logo {
@@ -1617,10 +1610,11 @@ textarea::-webkit-scrollbar-button {
     top: 72px;
     right: 34px;
     display:none;
-    z-index: 2;
+    z-index: 8;
 }
 
 .pop.logout .wrap_inner{
+    padding: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -1947,6 +1941,11 @@ textarea::-webkit-scrollbar-button {
     right: 166px;
     display: none;
     z-index: 99;
+}
+
+.pop.search_patient .wrap_inner{
+    padding: 0;
+    display: initial;
 }
 
 .pop.search_patient .wrap_inner p{

@@ -1,3 +1,9 @@
+/* pop up */
+
+
+
+
+
 /*================= 의사 =================*/
 /* 의사 메인 (h-works) */
 .doctor{
@@ -339,7 +345,6 @@
 
 .doctor .plan{
     width: 48px;
-    font-size: 10px;
     color: #fff;
     text-align: center;
     position: absolute;
@@ -350,6 +355,7 @@
 
 .doctor .plan p{
     width: 45px;
+    font-size: 10px;
 }
 
 .doctor .my_plan .weekly .weekend .title p{
@@ -961,7 +967,8 @@
 /* 실시간 원격 협진 */
 .connect_remote,
 .connect_opinion{
-    height: calc(100vh - 64px);
+    height: 100%;
+    min-height: calc(100vh - 64px);
     background: #222;
 }
 .connect_remote .wrap_inner,
@@ -974,6 +981,129 @@
     margin: 240px auto 0;
     background: none;
 }
+
+.para_connect .call_connect .img_container{
+    width: 117px;
+    height: 82px;
+    margin: 0 auto;
+}
+
+.para_connect .call_connect .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.para_connect .call_connect h1{
+    margin: 72px 0 12px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.para_connect .call_connect h3{
+    margin-bottom: 48px;
+    font-size: 16px;
+    text-align: center;
+    color: #888;
+}
+
+.para_connect .loading_con{
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+}
+
+.para_connect .loading_con img{
+    width: 100%;
+    height: 100%;
+}
+
+.para_connect .img_loading {
+    -webkit-animation: spin 2s infinite linear;
+            animation: spin 2s infinite linear;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+.para_connect .call_control{
+    width: 272px;
+    height: 80px;
+    margin: 140px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.para_connect .call_control button{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.para_connect .call_control .con_btn{
+    position: relative;
+}
+
+.para_connect .layer{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    padding: 28px 0;
+    border-radius: 50%;
+    top: 0;
+    background: linear-gradient(to right, #eee, #ccc);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.para_connect .layer p{
+    font-size: 16px;
+    text-align: center;
+}
+
+.para_connect .layer p{
+    color: #007A94;
+}
+
+.para_connect .refuse_layer p{
+    color: #940045;
+}
+
+.para_connect .refuse:hover .refuse_layer,
+.para_connect .mic:hover .mic_layer,
+.para_connect .webcam:hover .cam_layer{
+    opacity: 1;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.para_connect .toggle_layer{
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    padding: 24px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #eee, #ccc);
+    display: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 소견 요청 협진 */
 .connect_opinion .call_control .con_btn {
@@ -1158,551 +1288,10 @@
 
 
 
-
-
-
-
-/* 응급호출 */
-.doctor_emergency .section{
-    height: 720px;
-}
-
-.doctor_emergency .message_list{
-    width: 480px;
-    padding: 16px;
-}
-
-.doctor_emergency .message_list .title{
-    padding: 16px 0 25px 16px;
-    border-bottom: 1px solid #eee;
-}
-
-.doctor_emergency .message_list .title .inner,
-.doctor_emergency .message_list .title .inner div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.doctor_emergency .message_list .inner .img_container{
-    width: 16px;
-    height: 16px;
-}
-
-.doctor_emergency .message_list .inner .img_container img{
-    width: 100%;
-    height: 100%;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
-}
-
-.doctor_emergency .message_list .title h2{
-    margin-left: 16px;
-    color: #940045;
-}
-
-.doctor_emergency .message_list .title .btn_call{
-    width: 144px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    border: 1px solid #940045;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    color: #940045;
-}
-
-.doctor_emergency .message_list .title .btn_call:hover{
-    background: #F5EEF1;
-}
-
-.doctor_emergency .message_list .title p{
-    margin-top: 5px;
-    color: #444;
-}
-
-.doctor_emergency .message_list .list{
-    height: 600px;
-    padding: 16px;
-    overflow-y: scroll;
-}
-
-.doctor_emergency .message_list .list::-webkit-scrollbar{
-    width: 8px;
-}
-
-.doctor_emergency .message_list .list::-webkit-scrollbar-thumb{
-    height: 17%;
-    border-radius: 10px;
-    background: #ccc;
-}
-
-.doctor_emergency .message_list .row{
-    /* width: 296px; */
-    padding: 16px;
-    border-radius: 4px;
-    border-bottom: 1px solid #eee;
-}
-
-.doctor_emergency .message_list .row:hover{
-    background: #eee;
-    cursor: pointer;
-}
-
-.doctor_emergency .message_list .row> p{
-    font-size: 10px;
-    color: #940045;
-}
-
-.doctor_emergency .message_list .row div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.doctor_emergency .message_list .row .img_container{
-    width: 6px;
-    height: 12px;
-    margin-left: 16px;
-}
-
-.doctor_emergency .message_list .row .img_container img{
-    width: 100%;
-    height: 100%;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
-}
-
-.doctor_emergency .message_list .row.on{
-    background: #940045;
-}
-
-.doctor_emergency .message_list .row.on p{
-    color: #fff;
-}
-
-.doctor_emergency .message_list .row.on .img_container img{
-    filter: none;
-}
-
-.doctor_emergency .detail_ep{
-    /* width: 736px; */
-    width: 1192px;
-    margin-left: 16px;
-    border-radius: 8px;
-}
-
-.doctor_emergency .detail_ep .title{
-    padding: 24px  32px 26px 48px;
-}
-
-.doctor_emergency .detail_ep .title div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.doctor_emergency .detail_ep .title h2{
-    color: #940045;
-}
-
-.doctor_emergency .detail_ep .title> :last-child{
-    justify-content: initial;
-}
-
-.doctor_emergency .detail_ep .title> div> :first-child{
-    margin-right: 16px;
-    color: #940045;
-}
-
-.doctor_emergency .detail_ep .title .btn_check{
-    width: 80px;
-    height: 40px;
-    padding: 10px 20px;
-    border-radius: 4px;
-    background: #fff;
-    border: 1px solid #007a94;
-    color: #007a94;
-}
-
-.doctor_emergency .detail_ep .title .btn_respond{
-    width: 80px;
-    height: 40px;
-    border: 1px solid #940045;
-    color: #940045;
-    background: #fff;
-    border-radius: 4px;
-    display: none;
-}
-
-.doctor_emergency .detail_ep .title .btn_respond:hover{
-    background: #F5EEF1;
-}
-
-.doctor_emergency .detail_ep .title .btn_respond.active{
-    background: #ccc;
-    color: #888;
-}
-
-.doctor_emergency .detail_ep .title .btn_emer{
-    width: 180px;
-    height: 40px;
-    margin-left: 8px;
-    padding: 10px 25px;
-    border-radius: 4px;
-    background: #940045;
-    color: #fff;
-    display: none;
-}
-
-.doctor_emergency .detail_ep .title .btn_emer:hover{
-    background: #4A0000;
-}
-
-.doctor_emergency .detail_ep .title .btn_emer img{
-    vertical-align: middle;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(106%) contrast(103%);
-}
-
-.doctor_emergency .inner> .control{
-    /* width: 672px; */
-    width: 1128px;
-    margin: 0 auto;
-    padding: 8px 16px 8px 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #eee;
-}
-
-.doctor_emergency .control div{
-    display: flex;
-}
-
-.doctor_emergency .control span{
-    color: #007a94;
-}
-
-.doctor_emergency ul.tabs li{
-    width: 96px;
-    height: 32px;
-    padding: 8px 15px;
-    margin-right: 8px;
-    border-radius: 4px;
-    background: #ccc;
-    font-size: 12px;
-    font-weight: normal;
-    text-align: center;
-    color: #888;
-    display: inline-block;
-    cursor: pointer;
-}
-  
-.doctor_emergency ul.tabs li.current{
-    background: #f80;
-    color: #fff;
-}
-  
-.doctor_emergency .tab-content{
-    width: 100%;
-    display: none;
-    padding: 32px;
-}
-  
-.doctor_emergency .tab-content.current{
-    display: inherit;
-}
-
-.doctor_emergency .patient_status{
-    /* width: 672px; */
-    width: 100%;
-    height: 432px;
-    margin: 0;
-}
-
-.doctor_emergency .patient_status .patient{
-    /* width: 672px; */
-    width: 100%;
-    height: 500px;
-    /* height: 432px; */
-    padding: 0;
-}
-
-.doctor_emergency .patient_status .patient .symptome{
-    background: #fff;
-}
-
-.doctor_emergency .patient_status .patient .symptome> div{
-    display: flex;
-}
-
-.doctor_emergency .patient_status .sign{
-    padding: 0;
-}
-
-.doctor_emergency .patient_status .swiper-scrollbar{
-    width: 100%;
-}
-
-.doctor_emergency .patient_status .part_body {
-    position: relative;
-    width: 160px;
-    height: 240px;
-    background: url(/img/emergency/body.png)no-repeat 0 0px / contain;
-    background-size: cover;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle1{
-    top: 12px;
-    left: 67px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle2{
-    top: 47px;
-    left: 93px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle3{
-    top: 47px;
-    left: 40px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle4{
-    top: 80px;
-    left: 30px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle5{
-    top: 80px;
-    left: 105px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle6{
-    top: 90px;
-    left: 68px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle7{
-    top: 120px;
-    left: 39px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle8{
-    top: 120px;
-    left: 95px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle9{
-    top: 136px;
-    left: 67px;
-}
-
-.doctor_emergency .patient_status .body_toggle .toggle10{
-    top: 172px;
-    left: 67px;
-}
-
-.doctor_emergency .patient_status .patient .symptome .part{
-    display: initial;
-}
-
-.doctor_emergency .symptome_info .container{
-    padding: 0;
-}
-
-.doctor_emergency .swiper.part_accident_no{
-    padding: 40px 70px;
-    background: #eee;
-    border-radius: 4px;
-}
-
-.doctor_emergency .pupil_container> div{
-    width: 144px;
-    padding: 8px;
-    border-radius: 4px;
-    background: #eee;
-}
-
-.doctor_emergency .first_aid .aid_container> div{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.doctor_emergency .treatment{
-    margin-top: 155px;
-}
-
-
-/* tab-2 */
-.doctor_emergency .vital{
-    /* height: 470px; */
-    width: 1128px;
-    height: 528px;
-    margin: 0 auto;
-    padding: 0;
-    border-radius: 0 0 4px 4px;
-    background: #000;
-    overflow: hidden;
-    position: relative; 
-}
-
-.doctor_emergency .vital .graph> div{
-    padding: 8px 16px 8px 32px;
-}
-
-.doctor_emergency .vital .inner{
-    width: 872px;
-    overflow: hidden;
-}
-
-.doctor_emergency .vital .no_data{
-    padding: 32px;
-    display: none;
-}
-
-.doctor_emergency .vital .no_data p{
-    color: #888;
-}
-
-.doctor_emergency .vital .no_data .img_container{
-    width: 138px;
-    height: 96px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.doctor_emergency .vital .no_data .img_container img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: invert(0%) sepia(0%) saturate(27%) hue-rotate(411deg) brightness(83%) contrast(130%);
-}
-
-.doctor_emergency .graph> div> div> div{padding: 0;}
-
-.doctor_emergency .control{
-    padding: 8px 16px;
-}
-
-.doctor_emergency .vital .control> div> div{
-    display: initial;
-}
-
-.doctor_emergency .control .bell_num p{
-    font-size: 48px;
-}
-
-.doctor_emergency .mmhg{
-    margin: 0 ;
-}
-
-.doctor_emergency .mmhg .time span{
-    color: #fff;
-}
-
-.doctor_emergency .pulse {
-    width: 165px;
-}
-
-.doctor_emergency .pulse .time{
-    align-items: center;
-}
-
-.doctor_emergency .pulse .time span{
-    color: #00F6FF;
-}
-
-.doctor_emergency .mmhg .bell_num div,
-.doctor_emergency .pulse .bell_num div,
-.doctor_emergency .temp .bell_num div{
-    display: initial;
-}
-
-.doctor_emergency .mmhg .bell_num div p,
-.doctor_emergency .pulse .bell_num div p,
-.doctor_emergency .temp .bell_num div p{
-    font-size: 18px;
-}
-
-.doctor_emergency .vital .temp{
-    display: initial;
-}
-
-.doctor_emergency .vital .temp .bell_name,
-.doctor_emergency .vital .temp .bell_num{
-    display: flex;
-}
-
-.doctor_emergency .ews .bell_num> div{
-    display: initial;
-}
-
-/* 환자사진 */
-.doctor_emergency .patient_picture{
-    padding: 16px;
-}
-
-.doctor_emergency .big_picture{
-    /* width: 672px;
-    height: 336px; */
-    width: 1128px;
-    height: 408px;
-    overflow: hidden;
-}
-
-.doctor_emergency .detail_ep .patient_picture{
-    position: relative;
-}
-
-.doctor_emergency .small_picture{
-    width: 100%;
-    margin: 8px 16px;
-}
-
-.doctor_emergency .full{
-    position: absolute;
-    top: 32px;
-    right: 48px;
-    width: 32px;
-    height: 32px;
-    padding: 8px;
-    border-radius: 4px;
-    background: #fff;
-    z-index: 10;
-    cursor: pointer;
-}
-
-.doctor_emergency .full img{
-    width: 100%;
-    height: 100%;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
-}
-
-.doctor_emergency .patient_picture .no_data{
-    /* width: 672px; */
-    width: 1128px;
-    /* height: 72px; */
-    height: 120px;
-    padding: 50px 32px;
-    margin: 0 auto;
-    border-radius: 8px;
-    background: #eee;
-    display: none;
-}
-
-.doctor_emergency .patient_picture .no_data p{
-    font-size: 14px;
-    color: #888;
-}
-
-
-
 /* 응급협진하기 - 로딩 */
 .connect_emergency{
-    height: calc(100vh - 64px);
+    height: 100%;
+    min-height: calc(100vh - 64px);
     background: #222;
 }
 
@@ -1718,10 +1307,6 @@
 
 .connect_emergency .section{
     width: fit-content;
-}
-
-.connect_screening{
-    height: calc(100vh - 64px);
 }
 
 
@@ -2487,12 +2072,6 @@
 }
 
 
-
-
-
-
-
-
 /* lab 조회 */
 .doctor_patient .lab_list,
 .doctor_patient .emr_list,
@@ -2724,20 +2303,20 @@
     color: #007A94;
 }
 
-.doctor .request .collabor_wrap{
+.doctor .ask_request .collabor_wrap{
     overflow-y:scroll
 }
 
-.doctor .request .collabor_wrap::-webkit-scrollbar{
-    width: 8px;
-    display: inherit;
+.doctor .ask_request .collabor_wrap::-webkit-scrollbar{
+    /* width: 8px; */
+    display: none;
 }
-
-.doctor .request .collabor_wrap::-webkit-scrollbar-thumb{
+/* 
+.doctor .ask_request .collabor_wrap::-webkit-scrollbar-thumb{
     height: 17%;
     border-radius: 10px;
     background: #ccc;
-}
+} */
 
 .doctor_remote .collabor_wrap .time{
     padding: 24px 30px;
@@ -2747,11 +2326,11 @@
     padding: 24px 30px;
 }
 
-.doctor .request .collabor_wrap .case_inner .title{
+.doctor .ask_request .collabor_wrap .case_inner .title{
     padding: 0;
 }
 
-.doctor .request .title button{
+.doctor .ask_request .title button{
     padding: 10px 34px;
     background: #ccc;
     box-shadow: none;
@@ -2807,7 +2386,7 @@
   
 .doctor .time_select .tab-content{
     display: none;
-    padding: 32px 0;
+    /* padding: 32px 0; */
 }
   
 .doctor .tab-content.current{
@@ -2861,9 +2440,48 @@
 
 .doctor .time_select .week_view{
     width: 384px;
+    margin: 0 auto;
+    height: fit-content;
+    /* padding-left: 36px; */
+    /* display: flex; */   
+}
+
+.doctor .time_select .week_view .select_week{margin-bottom: 60px;}
+
+.doctor .time_select .week_view .select_week> div{
+    width: 100%;
+    padding: 12px 16px 16px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background: #eee;
+    display: none;
+}
+
+.doctor .time_select .week_view .select_week .check{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor .time_select .week_view .select_week .check span{
+    font-size: 12px;
+    color: #007A94;
+}
+
+.doctor .time_select .week_view .select_week .people{
+    margin-top: 20px;
+    padding: 15px 17px;
+    background: #fff;
+}
+
+.doctor .time_select .week_view .select_week .people p{
+    width: 90px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.doctor .time_select .week_wrap{
     height: 530px;
-    padding-left: 36px;
-    /* display: flex; */
     position: relative;
 }
 
@@ -2897,8 +2515,8 @@
     width: 315px;
     height: 505px;
     padding-bottom: 22px;
-    top: 0;
-    left: 80px;
+    top: -31px;
+    left: 50px;
     overflow: scroll hidden;
     display: flex;
     position: absolute;
@@ -2957,13 +2575,25 @@
     width: 48px;
     line-height: 46px;
     background: #004F60;
-    border: 1px solid red;
+    cursor: pointer;
 }
 
 .doctor .time_select .possible.active p{
     opacity: 1;
     transition: .3s;
     background: #004F60;
+}
+
+.doctor_remote .time_select .possible{
+    opacity: 1;
+}
+
+.doctor_remote .time_select .possible p{
+   background: none;
+}
+
+.doctor_remote .time_select .possible p.active{
+    background: #004f60;
 }
 
 .doctor .time_select .inner> :first-child{
@@ -3099,6 +2729,7 @@
 }
 
 .doctor .me_request .inner> :nth-child(2)> :nth-child(2){
+    height: 240px;
     top: 233px;
 }
 
@@ -3135,3 +2766,231 @@
     color: #940045;
 }
 
+.doctor_remote .ask_request, .doctor_remote .opinion_ing, .doctor_remote .me_request{display: none;} 
+
+/* 전체협진일정보기 - 주간일정 보기 */
+.doctor_remote .week .title{
+    padding: 16px 0;
+    justify-content: initial;
+    align-items: center;
+}
+
+.doctor_remote .week .title .btn_list{
+    width: 136px;
+    margin-left: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_remote .week .btn_list button{
+    width: 64px;
+    height: 32px;
+    padding: 7px 10px;
+    font-size: 12px;
+}
+
+.doctor_remote .week .btn_list button.on{
+    background: #007A94;
+}
+
+.doctor_remote .all_plan .week{display: none;}
+
+.doctor_remote .all_plan .weekly{
+    width: 736px;
+    height: 512px;
+    padding: 16px;
+    position: relative;
+}
+
+.doctor_remote .all_plan .weekly .time{
+    width: 100%;
+    padding-top: 32px;
+    position: absolute;
+}
+
+.doctor_remote .all_plan .weekly .time div{
+    width: 100%;
+    height: 48px;
+}
+
+.doctor_remote .all_plan .weekly .time p{
+    position: relative;
+}
+
+.doctor_remote .all_plan .weekly .time p::after{
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    content: '';
+    width: 675px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor_remote .all_plan .weekly .inner{
+    width: 664px;
+    height: 510px;
+    display: flex;
+    top: 16px;
+    left: 56px;
+    position: absolute;
+    overflow: scroll hidden;
+}
+
+.doctor_remote .all_plan .weekly .inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor_remote .all_plan .weekly .inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor_remote .all_plan .weekly .four{display: none;}
+
+.doctor_remote .all_plan .weekly .four> div{display: flex;}
+
+.doctor_remote .all_plan .weekly .day{
+    width: 48px;
+    height: 473px;
+    margin-right: 16px;
+    position: relative;
+}
+
+.doctor_remote .all_plan .weekly .day .title{
+    width: 48px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background: #eee;
+    display: inherit;
+}
+
+.doctor_remote .all_plan .weekly .day .title p{
+    text-align: center;
+}
+
+.doctor_remote .all_plan .inner> :nth-child(14),
+.doctor_remote .all_plan .weekly .inner> :last-child{
+    margin: 0;
+}
+
+.doctor_remote .all_plan .weekly .start.active{
+    background: #fff;
+    border: 1px solid #007A94;
+    color: #007A94;
+}
+
+.doctor_remote .all_plan .weekly .request.active{
+    background: #fff;
+    border: 1px solid #E13177;
+    color: #E13177;
+}
+
+.doctor_remote .all_plan .weekly .opinion.active{
+    background: #fff;
+    border: 1px solid #FF8000;
+    color: #FF8000;
+}
+
+.doctor_remote .all_plan .weekly .plan{cursor: pointer;}
+
+.doctor_remote .all_plan .weekly .plan p{
+    font-size: 10px;
+}
+
+.doctor_remote .all_plan .weekly .weekend p{
+    color: #888;
+}
+
+.doctor_remote .all_plan .weekly .inner> :first-child,
+.doctor_remote .all_plan .weekly .inner> :first-child .title{
+    width: 204px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(2){
+    height: 74px;
+    top: 42px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(3){
+    height: 94px;
+    top: 42px;
+    left: 52px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(4){
+    height: 286px;
+    top: 42px;
+    left: 104px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(5){
+    height: 430px;
+    top: 42px;
+    left: 156px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :nth-child(2)> :nth-child(2){
+    height: 143px;
+    top: 185px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :nth-child(3)> :nth-child(2){
+    height: 430px;
+    top: 42px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :nth-child(4),
+.doctor_remote .all_plan .weekly .inner> :nth-child(4) .title{
+    width: 100px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :nth-child(4)> :nth-child(2){
+    height: 74px;
+    top: 42px;
+}
+
+.doctor_remote .all_plan .weekly .inner> :nth-child(4)> :nth-child(3){
+    height: 286px;
+    top: 42px;
+    left: 52px;
+}
+
+
+
+/* remote_request */
+.remote_request{
+    width: 800px;
+    height: 720px;
+    margin: 0 32px;
+    padding: 32px;
+}
+
+.remote_request .title{
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.remote_request .list .title{
+    padding: 20px 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remote_request .list .title h2{
+    color: #000;
+}
+
+.remote_request .list .title span{
+    color: #007A94 ;
+}
+
+.remote_request .list .row{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

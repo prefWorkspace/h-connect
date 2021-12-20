@@ -9,14 +9,10 @@
   <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
   <script type='text/javascript' src='/js/common.js'></script>
   <script type='text/javascript' src='/js/index.js'></script>
-  <script type='text/javascript' src='/js/fullcalendar.js'></script>
-  <!-- <script type='text/javascript' src='/js/calendar.js'></script> -->
   
   <!--css-->
   <link rel='stylesheet' href='/css/reset.css'>
   <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link  rel="stylesheet" href="/css/fullcalendar.css">
   <link rel="stylesheet" href="/css/doctor.css">
 
 </head>
@@ -173,6 +169,7 @@
             </nav>
 
             <div class="wrap_inner">
+
                 <!-- 원격협진 현황 -->
                 <section class="section status">
                     <!-- 원격협진 진행중 -->
@@ -202,7 +199,7 @@
                         </div>
 
                         <div class="schedule_list status_list">
-                            <div class="row on" onclick="location.href='remote.html'">   
+                            <div class="row" onclick="location.href='remote.html'">   
                                 <p>전체 협진 일정보기</p>
 
                                 <div>
@@ -212,7 +209,7 @@
                                 </div>
                             </div>
 
-                            <div class="row" onclick="location.href='remote_alarm.html'">   
+                            <div class="row on" onclick="location.href='remote_alarm.html'">   
                                 <p>협진 일정요청 알림</p>
 
                                 <div>
@@ -239,368 +236,32 @@
                     </div>
                 </section>
 
-                <!-- 전체 협진 일정보기 -->
-                <section class="section all_plan">
+                <!-- 협진 일정요청 알림 -->
+                <section class="section remote_request">
                     <div class="title">
-                        <h2>전체 협진 일정보기</h2>
-
-                        <div class="btn_list">
-                            <button type="button" class="btn_cal on">
-                                <div>
-                                    <img src="/img/doctor/list.svg" alt="리스트 아이콘">
-                                </div>
-
-                                달력보기
-                            </button>
-
-                            <button type="button" class="btn_week">
-                                <div>
-                                    <img src="/img/icon/clock.svg" alt="시계 아이콘">
-                                </div> 
-
-                                시간표 보기     
-                            </button>
-                        </div>
+                        <h2>협진 일정요청 알림</h2>
                     </div>
 
-                    <!-- 달력보기 -->
-                    <div class="cal_view">
-                        <!-- 날짜선택 -->
-                        <div class="cal_container">
-                            <div class="title">
-                                <h2>날짜 선택</h2>
-    
-                                <div class="select">
-                                    <!-- 년도 선택 -->
-                                    <div class="selectBox2 year_box">
-                                        <button class="label year_label">2021 년</button>
- 
-                                        <div>
-                                            <ul class="optionList year_list">
-                                                <li class="optionItem year_option">2020 년</li>
-                                                <li class="optionItem year_option">2021 년</li>
-                                                <li class="optionItem year_option">2022 년</li>
-                                            </ul>
-                                        </div>                                        
-                                    </div>
-        
-                                    <!-- 달 선택 -->
-                                    <div class="selectBox2 month_box">
-                                        <button class="label month_label">9 월</button>
-
-                                        <ul class="optionList month_list">
-                                            <li class="optionItem month_option">1 월</li>
-                                            <li class="optionItem month_option">2 월</li>
-                                            <li class="optionItem month_option">3 월</li>
-                                            <li class="optionItem month_option">4 월</li>
-                                            <li class="optionItem month_option">5 월</li>
-                                            <li class="optionItem month_option">6 월</li>
-                                            <li class="optionItem month_option">7 월</li>
-                                            <li class="optionItem month_option">8 월</li>
-                                            <li class="optionItem month_option">9 월</li>
-                                            <li class="optionItem month_option">10 월</li>
-                                            <li class="optionItem month_option">11 월</li>
-                                            <li class="optionItem month_option">12 월</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="calendar" id="calendar"></div>
-                        </div>
-
-                        <!-- 협진 일정목록 -->
-                        <div class="cal_list">
-                            <div class="title">
-                                <h2>9월 15일 협진 일정목록</h2>
-
-                                <p><span>4</span> 개의 일정</p>
-                            </div>
-
-                            <div class="schedule_list all_list">
-                                <div class="row start_remote on">
-                                    <div>
-                                        <p>10:30</p>
-                                        <p>협진시작</p>
-                                    </div>
-
-                                    <p>박협진 교수님 외 5명</p>
-                                </div>
-
-                                <div class="row remote_ask">
-                                    <div>
-                                        <p>11:00</p>
-                                        <p>협진일정 요청</p>
-                                    </div>
-
-                                    <p>최일정 교수님</p>
-                                </div>
-
-                                <div class="row end_remote">
-                                    <div>
-                                        <p>10:30</p>
-                                        <p>소견요청협진 마감</p>
-                                    </div>
-
-                                    <p>김소견 교수님 외 4명</p>
-                                </div>
-
-                                <div class="row request_remote">
-                                    <div>
-                                        <p>10:30</p>
-                                        <p>협진일정 요청</p>
-                                    </div>
-
-                                    <p class="me">내가 보냄</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 시간표 보기 -->
-                    <div class="week">
+                    <div class="list">
                         <div class="title">
-                            <h2>주간일정 보기</h2>
-
-                            <div class="btn_list">
-                                <button type="button" class="btn_two on">2주 보기</button>
-                                <button type="button" class="btn_four">4주 보기</button>
-                            </div>
+                            <h2>협진 일정요청 알림 목록</h2>
+                            <p><span>2</span> 개의 알림</p>
                         </div>
 
-                        <div class="weekly">
-                            <!-- 시간 time -->
-                            <div class="time">
-                                <div><p>09:00</p></div>
-                                <div><p>10:00</p></div>
-                                <div><p>11:00</p></div>
-                                <div><p>12:00</p></div>
-                                <div><p>13:00</p></div>
-                                <div><p>14:00</p></div>
-                                <div><p>15:00</p></div>
-                                <div><p>16:00</p></div>
-                                <div><p>17:00</p></div>
-                                <div><p>18:00</p></div>
-                            </div>
-    
-                            <!-- 2주 보기 -->
-                            <div class="inner two">
-                                <div class="day today">
-                                    <div class="title">
-                                        <p>15.월 </p>
-                                    </div>
-    
-                                    <!-- 협진시작 -->
-                                    <div class="plan start active">
-                                        <p>협진시작</p>
-                                    </div>
-    
-                                    <!-- 협진일정요청 -->
-                                    <div class="plan request">
-                                        <p>협진일정요청</p>
-                                    </div>
-    
-                                    <!-- 소견요청 -->
-                                    <div class="plan opinion">
-                                        <p>소견요쳥</p>
-                                    </div>
-    
-                                    <!-- 협진일정요청 -->
-                                    <div class="plan request">
-                                        <p>협진일정요청</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>16. 화 </p>
-                                    </div>
+                        <div class="row">
+                            <p class="time">
+                                <span>21.09.15</span>.
+                                <span>11:00</span> 까지
+                            </p>
 
-                                    <!-- 협진시작 -->
-                                    <div class="plan start">
-                                        <p>협진시작</p>
-                                    </div>                                
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>17. 수</p>
-                                    </div>
-    
-                                    <!-- 소견요청 -->
-                                    <div class="plan opinion">
-                                        <p>소견요쳥</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>18. 목</p>
-                                    </div>
-    
-                                    <!-- 협진시작 -->
-                                    <div class="plan start">
-                                        <p>협진시작</p>
-                                    </div>
-    
-                                    <!-- 소견요청 -->
-                                    <div class="plan opinion">
-                                        <p>소견요쳥</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>19. 금</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day weekend">
-                                    <div class="title">
-                                        <p>20. 토</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day weekend">
-                                    <div class="title">
-                                        <p>21. 일</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>15.월 </p>
-                                    </div>
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>16. 화 </p>
-                                    </div>                            
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>17. 수</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>18. 목</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day">
-                                    <div class="title">
-                                        <p>19. 금</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day weekend">
-                                    <div class="title">
-                                        <p>20. 토</p>
-                                    </div>
-                                </div>
-    
-                                <div class="day weekend">
-                                    <div class="title">
-                                        <p>21. 일</p>
-                                    </div>
-                                </div> 
-                                
-                                <!-- 4주 보기 -->
-                                <div class="four">
-                                    <div class="wrap">
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>15.월 </p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>16. 화 </p>
-                                            </div>                         
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>17. 수</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>18. 목</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>19. 금</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day weekend">
-                                            <div class="title">
-                                                <p>20. 토</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day weekend">
-                                            <div class="title">
-                                                <p>21. 일</p>
-                                            </div>
-                                        </div>   
-                                        
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>15.월 </p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>16. 화 </p>
-                                            </div>                           
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>17. 수</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>18. 목</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>19. 금</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day weekend">
-                                            <div class="title">
-                                                <p>20. 토</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="day weekend">
-                                            <div class="title">
-                                                <p>21. 일</p>
-                                            </div>
-                                        </div> 
-                                    </div>                                   
-                                </div>
-                            </div>  
+                            <p class="you_or">협진일정 요청 수신</p>
+                            <p class="me_or">회신하지 않음</p>
+                            <p>최일정 교수님</p>
                         </div>
-                    </div>  
+                    </div>
                 </section>
+
+
 
                 <!-- 협진시작 -->
                 <section class="section right collabor">
@@ -2215,43 +1876,6 @@
     <!--// end wrap-->
 
     <script>
-        // fullcalendar library
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                timeZone: 'local',
-                defaultDate: '2018-06-01',
-                // locale: "ko",
-
-                header:{
-                    center: 'title',
-                    left: 'prev',
-                    right: 'next today'
-                },
-                titleFormat: function(date){
-                    return date.date.year + "." + (date.date.month + 1) + "월";
-                },          
-                events:[{
-                    title: '협진시작',
-                    start: '2021-12-10T10:00:00',
-                    constraint: 'businessHours'
-                },
-                { title: '협진시작',
-                    start: '2021-12-15T10:00:00',
-                    constraint: 'businessHours'
-                },
-
-                { title: '협진시작',
-                    start: '2021-12-16T10:00:00',
-                    constraint: 'businessHours'
-                },
-                ]
-            });
-            calendar.render();
-        });
-
-
         //   년도 선택
             const yearLabel = document.querySelector('.year_label');
             const yearOptions = document.querySelectorAll('.year_option');

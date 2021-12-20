@@ -1616,14 +1616,17 @@
 .para_connect{
     height: calc(100vh - 64px);
 }
+
 .para_connect .wrap_inner{
-    padding-top: 240px;
+    padding-top: 304px;
     display: initial;
 }
 
 .para_connect, .para_connect .wrap_inner{
     min-width: 1920px;
+    min-height: calc(100vh - 64px);
     background: #222;
+    height: 100%;
 }
 
 .para_connect .call_connect .img_container{
@@ -2827,6 +2830,591 @@
 
 .connect_scroll .scene_picture .big_picture{
     height: 692px;
+}
+
+/* doctor_emergency */
+
+/* 응급호출 */
+.doctor_emergency .section{
+    height: 720px;
+}
+
+.doctor_emergency .message_list{
+    width: 480px;
+    padding: 16px;
+}
+
+.doctor_emergency .message_list .title{
+    padding: 16px 0 25px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor_emergency .message_list .title .inner,
+.doctor_emergency .message_list .title .inner div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_emergency .message_list .inner .img_container{
+    width: 16px;
+    height: 16px;
+}
+
+.doctor_emergency .message_list .inner .img_container img{
+    width: 100%;
+    height: 100%;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.doctor_emergency .message_list .title h2{
+    margin-left: 16px;
+    color: #940045;
+}
+
+.doctor_emergency .message_list .title .btn_call{
+    width: 144px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #940045;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #940045;
+}
+
+.doctor_emergency .message_list .title .btn_call:hover{
+    background: #F5EEF1;
+}
+
+.doctor_emergency .message_list .title p{
+    margin-top: 5px;
+    color: #444;
+}
+
+.doctor_emergency .message_list .list{
+    height: 600px;
+    padding: 16px;
+    overflow-y: scroll;
+}
+
+.doctor_emergency .message_list .list::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor_emergency .message_list .list::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor_emergency .message_list .row{
+    /* width: 296px; */
+    padding: 16px;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor_emergency .message_list .row:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
+.doctor_emergency .message_list .row> p{
+    font-size: 10px;
+    color: #940045;
+}
+
+.doctor_emergency .message_list .row div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_emergency .message_list .row .img_container{
+    width: 6px;
+    height: 12px;
+    margin-left: 16px;
+}
+
+.doctor_emergency .message_list .row .img_container img{
+    width: 100%;
+    height: 100%;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.doctor_emergency .message_list .row.on{
+    background: #940045;
+}
+
+.doctor_emergency .message_list .row.on p{
+    color: #fff;
+}
+
+.doctor_emergency .message_list .row.on .img_container img{
+    filter: none;
+}
+
+.doctor_emergency .detail_ep{
+    /* width: 736px; */
+    width: 1192px;
+    margin-left: 16px;
+    border-radius: 8px;
+}
+
+.doctor_emergency .detail_ep .title{
+    padding: 24px  32px 26px 48px;
+}
+
+.doctor_emergency .detail_ep .title div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_emergency .detail_ep .title h2{
+    color: #940045;
+}
+
+.doctor_emergency .detail_ep .title> :last-child{
+    justify-content: initial;
+}
+
+.doctor_emergency .detail_ep .title> div> :first-child{
+    margin-right: 16px;
+    color: #940045;
+}
+
+.doctor_emergency .detail_ep .title .btn_check{
+    width: 80px;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #007a94;
+    color: #007a94;
+}
+
+.doctor_emergency .detail_ep .title .btn_respond{
+    width: 80px;
+    height: 40px;
+    border: 1px solid #940045;
+    color: #940045;
+    background: #fff;
+    border-radius: 4px;
+    display: none;
+}
+
+.doctor_emergency .detail_ep .title .btn_respond:hover{
+    background: #F5EEF1;
+}
+
+.doctor_emergency .detail_ep .title .btn_respond.active{
+    background: #ccc;
+    color: #888;
+}
+
+.doctor_emergency .detail_ep .title .btn_emer{
+    width: 180px;
+    height: 40px;
+    margin-left: 8px;
+    padding: 10px 25px;
+    border-radius: 4px;
+    background: #940045;
+    color: #fff;
+    display: none;
+}
+
+.doctor_emergency .detail_ep .title .btn_emer:hover{
+    background: #4A0000;
+}
+
+.doctor_emergency .detail_ep .title .btn_emer img{
+    vertical-align: middle;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(106%) contrast(103%);
+}
+
+.doctor_emergency .inner> .control{
+    /* width: 672px; */
+    width: 1128px;
+    margin: 0 auto;
+    padding: 8px 16px 8px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+}
+
+.doctor_emergency .control div{
+    display: flex;
+}
+
+.doctor_emergency .control span{
+    color: #007a94;
+}
+
+.doctor_emergency ul.tabs li{
+    width: 96px;
+    height: 32px;
+    padding: 8px 15px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #ccc;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    color: #888;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.doctor_emergency ul.tabs li.current{
+    background: #f80;
+    color: #fff;
+}
+  
+.doctor_emergency .tab-content{
+    width: 100%;
+    display: none;
+    padding: 32px;
+}
+  
+.doctor_emergency .tab-content.current{
+    display: inherit;
+}
+
+.doctor_emergency .patient_status{
+    /* width: 672px; */
+    width: 100%;
+    height: 432px;
+    margin: 0;
+}
+
+.doctor_emergency .patient_status .patient{
+    /* width: 672px; */
+    width: 100%;
+    height: 500px;
+    /* height: 432px; */
+    padding: 0;
+}
+
+.doctor_emergency .patient_status .patient .symptome{
+    background: #fff;
+}
+
+.doctor_emergency .patient_status .patient .symptome> div{
+    display: flex;
+}
+
+.doctor_emergency .patient_status .sign{
+    padding: 0;
+}
+
+.doctor_emergency .patient_status .swiper-scrollbar{
+    width: 100%;
+}
+
+.doctor_emergency .patient_status .part_body {
+    position: relative;
+    width: 160px;
+    height: 240px;
+    background: url(/img/emergency/body.png)no-repeat 0 0px / contain;
+    background-size: cover;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle1{
+    top: 12px;
+    left: 67px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle2{
+    top: 47px;
+    left: 93px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle3{
+    top: 47px;
+    left: 40px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle4{
+    top: 80px;
+    left: 30px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle5{
+    top: 80px;
+    left: 105px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle6{
+    top: 90px;
+    left: 68px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle7{
+    top: 120px;
+    left: 39px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle8{
+    top: 120px;
+    left: 95px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle9{
+    top: 136px;
+    left: 67px;
+}
+
+.doctor_emergency .patient_status .body_toggle .toggle10{
+    top: 172px;
+    left: 67px;
+}
+
+.doctor_emergency .patient_status .patient .symptome .part{
+    display: initial;
+}
+
+.doctor_emergency .symptome_info .container{
+    padding: 0;
+}
+
+.doctor_emergency .swiper.part_accident_no{
+    padding: 40px 70px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.doctor_emergency .pupil_container> div{
+    width: 144px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.doctor_emergency .first_aid .aid_container> div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_emergency .treatment{
+    margin-top: 155px;
+}
+
+
+/* tab-2 */
+.doctor_emergency .vital{
+    /* height: 470px; */
+    width: 1128px;
+    height: 528px;
+    margin: 0 auto;
+    padding: 16px 0;
+    border-radius: 0 0 4px 4px;
+    background: #000;
+    overflow: hidden;
+    position: relative; 
+}
+
+.doctor_emergency .vital .graph> div{
+    padding: 8px 16px 8px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor_emergency .vital .bell{
+    width: 160px;
+    padding: 8px 16px;
+}
+
+.doctor_emergency .vital .inner{
+    width: 872px;
+    overflow: hidden;
+}
+
+.doctor_emergency .vital .inner p{
+    margin-bottom: 20px;
+}
+
+.doctor_emergency .vital .no_data{
+    padding: 32px;
+    display: none;
+}
+
+.doctor_emergency .vital .no_data p{
+    color: #888;
+}
+
+.doctor_emergency .vital .no_data .img_container{
+    width: 138px;
+    height: 96px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.doctor_emergency .vital .no_data .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(0%) sepia(0%) saturate(27%) hue-rotate(411deg) brightness(83%) contrast(130%);
+}
+
+.doctor_emergency .graph> div> div> div{padding: 0;}
+
+.doctor_emergency .vital .control{
+    padding: 8px 16px 8px 32px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.doctor_emergency .vital .control> :first-child{
+    width: 700px;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_emergency .vital .control> div> div{
+    display: initial;
+}
+
+.doctor_emergency .control .bell_num p{
+    font-size: 48px;
+}
+
+.doctor_emergency .ews{
+    width: 88px;
+    height: 136px;
+    padding: 0 12px;
+}
+
+.doctor_emergency .ews .bell_num{
+    width: 50px;
+    margin: 0 auto;
+    /* padding: 16px 12px; */
+}
+
+.doctor_emergency .mmhg{
+    width: 260px;
+    margin: 0 ;
+}
+
+.doctor_emergency .mmhg .time span{
+    color: #fff;
+}
+
+.doctor_emergency .pulse {
+    width: 160px;
+    padding: 0 26px 0 0;
+}
+
+.doctor_emergency .pulse .time{
+    align-items: center;
+}
+
+.doctor_emergency .time div{
+    margin-right: 8px;
+}
+
+.doctor_emergency .pulse .time span{
+    color: #00F6FF;
+}
+
+.doctor_emergency .mmhg .bell_num div,
+.doctor_emergency .pulse .bell_num div,
+.doctor_emergency .temp .bell_num div{
+    display: initial;
+}
+
+.doctor_emergency .mmhg .bell_num div p,
+.doctor_emergency .pulse .bell_num div p,
+.doctor_emergency .temp .bell_num div p{
+    font-size: 18px;
+}
+
+.doctor_emergency .vital .temp{
+    display: initial;
+}
+
+.doctor_emergency .vital .temp .bell_name,
+.doctor_emergency .vital .temp .bell_num{
+    display: flex;
+}
+
+.doctor_emergency .ews .bell_num> div{
+    display: initial;
+}
+
+.doctor_emergency .temp{
+    width: 160px;
+    padding: 8px 16px;
+}
+
+/* 환자사진 */
+.doctor_emergency .patient_picture{
+    padding: 16px;
+}
+
+.doctor_emergency .big_picture{
+    /* width: 672px;
+    height: 336px; */
+    width: 1128px;
+    height: 408px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.doctor_emergency .detail_ep .patient_picture{
+    position: relative;
+}
+
+.doctor_emergency .small_picture{
+    width: 1128px;
+    margin: 8px 16px;
+    overflow: hidden;
+}
+
+.doctor_emergency .full{
+    position: absolute;
+    top: 32px;
+    right: 48px;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #fff;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.doctor_emergency .full img{
+    width: 100%;
+    height: 100%;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.doctor_emergency .patient_picture .no_data{
+    /* width: 672px; */
+    width: 1128px;
+    /* height: 72px; */
+    height: 120px;
+    padding: 50px 32px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #eee;
+    display: none;
+}
+
+.doctor_emergency .patient_picture .no_data p{
+    font-size: 14px;
+    color: #888;
 }
 
 

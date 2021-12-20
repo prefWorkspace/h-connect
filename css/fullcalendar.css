@@ -74,6 +74,10 @@
   width: 305px !important;
 }
 
+.fc .fc-header-toolbar> :nth-child(3) .fc-today-button {display: none;}
+
+
+
 
 
 

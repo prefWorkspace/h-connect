@@ -9,17 +9,12 @@
     <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
     <script type='text/javascript' src='/js/common.js'></script>
     <script type='text/javascript' src='/js/index.js'></script>
-    <!-- <script type='text/javascript' src='/js/fullcalendar.js'></script>
-    <script type='text/javascript' src='/js/main.min.js'></script>
-    <script type='text/javascript' src='/js/calendar.js'></script> -->
     
     <!--css-->
     <link rel='stylesheet' href='/css/reset.css'>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/doctor.css">
-
-    <!-- <link  rel="stylesheet" href="/css/fullcalendar.css"> -->
 
 </head>
   <body>
@@ -149,7 +144,7 @@
         </header>
 
         <!--콘텐츠-->
-        <div id="wrap_content" class="doctor doctor_main">
+        <div id="wrap_content" class="doctor remote_main">
             <nav class="nav" id="nav">
                 <ul class="main_depth gnb">
                     <li class="gnb_list active">
@@ -487,6 +482,7 @@
                                 </div>
                             </div> 
                             
+                            <!-- 4주 보기 -->
                             <div class="four">
                                 <div class="wrap">
                                     <div class="day">
@@ -623,11 +619,9 @@
                                         </div>
                                     </div> 
                                 </div>
-                               
                             </div>
                         </div>
 
-                        <!-- 4주 보기 -->
 
                     </div>
                 </section>
@@ -1362,40 +1356,6 @@
     <!--// end wrap-->
 
     <script>
-        // fullcalendar library
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     var calendarEl = document.getElementById('calendar');
-        //     var calendar = new FullCalendar.Calendar(calendarEl, {
-        //         initialView: 'dayGridMonth',
-        //         timeZone: 'local',
-        //         defaultDate: '2018-06-01',
-        //       locale: "ko",
-
-        //         header:{
-        //             center: 'title',
-        //             left: 'prev',
-        //             right: 'next today'
-        //         },          
-        //         events:[{
-        //             title: '협진시작',
-        //             start: '2021-12-10T10:00:00',
-        //             constraint: 'businessHours'
-        //         },
-        //         { title: '협진시작',
-        //             start: '2021-12-15T10:00:00',
-        //             constraint: 'businessHours'
-        //         },
-
-        //         { title: '협진시작',
-        //             start: '2021-12-16T10:00:00',
-        //             constraint: 'businessHours'
-        //         },
-        //         ]
-        //     });
-        //     calendar.render();
-        // });
-
-
         //   년도 선택
             const yearLabel = document.querySelector('.year_label');
             const yearOptions = document.querySelectorAll('.year_option');
