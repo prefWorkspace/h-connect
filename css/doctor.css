@@ -1,12 +1,12 @@
-
 /*================= 의사 =================*/
 /* 의사 메인 (h-works) */
 .doctor{
     width: 100%;
     /* min-width: 1248px; */
     min-width: 1880px;
-    height: calc(100vh - 80px);
+    /* height: calc(100vh - 80px); */
     min-height: calc(100vh - 80px);
+    padding-top: 80px;
     background: #eee;
 }
 

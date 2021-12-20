@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>선별 진료소</title>
     <!--Import-->
-    <script src="/statics/js/common.js"></script>
-    <script src="/statics/js/font.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/font.js"></script>
 
     <!--css-->
-    <link rel="stylesheet" href="/statics/css/common/reset.css">
-    <link rel="stylesheet" href="/statics/css/common/common.css">
-    <link rel="stylesheet" href="/statics/css/style/screening_care_start.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/screening_care_start.css">
 
 </head>
 <body>
@@ -50,17 +50,21 @@
                    </div>
                </div>
            </header>
+
            <section id="care_sect">
                 <div class="care_cont">
                     <div class="care_ready">
                         <h2 class="ready_title">선별진료를 준비중입니다.</h2>
                         <p class="care_connect">연결중...</p>
+                        
                         <span class="loader"></span>
                     </div>
+
                     <div class="care_ui">
                         <button type="button" class="care_btn dis_btn">
                             <span>종료</span>
                         </button>
+                        
                         <div class="mute_box">
                             <input type="checkbox" id="muteCare">
                             <label for="muteCare" class="care_btn mute_btn">

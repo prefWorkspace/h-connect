@@ -55,7 +55,7 @@
     padding-left: 20px;
     color: #007A94;
     text-align: center;
-    background: #fff url('../../images/btn_logo_green.svg') no-repeat left 18px center;
+    background: #fff url('/img/icon/btn_logo_green.svg') no-repeat left 18px center;
 }
 
 
@@ -76,7 +76,7 @@
 }
 
 .care_cont .care_ready {
-    background: url('../../images/care_logo.svg') no-repeat center top 5px;
+    background: url('/img/logo_gray.png') no-repeat center top 5px;
     padding-top: 180px;
     text-align: center;
     margin-bottom: 120px;
@@ -144,14 +144,14 @@
     transform: translate(-50%, -50%);
     width: 32px;
     height: 32px;
-    background: url('../../images/refuse.svg') no-repeat;
+    background: url('/img/emergency/refuse.svg') no-repeat;
     transition: 0.2s all;
 }
 
 .care_ui .mute_btn:before {
     width: 24px;
     height: 32px;
-    background: url('../../images/MIC.svg') no-repeat;
+    background: url('/img/emergency/mic.svg') no-repeat;
 }
 
 .care_ui .care_btn > span {
@@ -180,7 +180,7 @@
 /* checked */
 .care_ui .mute_box > input[type="checkbox"]:checked + .mute_btn:before {
     width: 32px;
-    background-image: url('../../images/mic_off.svg');
+    background-image: url('/img/icon/mic_off.svg');
 }
 
 

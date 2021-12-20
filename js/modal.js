@@ -1,3 +1,5 @@
+
+// screening pop 
 window.onload = function() {
     let thisIndexName = document.URL.substring(document.URL.lastIndexOf("/") + 1, document.URL.length);
     console.log(thisIndexName);

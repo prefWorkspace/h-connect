@@ -1,4 +1,16 @@
 /* messasge */
+.nurse_message{
+    padding-top: 80px;
+}
+
+.message .wrap_inner{
+    padding: 40px;
+    display: flex;
+    background: #eee;
+    min-width: 1860px;
+}
+
+
 .message .message_list{
     width: 1032px;
     height: 720px;
@@ -270,6 +282,8 @@
     border-radius: 0;
     background: linear-gradient(to right, #007A94, #003D4A);
     position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 .message .message_talk .search_container input{
@@ -310,7 +324,12 @@
     width: 32px;
     height: 32px;
     padding: 8px;
+    border-radius: 4px;
     background: #fff;
+}
+
+.nurse_message .message_talk .search_container .btn_sort:hover{
+    background: #eee;
 }
 
 .nurse_message .message_talk .search_container .btn_sort div{
@@ -1013,110 +1032,4 @@
 .message .send_message .btn_list .btn_send{
     border: 1px solid #007A94;
     color: #007A94;
-}
-
-
-
-
-
-/* nav */
-#nav {
-    position: relative;
-    width: 60px;
-    background: #222222;
-    padding-top: 40px;
-}
-
-
-#nav .gnb_list > a {
-    position: relative;
-    display: block;
-    color: #888888;
-    font-size: 10px;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    line-height: 83px;
-    z-index: 2;
-    transition: 0.2s all;
-}
-
-#nav .gnb_list > a:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: calc(50% - 8px);
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background: url('../../images/clinic_gray.svg') no-repeat center center;
-    transition: 0.2s all;
-    filter: none;
-}
-
-#nav .gnb_list:nth-child(2) > a:after {
-    background-image: url('../../images/message_gray.svg');
-}
-
-#nav .gnb_list:nth-child(3) > a:after {
-    background-image: url('../../images/setting_gray.svg');
-}
-
-#nav .gnb_list > a:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(to right, #007A94, #003D4A);
-    transition: 0.3s all;
-    z-index: -1;
-    border-radius: 0 4px 4px 0;
-}
-
-/* hover */
-#nav .gnb_list:hover > a {
-    color: #fff;
-    width: 64px;
-}
-
-#nav .gnb_list:nth-child(1):hover > a:after {
-    background-image: url('/statics/images/setting_gray.svg');
-}
-
-#nav .gnb_list:nth-child(2):hover > a:after {
-    background-image: url('/statics/images/message_gray.svg');
-}
-
-#nav .gnb_list:nth-child(3):hover > a:after {
-    background-image: url('/statics/images/setting_gray.svg');
-}
-
-#nav .gnb_list:hover > a:before {
-    width: 100%;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* active */
-#nav .gnb_list.active > a {
-    color: #fff;
-    width: 64px;
-}
-
-#nav .gnb_list:nth-child(1).active > a:after {
-    background-image: url('/statics/images/clinic_white.svg');
-}
-
-#nav .gnb_list:nth-child(2).active > a:after {
-    background-image: url('/statics/images/message_white.svg');
-}
-
-#nav .gnb_list:nth-child(3).active > a:after {
-    background-image: url('/statics/images/setting_white.svg');
-}
-
-#nav .gnb_list.active > a:before {
-    width: 100%;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }

@@ -4,6 +4,7 @@
 .nurse{
     min-width: 1880px;
     min-height: calc(100vh - 80px);
+    padding-top: 80px;
     display: flex;
     background-color: #eee;   
 }

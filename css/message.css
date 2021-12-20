@@ -1188,10 +1188,10 @@
 
 
 /* 선별진료 */
-/* .screening .message_list{
-    width: 616px;
-    height: 640px;
-} */
+.screening{
+    padding-top: 80px;
+    background: #eee;
+}
 
 .screening .message_list .title{
     padding: 16px 16px 26px;
@@ -1324,47 +1324,6 @@
 .screening .message_talk .btn_sort{
     border-radius: 4px ;
 }
-/* 
-.screening .message_talk .search_container .btn_search {
-    left: 71%;
-}
-
-.screening .message_talk .chat_container{
-    height: 360px;
-}
-
-.screening .chat_inner{
-    width: 100%;
-    height: 360px;
-}
-
-.screening .clinic{
-    width: 100%;
-}
-
-.screening .timeLine{
-    height: 360px;
-}
-
-.screening .timeLine .first{
-    height: 26%;
-}
-
-.screening .timeLine .second{
-    height: 10%;
-}
-
-.screening .timeLine .third{
-    height: 14%;
-}
-
-.screening .timeLine .fourth{
-    height: 20%;
-}
-
-.screening .timeLine .fifth{
-    height: 20%;
-} */
 
 /* 의사 메세지 */
 .doc_message .message_list .title> div{
@@ -1378,14 +1337,6 @@
     color: #fff;
 }
 
-/* .doc_message .message_list .search_container .btn_search{
-    right: 13%;
-} */
-
-/* .doc_message .select_medi{
-    width: 736px;
-    height: 640px;
-} */
 
 .doc_message .select_medi .title{
     padding: 16px 16px 26px;
@@ -1414,36 +1365,7 @@
     color: #fff;
 }
 
-/* .doc_message .favorite_list,
-.doc_message .select_doctor{
-    width: 320px;
-} */
-
 .doc_message .container{
     height: fit-content;
     padding: 28px 16px 16px;
 }
-/* 
-.doc_message .list_inner label p{
-    font-size: 12px;
-}
-
-.doc_message .group_container label p{
-    font-size: 12px;
-}
-
-.doc_message .favorite_container input[type='checkbox']:checked+label span{
-    width: 16px;
-    height: 16px;
-}
-
-.doc_message .list_inner .favorite_container input[type="checkbox"]+label> span{
-    width: 16px;
-    height: 16px; */
-}
-
-/* .doc_message .send_message{
-    width: 360px;
-    height: 640px;
-    margin-left: 16px;
-} */
