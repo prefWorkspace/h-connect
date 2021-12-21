@@ -755,6 +755,10 @@
 }
 
 /* checkbox */
+.message input[type="checkbox"]{
+    border: 1px solid red;
+}
+
 .message .group_container input[type="checkbox"]+label> span{
     display: inline-block;
     width: 18px;
@@ -1222,7 +1226,7 @@
     background: #eee;
 }
 
-.doc_screen .message_list .title{
+.doc_screen .title{
     padding: 16px 16px 26px;
     border-bottom: 1px solid #eee;
 }
@@ -1366,34 +1370,117 @@
     color: #fff;
 }
 
-/* .doc_message .select_medi .title{
+.doc_screen .select_medi .title{
     padding: 16px 16px 26px;
+    border:none;
 }
 
-.doc_message .select_medi .title h2{
+.doc_screen .select_medi .title h2{
     margin-bottom: 13px;
     font-size: 16px;
     font-weight: 500;
     color: #007A94;
 }
 
-.doc_message .select_medi .title p{
+.doc_screen .select_medi .title p{
     font-size: 12px;
     color: #444;
 }
 
-.doc_message .select_list{
+.doc_screen .select_list{
     /* width: 672px; */
     border: 1px solid #000;
     background: #fff;
 }
 
-.doc_message .send_message .btn_list .btn_send{
+.doc_screen .send_message .btn_list .btn_send{
     background: #007A94;
     color: #fff;
 }
 
-.doc_message .container{
+.doc_screen .container{
     height: fit-content;
     padding: 28px 16px 16px;
-} */
+}
+
+.doc_screen .select_medi .list_inner{
+    height: 430px;
+}
+
+.doctor_new.message .container{
+    height: 376px;
+    padding: 0 8px;
+    margin-top: 12px;
+    overflow-y: scroll;
+    display: inherit;
+}
+
+.doctor_new.message .container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.doctor_new.message .container::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.doctor_new.message .favorite_list{
+    width: 100%;
+}
+
+.doctor_new.message .group{
+    border-bottom: 1px solid #007A94;
+}
+
+.doctor_new.message .group_container{
+    padding: 16px 0;
+}
+
+.doctor_new.message .group .group_list.on{
+    background: #007A94;
+}
+
+.doctor_new.message .group .btn_next img{
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+}
+
+.doctor_new.message .group .btn_add{color: #007A94;}
+
+.doctor_new.message .select_doctor{
+    width: 100%;
+}
+
+.doctor_new.message .list_inner{
+    height: 100%;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+.doctor_new.message .list_inner> div{
+    padding: 7px 0;
+}
+
+.doctor_new.message .select_doctor h2{
+    padding-left: 8px;
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor_new.message .favorite_container input[type="checkbox"]+label> span{
+    margin: 0;
+}
+
+.doctor_new.message .favorite_container input[type='checkbox']:checked+label span{
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter: invert(39%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(57%) contrast(85%);  
+}
+
+.doctor_new.message .list_inner .favorite_container input[type='checkbox']:checked+label span{
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.doctor_new.message input[type="checkbox"]:checked + label> span {
+    filter: invert(58%) sepia(152%) saturate(863%) hue-rotate(154deg) brightness(60%) contrast(100%);
+}

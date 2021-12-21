@@ -2861,11 +2861,6 @@
     text-align: center;
 }
 
-.doctor_remote .all_plan .inner> :nth-child(14),
-.doctor_remote .all_plan .weekly .inner> :last-child{
-    margin: 0;
-}
-
 .doctor_remote .all_plan .weekly .start.active{
     background: #fff;
     border: 1px solid #007A94;
@@ -3231,10 +3226,13 @@
     margin-bottom: 15px;
 }
 
-.new_remote .content input{
+.new_remote .content input,
+.new_remote .content .search_container input{
     width: 100%;
+    height: 40px;
     padding: 8px 50px 8px 16px;
     border-radius: 4px;
+    background: #fff;
 }
 
 .new_remote .content input::placeholder{
@@ -3250,27 +3248,233 @@
     position: relative;
 }
 
-.new_remote .content .btn_search{
+.new_remote .content .search_container .btn_search{
     position: absolute;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
     background: #fff;
     width: 32px;
-    padding: 7px;
+    height: 32px;
+    padding: 6px;
 }
 
-.new_remote .content .btn_search img{
+.new_remote .content .search_container .btn_search img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: invert(10%) sepia(99998%) saturate(999%) hue-rotate(264deg) brightness(9999%) contrast(8%);
 }
 
+.new_remote .content .patient_select{
+    margin-bottom: 32px;
+}
+
 .new_remote .content .patient_select span{
     width: 100%;
     padding: 12px 16px;
+    margin-top: 16px;
     border-radius: 4px;
     background: #fff;
     display: block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.new_remote .content textarea{
+    width: 100%;
+    height: 32px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    overflow-y: hidden;
+}
+
+.new_remote .content textarea::placeholder{
+    color: #ccc;
+}
+
+.new_remote .content .btn_add{
+    width: 100%;
+    padding: 14px 0;
+    margin-top: 8px;
+    border: 1px dashed #ccc;
+    background: #fff;
+    color: #007A94;
+}
+
+.new_remote .content .participant{
+    padding: 20px 0;
+}
+
+.new_remote .content .title{
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new_remote .content .title h2,
+.new_remote .content .title p{
+    color: #000;
+}
+
+.new_remote .content .title span{color: #007A94;}
+
+.new_remote .content .member{
+    width: 100%;
+    height: 48px;
+    margin-top: 20px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.doctor .attendee{
+    width: 1132px;
+    margin: 0 32px;
+    padding: 16px;
+}
+
+.doctor .attendee .title{
+    padding: 16px 16px 40px;
+}
+
+.attendee .title .btn_list{
+    display: flex;
+}
+
+.attendee .title .btn_list button{
+    width: 120px;
+    box-shadow: none;
+    background: #ccc;
+    font-size: 14px;
+    color: #888;
+}
+
+.attendee .title .btn_list button img{
+    filter: invert(59%) sepia(0%) saturate(1174%) hue-rotate(227deg) brightness(90%) contrast(107%);
+}
+
+.attendee .title .btn_list button.on{
+    background: #f80;
+    color: #fff;
+}
+
+.attendee .title .btn_list button.on img{
+    filter: none;
+}
+
+.attendee .title .btn_list .btn_week{
+    padding: 10px 12px;
+    margin-left: 8px;
+}
+
+.attendee .atten_inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.attendee .cal_container{
+    width: 360px;
+}
+
+.attendee .cal_container .title{
+    padding: 8px 16px;
+    border: none;
+    align-items: center;
+}
+
+.attendee .atten_inner .cal_container .label{
+    width: 94px;
+    height: 30px;
+    padding: 6px 16px;
+    box-shadow: none;
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+}
+
+.doctor .attendee .month_box{
+    margin: 0 0 0 8px;
+}
+
+.attendee .choice_staff{
+    width: 676px;
+}
+
+.attendee .choice_staff .title{
+    padding: 16px 8px;
+    border: none;
+    align-items: center;
+}
+
+.attendee .choice_staff .title h2{
+    color: #000;
+}
+
+.attendee .choice_staff .title div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.attendee .choice_staff .title .btn_check{
+    width: 64px;
+    padding: 6px;
+    margin-left: 16px;
+    box-shadow: none;
+    background: #007A94;
+    text-align: center;
+    display: block;
+}
+
+.attendee .choice_staff .title .btn_check:hover{
+    background: #004F60;
+}
+
+.attendee .choice_staff .title .btn_check.on{
+    background: #ccc;
+    color: #888;
+}
+
+.attendee .choice_staff .title span{
+    color: #007A94;
+}
+
+.attendee .choice_member{
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.attendee .search_container{
+    position: relative;
+}
+
+.attendee .search_container input{
+    width: 100%;
+    height: 40px;
+    padding: 12px 50px 12px 8px;
+    margin-top: 12px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.attendee .search_container input::placeholder{
+    color: #ccc;
+}
+
+.doctor .attendee .search_container button{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    transform: translateY(-30%);
+}
+
+.doctor .attendee .search_container button img{
+    filter: invert(78%) sepia(6%) saturate(12%) hue-rotate(314deg) brightness(106%) contrast(89%);
 }
