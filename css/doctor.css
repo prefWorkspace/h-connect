@@ -3090,6 +3090,8 @@
     padding: 32px;
 }
 
+.new_remote h2{font-weight: 500;}
+
 .new_remote .title{
     padding-bottom: 25px;
     border-bottom: 1px solid #eee;
@@ -3170,7 +3172,7 @@
 }
 
 .new_remote .type{
-    padding: 16px;
+    padding: 16px 13px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -3191,6 +3193,164 @@
 
 .new_remote .type .surgery_list{
     width: 184px;
+}
+
+.new_remote .surgery_view{
+    display: none;
+}
+
+.new_remote .rt_view .type{
+    width: 444px;
+    margin: 0 auto;
+    padding: 14px 48px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.new_remote .rt_view .common_radio{
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+}
+
+.new_remote .rt_view .radio{
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    border-radius: 50%;
+}
+
+.new_remote .radio[type="radio"]{
+    background: #fff;
+    border: none;
+}
+
+.new_remote .common_radio > .radio[type="radio"]:checked + span{
+    color: #007A94;
+}
+
+.new_remote .surgery_view {
+    width: 444px;
+    margin: 20px auto;
+}   
+
+.new_remote .surgery_view h2{
+    margin-bottom: 16px;
+}
+
+.new_remote .surgery_view> div:not(.new_remote .rt_time, .new_remote .ut_wrap),
+.new_remote .surgery_view .date> div,
+.new_remote .rt_time> div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_remote .rt_time> div,
+.new_remote .t_view> div{
+    align-items: flex-start;
+}
+
+.new_remote .surgery_view .date_time> div,
+.new_remote .surgery_view .date_time> div div,
+.new_remote .surgery_view .date> div,
+.new_remote .surgery_view .date{
+    display: flex;
+    align-items: center;
+}
+
+.new_remote .ro_view .date{
+    display: block;
+}
+
+.new_remote .surgery_view .date_time> div,
+.new_remote .surgery_view .date> div{
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+
+.new_remote .surgery_view .date> div,
+.doctor .new_remote .rt_time .date .input_wrap p,
+.new_remote .surgery_view .date_time> :last-child,
+.doctor .new_remote .up_time .date .input_wrap p{
+    margin: 0;
+}
+
+.new_remote .t_view .type{padding:0;}
+
+.new_remote .surgery_view .input_wrap{
+    width: 48px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_remote .surgery_view .date_time> div> :nth-child(2),
+.new_remote .surgery_view .date> div> :nth-child(2),
+.new_remote .rt_time .date> :nth-child(2),
+.new_remote .up_time .date> :nth-child(2){
+    margin: 0 8px 0 16px;
+}
+
+.new_remote .surgery_view .date_time input,
+.new_remote .surgery_view .date input{
+    width: 15px;
+    background: none;
+    color: #007A94;
+}
+
+.new_remote .surgery_view .date_time input::placeholder,
+.new_remote .surgery_view .date input::placeholder{
+/* .new_remote .rt_time .date input::placeholder{ */
+    color: #ccc;
+}
+
+.new_remote .surgery_view input[type="number"]::-webkit-outer-spin-button,
+.new_remote .surgery_view input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.new_remote .rt_time {
+    margin: 20px 0 0;
+}
+
+.new_remote .t_view .type{
+    padding: 20px 0 40px;
+}
+
+.new_remote .ro_view .date> :first-child{
+    margin-bottom: 16px;
+}
+
+.new_remote .up_time{
+    position: relative;
+    padding: 16px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_remote .up_time .date{
+    align-items: flex-start;
+}
+
+.new_remote .up_time .input_wrap{
+    background: #fff;
+}
+
+.new_remote .up_time .repeat{
+    position: absolute;
+    font-size: 12px;
+    color: #940045;
+    bottom: 23px;
 }
 
 .new_remote .surgery_box.active{
@@ -3262,11 +3422,15 @@
     filter: invert(10%) sepia(99998%) saturate(999%) hue-rotate(264deg) brightness(9999%) contrast(8%);
 }
 
+.new_remote .content .search_container .btn_search.on img{
+    filter: none;
+}
+
 .new_remote .content .patient_select{
     margin-bottom: 32px;
 }
 
-.new_remote .content .patient_select span{
+.new_remote .content .patient_select> span{
     width: 100%;
     padding: 12px 16px;
     margin-top: 16px;
@@ -3279,7 +3443,7 @@
 
 .new_remote .content textarea{
     width: 100%;
-    height: 32px;
+    min-height: 32px;
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 12px;
@@ -3318,12 +3482,38 @@
 
 .new_remote .content .title span{color: #007A94;}
 
-.new_remote .content .member{
+.doctor_new .content .member{
     width: 100%;
-    height: 48px;
+    min-height: 48px;
+    padding: 16px 0 16px 16px;
     margin-top: 20px;
     border-radius: 4px;
     background: #eee;
+}
+
+.doctor_new .mem{
+    height: 17px;
+    margin-right: 16px;
+    width: fit-content;
+    display: inline-block;
+}
+
+.doctor_new .mem p{
+    margin: 0;
+    display: inline-block;
+}
+
+.doctor_new .btn_del{
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    margin-left: 7px;
+    border-radius: 50%;
+    background: #940045 url('/img/icon/nurse/close.svg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 50%;
+    display: inline-block;
+    vertical-align: inherit;
 }
 
 .doctor .attendee{
@@ -3333,7 +3523,8 @@
 }
 
 .doctor .attendee .title{
-    padding: 16px 16px 40px;
+    padding: 16px;
+    border: none;
 }
 
 .attendee .title .btn_list{
@@ -3399,8 +3590,12 @@
     width: 676px;
 }
 
+.attendee .choice_staff.on{
+    width: 292px;
+}
+
 .attendee .choice_staff .title{
-    padding: 16px 8px;
+    padding: 12px 8px;
     border: none;
     align-items: center;
 }
@@ -3414,13 +3609,15 @@
     justify-content: space-between;
 }
 
-.attendee .title .btn_check{
+.doctor .attendee .title .btn_check{
     width: 64px;
+    height: 32px;
     padding: 6px;
     margin-left: 16px;
     box-shadow: none;
     background: #007A94;
     text-align: center;
+    font-size: 12px;
     display: block;
 }
 
@@ -3441,7 +3638,8 @@
 
 .attendee .choice_member{
     width: 100%;
-    height: 48px;
+    min-height: 48px;
+    padding: 16px;
     border-radius: 4px;
     background: #eee;
 }
@@ -3481,6 +3679,7 @@
     width: 744px; 
     height: 576px;
     position: relative;
+    display: none;
 }
 
 .attendee .weekly> .title h2{
@@ -3490,6 +3689,7 @@
 
 .attendee .weekly> .title> div{
     display: flex;
+    align-items: center;
     text-align: center;
 }
 
@@ -3513,6 +3713,7 @@
 
 .attendee .weekly .title .btn_check{
     background: #007A94;
+    box-shadow: none;
 }
 
 .attendee .weekly .time{
@@ -3542,9 +3743,9 @@
 
 .attendee .weekly .inner{
     width: 688px;
-    height: 500px;
+    height: 515px;
     display: flex;
-    top: 90px;
+    top: 65px;
     left: 56px;
     position: absolute;
     overflow: scroll hidden;

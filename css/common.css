@@ -14,7 +14,7 @@ body {
     display: flex;
 }
 
-.wrap_inner{padding: 40px;display: flex;}
+.wrap_inner{padding: 40px; display: flex;}
 
 .title h2{
     font-size: 16px;
@@ -1909,6 +1909,7 @@ textarea::-webkit-scrollbar-button {
     margin-right: 16px;
     border-radius: 4px;
     background: #eee;
+    font-size: 16px;
     color: #888;
 }
 
@@ -1921,6 +1922,7 @@ textarea::-webkit-scrollbar-button {
     height: 48px;
     border-radius: 4px;
     background: #940045;
+    font-size: 16px;
     color: #fff;
 }
 
@@ -4682,4 +4684,65 @@ textarea::-webkit-scrollbar-button {
 /* 환자 검색 */
 .pop.doc_search{
     right: 350px;
+}
+
+.pop.remote_search{
+    top: 50px;
+    left: 0; 
+    display: none;
+    position: absolute;
+    z-index: 99;
+    width: 404px;
+    height: 192px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.pop.remote_search .wrap_inner{
+    padding: 32px;
+    display: inherit;
+}
+
+.pop.remote_search p{
+    margin-bottom: 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 실시간 원격 협진 생성 */
+.pop.create_remote .pop_cont{
+    width: 600px;
+    height: 360px;
+    padding: 64px 0 48px;
+}
+
+.pop.create_remote .pop_cont div{
+    width: 46px;
+    height: 32px;
+    margin: 0 auto 48px;
+}
+
+.pop.create_remote .pop_cont div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop.create_remote .pop_cont h2{text-align: center;}
+
+.pop.create_remote .pop_cont h2 span{color: #007A94;}
+
+.pop.create_remote .overlay .pop_cont .btn_list{position:initial;}
+
+.pop.create_remote .pop_cont .btn_list{
+    width: 272px;
+    height: 48px;
+}
+
+.pop.create_remote .pop_cont .btn_list .btn_check{
+    width: 100%;
+    margin-top: 96px;
+    height: auto;
+    padding: 12px;
 }

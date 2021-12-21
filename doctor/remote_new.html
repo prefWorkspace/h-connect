@@ -98,6 +98,46 @@
         </div>
     </div>
 
+    <!-- 신규협진 생성 취소 -->
+    <div class="pop delete no_create">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/img/logo.png" alt="로고">
+                </div>
+                    
+                <h3>신규협진이 생성되지 않았습니다. 모든 설정이 취소됩니다.</h3>
+                <h2>취소 하시겠습니까?</h2>
+    
+        
+                <div class="btn_list">
+                    <button type="button" class="btn_no">아니요</button>
+                    <button type="button" class="btn_cut">네, 취소합니다</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 실시간 원격 협진 생성 -->
+    <div class="pop create_remote">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/img/logo.png" alt="로고">
+                </div>
+                    
+                <h2>
+                    <span>실시간 원격 협진</span> 이 생성 되었습니다.
+                </h2>
+    
+        
+                <div class="btn_list">
+                    <button type="button" class="btn_check">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="wrap">
         <!--헤더 pc-->
         <header id="header" class="pc_header doc_header">
@@ -172,6 +212,7 @@
             </nav>
 
             <div class="wrap_inner">
+                <!-- 신규 협진 생성 -->
                 <section class="section left new_remote">
                     <div class="title">
                         <div>
@@ -185,6 +226,8 @@
 
                             <div class="btn_list">
                                 <button type="button" class="btn_cancel">취소</button>
+
+                                <!-- 밑에 내용 전부 입력하면 활성화가 되게 해주세요 -->
                                 <button type="button" class="btn_creat" disabled>협진생성</button>
                             </div>
                         </div>
@@ -200,13 +243,385 @@
                                 <button class="label surgery_label">협진 종류 선택</button>
                                 
                                 <ul class="optionList surgery_list">
-                                    <li class="optionItem surgery_option">실시간 원격 협진</li>
-                                    <li class="optionItem surgery_option">소견 요청 협진</li>
-                                    <li class="optionItem surgery_option">협진 일정 요청</li>
+                                    <li class="optionItem surgery_option real_time">실시간 원격 협진</li>
+                                    <li class="optionItem surgery_option re_opinion">소견 요청 협진</li>
+                                    <li class="optionItem surgery_option schedule_re">협진 일정 요청</li>
                                 </ul>                                  
                             </div>
                         </div>
 
+                        <!-- 실시간 원격 협진 -->
+                        <div class="surgery_view rt_view">
+                            <div class="type">
+                                <label for="real" class="common_radio">
+                                    <input type="radio" name="remote" id="real" class="radio" checked>
+                                    <span>실시간 원격 협진</span>
+                                </label> 
+                                
+                                <label for="multi" class="common_radio">
+                                    <input type="radio" name="remote" id="multi" class="radio">
+                                    <span>다학제 통합 진료</span>
+                                </label>
+                            </div>
+
+                            <div class="rt_time">
+                                <h2>협진 시간 선택</h2>
+                                
+                                <div>
+                                    <div class="date">
+                                        <p>협진일자</p>
+     
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>월</p>
+                                        </div>
+
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>일</p>
+                                        </div>
+                                    </div>
+    
+                                    <div class="date_time">
+                                        <div>
+                                            <p>시작시간</p>
+                                            
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+    
+                                        <div>
+                                            <p>종료시간</p>
+                                            
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 소견 요청 협진 -->
+                        <div class="surgery_view ro_view">
+                            <h2>협진 시간 선택</h2>
+                                
+                                <div>
+                                    <div class="date">
+                                        <div>
+                                            <p>소견요청 협진 시작일</p>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>월</p>
+                                            </div>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>일</p>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <p>소견요청 협진 마감일</p>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>월</p>
+                                            </div>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>일</p>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+    
+                                    <div class="date_time">
+                                        <div>
+                                            <p>시작시간</p>
+                                            
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+    
+                                        <div>
+                                            <p>마감시간</p>
+                                            
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+    
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <!-- 협진 가능시간 선택 -->
+                        <div class="surgery_view t_view" style="display: block;">
+                            <h2>일정 요청 마감 일자</h2>
+
+                            <div class="type">
+                                <div class="date">
+                                    <div>
+                                        <p>마감일자</p>
+ 
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>월</p>
+                                        </div>
+    
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>일</p>
+                                        </div>
+                                    </div>                                   
+                                </div>
+
+                                <div class="date_time">
+                                    <div>
+                                        <p>마감시간</p>
+                                        
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>시</p>
+                                        </div>
+
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>분</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2>협진 가능시간 선택</h2>
+
+                            <div class="ut_wrap">
+                                <div class="up_time">
+                                    <div class="date">
+                                        <p>협진일자</p>
+         
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>월</p>
+                                        </div>
+    
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>일</p>
+                                        </div>
+                                    </div>
+        
+                                    <div class="date_time">
+                                        <div>
+                                            <p>시작시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p>종료시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- 중복시 보여주세요 -->
+                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
+                                </div>
+    
+                                <div class="up_time">
+                                    <div class="date">
+                                        <p>협진일자</p>
+         
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>월</p>
+                                        </div>
+    
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>일</p>
+                                        </div>
+                                    </div>
+        
+                                    <div class="date_time">
+                                        <div>
+                                            <p>시작시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p>종료시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- 중복시 보여주세요 -->
+                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
+                                </div>
+    
+                                <div class="up_time">
+                                    <div class="date">
+                                        <p>협진일자</p>
+         
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>월</p>
+                                        </div>
+    
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>일</p>
+                                        </div>
+                                    </div>
+        
+                                    <div class="date_time">
+                                        <div>
+                                            <p>시작시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p>종료시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- 중복시 보여주세요 -->
+                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
+                                </div>
+    
+                                <div class="up_time">
+                                    <div class="date">
+                                        <p>협진일자</p>
+         
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>월</p>
+                                        </div>
+    
+                                        <div class="input_wrap">
+                                            <input type="number" placeholder="00">
+                                            <p>일</p>
+                                        </div>
+                                    </div>
+        
+                                    <div class="date_time">
+                                        <div>
+                                            <p>시작시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p>종료시간</p>
+                                                
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>시</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="number" placeholder="00">
+                                                <p>분</p>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- 중복시 보여주세요 -->
+                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
+                                </div>
+                            </div>                            
+                        </div>
+
+                        <!-- 협진 내용 -->
                         <div class="content">
                             <h2>협진 내용</h2>
 
@@ -214,7 +629,11 @@
                                 <div class="case">
                                     <p>Case 명.</p>
 
-                                    <input type="text" placeholder="case 명을 작성해주세요">
+                                    <div class="text_wrap">
+                                        <textarea placeholder="case 명을 작성해주세요"></textarea>
+                                    </div>
+                                   
+                                    <!-- <input type="text" placeholder="case 명을 작성해주세요"> -->
                                 </div>
 
                                 <div class="patient_select">
@@ -226,6 +645,47 @@
                                         <button type="button" class="btn_search">
                                             <img src="/img/header/search.svg" alt="검색표시">
                                         </button>
+
+                                         <!-- 환자 검색 -->
+                                        <div class="pop remote_search">
+                                            <div class="wrap_inner">
+                                                <p>
+                                                    <span>김환자</span>
+                                                    (<span>63</span>.<span>남</span>).
+                                                    <span>patient ID</span>.
+                                                    <span>심장병동</span>.
+                                                    <span>1308</span>호실.
+                                                    <span>3</span>병상
+                                                </p>
+
+                                                <p>
+                                                    <span>김환장</span>
+                                                    (<span>74</span>.<span>여</span>).
+                                                    <span>patient ID</span>.
+                                                    <span>심장병동</span>.
+                                                    <span>1302</span>호실.
+                                                    <span>1</span>병상
+                                                </p>
+
+                                                <p>
+                                                    <span>김환정</span>
+                                                    (<span>68</span>.<span>남</span>).
+                                                    <span>patient ID</span>.
+                                                    <span>심장병동</span>.
+                                                    <span>1306</span>호실.
+                                                    <span>6</span>병상
+                                                </p>
+
+                                                <p>
+                                                    <span>김환재</span>
+                                                    (<span>59</span>.<span>남</span>).
+                                                    <span>patient ID</span>.
+                                                    <span>심장병동</span>.
+                                                    <span>1304</span>호실.
+                                                    <span>2</span>병상
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <span>환자명</span> 
@@ -234,7 +694,9 @@
                                 <div class="contents">
                                     <p>협진 내용</p>
 
-                                    <textarea placeholder="협진 내용을 입력해주세요"></textarea>
+                                    <div class="text_wrap">
+                                        <textarea placeholder="협진 내용을 입력해주세요"></textarea>
+                                    </div>
                                 </div>
                             </form>
 
@@ -246,13 +708,38 @@
                                     <p>참여 요청 인원. <span>0명</span></p>
                                 </div>
                                
-                                <div class="member"></div>
+                                <div class="member">
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>
+
+                                    <div class="mem">
+                                        <p>다섯 글자자</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>                                    
+
+                                    <div class="mem">
+                                        <p>다섯글자자</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>                                    
+
+                                    <div class="mem">
+                                        <p>네 글자자</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>                                    
+
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>                                    
+                                </div>
                             </div>
                         </div>
-                        
                     </div>
                 </section>
 
+                <!-- 협진 시간 및 참석자 선택 -->
                 <section class="section right attendee">
                     <div class="title">
                         <h2>협진 시간 및 참석자 선택</h2>
@@ -278,7 +765,7 @@
 
                     <div class="atten_inner">
                         <!-- 날짜선택 -->
-                        <div class="cal_container" style="display: none;">
+                        <div class="cal_container">
                             <div class="title">
                                 <h2>날짜 선택</h2>
 
@@ -442,6 +929,11 @@
                                     <div class="title">
                                         <p>16. 화 </p>
                                     </div>
+
+                                    <!-- 협진 가능시간을 선택했을때 보이게 해주세요 -->
+                                    <div class="plan create_start">
+                                        협진시작
+                                    </div>
                                 </div>
 
                                 <div class="day">
@@ -565,9 +1057,8 @@
                             </div>  
                         </div>
 
-
                         <!-- 의료진 선택 -->
-                        <div class="choice_staff" style="display: none;">
+                        <div class="choice_staff">
                             <div class="title">
                                 <h2>의료진 선택</h2>
 
@@ -579,7 +1070,35 @@
 
                             <div class="choice">
                                 <div class="choice_member">
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>
 
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>
+
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>
+
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>
+
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>
+
+                                    <div class="mem">
+                                        <p>김협진 교수님</p>
+                                        <button type="button" class="btn_del"></button>
+                                    </div>
                                 </div>
 
                                 <div class="search_container">

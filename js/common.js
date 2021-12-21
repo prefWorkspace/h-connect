@@ -950,10 +950,58 @@ $(function () {
             $(this).addClass('on');
             $('.remote_request .list .row').not(this).removeClass('on');
         })
+        
+        // 4주보기
+        $('.attendee> .title .btn_list button').on('click', function(){
+            $(this).addClass('on');
+            $('.attendee> .title .btn_list button').not(this).removeClass('on');
+        })
+        $('.attendee .title .btn_list .btn_week').on('click',function(){
+            $('.attendee .cal_container').hide();
+            $('.attendee .weekly').show();
+            $('.attendee .choice_staff').addClass('on');
+        })
+        $('.attendee .title .btn_list .btn_cal').on('click',function(){
+            $('.attendee .cal_container').show();
+            $('.attendee .weekly').hide();
+            $('.attendee .choice_staff').removeClass('on');
+        })
+        // 환자선택
+        $('.doctor_new .new_remote .search_container').on('click', function(){
+            $('.pop.remote_search').toggle();
+            $('.doctor_new .new_remote .search_container .btn_search').toggleClass('on');
+        })
 
+        $('.doctor .btn_check').on('click', function(){
+            $(this).toggleClass('on');
+        })
 
+        // 협진 종류 선택
+        // 실시간 원격 협진
+        $('.doctor .surgery_list .real_time').on('click', function(){
+            $('.doctor .rt_view').show();
+            $('.doctor .surgery_view').not('.rt_view').hide();
+        })
 
+        // 소견 요청 협진
+        $('.doctor .surgery_list .re_opinion').on('click', function(){
+            $('.doctor .ro_view').show();
+            $('.doctor .surgery_view').not('.ro_view').hide();
+        })
 
+        // 협진 일정 요청
+        $('.doctor .surgery_list .schedule_re').on('click', function(){
+            $('.doctor .t_view').show();
+            $('.doctor .surgery_view').not('.t_view').hide();
+        })
+
+        $('.new_remote .title .btn_cancel').on('click', function(){
+            $('.pop.no_create .overlay').show();
+        })
+
+        $('.new_remote .title .btn_creat').on('click', function(){
+            $('.pop.create_remote .overlay').show();
+        })
 
 
 
@@ -1089,3 +1137,12 @@ $(function(){
         $(this).next(".case_cont").siblings(".case_cont").slideUp(300); // 1개씩 펼치기
     });
 })
+
+// 의사 xd 원격협진 textarea 높이 자동 조절
+$(document).ready(function() {
+    $('.text_wrap').on( 'keyup', 'textarea', function (e){
+      $(this).css('height', 'auto' );
+      $(this).height( this.scrollHeight );
+    });
+    $('.text_wrap').find( 'textarea' ).keyup();
+  });
