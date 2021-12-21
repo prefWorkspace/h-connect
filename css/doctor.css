@@ -269,15 +269,10 @@
 .doctor .my_plan .weekly .time div{
     width: 100%;
     height: 48px;
-    /* position: relative; */
-    /* border-bottom: 1px solid #aaa; */
 }
 
 .doctor .my_plan .weekly .time p{
     position: relative;
-    /* font-size: 12px; */
-    /* top: 50%;
-    left: 50%; */
 }
 
 .doctor .my_plan .weekly .time p::after{
@@ -301,9 +296,9 @@
 
 /* .doctor .my_plan .weekly .two::-webkit-scrollbar{display: none;} */
 
-.doctor .my_plan .weekly .four{display: none;}
+.doctor .weekly .four{display: none;}
 
-.doctor .my_plan .weekly .four> div{display: flex;}
+.doctor .weekly .four> div{display: flex;}
 
 .doctor .my_plan .weekly .inner::-webkit-scrollbar{
     width: 8px;
@@ -315,7 +310,7 @@
     background: #ccc;
 }
 
-.doctor .my_plan .weekly .day{
+.doctor .weekly .day{
     width: 48px;
     height: 473px;
     margin-right: 16px;
@@ -327,7 +322,7 @@
     margin: 0;
 }
 
-.doctor .my_plan .weekly .day .title{
+.doctor .weekly .day .title{
     width: 48px;
     height: 32px;
     padding: 8px;
@@ -338,9 +333,10 @@
     position: relative;
 }
 
-.doctor .my_plan .weekly .day .title p{
+.doctor .weekly .day .title p{
     text-align: center;
     color: #000;
+    margin: 0;
 }
 
 .doctor .plan{
@@ -358,7 +354,7 @@
     font-size: 10px;
 }
 
-.doctor .my_plan .weekly .weekend .title p{
+.doctor .weekly .weekend .title p{
     color: #888;
 }
 
@@ -3418,7 +3414,7 @@
     justify-content: space-between;
 }
 
-.attendee .choice_staff .title .btn_check{
+.attendee .title .btn_check{
     width: 64px;
     padding: 6px;
     margin-left: 16px;
@@ -3428,11 +3424,13 @@
     display: block;
 }
 
-.attendee .choice_staff .title .btn_check:hover{
+.attendee .weekly .title .btn_check:hover,
+.attendee .title .btn_check:hover{
     background: #004F60;
 }
 
-.attendee .choice_staff .title .btn_check.on{
+.attendee .weekly .title .btn_check.on,
+.attendee .title .btn_check.on{
     background: #ccc;
     color: #888;
 }
@@ -3477,4 +3475,142 @@
 
 .doctor .attendee .search_container button img{
     filter: invert(78%) sepia(6%) saturate(12%) hue-rotate(314deg) brightness(106%) contrast(89%);
+}
+
+.attendee .weekly{
+    width: 744px; 
+    height: 576px;
+    position: relative;
+}
+
+.attendee .weekly> .title h2{
+    margin-right: 50px;
+    color: #000;
+}
+
+.attendee .weekly> .title> div{
+    display: flex;
+    text-align: center;
+}
+
+.attendee .weekly> .title .btn_list button.on{
+    background: #007A94;
+}
+
+.attendee .weekly> .title .btn_two{
+    margin-right: 8px;
+}
+
+.attendee .weekly> .title button{
+    width: 64px;
+    height: 32px;
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    box-shadow: none;
+}
+
+.attendee .weekly .title .btn_check{
+    background: #007A94;
+}
+
+.attendee .weekly .time{
+    width: 100%;
+    padding-top: 32px;
+    position: absolute;
+    display: inherit;
+}
+
+.attendee .weekly .time div{
+    width: 100%;
+    height: 48px;
+}
+
+.attendee .weekly .time p{
+    position: relative;
+}
+
+.attendee .weekly .time p::after{
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    content: '';
+    width:  685px;
+    border-bottom: 1px solid #eee;
+}
+
+.attendee .weekly .inner{
+    width: 688px;
+    height: 500px;
+    display: flex;
+    top: 90px;
+    left: 56px;
+    position: absolute;
+    overflow: scroll hidden;
+}
+
+.attendee .weekly .inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.attendee .weekly .inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.attendee .weekly .inner> :nth-child(1) :nth-child(2){
+    height: 74px;
+    top: 110px;
+}
+
+.attendee .weekly .inner> :nth-child(1) :nth-child(3){
+    height: 239px;
+    top: 232px;
+}
+
+.attendee .weekly .inner> :nth-child(2) :nth-child(2){
+    height: 74px;
+    top: 110px;
+}
+
+.attendee .weekly .inner> :nth-child(2) :nth-child(3){
+    height: 239px;
+    top: 232px;
+}
+
+.attendee .weekly .inner> :nth-child(3) :nth-child(2){
+    height: 74px;
+    top: 41px;
+}
+
+.attendee .weekly .inner> :nth-child(4) :nth-child(2){
+    height: 74px;
+    top: 110px;
+}
+
+.attendee .weekly .inner> :nth-child(4) :nth-child(3){
+    height: 239px;
+    top: 232px;
+}
+
+.attendee .weekly .inner> :nth-child(5) :nth-child(2){
+    height: 74px;
+    top: 110px;
+}
+
+.attendee .weekly .inner> :nth-child(5) :nth-child(3){
+    height: 239px;
+    top: 232px;
+}
+
+.attendee .weekly .inner> :nth-child(8) :nth-child(2){
+    height: 74px;
+    top: 110px;
+}
+
+.attendee .weekly .inner> :nth-child(8) :nth-child(3){
+    height: 239px;
+    top: 232px;
 }

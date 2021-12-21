@@ -278,7 +278,7 @@
 
                     <div class="atten_inner">
                         <!-- 날짜선택 -->
-                        <div class="cal_container">
+                        <div class="cal_container" style="display: none;">
                             <div class="title">
                                 <h2>날짜 선택</h2>
 
@@ -321,8 +321,253 @@
                             <div class="calendar" id="calendar"></div>
                         </div>
 
+                        <!-- 시간 선택  -->
+                        <div class="weekly">
+                            <div class="title">
+                                <div>
+                                    <h2>시간 선택</h2>
+
+                                    <div class="btn_list">
+                                        <button type="button" class="btn_two on">2주 보기</button>
+                                        <button type="button" class="btn_four">4주 보기</button>
+                                    </div>
+                                </div>
+                               
+                                <button type="button" class="btn_check">확인</button>
+                            </div>
+
+                            <!-- 시간 time -->
+                            <div class="time">
+                                <div><p>09:00</p></div>
+                                <div><p>10:00</p></div>
+                                <div><p>11:00</p></div>
+                                <div><p>12:00</p></div>
+                                <div><p>13:00</p></div>
+                                <div><p>14:00</p></div>
+                                <div><p>15:00</p></div>
+                                <div><p>16:00</p></div>
+                                <div><p>17:00</p></div>
+                                <div><p>18:00</p></div>
+                            </div>
+
+                            <div class="inner">
+                                <div class="day today">
+                                    <div class="title">
+                                        <p>15.월 </p>
+                                    </div>
+
+                                    <!-- 협진요청 -->
+                                    <div class="plan start">
+                                        <p>협진시작</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>16. 화 </p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>  
+
+                                    <!-- 협진요청 -->
+                                    <div class="plan start">
+                                        <p>협진요청</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>17. 수</p>
+                                    </div>
+
+                                    <!-- 휴가 -->
+                                    <div class="plan ambul">
+                                        <p>수술</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>18. 목</p>
+                                    </div>
+
+                                    <!-- 협진요청 -->
+                                    <div class="plan start">
+                                        <p>협진요청</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>19. 금</p>
+                                    </div>
+                                    
+                                    <div class="plan holiday">
+                                        <p>휴가</p>
+                                    </div>
+                                </div>
+                                    
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>20. 토</p>
+                                    </div>
+                                </div>
+
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>21. 일</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>15.월 </p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>16. 화 </p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>17. 수</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>18. 목</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>19. 금</p>
+                                    </div>
+                                </div>
+                                    
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>20. 토</p>
+                                    </div>
+                                </div>
+
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>21. 일</p>
+                                    </div>
+                                </div>
+
+                                <!-- 4주 보기 -->
+                                <div class="four">
+                                    <div class="wrap">
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>15.월 </p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>16. 화 </p>
+                                            </div>                        
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>17. 수</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>18. 목</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>19. 금</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>20. 토</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>21. 일</p>
+                                            </div>
+                                        </div>   
+                                        
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>15.월 </p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>16. 화 </p>
+                                            </div>                            
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>17. 수</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>18. 목</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>19. 금</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>20. 토</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>21. 일</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+
+
                         <!-- 의료진 선택 -->
-                        <div class="choice_staff">
+                        <div class="choice_staff" style="display: none;">
                             <div class="title">
                                 <h2>의료진 선택</h2>
 
