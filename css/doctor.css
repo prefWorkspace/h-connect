@@ -350,7 +350,7 @@
 }
 
 .doctor .plan p{
-    width: 45px;
+    width: 48px;
     font-size: 10px;
 }
 
@@ -3155,6 +3155,8 @@
     color: #888;
 }
 
+.new_remote .title .btn_request{display: none;}
+
 .new_remote .inner{
     width: 476px;
     height: 576px;
@@ -3454,7 +3456,8 @@
     color: #ccc;
 }
 
-.new_remote .content .btn_add{
+.new_remote .content .btn_add,
+.new_remote .btn_tadd{
     width: 100%;
     padding: 14px 0;
     margin-top: 8px;
@@ -3807,11 +3810,73 @@
 }
 
 .attendee .weekly .inner> :nth-child(8) :nth-child(2){
-    height: 74px;
-    top: 110px;
+    height: 48px;
+    top: 41px;
 }
 
 .attendee .weekly .inner> :nth-child(8) :nth-child(3){
+    height: 432px;
+    top: 41px;
+}
+
+.attendee .weekly .inner> :nth-child(9) :nth-child(2){
+    height: 320px;
+    top: 41px;
+}
+
+
+.attendee .weekly .inner> :nth-child(9) :nth-child(3){
+    height: 432px;
+    top: 41px;
+}
+
+.attendee .weekly .inner> :nth-child(10) :nth-child(2){
+    width: 100%;
+    height: 432px;
+    top: 41px;
+}
+
+.attendee .weekly .inner> :nth-child(11) :nth-child(2){
+    width: 100%;
+    height: 432px;
+    top: 41px;
+}
+
+.attendee .weekly .inner> :nth-child(12) :nth-child(2){
     height: 239px;
     top: 232px;
 }
+
+.attendee .weekly .inner> :nth-child(12) :nth-child(3){
+    height: 432px;
+    top: 41px;
+}
+
+.attendee .new{
+    background: rgba(238, 238, 238, 0.5);
+    font-size: 10px;
+    color: #eee;
+    cursor: pointer;
+    display: none;
+}
+
+.attendee .create_start.active{
+    background: rgba(0, 122, 148, 0.8);
+    color: #fff;
+}
+
+.attendee .create_op.active{
+    background: rgba(255, 136, 0, 0.8);
+    color: #fff;
+}
+
+.attendee .create_op{
+    z-index: 3;
+}
+
+.attendee .create_op.line{
+   display: none;
+   z-index: 1;
+}
+
+

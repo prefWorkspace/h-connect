@@ -981,18 +981,32 @@ $(function () {
         $('.doctor .surgery_list .real_time').on('click', function(){
             $('.doctor .rt_view').show();
             $('.doctor .surgery_view').not('.rt_view').hide();
+            $('.new_remote .btn_creat').show();
+            $('.new_remote .btn_request').hide();
         })
 
         // 소견 요청 협진
         $('.doctor .surgery_list .re_opinion').on('click', function(){
             $('.doctor .ro_view').show();
             $('.doctor .surgery_view').not('.ro_view').hide();
+            $('.doctor .create_op').css('display', 'flex');
+            $('.doctor .new, .doctor .create_op.line').not('.create_op').hide();
+            $('.new_remote .btn_creat').show();
+            $('.new_remote .btn_request').hide();
         })
 
         // 협진 일정 요청
         $('.doctor .surgery_list .schedule_re').on('click', function(){
             $('.doctor .t_view').show();
             $('.doctor .surgery_view').not('.t_view').hide();
+            $('.doctor .create_start').css('display', 'flex');
+            $('.doctor .new').not('.create_start').hide();
+            $('.new_remote .btn_creat').hide();
+            $('.new_remote .btn_request').show();
+        })
+
+        $('.doctor .new').on('click', function(){
+            $(this).toggleClass('active');
         })
 
         $('.new_remote .title .btn_cancel').on('click', function(){
@@ -1002,6 +1016,11 @@ $(function () {
         $('.new_remote .title .btn_creat').on('click', function(){
             $('.pop.create_remote .overlay').show();
         })
+
+        $('.new_remote .title .btn_request').on('click', function(){
+            $('.pop.create_opinion .overlay').show();
+        })
+        
 
 
 
