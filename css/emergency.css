@@ -153,7 +153,7 @@
     width: 6px;
     height: 12px;
     position: absolute;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
     top: 3px;
     right: -16px;
 }
@@ -163,7 +163,7 @@
     width: 6px;
     height: 12px;
     position: absolute;
-    background: url('/img/icon/open_black.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/open_black.png') no-repeat 0 0px / contain;
     top: 3px;
     right: -16px;
 }
@@ -355,6 +355,8 @@
 .emergency .patient_status .patient .symptome> div> div{
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+    position: relative;
 }
 
 .emergency .patient_status .patient .symptome> div> div> div{
@@ -383,11 +385,11 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .patient .symptome input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .patient .symptome input[type="checkbox"]{
@@ -436,11 +438,11 @@
     height: 20px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .patient .type .disease> :first-child input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .patient .type .disease> :last-child input[type="checkbox"]+label {
@@ -460,6 +462,8 @@
 }
 
 .emergency .patient_status .patient .symptome .part .swiper-scrollbar{
+    bottom: 0;
+    left: 0;
     width: 100%;
     background: #ccc;
 }
@@ -487,11 +491,11 @@
     width: 24px;
     height: 24px;
     vertical-align: middle;
-    background: url('/img/emergency/damage.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/damage.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .part_container input[type='checkbox']:checked+label{
-    background: url('/img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
 }
 
 
@@ -501,7 +505,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/img/emergency/front.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/front.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .front_toggle{
@@ -520,7 +524,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/img/emergency/back.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/back.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .back_toggle{
@@ -654,7 +658,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/img/emergency/head left.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/head left.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .left_toggle{
@@ -742,7 +746,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/img/emergency/head right.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/head right.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .right_toggle{
@@ -830,7 +834,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/img/emergency/body.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/body.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .body_toggle{
@@ -929,11 +933,11 @@
     height: 20px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/checkbox_border.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/checkbox_border.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient .symptome_info > div input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient .symptome_info input[type="checkbox"]+label{
@@ -946,12 +950,12 @@
     height: 20px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     color: #eee;
 }
 
 .emergency .patient .symptome_info > div> div input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient .symptome_info .double_list{
@@ -1206,13 +1210,13 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
     filter: invert(69%) sepia(77%) saturate(4082%) hue-rotate(86deg) brightness(118%) contrast(116%);
     cursor: pointer;
 }
 
 .emergency .bell_name input[type='checkbox']:checked+label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -1247,12 +1251,12 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .emergency .bell_name input[type='checkbox']:checked + label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
 }
 
 .emergency .vital .control .sp .bell_num{
@@ -1309,12 +1313,12 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .emergency .patient_status .resp .bell_name input[type='checkbox']:checked+label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -1346,12 +1350,12 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .emergency .patient_status .mmhg .bell_name input[type='checkbox']:checked+label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -1410,12 +1414,12 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .emergency .patient_status .ews .bell_name input[type='checkbox']:checked+label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -1450,12 +1454,12 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_temp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_temp_alarm.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .emergency .patient_status .temp .bell_name input[type='checkbox']:checked+label span{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -1587,6 +1591,7 @@
 .emergency .big_picture{
     width: 520px;
     height: 192px;
+    overflow: hidden;
 }
 
 .emergency .big_picture img,
@@ -2522,13 +2527,13 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
     filter: invert(53%) sepia(73%) saturate(3112%) hue-rotate(94deg) brightness(127%) contrast(112%);
     cursor: pointer;
 }
 
 .connect .vital .ecg .bell_name input[type='checkbox']:checked+label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -2538,12 +2543,12 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .connect .vital .resp .bell_name input[type='checkbox']:checked+label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -2553,13 +2558,13 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
     filter: invert(47%) sepia(74%) saturate(6074%) hue-rotate(317deg) brightness(101%) contrast(101%);
     cursor: pointer;
 }
 
 .connect .vital .temp .bell_name input[type='checkbox']:checked+label{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -3120,7 +3125,7 @@
     position: relative;
     width: 160px;
     height: 240px;
-    background: url(/img/emergency/body.png)no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/emergency/body.png)no-repeat 0 0px / contain;
     background-size: cover;
 }
 

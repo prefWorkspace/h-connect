@@ -9,6 +9,7 @@
   <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
   <script type='text/javascript' src='/js/common.js'></script>
   <script type='text/javascript' src='/js/index.js'></script>
+
   <!--css-->
   <link rel='stylesheet' href='/css/reset.css'>
   <link rel="stylesheet" href="/css/common.css">
@@ -109,6 +110,43 @@
             </div>
         </div>
     </div> 
+
+    <!-- 장치추가 팝업 -->
+    <div class="pop regi_device">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div class="title">
+                    <h2>장치추가</h2>
+                </div>
+
+                <div class="content">
+                    <p>장치종류 </p>
+                    
+                    <div class="selectBox2">
+                        <button class="label left_label">산소포화도 측정장치</button>
+
+                        <ul class="optionList left_option">
+                            <li class="optionItem left_list">심전도 패치</li>
+                            <li class="optionItem left_list">산소포화도 측정장치</li>
+                            <li class="optionItem left_list">체온 패치</li>
+                        </ul>
+                    </div> 
+                </div>
+
+                <div class="content">
+                    <p>serial no.</p>
+                    <input type="text" placeholder="시리얼 넘버를 입력해주세요.">
+                </div>
+
+                <small>올바르지 않은 번호 입니다.</small>
+
+                <div class="btn_list">
+                    <button type="button" class="btn_cancel">취소</button>
+                    <button type="button" class="btn_check">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div id="wrap">
@@ -934,6 +972,30 @@
     </div>
     <!--// end wrap-->
     <script>
+
+        //장치등록 팝업 셀렉트
+            const leftlabel = document.querySelector('.left_label');
+            const leftoptions = document.querySelectorAll('.left_list');
+
+            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+            const handleSelect = (item) => {
+                leftlabel.parentNode.classList.remove('active');
+                leftlabel.innerHTML = item.textContent;
+            }
+            // 옵션 클릭시 클릭한 옵션을 넘김
+            leftoptions.forEach(option => {
+                option.addEventListener('click', () => handleSelect(option))
+            })
+
+            // 라벨을 클릭시 옵션 목록이 열림/닫힘
+            leftlabel.addEventListener('click', () => {
+            if(leftlabel.parentNode.classList.contains('active')) {
+                leftlabel.parentNode.classList.remove('active');
+            } else {
+                leftlabel.parentNode.classList.add('active');
+            }
+            })
+
         //measure_status 병동 셀렉트
             const wardlabel = document.querySelector('.ward_label');
             const wardOptions = document.querySelectorAll('.ward_list');
@@ -1144,7 +1206,6 @@
             }
             })
 
-    </script>
-   
+    </script>   
   </body>
 </html>
