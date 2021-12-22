@@ -2710,6 +2710,9 @@
 }
 
 /* connect_scroll */
+.connect_scroll {
+    padding-top: 64px;
+}
 .connect_scroll .tab_view{
     height: 857px;
     overflow-y: scroll;

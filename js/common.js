@@ -279,17 +279,13 @@ $(function () {
             $('.pop.send_doctor .overlay').show();
         })
 
-        // $('.pop.send_doctor .btn_send').on('click', function(){
-        //     $('.pop.send_doctor .overlay').hide();
-        // })
-
         $('.pop.send_doctor .btn_exit').on('click', function(){
             $('.pop.send_doctor .overlay').hide();
         })
 
-
-        $('.pop.send_doctor .overlay .btn_send.on').on('click', function(){
+        $('.pop.send_doctor .overlay .btn_send').on('click', function(){
             $('.pop.nurse_view').show();
+            $('.pop.send_doctor .overlay').hide();
         })
 
             // 담당의 메시지 창
@@ -1161,6 +1157,12 @@ $(function(){
         $(this).next(".case_cont").stop().slideToggle(300);
         $(this).toggleClass('on').siblings().removeClass('on');
         $(this).next(".case_cont").siblings(".case_cont").slideUp(300); // 1개씩 펼치기
+    });
+
+    $(".table_wrap").click(function() {
+        $(this).next(".table_content").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".table_content").siblings(".table_content").slideUp(300); // 1개씩 펼치기
     });
 })
 

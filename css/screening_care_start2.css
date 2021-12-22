@@ -59,14 +59,14 @@
     padding-left: 20px;
     color: #007A94;
     text-align: center;
-    background: #fff url('/img/icon/btn_logo_green.svg') no-repeat left 18px center;
+    background: #fff url('/H-Connect/img/icon/btn_logo_green.svg') no-repeat left 18px center;
 }
 
 
 /* care_sect */
 #care_sect {
-    max-width: 1920px;
-    min-width: 1880px;
+    /* max-width: 1920px; */
+    min-width: 1920px;
     height: auto;
     background-color: #222222;
     padding: 5px;
@@ -115,7 +115,7 @@
 }
 
 .mess_tab {
-    background: #007A94 url('/img/icon/message_white.svg') no-repeat left 8px top 9px;
+    background: #007A94 url('/H-Connect/img/icon/message_white.svg') no-repeat left 8px top 9px;
 }
 
 /* messge_cont_box */
@@ -186,7 +186,7 @@
     padding: 0 15px 0 35px;
     border-radius: 4px;
     font-size: 14px;
-    background: #007A94 url('/img/icon/care_icon.png') no-repeat left 12px center;
+    background: #007A94 url('/H-Connect/img/icon/care_icon.png') no-repeat left 12px center;
 }
 
 /* prescription_box */
@@ -236,4 +236,67 @@
 
 .modal_footer .sure_btn {
     display: inline-block;
+}
+
+
+/* 선별진료소 - 담당의 */
+.scroll .care_header{
+    padding: 0 0 0 16px;
+    background: #888;
+}
+.camera{
+    width: 80px;
+    height: 24px;
+    padding: 3px 18px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 12px;
+    color: #007A94;
+}
+
+.scroll .card_cont_box{
+    padding: 0;
+    height: 848px;
+    overflow: hidden;
+
+}
+
+.scroll .cont_header{
+    padding: 11px 23px;
+    height: 40px;
+    background: #007A94;
+    color: #fff;
+}
+
+.scroll .card_cont_box .you_cam{
+    width: 100%;
+    height: 100%;
+    background: url('/H-Connect/img/emergency/you.jpg') no-repeat;
+    position: relative;
+
+}
+
+.scroll .card_cont_box .my_cam{
+    position: absolute;
+    width: 240px;
+    height: 135px;
+    border-radius: 4px;
+    background: url('/H-Connect/img/emergency/mycam.jpg') no-repeat;
+    background-size: cover;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    top: 8px;
+    right: 8px;
+}
+
+.scroll .card_cont_box .my_info{
+    width: 144px;
+    height: 40px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    bottom: 52px;
+    right: 8px;
 }
