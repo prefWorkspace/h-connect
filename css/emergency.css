@@ -1,5 +1,6 @@
 /*================= 응급상황실 =================*/
 .emergency{
+    padding-top: 80px;
     min-width: 1880px;
     min-height: calc(100vh - 64px);
     background-color: #eee;
