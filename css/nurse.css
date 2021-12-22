@@ -4,7 +4,7 @@
 .nurse{
     min-width: 1880px;
     min-height: calc(100vh - 80px);
-    /* padding-top: 80px; */
+    padding-top: 80px;
     display: flex;
     background-color: #eee;   
 }
@@ -1049,7 +1049,7 @@
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
 }
@@ -1059,7 +1059,7 @@
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
     transform: rotate(180deg);
@@ -1280,6 +1280,10 @@
     background-color: #f00;
 }
 
+.patient_vital .all_patient .patient_moniter.active:hover{
+    background: #C20000;
+}
+
 .patient_vital .all_patient .patient_moniter.active .vital_moniter .ews{
     background-color: #fff;
     color: #f00;
@@ -1289,6 +1293,25 @@
     background-color: #fff;
     color: #f00;
 }
+
+.patient_vital .all_patient .patient_moniter.active.yellow{
+    background: #FFBA00;
+}
+
+.patient_vital .all_patient .patient_moniter.active.yellow:hover{
+    background: #FF9D00;
+}
+
+.patient_vital .all_patient .patient_moniter.active.blue{
+    background: #0062FF;
+}
+
+.patient_vital .all_patient .patient_moniter.active.blue:hover{
+    background: #044CBF;
+}
+
+
+
 
 /* 모니터링- 병실별 보기 */
 .patient_vital .wrap_inner{
@@ -1541,23 +1564,12 @@
 .monitoring_patient .control{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .monitoring_patient .sp{
     margin: 10px 0;
 }
-
-/* .monitoring_patient .ecg p{
-    color: #00FF22;
-}
-
-.monitoring_patient .sp p{
-    color: #00FFFF;
-}
-
-.monitoring_patient .resp p{
-    color: #FFEE00;
-} */
 
 .monitoring_patient .ecg_graph> div,
 .monitoring_patient .sp_graph> div,
@@ -1575,23 +1587,6 @@
 .monitoring_patient .bell_name p{
     font-size: 14px;
 }
-
-/* .monitoring_patient .ecg .bell_name input[type="checkbox"]+label span{
-    filter: invert(57%) sepia(94%) saturate(2086%) hue-rotate(86deg) brightness(114%) contrast(120%);
-}
-
-.monitoring_patient .sp .bell_name input[type="checkbox"]+label span{
-    filter: invert(8%) sepia(74%) saturate(950%) hue-rotate(101deg) brightness(105%) contrast(107%);
-}
-
-.monitoring_patient .resp .bell_name input[type="checkbox"]+label span{
-    filter: invert(8%) sepia(32%) saturate(2960%) hue-rotate(2deg) brightness(105%) contrast(108%);
-}
-
-.monitoring_patient .bell_name input[type='checkbox']:checked+label span{
-    background: url(/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
-    filter: none;
-} */
 
 .monitoring_patient .control{
     margin-bottom: 39px;
@@ -1633,7 +1628,7 @@
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat / contain;
+    background: url('/img/icon/btn_alarmOn.svg') no-repeat / contain;
 }
 
 .monitoring_patient .mmhg{
@@ -1641,6 +1636,7 @@
     padding: 16px;
     margin: 0 72px 0 64px;
     color: #fff;
+    cursor: pointer;
 }
 
 .monitoring_patient .time div{
@@ -1662,6 +1658,7 @@
     width: 160px;
     padding: 16px;
     color: #00FFFF;
+    cursor: pointer;
 }
 
 .monitoring_patient .pulse .time p{
@@ -1678,10 +1675,6 @@
     padding: 8px 16px;
     color: #FF3184;
     cursor: pointer;
-}
-
-.monitoring_patient .temp .bell_name input[type="checkbox"]+ label span{
-    filter: invert(41%) sepia(49%) saturate(7067%) hue-rotate(317deg) brightness(102%) contrast(101%);
 }
 
 /* tabular trend */
@@ -1853,7 +1846,7 @@
 .monitoring_patient .cont .graphical .time_line::before{
     position: absolute;
     content: '';
-    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    background: url('/img/icon/trend_tri.png')no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 19px;
@@ -1910,7 +1903,7 @@
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -1923,7 +1916,7 @@
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -1931,6 +1924,9 @@
     filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
     transform: rotate(180deg);
 }
+
+.monitoring_patient .cont .event .table_body .table_wrap.on .more{display: none;}
+.monitoring_patient .cont .event .table_body .table_wrap.on .close{display: inline-block;}
 
 .monitoring_patient .cont .event .table_body .table_wrap> div> div{
     display: inline-block;
@@ -2045,7 +2041,7 @@
     color: #fff;
 }
 
-.monitoring_patient .table_body .btn_delete:hover{
+.monitoring_patient .tabular_table .table_body .btn_delete:hover{
     background: #60002D;
 }
 
@@ -2114,33 +2110,48 @@
     margin-left: 32px;
     background-color: #fff;
     display: flex;
+    justify-content: space-between;
 }  
 
-.arteriotony .arteriotony_input .manual_input{
+.arteriotony_input .manual_input{
     width: 568px;
 }
 
-.arteriotony .arteriotony_input .manual_input .title{
+.arteriotony_input .manual_input .title{
     margin-bottom: 48px;
     display: flex;
     justify-content: space-between;
 }
 
-.arteriotony .arteriotony_input .title h2{
+.arteriotony_input .title h2{
     margin-top: 16px;
     color: #007A94;
 }
 
-.arteriotony .arteriotony_input .btn_arte_check{
+.arteriotony_input .manual_input .title .btn_list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.arteriotony_input .manual_input .title button{
     width: 120px;
     height: 40px;
-    border-radius: 4px;
-    background-color: #007A94;
+    margin: 0;
     font-size: 14px;
+    border-radius: 4px;
+}
+
+.arteriotony_input .manual_input .title .btn_no{
+    margin-right: 13px;
+    color: #888;
+}
+
+.arteriotony_input .manual_input .title .btn_add{
+    background: #007A94;
     color: #fff;
 }
 
-.arteriotony .arteriotony_input .btn_arte_check:hover{
+.arteriotony_input .manual_input .title .btn_add:hover{
     background-color: #004F60;
 }
 
@@ -2203,10 +2214,6 @@
 .arteriotony .form_arter .pulse> div h2{
     margin-bottom: 16px;
     color: #000;
-}
-
-.arteriotony .pre_record{
-    margin-left: 55px;
 }
 
 .arteriotony .pre_record .title{
@@ -2388,11 +2395,11 @@
     height: 24px;
     margin: -3px 16px 0 0;
     vertical-align: middle;
-    background: url("/H-Connect/img/icon/checkbox.png") no-repeat 0 0px / contain;
+    background: url("/img/icon/checkbox.png") no-repeat 0 0px / contain;
 }
 
 .dashboard input[type='checkbox']:checked+label span{
-    background: url("/H-Connect/img/icon/checkbox_check.png") no-repeat 0 0px / contain;
+    background: url("/img/icon/checkbox_check.png") no-repeat 0 0px / contain;
 }
 
 .emergency .emergency_recep .title .textbox{
@@ -2432,7 +2439,7 @@
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url("/H-Connect/img/under_arrow.svg") no-repeat;
+    background: url("/img/under_arrow.svg") no-repeat;
     top: 50%;
     right: 20px;
 }
@@ -2442,7 +2449,7 @@
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url("/H-Connect/img/under_arrow.svg") no-repeat;
+    background: url("/img/under_arrow.svg") no-repeat;
     top: 50%;
     right: 20px;
     transform: rotate(180deg);
@@ -2457,15 +2464,51 @@
     border-bottom: 1px solid #eee;
 }
 
-.dashboard .btn_add{
+.dashboard .middle{
+    width: 105px;
+    margin: 0 32px;
+    background: none;
+    position: relative;
+}
+
+.dashboard .middle div{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dashboard .middle button{
     width: 104px;
     height: fit-content;
-    margin: auto 32px;
-    padding: 12px 45px 12px 24px;
+    margin-bottom: 16px;
     border-radius: 4px;
-    border: 1px solid #007A94;
     background: #fff;
     font-size: 16px;
+}
+
+.dashboard .middle .btn_delete{
+    position: relative;
+    padding: 12px 24px 12px 45px;
+    border: 1px solid #940045;
+    color: #940045; 
+}
+
+.dashboard .middle .btn_delete::after{
+    content: '';
+    width: 12px;
+    height: 16px;
+    position: absolute;
+    background: url('/img/icon/btn_add.svg') no-repeat;
+    transform: rotate(180deg);
+    top: 16px;
+    left: 24px;
+    filter: invert(55%) sepia(59%) saturate(7031%) hue-rotate(321deg) brightness(56%) contrast(114%);
+}
+
+
+.dashboard .btn_add{
+    padding: 12px 45px 12px 24px;
+    border: 1px solid #007A94;
     color: #007A94;
     position: relative;
 }
@@ -2475,7 +2518,7 @@
     width: 12px;
     height: 16px;
     position: absolute;
-    background: url('/H-Connect/img/icon/btn_add.svg') no-repeat;
+    background: url('/img/icon/btn_add.svg') no-repeat;
     top: 16px;
     right: 24px;
 }
@@ -2537,6 +2580,8 @@
     padding: 16px;
     background: #eee;
     border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .dashboard .inpat> div{
@@ -2544,7 +2589,12 @@
 }
 
 .dashboard .inpat> :nth-child(3n+2):not(:nth-child(6n)){
-    margin: 0 12px;
+    margin: 0 15px;
+}
+
+.dashboard .inpat> :last-child,
+.dashboard .inpat> :nth-last-child(3){
+    margin: 0;
 }
 
 .dashboard .inpat .account{
@@ -2594,7 +2644,7 @@
 .ward_dashboard .wrap_inner{
     height: 100vh;
     padding: 20px;
-    background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px / contain;
+    background: url('/img/logo_gray.png') no-repeat 0 0px / contain;
     background-position: 80% 95%;
     background-size: 90px;
 }

@@ -6,14 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect</title>
   <!--Import-->
-  <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/index.js'></script>
+  <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' src='/js/common.js'></script>
+  <script type='text/javascript' src='/js/index.js'></script>
   <!--css-->
-  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
-  <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/style.css">
-  <link rel="stylesheet" href="/H-Connect/css/nurse.css">
+  <link rel='stylesheet' href='/css/reset.css'>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/nurse.css">
 
 </head>
   <body>
@@ -78,7 +77,7 @@
 				<div>
 					<h1 class="logo">
 						<a class="link" href="index.html">
-							<img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
+							<img class="img" src="/img/header/logo.png" alt="로고">
 						</a>
 					</h1>
 		
@@ -133,7 +132,7 @@
 					<div class="title">
 						<div>
 						<div>
-							<img src="/H-Connect/img/header/dashboard.svg" alt="대시보드 아이콘">
+							<img src="/img/header/dashboard.svg" alt="대시보드 아이콘">
 						</div>
 						
 						<h2>모니터링 대상</h2>
@@ -165,9 +164,11 @@
 
 						<!-- 호실별 대상 체크 -->
 						<div class="select_inner">
+
 						<!-- 1301 -->
+						<!-- patient_info의 checkbox를 선택하면 selectall도 선택이 되어야 하는데 안돼요..  -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1301">
+							<input type="checkbox" id="ward_1301" onclick="selectAll(this)">
 							<label for="ward_1301">
 							<span></span>
 							<p>1301호실</p>
@@ -176,49 +177,49 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no" id="patient_1">
-							<label for="patient_1">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no" id="patient_1" onclick="checkSelectAll(this)">
+								<label for="patient_1">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no" id="patient_2">
-							<label for="patient_2">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no" id="patient_2" onclick="checkSelectAll(this)">
+								<label for="patient_2">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no" id="patient_3">
-							<label for="patient_3">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no" id="patient_3" onclick="checkSelectAll(this)">
+								<label for="patient_3">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no" id="patient_4">
-							<label for="patient_4">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no" id="patient_4" onclick="checkSelectAll(this)">
+								<label for="patient_4">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 						</div>
 
 						<!-- 1302 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1302">
+							<input type="checkbox" id="ward_1302" onclick="selectAll(this)">
 							<label for="ward_1302">
 							<span></span>
 							<p>1302호실</p>
@@ -227,49 +228,49 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no2" id="patient_021">
-							<label for="patient_021">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no2" id="patient_021" onclick="checkSelectAll(this)">
+								<label for="patient_021">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no2" id="patient_022">
-							<label for="patient_022">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no2" id="patient_022" onclick="checkSelectAll(this)">
+								<label for="patient_022">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no2" id="patient_023">
-							<label for="patient_023">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no2" id="patient_023" onclick="checkSelectAll(this)">
+								<label for="patient_023">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no2" id="patient_024">
-							<label for="patient_024">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no2" id="patient_024" onclick="checkSelectAll(this)">
+								<label for="patient_024">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 						</div>
 
 						<!-- 1303 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1303">
+							<input type="checkbox" id="ward_1303" onclick="selectAll(this)">
 							<label for="ward_1303">
 							<span></span>
 							<p>1303호실</p>
@@ -278,49 +279,49 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no3" id="patient_031">
-							<label for="patient_031">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no3" id="patient_031" onclick="checkSelectAll(this)">
+								<label for="patient_031">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no3" id="patient_032">
-							<label for="patient_032">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no3" id="patient_032" onclick="checkSelectAll(this)">
+								<label for="patient_032">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no3" id="patient_033">
-							<label for="patient_033">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no3" id="patient_033" onclick="checkSelectAll(this)">
+								<label for="patient_033">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no3" id="patient_034">
-							<label for="patient_034">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no3" id="patient_034" onclick="checkSelectAll(this)">
+								<label for="patient_034">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 						</div>
 
 						<!-- 1304 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1304">
+							<input type="checkbox" id="ward_1304" onclick="selectAll(this)">
 							<label for="ward_1304">
 							<span></span>
 							<p>1304호실</p>
@@ -329,49 +330,49 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no4" id="patient_041">
-							<label for="patient_041">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no4" id="patient_041" onclick="checkSelectAll(this)">
+								<label for="patient_041">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no4" id="patient_042">
-							<label for="patient_042">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no4" id="patient_042" onclick="checkSelectAll(this)">
+								<label for="patient_042">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no4" id="patient_043">
-							<label for="patient_043">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no4" id="patient_043" onclick="checkSelectAll(this)">
+								<label for="patient_043">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no4" id="patient_044">
-							<label for="patient_044">
-								<span></span>
-								<p>김환자
-								(63.남.patient no)
-								</p>
-							</label>
+								<input type="checkbox" name="patient_no4" id="patient_044" onclick="checkSelectAll(this)">
+								<label for="patient_044">
+									<span></span>
+									<p>김환자
+									(63.남.patient no)
+									</p>
+								</label>
 							</div>
 						</div>
 
 						<!-- 1305 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1305">
+							<input type="checkbox" id="ward_1305" onclick="selectAll(this)">
 							<label for="ward_1305">
 							<span></span>
 							<p>1305호실</p>
@@ -380,7 +381,7 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no5" id="patient_051">
+							<input type="checkbox" name="patient_no5" id="patient_051" onclick="checkSelectAll(this)">
 							<label for="patient_051">
 								<span></span>
 								<p>김환자
@@ -390,7 +391,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no5" id="patient_052">
+							<input type="checkbox" name="patient_no5" id="patient_052" onclick="checkSelectAll(this)">
 							<label for="patient_052">
 								<span></span>
 								<p>김환자
@@ -400,7 +401,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no5" id="patient_053">
+							<input type="checkbox" name="patient_no5" id="patient_053" onclick="checkSelectAll(this)">
 							<label for="patient_053">
 								<span></span>
 								<p>김환자
@@ -410,7 +411,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no5" id="patient_054">
+							<input type="checkbox" name="patient_no5" id="patient_054" onclick="checkSelectAll(this)">
 							<label for="patient_054">
 								<span></span>
 								<p>김환자
@@ -422,7 +423,7 @@
 
 						<!-- 1306 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1306">
+							<input type="checkbox" id="ward_1306" onclick="selectAll(this)">
 							<label for="ward_1306">
 							<span></span>
 							<p>1306호실</p>
@@ -431,7 +432,7 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no6" id="patient_061">
+							<input type="checkbox" name="patient_no6" id="patient_061"  onclick="checkSelectAll(this)">
 							<label for="patient_061">
 								<span></span>
 								<p>김환자
@@ -441,7 +442,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no6" id="patient_062">
+							<input type="checkbox" name="patient_no6" id="patient_062"  onclick="checkSelectAll(this)">
 							<label for="patient_062">
 								<span></span>
 								<p>김환자
@@ -451,7 +452,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no6" id="patient_063">
+							<input type="checkbox" name="patient_no6" id="patient_063"  onclick="checkSelectAll(this)">
 							<label for="patient_063">
 								<span></span>
 								<p>김환자
@@ -461,7 +462,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no6" id="patient_064">
+							<input type="checkbox" name="patient_no6" id="patient_064" onclick="checkSelectAll(this)">
 							<label for="patient_064">
 								<span></span>
 								<p>김환자
@@ -473,7 +474,7 @@
 
 						<!-- 1307 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1307">
+							<input type="checkbox" id="ward_1307" onclick="selectAll(this)">
 							<label for="ward_1307">
 							<span></span>
 							<p>1307호실</p>
@@ -482,7 +483,7 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox"  name="patient_no7" id="patient_071">
+							<input type="checkbox"  name="patient_no7" id="patient_071" onclick="checkSelectAll(this)">
 							<label for="patient_071">
 								<span></span>
 								<p>김환자
@@ -492,7 +493,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox"  name="patient_no7" id="patient_072">
+							<input type="checkbox"  name="patient_no7" id="patient_072" onclick="checkSelectAll(this)">
 							<label for="patient_072">
 								<span></span>
 								<p>김환자
@@ -502,7 +503,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox"  name="patient_no7" id="patient_073">
+							<input type="checkbox"  name="patient_no7" id="patient_073" onclick="checkSelectAll(this)">
 							<label for="patient_073">
 								<span></span>
 								<p>김환자
@@ -512,7 +513,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox"  name="patient_no7" id="patient_074">
+							<input type="checkbox"  name="patient_no7" id="patient_074" onclick="checkSelectAll(this)">
 							<label for="patient_074">
 								<span></span>
 								<p>김환자
@@ -524,7 +525,7 @@
 
 						<!-- 1308 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1308">
+							<input type="checkbox" id="ward_1308" onclick="selectAll(this)">
 							<label for="ward_1308">
 							<span></span>
 							<p>1308호실</p>
@@ -533,7 +534,7 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no8" id="patient_081">
+							<input type="checkbox" name="patient_no8" id="patient_081" onclick="checkSelectAll(this)">
 							<label for="patient_081">
 								<span></span>
 								<p>김환자
@@ -543,7 +544,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no8" id="patient_082">
+							<input type="checkbox" name="patient_no8" id="patient_082" onclick="checkSelectAll(this)">
 							<label for="patient_082">
 								<span></span>
 								<p>김환자
@@ -553,7 +554,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no8" id="patient_083">
+							<input type="checkbox" name="patient_no8" id="patient_083" onclick="checkSelectAll(this)">
 							<label for="patient_083">
 								<span></span>
 								<p>김환자
@@ -563,7 +564,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no8" id="patient_084">
+							<input type="checkbox" name="patient_no8" id="patient_084" onclick="checkSelectAll(this)">
 							<label for="patient_084">
 								<span></span>
 								<p>김환자
@@ -575,7 +576,7 @@
 
 						<!-- 1309 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1309">
+							<input type="checkbox" id="ward_1309" onclick="selectAll(this)">
 							<label for="ward_1309">
 							<span></span>
 							<p>1309호실</p>
@@ -584,7 +585,7 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no9" id="patient_091">
+							<input type="checkbox" name="patient_no9" id="patient_091" onclick="checkSelectAll(this)">
 							<label for="patient_031">
 								<span></span>
 								<p>김환자
@@ -594,7 +595,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no9" id="patient_092">
+							<input type="checkbox" name="patient_no9" id="patient_092" onclick="checkSelectAll(this)">
 							<label for="patient_032">
 								<span></span>
 								<p>김환자
@@ -604,7 +605,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no9" id="patient_093">
+							<input type="checkbox" name="patient_no9" id="patient_093" onclick="checkSelectAll(this)">
 							<label for="patient_033">
 								<span></span>
 								<p>김환자
@@ -614,7 +615,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no9" id="patient_094">
+							<input type="checkbox" name="patient_no9" id="patient_094" onclick="checkSelectAll(this)">
 							<label for="patient_034">
 								<span></span>
 								<p>김환자
@@ -626,7 +627,7 @@
 
 						<!-- 1310 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1310">
+							<input type="checkbox" id="ward_1310" onclick="selectAll(this)">
 							<label for="ward_1310">
 							<span></span>
 							<p>1310호실</p>
@@ -635,7 +636,7 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no10" id="patient_101">
+							<input type="checkbox" name="patient_no10" id="patient_101" onclick="checkSelectAll(this)">
 							<label for="patient_031">
 								<span></span>
 								<p>김환자
@@ -645,7 +646,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no10" id="patient_102">
+							<input type="checkbox" name="patient_no10" id="patient_102" onclick="checkSelectAll(this)">
 							<label for="patient_032">
 								<span></span>
 								<p>김환자
@@ -655,7 +656,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no10" id="patient_103">
+							<input type="checkbox" name="patient_no10" id="patient_103" onclick="checkSelectAll(this)">
 							<label for="patient_033">
 								<span></span>
 								<p>김환자
@@ -665,7 +666,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no10" id="patient_104">
+							<input type="checkbox" name="patient_no10" id="patient_104" onclick="checkSelectAll(this)">
 							<label for="patient_034">
 								<span></span>
 								<p>김환자
@@ -677,7 +678,7 @@
 
 						<!-- 1311 -->
 						<div class="ward_count">
-							<input type="checkbox" id="ward_1311">
+							<input type="checkbox" id="ward_1311" onclick="selectAll(this)">
 							<label for="ward_1311">
 							<span></span>
 							<p>1311호실</p>
@@ -686,7 +687,7 @@
 
 						<div class="patient_info">
 							<div>
-							<input type="checkbox" name="patient_no11" id="patient_111">
+							<input type="checkbox" name="patient_no11" id="patient_111" onclick="checkSelectAll(this)">
 							<label for="patient_031">
 								<span></span>
 								<p>김환자
@@ -696,7 +697,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no11" id="patient_112">
+							<input type="checkbox" name="patient_no11" id="patient_112" onclick="checkSelectAll(this)">
 							<label for="patient_032">
 								<span></span>
 								<p>김환자
@@ -706,7 +707,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no11" id="patient_113">
+							<input type="checkbox" name="patient_no11" id="patient_113" onclick="checkSelectAll(this)">
 							<label for="patient_033">
 								<span></span>
 								<p>김환자
@@ -716,7 +717,7 @@
 							</div>
 
 							<div>
-							<input type="checkbox" name="patient_no11" id="patient_114">
+							<input type="checkbox" name="patient_no11" id="patient_114" onclick="checkSelectAll(this)">
 							<label for="patient_034">
 								<span></span>
 								<p>김환자
@@ -729,7 +730,12 @@
 					</div>
 				</section>
 
-				<button type="button" class="btn_add">추가</button>
+				<section class="section middle">
+					<div>
+						<button type="button" class="btn_add">추가</button>
+						<button type="button" class="btn_delete">제거</button>
+					</div>				
+				</section>				
 
 				<section class="section right taget_view">
 					<div class="title">
@@ -963,7 +969,27 @@
             } else {
                 wardLabel.parentNode.classList.add('active');
             }
-            })
+            })   
+			
+		/* checkbox selectAll */
+        function checkSelectAll(checkbox)  {
+          const selectall 
+          = document.querySelector('input[name="ward_1301"]');
+    
+          if(checkbox.checked === false)  {
+             selectall.checked = false;
+          }
+        }
+    
+        function selectAll(selectAll)  {
+          const checkboxes 
+          = document.getElementsByName('patient_no');
+    
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = selectAll.checked;
+          })
+        }  
+		
         
     </script>
 

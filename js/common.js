@@ -221,23 +221,23 @@ $(function () {
             location.href="patient.html";
         })
 
-        $('.monitoring_patient .cont .resp .bell').on('click', function(){
+        $('.nurse .cont .resp .bell_num').on('click', function(){
             $('.pop.resp_set .overlay').show();
         })
 
-        $('.monitoring_patient .cont .ecg .bell').on('click', function(){
+        $('.nurse .cont .ecg .bell_num').on('click', function(){
             $('.pop.ecg_set .overlay').show();
         })
 
-        $('.monitoring_patient .cont .sp .bell').on('click', function(){
+        $('.nurse .cont .sp .bell_num').on('click', function(){
             $('.pop.sp_set .overlay').show();
         })
 
-        $('.monitoring_patient .temp').on('click', function(){
+        $('.nurse .temp .bell_num').on('click', function(){
             $('.pop.temp_set .overlay').show();
         })
 
-        $('.monitoring_patient .ews').on('click', function(){
+        $('.monitoring_patient .ews .bell_num').on('click', function(){
             $('.pop.ews_set .overlay').show();
         })
 
@@ -266,7 +266,7 @@ $(function () {
         })
 
     // 혈압 수동입력
-        $('.arteriotony .arteriotony_input .title .btn_arte_check').on('click', function(){
+        $('.arteriotony_input .title .btn_add').on('click', function(){
             $('.pop.arteriotony_regi .overlay').show();
         })
 
@@ -1108,6 +1108,13 @@ $(function () {
 
         $('.pop.full_pacs .btn_close').on('click', function(){
             $('.pop.full_pacs .overlay').hide();
+        })
+
+
+        // ----------------------------------------선별진료실 의사
+        //진료 시작 버튼
+        $('.screening_doc .waiting .btn_treat').on('click', function(){
+            location.href="connect_screening.html"
         })
 
 

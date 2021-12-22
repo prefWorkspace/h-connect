@@ -21,7 +21,6 @@
 /* messasge */
 .message .message_list{
     width: 1032px;
-    height: 720px;
     margin: 0;
     padding: 16px;
     border-radius: 8px;
@@ -236,7 +235,6 @@
 /* 대화창 */
 .message .message_talk{
     width: 640px;
-    height: 720px;
     margin-left: 32px;
     background: #fff;
     border-radius: 8px;
@@ -574,7 +572,6 @@
 /* 새로운 메세지 보내기 */
 .message .select_medi{
     width: 1032px;
-    height: 720px;
     margin: 0;
     padding: 16px 16px 32px;
     background: #fff;
@@ -760,12 +757,12 @@
     height: 18px;
     margin: 0 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .group_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 .nurse_message .group_container input[type="checkbox"]+label> span{
@@ -774,12 +771,12 @@
     height: 18px;
     margin: 0 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/icon/check.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/check.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .nurse_message .group_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 
@@ -790,12 +787,12 @@
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/emergency/checkBox.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/checkBox.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .all_check input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 .nurse_message .all_check input[type="checkbox"]+label> span{
@@ -804,12 +801,12 @@
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/icon/check.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/check.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .nurse_message .all_check input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 /* favorite check */
@@ -819,17 +816,17 @@
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
 .nurse_message .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
@@ -864,6 +861,7 @@
     right: 5px;
     width: 35px;
     padding: 5px 0;
+    background: none;
 }
 
 .message .search_container .btn_search div{
@@ -884,7 +882,7 @@
 }
 
 .message .list_inner{
-    height: 336px;
+    height: 438px;
     margin-top: 8px;
     overflow-y: scroll;
 }
@@ -933,16 +931,16 @@
     height: 18px;
     margin: 0 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .list_inner div input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 .nurse_message .list_inner div input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 /* 의료진선택 즐겨찾기 */
@@ -952,17 +950,17 @@
     height: 18px;
     margin: 0    15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
 .nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
@@ -1004,7 +1002,11 @@
 
 .message .send_message form textarea{
     width: 100%;
-    height: 88px;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    border: 1px solid #eee;
 }
 
 .message .send_message form textarea::placeholder{
@@ -1059,17 +1061,19 @@
     height: 640px;
 } */
 
-.doctor_message .select_medi .title{
+.message .select_medi .title{
     padding: 16px 16px 26px;
 }
 
-.doctor_message .select_medi .title h2{
+.message .select_medi .title h2{
     font-size: 16px;
     font-weight: 500;
     color: #940045;
 }
 
-.doctor_message .list_inner label p{
+.nurse_message .select_medi .title h2{margin-bottom: 13px;color: #007A94;}
+
+.message .list_inner label p{
     font-size: 12px;
 }
 
@@ -1215,9 +1219,9 @@
 }
 
 
-/* 선별진료 */
+/* 의사 - 선별진료 */
 .doc_screen{
-    /* padding-top: 80px; */
+    padding-top: 80px;
     background: #eee;
 }
 
@@ -1225,6 +1229,10 @@
     min-height: calc(100vh - 80px);
     padding: 40px;
     display: flex;
+}
+
+.doc_screen .section{
+    height: 720px;
 }
 
 .doc_screen .title{
@@ -1473,15 +1481,111 @@
 }
 
 .doctor_new.message .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(39%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(57%) contrast(85%);  
 }
 
 .doctor_new.message .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
 .doctor_new.message input[type="checkbox"]:checked + label> span {
     filter: invert(58%) sepia(152%) saturate(863%) hue-rotate(154deg) brightness(60%) contrast(100%);
+}
+
+
+
+/* 선별진료실 -의사 */
+.screening_doc {
+    padding-top: 80px;
+}
+
+.screening_doc .section{
+    height: 720px;
+}
+
+.screening_doc .wrap_inner{
+    width: 100%;
+    min-width: 1860px;
+    min-height: calc(100vh - 80px);
+    background: #eee;
+}
+
+.screening_doc .message_list .title{
+    padding: 16px 16px 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.screening_doc .title_text{
+    width: 100%;
+    justify-content: inherit;
+}
+
+.screening_doc .title_text div{
+    margin-right: 15px;
+}
+
+.screening_doc .waiting{
+    width: 968px;
+    margin: 0 auto;
+}
+
+.screening_doc .waiting .row,
+.screening_doc .waiting .row> div,
+.screening_doc .waiting .row .img{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.screening_doc .waiting .row .img{
+    width: 40px;
+    margin: 0 33px 0 16px;
+}
+
+.screening_doc .waiting .row .handi{
+    width: 12px;
+    height: 15px;
+}
+
+.screening_doc .waiting .row .xray{
+    width: 16px;
+    height: 15px;
+}
+
+.screening_doc .waiting .row{
+    width: 100%;
+    height: 64px;
+    padding: 22px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.screening_doc .waiting .btn_treat{
+    width: 120px;
+    padding: 11px 20px;
+    background: linear-gradient(to right, #004F60, #350039);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.screening_doc .waiting .btn_treat div{
+    width: 16px;
+    height: 15px;
+}
+
+.screening_doc .waiting .btn_treat:disabled{
+    background: #ccc;
+    color: #888;
+}
+
+.screening_doc .waiting .btn_treat:disabled img{
+    filter: invert(7%) sepia(2%) saturate(0%) hue-rotate(283deg) brightness(146%) contrast(8%);
+}
+
+.screening_doc .search_container{
+    display: flex;
+    justify-content: space-between;
 }
