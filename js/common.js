@@ -447,21 +447,21 @@ $(function () {
         })
 
         // 메세지 보내기 창에서 다시 돌아가기(취소버튼 누름)
-        $('.para_message .send_message .btn_list .btn_cancel').on('click', function(){
-            $('.para_message .select_medi').hide();
-            $('.para_message .send_message').hide();
+        $('.message .send_message .btn_list .btn_cancel').on('click', function(){
+            $('.message .select_medi').hide();
+            $('.message .send_message').hide();
 
-            $('.para_message .message_list').show();
-            $('.para_message .message_talk').show();
+            $('.message .message_list').show();
+            $('.message .message_talk').show();
         })
 
         // 메세지 보내기 창에서 다시 돌아가기(전송버튼 누름)
-        $('.para_message .send_message .btn_list .btn_send').on('click', function(){
-            $('.para_message .select_medi').hide();
-            $('.para_message .send_message').hide();
+        $('.message .send_message .btn_list .btn_send').on('click', function(){
+            $('.message .select_medi').hide();
+            $('.message .send_message').hide();
 
-            $('.para_message .message_list').show();
-            $('.para_message .message_talk').show();
+            $('.message .message_list').show();
+            $('.message .message_talk').show();
         })
     
     // 구급대원에게 전화

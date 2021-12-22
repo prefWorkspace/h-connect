@@ -24,8 +24,12 @@
 
 .nurse .management{
     width: 360px;
-    /* height: 100vh; */
     padding: 16px;
+}
+
+.nurse .management .title{
+    padding: 16px 16px 26px;
+    border-bottom: 1px solid #eee;
 }
 
 .nurse .management .title> div{
@@ -58,8 +62,6 @@
 
 .nurse .management .management_list{
     padding: 16px;
-    margin-top: 16px;
-    border-top: 1px solid #eee;
 }
 
 .nurse .management .management_list .list{
@@ -115,7 +117,7 @@
 .nurse .left .title,
 .nurse .right .title{
     border-bottom: 1px solid #eee;
-    padding: 8px 15px 26px;
+    padding: 16px 16px 26px;
 }
 
 .nurse .left .title div,
@@ -2648,6 +2650,7 @@
 
 /* 대시보드 전체화면 */
 .ward_dashboard{
+    padding: 0;
     background: #222;
 }
 

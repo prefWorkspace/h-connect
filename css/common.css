@@ -335,7 +335,7 @@ button{border-radius: 4px;}
     padding: 14px 24px;
     background: linear-gradient(to right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    /* z-index: 999; */
+    z-index: 10;
 }
 
 /* header_wrap */
@@ -4498,8 +4498,8 @@ textarea::-webkit-scrollbar-button {
     border-radius: 50%;
     background: #940045;
     cursor: pointer;
-    top: -20%;
-    right: -20%;
+    top: -50px;
+    right: -7%;
     position: absolute;
 }
 
@@ -4520,7 +4520,7 @@ textarea::-webkit-scrollbar-button {
 .pop.full_picture .swiper-button-prev{
     width: 64px;
     background: url('/H-Connect/img/icon/btn_pre.png') no-repeat 0 0px / contain;
-    left:-128px;
+    left: -105px;
     cursor: pointer;
 }
 
@@ -4534,6 +4534,10 @@ textarea::-webkit-scrollbar-button {
     top: 5px;
     right: -12%;
     position: absolute;
+}
+
+.pop.full_picture .full_view{
+    overflow: hidden;
 }
 
 /* 참석자 명단 팝업 */

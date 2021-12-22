@@ -10,7 +10,7 @@ input[type="checkbox"]+label{cursor: pointer;}
 body {height: 100%;padding: 0;margin: 0;position: relative;}
 #wrap_content{display: flex;}
 html{height: 100%;}
-#wrap{height: 100%;}
+/* #wrap{height: 100%;} */
 h2{font-size: 16px;}
 p{font-size: 12px; font-weight: normal;}
 

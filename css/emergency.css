@@ -234,7 +234,7 @@
 
 .emergency .patient_status .title{
     margin-bottom: 16px;
-    padding-bottom: 25px;
+    padding: 16px 16px 25px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #eee;
@@ -1605,6 +1605,7 @@
 .emergency .small_picture{
     width: 520px;
     margin-top: 12px;
+    overflow:hidden
 }
 
 .emergency .small_picture .swiper-slide{
@@ -1628,11 +1629,16 @@
     display: initial;
 }
 
-.para_connect, .para_connect .wrap_inner{
-    min-width: 1920px;
+.para_connect{
+    min-width: 1880px;
     min-height: calc(100vh - 64px);
     background: #222;
     height: 100%;
+}
+
+.para_connect .wrap_inner{
+    min-width: 1880px;
+    min-height: calc(100vh - 80px);
 }
 
 .para_connect .call_connect .img_container{
@@ -2054,6 +2060,10 @@
 }
 
 /* 오른쪽 환자 화면 */
+.emergency.connect{
+    padding-top: 64px;
+}
+
 .connect .patient_view{
     width: 1428px;
     margin-left: 4px;
@@ -2094,26 +2104,6 @@
     font-size: 12px;
     color: #fff;
 }
-
-/* .connect .patient_view .view_list button{
-    width: 24px;
-    height: 24px;
-    padding: 6px;
-    background: none;
-    border-radius: 4px;
-}
-
-.connect .patient_view .view_list button.on{
-    background: #fff;
-}
-
-.connect .patient_view .view_list button.on img{
-    filter: invert(9%) sepia(62%) saturate(6511%) hue-rotate(322deg) brightness(60%) contrast(106%);
-}
-
-.connect .patient_view .view_list .btn_tab{
-    margin: 0 8px;
-} */
 
 .connect .view_list .tabs{
     width: 88px;

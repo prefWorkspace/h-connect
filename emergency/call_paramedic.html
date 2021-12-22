@@ -606,5 +606,25 @@
     </div>
     <!--// end wrap-->
 
+    <script>
+        /* checkbox selectAll */
+        function checkSelectAll(checkbox)  {
+          const selectall 
+          = document.querySelector('input[name="selectall"]');
+    
+          if(checkbox.checked === false)  {
+             selectall.checked = false;
+          }
+        }
+    
+        function selectAll(selectAll)  {
+          const checkboxes 
+          = document.getElementsByName('doctor');
+    
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = selectAll.checked
+          })
+        }  
+    </script>
   </body>
 </html>
