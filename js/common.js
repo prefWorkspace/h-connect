@@ -700,6 +700,10 @@ $('.doctor .now_section .row').on('click', function(){
     $('.doctor .now_section .row').not(this).removeClass('on');
 })
 
+$('.doctor .status .title .btn_new').on('click', function(){
+    location.href="remote_new.html";
+})
+
 // 세션 진행중
 $('.btn_today').on('click', function(){
     $('.doctor .my_plan').hide();
