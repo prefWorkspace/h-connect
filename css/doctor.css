@@ -86,7 +86,7 @@ p{font-size: 12px;}
     width: 9px;
     height: 18px; 
     position: absolute; 
-    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px /contain;
+    background: url('/img/right_arrow.svg') no-repeat 0 0px /contain;
     top: 50%; 
     transform: translateY(-50%);
     right: -50px;
@@ -558,6 +558,12 @@ p{font-size: 12px;}
     border: 1px solid #000;
 }
 
+.year_box .optionList::after,
+.month_box .optionList::after{
+    width: 65px;
+    background: #eee;
+}
+
 .doctor .selectBox2.active .optionList {
     width: 96px;
     top: 30px;
@@ -572,7 +578,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 45%;
     right: 15px;
     transition: 0.3s;
@@ -583,7 +589,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 45%;
     right: 15px;
     transform: rotate(180deg);
@@ -608,7 +614,7 @@ p{font-size: 12px;}
     width: 46px;
     height: 32px;
     margin-left: -22px;
-    background: url('/H-Connect/img/H-Connect logo.svg') no-repeat 0 0px / contain;
+    background: url('/img/H-Connect logo.svg') no-repeat 0 0px / contain;
     filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg) brightness(103%) contrast(96%);
 }
 
@@ -678,6 +684,10 @@ p{font-size: 12px;}
 /* 협진시작 */
 .doctor .right {
     width: 480px;
+}
+
+.doctor .right.opinion{
+    background: #fff;
 }
 
 .doctor .right .title{
@@ -1002,27 +1012,6 @@ p{font-size: 12px;}
     color: #888;
 }
 
-.para_connect .loading_con{
-    width: 32px;
-    height: 32px;
-    margin: 0 auto;
-}
-
-.para_connect .loading_con img{
-    width: 100%;
-    height: 100%;
-}
-
-.para_connect .img_loading {
-    -webkit-animation: spin 2s infinite linear;
-            animation: spin 2s infinite linear;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
 .para_connect .call_control{
     width: 272px;
     height: 80px;
@@ -1149,7 +1138,7 @@ p{font-size: 12px;}
     cursor: pointer;
 }
 
-.doctor .remote_alarm .row:hover{
+.doctor .row:hover{
     background: #eee;
 }
 
@@ -1385,10 +1374,6 @@ p{font-size: 12px;}
     cursor: pointer;
 }
 
-.doctor_monitor .new_patient .row:hover{
-    background: #eee;
-}
-
 .doctor_monitor .new_patient .row> p{
     font-size: 10px;
 }
@@ -1587,7 +1572,7 @@ p{font-size: 12px;}
     height: 64px;
     border-radius: 4px;
     border: 1px solid #940045;
-    background: url('/H-Connect/img/graph/grid.svg') no-repeat 0 0px / cover;
+    background: url('/img/graph/grid.svg') no-repeat 0 0px / cover;
     display: flex;
     align-items: center;
     position: relative;
@@ -1821,10 +1806,6 @@ p{font-size: 12px;}
     cursor: pointer;
 }
 
-.doctor_patient .pacs .row:hover{
-    background: #eee;
-}
-
 .doctor_patient .pacs .row div div{
     width: 6px;
     height: 12px;
@@ -1965,7 +1946,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     right: 150px;
-    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: translateY(91%);
 }
 
@@ -1974,7 +1955,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 44%;
     left: 150px;
-    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-100%);
 }
 
@@ -1985,7 +1966,7 @@ p{font-size: 12px;}
     /* top: 45%; */
     top: 35%;
     right: 100px;
-    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: translateY(81%); */
     transform: translateY(0%);
 }
@@ -1996,7 +1977,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     left: 100px;
-    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: rotate(180deg) translateY(-100%); */
     transform: rotate(180deg) translateY(30%);
 }
@@ -2120,7 +2101,7 @@ p{font-size: 12px;}
     width: 9px;
     height: 18px;
     position: absolute;
-    background: url(/H-Connect/img/right_arrow.svg) no-repeat 0 0px /contain;
+    background: url(/img/right_arrow.svg) no-repeat 0 0px /contain;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
@@ -2261,9 +2242,9 @@ p{font-size: 12px;}
 }
 
 .doctor .cal_view .title button{
-    width: fit-content;
-    height: fit-content;
-    padding: 5px 0 0 15px;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 0 15px;
     background: none;
     color: #000;
 }
@@ -2288,12 +2269,6 @@ p{font-size: 12px;}
     /* width: 8px; */
     display: none;
 }
-/* 
-.doctor .ask_request .collabor_wrap::-webkit-scrollbar-thumb{
-    height: 17%;
-    border-radius: 10px;
-    background: #ccc;
-} */
 
 .doctor_remote .collabor_wrap .time{
     padding: 24px 30px;
@@ -2366,7 +2341,8 @@ p{font-size: 12px;}
     /* padding: 32px 0; */
 }
   
-.doctor .tab-content.current{
+.doctor .tab-content.current,
+.doctor .tab-content.on{
     display: inherit;
 }
 
@@ -2396,11 +2372,11 @@ p{font-size: 12px;}
     width: 24px;
     height: 24px;
     margin: -3px 16px 0 0;
-    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
 }
 
 .doctor .time_select input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 .doctor .time_select input[type="checkbox"]{
@@ -2565,6 +2541,7 @@ p{font-size: 12px;}
 
 .doctor_remote .time_select .possible{
     opacity: 1;
+    z-index: 3;
 }
 
 .doctor_remote .time_select .possible p{
@@ -2681,6 +2658,7 @@ p{font-size: 12px;}
 
 .doctor .me_request .list_view{
     padding: 0 0 24px;
+    /* display: block; */
 }
 
 .doctor .me_request .list_view .check{
@@ -3026,7 +3004,6 @@ p{font-size: 12px;}
 
 .doctor_remote2 .time_select .possible p.active{
     opacity: 1;
-    z-index: 99999999;
 }
 
 .doctor_remote2 .me_request .time_select .possible p{
@@ -3043,7 +3020,6 @@ p{font-size: 12px;}
 .doctor .done_request .title .btn_done:disabled{
     color: #888;
     background: #ccc;
-    display: none;
 }
 
 .doctor .done_request .title .btn_accept{
@@ -3509,7 +3485,7 @@ p{font-size: 12px;}
     padding: 3px;
     margin-left: 7px;
     border-radius: 50%;
-    background: #940045 url('/H-Connect/img/icon/nurse/close.svg') no-repeat;
+    background: #940045 url('/img/icon/nurse/close.svg') no-repeat;
     background-position: 50% 50%;
     background-size: 50%;
     display: inline-block;

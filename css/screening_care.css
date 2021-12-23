@@ -45,6 +45,30 @@
     padding: 0 15px;
 }
 
+.common_radio .radio[type="checkbox"] {
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 1px solid #CCCCCC;
+    width: 24px;
+    height: 24px;
+    transition: 0.2s all;
+    border-radius: 4px;
+}
+
+.common_radio > .radio[type="checkbox"]:checked {
+    background-color: #007A94;
+    border-color: #007A94;
+    cursor: pointer;
+}
+
+
+
+
 /* page_box */
 .page_box {
     position: absolute;

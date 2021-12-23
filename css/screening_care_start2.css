@@ -59,7 +59,7 @@
     padding-left: 20px;
     color: #007A94;
     text-align: center;
-    background: #fff url('/H-Connect/img/icon/btn_logo_green.svg') no-repeat left 18px center;
+    background: #fff url('/img/icon/btn_logo_green.svg') no-repeat left 18px center;
 }
 
 
@@ -115,7 +115,7 @@
 }
 
 .mess_tab {
-    background: #007A94 url('/H-Connect/img/icon/message_white.svg') no-repeat left 8px top 9px;
+    background: #007A94 url('/img/icon/message_white.svg') no-repeat left 8px top 9px;
 }
 
 /* messge_cont_box */
@@ -186,7 +186,7 @@
     padding: 0 15px 0 35px;
     border-radius: 4px;
     font-size: 14px;
-    background: #007A94 url('/H-Connect/img/icon/care_icon.png') no-repeat left 12px center;
+    background: #007A94 url('/img/icon/care_icon.png') no-repeat left 12px center;
 }
 
 /* prescription_box */
@@ -210,28 +210,29 @@
 
 /* 스크롤 바 */
 .prescription_box::-webkit-scrollbar { 
-    width: 5px;
+    width: 8px;
 } 
 .prescription_box::-webkit-scrollbar-track {
 }
+
 /* 실질적 스크롤 바 */
 .prescription_box::-webkit-scrollbar-thumb { 
     border-radius: 50px;
-    background: #00799477; 
+    background:#007A94; 
 } 
-/* 실질적 스크롤 바 위에 마우스를 올려다 둘 때 */
+/* 실질적 스크롤 바 위에 마우스를 올려다 둘 때
 .prescription_box::-webkit-scrollbar-thumb:hover { 
     background: #00698177; 
 } 
-/* 실질적 스크롤 바를 클릭할 때 */
+실질적 스크롤 바를 클릭할 때
 .prescription_box::-webkit-scrollbar-thumb:active { 
     background: #00698179; 
 }
-/* 스크롤 바 상 하단 버튼 */ 
+스크롤 바 상 하단 버튼 
 .prescription_box::-webkit-scrollbar-button { 
     display: none; 
 } 
-
+ */
 
 
 .modal_footer .sure_btn {
@@ -271,7 +272,7 @@
 .scroll .card_cont_box .you_cam{
     width: 100%;
     height: 100%;
-    background: url('/H-Connect/img/emergency/you.jpg') no-repeat;
+    background: url('/img/emergency/you.jpg') no-repeat;
     position: relative;
 
 }
@@ -281,7 +282,7 @@
     width: 240px;
     height: 135px;
     border-radius: 4px;
-    background: url('/H-Connect/img/emergency/mycam.jpg') no-repeat;
+    background: url('/img/emergency/mycam.jpg') no-repeat;
     background-size: cover;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     top: 8px;

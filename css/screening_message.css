@@ -4,10 +4,11 @@
 }
 
 .message .wrap_inner{
+    width: 100%;
+    min-width: 1860px;
     padding: 40px;
     display: flex;
     background: #eee;
-    min-width: 1860px;
 }
 
 
@@ -580,24 +581,14 @@
     border-radius: 8px;
 }
 
-.para_message .emergency_title{
-    padding: 8px 16px;
-    border: 0;
-    color: #940045;
+.message .select_medi .title{
+    padding: 16px 16px 26px;
 }
 
-.nurse_message .left .emergency_title{
-    border: 0;
-}
-
-.message .emergency_title div{
+.message .select_medi .title div{
     margin-bottom: 13px;
     display: flex;
     justify-content: space-between;
-}
-
-.para_message .emergency_title h2{
-    color: #940045;
 }
 
 .message .emergency_title p{
@@ -728,7 +719,13 @@
 }
 
 .message .group_container{
+    height: 485px;
     padding: 16px;
+    overflow-y: scroll;
+}
+
+.message .group_container::-webkit-scrollbar{
+    display: none;
 }
 
 .message .group_container> div{
@@ -750,6 +747,7 @@
     padding-top: 0;
 }
 
+
 /* checkbox */
 .message .group_container input[type="checkbox"]+label> span{
     display: inline-block;
@@ -758,20 +756,6 @@
     margin: 4px 15px 0 0;
     vertical-align: middle;
     background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.message .group_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
-}
-
-.nurse_message .group_container input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/icon/check.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
@@ -881,7 +865,7 @@
 }
 
 .message .list_inner{
-    height: 336px;
+    height: 485px;
     margin-top: 8px;
     overflow-y: scroll;
 }
@@ -902,7 +886,7 @@
 }
 
 .message .list_inner> div{
-    padding: 7px 7px;
+    padding: 7px 0 7px 7px;
 }
 
 .message .list_inner label{
@@ -923,21 +907,16 @@
 
 /* 의료진선택 checkbox */
 .message .list_inner div input[type="checkbox"]+label> span{
-    display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
+    margin: 0 15px 0 0;
     background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .list_inner div input[type='checkbox']:checked+label span{
     background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
-}
-
-.nurse_message .list_inner div input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
 /* 의료진선택 즐겨찾기 */
@@ -946,7 +925,6 @@
     width: 18px;
     height: 18px;
     margin: 4px 15px 0 0;
-    vertical-align: middle;
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
@@ -956,10 +934,6 @@
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
-.nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
-}
 
 .message .send_message{
     width: 640px;
@@ -1032,4 +1006,46 @@
 .message .send_message .btn_list .btn_send{
     border: 1px solid #007A94;
     color: #007A94;
+}
+
+
+/* favorite check */
+.message .favorite_container input[type="checkbox"]+label{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.nurse_message .favorite_container input[type='checkbox']:checked + label{
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+/* 의료진선택 즐겨찾기 */
+.message .list_inner .favorite_container input[type="checkbox"]+label{
+    width: 18px;
+    height: 18px;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label{
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+}
+
+.message .send_message form textarea{
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.message .send_message form textarea::placeholder{
+    color: #ccc;
 }

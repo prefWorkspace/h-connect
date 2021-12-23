@@ -1,0 +1,197 @@
+/*================= 선별진료소 21:9 =================*/
+#wrap_content{display: inherit;}
+
+.wide{
+    min-width: 900px;
+    height: 100%;
+    min-height: 100vh;
+    max-height: 2100px;
+    background: linear-gradient(to right, #004F60, #350039);
+    position: relative;
+}
+
+.wide .wrap_inner{
+    padding: 0;
+    display: initial;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cam{
+    width: 360px;
+    height: 240px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* 진료대기 */
+.wait{
+    padding-top: 770px;
+}
+
+.wait .img_container{
+    width: 276px;
+    height: 192px;
+    margin: 0 auto 236px;
+}
+
+.wait h1{
+    font-size: 48px;
+    color: #fff;
+    text-align: center;
+}
+
+.wait .cam{
+    bottom: 24px;
+    right: 24px;
+}
+
+/* 진료시작 */
+.start .top{
+    height: 900px;
+    padding: 60px 48px;
+}
+
+.start .img_container{
+    width: 138px;
+    height: 96px;
+    margin: 200px auto;
+}
+
+.start .textbox{
+    padding-top: 40px;
+    border-top: 2px solid #fff;
+    color: #fff;
+}
+
+.start .textbox div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.start .textbox h1{
+    margin-bottom: 32px;
+    font-size: 64px;
+}
+
+.start .textbox h2{
+    margin-bottom: 13px;
+    font-size: 42px;
+}
+
+.start .textbox h3{
+    font-size: 32px;
+}
+
+.start .bottom{
+    height: 1200px;
+    position: relative;
+}
+
+.start .doctor{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.start .cam{
+    bottom: 24px;
+    right: 24px;
+}
+
+
+
+
+/* 진료 대기 목록 */
+.wait_list{color: #fff;}
+.wait_list .top{
+    padding: 120px 0;
+    text-align: center;
+}
+
+.wait_list .img_container{
+    width: 138px;
+    height: 96px;
+    margin: 0 auto 48px;
+}
+
+.wait_list h1{ font-size: 96px;}
+.wait_list h2{ font-size: 72px;}
+.wait_list h3{ font-size: 64px;}
+.wait_list h4{ font-size: 42px;}
+
+.wait_list .entry_call> div{
+    width: 960px;
+    height: 360px;
+    padding: 57px 0;
+    margin: 0 auto 84px;
+
+    border-radius: 24px;
+    text-align: center;
+}
+
+.wait_list .entry_call .call{
+    background: #fff;
+}
+
+.wait_list .entry_call .call h1{
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: #007a94;
+}
+
+.wait_list .entry_call .call h3{
+    font-weight: 500;
+    color: #000;
+}
+
+.wait_list .entry_call .disinfection{
+    border: 4px solid #fff;
+}
+
+.wait_list.on, .wait_list.on .row{color: #888;}
+.wait_list.on .disinfection{color: #fff;}
+.wait_list.on img{
+    filter: invert(57%) sepia(2%) saturate(20%) hue-rotate(321deg) brightness(93%) contrast(90%);
+}
+
+
+.wait_list .row{
+    width: 960px;
+    height: 180px;
+    padding: 60px 16px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.wait_list p{
+    margin-top: 53px;
+    font-size: 56px;
+    text-align: center;
+}
+
+/* 대기목록 빈화면 */
+.clear{
+    padding-top: 560px;
+    color: #fff;
+    text-align: center;
+}
+
+.clear div{
+    width: 276px;
+    height: 192px;
+    margin: 0 auto 448px;
+}
+
+.clear h1{font-size: 80px;}
+.clear h3{margin-top:24px; font-size: 48px;}

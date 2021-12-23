@@ -9,29 +9,17 @@
   <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
   <script type='text/javascript' src='/H-Connect/js/common.js'></script>
   <script type='text/javascript' src='/H-Connect/js/index.js'></script>
+  <script src="/H-Connect/js/modal.js"></script>
 
   <!--css-->
   <link rel='stylesheet' href='/H-Connect/css/reset.css'>
   <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/message.css">
   <link rel="stylesheet" href="/H-Connect/css/screening_message.css">
 
 
 
 </head>
   <body>
-
-    <!-- 로그아웃 팝업 -->
-    <div class="pop logout">
-        <div class="wrap_inner">
-            <div>
-                <p>선별진료소</p>
-                <h3>선별진료소</h3>
-            </div>
-
-            <button type="button" class="btn_bye">로그아웃</button>  
-        </div>
-    </div>
 
     <!-- 메세지 전송 완료 팝업 -->
     <div class="pop message_send">
@@ -53,32 +41,34 @@
     </div>
 
     <div id="wrap">
-      <!--헤더 pc-->
-      <header id="header" class="pc_header">
-        <div class="header_inner">
-            <div>
-                <h1 class="logo">
-                    <a class="link" href="index.html">
-                        <img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
-                    </a>
-                </h1>
-    
-                <div class="header_title">
-                    <h1>메세지</h1>
-                    <h3>의료진과 주고받은 메세지를 확인 합니다.</h3>
+        <!--헤더 pc-->
+        <header id="header">
+            <div class="header_wrap">
+                <div class="header_box">
+                    <div class="logo">
+                        <a href="#"><img src="/H-Connect/img/logo_white.png" alt="로고"></a>
+                    </div>
+                    <div class="page_info_box">
+                        <h2 class="pahe_title">메세지</h2>
+                        <p class="page_ex_text">의료진과 주고받은 메세지를 확인 합니다.</p>
+                    </div>
+                </div>
+
+                <div class="header_btn_box">
+                    <button type="button" class="header_btn btn1 popup_btn">선별진료소</button>
+                    <div class="profile_popup">
+                        <div class="pro_info">
+                            <p class="info_text">선별진료소</p>
+                            <p class="info_title">선별진료소</p>
+                        </div>
+                        <button type="button" class="login_btn btn1">로그아웃</button>
+                    </div>
                 </div>
             </div>
-    
-            <div>   
-                <button type="button" class="btn_logout">
-                    선별진료소
-                </button>
-            </div>
-        </div>
-     </header>
+       </header>
 
       <!--콘텐츠-->
-      <div id="wrap_content" class="nurse message nurse_message">
+      <div id="wrap_content" class="screening message nurse_message">
         <nav id="nav" class="nav">
             <ul class="main_depth gnb">
               <li class="gnb_list">
@@ -402,7 +392,7 @@
 
             <!-- 새로운 메세지를 누르면 나오는 화면 / 의료진 선택 -->
             <section class="section left select_medi">
-                <div class="title emergency_title">
+                <div class="title">
                     <div>
                         <h2>의료진 선택</h2>
                     </div>
@@ -496,7 +486,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite2" checked>
                                         <label for="favorite2">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -515,7 +504,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite3" checked>
                                         <label for="favorite3">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -534,7 +522,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite4" checked>
                                         <label for="favorite4">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -553,7 +540,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite5" checked>
                                         <label for="favorite5">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -572,7 +558,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="favorite6" checked>
                                         <label for="favorite6">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -610,7 +595,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite">
                                         <label for="list_favorite">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -629,7 +613,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite2">
                                         <label for="list_favorite2">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -648,7 +631,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite3">
                                         <label for="list_favorite3">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -667,7 +649,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite4">
                                         <label for="list_favorite4">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -686,7 +667,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite5">
                                         <label for="list_favorite5">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -705,7 +685,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite6">
                                         <label for="list_favorite6">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -724,7 +703,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite7">
                                         <label for="list_favorite7">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -743,7 +721,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite8">
                                         <label for="list_favorite8">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -762,7 +739,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite9">
                                         <label for="list_favorite9">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -781,7 +757,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite10">
                                         <label for="list_favorite10">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>
@@ -800,7 +775,6 @@
                                     <div class="favorite_container">
                                         <input type="checkbox" id="list_favorite11">
                                         <label for="list_favorite11">
-                                            <span></span>
                                         </label>
                                     </div>  
                                 </div>

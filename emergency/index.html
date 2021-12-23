@@ -8,7 +8,6 @@
     <!--Import-->
     <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
     <script type='text/javascript' src='/H-Connect/js/common.js'></script>
-    <script type='text/javascript' src='/H-Connect/js/index.js'></script>
     <script type='text/javascript' src='/H-Connect/js/slide.js'></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -813,7 +812,6 @@
         </div>
     </div>
 
-
     <div id="wrap">
       <!--헤더 pc-->
       <header id="header" class="pc_header emer">
@@ -836,8 +834,7 @@
                     응급상황실
                 </button>
             </div>
-        </div>
-       
+        </div>       
      </header>
 
       <!--콘텐츠-->
@@ -1042,7 +1039,7 @@
                         </h2>
                         
                         <div>
-                            <p>응급상황 진행 중.</p>
+                            <p class="emer_ing">응급상황 진행 중.</p>
                             <p>접수 : 
                                 <span>21</span>.<span>09</span>.<span>15</span>.
                                 <span>06</span>:<span>25</span>:<span>21</span>.
@@ -1050,7 +1047,7 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="btn_list">
                         <button type="button" class="btn_end">응급상황 종료</button>
 
                         <button type="button" class="btn_call">
@@ -1083,12 +1080,12 @@
                                 <div>
                                     <div class="pain">
                                         <h2>통증</h2>
-    
-                                        <input type="checkbox" id="chest_pain" checked>
-                                        <label for="chest_pain">
-                                          <span></span>
-                                          흉통
-                                        </label>
+
+                                        <div class="input_wrap">
+                                            <input type="checkbox" id="chest_pain" checked>
+                                            <label for="chest_pain"></label>
+                                            <p>흉통</p>
+                                        </div>                                        
                                     </div>
     
                                     <div class="injury">
@@ -1101,20 +1098,16 @@
                                     <h2>증상</h2>
 
                                     <div>
-                                        <div>
-                                            <input type="checkbox" id="dyspnoea" checked>
-                                            <label for="dyspnoea">
-                                              <span></span>
-                                              호흡곤란
-                                            </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" id="dyspnoea" checked disabled>
+                                            <label for="dyspnoea"></label>
+                                            <p>호흡곤란</p>
                                         </div>
 
-                                        <div>
-                                            <input type="checkbox" id="apnea" checked>
-                                            <label for="apnea">
-                                              <span></span>
-                                              호흡정지
-                                            </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" id="apnea" checked disabled>
+                                            <label for="apnea"></label>
+                                            <p>호흡정지</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1130,26 +1123,26 @@
                                     <div class="disease">
                                         <div>
                                             <h2>질병</h2>
-    
-                                            <input type="checkbox" id="medical_history" checked>
-                                            <label for="medical_history">
-                                              <span></span>
-                                              병력있음
-                                            </label>
+
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="medical_history" checked disabled>
+                                                <label for="medical_history"></label>
+                                                <p>병력있음</p>
+                                            </div>
                                         </div>
 
                                         <div>
-                                            <input type="checkbox" id="cerebrovascular" checked>
-                                            <label for="cerebrovascular">
-                                              <span></span>
-                                              뇌혈관질환
-                                            </label>
-
-                                            <input type="checkbox" id="heart"  checked>
-                                            <label for="heart">
-                                              <span></span>
-                                              심장질환
-                                            </label>
+                                            <div class="input_wrap left_wrap">
+                                                <input type="checkbox" id="cerebrovascular" checked disabled>
+                                                <label for="cerebrovascular"></label>
+                                                <p>뇌혈관질환</p>
+                                            </div>
+                                            
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="heart" checked disabled>
+                                                <label for="heart"></label>
+                                                <p>심장질환</p>
+                                            </div>
                                         </div>
                                     </div>
     
@@ -1162,11 +1155,11 @@
                                 <div class="place">
                                     <h2>환자 발생 장소</h2>
 
-                                    <input type="checkbox" id="place_home" checked>
-                                    <label for="place_home">
-                                        <span></span>
-                                        가정
-                                    </label>
+                                    <div class="input_wrap">
+                                        <input type="checkbox" id="place_home" checked disabled>
+                                        <label for="place_home"></label>
+                                        <p>가정</p>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
@@ -1178,7 +1171,6 @@
                             <!-- 사고부위 -->
                             <div class="part">
                                 <h2>사고부위</h2>
-
                                 
                                 <div class="swiper part_accident">
                                     <div class="swiper-wrapper part_container">
@@ -1186,127 +1178,127 @@
                                           
                                             <div class="front_toggle">
                                                 <div class="toggle1">
-                                                    <input type="checkbox" id="front_toggle1">
+                                                    <input type="checkbox" id="front_toggle1" disabled>
                                                     <label for="front_toggle1">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle2">
-                                                    <input type="checkbox" id="front_toggle2">
+                                                    <input type="checkbox" id="front_toggle2" disabled>
                                                     <label for="front_toggle2">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle3">
-                                                    <input type="checkbox" id="front_toggle3">
+                                                    <input type="checkbox" id="front_toggle3" disabled>
                                                     <label for="front_toggle3">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle4">
-                                                    <input type="checkbox" id="front_toggle4">
+                                                    <input type="checkbox" id="front_toggle4" disabled>
                                                     <label for="front_toggle4">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle5">
-                                                    <input type="checkbox" id="front_toggle5">
+                                                    <input type="checkbox" id="front_toggle5" disabled>
                                                     <label for="front_toggle5">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle6">
-                                                    <input type="checkbox" id="front_toggle6">
+                                                    <input type="checkbox" id="front_toggle6" disabled>
                                                     <label for="front_toggle6">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle7">
-                                                    <input type="checkbox" id="front_toggle7">
+                                                    <input type="checkbox" id="front_toggle7" disabled>
                                                     <label for="front_toggle7">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle8">
-                                                    <input type="checkbox" id="front_toggle8">
+                                                    <input type="checkbox" id="front_toggle8" disabled>
                                                     <label for="front_toggle8">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle9">
-                                                    <input type="checkbox" id="front_toggle9">
+                                                    <input type="checkbox" id="front_toggle9" disabled>
                                                     <label for="front_toggle9">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle10">
-                                                    <input type="checkbox" id="front_toggle10">
+                                                    <input type="checkbox" id="front_toggle10" disabled>
                                                     <label for="front_toggle10">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle11">
-                                                    <input type="checkbox" id="front_toggle11">
+                                                    <input type="checkbox" id="front_toggle11" disabled>
                                                     <label for="front_toggle11">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle12">
-                                                    <input type="checkbox" id="front_toggle12">
+                                                    <input type="checkbox" id="front_toggle12" disabled>
                                                     <label for="front_toggle12">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle13">
-                                                    <input type="checkbox" id="front_toggle13">
+                                                    <input type="checkbox" id="front_toggle13" disabled>
                                                     <label for="front_toggle13">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle14">
-                                                    <input type="checkbox" id="front_toggle14">
+                                                    <input type="checkbox" id="front_toggle14" disabled>
                                                     <label for="front_toggle14">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle15">
-                                                    <input type="checkbox" id="front_toggle15">
+                                                    <input type="checkbox" id="front_toggle15" disabled>
                                                     <label for="front_toggle15">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle16">
-                                                    <input type="checkbox" id="front_toggle16">
+                                                    <input type="checkbox" id="front_toggle16" disabled>
                                                     <label for="front_toggle16">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle17">
-                                                    <input type="checkbox" id="front_toggle17">
+                                                    <input type="checkbox" id="front_toggle17" disabled>
                                                     <label for="front_toggle17">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle18">
-                                                    <input type="checkbox" id="front_toggle18">
+                                                    <input type="checkbox" id="front_toggle18" disabled>
                                                     <label for="front_toggle18">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle19">
-                                                    <input type="checkbox" id="front_toggle19">
+                                                    <input type="checkbox" id="front_toggle19" disabled>
                                                     <label for="front_toggle19">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle20">
-                                                    <input type="checkbox" id="front_toggle20">
+                                                    <input type="checkbox" id="front_toggle20" disabled>
                                                     <label for="front_toggle20">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle21">
-                                                    <input type="checkbox" id="front_toggle21">
+                                                    <input type="checkbox" id="front_toggle21" disabled>
                                                     <label for="front_toggle21">
                                                     </label>
                                                 </div>
@@ -1317,133 +1309,133 @@
 
                                             <div class="back_toggle">
                                                 <div class="toggle1">
-                                                    <input type="checkbox" id="back_toggle1">
+                                                    <input type="checkbox" id="back_toggle1" disabled>
                                                     <label for="back_toggle1">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle2">
-                                                    <input type="checkbox" id="back_toggle2">
+                                                    <input type="checkbox" id="back_toggle2" disabled>
                                                     <label for="back_toggle2">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle3">
-                                                    <input type="checkbox" id="back_toggle3">
+                                                    <input type="checkbox" id="back_toggle3" disabled>
                                                     <label for="back_toggle3">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle4">
-                                                    <input type="checkbox" id="back_toggle4">
+                                                    <input type="checkbox" id="back_toggle4" disabled>
                                                     <label for="back_toggle4">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle5">
-                                                    <input type="checkbox" id="back_toggle5">
+                                                    <input type="checkbox" id="back_toggle5" disabled>
                                                     <label for="back_toggle5">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle6">
-                                                    <input type="checkbox" id="back_toggle6">
+                                                    <input type="checkbox" id="back_toggle6" disabled>
                                                     <label for="back_toggle6">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle7">
-                                                    <input type="checkbox" id="back_toggle7">
+                                                    <input type="checkbox" id="back_toggle7" disabled>
                                                     <label for="back_toggle7">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle8">
-                                                    <input type="checkbox" id="back_toggle8">
+                                                    <input type="checkbox" id="back_toggle8" disabled>
                                                     <label for="back_toggle8">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle9">
-                                                    <input type="checkbox" id="back_toggle9">
+                                                    <input type="checkbox" id="back_toggle9" disabled>
                                                     <label for="back_toggle9">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle10">
-                                                    <input type="checkbox" id="back_toggle10">
+                                                    <input type="checkbox" id="back_toggle10" disabled>
                                                     <label for="back_toggle10">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle11">
-                                                    <input type="checkbox" id="back_toggle11">
+                                                    <input type="checkbox" id="back_toggle11" disabled>
                                                     <label for="back_toggle11">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle12">
-                                                    <input type="checkbox" id="back_toggle12">
+                                                    <input type="checkbox" id="back_toggle12" disabled>
                                                     <label for="back_toggle12">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle13">
-                                                    <input type="checkbox" id="back_toggle13">
+                                                    <input type="checkbox" id="back_toggle13" checked disabled>
                                                     <label for="back_toggle13">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle14">
-                                                    <input type="checkbox" id="back_toggle14">
+                                                    <input type="checkbox" id="back_toggle14" disabled>
                                                     <label for="back_toggle14">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle15">
-                                                    <input type="checkbox" id="back_toggle15">
+                                                    <input type="checkbox" id="back_toggle15" disabled>
                                                     <label for="back_toggle15">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle16">
-                                                    <input type="checkbox" id="back_toggle16">
+                                                    <input type="checkbox" id="back_toggle16" disabled>
                                                     <label for="back_toggle16">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle17">
-                                                    <input type="checkbox" id="back_toggle17">
+                                                    <input type="checkbox" id="back_toggle17" disabled>
                                                     <label for="back_toggle17">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle18">
-                                                    <input type="checkbox" id="back_toggle18">
+                                                    <input type="checkbox" id="back_toggle18" disabled>
                                                     <label for="back_toggle18">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle19">
-                                                    <input type="checkbox" id="back_toggle19">
+                                                    <input type="checkbox" id="back_toggle19" disabled>
                                                     <label for="back_toggle19">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle20">
-                                                    <input type="checkbox" id="back_toggle20">
+                                                    <input type="checkbox" id="back_toggle20" disabled>
                                                     <label for="back_toggle20">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle21">
-                                                    <input type="checkbox" id="back_toggle21">
+                                                    <input type="checkbox" id="back_toggle21" disabled>
                                                     <label for="back_toggle21">
                                                     </label>
                                                 </div>
 
                                                 <div class="toggle22">
-                                                    <input type="checkbox" id="back_toggle22">
+                                                    <input type="checkbox" id="back_toggle22" disabled>
                                                     <label for="back_toggle22">
                                                     </label>
                                                 </div>
@@ -1454,85 +1446,85 @@
         
                                             <div class="left_toggle">
                                                 <div class="toggle1">
-                                                    <input type="checkbox" id="left_toggle1">
+                                                    <input type="checkbox" id="left_toggle1" disabled>
                                                     <label for="left_toggle1">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle2">
-                                                    <input type="checkbox" id="left_toggle2">
+                                                    <input type="checkbox" id="left_toggle2" disabled>
                                                     <label for="left_toggle2">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle3">
-                                                    <input type="checkbox" id="left_toggle3">
+                                                    <input type="checkbox" id="left_toggle3" disabled>
                                                     <label for="left_toggle3">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle4">
-                                                    <input type="checkbox" id="left_toggle4">
+                                                    <input type="checkbox" id="left_toggle4" disabled>
                                                     <label for="left_toggle4">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle5">
-                                                    <input type="checkbox" id="left_toggle5">
+                                                    <input type="checkbox" id="left_toggle5" disabled>
                                                     <label for="left_toggle5">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle6">
-                                                    <input type="checkbox" id="left_toggle6">
+                                                    <input type="checkbox" id="left_toggle6" disabled>
                                                     <label for="left_toggle6">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle7">
-                                                    <input type="checkbox" id="left_toggle7">
+                                                    <input type="checkbox" id="left_toggle7" disabled>
                                                     <label for="left_toggle7">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle8">
-                                                    <input type="checkbox" id="left_toggle8">
+                                                    <input type="checkbox" id="left_toggle8" disabled>
                                                     <label for="left_toggle8">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle9">
-                                                    <input type="checkbox" id="left_toggle9">
+                                                    <input type="checkbox" id="left_toggle9" checked disabled>
                                                     <label for="left_toggle9">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle10">
-                                                    <input type="checkbox" id="left_toggle10">
+                                                    <input type="checkbox" id="left_toggle10" disabled>
                                                     <label for="left_toggle10">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle11">
-                                                    <input type="checkbox" id="left_toggle11">
+                                                    <input type="checkbox" id="left_toggle11" disabled>
                                                     <label for="left_toggle11">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle12">
-                                                    <input type="checkbox" id="left_toggle12">
+                                                    <input type="checkbox" id="left_toggle12" disabled>
                                                     <label for="left_toggle12">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle13">
-                                                    <input type="checkbox" id="left_toggle13">
+                                                    <input type="checkbox" id="left_toggle13" disabled>
                                                     <label for="left_toggle13">
                                                     </label>
                                                 </div>
             
                                                 <div class="toggle14">
-                                                    <input type="checkbox" id="left_toggle14">
+                                                    <input type="checkbox" id="left_toggle14" disabled>
                                                     <label for="left_toggle14">
                                                     </label>
                                                 </div>
@@ -1543,85 +1535,85 @@
                                       
                                             <div class="right_toggle">
                                                 <div class="toggle1">
-                                                    <input type="checkbox" id="right_toggle1">
+                                                    <input type="checkbox" id="right_toggle1" disabled>
                                                     <label for="right_toggle1">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle2">
-                                                    <input type="checkbox" id="right_toggle2">
+                                                    <input type="checkbox" id="right_toggle2" disabled>
                                                     <label for="right_toggle2">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle3">
-                                                    <input type="checkbox" id="right_toggle3">
+                                                    <input type="checkbox" id="right_toggle3" disabled>
                                                     <label for="right_toggle3">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle4">
-                                                    <input type="checkbox" id="right_toggle4">
+                                                    <input type="checkbox" id="right_toggle4" disabled>
                                                     <label for="right_toggle4">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle5">
-                                                    <input type="checkbox" id="right_toggle5">
+                                                    <input type="checkbox" id="right_toggle5" disabled>
                                                     <label for="right_toggle5">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle6">
-                                                    <input type="checkbox" id="right_toggle6">
+                                                    <input type="checkbox" id="right_toggle6" disabled>
                                                     <label for="right_toggle6">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle7">
-                                                    <input type="checkbox" id="right_toggle7">
+                                                    <input type="checkbox" id="right_toggle7" disabled>
                                                     <label for="right_toggle7">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle8">
-                                                    <input type="checkbox" id="right_toggle8">
+                                                    <input type="checkbox" id="right_toggle8" disabled>
                                                     <label for="right_toggle8">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle9">
-                                                    <input type="checkbox" id="right_toggle9">
+                                                    <input type="checkbox" id="right_toggle9" disabled>
                                                     <label for="right_toggle9">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle10">
-                                                    <input type="checkbox" id="right_toggle10">
+                                                    <input type="checkbox" id="right_toggle10" disabled>
                                                     <label for="right_toggle10">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle11">
-                                                    <input type="checkbox" id="right_toggle11">
+                                                    <input type="checkbox" id="right_toggle11" disabled>
                                                     <label for="right_toggle11">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle12">
-                                                    <input type="checkbox" id="right_toggle12">
+                                                    <input type="checkbox" id="right_toggle12" disabled>
                                                     <label for="right_toggle12">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle13">
-                                                    <input type="checkbox" id="right_toggle13">
+                                                    <input type="checkbox" id="right_toggle13" disabled>
                                                     <label for="right_toggle13">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle14">
-                                                    <input type="checkbox" id="right_toggle14">
+                                                    <input type="checkbox" id="right_toggle14" disabled>
                                                     <label for="right_toggle14">
                                                     </label>
                                                 </div>
@@ -1632,61 +1624,61 @@
 
                                             <div class="body_toggle">
                                                 <div class="toggle1">
-                                                    <input type="checkbox" id="body_toggle1">
+                                                    <input type="checkbox" id="body_toggle1" disabled>
                                                     <label for="body_toggle1">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle2">
-                                                    <input type="checkbox" id="body_toggle2">
+                                                    <input type="checkbox" id="body_toggle2" disabled>
                                                     <label for="body_toggle2">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle3">
-                                                    <input type="checkbox" id="body_toggle3">
+                                                    <input type="checkbox" id="body_toggle3" disabled>
                                                     <label for="body_toggle3">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle4">
-                                                    <input type="checkbox" id="body_toggle4">
+                                                    <input type="checkbox" id="body_toggle4" disabled>
                                                     <label for="body_toggle4">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle5">
-                                                    <input type="checkbox" id="body_toggle5">
+                                                    <input type="checkbox" id="body_toggle5" disabled>
                                                     <label for="body_toggle5">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle6">
-                                                    <input type="checkbox" id="body_toggle6">
+                                                    <input type="checkbox" id="body_toggle6" disabled>
                                                     <label for="body_toggle6">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle7">
-                                                    <input type="checkbox" id="body_toggle7">
+                                                    <input type="checkbox" id="body_toggle7" disabled>
                                                     <label for="body_toggle7">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle8">
-                                                    <input type="checkbox" id="body_toggle8">
+                                                    <input type="checkbox" id="body_toggle8" disabled>
                                                     <label for="body_toggle8">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle9">
-                                                    <input type="checkbox" id="body_toggle9">
+                                                    <input type="checkbox" id="body_toggle9" disabled>
                                                     <label for="body_toggle9">
                                                     </label>
                                                 </div>
         
                                                 <div class="toggle10">
-                                                    <input type="checkbox" id="body_toggle10">
+                                                    <input type="checkbox" id="body_toggle10" disabled>
                                                     <label for="body_toggle10">
                                                     </label>
                                                 </div>
@@ -1706,86 +1698,68 @@
                                         <h2>의식상태</h2>
                                         
                                         <div class="sensorium_check">
-                                            <div class="alert">
-                                                <input type="checkbox" id="sensorium_alert" checked>
-                                                <label for="sensorium_alert">
-                                                    <span></span>
-                                                    Alert
-                                                </label>
+                                            <div class="alert input_wrap">
+                                                <input type="checkbox" id="sensorium_alert" checked disabled>
+                                                <label for="sensorium_alert"></label>
+                                                <p>Alert</p>
                                             </div>
 
                                             <div class="double verbal">
-                                                <div>
-                                                    <input type="checkbox" id="sensorium_verbal">
-                                                    <label for="sensorium_verbal">
-                                                        <span></span>
-                                                        Verbal
-                                                    </label>
+                                                <div class="input_wrap">
+                                                    <input type="checkbox" id="sensorium_verbal" disabled>
+                                                    <label for="sensorium_verbal"></label>
+                                                    <p>Verbal</p>
                                                 </div>
 
                                                 <div class="double_list verbal_list">
-                                                    <div>
-                                                        <input type="checkbox" id="verbal_drowsy">
-                                                        <label for="verbal_drowsy">
-                                                            <span></span>
-                                                            Drowsy
-                                                        </label>
+                                                    <div class="input_wrap left_wrap">
+                                                        <input type="checkbox" id="verbal_drowsy" disabled>
+                                                        <label for="verbal_drowsy"></label>
+                                                        <p>Drowsy</p>
                                                     </div>
                                                     
-                                                    <div>
-                                                        <input type="checkbox" id="verbal_obtu">
-                                                        <label for="verbal_obtu">
-                                                            <span></span>
-                                                            Obtunded
-                                                        </label>
+                                                    <div class="input_wrap">
+                                                        <input type="checkbox" id="verbal_obtu" disabled>
+                                                        <label for="verbal_obtu"></label>
+                                                        <p>Obtunded</p>
                                                     </div>                                                        
                                                 </div>
                                             </div>
 
                                             
                                             <div class="double painful">
-                                                <div>
-                                                    <input type="checkbox" id="sensorium_painful">
-                                                    <label for="sensorium_painful">
-                                                        <span></span>
-                                                        Verbal
-                                                    </label>
+                                                <div class="input_wrap">
+                                                    <input type="checkbox" id="sensorium_painful" disabled>
+                                                    <label for="sensorium_painful"></label>
+                                                    <p>Verbal</p>
                                                 </div>
 
                                                 <div class="double_list painful_list">
-                                                    <div>
-                                                        <input type="checkbox" id="painful_stupor">
-                                                        <label for="painful_stupor">
-                                                            <span></span>
-                                                            Stupor
-                                                        </label>
+                                                    <div class="input_wrap left_wrap">
+                                                        <input type="checkbox" id="painful_stupor" disabled>
+                                                        <label for="painful_stupor"></label>
+                                                        <p>Stupor</p>
                                                     </div>
                                               
-                                                    <div>
-                                                        <input type="checkbox" id="painful_semi">
-                                                        <label for="painful_semi">
-                                                            <span></span>
-                                                            Semicoma
-                                                        </label>
+                                                    <div class="input_wrap">
+                                                        <input type="checkbox" id="painful_semi" disabled>
+                                                        <label for="painful_semi"></label>
+                                                        <p>Semicoma</p>
                                                     </div>                                                       
                                                 </div>
                                             </div>
 
                                             <div class="unre">
-                                                <div>
-                                                    <input type="checkbox" id="sensorium_unres">
-                                                    <label for="sensorium_unres">
-                                                        <span></span>
-                                                        Unresponsive
-                                                    </label>
+                                                <div class="input_wrap">
+                                                    <input type="checkbox" id="sensorium_unres" disabled>
+                                                    <label for="sensorium_unres"></label>
+                                                    <p>Unresponsive</p>
                                                 </div>
 
-                                                <div class="double_list ure_list">
-                                                    <input type="checkbox" id="sensorium_coma">
-                                                    <label for="sensorium_coma">
-                                                        <span></span>
-                                                        Coma
-                                                    </label>
+                                                <div class="double_list ure_list input_wrap">
+                                                    <input type="checkbox" id="sensorium_coma" disabled>
+                                                    <label for="sensorium_coma"></label>
+                                                    <p>Coma</p>
                                                 </div>
                                                 
                                             </div>
@@ -1804,15 +1778,13 @@
                                                     <h2>좌측 (left)</h2>
 
                                                     <div>
-                                                        <div>
-                                                            <input type="checkbox" id="test_left" checked>
-                                                            <label for="test_left">
-                                                                <span></span>
-                                                                정상
-                                                            </label>
+                                                        <div class="input_wrap">
+                                                            <input type="checkbox" id="test_left" checked disabled>
+                                                            <label for="test_left"></label>
+                                                            <p>정상</p>
                                                         </div>                                                           
 
-                                                        <label><input type="text">mm</label>
+                                                        <label><input type="text" readonly>mm</label>
                                                     </div>
                                                 </div>
 
@@ -1820,15 +1792,13 @@
                                                     <h2>우측 (right)</h2>
 
                                                     <div>
-                                                        <div>
-                                                            <input type="checkbox" id="test_right" checked>
-                                                            <label for="test_right">
-                                                                <span></span>
-                                                                정상
-                                                            </label>    
+                                                        <div class="input_wrap">
+                                                            <input type="checkbox" id="test_right" checked disabled>
+                                                            <label for="test_right"></label>   
+                                                            <p>정상</p> 
                                                         </div>
                                                         
-                                                        <label><input type="text">mm</label>
+                                                        <label><input type="text" readonly>mm</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1842,41 +1812,35 @@
                             <div class="triage">
                                 <h2>환자분류</h2>
 
-                                <div>
-                                    <input type="checkbox" id="test_left" checked>
-                                    <label for="test_left">
-                                        <span></span>
-                                        준응급
-                                    </label>
+                                <div class="input_wrap">
+                                    <input type="checkbox" id="test_left" checked disabled>
+                                    <label for="test_left"></label>
+                                    <p>준응급</p>
                                 </div> 
                                 
                                 <div>
                                     <div>
-                                        <div>
-                                            <input type="checkbox" id="test_left" checked>
-                                            <label for="test_left">
-                                                <span></span>
-                                                발생시간
-                                            </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" id="test_left" checked disabled>
+                                            <label for="test_left"></label>
+                                            <p>발생시간</p>
                                         </div>   
 
-                                        <div>
-                                            <input type="checkbox" id="test_left" checked>
-                                            <label for="test_left">
-                                                <span></span>
-                                                추정
-                                            </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" id="test_left" checked disabled>
+                                            <label for="test_left"></label>
+                                            <p>추정</p>
                                         </div>   
                                     </div>
 
                                     <div class="triage_time">
                                         <div>
-                                            <input type="text">
+                                            <input type="text" readonly>
                                             <p>시</p>
                                         </div>
 
                                         <div>
-                                            <input type="text">
+                                            <input type="text" readonly>
                                             <p>분</p>
                                         </div>
                                     </div>
@@ -1896,20 +1860,16 @@
                                             <h2>기도확보</h2>
 
                                             <div class="airway_container">
-                                                <div>
-                                                    <input type="checkbox" id="mainpulation" checked>
-                                                    <label for="mainpulation">
-                                                      <span></span>
-                                                      도수조작
-                                                    </label>
+                                                <div class="input_wrap left_wrap">
+                                                    <input type="checkbox" id="mainpulation" checked disabled>
+                                                    <label for="mainpulation"></label>
+                                                    <p>도수조작</p>
                                                 </div>
     
-                                                <div>
-                                                    <input type="checkbox" id="artificial" checked>
-                                                    <label for="artificial">
-                                                      <span></span>
-                                                      기도유지기
-                                                    </label>
+                                                <div class="input_wrap">
+                                                    <input type="checkbox" id="artificial" checked disabled>
+                                                    <label for="artificial"></label>
+                                                    <p>기도유지기</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1937,7 +1897,7 @@
                                                 <h2>산소투여</h2>
 
                                                 <div>
-                                                    <input type="text">
+                                                    <input type="text" readonly>
                                                     <p>l/min</p>
                                                 </div>
                                             </div>
@@ -1974,7 +1934,7 @@
                                         위에 있는 full screen은 숨겨주세요 -->
                                         <p class="no_signal_text">full screen</p>
 
-                                        <button type="button" class="btn_vital">
+                                        <button type="button" class="full btn_vital">
                                             <img src="/H-Connect/img/icon/full.svg" alt="네모 아이콘">
                                         </button>
                                     </div>
@@ -2018,13 +1978,14 @@
                                     <div class="control">
                                         <div class="control_inner">
                                             <!-- hr. bpm -->
-                                            <div class="hr">
+                                            <div class="hr ecg">
                                                 <div class="bell_name">
                                                     <p>HR. bpm</p>
 
                                                     <div>
                                                         <input type="checkbox" id="hr_mute">
                                                         <label for="hr_mute">
+                                                            <span></span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -2046,7 +2007,9 @@
 
                                                     <div>
                                                         <input type="checkbox" id="spo2_mute">
-                                                        <label for="spo2_mute"></label>
+                                                        <label for="spo2_mute">
+                                                            <span></span>
+                                                        </label>
                                                     </div>                                                    
                                                 </div>
             
@@ -2068,6 +2031,7 @@
                                                     <div>
                                                         <input type="checkbox" id="res_mute">
                                                         <label for="res_mute">
+                                                            <span></span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -2128,6 +2092,7 @@
                                                     <div>
                                                         <input type="checkbox" id="ew_mute">
                                                         <label for="ew_mute">
+                                                            <span></span>
                                                         </label>
                                                     </div>                                                   
                                                 </div>
@@ -2225,7 +2190,7 @@
                                         위에 있는 full screen은 숨겨주세요 -->
                                         <p class="no_signal_text">full screen</p>
 
-                                        <button type="button" class="btn_picture">
+                                        <button type="button" class="full btn_picture">
                                             <img src="/H-Connect/img/icon/full.svg" alt="네모 아이콘">
                                         </button>
                                     </div>
