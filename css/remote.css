@@ -1,0 +1,1885 @@
+/* 원격협진 */
+.wrap_inner{
+    width: 100%;
+    min-width: 1920px;
+    display: initial;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* connect_remote */
+.btn_attendee{
+    width: 120px;
+    height: 32px;
+    padding: 6px 20px;
+    margin-right: 8px;
+    font-size: 14px;
+    color: #00749a;
+}
+
+.doc_connect .header_right> :nth-child(2){
+    margin: 0 31px;
+}
+
+.doc_connect .header_right> .btn_list {
+    margin: 0;
+}
+
+
+/* remote main */
+.remote{
+    width: 100%;
+    min-width: 1920px;
+    height: 100%;
+    min-height: calc(100vh - 64px);
+    padding-top: 64px;
+    background: #222;
+}
+
+.select_case{
+    width: 600px;
+    height: 480px;
+    margin: 100px auto 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.select_case .title{
+    padding: 24px 16px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(to right, #004F60, #350039);
+    display: flex;
+    color: #fff;
+}
+
+.select_case .title p{
+    margin-right: 17px;
+}
+
+.select_case .case_list{
+    height: 100%;
+    padding: 16px;
+    background: #eee url('/H-Connect/img/logo.png') no-repeat;
+    background-position: 50% 90%;
+    background-size: 69px 48px;
+    border-radius: 0 0 8px 8px;
+}
+
+.select_case .case_list .row{
+    padding: 15px 16px;
+    margin: 0 auto 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.select_case .case_list .row:hover{background: #ddd;}
+
+.select_case .case_list .row> div{
+    display: flex;
+    align-items: center;
+}
+
+.select_case .case_list .row img{
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%)
+}
+
+.select_case .case_list .row h3{
+    font-size: 14px
+}
+
+.select_case .row .left .img_container{
+    width: 16px;
+    height: 17px;
+    margin-right: 8px;
+}
+
+.select_case .row .count{margin-right: 11px;}
+
+.select_case .row .right .img_container{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px;
+}
+
+.select_case .row .right h3{color: #00749a;}
+
+
+/* connect */
+.default .wrap_inner{
+    padding: 4px 0 0;
+    display: flex;
+}
+
+.message{
+    width: 480px;
+    position: relative;
+}
+
+.message .notice{
+    position: absolute;
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 95%);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 56px;
+    left: 8px;
+}
+
+.message .notice> div {
+    display: flex;
+}
+
+.message .notice> div> :first-child{
+    width: 65px;
+}
+
+.message .notice h3{
+    width: 360px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.message .notice button{
+    width: 100%;
+}
+
+.message .notice button p{
+    font-size: 11px;
+    color: #007A94;
+}
+
+.message .notice button .hide{
+    display: none;
+}
+
+.message .title{
+    height: 48px;
+    padding: 4px 4px 0;
+    background: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message .title .left{
+    display: flex;
+}
+
+.message .title .menu{
+    width: 88px;
+    height: 44px;
+    padding: 7px 15px;
+    margin-right: 4px;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    align-items: center;
+    background: #666;
+    color: #888;
+    cursor: pointer;
+}
+
+.message .title .menu div{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.message .title .menu img{
+    filter: invert(68%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(106%) contrast(105%);
+}
+
+.message .title .menu.on{
+    background: #007A94;
+    color: #fff;
+}
+
+.message .title .menu.on img{
+    filter: invert(112%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(257%) contrast(142%);
+}
+
+.message .title .right{
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message .title .cam_control{
+    margin-right: 16px;
+    display: flex;
+}
+
+.message .title .cam_control button{
+    width: 32px;
+    height: 32px;
+    /* padding: 5px; */
+    border-radius: 50%;
+    background: #007A94;
+}
+
+.message .title .cam_control button:hover{
+    background: #004F60;
+}
+
+.message .title .cam_control button div{
+    width: 12px;
+    height: 16px;
+    margin: 0 auto;
+}
+
+.message .title .cam_control img{
+    filter: invert(98%) sepia(3%) saturate(2%) hue-rotate(207deg) brightness(260%) contrast(100%);
+}
+
+.message .title .cam_control .btn_mic{
+    margin: 0 4px;
+}
+
+.message .title .cam_control .btn_speaker div{
+    width: 16px;
+    height: 14px;
+}
+
+.message .title .cam_control .btn_speaker img{
+    filter: none;
+}
+
+
+.message .title .right .btn_list{
+    display: flex;
+}
+
+.message .title .right .btn_list button{
+    width: 120px;
+    height: 32px;
+    padding: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.message .title .right .btn_list button div{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px;
+}
+
+.message .title .right .btn_list img{
+    filter: invert(10%) sepia(98%) saturate(917%) hue-rotate(157deg) brightness(94%) contrast(101%);
+}
+
+.message .title .btn_video{
+    background: #fff;
+    color: #007A94;
+}
+
+.message .title .btn_video:hover{
+    background: #eee;
+}
+
+.message .title .right .btn_list .btn_novideo{
+    background: #007A94;
+    color: #fff;
+    display: none;
+}
+
+.message .title .right .btn_list .btn_novideo div{
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.message .title .right .btn_novideo img{
+    transform: rotate(180deg);
+    filter: invert(145%) sepia(98%) saturate(917%) hue-rotate(157deg) brightness(253%) contrast(185%);
+}
+
+.message .btn_novideo> div div{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px
+}
+
+.message .save{
+    height: 48px;
+    padding: 8px;
+    background: #eee;
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.message .save button{
+    padding: 7px 16px;
+    border: 1px solid #007A94;
+    background: #fff;
+    font-size: 12px;
+    color: #007A94;
+}
+
+.message .save button:hover{
+    background: #eee;
+}
+
+.message .save .btn_emr{
+    margin-right: 8px;
+    order:1;
+}
+
+
+/* 메세지창 */
+.message .view{
+    height: 672px;
+    padding: 16px;
+    background: #C5D8DC;
+}
+
+.message .input_message{
+    position: relative;
+}
+
+.message textarea{
+    width: 100%;
+    height: 120px;
+    padding: 16px 60px 16px 16px;
+}
+
+.message .btn_send{
+    width: 48px;
+    padding: 7px 11px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #fff;
+    background: #007A94;
+    position: absolute; 
+    top: 8px;
+    right: 8px;
+}
+
+.message .btn_send:hover{
+    background: #004F60;
+}
+
+.data{
+    height: 100%;
+    /* position: relative; */
+}
+
+.data_inner> :last-child{
+    margin: 0;
+}
+
+.data_inner{
+    width: 100%;
+    height: 640px;
+    padding-right: 16px;
+    overflow-y: scroll;
+    display: flex;
+    flex-flow: column;
+}
+
+.data_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.data_inner::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #007A94;
+}
+
+.data_inner .mark{
+    padding: 6px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background: #007A94;
+    text-align: center;
+    color: #fff;
+}
+
+.data_inner> div{
+    width: 100%;
+    /* height: 696px; */
+}
+
+/* .data_inner> div::-webkit-scrollbar{
+    width: 8px;
+}
+
+.data_inner> div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #C56F97;
+} */
+
+
+.chatting{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.chatting p{
+    font-size: 12px;
+}
+
+.chatting .top{
+    margin-bottom: 17px;
+    display: flex;
+}
+
+.chatting .top time{
+    font-size: 12px;
+}
+
+.chatting .top p{
+    color: #888;
+}
+
+.chatting .top .name{
+    margin-left: 8px;
+}
+
+.bottom .file{
+    display: flex;
+    cursor: pointer;
+}
+
+.bottom .file div{
+    width: 48px;
+    height: 48px;
+    margin-right: 4px;
+    border-radius: 4px;
+    border: 2px solid #FF8800;
+    overflow: hidden;
+}
+
+.bottom .file div:hover{
+    background: rgba(255, 136, 0, 0.2);
+}
+
+.bottom p{
+    margin-top: 8px;
+}
+
+.no_check .top p{
+    color: #007A94;
+}
+
+
+
+/* 화상보기 */
+.cam{
+    width: 256px;
+    height: 889px;
+    padding: 8px;
+    background: #444;
+    overflow-y: scroll;
+    display: none;
+}
+
+.cam::-webkit-scrollbar{
+    display: none;
+}
+
+.cam .cam_inner{
+    clear: both;
+}
+
+.cam .cam_inner> div{
+    width: 100%;
+    height: 135px;
+    margin: 0 0 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cam .cam_inner> div div{
+    width: 100%;
+    height: 100%;
+}
+
+.cam .cam_inner .name{
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.cam .cam_inner .my{
+    background: rgba(0, 122, 148, 0.5);
+}
+
+.cam .cam_inner .nocam_parti{
+    display: none;
+}
+
+.cam .cam_inner .nocam_parti{
+    padding: 24px 56px;
+    border-radius: 4px;
+    background: #000;
+}
+
+.cam .cam_inner .nocam_parti div{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto;
+}
+
+
+/* 오른쪽 환자 화면 */
+.emergency.connect{
+    padding-top: 64px;
+}
+
+.patient_view{
+    width: 1428px;
+    margin-left: 4px;
+}
+
+.patient_view> .title{
+    width: 100%;
+    height: 40px;
+    padding: 7px 16px;
+    margin-bottom: 4px;
+    background: #444;
+    display: flex;
+    justify-content: space-between;
+}
+
+.patient_view .btn_list button{
+    width: 80px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+    background: #007A94 ;
+}
+
+.patient_view .btn_list> :last-child{
+    margin: 0;
+}
+
+.patient_view .view_list,
+.patient_view .view_list> div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patient_view .view_list p{
+    margin-right: 26px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.view_list .tabs{
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view_list .link{
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.view_list .link div{
+    width: 12px;
+    height: 12px;
+}
+
+.view_list .link div img{
+    width: 100%;
+    height: 100%;
+}
+
+.view_list .link.active{
+    background: #fff;
+    cursor: pointer;
+}
+
+.view_list .link.active img{
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+}
+
+/* 탭으로 보기 */
+.several{
+    width: 100%;
+    height: 853px;
+    position: relative;
+}
+
+.several> div{
+    width: 708px;
+    height: 650px;
+    padding: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.several .title{
+    width: 100%;
+    height: 40px;
+    padding: 11px 16px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(to right, #007A94, #003D4A);
+    display: flex;
+    justify-content: space-between;
+}
+
+.several .title p{
+    color: #fff;
+}
+
+.several .title .btn_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.several .title .btn_list button{
+    width: 10px;
+    height: 10px;
+    background: none;
+}
+
+.several .title .btn_list button div{
+    width: 10px;
+    height: 10px;
+}
+
+.several .title .btn_list button div img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.several .title .btn_list .btn_full{
+    margin: 0 32px;
+}
+
+/* 환자상태 */
+.pati_stat{
+    width: 736px;
+    position: absolute;
+    z-index: 5;
+}
+
+.patient_status{
+    width: 736px;
+    margin: 0;
+    padding: 0 2px 0 0;
+    border-radius: 0;
+}
+
+.patient_status .patient_inner{
+    height: 710px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.patient_status .patient_inner::-webkit-scrollbar{
+    width: 8px;
+    background: #eee;
+}
+
+.patient_status .patient_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #940045;
+}
+
+.patient_status .patient{
+    width: 100%;
+    background: #eee;
+}
+
+.patient .title{
+    padding: 0;
+    border: 0;
+    background: none;
+    justify-content: initial;
+    align-items: center;
+}
+
+.patient .title div{
+    width: 16px;
+    height: 17px;
+    margin-right: 8px;
+}
+
+.patient .title div img{
+    width: 100%;
+    height: 100%;
+}
+
+.patient .title h2{
+    margin: 0;
+}
+
+.pupil_left,
+.pupil_right{
+    width: 144px;
+    height: 80px;
+    padding: 8px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+
+/* 환자상태 full 화면 */
+.pati_stat.on{
+    width: 100%;
+    height: 816px;
+    z-index: 5;
+}
+
+.pati_stat.on .title{
+    width: 100%;
+}
+
+.pati_stat.on .patient_status {
+    width: 100%;
+    height: 816px;
+}
+
+.pati_stat.on .pati_stat{
+    width: 100%;
+    height: 100%;
+}
+
+.pati_stat.on .patient_status .patient_inner {
+    height: 813px;
+}
+
+.pati_stat.on .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pati_stat.on .patient_status .patient .symptome{
+    width: 683px;
+}
+
+.pati_stat.on .part_accident{
+    display: block;
+}
+
+.pati_stat.on .swiper-scrollbar-drag {
+    height: 8px;
+    margin-bottom: 2px;
+    background: #940045;
+}
+
+
+/* 화상연결 */
+.connect_video{
+    width: 720px;
+    height: 472px;
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    right: 0;
+}
+
+.video_view{
+    position: relative;
+}
+
+.para_cam{
+    width: 720px;
+    height: 432px;
+}
+
+.para_cam img{
+    width: 100%;
+    height: 100%;
+}
+
+.video_view .my_cam{
+    width: 240px;
+    height: 135px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.video_view .my_cam img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.video_view .para_name{
+    width: 180px;
+    height: 40px;
+    padding: 8px 18px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.video_view .para_name p{
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.patient_status .patient .symptome{
+    background: #fff;
+}
+
+.swiper.part_accident{
+    background: #eee;
+}
+
+.emergency .patient_status .patient .symptome> div> div> div{
+    width: 300px;
+}
+
+
+/* 바이탈 */
+.vital{
+    overflow-y: initial;
+    position: absolute;
+    top: 20px;
+    left: 24;
+}
+
+.vital ul.tabs{
+    padding: 8px;
+    background: #444;
+}
+
+.vital ul.tabs li{
+    width: 104px;
+    height: 32px ;
+    padding: 8px 0;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #888;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    color: #222;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.vital ul.tabs li.current{
+    background: #FF8800;
+    color: #fff;
+}
+  
+.vital .tab-content{
+    display: none;
+    padding: 16px 8px;
+}
+  
+.vital .tab-content.current{
+    display: inherit;
+}
+
+.vital> :last-child{
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.vital .graph> div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vital .graph> div> :first-child div{
+    width: 492px;
+    height: 64px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.vital .graph> div> :first-child div img{
+    width: 100%;
+}
+
+.graph> div> div> div{
+    padding: 0;
+}
+
+.vital .ecg{
+    color:#00FF22;
+    display: flex;
+    align-items: center;
+}
+
+.vital .ecg_graph,
+.vital .sp_graph,
+.vital .resp_graph{
+    height: 100%;
+    padding: 8px 16px;
+}
+
+.vital .ecg_graph> div{
+    width: 468px;
+    overflow: hidden;
+}
+
+.vital .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+}
+
+.vital .bell_name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vital .bell_num{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vital .sp{
+    color: #00F6FF;
+}
+
+.vital .resp{
+    color: #ff0;
+}
+
+.vital .control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vital .control> :first-child{
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vital .control .ews{
+    width: 88px;
+    height: 136px;
+    padding: 16px 12px;
+    color: #fff;
+    display: initial;
+}
+
+.vital .control .mmhg{  
+    width: 260px;
+    height: 136px;
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.vital .control .pulse{
+    width: 160px;
+    height: 136px;
+    padding: 8px 16px;
+    color: #00F6FF;
+}
+
+.vital .control .temp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #FF3184;
+}
+
+.vital .control .time{
+    display: flex;
+    align-items: center;
+}
+
+.vital .control .time div{
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.vital .control .time p{
+    font-size: 11px;
+}
+
+.vital .bell_name input{
+    display: none;
+}
+
+/* tabular trend */
+#tab-2 .ecg_graph p{
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.tabular_table .table_title{
+    height: 32px;
+    padding: 7px 16px;
+    background: #222;
+}
+
+.tabular_table .table_title p {
+    /* margin-right: 55px; */
+    display: inline-block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.tabular_table .table_title .date_time{
+    margin-right: 80px;
+}
+
+.tabular_table .table_title .temp{
+    padding: 0;
+}
+
+.tabular_table .table_title .ews{
+    margin-right: 55px;
+}
+
+.tabular_table .table_title .spo{
+    margin-right: 60px;
+}
+
+.tabular_table .table_content{
+    height: 32px;
+    padding: 8px 16px 7px;
+    border-bottom: 1px solid #888;
+}
+
+.tabular_table .table_content div{
+    display: inline-block;
+}
+
+.tabular_table .table_content p{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.tabular_table .table_content .date_time{
+    margin-right: 40px;
+}
+
+.tabular_table .table_content .hr{
+    margin-right: 78px;
+}
+
+.tabular_table .table_content .temp{
+    margin-right: 85px;
+    padding: 0;
+}
+
+.tabular_table .table_content .ews{
+    margin-right: 79px;
+}
+
+.tabular_table .table_content .spo{
+    margin-right: 99px;
+}
+
+.tabular_table .table_page ul{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.tabular_table .table_page ul li{
+    display: inline-block;
+    font-size: 11px;
+    color: #888;
+}
+
+.tabular_table .table_page ul li.active{
+    color: #fff;
+}
+
+.tabular_table .alarm_des{
+    margin-right: 350px;
+}
+
+.cont .graphical .hr_chart{
+    margin-top: 62px;
+    padding-left: 27px;
+}
+
+.graphical .hr_chart{
+    display: flex;
+    position: relative;
+}
+
+.graphical .hr_chart p{
+    color: #888;
+}
+
+.cont .graphical .hr_index p{
+    margin-right: 31px;
+}
+
+.graphical .hr_index p{
+    color: #fff;
+}
+
+.graphical .hr_line{
+    width: 576px;
+    margin-bottom: 31px;
+    border-bottom: 1px solid #eee;
+}
+
+.cont .graphical .hr_chart> div> div> :last-child{
+    margin: 0;
+}
+
+.cont .graphical .hr_time{
+    padding: 33px 0 0;
+    font-size: 12px;
+    position: relative;
+}
+
+.cont .graphical .hr_time> p{
+    margin-right: 73px;
+    display: inline-block;
+}
+
+.cont .graphical .hr_time> :last-child{
+    margin: 0;
+}
+
+.cont .graphical .hr_img{
+    width: 400px;
+    height: 36px;
+    position: absolute;
+    top: 23px;
+    left: 176px;
+    z-index: 999;
+}
+
+.cont .graphical .time_line{
+    position: absolute;
+    top: -38px;
+    left: 50%;
+}
+
+.cont .graphical .time_line .time{
+    font-size: 12px;
+    text-align: center;
+    color: yellow;
+}
+
+.cont .graphical .time_line::after{
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 220px;
+    background-color: #ff0;
+    top: 29px;
+    left: 29px;
+}
+
+.cont .graphical .time_line::before{
+    position: absolute;
+    content: '';
+    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    width: 12px;
+    height: 8px;
+    top: 19px;
+    left: 24px;
+}
+
+/* event */
+.cont .event .table_title .date_time{
+    margin-right: 83px;
+}
+
+.cont .event .table_body {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.cont .event .table_body::-webkit-scrollbar{
+    width: 8px;
+}
+
+.cont .event .table_body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.cont .event .table_body .table_wrap{
+    height: 31px;
+    padding: 7px 45px 7px 16px;
+    border-bottom: 1px solid #888;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cont .event .table_body .table_wrap.on{
+    border-bottom: 0px solid #888;
+}
+
+.cont .event .table_body .table_wrap .close{
+    display: none;
+}
+
+.cont .event .table_body .table_wrap> :last-child span{
+    position: relative;
+}
+
+.cont .event .table_body .table_wrap> :last-child span::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%;
+    right: -35px;
+    transition: .3s;
+    margin-top: 7px;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+}
+
+.cont .event .table_body .table_wrap.on> :last-child span::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%;
+    right: -35px;
+    transition: .3s;
+    margin-top: 7px;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    transform: rotate(180deg);
+}
+
+.cont .event .table_body .table_wrap.on .more{display: none;}
+.cont .event .table_body .table_wrap.on .close{display: inline-block;}
+
+.cont .event .table_body .table_wrap> div> div{
+    display: inline-block;
+}
+
+.cont .event .table_body .table_wrap .date_time{
+    margin-right: 42px;
+}
+
+.cont .event .table_body .table_wrap p,
+.cont .event .table_body .table_wrap span{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.cont .event .table_body .table_content{
+    height: fit-content;
+    overflow: hidden;
+    display: none;
+}
+
+.table_body .table_content .cont_inner{
+    display: flex;
+}
+
+.cont .event .table_body .table_content .ecg{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.table_body .table_content .ecg p{
+    font-size: 14px;
+    color: #00FF22;
+    display: block;
+}
+
+.table_body .table_content .ecg .bell{
+    width: 160px;
+    height: 104px;
+    /* padding: 40px 16px; */
+    cursor: pointer;
+}
+
+.table_body .table_content .ecg .ecg_graph> div{
+    width: 444px;
+    height: 64px;
+    /* padding: 30px 0; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar{
+    width: 3px;
+}
+
+.table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.img_container{
+    width: 1090px;
+    /* height: 64px; */
+}
+
+.table_body .table_content .ecg .bell> div{
+    display: flex;
+}
+
+.table_body .table_content .bell_num div p{
+    font-size: 18px;
+}
+
+.table_body .table_content .bell_num> p{
+    font-size: 48px;
+}
+
+.table_body .table_content .ecg .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.table_body .table_content .ecg .bell_name p{
+    font-size: 14px;
+}
+
+.table_body .btn_list button{
+    width: 80px;
+    height: 32px;
+    padding: 6px 15px;
+    border-radius: 4px;
+}
+
+.table_body .btn_confirm{
+    background: #007A94;
+    color: #fff;
+}
+
+ .table_body .btn_confirm:hover{
+    background: #004F60;
+}
+
+.table_body .btn_confirm:disabled{
+    background: #888;
+    color: #444;
+}
+
+.table_body .btn_delete{
+    background: #940045;
+    color: #fff;
+}
+
+.tabular_table .table_body .btn_delete:hover{
+    background: #60002D;
+}
+
+/* 탭으로 보기 */
+.tab_view{
+    position: relative;
+}
+
+.connect_tab .tab_view .connect_video{
+    display: none;
+}
+
+.connect_tab .tab_view .vital{
+    display: none;
+}
+
+.connect_tab .patient_view> .title{
+    padding: 0 16px;
+    margin: 0;
+}
+
+.connect_tab .patient_view> .title .btn_list{
+    padding-top: 7px;
+}
+
+.connect_tab .patient_view .title .btn_list button{
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+    background: #CCC;
+    color: #888;
+}
+
+.connect_tab .patient_view .title .btn_list .on{
+    background: #940045;
+    color: #fff;
+}
+
+.connect_tab .tab_view .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+}
+
+.connect_tab .tab_view .title p{
+    color: #fff;
+}
+
+.connect_tab .tab_view .pati_stat,
+.connect_tab .tab_view .patient_status{
+    width: 100%;
+}
+
+.connect_tab .patient_status .patient{
+    padding: 10px;
+}
+
+.connect_tab .tab_view .patient .title{
+    background: none;
+}
+
+.connect_tab .patient_status,
+.connect_tab .patient_status .patient_inner{
+    height: 817px;
+}
+
+.connect_tab .patient_status .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_tab .patient_status .patient .pati_container> div{
+    width: 688px;
+    height: fit-content;
+}
+
+.connect_tab .vital{
+    position: initial;
+    width: 100%;
+}
+
+.connect_tab .vital> :last-child {
+    height: 817px;
+}
+
+.connect_tab .connect_video{
+    width: 100%;
+}
+
+.connect_tab .connect_video .para_cam{
+    width: 100%;
+    height: 817px;
+}
+
+.connect_tab .scene_picture{
+    width: 100%;
+    position: initial;
+    height: 857px;
+    display: none;
+    background: #eee;
+}
+
+.connect_tab .scene_picture .swiper{
+    width: 100%;
+    display: block;
+}
+
+.connect_tab .scene_picture .big_picture{
+    height: 692px;
+}
+
+/* connect_scroll */
+.connect_scroll {
+    padding-top: 64px;
+}
+.connect_scroll .tab_view{
+    height: 857px;
+    overflow-y: scroll;
+}
+
+.connect_scroll .tab_view::-webkit-scrollbar{
+    display: none;
+}
+
+.connect_scroll .patient_view> .title{
+    margin: 0;
+}
+
+.connect_scroll .pati_stat{
+    width: 100%;
+    height: fit-content;
+    position: initial;
+    display: block;
+}
+
+.connect_scroll .pati_stat> .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .pati_stat .title p{
+    color: #fff;
+}
+
+.connect_scroll .tab_view .title button{
+    width: 20px;
+    height: 20px;
+    background: none;
+}
+
+.connect_scroll .pati_stat .pati_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .pati_stat .patient_status .pati_container> div{
+    width: 673px;
+}
+
+.connect_scroll .patient_status .patient .first_aid{
+    height: fit-content;
+}
+
+.connect_scroll .patient_status{
+    width: 100%;
+    height: 816px;
+}
+
+.connect_scroll .patient_status .patient_inner {
+    height: 816px;
+}
+
+.connect_scroll .vital{
+    width: 100%;
+    position: initial;
+}
+
+.connect_scroll .vital .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+}
+
+.connect_scroll .vital .title p{
+    color: #fff;
+}
+
+.connect_scroll .connect_video{
+    width: 100%;
+    height: 100%;
+    position: initial;
+}
+
+.connect_scroll .connect_video .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .connect_video .title p{
+    color: #fff;
+}
+
+.connect_scroll .connect_video .video_view{
+    height: 808px;
+}
+
+.connect_scroll .connect_video .para_cam{
+    width: 100%;
+    height: 100%;
+}
+
+.connect_scroll .scene_picture{
+    width: 100%;
+    position: initial;
+}
+
+.connect_scroll .scene_picture .title{
+    height: 40px;
+    padding: 10px 24px;
+    background: #940045;
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect_scroll .scene_picture .title p{
+    color: #fff;
+}
+
+.connect_scroll .scene_picture .swiper{
+    width: 100%;
+    display: block;
+}
+
+.connect_scroll .scene_picture .big_picture{
+    height: 692px;
+}
+
+
+.several .pacs{
+    width: 1080px;
+    height: 720px;
+    background: #111;
+}
+
+
+
+/* study_list */
+.study_list{
+    width: 100%;
+    height: 720px;
+    padding: 16px;
+    background: #fff;
+}
+
+.study_list .title{
+    height: 96px;
+    border-bottom: 1px solid #eee;
+    background: none;
+    display: block;
+}
+
+.study_list .title h2{
+    margin-bottom: 13px;
+    color: #007A94;
+}
+
+.study_list .title p{
+    color: #444;
+}
+
+.study_list .row,
+.study_list .row div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.study_list .list{
+    padding: 16px;
+}
+
+.study_list .row{
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.study_list .row:hover{
+    background: #eee;
+    border-radius: 4px;
+}
+
+.study_list .row div div{
+    width: 6px;
+    height: 12px;
+}
+
+.study_list .row div p{
+    width: 80px;
+    text-align: right;
+}
+
+.study_list .row div img{
+    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
+}
+
+.study_list .row> :first-child{
+    width: 150px;
+}
+
+.study_list .row> :nth-child(2){
+    width: 170px;
+}
+
+.study_list .row> :nth-child(3),
+.study_list .row> :nth-child(4),
+.study_list .row> :nth-child(5){
+    width: 170px;
+}
+
+.study_list .row> :last-child{
+    width: 115px;
+    /* margin-left: 80px; */
+}
+
+.pacs .pacs_view .list{
+    height: 64px;
+    padding: 16px;
+    background: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pacs .pacs_view .list div{
+    display: flex;
+    align-items: center;
+}
+
+.pacs .back{
+    width: 64px;
+    height: 32px;
+    padding: 8px 13px;
+    margin-right: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background: #007A94; 
+}
+
+.pacs .back div{
+    margin-right: 8px;
+    transform: rotate(180deg);
+}
+
+.pacs .list h3{
+    font-size: 14px;
+    color: #fff;
+}
+
+.pacs .list .btn_list{
+    width: 216px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.pacs .list .btn_list button{
+    width: 96px;
+    height: 32px;
+}
+
+.pacs .list .btn_list .send{
+    background: #ccc;
+    color: #888;
+}
+
+.pacs .list .btn_list .full{
+    padding: 10px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.pacs .list .btn_list .full div{
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+}
+
+.pacs .slide .pacs_big{
+    width: 700px;
+    height: 456px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.pacs .pacs_small{
+    width: 100%;
+    margin-top: 12px;
+}
+
+.pacs .pacs_small .swiper-slide{
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+.pacs .swiper-slide-thumb-active{
+    border: 4px solid #FFB300;
+}
+
+.pacs .control{
+    width: 640px;
+    height: 64px;
+    padding: 20px;
+    margin: 8px auto;
+    background: #004F60;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pacs .control .next{
+    width: 17px;
+    height: 17px;
+    top: 45%;
+    right: 150px;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    transform: translateY(91%);
+}
+
+.pacs .control .prev{
+    width: 17px;
+    height: 17px;
+    top: 44%;
+    left: 150px;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    transform: rotate(180deg) translateY(-100%);
+}
+
+.pacs .swiper-scrollbar{
+    width: 210px;
+    height: 2px;
+    background: #007A94;
+    border: 1px solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.pacs .swiper-scrollbar-drag{
+    position: relative;
+    top: -11px;
+    width: 40px !important;
+    height: 24px;
+    background: #007A94;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transform: rotate(180deg);
+    z-index: 2;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pacs .swiper-pagination-fraction{
+    position: absolute;
+    top: 6%;
+    right: 50%;
+    transform: translate(-7%, -32%);
+    color: #007A94;
+}
+
+.pacs .swiper-pagination-current{
+    position: absolute;
+    width: 100%;
+    top: 23%;
+    left: 6%;
+    font-size: 12px;
+    color: #fff;
+}

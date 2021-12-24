@@ -90,14 +90,45 @@ $(function(){
 			}
 		}
 	});
+});
 
-	// $('.patient_img .last').click(function(){
-	// 	swiper.slideTo(1, 1000, false);
-	// });
+// 원격협진 슬라이드
+$(function(){
+	var swiper7 = new Swiper(".list_small", {
+		spaceBetween: 8,
+		slidesPerView: 3,
+		freeMode: true,
+		watchSlidesProgress: true,
+		slidesPerView: "auto",
+	});
 	
-
-	// function SetPageNumber(nPageNumber){
-	// 	document.getElementsByClassName(".swiper-pagination").innerHTML = nPageNumber;
-	// }
-
+	var swiper8 = new Swiper(".list_big", {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		pagination:{
+			el: '.swiper-pagination',
+			type: 'fraction',
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '">' + (index + 1) + '</span>';
+			}
+		},
+		scrollbar: {
+			el: ".swiper-scrollbar",
+			// hide: true,
+			draggable: true,
+		  },
+		thumbs: {
+			swiper: swiper7,
+		},
+		on: {
+			slideChangeTransitionEnd: function(){
+				// alert(this.activeIndex);
+				SetPageNumber(this.activeIndex+1);
+			}
+		}
+	});
 });

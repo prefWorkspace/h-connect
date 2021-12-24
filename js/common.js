@@ -221,23 +221,23 @@ $(function () {
         location.href="patient.html";
     })
 
-    $('.nurse .cont .resp .bell_num').on('click', function(){
+    $('.cont .resp .bell_num').on('click', function(){
         $('.pop.resp_set .overlay').show();
     })
 
-    $('.nurse .cont .ecg .bell_num').on('click', function(){
+    $(' .cont .ecg .bell_num').on('click', function(){
         $('.pop.ecg_set .overlay').show();
     })
 
-    $('.nurse .cont .sp .bell_num').on('click', function(){
+    $('.cont .sp .bell_num').on('click', function(){
         $('.pop.sp_set .overlay').show();
     })
 
-    $('.nurse .temp .bell_num').on('click', function(){
+    $('.temp .bell_num').on('click', function(){
         $('.pop.temp_set .overlay').show();
     })
 
-    $('.monitoring_patient .ews .bell_num').on('click', function(){
+    $('.ews .bell_num').on('click', function(){
         $('.pop.ews_set .overlay').show();
     })
 
@@ -275,7 +275,7 @@ $(function () {
     })
 
     // 담당의에게 메시지 보내기
-    $('.nurse .management .management_list .doctor_send').on('click', function(){
+    $('.doctor_send').on('click', function(){
         $('.pop.send_doctor .overlay').show();
     })
 
@@ -813,6 +813,26 @@ $('.doctor .btn_four').on('click', function(){
     $('.doctor .btn_two').removeClass('on');
 })
 
+// 주간일정 스케쥴 선택
+$('.doctor_remote .green').on('click', function(){
+    $('.doctor_remote .collabor').show();
+    $('.doctor_remote .right').not('.doctor_remote .collabor').hide();
+})
+
+$('.doctor_remote .pink').on('click', function(){
+    $('.doctor_remote .ask_request').show();
+    $('.doctor_remote .right').not('.doctor_remote .ask_request').hide();
+})
+
+$('.doctor_remote .orange').on('click', function(){
+    $('.doctor_remote .opinion_ing').show();
+    $('.doctor_remote .right').not('.doctor_remote .opinion_ing').hide();
+})
+
+$('.doctor_remote .mepink').on('click', function(){
+    $('.doctor_remote .me_request').show();
+    $('.doctor_remote .right').not('.doctor_remote .me_request').hide();
+})
 
 // 응급호출 확인버튼 누름
 $('.doctor_emergency .detail_ep .title .btn_check').on('click', function(){
@@ -887,6 +907,11 @@ $('.doctor .clear_return').on('click', function(){
 $('.doctor_message .send_message .search_container').on('click', function(){
     $('.doctor_message .send_message .search_container').toggleClass('on');
     $('.doctor_message .pop.search_patient').toggleClass('on');
+})
+
+// 모니터링 페이지의 메세지
+$('.doctor .nurse_send').on('click', function(){
+    $('.nurse_view').show();
 })
 
 // 원격협진
@@ -1113,13 +1138,27 @@ $('.doctor_message .send_message .search_container').on('click', function(){
     })
 
 
-    // ----------------------------------------선별진료실 의사
+//---------------------- 선별진료실 의사 ----------------------//
     //진료 시작 버튼
     $('.screening_doc .waiting .btn_treat').on('click', function(){
         location.href="connect_screening.html"
     })
 
 
+    //---------------------- 원격협진  ----------------------//
+    $('.remote .btn_video').on('click', function(){
+        $('.remote .cam').toggle();
+    })
+
+    $('.pacs .back').on('click', function(){
+        $('.pacs .study_list').toggle();
+        $('.pacs .pacs_view').toggle();
+    })
+
+    $('.study_list .row').on('click', function(){
+        $('.pacs .study_list').toggle();
+        $('.pacs .pacs_view').toggle();
+    })
 
 
 });
@@ -1140,45 +1179,42 @@ $('ul.tabs li').click(function(){
 })
 
 $(function(){
-//  간호사 관리페이지 대시보드 아코디언
-$(".ward_count").click(function() {
-    $(this).next(".patient_info").stop().slideToggle(300);
-    $(this).toggleClass('on').siblings().removeClass('on');
-    $(this).next(".patient_info").siblings(".patient_info").slideUp(300); // 1개씩 펼치기
-});
+    //  간호사 관리페이지 대시보드 아코디언
+    $(".ward_count").click(function() {
+        $(this).next(".patient_info").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".patient_info").siblings(".patient_info").slideUp(300); // 1개씩 펼치기
+    });
 
-// $("").on('click',function(){
-//     $(this).next(".con").slideToggle(100);
-//   });
+    //  doctor 메인 캘린더 아코디언
+    $(".calendar_con").click(function() {
+        $(this).next(".calendar_container").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".calendar_container").siblings(".calendar_container").slideUp(300); // 1개씩 펼치기
+    });
 
-//  doctor 메인 캘린더 아코디언
-$(".calendar_con").click(function() {
-    $(this).next(".calendar_container").stop().slideToggle(300);
-    $(this).toggleClass('on').siblings().removeClass('on');
-    $(this).next(".calendar_container").siblings(".calendar_container").slideUp(300); // 1개씩 펼치기
-});
+    //  doctor 메인 협진내용 아코디언
+    $(".case").click(function() {
+        $(this).next(".case_cont").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".case_cont").siblings(".case_cont").slideUp(300); // 1개씩 펼치기
+    });
 
-//  doctor 메인 협진내용 아코디언
-$(".case").click(function() {
-    $(this).next(".case_cont").stop().slideToggle(300);
-    $(this).toggleClass('on').siblings().removeClass('on');
-    $(this).next(".case_cont").siblings(".case_cont").slideUp(300); // 1개씩 펼치기
-});
-
-$(".table_wrap").click(function() {
-    $(this).next(".table_content").stop().slideToggle(300);
-    $(this).toggleClass('on').siblings().removeClass('on');
-    $(this).next(".table_content").siblings(".table_content").slideUp(300); // 1개씩 펼치기
-});
+    $(".table_wrap").click(function() {
+        $(this).next(".table_content").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".table_content").siblings(".table_content").slideUp(300); // 1개씩 펼치기
+    });
 })
 
 // 의사 xd 원격협진 textarea 높이 자동 조절
 $(document).ready(function() {
-$('.text_wrap').on( 'keyup', 'textarea', function (e){
-  $(this).css('height', 'auto' );
-  $(this).height( this.scrollHeight );
-});
-$('.text_wrap').find( 'textarea' ).keyup();
+    $('.text_wrap').on( 'keyup', 'textarea', function (e){
+        $(this).css('height', 'auto' );
+        $(this).height( this.scrollHeight );
+    });
+
+    $('.text_wrap').find( 'textarea' ).keyup();
 });
 
 // 선별진료소 버튼 누르면 소독중으로 바뀜
@@ -1189,3 +1225,19 @@ $(document).ready(function(){
         $('.wait_list').toggleClass('on');
     })
 });
+
+
+// 대시보드 체크박스 선택시 버튼 활성화
+$(document).ready(function(){
+    $(".dashboard .middle .btn_delete").attr("disabled", true);
+
+    $(".check_pati input[type='checkbox']").on('click',function(){
+        var chk = $('.check_pati input[type="checkbox"]').is(":checked");
+
+        if(chk==true){
+            $(".dashboard .middle .btn_delete").removeAttr('disabled');
+        }else{
+            $(".dashboard .middle .btn_delete").attr("disabled", true);
+        }
+    });
+})

@@ -17,7 +17,6 @@
 
 
 
-
 /* messasge */
 .message .message_list{
     width: 1032px;
@@ -251,7 +250,7 @@
     border-radius: 8px;
 }
 
-.nurse_message .message_talk{
+.nurse.nurse_message .message_talk{
     padding: 0;
 }
 
@@ -259,7 +258,7 @@
     padding: 32px 32px 24px;
 }
 
-.nurse_message .message_talk .title{
+.nurse.nurse_message .message_talk .title{
     padding: 32px 32px 24px;
     border: 0;
 }
@@ -544,7 +543,6 @@
 }
 
 .nurse_message .start_clinic{
-    width: 560px;
     height: 48px;
     margin: 0 auto 16px;
     padding: 14px 32px;
@@ -561,7 +559,6 @@
 }
 
 .nurse_message .end_clinic{
-    width: 560px;
     height: 48px;
     margin: 0 auto 16px;
     padding: 14px 32px;
@@ -740,7 +737,8 @@
 }
 
 .message .group_container> div{
-    padding: 7px 0;
+    height: 32px;
+    /* padding: 7px 0; */
     display: flex;
     justify-content: space-between;
 }
@@ -767,14 +765,17 @@
     vertical-align: middle;
     background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
+    transition: .3s;
 }
 
 .message .group_container input[type='checkbox']:checked+label span{
     background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
+    transition: .3s;
 }
 
 .nurse_message .group_container input[type='checkbox']:checked+label span{
     background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    transition: .3s;
 }
 
 
@@ -815,16 +816,19 @@
     vertical-align: middle;
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
+    transition: .3s;
 }
 
 .message .favorite_container input[type='checkbox']:checked+label{
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
+    transition: .3s;
 }
 
 .nurse_message .favorite_container input[type='checkbox']:checked + label{
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+    transition: .3s;
 }
 
 .message .select_doctor{
@@ -922,20 +926,23 @@
 }
 
 /* 의료진선택 checkbox */
-.message .list_inner div input[type="checkbox"]+label >span {
+.message .list_inner div input[type="checkbox"] + label >span {
     width: 18px;
     height: 18px;
     margin: 0 15px 0 0;
     background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
+    transition: .3s;
 }
 
-.message .list_inner div input[type='checkbox']:checked+label span{
+.message .list_inner div input[type='checkbox']:checked + label span{
     background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
-.nurse_message .list_inner div input[type='checkbox']:checked+label {
+.nurse_message .list_inner div input[type='checkbox']:checked + label,
+.nurse_message .list_inner div input[type='checkbox']:checked + label span {
     background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    transition: .3s;
 }
 
 /* 의료진선택 즐겨찾기 */
@@ -1031,6 +1038,16 @@
 .message .send_message .btn_list .btn_send{
     border: 1px solid #007A94;
     color: #007A94;
+}
+
+.nurse_message .send_message .btn_list .btn_send{
+    background: #007a94;
+    color: #fff;
+}
+
+.nurse_message .send_message .btn_list .btn_send:hover{
+    background: #004F60;
+    transition: .3s;
 }
 
 

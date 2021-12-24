@@ -6,7 +6,7 @@ p{font-size: 12px;}
 .doctor{
     width: 100%;
     /* min-width: 1248px; */
-    min-width: 1880px;
+    min-width: 1920px;
     /* height: calc(100vh - 80px); */
     min-height: calc(100vh - 80px);
     padding-top: 80px;
@@ -86,7 +86,7 @@ p{font-size: 12px;}
     width: 9px;
     height: 18px; 
     position: absolute; 
-    background: url('/img/right_arrow.svg') no-repeat 0 0px /contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px /contain;
     top: 50%; 
     transform: translateY(-50%);
     right: -50px;
@@ -378,6 +378,8 @@ p{font-size: 12px;}
     background: rgba(226, 42, 116, 0.8);
 }
 
+.doctor .request p{width: 38px; margin: auto;}
+
 .doctor .opinion{
     background: rgba(255, 128, 0, 0.8);
 }
@@ -578,7 +580,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 45%;
     right: 15px;
     transition: 0.3s;
@@ -589,7 +591,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 45%;
     right: 15px;
     transform: rotate(180deg);
@@ -614,7 +616,7 @@ p{font-size: 12px;}
     width: 46px;
     height: 32px;
     margin-left: -22px;
-    background: url('/img/H-Connect logo.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img logo.svg') no-repeat 0 0px / contain;
     filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg) brightness(103%) contrast(96%);
 }
 
@@ -932,7 +934,7 @@ p{font-size: 12px;}
 
 .doctor .emergency_section .recep_time,
 .doctor .emergency_section .cont{
-    padding: 20px 16px;
+    padding: 20px 32px;
 }
 
 .doctor .emergency_section .collabor_wrap .member{
@@ -963,6 +965,11 @@ p{font-size: 12px;}
 
 .doctor .opinion .member .red{
     color: #940045;
+}
+
+.doctor .collabor .collabor_wrap .time,
+.doctor .collabor .collabor_wrap .cont .title{
+    padding: 16px 32px;
 }
 
 
@@ -1024,6 +1031,7 @@ p{font-size: 12px;}
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    background: #fff;
 }
 
 .para_connect .call_control .con_btn{
@@ -1572,7 +1580,7 @@ p{font-size: 12px;}
     height: 64px;
     border-radius: 4px;
     border: 1px solid #940045;
-    background: url('/img/graph/grid.svg') no-repeat 0 0px / cover;
+    background: url('/H-Connect/img/graph/grid.svg') no-repeat 0 0px / cover;
     display: flex;
     align-items: center;
     position: relative;
@@ -1753,9 +1761,65 @@ p{font-size: 12px;}
     background: #000;
 }
 
+.doctor_patient .vital_chart{
+    width: 1316px;
+    margin: 0 28px;
+}
+
 .doctor_patient .vital_chart .menu{
     display: flex;
     justify-content: space-between;
+}
+
+.doctor_patient .vital_chart .title{
+    width: 100%;
+    height: 40px;
+    padding: 11px 16px;
+    background: linear-gradient(to right, #004F60, #350039);
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.doctor_patient .vital_chart .title div{display: flex;}
+.doctor_patient .vital_chart .title .pati_info{margin-left: 56px;}
+
+.doctor_patient .vital_chart .cont{
+    width: 1316px;
+    height: 680px;
+    padding: 32px;
+    background: #000;
+    border-radius: 0 0 8px 8px;
+}
+
+.doctor_patient ul.tabs li{
+    width: 144px;
+    height: 40px;
+    padding: 10px 15px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #888;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: #222;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.doctor_patient ul.tabs li.current{
+    background: #007A94;
+    color: #fff;
+}
+  
+.doctor_patient .vital_chart .tab-content{
+    display: none;
+    padding: 32px 0;
+}
+
+.doctor_patient .tab-content.current{
+    display: inherit;
 }
 
 .doctor_patient .vital_chart .menu .btn_list button{
@@ -1763,7 +1827,470 @@ p{font-size: 12px;}
     height: 40px;
     border-radius: 4px;
     border: 1px solid #007A94;
+    background: #fff;
     color: #007A94;
+}
+
+.monitoring_patient .ecg,
+.monitoring_patient .sp,
+.monitoring_patient .resp,
+.monitoring_patient .control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.monitoring_patient .sp{
+    margin: 10px 0;
+}
+
+.monitoring_patient .ecg_graph> div,
+.monitoring_patient .sp_graph> div,
+.monitoring_patient .resp_graph> div{
+    margin-top: 20px;
+}
+
+.monitoring_patient .bell{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.monitoring_patient .bell_name p{
+    font-size: 14px;
+}
+
+.monitoring_patient .control{
+    margin-bottom: 39px;
+}
+
+.monitoring_patient .control> div:not(.temp){
+    display: flex;
+}
+
+.monitoring_patient .control .ews{
+    width: 88px;
+    padding: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.monitoring_patient .control .ews .bell_name p{
+    margin-right: 7px;
+}
+
+.monitoring_patient .control .ews .bell_num{
+    width: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: initial;
+}
+
+.monitoring_patient .control .ews .bell_num> div{
+    margin-top: -4px;
+}
+
+.monitoring_patient .control .ews .bell_num> p{
+    margin-right: 8px;
+}
+
+.monitoring_patient .control .bell_name input[type="checkbox"]+label span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat / contain;
+}
+
+.monitoring_patient .mmhg{
+    width: 260px;
+    padding: 16px;
+    margin: 0 72px 0 64px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.monitoring_patient .time div{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.monitoring_patient .time p{
+    margin-top: -2px;
+    margin-right: 8px;
+    font-size: 11px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.monitoring_patient .pulse{
+    width: 160px;
+    padding: 16px;
+    color: #00FFFF;
+    cursor: pointer;
+}
+
+.monitoring_patient .pulse .time p{
+    margin: 0 4px 0 0;
+}
+
+.monitoring_patient .pulse .time> :last-child {
+    margin-right: 0px;
+}
+
+.monitoring_patient .temp{
+    width: 160px;
+    height: 104px;
+    padding: 8px 16px;
+    color: #FF3184;
+    cursor: pointer;
+}
+
+/* tabular trend */
+.monitoring_patient .wrap_inner{
+    overflow: hidden;
+}
+
+.monitoring_patient .tabular_table .table_title{
+    height: 32px;
+    padding: 7px 16px;
+    background: #222;
+}
+
+.monitoring_patient .tabular_table .table_title p {
+
+    margin-right: 83px;
+    display: inline-block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.monitoring_patient .tabular_table .table_title .hr{
+    margin-right: 51px;
+}
+
+.monitoring_patient .tabular_table .table_title .temp{
+    width: fit-content;
+    height: fit-content;
+    margin-right: 57px;
+    padding: 0;
+}
+
+.monitoring_patient .tabular_table .table_title .ews{
+    margin-right: 55px;
+}
+
+.monitoring_patient .tabular_table .table_title .spo{
+    margin-right: 60px;
+}
+
+.monitoring_patient .tabular_table .table_content{
+    height: 32px;
+    padding: 8px 16px 7px;
+    border-bottom: 1px solid #888;
+}
+
+.monitoring_patient .tabular_table .table_content div{
+    display: inline-block;
+}
+
+.monitoring_patient .tabular_table .table_content p{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.monitoring_patient .tabular_table .table_content .date_time{
+    margin-right: 40px;
+}
+
+.monitoring_patient .tabular_table .table_content .hr{
+    margin-right: 78px;
+}
+
+.monitoring_patient .tabular_table .table_content .temp{
+    width: fit-content;
+    height: fit-content;
+    margin-right: 85px;
+    padding: 0;
+}
+
+.monitoring_patient .tabular_table .table_content .ews{
+    margin-right: 79px;
+}
+
+.monitoring_patient .tabular_table .table_content .spo{
+    margin-right: 99px;
+}
+
+.monitoring_patient .tabular_table .table_page ul{
+    margin-top: 56px;
+    text-align: center;
+}
+
+.monitoring_patient .tabular_table .table_page ul li{
+    display: inline-block;
+    font-size: 11px;
+    color: #888;
+}
+
+.monitoring_patient .tabular_table .table_page ul li.active{
+    color: #fff;
+}
+
+.monitoring_patient .cont .graphical .hr_chart{
+    margin-top: 62px;
+}
+
+.monitoring_patient .graphical .hr_chart{
+
+    display: flex;
+    position: relative;
+}
+
+.monitoring_patient .graphical .hr_chart p{
+    color: #888;
+}
+
+.monitoring_patient .cont .graphical .hr_index p{
+    margin-right: 31px;
+}
+
+.monitoring_patient .graphical .hr_index p{
+    color: #fff;
+}
+
+.monitoring_patient .graphical .hr_line{
+    width: 1136px;
+    margin-bottom: 31px;
+    border-bottom: 1px solid #eee;
+}
+
+.monitoring_patient .cont .graphical .hr_chart> div> div> :last-child{
+    margin: 0;
+}
+
+.monitoring_patient .cont .graphical .hr_time{
+    padding: 27px 28px 0;
+    font-size: 12px;
+    position: relative;
+}
+
+.monitoring_patient .cont .graphical .hr_time> p{
+    margin-right: 177px;
+    display: inline-block;
+}
+
+.monitoring_patient .cont .graphical .hr_time> :last-child{
+    margin: 0;
+}
+
+.monitoring_patient .cont .graphical .hr_img{
+    width: 400px;
+    height: 36px;
+    position: absolute;
+    top: 23px;
+    left: 365px;
+    z-index: 999;
+}
+
+.monitoring_patient .cont .graphical .time_line{
+    position: absolute;
+    top: -38px;
+    left: 50%;
+    margin-left: -38px;
+}
+
+.monitoring_patient .cont .graphical .time_line .time{
+    font-size: 12px;
+    text-align: center;
+    color: yellow;
+}
+
+.monitoring_patient .cont .graphical .time_line::after{
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 220px;
+    background-color: #ff0;
+    top: 29px;
+    left: 29px;
+}
+
+.monitoring_patient .cont .graphical .time_line::before{
+    position: absolute;
+    content: '';
+    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    width: 12px;
+    height: 8px;
+    top: 19px;
+    left: 24px;
+}
+
+/* event */
+.monitoring_patient .cont .event .table_title .date_time{
+    margin-right: 83px;
+}
+
+.monitoring_patient .cont .event .table_title .alarm_des{
+    margin-right: 703px;
+}
+
+.monitoring_patient .cont .event .table_body {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.monitoring_patient .cont .event .table_body::-webkit-scrollbar{
+    width: 8px;
+}
+
+.monitoring_patient .cont .event .table_body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap{
+    height: 31px;
+    padding: 7px 45px 7px 16px;
+    border-bottom: 1px solid #888;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap.on{
+    border-bottom: 0px solid #888;
+}
+
+
+.monitoring_patient .cont .event .table_body .table_wrap .close{
+    display: none;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap> :last-child span{
+    position: relative;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap> :last-child span::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%;
+    right: -35px;
+    transition: .3s;
+    margin-top: 7px;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap.on> :last-child span::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%;
+    right: -35px;
+    transition: .3s;
+    margin-top: 7px;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    transform: rotate(180deg);
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap.on .more{display: none;}
+.monitoring_patient .cont .event .table_body .table_wrap.on .close{display: inline-block;}
+
+.monitoring_patient .cont .event .table_body .table_wrap> div> div{
+    display: inline-block;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap .date_time{
+    margin-right: 42px;
+}
+
+.monitoring_patient .cont .event .table_body .table_wrap p,
+.monitoring_patient .cont .event .table_body .table_wrap span{
+    font-size: 12px;
+    color: #ccc;
+    display: inline-block;
+}
+
+.monitoring_patient .cont .event .table_body .table_content{
+    height: 195px;
+    overflow: hidden;
+    display: none;
+}
+
+.monitoring_patient .table_body .table_content .cont_inner{
+    justify-content: space-between;
+}
+
+.monitoring_patient .cont .event .table_body .table_content .ecg{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.monitoring_patient .table_body .table_content .ecg p{
+    font-size: 14px;
+    color: #00FF22;
+    display: block;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell{
+    width: 160px;
+    height: 104px;
+    /* padding: 40px 16px; */
+    cursor: pointer;
+}
+
+.monitoring_patient .table_body .table_content .ecg .ecg_graph> div{
+    width: 1010px;
+    height: 104px;
+    padding: 30px 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.monitoring_patient .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar{
+    width: 3px;
+}
+
+.monitoring_patient .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.monitoring_patient .img_container{
+    width: 1090px;
+    height: 64px;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell> div{
+    display: flex;
+}
+
+.monitoring_patient .table_body .table_content .bell_num div p{
+    font-size: 18px;
+}
+
+.monitoring_patient .table_body .table_content .bell_num> p{
+    font-size: 48px;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell_name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoring_patient .table_body .table_content .ecg .bell_name p{
+    font-size: 14px;
 }
 
 
@@ -1854,7 +2381,7 @@ p{font-size: 12px;}
 .patient_img .pati_info{
     width: 320px;
     position: absolute;
-    top: 40px;
+    top: 98px;
     color: #fff;
 }
 
@@ -1881,7 +2408,7 @@ p{font-size: 12px;}
     padding: 8px;
     border-radius: 4px;
     position: absolute;
-    top: 16px;
+    top: 96px;
     right: 80px;
     background: #007a94;
 }
@@ -1900,6 +2427,7 @@ p{font-size: 12px;}
     width: 1704px;
     height: 796px;
     margin: 0 auto;
+    background: #000;
 }
 
 .patient_img .pacs_big{
@@ -1946,7 +2474,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     right: 150px;
-    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: translateY(91%);
 }
 
@@ -1955,7 +2483,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 44%;
     left: 150px;
-    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-100%);
 }
 
@@ -1966,7 +2494,7 @@ p{font-size: 12px;}
     /* top: 45%; */
     top: 35%;
     right: 100px;
-    background: url('/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: translateY(81%); */
     transform: translateY(0%);
 }
@@ -1977,7 +2505,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     left: 100px;
-    background: url('/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: rotate(180deg) translateY(-100%); */
     transform: rotate(180deg) translateY(30%);
 }
@@ -2101,7 +2629,7 @@ p{font-size: 12px;}
     width: 9px;
     height: 18px;
     position: absolute;
-    background: url(/img/right_arrow.svg) no-repeat 0 0px /contain;
+    background: url(/H-Connect/img/right_arrow.svg) no-repeat 0 0px /contain;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
@@ -2372,11 +2900,11 @@ p{font-size: 12px;}
     width: 24px;
     height: 24px;
     margin: -3px 16px 0 0;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
 }
 
 .doctor .time_select input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 .doctor .time_select input[type="checkbox"]{
@@ -3190,6 +3718,7 @@ p{font-size: 12px;}
     align-items: center;
     font-size: 14px;
     color: #888;
+    cursor: pointer;
 }
 
 .new_remote .rt_view .radio{
@@ -3336,6 +3865,11 @@ p{font-size: 12px;}
     width: 184px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+.surgery_box .surgery_list::after{
+    width: 152px;
+    background: #eee;
 }
 
 .new_remote .type .surgery_option{
@@ -3485,7 +4019,7 @@ p{font-size: 12px;}
     padding: 3px;
     margin-left: 7px;
     border-radius: 50%;
-    background: #940045 url('/img/icon/nurse/close.svg') no-repeat;
+    background: #940045 url('/H-Connect/img/icon/nurse/close.svg') no-repeat;
     background-position: 50% 50%;
     background-size: 50%;
     display: inline-block;

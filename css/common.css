@@ -15,8 +15,13 @@ body {
     padding-top: 80px;
     display: flex;
 }
-
-button{border-radius: 4px;}
+input[type="checkbox"]+label{cursor: pointer;}
+#wrap_content{display: flex;}
+html{height: 100%;}
+/* #wrap{height: 100%;} */
+h2{font-size: 16px;}
+p{font-size: 12px; font-weight: normal;}
+button{border-radius: 4px; background: none;}
 
 .wrap_inner{padding: 40px; display: flex;}
 
@@ -50,11 +55,11 @@ button{border-radius: 4px;}
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
 }
 
 .bell_name input[type='checkbox']:checked+label span{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -88,7 +93,7 @@ button{border-radius: 4px;}
 }
 
 .bell_name input[type='checkbox']:checked+label span{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -155,7 +160,7 @@ button{border-radius: 4px;}
     display: flex;
     line-height: 47px;
     padding: 0 40px 0 17px;
-    background: url('/img/right_arrow.svg') no-repeat right 15px center;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat right 15px center;
     border-radius: 4px;
     border-bottom: 1px solid #EEEEEE;
     transition: 0.2s all;
@@ -168,7 +173,7 @@ button{border-radius: 4px;}
 
 /* btn_active */
 .card_btn.btn_active {
-    background: url('/img/right_arrow.svg') no-repeat right 15px center;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat right 15px center;
     background-color: #007A94;
     border-color: #007A94;
 }
@@ -338,7 +343,7 @@ button{border-radius: 4px;}
     border-radius: 4px;
     width: 360px;
     padding: 0 10px;
-    background: #fff url('/img/header/search.svg') no-repeat right 10px center;
+    background: #fff url('/H-Connect/img/header/search.svg') no-repeat right 10px center;
     font-size: 12px;
 }
 
@@ -358,7 +363,7 @@ button{border-radius: 4px;}
     padding: 12px 24px;
     background: linear-gradient(to right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    /* z-index: 10; */
+    z-index: 1;
 }
 
 /* header_wrap */
@@ -582,8 +587,9 @@ button{border-radius: 4px;}
     color: #940045;
 }
 
-.paramedic .header_right .btn_attendee{
+.btn_attendee{
     width: 96px;
+    background: #fff;
 }
 
 .paramedic .header_right .btn_doctor_call{
@@ -891,72 +897,72 @@ button{border-radius: 4px;}
 
 /* 응급상황실 */
 .emergency .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/monitoring.svg') no-repeat;
+    background: url('/H-Connect/img/header/monitoring.svg') no-repeat;
 }
 
 .emergency .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/message.svg') no-repeat;
+    background: url('/H-Connect/img/header/message.svg') no-repeat;
 }
 
 /* 간호사 */
 .nurse .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/monitoring.svg') no-repeat;
+    background: url('/H-Connect/img/header/monitoring.svg') no-repeat;
 }
 
 .nurse .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/clinic.svg') no-repeat;
+    background: url('/H-Connect/img/header/clinic.svg') no-repeat;
 }
 
 .nurse .gnb_list:nth-child(3)> a:after{
-    background: url('/img/header/dashboard.svg') no-repeat;
+    background: url('/H-Connect/img/header/dashboard.svg') no-repeat;
 }
 
 .nurse .gnb_list:nth-child(4)> a:after{
-    background: url('/img/header/message.svg') no-repeat;
+    background: url('/H-Connect/img/header/message.svg') no-repeat;
 }
 
 /* 의사 */
 .doctor .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/Hlogo_gray.svg') no-repeat;
+    background: url('/H-Connect/img/header/Hlogo_gray.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/clinic.svg') no-repeat;
+    background: url('/H-Connect/img/header/clinic.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(3)> a:after{
-    background: url('/img/header/monitoring.svg') no-repeat;
+    background: url('/H-Connect/img/header/monitoring.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(4)> a:after{
-    background: url('/img/header/remote.svg') no-repeat;
+    background: url('/H-Connect/img/header/remote.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(5)> a:after{
     /* transform: translate(-50%, -50%); */
-    background: url('/img/header/message.svg') no-repeat;
+    background: url('/H-Connect/img/header/message.svg') no-repeat;
 }
 
 /* 선별진료실 */
 .screening .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/remote.svg') no-repeat center center;
+    background: url('/H-Connect/img/header/remote.svg') no-repeat center center;
 }
 
 .screening .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/message.svg') no-repeat center center;
+    background: url('/H-Connect/img/header/message.svg') no-repeat center center;
 }
 
 .screening .gnb_list:nth-child(3)> a:after{
-    background: url('/img/header/setting.svg') no-repeat center center;
+    background: url('/H-Connect/img/header/setting.svg') no-repeat center center;
 }
 
 /* 선별진료실 - 의사 */
 .screening_doc .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/remote.svg') no-repeat;
+    background: url('/H-Connect/img/header/remote.svg') no-repeat;
 }
 
 .screening_doc .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/message.svg') no-repeat center center;
+    background: url('/H-Connect/img/header/message.svg') no-repeat center center;
 }
 
 
@@ -1034,7 +1040,7 @@ button{border-radius: 4px;}
 
 .first_card_title .card_title {
     padding-left: 30px;
-    background: url('/img/icon/setting_green.svg') no-repeat left top 5px;
+    background: url('/H-Connect/img/icon/setting_green.svg') no-repeat left top 5px;
 }
 
 .create_btn {
@@ -1336,7 +1342,7 @@ button{border-radius: 4px;}
     height: 32px;
     text-indent: -999999px;
     border-radius: 4px;
-    background: #fff url('/img/icon/nurse/sorting.svg') no-repeat center center;
+    background: #fff url('/H-Connect/img/icon/nurse/sorting.svg') no-repeat center center;
     margin-left: 20px;
 }
 
@@ -1719,6 +1725,7 @@ textarea::-webkit-scrollbar-button {
 .pop.logout .wrap_inner .btn_bye:hover{
     color: #fff;
     background: #940045;
+    transition: .3s;
 }
 
 /* 병동생성 팝업 */
@@ -1844,7 +1851,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
     transition: 0.3s;
@@ -1855,7 +1862,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
     transform: rotate(180deg);
@@ -2072,7 +2079,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
 }
@@ -2091,7 +2098,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
     transform: rotate(180deg);
@@ -2271,12 +2278,12 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -3px 4px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/radio.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/radio.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.setting_menu .content .sweep input[type='radio']:checked+label span{
-    background: url('/img/icon/radio_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/radio_check.png') no-repeat 0 0px / contain;
 }
 
 .pop.setting_menu .content .sweep input[type="radio"]{
@@ -2305,12 +2312,12 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -3px 4px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/radio.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/radio.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.resp_set .content .apnea input[type='radio']:checked+label span{
-    background: url('/img/icon/radio_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/radio_check.png') no-repeat 0 0px / contain;
 }
 
 .pop.resp_set .content .apnea input[type="radio"]{
@@ -2654,12 +2661,14 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
+    transition: .3s;
 }
 
 .pop.send_doctor .doctor_search .doctor_list input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    transition: .3s;
 }
 
 .pop.send_doctor .doctor_search .doctor_list input[type="checkbox"]{
@@ -2683,13 +2692,13 @@ textarea::-webkit-scrollbar-button {
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/favorite_blanc.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/favorite_blanc.svg') no-repeat 0 0px / contain;
     transition: .3s;
     cursor: pointer;
 }
 
 .pop.send_doctor .doctor_list .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/icon/favorite_green.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/favorite_green.png') no-repeat 0 0px / contain;
     transition: .3s;
 }
 
@@ -2784,12 +2793,13 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.send_doctor .favorite_list .group_container input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    transition: .3s;
 }
 
 .pop.send_doctor .favorite_list .group_container input[type="checkbox"]{
@@ -2801,7 +2811,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .favorite_list .group_container input[type="checkbox"]:disabled + label span{
-    background: url('/img/icon/check_disabled.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/check_disabled.png') no-repeat 0 0px / contain;
 }
 
 
@@ -2811,13 +2821,13 @@ textarea::-webkit-scrollbar-button {
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/favorite_blanc.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/favorite_blanc.png') no-repeat 0 0px / contain;
     transition: .3s;
     cursor: pointer;
 }
 
 .pop.send_doctor .favorite_list .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/icon/favorite_green.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/favorite_green.png') no-repeat 0 0px / contain;
     transition: .3s;
 }
 
@@ -3331,7 +3341,8 @@ textarea::-webkit-scrollbar-button {
     height: 672px;
     padding: 0;
     background: #000;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
+    border: 1px solid #444;
 }
 
 .pop.monitor  .overlay .pop_cont .title{border:0;}
@@ -3436,15 +3447,12 @@ textarea::-webkit-scrollbar-button {
     justify-content: space-between;
 }
 
-.pop.monitor #tab-1 .ecg{
+.pop.monitor #tab-1 .active{
     height: 95px;
     padding: 12px 8px;
     background: linear-gradient(#DE0076, #CB0000);
-    border-radius: 8px;
-}
-
-.pop.monitor #tab-1 .active{
     border: 2px solid #fff;
+    border-radius: 8px;
 }
 
 .pop.monitor .sp,
@@ -3520,23 +3528,18 @@ textarea::-webkit-scrollbar-button {
     padding: 6px 25px 13px 12px;
     margin-top: 25px;
     border-radius: 8px;
-    background: linear-gradient(#DE0076, #CB0000);
-}
-
-.pop.monitor .ews.on{
-    border: 2px solid #fff;
 }
 
 .pop.monitor .ews .bell_num{
-    width: 42px;
+    width: 47px;
     margin: 15px 0 0 35px;
     display: flex;
-    justify-content: initial;
+    align-items: center;
 }
 
 .pop.monitor .ews .bell_num> div{
     height: 30px;
-    margin-left: 5px;
+    margin: 0 5px 5px 0;
 }
 
 .pop.monitor .ews .bell_num> div div{
@@ -3595,7 +3598,9 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor #tab-2,
 .pop.monitor #tab-3,
 .pop.monitor #tab-4{
+    height: 522px;
     padding: 12px 8px;
+    border-radius: 0 0 8px 8px;
 }
 
 .pop.monitor .table_title{
@@ -3603,11 +3608,12 @@ textarea::-webkit-scrollbar-button {
     margin-top: 24px;
     font-size: 12px;
     background: #222;
-    color: #ccc;
     border-bottom: 1px solid #888;
     display: flex;
     justify-content: space-between;
 }
+
+.pop.monitor .table_title p{color: #ccc;}
 
 .pop.monitor .table_title .date_time{
     margin-right: 83px;
@@ -3622,7 +3628,10 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .table_content p{
     font-size: 12px;
+    color: #ccc;
 }
+
+.pop.monitor .table_content .bell p{color: #00FF22;}
 
 .pop.monitor .table_content .date_time{
     margin-right: 83px;
@@ -3646,7 +3655,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .table_page{
     width: 250px;
-    margin: 0 auto;
+    margin: 15px auto 0;
 }
 
 .pop.monitor .table_page .active{
@@ -3668,7 +3677,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .hr_chart{
-    padding:  80px 18px 0;
+    padding: 50px 18px 0;
     display: flex;
 }
 
@@ -3693,7 +3702,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .hr_time{
-    padding: 10px 28px 0;
+    padding: 10px 25px 0;
     font-size: 12px;
     color: #888;
 }
@@ -3712,7 +3721,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .time_line{
     position: absolute;
-    top: 55%;
+    top: 51%;
     left: 49%;
     margin-left: -2px;
     color: #ff0;
@@ -3721,7 +3730,7 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .time_line::before {
     position: absolute;
     content: '';
-    background: url(/img/icon/trend_tri.png)no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/icon/trend_tri.png)no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 30px;
@@ -3739,13 +3748,14 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .event .table_body{
-    height: 400px;
+    padding-right: 5px;
+    height: 380px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 .pop.monitor .table_body::-webkit-scrollbar{
-    width: 8px;
+    width: 5px;
 }
 
 .pop.monitor .table_body::-webkit-scrollbar-thumb{
@@ -3758,11 +3768,13 @@ textarea::-webkit-scrollbar-button {
     padding: 7px 100px 7px 16px;
     font-size: 12px;
     font-weight: normal;
-    color: #ccc;
+    /* color: #ccc; */
     display: flex;
     cursor: pointer;
     border-bottom: 1px solid #888;
 }
+
+.pop.monitor .table_wrap p{color: #ccc;}
 
 .pop.monitor .table_wrap.on{
     border-bottom: 0;
@@ -3831,6 +3843,11 @@ textarea::-webkit-scrollbar-button {
     color: #fff;
     text-align: center;
     display: none;
+}
+
+.pop.respon .wrap_inner{
+    padding: 0;
+    display: block;
 }
 
 .pop.respon h1{
@@ -4019,12 +4036,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .group_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* all_check */
@@ -4034,12 +4051,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/checkBox.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/checkBox.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .all_check input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* favorite check */
@@ -4049,12 +4066,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
@@ -4151,12 +4168,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .list_inner div input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* 의료진선택 즐겨찾기 */
@@ -4166,12 +4183,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
@@ -4428,16 +4445,16 @@ textarea::-webkit-scrollbar-button {
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
-
+/* 
 .pop.full_vital .ecg .bell_name input[type="checkbox"]+label span{
     filter: invert(59%) sepia(39%) saturate(4799%) hue-rotate(90deg) brightness(123%) contrast(112%);
 }
 
 .pop.full_vital .sp .bell_name input[type="checkbox"]+label span{
-    background: url('/img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_sp_alarm.png') no-repeat 0 0px / contain;
 }
 
 .pop.full_vital .resp .bell_name input[type="checkbox"]+label span{
@@ -4445,9 +4462,9 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.full_vital .bell_name input[type='checkbox']:checked+label span{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
-}
+} */
 
 .pop.full_vital .bell_num div{
     margin-top: 9px;
@@ -4487,7 +4504,7 @@ textarea::-webkit-scrollbar-button {
     height: 24px;
     margin: -3px 0 0 7px;
     vertical-align: middle;
-    background: url(/img/icon/btn_alarmOn.svg) no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/icon/btn_alarmOn.svg) no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
@@ -4555,13 +4572,13 @@ textarea::-webkit-scrollbar-button {
 
 .pop.full_picture .swiper-button-next{
     width: 64px;
-    background: url('/img/icon/btn_next.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_next.png') no-repeat 0 0px / contain;
     right: -128px;
 }
 
 .pop.full_picture .swiper-button-prev{
     width: 64px;
-    background: url('/img/icon/btn_pre.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_pre.png') no-repeat 0 0px / contain;
     left: -105px;
     cursor: pointer;
 }
@@ -4698,13 +4715,13 @@ textarea::-webkit-scrollbar-button {
 
 .pop.doc_full .swiper-button-prev{
     left: 0;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg);
 }
 
 .pop.doc_full .swiper-button-next{
     right: 0;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
 }
 
 .pop.doc_full .btn_close{
@@ -4757,6 +4774,7 @@ textarea::-webkit-scrollbar-button {
     width: 1380px;
     height: 100vh;
     padding: 0;
+    overflow: hidden;
 }
 
 .pop.full_pacs .picture_view{
@@ -4773,12 +4791,12 @@ textarea::-webkit-scrollbar-button {
 
 .pop.full_pacs .swiper-button-next{
     right: 64px;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px/ contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px/ contain;
 }
 
 .pop.full_pacs .swiper-button-prev{
     left: 64px;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px/ contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px/ contain;
     transform: rotate(180deg);
 }
 
