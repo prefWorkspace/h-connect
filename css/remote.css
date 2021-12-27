@@ -1809,12 +1809,13 @@ img{
 .study_list{
     width: 100%;
     height: 720px;
-    padding: 16px;
+    padding: 16px 32px;
     background: #fff;
 }
 
 .study_list .title{
     height: 96px;
+    padding: 16px 16px 25px;
     border-bottom: 1px solid #eee;
     background: none;
     display: block;
@@ -2105,7 +2106,7 @@ img{
     border-radius: 4px;
     border: 1px solid #fff;
     cursor: pointer;
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
     z-index: 2;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
@@ -2266,7 +2267,7 @@ img{
     margin: 4px 0 0;
 }
 
-.tab .patient_view .btn_list button{
+.tab .patient_view> .title .btn_list button{
     height: 40px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -2283,8 +2284,9 @@ img{
     background: none;
 }
 
-.tab .several .title{
+.tab .several> div> .title{
     border-radius: 0;
+    background: #007A94;
 }
 
 .tab .several .vital{
@@ -2297,4 +2299,184 @@ img{
 
 .tab .vital .graph > div > :first-child div{
     width: 1172px;
+    height: 70px;
+}
+
+.tab .vital .ecg{
+    height: 104px;
+    justify-content: space-between;
+}
+
+.tab .vital .ecg_graph> div{
+    width: 1172px;
+}
+
+.tab #tab-2 .ecg_graph p,
+.tab #tab-3 .ecg_graph p,
+.tab #tab-4 .ecg_graph p{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.tab .tabular_table .table_title .date_time{
+    margin-right: 83px;
+}
+
+.tab .tabular_table .table_title p{
+    margin-right: 55px;
+}
+
+.tab .graphical .hr_line{
+    width: 1296px;
+}
+
+.tab .cont .event .table_body{
+    height: 575px;
+}
+
+.tab .cont .graphical .hr_time> p {
+    margin-right: 255px;
+}
+
+.tab .cont .graphical .hr_time> :last-child{
+    margin: 0;
+}
+
+.tab .cont .graphical .hr_img{
+    left: 536px;
+}
+
+.tab .tabular_table .table_title .alarm_des{
+    margin-right: 300px;
+}
+
+.tab .table_body .table_content .ecg .ecg_graph> div{
+    width: 1172px;
+}
+
+.tab .several .pacs{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+}
+
+.tab .study_list{
+    height: 800px;
+    border-radius: 0;
+}
+
+.tab .pacs .slide{
+    height: 738px;
+}
+
+.tab .several .pacs_view .btn_list .send{
+    background: #ccc;
+    color: #888;
+}
+
+.tab .pacs .slide .pacs_big{
+    width: 884px;
+    height: 576px;
+}
+
+.tab .lab{
+    width: 100%;
+    height: 839px;
+    border-radius: 0;
+}
+
+.tab .several .inner {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 0;
+}
+
+/* .tab .inner .cont{
+    height: 100%;
+} */
+
+.tab .inner .cont{
+    height: 800px;
+}
+
+.tab .inner .cont .cont_wrap .list,
+.tab .inner .cont .cont_wrap .cont{
+    height: 650px;
+}
+
+.tab .inner .cont .cont_wrap .cont{
+    width: 704px;
+    margin-left: 48px;
+}
+
+.tab .inner .cont .cont_wrap{
+    justify-content: initial;
+}
+
+/* scroll */
+.scroll .wrap_inner{
+    padding: 0;
+    display: flex;
+}
+
+.scroll .patient_view> .title{
+    margin-bottom: 0;
+}
+
+.scroll .several{
+    height: 837px;
+    overflow-y: scroll;
+}
+
+.scroll .several::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll .several> div{
+    width: 100%;
+    height: 840px;
+    position: initial;
+    border-radius: 0;
+}
+
+.scroll .several .title{
+    border-radius: 0;
+}
+
+.scroll .several .pacs .pacs_view,
+.scroll .several .pacs .study_list{
+    height: 100%;
+}
+
+.scroll .pacs .slide .pacs_big{
+    width: 884px;
+    height: 576px;
+}
+
+.scroll .inner .cont{
+    height: 100%;
+}
+
+.scroll .vital .graph> div> :first-child div{
+    width: 1170px;
+}
+
+.pulse .time img{
+    filter: invert(0%) sepia(26%) saturate(5140%) hue-rotate(132deg) brightness(103%) contrast(105%);
+}
+
+.scroll .inner .cont .cont_wrap{
+    justify-content: initial;
+}
+
+.scroll .inner .cont .cont_wrap .list{
+    height: 648px;
+}
+
+.scroll .inner .cont .cont_wrap .cont{
+    height: 648px;
+    margin-left: 48px;
 }

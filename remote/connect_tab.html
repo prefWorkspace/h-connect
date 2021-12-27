@@ -230,7 +230,7 @@
         </header>
 
         <!--콘텐츠-->
-        <div id="wrap_content" class="remote tab">
+        <div id="wrap_content" class="remote scroll">
             <div class="wrap_inner">
                 <!-- 메세지 -->
                 <section class="section left emer_message message">
@@ -578,7 +578,7 @@
                             <button type="button" class="btn_pacs">PACS</button>
                             <button type="button" class="btn_lab">LAB 조회</button>
                             <button type="button" class="btn_emr">EMR 조회</button>
-                            <button type="button" class="btn_ocs" disabled>OCS 조회</button>
+                            <button type="button" class="btn_ocs">OCS 조회</button>
                         </div>
 
                         <div class="view_list">
@@ -612,30 +612,10 @@
                     <!-- several -->
                     <div class="tab-content several">
                         <!-- vital -->
-                        <div class="vital">
+                        <div class="vital section" style="display: none;">
                             <!-- 타이틀 -->
                             <div class="title">
                                 <p>환자 모니터링. 김환자 (63. 남). Patient ID - Patient type</p>
-
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_close">
-                                        <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
-                                        </div>
-                                    </button>
-                                </div>
                             </div>
 
                             <!-- 내용 -->
@@ -2016,29 +1996,9 @@
                         </div>
 
                         <!-- pacs -->
-                        <div class="pacs" style="display: none;">
+                        <div class="pacs section" style="display: none;">
                             <div class="title">
                                 <p>PACS. 김환자 (63. 남). Patient ID - Patient type</p>
-                                
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_close">
-                                        <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
-                                        </div>
-                                    </button>
-                                </div>
                             </div>
 
                             <div class="pacs_inner">
@@ -2127,7 +2087,7 @@
                                                 <span>21.08.15.</span>
                                                 <span>10:35:25.</span>
                                                 <span>CR CHEST.CHEST.CR.</span>
-                                                <span>185 imgages</span>
+                                                <span>185 images</span>
                                             </h3>
                                         </div>
 
@@ -2403,29 +2363,9 @@
                         </div>
 
                         <!-- lab -->
-                        <div class="lab inner" style="display: none;">
+                        <div class="lab section inner" style="display: block;">
                             <div class="title">
                                 <p>LAB 조회. 김환자 (63. 남). Patient ID - Patient type</p>
-                                
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_close">
-                                        <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
-                                        </div>
-                                    </button>
-                                </div>
                             </div>
 
                             <div class="cont">
@@ -2448,29 +2388,9 @@
                         </div>
 
                         <!-- emr -->
-                        <div class="emr inner" style="display: none;">
+                        <div class="emr section inner" style="display: none;">
                             <div class="title">
-                                <p>emr 조회. 김환자 (63. 남). Patient ID - Patient type</p>
-                                
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_close">
-                                        <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
-                                        </div>
-                                    </button>
-                                </div>
+                                <p>EMR 조회. 김환자 (63. 남). Patient ID - Patient type</p>
                             </div>
 
                             <div class="cont">
@@ -2493,29 +2413,9 @@
                         </div>
 
                         <!-- ocs -->
-                        <div class="ocs inner" style="display: none;">
+                        <div class="ocs section inner" style="display: none;">
                             <div class="title">
-                                <p>ocs 조회. 김환자 (63. 남). Patient ID - Patient type</p>
-                                
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-
-                                    <button type="button" class="btn_close">
-                                        <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
-                                        </div>
-                                    </button>
-                                </div>
+                                <p>OCS 조회. 김환자 (63. 남). Patient ID - Patient type</p>
                             </div>
 
                             <div class="cont">

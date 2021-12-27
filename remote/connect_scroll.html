@@ -139,7 +139,7 @@
 
     <!-- 메세지창에서 작성한 이미지 보기 -->
     <div class="pop view you_send">
-        <div class="overlay" >
+        <div class="overlay">
             <div class="pop_cont">
                 <div class="pop_header">
                     <div class="header_inner">
@@ -230,7 +230,7 @@
         </header>
 
         <!--콘텐츠-->
-        <div id="wrap_content" class="remote default">
+        <div id="wrap_content" class="remote scroll">
             <div class="wrap_inner">
                 <!-- 메세지 -->
                 <section class="section left emer_message message">
@@ -587,7 +587,7 @@
                             <div>
                                 <!-- 탭메뉴 -->
                                 <ul class="tabs">
-                                    <li class="link active" onclick="location.href='connect.html'">
+                                    <li class="link" onclick="location.href='connect.html'">
                                         <div>
                                             <img src="/img/emergency/several.svg" alt="여러개 탭의 아이콘">
                                         </div>
@@ -599,7 +599,7 @@
                                         </div>
                                     </li>
 
-                                    <li class="link" onclick="location.href='connect_scroll.html'">
+                                    <li class="link active" onclick="location.href='connect_scroll.html'">
                                         <div>
                                             <img src="/img/emergency/scroll.svg" alt="스크롤되는 탭 아이콘">
                                         </div>
@@ -617,19 +617,7 @@
                             <div class="title">
                                 <p>환자 모니터링. 김환자 (63. 남). Patient ID - Patient type</p>
 
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
+                                <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
                                             <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
@@ -745,95 +733,98 @@
                                             </div>
                                      
                                             <div class="control">
-                                                <div class="ews">
-                                                    <div class="bell_name">
-                                                        <p>EWS</p>
+                                                <div>
+                                                    <div class="ews">
+                                                        <div class="bell_name">
+                                                            <p>EWS</p>
+                                                            
+                                                            <input type="checkbox" id="ews_mute">
+                                                            <label for="ews_mute">
+                                                            <span></span>
+                                                            </label>
+                                                        </div>
+                        
+                                                        <div class="bell_num">
+                                                            <p>3</p>
+                        
+                                                            <div>
+                                                                <div>
+                                                                    <img src="/img/icon/up.svg" alt="위를 향하는 화살표">
+                                                                </div>
+                        
+                                                                <div>
+                                                                    <img src="/img/icon/down.svg" alt="아래를 향하는 화살표">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                        
+                                                    <div class="mmhg">                                                    
+                                                        <div class="bell_name">
+                                                            <p>NBP.mmHg</p>
+                                                        </div>
+                        
+                                                        <div class="bell_num">
+                                                            <div>
+                                                                <p>160</p>
+                                                                <p>90</p>
+                                                            </div>
+                        
+                                                            <p>128/77 (94)</p>
+                                                        </div>   
+    
+                                                        <div class="time">
+                                                            <div>
+                                                                <img src="/img/icon/clock.svg" alt="시계 아이콘">
+                                                            </div>
+                        
+                                                            <p>
+                                                                <span>21</span>.
+                                                                <span>09</span>.
+                                                                <span>15</span>.
+                                                            </p>
+                        
+                                                            <p>
+                                                                <span>21</span>:
+                                                                <span>10</span>
+                                                            </p>
+                                                        </div>                                 
+                                                    </div>
                                                         
-                                                        <input type="checkbox" id="ews_mute">
-                                                        <label for="ews_mute">
-                                                        <span></span>
-                                                        </label>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <p>3</p>
-                    
-                                                        <div>
+                                                    <div class="pulse">
+                                                        <div class="bell_name">
+                                                            <p>Pulse.bpm</p>
+                                                        </div>
+                        
+                                                        <div class="bell_num">
                                                             <div>
-                                                                <img src="/img/icon/up.svg" alt="위를 향하는 화살표">
+                                                                <p>120</p>
+                                                                <p>50</p>
                                                             </div>
-                    
+                        
+                                                            <p>184</p>
+                                                         </div> 
+    
+                                                        <div class="time">
                                                             <div>
-                                                                <img src="/img/icon/down.svg" alt="아래를 향하는 화살표">
+                                                                <img src="/img/icon/clock.svg" alt="시계 아이콘">
                                                             </div>
-                                                        </div>
+                        
+                                                            <p>
+                                                                <span>21</span>.
+                                                                <span>09</span>.
+                                                                <span>15</span>.
+                                                            </p>
+                        
+                                                            <p>
+                                                                <span>21</span>:
+                                                                <span>10</span>
+                                                            </p>
+                                                        </div>                                      
                                                     </div>
+    
                                                 </div>
-                    
-                                                <div class="mmhg">                                                    
-                                                    <div class="bell_name">
-                                                        <p>NBP.mmHg</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>160</p>
-                                                            <p>90</p>
-                                                        </div>
-                    
-                                                        <p>128/77 (94)</p>
-                                                    </div>   
-
-                                                    <div class="time">
-                                                        <div>
-                                                            <img src="/img/icon/clock.svg" alt="시계 아이콘">
-                                                        </div>
-                    
-                                                        <p>
-                                                            <span>21</span>.
-                                                            <span>09</span>.
-                                                            <span>15</span>.
-                                                        </p>
-                    
-                                                        <p>
-                                                            <span>21</span>:
-                                                            <span>10</span>
-                                                        </p>
-                                                    </div>                                 
-                                                </div>
-                                                    
-                                                <div class="pulse">
-                                                    <div class="bell_name">
-                                                        <p>Pulse.bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>184</p>
-                                                     </div> 
-
-                                                    <div class="time">
-                                                        <div>
-                                                            <img src="/img/icon/clock.svg" alt="시계 아이콘">
-                                                        </div>
-                    
-                                                        <p>
-                                                            <span>21</span>.
-                                                            <span>09</span>.
-                                                            <span>15</span>.
-                                                        </p>
-                    
-                                                        <p>
-                                                            <span>21</span>:
-                                                            <span>10</span>
-                                                        </p>
-                                                    </div>                                      
-                                                </div>
-
+                                               
                                                 <div class="temp">
                                                     <div class="bell_name">
                                                         <p>Temp.°C</p>
@@ -854,7 +845,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
 
                                         <!-- Tabular Trend -->
@@ -2020,19 +2010,7 @@
                             <div class="title">
                                 <p>PACS. 김환자 (63. 남). Patient ID - Patient type</p>
                                 
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
+                                <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
                                             <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
@@ -2127,7 +2105,7 @@
                                                 <span>21.08.15.</span>
                                                 <span>10:35:25.</span>
                                                 <span>CR CHEST.CHEST.CR.</span>
-                                                <span>185 imgages</span>
+                                                <span>185 images</span>
                                             </h3>
                                         </div>
 
@@ -2388,14 +2366,6 @@
                                                     <div class="swiper-pagination"></div>
                                                 </div>
                                             </div>
-
-
-                                            <button type="button" class="last" onclick="test()"></button>
-                                            <!-- <div class="last" onclick="test()"></div> -->
-                                            <div class="first"></div>
-                                <!-- 
-                                            <div class="swiper-button-next last"></div>
-                                            <div class="swiper-button-prev first"></div> -->
                                         </div>
                                     </div> 
                                 </div>  
@@ -2407,19 +2377,7 @@
                             <div class="title">
                                 <p>LAB 조회. 김환자 (63. 남). Patient ID - Patient type</p>
                                 
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
+                                <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
                                             <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
@@ -2452,19 +2410,7 @@
                             <div class="title">
                                 <p>emr 조회. 김환자 (63. 남). Patient ID - Patient type</p>
                                 
-                                <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-    
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-    
+                                <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
                                             <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
@@ -2498,18 +2444,6 @@
                                 <p>ocs 조회. 김환자 (63. 남). Patient ID - Patient type</p>
                                 
                                 <div class="btn_list">
-                                    <button type="button" class="btn_fold">
-                                        <div>
-                                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
-                                        </div>
-                                    </button>
-
-                                    <button type="button" class="btn_full">
-                                        <div>
-                                            <img src="/img/icon/nurse/full.svg" alt="네모 아이콘">
-                                        </div>
-                                    </button>
-
                                     <button type="button" class="btn_close">
                                         <div>
                                             <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
@@ -2543,7 +2477,6 @@
 
     </div>
     <!--// end wrap-->
-
     
     <script>
         const label = document.querySelector('.line_label');

@@ -1219,69 +1219,76 @@ $('.doctor .nurse_send').on('click', function(){
     })
 
     $('.pacs .list .btn_list .send').on('click', function(){
-        $('.pacs .list .btn_list').addClass('on');
+        $('.pacs .list .btn_list').toggleClass('on');
         $('.pacs .select_send').toggle();
     })
     
     // 버튼 눌러서 띄우기
-    $('.default .patient_view .btn_list .btn_vital').on('click', function(){
-        $('.several .vital').show();
+    $('.remote .patient_view .btn_list .btn_vital').on('click', function(){
+        $('.remote .vital').show();
+        $('.remote .several .section').not('.remote .vital').hide();
     })
-    $('.default .patient_view .btn_list .btn_pacs').on('click', function(){
-        $('.several .pacs').show();
+    $('.remote .patient_view .btn_list .btn_pacs').on('click', function(){
+        $('.remote .pacs').show();
+        $('.remote .several .section').not('.remote .pacs').hide();
     })
-    $('.default .patient_view .btn_list .btn_lab').on('click', function(){
-        $('.several .lab').show();
+    $('.remote .patient_view .btn_list .btn_lab').on('click', function(){
+        $('.remote .lab').show();
+        $('.remote .several .section').not('.remote .lab').hide();
     })
-    $('.default .patient_view .btn_list .btn_emr').on('click', function(){
-        $('.several .emr').show();
+    $('.remote .patient_view .btn_list .btn_emr').on('click', function(){
+        $('.remote .emr').show();
+        $('.remote .several .section').not('.remote .emr').hide();
+    })
+    $('.remote .patient_view .btn_list .btn_ocs').on('click', function(){
+        $('.remote .ocs').show();
+        $('.remote .several .section').not('.remote .ocs').hide();
     })
 
     // btn_fold
-    $('.default .pacs .btn_fold').on('click', function(){
+    $('.remote .pacs .btn_fold').on('click', function(){
         $('.pacs .pacs_inner').toggle();
     })
-    $('.default .vital .btn_fold').on('click', function(){
+    $('.remote .vital .btn_fold').on('click', function(){
         $('.vital .cont').toggle();
     })
-    $('.default .lab .btn_fold').on('click', function(){
+    $('.remote .lab .btn_fold').on('click', function(){
         $('.lab .cont').toggle();
     })
-    $('.default .emr .btn_fold').on('click', function(){
+    $('.remote .emr .btn_fold').on('click', function(){
         $('.emr .cont').toggle();
     })
-    $('.default .ocs .btn_fold').on('click', function(){
+    $('.remote .ocs .btn_fold').on('click', function(){
         $('.ocs .cont').toggle();
     })
     
 
     // btn_full
-    $('.default .pacs .btn_full').on('click', function(){
+    $('.remote .pacs .btn_full').on('click', function(){
         $('.pacs').toggleClass('on');
     })
-    $('.default .vital .btn_full').on('click', function(){
+    $('.remote .vital .btn_full').on('click', function(){
         $('.vital').toggleClass('on');
     })
-    $('.default .lab .btn_full').on('click', function(){
+    $('.remote .lab .btn_full').on('click', function(){
         $('.lab').toggleClass('on');
     })
-    $('.default .emr .btn_full').on('click', function(){
+    $('.remote .emr .btn_full').on('click', function(){
         $('.emr').toggleClass('on');
     })
-    $('.default .ocs .btn_full').on('click', function(){
+    $('.remote .ocs .btn_full').on('click', function(){
         $('.ocs').toggleClass('on');
     })
 
 
-
     // close 버튼 누름
-    $('.default .lab .title .btn_close').on('click', function(){
+    $('.remote .lab .title .btn_close').on('click', function(){
         $('.lab').hide();
     })
-    $('.default .pacs .title .btn_close').on('click', function(){
+    $('.remote .pacs .title .btn_close').on('click', function(){
         $('.pacs').hide();
     })
-    $('.default .emr .title .btn_close').on('click', function(){
+    $('.remote .emr .title .btn_close').on('click', function(){
         $('.emr').hide();
     })
 
@@ -1289,6 +1296,12 @@ $('.doctor .nurse_send').on('click', function(){
     $('.bottom .file div').on('click', function(){
         $('.pop.you_send .overlay').show();
     })
+
+    $('.remote .patient_view button').on('click', function(){
+        $(this).addClass('on');
+        $('.remote .patient_view button').not(this).removeClass('on');
+    })
+
 
 
 
