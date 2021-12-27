@@ -29,6 +29,10 @@ img{
     margin: 0;
 }
 
+.doc_connect button:hover{
+    background: #eee;
+}
+
 
 /* remote main */
 .remote{
@@ -194,6 +198,10 @@ img{
     margin-right: 8px;
 }
 
+.message .title .meet_menu div{
+    width: 15px;
+}
+
 .message .title .menu img{
     filter: invert(68%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(106%) contrast(105%);
 }
@@ -207,6 +215,10 @@ img{
     filter: invert(112%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(257%) contrast(142%);
 }
 
+.message .title .meet_menu.on img{
+    filter: invert(30%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(257%) contrast(142%);
+}
+
 .message .title .right{
     height: 38px;
     display: flex;
@@ -216,6 +228,7 @@ img{
 .message .title .cam_control{
     margin-right: 16px;
     display: flex;
+    position: relative;
 }
 
 .message .title .cam_control button{
@@ -228,9 +241,16 @@ img{
 
 .message .title .cam_control button:hover{
     background: #004F60;
+    transition: .3S;
 }
 
-.message .title .cam_control button div{
+.message .title .cam_control button:hover .modul{
+    /* display: block; */
+    opacity: 1;
+}
+
+.message .title .cam_control button div,
+.message .title .cam_control .dim div{
     width: 12px;
     height: 16px;
     margin: 0 auto;
@@ -253,6 +273,77 @@ img{
     filter: none;
 }
 
+.message .title .cam_control .dim{
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    background: #666;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    display: none;
+    cursor: pointer;
+}
+
+.message .title .cam_control .dim_mic{
+    left: 36px;
+}
+
+.message .title .cam_control .dim img{
+    filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(55deg) brightness(96%) contrast(94%);
+}
+
+.message .title .btn_speaker:hover .modul{
+    display: block;
+    opacity: 1;
+}
+
+.message .title .modul{
+    position: absolute;
+    top: 40px;
+    right: -65px;
+    width: 168px;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background: #eee;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+}
+
+.message .title .modul progress{
+    width: 100px;
+    height: 4px;
+    position: relative;
+}
+
+.message .title .modul progress::-webkit-progress-bar{
+    background: #ccc;
+}
+
+.message .title .modul progress::-webkit-progress-value {
+    background-color: #007A94;
+}
+
+.message .title .modul progress::after{
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 8px;
+    background: url(/img/icon/down.svg) no-repeat;
+    filter: invert(18%) sepia(66%) saturate(5427%) hue-rotate(179deg) brightness(47%) contrast(101%);
+    transform: rotate(-45deg);
+    top: 9px;
+    left: 45px;
+}
+
+.message .title .modul p{
+    font-size: 14px;
+    color: #007A94;
+}
 
 .message .title .right .btn_list{
     display: flex;
@@ -409,16 +500,6 @@ img{
     /* height: 696px; */
 }
 
-/* .data_inner> div::-webkit-scrollbar{
-    width: 8px;
-}
-
-.data_inner> div::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background: #C56F97;
-} */
-
-
 .chatting{
     width: 100%;
     padding: 16px;
@@ -459,11 +540,26 @@ img{
     margin-right: 4px;
     border-radius: 4px;
     border: 2px solid #FF8800;
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: relative;
 }
 
-.bottom .file div:hover{
+.bottom .file div::after{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 48px;
+    top: -3px;
+    left: -2px;
+    border-radius: 4px;
     background: rgba(255, 136, 0, 0.2);
+    position: absolute;
+    opacity: 0;
+}
+
+.bottom .file div:hover::after{
+    opacity: 1;
+    transition: .2s;
 }
 
 .bottom p{
@@ -472,6 +568,12 @@ img{
 
 .no_check .top p{
     color: #007A94;
+}
+
+/* 회의록 */
+.meet{
+    height: 792px;
+    background: #fff;
 }
 
 
@@ -554,8 +656,8 @@ img{
 
 .patient_view> .title{
     width: 100%;
-    height: 40px;
-    padding: 7px 16px;
+    height: 48px;
+    padding: 8px 16px;
     margin-bottom: 4px;
     background: #444;
     display: flex;
@@ -563,13 +665,19 @@ img{
 }
 
 .patient_view .btn_list button{
-    width: 80px;
-    height: 24px;
+    width: 96px;
+    /* height: 24px; */
+    padding: 8px;
     margin-right: 8px;
     border-radius: 4px;
     font-size: 12px;
     color: #fff;
     background: #007A94 ;
+}
+
+.patient_view .btn_list button:disabled{
+    background: #666;
+    color: #888;
 }
 
 .patient_view .btn_list> :last-child{
@@ -625,7 +733,7 @@ img{
 /* 탭으로 보기 */
 .several{
     width: 100%;
-    height: 853px;
+    height: 845px;
     position: relative;
 }
 
@@ -633,7 +741,7 @@ img{
     width: 708px;
     height: 650px;
     padding: 0;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); */
     border-radius: 8px;
     overflow: hidden;
 }
@@ -867,8 +975,8 @@ img{
 .vital{
     overflow-y: initial;
     position: absolute;
-    top: 20px;
-    left: 24;
+    top: 80px;
+    left: 24px;
 }
 
 .vital ul.tabs{
@@ -1033,6 +1141,64 @@ img{
 .vital .bell_name input{
     display: none;
 }
+
+
+.vital.on{
+    width: 100%;
+    height: 100%;
+    left:0;
+    top: 0;
+}
+
+.vital.on .graph> div> :first-child div{
+    width: 1200px;
+}
+
+.vital.on .ecg{
+    justify-content: space-between;
+}
+
+.vital.on .ecg_graph{
+    width: 1200px;
+    height: 100px;
+}
+
+.vital.on #tab-2 .ecg_graph p {
+    margin-bottom: 14px;
+}
+
+.vital.on .graphical .hr_line{
+    width: 1300px;
+}
+
+.vital.on .cont .graphical .hr_time> p {
+    margin-right: 255px;
+    display: inline-block;
+}
+
+.vital.on .cont .graphical .hr_time> :last-child{
+    margin: 0;
+}
+
+.vital.on .cont .graphical .hr_img{
+    left: 505px;
+}
+
+.vital.on .ecg_graph> div {
+    width: 100%;
+}
+
+.vital.on .ecg_graph p{
+    margin-bottom: 15px;
+}
+
+.vital.on .table_body .table_content .ecg .ecg_graph> div{
+    width: 1200px;
+}
+
+
+
+
 
 /* tabular trend */
 #tab-2 .ecg_graph p{
@@ -1639,15 +1805,6 @@ img{
     height: 692px;
 }
 
-
-.several .pacs{
-    width: 1080px;
-    height: 720px;
-    background: #111;
-}
-
-
-
 /* study_list */
 .study_list{
     width: 100%;
@@ -1728,6 +1885,23 @@ img{
 }
 
 /* .pacs  */
+.several .pacs{
+    width: 1080px;
+    height: 720px;
+    /* background: #111; */
+    position: absolute;
+    right: 10px;
+}
+
+.pacs .pacs_inner{
+    height: 100%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.pacs .pacs_view{
+    display: none;
+}
+
 .pacs .pacs_view .list{
     height: 64px;
     padding: 16px;
@@ -1770,12 +1944,14 @@ img{
     border-radius: 4px;
 }
 
+.pacs .list .btn_list.on{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 .pacs .list .btn_list button{
     width: 96px;
     height: 32px;
-}
-
-.pacs .list .btn_list .send{
     background: #ccc;
     color: #888;
 }
@@ -1784,6 +1960,12 @@ img{
     padding: 10px 8px;
     display: flex;
     align-items: center;
+    background: #007A94;
+    color: #fff;
+}
+
+.pacs .list .btn_list .full:hover{
+    background: #004F60;
 }
 
 .pacs .list .btn_list .full div{
@@ -1792,12 +1974,17 @@ img{
     margin-right: 8px;
 }
 
-.pacs .select_send{
+.pacs .pacs_view .list .select_send{
     height: 48px;
     padding: 8px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     background: #fff;
+    display: none;
+}
+
+.pacs .pacs_view .list .select_inner{
+    height: 32px;
 }
 
 .pacs .select_send .img_container{
@@ -1808,16 +1995,21 @@ img{
     position: relative;
 }
 
-.pacs .select_send> div{
+.pacs .select_inner> div:hover img{
+    filter: brightness(70%);
+    transition: .3s;
+}
+
+.pacs .select_inner> div:hover .delete{
+    display: block;
+}
+
+.pacs .select_send> div> div{
     position: relative;
     margin-right: 4px;
     /* border: 2px solid #fff; */
     border-radius: 4px;
     border: 2px solid #940045;
-}
-
-.pacs .select_send> div:hover{
-    background: red;
 }
 
 .pacs .select_send> :last-child{margin: 0;}
@@ -1834,6 +2026,12 @@ img{
     border-radius: 50%;
     background: #940045;
     display: none;
+}
+
+.pacs .slide{
+    /* height: 620px; */
+    padding-bottom: 30px;
+    background: #000;
 }
 
 .pacs .slide .pacs_big{
@@ -1927,4 +2125,176 @@ img{
     left: 6%;
     font-size: 12px;
     color: #fff;
+}
+
+.several .pacs.on{
+    width: 100%;
+    height: 835px;
+    right: 0;
+}
+
+.several .pacs.on .study_list{
+    height: 100%;
+}
+
+.pacs.on .pacs_small{
+    margin-top: 50px;
+}
+
+.pacs.on .slide .pacs_big {
+    width: 700px;
+    height: 507px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+/* lab */
+.several .inner{
+    width: 1080px;
+}
+
+.inner .cont {
+    padding: 16px 32px;
+    background: #fff;
+}
+
+.inner .cont .title{
+    height: 96px;
+    padding: 16px 16px 25px;
+    background: #fff;
+    border-radius: 0;
+    display: block;
+    justify-content: initial;
+    border-bottom: 1px solid #eee;
+}
+
+.inner .cont .title p{
+    margin-top: 13px;
+    color: #444;
+}
+
+.inner .cont .cont_wrap {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inner .cont .cont_wrap > div{
+    height: 450px;
+    padding: 32px;
+    background: rgba(255, 0, 119, 0.5);
+    overflow-y: scroll;
+}
+
+.inner .cont .cont_wrap > div::-webkit-scrollbar{
+    width: 8px;
+}
+
+.inner .cont .cont_wrap > div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.inner .cont .cont_wrap .list{
+    width: 320px;
+}
+
+.inner .cont .cont_wrap .cont{
+    width: 680px;
+}
+
+
+.several .inner.on{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.inner.on .cont{
+    height: 797px;
+}
+
+.inner.on .cont .cont_wrap{
+    justify-content: initial;
+}
+
+.inner.on .cont .cont_wrap .list{
+    width: 344px;
+    height: 650px;
+}
+
+.inner.on .cont .cont_wrap .cont{
+    width: 704px;
+    height: 650px;
+    margin-left: 48px;
+}
+/* emr */
+.emr{
+    position: absolute;
+    top: 30px;
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+
+/* connect_tab */
+.tab .wrap_inner{
+    padding: 0;
+    display: flex;
+}
+
+.tab .message .title{
+    margin-top: 4px;
+}
+
+.tab .patient_view> .title{
+    padding: 8px 16px 0;
+    margin: 4px 0 0;
+}
+
+.tab .patient_view .btn_list button{
+    height: 40px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background:#666;
+    color: #888;
+}
+
+.tab .patient_view .btn_list button.on{
+    background: #007A94;
+    color: #fff;
+}
+
+.tab .several .btn_list button{
+    background: none;
+}
+
+.tab .several .title{
+    border-radius: 0;
+}
+
+.tab .several .vital{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+}
+
+.tab .vital .graph > div > :first-child div{
+    width: 1172px;
 }

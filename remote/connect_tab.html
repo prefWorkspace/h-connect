@@ -230,7 +230,7 @@
         </header>
 
         <!--콘텐츠-->
-        <div id="wrap_content" class="remote default">
+        <div id="wrap_content" class="remote tab">
             <div class="wrap_inner">
                 <!-- 메세지 -->
                 <section class="section left emer_message message">
@@ -574,7 +574,7 @@
                 <section class="section right patient_view">
                     <div class="title">
                         <div class="btn_list">
-                            <button type="button" class="btn_vital">모니터링</button>
+                            <button type="button" class="btn_vital on">모니터링</button>
                             <button type="button" class="btn_pacs">PACS</button>
                             <button type="button" class="btn_lab">LAB 조회</button>
                             <button type="button" class="btn_emr">EMR 조회</button>
@@ -587,13 +587,13 @@
                             <div>
                                 <!-- 탭메뉴 -->
                                 <ul class="tabs">
-                                    <li class="link active" onclick="location.href='connect.html'">
+                                    <li class="link" onclick="location.href='connect.html'">
                                         <div>
                                             <img src="/img/emergency/several.svg" alt="여러개 탭의 아이콘">
                                         </div>
                                     </li>
 
-                                    <li class="link" onclick="location.href='connect_tab.html'">
+                                    <li class="link active" onclick="location.href='connect_tab.html'">
                                         <div>
                                             <img src="/img/emergency/tab.svg" alt="탭 아이콘">
                                         </div>
@@ -2016,7 +2016,7 @@
                         </div>
 
                         <!-- pacs -->
-                        <div class="pacs">
+                        <div class="pacs" style="display: none;">
                             <div class="title">
                                 <p>PACS. 김환자 (63. 남). Patient ID - Patient type</p>
                                 
@@ -2403,7 +2403,7 @@
                         </div>
 
                         <!-- lab -->
-                        <div class="lab inner">
+                        <div class="lab inner" style="display: none;">
                             <div class="title">
                                 <p>LAB 조회. 김환자 (63. 남). Patient ID - Patient type</p>
                                 
@@ -2448,7 +2448,7 @@
                         </div>
 
                         <!-- emr -->
-                        <div class="emr inner">
+                        <div class="emr inner" style="display: none;">
                             <div class="title">
                                 <p>emr 조회. 김환자 (63. 남). Patient ID - Patient type</p>
                                 
@@ -2544,7 +2544,6 @@
     </div>
     <!--// end wrap-->
 
-    
     <script>
         const label = document.querySelector('.line_label');
         const options = document.querySelectorAll('.line_option');

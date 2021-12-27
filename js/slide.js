@@ -132,3 +132,33 @@ $(function(){
 		}
 	});
 });
+
+// 원격협진 페이지 팝업 슬라이드
+$(function(){
+	var swiper9 = new Swiper(".small_view", {
+		spaceBetween: 8,
+		slidesPerView: 3,
+		freeMode: true,
+		watchSlidesProgress: true,
+		slidesPerView: "auto",
+	});
+	
+	var swiper10 = new Swiper(".big_view", {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		pagination:{
+			el: '.swiper-pagination',
+			type: 'fraction',
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '">' + (index + 1) + '</span>';
+			}
+		},
+		thumbs: {
+			swiper: swiper9,
+		}
+	});
+});

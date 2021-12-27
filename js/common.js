@@ -1160,6 +1160,137 @@ $('.doctor .nurse_send').on('click', function(){
         $('.pacs .pacs_view').toggle();
     })
 
+    $('.message .chat_menu').on('click', function(){
+        $('.message .chat').show();
+        $('.message .meet').hide();
+        $(this).addClass('on');
+        $('.message .menu').not(this).removeClass('on');
+    })
+    
+    $('.message .meet_menu').on('click', function(){
+        $('.message .chat').hide();
+        $('.message .meet').show();
+        $(this).addClass('on');
+        $('.message .menu').not(this).removeClass('on');
+    })
+
+    $('.pop.pacs_full .header_inner .color button').on('click', function(){
+        $(this).addClass('on');
+        $('.pop.pacs_full .header_inner .color button').not(this).removeClass('on');
+    })
+
+    // cam_control
+    $('.message .title .btn_cam').on('click', function(){
+        $('.message .title .dim_cam').show();
+    })
+    $('.message .title .dim_cam').on('click', function(){
+        $(this).hide();
+        $('.message .title .btn_cam').show();
+    })
+
+    $('.message .title .btn_mic').on('click', function(){
+        $('.message .title .dim_mic').show();
+    })
+    $('.message .title .dim_mic').on('click', function(){
+        $(this).hide();
+        $('.message .title .btn_mic').show();
+    })
+
+    $('.message .title .btn_speaker').on('click', function(){
+        $('.message .title .dim_speaker').show();
+    })
+    $('.message .title .dim_speaker').on('click', function(){
+        $(this).hide();
+        $('.message .title .btn_speaker').show();
+    })
+
+
+    // $('.message .btn_speaker').on('mouseover', function(){
+    //     $('.message .title .modul').fadeIn();
+    // })
+
+
+    $('.pacs .list .btn_list .full').on('click', function(){
+        $('.pop.pacs_full .overlay').show();
+    })
+
+    $('.pop.pacs_full .btn_no').on('click', function(){
+        $('.pop.pacs_full .overlay').hide();
+    })
+
+    $('.pacs .list .btn_list .send').on('click', function(){
+        $('.pacs .list .btn_list').addClass('on');
+        $('.pacs .select_send').toggle();
+    })
+    
+    // 버튼 눌러서 띄우기
+    $('.default .patient_view .btn_list .btn_vital').on('click', function(){
+        $('.several .vital').show();
+    })
+    $('.default .patient_view .btn_list .btn_pacs').on('click', function(){
+        $('.several .pacs').show();
+    })
+    $('.default .patient_view .btn_list .btn_lab').on('click', function(){
+        $('.several .lab').show();
+    })
+    $('.default .patient_view .btn_list .btn_emr').on('click', function(){
+        $('.several .emr').show();
+    })
+
+    // btn_fold
+    $('.default .pacs .btn_fold').on('click', function(){
+        $('.pacs .pacs_inner').toggle();
+    })
+    $('.default .vital .btn_fold').on('click', function(){
+        $('.vital .cont').toggle();
+    })
+    $('.default .lab .btn_fold').on('click', function(){
+        $('.lab .cont').toggle();
+    })
+    $('.default .emr .btn_fold').on('click', function(){
+        $('.emr .cont').toggle();
+    })
+    $('.default .ocs .btn_fold').on('click', function(){
+        $('.ocs .cont').toggle();
+    })
+    
+
+    // btn_full
+    $('.default .pacs .btn_full').on('click', function(){
+        $('.pacs').toggleClass('on');
+    })
+    $('.default .vital .btn_full').on('click', function(){
+        $('.vital').toggleClass('on');
+    })
+    $('.default .lab .btn_full').on('click', function(){
+        $('.lab').toggleClass('on');
+    })
+    $('.default .emr .btn_full').on('click', function(){
+        $('.emr').toggleClass('on');
+    })
+    $('.default .ocs .btn_full').on('click', function(){
+        $('.ocs').toggleClass('on');
+    })
+
+
+
+    // close 버튼 누름
+    $('.default .lab .title .btn_close').on('click', function(){
+        $('.lab').hide();
+    })
+    $('.default .pacs .title .btn_close').on('click', function(){
+        $('.pacs').hide();
+    })
+    $('.default .emr .title .btn_close').on('click', function(){
+        $('.emr').hide();
+    })
+
+    // 메세지창 작성 이미지 보기
+    $('.bottom .file div').on('click', function(){
+        $('.pop.you_send .overlay').show();
+    })
+
+
 
 });
 
