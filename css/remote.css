@@ -1,7 +1,7 @@
 /* 원격협진 */
 .wrap_inner{
     width: 100%;
-    min-width: 1920px;
+    min-width: 1280px;
     display: initial;
 }
 
@@ -33,11 +33,12 @@ img{
     background: #eee;
 }
 
+/* .ecg p, .sp p, .resp p{font-size: 14px;} */
 
 /* remote main */
 .remote{
     width: 100%;
-    min-width: 1920px;
+    min-width: 1280px;
     height: 100%;
     min-height: calc(100vh - 64px);
     padding-top: 64px;
@@ -231,7 +232,7 @@ img{
     position: relative;
 }
 
-.message .title .cam_control button{
+.message .cam_control button{
     width: 32px;
     height: 32px;
     /* padding: 5px; */
@@ -239,41 +240,41 @@ img{
     background: #007A94;
 }
 
-.message .title .cam_control button:hover{
+.message .cam_control button:hover{
     background: #004F60;
     transition: .3S;
 }
 
-.message .title .cam_control button:hover .modul{
+.message .cam_control button:hover .modul{
     /* display: block; */
     opacity: 1;
 }
 
-.message .title .cam_control button div,
-.message .title .cam_control .dim div{
+.message .cam_control button div,
+.message .cam_control .dim div{
     width: 12px;
     height: 16px;
     margin: 0 auto;
 }
 
-.message .title .cam_control img{
+.message .cam_control img{
     filter: invert(98%) sepia(3%) saturate(2%) hue-rotate(207deg) brightness(260%) contrast(100%);
 }
 
-.message .title .cam_control .btn_mic{
+.message .cam_control .btn_mic{
     margin: 0 4px;
 }
 
-.message .title .cam_control .btn_speaker div{
+.message .cam_control .btn_speaker div{
     width: 16px;
     height: 14px;
 }
 
-.message .title .cam_control .btn_speaker img{
+.message .cam_control .btn_speaker img{
     filter: none;
 }
 
-.message .title .cam_control .dim{
+.message .cam_control .dim{
     width: 32px;
     height: 32px;
     padding: 6px;
@@ -285,20 +286,20 @@ img{
     cursor: pointer;
 }
 
-.message .title .cam_control .dim_mic{
+.message .cam_control .dim_mic{
     left: 36px;
 }
 
-.message .title .cam_control .dim img{
+.message .cam_control .dim img{
     filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(55deg) brightness(96%) contrast(94%);
 }
 
-.message .title .btn_speaker:hover .modul{
+.message .btn_speaker:hover .modul{
     display: block;
     opacity: 1;
 }
 
-.message .title .modul{
+.message .modul{
     position: absolute;
     top: 40px;
     right: -65px;
@@ -314,7 +315,7 @@ img{
     opacity: 0;
 }
 
-.message .title .modul progress{
+.message .modul progress{
     width: 100px;
     height: 4px;
     position: relative;
@@ -369,27 +370,27 @@ img{
     filter: invert(10%) sepia(98%) saturate(917%) hue-rotate(157deg) brightness(94%) contrast(101%);
 }
 
-.message .title .btn_video{
+.message .btn_video{
     background: #fff;
     color: #007A94;
 }
 
-.message .title .btn_video:hover{
+.message .btn_video:hover{
     background: #eee;
 }
 
-.message .title .right .btn_list .btn_novideo{
+.message .btn_list .btn_novideo{
     background: #007A94;
     color: #fff;
     display: none;
 }
 
-.message .title .right .btn_list .btn_novideo div{
+.message .btn_list .btn_novideo div{
     margin-left: 0;
     margin-right: 8px;
 }
 
-.message .title .right .btn_novideo img{
+.message .btn_novideo img{
     transform: rotate(180deg);
     filter: invert(145%) sepia(98%) saturate(917%) hue-rotate(157deg) brightness(253%) contrast(185%);
 }
@@ -650,7 +651,8 @@ img{
 }
 
 .patient_view{
-    width: 1428px;
+    /* width: 1428px; */
+    width: calc(100% - 480px);
     margin-left: 4px;
 }
 
@@ -769,6 +771,7 @@ img{
 .several .title .btn_list button{
     width: 10px;
     height: 10px;
+    padding: 0;
     background: none;
 }
 
@@ -1048,7 +1051,8 @@ img{
 .vital .ecg_graph,
 .vital .sp_graph,
 .vital .resp_graph{
-    height: 100%;
+    width: calc(100% - 160px);
+    height: 104px;
     padding: 8px 16px;
 }
 
@@ -1201,9 +1205,9 @@ img{
 
 
 /* tabular trend */
-#tab-2 .ecg_graph p{
+.tab-content .ecg_graph p{
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .tabular_table .table_title{
@@ -1316,7 +1320,7 @@ img{
 .graphical .hr_line{
     width: 576px;
     margin-bottom: 31px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #888;
 }
 
 .cont .graphical .hr_chart> div> div> :last-child{
@@ -2031,6 +2035,8 @@ img{
 
 .pacs .slide{
     /* height: 620px; */
+    min-height: 620px;
+    height: 100%;
     padding-bottom: 30px;
     background: #000;
 }
@@ -2157,7 +2163,8 @@ img{
 
 /* lab */
 .several .inner{
-    width: 1080px;
+    width: 100%;
+    max-width: 1080px;
 }
 
 .inner .cont {
@@ -2236,6 +2243,7 @@ img{
     height: 650px;
     margin-left: 48px;
 }
+
 /* emr */
 .emr{
     position: absolute;
@@ -2394,10 +2402,6 @@ img{
     border-radius: 0;
 }
 
-/* .tab .inner .cont{
-    height: 100%;
-} */
-
 .tab .inner .cont{
     height: 800px;
 }
@@ -2427,7 +2431,7 @@ img{
 }
 
 .scroll .several{
-    height: 837px;
+    height: 840px;
     overflow-y: scroll;
 }
 
@@ -2442,8 +2446,23 @@ img{
     border-radius: 0;
 }
 
+.scroll .several .vital{
+    height: 592px;
+}
+
+.scroll .cont .event .table_body {
+    height: 312px;
+}
+
 .scroll .several .title{
     border-radius: 0;
+}
+
+.scroll .vital .ecg_graph> div{
+    min-width: 500px;
+    max-width: 1172px;
+    width: 90%;
+    height: 28px;
 }
 
 .scroll .several .pacs .pacs_view,
@@ -2451,9 +2470,18 @@ img{
     height: 100%;
 }
 
+.scroll .vital .ecg{
+    justify-content: space-between;
+}
+
 .scroll .pacs .slide .pacs_big{
-    width: 884px;
-    height: 576px;
+    /* width: 100%; */
+    min-width: 700px;
+    max-width: 884px;
+/* 
+    height: 100%; */
+    min-height: 456px;
+    max-height: 576px;
 }
 
 .scroll .inner .cont{
@@ -2461,7 +2489,9 @@ img{
 }
 
 .scroll .vital .graph> div> :first-child div{
-    width: 1170px;
+    width: 100%;
+    min-width: 578px;
+    max-width: 1170px;
 }
 
 .pulse .time img{
@@ -2479,4 +2509,149 @@ img{
 .scroll .inner .cont .cont_wrap .cont{
     height: 648px;
     margin-left: 48px;
+}
+
+.scroll .tabular_table .table_title p{
+    margin-right: 55px;
+}
+
+.scroll .tabular_table .table_title .date_time {
+    margin-right: 80px;
+}
+
+.scroll .cont .graphical .hr_chart {
+    margin-top: 40px;
+}
+
+.scroll .cont .graphical .hr_time {
+    padding: 13px 0 0;
+}
+
+.scroll .graphical .hr_line{
+    width: 1296px;
+}
+
+.scroll .cont .graphical .hr_time> p {
+    /* margin-right: 253px; */
+    margin-right: 103px;
+}
+
+.scroll .cont .graphical .hr_time> :last-child{margin: 0;}
+
+.scroll .cont .graphical .hr_img {
+    left: 504px;
+}
+
+.scroll .tabular_table .table_title .alarm_des{
+    margin-right: 100px;
+}
+
+.scroll #tab-4 .ecg_graph> div{
+    width: 1172px;
+}
+
+/* multi */
+.multi .wrap_inner{
+    padding: 0;
+}
+
+.multi .header{
+    width: 100%;
+    min-width: 1280px;
+    max-width: 1920px;
+    height: 48px;
+    margin-bottom: 4px;
+    padding: 8px 24px 8px 8px;
+    display: flex;
+    justify-content: space-between;
+    background: #444;
+}
+
+.multi .header div{
+    display: flex;
+    align-items: center;
+}
+
+.multi .header .btn_list button{
+    width: 120px;
+    height: 32px;
+    padding: 0 3px;
+    display: flex;
+    align-items: center;
+}
+
+.multi .header .btn_list div{
+    width: 6px;
+    height: 12px;
+}
+
+.multi .header .btn_list .btn_video{padding: 8px;}
+
+.multi .header .btn_list .btn_video div{
+    margin-left: 8px;
+}
+
+.multi .header .btn_list .btn_video img{
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+}
+
+.multi .header .btn_list .btn_novideo{display: none;}
+
+.multi .header .btn_list .btn_novideo div{
+    margin-right: 8px;
+} 
+
+.multi .header .cam_control{
+    margin-left: 24px;
+}
+
+.multi .header div p{
+    color: #fff;
+}
+
+.multi .selectBox2{
+    width: 160px;
+    height: 32px;
+    margin-left: 16px;
+}
+
+.multi .selectBox2 .optionList{
+    width: 160px;
+    top: 31px;
+}
+
+.multi .selectBox2 .optionList::after{
+    width: 100px;
+    background: #fff;
+}
+
+.multi .label{
+    width: 160px;
+    background: #fff;
+}
+
+.multi .modul{
+    left: 0;
+}
+
+.multi .cam_control .dim_mic {
+    left: 188px;
+}
+
+.multi .cam_control .dim{
+    top: 8px;
+}
+
+
+.multi .cam{
+    height: 840px;
+    display: block;
+}
+
+.multi .bottom_wrap{
+    display: flex;
+}
+
+.multi .view{
+    width: 826px;
 }

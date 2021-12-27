@@ -1144,8 +1144,16 @@ $('.doctor .nurse_send').on('click', function(){
         location.href="connect_screening.html"
     })
 
+    $('.select_case .case_list .row').on('click', function(){
+        location.href="connect.html"
+    })
+
 
     //---------------------- 원격협진  ----------------------//
+    $('.btn_attendee').on('click', function(){
+        $('.pop.remote_attend').toggle();
+    })
+
     $('.remote .btn_video').on('click', function(){
         $('.remote .cam').toggle();
     })
@@ -1180,28 +1188,28 @@ $('.doctor .nurse_send').on('click', function(){
     })
 
     // cam_control
-    $('.message .title .btn_cam').on('click', function(){
-        $('.message .title .dim_cam').show();
+    $('.message .btn_cam').on('click', function(){
+        $('.message .dim_cam').show();
     })
-    $('.message .title .dim_cam').on('click', function(){
+    $('.message .dim_cam').on('click', function(){
         $(this).hide();
-        $('.message .title .btn_cam').show();
+        $('.message .btn_cam').show();
     })
 
-    $('.message .title .btn_mic').on('click', function(){
-        $('.message .title .dim_mic').show();
+    $('.message .btn_mic').on('click', function(){
+        $('.message .dim_mic').show();
     })
-    $('.message .title .dim_mic').on('click', function(){
+    $('.message .dim_mic').on('click', function(){
         $(this).hide();
-        $('.message .title .btn_mic').show();
+        $('.message .btn_mic').show();
     })
 
-    $('.message .title .btn_speaker').on('click', function(){
-        $('.message .title .dim_speaker').show();
+    $('.message .btn_speaker').on('click', function(){
+        $('.message .dim_speaker').show();
     })
-    $('.message .title .dim_speaker').on('click', function(){
+    $('.message .dim_speaker').on('click', function(){
         $(this).hide();
-        $('.message .title .btn_speaker').show();
+        $('.message .btn_speaker').show();
     })
 
 
