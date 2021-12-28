@@ -56,7 +56,7 @@
     border: 1px solid #CCCCCC;
     width: 24px;
     height: 24px;
-    transition: 0.2s all;
+    /* transition: 0.2s all; */
     border-radius: 4px;
 }
 
@@ -82,7 +82,7 @@
     font-size: 14px;
     font-weight: 500;
     color: #CCCCCC;
-    transition: 0.2s all;
+    /* transition: 0.2s all; */
 }
 
 .page_box .page:not(:last-child) {
@@ -155,7 +155,7 @@
     border: 1px solid #CCCCCC;
     background-color: #CCCCCC;
     color: #888888;
-    transition: 0.2s all;
+    /* transition: 0.2s all; */
 }
 
 .radi_box > input[type="radio"]:checked + label {
@@ -218,7 +218,7 @@
 .btn_thead .call_btn {
     width: 80px;
     margin-right: 10px;
-    transition: 0.2s all;
+    /* transition: 0.2s all; */
     color: #fff;
     background-color: #007A94;
     border-color: #007A94;
@@ -264,7 +264,7 @@
     text-align: center;
     background: #CCCCCC;
     pointer-events: none;
-    transition: 0.2s all;
+    /* transition: 0.2s all; */
 }
 
 .btn_thead .call_doc_btn > span {

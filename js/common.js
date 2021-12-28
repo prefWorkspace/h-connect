@@ -537,7 +537,6 @@ $('.cam .btn_cam_off').on('click', function(){
 $('.connect .emer_message .title .btn_video').on('click', function(){
     $('.connect .patient_view' ).width('1272px');
 })
-
 $('.connect .emer_message .title .btn_novideo').on('click', function(){
     $('.connect .patient_view').width('1428px');
 })
@@ -704,12 +703,19 @@ $('.doctor .status .title .btn_new').on('click', function(){
     location.href="remote_new.html";
 })
 
+$('.doctor .schedule_list .row').on('click', function(){
+    $(this).addClass('on');
+    $('.doctor .schedule_list .row').not(this).removeClass('on');
+})
+
 // 세션 진행중
 $('.btn_today').on('click', function(){
-    $('.doctor .my_plan').hide();
-    $('.doctor .now_section').show();
-    $('.doctor .waiting').show();
-    $('.doctor .row').not('.doctor .now_section .row').removeClass('on');
+    $('.doctor .my_plan').toggle();
+    $('.doctor .now_section').toggle();
+    $('.doctor .waiting').toggle();
+    $('.doctor .schedule_list .collabor').toggleClass('on');
+    $('.doctor .schedule_list .my').toggleClass('on');
+    // $('.doctor .row').not('.doctor .now_section .row').removeClass('on');
 })
 
 // 선별진료실 리스트
@@ -1065,22 +1071,6 @@ $('.doctor .nurse_send').on('click', function(){
         location.href="connect_nurse.html"
     })
 
-    // // 리스트 클릭시 배경색 바뀜
-    // $('.row').on('click', function(){
-    //     $(this).addClass('on');
-    //     $('.row').not(this).removeClass('on');
-    // })
-
-    // $('.doctor_monitor .new_patient .row').on('click', function(){
-    //     $(this).addClass('on');
-    //     $('.doctor_monitor .new_patient .row.on').not(this,'.doctor_monitor .pre .row.on').removeClass('on');
-    // })
-
-    // $('.doctor_monitor .pre .row').on('click', function(){
-    //     $(this).addClass('on');
-    //     $('.doctor_monitor .pre .row.on').not(this).removeClass('on');
-    // })
-
     // 신규 알람 -> 지난 알람
     $('.doctor_monitor .new .btn_pre').on('click', function(){
         $('.doctor_monitor .new').hide();
@@ -1144,28 +1134,51 @@ $('.doctor .nurse_send').on('click', function(){
         location.href="connect_screening.html"
     })
 
-    $('.select_case .case_list .row').on('click', function(){
-        location.href="connect.html"
-    })
+    // $('.select_case .case_list .row').on('click', function(){
+    //     location.href="connect.html"
+    // })
 
 
     //---------------------- 원격협진  ----------------------//
+    $('.con_header .btn_end').on('click', function(){
+        $('.pop.connect .overlay').show();
+    })
+
+    // 공지 스르륵
+    $('.slide_notice').on('click', function(){
+        $('.remote .notice').addClass('active');
+        $('.remote .notice_wrap').slidetoggle();
+        $('.remote .slide_notice').hide();
+    })
+    $('.slide_up').on('click', function(){
+        $('.remote .notice').removeClass('active');
+        $('.remote .notice_wrap').slidetoggle();
+        $('.remote .slide_up').hide();
+    })
+
     $('.btn_attendee').on('click', function(){
         $('.pop.remote_attend').toggle();
     })
 
     $('.remote .btn_video').on('click', function(){
         $('.remote .cam').toggle();
+        $(this).hide();
+        $('.remote .btn_novideo').show();
+    })
+    $('.remote .btn_novideo').on('click', function(){
+        $('.remote .cam').toggle();
+        $(this).hide();
+        $('.remote .btn_video').show();
     })
 
-    $('.default .pacs .back').on('click', function(){
-        $('.default .pacs .study_list').toggle();
-        $('.default .pacs .pacs_view').toggle();
+    $('.remote_connect .pacs .back').on('click', function(){
+        $('.remote_connect .pacs .study_list').toggle();
+        $('.remote_connect .pacs .pacs_view').toggle();
     })
 
-    $('.default .study_list .row').on('click', function(){
-        $('.default .pacs .study_list').toggle();
-        $('.default .pacs .pacs_view').toggle();
+    $('.remote_connect .study_list .row').on('click', function(){
+        $('.remote_connect .pacs .study_list').toggle();
+        $('.remote_connect .pacs .pacs_view').toggle();
     })
 
     $('.message .chat_menu').on('click', function(){
@@ -1173,6 +1186,7 @@ $('.doctor .nurse_send').on('click', function(){
         $('.message .meet').hide();
         $(this).addClass('on');
         $('.message .menu').not(this).removeClass('on');
+        $('.notice').show();
     })
     
     $('.message .meet_menu').on('click', function(){
@@ -1180,6 +1194,7 @@ $('.doctor .nurse_send').on('click', function(){
         $('.message .meet').show();
         $(this).addClass('on');
         $('.message .menu').not(this).removeClass('on');
+        $('.notice').hide();
     })
 
     $('.pop.pacs_full .header_inner .color button').on('click', function(){
@@ -1311,6 +1326,14 @@ $('.doctor .nurse_send').on('click', function(){
     })
 
     // 
+
+    $('.remote .btn_video').on('click', function(){
+        $('.remote .patient_view').addClass('on');
+    })
+    $('.remote .btn_novideo').on('click', function(){
+        $('.remote .patient_view').removeClass('on');
+    })
+
     $('.right_view .study_list .row').on('click', function(){
         $('.right_view .study_list').hide();
         $('.right_view .pacs_view').show();

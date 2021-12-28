@@ -154,7 +154,7 @@
     width: 6px;
     height: 12px;
     position: absolute;
-    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
+    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
     top: 3px;
     right: -16px;
 }
@@ -164,7 +164,7 @@
     width: 6px;
     height: 12px;
     position: absolute;
-    background: url('/H-Connect/img/icon/open_black.png') no-repeat 0 0px / contain;
+    background: url('/img/icon/open_black.png') no-repeat 0 0px / contain;
     top: 3px;
     right: -16px;
 }
@@ -241,11 +241,20 @@
 }
 
 .emergency .patient_status .title h2{
+    margin-bottom: 13px;
     color: #940045;
 }
 
-.emergency .patient_status .title div> div{
+.emergency .patient_status> .title div> div{
     margin-top: 13px;
+    display: flex;
+}
+
+.emergency_main .patient_status .title> :first-child div{
+    display: flex;
+}
+
+.emergency_main .patient_status .title> :last-child{
     display: flex;
 }
 
@@ -264,6 +273,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.emergency_main .patient_inner> div> button{
+    border: 1px solid red;
 }
 
 .emergency .patient_status .btn_end{
@@ -359,6 +372,7 @@
     justify-content: space-between;
     overflow: hidden;
     position: relative;
+    border-radius: 4px;
 }
 
 .emergency .patient_status .patient .symptome> div> div> div{
@@ -385,7 +399,7 @@
     display: none;
 }
 
-.emergency .symptome input[type='checkbox'] + label{
+.emergency .symptome .emer_check[type='checkbox'] + label{
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -396,7 +410,7 @@
     position: relative;
 }
 
-.emergency .symptome input[type='checkbox']:checked + label{
+.emergency .symptome .emer_check[type='checkbox']:checked + label{
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -499,11 +513,11 @@
     height: 24px;
     vertical-align: middle;
     border: none;
-    background: url('/H-Connect/img/emergency/damage.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/damage.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .part_container input[type='checkbox']:checked+label{
-    background: url('/H-Connect/img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
+    background: url('/img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
 }
 
 
@@ -513,7 +527,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/front.png')no-repeat 0 0px / contain;
+    background: url('/img/emergency/front.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .front_toggle{
@@ -532,7 +546,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/back.png')no-repeat 0 0px / contain;
+    background: url('/img/emergency/back.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .back_toggle{
@@ -666,7 +680,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/head left.png')no-repeat 0 0px / contain;
+    background: url('/img/emergency/head left.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .left_toggle{
@@ -754,7 +768,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/head right.png')no-repeat 0 0px / contain;
+    background: url('/img/emergency/head right.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .right_toggle{
@@ -842,7 +856,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/body.png')no-repeat 0 0px / contain;
+    background: url('/img/emergency/body.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .body_toggle{
@@ -905,6 +919,15 @@
     left: 60px;
 }
 
+
+.connect .patient_status .front_toggle,
+.connect .patient_status .back_toggle,
+.connect .patient_status .left_toggle,
+.connect .patient_status .right_toggle,
+.connect .patient_status .body_toggle{
+    left: -7px;
+}
+
 /* 환자가 없을 경우 */
 .emergency .patient_status .patient .no_patient{
     height: 64px;
@@ -944,7 +967,7 @@
 }
 
 .emergency .patient .symptome_info .unre .ure_list{
-    margin-left: 0;
+    margin-left: 61px;
 }
 
 .emergency .patient .symptome_info .unre .ure_list p{
@@ -954,6 +977,8 @@
 .emergency .patient .pupil{
     width: 50%;
 }
+
+.emergency .patient .pupil .input_wrap{margin: 0;}
 
 .emergency .patient .pupil .pupil_container,
 .emergency .patient .pupil .pupil_container>div> div{
@@ -1480,6 +1505,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    background: linear-gradient(to right, #fff, #eee);
 }
 
 .para_connect .call_control .con_btn{
@@ -1685,6 +1711,8 @@
     overflow-y: scroll;
     position: absolute;
     bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .connect .data_inner::-webkit-scrollbar{
@@ -1701,20 +1729,10 @@
     /* height: 696px; */
 }
 
-/* .connect .data_inner> div::-webkit-scrollbar{
-    width: 8px;
-}
-
-.connect .data_inner> div::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background: #C56F97;
-} */
-
-
 .connect .chatting{
     width: 100%;
     padding: 16px;
-    margin-bottom: 8px;
+    margin-top: 8px;
     border-radius: 8px;
     background: #fff;
 }
@@ -1865,6 +1883,7 @@
     margin-right: 8px;
     border-radius: 4px;
     font-size: 12px;
+    background: #fff;
     color: #940045;
 }
 
@@ -2032,6 +2051,49 @@
     background: #eee;
 }
 
+.connect .patient_status .patient .symptome .part .swiper-scrollbar{
+    width: 627px;
+}
+
+.connect .patient_status .symptome label{
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.connect .red_custom[type='checkbox'] + label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.connect .red_custom.black[type='checkbox'] + label{
+    border: 1px solid #000;
+}
+
+.connect .patient_status .gray_font{
+    color: #ccc;
+}
+
+.connect .red_custom[type='checkbox']:checked + label{
+    background: #940045;
+    border: none;
+}
+
+.connect .patient_status .double_list .first{
+    width: 200px;
+}
+
+.connect .pati_stat .full_wrap> div{
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap;
+    flex-direction: row; */
+}
+
+
 
 /* 환자상태 full 화면 */
 .connect .pati_stat.on{
@@ -2042,6 +2104,13 @@
 
 .connect .pati_stat.on .title{
     width: 100%;
+}
+
+.connect .pati_stat.on .full_wrap> div{
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap;
+    flex-direction: row; */
 }
 
 .connect .pati_stat.on .patient_status {
@@ -2065,6 +2134,11 @@
 
 .connect .pati_stat.on .patient_status .patient .symptome{
     width: 683px;
+    /* height: fit-content; */
+}
+
+.connect .pati_stat.on .patient_status .patient .first_aid{
+    height: fit-content;
 }
 
 .connect .pati_stat.on .part_accident{
@@ -2292,53 +2366,6 @@
     display: none;
 }
 
-.connect .vital .ecg .bell_name input[type="checkbox"]+label{
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin: -3px 8px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
-    filter: invert(53%) sepia(73%) saturate(3112%) hue-rotate(94deg) brightness(127%) contrast(112%);
-    cursor: pointer;
-}
-
-.connect .vital .ecg .bell_name input[type='checkbox']:checked+label{
-    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
-    filter: none;
-}
-
-.connect .vital .resp .bell_name input[type="checkbox"]+label{
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin: -3px 8px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.connect .vital .resp .bell_name input[type='checkbox']:checked+label{
-    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
-    filter: none;
-}
-
-.connect .vital .temp .bell_name input[type="checkbox"]+label{
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin: -3px 8px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/icon/btn_resp_alarm.png') no-repeat 0 0px / contain;
-    filter: invert(47%) sepia(74%) saturate(6074%) hue-rotate(317deg) brightness(101%) contrast(101%);
-    cursor: pointer;
-}
-
-.connect .vital .temp .bell_name input[type='checkbox']:checked+label{
-    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
-    filter: none;
-}
-
 .connect .scene_picture{
     width: 300px;
     height: fit-content;
@@ -2413,6 +2440,7 @@
 }
 
 .connect_tab .tab_view .title p{
+    font-size: 12px;
     color: #fff;
 }
 
@@ -2439,10 +2467,12 @@
     justify-content: space-between;
 }
 
-.connect_tab .patient_status .patient .pati_container> div{
+.connect_tab .patient_status .patient .symptome{
     width: 688px;
-    height: fit-content;
+    /* height: fit-content; */
 }
+
+.connect_tab .patient_status .patient .first_aid{height: fit-content;}
 
 .connect_tab .vital{
     position: initial;
@@ -2477,6 +2507,10 @@
 
 .connect_tab .scene_picture .big_picture{
     height: 692px;
+}
+
+.connect_tab .scene_picture .small_picture{
+    padding-left: 8px;
 }
 
 /* connect_scroll */
@@ -2519,6 +2553,10 @@
     width: 20px;
     height: 20px;
     background: none;
+}
+
+.connect_scroll .pati_stat .full_wrap> div> :last-child{
+    margin-left: 16px;
 }
 
 .connect_scroll .pati_stat .pati_container{
@@ -2610,6 +2648,7 @@
 .connect_scroll .scene_picture .big_picture{
     height: 692px;
 }
+
 
 /* doctor_emergency */
 
@@ -2879,6 +2918,33 @@
     padding: 0;
 }
 
+.doctor_emergency .patient_status .symptome label{
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.doctor_emergency .red_custom[type='checkbox'] + label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.doctor_emergency .red_custom.black[type='checkbox'] + label{
+    border: 1px solid #000;
+}
+
+.doctor_emergency .patient_status .gray_font{
+    color: #ccc;
+}
+
+.doctor_emergency .patient_status .symptome .red_custom[type='checkbox']:checked + label{
+    background: #940045;
+    border: none;
+}
+
 .doctor_emergency .patient_status .patient .symptome{
     background: #fff;
 }
@@ -2899,8 +2965,16 @@
     position: relative;
     width: 160px;
     height: 240px;
-    background: url(/H-Connect/img/emergency/body.png)no-repeat 0 0px / contain;
+    background: url(/img/emergency/body.png)no-repeat 0 0px / contain;
     background-size: cover;
+}
+
+.doctor_emergency .patient_status .front_toggle,
+.doctor_emergency .patient_status .back_toggle,
+.doctor_emergency .patient_status .left_toggle,
+.doctor_emergency .patient_status .right_toggle,
+.doctor_emergency .patient_status .body_toggle{
+    left: -7px;
 }
 
 .doctor_emergency .patient_status .body_toggle .toggle1{
@@ -2984,6 +3058,14 @@
     margin-top: 155px;
 }
 
+.doctor_emergency .patient_status .double_list .first{
+    width: 200px;
+}
+
+.doctor_emergency .patient .symptome_info .unre .input_wrap{
+    width: 200px;
+    margin-right: 14px;
+}
 
 /* tab-2 */
 .doctor_emergency .vital{
