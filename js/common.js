@@ -1158,14 +1158,14 @@ $('.doctor .nurse_send').on('click', function(){
         $('.remote .cam').toggle();
     })
 
-    $('.pacs .back').on('click', function(){
-        $('.pacs .study_list').toggle();
-        $('.pacs .pacs_view').toggle();
+    $('.default .pacs .back').on('click', function(){
+        $('.default .pacs .study_list').toggle();
+        $('.default .pacs .pacs_view').toggle();
     })
 
-    $('.study_list .row').on('click', function(){
-        $('.pacs .study_list').toggle();
-        $('.pacs .pacs_view').toggle();
+    $('.default .study_list .row').on('click', function(){
+        $('.default .pacs .study_list').toggle();
+        $('.default .pacs .pacs_view').toggle();
     })
 
     $('.message .chat_menu').on('click', function(){
@@ -1310,6 +1310,24 @@ $('.doctor .nurse_send').on('click', function(){
         $('.remote .patient_view button').not(this).removeClass('on');
     })
 
+    // 
+    $('.right_view .study_list .row').on('click', function(){
+        $('.right_view .study_list').hide();
+        $('.right_view .pacs_view').show();
+    })
+    $('.right_view .back').on('click', function(){
+        $('.right_view .study_list').show();
+        $('.right_view .pacs_view').hide();
+    })
+
+    $('.left_view .study_list .row').on('click', function(){
+        $('.left_view .study_list').hide();
+        $('.left_view .pacs_view').show();
+    })
+    $('.left_view .back').on('click', function(){
+        $('.left_view .study_list').show();
+        $('.left_view .pacs_view').hide();
+    })
 
 
 

@@ -162,3 +162,72 @@ $(function(){
 		}
 	});
 });
+
+// 원격협진 - 다학제 통합 진료 페이지
+$(function(){
+	var swiper11 = new Swiper(".pacs_small1", {
+		spaceBetween: 8,
+		slidesPerView: 3,
+		freeMode: true,
+		watchSlidesProgress: true,
+		slidesPerView: "auto",
+	});
+	
+	var swiper12 = new Swiper(".pacs_big1", {
+		slidesPerView: 1,
+		spaceBetween: 30,
+		navigation: {
+			nextEl: ".swiper-button-next1",
+			prevEl: ".swiper-button-prev1",
+		},
+		pagination:{
+			el: '.swiper-pagination1',
+			type: 'fraction',
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '">' + (index + 1) + '</span>';
+			}
+		},
+		scrollbar: {
+			el: ".swiper-scrollbar1",
+			// hide: true,
+			draggable: true,
+		  },
+		thumbs: {
+			swiper: swiper11,
+		}
+	});
+
+
+
+	var swiper13 = new Swiper(".pacs_small2", {
+		spaceBetween: 8,
+		slidesPerView: 3,
+		freeMode: true,
+		watchSlidesProgress: true,
+		slidesPerView: "auto",
+	});
+	
+	var swiper14 = new Swiper(".pacs_big2", {
+		slidesPerView: 1,
+		spaceBetween: 30,
+		navigation: {
+			nextEl: ".swiper-button-next2",
+			prevEl: ".swiper-button-prev2",
+		},
+		pagination:{
+			el: '.swiper-pagination',
+			type: 'fraction',
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '">' + (index + 1) + '</span>';
+			}
+		},
+		scrollbar: {
+			el: ".swiper-scrollbar",
+			// hide: true,
+			draggable: true,
+		  },
+		thumbs: {
+			swiper: swiper13,
+		}
+	});
+});
