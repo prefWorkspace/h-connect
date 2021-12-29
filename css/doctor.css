@@ -106,7 +106,7 @@ p{font-size: 12px;}
 }
 
 .doctor .schedule .container{
-    height: 616px;
+    height: 605px;
 }
 
 .doctor .schedule .title{
@@ -166,7 +166,7 @@ p{font-size: 12px;}
 
 .doctor .schedule_list .row> div {
     display: flex;
-    align-items: center;
+    align-items: center ;
 }
 
 .doctor .schedule_list .row> div div{
@@ -579,8 +579,9 @@ p{font-size: 12px;}
     height: 6px;
     position: absolute;
     background: url('../img/under_arrow.svg') no-repeat;
-    top: 45%;
+    top: 50%;
     right: 15px;
+    transform: translateY(-50%);
     transition: 0.3s;
 }
 
@@ -590,9 +591,9 @@ p{font-size: 12px;}
     height: 6px;
     position: absolute;
     background: url('../img/under_arrow.svg') no-repeat;
-    top: 45%;
+    top: 30%;
     right: 15px;
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateY(-50%);
     transition: .3s;
 }
 
@@ -614,7 +615,7 @@ p{font-size: 12px;}
     width: 46px;
     height: 32px;
     margin-left: -22px;
-    background: url('../img logo.svg') no-repeat 0 0px / contain;
+    background: url('../img/logo_gray.svg') no-repeat 0 0px / contain;
     filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg) brightness(103%) contrast(96%);
 }
 
@@ -731,6 +732,7 @@ p{font-size: 12px;}
 
 .doctor .collabor_wrap{
     height: 590px;
+    /* padding-top: 12px; */
     overflow-y: scroll;
 }
 
@@ -971,7 +973,7 @@ p{font-size: 12px;}
 
 .doctor .collabor .collabor_wrap .time,
 .doctor .collabor .collabor_wrap .cont .title{
-    padding: 16px 32px;
+    padding: 20px 30px;
 }
 
 
@@ -980,8 +982,10 @@ p{font-size: 12px;}
 /* 실시간 원격 협진 */
 .connect_remote,
 .connect_opinion{
+    min-width: 1248px;
     height: 100%;
     min-height: calc(100vh - 64px);
+    padding: 0;
     background: #222;
 }
 .connect_remote .wrap_inner,
@@ -1033,7 +1037,7 @@ p{font-size: 12px;}
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: #fff;
+    background: linear-gradient(to right, #fff, #eee);
 }
 
 .para_connect .call_control .con_btn{
@@ -2782,7 +2786,7 @@ p{font-size: 12px;}
 
 .doctor .cal_view .title button{
     width: 100%;
-    height: 100%;
+    height: 99%;
     padding: 0 0 0 15px;
     background: none;
     color: #000;
@@ -2810,11 +2814,11 @@ p{font-size: 12px;}
 }
 
 .doctor_remote .collabor_wrap .time{
-    padding: 24px 30px;
+    padding: 20px 30px;
 }
 
 .doctor_remote .collabor_wrap> div .title{
-    padding: 24px 30px;
+    padding: 20px 30px;
 }
 
 .doctor .ask_request .collabor_wrap .case_inner .title{
@@ -2939,6 +2943,10 @@ p{font-size: 12px;}
     position: relative;
 }
 
+.doctor .time_select .week_view.on{
+    height: 700px;
+}
+
 .doctor .time_select .week_view .select_week{margin-bottom: 10px;}
 
 .doctor .time_select .week_view .select_week> div{
@@ -3003,6 +3011,10 @@ p{font-size: 12px;}
     background: #eee;
     top: 50%;
     right: 41px;
+}
+
+.doctor .me_request .time_select .week_view .possible p{
+    opacity: 1;
 }
 
 .doctor .time_select .inner{
@@ -3331,7 +3343,7 @@ p{font-size: 12px;}
 
 .doctor_remote .all_plan .weekly .inner{
     width: 664px;
-    height: 510px;
+    height: 490px;
     display: flex;
     top: 16px;
     left: 56px;
@@ -3341,6 +3353,7 @@ p{font-size: 12px;}
 
 .doctor_remote .all_plan .weekly .inner::-webkit-scrollbar{
     width: 8px;
+    height: 8px;
 }
 
 .doctor_remote .all_plan .weekly .inner::-webkit-scrollbar-thumb{
@@ -4012,13 +4025,15 @@ p{font-size: 12px;}
     margin-top: 20px;
     border-radius: 4px;
     background: #eee;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .doctor_new .mem{
     height: 17px;
     margin-right: 16px;
     width: fit-content;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .doctor_new .mem p{
@@ -4039,6 +4054,10 @@ p{font-size: 12px;}
     vertical-align: inherit;
 }
 
+.doctor_new.message .favorite_container input[type='checkbox']:checked+label{
+    filter: none;
+}
+
 .doctor .attendee{
     width: 1132px;
     margin: 0 32px;
@@ -4046,8 +4065,8 @@ p{font-size: 12px;}
 }
 
 .doctor .attendee .title{
-    padding: 16px;
-    border: none;
+    padding: 16px 16px 40px;
+    /* border: none; */
 }
 
 .attendee .title .btn_list{
@@ -4081,6 +4100,7 @@ p{font-size: 12px;}
 }
 
 .attendee .atten_inner{
+    padding: 16px;
     display: flex;
     justify-content: space-between;
 }
@@ -4130,7 +4150,10 @@ p{font-size: 12px;}
 .attendee .choice_staff .title div{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+.attendee .choice_staff .title p{margin: 0;}
 
 .doctor .attendee .title .btn_check{
     width: 64px;
@@ -4140,7 +4163,7 @@ p{font-size: 12px;}
     box-shadow: none;
     background: #007A94;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     display: block;
 }
 
@@ -4165,6 +4188,8 @@ p{font-size: 12px;}
     padding: 16px;
     border-radius: 4px;
     background: #eee;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .attendee .search_container{
@@ -4266,7 +4291,7 @@ p{font-size: 12px;}
 
 .attendee .weekly .inner{
     width: 688px;
-    height: 515px;
+    height: 490px;
     display: flex;
     top: 65px;
     left: 56px;
@@ -4275,7 +4300,7 @@ p{font-size: 12px;}
 }
 
 .attendee .weekly .inner::-webkit-scrollbar{
-    width: 8px;
+    height: 8px;
 }
 
 .attendee .weekly .inner::-webkit-scrollbar-thumb{

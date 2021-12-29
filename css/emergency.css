@@ -1438,14 +1438,15 @@
 }
 
 .para_connect{
-    min-width: 1880px;
+    min-width: 1280px;
     min-height: calc(100vh - 64px);
     background: #222;
     height: 100%;
 }
 
 .para_connect .wrap_inner{
-    min-width: 1880px;
+    width: 100%;
+    min-width: 1280px;
     min-height: calc(100vh - 80px);
 }
 
@@ -3089,7 +3090,7 @@
 
 .doctor_emergency .patient .symptome_info .unre .input_wrap{
     width: 200px;
-    margin-right: 14px;
+    /* margin-right: 14px; */
 }
 
 /* tab-2 */

@@ -160,7 +160,7 @@ button{border-radius: 4px; background: none;}
     display: flex;
     line-height: 47px;
     padding: 0 40px 0 17px;
-    background: url('../img/right_arrow.svg') no-repeat right 15px center;
+    background: url('../img/icon/right_arrow_black.svg') no-repeat right 15px center;
     border-radius: 4px;
     border-bottom: 1px solid #EEEEEE;
     transition: 0.2s all;
@@ -256,13 +256,16 @@ button{border-radius: 4px; background: none;}
 
 /* tr */
 .common_table tr {
-    display: flex;
+    /* display: flex; */
     width: 100%;
     border-bottom: 1px solid #eee;
 }
 
 
 /* th, td */
+/* .common_table tr > td{
+    width: 100px;
+} */
 .common_table tr > td,
 .common_table tr > th {
     flex: 1;
@@ -681,7 +684,7 @@ button{border-radius: 4px; background: none;}
 #header.con_header{
     min-width: 1280px;
     height: 64px;
-    /* padding: 16px 24px; */
+    padding: 16px 24px;
 }
 
 #header.con_header{
@@ -698,6 +701,10 @@ button{border-radius: 4px; background: none;}
 
 .con_header .btn_list button{
     height: 40px;
+}
+
+#header.re_header{
+    padding: 12px 24px;
 }
 
 
@@ -1214,7 +1221,7 @@ button{border-radius: 4px; background: none;}
 
 /* modal_form */
 .modal_form {
-    padding-top: 30px;
+    padding-top: 48px;
 }
 
 
@@ -1351,58 +1358,6 @@ button{border-radius: 4px; background: none;}
 }
 
 
-/* mess_text_box */
-.mess_text_box {
-    height: 453px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
-}
-
-/* left_bar */
-.mess_text_box .left_bar {
-    position: absolute;
-    width: 12px;
-    height: calc(100% - 20px);
-    left: 10px;
-    top: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-.left_bar .bar:not(:last-child) {
-    margin-bottom: 5px;
-}
-
-.left_bar .bar:nth-child(1) {
-    flex: 4;
-}
-.left_bar .bar:nth-child(2) {
-    flex: 1.5;
-}
-.left_bar .bar:nth-child(3) {
-    flex: 3;
-}
-.left_bar .bar:nth-child(4) {
-    flex: 1;
-}
-.left_bar .bar:nth-child(5) {
-    flex: 1.5;
-}
-
-
-/* white */
-.left_bar .bar.white {
-    background-color: #EEEEEE;
-}
-
-/* green */
-.left_bar .bar.green {
-    background-color: #007A94;
-}
 
 
 
@@ -1413,7 +1368,7 @@ button{border-radius: 4px; background: none;}
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 10px 35px 10px 45px;
 }
 /* 스크롤 바 */
@@ -4327,6 +4282,7 @@ textarea::-webkit-scrollbar-button {
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    background: linear-gradient(to right, #fff, #eee);
 }
 
 .pop.connect_para .pop_cont .accept button{

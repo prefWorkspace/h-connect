@@ -66,8 +66,8 @@
 /* care_sect */
 #care_sect {
     /* max-width: 1920px; */
-    min-width: 1920px;
-    height: auto;
+    min-width: 1880px;
+    height: calc(100vh - 64px);
     background-color: #222222;
     padding: 5px;
 }
@@ -128,6 +128,7 @@
 }
 
 .messge_cont_box .mess_send_box {
+    padding: 8px;
     border-radius: 0;
 }
 

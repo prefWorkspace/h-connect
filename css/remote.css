@@ -11,6 +11,8 @@ img{
     object-fit: cover;
 }
 
+/* #wrap{height: auto;} */
+
 /* connect_remote */
 .connect_remote .btn_refuse div{
     width: 32px;
@@ -82,7 +84,7 @@ img{
 .select_case .case_list{
     height: 100%;
     padding: 16px;
-    background: #eee url('/H-Connect/img/logo.png') no-repeat;
+    background: #eee url('/img/logo.png') no-repeat;
     background-position: 50% 90%;
     background-size: 69px 48px;
     border-radius: 0 0 8px 8px;
@@ -138,19 +140,29 @@ img{
 }
 
 .message{
-    width: 480px;
+    min-width: 480px;
+    max-width: 480px;
+    height: 100%;
+    min-height: 848px;
+    max-height: 888px;
     position: relative;
+    display: flex;
+    flex-direction: column; 
 }
 
 .message .notice{
+    width: 100%;
+    min-width: 456px;
+    max-width: 456px;
     position: absolute;
     padding: 16px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 95%);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    /* z-index: 1; */
+    z-index: 1;
     top: 56px;
     left: 8px;
+    z-index: 5;
 }
 
 .message .notice> div> div {
@@ -182,7 +194,7 @@ img{
     content: '';
     width: 6px;
     height: 12px;
-    background: url('/H-Connect/img/right_arrow.svg') no-repeat;
+    background: url('/img/right_arrow.svg') no-repeat;
     filter: invert(80%) sepia(87%) saturate(5190%) hue-rotate(177deg) brightness(97%) contrast(101%);
     display: block;
     transform: rotate(90deg) translateX(-82%);
@@ -282,6 +294,12 @@ img{
     position: relative;
 }
 
+.message .chat{
+    height: 100%;
+    min-height: 600px;
+    max-height: 640px;
+}
+
 .message .cam_control button{
     width: 32px;
     height: 32px;
@@ -296,9 +314,9 @@ img{
     transition: .3S;
 }
 
-.btn_speaker:hover .modul{
+/* .btn_speaker:hover .modul{
     opacity: 1;
-}
+} */
 
 .message .cam_control button div,
 .message .cam_control .dim div{
@@ -313,6 +331,29 @@ img{
 
 .message .cam_control .btn_mic{
     margin: 0 4px;
+}
+
+.message .cam_control .volume{
+    width: 32px;
+    height: 50px;
+    z-index: 5;
+}
+
+.message .cam_control .volume:hover .modul{
+    display: flex;
+}
+
+.message .cam_control .btn_speaker{
+    position: relative;
+}
+
+.message .cam_control .btn_speaker::after{
+    position: absolute;
+    content: '';
+    width: 32px;
+    height: 50px;
+    top: 0;
+    left: 0;
 }
 
 .message .cam_control .btn_speaker div{
@@ -360,8 +401,8 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    opacity: 0;
-    /* display: none; */
+    /* opacity: 0; */
+    display: none;
 }
 
 .modul progress{
@@ -370,7 +411,7 @@ img{
     position: relative;
 }
 
- .modul progress::-webkit-progress-bar{
+.modul progress::-webkit-progress-bar{
     background: #ccc;
 }
 
@@ -383,7 +424,7 @@ img{
     content: '';
     width: 6px;
     height: 8px;
-    background: url(/H-Connect/img/icon/down.svg) no-repeat;
+    backgr/img/icon/down.svg) no-repeat;
     filter: invert(18%) sepia(66%) saturate(5427%) hue-rotate(179deg) brightness(47%) contrast(101%);
     transform: rotate(-45deg);
     top: 9px;
@@ -487,7 +528,9 @@ img{
 
 /* 메세지창 */
 .message .view{
-    height: 672px;
+    height: 100%;
+    min-height: 632px;
+    max-height: 672px;
     padding: 16px;
     background: #C5D8DC;
 }
@@ -529,7 +572,9 @@ img{
 
 .data_inner{
     width: 100%;
-    height: 640px;
+    height: 100%;
+    min-height: 600px;
+    max-height: 640px;
     padding-right: 16px;
     overflow-y: scroll;
     display: flex;
@@ -590,7 +635,6 @@ img{
 
 .bottom .file{
     display: flex;
-    cursor: pointer;
 }
 
 .bottom .file div{
@@ -601,6 +645,7 @@ img{
     border: 2px solid #FF8800;
     /* overflow: hidden; */
     position: relative;
+    cursor: pointer;
 }
 
 .bottom .file div::after{
@@ -709,8 +754,10 @@ img{
 }
 
 .patient_view{
-    width: 1428px;
-    /* width: calc(100% - 480px); */
+    width: 100%;
+    min-width: 792px;
+    max-width: 1428px;
+    
     margin-left: 4px;
 }
 
@@ -793,7 +840,8 @@ img{
 /* 탭으로 보기 */
 .several{
     width: 100%;
-    height: 845px;
+    min-height: 792px;
+    max-height: 845px;
     position: relative;
 }
 
@@ -1123,6 +1171,8 @@ img{
 
 .vital .bell{
     width: 160px;
+    min-width: 160px;
+    max-width: 160px;
     height: 104px;
     padding: 8px 16px;
 }
@@ -1215,7 +1265,9 @@ img{
 }
 
 .vital.on .graph> div> :first-child div{
-    width: 1200px;
+    width: 100%;
+    min-width: 492px;
+    max-width: 1200px;
 }
 
 .vital.on .ecg{
@@ -1277,7 +1329,7 @@ img{
 }
 
 .tabular_table .table_title p {
-    /* margin-right: 55px; */
+    margin-right: 55px;
     display: inline-block;
     font-size: 12px;
     color: #ccc;
@@ -1436,7 +1488,7 @@ img{
 .cont .graphical .time_line::before{
     position: absolute;
     content: '';
-    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    background: url('/img/icon/trend_tri.png')no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 19px;
@@ -1488,7 +1540,7 @@ img{
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -1501,7 +1553,7 @@ img{
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -1951,11 +2003,13 @@ img{
 
 /* .pacs  */
 .several .pacs{
-    width: 1080px;
+    width: 100%;
+    min-width: 708px;
+    max-width: 1080px;
     height: 720px;
     /* background: #111; */
     position: absolute;
-    right: 10px;
+    /* right: 10px; */
 }
 
 .pacs .pacs_inner{
@@ -2138,7 +2192,7 @@ img{
     height: 17px;
     top: 45%;
     right: 40px;
-    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: translateY(91%);
 }
 
@@ -2147,7 +2201,7 @@ img{
     height: 17px;
     top: 44%;
     left: 40px;
-    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-100%);
 }
 
@@ -2227,10 +2281,14 @@ img{
 /* lab */
 .several .inner{
     width: 100%;
-    min-width: 1080px;
+    min-width: 788px;
+    max-width: 1080px;
 }
 
-.inner .cont {
+.inner> .cont {
+    height: 100%;
+    min-height: 720px;
+    max-height: 792px;
     padding: 16px 32px;
     background: #fff;
 }
@@ -2290,7 +2348,9 @@ img{
 }
 
 .inner.on .cont{
-    height: 797px;
+    height: 100%;
+    min-height: 650px;
+    max-height: 797px;
 }
 
 .inner.on .cont .cont_wrap{
@@ -2299,12 +2359,16 @@ img{
 
 .inner.on .cont .cont_wrap .list{
     width: 344px;
-    height: 650px;
+    height: 100%;
+    min-height: 500px;
+    max-height: 650px;
 }
 
 .inner.on .cont .cont_wrap .cont{
     width: 704px;
-    height: 650px;
+    height: 100%;
+    min-height: 500px;
+    max-height: 650px;
 }
 
 /* emr */
@@ -2312,6 +2376,12 @@ img{
     position: absolute;
     top: 30px;
     z-index: 3;
+}
+
+.several .emr{
+    width: 100%;
+    min-width: 788px;
+    max-width: 1080px;
 }
 
 
@@ -2495,7 +2565,8 @@ img{
 }
 
 .scroll .several{
-    height: 840px;
+    min-height: 740px;
+    max-height: 760px;
     overflow-y: scroll;
 }
 
@@ -2505,7 +2576,10 @@ img{
 
 .scroll .several> div{
     width: 100%;
-    height: 840px;
+    max-width: 1920px;
+    height: 100%;
+    min-height: 600px;
+    max-height: 840px;
     position: initial;
     border-radius: 0;
 }
@@ -2532,6 +2606,8 @@ img{
 .scroll .several .pacs .pacs_view,
 .scroll .several .pacs .study_list{
     height: 100%;
+    min-height: 720px;
+    max-height: 792px;
 }
 
 .scroll .vital .ecg{
@@ -2567,11 +2643,11 @@ img{
 }
 
 .scroll .inner .cont .cont_wrap .list{
-    height: 648px;
+    max-height: 648px;
 }
 
 .scroll .inner .cont .cont_wrap .cont{
-    height: 648px;
+    max-height: 648px;
     margin-left: 48px;
 }
 
@@ -2714,10 +2790,10 @@ img{
     background: #fff;
 }
 
-.multi .cam_control .btn_speaker:hover .modul{
+/* .multi .cam_control .btn_speaker:hover .modul{
     opacity: 1;
     transition: .3s;
-}
+} */
 
 .multi .header .cam_control .modul{
     width: 168px;
@@ -2891,7 +2967,7 @@ img{
     height: 17px;
     top: 50%;
     right: 40px;
-    background: url(/H-Connect/img/icon/btn_tri.svg) no-repeat 0 0px / contain;
+    background: url(/img/icon/btn_tri.svg) no-repeat 0 0px / contain;
     transform: translateY(72%);
     position: absolute;
 }
@@ -2905,7 +2981,7 @@ img{
     height: 17px;
     top: 50%;
     left: 40px;
-    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-72%);
     position: absolute;
 }
@@ -2939,4 +3015,10 @@ img{
 
 .remote .patient_view.on .table_body{
     height: 500px;
+}
+
+
+
+@media all and (max-width:708px){
+
 }

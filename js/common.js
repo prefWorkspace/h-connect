@@ -1,14 +1,14 @@
 $(function () {
 
     // 팝업창 닫기    
-    $('.pop .overlay .pop_cont .btn_list .btn_cancel').on('click', function () {
-        $('.pop .overlay').hide();
-    });
-
     $('.pop .pop_cont .btn_list .btn_cancel').on('click', function(){
         $('.pop .overlay').hide();
     })
 
+    // $('#wrap_content').on('click', function () {
+    //     $('.pop .overlay').hide();
+    //     $('.pop').hide();
+    // });
 
 //---------------------- 간호사 ----------------------//
 
@@ -909,7 +909,7 @@ $('.doctor .nurse_send').on('click', function(){
     $('.doctor_remote .time_select .possible p').on('click', function(){
         $(this).toggleClass('active');
         $('.doctor_remote .select_week> :first-child').toggle();
-        // $('.doctor .possible p.on').css("opacity", '1');
+        $('.doctor_remote .week_view').toggleClass('on');
     })
 
     // 리스트 클릭시 배경색 바뀜
@@ -1131,12 +1131,12 @@ $('.doctor .nurse_send').on('click', function(){
     // 공지 스르륵
     $('.slide_notice').on('click', function(){
         $('.remote .notice').addClass('active');
-        $('.remote .notice_wrap').slidetoggle();
+        // $('.remote .notice_wrap').slidetoggle();
         $('.remote .slide_notice').hide();
     })
     $('.slide_up').on('click', function(){
         $('.remote .notice').removeClass('active');
-        $('.remote .notice_wrap').slidetoggle();
+        // $('.remote .notice_wrap').slidetoggle();
         $('.remote .slide_up').hide();
     })
 
@@ -1189,10 +1189,14 @@ $('.doctor .nurse_send').on('click', function(){
     // cam_control
     $('.message .btn_cam').on('click', function(){
         $('.message .dim_cam').show();
+        $('.cam .my_cam .cam_parti').hide();
+        $('.cam .my_cam .nocam_parti').show();
     })
     $('.message .dim_cam').on('click', function(){
         $(this).hide();
         $('.message .btn_cam').show();
+        $('.cam .my_cam .cam_parti').show();
+        $('.cam .my_cam .nocam_parti').hide();
     })
 
     $('.message .btn_mic').on('click', function(){
@@ -1210,11 +1214,6 @@ $('.doctor .nurse_send').on('click', function(){
         $(this).hide();
         $('.message .btn_speaker').show();
     })
-
-
-    // $('.message .btn_speaker').on('mouseover', function(){
-    //     $('.message .title .modul').fadeIn();
-    // })
 
 
     $('.pacs .list .btn_list .full').on('click', function(){
@@ -1309,7 +1308,6 @@ $('.doctor .nurse_send').on('click', function(){
         $('.remote .patient_view button').not(this).removeClass('on');
     })
 
-    // 
 
     $('.remote .btn_video').on('click', function(){
         $('.remote .patient_view').addClass('on');
@@ -1335,7 +1333,6 @@ $('.doctor .nurse_send').on('click', function(){
         $('.left_view .study_list').show();
         $('.left_view .pacs_view').hide();
     })
-
 
 
 });

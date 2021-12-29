@@ -55,7 +55,7 @@
     padding-left: 20px;
     color: #007A94;
     text-align: center;
-    background: #fff url('/H-Connect/img/icon/btn_logo_green.svg') no-repeat left 18px center;
+    background: #fff url('../img/icon/btn_logo_green.svg') no-repeat left 18px center;
 }
 
 
@@ -75,7 +75,7 @@
 }
 
 .care_cont .care_ready {
-    /* background: url('/H-Connect/img/logo_gray.png') no-repeat center top 5px; */
+    /* background: url('../img/logo_gray.png') no-repeat center top 5px; */
     /* padding-top: 180px; */
     text-align: center;
     margin-bottom: 120px;
@@ -155,14 +155,14 @@
     transform: translate(-50%, -50%);
     width: 32px;
     height: 32px;
-    background: url('/H-Connect/img/emergency/refuse.svg') no-repeat;
+    background: url('../img/emergency/refuse.svg') no-repeat;
     transition: 0.2s all;
 }
 
 .care_ui .mute_btn:before {
     width: 24px;
     height: 32px;
-    background: url('/H-Connect/img/emergency/mic.svg') no-repeat;
+    background: url('../img/emergency/mic.svg') no-repeat;
 }
 
 .care_ui .care_btn > span {
@@ -191,10 +191,22 @@
 /* checked */
 .care_ui .mute_box > input[type="checkbox"]:checked + .mute_btn:before {
     width: 32px;
-    background-image: url('/H-Connect/img/icon/mic_off.svg');
+    background-image: url('../img/icon/mic_off.svg');
 }
 
 
 .sure_btn {
     display: inline-block;
+}
+
+.check_ex_text{
+    font-size: 16px;
+}
+
+.modal_footer button{
+    height: 48px;
+}
+
+.modal_footer a{
+    line-height: 46px;
 }

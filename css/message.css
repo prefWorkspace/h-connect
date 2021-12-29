@@ -349,6 +349,12 @@
     height: 15px;
 }
 
+.screening_doc .message_talk .search_container .btn_search{
+    width: 30px;
+    height: 30px;
+    transform: translate( 20px ,-50%);
+}
+
 
 
 /* 채팅 */
@@ -1434,7 +1440,7 @@
 }
 
 .doctor_new.message .container{
-    height: 376px;
+    height: 366px;
     padding: 0 8px;
     margin-top: 12px;
     overflow-y: scroll;
