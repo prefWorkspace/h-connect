@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect</title>
   <!--Import-->
-  <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' src='/js/common.js'></script>
-  <script type='text/javascript' src='/js/index.js'></script>
+  <script type='text/javascript' src='../js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' src='../js/common.js'></script>
+  <script type='text/javascript' src='../js/index.js'></script>
   <!--css-->
-  <link rel='stylesheet' href='/css/reset.css'>
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/nurse.css">
+  <link rel='stylesheet' href='../css/reset.css'>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/nurse.css">
 
 </head>
   <body>
@@ -75,7 +75,7 @@
         <div class="overlay">
             <div class="pop_cont">
                 <div>
-                    <img src="/img/logo.png" alt="로고">
+                    <img src="../img/logo.png" alt="로고">
                 </div>
 
                 <h3>선택한 이벤트를 삭제합니다.</h3>
@@ -468,10 +468,10 @@
                                 </p>
     
                                 <button type="button">
-                                    <img src="/img/icon/delete.png" alt="빨간색 닫기 아이콘">
+                                    <img src="../img/icon/delete.png" alt="빨간색 닫기 아이콘">
                                 </button>
                             </div>
-                          
+                                                      
                         </div>
 
                         <div class="favorite_list">
@@ -494,7 +494,7 @@
                                     </div>
 
                                     <button type="button">
-                                        <img src="/img/icon/open.png" alt="오른쪽 화살표">
+                                        <img src="../img/icon/open.png" alt="오른쪽 화살표">
                                     </button>
 
                                     <div>
@@ -625,7 +625,7 @@
                         <div class="search_container">
                             <input type="text" placeholder="이름 혹은 담당병과명을 입력해주세요.">
                             <button type="button">
-                                <img src="/img/header/search.svg" alt="돋보기 아이콘">
+                                <img src="../img/header/search.svg" alt="돋보기 아이콘">
                             </button>
                         </div>
 
@@ -845,7 +845,7 @@
                 </div>
 
                 <button type="button" class="btn_exit">
-                    <img src="/img/icon/close.png" alt="닫기 버튼">
+                    <img src="../img/icon/close.png" alt="닫기 버튼">
                 </button>
 
                 <div class="pop delete_favorite">
@@ -864,15 +864,15 @@
 
                     <div class="btn_list">
                         <div class="btn_fold">
-                            <img src="/img/icon/nurse/fold.svg" alt="접는 아이콘">
+                            <img src="../img/icon/nurse/fold.svg" alt="접는 아이콘">
                         </div>
 
                         <div class="btn_full">
-                            <img src="/img/icon/nurse/full.svg" alt="풀화면 아이콘">
+                            <img src="../img/icon/nurse/full.svg" alt="풀화면 아이콘">
                         </div>
 
                         <div class="btn_close">
-                            <img src="/img/icon/nurse/close.svg" alt="닫는 아이콘">
+                            <img src="../img/icon/nurse/close.svg" alt="닫는 아이콘">
                         </div>
                     </div>
                 </div>
@@ -885,13 +885,13 @@
 
                     <button type="button" class="btn_search">
                         <div>
-                            <img src="/img/header/search.svg" alt="검색표시">
+                            <img src="../img/header/search.svg" alt="검색표시">
                         </div>                           
                     </button>
                 </div>                            
 
                 <div class="sort">
-                    <img src="/img/icon/nurse/sorting.svg" alt="정렬아이콘">
+                    <img src="../img/icon/nurse/sorting.svg" alt="정렬아이콘">
                 </div>
 
                  
@@ -1035,1611 +1035,1613 @@
     </div>
 
     <div id="wrap">
-      <!--헤더 pc-->
-      <header id="header" class="pc_header">
-        <div class="header_inner">
-            <div>
-                <h1 class="logo">
-                    <a class="link" href="index.html">
-                        <img class="img" src="/img/header/logo.png" alt="로고">
-                    </a>
-                </h1>
-    
-                <div class="header_title">
-                    <h1>모니터링</h1>
-                    <h3>담당 환자들의 생체신호를 실시간으로 모니터링 합니다.</h3>
-                </div>
-            </div>
-    
-            <div>
-                <div style="width: 110px;"></div>
-    
-                <div class="search_container">
-                    <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
-    
-                    <button type="button" class="btn_search">
-                        <img src="/img/header/search.svg" alt="검색표시">
-                    </button>
-                </div>
-    
-                <button type="button" class="btn_logout">
-                    심장병동 간호사실
-                </button>
-            </div>
-        </div>
-     </header>
-
-
-      <!--콘텐츠-->
-      <div id="wrap_content" class="nurse monitoring_patient">
-
-        <nav class="nav">
-            <ul class="main_depth gnb">
-              <li class="gnb_list active">
-                <a class="link" href="monitoring.html">
-                    모니터링
-                </a>
-              </li>
-
-              <li class="gnb_list">
-                <a class="link" href="index.html">
-                   관리
-                </a>
-              </li>
-
-              <li class="gnb_list">
-                <a class="link" href="dashboard.html">
-                    대시보드
-                </a>
-              </li>
-
-              <li class="gnb_list">
-                <a class="link" href="message.html">
-                    메세지
-                </a>
-              </li>
-            </ul>
-        </nav>
-
-        <div class="wrap_inner">
-          <section class="section management patient">
-              <div class="btn_list">
-                    <button type="button" class="btn_alarm" disabled>
-                        경보해제
-                    </button>
-
-                    <!-- 경보해제시 빨간 버튼 -->
-                    <button type="button" class="btn_alarm_red">
-                        경보해제
-                    </button>
-
-                    <!-- 경보해제 버튼 누르면 나오는 버튼 -->
-                    <div class="emergency_list">
-                        <button type="button" class="response">
-                            대응중
-                        </button>
+        <!--헤더 pc-->
+        <header id="header" class="pc_header">
+            <div class="header_inner">
+                <div>
+                    <h1 class="logo">
+                        <a class="link" href="index.html">
+                            <img class="img" src="../img/header/logo.png" alt="로고">
+                        </a>
+                    </h1>
         
-                        <button type="button" class="circum">
-                            상황해제<br>
-                            <span>환자 대응을 마치고 상황을 종료합니다.</span>
+                    <div class="header_title">
+                        <h1>모니터링</h1>
+                        <h3>담당 환자들의 생체신호를 실시간으로 모니터링 합니다.</h3>
+                    </div>
+                </div>
+        
+                <div>
+                    <div style="width: 110px;"></div>
+        
+                    <div class="search_container">
+                        <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
+        
+                        <button type="button" class="btn_search">
+                            <img src="../img/header/search.svg" alt="검색표시">
                         </button>
                     </div>
-              </div>
-              
-
-            <div class="container">
-                <div class="title">
-                    <div>
-                        <h2>
-                            <span>김환자</span>
-                            (<span>63</span>.
-                            <span>남</span>)
-                        </h2>
-                    </div>
-                    
-                    <p>
-                        <span>Patient ID</span> - 
-                        <span>Patient type</span>
-                    </p>
-
-                    <p>
-                        <span>심장병동</span>.
-                        <span>1308</span>호.
-                        <span>3</span>병상
-                    </p>
-                </div>
-
-                <div class="container">
-                    <div class="management_list">
-                        <div class="list on" onclick="location.href='patient.html'">
-                            <p>모니터링</p>
-                        </div>
-    
-                        <div class="list off" onclick="location.href='arteriotony.html'">
-                            <p>협압 수동입력</p>
-                        </div>
-    
-                        <div class="list off doctor_send">
-                            <p>담당의에게 메세지 보내기</p>
-    
-                            <div>
-                                <img src="/img/icon/share.png" alt="공유 아이콘">
-                            </div>
-                        </div>
-                    </div>
+        
+                    <button type="button" class="btn_logout">
+                        심장병동 간호사실
+                    </button>
                 </div>
             </div>
-          </section>
+        </header>
 
-          <section class="section vital_chart">
-            <div class="container">
-                <div class="title">
-                    <p>vital moniter</p>
-                    <p>
-                        <span>김환자</span>
-                        (<span>63</span>.
-                        <span>남</span>).
-                        <span>Patient ID</span> - 
-                        <span>Patient type</span>
-                    </p>
 
-                    <div class="chart_time">
-                        <p>
-                            마지막 업데이트 시간 : 
-                            <span>21</span>.
-                            <span>09</span>.
-                            <span>15</span>.
-                        </p>
-                        &nbsp;
-                        <p>
-                            <span>10</span>:
-                            <span>30</span>:
-                            <span>15</span>
-                        </p>
-                    </div>
-                </div>
+        <!--콘텐츠-->
+        <div id="wrap_content" class="nurse monitoring_patient">
 
-                <div class="cont">
-                    <div class="container">
+            <nav class="nav">
+                <ul class="main_depth gnb">
+                    <li class="gnb_list active">
+                        <a class="link" href="monitoring.html">
+                            모니터링
+                        </a>
+                    </li>
 
-                        <!-- 탭메뉴 -->
-                        <ul class="tabs">
-                            <li class="tab-link  current" data-tab="tab-1">current vital</li>
-                            <li class="tab-link" data-tab="tab-2">Tabular Trend</li>
-                            <li class="tab-link" data-tab="tab-3">Graphical Trend</li>
-                            <li class="tab-link" data-tab="tab-4">Event</li>
-                        </ul>
+                    <li class="gnb_list">
+                        <a class="link" href="index.html">
+                        관리
+                        </a>
+                    </li>
+
+                    <li class="gnb_list">
+                        <a class="link" href="dashboard.html">
+                            대시보드
+                        </a>
+                    </li>
+
+                    <li class="gnb_list">
+                        <a class="link" href="message.html">
+                            메세지
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="wrap_inner">
+
+                <!-- 왼쪽 -->
+                <section class="section management patient">
+                    <div class="btn_list">
+                        <button type="button" class="btn_alarm" disabled>
+                            경보해제
+                        </button>
+
+                        <!-- 경보해제시 빨간 버튼 -->
+                        <button type="button" class="btn_alarm_red">
+                            경보해제
+                        </button>
+
+                        <!-- 경보해제 버튼 누르면 나오는 버튼 -->
+                        <div class="emergency_list">
+                            <button type="button" class="response">
+                                대응중
+                            </button>
                 
-                        <!-- current vital -->
-                        <div id="tab-1" class="tab-content current">
-
-                            <div class="graph">
-                                <div class="ecg">
-                                    <div class="ecg_graph">
-                                        <p>ECG</p>
-
-                                        <div>
-                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="bell">
-                                        <div class="bell_name">
-                                            <p>HR. bpm</p>
-
-                                            <input type="checkbox" id="ecg_mute">
-                                            <label for="ecg_mute">
-                                              <span></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="bell_num">
-                                            <div>
-                                                <p>120</p>
-                                                <p>50</p>
-                                            </div>
-
-                                            <p>108</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="sp">
-                                    <div class="sp_graph">
-                                        <p>SpO2</p>
-
-                                        <div>
-                                            <img src="/img/graph/SpO2.png" alt="ecg그래프">
-                                        </div>
-                                    </div>
-
-                                    <div class="bell">
-                                        <div class="bell_name">
-                                            <p>SpO2. %</p>
-
-                                            <input type="checkbox" id="sp_mute">
-                                            <label for="sp_mute">
-                                              <span></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="bell_num">
-                                            <div>
-                                                <p>100</p>
-                                                <p>90</p>
-                                            </div>
-
-                                            <p>98</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="resp">
-                                    <div class="resp_graph">
-                                        <p>RESP</p>
-
-                                        <div>
-                                            <img src="/img/graph/RESP.png" alt="ecg그래프">
-                                        </div>    
-                                    </div>
-
-                                    <div class="bell">
-                                        <div class="bell_name">
-                                            <p>RESP</p>
-
-                                            <input type="checkbox" id="resp_mute">
-                                            <label for="resp_mute">
-                                              <span></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="bell_num">
-                                            <div>
-                                                <p>30</p>  
-                                                <p>8</p>
-                                            </div>
-
-                                            <p>15</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="control">
-                                <div>
-                                    <div class="ews">
-                                        <div class="bell_name">
-                                            <p>EWS</p>
-    
-                                            <input type="checkbox" id="ews_mute">
-                                            <label for="ews_mute">
-                                              <span></span>
-                                            </label>
-                                        </div>
-    
-                                        <div class="bell_num">
-                                            <p>3</p>
-    
-                                            <div>
-                                                <div>
-                                                    <img src="/img/icon/up.png" alt="위를 향하는 화살표">
-                                                </div>
-    
-                                                <div>
-                                                    <img src="/img/icon/down.png" alt="아래를 향하는 화살표">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <div class="mmhg" onclick="location.href='arteriotony.html'">
-                                        <div class="bell_name">
-                                            <p>NBP.mmHg</p>
-                                        </div>
-    
-                                        <div class="bell_num">
-                                            <div>
-                                                <p>160</p>
-                                                <p>90</p>
-                                            </div>
-    
-                                            <p>128/77 (94)</p>
-                                        </div>
-    
-                                        <div class="time">
-                                            <div>
-                                                <img src="/img/icon/clock.svg" alt="시계 아이콘">
-                                            </div>
-    
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>21</span>:
-                                                <span>10</span>:
-                                                <span>25</span>
-                                            </p>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    <div class="pulse" onclick="location.href='arteriotony.html'">
-                                        <div class="bell_name">
-                                            <p>Pulse.bpm</p>
-                                        </div>
-    
-                                        <div class="bell_num">
-                                            <div>
-                                                <p>120</p>
-                                                <p>50</p>
-                                            </div>
-    
-                                            <p>184</p>
-                                        </div>
-    
-                                        <div class="time">
-                                            <div>
-                                                <img src="/img/icon/pulse_clock.png" alt="시계 아이콘">
-                                            </div>
-    
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>21</span>:
-                                                <span>10</span>:
-                                                <span>25</span>
-                                            </p>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                                <div class="temp">
-                                    <div class="bell_name">
-                                        <p>Temp.°C</p>
-
-                                        <input type="checkbox" id="temp_mute">
-                                        <label for="temp_mute">
-                                          <span></span>
-                                        </label>
-                                    </div>
-
-                                    <div class="bell_num">
-                                        <div>
-                                            <p>39.0</p>
-                                            <p>36.0</p>
-                                        </div>
-
-                                        <p>36.5</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <button type="button" class="circum">
+                                상황해제<br>
+                                <span>환자 대응을 마치고 상황을 종료합니다.</span>
+                            </button>
                         </div>
-
-                        <!-- Tabular Trend -->
-                        <div id="tab-2" class="tab-content">
-                            
-                            <div class="ecg">
-                                <div class="ecg_graph">
-                                    <p>ECG</p>
-
-                                    <div>
-                                        <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                    </div>
-                                </div>
-                                
-                                <div class="bell">
-                                    <div class="bell_name">
-                                        <p>HR. bpm</p>
-                                    </div>
-
-                                    <div class="bell_num">
-                                        <div>
-                                            <p>120</p>
-                                            <p>50</p>
-                                        </div>
-
-                                        <p>108</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="tabular_table">
-                                <div class="table_title">
-                                    <p class="date_time">date/time</p>
-                                    <p class="hr">HR (bpm)</p>
-                                    <p class="temp">Temp (°C)</p>
-                                    <p class="ews">EWS</p>
-                                    <p class="spo">SpO2 (%)</p>
-                                    <p class="error">Error</p>
-                                </div>
-
-                                <div class="table_body">
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-                                </div>
-
-                                <!-- pagenation -->
-                                <div class="table_page">
-                                    <ul>
-                                        <li><a href=""><<</a></li>
-                                        <li><a href=""><</a></li>
-
-                                        <li class="active"><a href="">1.</a></li>
-                                        <li><a href="">2.</a></li>
-                                        <li><a href="">3.</a></li>
-                                        <li><a href="">4.</a></li>
-                                        <li><a href="">5.</a></li>
-                                        <li><a href="">6.</a></li>
-                                        <li><a href="">7.</a></li>
-                                        <li><a href="">8.</a></li>
-                                        <li><a href="">9.</a></li>
-                                        <li><a href="">10.</a></li>
-                                        <li><a href="">...</a></li>
-                                        <li><a href="">52.</a></li>
-
-                                        <li><a href="">></a></li>
-                                        <li><a href="">>></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        
-                        </div>
-
-                        <!-- Graphical Trend -->
-                        <div id="tab-3" class="tab-content">
-                            <div class="ecg">
-                                <div class="ecg_graph">
-                                    <p>ECG</p>
-
-                                    <div>
-                                        <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                    </div>
-                                </div>
-                                
-                                <div class="bell">
-                                    <div class="bell_name">
-                                        <p>HR. bpm</p>
-                                    </div>
-
-                                    <div class="bell_num">
-                                        <div>
-                                            <p>120</p>
-                                            <p>50</p>
-                                        </div>
-
-                                        <p>108</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tabular_table graphical">
-                                <div class="table_title">
-                                    <p class="date_time">date/time</p>
-                                    <p class="hr">HR (bpm)</p>
-                                    <p class="temp">Temp (°C)</p>
-                                    <p class="ews">EWS</p>
-                                    <p class="spo">SpO2 (%)</p>
-                                    <p class="error">Error</p>
-                                </div>
-
-                                <div class="table_body">
-                                    <div class="table_content">
-                                        <div class="date_time">
-                                            <p>
-                                                <span>21</span>.
-                                                <span>09</span>.
-                                                <span>15</span>.
-                                            </p>
-    
-                                            <p>
-                                                <span>01</span>:
-                                                <span>44</span>:
-                                                <span>37</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="hr"><p>108</p></div>
-
-                                        <div class="temp">
-                                            <p>
-                                                <span>36</span>.
-                                                <span>5</span>
-                                            </p>
-                                        </div>
-
-                                        <div class="ews"><p>4</p></div>
-                                        <div class="spo"><p>98</p></div>
-                                        <div class="error"><p>-</p></div>
-                                    </div>
-                                </div>
-
-                                <div class="hr_chart">
-                                    <div class="hr_index">
-                                        <p>HR</p>
-                                        <p>(bpm)</p>
-                                    </div>
-
-                                    <div>
-                                        <div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                        </div>
-                                        
-
-                                       <div class="hr_time">
-                                           <div>
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>
-                                                </p>
-                                           </div>
-
-                                            <p class="start_time">
-                                                <span>00</span>:
-                                                <span>00</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="second_time">
-                                                <span>00</span>:
-                                                <span>01</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="third_time">
-                                                <span>00</span>:
-                                                <span>02</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="fourth_time">
-                                                <span>00</span>:
-                                                <span>03</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="fifth_time">
-                                                <span>00</span>:
-                                                <span>04</span>:
-                                                <span>00</span>
-                                            </p>
-                                       </div>
-                                    </div>
-
-                                    <div class="hr_img">
-                                        <img src="/img/graph/hr_dot.png" alt="점으로된 그래프">
-                                    </div>
-
-                                    <div class="time_line">
-                                        <p class="time">
-                                            <span>00</span>:
-                                            <span>02</span>:
-                                            <span>00</span>
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <!-- Event -->
-                        <div id="tab-4" class="tab-content">
-                            <div class="ecg">
-                                <div class="ecg_graph">
-                                    <p>ECG</p>
-
-                                    <div>
-                                        <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                    </div>
-                                </div>
-                                
-                                <div class="bell">
-                                    <div class="bell_name">
-                                        <p>HR. bpm</p>
-                                    </div>
-
-                                    <div class="bell_num">
-                                        <div>
-                                            <p>120</p>
-                                            <p>50</p>
-                                        </div>
-
-                                        <p>216</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="tabular_table graphical event">
-                                <div class="table_title">
-                                    <p class="date_time">date/time</p>
-                                    <p class="alarm_des">Alarm Description</p>
-                                    <p class="prior">Priority</p>
-                                </div>
-
-                                <div class="table_body">
-                                    <!-- 1 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 2 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 3 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 4 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 5 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 6 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 7 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 8 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 9 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-
-                                    <!-- 10 -->
-                                    <div class="table_wrap">
-                                        <div>
-                                            <div class="date_time">
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>.
-                                                </p>
-        
-                                                <p>
-                                                    <span>01</span>:
-                                                    <span>44</span>:
-                                                    <span>37</span>
-                                                </p>
-                                            </div>
-    
-                                            <div class="alarm_des"><p>Manual Event</p></div>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="close">닫기</p>
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="table_content">
-                                        <div class="cont_inner">
-                                            <div class="ecg">
-                                                <div class="ecg_graph">
-                                                    <p>ECG</p>
-                    
-                                                    <div>
-                                                        <div class="img_container">
-                                                            <img src="/img/graph/ECG.png" alt="ecg그래프">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    
-                                                <div class="bell">
-                                                    <div class="bell_name">
-                                                        <p>HR. bpm</p>
-                                                    </div>
-                    
-                                                    <div class="bell_num">
-                                                        <div>
-                                                            <p>120</p>
-                                                            <p>50</p>
-                                                        </div>
-                    
-                                                        <p>216</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="btn_list">
-                                                <button type="button" class="btn_confirm">confirm</button>
-                                                <button type="button" class="btn_delete">delete</button>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-                                    
-                                    <!-- pagenation -->
-                                    <div class="table_page">
-                                        <ul>
-                                            <li><a href=""><<</a></li>
-                                            <li><a href=""><</a></li>
-    
-                                            <li class="active"><a href="">1.</a></li>
-                                            <li><a href="">2.</a></li>
-                                            <li><a href="">3.</a></li>
-                                            <li><a href="">4.</a></li>
-                                            <li><a href="">5.</a></li>
-                                            <li><a href="">6.</a></li>
-                                            <li><a href="">7.</a></li>
-                                            <li><a href="">8.</a></li>
-                                            <li><a href="">9.</a></li>
-                                            <li><a href="">10.</a></li>
-                                            <li><a href="">...</a></li>
-                                            <li><a href="">52.</a></li>
-    
-                                            <li><a href="">></a></li>
-                                            <li><a href="">>></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                      
                     </div>
                     
-                </div>
 
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>
+                                    <span>김환자</span>
+                                    (<span>63</span>.
+                                    <span>남</span>)
+                                </h2>
+                            </div>
+                            
+                            <p>
+                                <span>Patient ID</span> - 
+                                <span>Patient type</span>
+                            </p>
+
+                            <p>
+                                <span>심장병동</span>.
+                                <span>1308</span>호.
+                                <span>3</span>병상
+                            </p>
+                        </div>
+
+                        <div class="container">
+                            <div class="management_list">
+                                <div class="list on" onclick="location.href='patient.html'">
+                                    <p>모니터링</p>
+                                </div>
+            
+                                <div class="list off" onclick="location.href='arteriotony.html'">
+                                    <p>협압 수동입력</p>
+                                </div>
+            
+                                <div class="list off doctor_send">
+                                    <p>담당의에게 메세지 보내기</p>
+            
+                                    <div>
+                                        <img src="../img/icon/share.png" alt="공유 아이콘">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 오른쪽 -->
+                <section class="section vital_chart">
+                    <div class="container">
+                        <div class="title">
+                            <p>vital moniter</p>
+                            <p>
+                                <span>김환자</span>
+                                (<span>63</span>.
+                                <span>남</span>).
+                                <span>Patient ID</span> - 
+                                <span>Patient type</span>
+                            </p>
+
+                            <div class="chart_time">
+                                <p>
+                                    마지막 업데이트 시간 : 
+                                    <span>21</span>.
+                                    <span>09</span>.
+                                    <span>15</span>.
+                                </p>
+
+                                <p>
+                                    <span>10</span>:
+                                    <span>30</span>:
+                                    <span>15</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="cont">
+                            <div class="container">
+
+                                <!-- 탭메뉴 -->
+                                <ul class="tabs">
+                                    <li class="tab-link  current" data-tab="tab-1">current vital</li>
+                                    <li class="tab-link" data-tab="tab-2">Tabular Trend</li>
+                                    <li class="tab-link" data-tab="tab-3">Graphical Trend</li>
+                                    <li class="tab-link" data-tab="tab-4">Event</li>
+                                </ul>
+                        
+                                <!-- current vital -->
+                                <div id="tab-1" class="tab-content current">
+
+                                    <div class="graph">
+                                        <div class="ecg">
+                                            <div class="ecg_graph">
+                                                <p>ECG</p>
+
+                                                <div>
+                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="bell">
+                                                <div class="bell_name">
+                                                    <p>HR. bpm</p>
+
+                                                    <input type="checkbox" id="ecg_mute">
+                                                    <label for="ecg_mute">
+                                                    <span></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>120</p>
+                                                        <p>50</p>
+                                                    </div>
+
+                                                    <p>108</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="sp">
+                                            <div class="sp_graph">
+                                                <p>SpO2</p>
+
+                                                <div>
+                                                    <img src="../img/graph/SpO2.png" alt="ecg그래프">
+                                                </div>
+                                            </div>
+
+                                            <div class="bell">
+                                                <div class="bell_name">
+                                                    <p>SpO2. %</p>
+
+                                                    <input type="checkbox" id="sp_mute">
+                                                    <label for="sp_mute">
+                                                    <span></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>100</p>
+                                                        <p>90</p>
+                                                    </div>
+
+                                                    <p>98</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="resp">
+                                            <div class="resp_graph">
+                                                <p>RESP</p>
+
+                                                <div>
+                                                    <img src="../img/graph/RESP.png" alt="ecg그래프">
+                                                </div>    
+                                            </div>
+
+                                            <div class="bell">
+                                                <div class="bell_name">
+                                                    <p>RESP</p>
+
+                                                    <input type="checkbox" id="resp_mute">
+                                                    <label for="resp_mute">
+                                                    <span></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>30</p>  
+                                                        <p>8</p>
+                                                    </div>
+
+                                                    <p>15</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control">
+                                        <div>
+                                            <div class="ews">
+                                                <div class="bell_name">
+                                                    <p>EWS</p>
+            
+                                                    <input type="checkbox" id="ews_mute">
+                                                    <label for="ews_mute">
+                                                    <span></span>
+                                                    </label>
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <p>3</p>
+            
+                                                    <div>
+                                                        <div>
+                                                            <img src="../img/icon/up.png" alt="위를 향하는 화살표">
+                                                        </div>
+            
+                                                        <div>
+                                                            <img src="../img/icon/down.png" alt="아래를 향하는 화살표">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="mmhg" onclick="location.href='arteriotony.html'">
+                                                <div class="bell_name">
+                                                    <p>NBP.mmHg</p>
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>160</p>
+                                                        <p>90</p>
+                                                    </div>
+            
+                                                    <p>128/77 (94)</p>
+                                                </div>
+            
+                                                <div class="time">
+                                                    <div>
+                                                        <img src="../img/icon/clock.svg" alt="시계 아이콘">
+                                                    </div>
+            
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>21</span>:
+                                                        <span>10</span>:
+                                                        <span>25</span>
+                                                    </p>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="pulse" onclick="location.href='arteriotony.html'">
+                                                <div class="bell_name">
+                                                    <p>Pulse.bpm</p>
+                                                </div>
+            
+                                                <div class="bell_num">
+                                                    <div>
+                                                        <p>120</p>
+                                                        <p>50</p>
+                                                    </div>
+            
+                                                    <p>184</p>
+                                                </div>
+            
+                                                <div class="time">
+                                                    <div>
+                                                        <img src="../img/icon/pulse_clock.png" alt="시계 아이콘">
+                                                    </div>
+            
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>21</span>:
+                                                        <span>10</span>:
+                                                        <span>25</span>
+                                                    </p>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="temp">
+                                            <div class="bell_name">
+                                                <p>Temp.°C</p>
+
+                                                <input type="checkbox" id="temp_mute">
+                                                <label for="temp_mute">
+                                                <span></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="bell_num">
+                                                <div>
+                                                    <p>39.0</p>
+                                                    <p>36.0</p>
+                                                </div>
+
+                                                <p>36.5</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Tabular Trend -->
+                                <div id="tab-2" class="tab-content">
+                                    
+                                    <div class="ecg">
+                                        <div class="ecg_graph">
+                                            <p>ECG</p>
+
+                                            <div>
+                                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bell">
+                                            <div class="bell_name">
+                                                <p>HR. bpm</p>
+                                            </div>
+
+                                            <div class="bell_num">
+                                                <div>
+                                                    <p>120</p>
+                                                    <p>50</p>
+                                                </div>
+
+                                                <p>108</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="tabular_table">
+                                        <div class="table_title">
+                                            <p class="date_time">date/time</p>
+                                            <p class="hr">HR (bpm)</p>
+                                            <p class="temp">Temp (°C)</p>
+                                            <p class="ews">EWS</p>
+                                            <p class="spo">SpO2 (%)</p>
+                                            <p class="error">Error</p>
+                                        </div>
+
+                                        <div class="table_body">
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- pagenation -->
+                                        <div class="table_page">
+                                            <ul>
+                                                <li><a href=""><<</a></li>
+                                                <li><a href=""><</a></li>
+
+                                                <li class="active"><a href="">1.</a></li>
+                                                <li><a href="">2.</a></li>
+                                                <li><a href="">3.</a></li>
+                                                <li><a href="">4.</a></li>
+                                                <li><a href="">5.</a></li>
+                                                <li><a href="">6.</a></li>
+                                                <li><a href="">7.</a></li>
+                                                <li><a href="">8.</a></li>
+                                                <li><a href="">9.</a></li>
+                                                <li><a href="">10.</a></li>
+                                                <li><a href="">...</a></li>
+                                                <li><a href="">52.</a></li>
+
+                                                <li><a href="">></a></li>
+                                                <li><a href="">>></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+
+                                <!-- Graphical Trend -->
+                                <div id="tab-3" class="tab-content">
+                                    <div class="ecg">
+                                        <div class="ecg_graph">
+                                            <p>ECG</p>
+
+                                            <div>
+                                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bell">
+                                            <div class="bell_name">
+                                                <p>HR. bpm</p>
+                                            </div>
+
+                                            <div class="bell_num">
+                                                <div>
+                                                    <p>120</p>
+                                                    <p>50</p>
+                                                </div>
+
+                                                <p>108</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tabular_table graphical">
+                                        <div class="table_title">
+                                            <p class="date_time">date/time</p>
+                                            <p class="hr">HR (bpm)</p>
+                                            <p class="temp">Temp (°C)</p>
+                                            <p class="ews">EWS</p>
+                                            <p class="spo">SpO2 (%)</p>
+                                            <p class="error">Error</p>
+                                        </div>
+
+                                        <div class="table_body">
+                                            <div class="table_content">
+                                                <div class="date_time">
+                                                    <p>
+                                                        <span>21</span>.
+                                                        <span>09</span>.
+                                                        <span>15</span>.
+                                                    </p>
+            
+                                                    <p>
+                                                        <span>01</span>:
+                                                        <span>44</span>:
+                                                        <span>37</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="hr"><p>108</p></div>
+
+                                                <div class="temp">
+                                                    <p>
+                                                        <span>36</span>.
+                                                        <span>5</span>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ews"><p>4</p></div>
+                                                <div class="spo"><p>98</p></div>
+                                                <div class="error"><p>-</p></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="hr_chart">
+                                            <div class="hr_index">
+                                                <p>HR</p>
+                                                <p>(bpm)</p>
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <div class="hr_line"></div>
+                                                    <div class="hr_line"></div>
+                                                    <div class="hr_line"></div>
+                                                    <div class="hr_line"></div>
+                                                    <div class="hr_line"></div>
+                                                    <div class="hr_line"></div>
+                                                    <div class="hr_line"></div>
+                                                </div>
+                                                
+
+                                            <div class="hr_time">
+                                                <div>
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>
+                                                        </p>
+                                                </div>
+
+                                                    <p class="start_time">
+                                                        <span>00</span>:
+                                                        <span>00</span>:
+                                                        <span>00</span>
+                                                    </p>
+
+                                                    <p class="second_time">
+                                                        <span>00</span>:
+                                                        <span>01</span>:
+                                                        <span>00</span>
+                                                    </p>
+
+                                                    <p class="third_time">
+                                                        <span>00</span>:
+                                                        <span>02</span>:
+                                                        <span>00</span>
+                                                    </p>
+
+                                                    <p class="fourth_time">
+                                                        <span>00</span>:
+                                                        <span>03</span>:
+                                                        <span>00</span>
+                                                    </p>
+
+                                                    <p class="fifth_time">
+                                                        <span>00</span>:
+                                                        <span>04</span>:
+                                                        <span>00</span>
+                                                    </p>
+                                            </div>
+                                            </div>
+
+                                            <div class="hr_img">
+                                                <img src="../img/graph/hr_dot.png" alt="점으로된 그래프">
+                                            </div>
+
+                                            <div class="time_line">
+                                                <p class="time">
+                                                    <span>00</span>:
+                                                    <span>02</span>:
+                                                    <span>00</span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <!-- Event -->
+                                <div id="tab-4" class="tab-content">
+                                    <div class="ecg">
+                                        <div class="ecg_graph">
+                                            <p>ECG</p>
+
+                                            <div>
+                                                <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bell">
+                                            <div class="bell_name">
+                                                <p>HR. bpm</p>
+                                            </div>
+
+                                            <div class="bell_num">
+                                                <div>
+                                                    <p>120</p>
+                                                    <p>50</p>
+                                                </div>
+
+                                                <p>216</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="tabular_table graphical event">
+                                        <div class="table_title">
+                                            <p class="date_time">date/time</p>
+                                            <p class="alarm_des">Alarm Description</p>
+                                            <p class="prior">Priority</p>
+                                        </div>
+
+                                        <div class="table_body">
+                                            <!-- 1 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 2 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 3 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 4 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 5 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 6 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 7 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 8 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 9 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                            <!-- 10 -->
+                                            <div class="table_wrap">
+                                                <div>
+                                                    <div class="date_time">
+                                                        <p>
+                                                            <span>21</span>.
+                                                            <span>09</span>.
+                                                            <span>15</span>.
+                                                        </p>
+                
+                                                        <p>
+                                                            <span>01</span>:
+                                                            <span>44</span>:
+                                                            <span>37</span>
+                                                        </p>
+                                                    </div>
+            
+                                                    <div class="alarm_des"><p>Manual Event</p></div>
+                                                </div>
+
+                                                <div>
+                                                    <p class="more">자세히</p>
+                                                    <p class="close">닫기</p>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="table_content">
+                                                <div class="cont_inner">
+                                                    <div class="ecg">
+                                                        <div class="ecg_graph">
+                                                            <p>ECG</p>
+                            
+                                                            <div>
+                                                                <div class="img_container">
+                                                                    <img src="../img/graph/ECG.png" alt="ecg그래프">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="bell">
+                                                            <div class="bell_name">
+                                                                <p>HR. bpm</p>
+                                                            </div>
+                            
+                                                            <div class="bell_num">
+                                                                <div>
+                                                                    <p>120</p>
+                                                                    <p>50</p>
+                                                                </div>
+                            
+                                                                <p>216</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="btn_list">
+                                                        <button type="button" class="btn_confirm">confirm</button>
+                                                        <button type="button" class="btn_delete">delete</button>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                            
+                                            <!-- pagenation -->
+                                            <div class="table_page">
+                                                <ul>
+                                                    <li><a href=""><<</a></li>
+                                                    <li><a href=""><</a></li>
+            
+                                                    <li class="active"><a href="">1.</a></li>
+                                                    <li><a href="">2.</a></li>
+                                                    <li><a href="">3.</a></li>
+                                                    <li><a href="">4.</a></li>
+                                                    <li><a href="">5.</a></li>
+                                                    <li><a href="">6.</a></li>
+                                                    <li><a href="">7.</a></li>
+                                                    <li><a href="">8.</a></li>
+                                                    <li><a href="">9.</a></li>
+                                                    <li><a href="">10.</a></li>
+                                                    <li><a href="">...</a></li>
+                                                    <li><a href="">52.</a></li>
+            
+                                                    <li><a href="">></a></li>
+                                                    <li><a href="">>></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </section>
             </div>
-          </section>
-
         </div>
-      </div>
 
     </div>
     <!--// end wrap-->

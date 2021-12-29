@@ -66,6 +66,7 @@ input, select, label { vertical-align:middle; 	font-family: 'Noto Sans KR', sans
 button, input, select, textarea { margin:0; vertical-align:baseline; *vertical-align:middle;font-weight:normal;letter-spacing:normal;}
 button, input { line-height:normal;}
 button, select { text-transform:none; }
+button{background: none;}
 
 select {
      -webkit-appearance: none;/* 네이티브 외형 감추기*/

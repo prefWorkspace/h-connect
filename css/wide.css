@@ -122,7 +122,7 @@ img{
     margin: 0 auto 48px;
 }
 
-.wait_list h1{ font-size: 96px;}
+.wait_list h1{margin-bottom: 16px;font-size: 96px;}
 .wait_list h2{ font-size: 72px;}
 .wait_list h3{ font-size: 64px;}
 .wait_list h4{ font-size: 42px;}

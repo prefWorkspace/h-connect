@@ -488,6 +488,9 @@
 }
 
 /* 사용한 장치 반납 */
+.return_device .container .title h2{
+    color: #940045;
+}
 .return_device .device_count div h1{
     color: #000;
 }
@@ -685,7 +688,11 @@
     border:1px solid #940045;
     color: #940045;
 }
-/* 
+
+.nurse .new_hospital .title{
+    padding: 8px 16px 26px;
+}
+
 .new_hospital .title .btn_new_hospital{
     width: 96px;
     height: 40px;
@@ -695,24 +702,10 @@
     background: none;
     font-size: 14px;
     color: #007A94;
-} */
-
-.new_hospital .title button{
-    width: 96px;
-    height: 40px;
-    padding: 10px;
-    font-size: 12px;
-    font-weight: normal;
 }
 
-.new_hospital .title .btn_no{
-    margin-right: 13px;
-    color: #aaa;
-}
-
-.new_hospital .title .btn_add{
-    background: #007A94;
-    color: #fff;
+.new_hospital .title p{
+    margin-top: 5px;
 }
 
 .new_hospital .hospital_patient input{
@@ -886,7 +879,13 @@
     border-bottom: 1px solid #eee;
 }
 
-.modifi_hospital{display: none;}
+.modifi_hospital .title{
+    height: 96px;
+}
+
+.modifi_hospital .title h2{
+    margin-bottom: 13px;
+}
 
 .modifi_hospital .title .btn_new_hospital{
     width: 96px;
@@ -964,7 +963,6 @@
     font-weight: normal;
 }
 
-
 .modifi_hospital .device_room{
     padding: 16px;
 }
@@ -1021,7 +1019,7 @@
 .modifi_hospital .device_room .btn_add a{
     margin: 0;
     font-size: 14px;
-    color: #007A94;
+    color: #888;
 }
 
 .modifi_hospital .device_room> div{
@@ -1031,6 +1029,32 @@
 .modifi_hospital .sex_option2{
     width: 80px;
     z-index: 2;
+}
+
+.modifi_hospital .container> .btn_list{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modifi_hospital .container> .btn_list button{
+    width: 98px;
+    height: 32px;
+}
+
+.modifi_hospital .container> .btn_list .btn_no{
+    margin-right: 8px;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.modifi_hospital .container> .btn_list .btn_add{
+    background: #007A94;
+    color: #fff;
+}
+
+.modifi_hospital .container> .btn_list .btn_add:hover{
+    background: #004F60;
 }
 
 
@@ -2157,7 +2181,7 @@
 }
 
 .arteriotony_input .manual_input .title{
-    margin-bottom: 48px;
+    margin-bottom: 25px;
     display: flex;
     justify-content: space-between;
 }
@@ -2196,7 +2220,7 @@
 
 .arteriotony .form_arter{
     height: 576px;
-    padding: 32px 32px 40px;
+    padding: 63px 32px 45px;
     border-radius: 8px;
     background-color: #eee;
 }
@@ -2209,15 +2233,17 @@
 }
 
 .arteriotony .form_arter h2{
+    font-weight: 500;
     font-size: 16px;
 }
 
-.arteriotony .form_arter> div> div{
-    margin-bottom: 32px;
+.arteriotony .form_arter .arter_input{
+    display: flex;
+    justify-content: space-between;
 }
 
-.arteriotony .form_arter .arter_input> :nth-child(2){
-    margin: 0;
+.arteriotony .form_arter .arter_input div{
+    width: 246px;
 }
 
 .arteriotony .form_arter .arter_input> div> h2{
@@ -2229,12 +2255,14 @@
     height: 48px;
     padding: 12px 24px;
     border-radius: 4px;
+    font-weight: normal;
     font-size: 16px;
 }
 
 .arteriotony .form_arter .pulse{
     width: 100%;
-    padding: 64px 0 0 0;
+    padding: 41px 0 0 0;
+    cursor: default;
 }
 
 .arteriotony .form_arter .pulse .arter_title{
@@ -2253,6 +2281,34 @@
 .arteriotony .form_arter .pulse> div h2{
     margin-bottom: 16px;
     color: #000;
+}
+
+.arteriotony .form_arter .btn_list{
+    padding-top: 75px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.arteriotony .form_arter .btn_list button{
+    width: 96px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.arteriotony .form_arter .btn_list .btn_no{
+    margin-right: 8px;
+    background: #fff;
+    border: 1px solid #940045;
+    color: #940045;
+}
+
+.arteriotony .form_arter .btn_list .btn_add{
+    background: #007A94;
+    color: #fff;
+}
+
+.arteriotony .form_arter .btn_list .btn_add:hover{
+
 }
 
 .arteriotony .pre_record .title{

@@ -82,7 +82,7 @@ img{
 .select_case .case_list{
     height: 100%;
     padding: 16px;
-    background: #eee url('/img/logo.png') no-repeat;
+    background: #eee url('/H-Connect/img/logo.png') no-repeat;
     background-position: 50% 90%;
     background-size: 69px 48px;
     border-radius: 0 0 8px 8px;
@@ -182,7 +182,7 @@ img{
     content: '';
     width: 6px;
     height: 12px;
-    background: url('/img/right_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat;
     filter: invert(80%) sepia(87%) saturate(5190%) hue-rotate(177deg) brightness(97%) contrast(101%);
     display: block;
     transform: rotate(90deg) translateX(-82%);
@@ -383,7 +383,7 @@ img{
     content: '';
     width: 6px;
     height: 8px;
-    background: url(/img/icon/down.svg) no-repeat;
+    background: url(/H-Connect/img/icon/down.svg) no-repeat;
     filter: invert(18%) sepia(66%) saturate(5427%) hue-rotate(179deg) brightness(47%) contrast(101%);
     transform: rotate(-45deg);
     top: 9px;
@@ -1436,7 +1436,7 @@ img{
 .cont .graphical .time_line::before{
     position: absolute;
     content: '';
-    background: url('/img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 19px;
@@ -1488,7 +1488,7 @@ img{
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -1501,7 +1501,7 @@ img{
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -2138,7 +2138,7 @@ img{
     height: 17px;
     top: 45%;
     right: 40px;
-    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: translateY(91%);
 }
 
@@ -2147,7 +2147,7 @@ img{
     height: 17px;
     top: 44%;
     left: 40px;
-    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-100%);
 }
 
@@ -2891,7 +2891,7 @@ img{
     height: 17px;
     top: 50%;
     right: 40px;
-    background: url(/img/icon/btn_tri.svg) no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/icon/btn_tri.svg) no-repeat 0 0px / contain;
     transform: translateY(72%);
     position: absolute;
 }
@@ -2905,7 +2905,7 @@ img{
     height: 17px;
     top: 50%;
     left: 40px;
-    background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-72%);
     position: absolute;
 }

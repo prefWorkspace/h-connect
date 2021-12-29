@@ -146,25 +146,6 @@ $(function () {
         $('.pop.delete .overlay').hide();
     });
 
-
-    // 셀렉트
-        //장치관리- 장치추가
-        // $('.selectBox2 .label').on('click', function(){
-        //     $('.left_option').slideToggle(200);
-        // });
-        //장치관리- 장치반납
-        // $('.selectBox2 .label').on('click', function(){
-        //     $('.right_option').slideToggle(200);
-        // });
-
-        //장치관리- 장치리스트
-        // $('.select_device .label').on('click', function(){
-        //     $('.select_device').toggleClass('on');
-        //     $('.device_option').slideToggle(200);
-        // });
-
-        
-
 //측정관리
     // 환자검색
     $('.nurse .measure_status .search_container').on('click', function(){
@@ -178,8 +159,11 @@ $(function () {
     });
 
     // 환자선택하면 배경색이 바뀜
-    $('nurse .measure_status .cont .container .status_list').on('click', function(){
-        // $('.measure_status .cont .container> :nth-child(1)').toggleClass('on');
+    $('.measure_status .container .status_list').on('click', function(){
+        $(this).toggleClass('on');
+        $('.measure_status .container .status_list').not(this).removeClass('on');
+        $('.nurse_measure .new_hospital').toggle();
+        $('.nurse_measure .modifi_hospital').toggle();
     });
 
     // 측정 수정

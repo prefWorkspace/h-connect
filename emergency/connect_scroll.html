@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>H-Connect</title>
     <!--Import-->
-    <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
-    <script type='text/javascript' src='/js/common.js'></script>
-    <script type='text/javascript' src='/js/index.js'></script>
-    <script type='text/javascript' src='/js/slide.js'></script>
-    <script type='text/javascript' src='/js/swiper-bundle.min.js'></script>
+    <script type='text/javascript' src='../js/jquery-3.6.0.js'></script>
+    <script type='text/javascript' src='../js/common.js'></script>
+    <script type='text/javascript' src='../js/index.js'></script>
+    <script type='text/javascript' src='../js/slide.js'></script>
+    <script type='text/javascript' src='../js/swiper-bundle.min.js'></script>
 
     <!--css-->
-    <link rel='stylesheet' href='/css/reset.css'>
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/emergency.css">
-    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+    <link rel='stylesheet' href='../css/reset.css'>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/emergency.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
 
 </head>
 
@@ -35,7 +35,7 @@
     </div>
 
     <!-- 참석자 명단 팝업 -->
-    <div class="pop attendee">
+    <div class="pop emer_atten attendee">
         <div class="wrap_inner">
             <!-- 참석자 없을때 -->
             <div class="no_atten">
@@ -88,7 +88,7 @@
                         <div class="btn_list">
                             <button type="button" class="btn_cancel">취소</button>
                             <button type="button" class="btn_doctor_call">
-                                <img src="/img/header/call.png" alt="전화기 아이콘"> 확인
+                                <img src="../img/header/call.png" alt="전화기 아이콘"> 확인
                             </button>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                         <p>김협진 교수님</p>
 
                         <button type="button" class="btn_doctor_delete">
-                            <img src="/img/emergency/delete.png" alt="빨간색 취소아이콘">
+                            <img src="../img/emergency/delete.png" alt="빨간색 취소아이콘">
                         </button>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                                     </div>
 
                                     <button type="button" class="btn_next">
-                                        <img src="/img/emergency/btn_next.svg" alt="오른쪽 화살표">
+                                        <img src="../img/emergency/btn_next.svg" alt="오른쪽 화살표">
                                     </button>
                                 </div>
 
@@ -251,7 +251,7 @@
             
                             <button type="button" class="btn_search">
                                 <div>
-                                    <img src="/img/header/search.svg" alt="검색표시">
+                                    <img src="../img/header/search.svg" alt="검색표시">
                                 </div>                                
                             </button>
                         </div>
@@ -479,7 +479,7 @@
         <div class="overlay">
             <div class="pop_cont">
                 <div>
-                    <img src="/img/logo.png" alt="로고">
+                    <img src="../img/logo.png" alt="로고">
                 </div>
 
                 <h3>응급협진을 종료합니다.</h3>
@@ -501,7 +501,7 @@
 
                     <div class="header_left">
                         <div>
-                            <img src="/img/emergency/emergency.svg" alt="경고등 아이콘">
+                            <img src="../img/emergency/emergency.svg" alt="경고등 아이콘">
                         </div>
 
                         <h4>뇌졸증 환자(70대. 여)</h4>
@@ -527,14 +527,14 @@
 
                             <button type="button" class="btn_doctor_call">
                                 <div>
-                                    <img src="/img/icon/call.svg" alt="전화기 아이콘">
+                                    <img src="../img/icon/call.svg" alt="전화기 아이콘">
                                 </div>
                                 응급협진 요청하기
                             </button>
 
                             <button type="button" class="btn_end">
                                 <div>
-                                    <img src=" /img/logo.svg" alt="로고">
+                                    <img src=" ../img/logo.svg" alt="로고">
                                 </div>
                                 연결종료
                             </button>
@@ -548,12 +548,14 @@
         <!--콘텐츠-->
         <div id="wrap_content" class="emergency connect connect_scroll">
             <div class="wrap_inner">
+                <!-- 메세지창 -->
                 <section class="section left emer_message">
                     <div class="title">
                         <div>
                             <div>
-                                <img src="/img/header/message.svg" alt="메세지 아이콘">
+                                <img src="../img/header/message.svg" alt="메세지 아이콘">
                             </div>
+                            
                             <p>메세지</p>
                         </div>
                     </div>
@@ -726,7 +728,7 @@
                     </div>
                 </section>
 
-
+                <!-- 오른쪽 화면 -->
                 <section class="section right patient_view">
                     <div class="title">
                         <div class="btn_list">
@@ -744,19 +746,19 @@
                                 <ul class="tabs">
                                     <li class="tab-link" onclick="location.href='connect.html'">
                                         <div>
-                                            <img src="/img/emergency/several.svg" alt="여러개 탭의 아이콘">
+                                            <img src="../img/emergency/several.svg" alt="여러개 탭의 아이콘">
                                         </div>
                                     </li>
 
                                     <li class="tab-link" onclick="location.href='connect_tab.html'">
                                         <div>
-                                            <img src="/img/emergency/tab.svg" alt="탭 아이콘">
+                                            <img src="../img/emergency/tab.svg" alt="탭 아이콘">
                                         </div>
                                     </li>
 
                                     <li class="tab-link current" onclick="location.href='connect_scroll.html'">
                                         <div>
-                                            <img src="/img/emergency/scroll.svg" alt="스크롤되는 탭 아이콘">
+                                            <img src="../img/emergency/scroll.svg" alt="스크롤되는 탭 아이콘">
                                         </div>
                                     </li>
                                 </ul>
@@ -774,7 +776,7 @@
                                 <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
+                                            <img src="../img/icon/nurse/close.svg" alt="엑스 아이콘">
                                         </div>
                                     </button>
                                 </div>
@@ -785,7 +787,7 @@
                                     <div class="patient">
                                         <div class="title">
                                             <div class="img_container">
-                                                <img src="/img/emergency/document.svg" alt="문서 아이콘">
+                                                <img src="../img/emergency/document.svg" alt="문서 아이콘">
                                             </div>
 
                                             <h2>환자 상태</h2>
@@ -896,7 +898,7 @@
                                                     <!-- 사고부위 -->
                                                     <div class="part">
                                                         <h2>사고부위</h2>
-            
+
                                                         <div class="swiper part_accident">
                                                             <div class="swiper-wrapper part_container">
                                                                 <div class="swiper-slide part_front">
@@ -1654,7 +1656,7 @@
                                 <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
+                                            <img src="../img/icon/nurse/close.svg" alt="엑스 아이콘">
                                         </div>
                                     </button>
                                 </div>
@@ -1667,7 +1669,7 @@
                                             <p>ECG</p>
     
                                             <div>
-                                                <img src="/img/graph/ECG.png" alt="ecg그래프">
+                                                <img src="../img/graph/ECG.png" alt="ecg그래프">
                                             </div>
                                         </div>
                                         
@@ -1698,7 +1700,7 @@
                                             <p>SpO2</p>
     
                                             <div>
-                                                <img src="/img/graph/SpO2.png" alt="ecg그래프">
+                                                <img src="../img/graph/SpO2.png" alt="ecg그래프">
                                             </div>
                                         </div>
     
@@ -1728,7 +1730,7 @@
                                             <p>RESP</p>
     
                                             <div>
-                                                <img src="/img/graph/RESP.png" alt="ecg그래프">
+                                                <img src="../img/graph/RESP.png" alt="ecg그래프">
                                             </div>    
                                         </div>
     
@@ -1771,11 +1773,11 @@
         
                                                 <div>
                                                     <div>
-                                                        <img src="/img/icon/up.png" alt="위를 향하는 화살표">
+                                                        <img src="../img/icon/up.png" alt="위를 향하는 화살표">
                                                     </div>
         
                                                     <div>
-                                                        <img src="/img/icon/down.png" alt="아래를 향하는 화살표">
+                                                        <img src="../img/icon/down.png" alt="아래를 향하는 화살표">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1797,7 +1799,7 @@
         
                                             <div class="time">
                                                 <div>
-                                                    <img src="/img/icon/clock.svg" alt="시계 아이콘">
+                                                    <img src="../img/icon/clock.svg" alt="시계 아이콘">
                                                 </div>
         
                                                 <p>
@@ -1831,7 +1833,7 @@
         
                                             <div class="time">
                                                 <div>
-                                                    <img src="/img/icon/pulse_clock.png" alt="시계 아이콘">
+                                                    <img src="../img/icon/pulse_clock.png" alt="시계 아이콘">
                                                 </div>
         
                                                 <p>
@@ -1881,7 +1883,7 @@
                                 <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
+                                            <img src="../img/icon/nurse/close.svg" alt="엑스 아이콘">
                                         </div>
                                     </button>
                                 </div>
@@ -1889,11 +1891,11 @@
 
                             <div class="video_view">
                                 <div class="my_cam">
-                                    <img src="/img/emergency/mycam.jpg" alt="내 카메라 사진">
+                                    <img src="../img/emergency/mycam.jpg" alt="내 카메라 사진">
                                 </div>
 
                                 <div class="para_cam">
-                                    <img src="/img/emergency/scene_photo2.jpg" alt="현장사진">
+                                    <img src="../img/emergency/scene_photo2.jpg" alt="현장사진">
                                 </div>
 
                                 <div class="para_name">
@@ -1910,7 +1912,7 @@
                                 <div class="btn_list">    
                                     <button type="button" class="btn_close">
                                         <div>
-                                            <img src="/img/icon/nurse/close.svg" alt="엑스 아이콘">
+                                            <img src="../img/icon/nurse/close.svg" alt="엑스 아이콘">
                                         </div>
                                     </button>
                                 </div>
@@ -1920,27 +1922,27 @@
                             <div class="swiper big_picture" >
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
 
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
 
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                     
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                     
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                     
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                 </div>
                             </div>
@@ -1949,27 +1951,27 @@
                             <div class="swiper small_picture">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
 
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
 
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                     
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                     
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                     
                                     <div class="swiper-slide">
-                                        <img src="/img/emergency/scene_photo.jpg" alt="현장사진">
+                                        <img src="../img/emergency/scene_photo.jpg" alt="현장사진">
                                     </div>
                                 </div>
                             </div> 

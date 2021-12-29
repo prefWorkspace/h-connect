@@ -53,13 +53,13 @@ button{border-radius: 4px; background: none;}
     display: inline-block;
     width: 24px;
     height: 24px;
-    margin: -3px 8px 0 0;
+    /* margin: -3px 8px 0 0; */
     vertical-align: middle;
-    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
 }
 
 .bell_name input[type='checkbox']:checked+label span{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -93,7 +93,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .bell_name input[type='checkbox']:checked+label span{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -160,7 +160,7 @@ button{border-radius: 4px; background: none;}
     display: flex;
     line-height: 47px;
     padding: 0 40px 0 17px;
-    background: url('/img/right_arrow.svg') no-repeat right 15px center;
+    background: url('../img/right_arrow.svg') no-repeat right 15px center;
     border-radius: 4px;
     border-bottom: 1px solid #EEEEEE;
     transition: 0.2s all;
@@ -173,7 +173,7 @@ button{border-radius: 4px; background: none;}
 
 /* btn_active */
 .card_btn.btn_active {
-    background: url('/img/right_arrow.svg') no-repeat right 15px center;
+    background: url('../img/right_arrow.svg') no-repeat right 15px center;
     background-color: #007A94;
     border-color: #007A94;
 }
@@ -343,7 +343,7 @@ button{border-radius: 4px; background: none;}
     border-radius: 4px;
     width: 360px;
     padding: 0 10px;
-    background: #fff url('/img/header/search.svg') no-repeat right 10px center;
+    background: #fff url('../img/header/search.svg') no-repeat right 10px center;
     font-size: 12px;
 }
 
@@ -901,72 +901,72 @@ button{border-radius: 4px; background: none;}
 
 /* 응급상황실 */
 .emergency .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/monitoring.svg') no-repeat;
+    background: url('../img/header/monitoring.svg') no-repeat;
 }
 
 .emergency .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/message.svg') no-repeat;
+    background: url('../img/header/message.svg') no-repeat;
 }
 
 /* 간호사 */
 .nurse .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/monitoring.svg') no-repeat;
+    background: url('../img/header/monitoring.svg') no-repeat;
 }
 
 .nurse .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/clinic.svg') no-repeat;
+    background: url('../img/header/clinic.svg') no-repeat;
 }
 
 .nurse .gnb_list:nth-child(3)> a:after{
-    background: url('/img/header/dashboard.svg') no-repeat;
+    background: url('../img/header/dashboard.svg') no-repeat;
 }
 
 .nurse .gnb_list:nth-child(4)> a:after{
-    background: url('/img/header/message.svg') no-repeat;
+    background: url('../img/header/message.svg') no-repeat;
 }
 
 /* 의사 */
 .doctor .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/Hlogo_gray.svg') no-repeat;
+    background: url('../img/header/Hlogo_gray.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/clinic.svg') no-repeat;
+    background: url('../img/header/clinic.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(3)> a:after{
-    background: url('/img/header/monitoring.svg') no-repeat;
+    background: url('../img/header/monitoring.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(4)> a:after{
-    background: url('/img/header/remote.svg') no-repeat;
+    background: url('../img/header/remote.svg') no-repeat;
 }
 
 .doctor .gnb_list:nth-child(5)> a:after{
     /* transform: translate(-50%, -50%); */
-    background: url('/img/header/message.svg') no-repeat;
+    background: url('../img/header/message.svg') no-repeat;
 }
 
 /* 선별진료실 */
 .screening .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/remote.svg') no-repeat center center;
+    background: url('../img/header/remote.svg') no-repeat center center;
 }
 
 .screening .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/message.svg') no-repeat center center;
+    background: url('../img/header/message.svg') no-repeat center center;
 }
 
 .screening .gnb_list:nth-child(3)> a:after{
-    background: url('/img/header/setting.svg') no-repeat center center;
+    background: url('../img/header/setting.svg') no-repeat center center;
 }
 
 /* 선별진료실 - 의사 */
 .screening_doc .gnb_list:nth-child(1)> a:after{
-    background: url('/img/header/remote.svg') no-repeat;
+    background: url('../img/header/remote.svg') no-repeat;
 }
 
 .screening_doc .gnb_list:nth-child(2)> a:after{
-    background: url('/img/header/message.svg') no-repeat center center;
+    background: url('../img/header/message.svg') no-repeat center center;
 }
 
 
@@ -1044,7 +1044,7 @@ button{border-radius: 4px; background: none;}
 
 .first_card_title .card_title {
     padding-left: 30px;
-    background: url('/img/icon/setting_green.svg') no-repeat left top 5px;
+    background: url('../img/icon/setting_green.svg') no-repeat left top 5px;
 }
 
 .create_btn {
@@ -1346,7 +1346,7 @@ button{border-radius: 4px; background: none;}
     height: 32px;
     text-indent: -999999px;
     border-radius: 4px;
-    background: #fff url('/img/icon/nurse/sorting.svg') no-repeat center center;
+    background: #fff url('../img/icon/nurse/sorting.svg') no-repeat center center;
     margin-left: 20px;
 }
 
@@ -1855,7 +1855,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('../img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
     transition: 0.3s;
@@ -1867,7 +1867,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('../img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
     transform: rotate(180deg);
@@ -2084,7 +2084,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('../img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
 }
@@ -2103,7 +2103,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('../img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 20px;
     transform: rotate(180deg);
@@ -2283,12 +2283,12 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -3px 4px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/radio.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/radio.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.setting_menu .content .sweep input[type='radio']:checked+label span{
-    background: url('/img/icon/radio_check.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/radio_check.png') no-repeat 0 0px / contain;
 }
 
 .pop.setting_menu .content .sweep input[type="radio"]{
@@ -2317,12 +2317,12 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -3px 4px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/radio.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/radio.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.resp_set .content .apnea input[type='radio']:checked+label span{
-    background: url('/img/icon/radio_check.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/radio_check.png') no-repeat 0 0px / contain;
 }
 
 .pop.resp_set .content .apnea input[type="radio"]{
@@ -2493,6 +2493,17 @@ textarea::-webkit-scrollbar-button {
     padding: 12px 16px;
     border-radius: 4px;
     background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.pop.send_doctor .doctor_select .select_list::-webkit-scrollbar{
+    display: none;
+}
+
+.pop.send_doctor .doctor_select .select_list> div{
+    margin-right: 20px;
 }
 
 .pop.send_doctor .doctor_select .select_list> div p{
@@ -2666,13 +2677,13 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
     /* transition: .3s; */
 }
 
 .pop.send_doctor .doctor_search .doctor_list input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
     /* transition: .3s; */
 }
 
@@ -2697,13 +2708,13 @@ textarea::-webkit-scrollbar-button {
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/favorite_blanc.svg') no-repeat 0 0px / contain;
+    background: url('../img/icon/favorite_blanc.svg') no-repeat 0 0px / contain;
     /* transition: .3s; */
     cursor: pointer;
 }
 
 .pop.send_doctor .doctor_search .doctor_list .favorite_container input[type='checkbox']:checked+label> span{
-    background: url('/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
+    background: url('../img/icon/favorite_green.svg') no-repeat 0 0px / contain;
     /* transition: .3s; */
 }
 
@@ -2798,12 +2809,12 @@ textarea::-webkit-scrollbar-button {
     height: 16px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.send_doctor .favorite_list .group_container input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
     /* transition: .3s; */
 }
 
@@ -2816,7 +2827,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .favorite_list .group_container input[type="checkbox"]:disabled + label span{
-    background: url('/img/icon/check_disabled.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/check_disabled.png') no-repeat 0 0px / contain;
 }
 
 
@@ -2826,13 +2837,13 @@ textarea::-webkit-scrollbar-button {
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/favorite_blanc.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/favorite_blanc.png') no-repeat 0 0px / contain;
     /* transition: .3s; */
     cursor: pointer;
 }
 
 .pop.send_doctor .favorite_list .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
+    background: url('../img/icon/favorite_green.svg') no-repeat 0 0px / contain;
     /* transition: .3s; */
 }
 
@@ -3735,7 +3746,7 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .time_line::before {
     position: absolute;
     content: '';
-    background: url(/img/icon/trend_tri.png)no-repeat 0 0px / contain;
+    background: url(../img/icon/trend_tri.png)no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 30px;
@@ -4041,12 +4052,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .group_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* all_check */
@@ -4056,12 +4067,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/checkBox.svg') no-repeat 0 0px / contain;
+    background: url('../img/emergency/checkBox.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .all_check input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* favorite check */
@@ -4071,12 +4082,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
@@ -4173,12 +4184,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .list_inner div input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('../img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 /* 의료진선택 즐겨찾기 */
@@ -4188,12 +4199,12 @@ textarea::-webkit-scrollbar-button {
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.doctor_call .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('../img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
@@ -4260,6 +4271,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.emergency_clear .pop_cont .btn_end{
+    padding: 8px 13px;
     background: #940045;
     color: #fff;
 }
@@ -4444,22 +4456,27 @@ textarea::-webkit-scrollbar-button {
     display: none;
 }
 
-.pop.full_vital .bell_name input[type="checkbox"]+label span{
+/* .pop.full_vital .bell_name input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
+    background: url('../img/icon/btn_alarmOn.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.full_vital .bell_name input[type='checkbox']:checked+label span{
-    background: url('/img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
+    filter: none;
+} */
+
+.pop.full_vital .temp .bell_name input[type="checkbox"]:checked+label span{
     filter: none;
 } 
 
-.pop.full_vital .temp .bell_name input[type="checkbox"]:checked+label span{
+.pop.full_vital .ews .bell_name input[type='checkbox']:checked+label span{
+    background: url('../img/icon/btn_mute_off.png') no-repeat 0 0px / contain;
     filter: none;
 }
 
@@ -4501,7 +4518,7 @@ textarea::-webkit-scrollbar-button {
     height: 24px;
     margin: -3px 0 0 7px;
     vertical-align: middle;
-    background: url(/img/icon/btn_alarmOn.svg) no-repeat 0 0px / contain;
+    background: url(../img/icon/btn_alarmOn.svg) no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
@@ -4569,13 +4586,13 @@ textarea::-webkit-scrollbar-button {
 
 .pop.full_picture .swiper-button-next{
     width: 64px;
-    background: url('/img/icon/btn_next.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/btn_next.png') no-repeat 0 0px / contain;
     right: -128px;
 }
 
 .pop.full_picture .swiper-button-prev{
     width: 64px;
-    background: url('/img/icon/btn_pre.png') no-repeat 0 0px / contain;
+    background: url('../img/icon/btn_pre.png') no-repeat 0 0px / contain;
     left: -105px;
     cursor: pointer;
 }
@@ -4611,6 +4628,8 @@ textarea::-webkit-scrollbar-button {
     z-index: 10;
 }
 
+.pop.attendee .wrap_inner{padding: 0;}
+
 .pop.attendee .atten{
     display: none;
 }
@@ -4639,8 +4658,16 @@ textarea::-webkit-scrollbar-button {
     color: #888;
 }
 
+.pop.attendee .no_atten p{
+    font-size: 16px;
+}
+
 .pop.attendee .unrespon{
     color: #940045;
+}
+
+.pop.attendee .atten .count> p{
+    font-size: 14px;
 }
 
 .pop.attendee .atten .count> p span{
@@ -4651,12 +4678,13 @@ textarea::-webkit-scrollbar-button {
     padding: 16px;
     background: #eee;
     border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .pop.attendee .name p{
     margin-right: 20px;
     font-size: 14px;
-    display: inline-block;
 }
 
 .pop.attendee .name p.on{
@@ -4712,13 +4740,13 @@ textarea::-webkit-scrollbar-button {
 
 .pop.doc_full .swiper-button-prev{
     left: 0;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+    background: url('../img/right_arrow.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg);
 }
 
 .pop.doc_full .swiper-button-next{
     right: 0;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px / contain;
+    background: url('../img/right_arrow.svg') no-repeat 0 0px / contain;
 }
 
 .pop.doc_full .btn_close{
@@ -4788,12 +4816,12 @@ textarea::-webkit-scrollbar-button {
 
 .pop.full_pacs .swiper-button-next{
     right: 64px;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px/ contain;
+    background: url('../img/right_arrow.svg') no-repeat 0 0px/ contain;
 }
 
 .pop.full_pacs .swiper-button-prev{
     left: 64px;
-    background: url('/img/right_arrow.svg') no-repeat 0 0px/ contain;
+    background: url('../img/right_arrow.svg') no-repeat 0 0px/ contain;
     transform: rotate(180deg);
 }
 
@@ -4958,7 +4986,7 @@ textarea::-webkit-scrollbar-button {
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: ('/img/under_arrow.svg') no-repeat;
+    background: ('../img/under_arrow.svg') no-repeat;
     top: 50%; 
     right: 8px;
     filter: invert(110%) sepia(153%) saturate(7500%) hue-rotate(261deg) brightness(-70%) contrast(171%);}
