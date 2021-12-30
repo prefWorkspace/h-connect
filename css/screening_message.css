@@ -758,12 +758,12 @@
     height: 18px;
     margin: 4px 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .nurse_message .group_container input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 
@@ -774,12 +774,12 @@
     height: 18px;
     margin: 0 15px 0 0;
     vertical-align: middle;
-    background: url('/img/icon/check.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/check.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .nurse_message .all_check input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 /* favorite check */
@@ -789,17 +789,17 @@
     height: 18px;
     margin: 0 15px 0 0;
     vertical-align: middle;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
 .nurse_message .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
@@ -899,12 +899,12 @@
     width: 18px;
     height: 18px;
     margin: 0 15px 0 0;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .list_inner div input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 
@@ -914,12 +914,12 @@
     width: 18px;
     height: 18px;
     margin: 4px 15px 0 0;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
@@ -1004,12 +1004,12 @@
     width: 16px;
     height: 16px;
     vertical-align: middle;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .nurse_message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
@@ -1017,12 +1017,12 @@
 .message .list_inner .favorite_container input[type="checkbox"]+label{
     width: 18px;
     height: 18px;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 

@@ -28,7 +28,7 @@
 .screening_care .card_title{color: #007A94;}
 
 .care_card1 .card_title {
-    background-image: url('/img/doctor/list.svg');
+    background-image: url('/H-Connect/img/doctor/list.svg');
     background-position: left top 6px;
     margin-bottom: 0;
     filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
@@ -127,7 +127,7 @@
     color: #fff;
     font-weight: 500;
     padding-left: 30px;
-    background: url('/img/header/remote.svg') no-repeat left 5px top 5px;
+    background: url('/H-Connect/img/header/remote.svg') no-repeat left 5px top 5px;
     filter: invert(0%) sepia(78%) saturate(12%) hue-rotate(13deg) brightness(9999%) contrast(999%);
 }
 
@@ -268,7 +268,7 @@
 }
 
 .btn_thead .call_doc_btn > span {
-    background: url('/img/logo.svg') no-repeat left 12px top 10px;
+    background: url('/H-Connect/img/logo.svg') no-repeat left 12px top 10px;
     display: block;
     padding-left: 20px;
     color: #000;
@@ -311,7 +311,7 @@
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: url('/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     filter: invert(0%) sepia(0%) saturate(7496%) hue-rotate(235deg) brightness(-56%) contrast(118%);
 }
 

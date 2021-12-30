@@ -1131,12 +1131,12 @@ $('.doctor .nurse_send').on('click', function(){
     // 공지 스르륵
     $('.slide_notice').on('click', function(){
         $('.remote .notice').addClass('active');
-        // $('.remote .notice_wrap').slidetoggle();
+        $('.remote .notice_wrap').slidetoggle();
         $('.remote .slide_notice').hide();
     })
     $('.slide_up').on('click', function(){
         $('.remote .notice').removeClass('active');
-        // $('.remote .notice_wrap').slidetoggle();
+        $('.remote .notice_wrap').slidetoggle();
         $('.remote .slide_up').hide();
     })
 
@@ -1227,6 +1227,7 @@ $('.doctor .nurse_send').on('click', function(){
     $('.pacs .list .btn_list .send').on('click', function(){
         $('.pacs .list .btn_list').toggleClass('on');
         $('.pacs .select_send').toggle();
+        $('.pacs .list h3').toggleClass('on');
     })
     
     // 버튼 눌러서 띄우기

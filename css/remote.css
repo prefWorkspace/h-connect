@@ -154,6 +154,7 @@ img{
     width: 100%;
     min-width: 456px;
     max-width: 456px;
+    height: 88px;
     position: absolute;
     padding: 16px;
     border-radius: 8px;
@@ -209,6 +210,10 @@ img{
 .message .notice .notice_wrap{
     height: 24px;
     overflow: hidden;
+}
+
+.message .notice.active {
+    height: fit-content;
 }
 
 .message .notice.active .notice_wrap{
@@ -294,11 +299,11 @@ img{
     position: relative;
 }
 
-.message .chat{
+/* .message .chat{
     height: 100%;
-    min-height: 600px;
-    max-height: 640px;
-}
+    min-height: 632px;
+    max-height: 792px;
+} */
 
 .message .cam_control button{
     width: 32px;
@@ -424,7 +429,7 @@ img{
     content: '';
     width: 6px;
     height: 8px;
-    backgr/img/icon/down.svg) no-repeat;
+    background: url(/img/icon/down.svg) no-repeat;
     filter: invert(18%) sepia(66%) saturate(5427%) hue-rotate(179deg) brightness(47%) contrast(101%);
     transform: rotate(-45deg);
     top: 9px;
@@ -528,9 +533,9 @@ img{
 
 /* 메세지창 */
 .message .view{
-    height: 100%;
-    min-height: 632px;
-    max-height: 672px;
+    height: 672px;
+    /* min-height: 632px; */
+    /* max-height: 672px; */
     padding: 16px;
     background: #C5D8DC;
 }
@@ -576,7 +581,7 @@ img{
     min-height: 600px;
     max-height: 640px;
     padding-right: 16px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     display: flex;
     flex-flow: column;
 }
@@ -688,7 +693,7 @@ img{
     height: 889px;
     padding: 8px;
     background: #444;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     display: none;
 }
 
@@ -912,7 +917,7 @@ img{
 
 .patient_status .patient_inner{
     height: 710px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     display: block;
 }
 
@@ -1216,6 +1221,14 @@ img{
     display: initial;
 }
 
+.vital .control .ews .bell_num{
+    padding-left: 20px;
+}
+
+.vital .control .ews .bell_num> :last-child{
+    margin-top: 15px;
+}
+
 .vital .control .mmhg{  
     width: 260px;
     height: 136px;
@@ -1284,7 +1297,9 @@ img{
 }
 
 .vital.on .graphical .hr_line{
-    width: 1300px;
+    max-width: 1300px;
+    min-width: 576px;
+    width: 100%;
 }
 
 .vital.on .cont .graphical .hr_time> p {
@@ -1301,7 +1316,7 @@ img{
 }
 
 .vital.on .ecg_graph> div {
-    width: 100%;
+    width: 1172px;
 }
 
 .vital.on .ecg_graph p{
@@ -1502,7 +1517,7 @@ img{
 
 .cont .event .table_body {
     height: 400px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .cont .event .table_body::-webkit-scrollbar{
@@ -1795,7 +1810,7 @@ img{
 }
 .connect_scroll .tab_view{
     height: 857px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .connect_scroll .tab_view::-webkit-scrollbar{
@@ -2165,6 +2180,7 @@ img{
 .pacs .pacs_small{
     width: 100%;
     margin-top: 12px;
+    overflow: hidden;
 }
 
 .pacs .pacs_small .swiper-slide{
@@ -2203,6 +2219,7 @@ img{
     left: 40px;
     background: url('/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-100%);
+    z-index: 1;
 }
 
 .pacs .swiper-scrollbar{
@@ -2252,10 +2269,16 @@ img{
 }
 
 .several .pacs.on{
-    width: 100%;
-    height: 835px;
+    width: 1428px;
+    max-width: 1428px;
+    /* min-width: 1280px;
+    max-width: 1428px; */
+    height: 840px;
+    /* max-height: 835px; */
     right: 0;
+    border-radius: 0;
 }
+
 
 .several .pacs.on .study_list{
     height: 100%;
@@ -2318,7 +2341,7 @@ img{
     height: 450px;
     padding: 32px;
     background: rgba(255, 0, 119, 0.5);
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .inner .cont .cont_wrap > div::-webkit-scrollbar{
@@ -2339,10 +2362,12 @@ img{
     margin-left: 48px;
 }
 
-
 .several .inner.on{
     width: 100%;
+    max-width: 1428px;
     height: 100%;
+    min-height: 835px;
+    border-radius: 0;
     top: 0;
     left: 0;
 }
@@ -2360,15 +2385,19 @@ img{
 .inner.on .cont .cont_wrap .list{
     width: 344px;
     height: 100%;
-    min-height: 500px;
+    min-height: 600px;
     max-height: 650px;
 }
 
 .inner.on .cont .cont_wrap .cont{
     width: 704px;
     height: 100%;
-    min-height: 500px;
+    min-height: 600px;
     max-height: 650px;
+}
+
+.lab.on >.cont{
+    height: 795px;
 }
 
 /* emr */
@@ -2432,7 +2461,7 @@ img{
 
 .tab .several .vital{
     width: 100%;
-    height: 100%;
+    height: 838px;
     top: 0;
     left: 0;
     border-radius: 0;
@@ -2468,7 +2497,8 @@ img{
 }
 
 .tab .graphical .hr_line{
-    width: 1296px;
+    max-width: 1300px;
+    min-width: 576px;
 }
 
 .tab .cont .event .table_body{
@@ -2497,14 +2527,16 @@ img{
 
 .tab .several .pacs{
     width: 100%;
-    height: 100%;
+    max-width: 1428px;
+    height: 800px;
     top: 0;
     left: 0;
     border-radius: 0;
+    overflow: initial;
 }
 
 .tab .study_list{
-    height: 800px;
+    height: 797px;
     border-radius: 0;
 }
 
@@ -2529,28 +2561,32 @@ img{
 }
 
 .tab .several .inner {
-    width: 100%;
+    min-width: 1428px;
     height: 100%;
     top: 0;
     border-radius: 0;
+    overflow: initial;
 }
 
-.tab .inner .cont{
-    height: 800px;
+.tab .inner> .cont{
+    height: 796px;
+    /* min-height: 796px; */
+    max-height: 796px;
+}
+
+.tab .inner .cont .cont_wrap{
+    height: 620px;
+    justify-content: initial;
 }
 
 .tab .inner .cont .cont_wrap .list,
 .tab .inner .cont .cont_wrap .cont{
-    height: 650px;
+    height: 100%;
 }
 
 .tab .inner .cont .cont_wrap .cont{
     width: 704px;
     margin-left: 48px;
-}
-
-.tab .inner .cont .cont_wrap{
-    justify-content: initial;
 }
 
 /* scroll */
@@ -2565,8 +2601,9 @@ img{
 }
 
 .scroll .several{
-    min-height: 740px;
-    max-height: 760px;
+    height: calc(100vh - 129px);
+    /* min-height: 740px;
+    max-height: 760px; */
     overflow-y: scroll;
 }
 
@@ -2577,9 +2614,9 @@ img{
 .scroll .several> div{
     width: 100%;
     max-width: 1920px;
-    height: 100%;
-    min-height: 600px;
-    max-height: 840px;
+    height: 840px;
+    /* min-height: 600px;
+    max-height: 840px; */
     position: initial;
     border-radius: 0;
 }
@@ -2589,7 +2626,7 @@ img{
 } */
 
 .scroll .cont .event .table_body {
-    height: 312px;
+    height: 540px;
 }
 
 .scroll .several .title{
@@ -2615,17 +2652,21 @@ img{
 }
 
 .scroll .pacs .slide .pacs_big{
-    /* width: 100%; */
+    /* width: 100%;
     min-width: 700px;
     max-width: 884px;
-/* 
-    height: 100%; */
+
+    height: 100%;
     min-height: 456px;
-    max-height: 576px;
+    max-height: 576px; */
+    width: 884px;
+    height: 576px;
+
 }
 
 .scroll .inner .cont{
     height: 100%;
+    min-height: 100%;
 }
 
 .scroll .vital .graph> div> :first-child div{
@@ -2639,15 +2680,15 @@ img{
 }
 
 .scroll .inner .cont .cont_wrap{
+    height: 650px;
     justify-content: initial;
 }
 
-.scroll .inner .cont .cont_wrap .list{
-    max-height: 648px;
+.scroll .inner .cont .cont_wrap> div{
+    height: 100%;
 }
 
 .scroll .inner .cont .cont_wrap .cont{
-    max-height: 648px;
     margin-left: 48px;
 }
 
@@ -2993,6 +3034,7 @@ img{
 
 .remote .patient_view.on{
     width: 1168px;
+    overflow: hidden;
 }
 
 .remote .patient_view.on .hr_chart> :last-child{
@@ -3018,7 +3060,156 @@ img{
 }
 
 
+.tab .patient_view.on .table_body {height: auto;}
 
-@media all and (max-width:708px){
+
+
+@media all and (max-width:1300px){
+    .message .view{
+        height: 636px;
+    }
+
+    .vital.on .cont .graphical .hr_time> p,
+    .remote .cont .graphical .hr_time> p{
+        margin-right: 100px;
+    }
+
+    .vital.on .cont .graphical .hr_img,
+    .remote .cont .graphical .hr_img{
+        left: 230px;
+    }
+
+    .cont .graphical .time_line{
+        transform: translateX(20%);
+    }
+
+    .study_list .row div p{width: 73px;}
+
+    .study_list .row> :nth-child(2){width: 105px;}
+    .study_list .row> :nth-child(4){width: 150px;}
+    .study_list .row> :nth-child(5) {width: 65px;}
+
+    .several .pacs{
+        width: 708px;
+    }
+
+    .several .pacs.on{width: 796px; height: 800px;}
+    .several .pacs.on .study_list{
+        height: 800px;
+    }
+
+    .message .notice{
+        height: 88px;
+    }
+
+    /* 화상 */
+    .cam{
+        height: 800px;
+        /* overflow-y: scroll; */
+        position: absolute;
+        margin-left: -158px;
+        left: 50%;
+        top: 120px;
+        z-index: 5;
+    }
+
+    .pacs .list h3.on{
+        width: 228px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* pacs full_view */
+    .pop.view .header_inner{
+        width: 1280px;
+        padding: 0 24px;
+    }
+    
+    .pop.pacs_full .img_container{
+        width: 1280px;
+        height: 900px;
+        margin-left: -8px;
+    }
+
+    .inner.on> .cont{
+        height: 760px;
+        border-radius: 0;
+    }
+
+    .pop.you_send .big_view {
+        width: 1280px;
+        margin: 13px 0 0 -12px;
+    }
+
+    .tab .several .vital {
+        height: 800px;
+    }
+
+    .tab .tabular_table .table_title .alarm_des{
+        margin-right: 55px;
+    }
+
+    .scroll .cont .event .table_body{
+        height: 600px;
+    }
+
+    .pacs .pacs_inner{
+        height: 760px;
+    }
+
+    .tab .study_list{
+        height: 763px;
+    }
+
+    .tab .pacs .slide{
+        height: 700px;
+    }
+
+    .tab .pacs .slide .pacs_big{
+        width: 100%;
+        height: 500px;
+    }
+
+    .tab .several .inner{
+        min-width: 706px;
+    }
+
+    .tab .inner> .cont{
+        height: 764px;
+    }
+
+    .tab .tabular_table .table_title .hr{
+        margin-right: 50px;
+    }
+
+    .tab .tabular_table .table_title .spo{
+        margin-right: 63px;
+    }
+
+    .scroll .several{
+        min-height: 803px;
+    }
+
+    .scroll .several> div{
+        height: 100vh;
+    }
+
+    .scroll .pacs .pacs_inner{
+        height: 100vh;
+    }
+
+    .scroll .pacs .pacs_inner> div{
+        height: 100vh;
+    }
+
+    .scroll .inner> .cont{
+        min-height: 100vh;
+    }
+
+    .scroll .inner .cont .cont_wrap{
+        height: 700px;
+    }
+
 
 }

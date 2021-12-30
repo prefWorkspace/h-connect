@@ -155,7 +155,7 @@
     width: 6px;
     height: 12px;
     position: absolute;
-    background: url('../img/right_arrow.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
     top: 3px;
     right: -16px;
 }
@@ -165,7 +165,7 @@
     width: 6px;
     height: 12px;
     position: absolute;
-    background: url('../img/icon/open_black.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/open_black.png') no-repeat 0 0px / contain;
     top: 3px;
     right: -16px;
 }
@@ -515,11 +515,11 @@
     height: 24px;
     vertical-align: middle;
     border: none;
-    background: url('../img/emergency/damage.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/damage.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .part_container input[type='checkbox']:checked+label{
-    background: url('../img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/damage_toggle.png') no-repeat 0 0px / contain;
 }
 
 
@@ -529,7 +529,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('../img/emergency/front.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/front.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .front_toggle{
@@ -548,7 +548,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('../img/emergency/back.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/back.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .back_toggle{
@@ -682,7 +682,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('../img/emergency/head left.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/head left.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .left_toggle{
@@ -770,7 +770,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('../img/emergency/head right.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/head right.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .right_toggle{
@@ -858,7 +858,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('../img/emergency/body.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/body.png')no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .body_toggle{
@@ -2991,7 +2991,7 @@
     position: relative;
     width: 160px;
     height: 240px;
-    background: url(../img/emergency/body.png)no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/emergency/body.png)no-repeat 0 0px / contain;
     background-size: cover;
 }
 

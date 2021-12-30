@@ -86,7 +86,7 @@ p{font-size: 12px;}
     width: 9px;
     height: 18px; 
     position: absolute; 
-    background: url('../img/right_arrow.svg') no-repeat 0 0px /contain;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px /contain;
     top: 50%; 
     transform: translateY(-50%);
     right: -50px;
@@ -578,7 +578,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url('../img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
@@ -590,7 +590,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url('../img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 30%;
     right: 15px;
     transform: rotate(180deg) translateY(-50%);
@@ -615,7 +615,7 @@ p{font-size: 12px;}
     width: 46px;
     height: 32px;
     margin-left: -22px;
-    background: url('../img/logo_gray.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/logo_gray.svg') no-repeat 0 0px / contain;
     filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg) brightness(103%) contrast(96%);
 }
 
@@ -1586,7 +1586,7 @@ p{font-size: 12px;}
     height: 64px;
     border-radius: 4px;
     border: 1px solid #940045;
-    background: url('../img/graph/grid.svg') no-repeat 0 0px / cover;
+    background: url('/H-Connect/img/graph/grid.svg') no-repeat 0 0px / cover;
     display: flex;
     align-items: center;
     position: relative;
@@ -1915,7 +1915,7 @@ p{font-size: 12px;}
     height: 24px;
     margin: -3px 8px 0 0;
     vertical-align: middle;
-    background: url('../img/icon/btn_alarmOn.svg') no-repeat / contain;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat / contain;
 }
 
 .monitoring_patient .mmhg{
@@ -2138,7 +2138,7 @@ p{font-size: 12px;}
 .monitoring_patient .cont .graphical .time_line::before{
     position: absolute;
     content: '';
-    background: url('../img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 19px;
@@ -2195,7 +2195,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('../img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -2208,7 +2208,7 @@ p{font-size: 12px;}
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('../img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
     transition: .3s;
@@ -2489,7 +2489,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     right: 150px;
-    background: url('../img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: translateY(91%);
 }
 
@@ -2498,7 +2498,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 44%;
     left: 150px;
-    background: url('../img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-100%);
 }
 
@@ -2509,7 +2509,7 @@ p{font-size: 12px;}
     /* top: 45%; */
     top: 35%;
     right: 100px;
-    background: url('../img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: translateY(81%); */
     transform: translateY(0%);
 }
@@ -2520,7 +2520,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     left: 100px;
-    background: url('../img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: rotate(180deg) translateY(-100%); */
     transform: rotate(180deg) translateY(30%);
 }
@@ -2644,7 +2644,7 @@ p{font-size: 12px;}
     width: 9px;
     height: 18px;
     position: absolute;
-    background: url(/../img/right_arrow.svg) no-repeat 0 0px /contain;
+    background: url(//H-Connect/img/right_arrow.svg) no-repeat 0 0px /contain;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
@@ -2915,11 +2915,11 @@ p{font-size: 12px;}
     width: 24px;
     height: 24px;
     margin: -3px 16px 0 0;
-    background: url('../img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
 }
 
 .doctor .time_select input[type='checkbox']:checked+label span{
-    background: url('../img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 .doctor .time_select input[type="checkbox"]{
@@ -4047,7 +4047,7 @@ p{font-size: 12px;}
     padding: 3px;
     margin-left: 7px;
     border-radius: 50%;
-    background: #940045 url('../img/icon/nurse/close.svg') no-repeat;
+    background: #940045 url('/H-Connect/img/icon/nurse/close.svg') no-repeat;
     background-position: 50% 50%;
     background-size: 50%;
     display: inline-block;
