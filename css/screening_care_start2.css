@@ -125,12 +125,195 @@
 
 .mess_text_box {
     height: 728px;
+    display: flex;
 }
 
-.messge_cont_box .mess_send_box {
-    padding: 8px;
+.timeLine{
+    width: 32px;
+    height: 100%;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeLine a{
+    width: 12px;
+    margin-bottom: 8px;
+    display: block;
+    background: #007A94;
+}
+
+.timeLine> :nth-child(2n-1){
+    background: #eee;
+}
+
+.timeLine> :last-child{
+    margin: 0;
+}
+
+.timeLine .first{
+    flex: 3;
+}
+
+.timeLine .second{
+    flex: 2;
+}
+
+.timeLine .third{
+    flex: 1;
+}
+
+.timeLine .fourth{
+    flex: 2;
+}
+
+.timeLine .fifth{
+    flex: 1;
+}
+
+.chat_inner{
+    width: calc(100% - 32px);
+    height: 725px;
+    padding: 8px 20px;
+    overflow-y: scroll;
+}
+
+.chat_inner::-webkit-scrollbar{
+    width: 8px;
+}
+
+.chat_inner::-webkit-scrollbar-thumb{
+    height: 17%;
+    border-radius: 10px;
+    background: #007A94;
+}
+
+.chat_me{
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+}
+
+.chat_me p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.chat_me .bubble{
+    position: relative;
+    width: fit-content;
+    padding: 14px 16px;
+	background: #940045;
+	border-radius: .4em;
+    color: #fff;
+}
+
+.chat_me .bubble:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: #940045;
+    border-right: 0;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+
+.chat_me .bubble{
+	background: #007A94;
+}
+
+.chat_me .bubble:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: #007A94;
+    border-right: 0;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+
+.chat_you{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.chat_you> p{
+    font-size: 12px;
+}
+
+.chat_you .bubble{
+    margin: 7px 0;
+    position: relative;
+    width: fit-content;
+    padding: 14px 16px;
+	background: #fff;
+	border-radius: .4em;
+    color: #000;
+}
+
+.chat_you .bubble:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-right-color: #fff;
+    border-left: 0;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.start_clinic{
+    height: 48px;
+    margin: 0 auto 16px;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #007A94, #003D4A);
+    border-radius: 4px;
+    color: #fff;
+}
+
+.start_clinic p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.end_clinic{
+    height: 48px;
+    margin: 0 auto 16px;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.end_clinic p{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+.messge_cont_box .mess_send_box{
     border-radius: 0;
 }
+
+
+
 
 
 /* care_start_card2 */

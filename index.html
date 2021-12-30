@@ -29,7 +29,7 @@
                 </a>
             </div>
 
-            <form action="" class="login">
+            <form class="login">
                 <div class="input_container">
                     <input type="text">
 
@@ -37,17 +37,17 @@
                 </div>
 
                 <div class="check">
-                  <input type="checkbox" id="id_save">
-                  <label for="id_save">
-                    <span></span>
-                    아이디기억
-                  </label>
-
-                  <input type="checkbox" id="auto_login">
-                  <label for="auto_login">
-                    <span></span>
-                    자동로그인
-                  </label>
+					<div class="input_wrap">
+						<input type="checkbox" id="id_save" class="green_custom">
+						<label for="id_save"></label>
+						<label for="id_save">아이디 기억</label>
+					</div>
+					
+					<div class="input_wrap">
+						<input type="checkbox" id="auto_login" class="green_custom">
+						<label for="auto_login"></label>
+						<label for="auto_login">자동 로그인</label>
+					</div>					
                 </div>
 
                 <button type="button" onclick="location.href='nurse/index.html'">로그인</button>

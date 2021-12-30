@@ -354,6 +354,51 @@ button{border-radius: 4px; background: none;}
     color: #CCCCCC;
 }
 
+/* checkbox custom */
+.green_custom[type="checkbox"] + label{
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+.green_custom[type='checkbox']:checked + label{
+    background: #007A94;
+    border: none;
+}
+
+.green_custom[type='checkbox']:checked + label + label,
+.red_custom[type='checkbox']:checked + label + label{
+    font-size: 12px;
+}
+
+.green_custom[type='checkbox']:disabled + label{
+    background: #eee;
+    border: 1px solid #eee;
+}
+
+.red_custom[type="checkbox"] + label{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.red_custom[type="checkbox"]:checked + label{
+    background: #940045;
+    border: 1px solid #940045;
+}
+
+
+
+
+
 
 /*================= 헤더 =================*/
 #header {
@@ -2499,7 +2544,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .doctor_select .favorite_list .group{
-    margin-bottom: 24px;
+    margin-bottom: 17px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #007A94;
@@ -2622,27 +2667,39 @@ textarea::-webkit-scrollbar-button {
     display: inline-block;
 }
 
-.pop.send_doctor .doctor_search .doctor_list input[type="checkbox"]+label> span{
-    margin-top: 3px;
+.pop.send_doctor .doctor_list> div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.pop.send_doctor .doctor_search .doctor_list input[type="checkbox"]+label> span{
+.pop.send_doctor .doctor_list .input_wrap{
+    display: flex;
+    align-items: center;
+}
+
+.pop.send_doctor .doctor_list .input_wrap :first-child{
+    margin-right: 14px;
+}
+
+.pop.send_doctor .doctor_list .green_custom[type="checkbox"] + label{
     display: inline-block;
     width: 16px;
     height: 16px;
-    margin: -10px 15px 0 0;
-    vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: #eee;
+    border: 1px solid #eee;
     cursor: pointer;
-    /* transition: .3s; */
 }
 
-.pop.send_doctor .doctor_search .doctor_list input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
-    /* transition: .3s; */
+.pop.send_doctor .doctor_list .green_custom[type="checkbox"]:checked + label{
+    background: #007A94;
 }
 
-.pop.send_doctor .doctor_search .doctor_list input[type="checkbox"]{
+.pop.send_doctor .doctor_list .green_custom[type="checkbox"] + label + label{
+    font-size: 12px;
+}
+
+.pop.send_doctor .doctor_list input[type="checkbox"]{
     display: none;
 }
 
@@ -2657,20 +2714,18 @@ textarea::-webkit-scrollbar-button {
     clear: both;
 }
 
-.pop.send_doctor .doctor_search .doctor_list .favorite_container input[type="checkbox"]+label> span{
+.pop.send_doctor .doctor_search .doctor_list .favorite_container input[type="checkbox"] + label> span{
     display: inline-block;
     width: 12px;
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
     background: url('/img/icon/favorite_blanc.svg') no-repeat 0 0px / contain;
-    /* transition: .3s; */
     cursor: pointer;
 }
 
-.pop.send_doctor .doctor_search .doctor_list .favorite_container input[type='checkbox']:checked+label> span{
+.pop.send_doctor .doctor_search .doctor_list .favorite_container input[type='checkbox']:checked + label> span{
     background: url('/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-    /* transition: .3s; */
 }
 
 .pop.send_doctor .doctor_list> div{
@@ -2732,7 +2787,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .favorite_list .group_container{
     height: 175px;
-    overflow-y: scroll;
+    overflow: hidden scroll;
 }
 
 .pop.send_doctor .favorite_list .group_container::-webkit-scrollbar{
@@ -2746,32 +2801,36 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .favorite_list .group_container> div{
-    margin-bottom: 8px;
+    padding: 7px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.pop.send_doctor .favorite_list .group_container p{
-    display: inline-block;
+.pop.send_doctor .favorite_list .input_wrap{
+    display: flex;
+    align-items: center;
+}
+
+.pop.send_doctor .favorite_list input{
+    display: none;
+}
+
+.pop.send_doctor .favorite_list .input_wrap label{
     font-size: 12px;
 }
 
-.pop.send_doctor .favorite_list .group_container input[type="checkbox"]+label> span{
-    margin-top: 3px;
+.pop.send_doctor .green_custom[type="checkbox"]:checked + label + label{
+    color: #007A94;
 }
 
-.pop.send_doctor .favorite_list .group_container input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin: -10px 15px 0 0;
-    vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
+.pop.send_doctor .green_custom[type="checkbox"]:disabled + label{
+    background: #ccc;
 }
 
-.pop.send_doctor .favorite_list .group_container input[type='checkbox']:checked+label span{
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
-    /* transition: .3s; */
+.pop.send_doctor .green_custom[type="checkbox"]:disabled + label + label{
+    color: #ccc;
 }
+
 
 .pop.send_doctor .favorite_list .group_container input[type="checkbox"]{
     display: none;
@@ -2780,11 +2839,6 @@ textarea::-webkit-scrollbar-button {
 .pop.send_doctor .favorite_list .group_container input[type="checkbox"]:disabled + label{
     color: gray;
 }
-
-.pop.send_doctor .favorite_list .group_container input[type="checkbox"]:disabled + label span{
-    background: url('/img/icon/check_disabled.png') no-repeat 0 0px / contain;
-}
-
 
 .pop.send_doctor .favorite_list .favorite_container input[type="checkbox"]+label> span{
     display: inline-block;
@@ -3861,8 +3915,8 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.doctor_call .btn_doctor_call{
-    width: 96px;
-    padding: 11px 25px;
+    width: 120px;
+    padding: 11px 13px;
     border-radius: 4px;
     background: #940045;
     font-size: 12px;
@@ -3887,15 +3941,23 @@ textarea::-webkit-scrollbar-button {
 
 .pop.doctor_call .select_list{
     width: 672px;
-    height: 48px;
+    height: 48;
     margin: 18px auto 0;
     padding: 16px;
     border: 1px solid #000;
     border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.pop.doctor_call .select_list::-webkit-scrollbar{
+    display: none;
 }
 
 .pop.doctor_call .select_list div{
     width: 100px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
 }
@@ -3945,6 +4007,7 @@ textarea::-webkit-scrollbar-button {
     padding: 7px 10px;
     border-radius: 4px 4px 0 0;
     background: #ccc;
+    cursor: pointer;
 }
 
 .pop.doctor_call .group .group_list p{
@@ -3977,7 +4040,13 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.doctor_call .group_container{
+    height: 336px;
     padding: 16px;
+    overflow-y: scroll;
+}
+
+.pop.doctor_call .group_container::-webkit-scrollbar{
+    display: none;
 }
 
 .pop.doctor_call .group_container> div{
@@ -3998,37 +4067,32 @@ textarea::-webkit-scrollbar-button {
 
 .pop.doctor_call .group_container .all_check{
     padding-top: 0;
+    justify-content: initial;
 }
 
-/* checkbox */
-.pop.doctor_call .group_container input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
+.pop.doctor_call .input_wrap{
+    display: flex;
+    align-items: center;
 }
 
-.pop.doctor_call .group_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+.pop.doctor_call .input_wrap label{
+    font-size: 12px;
 }
 
-/* all_check */
-.pop.doctor_call .all_check input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
-    background: url('/img/emergency/checkBox.svg') no-repeat 0 0px / contain;
-    cursor: pointer;
+.pop.doctor_call .input_wrap label :first-child{
+    margin-right: 14px;
 }
 
-.pop.doctor_call .all_check input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+
+/* all check */
+.pop.doctor_call .all_check .red_custom[type="checkbox"] + label{
+    border: 1px solid #940045;
 }
+
+.pop.doctor_call .all_check .red_custom[type="checkbox"] + label + label{
+    color: #940045;
+}
+
 
 /* favorite check */
 .pop.doctor_call .favorite_container input[type="checkbox"]+label> span{
@@ -4118,6 +4182,7 @@ textarea::-webkit-scrollbar-button {
 .pop.doctor_call .list_inner label{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .pop.doctor_call .list_inner label p{

@@ -909,7 +909,7 @@ $('.doctor .nurse_send').on('click', function(){
     $('.doctor_remote .time_select .possible p').on('click', function(){
         $(this).toggleClass('active');
         $('.doctor_remote .select_week> :first-child').toggle();
-        $('.doctor_remote .week_view').toggleClass('on');
+        $('.doctor_remote .week_view2').toggleClass('on');
     })
 
     // 리스트 클릭시 배경색 바뀜

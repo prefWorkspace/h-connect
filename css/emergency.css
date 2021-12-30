@@ -2063,9 +2063,12 @@
     width: 627px;
 }
 
-.connect .patient_status .symptome label{
-    margin-left: 8px;
+.connect .patient_status .red_custom[type='checkbox'] + label + label{
     font-size: 14px;
+}
+
+.connect .patient_status .two_red + label + label{
+    color: #940045;
 }
 
 .connect .red_custom[type='checkbox'] + label{
@@ -2077,12 +2080,31 @@
     background: #fff;
 }
 
-.connect .red_custom.black[type='checkbox'] + label{
+.connect .green_custom[type="checkbox"] + label{
+    width: 24px;
+    height: 24px;
+}
+
+.connect .green_custom[type="checkbox"] + label + label{
+    font-size: 14px;
+}
+
+.connect .green_custom[type="checkbox"]:checked + label + label{
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.connect .green_custom.black[type='checkbox'] + label{
     border: 1px solid #000;
 }
 
-.connect .patient_status .gray_font{
-    color: #ccc;
+.connect .green_custom.black[type="checkbox"]:checked + label{
+    border: 1px solid #007A94;
+}
+
+.connect .green_custom.gray[type='checkbox'] + label + label{
+   color: #ccc;
+   cursor: pointer;
 }
 
 .connect .red_custom[type='checkbox']:checked + label{
@@ -2093,13 +2115,6 @@
 .connect .patient_status .double_list .first{
     width: 200px;
 }
-
-/* .connect .pati_stat .full_wrap> div{
-    display: flex;
-    justify-content: space-between;
-    /* flex-wrap: wrap;
-    flex-direction: row; */
-} */
 
 
 
@@ -2945,7 +2960,7 @@
 }
 
 .doctor_emergency .patient_status .symptome label{
-    margin-left: 8px;
+    /* margin-left: 8px; */
     font-size: 14px;
 }
 
@@ -2958,13 +2973,32 @@
     background: #fff;
 }
 
+.doctor_emergency .red_custom[type='checkbox'] + label + label{
+    font-size: 14px;
+}
+
+.doctor_emergency .red_custom.gray[type='checkbox'] + label{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.doctor_emergency .red_custom.gray[type='checkbox'] + label + label{
+    font-size: 14px;
+    color: #ccc;
+}
+
 .doctor_emergency .red_custom.black[type='checkbox'] + label{
     border: 1px solid #000;
 }
 
-.doctor_emergency .patient_status .gray_font{
-    color: #ccc;
+.doctor_emergency .patient_status .patient .symptome .sign{
+    padding: 0;
 }
+
 
 .doctor_emergency .patient_status .symptome .red_custom[type='checkbox']:checked + label{
     background: #940045;

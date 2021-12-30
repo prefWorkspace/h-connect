@@ -675,6 +675,7 @@
     padding: 7px 10px;
     border-radius: 4px 4px 0 0;
     background: #ccc;
+    cursor: pointer;
 }
 
 .message .group .group_list p{
@@ -748,27 +749,25 @@
 
 .message .group_container .all_check{
     padding-top: 0;
+    justify-content: initial;
 }
 
+.message .input_wrap{
+    display: flex;
+    align-items: center;
+}
 
-/* checkbox */
-.message .group_container input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
+.message .input_wrap label{
+    font-size: 12px;
     cursor: pointer;
 }
 
-.nurse_message .group_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+.message .input_wrap label :first-child{
+    margin-right: 14px;
 }
 
-
 /* all_check */
-.nurse_message .all_check input[type="checkbox"]+label> span{
+.nurse_message .all_check input[type="checkbox"] + label{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -778,30 +777,35 @@
     cursor: pointer;
 }
 
-.nurse_message .all_check input[type='checkbox']:checked+label span{
+.nurse_message .all_check input[type='checkbox']:checked + label{
     background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
+.nurse_message .all_check input[type="checkbox"] + label + label{
+    color: #007A94;
+}
+
+/* check box */
+.green_custom[type="checkbox"] + label {
+    width: 18px;
+    height: 18px;
+}
+
 /* favorite check */
-.message .favorite_container input[type="checkbox"]+label> span{
+.message .favorite_container input[type="checkbox"]+label{
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 0 15px 0 0;
     vertical-align: middle;
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
-.message .favorite_container input[type='checkbox']:checked+label span{
+.message .favorite_container input[type='checkbox']:checked + label{
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
-.nurse_message .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
-}
 
 .message .select_doctor{
     width: 400px;

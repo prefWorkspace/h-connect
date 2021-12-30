@@ -9,6 +9,7 @@
 .main .logo{
     width: 138px;
     height: 96px;
+    padding: 0;
     margin: 0 auto 50px;
 }
 
@@ -20,6 +21,7 @@
 .main .logo img{
     width: 100%;
     height: 100%;
+
 }
 
 .main .login{
@@ -50,17 +52,23 @@
     margin-top: 10px;
 }
 
-.main .check input[type="checkbox"]+label span{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin: -3px 8px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
+.input_wrap{
+    display: flex;
+    align-items: center;
 }
 
-.main .check input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+.green_custom[type="checkbox"] + label{
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.green_custom[type='checkbox']:checked + label{
+    background: #007A94;
+    border: none;
 }
 
 .main .check input[type="checkbox"]{
