@@ -3263,7 +3263,9 @@ img{
     }
 
 
-
+    .multi .cam_control .dim_mic {
+        left: 63px;
+    }
 
 
 

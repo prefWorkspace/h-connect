@@ -369,6 +369,8 @@
     width: 32px;
     height: 440px;
     padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .nurse_message .timeLine a{
@@ -387,23 +389,28 @@
 }
 
 .nurse_message .timeLine .first{
-    height: 140px;
+    /* height: 140px; */
+    flex: 2;
 }
 
 .nurse_message .timeLine .second{
-    height: 40px;
+    /* height: 40px; */
+    flex: 3;
 }
 
 .nurse_message .timeLine .third{
-    height: 80px;
+    /* height: 80px; */
+    flex: 1;
 }
 
 .nurse_message .timeLine .fourth{
-    height: 60px;
+    /* height: 60px; */
+    flex: 2;
 }
 
 .nurse_message .timeLine .fifth{
-    height: 72px;
+    /* height: 72px; */
+    flex: 1;
 }
 
 
@@ -751,15 +758,21 @@
 
 .message .group_container{
     padding: 16px;
-}
-
-.nurse_message .group_container{
-    height: 400px;
     overflow-y: scroll;
 }
 
-.nurse_message .group_container::-webkit-scrollbar{
-    display: none;
+.nurse_message .group_container,
+.doctor_message .group_container{
+    height: 400px;
+}
+
+.message .group_container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.message .group_container::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 10px;
 }
 
 .message .group_container> div{
@@ -812,6 +825,19 @@
     cursor: pointer;
 }
 
+.message .group_container input[type="checkbox"]:disabled + label{
+    background: #eee;
+    border: 1px solid #eee;
+}
+
+.doctor_message .group_container .red_custom[type="checkbox"] + label{
+    border: 1px solid #000;
+}
+
+.doctor_message .group_container .red_custom[type="checkbox"]:checked + label{
+    border: 1px solid #940045;
+}
+
 
 /* all_check */
 .all_check input[type="checkbox"] + label{
@@ -828,28 +854,32 @@
     color: #940045;
 }
 
+.doctor_message .all_check .red_custom[type="checkbox"] + label{
+    border: 1px solid #940045;
+}
+
 
 /* favorite check */
-.message .favorite_container input[type="checkbox"]+label{
+.message .favorite_container input[type="checkbox"] + label{
     display: inline-block;
     width: 16px;
     height: 16px;
     vertical-align: middle;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
-.message .favorite_container input[type='checkbox']:checked+label{
-    background: url('/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);}
+.message .favorite_container input[type='checkbox']:checked + label{
+    background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }
 
-.doctor_message .favorite_container input[type='checkbox']:checked+label{
-    background: url('/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
+.doctor_message .favorite_container input[type='checkbox']:checked + label{
+    background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
     filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);}
 
 .nurse_message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
@@ -949,38 +979,38 @@
 }
 
 /* 의료진선택 checkbox */
-.message .list_inner div input[type="checkbox"] + label >span {
+/* .message .list_inner div input[type="checkbox"] + label >span {
     width: 18px;
     height: 18px;
     margin: 0 15px 0 0;
-    background: url('/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .message .list_inner div input[type='checkbox']:checked + label span{
-    background: url('/img/emergency/square.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
 }
 
 .nurse_message .list_inner div input[type='checkbox']:checked + label,
 .nurse_message .list_inner div input[type='checkbox']:checked + label span {
-    background: url('/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
-}
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+} */
 
 /* 의료진선택 즐겨찾기 */
 /* .message .list_inner .favorite_container input[type="checkbox"]+label{
     width: 18px;
     height: 18px;
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 } */
 
 .message .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
 .nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
@@ -1121,7 +1151,8 @@
 }
 
 .doctor_message .send_message .title .btn_list button{
-    width: 64px;
+    width: 96px;
+    height: 40px;
 }
 
 .doctor_message .send_message .title .btn_cancel:hover{
@@ -1515,12 +1546,12 @@
 }
 
 .doctor_new.message .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(39%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(57%) contrast(85%);  
 }
 
 .doctor_new.message .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
 }
 
@@ -1528,6 +1559,24 @@
     filter: invert(58%) sepia(152%) saturate(863%) hue-rotate(154deg) brightness(60%) contrast(100%);
 }
 
+.doc_screen .group_container .green_custom[type="checkbox"] + label{
+    background: #eee;
+    border: #eee;
+}
+
+.doc_screen .group_container .green_custom[type="checkbox"]:checked + label{
+    background: #007A94;
+    border: #eee;
+}
+
+/* all check */
+.doc_screen .group_container .all_check input[type="checkbox"] + label{
+    border: 1px solid #007A94;
+}
+
+.doc_screen .group_container .all_check input[type="checkbox"] + label + label{
+    color: #007A94;
+}
 
 
 /* 선별진료실 -의사 */
@@ -1654,4 +1703,132 @@
 
 .screening_doc .message_talk .title h2{
     margin-bottom: 13px;
+}
+
+
+
+
+/* 1248px */
+@media all and (max-width:1300px){
+    /* 의사 - 응급호출 메세지 */
+    .doctor_message .wrap_inner{
+        min-width: 1220px;
+    }
+    .doctor_message .select_medi{
+       width: 736px;
+    }
+
+    .doctor_message .send_message{
+        width: 360px;
+    }
+
+    .doctor_message .select_list{
+        width: 672px;
+    }
+
+    .doctor_message .favorite_list{
+        width: 312px;
+    }
+
+    .doctor_message .select_doctor{
+        width: 296px;
+    }
+
+    .doctor_message .send_message .title .btn_list button{
+        width: 64px;
+    }
+
+    .doctor_message .pop.search_patient{
+        width: 296px;
+        height: 180px;
+        padding: 32px 0 32px 15px;
+    }
+
+    .doctor_message .connect{
+        padding: 0 14px;
+    }
+
+    .doctor_message .connect> div{
+        display: block;
+    }
+
+    /* 의사관리 - 메세지 페이지 */
+    .doc_screen .wrap_inner{
+        min-width: 1188px;
+    }
+    
+    .doc_screen .message_list{
+        width: 616px;
+        height: 640px;
+    }
+
+    .doc_screen .message_talk{
+        width: 480px;
+        height: 640px;
+    }
+
+    .doc_screen .talk_list{
+        height: 450px;
+    }
+
+    .doc_screen .message_list .search_container .btn_search{
+        left: 76%;
+    }
+
+    .doc_screen .message_talk .search_container .btn_search{
+        left: 70%;
+    }
+
+    .doc_screen .chat_container,
+    .doc_screen .chat_inner{
+        height: 360px;
+    }
+
+    .doc_screen .select_medi{
+        width: 736px;
+        height: 640px;
+    }
+
+    .doc_screen .select_list{
+        width: 672px;
+        margin: 0 auto;
+    }
+
+    .doc_screen .favorite_list,
+    .doc_screen .select_doctor{
+        width: 320px;
+    }
+
+    .doc_screen .select_medi .list_inner{
+        height: 350px;
+    }
+
+    .doc_screen .group_container{
+        height: 350px;
+    }
+
+    .doc_screen .send_message{
+        width: 360px;
+        height: 640px;
+    }
+
+    .nurse_message .timeLine{
+        height: 360px;
+    }
+
+    /* 선별진료 */
+    .doc_screen .waiting .row> div{
+        width: 320px;
+        /* justify-content: initial; */
+    }
+
+    .doc_screen .waiting .btn_treat{
+        margin-left: 81px;
+    }
+
+    .doc_screen .elapsed{display: none;}
+    
+    .doctor_new .section{
+        height: 640px;
+    }
 }

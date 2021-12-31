@@ -231,3 +231,21 @@ $(function(){
 		}
 	});
 });
+
+// 의사- 응급호출
+$(function(){
+	var swiper15 = new Swiper(".part_accident_no", {
+		slidesPerView: 3,
+		spaceBetween: 50,
+		freeMode: true,
+		slidesPerView: "auto",
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		scrollbar: {
+			el: ".swiper-scrollbar",
+		},
+		mousewheel: true,
+    });
+})

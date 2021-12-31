@@ -80,31 +80,31 @@
             <nav class="nav" id="nav">
                 <ul class="main_depth gnb">
                     <li class="gnb_list">
-                        <a class="link" href="doctor/index.html">
+                        <a class="link" href="/doctor/index.html">
                             H-Works
                         </a>
                     </li>
 
                     <li class="gnb_list clinic">
-                        <a class="link" href="doctor/remote.html">
+                        <a class="link" href="/doctor/remote.html">
                         원격협진
                         </a>
                     </li>
 
                     <li class="gnb_list off">
-                        <a class="link" href="doctor/monitoring.html">
+                        <a class="link" href="/doctor/monitoring.html">
                             모니터링
                         </a>
                     </li>
 
                     <li class="gnb_list off">
-                        <a class="link" href="doctor/screening.html">
+                        <a class="link" href="/doctor/screening.html">
                             선별진료
                         </a>
                     </li>
 
                     <li class="gnb_list off">
-                        <a class="link" href="doctor/message.html">
+                        <a class="link" href="/doctor/message.html">
                             메세지
                         </a>
                     </li>
@@ -185,25 +185,21 @@
                                 </div>
 
                                 <div class="group_container">
-                                    <div class="all_check">
-                                        <input type="checkbox" name="selectall" id="check1"  onclick="selectAll(this)">
-                                        <label for="check1">
-                                            <span></span>
-                                            
-                                            <p>모두선택</p>
-                                        </label>
+                                    <div class="all_check input_wrap">
+                                        <input type="checkbox" name="selectall" id="check1" class="red_custom" onclick="selectAll(this)">
+                                        <label for="check1"></label>
+                                        <label for="check1">모두선택</label>
                                     </div>
 
                                     <div>
-                                        <input type="checkbox" name="doctor" id="check2" onclick="checkSelectAll(this)">
-                                        <label for="check2">
-                                            <span></span>
-                                            
-                                            <p>강수술 교수님</p>
-
-                                            <p>일반외과</p>
-
-                                        </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" name="doctor" id="check2" class="red_custom" disabled onclick="checkSelectAll(this)">
+                                            <label for="check2"></label>
+                                            <label for="check2">
+                                                <span>강수술 교수님</span>
+                                                <span>일반외과</span>
+                                            </label>                                        
+                                        </div>
 
                                         <div class="favorite_container">
                                             <input type="checkbox" id="favorite2" checked>
@@ -212,15 +208,14 @@
                                     </div>
 
                                     <div>
-                                        <input type="checkbox" name="doctor" id="check3" onclick="checkSelectAll(this)" disabled>
-                                        <label for="check3">
-                                            <span></span>
-                                            
-                                            <p>김협진 교수님</p>
-
-                                            <p>일반외과</p>
-
-                                        </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" name="doctor" id="check3" class="red_custom" onclick="checkSelectAll(this)">
+                                            <label for="check3"></label>
+                                            <label for="check3">
+                                                <span>김협진 교수님</span>
+                                                <span>일반외과</span>
+                                            </label>                                        
+                                        </div>
 
                                         <div class="favorite_container">
                                             <input type="checkbox" id="favorite3" checked>
@@ -229,15 +224,14 @@
                                     </div>
 
                                     <div>
-                                        <input type="checkbox" name="doctor" id="check4" onclick="checkSelectAll(this)">
-                                        <label for="check4">
-                                            <span></span>
-                                            
-                                            <p>김흉부 교수님</p>
-
-                                            <p>흉부외과</p>
-
-                                        </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" name="doctor" id="check4" class="red_custom" onclick="checkSelectAll(this)">
+                                            <label for="check4"></label>
+                                            <label for="check4">
+                                                <span>김흉부 교수님</span>
+                                                <span>일반외과</span>
+                                            </label>                                        
+                                        </div>    
 
                                         <div class="favorite_container">
                                             <input type="checkbox" id="favorite4" checked>
@@ -246,15 +240,14 @@
                                     </div>
 
                                     <div>
-                                        <input type="checkbox" name="doctor" id="check5" onclick="checkSelectAll(this)">
-                                        <label for="check5">
-                                            <span></span>
-                                            
-                                            <p>박골절 교수님</p>
-
-                                            <p>정형외과</p>
-
-                                        </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" name="doctor" id="check5" class="red_custom" onclick="checkSelectAll(this)">
+                                            <label for="check5"></label>
+                                            <label for="check5">
+                                                <span>박골절 교수님</span>
+                                                <span>일반외과</span>
+                                            </label>
+                                        </div>
 
                                         <div class="favorite_container">
                                             <input type="checkbox" id="favorite5" checked>
@@ -263,15 +256,14 @@
                                     </div>
 
                                     <div>
-                                        <input type="checkbox" name="doctor" id="check6" onclick="checkSelectAll(this)">
-                                        <label for="check6">
-                                            <span></span>
-                                            
-                                            <p>김두통 교수님</p>
-
-                                            <p>신경외과</p>
-
-                                        </label>
+                                        <div class="input_wrap">
+                                            <input type="checkbox" name="doctor" id="check6" class="red_custom" onclick="checkSelectAll(this)">
+                                            <label for="check6"></label>
+                                            <label for="check6">
+                                                <span>김두통 교수님</span>
+                                                <span>일반외과</span>
+                                            </label>
+                                        </div>
 
                                         <div class="favorite_container">
                                             <input type="checkbox" id="favorite6" checked>
@@ -625,7 +617,7 @@
           = document.querySelector('input[name="selectall"]');
     
           if(checkbox.checked === false)  {
-             selectall.checked = false;
+                selectall.checked = false;
           }
         }
     

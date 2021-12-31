@@ -1037,6 +1037,11 @@ $('.doctor .nurse_send').on('click', function(){
     $('.new_remote .title .btn_request').on('click', function(){
         $('.pop.create_opinion .overlay').show();
     })
+
+    // 의사 - 응급상황실 
+    $('.doctor_message .btn_cancel').on('click',function(){
+        location.href="index.html"
+    })
     
 
 
@@ -1111,12 +1116,16 @@ $('.doctor .nurse_send').on('click', function(){
         $('.pop.full_pacs .overlay').hide();
     })
 
+    $('.detail_ep .btn_respond').on('click', function(){
+        $('.detail_ep .btn_respond').toggleClass('active');
+    })
+
 
 //---------------------- 선별진료실 의사 ----------------------//
-    //진료 시작 버튼
-    $('.screening_doc .waiting .btn_treat').on('click', function(){
-        location.href="connect_screening.html"
-    })
+    // //진료 시작 버튼
+    // $('.screening_doc .waiting .btn_treat').on('click', function(){
+    //     location.href="connect_screening.html"
+    // })
 
     // $('.select_case .case_list .row').on('click', function(){
     //     location.href="connect.html"
@@ -1379,6 +1388,13 @@ $(function(){
         $(this).next(".table_content").stop().slideToggle(300);
         $(this).toggleClass('on').siblings().removeClass('on');
         $(this).next(".table_content").siblings(".table_content").slideUp(300); // 1개씩 펼치기
+    });
+
+    // 의사 관리 페이지 - 원격협진 1280 아코디언
+    $(".cal_container_top").click(function() {
+        $(this).next(".cal_container").stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next(".cal_container").siblings(".cal_container").slideUp(300); // 1개씩 펼치기
     });
 })
 

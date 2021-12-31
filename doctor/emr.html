@@ -266,9 +266,7 @@
                     </div>
                 </div>
         
-                <div>
-                    <div style="width: 110px;"></div>
-        
+                <div>        
                     <div class="search_container">
                         <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
         
@@ -410,23 +408,76 @@
                 </div>
             </section>
 
-            <!-- emr 조회 목록 영역 -->
-            <section class="section emr_list">
-                <div class="list_inner">
+            <!-- 환자 정보 w1280 -->
+            <section class="section management patient_small">
+                <div class="title">
                     <div>
-                        스마트 리포맥스 emr 조회 목록 영역
+                        <h2>
+                            <span>김환자</span>
+                            (<span>63</span>.
+                            <span>남</span>)
+                        </h2>
+                        
+                        <p>
+                            <span>Patient ID</span> - 
+                            <span>Patient type</span>
+                        </p>
+                    </div>
+                   
+                    <button type="button">
+                        <div class="img_container">
+                            <img src="/H-Connect/img/logo_h_rainbow.svg" alt="로고">
+                        </div>
+                        병상연결
+                    </button>
+                </div>  
+
+                <div class="management_list">
+                    <div class="list" onclick="location.href='patient.html'">
+                        <p>모니터링</p>
+                    </div>
+
+                    <div class="list" onclick="location.href='pacs.html'">
+                        <p>PACS 보기</p>
+                    </div>
+
+                    <div class="list" onclick="location.href='lab.html'">
+                        <p>LAB 조회</p>
+                    </div>
+
+                    <div class="list on" onclick="location.href='emr.html'">
+                        <p>EMR</p>
+                    </div>
+
+                    <div class="list" onclick="location.href='ocs.html'">
+                        <p>OCS</p>
+                    </div>
+
+                    <div class="list doctor_send nurse_send">
+                        <p>병동 간호사실</p>
                     </div>
                 </div>
             </section>
 
-            <!-- emr 결과 표시 영역 -->
-            <section class="section emr_result">
-                <div class="list_inner">
-                    <div>
-                        스마트 리포맥스 emr 결과 표시 영역
+            <div>
+                <!-- emr 조회 목록 영역 -->
+                <section class="section emr_list">
+                    <div class="list_inner">
+                        <div>
+                        스마트 리포맥스 emr 조회 목록 영역
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+                <!-- emr 결과 표시 영역 -->
+                <section class="section emr_result">
+                    <div class="list_inner">
+                        <div>
+                            스마트 리포맥스 emr 결과 표시 영역
+                        </div>
+                    </div>
+                </section> 
+            </div>                      
         </div>
       </div>
 
