@@ -858,6 +858,14 @@
     border: 1px solid #940045;
 }
 
+.nurse_message .all_check .green_custom[type="checkbox"] + label{
+    border: 1px solid #007A94;
+}
+
+.nurse_message .all_check .green_custom[type="checkbox"] + label + label{
+    color: #007A94;
+}
+
 
 /* favorite check */
 .message .favorite_container input[type="checkbox"] + label{
@@ -1482,7 +1490,7 @@
 }
 
 .doctor_new.message .container{
-    height: 366px;
+    height: 312px;
     padding: 0 8px;
     margin-top: 12px;
     overflow-y: scroll;

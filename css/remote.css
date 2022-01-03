@@ -2,6 +2,7 @@
 .wrap_inner{
     width: 100%;
     min-width: 1280px;
+    min-height: calc(100vh - 64px);
     display: initial;
 }
 
@@ -54,10 +55,26 @@ img{
 .remote{
     width: 100%;
     min-width: 1280px;
-    height: 100%;
+    /* height: 100%; */
     min-height: calc(100vh - 64px);
     padding-top: 64px;
     background: #222;
+}
+
+.main{min-width: 1248px;}
+
+.main .wrap_inner{
+    padding-top: 100px;
+    min-width: 1248px;
+    min-height: calc(100vh - 64px);
+}
+
+.main .section{
+    height: 480px;
+}
+
+.remote .section{
+    height: 888px;
 }
 
 .select_case{
@@ -82,7 +99,7 @@ img{
 }
 
 .select_case .case_list{
-    height: 100%;
+    height: 413px;
     padding: 16px;
     background: #eee url('/H-Connect/img/logo.png') no-repeat;
     background-position: 50% 90%;
@@ -182,6 +199,7 @@ img{
 
 .message .notice button{
     width: 100%;
+    height: 40px;
 }
 
 .message .notice button p{
@@ -845,8 +863,9 @@ img{
 /* 탭으로 보기 */
 .several{
     width: 100%;
+    height: 849px;
     /* min-height: 792px; */
-    max-height: 845px;
+    /* max-height: 845px; */
     position: relative;
 }
 
@@ -1517,7 +1536,7 @@ img{
 
 .cont .event .table_body {
     height: 400px;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 }
 
 .cont .event .table_body::-webkit-scrollbar{
@@ -2589,8 +2608,13 @@ img{
     margin-left: 48px;
 }
 
+.tab .cam{
+    margin-top: 4px;
+}
+
 /* scroll */
 .scroll .wrap_inner{
+    min-height: calc(100vh - 68px);
     padding: 0;
     margin-top: 4px;
     display: flex;
@@ -2839,12 +2863,19 @@ img{
 } */
 
 .multi .header .cam_control .modul{
+    position: absolute;
+    top: 53px;
+    left: 160px;
     width: 168px;
-    height: 40px;
-    top: 44px;
-    left: -65px;
-    z-index: 1;
-    opacity: 0;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background: #eee;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* opacity: 0; */
+    display: none;
 }
 
 .multi .header .modul p{color: #007A94;}
@@ -3067,6 +3098,14 @@ img{
 
 
 @media all and (max-width:1300px){
+    .remote.main .section{
+        height: 480px;
+    }
+
+    .remote .section{
+        height: 848px;
+    }
+
     .message{
         height: 100%;
         min-height: 850px;
@@ -3077,8 +3116,11 @@ img{
         height: 636px;
     }
 
-    .vital.on .cont .graphical .hr_time> p,
     .remote .cont .graphical .hr_time> p{
+        margin-right: 80px;
+    }
+
+    .vital.on .cont .graphical .hr_time> p{
         margin-right: 100px;
     }
 
@@ -3097,6 +3139,10 @@ img{
     .study_list .row> :nth-child(4){width: 150px;}
     .study_list .row> :nth-child(5) {width: 65px;}
 
+    .several{
+        height: 800px;
+    }
+
     .several .pacs{
         width: 708px;
     }
@@ -3110,6 +3156,28 @@ img{
         height: 88px;
     }
 
+    /* tabular_table */
+    /* .event .ecg_graph{
+        overflow-x: scroll;
+    } */
+
+    .tab .table_body .table_content .ecg .ecg_graph> div{
+        width: 500px;
+        height: 50px;
+    }
+
+    .tabular_table .table_content .hr {
+        margin-right: 80px;
+    }
+
+    .tabular_table .table_content .spo{
+        margin-right: 95px;
+    }
+
+    .vital .ecg_graph> div {
+        width: 468px;
+        height: 28px;
+    }
 
 
     /* 화상 */
@@ -3121,6 +3189,11 @@ img{
         left: 50%;
         top: 120px;
         z-index: 5;
+    }
+
+    .remote .cam{
+        height: 800px;
+        margin-top: 0;
     }
 
     .pacs .list h3.on{
@@ -3225,14 +3298,19 @@ img{
 
 
     /* ------------------ 다학제 통합 진료 ------------------ */
-    .multi .header .btn_list{
+    /* .multi .header .btn_list{
         display: none;
+    } */
+
+    .multi .header{
+        height: 48px;
     }
 
     .multi .cam{
         height: 800px;
         position: initial;
         margin: 0;
+        z-index: 0;
     }
 
     .multi .view{
@@ -3265,6 +3343,10 @@ img{
 
     .multi .cam_control .dim_mic {
         left: 63px;
+    }
+
+    .multi .header .cam_control .modul{
+        z-index: 1;
     }
 
 

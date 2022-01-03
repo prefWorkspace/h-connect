@@ -730,6 +730,7 @@ button{border-radius: 4px; background: none;}
     min-width: 1280px;
     height: 64px;
     padding: 16px 24px;
+    /* padding: 12px 24px; */
 }
 
 #header.con_header{
@@ -1595,7 +1596,8 @@ button{border-radius: 4px; background: none;}
     align-items: flex-start;
     padding: 15px;
     justify-content: space-between;
-    border-radius: 0 8px 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .mess_send_box .my_send_text {
@@ -2831,6 +2833,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .green_custom[type="checkbox"]:checked + label + label{
     color: #007A94;
+    cursor: pointer;
 }
 
 .pop.send_doctor .green_custom[type="checkbox"]:disabled + label{
@@ -2995,9 +2998,9 @@ textarea::-webkit-scrollbar-button {
     width: 30px;
     height: 30px;
     position: absolute;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
-    right: 20px;
+    right: 8px;
     background: none;
 }
 

@@ -1122,10 +1122,10 @@ $('.doctor .nurse_send').on('click', function(){
 
 
 //---------------------- 선별진료실 의사 ----------------------//
-    // //진료 시작 버튼
-    // $('.screening_doc .waiting .btn_treat').on('click', function(){
-    //     location.href="connect_screening.html"
-    // })
+    //진료 시작 버튼
+    $('.screening_doc .waiting .btn_treat').on('click', function(){
+        location.href="connect_screening.html"
+    })
 
     // $('.select_case .case_list .row').on('click', function(){
     //     location.href="connect.html"

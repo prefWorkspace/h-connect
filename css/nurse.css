@@ -390,6 +390,14 @@
     padding: 6px;
 }
 
+.nurse_measure .left.measure_status .ward_list{
+    border: none;
+}
+
+.nurse_measure .left.measure_status .ward_list:hover{
+    background: #fff;
+}
+
 .s_select .optionList::after{
     width: 128px;
 }
@@ -1380,7 +1388,7 @@
 
 .patient_vital .room_view .container{
     width: fit-content;
-    padding: 8px 0 8px 32px;
+    padding: 8px 0 0 32px;
     background: linear-gradient(to right, #007A94,#003D4A);
     border-radius: 8px;
     display: flex;
@@ -1426,13 +1434,14 @@
 }
 
 .patient_vital .room_view .monitor_wrap{
+    width: calc(100% - 188px);
     display: flex;
     flex-wrap: wrap;
 }
 
-.patient_vital .room_view .patient_moniter{
+/* .patient_vital .room_view .patient_moniter{
     margin-bottom:0;
-}
+} */
 
 
 /* 모니터링 환자 선택 */
@@ -2761,12 +2770,19 @@
     background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px/ contain;
     background-position: 80% 95%;
     background-size: 90px;
+    display: block;
 }
 
 .ward_dashboard .wrap_inner> div{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+}
+
+.ward_dashboard .wrap_inner> div::-webkit-scrollbar{
+    display: none;
 }
 
 .ward_dashboard .wrap_inner .img{

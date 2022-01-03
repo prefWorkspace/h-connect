@@ -1682,6 +1682,10 @@ p{font-size: 12px;}
 .doctor_monitor .pre_rhythm{display: none;}
 
 /* 모니터링 - 환자 상세화면 */
+.doctor_patient .wrap_inner> div{
+    display: flex;
+}
+
 .doctor_patient .patient{
     width: 360px;
     padding: 16px;
@@ -4077,12 +4081,12 @@ p{font-size: 12px;}
     height: 17px;
     margin-right: 16px;
     width: fit-content;
-    /* display: inline-block; */
+    display: flex;
+    /* align-items: center; */
 }
 
 .doctor_new .mem p{
     margin: 0;
-    display: inline-block;
 }
 
 .doctor_new .btn_del{
@@ -4093,8 +4097,6 @@ p{font-size: 12px;}
     border-radius: 50%;
     background: #940045 url('/H-Connect/img/icon/nurse/close.svg') no-repeat;
     background-position: 50% 50%;
-    background-size: 50%;
-    display: inline-block;
     vertical-align: inherit;
 }
 
