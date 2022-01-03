@@ -1124,11 +1124,6 @@
     display: block;
 }
 
-/* .doctor_message .select_medi{
-    width: 736px;
-    height: 640px;
-} */
-
 .message .select_medi .title{
     padding: 16px 16px 26px;
 }
@@ -1287,6 +1282,14 @@
     margin: 19px 0;
 }
 
+.doctor_message .select_doctor .red_custom[type="checkbox"] + label{
+    background: #eee;
+    border: 1px solid #eee;
+}
+
+.doctor_message .select_doctor .red_custom[type="checkbox"]:checked + label{
+    background: #940045;
+}
 
 /* 의사 - 선별진료 */
 .doc_screen{

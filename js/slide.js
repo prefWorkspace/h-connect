@@ -247,5 +247,11 @@ $(function(){
 			el: ".swiper-scrollbar",
 		},
 		mousewheel: true,
+		breakpoints:{
+			1300:{
+				allowTouchMove: false,
+				mousewheel: false
+			}
+		}
     });
 })
