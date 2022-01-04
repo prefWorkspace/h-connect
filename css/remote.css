@@ -69,7 +69,7 @@ img{
     min-height: calc(100vh - 64px);
 }
 
-.main .section{
+.remote.main .section{
     height: 480px;
 }
 
