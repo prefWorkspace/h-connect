@@ -4,11 +4,14 @@ $(function () {
     $('.pop .pop_cont .btn_list .btn_cancel').on('click', function(){
         $('.pop .overlay').hide();
     })
+    
+    $('#wrap_content').on('click', function () {
+        $('.pop.logout').hide();
+    });
 
-    // $('#wrap_content').on('click', function () {
-    //     $('.pop .overlay').hide();
-    //     $('.pop').hide();
-    // });
+    $('#contents_wrap').on('click', function () {
+        $('.pop.logout').hide();
+    });
 
 //---------------------- 간호사 ----------------------//
 
@@ -33,9 +36,6 @@ $(function () {
         $('.pc_header .search_container .btn_search').removeClass('on');
     })
 
-
-
-// --------- 간호사 관리 --------- //
 // 병동관리
     // 병동생성 팝업 열고 닫기
     $('.nurse .ward .title .btn_new_ward').on('click', function () {
@@ -375,298 +375,317 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
     });
 
 
-
-
-
-
 //---------------------- 응급상황실 ----------------------//
-    // 의료진호출
-    $('.emergency .patient_status .btn_call').on('click', function(){
-        $('.pop.doctor_call .overlay').show();
-    })
+        // 의료진호출
+        $('.emergency .btn_call').on('click', function(){
+            $('.pop.doctor_call .overlay').show();
+        })
+
         // 확인버튼 누름
-        $('.pop.doctor_call .btn_doctor_call').on('click', function(){
+         $('.pop.doctor_call .btn_doctor_call').on('click', function(){
             $('.pop.doctor_call .overlay').hide();
         })
 
-    // 응급상황 종료
-    $('.emergency .patient_status .btn_end').on('click', function(){
-        $('.pop.emergency_clear .overlay').show();
+        // 응급상황 종료
+        $('.emergency .patient_status .btn_end').on('click', function(){
+            $('.pop.emergency_clear .overlay').show();
+        })
+
+        $('.pop.emergency_clear .pop_cont .btn_no').on('click', function(){
+            $('.pop.emergency_clear .overlay').hide();
+        })
+
+        $('.pop.emergency_clear .pop_cont .btn_list button').on('click', function(){
+            $('.pop.emergency_clear .overlay').hide();
+        })
+
+        // 환자 바이탈 풀스크린
+        $('.emergency .vital .vital_container .btn_vital').on('click', function(){
+            $('.pop.full_vital .overlay').show();
+        })
+
+        $('.pop.full_vital .btn_close').on('click', function(){
+            $('.pop.full_vital .overlay').hide();
+        })
+
+        // 응급사진 보기
+        $('.emergency .picture .title .btn_picture').on('click', function(){
+            $('.pop.full_picture .overlay').show();
+        })
+
+        $('.pop.full .btn_close').on('click', function(){
+            $('.pop.full_picture .overlay').hide();
+        })
+
+        // 리스트 선택시 none한거 보이게
+        $('.emergency .emergency_recep .list_container .list').on('click', function(){
+            $(this).addClass('on');
+            $('.emergency .list_container .list').not(this).removeClass('on');
+
+            $('.emergency .patient_status .no_patient').show();
+            $('.emergency .patient_status .symptome').hide();
+
+            $('.emergency .vital .vital_monitor').hide();
+            $('.emergency .vital .no_signal').show();
+
+            $('.emergency .big_picture, .emergency .small_picture').hide();
+            $('.emergency .no_picture').show();
+
+            $('.signal_text').hide();
+            $('.no_signal_text').show();
+            $('.emergency .full').attr('disabled', true);
+        })
+        
+
+    // 메세지
+        // 새로운 메세지
+        $('.para_message .btn_message').on('click', function(){
+            $('.para_message .message_list').hide();
+            $('.para_message .message_talk').hide();
+
+            $('.para_message .select_medi').show();
+            $('.para_message .send_message').show();
+        })
+
+        // 메세지 보내기 창에서 다시 돌아가기(취소버튼 누름)
+        $('.message .send_message .btn_list .btn_cancel').on('click', function(){
+            $('.message .select_medi').hide();
+            $('.message .send_message').hide();
+
+            $('.message .message_list').show();
+            $('.message .message_talk').show();
+        })
+
+        // 메세지 보내기 창에서 다시 돌아가기(전송버튼 누름)
+        $('.message .send_message .btn_list .btn_send').on('click', function(){
+            $('.message .select_medi').hide();
+            $('.message .send_message').hide();
+
+            $('.message .message_list').show();
+            $('.message .message_talk').show();
+        })
+
+    // 구급대원에게 전화
+    $('.emergency .patient_status .btn_paramedic').on('click', function(){
+        location.href="call_paramedic.html";
     })
 
-    $('.pop.emergency_clear .pop_cont .btn_no').on('click', function(){
-        $('.pop.emergency_clear .overlay').hide();
+    $('.para_connect .mic_layer').on('click', function(){
+        $('.para_connect .mic_off').show();
     })
 
-    $('.pop.emergency_clear .pop_cont .btn_list button').on('click', function(){
-        $('.pop.emergency_clear .overlay').hide();
+    $('.para_connect .mic_off').on('click', function(){
+        $('.para_connect .mic_off').hide();
     })
 
-    // 환자 바이탈 풀스크린
-    $('.emergency .vital .vital_container .btn_vital').on('click', function(){
-        $('.pop.full_vital .overlay').show();
+    $('.para_connect .cam_layer').on('click', function(){
+        $('.para_connect .cam_off').show();
     })
 
-    $('.pop.full_vital .btn_close').on('click', function(){
-        $('.pop.full_vital .overlay').hide();
+    $('.para_connect .cam_off').on('click', function(){
+        $('.para_connect .cam_off').hide();
     })
 
-    // 응급사진 보기
-    $('.emergency .picture .title .btn_picture').on('click', function(){
-        $('.pop.full_picture .overlay').show();
+    $('.para_connect .refuse_layer').on('click', function(){
+        $('.pop.connect .overlay').show();
     })
 
-    $('.pop.full .btn_close').on('click', function(){
-        $('.pop.full_picture .overlay').hide();
+    $('.pop.connect .btn_delete').on('click', function(){
+        $('.pop.connect .overlay').hide();
+        location.href="index.html";
     })
 
-// 메세지
-    // 새로운 메세지
-    $('.para_message .btn_message').on('click', function(){
-        $('.para_message .message_list').hide();
-        $('.para_message .message_talk').hide();
-
-        $('.para_message .select_medi').show();
-        $('.para_message .send_message').show();
+    $('.paramedic .header_right .btn_attendee').on('click', function(){
+        $('.pop.attendee').toggle();
     })
 
-    // 메세지 보내기 창에서 다시 돌아가기(취소버튼 누름)
-    $('.message .send_message .btn_list .btn_cancel').on('click', function(){
-        $('.message .select_medi').hide();
-        $('.message .send_message').hide();
-
-        $('.message .message_list').show();
-        $('.message .message_talk').show();
+    $('.paramedic .header_right .btn_doctor_call').on('click', function(){
+        $('.pop.doctor_call .overlay').show();
     })
 
-    // 메세지 보내기 창에서 다시 돌아가기(전송버튼 누름)
-    $('.message .send_message .btn_list .btn_send').on('click', function(){
-        $('.message .select_medi').hide();
-        $('.message .send_message').hide();
-
-        $('.message .message_list').show();
-        $('.message .message_talk').show();
+    // 화상창 켜기
+    $('.connect .emer_message .btn_video').on('click', function(){
+        $('.cam').show();
+        $('.connect .data').show();
+        $('.connect .no_data').hide();
+        $('.connect .emer_message .btn_video').hide();
+        $('.connect .emer_message .btn_novideo').show();
     })
 
-// 구급대원에게 전화
-$('.emergency .patient_status .btn_paramedic').on('click', function(){
-    location.href="call_paramedic.html";
-})
+    $('.connect .emer_message .btn_novideo').on('click', function(){
+        $('.cam').hide();
+        $('.connect .data').hide();
+        $('.connect .no_data').show();
+        $('.connect .emer_message .btn_novideo').hide();
+        $('.connect .emer_message .btn_video').show();
+    })
 
-$('.para_connect .mic_layer').on('click', function(){
-    $('.para_connect .mic_off').show();
-})
+    // 화상카메라 켜기
+    $('.cam .btn_cam').on('click', function(){
+        $('.cam .btn_cam').hide();
+        $('.cam .btn_cam_off').show();
+        $('.cam .my_cam .cam_parti').hide();
+        $('.cam .my_cam .nocam_parti').show();
+    })
 
-$('.para_connect .mic_off').on('click', function(){
-    $('.para_connect .mic_off').hide();
-})
+    $('.cam .btn_cam_off').on('click', function(){
+        $('.cam .btn_cam').show();
+        $('.cam .btn_cam_off').hide();
+        $('.cam .my_cam .cam_parti').show();
+        $('.cam .my_cam .nocam_parti').hide();
+    })
 
-$('.para_connect .cam_layer').on('click', function(){
-    $('.para_connect .cam_off').show();
-})
+    $('.connect .emer_message .title .btn_video').on('click', function(){
+        $('.connect .patient_view' ).width('1272px');
+    })
+    $('.connect .emer_message .title .btn_novideo').on('click', function(){
+        $('.connect .patient_view').width('1428px');
+    })
 
-$('.para_connect .cam_off').on('click', function(){
-    $('.para_connect .cam_off').hide();
-})
+    $('.connect .btn_doctor_call').on('click', function(){
+        $('.pop.conn_call .overlay').show();
+    })
 
-$('.para_connect .refuse_layer').on('click', function(){
-    $('.pop.connect .overlay').show();
-})
-
-$('.pop.connect .btn_delete').on('click', function(){
-    $('.pop.connect .overlay').hide();
-    location.href="index.html";
-})
-
-$('.paramedic .header_right .btn_attendee').on('click', function(){
-    $('.pop.attendee').toggle();
-})
-
-$('.paramedic .header_right .btn_doctor_call').on('click', function(){
-    $('.pop.doctor_call .overlay').show();
-})
-
-// 화상창 켜기
-$('.connect .emer_message .btn_video').on('click', function(){
-    $('.cam').show();
-    $('.connect .data').show();
-    $('.connect .no_data').hide();
-    $('.connect .emer_message .btn_video').hide();
-    $('.connect .emer_message .btn_novideo').show();
-})
-
-$('.connect .emer_message .btn_novideo').on('click', function(){
-    $('.cam').hide();
-    $('.connect .data').hide();
-    $('.connect .no_data').show();
-    $('.connect .emer_message .btn_novideo').hide();
-    $('.connect .emer_message .btn_video').show();
-})
-
-// 화상카메라 켜기
-$('.cam .btn_cam').on('click', function(){
-    $('.cam .btn_cam').hide();
-    $('.cam .btn_cam_off').show();
-    $('.cam .my_cam .cam_parti').hide();
-    $('.cam .my_cam .nocam_parti').show();
-})
-
-$('.cam .btn_cam_off').on('click', function(){
-    $('.cam .btn_cam').show();
-    $('.cam .btn_cam_off').hide();
-    $('.cam .my_cam .cam_parti').show();
-    $('.cam .my_cam .nocam_parti').hide();
-})
-
-$('.connect .emer_message .title .btn_video').on('click', function(){
-    $('.connect .patient_view' ).width('1272px');
-})
-$('.connect .emer_message .title .btn_novideo').on('click', function(){
-    $('.connect .patient_view').width('1428px');
-})
-
-$('.connect .btn_doctor_call').on('click', function(){
-    $('.pop.conn_call .overlay').show();
-})
-
-$('.paramedic .header_right .btn_list .btn_end').on('click', function(){
-    $('.pop.connect .overlay').show();
-})
+    $('.paramedic .header_right .btn_list .btn_end').on('click', function(){
+        $('.pop.connect .overlay').show();
+    })
 
 
-// connect fold full close
-// 환자상태
-$('.several .pati_stat .title .btn_fold').on('click', function(){
-    $('.several .patient_status').toggle();
-})
-
-$('.several .pati_stat .title .btn_full').on('click', function(){
-    $('.several .pati_stat').toggleClass('on');
-    $('.several .patient_status').show();
-})
-
-$('.several .pati_stat .title .btn_close').on('click', function(){
-    $('.several .pati_stat').hide();
-})
-
-$('.patient_view .btn_patient').on('click', function(){
-    $('.several .pati_stat').show();
-})
-
-// 바이탈
-$('.several .vital .title .btn_close').on('click', function(){
-    $('.several .vital').hide();
-})
-
-$('.patient_view .btn_vital').on('click', function(){
-    $('.several .vital').show();
-})
-
-
- // 화상연결
-$('.several .connect_video .title .btn_fold').on('click', function(){
-    $('.several .video_view').toggle();
-})
-
-$('.several .connect_video .title .btn_full').on('click', function(){
-    $('.several .connect_video').toggleClass('on');
-    $('.several .video_view').show();
-})
-
-$('.several .connect_video .title .btn_close').on('click', function(){
-    $('.several .connect_video').hide();
-})
-
-$('.patient_view .btn_videocall').on('click', function(){
-    $('.several .connect_video').show();
-})
-
-// 현장사진
-$('.several .scene_picture .title .btn_fold').on('click', function(){
-    $('.several .swiper').toggle();
-})
-
-$('.several .scene_picture .title .btn_full').on('click', function(){
-    $('.several .scene_picture').toggleClass('on');
-    $('.several .swiper').show();
-})
-
-$('.several .scene_picture .title .btn_close').on('click', function(){
-    $('.several .scene_picture').hide();
-})
-
-$('.patient_view .btn_picture').on('click', function(){
-    $('.several .scene_picture').show();
-})
-
-
-
-
-// view별로 보기(탭)
+    // connect fold full close
     // 환자상태
-    $('.connect_tab .btn_patient').on('click', function(){
-        $('.connect_tab .vital, .connect_tab .connect_video, .connect_tab .scene_picture').hide();
-        $('.connect_tab .pati_stat').show();
-        $('.connect_tab .btn_patient').addClass('on');
-        $('.connect_tab .btn_vital, .connect_tab .btn_videocall, .connect_tab .btn_picture').removeClass('on');
+    $('.several .pati_stat .title .btn_fold').on('click', function(){
+        $('.several .patient_status').toggle();
     })
 
-    // 바이탈 보기
-    $('.connect_tab .btn_vital').on('click', function(){
-        $('.connect_tab .pati_stat, .connect_tab .connect_video, .connect_tab .scene_picture').hide();
-        $('.connect_tab .vital').show();
-        $('.connect_tab .btn_vital').addClass('on');
-        $('.connect_tab .btn_patient, .connect_tab .btn_videocall, .connect_tab .btn_picture').removeClass('on');
+    $('.several .pati_stat .title .btn_full').on('click', function(){
+        $('.several .pati_stat').toggleClass('on');
+        $('.several .patient_status').show();
     })
+
+    $('.several .pati_stat .title .btn_close').on('click', function(){
+        $('.several .pati_stat').hide();
+    })
+
+    $('.patient_view .btn_patient').on('click', function(){
+        $('.several .pati_stat').show();
+    })
+
+    // 바이탈
+    $('.several .vital .title .btn_close').on('click', function(){
+        $('.several .vital').hide();
+    })
+
+    $('.patient_view .btn_vital').on('click', function(){
+        $('.several .vital').show();
+    })
+
 
     // 화상연결
-    $('.connect_tab .btn_videocall').on('click', function(){
-        $('.connect_tab .pati_stat, .connect_tab .vital, .connect_tab .scene_picture').hide();
-        $('.connect_tab .connect_video').show();
-        $('.connect_tab .btn_videocall').addClass('on');
-        $('.connect_tab .btn_patient, .connect_tab .btn_vital, .connect_tab .btn_picture').removeClass('on');
+    $('.several .connect_video .title .btn_fold').on('click', function(){
+        $('.several .video_view').toggle();
+    })
+
+    $('.several .connect_video .title .btn_full').on('click', function(){
+        $('.several .connect_video').toggleClass('on');
+        $('.several .video_view').show();
+    })
+
+    $('.several .connect_video .title .btn_close').on('click', function(){
+        $('.several .connect_video').hide();
+    })
+
+    $('.patient_view .btn_videocall').on('click', function(){
+        $('.several .connect_video').show();
     })
 
     // 현장사진
-    $('.connect_tab .btn_picture').on('click', function(){
-        $('.connect_tab .pati_stat, .connect_tab .vital, .connect_tab .connect_video').hide();
-        $('.connect_tab .scene_picture').show();
-        $('.connect_tab .btn_picture').addClass('on');
-        $('.connect_tab .btn_patient, .connect_tab .btn_vital, .connect_tab .btn_videocall').removeClass('on');
+    $('.several .scene_picture .title .btn_fold').on('click', function(){
+        $('.several .swiper').toggle();
     })
 
-// view별로 보기(스크롤)
-$('.connect_scroll .pati_stat .btn_close').on('click', function(){
-    $('.connect_scroll .pati_stat').hide();
-})
+    $('.several .scene_picture .title .btn_full').on('click', function(){
+        $('.several .scene_picture').toggleClass('on');
+        $('.several .swiper').show();
+    })
 
-$('.connect_scroll .vital .btn_close').on('click', function(){
-    $('.connect_scroll .vital').hide();
-})
+    $('.several .scene_picture .title .btn_close').on('click', function(){
+        $('.several .scene_picture').hide();
+    })
 
-$('.connect_scroll .connect_video .btn_close').on('click', function(){
-    $('.connect_scroll .connect_video').hide();
-})
+    $('.patient_view .btn_picture').on('click', function(){
+        $('.several .scene_picture').show();
+    })
 
-$('.connect_scroll .scene_picture .btn_close').on('click', function(){
-    $('.connect_scroll .scene_picture').hide();
-})
 
-$('.connect_scroll .btn_patient').on('click', function(){
-    $('.connect_scroll .pati_stat').show();
-})
 
-$('.connect_scroll .btn_vital').on('click', function(){
-    $('.connect_scroll .vital').show();
-})
 
-$('.connect_scroll .btn_videocall').on('click', function(){
-    $('.connect_scroll .connect_video').show();
-})
+    // view별로 보기(탭)
+        // 환자상태
+        $('.connect_tab .btn_patient').on('click', function(){
+            $('.connect_tab .vital, .connect_tab .connect_video, .connect_tab .scene_picture').hide();
+            $('.connect_tab .pati_stat').show();
+            $('.connect_tab .btn_patient').addClass('on');
+            $('.connect_tab .btn_vital, .connect_tab .btn_videocall, .connect_tab .btn_picture').removeClass('on');
+        })
 
-$('.connect_scroll .btn_picture').on('click', function(){
-    $('.connect_scroll .scene_picture').show();
-})
+        // 바이탈 보기
+        $('.connect_tab .btn_vital').on('click', function(){
+            $('.connect_tab .pati_stat, .connect_tab .connect_video, .connect_tab .scene_picture').hide();
+            $('.connect_tab .vital').show();
+            $('.connect_tab .btn_vital').addClass('on');
+            $('.connect_tab .btn_patient, .connect_tab .btn_videocall, .connect_tab .btn_picture').removeClass('on');
+        })
+
+        // 화상연결
+        $('.connect_tab .btn_videocall').on('click', function(){
+            $('.connect_tab .pati_stat, .connect_tab .vital, .connect_tab .scene_picture').hide();
+            $('.connect_tab .connect_video').show();
+            $('.connect_tab .btn_videocall').addClass('on');
+            $('.connect_tab .btn_patient, .connect_tab .btn_vital, .connect_tab .btn_picture').removeClass('on');
+        })
+
+        // 현장사진
+        $('.connect_tab .btn_picture').on('click', function(){
+            $('.connect_tab .pati_stat, .connect_tab .vital, .connect_tab .connect_video').hide();
+            $('.connect_tab .scene_picture').show();
+            $('.connect_tab .btn_picture').addClass('on');
+            $('.connect_tab .btn_patient, .connect_tab .btn_vital, .connect_tab .btn_videocall').removeClass('on');
+        })
+
+    // view별로 보기(스크롤)
+    $('.connect_scroll .pati_stat .btn_close').on('click', function(){
+        $('.connect_scroll .pati_stat').hide();
+    })
+
+    $('.connect_scroll .vital .btn_close').on('click', function(){
+        $('.connect_scroll .vital').hide();
+    })
+
+    $('.connect_scroll .connect_video .btn_close').on('click', function(){
+        $('.connect_scroll .connect_video').hide();
+    })
+
+    $('.connect_scroll .scene_picture .btn_close').on('click', function(){
+        $('.connect_scroll .scene_picture').hide();
+    })
+
+    $('.connect_scroll .btn_patient').on('click', function(){
+        $('.connect_scroll .pati_stat').show();
+    })
+
+    $('.connect_scroll .btn_vital').on('click', function(){
+        $('.connect_scroll .vital').show();
+    })
+
+    $('.connect_scroll .btn_videocall').on('click', function(){
+        $('.connect_scroll .connect_video').show();
+    })
+
+    $('.connect_scroll .btn_picture').on('click', function(){
+        $('.connect_scroll .scene_picture').show();
+    })
+
+
 
 
 
@@ -1132,7 +1151,8 @@ $('.doctor .nurse_send').on('click', function(){
     // })
 
 
-    //---------------------- 원격협진  ----------------------//
+//---------------------- 원격협진  ----------------------//
+
     $('.con_header .btn_end').on('click', function(){
         $('.pop.connect .overlay').show();
     })
@@ -1432,3 +1452,5 @@ $(document).ready(function(){
         }
     });
 })
+
+

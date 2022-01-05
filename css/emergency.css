@@ -20,13 +20,14 @@
 }
 
 .emergency .emergency_recep .container{
+    height: 360px;
     padding: 16px;
     border-radius: 8px;
     background-color: #fff;
 }
 
 .emergency .emergency_recep .title{
-    padding: 16px;
+    padding: 16px 16px 25px;
     border-bottom: 1px solid #eee;
 }
 
@@ -81,6 +82,7 @@
     width: 400px;
     height: 64px;
     border-radius: 4px;
+    border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
 }
@@ -120,6 +122,21 @@
 .emergency .emergency_recep .list.on h3{
     color: #fff;
 }
+
+/* 응급상황 접수된거 없음 */
+.emergency .emergency_recep .no_recep{
+    width: 400px;
+    height: 64px;
+    margin: 16px auto;
+    padding: 24px 16px;
+    border-radius: 4px;
+    background: #eee;
+    color: #000;
+    display: none;
+}
+
+
+
 
 .emergency .arrival_time{
     width: 50%;
@@ -264,6 +281,42 @@
     color: #940045;
 }
 
+/* 응급환자가 없을때 */
+.emergency .patient_status .no_data{display: none;}
+
+.emergency .patient_status .no_data .title h2,
+.emergency .patient_status .no_data{
+    color: #ccc;
+}
+
+.emergency .patient_status .no_data .title{
+    padding: 16px 16px 26px;
+    display: inherit;
+}
+
+.emergency .patient_status .no_data .back_img{
+    width: 138px;
+    margin: 240px auto 0;
+}
+
+.emergency .patient_status .no_data .back_img div{
+    width: 138px;
+    height: 96px;
+}
+
+.emergency .patient_status .no_data .back_img div img{
+    width: 100%;
+    height: 100%;
+    filter: invert(64%) sepia(48%) saturate(0%) hue-rotate(291deg) brightness(119%) contrast(89%);
+}
+
+.emergency .patient_status .no_data .back_img h3{
+    margin-top: 32px;
+    font-size: 14px;
+    text-align: center;
+}
+
+
 .emergency .patient_status .btn_list{
     display: flex;
 }
@@ -323,7 +376,8 @@
 
 .emergency .patient_status .patient{
     width: 576px;
-    padding: 16px 4px 16px 16px;
+    /* padding: 16px 4px 16px 16px; */
+    padding: 16px;
     overflow-y: scroll;
 }
 
@@ -922,13 +976,13 @@
 }
 
 
-.connect .patient_status .front_toggle,
+/* .connect .patient_status .front_toggle,
 .connect .patient_status .back_toggle,
 .connect .patient_status .left_toggle,
 .connect .patient_status .right_toggle,
 .connect .patient_status .body_toggle{
     left: -7px;
-}
+} */
 
 /* 환자가 없을 경우 */
 .emergency .patient_status .patient .no_patient{
@@ -974,14 +1028,13 @@
 }
 
 .patient .symptome_info .unre .input_wrap{
-    width: 160px;
+    width: 146px;
     margin: 0;
 }
 
-.emergency .patient .symptome_info .unre .ure_list{
-    /* margin-left: 61px; */
+/* .emergency .patient .symptome_info .unre .ure_list{
     margin-left: 20px;
-}
+} */
 
 .doctor_emergency .patient .symptome_info .unre .ure_list{
     margin: 0;
@@ -1112,7 +1165,8 @@
 
 /* 환자 바이탈 */
 .emergency .vital{
-    padding: 0 16px;
+    width: 544px;
+    padding: 16px;
     overflow-y: scroll;
 }
 
@@ -1127,14 +1181,16 @@
 }
 
 .emergency .vital .title{
-    padding: 20px 0;
+    padding: 0px 0 14px;
     margin: 0;
     border: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .emergency  .vital .title h2{
+    margin: 0;
     color: #940045;
 }
 
@@ -1166,9 +1222,13 @@
 .emergency .vital .vital_monitor{
     width: 520px;
     height: 688px;
-    padding: 8px 16px 16px;
+    /* padding: 8px 16px 16px; */
     background: #000;
     border-radius: 8px;
+}
+
+.emergency .vital .vital_monitor .graph{
+    padding: 16px 16px 0;
 }
 
 .emergency .vital .vital_monitor p{
@@ -1250,9 +1310,14 @@
     color: #FFEE00;
 }
 
+.emergency .patient_status .graph> .resp{
+    width: 100%;
+    padding: 0;
+}
+
 /* mmhg */
 .emergency .patient_status .mmhg{
-    width: 260px;
+    width: 262px;
     height: 104px;
     padding: 8px 16px;
     color: #fff;
@@ -1363,6 +1428,7 @@
 }
 
 .emergency .picture .title h2{
+    margin: 0;
     color: #940045;
 }
 
@@ -1375,8 +1441,10 @@
 .emergency .picture .title .btn_picture{
     width: 32px;
     height: 32px;
+    padding: 8px;
     border-radius: 4px;
     background: #940045;
+    display: inherit;
 }
 
 .emergency .picture .title .btn_picture:hover{
@@ -2039,6 +2107,7 @@
 
 .connect .patient_status .patient{
     width: 100%;
+    padding: 16px 4px 16px 16px;
     background: #eee;
 }
 
@@ -2088,16 +2157,19 @@
 
 .connect .red_custom[type='checkbox'] + label{
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
     border: 1px solid #ccc;
     background: #fff;
 }
 
 .connect .green_custom[type="checkbox"] + label{
-    width: 24px;
-    height: 24px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    background: #fff;
 }
 
 .connect .green_custom[type="checkbox"] + label + label{
@@ -2111,6 +2183,7 @@
 
 .connect .black[type='checkbox'] + label{
     border: 1px solid #000;
+    background: #fff;
 }
 
 .connect .red_custom.black[type='checkbox']:checked + label{
@@ -2118,12 +2191,15 @@
 }
 
 .connect .green_custom.black[type="checkbox"]:checked + label{
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
     border: 1px solid #007A94;
 }
 
 .connect .gray[type='checkbox'] + label + label{
-   color: #ccc;
-   cursor: pointer;
+    color: #ccc;
+    cursor: pointer;
 }
 
 .connect .red_custom.gray[type='checkbox']:checked + label{

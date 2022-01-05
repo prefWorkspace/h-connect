@@ -444,7 +444,7 @@ button{border-radius: 4px; background: none;}
 }
 
 #header.emer{
-    min-width: 1248px;
+    min-width: 1880px;
     height: 80px;
     padding: 12px 24px;
     background: linear-gradient(to right, #940045, #4A0000);
@@ -654,6 +654,7 @@ button{border-radius: 4px; background: none;}
 .paramedic .header_right .btn_doctor_call div{
     width: 16px;
     height: 16px;
+    margin-right: 5px;
 }
 
 .paramedic .header_right .btn_doctor_call div img{
@@ -3937,6 +3938,15 @@ textarea::-webkit-scrollbar-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.pop.doctor_call .btn_small{
+    width: 96px;
+    justify-content: center;
+}
+
+.pop.doctor_call .btn_small img{
+    margin-right: 8px;
 }
 
 .pop.doctor_call .btn_doctor_call img{

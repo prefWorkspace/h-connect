@@ -8,6 +8,7 @@
     <!--Import-->
     <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
     <script type='text/javascript' src='/H-Connect/js/common.js'></script>
+    <script type='text/javascript' src='/H-Connect/js/emergency.js'></script>
     <script type='text/javascript' src='/H-Connect/js/slide.js'></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -42,7 +43,7 @@
 
                         <div class="btn_list">
                             <button type="button" class="btn_cancel">취소</button>
-                            <button type="button" class="btn_doctor_call">
+                            <button type="button" class="btn_small btn_doctor_call">
                                 <img src="/H-Connect/img/header/call.png" alt="전화기 아이콘"> 확인
                             </button>
                         </div>
@@ -861,8 +862,8 @@
             </nav>
 
             <div class="wrap_inner">
+                <!-- 왼쪽 화면 -->
                 <section class="section left emergency_recep">
-                    <!-- 응급상황 접수목록 -->
                     <div class="container">
                         <div class="title">
                             <div>
@@ -880,6 +881,7 @@
                             </div>
                         </div>
 
+                        <!-- 응급상황 접수목록 -->
                         <div class="list_container">
                             <div class="list on">
                                 <div>
@@ -1009,6 +1011,11 @@
 
                             </div>
                         </div>
+
+                        <!-- 응급상황 접수된거 없음 -->
+                        <div class="container no_recep">
+                            <p>접수된 응급상황이 없습니다.</p>
+                        </div>
                     </div>
 
                     <!-- 위치정보 -->
@@ -1034,7 +1041,9 @@
                     </div>
                 </section>
 
+                <!-- 오른쪽 화면 -->
                 <section class="section left patient_status">
+                    <!-- 접수된 응급환자가 있을때 -->
                     <div class="container">
                         <div class="title">
                             <div>
@@ -1932,10 +1941,8 @@
                                             <h2>환자 바이탈</h2>
             
                                             <div>
-                                                <p>full screen</p>
+                                                <p class="signal_text">full screen</p>
 
-                                                <!-- 바이탈이 없으면 버튼 비활성화와 함께 no_signal_text를 보이게 해주세요
-                                                위에 있는 full screen은 숨겨주세요 -->
                                                 <p class="no_signal_text">full screen</p>
 
                                                 <button type="button" class="full btn_vital">
@@ -2188,10 +2195,8 @@
                                             <h2>응급상황 사진 및 동영상</h2>
             
                                             <div>
-                                                <p>full screen</p>
+                                                <p class="signal_text">full screen</p>
 
-                                                <!-- 바이탈이 없으면 버튼 비활성화와 함께 no_signal_text를 보이게 해주세요
-                                                위에 있는 full screen은 숨겨주세요 -->
                                                 <p class="no_signal_text">full screen</p>
 
                                                 <button type="button" class="full btn_picture">
@@ -2268,8 +2273,24 @@
                             </div>
                         </div>
                     </div>
-                </section>
 
+                    <!-- 접수된 응급환자가 없을때 -->
+                    <div class="container no_data">
+                        <div class="title">
+                            <h2>접수된 응급상황이 없습니다.</h2>
+
+                            <p>상황종료</p>
+                        </div>
+
+                        <div class="back_img">
+                            <div>
+                                <img src="/H-Connect/img/logo_gray.png" alt="로고">
+                            </div>
+
+                           <h3>응급상황 접수 대기중</h3>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
 
