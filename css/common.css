@@ -1853,7 +1853,7 @@ textarea::-webkit-scrollbar-button {
     opacity: 1;
 }
 
-.selectBox2:after {
+.selectBox2 .label span:after {
     content: ''; 
     width: 12px;
     height: 6px; 
@@ -1865,7 +1865,7 @@ textarea::-webkit-scrollbar-button {
     transform: translateY(-50%);
 }
 
-.selectBox2.active:after{
+.selectBox2.active .label span:after{
     content: ''; 
     width: 12px;
     height: 6px; 
@@ -1890,6 +1890,7 @@ textarea::-webkit-scrollbar-button {
     font-size: 14px;
     font-weight: normal;
     color: #000;
+    position: relative;
 }
 
 .selectBox2 .label2 {

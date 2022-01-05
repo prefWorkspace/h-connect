@@ -798,11 +798,6 @@ $('.doctor_main .collabor').click(function(){
     $('.doctor_main .section').not('.schedule, .remote_alarm').hide();
 })
 
-// 원격협진으로 넘어가기
-$('.doctor .remote_alarm .row').click(function(){
-    location.href="remote.html";
-})
-
 // 주간일정 보기
 $('.doctor .my_plan .inner .title button').on('click', function(){
     $(this).addClass('on');
