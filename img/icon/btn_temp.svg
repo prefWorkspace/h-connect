@@ -1,0 +1,9 @@
+<svg id="btn_mute" data-name="btn mute" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="btn_alarmOn">
+    <g id="사각형_665" data-name="사각형 665" fill="none" stroke="#ff3184" stroke-width="1">
+      <rect width="24" height="24" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="23" height="23" rx="3.5" fill="none"/>
+    </g>
+    <path id="_1x_noti" data-name="@1x noti" d="M13.6,11.2A4,4,0,0,1,12,8V7a4,4,0,0,0-2.49-3.7,2,2,0,1,0-3.018,0A4,4,0,0,0,4,7V8a4,4,0,0,1-1.6,3.2h0A1,1,0,0,0,3,13H5a3,3,0,0,0,6,0h2A1,1,0,0,0,13.6,11.2ZM8,1A1,1,0,1,1,7,2,1,1,0,0,1,8,1ZM8,15a2,2,0,0,1-2-2h4A2,2,0,0,1,8,15ZM3,12A5.024,5.024,0,0,0,5,8V7a3,3,0,1,1,6,0V8a5.024,5.024,0,0,0,2,4Z" transform="translate(4 4)" fill="#ff3184"/>
+  </g>
+</svg>

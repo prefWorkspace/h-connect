@@ -1,6 +1,6 @@
 
-/*================= 간호사 =================*/
-/* 메인 */
+/*================= nurse =================*/
+/* main */
 .nurse{
     min-width: 1920px;
     min-height: calc(100vh - 80px);
@@ -1518,12 +1518,6 @@
     float: right;
 }
 
-.monitoring_patient .patient .title::after{
-    content: '';
-    display: block;
-    clear: both;
-}
-
 .monitoring_patient .patient .container .container{
     padding:0 16px 16px;
 }
@@ -1555,26 +1549,22 @@
     padding: 11px 16px;
     background: linear-gradient(to right, #004F60, #350039);
     border-radius: 8px 8px 0 0;
-}
-
-.monitoring_patient .vital_chart .title p{
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
     color: #fff;
 }
 
-.monitoring_patient .vital_chart .title> p{
-    margin-right: 56px;
+.monitoring_patient .vital_chart .title div{
+    display: flex;
+}
+
+.monitoring_patient .vital_chart .pati_info{
+    margin-left: 56px;
 }
 
 .monitoring_patient .chart_time{
-    display: inline-block;
-    float: right;
-}
-
-.monitoring_patient .vital_chart .title::after{
-    content: '';
-    display: block;
-    clear: both;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .monitoring_patient .vital_chart .cont{
@@ -2140,11 +2130,16 @@
     background: linear-gradient(to right, #940045, #4A0000);
 }
 
-.warning .active .ecg_graph{
-    padding: 8px 16px;
+.warning .active .img_graph{
+
     background: #f00;
     border-radius: 8px;
 }
+
+.warning .img_graph{
+    height: 104px;
+    padding: 8px 16px;
+} 
 
 .warning .cont .active .bell{
     background: #f00;

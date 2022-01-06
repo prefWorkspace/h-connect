@@ -81,7 +81,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .sp .bell_name input[type="checkbox"]+label span{
-    filter: invert(8%) sepia(74%) saturate(950%) hue-rotate(101deg) brightness(105%) contrast(107%);
+    filter: invert(8%) sepia(74%) saturate(950%) hue-rotate(101deg) brightness(138%) contrast(214%);
 }
 
 .resp .bell_name input[type="checkbox"]+label span{
@@ -89,7 +89,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .temp .bell_name input[type="checkbox"]+ label span{
-    filter: invert(41%) sepia(49%) saturate(7067%) hue-rotate(317deg) brightness(102%) contrast(101%);
+    background: url('/H-Connect/img/icon/btn_temp.svg') no-repeat 0 0px / contain;
 }
 
 .bell_name input[type='checkbox']:checked+label span{
@@ -405,7 +405,7 @@ button{border-radius: 4px; background: none;}
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 1920px;
+    min-width: 1880px;
     width: 100%;
     height: 80px;
     padding: 12px 24px;
@@ -632,6 +632,7 @@ button{border-radius: 4px; background: none;}
     padding: 6px 14px;
     background: #fff;
     border-radius: 4px;
+    font-size: 14px;
     color: #940045;
 }
 
@@ -641,9 +642,10 @@ button{border-radius: 4px; background: none;}
 }
 
 .paramedic .header_right .btn_doctor_call{
-    width: 152px;
+    width: 159px;
     margin: 0 8px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -654,7 +656,7 @@ button{border-radius: 4px; background: none;}
 .paramedic .header_right .btn_doctor_call div{
     width: 16px;
     height: 16px;
-    margin-right: 5px;
+    margin: 2px 8px 0 0;
 }
 
 .paramedic .header_right .btn_doctor_call div img{
@@ -666,6 +668,7 @@ button{border-radius: 4px; background: none;}
 
 .paramedic .header_right .btn_list .btn_end{
     width: 120px;
+    padding: 6px 21px;
     display: flex;
     align-items: center;
 }
@@ -673,7 +676,7 @@ button{border-radius: 4px; background: none;}
 .paramedic .header_right .btn_list .btn_end div{
     width: 16px;
     height: 15px;
-    margin-right: 16px;
+    /* margin-right: 16px; */
 }
 
 .paramedic .header_right .btn_list .btn_end div img{
@@ -2173,7 +2176,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.setting_menu .overlay .content> div{
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 /* resp setting */
@@ -2206,6 +2209,8 @@ textarea::-webkit-scrollbar-button {
 	width: 1px;
 	border: 0;
 	overflow: hidden;
+    opacity: 0;
+    display: none;
 }
 
 .pop.setting_menu .content .alarm .container label {
@@ -2219,7 +2224,6 @@ textarea::-webkit-scrollbar-button {
 	transition: all 0.1s ease-in-out;
     color: #888;
 }
-
 
 .pop.setting_menu .content .alarm .container label:hover {
 	cursor: pointer;
@@ -2251,11 +2255,13 @@ textarea::-webkit-scrollbar-button {
     display: inline-block;
 }
 
-.pop.setting_menu .content .input_num input[type=number]::-webkit-inner-spin-button, 
+/* .pop.setting_menu .content .input_num input[type=number]::-webkit-inner-spin-button, 
 .pop.setting_menu .content .input_num input[type=number]::-webkit-outer-spin-button {  
    -webkit-appearance: "Always Show Up/Down Arrows";
    opacity: 1;
-}
+   width: 30px;
+   height: 28px;
+} */
 
 .pop.setting_menu .content .sweep{
     margin-bottom: 16px;
@@ -2264,15 +2270,18 @@ textarea::-webkit-scrollbar-button {
 .pop.setting_menu .content .sweep p,
 .pop.setting_menu .content .apnea p{
     width: 89px;
+    margin-top: 0;
     margin-right: 29px;
 }
 
 .pop.setting_menu .sweep .container{
-    display: flex;
+    display: table;
 }
 
 .pop.setting_menu .sweep .container> div{
+    width: 112px;
     margin-right: 18px;
+    display: table-cell;
 }
 
 .pop.setting_menu .container .input_wrap{
@@ -2284,6 +2293,10 @@ textarea::-webkit-scrollbar-button {
 .pop.setting_menu .container .input_wrap label{
     font-size: 14px;
     cursor: pointer;
+}
+
+.pop.setting_menu .input_num .container{
+    display: flex;
 }
 
 .pop.setting_menu .radio_custom[type="radio"] + label{
@@ -2346,8 +2359,13 @@ textarea::-webkit-scrollbar-button {
 .pop.resp_set .content .apnea .container> div{
     width: 250px;
     margin-bottom: 10px;
-    display: flex;
+    display: table;
     justify-content: space-between;
+}
+
+.pop.setting_menu .apnea .container .input_wrap{
+    width: 60px;
+    display: table-cell;
 }
 
 .pop.setting_menu .resp .container{
@@ -2361,6 +2379,31 @@ textarea::-webkit-scrollbar-button {
     width: 84px;
     height: 28px;
 }
+
+.pop.setting_menu .num_wrap{
+    position: relative;
+}
+
+.pop.setting_menu .num_control{
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+}
+
+.pop.setting_menu .num_control button{
+    width: 7px;
+    height: 6px;
+}
+
+.pop.setting_menu .num_control .down{
+    margin-top: 6px;
+}
+
+
+
 
 /* ECG setting menu */
 .pop.ecg_set .overlay .content> div> p{
@@ -2390,6 +2433,7 @@ textarea::-webkit-scrollbar-button {
 	width: 1px;
 	border: 0;
 	overflow: hidden;
+    display: none;
 }
 
 .pop.ecg_set .st_set .toggle_container label {
@@ -2682,6 +2726,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .doctor_list> div{
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2734,16 +2779,12 @@ textarea::-webkit-scrollbar-button {
     height: 12px;
     margin: -10px 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/icon/favorite_blanc.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     cursor: pointer;
 }
 
 .pop.send_doctor .doctor_search .doctor_list .favorite_container input[type='checkbox']:checked + label> span{
     background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-}
-
-.pop.send_doctor .doctor_list> div{
-    margin-bottom: 16px;
 }
 
 .pop.send_doctor .doctor_list> :last-child{
@@ -2815,7 +2856,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .favorite_list .group_container> div{
-    padding: 7px 0;
+    padding: 4px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -3967,7 +4008,7 @@ textarea::-webkit-scrollbar-button {
     width: 672px;
     height: 48;
     margin: 18px auto 0;
-    padding: 16px;
+    padding: 16px 16px 11px;
     border: 1px solid #000;
     border-radius: 4px;
     display: flex;
@@ -4221,21 +4262,6 @@ textarea::-webkit-scrollbar-button {
     display: none;
 }
 
-/* 의료진선택 checkbox */
-/* .pop.doctor_call .list_inner div input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.pop.doctor_call .list_inner div input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
-} */
-
 /* 의료진선택 즐겨찾기 */
 .pop.doctor_call .list_inner .favorite_container input[type="checkbox"]+label> span{
     display: inline-block;
@@ -4314,10 +4340,18 @@ textarea::-webkit-scrollbar-button {
     color: #888;
 }
 
+.pop.emergency_clear .pop_cont .btn_no:hover{
+    background: #ccc;
+}
+
 .pop.emergency_clear .pop_cont .btn_end{
     padding: 8px 13px;
     background: #940045;
     color: #fff;
+}
+
+.pop.emergency_clear .pop_cont .btn_end:hover{
+    background: #4A0000;
 }
 
 /* 연결요청 */
@@ -4664,7 +4698,6 @@ textarea::-webkit-scrollbar-button {
     top: 64px;
     right: 312px;
     width: 480px;
-    height: fit-content;
     padding: 20px 16px;
     background: #fff;
     border-radius: 8px;
@@ -5210,41 +5243,3 @@ textarea::-webkit-scrollbar-button {
 }
 
 
-/* 의사 1280 */
-@media all and (max-width:1300px){
-    .pop.full_picture .pop_cont{
-        width: 1280px;
-        height: 920px;
-    }
-
-    .pop.full_picture .full_view{
-        width: 100%;
-        height: 100%;
-    }
-
-    .pop.doc_full .btn_close{
-        top: 32px;
-        right: 32px;
-    }
-
-    #header.doc_header, .doc_header.header_inner{
-        min-width: 1248px;
-    }
-
-    .doc_header .header_inner> :first-child{
-        width: 630px;
-    }
-
-    .doc_header .search_container{
-        width: 480px;
-    }
-
-    .doc_header .search_container input{
-        width: 480px;
-    }
-
-    .pop.doc_search{
-        width: 480px;
-    }
-
-}

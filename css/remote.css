@@ -171,7 +171,7 @@ img{
     width: 100%;
     min-width: 456px;
     max-width: 456px;
-    height: 88px;
+    /* height: 88px; */
     position: absolute;
     padding: 16px;
     border-radius: 8px;
@@ -230,9 +230,9 @@ img{
     overflow: hidden;
 }
 
-.message .notice.active {
+/* .message .notice.active {
     height: fit-content;
-}
+} */
 
 .message .notice.active .notice_wrap{
     height: 100%;
@@ -738,8 +738,8 @@ img{
 }
 
 .cam .cam_inner .name{
-    width: fit-content;
-    height: fit-content;
+    width: auto;
+    height: auto;
     padding: 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -779,9 +779,9 @@ img{
 .patient_view{
     width: 100%;
     min-width: 792px;
-    max-width: 1428px;
-    
+    max-width: 1428px;    
     margin-left: 4px;
+    overflow: hidden;
 }
 
 .patient_view> .title{
@@ -873,7 +873,7 @@ img{
     width: 708px;
     height: 650px;
     padding: 0;
-    /* box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); */
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -2043,7 +2043,7 @@ img{
     height: 720px;
     /* background: #111; */
     position: absolute;
-    /* right: 10px; */
+    right: 10px;
 }
 
 .pacs .pacs_inner{
@@ -2430,6 +2430,8 @@ img{
     width: 100%;
     min-width: 788px;
     max-width: 1080px;
+    top: 127px;
+    right: 0;
 }
 
 
@@ -2644,10 +2646,10 @@ img{
     position: initial;
     border-radius: 0;
 }
-/* 
+
 .scroll .several .vital{
-    height: 592px;
-} */
+    height: 700px;
+}
 
 .scroll .cont .event .table_body {
     height: 540px;
@@ -3094,265 +3096,3 @@ img{
 
 
 .tab .patient_view.on .table_body {height: auto;}
-
-
-
-@media all and (max-width:1300px){
-    .remote.main .section{
-        height: 480px;
-    }
-
-    .remote .section{
-        height: 848px;
-    }
-
-    .message{
-        height: 100%;
-        min-height: 850px;
-        max-height: 850px;
-    }
-
-    .message .view{
-        height: 636px;
-    }
-
-    .remote .cont .graphical .hr_time> p{
-        margin-right: 80px;
-    }
-
-    .vital.on .cont .graphical .hr_time> p{
-        margin-right: 100px;
-    }
-
-    .vital.on .cont .graphical .hr_img,
-    .remote .cont .graphical .hr_img{
-        left: 230px;
-    }
-
-    .cont .graphical .time_line{
-        transform: translateX(20%);
-    }
-
-    .study_list .row div p{width: 73px;}
-
-    .study_list .row> :nth-child(2){width: 105px;}
-    .study_list .row> :nth-child(4){width: 150px;}
-    .study_list .row> :nth-child(5) {width: 65px;}
-
-    .several{
-        height: 800px;
-    }
-
-    .several .pacs{
-        width: 708px;
-    }
-
-    .several .pacs.on{width: 796px; height: 800px;}
-    .several .pacs.on .study_list{
-        height: 800px;
-    }
-
-    .message .notice{
-        height: 88px;
-    }
-
-    /* tabular_table */
-    /* .event .ecg_graph{
-        overflow-x: scroll;
-    } */
-
-    .tab .table_body .table_content .ecg .ecg_graph> div{
-        width: 500px;
-        height: 50px;
-    }
-
-    .tabular_table .table_content .hr {
-        margin-right: 80px;
-    }
-
-    .tabular_table .table_content .spo{
-        margin-right: 95px;
-    }
-
-    .vital .ecg_graph> div {
-        width: 468px;
-        height: 28px;
-    }
-
-
-    /* 화상 */
-    .cam{
-        height: 800px;
-        overflow-y: scroll;
-        position: absolute;
-        margin-left: -158px;
-        left: 50%;
-        top: 120px;
-        z-index: 5;
-    }
-
-    .remote .cam{
-        height: 800px;
-        margin-top: 0;
-    }
-
-    .pacs .list h3.on{
-        width: 228px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* pacs full_view */
-    .pop.view .header_inner{
-        width: 1280px;
-        padding: 0 24px;
-    }
-    
-    .pop.pacs_full .img_container{
-        width: 1280px;
-        height: 900px;
-        margin-left: -8px;
-    }
-
-    .inner.on> .cont{
-        height: 760px;
-        border-radius: 0;
-    }
-
-    .pop.you_send .big_view {
-        width: 1280px;
-        margin: 13px 0 0 -12px;
-    }
-
-    .tab .several .vital {
-        height: 800px;
-    }
-
-    .tab .tabular_table .table_title .alarm_des{
-        margin-right: 55px;
-    }
-
-    .scroll .cont .event .table_body{
-        height: 600px;
-    }
-
-    .pacs .pacs_inner{
-        height: 760px;
-    }
-
-    .tab .study_list{
-        height: 763px;
-    }
-
-    .tab .pacs .slide{
-        height: 700px;
-    }
-
-    .tab .pacs .slide .pacs_big{
-        width: 100%;
-        height: 500px;
-    }
-
-    .tab .several .inner{
-        min-width: 706px;
-    }
-
-    .tab .inner> .cont{
-        height: 764px;
-    }
-
-    .tab .tabular_table .table_title .hr{
-        margin-right: 50px;
-    }
-
-    .tab .tabular_table .table_title .spo{
-        margin-right: 63px;
-    }
-
-    .scroll .several{
-        min-height: 803px;
-    }
-
-    .scroll .several> div{
-        height: 100vh;
-    }
-
-    .scroll .pacs .pacs_inner{
-        height: 100vh;
-    }
-
-    .scroll .pacs .pacs_inner> div{
-        height: 100vh;
-        max-height: 100%;
-    }
-
-    .scroll .inner> .cont{
-        min-height: 100vh;
-    }
-
-    .scroll .inner .cont .cont_wrap{
-        height: 700px;
-    }
-
-
-
-    /* ------------------ 다학제 통합 진료 ------------------ */
-    /* .multi .header .btn_list{
-        display: none;
-    } */
-
-    .multi .header{
-        height: 48px;
-    }
-
-    .multi .cam{
-        height: 800px;
-        position: initial;
-        margin: 0;
-        z-index: 0;
-    }
-
-    .multi .view{
-        width: 1018px;
-        height: fit-content;
-    }
-
-    .multi .right_view{
-        display: none;
-    }
-
-    .multi .view .pacs_view{
-        height: 700px;
-    }
-
-    .multi .view .slide .big{
-        width: 822px;
-        height: 536px;
-        overflow: hidden;
-    }
-
-    .multi .view .slide .small{
-        overflow: hidden;
-    }
-
-    .multi .view .slide{
-        height: 700px;
-    }
-
-
-    .multi .cam_control .dim_mic {
-        left: 63px;
-    }
-
-    .multi .header .cam_control .modul{
-        z-index: 1;
-    }
-
-
-
-
-
-
-
-}

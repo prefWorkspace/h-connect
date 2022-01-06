@@ -207,27 +207,33 @@
     border-radius: 8px 8px 0 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .emergency .map_title h2{
     font-size: 16px;
     color: #940045;
-    vertical-align: middle;
-}
-
-.emergency .map_title div{
-    vertical-align: middle;
 }
 
 .emergency .map_title p{
-    font-size: 14px;        
-    display: inline-block;
-    vertical-align: middle; 
+    font-size: 14px;      
+}
+
+.emergency .map_title .data{
+    display: flex;
 }
 
 .emergency .map_title :first-child span{
     color: #007A94;
-}  
+}
+
+.emergency .map_title .no_data{
+    display: none;
+}
+
+.emergency .map_title .no_data h2{
+    color: #ccc;
+}
 
 .emergency .map_container{
     width: 480px;
@@ -324,6 +330,7 @@
 .emergency .patient_status button{
     width: 180px;
     height: 40px;
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1080,6 +1087,10 @@
     background: none;
 }
 
+.emergency .patient_status .patient .assessing .triage{
+    margin-top: 20px;
+}
+
 .emergency .patient_status .patient .assessing .triage> div{
     margin-bottom: 16px;
     display: block;
@@ -1831,6 +1842,7 @@
 .connect .top{
     margin-bottom: 17px;
     display: flex;
+    align-items: center;
 }
 
 .connect .top time{
@@ -2391,9 +2403,9 @@
 }
 
 .connect .vital .graph> div> :first-child div{
-    width: 920px;
+    /* width: 920px; */
     height: 42px;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     overflow: hidden;
 }
 
@@ -2412,7 +2424,14 @@
 .connect .vital .ecg_graph,
 .connect .vital .sp_graph,
 .connect .vital .resp_graph{
+    width: 1172px;
     padding: 8px 16px;
+}
+
+.connect .vital .ecg_graph p, 
+.connect .vital .sp_graph p, 
+.connect .vital .resp_graph p{
+    margin-bottom: 20px;
 }
 
 .connect .vital .bell{
@@ -3140,13 +3159,13 @@
     background-size: cover;
 }
 
-.doctor_emergency .patient_status .front_toggle,
+/* .doctor_emergency .patient_status .front_toggle,
 .doctor_emergency .patient_status .back_toggle,
 .doctor_emergency .patient_status .left_toggle,
 .doctor_emergency .patient_status .right_toggle,
 .doctor_emergency .patient_status .body_toggle{
     left: -7px;
-}
+} */
 
 .doctor_emergency .patient_status .body_toggle .toggle1{
     top: 12px;
@@ -3450,82 +3469,3 @@
 }
 
 
-
-/* 1248px */
-@media all and (max-width:1300px){
-    /* 응급호출 */
-    .doctor_emergency .message_list{
-        width: 360px;
-    }
-
-    .doctor_emergency .message_list .list{
-        padding: 0;
-    }
-
-    .doctor_emergency .inner> .control{
-        width: 672px;
-    }
-
-    .doctor_emergency .message_list .list .row{
-        width: 296px;
-        margin: 0 auto;
-    }
-
-    .doctor_emergency .detail_ep{
-        width: 736px;
-    }
-
-    /* 환자상태 */
-    .doctor_emergency .patient .symptome_info .container{
-        display: block;
-    }
-
-    .doctor_emergency .patient_status .patient .symptome> div> div{
-        display: block;
-    }
-
-    .emergency .patient_status .patient .symptome .triage{
-        margin-top: 30px;
-    }
-
-    .doctor_emergency .patient_status .patient .symptome .aid_container> div{
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .doctor_emergency .patient_status .patient .symptome .part .swiper-scrollbar{
-        width: 600px;
-        opacity: 1;
-    }
-
-    .doctor_emergency .patient .pupil .pupil_container{
-        width: 300px;
-    }
-
-    .emergency .patient .symptome_info .unre .ure_list{
-        margin: 0;
-    }
-
-    /* 모니터링 */
-    .doctor_emergency .vital{
-        width: 736px;
-        height: 565px;
-    }
-
-    .doctor_emergency .vital .inner{
-        width: 492px;
-    }
-
-    .doctor_emergency .vital .control> :first-child{
-        width: fit-content;
-    }
-
-    /* 환자사진 */
-    .doctor_emergency .big_picture{
-        width: 672px;
-    }
-
-    .doctor_emergency .patient_picture .no_data{
-        width: 672px;
-    }
-}

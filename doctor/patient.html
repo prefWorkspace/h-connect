@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect</title>
   <!--Import-->
-  <script type='text/javascript' src='/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' src='/js/common.js'></script>
-  <script type='text/javascript' src='/js/index.js'></script>
+  <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' src='/H-Connect/js/common.js'></script>
+  <script type='text/javascript' src='/H-Connect/js/index.js'></script>
   <!--css-->
-  <link rel='stylesheet' href='/css/reset.css'>
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/doctor.css">
+  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
+  <link rel="stylesheet" href="/H-Connect/css/common.css">
+  <link rel="stylesheet" href="/H-Connect/css/doctor.css">
 
 </head>
   <body>
@@ -104,7 +104,7 @@
                         <div class="container">
                             <input type="radio" name="resp_alarm" id="btn_off" class="alarm_off">
                             <label for="btn_off" class="btn_resp_alarm">Off</label>
-    
+
                             <input type="radio" name="resp_alarm" id="btn_on"  class="alarm_on" checked>
                             <label for="btn_on" class="btn_resp_alarm">On</label>
                         </div>
@@ -114,9 +114,33 @@
                         <p>RESP</p>
 
                         <div class="container">
-                            <input type="number">
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
 
-                            <input type="number">
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
+
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
+
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
                         </div>
                     </div>
 
@@ -132,12 +156,11 @@
                                     <label for="first">6.25 mm/s</label>
                                 </div>
                                 
-    
                                 <div class="input_wrap">
                                     <input type="radio" name="sweep" id="second" class="radio_custom">
                                     <label for="second"></label>
                                     <label for="second">12.5 mm/s</label>
-                                </div>                                
+                                </div>                                                             
                             </div>
 
                             <div>
@@ -146,7 +169,7 @@
                                     <label for="third"></label>
                                     <label for="third">25.0 mm/s</label>
                                 </div>
-                                
+
                                 <div class="input_wrap">
                                     <input type="radio" name="sweep" id="fourth" class="radio_custom">
                                     <label for="fourth"></label>
@@ -240,7 +263,7 @@
                         <div class="container">
                             <input type="radio" name="ecg_alarm" id="ecg_off" class="alarm_off">
                             <label for="ecg_off" class="btn_resp_alarm">Off</label>
-    
+
                             <input type="radio" name="ecg_alarm" id="ecg_on"  class="alarm_on" checked>
                             <label for="ecg_on" class="btn_resp_alarm">On</label>
                         </div>
@@ -250,9 +273,33 @@
                         <p>HR</p>
 
                         <div class="container">
-                            <input type="number">
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
 
-                            <input type="number">
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
+
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
+
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
                         </div>
                     </div>
 
@@ -260,7 +307,19 @@
                         <p>Extreme Tachy</p>
 
                         <div class="container">
-                            <input type="number">
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
+
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
                         </div>
                     </div>
 
@@ -268,7 +327,19 @@
                         <p>Extreme Brady</p>
 
                         <div class="container">
-                            <input type="number">
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
+
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
                         </div>
                     </div>
 
@@ -278,16 +349,40 @@
                         <div class="toggle_container">
                             <input type="radio" name="st_alarm" id="st_off" class="alarm_off" checked>
                             <label for="st_off" class="btn_resp_alarm">Off</label>
-    
+
                             <input type="radio" name="st_alarm" id="st_on"  class="alarm_on">
                             <label for="st_on" class="btn_resp_alarm">On</label>
                         </div>
 
                         <div class="input_num">
                             <div class="container">
-                                <input type="number">
+                                <div class="num_wrap">
+                                    <input type="number">
+                                    
+                                    <div class="num_control">
+                                        <button type="button" class="up">
+                                            <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                        </button>
+        
+                                        <button type="button" class="down">
+                                            <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                        </button>
+                                    </div>                                
+                                </div>
 
+                                <div class="num_wrap">
                                 <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
+
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
                             </div>
                         </div>                        
                     </div>
@@ -318,7 +413,7 @@
                         <div class="container">
                             <input type="radio" name="sp_alarm" id="sp_off" class="alarm_off">
                             <label for="sp_off" class="btn_resp_alarm">Off</label>
-    
+
                             <input type="radio" name="sp_alarm" id="sp_on" class="alarm_on" checked>
                             <label for="sp_on" class="btn_resp_alarm">On</label>
                         </div>
@@ -328,9 +423,33 @@
                         <p>SpO2</p>
 
                         <div class="container">
-                            <input type="number">
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
 
-                            <input type="number">
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
+
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
+
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
                         </div>
                     </div>
 
@@ -359,19 +478,43 @@
                         <div class="container">
                             <input type="radio" name="temp_alarm" id="temp_off" class="alarm_off">
                             <label for="temp_off" class="btn_resp_alarm">Off</label>
-    
+
                             <input type="radio" name="temp_alarm" id="temp_on"  class="alarm_on" checked>
                             <label for="temp_on" class="btn_resp_alarm">On</label>
                         </div>
                     </div>
 
                     <div class="input_num resp">
-                        <p>RESP</p>
+                        <p>resp</p>
 
                         <div class="container">
-                            <input type="number">
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
 
-                            <input type="number">
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
+
+                            <div class="num_wrap">
+                                <input type="number">
+                                
+                                <div class="num_control">
+                                    <button type="button" class="up">
+                                        <img src="/H-Connect/img/icon/black_up.svg" alt="검은색 삼각형">
+                                    </button>
+
+                                    <button type="button" class="down">
+                                        <img src="/H-Connect/img/icon/black_down.svg" alt="검은색 삼각형">
+                                    </button>
+                                </div>                                
+                            </div>
                         </div>
                     </div>
 
@@ -418,7 +561,7 @@
                         <div class="container">
                             <input type="radio" name="alarm" id="ews_off" class="alarm_off">
                             <label for="ews_off" class="btn_resp_alarm">Off</label>
-    
+
                             <input type="radio" name="alarm" id="ews_on"  class="alarm_on" checked>
                             <label for="ews_on" class="btn_resp_alarm">On</label>
                         </div>

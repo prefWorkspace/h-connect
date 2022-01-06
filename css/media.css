@@ -1,0 +1,1055 @@
+
+
+/* remote */
+@media all and (max-width:1300px){
+    .remote.main .section{
+        height: 480px;
+    }
+
+    .remote .section{
+        height: 848px;
+    }
+
+    .message{
+        height: 100%;
+        min-height: 850px;
+        max-height: 850px;
+    }
+
+    .message .view{
+        height: 636px;
+    }
+
+    .remote .cont .graphical .hr_time> p{
+        margin-right: 80px;
+    }
+
+    .vital.on .cont .graphical .hr_time> p{
+        margin-right: 100px;
+    }
+
+    .vital.on .cont .graphical .hr_img,
+    .remote .cont .graphical .hr_img{
+        left: 230px;
+    }
+
+    .cont .graphical .time_line{
+        transform: translateX(20%);
+    }
+
+    .study_list .row div p{width: 73px;}
+
+    .study_list .row> :nth-child(2){width: 105px;}
+    .study_list .row> :nth-child(4){width: 150px;}
+    .study_list .row> :nth-child(5) {width: 65px;}
+
+    .several{
+        height: 800px;
+    }
+
+    .several .pacs{
+        width: 708px;
+    }
+
+    .several .pacs.on{width: 796px; height: 800px;}
+    .several .pacs.on .study_list{
+        height: 800px;
+    }
+
+    .message .notice{
+        height: 88px;
+    }
+
+    /* tabular_table */
+    /* .event .ecg_graph{
+        overflow-x: scroll;
+    } */
+
+    .tab .table_body .table_content .ecg .ecg_graph> div{
+        width: 500px;
+        height: 50px;
+    }
+
+    .tabular_table .table_content .hr {
+        margin-right: 80px;
+    }
+
+    .tabular_table .table_content .spo{
+        margin-right: 95px;
+    }
+
+    .vital .ecg_graph> div {
+        width: 468px;
+        height: 28px;
+    }
+
+
+    /* 화상 */
+    .cam{
+        height: 800px;
+        overflow-y: scroll;
+        position: absolute;
+        margin-left: -158px;
+        left: 50%;
+        top: 120px;
+        z-index: 5;
+    }
+
+    .remote .cam{
+        height: 800px;
+        margin-top: 0;
+    }
+
+    .pacs .list h3.on{
+        width: 228px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* pacs full_view */
+    .pop.view .header_inner{
+        width: 1280px;
+        padding: 0 24px;
+    }
+    
+    .pop.pacs_full .img_container{
+        width: 1280px;
+        height: 900px;
+        margin-left: -8px;
+    }
+
+    .inner.on> .cont{
+        height: 760px;
+        border-radius: 0;
+    }
+
+    .pop.you_send .big_view {
+        width: 1280px;
+        margin: 13px 0 0 -12px;
+    }
+
+    .tab .several .vital {
+        height: 800px;
+    }
+
+    .tab .tabular_table .table_title .alarm_des{
+        margin-right: 55px;
+    }
+
+    .scroll .cont .event .table_body{
+        height: 600px;
+    }
+
+    .pacs .pacs_inner{
+        height: 760px;
+    }
+
+    .tab .study_list{
+        height: 763px;
+    }
+
+    .tab .pacs .slide{
+        height: 700px;
+    }
+
+    .tab .pacs .slide .pacs_big{
+        width: 100%;
+        height: 500px;
+    }
+
+    .tab .several .inner{
+        min-width: 706px;
+    }
+
+    .tab .inner> .cont{
+        height: 764px;
+    }
+
+    .tab .tabular_table .table_title .hr{
+        margin-right: 50px;
+    }
+
+    .tab .tabular_table .table_title .spo{
+        margin-right: 63px;
+    }
+
+    .scroll .several{
+        min-height: 803px;
+    }
+
+    .scroll .several> div{
+        height: 100vh;
+    }
+
+    .scroll .pacs .pacs_inner{
+        height: 100vh;
+    }
+
+    .scroll .pacs .pacs_inner> div{
+        height: 100vh;
+        max-height: 100%;
+    }
+
+    .scroll .inner> .cont{
+        min-height: 100vh;
+    }
+
+    .scroll .inner .cont .cont_wrap{
+        height: 700px;
+    }
+
+
+
+    /* ------------------ 다학제 통합 진료 ------------------ */
+    /* .multi .header .btn_list{
+        display: none;
+    } */
+
+    .multi .header{
+        height: 48px;
+    }
+
+    .multi .cam{
+        height: 800px;
+        position: initial;
+        margin: 0;
+        z-index: 0;
+    }
+
+    .multi .view{
+        width: 1018px;
+        height: fit-content;
+    }
+
+    .multi .right_view{
+        display: none;
+    }
+
+    .multi .view .pacs_view{
+        height: 700px;
+    }
+
+    .multi .view .slide .big{
+        width: 822px;
+        height: 536px;
+        overflow: hidden;
+    }
+
+    .multi .view .slide .small{
+        overflow: hidden;
+    }
+
+    .multi .view .slide{
+        height: 700px;
+    }
+
+
+    .multi .cam_control .dim_mic {
+        left: 63px;
+    }
+
+    .multi .header .cam_control .modul{
+        z-index: 1;
+    }
+
+}
+
+/* doctor */
+@media all and (max-width:1300px){
+    .doctor{
+        min-width: 1280px;
+    }
+
+    .doctor .wrap_inner{
+        min-width: 1220px;
+        height: calc(100vh - 80px);
+        flex-wrap: wrap;
+    }
+
+    .doctor .section{
+        height: 640px;
+    }
+
+    /* 입원환자 모니터링 */
+    .doctor_patient .wrap_inner{
+        display: block;
+    }
+
+    .doctor_patient .patient{
+        display: none;
+    }
+
+    .doctor_patient .patient_small{
+        width: 1112px;
+        height: 48px;
+        padding: 8px 8px 8px 16px;
+        margin-bottom: 15px;
+        background: linear-gradient(to right, #004F60, #350039);
+        display: flex;
+        align-items: center;
+        /* order: 1; */
+    }
+
+    .doctor_patient .patient_small .title{
+        display: flex;
+        color: #fff;
+    }
+
+    .doctor_patient .patient_small .title h2{
+        margin-right: 20px;
+        color: #fff;
+    }
+
+    .doctor_patient .patient_small .title> div{
+        display: flex;
+        align-items: center;
+    }
+
+    .doctor_patient .patient_small .title button{
+        width: 120px;
+        height: 32px;
+        padding: 6px 20px;
+        margin: 0 65px 0 25px;
+        display: flex;
+        align-items: center;
+        background: #fff;
+    }
+
+    .doctor_patient .patient_small .title .img_container{
+        width: 16px;
+        height: 15px;
+        margin-right: 9px;
+    }
+
+    .doctor_patient .patient_small .management_list{
+        width: 616px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .doctor_patient .patient_small .management_list .list{
+        width: 96px;
+        height: 32px;
+        padding: 7px 0;
+        border-radius: 4px;
+        background: #fff;
+        color: #007A94;
+        text-align: center;
+    }
+
+    .doctor_patient .patient_small .management_list .list.on{
+        background: #f80;
+        color: #fff;
+    }
+
+    .doctor_patient .wrap_inner> div{
+        display: flex;
+    }
+
+    .doctor_patient .lab_list, .doctor_patient .emr_list, .doctor_patient .ocs_list{
+        width: 360px;
+        height: 576px;
+        margin: 0 ;
+    }
+
+    .doctor_patient .lab_result, .doctor_patient .emr_result, .doctor_patient .ocs_result{
+        width: 720px;
+        height: 576px;
+        margin-left: 32px;
+    }
+
+    /* pacs */
+    .doctor_patient .pacs{
+        width: 1112px;
+        height: 576px;
+        margin: 0;
+    }
+
+    .patient_img .pacs_img{
+        width: 1112px;
+        height: 696px;
+    }
+
+    .patient_img .pati_info{
+        width: 100%;
+        margin-bottom: 16px;
+        position: initial;
+        display: flex;
+        align-items: center;
+    }
+
+    .patient_img .pati_info div{
+        display: flex;
+        align-items: center;
+    }
+
+    .patient_img .pati_info .back{
+        margin-right: 19px;
+    }
+
+    .patient_img .pacs_info p,.patient_img .pacs_info h2{
+        width: fit-content;
+        margin: 0;
+    }
+
+    .patient_img .pacs_big{
+        width: 792px;
+        height: 516px;
+    }
+
+    .patient_img .pacs_small{
+        overflow: hidden;
+    }
+
+    /* monitoring vital */
+    .doctor_patient .vital_chart{
+        width: 1112px;
+        height: 580px;
+        margin: 0;
+    }
+
+    .doctor_patient .vital_chart .cont{
+        width: 1112px;
+        height: 540px;
+        padding: 16px;
+    }
+
+    .doctor_patient .vital_chart .tab-content{
+        padding: 16px 0 0 0;
+    }
+
+    .doctor_patient .graph> div> :first-child{
+        width: 856px;
+        overflow: hidden;
+    }
+
+    .doctor_patient ul.tabs li{
+        height: 30px;
+        padding: 6px;
+    }
+
+    .doctor_patient .vital_chart .menu .btn_list button{
+        height: 30px;
+    }
+
+    .doctor_patient .ecg_graph{
+        width: 800px;
+        overflow: hidden;
+    }
+
+    .monitoring_patient  #tab-2  .tabular_table .table_content:nth-last-child(-n+2){
+        display: none;
+    }
+
+    .monitoring_patient .tabular_table .table_page ul{margin-top: 36px;}
+
+    .monitoring_patient .graphical .hr_line{
+        width: 964px;
+    }
+
+    .monitoring_patient .cont .graphical .hr_time> p{
+        margin-right: 157px;
+    }
+
+    .monitoring_patient .cont .graphical .hr_chart {
+        margin-top: 40px;
+    }
+
+    .monitoring_patient .cont .event .table_title .alarm_des{
+        margin-right: 0;
+    }
+
+    .monitoring_patient .cont .event .table_body{
+        height: 330px;
+    }
+
+    /* 새로운 환자 알람 */
+    .doctor_monitor .rhythm{
+        width: 736px;
+    }
+
+    .doctor_monitor .new_patient .ecglist{
+        height: 440px;
+    }
+
+    .doctor_monitor .rhythm .event_inner{
+        height: 400px;
+    }
+
+    .doctor_monitor .rhythm .graph_wrap{
+        width: 616px;
+    }
+
+    .doctor_monitor .rhythm .graph_scroll{
+        width: 520px;
+        overflow-x: scroll;
+    }
+
+    /* 원격협진 */
+    .doctor .all_plan{
+        width: 360px;
+        padding: 0;
+        margin: 0 16px;
+    }
+
+    .doctor .all_plan> .title{
+        padding: 32px 32px 39px;
+        border: none;
+    }
+
+    .doctor .all_plan .title .btn_list{
+        width: 88px;
+    }
+
+    .doctor .all_plan .title .btn_list button{
+        width: 40px;
+        padding: 10px 12px;
+    }
+
+    .doctor .all_plan .title .btn_list .btn_cal{
+        padding: 10px 12px;
+    }
+
+    .doctor .all_plan .btn_list span{
+        display: none;
+    }
+
+    .doctor .status .container{
+        height: 535px;
+    }
+
+    .doctor .schedule_list{
+        height: 400px;
+    }
+
+    .doctor .cal_view{
+        height: 500px;
+        overflow-y: scroll;
+        display: block;
+    }
+
+    .doctor .cal_view .title{
+        width: 296px;
+        margin: 0 auto;
+    }
+
+    .doctor .cal_view::-webkit-scrollbar{
+        display: none;
+    }
+
+    .doctor .cal_view .cal_container_top{
+        width: 296px;
+        padding: 20px 0;
+        margin: 0 auto;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .doctor .cal_view .cal_container_top p{
+        margin-right: 20px;
+        color: #007A94;
+        position: relative;
+    }
+
+    .doctor .cal_view .cal_container_top .close{display: none;}
+
+    .doctor .cal_view .cal_container_top p::after{
+        content: '';
+        width: 12px;
+        height: 6px;
+        position: absolute;
+        background: url(/H-Connect/img/under_arrow.svg) no-repeat;
+        top: 50%;
+        right: -20px;
+        transform: translateY(-50%);
+        transition: 0.3s;
+    }
+
+    .doctor .cal_view .cal_container_top.on p::after{
+        content: '';
+        width: 12px;
+        height: 6px;
+        position: absolute;
+        background: url(/H-Connect/img/under_arrow.svg) no-repeat;
+        top: 50%;
+        right: -20px;
+        transform: rotate(180deg) translateY(10%);
+        transition: 0.3s;
+    }
+
+    .doctor .cal_view .cal_container_top.on{
+        border-bottom: 1px solid #eee;
+    }
+
+    .doctor .cal_view .cal_container_top.on .open{display: none;}
+    .doctor .cal_view .cal_container_top.on .close{display: block;}
+
+    .doctor .cal_view .cal_container{display: none;}
+
+    .doctor .cal_view .cal_container .title{
+        justify-content: flex-end;
+    }
+
+    .doctor .cal_view .cal_container .title h2{display: none;}
+
+    .doctor .calendar{
+        height: 400px;
+        border-radius: 0;
+    }
+
+    .fc .fc-scrollgrid-liquid {
+        height: 264px;
+    }
+
+    .doctor .calendar::after{display: none;}
+
+    .doctor .schedule_list .row{
+        width: 296px;
+        margin: 0 auto;
+    }
+
+    .doctor .container{height: 640px;}
+
+    .doctor .collabor, .doctor .right{
+        width: 360px;
+    }
+
+    .doctor .collabor_wrap{
+        height: 460px;
+    }
+
+    .doctor .collabor .collabor_wrap .time, .doctor .collabor .collabor_wrap .cont .title{
+        padding: 20px 17px;
+    }
+
+    .doctor .right .case,
+    .doctor .right .case_cont,
+    .doctor .time_select .list_view> div{
+        width: 296px;
+    }
+
+    .doctor .right .case_inner{
+        width: 296px;
+        padding: 16px;
+    }
+
+    .doctor .right .case> :first-child :last-child{
+        width: 120px;
+    }
+
+    .doctor_remote .collabor_wrap .time,
+    .doctor_remote .collabor_wrap> div .title{
+        padding: 20px 17px;
+    }
+
+    .doctor_remote .me_request .container> .title{
+        flex-direction: column-reverse;
+    }
+
+    .doctor_remote .me_request .btn_list{
+        margin-bottom: 16px;
+        justify-content: flex-end;
+    }
+
+    .doctor .time_select .week_view .select_week> div{
+        width: 296px;
+        margin-left: 16px;
+    }
+
+    /* 시간표보기 */
+    .doctor_remote .week .title{
+        width: 296px;
+        margin: 0 auto;
+        justify-content: space-between;
+        display: none;
+    }
+/* 
+    .doctor_remote .week .title .btn_list {
+        width: 200px;
+        margin: 0;
+        justify-content: flex-end;
+    }
+
+    .doctor_remote .week .title .btn_list button{
+        width: 64px;
+        padding: 10px;
+    }
+
+    .doctor_remote .week .title .btn_list .btn_four{
+        margin-left: 8px;
+    } */
+
+    .doctor_remote .all_plan .weekly .inner{
+        width: 280px;
+    }
+
+    .doctor_remote .all_plan .weekly .time p::after{
+        width: 280px;
+    }
+
+    /* 신규협진생성 */
+    .doctor .new_remote{
+        width: 360px;
+        padding: 0;
+    }
+
+    .doctor .new_remote .title{
+        padding: 32px;
+    }
+
+    /* .new_remote .title> div{
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: initial;
+    } */
+
+    .new_remote .title .btn_list {
+        width: 160px;
+    }
+
+    .new_remote .title button {
+        width: 75px;
+    }
+
+    .new_remote .inner{
+        width: 360px;
+        height: 480px;
+    }
+
+    .new_remote .type{
+        padding: 16px;
+    }
+
+    .doctor .new_remote .participant .title{
+        padding: 0;
+    }
+
+    .new_remote .surgery_view{
+        width: 325px;
+    }
+
+    .new_remote .surgery_view> div:not(.new_remote .rt_time, .new_remote .ut_wrap){
+        width: 100%;
+        padding: 14px 20px;
+        flex-direction: column;
+    }
+
+    .new_remote .rt_time> div{
+        flex-direction: column;
+    }
+
+    /* .surgery_view .date{
+        width: 300px;
+    }
+
+    .surgery_view .date_time{
+        margin-top: 30px;
+    }
+
+    .surgery_view .date_time > div,
+    .doctor_new .t_view .date> div{
+        width: 300px;
+        justify-content: space-between;
+    }
+
+    .surgery_view .date_time > div p{
+        width: 107px;
+    }
+
+    .doctor_new .t_view .date> div p{
+        width: 107px;
+    } */
+
+   
+
+    .doctor .attendee{
+        width: 736px;
+        height: 640px;
+        margin: 0 0 0 16px;
+    }
+
+    .doctor .cal_container .fc-theme-standard {
+        height: 400px;
+    }
+
+    .attendee .choice_staff{
+        width: 296px;
+    }
+
+    .doctor_new.message .choice_staff .container{
+        height: 260px;
+    }
+
+    /* 메인 */
+    /* .doctor .my_plan{
+        width: 360px;
+        margin: 0 ;
+    } */
+
+    /* .doctor .my_plan .inner{
+        display: none;
+    }
+
+    .doctor .my_plan .weekly .inner {
+        width: 270px;
+    }
+
+    .doctor .schedule .container{
+        height: 400px;
+    } */
+
+    .remote_main .wrap_inner{
+        flex-wrap: nowrap;
+    }
+
+    .doctor_remote .wrap_inner{
+        flex-wrap: nowrap;
+    } 
+}
+
+/* 의사 1280 */
+@media all and (max-width:1300px){
+    .pop.full_picture .pop_cont{
+        width: 1280px;
+        height: 920px;
+    }
+
+    .pop.full_picture .full_view{
+        width: 100%;
+        height: 100%;
+    }
+
+    .pop.doc_full .btn_close{
+        top: 32px;
+        right: 32px;
+    }
+
+    #header.doc_header, .doc_header.header_inner{
+        min-width: 1248px;
+    }
+
+    .doc_header .header_inner> :first-child{
+        width: 630px;
+    }
+
+    .doc_header .search_container{
+        width: 480px;
+    }
+
+    .doc_header .search_container input{
+        width: 480px;
+    }
+
+    .pop.doc_search{
+        width: 480px;
+    }
+
+}
+
+/* 응급상황실 */
+@media all and (max-width:1300px){
+    /* 응급호출 */
+    .doctor_emergency .message_list{
+        width: 360px;
+    }
+
+    .doctor_emergency .message_list .list{
+        padding: 0;
+    }
+
+    .doctor_emergency .inner> .control{
+        width: 672px;
+    }
+
+    .doctor_emergency .message_list .list .row{
+        width: 296px;
+        margin: 0 auto;
+    }
+
+    .doctor_emergency .detail_ep{
+        width: 736px;
+    }
+
+    /* 환자상태 */
+    .doctor_emergency .patient .symptome_info .container{
+        display: block;
+    }
+
+    .doctor_emergency .patient_status .patient .symptome> div> div{
+        display: block;
+    }
+
+    .emergency .patient_status .patient .symptome .triage{
+        margin-top: 30px;
+    }
+
+    .doctor_emergency .patient_status .patient .symptome .aid_container> div{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .doctor_emergency .patient_status .patient .symptome .part .swiper-scrollbar{
+        width: 600px;
+        opacity: 1;
+    }
+
+    .doctor_emergency .patient .pupil .pupil_container{
+        width: 300px;
+    }
+
+    .emergency .patient .symptome_info .unre .ure_list{
+        margin: 0;
+    }
+
+    /* 모니터링 */
+    .doctor_emergency .vital{
+        width: 736px;
+        height: 565px;
+    }
+
+    .doctor_emergency .vital .inner{
+        width: 492px;
+    }
+
+    .doctor_emergency .vital .control> :first-child{
+        width: fit-content;
+    }
+
+    /* 환자사진 */
+    .doctor_emergency .big_picture{
+        width: 672px;
+    }
+
+    .doctor_emergency .patient_picture .no_data{
+        width: 672px;
+    }
+}
+
+/* 메세지 */
+@media all and (max-width:1300px){
+    /* 의사 - 응급호출 메세지 */
+    .doctor_message .wrap_inner{
+        min-width: 1220px;
+    }
+    .doctor_message .select_medi{
+       width: 736px;
+    }
+
+    .doctor_message .send_message{
+        width: 360px;
+    }
+
+    .doctor_message .select_list{
+        width: 672px;
+    }
+
+    .doctor_message .favorite_list{
+        width: 312px;
+    }
+
+    .doctor_message .select_doctor{
+        width: 296px;
+    }
+
+    .doctor_message .send_message .title .btn_list button{
+        width: 64px;
+    }
+
+    .doctor_message .pop.search_patient{
+        width: 296px;
+        height: 180px;
+        padding: 32px 0 32px 15px;
+    }
+
+    .doctor_message .connect{
+        padding: 0 14px;
+    }
+
+    .doctor_message .connect> div{
+        display: block;
+    }
+
+    /* 의사관리 - 메세지 페이지 */
+    .doc_screen .wrap_inner{
+        min-width: 1188px;
+    }
+    
+    .doc_screen .message_list{
+        width: 616px;
+        height: 640px;
+    }
+
+    .doc_screen .message_talk{
+        width: 480px;
+        height: 640px;
+    }
+
+    .doc_screen .talk_list{
+        height: 450px;
+    }
+
+    .doc_screen .message_list .search_container .btn_search{
+        left: 76%;
+    }
+
+    .doc_screen .message_talk .search_container .btn_search{
+        left: 70%;
+    }
+
+    .doc_screen .chat_container,
+    .doc_screen .chat_inner{
+        height: 360px;
+    }
+
+    .doc_screen .select_medi{
+        width: 736px;
+        height: 640px;
+    }
+
+    .doc_screen .select_list{
+        width: 672px;
+        margin: 0 auto;
+    }
+
+    .doc_screen .favorite_list,
+    .doc_screen .select_doctor{
+        width: 320px;
+    }
+
+    .doc_screen .select_medi .list_inner{
+        height: 350px;
+    }
+
+    .doc_screen .group_container{
+        height: 350px;
+    }
+
+    .doc_screen .send_message{
+        width: 360px;
+        height: 640px;
+    }
+
+    .nurse_message .timeLine{
+        height: 360px;
+    }
+
+    /* 선별진료 */
+    .doc_screen .waiting .row> div{
+        width: 320px;
+        /* justify-content: initial; */
+    }
+
+    .doc_screen .waiting .btn_treat{
+        margin-left: 81px;
+    }
+
+    .doc_screen .elapsed{display: none;}
+    
+    .doctor_new .section{
+        height: 640px;
+    }
+}

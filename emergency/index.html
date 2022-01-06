@@ -875,7 +875,8 @@
                             
                             <div class="textbox">
                                 <p>구급대원으로부터 접수받은 응급상황 목록 입니다.</p>
-                                <p>
+
+                                <p class="count">
                                     <span>4</span>건의 응급상황 대응 중
                                 </p>
                             </div>
@@ -1023,7 +1024,7 @@
                         <div class="map_title">
                             <h2>위치정보</h2>
 
-                            <div>
+                            <div class="data">
                                 <p>
                                     도착예정 : <span>30</span> 분 후 도착.
                                 </p>
@@ -1031,7 +1032,11 @@
                                 <p>
                                     예정시간 : <span>21</span>.<span>09</span>.<span>15</span>.<span>07</span>:<span>05</span>.
                                 </p>
-                            </div>         
+                            </div>     
+                            
+                            <div class="no_data">
+                               <h2>접수된 응급상황이 없습니다.</h2>
+                            </div> 
                         </div>
 
                         <div class="map_container">
@@ -1826,7 +1831,7 @@
                                         <h2>환자분류</h2>
 
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="semi_emer" class="red_custom" checked>
+                                            <input type="checkbox" id="semi_emer" class="emer_check" checked>
                                             <label for="semi_emer"></label>
                                             <label for="semi_emer">준응급</label>
                                         </div> 
@@ -1834,13 +1839,13 @@
                                         <div>
                                             <div>
                                                 <div class="input_wrap">
-                                                    <input type="checkbox" id="emer_time" class="red_custom" checked>
+                                                    <input type="checkbox" id="emer_time" class="emer_check" checked>
                                                     <label for="emer_time"></label>
                                                     <label for="emer_time">발생시간</label>
                                                 </div>   
         
                                                 <div class="input_wrap">
-                                                    <input type="checkbox" id="esti" class="red_custom" checked>
+                                                    <input type="checkbox" id="esti" class="emer_check" checked>
                                                     <label for="esti"></label>
                                                     <label for="esti">추정</label>
                                                 </div>   
