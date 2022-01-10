@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect 로그인</title>
   <!--Import-->
-  <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.min.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/index.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.min.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/login/login.js'></script>
   <!--css-->
-  <link rel='stylesheet' href='./css/reset.css'>
-  <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/login.css">
+  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
+  <link rel="stylesheet" href="/H-Connect/css/common.css">
+  <link rel="stylesheet" href="/H-Connect/css/login.css">
 
 
 </head>
@@ -22,7 +23,6 @@
       <!--콘텐츠-->
       <div id="wrap_content" class="main">
         <div class="wrap_inner">
-
             <div class="logo">
                 <a class="link" href="index.html">
                     <img src="/H-Connect/img/logo.png" alt="로고">
@@ -31,26 +31,25 @@
 
             <form class="login">
                 <div class="input_container">
-                    <input type="text">
-
-                    <input type="password">
+                    <input id="id" type="text">
+                    <input id="pw" type="password">
                 </div>
 
                 <div class="check">
-					<div class="input_wrap">
-						<input type="checkbox" id="id_save" class="green_custom">
-						<label for="id_save"></label>
-						<label for="id_save">아이디 기억</label>
-					</div>
-					
-					<div class="input_wrap">
-						<input type="checkbox" id="auto_login" class="green_custom">
-						<label for="auto_login"></label>
-						<label for="auto_login">자동 로그인</label>
-					</div>					
+                  <div class="input_wrap">
+                    <input type="checkbox" id="id_save" class="green_custom">
+                    <label for="id_save"></label>
+                    <label for="id_save">아이디 기억</label>
+                  </div>
+                  
+                  <div class="input_wrap">
+                    <input type="checkbox" id="auto_login" class="green_custom">
+                    <label for="auto_login"></label>
+                    <label for="auto_login">자동 로그인</label>
+                  </div>					
                 </div>
 
-                <button type="button" onclick="location.href='nurse/index.html'">로그인</button>
+                <button id="login" type="button" >로그인</button>
             </form>
 
         </div>
