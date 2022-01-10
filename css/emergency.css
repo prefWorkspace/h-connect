@@ -3129,6 +3129,11 @@
     padding: 0;
 }
 
+.doctor_emergency .patient_status .symptome .red_custom[type='checkbox'] + label{
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
 
 .doctor_emergency .patient_status .symptome .red_custom[type='checkbox']:checked + label{
     background: #940045;

@@ -737,9 +737,7 @@ $('.btn_today').on('click', function(){
     $('.doctor .my_plan').toggle();
     $('.doctor .now_section').toggle();
     $('.doctor .waiting').toggle();
-    $('.doctor .schedule_list .collabor').toggleClass('on');
-    $('.doctor .schedule_list .my').toggleClass('on');
-    // $('.doctor .row').not('.doctor .now_section .row').removeClass('on');
+    $('.doctor .schedule_list .row').removeClass('on');
 })
 
 // 선별진료실 리스트
@@ -905,6 +903,10 @@ $('.screening .waiting .btn_treat').on('click', function(){
 
 $('.pc_header .btn_red').on('click', function(){
     location.href="emergency/index.html"
+})
+
+$('.pc_header .btn_red.red2').on('click', function(){
+    location.href="remote.html"
 })
 
 // 가능
@@ -1277,24 +1279,53 @@ $('.doctor .nurse_send').on('click', function(){
     
     // 버튼 눌러서 띄우기
     $('.remote .patient_view .btn_list .btn_vital').on('click', function(){
-        $('.remote .vital').show();
+        $('.remote .vital').show().addClass('active');
         $('.remote .several .section').not('.remote .vital').hide();
+        $('.remote .several > div').not('.remote .vital').removeClass('active');
     })
+    $('.remote .vital .title').on('click', function(){
+        $('.remote .vital').addClass('active');
+        $('.remote .several > div').not('.remote .vital').removeClass('active');
+    })
+
     $('.remote .patient_view .btn_list .btn_pacs').on('click', function(){
-        $('.remote .pacs').show();
+        $('.remote .pacs').show().addClass('active');
         $('.remote .several .section').not('.remote .pacs').hide();
+        $('.remote .several > div').not('.remote .pacs').removeClass('active');
     })
+    $('.remote .pacs .title').on('click', function(){
+        $('.remote .pacs').addClass('active');
+        $('.remote .several > div').not('.remote .pacs').removeClass('active');
+    })
+
     $('.remote .patient_view .btn_list .btn_lab').on('click', function(){
-        $('.remote .lab').show();
+        $('.remote .lab').show().addClass('active');
         $('.remote .several .section').not('.remote .lab').hide();
+        $('.remote .several > div').not('.remote .lab').removeClass('active');
     })
+    $('.remote .lab .title').on('click', function(){
+        $('.remote .lab').addClass('active');
+        $('.remote .several > div').not('.remote .lab').removeClass('active');
+    })
+
     $('.remote .patient_view .btn_list .btn_emr').on('click', function(){
-        $('.remote .emr').show();
+        $('.remote .emr').show().addClass('active');
         $('.remote .several .section').not('.remote .emr').hide();
+        $('.remote .several > div').not('.remote .emr').removeClass('active');
     })
+    $('.remote .emr .title').on('click', function(){
+        $('.remote .emr').addClass('active');
+        $('.remote .several > div').not('.remote .emr').removeClass('active');
+    })
+
     $('.remote .patient_view .btn_list .btn_ocs').on('click', function(){
-        $('.remote .ocs').show();
+        $('.remote .ocs').show().addClass('active');
         $('.remote .several .section').not('.remote .ocs').hide();
+        $('.remote .several > div').not('.remote .ocs').removeClass('active');
+    })
+    $('.remote .ocs .title').on('click', function(){
+        $('.remote .ocs').addClass('active');
+        $('.remote .several > div').not('.remote .ocs').removeClass('active');
     })
 
     // btn_fold
@@ -1380,20 +1411,19 @@ $('.doctor .nurse_send').on('click', function(){
         $('.left_view .pacs_view').hide();
     })
 
-
 });
 
 // 모니터링 탭메뉴
 $(document).ready(function(){
 
 $('ul.tabs li').click(function(){
-  var tab_id = $(this).attr('data-tab');
+    var tab_id = $(this).attr('data-tab');
 
-  $('ul.tabs li').removeClass('current');
-  $('.tab-content').removeClass('current');
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
 
-  $(this).addClass('current');
-  $("#"+tab_id).addClass('current');
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
 })
 
 })
