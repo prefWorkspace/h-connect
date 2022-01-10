@@ -281,7 +281,7 @@ $(function () {
         })
 
         $('.pop.nurse_view .btn_fold').on('click', function(){
-            $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').fadeToggle();
+            $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').toggle();
             $('.pop.nurse_view').toggleClass('on');
         })
 
@@ -734,9 +734,9 @@ $('.doctor .schedule_list .row').on('click', function(){
 
 // 세션 진행중
 $('.btn_today').on('click', function(){
-    $('.doctor .my_plan').toggle();
-    $('.doctor .now_section').toggle();
-    $('.doctor .waiting').toggle();
+    $('.doctor .my_plan').hide();
+    $('.doctor .now_section').show();
+    $('.doctor .waiting').show();
     $('.doctor .schedule_list .row').removeClass('on');
 })
 

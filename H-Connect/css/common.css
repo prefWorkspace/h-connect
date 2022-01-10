@@ -1856,30 +1856,6 @@ textarea::-webkit-scrollbar-button {
     opacity: 1;
 }
 
-.selectBox2 .label span:after {
-    content: ''; 
-    width: 12px;
-    height: 6px; 
-    position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
-    top: 50%; 
-    right: 20px;
-    transition: 0.3s;
-    transform: translateY(-50%);
-}
-
-.selectBox2.active .label span:after{
-    content: ''; 
-    width: 12px;
-    height: 6px; 
-    position: absolute; 
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
-    top: 50%; 
-    right: 20px;
-    transform: rotate(180deg);
-    transition: .3s;
-}
-
 .selectBox2 .label {
     display: flex;
     align-items: center;
@@ -1899,7 +1875,7 @@ textarea::-webkit-scrollbar-button {
 .selectBox2 .label2 {
     display: flex;
     align-items: center;
-    width: inherit;
+    width: inherit; 
     height: inherit;
     border: 0 none;
     outline: 0 none;

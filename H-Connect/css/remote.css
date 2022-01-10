@@ -1190,7 +1190,7 @@ img{
     overflow: hidden;
 }
 
-.vital .ecg_graph img:not(.vital #tab-1 .ecg_graph img){
+.default .vital .ecg_graph img:not(.vital #tab-1 .ecg_graph img){
     width: fit-content;
     height: fit-content;
 }
