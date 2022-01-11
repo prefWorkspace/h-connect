@@ -37,6 +37,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .bell_name{
+    height: 27px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,13 +120,6 @@ button{border-radius: 4px; background: none;}
 }
 
 
-
-
-/* btn1 - header 버튼 스타일 */
-/* 
-    <button type="button" class="btn1"></button> 
-*/
-
 .btn1 {
     background: none;
     color: #fff;
@@ -136,6 +130,18 @@ button{border-radius: 4px; background: none;}
     border-radius: 4px;
     transition: 0.2s all;
 }
+
+.btn.bl{background-color: #fff !important; color: #007A94 !important; border: 1px solid #007A94 !important;}
+.btn.bl:hover{background-color: #C5D8DC !important;}
+.btn.blf{background-color: #007A94 !important; color: #fff !important;}
+.btn.rd{background-color: #fff !important; color: #940045 !important; border: 1px solid #940045 !important;}
+.btn.rd:hover{background-color: #F5EEF1 !important;}
+.btn.rdf{background-color: #940045 !important; color: #fff !important;}
+.btn.rdf:hover{background-color: #4A0000 !important;}
+.btn.gr{background-color: #eee !important; color: #888 !important;}
+.btn.gr:hover{background-color: #ccc !important;}
+
+
 
 /* card_title - card title 스타일 */
 /* 
@@ -637,7 +643,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .btn_attendee{
-    width: 96px;
+    width: 98px;
     background: #fff;
 }
 
@@ -1808,18 +1814,14 @@ textarea::-webkit-scrollbar-button {
     width: 120px;
     height: 40px;
     border-radius: 4px;
-    border:1px solid #940045;
     background: none;
     font-size: 14px;
-    color: #940045;
 }
 
 .pop .overlay .pop_cont .btn_list .btn_check{
     width: 120px;
     height: 40px;
     border-radius: 4px;
-    border:1px solid #007A94;
-    background: #007A94;
     font-size: 14px;
     color: #fff;
 }
@@ -1885,6 +1887,30 @@ textarea::-webkit-scrollbar-button {
     font-size: 14px;
     font-weight: 500;
     color: #000;
+}
+
+.selectBox2 .label::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+    transition: 0.3s;
+    transform: translateY(-50%);
+}
+
+.selectBox2.active .label::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 40%;
+    right: 20px;
+    transition: .3s;
+    transform: rotate(180deg) translateY(-50%);
 }
 
 .selectBox2 .optionList {
@@ -1993,13 +2019,7 @@ textarea::-webkit-scrollbar-button {
     height: 48px;
     margin-right: 16px;
     border-radius: 4px;
-    background: #eee;
     font-size: 16px;
-    color: #888;
-}
-
-.pop.delete .pop_cont .btn_list .btn_no:hover{
-    background: #CCC; 
 }
 
 .pop.delete .pop_cont .btn_list .btn_cut{
@@ -2492,10 +2512,8 @@ textarea::-webkit-scrollbar-button {
     width: 272px;
     height: 48px;
     margin: 0 auto;
-    background-color: #007A94;
     border-radius: 4px;
     font-size: 16px;
-    color: #fff;
     display: block;
 }
 
@@ -3544,6 +3562,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .bell_name{
+    height: auto;
     font-size: 12px;
 }
 
@@ -3683,6 +3702,8 @@ textarea::-webkit-scrollbar-button {
     font-size: 12px;
     color: #ccc;
 }
+
+.pop.monitor .table_content .ecg_graph> p{color: #00ff22;}
 
 .pop.monitor .table_content .bell p{color: #00FF22;}
 

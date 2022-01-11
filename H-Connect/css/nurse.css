@@ -141,10 +141,7 @@
     height: 40px;
     background: none;
     border-radius: 4px;
-    border:1px solid #007A94;
     font-size: 14px;
-    color: #007A94;
-    vertical-align: middle;
 }
 
 .nurse .left .title p,
@@ -208,8 +205,7 @@
     color: #fff;
 }
 
-.nurse .left .cont .ward_list .btn_list button,
-.nurse .right .cont .ward_list .btn_list button{
+.nurse .cont .ward_list .btn_list button{
     width: 56px;
     height: 32px;
     padding: 4px 0;
@@ -217,21 +213,12 @@
     border-radius: 4px;
 }
 
-.nurse .left .cont .ward_list .btn_list .btn_modify,
-.nurse .right .cont .ward_list .btn_list .btn_modify{
+.nurse .cont .ward_list .btn_list .btn_modify{
     margin:0 6px 0 24px;
-    border:1px solid #007A94;
-    color: #007A94;
 }
 
 .nurse .hospital_room .cont .ward_list .btn_list .btn_modify{
     margin: 0 6px 0;
-}
-
-.ward .cont .ward_list .btn_list .btn_delete,
-.hospital_room .cont .ward_list .btn_list .btn_delete{
-    border: 1px solid #940045;
-    color: #940045;
 }
 
 .ward .cont .ward_list.on .btn_list .btn_modify{
@@ -276,10 +263,7 @@
     height: 40px;
     background: none;
     border-radius: 4px;
-    border:1px solid #007A94;
     font-size: 14px;
-    color: #007A94;
-    vertical-align: middle;
 }
 
 .right .title .btn_new_room:disabled{
@@ -467,13 +451,12 @@
     color: #007A94;
 }
 
-.section .btn_cancel{
+.section .btn_cancel,
+.section .btn_delete{
     width: 56px;
     height: 24px;
     background: none;
     border-radius: 4px;
-    border: 1px solid #940045;
-    color: #940045;
     display: inline-block;
     vertical-align: middle;
 }
@@ -507,10 +490,6 @@
 
 .return_device .item_row .use_line{margin-right: 38px;}
 
-.return_device .btn_use_device{
-    border: 1px solid #940045;
-    color: #940045;
-}
 
 
 /* 측정 관리 */
@@ -581,6 +560,12 @@
     width: 160px;
     top: 35px;
 }
+
+.nurse_measure .mbed_option{
+    width: 120px;
+}
+
+.selectBox2 .mbed_option::after{width: 88px;}
 
 .nurse_measure .measure_status .cont{
     padding-bottom: 0;
@@ -690,11 +675,6 @@
     color: #007A94;
 }
 
-.measure_status .container .status_list .btn_delete{
-    border:1px solid #940045;
-    color: #940045;
-}
-
 .nurse .new_hospital .title{
     height: 96px;
     padding: 8px 16px 26px;
@@ -705,10 +685,8 @@
     height: 40px;
     padding: 10px 17px;
     border-radius: 4px;
-    border:1px solid #007A94;
     background: none;
     font-size: 14px;
-    color: #007A94;
 }
 
 .new_hospital .title p{
@@ -760,7 +738,8 @@
     z-index: 1;
 }
 
-.new_hospital .sex_option::after{
+.nurse .sex_option::after,
+.nurse .sex_option2::after{
     width: 60px;
     left: 8px;
 }
@@ -794,7 +773,8 @@
     height: 36px;
 }
 
-.select_bed .bed_option::after{
+.select_bed .bed_option::after,
+.select_bed .bed_option2::after{
     width: 85px;
 }
 
@@ -864,10 +844,6 @@
     color: #007A94;
 }
 
-.new_hospital .device_room> div .btn_list .btn_delete{
-    border:1px solid #940045;
-    color: #940045;
-}
 
 .new_hospital .device_room .btn_add{
     padding: 16px;
@@ -970,6 +946,9 @@
     font-weight: normal;
 }
 
+.selectBox2 .mward_option::after{width: 125px;}
+.selectBox2 .mroom_option::after{width: 125px;}
+
 .modifi_hospital .device_room{
     padding: 16px;
 }
@@ -1008,13 +987,6 @@
 
 .modifi_hospital .device_room> div .btn_list .btn_modify{
     margin-right: 8px;
-    border:1px solid #007A94;
-    color: #007A94;
-}
-
-.modifi_hospital .device_room> div .btn_list .btn_delete{
-    border:1px solid #940045;
-    color: #940045;
 }
 
 .modifi_hospital .device_room .btn_add{
@@ -1051,8 +1023,6 @@
 
 .modifi_hospital .container> .btn_list .btn_no{
     margin-right: 8px;
-    border: 1px solid #940045;
-    color: #940045;
 }
 
 .modifi_hospital .container> .btn_list .btn_add{
@@ -1127,9 +1097,9 @@
     max-height: 0;
     transition: .3s ease-in;
 }
- 
-.select_box.active .ward_option {
-    max-height: 500px;
+
+.selectBox2 .ward_option::after{
+    width: 125px;
 }
 
 .select_box .option_item {
@@ -1556,8 +1526,8 @@
     display: flex;
 }
 
-.monitoring_patient .vital_chart .pati_info{
-    margin-left: 56px;
+.monitoring_patient .vital_chart .title> :first-child :first-child {
+    width: 150px;
 }
 
 .monitoring_patient .chart_time{
@@ -1608,18 +1578,18 @@
 .monitoring_patient .control{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .monitoring_patient .sp{
     margin: 10px 0;
 }
 
-.monitoring_patient .ecg_graph> div,
-.monitoring_patient .sp_graph> div,
-.monitoring_patient .resp_graph> div{
+.monitoring_patient .g_type> div{
     margin-top: 20px;
 }
+
+.monitoring_patient .g_type> p{font-size: 14px;}
 
 .monitoring_patient .bell{
     width: 160px;
@@ -1767,6 +1737,7 @@
     height: 32px;
     padding: 8px 16px 7px;
     border-bottom: 1px solid #888;
+    display: flex;
 }
 
 /* .monitoring_patient .tabular_table .table_content div{
@@ -2004,7 +1975,7 @@
 .monitoring_patient .table_body .table_content .cont_inner{
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .monitoring_patient .table_body .table_content .cont_inner .btn_list{
@@ -2034,8 +2005,8 @@
 
 .monitoring_patient .table_body .table_content .ecg .ecg_graph> div{
     width: 916px;
-    height: 64px;
-    /* padding: 30px 0; */
+    height: 70px;
+    padding: 13px 0;
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -2080,6 +2051,7 @@
     width: 80px;
     height: 32px;
     padding: 6px 15px;
+    margin-bottom: 8px;
     border-radius: 4px;
 }
 
@@ -2129,7 +2101,6 @@
 }
 
 .warning .active .img_graph{
-
     background: #f00;
     border-radius: 8px;
 }
@@ -2137,7 +2108,11 @@
 .warning .img_graph{
     height: 104px;
     padding: 8px 16px;
-} 
+}
+
+.warning .img_graph div{
+    margin-top: 20px;
+}
 
 .warning .cont .active .bell{
     background: #f00;
@@ -2163,7 +2138,7 @@
 }
 
 .warning .cont .control .active input[type="checkbox"]+ label span{
-    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(108%) contrast(101%);
+    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(250%) contrast(205%);
 }
 
 
@@ -2301,8 +2276,6 @@
 .arteriotony .form_arter .btn_list .btn_no{
     margin-right: 8px;
     background: #fff;
-    border: 1px solid #940045;
-    color: #940045;
 }
 
 .arteriotony .form_arter .btn_list .btn_add{
@@ -2327,19 +2300,19 @@
     height: 48px;
     padding: 16px 16px 14px;
     border-bottom: 1px solid #eee;
+    display: flex;
 }
 
 .arteriotony .table_title p{
     margin-right: 22px;
-    display: inline-block;
 }
 
 .arteriotony .table_title :first-child{
-    margin-right: 105px;
+    margin-right: 115px;
 }
 
 .arteriotony .table_title :nth-child(3){
-    margin-right: 39px;
+    margin-right: 40px;
 }
 
 .arteriotony .table_body> div{
@@ -2379,15 +2352,8 @@
     font-size: 12px;
 }
 
-.arteriotony .table_body> div .btn_list .btn_modify{
-    border: 1px solid #007A94;
-    color: #007A94;
-}
-
 .arteriotony .table_body> div .btn_list .btn_delete{
     margin-left: 8px;
-    border: 1px solid #940045;
-    color: #940045;
 }
 
 .arteriotony .table_page{
@@ -2429,6 +2395,8 @@
     align-items: center;
 }
 
+.dashboard .taget_list .title> div{margin-bottom: 13px;}
+
 .dashboard .taget_list .title div img{
     filter: invert(57%) sepia(50%) saturate(4029%) hue-rotate(176deg) brightness(69%) contrast(54%);
 }
@@ -2449,6 +2417,30 @@
 
 .dashboard .label{
     font-size: 12px;
+}
+
+.dashboard .label::after{
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+    transition: 0.3s;
+    transform: translateY(-50%);
+}
+
+.dashboard .selectBox2.active .label::after {
+    content: ''; 
+    width: 12px;
+    height: 6px; 
+    position: absolute; 
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%; 
+    right: 20px;
+    transform: rotate(180deg);
+    transition: .3s;
 }
 
 .dashboard .ward_option{
@@ -2603,8 +2595,6 @@
 .dashboard .middle .btn_delete{
     position: relative;
     padding: 12px 24px 12px 45px;
-    border: 1px solid #940045;
-    color: #940045; 
 }
 
 .dashboard .middle .btn_delete:disabled{
@@ -2672,8 +2662,6 @@
     border-radius: 4px;
     font-size: 12px;
     background: #fff;
-    border: 1px solid #007A94;
-    color: #007A94;
 }
 
 .dashboard .taget_view .btn_first{
@@ -2870,6 +2858,7 @@
 
 .ward_dashboard .vital_inner{
     display: flex;
+    justify-content: space-between;
 }
 
 .ward_dashboard .graph{
@@ -2910,7 +2899,7 @@
 .ward_dashboard .character> div> div{
     width: 72px;
     height: 56px;
-    padding: 4px 8px;
+    padding: 4px;
 }
 
 .ward_dashboard .character .ecg{
@@ -2930,6 +2919,7 @@
 }
 
 .ward_dashboard .bell_name{
+    height: auto;
     font-size: 10px;
 }
 

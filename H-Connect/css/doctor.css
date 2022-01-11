@@ -283,7 +283,7 @@ p{font-size: 12px;}
 }
 
 .doctor .my_plan .weekly .inner{
-    width: 1140px;
+    width: 1158px;
     height: 495px;
     display: flex;
     top: 16px;
@@ -313,10 +313,10 @@ p{font-size: 12px;}
     position: relative;
 }
 
-.doctor .my_plan .inner> :nth-child(14),
+/* .doctor .my_plan .inner> :nth-child(14),
 .doctor .my_plan .weekly .inner> :last-child{
     margin: 0;
-}
+} */
 
 .doctor .weekly .day .title{
     width: 48px;
@@ -365,27 +365,13 @@ p{font-size: 12px;}
 
 .doctor .my_plan .weekly .today .title p{color: #fff;}
 
-.doctor .start{
-    background: rgba(0, 122, 148, 0.8);
-}
-
-.doctor .ambul{
-    background: rgba(53, 0, 57, 0.8);
-}
-
-.doctor .request{
-    background: rgba(226, 42, 116, 0.8);
-}
+.doctor .start{ background: rgba(0, 122, 148, 0.8); cursor: pointer;}
+.doctor .ambul{background: rgba(53, 0, 57, 0.8); cursor: pointer;}
+.doctor .request{background: rgba(226, 42, 116, 0.8); cursor: pointer;}
+.doctor .opinion{background: rgba(255, 128, 0, 0.8); cursor: pointer;}
+.doctor .holiday{background: rgba(68, 68, 68, 0.8); cursor: pointer;}
 
 .doctor .request p{width: 38px; margin: auto;}
-
-.doctor .opinion{
-    background: rgba(255, 128, 0, 0.8);
-}
-
-.doctor .holiday{
-    background: rgba(68, 68, 68, 0.8);
-}
 
 .doctor .my_plan .today :nth-child(2){
     height: 74px;
@@ -1918,11 +1904,9 @@ p{font-size: 12px;}
     margin: 10px 0;
 }
 
-.monitoring_patient .ecg_graph> div,
-.monitoring_patient .sp_graph> div,
-.monitoring_patient .resp_graph> div{
-    margin-top: 20px;
-}
+.monitoring_patient .g_type> div{ margin-top: 20px;}
+
+.monitoring_patient .g_type> p{font-size: 14px;}
 
 .monitoring_patient .bell{
     width: 160px;
@@ -2121,7 +2105,6 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .graphical .hr_chart{
-
     display: flex;
     position: relative;
 }
@@ -2246,30 +2229,30 @@ p{font-size: 12px;}
     display: none;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap> :last-child span{
+.monitoring_patient .cont .event .table_body .table_wrap> :last-child{
     position: relative;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap> :last-child span::after{
+.monitoring_patient .cont .event .table_body .table_wrap> :last-child::after{
     content: ''; 
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Conenct/img/under_arrow.svg') no-repeat;
-    top: 50%;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 50%; 
     right: -35px;
-    transition: .3s;
-    margin-top: 7px;
+    transition: 0.3s;
+    transform: translateY(-50%);
     filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap.on> :last-child span::after{
+.monitoring_patient .cont .event .table_body .table_wrap.on> :last-child::after{
     content: ''; 
     width: 12px;
     height: 6px; 
     position: absolute; 
-    background: url('/H-Conenct/img/under_arrow.svg') no-repeat;
-    top: 50%;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    top: 0;
     right: -35px;
     transition: .3s;
     margin-top: 7px;
@@ -2296,7 +2279,7 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .cont .event .table_body .table_content{
-    height: 195px;
+    height: 125px;
     overflow: hidden;
     display: none;
 }
@@ -2327,8 +2310,8 @@ p{font-size: 12px;}
 
 .monitoring_patient .table_body .table_content .ecg .ecg_graph> div{
     width: 1010px;
-    height: 104px;
-    padding: 30px 0;
+    height: 70px;
+    padding: 10px 0;
     overflow-x: scroll;
     overflow-y: hidden;
 }

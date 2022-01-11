@@ -249,7 +249,7 @@ $(function () {
     })
 
 // 혈압 수동입력
-    $('.arteriotony_input .title .btn_add').on('click', function(){
+    $('.arteriotony_input .btn_add').on('click', function(){
         $('.pop.arteriotony_regi .overlay').fadeIn();
     })
 
@@ -323,8 +323,8 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
 
     // 상황해제 버튼 클릭함
     $('.pop.monitor .btn_clear').on('click', function(){
-        $('.pop.monitor .btn_clear').fadeOut();
-        $('.pop.monitor .btn_situ').fadeIn();
+        $('.pop.monitor .btn_clear').hide();
+        $('.pop.monitor .btn_situ').show();
     })
 
     // 상황해제 버튼 클릭후 팝업 닫히고 active 꺼짐
@@ -577,28 +577,36 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
     $('.several .pati_stat .title .btn_fold').on('click', function(){
         $('.several .patient_status').toggle();
     })
-
     $('.several .pati_stat .title .btn_full').on('click', function(){
         $('.several .pati_stat').toggleClass('on');
         $('.several .patient_status').show();
     })
-
     $('.several .pati_stat .title .btn_close').on('click', function(){
         $('.several .pati_stat').hide();
     })
-
     $('.patient_view .btn_patient').on('click', function(){
-        $('.several .pati_stat').show();
+        $('.connect .pati_stat').show().addClass('active');
+        $('.connect .several > div').not('.connect .pati_stat').removeClass('active');
     })
+    $('.connect .pati_stat .title').on('click', function(){
+        $('.connect .pati_stat').addClass('active');
+        $('.connect .several > div').not('.connect .pati_stat').removeClass('active');
+    })
+
 
     // 바이탈
     $('.several .vital .title .btn_close').on('click', function(){
         $('.several .vital').hide();
     })
-
     $('.patient_view .btn_vital').on('click', function(){
-        $('.several .vital').show();
+        $('.connect .vital').show().addClass('active');
+        $('.connect .several > div').not('.connect .vital').removeClass('active');
     })
+    $('.connect .vital .title').on('click', function(){
+        $('.connect .vital').addClass('active');
+        $('.connect .several > div').not('.connect .vital').removeClass('active');
+    })
+
 
 
     // 화상연결
@@ -614,9 +622,13 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
     $('.several .connect_video .title .btn_close').on('click', function(){
         $('.several .connect_video').hide();
     })
-
     $('.patient_view .btn_videocall').on('click', function(){
-        $('.several .connect_video').show();
+        $('.connect .connect_video').show().addClass('active');
+        $('.connect .several > div').not('.connect .connect_video').removeClass('active');
+    })
+    $('.connect .connect_video .title').on('click', function(){
+        $('.connect .connect_video').addClass('active');
+        $('.connect .several > div').not('.connect .connect_video').removeClass('active');
     })
 
     // 현장사진
@@ -632,11 +644,14 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
     $('.several .scene_picture .title .btn_close').on('click', function(){
         $('.several .scene_picture').hide();
     })
-
-    $('.patient_view .btn_picture').on('click', function(){
-        $('.several .scene_picture').show();
+    $('.patient_view .btn_videocall').on('click', function(){
+        $('.connect .scene_picture').show().addClass('active');
+        $('.connect .several > div').not('.connect .scene_picture').removeClass('active');
     })
-
+    $('.connect .scene_picture .title').on('click', function(){
+        $('.connect .scene_picture').addClass('active');
+        $('.connect .several > div').not('.connect .scene_picture').removeClass('active');
+    })
 
 
 
