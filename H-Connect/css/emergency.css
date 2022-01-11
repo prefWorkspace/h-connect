@@ -2082,11 +2082,14 @@
     margin: 0 32px;
 }
 
+.connect .several> div.active{
+    z-index: 10;
+}
+
 /* 환자상태 */
 .connect .pati_stat{
     width: 736px;
     position: absolute;
-    z-index: 5;
 }
 
 .connect .pati_stat.on{

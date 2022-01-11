@@ -283,7 +283,7 @@ p{font-size: 12px;}
 }
 
 .doctor .my_plan .weekly .inner{
-    width: 1140px;
+    width: 1158px;
     height: 495px;
     display: flex;
     top: 16px;
@@ -313,10 +313,10 @@ p{font-size: 12px;}
     position: relative;
 }
 
-.doctor .my_plan .inner> :nth-child(14),
+/* .doctor .my_plan .inner> :nth-child(14),
 .doctor .my_plan .weekly .inner> :last-child{
     margin: 0;
-}
+} */
 
 .doctor .weekly .day .title{
     width: 48px;
@@ -365,27 +365,13 @@ p{font-size: 12px;}
 
 .doctor .my_plan .weekly .today .title p{color: #fff;}
 
-.doctor .start{
-    background: rgba(0, 122, 148, 0.8);
-}
-
-.doctor .ambul{
-    background: rgba(53, 0, 57, 0.8);
-}
-
-.doctor .request{
-    background: rgba(226, 42, 116, 0.8);
-}
+.doctor .start{ background: rgba(0, 122, 148, 0.8); cursor: pointer;}
+.doctor .ambul{background: rgba(53, 0, 57, 0.8); cursor: pointer;}
+.doctor .request{background: rgba(226, 42, 116, 0.8); cursor: pointer;}
+.doctor .opinion{background: rgba(255, 128, 0, 0.8); cursor: pointer;}
+.doctor .holiday{background: rgba(68, 68, 68, 0.8); cursor: pointer;}
 
 .doctor .request p{width: 38px; margin: auto;}
-
-.doctor .opinion{
-    background: rgba(255, 128, 0, 0.8);
-}
-
-.doctor .holiday{
-    background: rgba(68, 68, 68, 0.8);
-}
 
 .doctor .my_plan .today :nth-child(2){
     height: 74px;
