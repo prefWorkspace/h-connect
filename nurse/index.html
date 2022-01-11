@@ -6,9 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect</title>
   <!--Import-->
-  <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/index.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
+  <script type='module' defer src='/H-Connect/js/nurse/insertWard.js'></script>
   <!--css-->
   <link rel='stylesheet' href='/H-Connect/css/reset.css'>
   <link rel="stylesheet" href="/H-Connect/css/common.css">
@@ -40,12 +41,12 @@
                  <div class="content">
                      <p>병동이름 </p>
 
-                     <input type="text">
+                     <input id="ward_Name" type="text">
                  </div>
 
                  <div class="btn_list">
                      <button type="button" class="btn_cancel">취소</button>
-                     <button type="button" class="btn_check">확인</button>
+                     <button id="ward_Button" type="button" class="btn_check">확인</button>
                  </div>
             </div>
         </div>
@@ -257,7 +258,7 @@
                                 <p>병동관리</p>
                                 <div>
                                     <img src="/H-Connect/img/right_arrow.svg" alt="오른쪽 화살표">
-                                </div>
+                                </div>                                                  
                             </div>
 
                             <div class="list off" onclick="location.href='device_management.html'">
