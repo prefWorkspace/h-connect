@@ -130,7 +130,7 @@ img{
 }
 
 .select_case .case_list .row h3{
-    font-size: 14px
+    font-size: 14px;
 }
 
 .select_case .row .left .img_container{
@@ -139,7 +139,7 @@ img{
     margin-right: 8px;
 }
 
-.select_case .row .count{margin-right: 11px;}
+.select_case .row .count{width: 60px;}
 
 .select_case .row .right .img_container{
     width: 6px;
@@ -1202,8 +1202,6 @@ img{
 
 .vital .bell{
     width: 160px;
-    min-width: 160px;
-    max-width: 160px;
     height: 104px;
     padding: 8px 16px;
 }
@@ -1394,7 +1392,7 @@ img{
 
 .tabular_table .table_content{
     height: 32px;
-    padding: 8px 16px 7px;
+    padding: 7px 16px;
     border-bottom: 1px solid #888;
 }
 
@@ -1644,9 +1642,9 @@ img{
 }
 
 .table_body .table_content .ecg .bell{
-    width: 160px;
+    width: 137px;
     height: 104px;
-    /* padding: 40px 16px; */
+    padding: 8px 16px 8px 0;
     cursor: pointer;
 }
 
@@ -1980,6 +1978,7 @@ img{
     border-bottom: 1px solid #eee;
     background: none;
     display: block;
+    cursor: initial;
 }
 
 .study_list .title h2{
@@ -2559,7 +2558,7 @@ img{
 }
 
 .tab .table_body .table_content .ecg .ecg_graph> div{
-    width: 1150px;
+    width: 1172px;
 }
 
 .tab .several .pacs{
@@ -2647,7 +2646,7 @@ img{
 }
 
 .scroll .several{
-    height: calc(100vh - 129px);
+    /* height: calc(100vh - 129px); */
     /* min-height: 740px;
     max-height: 760px; */
     overflow-y: scroll;

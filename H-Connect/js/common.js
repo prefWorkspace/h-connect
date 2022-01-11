@@ -249,7 +249,7 @@ $(function () {
     })
 
 // 혈압 수동입력
-    $('.arteriotony_input .title .btn_add').on('click', function(){
+    $('.arteriotony_input .btn_add').on('click', function(){
         $('.pop.arteriotony_regi .overlay').fadeIn();
     })
 
@@ -323,8 +323,8 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
 
     // 상황해제 버튼 클릭함
     $('.pop.monitor .btn_clear').on('click', function(){
-        $('.pop.monitor .btn_clear').fadeOut();
-        $('.pop.monitor .btn_situ').fadeIn();
+        $('.pop.monitor .btn_clear').hide();
+        $('.pop.monitor .btn_situ').show();
     })
 
     // 상황해제 버튼 클릭후 팝업 닫히고 active 꺼짐
