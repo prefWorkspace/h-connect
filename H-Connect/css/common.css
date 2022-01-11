@@ -132,6 +132,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .btn.bl{background-color: #fff !important; color: #007A94 !important; border: 1px solid #007A94 !important;}
+.btn.bl:hover{background-color: #C5D8DC !important;}
 .btn.blf{background-color: #007A94 !important; color: #fff !important;}
 .btn.rd{background-color: #fff !important; color: #940045 !important; border: 1px solid #940045 !important;}
 .btn.rd:hover{background-color: #F5EEF1 !important;}
