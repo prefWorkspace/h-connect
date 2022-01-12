@@ -105,6 +105,11 @@ img{
     background-position: 50% 90%;
     background-size: 69px 48px;
     border-radius: 0 0 8px 8px;
+    overflow: hidden scroll;
+}
+
+.select_case .case_list::-webkit-scrollbar{
+    display: none;
 }
 
 .select_case .case_list .row{

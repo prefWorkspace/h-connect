@@ -5054,7 +5054,7 @@ textarea::-webkit-scrollbar-button {
     background: #fff;
 }
 
-.pop.pacs_full .selectBox2:after {
+/* .pop.pacs_full .selectBox2:after {
     content: ''; 
     width: 12px;
     height: 6px; 
@@ -5063,10 +5063,15 @@ textarea::-webkit-scrollbar-button {
     top: 50%; 
     right: 8px;
     filter: invert(110%) sepia(153%) saturate(7500%) hue-rotate(261deg) brightness(-70%) contrast(171%);}
+}
 
 .pop.pacs_full .selectBox2.after:after{
     transform: rotate(180deg);
     transition: .3s;
+} */
+
+.pop.pacs_full .selectBox2 .label::after{
+    right: 2px;
 }
 
 .pop.pacs_full .selectBox2 .label{
