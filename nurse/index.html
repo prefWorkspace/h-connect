@@ -10,6 +10,7 @@
   <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
   <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
   <script type='module' defer src='/H-Connect/js/nurse/insertWard.js'></script>
+  <script type='module' defer src='/H-Connect/js/nurse/selectWard.js'></script>
   <!--css-->
   <link rel='stylesheet' href='/H-Connect/css/reset.css'>
   <link rel="stylesheet" href="/H-Connect/css/common.css">
@@ -666,11 +667,12 @@
 
         // 라벨을 클릭시 옵션 목록이 열림/닫힘
         label.addEventListener('click', () => {
-        if(label.parentNode.classList.contains('active')) {
-            label.parentNode.classList.remove('active');
-        } else {
-            label.parentNode.classList.add('active');
-        }
+        // if(label.parentNode.classList.contains('active')) {
+        //     label.parentNode.classList.remove('active');
+        // } else {
+        //     label.parentNode.classList.add('active');
+        // }
+            label.parentNode.classList.toggle("active");
         })
     </script>
   </body>

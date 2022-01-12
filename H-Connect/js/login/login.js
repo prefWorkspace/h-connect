@@ -69,9 +69,9 @@ function Enter_Press_Login(e){
 }
 
 
-get_Saved_Id();
+// get_Saved_Id();
 
-pw_Input.addEventListener("keypress", Enter_Press_Login)
+// pw_Input.addEventListener("keypress", Enter_Press_Login)
 
-login_Button.addEventListener("click", Login_Fetch);
+// login_Button.addEventListener("click", Login_Fetch);
 
