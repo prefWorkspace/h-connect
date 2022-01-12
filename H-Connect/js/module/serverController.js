@@ -1,7 +1,8 @@
+import localStorageController from "./localStorage.js";
 // 서버 ip
 const ip = "https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/"; 
 
-const LOGIN_TOKEN = "";
+const LOGIN_TOKEN = localStorageController.getLocalS("accesToken");
 
 const serverController = {
   connectFetchController: async ( path, method, body, callBack, errorCallBack) => {
@@ -11,7 +12,7 @@ const serverController = {
             body: body ? body : null,
             headers: {
                 "Content-Type": "application/json;charset=UTF-8",
-                "sx-auth-token": null,
+                "SX-Auth-Token": LOGIN_TOKEN ? LOGIN_TOKEN : null,
             }
         })
         .then(function (res){
