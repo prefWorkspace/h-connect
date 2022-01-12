@@ -442,7 +442,9 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
         $('.emergency .emergency_recep .list_container .list').on('click', function(){
             $(this).addClass('on');
             $('.emergency .list_container .list').not(this).removeClass('on');
+        })
 
+        $('.emergency .emergency_recep .list_container .list.second').on('click', function(){
             $('.emergency .patient_status .no_patient').show();
             $('.emergency .patient_status .symptome').hide();
 
@@ -455,6 +457,20 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
             $('.signal_text').hide();
             $('.no_signal_text').show();
             $('.emergency .full').attr('disabled', true);
+        })
+        $('.emergency .emergency_recep .list_container .list.first').on('click', function(){
+            $('.emergency .patient_status .no_patient').hide();
+            $('.emergency .patient_status .symptome').show();
+
+            $('.emergency .vital .vital_monitor').show();
+            $('.emergency .vital .no_signal').hide();
+
+            $('.emergency .big_picture, .emergency .small_picture').show();
+            $('.emergency .no_picture').hide();
+
+            $('.signal_text').show();
+            $('.no_signal_text').hide();
+            $('.emergency .full').attr('disabled', false);
         })
         
 

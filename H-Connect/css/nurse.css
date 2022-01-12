@@ -2307,15 +2307,13 @@
 }
 
 .arteriotony .table_title p{
-    margin-right: 22px;
+    width: 81px;
+    margin: 0;
 }
 
 .arteriotony .table_title :first-child{
-    margin-right: 115px;
-}
-
-.arteriotony .table_title :nth-child(3){
-    margin-right: 40px;
+    width: 129px;
+    margin: 0;
 }
 
 .arteriotony .table_body> div{
@@ -2328,11 +2326,11 @@
 
 .arteriotony .table_body> div .text_box{
     padding: 8px 0 0;
+    display: flex;
 }
 
 .arteriotony .table_body> div> div p{
     margin-right: 26px;
-    display: inline-block;
 }
 
 .arteriotony .table_body> div> div> :first-child{
