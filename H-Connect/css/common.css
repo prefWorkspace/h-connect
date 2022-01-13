@@ -201,16 +201,6 @@ button{border-radius: 4px; background: none;}
     border-color: #007A94;
 }
 
-
-/* 
-<div class="form_box">
-    <span></span>
-    <label for="">
-        <input type="text" class="clinic_name">
-    </label>
-</div> 
-*/
-
 .form_box {
     display: flex;
     align-items: center;
@@ -1318,14 +1308,10 @@ button{border-radius: 4px; background: none;}
     font-size: 24px;
 }
 
-.check_modal .modal_footer {
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 48px;
-}
-
 .check_modal .cancel_btn {
+    width: 128px;
+    height: 48px;
+    font-size: 16px;
     background-color: #eee;
     border-color: #eee;
     color: #888888;
@@ -1337,6 +1323,9 @@ button{border-radius: 4px; background: none;}
 }
 
 .check_modal .sure_btn {
+    width: 128px;
+    height: 48px;
+    font-size: 16px;
     background-color: #940045;
     border-color: #940045;
 }
@@ -1350,7 +1339,7 @@ button{border-radius: 4px; background: none;}
     width: 46px;
     height: 32px;
     padding: 0;
-    margin: 0 auto;
+    margin: 0 auto 48px;
 }
 
 .check_modal .modal_header img{
@@ -1358,6 +1347,8 @@ button{border-radius: 4px; background: none;}
     height: 100%;
     object-fit: cover;
 }
+
+.check_ex_text{margin-bottom: 48px;}
 
 
 

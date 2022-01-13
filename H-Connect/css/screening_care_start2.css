@@ -93,6 +93,7 @@
     display: flex;
     align-items: flex-end;
     height: 40px;
+    background: #444;
 }
 
 /* care_tab */
@@ -119,6 +120,13 @@
 }
 
 /* messge_cont_box */
+.chat_container{
+    height: 728px;
+    display: flex;
+    justify-content: space-between;
+    background: #C5D8DC;
+}
+
 .messge_cont_box {
     background-color: #C5D8DC;
 }
@@ -205,27 +213,9 @@
     position: relative;
     width: fit-content;
     padding: 14px 16px;
-	background: #940045;
+	background: #007A94;
 	border-radius: .4em;
     color: #fff;
-}
-
-.chat_me .bubble:after{
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 40%;
-    width: 0;
-    height: 0;
-    border: 8px solid transparent;
-    border-left-color: #940045;
-    border-right: 0;
-    margin-top: -8px;
-    margin-right: -8px;
-}
-
-.chat_me .bubble{
-	background: #007A94;
 }
 
 .chat_me .bubble:after{
@@ -312,8 +302,31 @@
     border-radius: 0;
 }
 
+.chat_window{
+    height: 122px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+}
 
+.chat_window textarea{
+    width: 90%;
+}
 
+.chat_window textarea::placeholder{
+    font-size: 14px;
+    color: #ccc;
+}
+
+.chat_window .btn_send{
+    width: 48px;
+    height: 32px;
+    border-radius: 4px;
+    background: #007A94;
+    font-size: 14px;
+    color: #fff;
+}
 
 
 /* care_start_card2 */
