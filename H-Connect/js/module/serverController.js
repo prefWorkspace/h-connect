@@ -1,5 +1,5 @@
 import cookieController from "./cookieController.js";
-import localStorageController from "./localStorage.js";
+import localStorageController from "./localStorageController.js";
 
 // 서버 ip
 const ip = "https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/"; 
