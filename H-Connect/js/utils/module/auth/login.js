@@ -1,7 +1,7 @@
-import serverController from "../module/serverController.js";
-import commonRequest from "../module/commonRequest.js";
+import serverController from "../../../module/serverController.js";
+import commonRequest from "../../controller/commonRequest.js";
 import localStorageController from "../module/localStorage.js";
-import cookieController from "../module/cookieController.js";
+import cookieController from "../../../module/cookieController.js";
 
 const TEN_YEAR_DAY = 10 * 365;
 
