@@ -14,7 +14,7 @@ function getWardData(){
         ...commonRequest()
     });
 
-    serverController.connectFetchController("API/Manager/SelectWard", "POST", req, (res) => {
+    serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
         console.log(res);
         if(res.result){
             console.log("통신 성공");
