@@ -272,12 +272,12 @@
 .right .title .btn_new_room:disabled{
     width: 96px;
     height: 40px;
-    background: #ccc;
+    background: #ccc !important;
     border-radius: 4px;
     border: 0;
     font-size: 14px;
-    color: #fff;
-    vertical-align: middle;
+    color: #fff !important;
+    border: none !important;
 }
 
 .hospital_room .cont{
@@ -1193,7 +1193,7 @@
     display: none;
 }
 
-.patient_vital .all_patient .patient_moniter{
+.patient_vital .all_patient .patient_monitor{
     background-color: #000;
     width: 240px;
     height: 88px;
@@ -1208,25 +1208,25 @@
     margin: 0;
 }
 
-.patient_vital .all_patient .patient_moniter:hover{
+.patient_vital .all_patient .patient_monitor:hover{
     background-color: #222;
     transition: .3s;
 }
 
-.patient_vital .all_patient .patient_moniter .patient_info{
+.patient_vital .all_patient .patient_monitor .patient_info{
     color: #fff;
     font-size: 12px;
     line-height: 17px;
 }
 
-.patient_vital .all_patient .patient_moniter .vital_moniter{
+.patient_vital .all_patient .patient_monitor .vital_moniter{
     margin-top: 7px;
     display: flex;
     /* justify-content: space-between; */
     color: #fff;
 }
 
-.patient_vital .all_patient .patient_moniter .vital_moniter div{
+.patient_vital .all_patient .patient_monitor .vital_moniter div{
     width: 40px;
     height: 48px;
     padding: 4px;
@@ -1234,50 +1234,50 @@
     text-align: center;
 }
 
-.patient_vital .all_patient .patient_moniter .vital_moniter div h3{
+.patient_vital .all_patient .patient_monitor .vital_moniter div h3{
     font-size: 12px;
     font-family: 'Bebas Neue', cursive;
 }
 
-.patient_vital .all_patient .patient_moniter .vital_moniter div p{
+.patient_vital .all_patient .patient_monitor .vital_moniter div p{
     font-size: 24px;
     font-family: 'Bebas Neue', cursive;
 }
 
-.patient_vital .all_patient .patient_moniter .vital_moniter .hr{
+.patient_vital .all_patient .patient_monitor .vital_moniter .hr{
      margin: 0 4px;
 }
 
-.patient_vital .all_patient .patient_moniter .vital_moniter .sp{
+.patient_vital .all_patient .patient_monitor .vital_moniter .sp{
     margin-right: 4px;
 }
 
-.patient_vital .all_patient .patient_moniter .vital_moniter .resp{
+.patient_vital .all_patient .patient_monitor .vital_moniter .resp{
     margin-right: 4px;
 }
 
-.patient_vital .all_patient .patient_moniter .empty_bed{
+.patient_vital .all_patient .patient_monitor .empty_bed{
     /* width: 240px; */
     position: relative;
 }
 
-.patient_vital .all_patient .patient_moniter .empty_bed p{
+.patient_vital .all_patient .patient_monitor .empty_bed p{
     float: left;
     color: #444;
 }
 
-.patient_vital .all_patient .patient_moniter .empty_bed div{
+.patient_vital .all_patient .patient_monitor .empty_bed div{
     width: 64px;
     height: 64px;
     margin: 3px auto 0 80px;
 }
 
-.patient_vital .all_patient .patient_moniter .empty_bed div img{
+.patient_vital .all_patient .patient_monitor .empty_bed div img{
     width: 100%;
     height: 100%;
 }
 
-.patient_vital .all_patient .patient_moniter .empty_bed .btn_hover{
+.patient_vital .all_patient .patient_monitor .empty_bed .btn_hover{
     position: absolute;
     top: -3px;
     left: 50%;
@@ -1285,44 +1285,44 @@
     opacity: 0;
 }
 
-.patient_vital .all_patient .patient_moniter .empty_bed .btn_hover:hover{
+.patient_vital .all_patient .patient_monitor .empty_bed .btn_hover:hover{
     opacity: 1;
     transition: .3s;
 }
 
-.patient_vital .all_patient .patient_moniter.active{
+.patient_vital .all_patient .patient_monitor.active{
     background-color: #f00;
 }
 
-.patient_vital .all_patient .patient_moniter.active:hover{
+.patient_vital .all_patient .patient_monitor.active:hover{
     background: #C20000;
     transition: .3s;
 }
 
-.patient_vital .all_patient .patient_moniter.active .vital_moniter .ews{
+.patient_vital .all_patient .patient_monitor.active .vital_moniter .ews{
     background-color: #fff;
     color: #f00;
 }
 
-.patient_vital .all_patient .patient_moniter.active .vital_moniter .hr{
+.patient_vital .all_patient .patient_monitor.active .vital_moniter .hr{
     background-color: #fff;
     color: #f00;
 }
 
-.patient_vital .all_patient .patient_moniter.active.yellow{
+.patient_vital .all_patient .patient_monitor.active.yellow{
     background: #FFBA00;
 }
 
-.patient_vital .all_patient .patient_moniter.active.yellow:hover{
+.patient_vital .all_patient .patient_monitor.active.yellow:hover{
     background: #FF9D00;
     transition: .3s;
 }
 
-.patient_vital .all_patient .patient_moniter.active.blue{
+.patient_vital .all_patient .patient_monitor.active.blue{
     background: #0062FF;
 }
 
-.patient_vital .all_patient .patient_moniter.active.blue:hover{
+.patient_vital .all_patient .patient_monitor.active.blue:hover{
     background: #044CBF;
     transition: .3s;
 }
@@ -1331,10 +1331,6 @@
 
 
 /* 모니터링- 병실별 보기 */
-.patient_vital .wrap_inner{
-    /* width: auto; */
-}
-
 .patient_vital .wrap_inner> .container{
     width: auto;
     height: 780px;
@@ -1359,6 +1355,7 @@
 
 .patient_vital .room_view .container{
     width: fit-content;
+    max-width: 1708px;
     padding: 8px 0 0 32px;
     background: linear-gradient(to right, #007A94,#003D4A);
     border-radius: 8px;
@@ -1369,7 +1366,6 @@
     width: 140px;
     height: 64px;
     margin: 12px 48px 0 0;
-    display: inline-block;
 }
 
 .patient_vital .room_view .room_num{
@@ -1382,11 +1378,11 @@
     line-height: 35px;
     color: #fff;
 }
+.patient_vital .room_view .room_count{display:flex;}
 
 .patient_vital .room_view .room_count p{
     font-size: 14px;
     color: #fff;
-    display: inline-block;
 }
 
 .patient_vital .room_view  .btn_setting{
@@ -1410,7 +1406,7 @@
     flex-wrap: wrap;
 }
 
-/* .patient_vital .room_view .patient_moniter{
+/* .patient_vital .room_view .patient_monitor{
     margin-bottom:0;
 } */
 
@@ -1703,10 +1699,10 @@
     height: 32px;
     padding: 7px 16px;
     background: #222;
+    display: flex;
 }
 
 .monitoring_patient .tabular_table .table_title p {
-
     margin-right: 83px;
     display: inline-block;
     font-size: 12px;
@@ -1823,14 +1819,19 @@
 }
 
 .monitoring_patient .cont .graphical .hr_time{
-    padding: 27px 28px 0;
+    width: 1082px;
+    margin: 0 auto;
+    padding: 27px 0 0;
     font-size: 12px;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .monitoring_patient .cont .graphical .hr_time> p{
-    margin-right: 200px;
-    display: inline-block;
+    /* margin-right: 200px; */
+    display: flex;
 }
 
 .monitoring_patient .cont .graphical .hr_time> :last-child{
@@ -1843,20 +1844,21 @@
     position: absolute;
     top: 23px;
     left: 365px;
-    z-index: 999;
+    /* z-index: 999; */
 }
 
 .monitoring_patient .cont .graphical .time_line{
     position: absolute;
     top: -38px;
     left: 50%;
-    margin-left: -38px;
+    transform: translateX(-50%);
 }
 
 .monitoring_patient .cont .graphical .time_line .time{
     font-size: 12px;
     text-align: center;
     color: yellow;
+    display: flex;
 }
 
 .monitoring_patient .cont .graphical .time_line::after{
@@ -1866,7 +1868,8 @@
     height: 220px;
     background-color: #ff0;
     top: 29px;
-    left: 29px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .monitoring_patient .cont .graphical .time_line::before{
@@ -1876,7 +1879,8 @@
     width: 12px;
     height: 8px;
     top: 19px;
-    left: 24px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* event */

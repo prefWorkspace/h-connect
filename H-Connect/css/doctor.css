@@ -38,6 +38,7 @@ p{font-size: 12px;}
 
 .doctor .schedule button{
     width: 100%;
+    height: 72px;
     padding: 20px 16px;
     margin-bottom: 32px;
     border-radius: 8px;
@@ -86,8 +87,9 @@ p{font-size: 12px;}
     content: ''; 
     width: 9px;
     height: 18px; 
-    position: absolute; 
-    background: url('/H-Conenct/img/right_arrow.svg') no-repeat 0 0px /contain;
+    position: absolute;
+    display: block;
+    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px/ contain;
     top: 50%; 
     transform: translateY(-50%);
     right: -50px;
@@ -750,6 +752,8 @@ p{font-size: 12px;}
     font-weight: 500;
 }
 
+.doctor .right .time p{font-size: 16px;}
+
 .doctor .right .cont .title{
     border:none;
     display: flex;
@@ -995,13 +999,14 @@ p{font-size: 12px;}
     min-width: 1248px;
     height: 100%;
     min-height: calc(100vh - 64px);
-    padding: 0;
+    padding-top: 64px;
     background: #222;
 }
 .connect_remote .wrap_inner,
 .connect_opinion .wrap_inner{
     width: 100%;
     min-width: 1248px;
+    padding: 0;
 }
 .doctor .call_connect{
     height: fit-content;
@@ -1568,26 +1573,15 @@ p{font-size: 12px;}
     border-radius: 4px;
 }
 
-.doctor_monitor .rhythm .event .title button:hover{
-    background: #eee;
-}
-
-.doctor_monitor .rhythm .event .btn_delete{
-    border: 1px solid #940045;
-    color: #940045;
-}
-
 .doctor_monitor .rhythm .event .btn_con{
     padding: 10px;
     margin-left: 8px;
-    border: 1px solid #007A94;
-    color: #007A94;
 }
 
 .doctor_monitor .rhythm .event .btn_con:disabled{
-    background: #ccc;
-    color: #888;
-    border: 1px solid #ccc;
+    background: #ccc !important;
+    color: #444 !important;
+    border: 1px solid #ccc !important;
 }
 
 .doctor_monitor .rhythm .event_inner{
@@ -1621,7 +1615,7 @@ p{font-size: 12px;}
     height: 64px;
     border-radius: 4px;
     border: 1px solid #940045;
-    background: url('/H-Conenct/img/graph/grid.svg') no-repeat 0 0px / cover;
+    background: url('/H-Connect/img/graph/grid.svg') no-repeat 0 0px / cover;
     display: flex;
     align-items: center;
     position: relative;
@@ -1897,7 +1891,7 @@ p{font-size: 12px;}
 .monitoring_patient .control{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .monitoring_patient .sp{
@@ -1967,7 +1961,6 @@ p{font-size: 12px;}
     padding: 16px;
     margin: 0 72px 0 64px;
     color: #fff;
-    cursor: pointer;
 }
 
 .monitoring_patient .time div{
@@ -1989,7 +1982,6 @@ p{font-size: 12px;}
     width: 160px;
     padding: 16px;
     color: #00FFFF;
-    cursor: pointer;
 }
 
 .monitoring_patient .pulse .time p{
@@ -2020,15 +2012,18 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .tabular_table .table_title p {
-
     margin-right: 83px;
     display: inline-block;
     font-size: 12px;
     color: #ccc;
 }
 
+.monitoring_patient .tabular_table .table_title .date_time{
+    margin-right: 120px;
+}
+
 .monitoring_patient .tabular_table .table_title .hr{
-    margin-right: 51px;
+    margin-right: 50px;
 }
 
 .monitoring_patient .tabular_table .table_title .temp{
@@ -2050,20 +2045,20 @@ p{font-size: 12px;}
     height: 32px;
     padding: 8px 16px 7px;
     border-bottom: 1px solid #888;
+    display: flex;
 }
 
-.monitoring_patient .tabular_table .table_content div{
-    display: inline-block;
+.monitoring_patient .tabular_table .table_content> div{
+    display: flex;
 }
 
 .monitoring_patient .tabular_table .table_content p{
     font-size: 12px;
     color: #ccc;
-    display: inline-block;
 }
 
 .monitoring_patient .tabular_table .table_content .date_time{
-    margin-right: 40px;
+    margin-right: 80px;
 }
 
 .monitoring_patient .tabular_table .table_content .hr{
@@ -2132,14 +2127,20 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .cont .graphical .hr_time{
-    padding: 27px 28px 0;
+    width: 1082px;
+    margin: 0 auto;
+    padding: 27px 0 0;
     font-size: 12px;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .monitoring_patient .cont .graphical .hr_time> p{
-    margin-right: 201px;
-    display: inline-block;
+    /* margin-right: 201px;
+    display: inline-block; */
+    display: flex;
 }
 
 .monitoring_patient .cont .graphical .hr_time> :last-child{
@@ -2159,13 +2160,14 @@ p{font-size: 12px;}
     position: absolute;
     top: -38px;
     left: 50%;
-    margin-left: -18px;
+    transform: translateX(-50%);
 }
 
 .monitoring_patient .cont .graphical .time_line .time{
     font-size: 12px;
     text-align: center;
     color: yellow;
+    display: flex;
 }
 
 .monitoring_patient .cont .graphical .time_line::after{
@@ -2175,17 +2177,19 @@ p{font-size: 12px;}
     height: 220px;
     background-color: #ff0;
     top: 29px;
-    left: 29px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .monitoring_patient .cont .graphical .time_line::before{
     position: absolute;
     content: '';
-    background: url('/H-Conenct/img/icon/trend_tri.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 19px;
-    left: 24px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* event */
@@ -2618,6 +2622,7 @@ p{font-size: 12px;}
 
 .doctor_patient .tabular_table .table_title{
     padding: 7px 240px 7px 16px;
+    display: flex;
 }
 
 .doctor_patient .tabular_table .table_title .prior{

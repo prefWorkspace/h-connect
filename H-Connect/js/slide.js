@@ -32,11 +32,7 @@ $(function () {
 		scrollbar: {
 			el: ".swiper-scrollbar",
 		},
-		mousewheel:{
-			sensitivity: .3,
-			// thresholdTime: 5,
-			thresholdDelta: 1,
-		}
+		mousewheel: true,
     });
 
     // 응급사진 팝업 슬라이드
@@ -254,12 +250,6 @@ $(function(){
 			sensitivity: .3,
 			// thresholdTime: 5,
 			thresholdDelta: 1,
-		}
-		breakpoints:{
-			1300:{
-				allowTouchMove: false,
-				mousewheel: false
-			}
 		}
     });
 })
