@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "seers"
+    "liveServer.settings.multiRootWorkspaceName": "seers",
+    "liveServer.settings.port": 5501
 }
