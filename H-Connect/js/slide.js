@@ -5,6 +5,8 @@ $(function () {
 		freeMode: true,
 		watchSlidesProgress: true,
 		slidesPerView: "auto",
+		observer: true,
+		observeParents: true,
     });
 
     var swiper2 = new Swiper(".big_picture", {
@@ -17,6 +19,8 @@ $(function () {
 		thumbs: {
 			swiper: swiper,
 		},
+		observer: true,
+		observeParents: true,
     });
 
     // 사고부위 슬라이드
@@ -33,6 +37,8 @@ $(function () {
 			el: ".swiper-scrollbar",
 		},
 		mousewheel: true,
+		observer: true,
+		observeParents: true,
     });
 
     // 응급사진 팝업 슬라이드
@@ -48,6 +54,8 @@ $(function () {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
 		},
+		observer: true,
+		observeParents: true,
     });
 });
 
@@ -246,10 +254,8 @@ $(function(){
 		scrollbar: {
 			el: ".swiper-scrollbar",
 		},
-		mousewheel:{
-			sensitivity: .3,
-			// thresholdTime: 5,
-			thresholdDelta: 1,
-		}
+		mousewheel:true,
+		observer: true,
+		observeParents: true,
     });
 })

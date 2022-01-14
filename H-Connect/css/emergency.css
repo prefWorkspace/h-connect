@@ -1018,6 +1018,8 @@
     margin-left: 15px;
 }
 
+.emergency_main .patient .symptome_info .unre .ure_list{ margin: 0;}
+
 .doctor_emergency .patient .symptome_info .unre .ure_list{
     margin: 0;
 }
@@ -1151,8 +1153,8 @@
 
 /* 환자 바이탈 */
 .emergency .vital{
-    width: 544px;
-    padding: 16px;
+    width: 552px;
+    padding: 16px 12px;
     overflow-y: scroll;
 }
 
@@ -1488,6 +1490,8 @@
     margin-top: 12px;
     overflow:hidden
 }
+
+.emergency .small_picture .swiper-wrapper{padding-left: 8px; padding-bottom: 8px;}
 
 .emergency .small_picture .swiper-slide{
     width: 95px;
@@ -2645,10 +2649,6 @@
 
 .connect_tab .scene_picture .big_picture{
     height: 692px;
-}
-
-.connect_tab .scene_picture .small_picture{
-    padding-left: 8px;
 }
 
 /* connect_scroll */
