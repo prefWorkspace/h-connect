@@ -3,6 +3,7 @@ import commonRequest from "../module/commonRequest.js";
 import localStorageController from "../module/localStorage.js";
 import cookieController from "../module/cookieController.js";
 
+
 const id_Input = document.querySelector(".login #id"); 
 const pw_Input = document.querySelector(".login #pw"); 
 const login_Button = document.querySelector(".login #login_button");
@@ -72,5 +73,5 @@ function Enter_Press_Login(e){
 
 // pw_Input.addEventListener("keypress", Enter_Press_Login)
 
-// login_Button.addEventListener("click", Login_Fetch);
+login_Button.addEventListener("click", Login_Fetch);
 
