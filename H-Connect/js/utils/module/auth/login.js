@@ -1,13 +1,9 @@
-import serverController from "../module/serverController.js";
-import commonRequest from "../module/commonRequest.js";
+import serverController from "../../../module/serverController.js";
+import commonRequest from "../../controller/commonRequest.js";
 import localStorageController from "../module/localStorage.js";
-import cookieController from "../module/cookieController.js";
+import cookieController from "../../../module/cookieController.js";
 
-const id_Input = document.querySelector(".login #id"); 
-const pw_Input = document.querySelector(".login #pw"); 
-const login_Button = document.querySelector(".login #login_button");
-const saveId_input = document.querySelector(".login .check #id_save");
-const autoLogin_input = document.querySelector(".login .check #auto_login");
+const TEN_YEAR_DAY = 10 * 365;
 
 function auto_Login(){
     if(autoLogin_input.checked){
@@ -16,32 +12,36 @@ function auto_Login(){
 };
 
 function get_Saved_Id(){
-    const getId = localStorageController.getLocalS("Hconnect-id");
+    const getId = localStorageController.getLocalS("Hconnect-id");  //로컬스토리지에 저장된 id
     if(getId){
-        id_Input.value = getId;
+        $(".login #id").value = getId;
     }
 };
 
 function Login_Fetch(){
 
+    const id_Input = $(".login #id").val();  //아이디 input 값
+    const pw_Input = $(".login #pw").val(); //비밀번호 input 값
+    const saveId_input = $(".login .check #id_save").is(":checked"); // 아이디 저장 체크 박스  boolean
+
     const req = JSON.stringify({
-            id: id_Input.value,
-            password: pw_Input.value,
+            id: id_Input,
+            password: pw_Input,
             ...commonRequest()
     })
 
-    serverController.connectFetchController("API/Account/LoginHIS", "POST", req, (res) => {
-        
+    serverController.ajaxAwaitController("API/Account/LoginHIS", "POST", req, (res) => {
+        console.log(res)
         if(res.result){
-            const userData = res.userAccount;
-            const TEN_YEAR_DAY = 10 * 365;
+            const userData = res.userAccount; 
+            
             cookieController.setCookie("accesToken", res.accessToken, TEN_YEAR_DAY);
             localStorageController.setLocalS("userData", userData);
-            if(saveId_input.checked) localStorageController.setLocalS("Hconnect-id", id_Input.value);
+            if(saveId_input) localStorageController.setLocalS("Hconnect-id", id_Input.value);
             
             switch(userData.level){
                 case 1: 
-                    // location.href = "nurse/index.html";
+                    location.href = "nurse/index.html";
                     break;
                 case 2: 
                     location.href = "nurse/index.html";
@@ -53,7 +53,7 @@ function Login_Fetch(){
                     location.href = "nurse/index.html";
                     break;
                 case 14: 
-                    // location.href = "nurse/index.html";
+                    location.href = "nurse/index.html";
                     break;
             }
         }else{
@@ -68,9 +68,11 @@ function Enter_Press_Login(e){
     }
 }
 
-// get_Saved_Id();
+get_Saved_Id();
 
 // pw_Input.addEventListener("keypress", Enter_Press_Login)
+$(".login #pw").on("keypress", Enter_Press_Login);
 
 // login_Button.addEventListener("click", Login_Fetch);
+$(".login #login_button").on("click", Login_Fetch);
 
