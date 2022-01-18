@@ -19,4 +19,4 @@ const commonRequest = () => {
         extra: ""
     }
 }
-export default commonRequest;
+// export default commonRequest;
