@@ -67,6 +67,13 @@ const VERSION = {
                     file_path:'/H-Connect/js/nurse/template/monitoring/',
                     version:'2022.01.18.15.22'
                 }
+            },
+            'dashboard' : {
+                'dashboard.js' : {
+                    url_path:'/nurse/dashboard',
+                    file_path:'/H-Connect/js/nurse/template/dashboard/',
+                    version:'2022.01.18.15.22'
+                }
             }
         },
         'action' : {
@@ -74,6 +81,13 @@ const VERSION = {
                 'insert_monitoring.js' : {
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/action/monitoring/',
+                    version:'2022.01.18.15.22'
+                }
+            },
+            'dashboard' : {
+                'insert_dashboard.js' : {
+                    url_path:'/nurse/dashboard',
+                    file_path:'/H-Connect/js/nurse/action/dashboard/',
                     version:'2022.01.18.15.22'
                 }
             },
