@@ -1,6 +1,6 @@
 import serverController from "../module/serverController.js";
 import commonRequest from "../module/commonRequest.js";
-import localStorageController from "../module/localStorage.js";
+import localStorageController from "../module/localStorageController.js";
 
 const ward_Name = document.querySelector(".new_ward .content #ward_Name");
 const ward_Insert_Button = document.querySelector(".new_ward .btn_list #ward_Button");
