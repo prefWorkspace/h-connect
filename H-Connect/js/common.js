@@ -51,10 +51,10 @@ $(function () {
 
 
     // 병동관리 리스트 수정버튼 누르면 나오는 팝업
-    $('.nurse .ward .cont .ward_list .btn_list .btn_modify').on('click', function () {
-        $('.pop.new_ward .overlay').fadeIn();
-        $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
-    });
+    // $('.nurse .ward .cont .ward_list .btn_list .btn_modify').on('click', function () {
+    //     $('.pop.new_ward .overlay').fadeIn();
+    //     $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
+    // });
 
 
     // 병동관리 리스트 누르면 색 변함

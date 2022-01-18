@@ -16,10 +16,13 @@ function getWardData(){
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
                 const title = wardList[i].ward;
-                create_newWard(title);
+                Create_newWard(title, wardList[i].wardCode, wardList[i].orderNumber);
             }
+            aaa();
         }
     })
 }
 
 getWardData();
+
+console.log(timestamp());

@@ -16,7 +16,7 @@ function Insert_New_Ward(){
         requester: userData.userCode,
         organizationCode: userData.organizationCode,
         ward: ward_Name.value,
-        orderNumber: 1,
+        orderNumber: timestamp(),
         etc: "",
         ...commonRequest()
     })
@@ -24,7 +24,7 @@ function Insert_New_Ward(){
     serverController.ajaxAwaitController("API/Manager/InsertWard", "POST", req, (res) => {
         if(res.result){
             const title = $(".new_ward .content #ward_Name").val();
-            create_newWard(title);
+            Create_newWard(title);
         }
     }, (err) => {console.log(err)});
 }

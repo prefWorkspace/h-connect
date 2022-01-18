@@ -1,6 +1,6 @@
 
 
-function create_newWard(title = "병동"){
+function Create_newWard(title = "병동", wardCode, orderNumber){
     const data = `
                 <div class="cont">
                     <div class="ward_list">
@@ -14,7 +14,7 @@ function create_newWard(title = "병동"){
                             </p>
                         </div>
                         <div class="btn_list">
-                            <button type="button" class="btn btn_modify bl">수정</button>
+                            <button type="button" class="btn btn_modify bl" data-wardcode=${wardCode} data-oN=${orderNumber}>수정</button>
                             <button type="button" class="btn btn_delete rd">삭제</button>
                         </div>
                         <div>
@@ -23,7 +23,6 @@ function create_newWard(title = "병동"){
                     </div>
                 </div>
             `;
-
     $(".nurse_main .wrap_inner .section.left.ward .container .title").after(data);
     $('.nurse .ward .cont').fadeIn();
 }
