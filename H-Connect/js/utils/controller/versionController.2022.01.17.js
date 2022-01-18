@@ -69,6 +69,15 @@ const VERSION = {
                 }
             }
         },
+        'action' : {
+            'monitoring' : {
+                'insert_monitoring.js' : {
+                    url_path:'/nurse/monitoring',
+                    file_path:'/H-Connect/js/nurse/action/monitoring/',
+                    version:'2022.01.18.15.22'
+                }
+            }
+        },
         'insertWard.js' : {
             url_path:'/nurse/index||/nurse/measure',
             file_path:'/H-Connect/js/nurse/',

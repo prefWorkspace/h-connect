@@ -1,21 +1,26 @@
-
-function MonitorBlock(index){
+/*
+    s: 
+*/
+function MonitorBlock_Have(index){
+    /**
+    * < patient_monitor >
+    * active(빨간색) : 환자 이상
+    * active yellow(노란색) : 장치 이상
+    * active blue(파란색) : 시스템 이상
+    */
     return `
     <div class="patient_monitor">
-        <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
         <div class="patient_info">
             <p>
                 <span>Patient ID</span>.
                 <span>Patient type</span>
             </p>
         </div>
-
         <div class="vital_moniter">
             <div class="ews">
                 <h3>EWS</h3>
                 <p>3</p>
             </div>
-
             <div class="hr">
                 <h3>HR</h3>
                 <p>108</p>
@@ -36,8 +41,12 @@ function MonitorBlock(index){
                 <p>36.5</p>
             </div>
         </div>
-
-        <!-- 환자가 없을 경우 empty_bed를 보이게 해주세요 -->
+    </div>
+    `;
+}
+function MonitorBlock_None(index){
+    return `
+    <div class="patient_monitor">
         <div class="empty_bed" style="display: none;">
             <p>empty_bed</p>
 
@@ -50,5 +59,5 @@ function MonitorBlock(index){
             </div>
         </div>
     </div>
-    `;
+    `
 }
