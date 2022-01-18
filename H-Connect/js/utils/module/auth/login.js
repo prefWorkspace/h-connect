@@ -1,9 +1,10 @@
-import serverController from "../../../module/serverController.js";
-import commonRequest from "../../controller/commonRequest.js";
-import localStorageController from "../module/localStorage.js";
-import cookieController from "../../../module/cookieController.js";
+// import serverController from "../../../module/serverController.js";
+// import commonRequest from "../../controller/commonRequest.js";
+// import localStorageController from "../module/localStorage.js";
+// import cookieController from "../../../module/cookieController.js";
 
 const TEN_YEAR_DAY = 10 * 365;
+console.log("test")
 
 function auto_Login(){
     if(autoLogin_input.checked){

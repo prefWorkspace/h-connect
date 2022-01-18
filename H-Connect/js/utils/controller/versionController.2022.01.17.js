@@ -45,7 +45,7 @@ const VERSION = {
         'module' : {
             'auth' : {
                 'login.js' : {
-                    url_path:'/index',
+                    url_path:'/',
                     file_path:'/H-Connect/js/utils/module/auth/',
                     version:'2022.01.17.11.33',
                 },
@@ -60,6 +60,15 @@ const VERSION = {
         }
     },
     'nurse' : {
+        'template' : {
+            'index' : {
+                'insert_newWard.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/template/index/',
+                    version:'2022.01.18.15.22'
+                }
+            }
+        },
         'insertWard.js' : {
             url_path:'/nurse/index||/nurse/measure',
             file_path:'/H-Connect/js/nurse/',
@@ -102,7 +111,7 @@ function findJsInVersion(_targetObj, filter){
     }
 }
 scriptSet(); // 스크립트 생성해주는 함수
-+
+
 /* s: settings function */
 
 function pathCalc(){
