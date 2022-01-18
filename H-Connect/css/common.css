@@ -98,6 +98,18 @@ button{border-radius: 4px; background: none;}
     filter: none;
 }
 
+.ews .bell_num{justify-content: flex-end;}
+.ews .bell_num p{ margin-right: 5px;}
+.ews .bell_num button{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ews .bell_num button img{width: auto; height: auto;}
+
+
 .loading_con{
     width: 32px;
     height: 32px;
@@ -1147,12 +1159,14 @@ button{border-radius: 4px; background: none;}
 
 .retouch_btn {
     border-color: #007A94;
+    background: #fff;
     color: #007A94;
     margin-right: 5px;
 }
 
 .delete_btn {
     border-color: #940045;
+    background: #fff;
     color: #940045;
 }
 
@@ -2262,17 +2276,18 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.setting_menu .sweep .container{
-    display: table;
+    /* display: table; */
 }
 
 .pop.setting_menu .sweep .container> div{
-    width: 112px;
-    margin-right: 18px;
-    display: table-cell;
+    /* width: 112px;
+    margin-right: 18px; */
+    display: flex;
 }
 
 .pop.setting_menu .container .input_wrap{
-    margin-bottom: 10px;
+    margin-right: 28px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
@@ -4737,7 +4752,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.attendee .name{
-    padding: 16px;
+    padding: 16px 16px 9px;
     background: #eee;
     border-radius: 4px;
     display: flex;
@@ -4746,6 +4761,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.attendee .name p{
     margin-right: 20px;
+    margin-bottom: 7px;
     font-size: 14px;
 }
 

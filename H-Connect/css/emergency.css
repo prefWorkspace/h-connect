@@ -1836,6 +1836,7 @@
     margin-left: 8px;
 }
 
+
 /* 화상보기 */
 .cam{
     width: 156px;
@@ -2463,12 +2464,25 @@
 .connect .vital .control .ews{
     width: 88px;
     height: 136px;
-    padding: 16px;
+    padding: 16px 13px;
     color: #fff;
 }
 
+.ews .bell_num button{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .connect .vital .ews .bell_num{
-    padding: 0 7px;
+    /* padding: 0 7px; */
+    justify-content: flex-end;
+}
+
+.connect .vital .ews .bell_num p{
+    margin-right: 5px;
 }
 
 .connect .vital .control .mmhg{

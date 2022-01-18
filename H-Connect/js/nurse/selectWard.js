@@ -1,7 +1,3 @@
-import serverController from "../module/serverController.js";
-import commonRequest from "../module/commonRequest.js";
-import localStorageController from "../module/localStorage.js";
-
  
 //userData
 const { userCode: requester, organizationCode } = JSON.parse(localStorageController.getLocalS("userData"));
@@ -17,10 +13,13 @@ function getWardData(){
     serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
         console.log(res);
         if(res.result){
-            console.log("통신 성공");
             const wardList = [...res.wardList];
+            for(let i = 0; i < wardList.length; i++){
+                const title = wardList[i].ward;
+                create_newWard(title);
+            }
         }
     })
 }
 
-// getWardData();
+getWardData();
