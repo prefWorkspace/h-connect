@@ -245,8 +245,9 @@ $(function(){
 	var swiper15 = new Swiper(".part_accident_no", {
 		slidesPerView: 3,
 		spaceBetween: 50,
-		freeMode: true,
+		freeMode: false,
 		slidesPerView: "auto",
+		allowTouchMove: false,
 		pagination: {
 			el: ".swiper-pagination",
 			clickable: true,
@@ -254,7 +255,7 @@ $(function(){
 		scrollbar: {
 			el: ".swiper-scrollbar",
 		},
-		mousewheel:true,
+		mousewheel: false,
 		observer: true,
 		observeParents: true,
     });

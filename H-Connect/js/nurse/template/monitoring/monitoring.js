@@ -1,5 +1,5 @@
-console.log('template load');
-function template(index){
+
+function MonitorBlock(index){
     return `
     <div class="patient_monitor">
         <!-- 환자가 있을경우 patient_info , vital_moniter 보이게 해주세요 -->
@@ -52,18 +52,3 @@ function template(index){
     </div>
     `;
 }
-
-
-function renderTemplate(){
-    const date1 = new Date().getTime();
-    const $patientWrapEl = $('.all_patient');
-    let html = '';
-    for(let i = 0; i < 10; i++){
-        html += template();
-    }
-    $patientWrapEl.html(html);
-    const date2 = new Date().getTime();
-    console.log(date2, date1, date2 - date1);
-}
-
-renderTemplate();

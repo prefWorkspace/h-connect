@@ -21,18 +21,6 @@
     
 </head>
 <body>
-    <!-- 로그아웃 팝업 -->
-    <div class="pop logout">
-        <div class="wrap_inner">
-            <div>
-                <p>선별진료소</p>
-                <h3>선별진료소</h3>
-            </div>
-
-            <button type="button" class="btn_bye">로그아웃</button>  
-        </div>
-    </div>
-
    <div id="wrap">
         <!-- header -->
         <header id="header" class="pc_header doc_header">
@@ -56,6 +44,18 @@
                             선별진료소
                         </button>
                     </div>                          
+                </div>
+            </div>
+
+            <!-- 로그아웃 팝업 -->
+            <div class="pop logout">
+                <div class="wrap_inner">
+                    <div>
+                        <p>선별진료소</p>
+                        <h3>선별진료소</h3>
+                    </div>
+
+                    <button type="button" class="btn_bye">로그아웃</button>  
                 </div>
             </div>
         </header>
@@ -205,6 +205,28 @@
                         </div>
                     </div>
             </div>
+
+            <div class="modal select_clinic_modal data_modal" id="care_retouch">
+                <div class="modal_box">
+                    <div class="modal_header">
+                        <h2 class="modal_title card_title">진료소 수정</h2>
+                    </div>
+                    <div class="modal_cont">
+                        <div class="modal_form">
+                            <div class="form_box">
+                                <span>진료소 이름</span>
+                                <label for="">
+                                    <input type="text" class="clinic_name">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal_footer">
+                        <button type="button" class="btn1 delete_btn cancel_btn">취소</button>
+                        <button type="button" class="btn1 sure_btn">확인</button>
+                    </div>
+                </div>
+        </div>
 
             <div class="modal select_clinic_modal check_modal" id="deleteList">
                 <div class="modal_box">

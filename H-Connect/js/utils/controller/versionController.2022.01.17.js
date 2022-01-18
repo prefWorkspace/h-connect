@@ -51,13 +51,6 @@ const VERSION = {
                 },
             },
         },
-        'template' : {
-            'ex.template.js' : {
-                url_path:'/nurse/monitoring',
-                file_path:'/H-Connect/js/utils/template/',
-                version:'2022.01.17.11.33',
-            }
-        }
     },
     'nurse' : {
         'template' : {
@@ -65,6 +58,13 @@ const VERSION = {
                 'insert_newWard.js' : {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/index/',
+                    version:'2022.01.18.15.22'
+                }
+            },
+            'monitoring' : {
+                'monitoring.js' : {
+                    url_path:'/nurse/monitoring',
+                    file_path:'/H-Connect/js/nurse/template/monitoring/',
                     version:'2022.01.18.15.22'
                 }
             }
@@ -78,6 +78,11 @@ const VERSION = {
             url_path:'/nurse/index||/nurse/measure',
             file_path:'/H-Connect/js/nurse/',
             version:'2022.01.18.16.00'
+        },
+        'insert_monitoring.js' : {
+            url_path:'/nurse/monitoring',
+            file_path:'/H-Connect/js/nurse/',
+            version:'2022.01.18.15.22'
         }
     }
 }
