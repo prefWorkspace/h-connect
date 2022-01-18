@@ -72,7 +72,12 @@ const VERSION = {
         'insertWard.js' : {
             url_path:'/nurse/index||/nurse/measure',
             file_path:'/H-Connect/js/nurse/',
-            version:'2022.01.17.11.33'
+            version:'2022.01.18.15.33'
+        },
+        'selectWard.js' : {
+            url_path:'/nurse/index||/nurse/measure',
+            file_path:'/H-Connect/js/nurse/',
+            version:'2022.01.18.16.00'
         }
     }
 }

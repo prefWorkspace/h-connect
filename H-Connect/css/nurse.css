@@ -110,6 +110,7 @@
 .nurse .left{
     width: 640px;
     /* height: fit-content; */
+    overflow: auto; 
     padding: 16px;
     margin: 0 32px;
 }
@@ -156,7 +157,8 @@
     /* display: none; */
 }
 
-.nurse .ward .cont, .nurse .hospital_room .cont{display: none;}
+/* .nurse .ward .cont, .nurse .hospital_room .cont{display: none;} */
+.nurse .hospital_room .cont{display: none;}
 
 .nurse .left .cont .ward_list,
 .nurse .right .cont .ward_list{
@@ -183,7 +185,8 @@
 
 .nurse .left .cont .ward_list> p{
     margin-top: 8px;
-    margin-right: 84px;
+    width: 100px;
+    /* margin-right: 84px; */
 }
 
 .nurse .left .cont .ward_list .ward_count{
