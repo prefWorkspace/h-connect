@@ -290,11 +290,16 @@ img{
 }
 
 .message .title .meet_menu div{
-    width: 15px;
+    width: 16px;
+    height: 17px;
 }
 
 .message .title .menu img{
     filter: invert(68%) sepia(0%) saturate(7483%) hue-rotate(110deg) brightness(106%) contrast(105%);
+}
+
+.message .title .menu:hover{
+    background: #004F60;
 }
 
 .message .title .menu.on{
@@ -810,6 +815,10 @@ img{
     background: #007A94 ;
 }
 
+.patient_view .btn_list button:hover{
+    background: #004F60;
+}
+
 .patient_view .btn_list button:disabled{
     background: #666;
     color: #888;
@@ -1254,9 +1263,9 @@ img{
     padding-left: 20px;
 }
 
-.vital .control .ews .bell_num> :last-child{
+/* .vital .control .ews .bell_num> :last-child{
     margin-top: 15px;
-}
+} */
 
 .vital .control .mmhg{  
     width: 260px;
@@ -2486,6 +2495,8 @@ img{
     color: #888;
 }
 
+.tab .patient_view> .title .btn_list button:hover{background: #004F60;}
+
 .tab .patient_view .btn_list button.on{
     background: #007A94;
     color: #fff;
@@ -2647,7 +2658,7 @@ img{
 }
 
 .scroll .vital .tab-content.current{
-    height: fit-content;
+    height: 550px;
 }
 
 .scroll .several{
@@ -2676,7 +2687,7 @@ img{
 }
 
 .scroll .cont .event .table_body {
-    height: 540px;
+    height: 388px;
 }
 
 .scroll .several .title{

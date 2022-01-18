@@ -610,7 +610,7 @@ p{font-size: 12px;}
     width: 46px;
     height: 32px;
     margin-left: -22px;
-    background: url('/H-Conenct/img/logo_gray.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/logo_gray.svg') no-repeat 0 0px / contain;
     filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg) brightness(103%) contrast(96%);
 }
 
@@ -1847,6 +1847,20 @@ p{font-size: 12px;}
     border-radius: 0 0 8px 8px;
 }
 
+.doctor_patient .vital_chart .btn_group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_patient .vital_chart .btn_group button{
+    width: 80px;
+    height: 40px;
+}
+
+.doctor_patient .vital_chart .btn_group .btn_re{
+    margin-left: 8px;
+}
+
 .doctor_patient ul.tabs li{
     width: 144px;
     height: 40px;
@@ -1951,9 +1965,9 @@ p{font-size: 12px;}
     display: inline-block;
     width: 24px;
     height: 24px;
-    margin: -3px 8px 0 0;
+    /* margin: -3px 8px 0 0; */
     vertical-align: middle;
-    background: url('/H-Conenct/img/icon/btn_alarmOn.svg') no-repeat / contain;
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat / contain;
 }
 
 .monitoring_patient .mmhg{
@@ -2536,7 +2550,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     right: 150px;
-    background: url('/H-Conenct/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: translateY(91%);
 }
 
@@ -2545,7 +2559,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 44%;
     left: 150px;
-    background: url('/H-Conenct/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg) translateY(-100%);
 }
 
@@ -2556,7 +2570,7 @@ p{font-size: 12px;}
     /* top: 45%; */
     top: 35%;
     right: 100px;
-    background: url('/H-Conenct/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: translateY(81%); */
     transform: translateY(0%);
 }
@@ -2567,7 +2581,7 @@ p{font-size: 12px;}
     height: 17px;
     top: 45%;
     left: 100px;
-    background: url('/H-Conenct/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
     /* transform: rotate(180deg) translateY(-100%); */
     transform: rotate(180deg) translateY(30%);
 }
@@ -2708,7 +2722,7 @@ p{font-size: 12px;}
     width: 9px;
     height: 18px;
     position: absolute;
-    background: url(//H-Conenct/img/right_arrow.svg) no-repeat 0 0px /contain;
+    background: url(//H-Connect/img/right_arrow.svg) no-repeat 0 0px /contain;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
@@ -4130,7 +4144,7 @@ p{font-size: 12px;}
     padding: 3px;
     margin-left: 7px;
     border-radius: 50%;
-    background: #940045 url('/H-Conenct/img/icon/nurse/close.svg') no-repeat;
+    background: #940045 url('/H-Connect/img/icon/nurse/close.svg') no-repeat;
     background-position: 50% 50%;
     vertical-align: inherit;
 }

@@ -556,4 +556,8 @@
 .message_list, .message_talk{display: block;}
 .select_medi, .send_message{display: none;}
 
+.data_modal .modal_header{
+    margin-bottom: 31px;
+}
+
 .modal_form{padding-top: 0;}

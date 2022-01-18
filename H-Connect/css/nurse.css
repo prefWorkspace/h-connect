@@ -1181,7 +1181,8 @@
 
 .patient_vital .all_patient{
     width: 1758px;
-    height: 720px;
+    height: fit-content;
+    max-height: 720px;
     border-radius: 0;
     background: none;
     overflow-y: scroll;
@@ -1335,6 +1336,7 @@
     width: auto;
     height: 780px;
     padding-right: 25px;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
@@ -1622,9 +1624,11 @@
 
 .monitoring_patient .control .ews .bell_num{
     width: 50px;
-    margin-left: 20px;
+    margin-top: 7px;
+    margin-left: 16px;
     display: flex;
     justify-content: initial;
+    align-items: center;
 }
 
 .monitoring_patient .control .ews .bell_num> div{
@@ -1635,11 +1639,19 @@
     margin-right: 8px;
 }
 
+.monitoring_patient .control .ews .bell_num button{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .monitoring_patient .control .bell_name input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
-    margin: -3px 8px 0 0;
+    /* margin: -3px 8px 0 0; */
     vertical-align: middle;
     background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat / contain;
 }
@@ -2782,7 +2794,9 @@
 
 .ward_dashboard .wrap_inner> div{
     width: 100%;
+    min-width: 1880px;
     height: 100%;
+    max-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

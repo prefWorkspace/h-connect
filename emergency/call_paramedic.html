@@ -18,469 +18,6 @@
 
 </head>
   <body>
-    <!-- 참석자 명단 팝업 -->
-    <div class="pop attendee">
-        <div class="wrap_inner">
-            <!-- 참석자 없을때 -->
-            <div class="no_atten">
-                <p>응급협진에 참여중인 의료진이 없습니다.</p>
-            </div>
-
-            <!-- 참석자 있을 때 -->
-            <div class="atten">
-                <div class="count">
-                    <div>
-                        <!-- 참석하는 경우 attend를 넣어주세요 -->
-                        <p class="attend">참석 : 5명</p>
-
-                        <!-- 미참석하는 경우 no_attend를 넣어주세요 -->
-                        <p class="no_attend">미참석 : 1명</p>
-
-                        <!-- 대응불가인 경우 unrespon를 넣어주세요 -->
-                        <p class="unrespon">대응불가 : 1명</p>
-                    </div>
-                    
-                    <p>
-                        <span>5명</span> 참여중
-                    </p>
-                </div>
-
-                <div class="name">
-                    <p>김응급 교수님</p>
-                    <p>김한림 교수님</p>
-                    <p>최협진 교수님</p>
-                    <p>이연차 전공의</p>
-                    <p>박협진 교수님</p>
-
-                    <!-- 불참하는 인원에는 addClass on을 해주세요 -->
-                    <p class="on">박불참 교수님</p>
-                    <p class="on">권바쁨 교수님(대응불가)</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-
-    <!-- 연결 종료 팝업 -->
-    <div class="pop delete connect">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div>
-                    <img src="/H-Connect/img/logo.png" alt="로고">
-                </div>
-
-                <h3>응급협진을 종료합니다.</h3>
-                <h1>연결을 종료 하시겠습니까?</h1>
-
-                <div class="btn_list">
-                    <button type="button" class="btn gr btn_no">아니요</button>
-                    <button type="button" class="btn rdf btn_delete">네, 종료합니다</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 의료진호출 -->
-    <div class="pop call doctor_call emer_call">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div class="title emergency_title">
-                    <div>
-                        <h2>의료진 선택</h2>
-
-                        <div class="btn_list">
-                            <button type="button" class="btn rd btn_cancel">취소</button>
-                            <button type="button" class="btn rdf btn_small btn_doctor_call">
-                                <img src="/H-Connect/img/header/call.png" alt="전화기 아이콘"> 확인
-                            </button>
-                        </div>
-                    </div>
-
-                    <p>호출한 의료진과 응급상황 정보를 공유하고 응급상황에 대응합니다.</p>
-                </div>
-
-                <div class="select_list">
-                    <div>
-                        <p>김협진 교수님</p>
-
-                        <button type="button" class="btn_doctor_delete">
-                            <img src="/H-Connect/img/emergency/delete.png" alt="빨간색 취소아이콘">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <!-- 즐겨찾기 -->
-                    <div class="favorite_list">
-                        <h2>즐겨찾기</h2>
-
-                        <div>
-                            <div class="group">
-                                <div>
-                                    <div class="group_list on">
-                                        <p>외과그룹</p>
-                                    </div>
-
-                                    <div class="group_list">
-                                        <p>세글자</p>
-                                    </div>
-
-                                    <div class="group_list">
-                                        <p>3글자</p>
-                                    </div>
-
-                                    <button type="button" class="btn_next">
-                                        <img src="/H-Connect/img/emergency/btn_next.svg" alt="오른쪽 화살표">
-                                    </button>
-                                </div>
-
-                                <button type="button" class="btn_add">+ 추가</button>
-                            </div>
-
-                            <div class="group_container">
-                                <div class="all_check input_wrap">
-                                    <input type="checkbox" name="selectall" id="check1" class="red_custom" onclick="selectAll(this)">
-                                    <label for="check1"></label>
-                                    <label for="check1">모두선택</label>
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" name="doctor" id="check2" class="red_custom" onclick="checkSelectAll(this)">
-                                        <label for="check2"></label>
-                                        <label for="check2">
-                                            <span>강수술 교수님</span>
-                                            <span>일반외과</span>
-                                        </label>                                        
-                                    </div>
-    
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="favorite2" checked>
-                                        <label for="favorite2">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" name="doctor" id="check3" class="red_custom" onclick="checkSelectAll(this)">
-                                        <label for="check3"></label>
-                                        <label for="check3">
-                                            <span>김협진 교수님</span>
-                                            <span>일반외과</span>
-                                        </label>                                        
-                                    </div>
-    
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="favorite3" checked>
-                                        <label for="favorite3">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" name="doctor" id="check4" class="red_custom" onclick="checkSelectAll(this)">
-                                        <label for="check4"></label>
-                                        <label for="check4">
-                                            <span>김흉부 교수님</span>
-                                            <span>일반외과</span>
-                                        </label>                                        
-                                    </div>
-    
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="favorite4" checked>
-                                        <label for="favorite4">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" name="doctor" id="check5" class="red_custom" onclick="checkSelectAll(this)">
-                                        <label for="check5"></label>
-                                        <label for="check5">
-                                            <span>박골절 교수님</span>
-                                            <span>일반외과</span>
-                                        </label>                                        
-                                    </div>
-
-    
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="favorite5" checked>
-                                        <label for="favorite5">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" name="doctor" id="check6" class="red_custom" onclick="checkSelectAll(this)">
-                                        <label for="check6"></label>
-                                        <label for="check6">
-                                            <span>김두통 교수님</span>
-                                            <span>일반외과</span>
-                                        </label>                                        
-                                    </div>
-    
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="favorite6" checked>
-                                        <label for="favorite6">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 의료진선택 -->
-                    <div class="select_doctor">
-                        <h2>의료진 선택</h2>
-
-                        <div class="search_container">
-                            <input type="text" placeholder="이름 혹은 담당병과명을 입력해주세요.">
-            
-                            <button type="button" class="btn_search">
-                                <div>
-                                    <img src="/H-Connect/img/header/search.svg" alt="검색표시">
-                                </div>                                
-                            </button>
-                        </div>
-
-                        <div class="doctor_list">
-                            <div class="list_inner">
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check" class="red_custom">
-                                        <label for="list_check"></label>
-                                        <label for="list_check">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite">
-                                        <label for="list_favorite">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check2" class="red_custom">
-                                        <label for="list_check2"></label>
-                                        <label for="list_check2">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite2">
-                                        <label for="list_favorite2">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check3" class="red_custom">
-                                        <label for="list_check3"></label>
-                                        <label for="list_check3">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite3">
-                                        <label for="list_favorite3">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check4" class="red_custom">
-                                        <label for="list_check4"></label>
-                                        <label for="list_check4">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite4">
-                                        <label for="list_favorite4">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check5" class="red_custom">
-                                        <label for="list_check5"></label>
-                                        <label for="list_check5">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite5">
-                                        <label for="list_favorite5">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check6" class="red_custom">
-                                        <label for="list_check6"></label>
-                                        <label for="list_check6">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite6">
-                                        <label for="list_favorite6">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check7" class="red_custom">
-                                        <label for="list_check7"></label>
-                                        <label for="list_check7">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite7">
-                                        <label for="list_favorite7">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check8" class="red_custom">
-                                        <label for="list_check8"></label>
-                                        <label for="list_check8">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite8">
-                                        <label for="list_favorite8">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check9" class="red_custom">
-                                        <label for="list_check9"></label>
-                                        <label for="list_check9">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite9">
-                                        <label for="list_favorite9">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check10" class="red_custom">
-                                        <label for="list_check10"></label>
-                                        <label for="list_check10">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite10">
-                                        <label for="list_favorite10">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-
-                                <div>
-                                    <div class="input_wrap">
-                                        <input type="checkbox" id="list_check11" class="red_custom">
-                                        <label for="list_check11"></label>
-                                        <label for="list_check11">
-                                            <span>강수술 교수님</span>
-
-                                            <span>일반외과</span>
-                                        </label>
-                                    </div>
-                                    
-
-                                    <div class="favorite_container">
-                                        <input type="checkbox" id="list_favorite11">
-                                        <label for="list_favorite11">
-                                            <span></span>
-                                        </label>
-                                    </div>  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="wrap">
       <!--헤더 pc-->
         <header id="header" class="pc_header paramedic">
@@ -530,7 +67,470 @@
                     </div>
                     
                 </div>
-            </div>       
+            </div> 
+            
+            <!-- 참석자 명단 팝업 -->
+            <div class="pop attendee">
+                <div class="wrap_inner">
+                    <!-- 참석자 없을때 -->
+                    <div class="no_atten">
+                        <p>응급협진에 참여중인 의료진이 없습니다.</p>
+                    </div>
+
+                    <!-- 참석자 있을 때 -->
+                    <div class="atten">
+                        <div class="count">
+                            <div>
+                                <!-- 참석하는 경우 attend를 넣어주세요 -->
+                                <p class="attend">참석 : 5명</p>
+
+                                <!-- 미참석하는 경우 no_attend를 넣어주세요 -->
+                                <p class="no_attend">미참석 : 1명</p>
+
+                                <!-- 대응불가인 경우 unrespon를 넣어주세요 -->
+                                <p class="unrespon">대응불가 : 1명</p>
+                            </div>
+                            
+                            <p>
+                                <span>5명</span> 참여중
+                            </p>
+                        </div>
+
+                        <div class="name">
+                            <p>김응급 교수님</p>
+                            <p>김한림 교수님</p>
+                            <p>최협진 교수님</p>
+                            <p>이연차 전공의</p>
+                            <p>박협진 교수님</p>
+
+                            <!-- 불참하는 인원에는 addClass on을 해주세요 -->
+                            <p class="on">박불참 교수님</p>
+                            <p class="on">권바쁨 교수님(대응불가)</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 연결 종료 팝업 -->
+            <div class="pop delete connect">
+                <div class="overlay">
+                    <div class="pop_cont">
+                        <div>
+                            <img src="/H-Connect/img/logo.png" alt="로고">
+                        </div>
+
+                        <h3>응급협진을 종료합니다.</h3>
+                        <h1>연결을 종료 하시겠습니까?</h1>
+
+                        <div class="btn_list">
+                            <button type="button" class="btn gr btn_no">아니요</button>
+                            <button type="button" class="btn rdf btn_delete">네, 종료합니다</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 의료진호출 -->
+            <div class="pop call doctor_call emer_call">
+                <div class="overlay">
+                    <div class="pop_cont">
+                        <div class="title emergency_title">
+                            <div>
+                                <h2>의료진 선택</h2>
+
+                                <div class="btn_list">
+                                    <button type="button" class="btn rd btn_cancel">취소</button>
+                                    <button type="button" class="btn rdf btn_small btn_doctor_call">
+                                        <img src="/H-Connect/img/header/call.png" alt="전화기 아이콘"> 확인
+                                    </button>
+                                </div>
+                            </div>
+
+                            <p>호출한 의료진과 응급상황 정보를 공유하고 응급상황에 대응합니다.</p>
+                        </div>
+
+                        <div class="select_list">
+                            <div>
+                                <p>김협진 교수님</p>
+
+                                <button type="button" class="btn_doctor_delete">
+                                    <img src="/H-Connect/img/emergency/delete.png" alt="빨간색 취소아이콘">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <!-- 즐겨찾기 -->
+                            <div class="favorite_list">
+                                <h2>즐겨찾기</h2>
+
+                                <div>
+                                    <div class="group">
+                                        <div>
+                                            <div class="group_list on">
+                                                <p>외과그룹</p>
+                                            </div>
+
+                                            <div class="group_list">
+                                                <p>세글자</p>
+                                            </div>
+
+                                            <div class="group_list">
+                                                <p>3글자</p>
+                                            </div>
+
+                                            <button type="button" class="btn_next">
+                                                <img src="/H-Connect/img/emergency/btn_next.svg" alt="오른쪽 화살표">
+                                            </button>
+                                        </div>
+
+                                        <button type="button" class="btn_add">+ 추가</button>
+                                    </div>
+
+                                    <div class="group_container">
+                                        <div class="all_check input_wrap">
+                                            <input type="checkbox" name="selectall" id="check1" class="red_custom" onclick="selectAll(this)">
+                                            <label for="check1"></label>
+                                            <label for="check1">모두선택</label>
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" name="doctor" id="check2" class="red_custom" onclick="checkSelectAll(this)">
+                                                <label for="check2"></label>
+                                                <label for="check2">
+                                                    <span>강수술 교수님</span>
+                                                    <span>일반외과</span>
+                                                </label>                                        
+                                            </div>
+            
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="favorite2" checked>
+                                                <label for="favorite2">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" name="doctor" id="check3" class="red_custom" onclick="checkSelectAll(this)">
+                                                <label for="check3"></label>
+                                                <label for="check3">
+                                                    <span>김협진 교수님</span>
+                                                    <span>일반외과</span>
+                                                </label>                                        
+                                            </div>
+            
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="favorite3" checked>
+                                                <label for="favorite3">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" name="doctor" id="check4" class="red_custom" onclick="checkSelectAll(this)">
+                                                <label for="check4"></label>
+                                                <label for="check4">
+                                                    <span>김흉부 교수님</span>
+                                                    <span>일반외과</span>
+                                                </label>                                        
+                                            </div>
+            
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="favorite4" checked>
+                                                <label for="favorite4">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" name="doctor" id="check5" class="red_custom" onclick="checkSelectAll(this)">
+                                                <label for="check5"></label>
+                                                <label for="check5">
+                                                    <span>박골절 교수님</span>
+                                                    <span>일반외과</span>
+                                                </label>                                        
+                                            </div>
+
+            
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="favorite5" checked>
+                                                <label for="favorite5">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" name="doctor" id="check6" class="red_custom" onclick="checkSelectAll(this)">
+                                                <label for="check6"></label>
+                                                <label for="check6">
+                                                    <span>김두통 교수님</span>
+                                                    <span>일반외과</span>
+                                                </label>                                        
+                                            </div>
+            
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="favorite6" checked>
+                                                <label for="favorite6">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 의료진선택 -->
+                            <div class="select_doctor">
+                                <h2>의료진 선택</h2>
+
+                                <div class="search_container">
+                                    <input type="text" placeholder="이름 혹은 담당병과명을 입력해주세요.">
+                    
+                                    <button type="button" class="btn_search">
+                                        <div>
+                                            <img src="/H-Connect/img/header/search.svg" alt="검색표시">
+                                        </div>                                
+                                    </button>
+                                </div>
+
+                                <div class="doctor_list">
+                                    <div class="list_inner">
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check" class="red_custom">
+                                                <label for="list_check"></label>
+                                                <label for="list_check">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite">
+                                                <label for="list_favorite">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check2" class="red_custom">
+                                                <label for="list_check2"></label>
+                                                <label for="list_check2">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite2">
+                                                <label for="list_favorite2">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check3" class="red_custom">
+                                                <label for="list_check3"></label>
+                                                <label for="list_check3">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite3">
+                                                <label for="list_favorite3">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check4" class="red_custom">
+                                                <label for="list_check4"></label>
+                                                <label for="list_check4">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite4">
+                                                <label for="list_favorite4">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check5" class="red_custom">
+                                                <label for="list_check5"></label>
+                                                <label for="list_check5">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite5">
+                                                <label for="list_favorite5">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check6" class="red_custom">
+                                                <label for="list_check6"></label>
+                                                <label for="list_check6">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite6">
+                                                <label for="list_favorite6">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check7" class="red_custom">
+                                                <label for="list_check7"></label>
+                                                <label for="list_check7">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite7">
+                                                <label for="list_favorite7">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check8" class="red_custom">
+                                                <label for="list_check8"></label>
+                                                <label for="list_check8">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite8">
+                                                <label for="list_favorite8">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check9" class="red_custom">
+                                                <label for="list_check9"></label>
+                                                <label for="list_check9">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite9">
+                                                <label for="list_favorite9">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check10" class="red_custom">
+                                                <label for="list_check10"></label>
+                                                <label for="list_check10">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite10">
+                                                <label for="list_favorite10">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+
+                                        <div>
+                                            <div class="input_wrap">
+                                                <input type="checkbox" id="list_check11" class="red_custom">
+                                                <label for="list_check11"></label>
+                                                <label for="list_check11">
+                                                    <span>강수술 교수님</span>
+
+                                                    <span>일반외과</span>
+                                                </label>
+                                            </div>
+                                            
+
+                                            <div class="favorite_container">
+                                                <input type="checkbox" id="list_favorite11">
+                                                <label for="list_favorite11">
+                                                    <span></span>
+                                                </label>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
 
       <!--콘텐츠-->
