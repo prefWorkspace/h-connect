@@ -35,14 +35,13 @@ const serverController = {
     ajaxAwaitController: (path,type,formData,callBack,errorCallBack) => {
         return  $.ajax({
             beforeSend: function (xhr){
-                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 xhr.setRequestHeader("SX-Auth-Token", LOGIN_TOKEN ? LOGIN_TOKEN : null);
             },
             url:`${ip}${path}`,
             type: type,
             data: formData ? formData : null,
             processData: false,
-            contentType: false,
+            contentType: "application/json;charset=UTF-8",
             success: function (data) {
                 if(callBack) callBack(data);
                 return data;

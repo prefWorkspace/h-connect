@@ -102,7 +102,7 @@ function findJsInVersion(_targetObj, filter){
     }
 }
 scriptSet(); // 스크립트 생성해주는 함수
-
++
 /* s: settings function */
 
 function pathCalc(){
