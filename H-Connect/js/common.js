@@ -46,7 +46,7 @@ $(function () {
     // 병동생성 팝업에서 확인 누르면 나오게
     $('.pop .overlay .pop_cont .btn_list .btn_check').on('click', function () {
         $('.pop .overlay').fadeOut();
-        $('.nurse .ward .cont').fadeIn();
+        // $('.nurse .ward .cont').fadeIn();  //병동 더미 데이터 나오게 하는 애
     });
 
 

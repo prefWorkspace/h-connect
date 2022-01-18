@@ -28,4 +28,4 @@ const cookieController = {
 }
 
 
-export default cookieController;
+// export default cookieController;

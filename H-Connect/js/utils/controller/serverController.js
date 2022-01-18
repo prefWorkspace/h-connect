@@ -1,5 +1,5 @@
-import cookieController from "./cookieController.js";
-import localStorageController from "./localStorageController.js";
+// import cookieController from "./cookieController.js";
+// import localStorageController from "./localStorageController.js";
 
 // 서버 ip
 const ip = "https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/"; 
@@ -35,14 +35,13 @@ const serverController = {
     ajaxAwaitController: (path,type,formData,callBack,errorCallBack) => {
         return  $.ajax({
             beforeSend: function (xhr){
-                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 xhr.setRequestHeader("SX-Auth-Token", LOGIN_TOKEN ? LOGIN_TOKEN : null);
             },
             url:`${ip}${path}`,
             type: type,
             data: formData ? formData : null,
             processData: false,
-            contentType: false,
+            contentType: "application/json;charset=UTF-8",
             success: function (data) {
                 if(callBack) callBack(data);
                 return data;
@@ -57,4 +56,4 @@ const serverController = {
     }
 };
 
-export default serverController;
+// export default serverController;
