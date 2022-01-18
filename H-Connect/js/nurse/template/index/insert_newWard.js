@@ -1,7 +1,6 @@
 
 
 function Create_newWard(title = "병동", wardCode, orderNumber, deactivate){
-    // const deactivate = deactivate ? 
     const data = `
                 <div class="cont">
                     <div class="ward_list">
@@ -15,8 +14,8 @@ function Create_newWard(title = "병동", wardCode, orderNumber, deactivate){
                             </p>
                         </div>
                         <div class="btn_list">
-                            <button type="button" class="btn btn_modify bl" data-wardcode=${wardCode} data-oN=${orderNumber}>수정</button>
-                            <button type="button" class="btn btn_delete rd">삭제</button>
+                            <button type="button" class="btn btn_modify bl" data-wardcode=${wardCode} data-oN=${orderNumber} data-deactivate=${deactivate} >수정</button>
+                            <button type="button" class="btn btn_delete rd" data-wardcode=${wardCode}>삭제</button>
                         </div>
                         <div>
                             <img src="/H-Connect/img/right_arrow.svg" alt="오른쪽 화살표 아이콘">

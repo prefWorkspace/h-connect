@@ -72,10 +72,10 @@ $(function () {
         $('.pop .overlay').fadeOut();
     });
         // 네 삭제합니다.
-    $('.pop.delete .btn_cut').on('click', function(){
-        $('.nurse .ward .cont .ward_list').hide();
-        $('.pop.delete .overlay').hide();
-    });
+    // $('.pop.delete .btn_cut').on('click', function(){
+    //     $('.nurse .ward .cont .ward_list').hide();
+    //     $('.pop.delete .overlay').hide();
+    // });
 
 
 

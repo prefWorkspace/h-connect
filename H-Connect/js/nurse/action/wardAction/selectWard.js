@@ -18,11 +18,9 @@ function getWardData(){
                 const title = wardList[i].ward;
                 Create_newWard(title, wardList[i].wardCode, wardList[i].orderNumber, wardList[i].deactivate);
             }
-            aaa();
+            updateWard();
+            deleteWard();
         }
     })
 }
-
 getWardData();
-
-console.log(timestamp());
