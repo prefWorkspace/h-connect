@@ -16,7 +16,7 @@ function getWardData(){
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
                 const title = wardList[i].ward;
-                Create_newWard(title, wardList[i].wardCode, wardList[i].orderNumber);
+                Create_newWard(title, wardList[i].wardCode, wardList[i].orderNumber, wardList[i].deactivate);
             }
             aaa();
         }

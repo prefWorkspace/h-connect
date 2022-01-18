@@ -1,6 +1,7 @@
 
 
-function Create_newWard(title = "병동", wardCode, orderNumber){
+function Create_newWard(title = "병동", wardCode, orderNumber, deactivate){
+    // const deactivate = deactivate ? 
     const data = `
                 <div class="cont">
                     <div class="ward_list">
