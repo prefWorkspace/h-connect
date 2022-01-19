@@ -138,14 +138,13 @@ button{border-radius: 4px; background: none;}
     font-size: 14px;
     width: 120px;
     line-height: 32px;
-    border: 1px solid #fff;
     border-radius: 4px;
     transition: 0.2s all;
 }
 
 .btn.bl{background-color: #fff !important; color: #007A94 !important; border: 1px solid #007A94 !important;}
 .btn.bl:hover{background-color: #C5D8DC !important;}
-.btn.blf{background-color: #007A94 !important; color: #fff !important;}
+.btn.blf{background-color: #007A94 !important; color: #fff !important; border: 1px solid #007A94 !important;}
 .btn.rd{background-color: #fff !important; color: #940045 !important; border: 1px solid #940045 !important;}
 .btn.rd:hover{background-color: #F5EEF1 !important;}
 .btn.rdf{background-color: #940045 !important; color: #fff !important;}
@@ -212,6 +211,16 @@ button{border-radius: 4px; background: none;}
     background-color: #007A94;
     border-color: #007A94;
 }
+
+
+/* 
+<div class="form_box">
+    <span></span>
+    <label for="">
+        <input type="text" class="clinic_name">
+    </label>
+</div> 
+*/
 
 .form_box {
     display: flex;
@@ -729,11 +738,11 @@ button{border-radius: 4px; background: none;}
     color: #fff;
 }
 
-.doc_connect .header_right> h5:nth-child(2){
+.doc_connect .header_right> :nth-child(3){
     margin:0 48px 0 31px;
 }
 
-.doc_connect button img{
+.doc_connect .btn_end img{
     filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }
 
@@ -1158,22 +1167,20 @@ button{border-radius: 4px; background: none;}
 }
 
 .retouch_btn {
+    border: 1px solid #007A94;
     border-color: #007A94;
     background: #fff;
     color: #007A94;
+    background: #fff;
     margin-right: 5px;
 }
 
 .delete_btn {
+    border: 1px solid #940045;
     border-color: #940045;
     background: #fff;
     color: #940045;
-}
-
-/* btn_active */
-.card_cont_list.btn_active .re_del_btn {
-    background-color: #fff;
-    border-color: #fff;
+    background: #fff;
 }
 
 
@@ -1246,6 +1253,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .data_modal .modal_header {
+    margin-bottom: 31px;
     border-bottom: 1px solid #007A94;
     padding-bottom: 5px;
 }
@@ -1256,10 +1264,13 @@ button{border-radius: 4px; background: none;}
     bottom: 33px;
 }
 
+.data_modal .modal_footer button{
+    height: 40px;
+}
 
 
 
-.cancel_btn {
+/* .cancel_btn {
     line-height: 40px;
     margin-right: 5px;
 }
@@ -1270,21 +1281,19 @@ button{border-radius: 4px; background: none;}
 }
 
 /* :hover */
-.cancel_btn:hover {
+/* .cancel_btn:hover {
     background-color: #EEEEEE;
 }
 
 .sure_btn:hover {
     background-color: #01647a;
-}
+} */ */
 
 
 /* modal_form */
-.modal_form {
-    padding-top: 31px;
-}
+.modal_form {padding-top: 31px;}
 
-
+.modal_form p{font-size: 16px;}
 
 
 
@@ -1322,6 +1331,17 @@ button{border-radius: 4px; background: none;}
     font-size: 24px;
 }
 
+.check_modal .modal_footer {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 48px;
+}
+
+.check_modal .modal_footer button{
+    width: 128px;
+    height: 48px;
+}
 .check_modal .cancel_btn {
     width: 128px;
     line-height: 48px;
@@ -2276,16 +2296,21 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.setting_menu .sweep .container{
+    display: table;
     /* display: table; */
 }
 
 .pop.setting_menu .sweep .container> div{
+    width: 112px;
+    margin-right: 18px;
+    display: table-cell;
     /* width: 112px;
     margin-right: 18px; */
     display: flex;
 }
 
 .pop.setting_menu .container .input_wrap{
+    margin-bottom: 10px;
     margin-right: 28px;
     margin-bottom: 15px;
     display: flex;
@@ -4752,6 +4777,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.attendee .name{
+    padding: 16px;
     padding: 16px 16px 9px;
     background: #eee;
     border-radius: 4px;

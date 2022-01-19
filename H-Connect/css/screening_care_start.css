@@ -209,6 +209,7 @@
 }
 
 .modal_footer a{
+    width: 128px;
     line-height: 46px;
 }
 

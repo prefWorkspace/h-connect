@@ -29,5 +29,4 @@ function Insert_New_Ward(){
     }, (err) => {console.log(err)});
 }
 
-
 $(".new_ward .btn_list #ward_Button").on("click", Insert_New_Ward);

@@ -112,6 +112,11 @@ const VERSION = {
                     file_path:'/H-Connect/js/nurse/action/wardAction/',
                     version:'2022.01.18.16.49'
                 },
+                'deleteWard.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/wardAction/',
+                    version:'2022.01.18.18.47'
+                }
             }
         },
         'insert_monitoring.js' : {

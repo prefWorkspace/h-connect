@@ -109,7 +109,7 @@ p{font-size: 12px;}
 }
 
 .doctor .schedule .container{
-    height: 605px;
+    height: 616px;
 }
 
 .doctor .schedule .title{
@@ -254,7 +254,7 @@ p{font-size: 12px;}
 
 /* 2주보기 주간달력 */
 .doctor .my_plan .weekly{
-    width: 1248px;
+    /* width: 1248px; */
     height: 512px;
     padding: 16px;
     position: relative;
@@ -285,7 +285,7 @@ p{font-size: 12px;}
 }
 
 .doctor .my_plan .weekly .inner{
-    width: 1158px;
+    width: 1210px;
     height: 495px;
     display: flex;
     top: 16px;
