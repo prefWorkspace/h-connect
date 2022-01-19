@@ -45,7 +45,7 @@ const VERSION = {
         'module' : {
             'auth' : {
                 'login.js' : {
-                    url_path:'/',
+                    url_path:'/||/index',
                     file_path:'/H-Connect/js/utils/module/auth/',
                     version:'2022.01.17.11.33',
                 },
@@ -86,6 +86,11 @@ const VERSION = {
             },
             'dashboard' : {
                 'insert_dashboard.js' : {
+                    url_path:'/nurse/dashboard',
+                    file_path:'/H-Connect/js/nurse/action/dashboard/',
+                    version:'2022.01.18.15.22'
+                },
+                'select_ward.js' : {
                     url_path:'/nurse/dashboard',
                     file_path:'/H-Connect/js/nurse/action/dashboard/',
                     version:'2022.01.18.15.22'
