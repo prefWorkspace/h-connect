@@ -1,6 +1,15 @@
- 
+
 //userData
 const { userCode: requester, organizationCode } = JSON.parse(localStorageController.getLocalS("userData"));
+
+//병동 클릭시 배경색 변경 active
+function clickActive(){
+    $('.nurse .ward .cont .ward_list').on('click', function(){
+        $('.nurse .ward .cont .ward_list').removeClass('on');
+        $(this).addClass('on');
+        $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
+    });
+}
 
 function getWardData(){
 
@@ -20,6 +29,7 @@ function getWardData(){
             }
             updateWard();
             deleteWard();
+            clickActive();
         }
     })
 }

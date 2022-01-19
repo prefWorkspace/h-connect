@@ -7,6 +7,7 @@
 const ward_Name = document.querySelector(".new_ward .content #ward_Name");
 const ward_Insert_Button = document.querySelector(".new_ward .btn_list #ward_Button");
 
+
 //유저 정보 
 const userData = JSON.parse(localStorageController.getLocalS("userData"));
 
@@ -16,15 +17,21 @@ function Insert_New_Ward(){
         requester: userData.userCode,
         organizationCode: userData.organizationCode,
         ward: ward_Name.value,
-        orderNumber: timestamp(),
+        // orderNumber: timestamp(),
+        orderNumber: 1,
         etc: "",
         ...commonRequest()
     })
+    console.log("req===")
+    console.log(req)
 
     serverController.ajaxAwaitController("API/Manager/InsertWard", "POST", req, (res) => {
         if(res.result){
-            const title = $(".new_ward .content #ward_Name").val();
-            Create_newWard(title);
+            // const title = $(".new_ward .content #ward_Name").val();
+            // Create_newWard(title);
+            $("div").remove(".cont");
+            getWardData();
+
         }
     }, (err) => {console.log(err)});
 }

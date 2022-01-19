@@ -58,10 +58,10 @@ $(function () {
 
 
     // 병동관리 리스트 누르면 색 변함
-    $('.nurse .ward .cont .ward_list').on('click', function(){
-        $('.nurse .ward .cont .ward_list').toggleClass('on');
-        $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
-    });
+    // $('.nurse .ward .cont .ward_list').on('click', function(){
+    //     $('.nurse .ward .cont .ward_list').toggleClass('on');
+    //     $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
+    // });
 
     // 병동삭제
     // $('.btn_delete').on('click', function () {
