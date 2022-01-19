@@ -738,7 +738,7 @@ button{border-radius: 4px; background: none;}
     color: #fff;
 }
 
-.doc_connect .header_right> :nth-child(3){
+.doc_connect .header_right> :nth-child(2){
     margin:0 48px 0 31px;
 }
 
