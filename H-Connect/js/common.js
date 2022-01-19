@@ -1161,11 +1161,21 @@ $('.doctor .nurse_send').on('click', function(){
 
     // confirm 버튼 클릭
     $('.doctor_monitor .rhythm .event .btn_con').on('click', function(){
-        $('.doctor_monitor .new .row.on').hide();
+        // $('.doctor_monitor .new .row.on').hide();
         $('.doctor_monitor .new').hide();
         $('.doctor_monitor .pre').show();
         $('.doctor_monitor .rhythm').hide();
         $('.doctor_monitor .pre_rhythm').show();
+    })
+
+    // 배경
+    $('.doctor_monitor .new_patient.new .row').on('click', function(){
+        $(this).addClass('on');
+        $('.doctor_monitor .new_patient.new .row').not(this).removeClass('on');
+    })
+    $('.doctor_monitor .new_patient.pre .row').on('click', function(){
+        $(this).addClass('on');
+        $('.doctor_monitor .new_patient.pre .row').not(this).removeClass('on');
     })
 
     // vital sign 저장 팝업

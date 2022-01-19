@@ -1496,7 +1496,7 @@
 }
 
 .doctor_new.message .container{
-    height: 312px;
+    height: 380px;
     padding: 0 8px;
     margin-top: 12px;
     overflow-y: scroll;
@@ -1529,9 +1529,9 @@
     background: #007A94;
 }
 
-.doctor_new.message .group .btn_next img{
+/* .doctor_new.message .group .btn_next img{
     filter: invert(30%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
-}
+} */
 
 .doctor_new.message .group .btn_add{color: #007A94;}
 
