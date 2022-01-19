@@ -126,14 +126,13 @@ button{border-radius: 4px; background: none;}
     font-size: 14px;
     width: 120px;
     line-height: 32px;
-    border: 1px solid #fff;
     border-radius: 4px;
     transition: 0.2s all;
 }
 
 .btn.bl{background-color: #fff !important; color: #007A94 !important; border: 1px solid #007A94 !important;}
 .btn.bl:hover{background-color: #C5D8DC !important;}
-.btn.blf{background-color: #007A94 !important; color: #fff !important;}
+.btn.blf{background-color: #007A94 !important; color: #fff !important; border: 1px solid #007A94 !important;}
 .btn.rd{background-color: #fff !important; color: #940045 !important; border: 1px solid #940045 !important;}
 .btn.rd:hover{background-color: #F5EEF1 !important;}
 .btn.rdf{background-color: #940045 !important; color: #fff !important;}
@@ -1156,20 +1155,16 @@ button{border-radius: 4px; background: none;}
 }
 
 .retouch_btn {
-    border-color: #007A94;
+    border: 1px solid #007A94;
     color: #007A94;
+    background: #fff;
     margin-right: 5px;
 }
 
 .delete_btn {
-    border-color: #940045;
+    border: 1px solid #940045;
     color: #940045;
-}
-
-/* btn_active */
-.card_cont_list.btn_active .re_del_btn {
-    background-color: #fff;
-    border-color: #fff;
+    background: #fff;
 }
 
 
@@ -1242,6 +1237,7 @@ button{border-radius: 4px; background: none;}
 }
 
 .data_modal .modal_header {
+    margin-bottom: 31px;
     border-bottom: 1px solid #007A94;
     padding-bottom: 5px;
 }
@@ -1252,10 +1248,13 @@ button{border-radius: 4px; background: none;}
     bottom: 33px;
 }
 
+.data_modal .modal_footer button{
+    height: 40px;
+}
 
 
 
-.cancel_btn {
+/* .cancel_btn {
     line-height: 40px;
     margin-right: 5px;
 }
@@ -1266,21 +1265,19 @@ button{border-radius: 4px; background: none;}
 }
 
 /* :hover */
-.cancel_btn:hover {
+/* .cancel_btn:hover {
     background-color: #EEEEEE;
 }
 
 .sure_btn:hover {
     background-color: #01647a;
-}
+} */ */
 
 
 /* modal_form */
-.modal_form {
-    padding-top: 31px;
-}
+.modal_form {padding-top: 31px;}
 
-
+.modal_form p{font-size: 16px;}
 
 
 
@@ -1325,32 +1322,16 @@ button{border-radius: 4px; background: none;}
     bottom: 48px;
 }
 
-.check_modal .cancel_btn {
-    background-color: #eee;
-    border-color: #eee;
-    color: #888888;
-}
-
-.check_modal .cancel_btn:hover{
-    background: #ccc;
-    border-color: #ccc;
-}
-
-.check_modal .sure_btn {
-    background-color: #940045;
-    border-color: #940045;
-}
-
-.check_modal .sure_btn:hover{
-    background: #4A0000;
-    border-color: #4A0000;
+.check_modal .modal_footer button{
+    width: 128px;
+    height: 48px;
 }
 
 .check_modal .modal_header{
     width: 46px;
     height: 32px;
     padding: 0;
-    margin: 0 auto;
+    margin: 0 auto 48px;
 }
 
 .check_modal .modal_header img{

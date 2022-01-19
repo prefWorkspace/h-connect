@@ -103,15 +103,15 @@
                                 <p class="card_ex_text">선별진료소 생성합니다.</p>
                             </div>
                             
-                            <button type="button" class="btn1 create_btn modal_btn" data-modal="selectClinic">+ 선별진료소 생성</button>
+                            <button type="button" class="btn1 btn bl create_btn modal_btn" data-modal="selectClinic">+ 선별진료소 생성</button>
                         </div>
 
                         <ul class="card_cont_box" id='selClicList'>
                             <!-- <li class="card_cont_list card_btn">
                                 <span>선별진료소1</span>
                                 <div class="re_del_box">
-                                    <button type="button" class="retouch_btn re_del_btn btn1">수정</button>
-                                    <button type="button" class="delete_btn re_del_btn btn1">삭제</button>
+                                    <button type="button" class="btn bl retouch_btn re_del_btn btn1">수정</button>
+                                    <button type="button" class="btn rd delete_btn re_del_btn btn1">삭제</button>
                                 </div>
                             </li> -->
                         </ul>
@@ -124,7 +124,7 @@
                                 <h2 class="card_title">진료소 관리</h2>
                                 <p class="card_ex_text">선별진료소의 진료소 수량을 설정합니다.</p>
                             </div>
-                            <button type="button" class="btn1 create_btn modal_btn off" data-modal="clinicCare">+ 진료소 생성</button>
+                            <button type="button" class="btn1 btn bl create_btn modal_btn off" data-modal="clinicCare">+ 진료소 생성</button>
                         </div>
                     <!-- <li class="no_arrow_list card_cont_list card_btn">
                             <span>3호실</span>
@@ -138,6 +138,7 @@
                </section>
            </main>
 
+           <!-- 선별 진료소 생성 모달 -->
             <div class="modal select_clinic_modal data_modal" id="selectClinic" data-box="selClicList">
                     <div class="modal_box">
                         <div class="modal_header">
@@ -156,12 +157,13 @@
                         </div>
 
                         <div class="modal_footer">
-                            <button type="button" class="btn1 delete_btn cancel_btn">취소</button>
-                            <button type="button" class="btn1 sure_btn">확인</button>
+                            <button type="button" class="btn1 btn rd delete_btn cancel_btn">취소</button>
+                            <button type="button" class="btn1 btn blf sure_btn">확인</button>
                         </div>
                     </div>
             </div>
 
+            <!-- 진료소 생성 모달 -->
             <div class="modal clinic_care_modal data_modal" id="clinicCare">
                     <div class="modal_box">
                         <div class="modal_header">
@@ -178,12 +180,13 @@
                             </div>
                         </div>
                         <div class="modal_footer">
-                            <button type="button" class="btn1 delete_btn cancel_btn">취소</button>
-                            <button type="button" class="btn1 sure_btn">확인</button>
+                            <button type="button" class="btn1 btn rd cancel_btn">취소</button>
+                            <button type="button" class="btn1 btn blf sure_btn">확인</button>
                         </div>
                     </div>
             </div>
 
+            <!-- 수정 모달 -->
             <div class="modal select_clinic_modal data_modal" id="retouch">
                     <div class="modal_box">
                         <div class="modal_header">
@@ -200,12 +203,13 @@
                             </div>
                         </div>
                         <div class="modal_footer">
-                            <button type="button" class="btn1 delete_btn cancel_btn">취소</button>
-                            <button type="button" class="btn1 sure_btn">확인</button>
+                            <button type="button" class="btn1 btn rd cancel_btn">취소</button>
+                            <button type="button" class="btn1 btn blf sure_btn">확인</button>
                         </div>
                     </div>
             </div>
 
+            <!-- 삭제 모달 -->
             <div class="modal select_clinic_modal check_modal" id="deleteList">
                 <div class="modal_box">
                     <div class="modal_header">
@@ -220,8 +224,8 @@
                         </div>
                     </div>
                     <div class="modal_footer">
-                        <button type="button" class="btn1 delete_btn cancel_btn">아니오</button>
-                        <button type="button" class="btn1 sure_btn">네, 삭제합니다</button>
+                        <button type="button" class="btn1 btn gr cancel_btn">아니오</button>
+                        <button type="button" class="btn1 btn rdf sure_btn">네, 삭제합니다</button>
                     </div>
                 </div>
             </div>
