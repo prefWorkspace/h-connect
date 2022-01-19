@@ -87,7 +87,7 @@ $(function () {
 
     //병실관리 확인 누르면 리스트 나오게
     $('.pop.new_room .overlay .pop_cont .btn_list .btn_check').on('click', function(){
-        $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
+        // $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
     });
     //병실관리 수정
     $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on('click', function(){
@@ -95,9 +95,9 @@ $(function () {
     });
 
     // 병실삭제
-    $('.nurse .hospital_room .cont .ward_list .btn_list .btn_delete').on('click', function () {
-        $('.pop.delete_room .overlay').fadeIn();
-    });
+    // $('.nurse .hospital_room .cont .ward_list .btn_list .btn_delete').on('click', function () {
+    //     $('.pop.delete_room .overlay').fadeIn();
+    // });
         // 아니요
     $('.pop.delete_room .pop_cont .btn_list .btn_no').on('click', function(){
         $('.pop.delete_room .overlay').fadeOut();

@@ -1,9 +1,10 @@
 
 
-function Create_newWard(title = "병동", wardCode, orderNumber, deactivate){
+function Create_newWard(title = "병동", wardCode, orderNumber, deactivate, sickRoomList){
+    //sickRoomList 이걸로 map 돌려서 환자 총 수 체크 
     const data = `
                 <div class="cont">
-                    <div class="ward_list">
+                    <div class="ward_list" data-wardcode=${wardCode}>
                         <p>${title}</p>
                         <div class="ward_count">
                             <p>

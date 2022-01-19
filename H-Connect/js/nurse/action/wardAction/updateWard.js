@@ -30,7 +30,7 @@ function updateWard () {
         serverController.ajaxAwaitController("API/Manager/UpdateWard", "POST", req, (res) => {
             if(res.result){
                 // location.reload();
-                $("div").remove(".cont");
+                $("div").remove(".nurse .ward .cont");
                 getWardData();
             }
         }, (err) => {console.log(err)})

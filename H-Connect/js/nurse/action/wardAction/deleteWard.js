@@ -15,14 +15,14 @@ function deleteWard(){
             wardCode,
             ...commonRequest()
         })
-        console.log(req)
+        
         serverController.ajaxAwaitController("API/Manager/DeleteWard", "POST", req, (res) => {
             console.log(res);
             if(res.result){
                 $('.nurse .ward .cont .ward_list').hide();
                 $('.pop.delete .overlay').hide();
                 // location.reload();
-                $("div").remove(".cont");
+                $("div").remove(".nurse .ward .cont");
                 getWardData();
             }
         }, (err) => {console.log(err)})

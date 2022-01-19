@@ -8,14 +8,17 @@ function clickActive(){
         $('.nurse .ward .cont .ward_list').removeClass('on');
         $(this).addClass('on');
         $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
+        selectSickRoom($(this).data("wardcode"));
+        
+        $(".pop.new_room .overlay .pop_cont .btn_list button.btn_check").attr('data-wardcode', $(this).data("wardcode"));
     });
 }
 
 function getWardData(){
-
     const req = JSON.stringify({
         requester,
         organizationCode,
+        includeCickBed: true,
         ...commonRequest()
     });
 
@@ -25,7 +28,7 @@ function getWardData(){
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
                 const title = wardList[i].ward;
-                Create_newWard(title, wardList[i].wardCode, wardList[i].orderNumber, wardList[i].deactivate);
+                Create_newWard(title, wardList[i].wardCode, wardList[i].orderNumber, wardList[i].deactivate, wardList[i].sickRoomList);
             }
             updateWard();
             deleteWard();
