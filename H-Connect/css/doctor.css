@@ -1000,7 +1000,7 @@ p{font-size: 12px;}
 /* 실시간 원격 협진 */
 .connect_remote,
 .connect_opinion{
-    min-width: 1248px;
+    min-width: 1280px;
     height: 100%;
     min-height: calc(100vh - 64px);
     padding-top: 64px;
@@ -1118,6 +1118,8 @@ p{font-size: 12px;}
 
 
 /* 원격협진알림 */
+.doctor_remote .schedule .btn_section{display: flex;}
+.doctor_remote .schedule .btn_today{display: none;}
 .doctor .remote_alarm{
     width: 1312px;
     padding: 16px;
@@ -1306,7 +1308,7 @@ p{font-size: 12px;}
 
 /* 응급협진하기 - 로딩 */
 .connect_emergency{
-    min-width: 1248px;
+    min-width: 1280px;
     height: 100%;
     min-height: calc(100vh - 64px);
     background: #222;
@@ -2715,13 +2717,28 @@ p{font-size: 12px;}
     margin-bottom: 32px;
     padding: 20px 32px;
     border-radius: 8px;
+    background-color: #ccc;
     display: flex;
     align-items: center;
 }
 
+.doctor .status_label.on{
+    background: linear-gradient(to right, #004F60, #350039);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.doctor .status_label h1{color: #fff;}
+
+.doctor .status_label h1.done{
+    display: none;
+}
+
+.doctor_remote .status_label h1.ing{position: relative;}
+
 .doctor .status_label div{
     width: 32px;
     height: 32px;
+    margin-right: 28px;
 }
 
 .doctor .status_label img{
@@ -2731,12 +2748,12 @@ p{font-size: 12px;}
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(210%) contrast(103%);
 }
 
-.doctor_remote .btn_today> :last-child:after {
+.doctor_remote .status_label h1.ing::after {
     content: '';
     width: 9px;
     height: 18px;
     position: absolute;
-    background: url(//H-Connect/img/right_arrow.svg) no-repeat 0 0px /contain;
+    background: url(/H-Connect/img/right_arrow.svg) no-repeat 0 0px /contain;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;

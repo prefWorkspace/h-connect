@@ -759,7 +759,7 @@ $('.doctor .schedule_list .row').on('click', function(){
 })
 
 // 세션 진행중
-$('.btn_today').on('click', function(){
+$('.doctor_main .btn_today').on('click', function(){
     $('.doctor .my_plan').hide();
     $('.doctor .now_section').show();
     $('.doctor .waiting').show();
@@ -938,12 +938,13 @@ $('.screening .waiting .btn_treat').on('click', function(){
     location.href="connect_screening.html"
 })
 
-$('.pc_header .btn_red').on('click', function(){
-    location.href="emergency/index.html"
-})
+// $('.pc_header .btn_red').on('click', function(){
+//     location.href="emergency/index.html"
+// })
 
 $('.pc_header .btn_red.red2').on('click', function(){
-    location.href="remote.html"
+    $('.pop.delete .overlay').fadeIn();
+    // location.href="remote.html"
 })
 
 // 가능
@@ -1168,7 +1169,7 @@ $('.doctor .nurse_send').on('click', function(){
         $('.doctor_monitor .pre_rhythm').show();
     })
 
-    // 배경
+    // 배경색
     $('.doctor_monitor .new_patient.new .row').on('click', function(){
         $(this).addClass('on');
         $('.doctor_monitor .new_patient.new .row').not(this).removeClass('on');
@@ -1182,11 +1183,9 @@ $('.doctor .nurse_send').on('click', function(){
     $('.doctor_patient .vital_chart .btn_re').on('click', function(){
         $('.pop.record .overlay').show();
     })
-
     $('.pop.record .btn_check').on('click', function(){
         $('.pop.record .overlay').hide();
     })
-
     $('.doctor_patient .pacs .row').on('click', function(){
         location.href="pacs_img.html"
     })
@@ -1195,11 +1194,9 @@ $('.doctor .nurse_send').on('click', function(){
     $('.patient_img .btn_full').on('click', function(){
         $('.pop.full_pacs .overlay').fadeIn();
     })
-
     $('.pop.full_pacs .btn_close').on('click', function(){
         $('.pop.full_pacs .overlay').fadeOut();
     })
-
     $('.detail_ep .btn_respond').on('click', function(){
         $('.detail_ep .btn_respond').toggleClass('active');
     })

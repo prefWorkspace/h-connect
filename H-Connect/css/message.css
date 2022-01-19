@@ -740,9 +740,9 @@
     background: none;
 }
 
-.nurse_message .group .btn_next img{
+/* .nurse_message .group .btn_next img{
     filter: invert(124%) sepia(100%) saturate(5863%) hue-rotate(154deg) brightness(48%) contrast(97%);
-}
+} */
 
 .message .group .btn_add{
     background: none;
