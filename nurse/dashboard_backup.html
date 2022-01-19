@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>H-Connect</title>
+  <!--Import-->
+  <script type='text/javascript' defer src='/H-Connect/js/utils/controller/versionController.2022.01.17.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
+  <!--css-->
+  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
+  <link rel="stylesheet" href="/H-Connect/css/common.css">
+  <link rel="stylesheet" href="/H-Connect/css/nurse.css">
+
+</head>
+  <body>
+    <div id="wrap">
+		<!--헤더 pc-->
+		<header id="header" class="pc_header">
+			<div class="header_inner">
+				<div>
+					<h1 class="logo">
+						<a class="link" href="index.html">
+							<img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
+						</a>
+					</h1>
+		
+					<div class="header_title">
+						<h1>대시보드</h1>
+						<h3>담당 환자들을 대시보드에 등록하고 모니터링 합니다.</h3>
+					</div>
+				</div>
+		
+				<div>	
+					<button type="button" class="btn_logout">
+						심장병동 간호사실
+					</button>
+				</div>
+			</div>
+
+			    <!-- 로그아웃 팝업 -->
+				<div class="pop logout">
+					<div class="wrap_inner">
+						<div>
+							<p>심장병동</p>
+							<h3>심장병동 간호사실</h3>
+						</div>
+			
+						<button type="button" class="btn_bye">로그아웃</button>  
+					</div>
+				</div>
+			
+				<!-- 환자 검색 -->
+				<div class="pop search_patient">
+					<div class="wrap_inner">
+						<p>
+							<span>김환자</span>
+							(<span>63</span>.<span>남</span>).
+							<span>patient ID</span>.
+							<span>심장병동</span>.
+							<span>1308</span>호실.
+							<span>3</span>병상
+						</p>
+			
+						<p>
+							<span>김환장</span>
+							(<span>74</span>.<span>여</span>).
+							<span>patient ID</span>.
+							<span>심장병동</span>.
+							<span>1302</span>호실.
+							<span>1</span>병상
+						</p>
+			
+						<p>
+							<span>김환정</span>
+							(<span>68</span>.<span>남</span>).
+							<span>patient ID</span>.
+							<span>심장병동</span>.
+							<span>1306</span>호실.
+							<span>6</span>병상
+						</p>
+			
+						<p>
+							<span>김환재</span>
+							(<span>59</span>.<span>남</span>).
+							<span>patient ID</span>.
+							<span>심장병동</span>.
+							<span>1304</span>호실.
+							<span>2</span>병상
+						</p>
+					</div>
+				</div>
+			
+		</header>
+
+		<!--콘텐츠-->
+		<div id="wrap_content" class="nurse dashboard">
+
+			<nav class="nav">
+				<ul class="main_depth gnb">
+				  <li class="gnb_list">
+					<a class="link" href="monitoring.html">
+						모니터링
+					</a>
+				  </li>
+	
+				  <li class="gnb_list">
+					<a class="link" href="index.html">
+					   관리
+					</a>
+				  </li>
+	
+				  <li class="gnb_list active">
+					<a class="link" href="dashboard.html">
+						대시보드
+					</a>
+				  </li>
+	
+				  <li class="gnb_list">
+					<a class="link" href="message.html">
+						메세지
+					</a>
+				  </li>
+				</ul>
+			</nav>
+
+			<div class="wrap_inner">
+				<!-- 모니터링 대상 -->
+				<section class="section left taget_list">
+					<div class="title">
+						<div>
+						<div>
+							<img src="/H-Connect/img/header/dashboard.svg" alt="대시보드 아이콘">
+						</div>
+						
+						<h2>모니터링 대상</h2>
+						</div>
+						
+						<p>대시보드에 등록할 모니터링 대상자를 설정합니다.</p>
+						
+					</div>
+
+					<div class="taget_select">
+						<div class="select_head">
+						<div class="input_wrap">
+							<input type="checkbox" class="green_custom" id="ward_check" class="green_custom">
+							<label for="ward_check"></label>
+							<label for="ward_check">병동선택</label>
+						</div>
+
+						<!-- select 텍스트가 두개로 되어서 나와요ㅠㅠ -->
+						<div class="selectBox2 select_ward">
+							<button class="label ward_label">심장병동</button>
+
+							<ul class="optionList ward_option">
+								<li class="optionItem ward_list">심장병동</li>
+								<li class="optionItem ward_list">12 병동</li>
+							</ul>
+						</div>
+						</div>
+
+						<!-- 호실별 대상 체크 -->
+						<div class="select_inner">
+
+						<!-- 1301 -->
+						<!-- patient_info의 checkbox를 선택하면 selectall도 선택이 되어야 하는데 안돼요 ㅠ -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1301" onclick="selectAll(this)">
+								<label for="ward_1301"></label>
+								<label for="ward_1301">1301호실</label>
+							</div>
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no" class="green_custom" id="patient_1" onclick="checkSelectAll(this)">
+								<label for="patient_1"></label>
+								<label for="patient_1"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no" class="green_custom" id="patient_2" onclick="checkSelectAll(this)">
+								<label for="patient_2"></label>
+								<label for="patient_2"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no" class="green_custom" id="patient_3" onclick="checkSelectAll(this)">
+								<label for="patient_3"></label>
+								<label for="patient_3"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no" class="green_custom" id="patient_4" onclick="checkSelectAll(this)">
+								<label for="patient_4"></label>
+								<label for="patient_4"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1302 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1302" onclick="selectAll(this)">
+								<label for="ward_1302"></label>
+								<label for="ward_1302"><span>1302호실</span></label>
+							</div>							
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no2" class="green_custom" id="patient_021" onclick="checkSelectAll(this)">
+								<label for="patient_021"></label>
+								<label for="patient_021"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no2" class="green_custom" id="patient_022" onclick="checkSelectAll(this)">
+								<label for="patient_022"></label>
+								<label for="patient_022"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no2" class="green_custom" id="patient_023" onclick="checkSelectAll(this)">
+								<label for="patient_023"></label>
+								<label for="patient_023"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no2" class="green_custom" id="patient_024" onclick="checkSelectAll(this)">
+								<label for="patient_024"></label>
+								<label for="patient_024"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1303 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1303" onclick="selectAll(this)">
+								<label for="ward_1303"></label>
+								<label for="ward_1303"><span>1303호실</span></label>
+							</div>							
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no3" class="green_custom" id="patient_031" onclick="checkSelectAll(this)">
+								<label for="patient_031"></label>
+								<label for="patient_031"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no3" class="green_custom" id="patient_032" onclick="checkSelectAll(this)">
+								<label for="patient_032"></label>
+								<label for="patient_032"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no3" class="green_custom" id="patient_033" onclick="checkSelectAll(this)">
+								<label for="patient_033"></label>
+								<label for="patient_033"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no3" class="green_custom" id="patient_034" onclick="checkSelectAll(this)">
+								<label for="patient_034"></label>
+								<label for="patient_034"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1304 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1304" onclick="selectAll(this)">
+								<label for="ward_1304"></label>
+								<label for="ward_1304"><span>1304호실</span></label>
+							</div>							
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no4" class="green_custom" id="patient_041" onclick="checkSelectAll(this)">
+								<label for="patient_041"></label>
+								<label for="patient_041"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no4" class="green_custom" id="patient_042" onclick="checkSelectAll(this)">
+								<label for="patient_042"></label>
+								<label for="patient_042"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no4" class="green_custom" id="patient_043" onclick="checkSelectAll(this)">
+								<label for="patient_043"></label>
+								<label for="patient_043"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no4" class="green_custom" id="patient_044" onclick="checkSelectAll(this)">
+								<label for="patient_044"></label>
+								<label for="patient_044"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1305 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1305" onclick="selectAll(this)">
+								<label for="ward_1305"></label>
+								<label for="patient_111"><span>1305호실</span></label>
+							</div>							
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no5" class="green_custom" id="patient_051" onclick="checkSelectAll(this)">
+								<label for="patient_051"></label>
+								<label for="patient_051"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no5" class="green_custom" id="patient_052" onclick="checkSelectAll(this)">
+								<label for="patient_052"></label>
+								<label for="patient_052"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no5" class="green_custom" id="patient_053" onclick="checkSelectAll(this)">
+								<label for="patient_053"></label>
+								<label for="patient_053"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no5" class="green_custom" id="patient_054" onclick="checkSelectAll(this)">
+								<label for="patient_054"></label>
+								<label for="patient_054"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1306 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1306" onclick="selectAll(this)">
+								<label for="ward_1306"></label>
+								<label for="ward_1306"><span>1306호실</span></label>
+							</div>							
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no6" class="green_custom" id="patient_061"  onclick="checkSelectAll(this)">
+								<label for="patient_061"></label>
+								<label for="patient_061"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no6" class="green_custom" id="patient_062"  onclick="checkSelectAll(this)">
+								<label for="patient_062"></label>
+								<label for="patient_062"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no6" class="green_custom" id="patient_063"  onclick="checkSelectAll(this)">
+								<label for="patient_063"></label>
+								<label for="patient_063"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no6" class="green_custom" id="patient_064" onclick="checkSelectAll(this)">
+								<label for="patient_064"></label>
+								<label for="patient_064"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1307 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1307" onclick="selectAll(this)">
+								<label for="ward_1307"></label>
+								<label for="ward_1307"><span>1307호실</span></label>
+							</div>
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox"  name="patient_no7" class="green_custom" id="patient_071" onclick="checkSelectAll(this)">
+								<label for="patient_071"></label>
+								<label for="patient_071"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox"  name="patient_no7" class="green_custom" id="patient_072" onclick="checkSelectAll(this)">
+								<label for="patient_072"></label>
+								<label for="patient_072"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox"  name="patient_no7" class="green_custom" id="patient_073" onclick="checkSelectAll(this)">
+								<label for="patient_073"></label>
+								<label for="patient_073"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox"  name="patient_no7" class="green_custom" id="patient_074" onclick="checkSelectAll(this)">
+								<label for="patient_074"></label>
+								<label for="patient_074"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1308 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1308" onclick="selectAll(this)">
+								<label for="ward_1308"></label>
+								<label for="ward_1308"><span>1308호실</span></label>
+							</div>
+						</div>
+
+						<div class="patient_info">
+							<div  class="input_wrap">
+								<input type="checkbox" name="patient_no8" class="green_custom" id="patient_081" onclick="checkSelectAll(this)">
+								<label for="patient_081"></label>
+								<label for="patient_081"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no8" class="green_custom" id="patient_082" onclick="checkSelectAll(this)">
+								<label for="patient_082"></label>
+								<label for="patient_082"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no8" class="green_custom" id="patient_083" onclick="checkSelectAll(this)">
+								<label for="patient_083"></label>
+								<label for="patient_083"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no8" class="green_custom" id="patient_084" onclick="checkSelectAll(this)">
+								<label for="patient_084"></label>
+								<label for="patient_084"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1309 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1309" onclick="selectAll(this)">
+								<label for="ward_1309"></label>
+								<label for="ward_1309"><span>1309호실</span></label>
+							</div>							
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no9" class="green_custom" id="patient_091" onclick="checkSelectAll(this)">
+								<label for="patient_091"></label>
+								<label for="patient_091"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no9" class="green_custom" id="patient_092" onclick="checkSelectAll(this)">
+								<label for="patient_092"></label>
+								<label for="patient_092"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no9" class="green_custom" id="patient_093" onclick="checkSelectAll(this)">
+								<label for="patient_093"></label>
+								<label for="patient_093"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no9" class="green_custom" id="patient_094" onclick="checkSelectAll(this)">
+								<label for="patient_094"></label>
+								<label for="patient_094"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1310 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1310" onclick="selectAll(this)">
+								<label for="ward_1310"></label>
+								<label for="ward_1310"><span>1310호실</span></label>
+							</div>							
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no10" class="green_custom" id="patient_101" onclick="checkSelectAll(this)">
+								<label for="patient_101"></label>
+								<label for="patient_101"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no10" class="green_custom" id="patient_102" onclick="checkSelectAll(this)">
+								<label for="patient_102"></label>
+								<label for="patient_102"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no10" class="green_custom" id="patient_103" onclick="checkSelectAll(this)">
+								<label for="patient_103"></label>
+								<label for="patient_103"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no10" class="green_custom" id="patient_104" onclick="checkSelectAll(this)">
+								<label for="patient_104"></label>
+								<label for="patient_104"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+
+						<!-- 1311 -->
+						<div class="ward_count">
+							<div class="input_wrap">
+								<input type="checkbox" class="green_custom" id="ward_1311" onclick="selectAll(this)">
+								<label for="ward_1311"></label>
+								<label for="ward_1311"><span>1311호실</span></label>
+							</div>		
+						</div>
+
+						<div class="patient_info">
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no11" class="green_custom" id="patient_111" onclick="checkSelectAll(this)">
+								<label for="patient_111"></label>
+								<label for="patient_111"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no11" class="green_custom" id="patient_112" onclick="checkSelectAll(this)">
+								<label for="patient_112"></label>
+								<label for="patient_112"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no11" class="green_custom" id="patient_113" onclick="checkSelectAll(this)">
+								<label for="patient_113"></label>
+								<label for="patient_113"><span>김환자(63.남.patient no)</span></label>
+							</div>
+
+							<div class="input_wrap">
+								<input type="checkbox" name="patient_no11" class="green_custom" id="patient_114" onclick="checkSelectAll(this)">
+								<label for="patient_114"></label>
+								<label for="patient_114"><span>김환자(63.남.patient no)</span></label>
+							</div>
+						</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- 추가, 제거 버튼 -->
+				<section class="section middle">
+					<div>
+						<button type="button" class="btn bl btn_add">추가</button>
+						<button type="button" class="btn rd btn_delete" disabled>제거</button>
+					</div>				
+				</section>				
+
+				<!-- 대시보드 화면 -->
+				<section class="section right taget_view">
+					<div class="title">
+						<div>
+							<h2>대시보드 화면</h2>
+							
+							<div class="btn_list">
+							<button type="button" class="btn btn_first on">1번 화면</button>
+							<button type="button" class="btn btn_second">2번 화면</button>
+							<button type="button" class="btn btn_addView">+ 화면추가</button>
+							</div>
+						</div>
+
+						<button type="button" class="btn btn_state" onclick="window.open('ward_dashboard.html')">현재상태 적용</button>
+					</div>
+					
+					<div class="inpat">
+						<div class="account">
+						<p>H-Connect inpatient monitoring system</p>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati1">
+								<label for="inpati1">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati2">
+								<label for="inpati2">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati3">
+								<label for="inpati3">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati4">
+								<label for="inpati4">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati5">
+								<label for="inpati5">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati6">
+								<label for="inpati6">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati7">
+								<label for="inpati7">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati8">
+								<label for="inpati8">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati9">
+								<label for="inpati9">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati10">
+								<label for="inpati10">Patient Type-Patient ID</label>
+							</div>                  
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati11">
+								<label for="inpati11">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati12">
+								<label for="inpati12">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati13">
+								<label for="inpati13">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati14">
+								<label for="inpati14">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati15">
+								<label for="inpati15">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati16">
+								<label for="inpati16">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati17">
+								<label for="inpati17">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati18">
+								<label for="inpati18">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati19">
+								<label for="inpati19">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati20">
+								<label for="inpati20">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati21">
+								<label for="inpati21">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati22">
+								<label for="inpati22">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati23">
+								<label for="inpati23">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati24">
+								<label for="inpati24">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati25">
+								<label for="inpati25">Patient Type-Patient ID</label>
+							</div>
+						</div>
+
+						<div class="check_pati">
+							<div class="pati_inner">
+								<input type="checkbox" id="inpati26">
+								<label for="inpati26">Patient Type-Patient ID</label>
+							</div>
+						</div>               
+					</div>
+				</section>
+			</div>
+    	</div>
+
+    </div>
+    <!--// end wrap-->
+
+    <script>
+        //병동선택 셀렉트
+			const wardLabel = document.querySelector('.ward_label');
+            const wardOption = document.querySelectorAll('.ward_option');
+
+            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+            const wardSelect = (item) => {
+                wardLabel.parentNode.classList.remove('active');
+                wardLabel.innerHTML = item.textContent;
+            }
+
+            // 옵션 클릭시 클릭한 옵션을 넘김
+            wardOption.forEach(option => {
+                option.addEventListener('click', () => wardSelect(option))
+            })
+
+            // 라벨을 클릭시 옵션 목록이 열림/닫힘
+            wardLabel.addEventListener('click', () => {
+            if(wardLabel.parentNode.classList.contains('active')) {
+                wardLabel.parentNode.classList.remove('active');
+            } else {
+                wardLabel.parentNode.classList.add('active');
+            }
+            })   
+			
+		/* checkbox selectAll */
+        function checkSelectAll(checkbox)  {
+          const selectall 
+          = document.querySelector('input[name="ward_1301"]');
+    
+          if(checkbox.checked === false)  {
+             selectall.checked = false;
+          }
+        }
+    
+        function selectAll(selectAll)  {
+          const checkboxes 
+          = document.getElementsByName('patient_no');
+    
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = selectAll.checked;
+          })
+        }  
+		
+        
+    </script>
+
+  </body>
+</html>
+ 

@@ -89,6 +89,11 @@ const VERSION = {
                     url_path:'/nurse/dashboard',
                     file_path:'/H-Connect/js/nurse/action/dashboard/',
                     version:'2022.01.18.15.22'
+                },
+                'select_ward.js' : {
+                    url_path:'/nurse/dashboard',
+                    file_path:'/H-Connect/js/nurse/action/dashboard/',
+                    version:'2022.01.18.15.22'
                 }
             },
             'wardAction' : {
