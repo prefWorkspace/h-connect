@@ -301,7 +301,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
                     reButton.setAttribute('class', 'retouch_btn re_del_btn btn1 modal_btn');
                     delButton.setAttribute('class', 'delete_btn re_del_btn btn1 modal_btn');
-                    reButton.setAttribute('data-modal', 'retouch');
+                    reButton.setAttribute('data-modal', 'care_retouch');
                     delButton.setAttribute('data-modal', 'deleteList');
 
                     reButton.setAttribute('type', 'button');

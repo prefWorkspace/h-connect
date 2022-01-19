@@ -200,6 +200,7 @@
 }
 
 .check_ex_text{
+    margin-bottom: 48px;
     font-size: 16px;
 }
 
@@ -210,4 +211,8 @@
 .modal_footer a{
     width: 128px;
     line-height: 46px;
+}
+
+.modal_form{
+    padding-top: 0;
 }

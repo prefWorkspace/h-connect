@@ -6,6 +6,7 @@ const cookieController = {
         document.cookie = `${key}=${value};path=/;expires=${toDay.toGMTString()};`
     },
     getCookie: (key) => {
+        if(document.cookie === "") return; 
         let arr = document.cookie.split(";");
         let str;
         for(let i =0; i < arr.length; i++){
@@ -14,7 +15,6 @@ const cookieController = {
             }
         }
         let res = str.split("=");
-
         // let matches = documnet.cookie.match(new RegExp(
         //     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
         //   ));
@@ -28,4 +28,4 @@ const cookieController = {
 }
 
 
-export default cookieController;
+// export default cookieController;

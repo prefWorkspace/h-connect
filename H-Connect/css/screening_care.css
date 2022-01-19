@@ -1,4 +1,9 @@
 @charset "utf-8";
+#contents_wrap.screening{   
+    width: 100%; 
+    min-width: 1880px;
+}
+
 /* card */
 .card {
     flex: 1;
@@ -308,20 +313,19 @@
 }
 
 .upDown {
-    display: inline-block;
     width: 12px;
     height: 12px;
-    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat center;
     filter: invert(0%) sepia(0%) saturate(7496%) hue-rotate(235deg) brightness(-56%) contrast(118%);
 }
 
-.up {
-    margin-top: 4px;
-    margin-right: 16px;
-}
-
-.down {
+/* .up {
     margin-top: -7px;
+} */
+
+.up {
+    /* margin-top: 4px; */
+    margin-right: 16px;
     transform: rotate(180deg);
 }
 
@@ -551,3 +555,9 @@
 
 .message_list, .message_talk{display: block;}
 .select_medi, .send_message{display: none;}
+
+.data_modal .modal_header{
+    margin-bottom: 31px;
+}
+
+.modal_form{padding-top: 0;}

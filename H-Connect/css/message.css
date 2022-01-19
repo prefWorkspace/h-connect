@@ -643,6 +643,7 @@
     width: 968px;
     height: fit-content;
     margin: 0 auto;
+    padding: 16px 16px 11px;
     border: 0;
     background: #eee;
     flex-wrap: wrap;
@@ -651,6 +652,7 @@
 .message .select_list div{
     width: fit-content;
     margin-right: 20px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
 }

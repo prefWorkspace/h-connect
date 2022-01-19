@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect</title>
   <!--Import-->
-  <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/index.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
   
   <!--css-->
   <link rel='stylesheet' href='/H-Connect/css/reset.css'>
@@ -18,18 +18,6 @@
 
 </head>
   <body>
-    <!-- 로그아웃 팝업 -->
-    <div class="pop logout">
-        <div class="wrap_inner">
-            <div>
-                <p>응급상황실</p>
-                <h3>응급상황실  </h3>
-            </div>
-
-            <button type="button" class="btn_bye">로그아웃</button>  
-        </div>
-    </div>
-
     <!-- 연결 종료 팝업 -->
     <div class="pop delete connect">
         <div class="overlay">
@@ -46,49 +34,6 @@
                     <button type="button" class="btn rdf btn_delete">네, 종료합니다</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- 참석자 명단 팝업 -->
-    <div class="pop attendee remote_attend">
-        <div class="wrap_inner">
-            <!-- 참석자 없을때 -->
-            <div class="no_atten">
-                <p>응급협진에 참여중인 의료진이 없습니다.</p>
-            </div>
-
-            <!-- 참석자 있을 때 -->
-            <div class="atten">
-                <div class="count">
-                    <div>
-                        <!-- 참석하는 경우 attend를 넣어주세요 -->
-                        <p class="attend">참석 : 5명</p>
-
-                        <!-- 미참석하는 경우 no_attend를 넣어주세요 -->
-                        <p class="no_attend">미참석 : 1명</p>
-
-                        <!-- 대응불가인 경우 unrespon를 넣어주세요 -->
-                        <p class="unrespon">대응불가 : 1명</p>
-                    </div>
-                    
-                    <p>
-                        <span>5명</span> 참여중
-                    </p>
-                </div>
-
-                <div class="name">
-                    <p>김응급 교수님</p>
-                    <p>김한림 교수님</p>
-                    <p>최협진 교수님</p>
-                    <p>이연차 전공의</p>
-                    <p>박협진 교수님</p>
-
-                    <!-- 불참하는 인원에는 addClass on을 해주세요 -->
-                    <p class="on">박불참 교수님</p>
-                    <p class="on">권바쁨 교수님(대응불가)</p>
-                </div>
-            </div>
-            
         </div>
     </div>
 
@@ -125,7 +70,51 @@
                         </button>
                     </div>
                 </div>
-            </div>        
+            </div>  
+            
+            <!-- 참석자 명단 팝업 -->
+            <div class="pop attendee remote_attend">
+                <div class="wrap_inner">
+                    <!-- 참석자 없을때 -->
+                    <div class="no_atten">
+                        <p>응급협진에 참여중인 의료진이 없습니다.</p>
+                    </div>
+
+                    <!-- 참석자 있을 때 -->
+                    <div class="atten">
+                        <div class="count">
+                            <div>
+                                <!-- 참석하는 경우 attend를 넣어주세요 -->
+                                <p class="attend">참석 : 5명</p>
+
+                                <!-- 미참석하는 경우 no_attend를 넣어주세요 -->
+                                <p class="no_attend">미참석 : 1명</p>
+
+                                <!-- 대응불가인 경우 unrespon를 넣어주세요 -->
+                                <p class="unrespon">대응불가 : 1명</p>
+                            </div>
+                            
+                            <p>
+                                <span>5명</span> 참여중
+                            </p>
+                        </div>
+
+                        <div class="name">
+                            <p>김응급 교수님</p>
+                            <p>김한림 교수님</p>
+                            <p>최협진 교수님</p>
+                            <p>이연차 전공의</p>
+                            <p>박협진 교수님</p>
+
+                            <!-- 불참하는 인원에는 addClass on을 해주세요 -->
+                            <p class="on">박불참 교수님</p>
+                            <p class="on">권바쁨 교수님(대응불가)</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
         </header>
 
       <!--콘텐츠-->

@@ -64,7 +64,7 @@
 
 .emergency .emergency_recep .list_container{
     height: 232px;
-    padding: 16px;
+    padding: 16px 20px 16px;
     overflow-y: scroll;
 }
 
@@ -1014,9 +1014,11 @@
     margin: 0;
 }
 
-/* .emergency .patient .symptome_info .unre .ure_list{
-    margin-left: 20px;
-} */
+.emergency .patient .symptome_info .unre .ure_list{
+    margin-left: 15px;
+}
+
+.emergency_main .patient .symptome_info .unre .ure_list{ margin: 0;}
 
 .doctor_emergency .patient .symptome_info .unre .ure_list{
     margin: 0;
@@ -1151,8 +1153,8 @@
 
 /* 환자 바이탈 */
 .emergency .vital{
-    width: 544px;
-    padding: 16px;
+    width: 552px;
+    padding: 16px 12px;
     overflow-y: scroll;
 }
 
@@ -1198,7 +1200,18 @@
     padding: 8px;
     border-radius: 4px;
     display: initial;
+    position: relative;
 }
+
+.emergency .vital .full::before{
+    content: '';
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0%;
+}
+.emergency_main .patient_status .title> :last-child:hover .signal_text{color:#4A0000;}
 
 .emergency .vital .vital_monitor{
     width: 520px;
@@ -1478,6 +1491,8 @@
     overflow:hidden
 }
 
+.emergency .small_picture .swiper-wrapper{padding-left: 8px; padding-bottom: 8px;}
+
 .emergency .small_picture .swiper-slide{
     width: 95px;
     height: 95px;
@@ -1495,7 +1510,7 @@
 }
 
 .para_connect .wrap_inner{
-    padding-top: 304px;
+    padding-top: 240px;
     display: initial;
 }
 
@@ -1821,6 +1836,7 @@
     margin-left: 8px;
 }
 
+
 /* 화상보기 */
 .cam{
     width: 156px;
@@ -2058,6 +2074,7 @@
 .connect .pati_stat{
     width: 736px;
     position: absolute;
+    z-index: 1;
 }
 
 .connect .pati_stat.on{
@@ -2403,6 +2420,7 @@
 .connect .vital .sp_graph p, 
 .connect .vital .resp_graph p{
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .connect .vital .bell{
@@ -2417,6 +2435,7 @@
     align-items: center;
 }
 
+.connect .vital .bell_name> p{font-size: 14px;}
 .connect .vital .bell_num{
     display: flex;
     justify-content: space-between;
@@ -2445,12 +2464,25 @@
 .connect .vital .control .ews{
     width: 88px;
     height: 136px;
-    padding: 16px;
+    padding: 16px 13px;
     color: #fff;
 }
 
+.ews .bell_num button{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .connect .vital .ews .bell_num{
-    padding: 0 7px;
+    /* padding: 0 7px; */
+    justify-content: flex-end;
+}
+
+.connect .vital .ews .bell_num p{
+    margin-right: 5px;
 }
 
 .connect .vital .control .mmhg{
@@ -2633,10 +2665,6 @@
     height: 692px;
 }
 
-.connect_tab .scene_picture .small_picture{
-    padding-left: 8px;
-}
-
 /* connect_scroll */
 .connect_scroll {
     padding-top: 64px;
@@ -2703,11 +2731,11 @@
 
 .connect_scroll .patient_status{
     width: 100%;
-    height: 816px;
+    height: fit-content;
 }
 
 .connect_scroll .patient_status .patient_inner {
-    height: 816px;
+    height: 100%;
 }
 
 .connect_scroll .vital{
@@ -2727,7 +2755,7 @@
 
 .connect_scroll .connect_video{
     width: 100%;
-    height: 100%;
+    height: fit-content;
     position: initial;
 }
 

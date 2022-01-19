@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H-Connect</title>
   <!--Import-->
-  <script type='text/javascript' src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' src='./js/index.js'></script>
-  <script src="/H-Connect/js/modal.js"></script>
+  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
+  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
+  <script type='text/javascript' defer src='./js/index.js'></script>
+  <script type='text/javascript' defer src="/H-Connect/js/modal.js"></script>
 
   <!--css-->
   <link rel='stylesheet' href='/H-Connect/css/reset.css'>
@@ -20,18 +20,6 @@
 
 </head>
   <body>
-    <!-- 로그아웃 팝업 -->
-    <div class="pop logout">
-        <div class="wrap_inner">
-            <div>
-                <p>선별진료소</p>
-                <h3>선별진료소</h3>
-            </div>
-
-            <button type="button" class="btn_bye">로그아웃</button>  
-        </div>
-    </div>
-
     <!-- 메세지 전송 완료 팝업 -->
     <div class="pop message_send">
         <div class="overlay">
@@ -74,6 +62,18 @@
                             선별진료소
                         </button>
                     </div>                          
+                </div>
+            </div>
+
+            <!-- 로그아웃 팝업 -->
+            <div class="pop logout">
+                <div class="wrap_inner">
+                    <div>
+                        <p>선별진료소</p>
+                        <h3>선별진료소</h3>
+                    </div>
+
+                    <button type="button" class="btn_bye">로그아웃</button>  
                 </div>
             </div>
         </header>
@@ -796,7 +796,7 @@
 
                     <div class="btn_list">
                         <button type="button" class="btn_cancel">취소</button>
-                        <button type="button" class="btn_send">전송</button>
+                        <button type="button" class="btn blf btn_send">전송</button>
                     </div>                    
                 </form>
             </section>

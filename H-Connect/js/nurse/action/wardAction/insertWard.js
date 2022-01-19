@@ -1,6 +1,8 @@
-import serverController from "../module/serverController.js";
-import commonRequest from "../module/commonRequest.js";
-import localStorageController from "../module/localStorage.js";
+
+// import serverController from "../module/serverController.js";
+// import commonRequest from "../module/commonRequest.js";
+// import localStorageController from "../module/localStorageController.js";
+
 
 const ward_Name = document.querySelector(".new_ward .content #ward_Name");
 const ward_Insert_Button = document.querySelector(".new_ward .btn_list #ward_Button");
@@ -8,24 +10,23 @@ const ward_Insert_Button = document.querySelector(".new_ward .btn_list #ward_But
 //유저 정보 
 const userData = JSON.parse(localStorageController.getLocalS("userData"));
 
-
 function Insert_New_Ward(){
     
     const req = JSON.stringify({
         requester: userData.userCode,
         organizationCode: userData.organizationCode,
         ward: ward_Name.value,
-        orderNumber: 1,
+        orderNumber: timestamp(),
         etc: "",
         ...commonRequest()
     })
 
-    serverController.connectFetchController("API/Manager/InserWard", "POST", req, (res) => {
-        console.log(res);
+    serverController.ajaxAwaitController("API/Manager/InsertWard", "POST", req, (res) => {
         if(res.result){
-            console.log("서버 통신 성공")
+            const title = $(".new_ward .content #ward_Name").val();
+            Create_newWard(title);
         }
     }, (err) => {console.log(err)});
 }
 
-ward_Insert_Button.addEventListener("click", Insert_New_Ward);
+$(".new_ward .btn_list #ward_Button").on("click", Insert_New_Ward);

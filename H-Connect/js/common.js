@@ -46,15 +46,15 @@ $(function () {
     // 병동생성 팝업에서 확인 누르면 나오게
     $('.pop .overlay .pop_cont .btn_list .btn_check').on('click', function () {
         $('.pop .overlay').fadeOut();
-        $('.nurse .ward .cont').fadeIn();
+        // $('.nurse .ward .cont').fadeIn();  //병동 더미 데이터 나오게 하는 애
     });
 
 
     // 병동관리 리스트 수정버튼 누르면 나오는 팝업
-    $('.nurse .ward .cont .ward_list .btn_list .btn_modify').on('click', function () {
-        $('.pop.new_ward .overlay').fadeIn();
-        $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
-    });
+    // $('.nurse .ward .cont .ward_list .btn_list .btn_modify').on('click', function () {
+    //     $('.pop.new_ward .overlay').fadeIn();
+    //     $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
+    // });
 
 
     // 병동관리 리스트 누르면 색 변함
@@ -64,18 +64,18 @@ $(function () {
     });
 
     // 병동삭제
-    $('.btn_delete').on('click', function () {
-        $('.pop.delete .overlay').fadeIn();
-    });
+    // $('.btn_delete').on('click', function () {
+    //     $('.pop.delete .overlay').fadeIn();
+    // });
         // 아니요
     $('.pop.delete .btn_no').on('click', function(){
         $('.pop .overlay').fadeOut();
     });
         // 네 삭제합니다.
-    $('.pop.delete .btn_cut').on('click', function(){
-        $('.nurse .ward .cont .ward_list').hide();
-        $('.pop.delete .overlay').hide();
-    });
+    // $('.pop.delete .btn_cut').on('click', function(){
+    //     $('.nurse .ward .cont .ward_list').hide();
+    //     $('.pop.delete .overlay').hide();
+    // });
 
 
 
@@ -116,7 +116,7 @@ $(function () {
 
     // 장치삭제
     $('.nurse .new_device .item_row .btn_delete').on('click', function () {
-        $('.pop.delete .overlay').fadeIn();
+        $('.pop.delete_regi .overlay').fadeIn();
     });
         // 아니요
     $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function(){
@@ -135,11 +135,11 @@ $(function () {
 
     // 장치반납 취소
     $('.nurse .return_device .item_row .btn_cancel').on('click', function () {
-        $('.pop.delete .overlay').fadeIn();
+        $('.pop.delete_return .overlay').fadeIn();
     });
         // 아니요
     $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function(){
-        $('.pop.delete .overlay').fadeOut();
+        $('.pop.delete_return .overlay').fadeOut();
     });
         // 네 삭제합니다.
     $('.pop.delete .pop_cont .btn_list .btn_cut').on('click', function(){
@@ -198,10 +198,13 @@ $(function () {
     })
 
 //모니터링
-    $('.patient_vital .all_patient .patient_moniter').on('click', function(){
+    $('.patient_vital .all_patient .patient_monitor').on('click', function(){
         location.href="patient.html";
     })
-    $('.patient_vital .all_patient .patient_moniter.empty').on('click', function(){
+    $('.patient_vital .all_patient .patient_monitor.active').on('click', function(){
+        location.href="patient_warning.html";
+    })
+    $('.patient_vital .all_patient .patient_monitor.empty').on('click', function(){
         location.href="measure.html";
     })
 
@@ -288,19 +291,6 @@ $(function () {
         $('.pop.nurse_view .btn_full').on('click', function(){
             $('.pop.nurse_view').toggleClass('active');
         })
-
-    // 담당의에게 메시지 보내는 버튼 활성화
-    $('#to_doctor').on('keyup', function() {
-        var inputVal = $('#to_doctor').val();
-        if (!(inputVal === "")) {
-          $('.btn_send').addClass('on');
-          $('.btn_send').attr('disabled', false);
-        } else {
-          $('.btn_send').removeClass('on');
-          $('.btn_send').attr('disabled', true);
-        }
-    });
-
     // 경보해제
     $('.warning .emergency_list .circum').on('click', function(){
         location.href="patient.html";
@@ -428,6 +418,11 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
         $('.pop.full .btn_close').on('click', function(){
             $('.pop.full_picture .overlay').fadeOut();
         })
+        
+        $('.emergency .big_picture').on('click', function(){
+            $('.pop.full_picture .overlay').fadeIn();
+        })
+
 
         // 연결요청 팝업
         $('.connect_para .refuse').on('click', function(){
@@ -895,12 +890,23 @@ $('.doctor_emergency .detail_ep .title .btn_check').on('click', function(){
 })
 
 // 응급호출 버튼 숨기기
-$('.doctor_emergency .message_list .row').on('click', function(){
+$('.doctor_emergency .message_list .row1').on('click', function(){
     $(this).addClass('on');
     $('.doctor_emergency .message_list .row.on').not(this).removeClass('on');
-    $('.doctor_emergency .detail_ep .title button').toggle();
-    $('.doctor_emergency .data').toggle();
-    $('.doctor_emergency .no_data').toggle();
+    $('.doctor_emergency .detail_ep .title button').hide();
+    $('.doctor_emergency .detail_ep .title .btn_check').show();
+    $('.doctor_emergency .data').show();
+    $('.doctor_emergency .no_data').hide();
+    $('.doctor_emergency .detail_ep').show();
+})
+
+$('.doctor_emergency .message_list .row2').on('click', function(){
+    $(this).addClass('on');
+    $('.doctor_emergency .message_list .row.on').not(this).removeClass('on');
+    $('.doctor_emergency .detail_ep .title button').show();
+    $('.doctor_emergency .detail_ep .title .btn_check').hide();
+    $('.doctor_emergency .data').hide();
+    $('.doctor_emergency .no_data').show();
     $('.doctor_emergency .detail_ep').show();
 })
 
@@ -1447,15 +1453,30 @@ $('.doctor .nurse_send').on('click', function(){
 // 모니터링 탭메뉴
 $(document).ready(function(){
 
-$('ul.tabs li').click(function(){
-    var tab_id = $(this).attr('data-tab');
+    $('ul.tabs li').click(function(){
+        var tab_id = $(this).attr('data-tab');
 
-    $('ul.tabs li').removeClass('current');
-    $('.tab-content').removeClass('current');
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
 
-    $(this).addClass('current');
-    $("#"+tab_id).addClass('current');
+        $(this).addClass('current');
+        $("#"+tab_id).addClass('current');
+    })
 })
+
+$(document).ready(function(){
+    
+    // 담당의에게 메시지 보내는 버튼 활성화
+    $('#to_doctor').on('keyup', function() {
+        var inputVal = $('#to_doctor').val();
+        if (!(inputVal === "")) {
+          $('.btn_send').addClass('on');
+          $('.btn_send').attr('disabled', false);
+        } else {
+          $('.btn_send').removeClass('on');
+          $('.btn_send').attr('disabled', true);
+        }
+    });
 
 })
 
