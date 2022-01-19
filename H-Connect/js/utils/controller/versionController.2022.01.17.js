@@ -45,7 +45,7 @@ const VERSION = {
         'module' : {
             'auth' : {
                 'login.js' : {
-                    url_path:'/',
+                    url_path:'/||/index',
                     file_path:'/H-Connect/js/utils/module/auth/',
                     version:'2022.01.17.11.33',
                 },
@@ -89,6 +89,11 @@ const VERSION = {
                     url_path:'/nurse/dashboard',
                     file_path:'/H-Connect/js/nurse/action/dashboard/',
                     version:'2022.01.18.15.22'
+                },
+                'select_ward.js' : {
+                    url_path:'/nurse/dashboard',
+                    file_path:'/H-Connect/js/nurse/action/dashboard/',
+                    version:'2022.01.18.15.22'
                 }
             },
             'wardAction' : {
@@ -111,7 +116,7 @@ const VERSION = {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/wardAction/',
                     version:'2022.01.18.18.47'
-                }
+                } 
             }
         },
         'insert_monitoring.js' : {

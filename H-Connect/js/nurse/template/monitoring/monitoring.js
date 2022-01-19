@@ -1,5 +1,5 @@
 /*
-    s: 
+    s : 모니터링 블록
 */
 function MonitorBlock_Have(index){
     /**
@@ -59,5 +59,8 @@ function MonitorBlock_None(index){
             </div>
         </div>
     </div>
-    `
+    `;
 }
+/*
+    e : 모니터링 블록
+*/
