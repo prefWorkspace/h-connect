@@ -9,7 +9,6 @@ function clickActive(){
         $(this).addClass('on');
         $('.nurse .hospital_room .title .btn_new_room').attr("disabled", false);
         selectSickRoom($(this).data("wardcode"));
-        
         $(".pop.new_room .overlay .pop_cont .btn_list button.btn_check").attr('data-wardcode', $(this).data("wardcode"));
     });
 }
@@ -18,13 +17,14 @@ function getWardData(){
     const req = JSON.stringify({
         requester,
         organizationCode,
-        includeCickBed: true,
+        includeSickRoom: true,
         ...commonRequest()
     });
 
     serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
-        console.log(res);
+        
         if(res.result){
+            console.log(res);
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
                 const title = wardList[i].ward;
@@ -33,6 +33,7 @@ function getWardData(){
             updateWard();
             deleteWard();
             clickActive();
+            Create_ward_list_measure(wardList);
         }
     })
 }

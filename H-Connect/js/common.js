@@ -91,7 +91,7 @@ $(function () {
     });
     //병실관리 수정
     $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on('click', function(){
-        $('.pop.new_room .overlay').fadeIn();
+        // $('.pop.new_room .overlay').fadeIn();
     });
 
     // 병실삭제
@@ -104,7 +104,7 @@ $(function () {
     });
         // 네 삭제합니다.
     $('.pop.delete_room .pop_cont .btn_list .btn_cut').on('click', function(){
-        $('.nurse .hospital_room .cont .ward_list').hide();
+        // $('.nurse .hospital_room .cont .ward_list').hide();
         $('.pop.delete_room .overlay').fadeOut();
     });
 

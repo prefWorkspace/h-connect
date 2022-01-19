@@ -99,6 +99,45 @@
         </div>
     </div>
 
+    <!-- 병실수정 팝업 -->
+    <div class="pop update_room">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div class="title">
+                    <h2>병실수정</h2>
+                </div>
+
+                 <div class="content">
+                     <p>병실이름 </p>
+
+                     <input type="text">
+                 </div>
+
+                 <div class="content">
+                    <p>병상 수 </p>
+
+                    <div class="selectBox2 room_box">
+                        <button class="label room_label">6인실<span></span></button>
+
+                        <ul class="optionList room_list">
+                            <li data-number="1" class="optionItem room_option">1인실</li>
+                            <li data-number="2" class="optionItem room_option">2인실</li>
+                            <li data-number="3" class="optionItem room_option">3인실</li>
+                            <li data-number="4" class="optionItem room_option">4인실</li>
+                            <li data-number="5" class="optionItem room_option">5인실</li>
+                            <li data-number="6" class="optionItem room_option">6인실</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="btn_list">
+                     <button type="button" class="btn rd btn_cancel">취소</button>
+                     <button type="button" class="btn blf btn_check">확인</button>
+                 </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 병동 삭제 -->
     <div class="pop delete delete_ward">
         <div class="overlay">
@@ -670,27 +709,39 @@
     <!--// end wrap-->
 
     <script>
-        const label = document.querySelector('.room_label');
-        const options = document.querySelectorAll('.room_option');
+        const newRoom_label = document.querySelector('.new_room .room_label');
+        const newRoom_options = document.querySelectorAll('.new_room .room_option');
+        const update_label = document.querySelector('.update_room .room_label');
+        const update_options = document.querySelectorAll('.update_room .room_option');
 
         // 클릭한 옵션의 텍스트를 라벨 안에 넣음
         const handleSelect = (item) => {
-        label.parentNode.classList.remove('active');
-        label.innerHTML = item.textContent;
+        newRoom_label.parentNode.classList.remove('active');
+        newRoom_label.innerHTML = item.textContent;
+        }
+        const updateHandleSelect = (item) => {
+        update_label.parentNode.classList.remove('active');
+        update_label.innerHTML = item.textContent;
         }
         // 옵션 클릭시 클릭한 옵션을 넘김
-        options.forEach(option => {
+        newRoom_options.forEach(option => {
             option.addEventListener('click', () => handleSelect(option))
+        })
+        update_options.forEach(option => {
+            option.addEventListener('click', () => updateHandleSelect(option))
         })
 
         // 라벨을 클릭시 옵션 목록이 열림/닫힘
-        label.addEventListener('click', () => {
-        // if(label.parentNode.classList.contains('active')) {
-        //     label.parentNode.classList.remove('active');
+        newRoom_label.addEventListener('click', () => {
+        // if(newRoom_label.parentNode.classList.contains('active')) {
+        //     newRoom_label.parentNode.classList.remove('active');
         // } else {
-        //     label.parentNode.classList.add('active');
+        //     newRoom_label.parentNode.classList.add('active');
         // }
-            label.parentNode.classList.toggle("active");
+            newRoom_label.parentNode.classList.toggle("active");
+        })
+        update_label.addEventListener('click', () => {
+            update_label.parentNode.classList.toggle("active");
         })
     </script>
   </body>

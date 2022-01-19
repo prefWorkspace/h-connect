@@ -55,15 +55,22 @@ const VERSION = {
     'nurse' : {
         'template' : {
             'index' : {
-                'insert_newWard.js' : {
+                'insert_newWard_index.js' : {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/index/',
                     version:'2022.01.18.15.22'
                 },
-                'inser_newSickRoom.js' : {
+                'insert_newSickRoom_index.js' : {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/index/',
                     version:'2022.01.19.11.43'
+                }
+            },
+            'measure' : {
+                'insert_ward_measur.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/template/measure/',
+                    version:'2022.01.19.18.15'
                 }
             },
             'monitoring' : {
@@ -101,43 +108,50 @@ const VERSION = {
                     version:'2022.01.18.15.22'
                 }
             },
-            'wardAction' : {
-                'selectWard.js' : {
-                    url_path:'/nurse/index||/nurse/measure',
-                    file_path:'/H-Connect/js/nurse/action/wardAction/',
-                    version:'2022.01.18.16.00'
+            'index' : {
+                'wardAction' : {
+                    'selectWard.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/wardAction/',
+                        version:'2022.01.18.16.00'
+                    },
+                    'insertWard.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/wardAction/',
+                        version:'2022.01.18.15.33'
+                    },
+                    'updateWard.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/wardAction/',
+                        version:'2022.01.18.16.49'
+                    },
+                    'deleteWard.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/wardAction/',
+                        version:'2022.01.18.18.47'
+                    } 
                 },
-                'insertWard.js' : {
-                    url_path:'/nurse/index||/nurse/measure',
-                    file_path:'/H-Connect/js/nurse/action/wardAction/',
-                    version:'2022.01.18.15.33'
-                },
-                'updateWard.js' : {
-                    url_path:'/nurse/index||/nurse/measure',
-                    file_path:'/H-Connect/js/nurse/action/wardAction/',
-                    version:'2022.01.18.16.49'
-                },
-                'deleteWard.js' : {
-                    url_path:'/nurse/index||/nurse/measure',
-                    file_path:'/H-Connect/js/nurse/action/wardAction/',
-                    version:'2022.01.18.18.47'
-                } 
-            },
-            'sickRoomAction' : {
-                'selectSickRoom.js' : {
-                    url_path:'/nurse/index||/nurse/measure',
-                    file_path:'/H-Connect/js/nurse/action/sickRoomAction/',
-                    version:'2022.01.19.11.30'
-                },
-                'insertSickRoom.js' : {
-                    url_path:'/nurse/index||/nurse/measure',
-                    file_path:'/H-Connect/js/nurse/action/sickRoomAction/',
-                    version:'2022.01.19.12.09'
-                },
-                'deleteSickRoom.js' : {
-                    url_path:'/nurse/index||/nurse/measure',
-                    file_path:'/H-Connect/js/nurse/action/sickRoomAction/',
-                    version:'2022.01.19.14.30'
+                'sickRoomAction' : {
+                    'selectSickRoom.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/sickRoomAction/',
+                        version:'2022.01.19.11.30'
+                    },
+                    'insertSickRoom.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/sickRoomAction/',
+                        version:'2022.01.19.12.09'
+                    },
+                    'deleteSickRoom.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/sickRoomAction/',
+                        version:'2022.01.19.14.30'
+                    },
+                    'updateSickRoom.js' : {
+                        url_path:'/nurse/index||/nurse/measure',
+                        file_path:'/H-Connect/js/nurse/action/index/sickRoomAction/',
+                        version:'2022.01.19.16.09'
+                    }
                 }
             }
         },
