@@ -45,7 +45,7 @@ const VERSION = {
         'module' : {
             'auth' : {
                 'login.js' : {
-                    url_path:'/',
+                    url_path:'/||/index',
                     file_path:'/H-Connect/js/utils/module/auth/',
                     version:'2022.01.17.11.33',
                 },
