@@ -2073,6 +2073,9 @@
 /* 환자상태 */
 .connect .pati_stat{
     width: 736px;
+}
+
+.connect.main .pati_stat{    
     position: absolute;
     z-index: 1;
 }
@@ -2662,7 +2665,7 @@
 }
 
 .connect_tab .scene_picture .big_picture{
-    height: 692px;
+    height: 698px;
 }
 
 /* connect_scroll */
@@ -2813,13 +2816,13 @@
 
 /* doctor_emergency */
 
-.doctor_emergency{
+/* .doctor_emergency{
     min-width: 1248px;
 }
 
 .doctor_emergency .wrap_inner{
     min-width: 1220px;
-}
+} */
 
 /* 응급호출 */
 .doctor_emergency .section{

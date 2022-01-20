@@ -773,12 +773,7 @@
     height: 18px;
     margin: 0 15px 0 0;
     vertical-align: middle;
-    background: url('/H-Connect/img/icon/check.svg') no-repeat 0 0px / contain;
     cursor: pointer;
-}
-
-.nurse_message .all_check input[type='checkbox']:checked + label{
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
 }
 
 .nurse_message .all_check input[type="checkbox"] + label + label{

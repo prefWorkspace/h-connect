@@ -604,7 +604,6 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
         $('.connect .several > div').not('.connect .pati_stat').removeClass('active');
     })
 
-
     // 바이탈
     $('.several .vital .title .btn_close').on('click', function(){
         $('.several .vital').hide();

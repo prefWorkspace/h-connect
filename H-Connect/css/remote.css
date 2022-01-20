@@ -74,7 +74,7 @@ img{
 }
 
 .remote .section{
-    height: 888px;
+    height: 100%;
 }
 
 .select_case{
@@ -1122,11 +1122,13 @@ img{
 /* 바이탈 */
 .vital{
     overflow-y: initial;
-    position: absolute;
+    /* position: absolute;
     top: 80px;
-    left: 24px;
+    left: 24px; */
     z-index: 2;
 }
+
+.default .vital{position: absolute; top: 80px; left: 24px;}
 
 .vital ul.tabs{
     padding: 8px;
@@ -1740,9 +1742,9 @@ img{
 }
 
 /* 탭으로 보기 */
-.tab_view{
+/* .tab_view{
     position: relative;
-}
+} */
 
 .connect_tab .tab_view .connect_video{
     display: none;
@@ -2066,9 +2068,11 @@ img{
     max-width: 1080px;
     height: 720px;
     /* background: #111; */
-    position: absolute;
-    right: 10px;
+    /* position: absolute;
+    right: 10px; */
 }
+
+.default .several .pacs{position: absolute; right: 10px;}
 
 .pacs .pacs_inner{
     height: 100%;
@@ -2439,7 +2443,7 @@ img{
     max-height: 650px;
 }
 
-.lab{
+.default  .lab{
     position: absolute;
     top: 0;
 }
@@ -2449,7 +2453,7 @@ img{
 }
 
 /* emr */
-.emr{
+.default .emr{
     position: absolute;
     top: 30px;
     z-index: 0;
@@ -2513,7 +2517,7 @@ img{
 
 .tab .several .vital{
     width: 100%;
-    height: 838px;
+    height: 842px;
     top: 0;
     left: 0;
     border-radius: 0;
@@ -2588,7 +2592,7 @@ img{
 }
 
 .tab .study_list{
-    height: 797px;
+    height: 800px;
     border-radius: 0;
 }
 
@@ -2621,9 +2625,9 @@ img{
 }
 
 .tab .inner> .cont{
-    height: 796px;
+    height: 800px;
     /* min-height: 796px; */
-    max-height: 796px;
+    max-height: 800px;
 }
 
 .tab .inner .cont .cont_wrap{
@@ -2656,6 +2660,8 @@ img{
 .scroll .patient_view> .title{
     margin-bottom: 0;
 }
+
+.scroll #tab-1 .ecg_graph p{margin-bottom: 0;}
 
 .scroll .vital .tab-content.current{
     height: 550px;
@@ -2945,6 +2951,9 @@ img{
 
 .multi .pacs .list .btn_list .full{
     padding: 10px 5px;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
 }
 
 .view .pacs_inner{
