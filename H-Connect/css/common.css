@@ -428,7 +428,7 @@ button{border-radius: 4px; background: none;}
     padding: 12px 24px;
     background: linear-gradient(to right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    z-index: 99;
 }
 
 /* header_wrap */
@@ -5272,5 +5272,8 @@ textarea::-webkit-scrollbar-button {
     /* border: 1px solid red; */
     right: 150px;
 }
+
+.pop.remote_attend .no_atten{display: none;}
+.pop.remote_attend .atten{display: block;}
 
 

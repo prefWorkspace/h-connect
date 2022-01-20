@@ -83,7 +83,7 @@ p{font-size: 12px;}
     position: relative;
 }
 
-.doctor .btn_today> :last-child:after{
+.doctor .btn_today> h1::after{
     content: ''; 
     width: 9px;
     height: 18px; 
@@ -92,7 +92,7 @@ p{font-size: 12px;}
     background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px/ contain;
     top: 50%; 
     transform: translateY(-50%);
-    right: -50px;
+    right: -83px;
 }
 
 .doctor .schedule .btn_today h2{
@@ -2717,7 +2717,7 @@ p{font-size: 12px;}
     margin-bottom: 32px;
     padding: 20px 32px;
     border-radius: 8px;
-    background-color: #ccc;
+    background: #ccc;
     display: flex;
     align-items: center;
 }
@@ -2726,6 +2726,8 @@ p{font-size: 12px;}
     background: linear-gradient(to right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
+
+.doctor .status_label.on h1.ing{display: block;}
 
 .doctor .status_label h1{color: #fff;}
 
