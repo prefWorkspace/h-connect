@@ -18,6 +18,7 @@ function getWardData(){
         requester,
         organizationCode,
         includeSickRoom: true,
+        includeSickBed: true,
         ...commonRequest()
     });
 
@@ -34,6 +35,7 @@ function getWardData(){
             deleteWard();
             clickActive();
             Create_ward_list_measure(wardList);
+            Create_ward_list_measure_Bed(wardList);
         }
     })
 }

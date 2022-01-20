@@ -371,94 +371,32 @@
 
                                     <div class="patient_room">
                                         <div class="selectBox2 select_ward s_select">
-                                            <button class="label ward_label2">심장병동<span></span></button>
+                                            <button class="label ward_label2">병동선택<span></span></button>
                                             <ul class="optionList ward_option2">
-                                                <li class="optionItem ward_list2">
+                                                <!-- <li class="optionItem ward_list2">
                                                     <p>심장병동</p>
                                                     <span class="bed_count lot">+8 여유</span>
-                                                </li>
-
-                                                <li class="optionItem ward_list2">
-                                                    <p>12 병동</p>
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
 
                                         <div class="selectBox2 select_room s_select">
                                             <button class="label room_label2">병실선택<span></span></button>
                                             <ul class="optionList room_option2">
-                                                <li class="optionItem room_list2">병실전체</li>
-                                                <li class="optionItem room_list2">
+                                                <!-- <li class="optionItem room_list2">병실전체</li> -->
+                                                <!-- <li class="optionItem room_list2">
                                                     <p>
                                                         <span>1301</span> 호실
                                                     </p>
-
                                                     <span class="bed_count lot">+1 여유</span>
-                                                </li>
-
-                                                <li class="optionItem room_list2">
-                                                    <p>
-                                                        <span>1302</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count lot">+2 여유</span>
-                                                </li>
-
-                                                <li class="optionItem room_list2">
-                                                    <p>
-                                                        <span>1303</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
-
-                                                <li class="optionItem room_list2">
-                                                    <p>
-                                                        <span>1304</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
-
-                                                <li class="optionItem room_list2">
-                                                    <p>
-                                                        <span>1305</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
-
-                                                <li class="optionItem room_list2">
-                                                    <p>
-                                                        <span>1306</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count lot">+1 여유</span>
-                                                </li>
-
-                                                <li class="optionItem room_list2">
-                                                    <p>
-                                                        <span>1307</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count lot">+2 여유</span>
-                                                </li>
-
-                                                <li class="optionItem room_list2">
-                                                    <p>
-                                                        <span>1308</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
 
                                         <div class="selectBox2 select_bed">
                                             <button class="label bed_label">병상선택<span></span></button>
                                             <ul class="optionList bed_option">
-                                                <li class="optionItem bed_list">6번 병상</li>
+                                                <!-- <li class="optionItem bed_list">6번 병상</li> -->
                                             </ul>
                                         </div>
                                     </div>
@@ -711,22 +649,22 @@
             const roomlabel = document.querySelector('.room_label');
             const roomOptions = document.querySelectorAll('.room_list');
 
-            const roomSelect = (item) => {
-                roomlabel.parentNode.classList.remove('active');
-                roomlabel.innerHTML = item.textContent;
-            }
+            // const roomSelect = (item) => {
+            //     roomlabel.parentNode.classList.remove('active');
+            //     roomlabel.innerHTML = item.textContent;
+            // }
 
-            roomOptions.forEach(option => {
-                option.addEventListener('click', () => roomSelect(option))
-            })
+            // roomOptions.forEach(option => {
+            //     option.addEventListener('click', () => roomSelect(option))
+            // })
 
-            roomlabel.addEventListener('click', () => {
-            if(roomlabel.parentNode.classList.contains('active')) {
-                roomlabel.parentNode.classList.remove('active');
-            } else {
-                roomlabel.parentNode.classList.add('active');
-            }
-            })
+            // roomlabel.addEventListener('click', () => {
+            // if(roomlabel.parentNode.classList.contains('active')) {
+            //     roomlabel.parentNode.classList.remove('active');
+            // } else {
+            //     roomlabel.parentNode.classList.add('active');
+            // }
+            // })
 
         //measure_status 병상등록 성별 셀렉트
             const sexlabel = document.querySelector('.sex_label');
@@ -753,64 +691,64 @@
             const wardlabel2 = document.querySelector('.ward_label2');
             const wardOptions2 = document.querySelectorAll('.ward_list2');
 
-            const wardSelect2 = (item) => {
-                wardlabel2.parentNode.classList.remove('active');
-                wardlabel2.innerHTML = item.textContent;
-            }
+            // const wardSelect2 = (item) => {
+            //     wardlabel2.parentNode.classList.remove('active');
+            //     wardlabel2.innerHTML = item.textContent;
+            // }
 
-            wardOptions2.forEach(option => {
-                option.addEventListener('click', () => wardSelect2(option))
-            })
+            // wardOptions2.forEach(option => {
+            //     option.addEventListener('click', () => wardSelect2(option))
+            // })
 
-            wardlabel2.addEventListener('click', () => {
-            if(wardlabel2.parentNode.classList.contains('active')) {
-                wardlabel2.parentNode.classList.remove('active');
-            } else {
-                wardlabel2.parentNode.classList.add('active');
-            }
-            })
+            // wardlabel2.addEventListener('click', () => {
+            // if(wardlabel2.parentNode.classList.contains('active')) {
+            //     wardlabel2.parentNode.classList.remove('active');
+            // } else {
+            //     wardlabel2.parentNode.classList.add('active');
+            // }
+            // })
 
         //measure_status 병실 셀렉트
             const roomlabel2 = document.querySelector('.room_label2');
             const roomOptions2 = document.querySelectorAll('.room_list2');
 
-            const roomSelect2 = (item) => {
-                roomlabel2.parentNode.classList.remove('active');
-                roomlabel2.innerHTML = item.textContent;
-            }
+            // const roomSelect2 = (item) => {
+            //     roomlabel2.parentNode.classList.remove('active');
+            //     roomlabel2.innerHTML = item.textContent;
+            // }
       
-            roomOptions2.forEach(option => {
-                option.addEventListener('click', () => roomSelect2(option))
-            })
+            // roomOptions2.forEach(option => {
+            //     option.addEventListener('click', () => roomSelect2(option))
+            // })
 
-            roomlabel2.addEventListener('click', () => {
-            if(roomlabel2.parentNode.classList.contains('active')) {
-                roomlabel2.parentNode.classList.remove('active');
-            } else {
-                roomlabel2.parentNode.classList.add('active');
-            }
-            })
+            // roomlabel2.addEventListener('click', () => {
+            // if(roomlabel2.parentNode.classList.contains('active')) {
+            //     roomlabel2.parentNode.classList.remove('active');
+            // } else {
+            //     roomlabel2.parentNode.classList.add('active');
+            // }
+            // })
 
         //measure_status 병실 셀렉트
             const bedlabel = document.querySelector('.bed_label');
             const bedOptions = document.querySelectorAll('.bed_list');
 
-            const bedSelect = (item) => {
-                bedlabel.parentNode.classList.remove('active');
-                bedlabel.innerHTML = item.textContent;
-            }
+            // const bedSelect = (item) => {
+            //     bedlabel.parentNode.classList.remove('active');
+            //     bedlabel.innerHTML = item.textContent;
+            // }
 
-            bedOptions.forEach(option => {
-                option.addEventListener('click', () => bedSelect(option))
-            })
+            // bedOptions.forEach(option => {
+            //     option.addEventListener('click', () => bedSelect(option))
+            // })
 
-            bedlabel.addEventListener('click', () => {
-            if(bedlabel.parentNode.classList.contains('active')) {
-                bedlabel.parentNode.classList.remove('active');
-            } else {
-                bedlabel.parentNode.classList.add('active');
-            }
-            })
+            // bedlabel.addEventListener('click', () => {
+            // if(bedlabel.parentNode.classList.contains('active')) {
+            //     bedlabel.parentNode.classList.remove('active');
+            // } else {
+            //     bedlabel.parentNode.classList.add('active');
+            // }
+            // })
 
         //measure_status 병상수정 성별 셀렉트
             const sexlabel2 = document.querySelector('.sex_label2');
