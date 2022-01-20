@@ -33,7 +33,8 @@ first_get_DashBoard_Ward_Api();
 
 /* s : 병상 데이터 불러오기 */
 
-async function get_SickRoom_Api(setData){
+async function get_SickRoomBed_Api(setData){
+    //병실 및 병상 가져오기
     const req = JSON.stringify({
         requester,
         organizationCode,
@@ -41,13 +42,11 @@ async function get_SickRoom_Api(setData){
         ...commonRequest()
     });
     
-    //병동, 병실, 병상 가져오기
     
     await serverController.ajaxAwaitController("API/Manager/SelectSickRoom", "POST", req, (res) => {
         if(res.result){
             sickRoomList = res.sickRoomList;
             SickRoom_Block(sickRoomList);
-            // 1. 병동 설렉트 박스 선택 설정
         }
     })
 }
