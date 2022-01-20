@@ -53,25 +53,25 @@ function SickRoom_Block(room_list){
                 <div class="patient_info">
                 
                     <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="${'afasd'}" onclick="checkSelectAll(this)">
+                        <input type="checkbox" name="patient_no" class="green_custom" id="${'afasd'}">
                         <label for="${'afasd'}"></label>
                         <label for="${'afasd'}"><span>김환자(63.남.patient no)</span></label>
                     </div>
     
                     <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_2" onclick="checkSelectAll(this)">
+                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_2">
                         <label for="patient_2"></label>
                         <label for="patient_2"><span>김환자(63.남.patient no)</span></label>
                     </div>
     
                     <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_3" onclick="checkSelectAll(this)">
+                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_3">
                         <label for="patient_3"></label>
                         <label for="patient_3"><span>김환자(63.남.patient no)</span></label>
                     </div>
     
                     <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_4" onclick="checkSelectAll(this)">
+                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_4">
                         <label for="patient_4"></label>
                         <label for="patient_4"><span>김환자(63.남.patient no)</span></label>
                     </div>
@@ -82,12 +82,13 @@ function SickRoom_Block(room_list){
         $sickRoomWrapEl.html(html);
 
         const $sickRoom_wardListEls = $('.nurse.dashboard .taget_select .select_inner .sickRoom_block');
-        $sickRoom_wardListEls.children('.ward_count').off().on('click', function(){
+        $sickRoom_wardListEls.find('.ward_count').off().on('click', function(){
             $(this).next().toggle();
         });
-        $sickRoom_wardListEls.children('.ward_count .input_wrap input').off().on('change', function(){
-            console.log('cc');
-        })
+        $sickRoom_wardListEls.find('.ward_count .input_wrap input').off().on('change', function(){
+            const inputPatientEl = $(this).closest('.sickRoom_block').find('.patient_info input');  
+            inputPatientEl.attr('checked', !inputPatientEl.attr('checked'));
+        });
     }
 }
 
@@ -130,7 +131,7 @@ function first_ward_addEvent(){
 ------------------------------------------------------------------ */
 function first_dashboard_view_setting(){
 
-    ward_Selected_Setting(wardList[0].ward);
+    ward_Selected_Setting(wardList[0]?.ward);
 
     Ward_Select_ListBox(wardList);
 

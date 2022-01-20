@@ -74,7 +74,12 @@ const VERSION = {
                 }
             },
             'dashboard' : {
-                'dashboard.js' : {
+                'insert_ward.js' : {
+                    url_path:'/nurse/dashboard',
+                    file_path:'/H-Connect/js/nurse/template/dashboard/',
+                    version:'2022.01.18.15.22'
+                },
+                'insert_dashboard.js' : {
                     url_path:'/nurse/dashboard',
                     file_path:'/H-Connect/js/nurse/template/dashboard/',
                     version:'2022.01.18.15.22'
