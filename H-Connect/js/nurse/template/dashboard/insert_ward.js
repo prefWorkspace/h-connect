@@ -41,7 +41,7 @@ function SickRoom_Block(room_list){
     if(room_list !== null && room_list.length > 0){
         let html = '';
         for(let i = 0; i < room_list.length; i++){
-            const {sickRoom, sickRoomCode} = room_list[i];
+            const {sickRoom, sickRoomCode, sickBedList} = room_list[i];
             html+= `
             <div class="sickRoom_block" style="cursor:pointer;">
                 <div class="ward_count">
@@ -53,7 +53,7 @@ function SickRoom_Block(room_list){
                 </div>
                 <div class="patient_info">
                     ${
-                        Array(5).fill().htmlFor(SickBed_Block())
+                        [{test:1, test2:"asdf"},{test:1, test2:"asdf"}].htmlFor((item, index, arr)=>{return SickBed_Block(item)})
                     }
                 </div>
             </div>
@@ -72,7 +72,9 @@ function SickRoom_Block(room_list){
     }
 }
 
-function SickBed_Block(){
+function SickBed_Block(data){
+    console.log(data);
+    const {test} = data;
     /**
     * 병상 블록 HTML 템플릿 입니다.
     */
@@ -80,7 +82,7 @@ function SickBed_Block(){
     <div class="input_wrap">
         <input type="checkbox" name="patient_no" class="green_custom" id="patient_1">
         <label for="patient_1"></label>
-        <label for="patient_1"><span>김환자(63.남.patient no)</span></label>
+        <label for="patient_1"><span>${test}(63.남.patient no)</span></label>
     </div>
     `;
 }
