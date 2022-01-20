@@ -19,24 +19,35 @@ const NOW_URL_PATH = pathCalc();
  */
 const VERSION = {
     'utils' : {
+        'common' : {
+            'arrayHandle.js' : {
+                priority:0,
+                url_path:'*',
+                file_path:'/H-Connect/js/utils/common/',
+                version:'2022.01.17.11.33'
+            }
+        },
         'controller' : {
             'commonRequest.js' : {
-                priority:1,
+                priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
             },
             'cookieController.js' : {
+                priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
             },
             'localStorageController.js' : {
+                priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
             },
             'serverController.js' : {
+                priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
@@ -168,21 +179,26 @@ const VERSION = {
     }
 }
 
+/* s: settings function */
+function pathCalc(){
+    /**
+     * 주소 path값을 반환하는 함수입니다.
+     * 어떠한 환경에서 실행되는지를 명확히 알수가 없어
+     * path값에서 .html을 제외하고 반환해줍니다.
+     */
+    const _GET_PATH = location.pathname; // location의 path값을 반환합니다.
+    let _resultPath = _GET_PATH; // 반환될 path값을 설정해줍니다.
+
+    if(_GET_PATH.indexOf('.html') !== -1){
+        _resultPath = _GET_PATH.split('.html')[0];
+    }
+
+    return _resultPath; 
+}
+/* e: settings function */
+
 /* e : path, version set */
 let scriptArr = [];
-function scriptSet(){
-    // 스크립트를 생성해줍니다.
-    findJsInVersion(VERSION, '.js');
-    const tempScript = doc.createDocumentFragment();
-    for(let i = 0; i < scriptArr.length; i++){
-        const arr = scriptArr[i];
-        const scriptEl = doc.createElement('script');
-        scriptEl.defer = true;
-        scriptEl.src = arr.file_path + arr.file_name + '?v=' + arr.version;
-        tempScript.append(scriptEl);
-    }
-    doc.head.append(tempScript);
-}
 function findJsInVersion(_targetObj, filter){
     // 재귀를 통한 스크립트 오브젝트 배열 세팅 함수
     if(typeof(_targetObj) !== 'object'){return;}
@@ -201,23 +217,20 @@ function findJsInVersion(_targetObj, filter){
         findJsInVersion(_targetObj[key], filter);
     }
 }
-scriptSet(); // 스크립트 생성해주는 함수
 
-/* s: settings function */
-
-function pathCalc(){
-    /**
-     * 주소 path값을 반환하는 함수입니다.
-     * 어떠한 환경에서 실행되는지를 명확히 알수가 없어
-     * path값에서 .html을 제외하고 반환해줍니다.
-     */
-    const _GET_PATH = location.pathname; // location의 path값을 반환합니다.
-    let _resultPath = _GET_PATH; // 반환될 path값을 설정해줍니다.
-
-    if(_GET_PATH.indexOf('.html') !== -1){
-        _resultPath = _GET_PATH.split('.html')[0];
+function scriptSet(){
+    // 스크립트를 생성해줍니다.
+    findJsInVersion(VERSION, '.js');
+    scriptArr.sort((a, b)=>{return a.priority - b.priority;});
+    const tempScriptFragment = doc.createDocumentFragment();
+    for(let i = 0; i < scriptArr.length; i++){
+        const arr = scriptArr[i];
+        const scriptEl = doc.createElement('script');
+        scriptEl.defer = true;
+        scriptEl.src = arr.file_path + arr.file_name + '?v=' + arr.version;
+        tempScriptFragment.append(scriptEl);
     }
-
-    return _resultPath; 
+    doc.head.append(tempScriptFragment);
 }
-/* e: settings function */
+
+scriptSet(); // 스크립트 생성해주는 함수

@@ -37,6 +37,7 @@ function SickRoom_Block(room_list){
     * 병실 블록 생성입니다.
     */
    console.log(room_list);
+   let adsfa = ""; 
     if(room_list !== null && room_list.length > 0){
         let html = '';
         for(let i = 0; i < room_list.length; i++){
@@ -51,30 +52,9 @@ function SickRoom_Block(room_list){
                     </div>
                 </div>
                 <div class="patient_info">
-                
-                    <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="${'afasd'}">
-                        <label for="${'afasd'}"></label>
-                        <label for="${'afasd'}"><span>김환자(63.남.patient no)</span></label>
-                    </div>
-    
-                    <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_2">
-                        <label for="patient_2"></label>
-                        <label for="patient_2"><span>김환자(63.남.patient no)</span></label>
-                    </div>
-    
-                    <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_3">
-                        <label for="patient_3"></label>
-                        <label for="patient_3"><span>김환자(63.남.patient no)</span></label>
-                    </div>
-    
-                    <div class="input_wrap">
-                        <input type="checkbox" name="patient_no" class="green_custom" id="patient_4">
-                        <label for="patient_4"></label>
-                        <label for="patient_4"><span>김환자(63.남.patient no)</span></label>
-                    </div>
+                    ${
+                        Array(5).fill().htmlFor(SickBed_Block())
+                    }
                 </div>
             </div>
             `;
@@ -98,11 +78,11 @@ function SickBed_Block(){
     */
     return `
     <div class="input_wrap">
-        <input type="checkbox" name="patient_no" class="green_custom" id="patient_1" onclick="checkSelectAll(this)">
+        <input type="checkbox" name="patient_no" class="green_custom" id="patient_1">
         <label for="patient_1"></label>
         <label for="patient_1"><span>김환자(63.남.patient no)</span></label>
     </div>
-    `
+    `;
 }
 
 //setting and events
@@ -119,7 +99,9 @@ function first_ward_addEvent(){
         // 설렉트 박스 선택 이벤트
         const selectedWard = wardList[$(this).index()];
         ward_Selected_Setting(selectedWard.ward);
-        get_SickRoom_Api({
+        $sickRoomWrapEl.html(''); // 초기화
+        get_SickRoomBed_Api({
+            // 병상 api호출
             wardCode : selectedWard.wardCode,
             includeSickBed : true
         });
