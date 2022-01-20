@@ -53,7 +53,7 @@ function SickRoom_Block(room_list){
                 </div>
                 <div class="patient_info">
                     ${
-                        [{test:1, test2:"asdf"},{test:1, test2:"asdf"}].htmlFor((item, index, arr)=>{return SickBed_Block(item)})
+                        Array(4).fill().htmlFor((item, index, arr)=>{return SickBed_Block(item)})
                     }
                 </div>
             </div>
@@ -73,8 +73,6 @@ function SickRoom_Block(room_list){
 }
 
 function SickBed_Block(data){
-    console.log(data);
-    const {test} = data;
     /**
     * 병상 블록 HTML 템플릿 입니다.
     */
@@ -82,7 +80,7 @@ function SickBed_Block(data){
     <div class="input_wrap">
         <input type="checkbox" name="patient_no" class="green_custom" id="patient_1">
         <label for="patient_1"></label>
-        <label for="patient_1"><span>${test}(63.남.patient no)</span></label>
+        <label for="patient_1"><span>${"test"}(63.남.patient no)</span></label>
     </div>
     `;
 }
