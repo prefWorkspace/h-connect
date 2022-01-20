@@ -2,7 +2,7 @@
 
  function insertSickRoomHandle(){
     const $roomName = $(".pop.new_room .overlay .pop_cont .content input").val();
-    const $posern = $(".pop.new_room .overlay .pop_cont .content .selectBox2 .room_label").text().slice(0,1);
+    const $person = $(".pop.new_room .overlay .pop_cont .content .selectBox2 .room_label").text().slice(0,1);
     const wardCode = $(this).attr("data-wardcode");    
     
     const orderNumber = $(".section.right.hospital_room .container .cont .container .ward_list").length + 1;
@@ -13,7 +13,7 @@
         wardCode,
         sickRoom: $roomName,
         orderNumber,
-        etc: $posern,
+        etc: $person,
         ...commonRequest(),
     })
     
@@ -23,6 +23,7 @@
         if(res.result){
             $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
             selectSickRoom(wardCode);
+            $(".pop.new_room .overlay .pop_cont .content .selectBox2 .room_label").text("")
         }
     }, (err) => {console.log(err)})
 }

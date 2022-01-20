@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>H-Connect</title>
-  <!--Import-->
-  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
-
-  <!--css-->
-  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
-  <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/nurse.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H-Connect</title>
+    <!--Import-->
+    <script type='text/javascript' defer src='/H-Connect/js/utils/controller/versionController.2022.01.17.js'></script>
+    <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
+    <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
+    <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
+    <!--css-->
+    <link rel='stylesheet' href='/H-Connect/css/reset.css'>
+    <link rel="stylesheet" href="/H-Connect/css/common.css">
+    <link rel="stylesheet" href="/H-Connect/css/nurse.css">
 
 </head>
   <body>
@@ -279,10 +279,10 @@
                                     
                                     <!-- 병동선택 selecbox -->
                                     <div class="selectBox2 s_select">
-                                        <button class="label ward_label">심장병동<span></span></button>
+                                        <button class="label ward_label">병동선택<span></span></button>
                                         <ul class="optionList ward_option">
-                                            <li class="optionItem ward_list">심장병동</li>
-                                            <li class="optionItem ward_list">12병동</li>
+                                            <!-- <li class="optionItem ward_list">심장병동</li>
+                                            <li class="optionItem ward_list">12병동</li> -->
                                         </ul>
                                     </div>
             
@@ -291,18 +291,7 @@
                                         <button class="label room_label">병실선택<span></span></button>
                                         <ul class="optionList room_option">
                                             <li class="optionItem room_list">병실전체</li>
-                                            <li class="optionItem room_list">1301 호실</li>
-                                            <li class="optionItem room_list">1302 호실</li>
-                                            <li class="optionItem room_list">1303 호실</li>
-                                            <li class="optionItem room_list">1304 호실</li>
-                                            <li class="optionItem room_list">1305 호실</li>
-                                            <li class="optionItem room_list">1306 호실</li>
-                                            <li class="optionItem room_list">1307 호실</li>
-                                            <li class="optionItem room_list">1308 호실</li>
-                                            <li class="optionItem room_list">1309 호실</li>
-                                            <li class="optionItem room_list">1310 호실</li>
-                                            <li class="optionItem room_list">1311 호실</li>
-                                            <li class="optionItem room_list">1312 호실</li>
+                                            <!-- <li class="optionItem room_list">1301 호실</li> -->
                                         </ul>
                                     </div>
             
@@ -313,7 +302,7 @@
                             </div>
 
                             <div class="container">
-                                <div class="status_list">
+                                <!-- <div class="status_list">
                                     <p>
                                         <span>심장병동</span>.
                                         <span>1301</span>호실.
@@ -337,319 +326,7 @@
                                         <button type="button" class="btn bl btn_modify">수정</button>
                                         <button type="button" class="btn rd btn_delete">삭제</button>
                                     </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
-        
-                                <div class="status_list">
-                                    <p>
-                                        <span>심장병동</span>.
-                                        <span>1301</span>호실.
-                                        <span>1</span>병상.
-                                    </p>
-        
-                                    <p>
-                                        <span>김환자</span>.
-                                        (<span>63</span>.
-                                        <span>남</span>.
-                                        <span>patient no</span>)
-                                    </p>
-        
-                                    <div class="device_list">
-                                        <div>심전도</div>
-                                        <div>산소포화도</div>
-                                        <div>체온</div>
-                                    </div>
-        
-                                    <div class="btn_list">
-                                        <button type="button" class="btn bl btn_modify">수정</button>
-                                        <button type="button" class="btn rd btn_delete">삭제</button>
-                                    </div>
-                                </div>
+                                </div> -->
                             </div> 
                         </div> 
                 </section>
@@ -1013,22 +690,22 @@
             const wardlabel = document.querySelector('.ward_label');
             const wardOptions = document.querySelectorAll('.ward_list');
 
-            const wardSelect = (item) => {
-                wardlabel.parentNode.classList.remove('active');
-                wardlabel.innerHTML = item.textContent;
-            }
+            // const wardSelect = (item) => {
+            //     wardlabel.parentNode.classList.remove('active');
+            //     wardlabel.innerHTML = item.textContent;
+            // }
 
-            wardOptions.forEach(option => {
-                option.addEventListener('click', () => wardSelect(option))
-            })
+            // wardOptions.forEach(option => {
+            //     option.addEventListener('click', () => wardSelect(option))
+            // })
 
-            wardlabel.addEventListener('click', () => {
-            if(wardlabel.parentNode.classList.contains('active')) {
-                wardlabel.parentNode.classList.remove('active');
-            } else {
-                wardlabel.parentNode.classList.add('active');
-            }
-            })
+            // wardlabel.addEventListener('click', () => {
+            // if(wardlabel.parentNode.classList.contains('active')) {
+            //     wardlabel.parentNode.classList.remove('active');
+            // } else {
+            //     wardlabel.parentNode.classList.add('active');
+            // }
+            // })
 
         //measure_status 병실 셀렉트
             const roomlabel = document.querySelector('.room_label');
