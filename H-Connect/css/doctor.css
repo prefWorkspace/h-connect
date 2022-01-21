@@ -2223,12 +2223,8 @@ p{font-size: 12px;}
 }
 
 /* event */
-.monitoring_patient .cont .event .table_title .date_time{
-    margin-right: 83px;
-}
-
 .monitoring_patient .cont .event .table_title .alarm_des{
-    margin-right: 703px;
+    margin-right: 666px;
 }
 
 .monitoring_patient .cont .event .table_body {
@@ -2297,12 +2293,14 @@ p{font-size: 12px;}
 .monitoring_patient .cont .event .table_body .table_wrap.on .more{display: none;}
 .monitoring_patient .cont .event .table_body .table_wrap.on .close{display: inline-block;}
 
+.monitoring_patient .cont .event .table_body .table_wrap> div{display: flex;}
+
 .monitoring_patient .cont .event .table_body .table_wrap> div> div{
-    display: inline-block;
+    display: flex;
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap .date_time{
-    margin-right: 42px;
+    margin-right: 75px;
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap p,

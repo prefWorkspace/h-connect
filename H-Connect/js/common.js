@@ -1488,7 +1488,7 @@ $(document).ready(function(){
 
 $(function(){
     //  간호사 관리페이지 대시보드 아코디언
-    $(".ward_count").click(function() {
+    $(".nurse.dashboard .ward_count").click(function() {
         $(this).next(".patient_info").stop().slideToggle(300);
         $(this).toggleClass('on').siblings().removeClass('on');
         $(this).next(".patient_info").siblings(".patient_info").slideUp(300); // 1개씩 펼치기

@@ -827,13 +827,18 @@
     cursor: pointer;
 }
 
-.message .group_container input[type="checkbox"]:disabled + label{
+/* .message .group_container input[type="checkbox"]:disabled + label{
     background: #eee;
     border: 1px solid #eee;
 }
 
 .doctor_message .group_container .red_custom[type="checkbox"] + label{
     border: 1px solid #000;
+} */
+
+.doctor_message .group_container .red_custom[type="checkbox"] + label{
+    background: #eee;
+    border: none;
 }
 
 .doctor_message .group_container .red_custom[type="checkbox"]:checked + label{
@@ -850,6 +855,7 @@
 
 .all_check .red_custom[type="checkbox"] + label{
     border: 1px solid #940045;
+    background: #fff;
 }
 
 .all_check .red_custom[type="checkbox"] + label + label{
