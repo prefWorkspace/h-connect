@@ -1,21 +1,21 @@
 
-//측정관리 신규병산 등록 셀렉트 박스 이벤트
+//측정관리 신규병상 등록 셀렉트 박스 이벤트
 function new_SickBed_selectBox_handle(wardList){
 
     //병동 셀렉트 박스 활성화
     $(".section.new_hospital .hospital_patient .selectBox2.s_select .ward_label2").on("click", function(){
         $(this).parent().toggleClass("active");
-    })
+    });
 
     //병실 셀렉트 박스 활성화 
     $(".section.new_hospital .hospital_patient .selectBox2.s_select .room_label2").on("click", function(){
         $(this).parent().toggleClass("active");
-    })
+    });
 
     //병상 셀렉트 박스 활성화 
     $(".section.new_hospital .hospital_patient .selectBox2.select_bed .bed_label").on("click", function(){
         $(this).parent().toggleClass("active");
-    })
+    });
 
     //병동 셀렉트 박스 옵션 선택 이벤트
     $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.ward_option2 .ward_list2").on("click", function(){
@@ -51,8 +51,8 @@ function new_SickBed_selectBox_handle(wardList){
         $(this).parent().parent().removeClass("active"); //셀렉트 박스 비활성화 
     });
 
-    //병실 셀렉트 박스 옵션 선택 이벤트
-    $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .optionItem.room_list2").on("click",roomSelectHandle2) // 첫화면에서 병실 셀렉트 박스 이벤트 걸기
+    // 첫화면에서 병실 셀렉트 박스 이벤트 걸기
+    $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .optionItem.room_list2").on("click",roomSelectHandle2) 
 }
 
 // 측정관리 => 신규 병상등록 병실 셀렉트 박스
@@ -77,6 +77,5 @@ function roomSelectHandle2(){
         $(".section.new_hospital .hospital_patient .selectBox2.select_bed .bed_label").text($title);
         $(this).parent().parent().removeClass("active");
     });
-
 
 } 

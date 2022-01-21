@@ -26,7 +26,9 @@ function Create_ward_list_measure(wardList){
     
 }
 
-function Create_Ward_measure(ward, sickRoom, sickBed, sickRoomCode, patient){
+function Create_Ward_measure(ward, sickRoom, sickBed, patient, codeList){
+
+    const {wardCode, sickRoomCode, sickBedCode} = codeList
 
     if(!ward || !sickRoom || !sickBed || !sickRoomCode) return;
     if(patient === "" || patient === undefined) return;
@@ -37,7 +39,7 @@ function Create_Ward_measure(ward, sickRoom, sickBed, sickRoomCode, patient){
         <div class="status_list" data-sickroomcode="${sickRoomCode}" >
             <p>
                 <span>${ward}</span>.
-                <span>${sickRoom}</span>.
+                <span>${sickRoom}호</span>. 
                 <span>${sickBed}</span>.
             </p>
 
@@ -55,8 +57,8 @@ function Create_Ward_measure(ward, sickRoom, sickBed, sickRoomCode, patient){
             </div>
 
             <div class="btn_list">
-                <button type="button" class="btn bl btn_modify">수정</button>
-                <button type="button" class="btn rd btn_delete">삭제</button>
+                <button type="button" class="btn bl btn_modify" data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}">수정</button>
+                <button type="button" class="btn rd btn_delete" data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}">삭제</button>
             </div>
         </div>
     `;

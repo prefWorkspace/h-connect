@@ -21,11 +21,12 @@ function getWardData(){
         includeSickBed: true,
         ...commonRequest()
     });
+    
 
     serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
         
+        console.log(res);
         if(res.result){
-            console.log(res);
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
                 const title = wardList[i].ward;
@@ -38,6 +39,8 @@ function getWardData(){
             measure_selectBox_handle(wardList);
             Create_ward_list_measure_Bed(wardList);
             new_SickBed_selectBox_handle(wardList);
+        }else{
+            session_renew(res);
         }
     })
 }

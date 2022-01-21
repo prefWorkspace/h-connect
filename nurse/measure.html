@@ -17,7 +17,7 @@
 
 </head>
   <body>
-    <!-- 병동 삭제 -->
+    <!-- 병상 삭제 -->
     <div class="pop delete delete_measure">
         <div class="overlay">
             <div class="pop_cont">
@@ -134,7 +134,6 @@
                         <p>심장병동</p>
                         <h3>심장병동 간호사실</h3>
                     </div>
-
                     <button type="button" class="btn_bye">로그아웃</button>  
                 </div>
             </div>
@@ -438,10 +437,10 @@
                         <!-- 입력 -->
                         <div class="cont">
                                 <div class="hospital_patient">
-                                    <input type="text" placeholder="김환자" readonly>
+                                    <input type="text" id="patient_name" readonly>
                                     
                                     <div class="patient_info">
-                                        <input type="number" placeholder="63" readonly>
+                                        <input type="number" id="patient_age" readonly>
 
                                         <div class="selectBox2 select_sex">
                                             <button class="label sex_label2">남<span></span></button>
@@ -451,7 +450,7 @@
                                             </ul>
                                         </div>
 
-                                        <input type="text" placeholder="patient no" readonly>
+                                        <input type="text" id="patient_MRN" readonly>
                                     </div>
 
                                     <div class="patient_room">

@@ -60,6 +60,11 @@ const VERSION = {
                     file_path:'/H-Connect/js/utils/module/auth/',
                     version:'2022.01.17.11.33',
                 },
+                'logout.js' : {
+                    url_path:'*',
+                    file_path:'/H-Connect/js/utils/module/auth/',
+                    version:'2022.01.21.11.37',
+                },
             },
         },
     },
@@ -186,10 +191,15 @@ const VERSION = {
                     file_path:'/H-Connect/js/nurse/action/measure/',
                     version:'2022.01.20.14.11'
                 },
-                'insert_new_sickBed.js' : {
+                'measure_insert_new_sickBed.js' : {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/measure/',
                     version:'2022.01.20.14.30'
+                },
+                'measure_delete_sickBed.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.21.16.47'
                 }
             }
         },

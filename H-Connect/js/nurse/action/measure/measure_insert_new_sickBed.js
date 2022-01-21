@@ -36,7 +36,6 @@ $("#btn_new_hospital").on("click", function(){
     })
 
     serverController.ajaxAwaitController("API/Manager/InsertSickBed", "POST", req, (res) => {
-        console.log(res)
         if(res.result){
             location.reload();
         }

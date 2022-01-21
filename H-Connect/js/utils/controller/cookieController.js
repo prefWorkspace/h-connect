@@ -14,11 +14,9 @@ const cookieController = {
                 str = arr[i]
             }
         }
-        let res = str.split("=");
-        // let matches = documnet.cookie.match(new RegExp(
-        //     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-        //   ));
-        //   return matches ? decodeURIComponent(matches[1]) : undefined;
+        const res = str?.split("=");
+        
+        // const result = res[1] : null;
         return res[1];
     },
     removeCookie: (key) => {

@@ -26,7 +26,9 @@ function Create_ward_list_measure_Bed(wardList){
     
     //측정 현황 병동 선택 셀렉 박스
     $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.ward_option2").html(ward_list_html);
-    // $(".section.new_hospital .hospital_patient .selectBox2.s_select .label.ward_label").text(wardList[0].ward);  //원래 첫번째 인자 넣었는데 병동 선택으로 
+    
+    //원래 첫번째 인자 넣었는데 병동 선택으로 
+    // $(".section.new_hospital .hospital_patient .selectBox2.s_select .label.ward_label").text(wardList[0].ward);  
     
     //측정 현황 병실 선택 셀렉 박스 
     // $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2").html(sickRoom_list_html);

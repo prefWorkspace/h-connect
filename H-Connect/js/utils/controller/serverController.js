@@ -56,4 +56,21 @@ const serverController = {
     }
 };
 
+const session_renew = (res) => {
+
+    if(res.message !== "session_renew") return;
+
+    const req = JSON.stringify({
+        requester,
+        ...commonRequest()
+    });
+
+    serverController.ajaxAwaitController("API/AccountUtil/SessionRenew", "POST", req, (res) => {
+        if(res.result){
+            cookieController.setCookie("accesToken", res.accessToken, 10 * 365);
+            location.reload();
+        }
+    }, (err) => {console.log(err)})
+}
+
 // export default serverController;
