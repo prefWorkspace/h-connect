@@ -35,7 +35,9 @@ function getWardData(){
             deleteWard();
             clickActive();
             Create_ward_list_measure(wardList);
+            measure_selectBox_handle(wardList);
             Create_ward_list_measure_Bed(wardList);
+            new_SickBed_selectBox_handle(wardList);
         }
     })
 }
