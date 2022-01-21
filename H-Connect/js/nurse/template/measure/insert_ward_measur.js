@@ -1,6 +1,5 @@
 
 //측정 관리 => 측정 현황 셀렉트 박스
-
 function Create_ward_list_measure(wardList){
     let ward_list_html = ``;
     let sickRoom_list_html = ``;

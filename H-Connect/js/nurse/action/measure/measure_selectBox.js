@@ -32,7 +32,7 @@ function measure_selectBox_handle(wardList){
         //병실 옵션 목록 생성
         for(let i = 0; i < wardList[index].sickRoomList.length; i++){
             new_sickRoomList += `
-                <li class="optionItem room_list roomoption" data-index="${i}" data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}">${wardList[index].sickRoomList[i].sickRoom} 호실</li>
+                <li class="optionItem room_list roomoption" data-wardindex="${index}" data-index="${i}" data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}">${wardList[index].sickRoomList[i].sickRoom} 호실</li>
             `;
         }
 
@@ -40,7 +40,7 @@ function measure_selectBox_handle(wardList){
         $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").after(new_sickRoomList); 
 
         //리스트 정렬후 다시 이벤트 
-        $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").on("click", (e) => roomSelectHandle(wardList[index], e));
+        $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").on("click", (e) => roomSelectHandle(wardList, e));
         
         //환자 리스트 일단 지우기
         $("div").remove(".nurse.nurse_measure .wrap_inner .section.measure_status .container .status_list"); 
@@ -76,15 +76,8 @@ function measure_selectBox_handle(wardList){
 
         //병상 수정 콘텐츠 숨김 
         $('.nurse_measure .modifi_hospital').hide(); 
-
-        //병실 클릭시 배경색 변화
-        $('.measure_status .container .status_list').on("click", backgroundChange)
-
-        //수정버튼 클릭
-        $('.measure_status .container .status_list .btn_list .btn_modify').on('click', clickUpdateSickBed);
-
-        //삭제 이벤트 함수
-        delete_sickBed_handle();
+        
+        sickBed_Event(wardList);
 
         //셀렉트 박스 비활성화 
         $(this).parent().parent().removeClass("active"); 
@@ -95,9 +88,11 @@ function measure_selectBox_handle(wardList){
 }
 
 //병실 셀렉트 박스 옵션 변경 함수
-function roomSelectHandle(checkWard, e){
+function roomSelectHandle(wardList, e){
     const $title = $(e.target).text(); // 클릭한 노드의 텍스트
-    const $index = $(e.target).data("index"); //클릭한 노드가 가지는 sickRoom index 
+    const $index = $(e.target).data("index"); //클릭한 노드가 가지는 sickRoom index \
+    const $ward_index = $(e.target).data("wardindex");
+    const checkWard = wardList[$ward_index];
     const check_sickBedLsit = checkWard.sickRoomList[$index]?.sickBedList; // 해당하는 병상 리스트 불러오기
     
     //셀렉트 박스 이름 변경
@@ -149,27 +144,20 @@ function roomSelectHandle(checkWard, e){
     
     $(e.target).parent().parent().removeClass("active");
 
-     //수정버튼 클릭
-    $('.measure_status .container .status_list .btn_list .btn_modify').on('click', clickUpdateSickBed);
-
-    //삭제 이벤트 함수
-    delete_sickBed_handle();
-
-    //병실 클릭시 배경색 변화
-    $('.measure_status .container .status_list').on("click", backgroundChange)
+    sickBed_Event(wardList);
 } 
 
 // 병상 수정 클릭 이벤트 함수
-function clickUpdateSickBed(){{
+function clickUpdateSickBed(wardList, e){{
     $('.nurse_measure .new_hospital').hide(); //신규 병상 등록 콘텐츠 숨김
     $('.nurse_measure .modifi_hospital').show(); //병산 수정 콘텐츠 등장
 
     const arr =[];
-    $(this).parent().parent().find("p span").each(function(index, item){
-        arr.push($(this).text());
+    $(e.target).parent().parent().find("p span").each(function(index, value){
+        arr.push($(value).text());
     });
     
-    const [ward, sickRoom, sickBed, patient_name, patient_age, patient_gender, patient_MRN ] = arr;
+    const [ ward, sickRoom, sickBed, patient_name, patient_age, patient_gender, patient_MRN ] = arr;
     
     $(".section.modifi_hospital .hospital_patient #patient_name").val(patient_name)
     $(".section.modifi_hospital .hospital_patient .patient_info #patient_age").val(patient_age);
@@ -178,6 +166,9 @@ function clickUpdateSickBed(){{
     $(".section.modifi_hospital .hospital_patient .patient_room .select_ward .mward_label").text(ward);
     $(".section.modifi_hospital .hospital_patient .patient_room .select_room .mroom_label").text(sickRoom);
     $(".section.modifi_hospital .hospital_patient .patient_room .select_bed .mbed_label").text(sickBed);
+
+    update_SickBed_selectBox_handle(wardList, e);
+    Create_ward_list_update_Bed(wardList);
 }}
 
 // 병상 클릭시 배경색 변화
@@ -187,5 +178,15 @@ function backgroundChange(){
 
 }
 
+// 병사에 관한 css 및 수정 삭제 이벤트 거는 함수
+function sickBed_Event(wardList){
+    //수정버튼 클릭
+    $('.measure_status .container .status_list .btn_list .btn_modify').on('click', (e) => clickUpdateSickBed(wardList, e));
 
+    //삭제 이벤트 함수
+    delete_sickBed_handle();
+
+    //병실 클릭시 배경색 변화
+    $('.measure_status .container .status_list').on("click", backgroundChange)
+}
 

@@ -34,3 +34,19 @@ function Create_ward_list_measure_Bed(wardList){
     // $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2").html(sickRoom_list_html);
     
 }
+
+//측정관리 병상 수정에서 병동 셀렉트 박스 대입
+function Create_ward_list_update_Bed(wardList){
+    let ward_list_html = ``;
+
+    for(let i = 0; i < wardList.length; i++){
+        ward_list_html += `
+            <li class="optionItem mward_list" data-index="${i}" data-wardcode="${wardList[i].wardCode}">
+                <p>${wardList[i].ward}</p>
+                <span class="bed_count lot">+8 여유</span>
+            </li>
+        `;
+    }
+
+    $(".section.modifi_hospital .hospital_patient .selectBox2.select_ward .optionList.mward_option").html(ward_list_html);
+}
