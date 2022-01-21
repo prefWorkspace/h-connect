@@ -2301,7 +2301,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.setting_menu .sweep .container> div{
-    width: 112px;
+    /* width: 112px; */
     margin-right: 18px;
     display: table-cell;
     /* width: 112px;
@@ -4843,13 +4843,13 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.doc_full .swiper-button-prev{
-    left: 0;
+    left: -200px;
     background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg);
 }
 
 .pop.doc_full .swiper-button-next{
-    right: 0;
+    right: -200px;
     background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
 }
 
