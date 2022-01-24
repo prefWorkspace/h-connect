@@ -22,8 +22,8 @@ $(function () {
     });
 
     $('.pop.logout .wrap_inner .btn_bye').on('click', function () {
-        $('.pop.logout').fadeOut();
-        location.href="/index.html";
+        // $('.pop.logout').fadeOut();
+        // location.href="/index.html";
     });
 
 // 환자검색
@@ -67,7 +67,8 @@ $(function () {
     // $('.btn_delete').on('click', function () {
     //     $('.pop.delete .overlay').fadeIn();
     // });
-        // 아니요
+
+    // 아니요
     $('.pop.delete .btn_no').on('click', function(){
         $('.pop .overlay').fadeOut();
     });
@@ -160,12 +161,12 @@ $(function () {
     });
 
     // 환자선택하면 배경색이 바뀜
-    $('.measure_status .container .status_list').on('click', function(){
-        $(this).toggleClass('on');
-        $('.measure_status .container .status_list').not(this).removeClass('on');
-        $('.nurse_measure .new_hospital').toggle();
-        $('.nurse_measure .modifi_hospital').toggle();
-    });
+    // $('.measure_status .container .status_list').on('click', function(){
+        // $(this).toggleClass('on');
+        // $('.measure_status .container .status_list').not(this).removeClass('on');
+        // $('.nurse_measure .new_hospital').toggle();
+        // $('.nurse_measure .modifi_hospital').toggle();
+    // });
 
     // 측정 수정
     $('.nurse .measure_status .cont .container .status_list .btn_list .btn_modify').on('click', function(){
@@ -179,7 +180,7 @@ $(function () {
 
     // 측정현황 생체신호 리스트 삭제 팝업
     $('.nurse .measure_status .cont .container .status_list .btn_list .btn_delete').on('click', function(){
-        $('.pop.delete_measure .overlay').fadeIn();
+        // $('.pop.delete_measure .overlay').fadeIn();
     })
 
     // 병상정보 수정 디바이스 리스트 삭제
@@ -1488,7 +1489,7 @@ $(document).ready(function(){
 
 $(function(){
     //  간호사 관리페이지 대시보드 아코디언
-    $(".ward_count").click(function() {
+    $(".nurse.dashboard .ward_count").click(function() {
         $(this).next(".patient_info").stop().slideToggle(300);
         $(this).toggleClass('on').siblings().removeClass('on');
         $(this).next(".patient_info").siblings(".patient_info").slideUp(300); // 1개씩 펼치기

@@ -17,7 +17,7 @@
 
 </head>
   <body>
-    <!-- 병동 삭제 -->
+    <!-- 병상 삭제 -->
     <div class="pop delete delete_measure">
         <div class="overlay">
             <div class="pop_cont">
@@ -134,7 +134,6 @@
                         <p>심장병동</p>
                         <h3>심장병동 간호사실</h3>
                     </div>
-
                     <button type="button" class="btn_bye">로그아웃</button>  
                 </div>
             </div>
@@ -338,7 +337,7 @@
                                 <div>
                                     <h2>신규 병상등록</h2>
 
-                                    <button type="button" class="btn bl btn_new_hospital">+병상등록</button>
+                                    <button type="button" id="btn_new_hospital" class="btn bl btn_new_hospital">+병상등록</button>
 
                                     <!-- <div class="btn_list">
                                         <button type="button" class="btn_no">아니요</button>
@@ -352,10 +351,10 @@
                             <div class="cont">
                                 <!-- 입력 -->
                                 <div class="hospital_patient">
-                                    <input type="text" placeholder="환자명">
+                                    <input id="patinet_name" type="text" placeholder="환자명">
                                     
                                     <div class="patient_info">
-                                        <input type="number" placeholder="환자나이">
+                                        <input id="patient_age" type="number" placeholder="환자나이">
 
                                         <div class="selectBox2 sex_select">
                                             <button class="label sex_label">성별<span></span></button>
@@ -366,7 +365,7 @@
                                             </ul>
                                         </div>
 
-                                        <input type="text" placeholder="MRN code">
+                                        <input id="patient_MRN" type="text" placeholder="MRN code">
                                     </div>
 
                                     <div class="patient_room">
@@ -438,10 +437,10 @@
                         <!-- 입력 -->
                         <div class="cont">
                                 <div class="hospital_patient">
-                                    <input type="text" placeholder="김환자" readonly>
+                                    <input type="text" id="patient_name" readonly>
                                     
                                     <div class="patient_info">
-                                        <input type="number" placeholder="63" readonly>
+                                        <input type="number" id="patient_age" readonly>
 
                                         <div class="selectBox2 select_sex">
                                             <button class="label sex_label2">남<span></span></button>
@@ -451,14 +450,14 @@
                                             </ul>
                                         </div>
 
-                                        <input type="text" placeholder="patient no" readonly>
+                                        <input type="text" id="patient_MRN" readonly>
                                     </div>
 
                                     <div class="patient_room">
                                         <div class="selectBox2 select_ward">
                                             <button class="label mward_label">심장병동<span></span></button>
                                             <ul class="optionList mward_option">
-                                                <li class="optionItem mward_list">
+                                                <!-- <li class="optionItem mward_list">
                                                     <p>심장병동</p>
                                                     <span class="bed_count lot">+8 여유</span>
                                                 </li>
@@ -466,77 +465,21 @@
                                                 <li class="optionItem mward_list">
                                                     <p>12 병동</p>
                                                     <span class="bed_count none">없음</span>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
 
                                         <div class="selectBox2 select_room">
                                             <button class="label mroom_label">병실선택<span></span></button>
                                             <ul class="optionList mroom_option">
-                                                <li class="optionItem mroom_list">병실전체</li>
-                                                <li class="optionItem mroom_list">
+                                                <!-- <li class="optionItem mroom_list">병실전체</li> -->
+                                                <!-- <li class="optionItem mroom_list">
                                                     <p>
                                                         <span>1301</span> 호실
                                                     </p>
 
                                                     <span class="bed_count lot">+1 여유</span>
-                                                </li>
-
-                                                <li class="optionItem mroom_list">
-                                                    <p>
-                                                        <span>1302</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count lot">+2 여유</span>
-                                                </li>
-
-                                                <li class="optionItem mroom_list">
-                                                    <p>
-                                                        <span>1303</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
-
-                                                <li class="optionItem mroom_list">
-                                                    <p>
-                                                        <span>1304</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
-
-                                                <li class="optionItem mroom_list">
-                                                    <p>
-                                                        <span>1305</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
-
-                                                <li class="optionItem mroom_list">
-                                                    <p>
-                                                        <span>1306</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count lot">+1 여유</span>
-                                                </li>
-
-                                                <li class="optionItem mroom_list">
-                                                    <p>
-                                                        <span>1307</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count lot">+2 여유</span>
-                                                </li>
-
-                                                <li class="optionItem mroom_list">
-                                                    <p>
-                                                        <span>1308</span> 호실
-                                                    </p>
-
-                                                    <span class="bed_count none">없음</span>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
 

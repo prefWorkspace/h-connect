@@ -1,10 +1,5 @@
-// import serverController from "../../../module/serverController.js";
-// import commonRequest from "../../controller/commonRequest.js";
-// import localStorageController from "../module/localStorage.js";
-// import cookieController from "../../../module/cookieController.js";
 
 const TEN_YEAR_DAY = 10 * 365;
-console.log("test")
 
 function auto_Login(){
     if(autoLogin_input.checked){
@@ -15,7 +10,7 @@ function auto_Login(){
 function get_Saved_Id(){
     const getId = localStorageController.getLocalS("Hconnect-id");  //로컬스토리지에 저장된 id
     if(getId){
-        $(".login #id").value = getId;
+        $(".login #id").val(getId);
     }
 };
 
@@ -23,7 +18,7 @@ function Login_Fetch(){
 
     const id_Input = $(".login #id").val();  //아이디 input 값
     const pw_Input = $(".login #pw").val(); //비밀번호 input 값
-    const saveId_input = $(".login .check #id_save").is(":checked"); // 아이디 저장 체크 박스  boolean
+    const saveId_input = $(".login .check #id_save").is(":checked"); // 아이디 저장 체크 박스 boolean
 
     const req = JSON.stringify({
             id: id_Input,
@@ -32,13 +27,14 @@ function Login_Fetch(){
     })
 
     serverController.ajaxAwaitController("API/Account/LoginHIS", "POST", req, (res) => {
-        console.log(res)
         if(res.result){
             const userData = res.userAccount; 
             
             cookieController.setCookie("accesToken", res.accessToken, TEN_YEAR_DAY);
             localStorageController.setLocalS("userData", userData);
-            if(saveId_input) localStorageController.setLocalS("Hconnect-id", id_Input.value);
+            if(saveId_input) {
+                localStorageController.setLocalS("Hconnect-id", id_Input);
+            }
             
             switch(userData.level){
                 case 1: 
@@ -58,7 +54,7 @@ function Login_Fetch(){
                     break;
             }
         }else{
-            localStorageController.removeLocalS("accesToken");
+            cookieController.removeCookie("accesToken");
         }
     }, (err) => console.log(err));
 }
@@ -71,9 +67,7 @@ function Enter_Press_Login(e){
 
 get_Saved_Id();
 
-// pw_Input.addEventListener("keypress", Enter_Press_Login)
 $(".login #pw").on("keypress", Enter_Press_Login);
 
-// login_Button.addEventListener("click", Login_Fetch);
 $(".login #login_button").on("click", Login_Fetch);
 

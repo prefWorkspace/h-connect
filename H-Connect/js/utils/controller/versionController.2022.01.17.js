@@ -60,6 +60,11 @@ const VERSION = {
                     file_path:'/H-Connect/js/utils/module/auth/',
                     version:'2022.01.17.11.33',
                 },
+                'logout.js' : {
+                    url_path:'*',
+                    file_path:'/H-Connect/js/utils/module/auth/',
+                    version:'2022.01.21.11.37',
+                },
             },
         },
     },
@@ -82,6 +87,11 @@ const VERSION = {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/measure/',
                     version:'2022.01.19.18.15'
+                },
+                'insert_new_sickBed_measure.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/template/measure/',
+                    version:'2022.01.20.14.34'
                 }
             },
             'monitoring' : {
@@ -174,6 +184,28 @@ const VERSION = {
                         file_path:'/H-Connect/js/nurse/action/index/sickRoomAction/',
                         version:'2022.01.19.16.09'
                     }
+                }
+            },
+            'measure' : {
+                'measure_selectBox.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.20.11.22'
+                },
+                'new_sickBed__selectBox.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.20.14.11'
+                },
+                'measure_insert_new_sickBed.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.20.14.30'
+                },
+                'measure_delete_sickBed.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.21.16.47'
                 }
             }
         }
