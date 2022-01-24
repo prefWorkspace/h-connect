@@ -5105,6 +5105,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.pacs_full .selectBox2 .label::after{
     right: 2px;
+    filter: brightness(0);
 }
 
 .pop.pacs_full .selectBox2 .label{

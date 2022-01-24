@@ -47,7 +47,7 @@ function MonitorBlock_Have(index){
 function MonitorBlock_None(index){
     return `
     <div class="patient_monitor">
-        <div class="empty_bed" style="display: none;">
+        <div class="empty_bed">
             <p>empty_bed</p>
 
             <div class="btn_default">
@@ -60,6 +60,19 @@ function MonitorBlock_None(index){
         </div>
     </div>
     `;
+}
+function first_insert_monitoring(patient_list){
+    let html = '';
+    const sickBedLen = 50;
+    const patientLen = patient_list ? patient_list.length : 0;
+    for(let i = 0; i < sickBedLen; i++){
+        if(i < patientLen){
+            html+=MonitorBlock_Have();
+        }else{
+            html+=MonitorBlock_None();
+        }
+    }
+    $all_patientEl.html(html);
 }
 /*
     e : 모니터링 블록
