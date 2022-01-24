@@ -15,12 +15,12 @@ const request_Date_Data = ()=> {
 
 const request_Data = () => {
     const userData = JSON.parse(localStorageController.getLocalS("userData"));
+    console.log(userData)
     return {
         requester: userData.userCode,
         organizationCode: userData.organizationCode 
     }
 }
-
 
 const commonRequest = () => {
     return {

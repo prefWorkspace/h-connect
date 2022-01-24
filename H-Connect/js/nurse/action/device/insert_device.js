@@ -8,7 +8,6 @@ function insert_device(){
         serialNumber,
         deviceType: device_name_type(device_name)
     });
-    console.log(device_name_type(device_name))
 
     serverController.ajaxAwaitController("API/Device/InsertDeviceRegister", "POST", req, (res) => {
         console.log(res);
