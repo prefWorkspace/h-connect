@@ -29,9 +29,9 @@ function deviceName(deviceType){
     switch(deviceType){
         case 1: 
             return "심전도 패치";
-        case 2:
+        case 3:
             return "산소포화도 측정장치"
-        case 3: 
+        case 2: 
             return "체온 패치"
     }
     
