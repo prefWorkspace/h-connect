@@ -157,6 +157,10 @@ function clickUpdateSickBed(wardList, e){{
         arr.push($(value).text());
     });
     
+    const wardCode = $(e.target).data("wardcode");
+    const sickRoomCode = $(e.target).data("sickroomcode");
+    const sickBedCode = $(e.target).data("sickbedcode");
+
     const [ ward, sickRoom, sickBed, patient_name, patient_age, patient_gender, patient_MRN ] = arr;
     
     $(".section.modifi_hospital .hospital_patient #patient_name").val(patient_name)
@@ -164,11 +168,14 @@ function clickUpdateSickBed(wardList, e){{
     $(".section.modifi_hospital .hospital_patient .patient_info .sex_label2").text(patient_gender === "남자" ? "남" : "여");
     $(".section.modifi_hospital .hospital_patient .patient_info #patient_MRN").val(patient_MRN);
     $(".section.modifi_hospital .hospital_patient .patient_room .select_ward .mward_label").text(ward);
+    $(".section.modifi_hospital .hospital_patient .patient_room .select_ward .mward_label").attr("data-wardCode", wardCode);
     $(".section.modifi_hospital .hospital_patient .patient_room .select_room .mroom_label").text(sickRoom);
+    $(".section.modifi_hospital .hospital_patient .patient_room .select_room .mroom_label").attr("data-sickRoomCode", sickRoomCode);
     $(".section.modifi_hospital .hospital_patient .patient_room .select_bed .mbed_label").text(sickBed);
+    $(".section.modifi_hospital .hospital_patient .patient_room .select_bed .mbed_label").attr("data-sickBedCode", sickBedCode);
 
-    update_SickBed_selectBox_handle(wardList, e);
-    Create_ward_list_update_Bed(wardList);
+    Create_ward_list_update_Bed(wardList); // 병상 수정에서 병동 선택 셀렉트 박스
+    update_SickBed_selectBox_handle(wardList, e); 
 }}
 
 // 병상 클릭시 배경색 변화

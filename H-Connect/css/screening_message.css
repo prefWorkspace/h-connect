@@ -148,7 +148,6 @@
     right: 50%;
     width: 48px;
     height: 32px;
-    margin-right: 16px;
     border-radius: 4px;
     background-color: #fff;
 }
@@ -308,10 +307,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 53%;
+    left: 54%;
     width: 48px;
     height: 30px;
-    margin-right: 21px;
     border-radius: 4px;
     background-color: #fff;
 }
@@ -774,6 +772,7 @@
     margin: 0 15px 0 0;
     vertical-align: middle;
     cursor: pointer;
+    border: 1px solid #007A94;
 }
 
 .nurse_message .all_check input[type="checkbox"] + label + label{

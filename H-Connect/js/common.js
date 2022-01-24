@@ -117,7 +117,7 @@ $(function () {
 
     // 장치삭제
     $('.nurse .new_device .item_row .btn_delete').on('click', function () {
-        $('.pop.delete_regi .overlay').fadeIn();
+        // $('.pop.delete_regi .overlay').fadeIn();
     });
         // 아니요
     $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function(){

@@ -250,6 +250,7 @@
 
 .btn_thead .call_btn.on .cancel {
     display: block;
+    border-radius: 4px;
 }
 
 .btn_thead .call_btn.on .call {
