@@ -9,6 +9,7 @@
   <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
   <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
   <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
+  <script type="text/javascript" defer src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"></script>
   <!--css-->
   <link rel='stylesheet' href='/H-Connect/css/reset.css'>
   <link rel="stylesheet" href="/H-Connect/css/common.css">
@@ -26,10 +27,8 @@
 
                 <div class="content">
                     <p>장치종류 </p>
-                    
                     <div class="selectBox2">
-                        <button class="label left_label">산소포화도 측정장치<span></span></button>
-
+                        <button id="device_name" class="label left_label">산소포화도 측정장치<span></span></button>
                         <ul class="optionList left_option">
                             <li class="optionItem left_list">심전도 패치</li>
                             <li class="optionItem left_list">산소포화도 측정장치</li>
@@ -40,7 +39,7 @@
 
                 <div class="content">
                     <p>serial no.</p>
-                    <input type="text" placeholder="시리얼 넘버를 입력해주세요.">
+                    <input id="device_serial" type="text" placeholder="시리얼 넘버를 입력해주세요.">
                 </div>
 
                 <small>올바르지 않은 번호 입니다.</small>
@@ -254,19 +253,19 @@
                         <div class="device_count">
                             <div>
                                 <p>심전도 패치</p>
-                                <h1>28</h1>
+                                <h1 id="ecg_count">0</h1>
                                 <p class="use_line">사용가능</p>
                             </div>
 
                             <div>
                                 <p>산소포화도 측정장치</p>
-                                <h1>36</h1>
+                                <h1 id="spo2_count">0</h1>
                                 <p class="use_line">사용가능</p>
                             </div>
 
                             <div>
                                 <p>체온 패치</p>
-                                <h1>32</h1>
+                                <h1 id="temp_count">0</h1>
                                 <p class="use_line">사용가능</p>
                             </div>
                         </div>
@@ -278,9 +277,9 @@
                                     <button class="label device_label">심전도 패치<span></span></button>
 
                                     <ul class="optionList device_option">
-                                        <li class="optionItem device_optionItem">심전도 패치</li>
-                                        <li class="optionItem device_optionItem">산소포화도 측정장치</li>
-                                        <li class="optionItem device_optionItem">체온 패치</li>
+                                        <li class="optionItem device_optionItem" data-type="1">심전도 패치</li>
+                                        <li class="optionItem device_optionItem" data-type="3">산소포화도 측정장치</li>
+                                        <li class="optionItem device_optionItem" data-type="2">체온 패치</li>
                                     </ul>
                                 </div>
 
@@ -293,7 +292,7 @@
                             </div>
 
                             <div class="device_item">
-                                <div class="item_row">
+                                <!-- <div class="item_row">
                                     <p class="item_name">심전도 패치</p>
                                     <p class="item_num">serial no.</p>
                                     <p class="use_line">사용가능</p>
@@ -301,97 +300,8 @@
                                     <button type="button" class="btn rd btn_delete">
                                         삭제
                                     </button>
-                                </div>
+                                </div> -->
 
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">심전도 패치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">사용가능</p>
-
-                                    <button type="button" class="btn rd btn_delete">
-                                        삭제
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>

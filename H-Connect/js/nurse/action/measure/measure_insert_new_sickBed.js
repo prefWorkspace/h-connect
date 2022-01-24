@@ -5,7 +5,7 @@ $("#btn_new_hospital").on("click", function(){
     const wardCode = $(".section.new_hospital .hospital_patient .ward_label2").data("wardcode");
     const sickRoomCode = $(".section.new_hospital .hospital_patient .room_label2").data("sickroomcode");
     const sickBed = $(".section.new_hospital .hospital_patient .bed_label").text();
-    const patient_name = $("#patinet_name").val();
+    const patient_name = $("#patient_name").val();
     const patient_age = $("#patient_age").val(); 
     const patient_gender = $(".section.new_hospital .hospital_patient .patient_info .sex_label").text(); 
     const patient_MRNCode = $("#patient_MRN").val(); 

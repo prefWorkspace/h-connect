@@ -112,6 +112,13 @@ const VERSION = {
                     file_path:'/H-Connect/js/nurse/template/dashboard/',
                     version:'2022.01.18.15.22'
                 }
+            }, 
+            'device' : {
+                'select_device_list.js' : {
+                    url_path:'/nurse/device_management',
+                    file_path:'/H-Connect/js/nurse/template/device/',
+                    version:'2022.01.24.12.24'
+                }
             }
         },
         'action' : {
@@ -200,6 +207,33 @@ const VERSION = {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/measure/',
                     version:'2022.01.21.16.47'
+                },
+                'measure_update_sickBed.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.24.10.09'
+                },
+                'update_sickBed_selectBox.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.24.10.48'
+                }
+            },
+            "device" : {
+                "select_device.js" : {
+                    url_path:'/nurse/device_management',
+                    file_path:'/H-Connect/js/nurse/action/device/',
+                    version:'2022.01.24.12.08'
+                },
+                "delete_device.js" : {
+                    url_path:'/nurse/device_management',
+                    file_path:'/H-Connect/js/nurse/action/device/',
+                    version:'2022.01.24.15.10'
+                },
+                "insert_device.js" : {
+                    url_path:'/nurse/device_management',
+                    file_path:'/H-Connect/js/nurse/action/device/',
+                    version:'2022.01.24.15.20'
                 }
             }
         },
