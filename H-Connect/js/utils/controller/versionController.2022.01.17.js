@@ -110,6 +110,12 @@ const VERSION = {
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/action/monitoring/',
                     version:'2022.01.18.15.22'
+                },
+                'websoket_test.js' : {
+                    priority : 1,
+                    url_path:'/nurse/monitoring',
+                    file_path:'/H-Connect/js/nurse/action/monitoring/',
+                    version:'2022.01.18.15.22'
                 }
             },
             'dashboard' : {
@@ -170,11 +176,6 @@ const VERSION = {
                     }
                 }
             }
-        },
-        'insert_monitoring.js' : {
-            url_path:'/nurse/monitoring',
-            file_path:'/H-Connect/js/nurse/',
-            version:'2022.01.18.15.22'
         }
     }
 }
