@@ -255,15 +255,14 @@ function scriptSet(){
     // 스크립트를 생성해줍니다.
     findJsInVersion(VERSION, '.js');
     scriptArr.sort((a, b)=>{return a.priority - b.priority;});
-    const tempScriptFragment = doc.createDocumentFragment();
     for(let i = 0; i < scriptArr.length; i++){
         const arr = scriptArr[i];
         const scriptEl = doc.createElement('script');
         scriptEl.defer = true;
+        scriptEl.async = false;
         scriptEl.src = arr.file_path + arr.file_name + '?v=' + arr.version;
-        tempScriptFragment.append(scriptEl);
+        doc.head.append(scriptEl);
     }
-    doc.head.append(tempScriptFragment);
 }
 
 scriptSet(); // 스크립트 생성해주는 함수

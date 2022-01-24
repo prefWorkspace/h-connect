@@ -16,12 +16,10 @@ async function first_get_DashBoard_Ward_Api(){
     });
     
     //병동, 병실, 병상 가져오기
-    
     await serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
         if(res.result){
             wardList = res.wardList;
             sickRoomList = res.wardList[0].sickRoomList;
-            // 1. 병동 설렉트 박스 선택 설정
         }
     })
     first_dashboard_view_setting();

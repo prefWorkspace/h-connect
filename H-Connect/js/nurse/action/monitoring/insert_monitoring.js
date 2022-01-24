@@ -3,26 +3,27 @@
  */
 const $all_patientEl = $('.nurse.patient_vital .wrap_inner .all_patient');
 
-async function res_monitoring(){
+async function first_res_monitoring(){
     const userData = JSON.parse(localStorageController.getLocalS("userData"));
     const req = JSON.stringify({
     requester : userData.userCode, // 요청자 user code
     organizationCode : userData.organizationCode, // 기관 고유 코드
     measurementType : 'BM', // ET : 긴급이송 / BM : 병상모니터링
-    startDateTime : "2022-01-20 14:04:24",
-    endDateTime : "2022-01-21 14:04:24",
+    startDateTime : null,
+    endDateTime : null,
     pageNumber : 1,
     count : 50,
     ...commonRequest()
     });
-    await serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoPage", "POST", req, (res) => {
+    await serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoBioDataPage", "POST", req, (res) => {
         console.log(res);
         if(res.result){
-        const patient_list = res.measurementInfoSimpleList;
+        const patient_list = res.measurementInfoSimpleBioDataList;
         first_insert_monitoring(patient_list);
         }else{
 
         }
     }, (err) => console.log(err));
 }
-res_monitoring();
+first_res_monitoring();
+
