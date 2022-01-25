@@ -29,9 +29,15 @@ function Login_Fetch(){
     serverController.ajaxAwaitController("API/Account/LoginHIS", "POST", req, (res) => {
         if(res.result){
             const userData = res.userAccount; 
+            const apiServerinfoList = res.apiServerinfoList;
             
             cookieController.setCookie("accesToken", res.accessToken, TEN_YEAR_DAY);
             localStorageController.setLocalS("userData", userData);
+
+            if(apiServerinfoList){
+                localStorageController.setLocalS("apiserverinfoList", apiServerinfoList);
+            }
+            
             if(saveId_input) {
                 localStorageController.setLocalS("Hconnect-id", id_Input);
             }

@@ -274,9 +274,10 @@
                             <div class="device_search">
 
                                 <div class="selectBox2 select_device s_select">
-                                    <button class="label device_label">심전도 패치<span></span></button>
+                                    <button class="label device_label" data-type="0">전체 선택<span></span></button>
 
                                     <ul class="optionList device_option">
+                                        <li class="optionItem device_optionItem" data-type="0">전체 선택</li>
                                         <li class="optionItem device_optionItem" data-type="1">심전도 패치</li>
                                         <li class="optionItem device_optionItem" data-type="3">산소포화도 측정장치</li>
                                         <li class="optionItem device_optionItem" data-type="2">체온 패치</li>
@@ -324,19 +325,19 @@
                         <div class="device_count">
                             <div>
                                 <p>심전도 패치</p>
-                                <h1>32</h1>
+                                <h1 id="unused_ecg_count">0</h1>
                                 <p class="use_line">반납완료</p>
                             </div>
 
                             <div>
                                 <p>산소포화도 측정장치</p>
-                                <h1>24</h1>
+                                <h1 id="unused_spo2_count">0</h1>
                                 <p class="use_line">반납완료</p>
                             </div>
 
                             <div>
                                 <p>체온 패치</p>
-                                <h1>28</h1>
+                                <h1 id="unused_temp_count">0</h1>
                                 <p class="use_line">반납완료</p>
                             </div>
                         </div>
@@ -345,11 +346,12 @@
                             <div class="device_search">
 
                                 <div class="selectBox2 select_return s_select">
-                                    <button class="label return_label">산소포화도 측정장치<span></span></button>
+                                    <button class="label return_label" data-type="0">전체 선택<span></span></button>
                                     <ul class="optionList return_option">
-                                        <li class="optionItem return_list">심전도 패치</li>
-                                        <li class="optionItem return_list">산소포화도 측정장치</li>
-                                        <li class="optionItem return_list">체온 패치</li>
+                                        <li class="optionItem return_list" data-type="0">전체 선택</li>
+                                        <li class="optionItem return_list" data-type="1">심전도 패치</li>
+                                        <li class="optionItem return_list" data-type="3">산소포화도 측정장치</li>
+                                        <li class="optionItem return_list" data-type="2">체온 패치</li>
                                     </ul>
                                 </div>
 
@@ -362,85 +364,13 @@
                             </div>
 
                             <div class="device_item">
-                                <div class="item_row">
+                                <!-- <div class="item_row">
                                     <p class="item_name">산소포화도 측정장치</p>
                                     <p class="item_num">serial no.</p>
                                     <p class="use_line">반납완료</p>
 
                                     <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
-
-                                <div class="item_row">
-                                    <p class="item_name">산소포화도 측정장치</p>
-                                    <p class="item_num">serial no.</p>
-                                    <p class="use_line">반납완료</p>
-
-                                    <button type="button" class="btn rd btn_cancel">취소</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

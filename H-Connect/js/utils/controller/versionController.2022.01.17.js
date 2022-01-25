@@ -123,6 +123,11 @@ const VERSION = {
                     url_path:'/nurse/device_management',
                     file_path:'/H-Connect/js/nurse/template/device/',
                     version:'2022.01.24.12.24'
+                },
+                'select_device_unused_list.js' : {
+                    url_path:'/nurse/device_management',
+                    file_path:'/H-Connect/js/nurse/template/device/',
+                    version:'2022.01.24.17.51'
                 }
             }
         },
@@ -250,6 +255,16 @@ const VERSION = {
                     url_path:'/nurse/device_management',
                     file_path:'/H-Connect/js/nurse/action/device/',
                     version:'2022.01.24.15.20'
+                },
+                "select_device_unused.js" : {
+                    url_path:'/nurse/device_management',
+                    file_path:'/H-Connect/js/nurse/action/device/',
+                    version:'2022.01.24.17.41'
+                },
+                "cancel_device_unused.js" : {
+                    url_path:'/nurse/device_management',
+                    file_path:'/H-Connect/js/nurse/action/device/',
+                    version:'2022.01.24.18.00'
                 }
             }
         }
