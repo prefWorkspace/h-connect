@@ -27,20 +27,24 @@ function new_SickBed_selectBox_handle(wardList){
         $(".section.new_hospital .hospital_patient .selectBox2.s_select .ward_label2").text($title); //선택한 옵션의 이름 변경
         $(".section.new_hospital .hospital_patient .selectBox2.s_select .ward_label2").attr("data-wardcode", $(this).data("wardcode")); //선택한 옵션의 이름 변경
         
-        
         $(".section.new_hospital .hospital_patient .selectBox2.s_select .room_label2").text("병실선택"); // 병동 옵션이 바뀔시 병실은 디폴트값으로 다시 변경
         $(".section.new_hospital .hospital_patient .selectBox2.select_bed .bed_label").text("병상선택"); // 병동 옵션이 바뀔시 병상은 디폴트값으로 다시 변경
 
         $("li").remove(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .room_list2"); //병실의 리스트 지우기
         $("li").remove(".section.new_hospital .hospital_patient .selectBox2.select_bed .optionList.bed_option .bed_list"); //병상의 리스트 지우기
 
+        console.log(wardList[index].sickRoomList)
+        let total_bed_count;
+        let patient_count;
         for(let i = 0; i < wardList[index].sickRoomList.length; i++){
+            total_bed_count = wardList[index].sickRoomList[i].sickBedList.length;
+            patient_count = wardList[index].sickRoomList[i].roomPatientCount;
             new_sickRoomList += `
                 <li class="optionItem room_list2" data-index=${i} data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}" data-etc="${wardList[index].sickRoomList[i].etc}">
                     <p>
                         <span>${wardList[index].sickRoomList[i].sickRoom}</span> 호실
                     </p>
-                    <span class="bed_count lot">+1 여유</span>
+                    <span class="bed_count lot">+${total_bed_count - patient_count} 여유</span>
                 </li>
             `;
         }
