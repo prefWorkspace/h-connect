@@ -1,7 +1,7 @@
 function Create_new_DeviceList(device, serial){
-    console.log("test")
+    
     const data = `
-        <div id="device">
+        <div id="device" data-device="${device_name_type(device)}" data-serial="${serial}">
             <p>${device}</p>
             <p>${serial}</p>
 

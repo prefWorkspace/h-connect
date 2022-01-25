@@ -17,15 +17,4 @@ function insert_device(){
     }, (err) => {console.log(err)})
 }
 
-function device_name_type(devieName){
-    switch(devieName){
-        case "심전도 패치":
-            return 1;
-        case "체온 패치":
-            return 2;
-        case "산소포화도 측정장치":
-            return 3;            
-    }
-}
-
 $(".pop.regi_device .overlay .btn_list .btn_check").on("click", insert_device);

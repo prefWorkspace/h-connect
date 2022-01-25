@@ -25,17 +25,7 @@ function select_device_list(deviceRegisterList){
     $(".section.new_device .device_list .device_item .item_row .btn_delete").on("click", delete_device_modal_action)
 }
 
-function deviceName(deviceType){
-    switch(deviceType){
-        case 1: 
-            return "심전도 패치";
-        case 3:
-            return "산소포화도 측정장치"
-        case 2: 
-            return "체온 패치"
-    }
-    
-}
+
 
 function delete_device_modal_action(){
     $('.pop.delete_regi .overlay').fadeIn();
