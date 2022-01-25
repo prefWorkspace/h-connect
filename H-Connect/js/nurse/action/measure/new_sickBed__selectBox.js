@@ -36,7 +36,7 @@ function new_SickBed_selectBox_handle(wardList){
 
         for(let i = 0; i < wardList[index].sickRoomList.length; i++){
             new_sickRoomList += `
-                <li class="optionItem room_list2" data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}" data-etc="${wardList[index].sickRoomList[i].etc}">
+                <li class="optionItem room_list2" data-index=${i} data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}" data-etc="${wardList[index].sickRoomList[i].etc}">
                     <p>
                         <span>${wardList[index].sickRoomList[i].sickRoom}</span> 호실
                     </p>
@@ -46,7 +46,11 @@ function new_SickBed_selectBox_handle(wardList){
         }
 
         $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2").html(new_sickRoomList); //병실 셀렉트박스  병동에 맞는 새로운 리스트 정렬
-        $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .optionItem.room_list2").on("click",roomSelectHandle2) //리스트 정렬후 다시 이벤트 
+        // $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .optionItem.room_list2").on("click", function(){
+        $(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .optionItem.room_list2").on("click", function(){
+            const target = $(this);
+            roomSelectHandle2(wardList[index].sickRoomList, target);
+        }) //리스트 정렬후 다시 이벤트 
         
         $(this).parent().parent().removeClass("active"); //셀렉트 박스 비활성화 
     });
@@ -56,14 +60,16 @@ function new_SickBed_selectBox_handle(wardList){
 }
 
 // 측정관리 신규 병상등록 병실 셀렉트 박스
-function roomSelectHandle2(){
+function roomSelectHandle2(sickRoomList, target){
+
     let new_sickBed_html = "";
-    const $bedNumber = $(this).data("etc"); //몇 인실인지 확인
-    const $title = $(this).find("p").text();
-    
+    const index_SickRoomList = target.data("index");
+    const $bedNumber = sickRoomList[index_SickRoomList].sickBedList.length; //몇 인실인지 확인
+    const $title = target.find("p").text();
+
     $(".section.new_hospital .hospital_patient .selectBox2.s_select .room_label2").text($title);
     $(".section.new_hospital .hospital_patient .selectBox2.s_select .room_label2").attr("data-sickroomcode", $(this).data("sickroomcode"));
-    $(this).parent().parent().removeClass("active");
+    target.parent().parent().removeClass("active");
 
     for(let i = 0 ; i < $bedNumber; i++){
         new_sickBed_html += `
@@ -77,6 +83,6 @@ function roomSelectHandle2(){
         $(".section.new_hospital .hospital_patient .selectBox2.select_bed .bed_label").text($title);
         $(this).parent().parent().removeClass("active");
     });
-
+    
 } 
 

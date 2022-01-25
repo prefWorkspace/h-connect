@@ -21,6 +21,7 @@ function getWardData(){
     });
 
     serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
+        console.log(res)
         if(res.result){
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
