@@ -13,14 +13,12 @@ function updateSickRoomHandle(wardCode){
         const orderNumber = $(".section.right.hospital_room .container .cont .container .ward_list").length + 1;
 
         const req = JSON.stringify({
-            requester,
-            organizationCode,
             wardCode,
             sickRoomCode,
             sickRoom: $roomName,
             nickname: "",
             orderNumber,
-            etc: $person,
+            numberPatientRoom: $person,
             ...commonRequest()
         })
         

@@ -1,7 +1,7 @@
 
 //측정현황 셀렉트 박스 이벤트 
 function measure_selectBox_handle(wardList){
-    
+
     //병동 셀렉트 박스 활성화
     $(".section.measure_status .search_select .selectBox2.s_select .ward_label").on("click", function(){
         $(this).parent().toggleClass("active");
@@ -54,7 +54,7 @@ function measure_selectBox_handle(wardList){
 
         //측정 현황 해당 환자 목록 생성
         const sickRoomArr = [...wardList[index].sickRoomList]; 
-
+        console.log(sickRoomArr)
         //병상 클릭시, 해당병동에 있는 모든 환자 뿌리기(병실 상관 x)
         for(let i = 0; i < sickRoomArr.length; i++){
             codeList = {

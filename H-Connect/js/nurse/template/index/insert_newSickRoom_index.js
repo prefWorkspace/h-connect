@@ -1,7 +1,6 @@
 
 function Create_newSickRoom(sickRoomList){
     //bedNum 입원중 환자 및 장치 개수 체크
-    console.log(sickRoomList) 
     const data = `
     <div class="ward_list" data-sickroomcode=${sickRoomList.sickRoomCode}>
             <p>

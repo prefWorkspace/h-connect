@@ -28,9 +28,11 @@ function Create_ward_list_measure(wardList){
 function Create_Ward_measure(ward, sickRoom, sickBed, patient, codeList){
 
     const {wardCode, sickRoomCode, sickBedCode} = codeList
-
+    
     if(!ward || !sickRoom || !sickBed || !sickRoomCode) return;
-    if(patient === "" || patient === undefined) return;
+    if(patient === "" || patient === undefined || patient === null) return;
+
+    
 
     const {patient_name, patient_age, patient_gender, patient_MRNCode} = JSON.parse(patient);
 
