@@ -2,7 +2,7 @@
     s : 모니터링 블록
 */
 function MonitorBlock_Have(data){
-    const {bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = data || {};
+    const {patientCode, name, bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = data || {};
     /**
      * EWS : emergency warning system => 비상 경고 시스템
      * HR : heartRate => 심박수
@@ -24,33 +24,33 @@ function MonitorBlock_Have(data){
     <div class="patient_monitor">
         <div class="patient_info">
             <p>
-                <span>Patient ID</span>.
-                <span>Patient type</span>
+                <span>${patientCode}</span>.
+                <span>${name}</span>
             </p>
         </div>
         <div class="vital_moniter">
             <div class="ews">
                 <h3>EWS</h3>
-                <p>${ews ? ews : 0}</p>
+                <p>${ews ? ews : "-"}</p>
             </div>
             <div class="hr">
                 <h3>HR</h3>
-                <p>${heartRate ? heartRate : 0}</p>
+                <p>${heartRate ? heartRate : "-"}</p>
             </div>
 
             <div class="sp">
                 <h3>SP02</h3>
-                <p>${spO2 ? spO2 : 0}</p>
+                <p>${spO2 ? spO2 : "-"}</p>
             </div>
 
             <div class="resp">
                 <h3>RESP</h3>
-                <p>${resp ? resp : 0}</p>
+                <p>${resp ? resp : "-"}</p>
             </div>
 
             <div class="temp">
                 <h3>TEMP</h3>
-                <p>${temperature ? temperature : 0}</p>
+                <p>${temperature ? temperature : "-"}</p>
             </div>
         </div>
     </div>
