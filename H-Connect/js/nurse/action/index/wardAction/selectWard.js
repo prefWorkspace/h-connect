@@ -15,16 +15,12 @@ function clickActive(){
 
 function getWardData(){
     const req = JSON.stringify({
-        requester,
-        organizationCode,
         includeSickRoom: true,
         includeSickBed: true,
         ...commonRequest()
     });
-    
 
     serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
-        console.log(res.wardList)
         if(res.result){
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
