@@ -24,16 +24,14 @@
 
 
 
-const userData = JSON.parse(localStorageController.getLocalS("userData"));
-console.log(userData);
+const {requester} = commonRequest();
 const accessToken = cookieController.getCookie("accesToken");
-console.log(accessToken);
-const ws = new WebSocket(`${sockeIp}/ws?SX-API-Route=/topic/public/bioSignalData/${"SEERS_2201191502_RPR7"}&SX-Auth-Token=${accessToken}&deviceKind=${3}&requester=${userData.userCode}&requestDateTime=2021-05-17 14:23:45`);
-ws.addEventListener('message', function(e){
-    console.log("ddd:",e)
+
+const ws = new WebSocket(`${sockeIp}/ws?SX-API-Route=/topic/public/bioSignalData/${"SEERS_2201191502_RPR7"}&SX-Auth-Token=${accessToken}&deviceKind=${3}&requester=${requester}&requestDateTime=2021-05-17 14:23:45`);
+
+ws.addEventListener('open', function(e){
+    console.log("open:",e)
 })
-// ws?SX-Auth-Token=${accessToken}&deviceKind=${3}&requester=${userData.userCode}&requestDateTime=${'2021-05-17 14:23:45'}
-// const ws = new WebSocket(`ws://${ip}topic/public/bioSignalData/ws?SX-Auth-Token=${accessToken}&deviceKind=${3}&requester=${userData.userCode}&requestDateTime=${'2021-05-17 14:23:45'}`);
-
-
-
+ws.addEventListener('message', function(e){
+    console.log("message:",e)
+})

@@ -1,3 +1,4 @@
+const $all_patientEl = $('.nurse.patient_vital .wrap_inner .all_patient');
 /*
     s : 모니터링 블록
 */
