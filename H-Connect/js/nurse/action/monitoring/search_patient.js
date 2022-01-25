@@ -1,6 +1,3 @@
-const $search_inputEl = $('.search_container input');
-const $search_buttonEl = $('.search_container button.btn_search');
-
 async function search_patient_api(){
     const userData = JSON.parse(localStorageController.getLocalS("userData"));
     const req = JSON.stringify({
@@ -11,8 +8,8 @@ async function search_patient_api(){
     });
     await serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoList", "POST", req, (res) => {
         if(res.result){
-        const patient_list = res.measurementInfoSimpleList;
-        insert_search_patient_list(patient_list);
+            const patient_list = res.measurementInfoSimpleList;
+            insert_search_patient_list(patient_list);
         }else{
             
         }
