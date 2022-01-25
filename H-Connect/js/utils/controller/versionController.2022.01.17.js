@@ -20,6 +20,12 @@ const NOW_URL_PATH = pathCalc();
 const VERSION = {
     'utils' : {
         'common' : {
+            'utils.js' : {
+                priority:0,
+                url_path:'*',
+                file_path:'/H-Connect/js/utils/common/',
+                version:'2022.01.17.11.33'
+            },
             'arrayHandle.js' : {
                 priority:0,
                 url_path:'*',
