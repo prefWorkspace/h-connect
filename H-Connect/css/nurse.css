@@ -110,7 +110,6 @@
 .nurse .left{
     width: 640px;
     /* height: fit-content; */
-    overflow: auto; 
     padding: 16px;
     margin: 0 32px;
 }
@@ -157,8 +156,7 @@
     /* display: none; */
 }
 
-/* .nurse .ward .cont, .nurse .hospital_room .cont{display: none;} */
-/* .nurse .hospital_room .cont{display: none;} */
+.nurse .ward .cont, .nurse .hospital_room .cont{display: none;}
 
 .nurse .left .cont .ward_list,
 .nurse .right .cont .ward_list{
@@ -185,8 +183,7 @@
 
 .nurse .left .cont .ward_list> p{
     margin-top: 8px;
-    width: 100px;
-    /* margin-right: 84px; */
+    margin-right: 84px;
 }
 
 .nurse .left .cont .ward_list .ward_count{
@@ -289,7 +286,6 @@
 }
 
 .hospital_room .cont .ward_list> p{
-    width: 120px;
     margin-top: 8px;
     margin-right: 40px;
 }
@@ -543,7 +539,6 @@
 
 .nurse_measure .optionItem{
     padding: 10px 15px;
-    padding-right: 0;
     font-size: 12px;
     display: flex;
     justify-content: space-between;
@@ -639,7 +634,6 @@
 }
 
 .measure_status .container .status_list p{
-    width: 150px;
     margin-right: 30px;
 }
 
@@ -1757,24 +1751,25 @@
     display: flex;
 }
 
-/* .monitoring_patient .tabular_table .table_content div{
-    display: inline-block;
-} */
-
-.monitoring_patient .tabular_table .table_content p{
+.monitoring_patient .table_content p{
     color: #ccc;
-    display: inline-block;
+    display: flex;
 }
 
-.monitoring_patient .tabular_table .table_content .date_time{
-    margin-right: 80px;
+.monitoring_patient .table_content .date_time{
+    margin-right: 88px;
+    display: flex;
 }
 
-.monitoring_patient .tabular_table .table_content .hr{
-    margin-right: 78px;
+.monitoring_patient .table_content .date_time> :first-child{
+    margin-right: 4px;
 }
 
-.monitoring_patient .tabular_table .table_content .temp{
+.monitoring_patient .table_content .hr{
+    margin-right: 85px;
+}
+
+.monitoring_patient .table_content .temp{
     width: fit-content;
     height: fit-content;
     margin-right: 85px;
@@ -1809,7 +1804,6 @@
 }
 
 .monitoring_patient .graphical .hr_chart{
-
     display: flex;
     position: relative;
 }
@@ -1848,7 +1842,6 @@
 }
 
 .monitoring_patient .cont .graphical .hr_time> p{
-    /* margin-right: 200px; */
     display: flex;
 }
 
@@ -1902,9 +1895,9 @@
 }
 
 /* event */
-.monitoring_patient .cont .event .table_title .date_time{
+/* .monitoring_patient .cont .event .table_title .date_time{
     margin-right: 83px;
-}
+} */
 
 .monitoring_patient .cont .event .table_title .alarm_des{
     margin-right: 703px;
@@ -1912,7 +1905,7 @@
 
 .monitoring_patient .cont .event .table_body {
     height: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .monitoring_patient .cont .event .table_body::-webkit-scrollbar{
@@ -1925,8 +1918,8 @@
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap{
-    height: 31px;
-    padding: 7px 45px 7px 16px;
+    height: 32px;
+    padding: 8px 45px 7px 16px;
     border-bottom: 1px solid #888;
     display: flex;
     justify-content: space-between;
@@ -1973,26 +1966,30 @@
     transform: rotate(180deg);
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap.on .more{display: none;}
-.monitoring_patient .cont .event .table_body .table_wrap.on .close{display: inline-block;}
+.monitoring_patient .event .table_body .table_wrap.on .more{display: none;}
+.monitoring_patient .event .table_body .table_wrap.on .close{display: inline-block;}
 
-.monitoring_patient .cont .event .table_body .table_wrap> div> div{
-    display: inline-block;
+
+.monitoring_patient .event .table_body .table_wrap> div{
+    display: flex;
+}
+.monitoring_patient .event .table_body .date_time{
+    margin-right: 85px;
+    display: flex;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap .date_time{
-    margin-right: 42px;
+.monitoring_patient .event .table_body .date_time > :first-child{
+    margin-right: 4px;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap p,
-.monitoring_patient .cont .event .table_body .table_wrap span{
+.monitoring_patient .event .table_body .table_wrap p{
     font-size: 12px;
     color: #ccc;
-    display: inline-block;
+    display: flex;
 }
 
-.monitoring_patient .cont .event .table_body .table_content{
-    height: 120px;
+.monitoring_patient .event .table_body .table_content{
+    height: 120px;  
     overflow: hidden;
     display: none;
 }
@@ -2352,11 +2349,12 @@
 }
 
 .arteriotony .table_body> div> div p{
-    margin-right: 26px;
+    margin-right: 33px;
+    display: inline-flex;
 }
 
 .arteriotony .table_body> div> div> :first-child{
-    margin-right: 0;
+    margin-right: 4px;
 }
 
 .arteriotony .table_body> div> :first-child> :last-child{
@@ -2727,10 +2725,8 @@
     background: #eee;
     border-radius: 8px;
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
     height: 589px;
 }
 
@@ -2785,11 +2781,13 @@
 
 /* 대시보드 전체화면 */
 .ward_dashboard{
+    min-width: 1880px;
     padding: 0;
     background: #222;
 }
 
 .ward_dashboard .wrap_inner{
+    min-width: 1880px;
     height: 100vh;
     padding: 20px;
     background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px/ contain;
@@ -2799,13 +2797,13 @@
 }
 
 .ward_dashboard .wrap_inner> div{
-    width: 100%;
-    min-width: 1880px;
+    width: 1880px;
     height: 100%;
     max-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    /* justify-content: space-between; */
 }
 
 .ward_dashboard .wrap_inner> div::-webkit-scrollbar{
@@ -2825,11 +2823,6 @@
     height: 100%;
     object-fit: cover;
 }
-
-/* .ward_dashboard .sys_vital,
-.ward_dashboard .system_title{
-    display: inline-block;
-} */
 
 .ward_dashboard .wrap_inner> div > div{
     width: 624px;
@@ -2893,6 +2886,7 @@
 }
 
 .ward_dashboard .vital_inner{
+    height: 112px;
     display: flex;
     justify-content: space-between;
 }
