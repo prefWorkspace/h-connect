@@ -103,6 +103,11 @@ const VERSION = {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/measure/',
                     version:'2022.01.20.14.34'
+                },
+                'insert_device_list.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/template/measure/',
+                    version:'2022.01.25.17.07'
                 }
             },
             'monitoring' : {
@@ -249,6 +254,11 @@ const VERSION = {
                     url_path:'/nurse/index||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/measure/',
                     version:'2022.01.24.10.48'
+                },
+                'new_device_list.js' : {
+                    url_path:'/nurse/index||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/measure/',
+                    version:'2022.01.25.17.13'
                 }
             },
             "device" : {

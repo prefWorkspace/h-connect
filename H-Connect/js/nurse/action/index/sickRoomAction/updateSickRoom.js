@@ -13,8 +13,6 @@ function updateSickRoomHandle(wardCode){
         const orderNumber = $(".section.right.hospital_room .container .cont .container .ward_list").length + 1;
 
         const req = JSON.stringify({
-            wardCode,
-            sickRoomCode,
             sickRoom: $roomName,
             nickname: "",
             orderNumber,
@@ -23,7 +21,6 @@ function updateSickRoomHandle(wardCode){
         })
         
         serverController.ajaxAwaitController("API/Manager/UpdateSickRoom", "POST", req, (res) => {
-            console.log(res);
             if(res.result){
                 $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
                 selectSickRoom(wardCode);
