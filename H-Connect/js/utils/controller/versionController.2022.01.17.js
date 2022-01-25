@@ -67,6 +67,11 @@ const VERSION = {
                 },
             },
         },
+        'utils.js' : {
+            url_path:'*',
+            file_path:'/H-Connect/js/utils/',
+            version:'2022.01.25.10.11'
+        }
     },
     'nurse' : {
         'template' : {

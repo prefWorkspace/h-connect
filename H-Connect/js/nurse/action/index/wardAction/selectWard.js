@@ -24,13 +24,11 @@ function getWardData(){
     
 
     serverController.ajaxAwaitController("API/Manager/SelectWard", "POST", req, (res) => {
-        
-        console.log(res);
+        console.log(res.wardList)
         if(res.result){
             const wardList = [...res.wardList];
             for(let i = 0; i < wardList.length; i++){
-                const title = wardList[i].ward;
-                Create_newWard(title, wardList[i].wardCode, wardList[i].orderNumber, wardList[i].deactivate, wardList[i].sickRoomList);
+                Create_newWard(wardList[i]);
             }
             updateWard(); //병동 수정 이벤트
             deleteWard(); //병동 삭제 이벤트
@@ -45,4 +43,3 @@ function getWardData(){
     })
 }
 getWardData();
- 

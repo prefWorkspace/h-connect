@@ -1,3 +1,6 @@
+"use strict";
+
+
 function select_device_unused(deviceType = 0, search = null){
 
     const req = JSON.stringify({
