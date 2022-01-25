@@ -156,7 +156,7 @@
     /* display: none; */
 }
 
-.nurse .ward .cont, .nurse .hospital_room .cont{display: none;}
+/* .nurse .ward .cont, .nurse .hospital_room .cont{display: none;} */
 
 .nurse .left .cont .ward_list,
 .nurse .right .cont .ward_list{
@@ -182,8 +182,9 @@
 }
 
 .nurse .left .cont .ward_list> p{
+    width: 100px;
     margin-top: 8px;
-    margin-right: 84px;
+    margin-right: 20px;
 }
 
 .nurse .left .cont .ward_list .ward_count{
@@ -634,7 +635,7 @@
 }
 
 .measure_status .container .status_list p{
-    margin-right: 30px;
+    margin-right: 25px;
 }
 
 .measure_status .status_list{

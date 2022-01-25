@@ -3,7 +3,7 @@ function delete_devive(){
     const serialNumber = $(this).data("serialnumber");
 
     const req = JSON.stringify({
-        ...commonRequset(),
+        ...commonRequest(),
         serialNumber,
     })
 
