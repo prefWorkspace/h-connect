@@ -40,7 +40,7 @@ function new_SickBed_selectBox_handle(wardList){
             total_bed_count = wardList[index].sickRoomList[i].sickBedList.length;
             patient_count = wardList[index].sickRoomList[i].roomPatientCount;
             new_sickRoomList += `
-                <li class="optionItem room_list2" data-index=${i} data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}" data-etc="${wardList[index].sickRoomList[i].etc}">
+                <li class="optionItem room_list2" data-index=${i} data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}">
                     <p>
                         <span>${wardList[index].sickRoomList[i].sickRoom}</span> 호실
                     </p>
@@ -72,7 +72,7 @@ function roomSelectHandle2(sickRoomList, target){
     const $title = target.find("p").text();
 
     $(".section.new_hospital .hospital_patient .selectBox2.s_select .room_label2").text($title);
-    $(".section.new_hospital .hospital_patient .selectBox2.s_select .room_label2").attr("data-sickroomcode", $(this).data("sickroomcode"));
+    $(".section.new_hospital .hospital_patient .selectBox2.s_select .room_label2").attr("data-sickroomcode", target.data("sickroomcode"));
     target.parent().parent().removeClass("active");
 
     for(let i = 0 ; i < $bedNumber; i++){

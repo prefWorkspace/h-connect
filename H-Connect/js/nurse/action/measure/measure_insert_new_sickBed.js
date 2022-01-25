@@ -13,7 +13,7 @@ $("#btn_new_hospital").on("click", function(){
     //유효성 검사
     const valid = wardCode === undefined || sickRoomCode === undefined || sickBed === "병상선택" || 
         patient_name === "" || patient_age === "" || patient_MRNCode === "" || patient_gender === "성별";
-
+    
     //유효성 검사 차단
     if(valid) return;
 
