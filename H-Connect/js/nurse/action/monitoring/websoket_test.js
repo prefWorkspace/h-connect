@@ -33,7 +33,6 @@ ws.addEventListener('message', function(e){
     console.log("ddd:",e)
 })
 // ws?SX-Auth-Token=${accessToken}&deviceKind=${3}&requester=${userData.userCode}&requestDateTime=${'2021-05-17 14:23:45'}
-console.log(ws);
 // const ws = new WebSocket(`ws://${ip}topic/public/bioSignalData/ws?SX-Auth-Token=${accessToken}&deviceKind=${3}&requester=${userData.userCode}&requestDateTime=${'2021-05-17 14:23:45'}`);
 
 
