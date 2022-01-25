@@ -271,6 +271,13 @@ const VERSION = {
                     file_path:'/H-Connect/js/nurse/action/device/',
                     version:'2022.01.24.18.00'
                 }
+            },
+            'message' : {
+                'socket_connect.js' : {
+                    url_path:'/nurse/message',
+                    file_path:'/H-Connect/js/nurse/action/message/',
+                    version:'2022.01.25.11.20'
+                }
             }
         }
     }

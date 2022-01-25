@@ -8,12 +8,10 @@
     const orderNumber = $(".section.right.hospital_room .container .cont .container .ward_list").length + 1;
 
     const req = JSON.stringify({
-        requester,
-        organizationCode,
         wardCode,
         sickRoom: $roomName,
+        numberPatientRoom: $person,
         orderNumber,
-        etc: $person,
         ...commonRequest(),
     })
     
