@@ -3,7 +3,7 @@ const $all_patientEl = $('.nurse.patient_vital .wrap_inner .all_patient');
     s : 모니터링 블록
 */
 function MonitorBlock_Have(data){
-    const {patientCode, name, bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = data || {};
+    const {measurementCode, patientCode, name, bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = data || {};
     /**
      * EWS : emergency warning system => 비상 경고 시스템
      * HR : heartRate => 심박수
@@ -22,7 +22,7 @@ function MonitorBlock_Have(data){
     * active blue(파란색) : 시스템 이상
     */
     return `
-    <div class="patient_monitor">
+    <div class="patient_monitor" onclick="history.push('/nurse/patient.html?measurement_code=${measurementCode}')">
         <div class="patient_info">
             <p>
                 <span>${patientCode}</span>.
@@ -59,7 +59,7 @@ function MonitorBlock_Have(data){
 }
 function MonitorBlock_None(index){
     return `
-    <div class="patient_monitor">
+    <div class="patient_monitor" onclick="history.push('/nurse/measure.html')">
         <div class="empty_bed">
             <p>empty_bed</p>
 
