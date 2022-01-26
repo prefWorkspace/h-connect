@@ -49,4 +49,5 @@ function Create_ward_list_update_Bed(wardList){
     }
 
     $(".section.modifi_hospital .hospital_patient .selectBox2.select_ward .optionList.mward_option").html(ward_list_html);
-}
+} 
+

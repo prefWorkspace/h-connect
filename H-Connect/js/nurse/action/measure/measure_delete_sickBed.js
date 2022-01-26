@@ -19,14 +19,11 @@ function deleteModal(){
 function deleteSickBed(codeObj){
 
     const req = JSON.stringify({
-        requester,
-        organizationCode,
         ...codeObj,
         ...commonRequest()
     });
     
     serverController.ajaxAwaitController("API/Manager/DeleteSickBed", "POST", req, (res) => {
-        console.log(res);
         if(res.result){
             $('.pop.delete_measure .overlay').fadeOut();
             location.reload();

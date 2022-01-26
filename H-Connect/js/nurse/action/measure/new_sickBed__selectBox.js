@@ -33,7 +33,6 @@ function new_SickBed_selectBox_handle(wardList){
         $("li").remove(".section.new_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .room_list2"); //병실의 리스트 지우기
         $("li").remove(".section.new_hospital .hospital_patient .selectBox2.select_bed .optionList.bed_option .bed_list"); //병상의 리스트 지우기
 
-        console.log(wardList[index].sickRoomList)
         let total_bed_count;
         let patient_count;
         for(let i = 0; i < wardList[index].sickRoomList.length; i++){
@@ -77,7 +76,7 @@ function roomSelectHandle2(sickRoomList, target){
 
     for(let i = 0 ; i < $bedNumber; i++){
         new_sickBed_html += `
-            <li class="optionItem bed_list">${i+1}번 병상</li>
+            <li data-sickbedcode=${sickRoomList[index_SickRoomList].sickBedList[i].sickBedCode} class="optionItem bed_list">${sickRoomList[index_SickRoomList].sickBedList[i].sickBed}번 병상</li>
         `;
     }
     $(".section.new_hospital .hospital_patient .selectBox2.select_bed .optionList.bed_option").html(new_sickBed_html);

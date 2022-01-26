@@ -14,92 +14,16 @@ function measure_selectBox_handle(wardList){
 
     //병동 셀렉트 박스 옵션 선택 이벤트
     $(".section.measure_status .search_select .selectBox2.s_select .optionList.ward_option .ward_list").on("click", function(){
-        
-        let new_sickRoomList = ``; 
-        let patientList = ``;
-        const index = $(this).data("index"); //선택한 wardList의 인덱스
-        const $title = $(this).text();  //선택한 옵션의 이름
-
-        //선택한 옵션의 이름 변경
-        $(".section.measure_status .search_select .selectBox2.s_select .ward_label").text($title); 
-
-        // 병동 옵션이 바뀔시 병실은 디폴트값으로 다시 변경
-        $(".section.measure_status .search_select .selectBox2.s_select .room_label").text("병실전체"); 
-
-        //병실의 리스트 지우기
-        $("li").remove(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .room_list.roomoption"); 
-
-        //병실 옵션 목록 생성
-        for(let i = 0; i < wardList[index].sickRoomList.length; i++){
-            new_sickRoomList += `
-                <li class="optionItem room_list roomoption" data-wardindex="${index}" data-index="${i}" data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}">${wardList[index].sickRoomList[i].sickRoom} 호실</li>
-            `;
-        }
-
-        //병실에 병동의 맞는 새로운 리스트 정렬
-        $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").after(new_sickRoomList); 
-
-        //리스트 정렬후 다시 이벤트 
-        $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").on("click", (e) => roomSelectHandle(wardList, e));
-        
-        //환자 리스트 일단 지우기
-        $("div").remove(".nurse.nurse_measure .wrap_inner .section.measure_status .container .status_list"); 
-
-        // 측정현황 병동 클릭시 템플릿 뿌리기
-        let codeList = {
-            wardCode: "",
-            sickRoomCode: "",
-            sickBedCode: ""
-        }
-
-        //측정 현황 해당 환자 목록 생성
-        const sickRoomArr = [...wardList[index].sickRoomList]; 
-        console.log(sickRoomArr)
-        //병상 클릭시, 해당병동에 있는 모든 환자 뿌리기(병실 상관 x)
-        for(let i = 0; i < sickRoomArr.length; i++){
-            codeList = {
-                ...codeList,
-                wardCode: wardList[index].wardCode,
-                sickRoomCode: sickRoomArr[i].sickRoomCode
-            }
-            for(let j = 0; j < sickRoomArr[i].sickBedList?.length; j++){
-                codeList = {
-                    ...codeList,
-                    sickBedCode: sickRoomArr[i].sickBedList[j].sickBedCode
-                }
-                Create_Ward_measure(wardList[index].ward, sickRoomArr[i].sickRoom, sickRoomArr[i].sickBedList[j].sickBed, sickRoomArr[i].sickBedList[j].etc, codeList);
-            }
-        }
-
-        //신규 병상 등록 콘텐츠 등장
-        $('.nurse_measure .new_hospital').show(); 
-
-        //병상 수정 콘텐츠 숨김 
-        $('.nurse_measure .modifi_hospital').hide(); 
-        
-        sickBed_Event(wardList);
-
-        //셀렉트 박스 비활성화 
-        $(this).parent().parent().removeClass("active"); 
+        const target = $(this);
+        click_ward_option(target, wardList)
     });
 
-    // 첫 화면에서 병실 셀렉트 박스 옵션 선택 이벤트
-    // $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").on("click",roomSelectHandle)
 }
 
 //병실 셀렉트 박스 옵션 변경 함수
 function roomSelectHandle(wardList, e){
-    const $title = $(e.target).text(); // 클릭한 노드의 텍스트
-    const $index = $(e.target).data("index"); //클릭한 노드가 가지는 sickRoom index \
-    const $ward_index = $(e.target).data("wardindex");
-    const checkWard = wardList[$ward_index];
-    const check_sickBedLsit = checkWard.sickRoomList[$index]?.sickBedList; // 해당하는 병상 리스트 불러오기
-    
-    //셀렉트 박스 이름 변경
-    $(".section.measure_status .search_select .selectBox2.s_select .room_label").text($title);
 
-    // 병상 목록 지우기
-    $("div").remove(".nurse.nurse_measure .wrap_inner .section.measure_status .container .status_list"); 
+    const $title = $(e.target).text(); // 클릭한 노드의 텍스트
 
     let codeList = {
         wardCode: "",
@@ -109,42 +33,41 @@ function roomSelectHandle(wardList, e){
     
     if($title === "병실전체"){
 
-        for(let i = 0; i < checkWard.sickRoomList.length; i++){
-            codeList = {
-                ...codeList,
-                wardCode: checkWard.wardCode,
-                sickRoomCode: checkWard.sickRoomList[i].sickRoomCode
-            }
-            for(let j = 0; j < checkWard.sickRoomList[i].sickBedList?.length; j++){
-                codeList = {
-                    ...codeList,
-                    sickBedCode: checkWard.sickRoomList[i].sickBedList[j].sickBedCode
-                }
-                Create_Ward_measure(checkWard.ward, checkWard.sickRoomList[i].sickRoom, checkWard.sickRoomList[i].sickBedList[j].sickBed, checkWard.sickRoomList[i].sickBedList[j].etc, codeList);
-            }
-        }
+        //선택한 병동에 해당하는 리스트 생성 및 뿌리기
+        selectMeasurementInfoList(wardList.wardCode, null, null);
+
+        $(e.target).parent().parent().removeClass("active");
+
+        sickBed_Event(wardList);
+
+        return;
     }
 
+    const $index = $(e.target).data("index"); //클릭한 노드가 가지는 sickRoom index \
+    const checkRoomList = wardList.sickRoomList[$index];
+    const check_sickBedLsit = checkRoomList.sickBedList; // 해당하는 병상 리스트 불러오기
+
+    //셀렉트 박스 이름 변경
+    $(".section.measure_status .search_select .selectBox2.s_select .room_label").text($title);
+
+    // 병상 목록 지우기
+    $("div").remove(".nurse.nurse_measure .wrap_inner .section.measure_status .container .status_list"); 
+    
     if(check_sickBedLsit){
         codeList = {
-            wardCode: checkWard.wardCode,
-            sickRoomCode: checkWard.sickRoomList[$index].sickRoomCode,
+            wardCode: wardList.wardCode,
+            sickRoomCode: wardList.sickRoomList[$index].sickRoomCode,
             sickBedCode: ""
         }
 
-        for(let i = 0; i < check_sickBedLsit.length; i++){
-            /// 작업 
-            codeList = {
-                ...codeList,
-                sickBedCode: check_sickBedLsit[i].sickBedCode
-            }
-            Create_Ward_measure(checkWard.ward, checkWard.sickRoomList[$index].sickRoom, check_sickBedLsit[i].sickBed, check_sickBedLsit[i].etc, codeList);
-        }
+        //선택한 병동 및 병실에 해당하는 리스트 생성 및 뿌리기
+        selectMeasurementInfoList(wardList.wardCode, wardList.sickRoomList[$index].sickRoomCode, null);
     }
     
     $(e.target).parent().parent().removeClass("active");
 
     sickBed_Event(wardList);
+
 } 
 
 // 병상 수정 클릭 이벤트 함수
@@ -187,6 +110,7 @@ function backgroundChange(){
 
 // 병사에 관한 css 및 수정 삭제 이벤트 거는 함수
 function sickBed_Event(wardList){
+
     //수정버튼 클릭
     $('.measure_status .container .status_list .btn_list .btn_modify').on('click', (e) => clickUpdateSickBed(wardList, e));
 
@@ -197,3 +121,59 @@ function sickBed_Event(wardList){
     $('.measure_status .container .status_list').on("click", backgroundChange)
 }
 
+//병동 셀렉트 박스 옵션 선택 이벤트
+function click_ward_option(target, wardList){
+    let new_sickRoomList = ``; 
+    let patientList = ``;
+    const index = $(target).data("index"); //선택한 wardList의 인덱스
+    const $title = $(target).text();  //선택한 옵션의 이름
+
+    //선택한 옵션의 이름 변경
+    $(".section.measure_status .search_select .selectBox2.s_select .ward_label").text($title); 
+
+    // 병동 옵션이 바뀔시 병실은 디폴트값으로 다시 변경
+    $(".section.measure_status .search_select .selectBox2.s_select .room_label").text("병실전체"); 
+
+    //병실의 리스트 지우기
+    $("li").remove(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .room_list.roomoption"); 
+
+    //병실 옵션 목록 생성
+    for(let i = 0; i < wardList[index].sickRoomList.length; i++){
+        new_sickRoomList += `
+            <li class="optionItem room_list roomoption" data-wardindex="${index}" data-index="${i}" data-sickroomcode="${wardList[index].sickRoomList[i].sickRoomCode}">${wardList[index].sickRoomList[i].sickRoom} 호실</li>
+        `;
+    }
+
+    //병실에 병동의 맞는 새로운 리스트 정렬
+    $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").after(new_sickRoomList); 
+
+    //리스트 정렬후 다시 이벤트 
+    $(".section.measure_status .search_select .selectBox2.s_select .optionList.room_option .optionItem.room_list").on("click", (e) => roomSelectHandle(wardList[index], e));
+    
+    //환자 리스트 일단 지우기
+    $("div").remove(".nurse.nurse_measure .wrap_inner .section.measure_status .container .status_list"); 
+
+    // 측정현황 병동 클릭시 템플릿 뿌리기
+    let codeList = {
+        wardCode: "",
+        sickRoomCode: "",
+        sickBedCode: ""
+    }
+
+    //측정 현황 해당 환자 목록 생성
+    const sickRoomArr = [...wardList[index].sickRoomList]; 
+
+    //선택한 병동에 해당하는 리스트 생성 및 뿌리기
+    selectMeasurementInfoList(wardList[index].wardCode, null, null);
+
+    //신규 병상 등록 콘텐츠 등장
+    $('.nurse_measure .new_hospital').show(); 
+
+    //병상 수정 콘텐츠 숨김 
+    $('.nurse_measure .modifi_hospital').hide(); 
+    
+    sickBed_Event(wardList);
+
+    //셀렉트 박스 비활성화 
+    $(target).parent().parent().removeClass("active"); 
+}

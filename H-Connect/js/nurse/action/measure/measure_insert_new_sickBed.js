@@ -4,6 +4,7 @@ $("#btn_new_hospital").on("click", function(){
     
     const wardCode = $(".section.new_hospital .hospital_patient .ward_label2").data("wardcode");
     const sickRoomCode = $(".section.new_hospital .hospital_patient .room_label2").data("sickroomcode");
+    const sickBedCode = $(".section.new_hospital .hospital_patient .patient_room .bed_label").data("sickbedcode");
     const sickBed = $(".section.new_hospital .hospital_patient .bed_label").text();
 
     const name = $("#patient_name").val();
@@ -21,7 +22,6 @@ $("#btn_new_hospital").on("click", function(){
         }
         deviceInfoList.push(obj);
     });
-    console.log(deviceInfoList)
 
     //유효성 검사
     const valid = wardCode === undefined || sickRoomCode === undefined || sickBed === "병상선택" || 
@@ -30,27 +30,18 @@ $("#btn_new_hospital").on("click", function(){
     //유효성 검사 차단
     if(valid) return;
 
-    const patient_info = {
-        name,
-        birthday,
-        gender: gender === "남자" ? 1 : 0,
-        patientCode,
-    }
-
-    
-    const req_newBed = JSON.stringify({
-        wardCode,
-        sickRoomCode,
-        sickBed,
-        orderNumber: 1,
-        etc: JSON.stringify(patient_info),
-        ...commonRequest()
-    })
+    const { requestDateTime:startDateTime } = commonRequest();
     
     const req_measure = JSON.stringify({
-        ...req_newBed,
-        ...patient_info,
-        etc: "",
+        ...commonRequest(),
+        wardCode,
+        sickRoomCode,
+        sickBedCode,
+        name,
+        birthday,
+        gender: gender === "남자" ? 1 : 2,
+        patientCode,
+        etc: null,
         patientStatus: 3,
         ssn: null,
         foreigner: 0,
@@ -58,18 +49,15 @@ $("#btn_new_hospital").on("click", function(){
         measurementType: "BM",
         measurementStatus: 2,
         duration: 1,
-        startDateTime: "",
-        deviceInfoList: [],
+        startDateTime,
+        deviceInfoList,
     })
 
-    // serverController.ajaxAwaitController("API/Manager/InsertSickBed", "POST", req_newBed, (res) => {
-    //     if(res.result){
-    //         serverController.ajaxAwaitController("API/Measurement/InsertMeasurementInfo", "POST", req_measure, (res) => {
-    //             console.log(res)
-    //             if(res.result){
-    //                 location.reload();
-    //             }
-    //         }, (err) => {console.log(err)})
-    //     }
-    // }, (err) => {console.log(err)})
+    console.log(req_measure);
+
+    serverController.ajaxAwaitController("API/Manager/InsertMeasurementInfo", "POST", req_measure, (res) => {
+        if(res.result){
+        
+        }
+    }, (err) => {console.log(err)})
 });
