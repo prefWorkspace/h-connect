@@ -23,7 +23,7 @@ function Create_Ward_measure(data_List){
 
     let data = "";
     for(let i = 0; i < data_List.length; i++){
-        const { name, gender, ward, sickRoom, sickBed, patientCode, birthday, wardCode, sickRoomCode, sickBedCode } = data_List[i];
+        const { name, gender, ward, sickRoom, sickBed, patientCode, birthday, wardCode, sickRoomCode, sickBedCode, apiRoute, measurementCode } = data_List[i];
 
         data += `
             <div class="status_list" data-sickroomcode="${sickRoomCode}" >
@@ -47,8 +47,8 @@ function Create_Ward_measure(data_List){
                 </div>
     
                 <div class="btn_list">
-                    <button type="button" class="btn bl btn_modify" data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}">수정</button>
-                    <button type="button" class="btn rd btn_delete" data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}">삭제</button>
+                    <button type="button" class="btn bl btn_modify" data-measurementcode=${measurementCode} data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}" data-route=${apiRoute}>수정</button>
+                    <button type="button" class="btn rd btn_delete" data-measurementcode=${measurementCode} data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}" data-route=${apiRoute}>삭제</button>
                 </div>
             </div>
         `;

@@ -84,6 +84,7 @@ function roomSelectHandle2(sickRoomList, target){
     $(".section.new_hospital .hospital_patient .selectBox2.select_bed .optionList.bed_option .bed_list").on("click", function(){
         const $title = $(this).text();
         $(".section.new_hospital .hospital_patient .selectBox2.select_bed .bed_label").text($title);
+        $(".section.new_hospital .hospital_patient .selectBox2.select_bed .bed_label").attr("data-sickbedcode", $(this).data("sickbedcode"));
         $(this).parent().parent().removeClass("active");
     });
     

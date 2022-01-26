@@ -1,5 +1,5 @@
 
-//병상등록 버튼 이벤트 and measureInsertInto
+//병상등록 버튼 이벤트 and measureInsertInfo
 $("#btn_new_hospital").on("click", function(){
     
     const wardCode = $(".section.new_hospital .hospital_patient .ward_label2").data("wardcode");
@@ -38,7 +38,7 @@ $("#btn_new_hospital").on("click", function(){
         sickRoomCode,
         sickBedCode,
         name,
-        birthday,
+        birthday: null,
         gender: gender === "남자" ? 1 : 2,
         patientCode,
         etc: null,
@@ -53,11 +53,10 @@ $("#btn_new_hospital").on("click", function(){
         deviceInfoList,
     })
 
-    console.log(req_measure);
-
-    serverController.ajaxAwaitController("API/Manager/InsertMeasurementInfo", "POST", req_measure, (res) => {
+    serverController.ajaxAwaitController("API/Measurement/InsertMeasurementInfo", "POST", req_measure, (res) => {
+        console.log(res)
         if(res.result){
-        
+            location.reload();
         }
     }, (err) => {console.log(err)})
 });
