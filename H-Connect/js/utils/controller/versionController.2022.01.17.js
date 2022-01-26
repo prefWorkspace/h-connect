@@ -18,6 +18,22 @@ const NOW_URL_PATH = pathCalc();
  * @property {version} : 스크립트가 적용될 버전을 명시해줍니다.
  */
 const VERSION = {
+    'lib' : {
+        'socket' : {
+            'sockjs-1.5.0.js' : {
+                priority:0,
+                url_path:'/nurse/monitoring||/nurse/patient',
+                file_path:'/H-Connect/js/lib/socket/',
+                version:'2022.01.17.11.33'
+            },
+            'stomp-1.7.1.js' : {
+                priority:0,
+                url_path:'/nurse/monitoring||/nurse/patient',
+                file_path:'/H-Connect/js/lib/socket/',
+                version:'2022.01.17.11.33'
+            }
+        }
+    },
     'utils' : {
         'common' : {
             'utils.js' : {
@@ -102,6 +118,7 @@ const VERSION = {
         'template' : {
             'header' : {
                 'insert_search_patient.js' : {
+                    priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/header/',
                     version:'2022.01.26.12.01'
@@ -143,6 +160,14 @@ const VERSION = {
                     version:'2022.01.18.15.22'
                 }
             },
+            'patient' : {
+                'insert_patient.js' : {
+                    priority:2,
+                    url_path:'/nurse/patient',
+                    file_path:'/H-Connect/js/nurse/template/patient/',
+                    version:'2022.01.18.15.22'
+                }
+            },
             'dashboard' : {
                 'insert_ward.js' : {
                     url_path:'/nurse/dashboard',
@@ -171,6 +196,7 @@ const VERSION = {
         'action' : {
             'header' : {
                 'search_patient.js' : {
+                    priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/header/',
                     version:'2022.01.26.12.01'
@@ -186,6 +212,14 @@ const VERSION = {
                     priority : 1,
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/action/monitoring/',
+                    version:'2022.01.18.15.22'
+                }
+            },
+            'patient' : {
+                'patient_inform.js' : {
+                    priority:1,
+                    url_path:'/nurse/patient',
+                    file_path:'/H-Connect/js/nurse/action/patient/',
                     version:'2022.01.18.15.22'
                 }
             },
@@ -369,7 +403,13 @@ function findJsInVersion(_targetObj, filter){
 function scriptSet(){
     // 스크립트를 생성해줍니다.
     findJsInVersion(VERSION, '.js');
-    scriptArr.sort((a, b)=>{return a.priority - b.priority;});
+    scriptArr.sort((a, b)=>{
+        if(typeof a.priority === "number" && typeof b.priority === "number" ){
+            return a.priority - b.priority;
+        }else{
+            return 1;
+        }
+    });
     for(let i = 0; i < scriptArr.length; i++){
         const arr = scriptArr[i];
         const scriptEl = DOC.createElement('script');

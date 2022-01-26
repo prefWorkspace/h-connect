@@ -11,7 +11,7 @@ function Search_Patient_Block(data){
     
     const genderView = gender === 1 ? '남자' : gender === 2 ? '여자' : '';
     return `
-    <p class="patient_list" onclick='history.push("/nurse/patient.html?patient_code=${measurementCode}")'>
+    <p class="patient_list" onclick='history.push("/nurse/patient.html?measurement_code=${measurementCode}")'>
         <span>${name}</span>
         (<span>${ageCalc(birthday)}</span>.<span>${genderView}</span>).
         <span>${patientCode}</span>
@@ -66,7 +66,6 @@ function input_patient_find(patient_list){
     }
     $header_search_patientListEls = $('.search_patient .wrap_inner .patient_list');
 
-
     /* 검색 input 검색 이벤트 */
     $header_search_inputEl.off().on('input', (e)=>{
         // input에 타이핑을 하면 환자 이름, 코드를 찾아 해당 리스트만 display block 시켜줍니다.
@@ -86,6 +85,17 @@ function input_patient_find(patient_list){
 
             }
         });
+    })
+
+    /* 리스트 영역 컨트롤 이벤트 */
+    $('.pc_header .search_container').on('click', function(){
+        $('.pop.search_patient').fadeToggle();
+        $('.pc_header .search_container .btn_search').toggleClass('on');
+    })
+
+    $('#wrap_content').on('click', function(){
+        $('.pop.search_patient').fadeOut();
+        $('.pc_header .search_container .btn_search').removeClass('on');
     })
 }
 /* e: 환자검색 기능 */
