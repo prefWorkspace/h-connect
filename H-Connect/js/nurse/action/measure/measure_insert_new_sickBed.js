@@ -11,6 +11,18 @@ $("#btn_new_hospital").on("click", function(){
     const gender = $(".section.new_hospital .hospital_patient .patient_info .sex_label").text(); 
     const patientCode = $("#patient_MRN").val(); 
 
+    const deviceInfoList = [];
+    
+    $(".section.new_hospital #device").each(function(index, item){
+        const obj = {
+            deviceType: $(item).data("device"),
+            serialNumber: $(item).data("serial"),
+            macAddress: custom.etc.getMacaddress($(item).data("device"), $(item).data("serial"))
+        }
+        deviceInfoList.push(obj);
+    });
+    console.log(deviceInfoList)
+
     //유효성 검사
     const valid = wardCode === undefined || sickRoomCode === undefined || sickBed === "병상선택" || 
         name === "" || birthday === "" || patientCode === "" || gender === "성별";
@@ -21,10 +33,11 @@ $("#btn_new_hospital").on("click", function(){
     const patient_info = {
         name,
         birthday,
-        gender,
+        gender: gender === "남자" ? 1 : 0,
         patientCode,
     }
 
+    
     const req_newBed = JSON.stringify({
         wardCode,
         sickRoomCode,

@@ -31,6 +31,12 @@ const VERSION = {
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/common/',
                 version:'2022.01.17.11.33'
+            },
+            'constant.js' : {
+                priority:0,
+                url_path:'*',
+                file_path:'/H-Connect/js/utils/common/',
+                version:'2022.01.25.18.25'
             }
         },
         'controller' : {
@@ -79,10 +85,17 @@ const VERSION = {
                 },
             },
         },
-        'utils.js' : {
-            url_path:'*',
-            file_path:'/H-Connect/js/utils/',
-            version:'2022.01.25.10.11'
+        'custom' : {
+            'constant.js' : {
+                url_path:'*',
+                file_path:'/H-Connect/js/utils/custom/',
+                version:'2022.01.25.18.16'
+            },
+            'utils.js' : {
+                url_path:'*',
+                file_path:'/H-Connect/js/utils/custom/',
+                version:'2022.01.25.18.16'
+            }
         }
     },
     'nurse' : {
