@@ -410,7 +410,6 @@ function scriptSet(){
             return 1;
         }
     });
-    console.log(scriptArr)
     for(let i = 0; i < scriptArr.length; i++){
         const arr = scriptArr[i];
         const scriptEl = DOC.createElement('script');
