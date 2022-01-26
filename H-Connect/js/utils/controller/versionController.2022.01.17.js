@@ -1,5 +1,5 @@
 /* 각 JS파일 버전을 관리합니다 */
-const doc = document;
+const DOC = document;
 const NOW_URL_PATH = pathCalc();
 /* s : path, version set */
 
@@ -45,6 +45,12 @@ const VERSION = {
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
+            },
+            'historyController.js' : {
+                priority:0,
+                url_path:'*',
+                file_path:'/H-Connect/js/utils/controller/',
+                version:'2022.01.26.12.45'
             },
             'cookieController.js' : {
                 priority:0,
@@ -94,6 +100,13 @@ const VERSION = {
     },
     'nurse' : {
         'template' : {
+            'header' : {
+                'insert_search_patient.js' : {
+                    url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/template/header/',
+                    version:'2022.01.26.12.01'
+                }
+            },
             'index' : {
                 'insert_newWard_index.js' : {
                     url_path:'/nurse/index',
@@ -128,11 +141,6 @@ const VERSION = {
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/template/monitoring/',
                     version:'2022.01.18.15.22'
-                },
-                'insert_search_patient.js' : {
-                    url_path:'/nurse/monitoring',
-                    file_path:'/H-Connect/js/nurse/template/monitoring/',
-                    version:'2022.01.18.15.22'
                 }
             },
             'dashboard' : {
@@ -161,13 +169,15 @@ const VERSION = {
             }
         },
         'action' : {
+            'header' : {
+                'search_patient.js' : {
+                    url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
+                    file_path:'/H-Connect/js/nurse/action/header/',
+                    version:'2022.01.26.12.01'
+                }
+            },
             'monitoring' : {
                 'monitoring_all.js' : {
-                    url_path:'/nurse/monitoring',
-                    file_path:'/H-Connect/js/nurse/action/monitoring/',
-                    version:'2022.01.18.15.22'
-                },
-                'search_patient.js' : {
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/action/monitoring/',
                     version:'2022.01.18.15.22'
@@ -362,11 +372,11 @@ function scriptSet(){
     scriptArr.sort((a, b)=>{return a.priority - b.priority;});
     for(let i = 0; i < scriptArr.length; i++){
         const arr = scriptArr[i];
-        const scriptEl = doc.createElement('script');
+        const scriptEl = DOC.createElement('script');
         scriptEl.defer = true;
         scriptEl.async = false;
         scriptEl.src = arr.file_path + arr.file_name + '?v=' + arr.version;
-        doc.head.append(scriptEl);
+        DOC.head.append(scriptEl);
     }
 }
 
