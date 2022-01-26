@@ -74,11 +74,14 @@ function MonitorBlock_None(index){
     </div>
     `;
 }
-function first_insert_monitoring(patient_list){
+function first_insert_monitoring(patient_list, sickBed_len){
+    /*
+    patient_list : 환자 측정 리스트
+    sickBed_len : 병상 갯수
+    */  
     let html = '';
-    const sickBedLen = 50;
     const patientLen = patient_list ? patient_list.length : 0;
-    for(let i = 0; i < sickBedLen; i++){
+    for(let i = 0; i < sickBed_len; i++){
         if(i < patientLen){
             html+=MonitorBlock_Have(patient_list[i]);
         }else{
