@@ -1,3 +1,4 @@
+"use strict";
 
 $("#header .pop.logout .btn_bye").on("click", function(){
 
@@ -9,7 +10,7 @@ $("#header .pop.logout .btn_bye").on("click", function(){
     serverController.ajaxAwaitController("API/Account/LogoutHIS", "POST", req, (res) => {
         if(res.result){
             $('.pop.logout').fadeOut();
-            cookieController.removeCookie("accesToken");
+            sessionController.removeSession("accesToken");
             localStorageController.removeLocalS("userData");
             location.href="/index.html";
         }

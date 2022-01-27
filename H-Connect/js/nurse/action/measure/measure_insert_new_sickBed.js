@@ -1,18 +1,18 @@
+"use strict";
 
-//병상등록 버튼 이벤트 and measureInsertInfo
-$("#btn_new_hospital").on("click", function(){
-    
-    const wardCode = $(".section.new_hospital .hospital_patient .ward_label2").data("wardcode");
-    const sickRoomCode = $(".section.new_hospital .hospital_patient .room_label2").data("sickroomcode");
-    const sickBedCode = $(".section.new_hospital .hospital_patient .patient_room .bed_label").data("sickbedcode");
-    const sickBed = $(".section.new_hospital .hospital_patient .bed_label").text();
+function insertMeasurementInfo(){
 
-    const name = $("#patient_name").val();
-    const birthday = $("#patient_age").val(); 
-    const gender = $(".section.new_hospital .hospital_patient .patient_info .sex_label").text(); 
-    const patientCode = $("#patient_MRN").val(); 
+    const _wardCode = $(".section.new_hospital .hospital_patient .ward_label2").data("wardcode");
+    const _sickRoomCode = $(".section.new_hospital .hospital_patient .room_label2").data("sickroomcode");
+    const _sickBedCode = $(".section.new_hospital .hospital_patient .patient_room .bed_label").data("sickbedcode");
+    const _sickBed = $(".section.new_hospital .hospital_patient .bed_label").text();
 
-    const deviceInfoList = [];
+    const _name = $("#patient_name").val();
+    const _birthday = $("#patient_age").val(); 
+    const _gender = $(".section.new_hospital .hospital_patient .patient_info .sex_label").text(); 
+    const _patientCode = $("#patient_MRN").val(); 
+
+    const _deviceInfoList = [];
     
     $(".section.new_hospital #device").each(function(index, item){
         const obj = {
@@ -20,27 +20,27 @@ $("#btn_new_hospital").on("click", function(){
             serialNumber: $(item).data("serial"),
             macAddress: custom.etc.getMacaddress($(item).data("device"), $(item).data("serial"))
         }
-        deviceInfoList.push(obj);
+        _deviceInfoList.push(obj);
     });
 
     //유효성 검사
-    const valid = wardCode === undefined || sickRoomCode === undefined || sickBed === "병상선택" || 
-        name === "" || birthday === "" || patientCode === "" || gender === "성별";
+    const valid = _wardCode === undefined || _sickRoomCode === undefined || _sickBed === "병상선택" || 
+        _name === "" || _birthday === "" || _patientCode === "" || _gender === "성별";
     
     //유효성 검사 차단
     if(valid) return;
 
-    const { requestDateTime:startDateTime } = commonRequest();
+    const { requestDateTime:_startDateTime } = commonRequest();
     
     const req_measure = JSON.stringify({
         ...commonRequest(),
-        wardCode,
-        sickRoomCode,
-        sickBedCode,
-        name,
+        wardCode: _wardCode,
+        sickRoomCode: _sickRoomCode,
+        sickBedCode: _sickBedCode,
+        name: _name,
         birthday: null,
-        gender: gender === "남자" ? 1 : 2,
-        patientCode,
+        gender: _gender === "남자" ? 1 : 2,
+        patientCode: _patientCode,
         etc: null,
         patientStatus: 3,
         ssn: null,
@@ -49,14 +49,40 @@ $("#btn_new_hospital").on("click", function(){
         measurementType: "BM",
         measurementStatus: 2,
         duration: 1,
-        startDateTime,
-        deviceInfoList,
-    })
+        startDateTime: _startDateTime,
+        deviceInfoList: _deviceInfoList,
+    });
 
-    serverController.ajaxAwaitController("API/Measurement/InsertMeasurementInfo", "POST", req_measure, (res) => {
+    const _req_selecet = JSON.stringify({
+        ...commonRequest(),
+        wardCode: _wardCode,
+        sickRoomCode: _sickRoomCode,
+        sickBedCode: _sickBedCode,
+        measurementType: "BM",
+    });
+
+    console.log(_wardCode, _sickRoomCode, _sickBedCode)
+
+    let _isMeasurementInfoList;
+
+    serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoList", "POST", _req_selecet, (res) => {
         console.log(res)
         if(res.result){
-            location.reload();
+            if(!res.measurementInfoSimpleList){
+                serverController.ajaxAwaitController("API/Measurement/InsertMeasurementInfo", "POST", req_measure, (res) => {
+                    console.log(res)
+                    if(res.result){
+                        location.reload();
+                    }
+                }, (err) => {console.log(err)})
+            }else{
+                alert("병상에 이미 측정이 되고있습니다");
+            }
         }
     }, (err) => {console.log(err)})
-});
+
+}
+
+//병상등록 버튼 이벤트 and measureInsertInfo
+$("#btn_new_hospital").on("click", insertMeasurementInfo);
+

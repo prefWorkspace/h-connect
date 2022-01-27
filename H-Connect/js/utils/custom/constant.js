@@ -246,7 +246,7 @@ GBL.API.URL = {
             SELECT: "/Manager/SelectSickBed",
             INSERT: "/Manager/InsertSickBed",
             UPDATE: "/Manager/UpdateSickBed",
-            DELETE: "/Manager/DeleteSickBed",
+            DELETE: "/Manager/deleteMeasurementInfo",
         },
         GATEWAY: {
             SELECT: "/Manager/SelectGatewayInfoPage",

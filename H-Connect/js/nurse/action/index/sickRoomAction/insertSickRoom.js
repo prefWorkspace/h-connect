@@ -1,6 +1,7 @@
+"use strict";
 
-
- function insertSickRoomHandle(){
+//병실 조회
+ function insertSickRoom(){
     const $roomName = $(".pop.new_room .overlay .pop_cont .content input").val();
     const $person = $(".pop.new_room .overlay .pop_cont .content .selectBox2 .room_label").text().slice(0,1);
     const wardCode = $(this).attr("data-wardcode");    
@@ -15,7 +16,6 @@
         ...commonRequest(),
     })
     
-    console.log(req);
     serverController.ajaxAwaitController("API/Manager/InsertSickRoom", "POST", req, (res)  => {
         console.log(res)
         if(res.result){
@@ -26,4 +26,4 @@
     }, (err) => {console.log(err)})
 }
 
-$(".pop.new_room .overlay .pop_cont .btn_list .btn_check").on("click",insertSickRoomHandle)
+$(".pop.new_room .overlay .pop_cont .btn_list .btn_check").on("click",insertSickRoom)

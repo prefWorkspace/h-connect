@@ -79,6 +79,12 @@ const VERSION = {
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
             },
+            'sessionController.js' : {
+                priority:0,
+                url_path:'*',
+                file_path:'/H-Connect/js/utils/controller/',
+                version:'2022.01.27.09.24'
+            },
             'serverController.js' : {
                 priority:0,
                 url_path:'*',

@@ -26,7 +26,7 @@ function selectMeasurementInfoList(wardCode = null, sickRoomCode = null, sickBed
     }, (err) => {console.log(err)})
 }
 
-function getWardData(){
+function selectWard_measurement(){
 
     const req = JSON.stringify({
         includeSickRoom: true,
@@ -62,5 +62,5 @@ function getWardData(){
     })
 }
 
-getWardData();
+selectWard_measurement();
 selectMeasurementInfoList();

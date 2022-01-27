@@ -1,4 +1,4 @@
-
+"use strict";
 
 function deleteWard(){
     let wardCode;
@@ -22,7 +22,7 @@ function deleteWard(){
                 $('.pop.delete .overlay').hide();
                 // location.reload();
                 $("div").remove(".nurse .ward .cont");
-                getWardData();
+                selectWard();
             }
         }, (err) => {console.log(err)})
     });

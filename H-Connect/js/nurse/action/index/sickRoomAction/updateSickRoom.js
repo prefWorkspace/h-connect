@@ -1,6 +1,6 @@
+"use strict";
 
-
-function updateSickRoomHandle(wardCode){
+function updateSickRoom(_wardCode){
     let sickRoomCode;
     $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on('click', function () {
         $('.pop.update_room .overlay').fadeIn();
@@ -23,7 +23,7 @@ function updateSickRoomHandle(wardCode){
         serverController.ajaxAwaitController("API/Manager/UpdateSickRoom", "POST", req, (res) => {
             if(res.result){
                 $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
-                selectSickRoom(wardCode);
+                selectSickRoom(_wardCode);
                 $(".pop.update_room .overlay .pop_cont .content input").val("");
             }
         }, (err) => {console.log(err)})
