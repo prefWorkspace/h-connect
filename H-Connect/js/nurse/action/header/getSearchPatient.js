@@ -13,7 +13,7 @@
 /nurse/device_management.html
 /nurse/measure.html
 */
-async function search_patient_api(){
+async function getPatientApi(){
     await serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoList", "POST",
     JSON.stringify({
         ...commonRequest(),
@@ -21,11 +21,11 @@ async function search_patient_api(){
     }),
     (res) => {
         if(res.result){
-            const patient_list = res.measurementInfoSimpleList; // 환자 정보
-            insert_search_patient_list(patient_list); // 리스트 템플릿 렌더
+            const _patientList = res.measurementInfoSimpleList; // 환자 정보
+            _insertSearchPatientList(_patientList); // 리스트 템플릿 렌더
         }else{
             
         }
     }, (err) => console.log(err));
 }
-search_patient_api();
+getPatientApi();

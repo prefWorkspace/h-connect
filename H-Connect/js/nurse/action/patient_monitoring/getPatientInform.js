@@ -1,6 +1,9 @@
-async function patient_inform_api(){
+const PATIENT = {
+    inform : ""
+}
+async function getPatientInformApi(){
     const measurementCode = history.getParams("measurement_code");
-    
+    /* s: 환자 측정 상세 정보 */
     await serverController.ajaxAwaitController(
         "API/Measurement/SelectMeasurementInfoDetail", "POST",
         JSON.stringify({
@@ -8,16 +11,18 @@ async function patient_inform_api(){
             measurementCode:measurementCode
         }),
         (res) => {
-        console.log("ddd:",res);
+            console.log("res:",res);
         if(res.result){
-            
-            const bedList = res.sickBedList;
-            sickBedLen = bedList ? bedList.length : 50;
-
+            PATIENT.inform = res.measurementInfo;
         }else{
             
         }
     }, (err) => console.log(err));
-    /* e: 환자 병상 갯수 확인 */
+    /* e: 환자 측정 상세 정보 */
 }
-patient_inform_api();
+async function patient_init(){
+    await getPatientInformApi();
+    await _insertPatientInform();
+    // await _insertPatientVital();
+}
+patient_init();

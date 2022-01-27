@@ -1,8 +1,7 @@
-const $all_patientEl = $('.nurse.patient_vital .wrap_inner .all_patient');
 /*
     s : 모니터링 블록
 */
-function MonitorBlock_Have(data){
+function _monitorBlock_have(data){
     const {measurementCode, patientCode, name, bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = data || {};
     /**
      * EWS : emergency warning system => 비상 경고 시스템
@@ -12,7 +11,6 @@ function MonitorBlock_Have(data){
      * TEMP : Temperature => 온도
      */
     const {ews, heartRate, resp} = bioSignalECGLastData || {};
-    
     const {spO2} = bioSignalSpO2LastData || {};
     const {temperature} = bioSignalTempLastData || {};
     /**
@@ -57,7 +55,7 @@ function MonitorBlock_Have(data){
     </div>
     `;
 }
-function MonitorBlock_None(index){
+function _monitorBlock_none(index){
     return `
     <div class="patient_monitor" onclick="history.push('/nurse/measure.html')">
         <div class="empty_bed">
@@ -83,12 +81,13 @@ function first_insert_monitoring(patient_list, sickBed_len){
     const patientLen = patient_list ? patient_list.length : 0;
     for(let i = 0; i < sickBed_len; i++){
         if(i < patientLen){
-            html+=MonitorBlock_Have(patient_list[i]);
+            html+=_monitorBlock_have(patient_list[i]);
         }else{
-            html+=MonitorBlock_None();
+            html+=_monitorBlock_none();
         }
     }
-    $all_patientEl.html(html);
+    
+    $('.nurse.patient_vital .wrap_inner .all_patient').html(html);
 }
 /*
     e : 모니터링 블록

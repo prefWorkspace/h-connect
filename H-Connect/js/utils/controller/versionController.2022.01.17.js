@@ -1,11 +1,10 @@
 /* 각 JS파일 버전을 관리합니다 */
-const DOC = document;
 const NOW_URL_PATH = pathCalc();
 /* s : path, version set */
 
 /**
  * --------------------------------------------------------------
- * @version 2022.01.17, 버전표시
+ * @version 2022.01.27, 버전표시
  * --------------------------------------------------------------
  * 각 폴더와 파일을 오브젝트 형식으로 관리합니다.
  * 폴더명은 확장자가 표시되지 않은 key ex) controller
@@ -117,7 +116,7 @@ const VERSION = {
     'nurse' : {
         'template' : {
             'header' : {
-                'insert_search_patient.js' : {
+                'insertSearchPatient.js' : {
                     priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/header/',
@@ -154,18 +153,26 @@ const VERSION = {
                 }
             },
             'monitoring' : {
-                'insert_monitoring.js' : {
+                'insertMonitoring.js' : {
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/template/monitoring/',
                     version:'2022.01.18.15.22'
                 }
             },
-            'patient' : {
-                'insert_patient.js' : {
+            'patient_monitoring' : {
+                'insertPatientInform.js' : {
                     priority:2,
-                    url_path:'/nurse/patient',
-                    file_path:'/H-Connect/js/nurse/template/patient/',
+                    url_path:'/nurse/patient||/nurse/arteriotony',
+                    file_path:'/H-Connect/js/nurse/template/patient_monitoring/',
                     version:'2022.01.18.15.22'
+                },
+                'patient' : {
+                    'insertPatientVital.js' : {
+                        priority:2,
+                        url_path:'/nurse/patient',
+                        file_path:'/H-Connect/js/nurse/template/patient_monitoring/patient/',
+                        version:'2022.01.18.15.22'
+                    },
                 }
             },
             'dashboard' : {
@@ -195,7 +202,7 @@ const VERSION = {
         },
         'action' : {
             'header' : {
-                'search_patient.js' : {
+                'getSearchPatient.js' : {
                     priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/header/',
@@ -203,7 +210,7 @@ const VERSION = {
                 }
             },
             'monitoring' : {
-                'monitoring_all.js' : {
+                'getMonitoringAll.js' : {
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/action/monitoring/',
                     version:'2022.01.18.15.22'
@@ -215,12 +222,15 @@ const VERSION = {
                     version:'2022.01.18.15.22'
                 }
             },
-            'patient' : {
-                'patient_inform.js' : {
+            'patient_monitoring' : {
+                'getPatientInform.js' : {
                     priority:1,
-                    url_path:'/nurse/patient',
-                    file_path:'/H-Connect/js/nurse/action/patient/',
+                    url_path:'/nurse/patient||/nurse/arteriotony',
+                    file_path:'/H-Connect/js/nurse/action/patient_monitoring/',
                     version:'2022.01.18.15.22'
+                },
+                'patient' : {
+
                 }
             },
             'dashboard' : {
@@ -368,11 +378,11 @@ function pathCalc(){
      * 어떠한 환경에서 실행되는지를 명확히 알수가 없어
      * path값에서 .html을 제외하고 반환해줍니다.
      */
-    const _GET_PATH = location.pathname; // location의 path값을 반환합니다.
-    let _resultPath = _GET_PATH; // 반환될 path값을 설정해줍니다.
+    const _getPath = location.pathname; // location의 path값을 반환합니다.
+    let _resultPath = _getPath; // 반환될 path값을 설정해줍니다.
 
-    if(_GET_PATH.indexOf('.html') !== -1){
-        _resultPath = _GET_PATH.split('.html')[0];
+    if(_getPath.indexOf('.html') !== -1){
+        _resultPath = _getPath.split('.html')[0];
     }
 
     return _resultPath; 
@@ -380,8 +390,8 @@ function pathCalc(){
 /* e: settings function */
 
 /* e : path, version set */
-let scriptArr = [];
-function findJsInVersion(_targetObj, filter){
+let SCRIPT_ARR = [];
+function _findJsInVersion(_targetObj, filter){
     // 재귀를 통한 스크립트 오브젝트 배열 세팅 함수
     if(typeof(_targetObj) !== 'object'){return;}
     for(let key in _targetObj){
@@ -391,33 +401,34 @@ function findJsInVersion(_targetObj, filter){
             for(let i = 0; i < pathArray.length; i++){
                 if(pathArray[i] === NOW_URL_PATH || pathArray[i] === '*'){
                     _targetObj[key].file_name = key;
-                    scriptArr.push(_targetObj[key]);
+                    SCRIPT_ARR.push(_targetObj[key]);
                 }
             }
             continue;
         }
-        findJsInVersion(_targetObj[key], filter);
+        _findJsInVersion(_targetObj[key], filter);
     }
 }
 
-function scriptSet(){
+function setScript(){
     // 스크립트를 생성해줍니다.
-    findJsInVersion(VERSION, '.js');
-    scriptArr.sort((a, b)=>{
+    _findJsInVersion(VERSION, '.js');
+    SCRIPT_ARR.sort((a, b)=>{
         if(typeof a.priority === "number" && typeof b.priority === "number" ){
             return a.priority - b.priority;
         }else{
             return 1;
         }
     });
-    for(let i = 0; i < scriptArr.length; i++){
-        const arr = scriptArr[i];
-        const scriptEl = DOC.createElement('script');
+    for(let i = 0; i < SCRIPT_ARR.length; i++){
+        const _arr = SCRIPT_ARR[i];
+        const {file_path, file_name, version } = _arr;
+        const scriptEl = document.createElement('script');
         scriptEl.defer = true;
         scriptEl.async = false;
-        scriptEl.src = arr.file_path + arr.file_name + '?v=' + arr.version;
-        DOC.head.append(scriptEl);
+        scriptEl.src = file_path + file_name + '?v=' + version;
+        document.head.append(scriptEl);
     }
 }
 
-scriptSet(); // 스크립트 생성해주는 함수
+setScript(); // 스크립트 생성해주는 함수
