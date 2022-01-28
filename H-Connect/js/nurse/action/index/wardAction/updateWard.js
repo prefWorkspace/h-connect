@@ -31,6 +31,7 @@ function updateWard () {
             if(res.result){
                 // location.reload();
                 $("div").remove(".nurse .ward .cont");
+                $('.pop.update_ward .overlay').fadeOut();
                 selectWard();
             }
         }, (err) => {console.log(err)})

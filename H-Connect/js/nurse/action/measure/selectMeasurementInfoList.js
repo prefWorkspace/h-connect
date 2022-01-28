@@ -14,7 +14,7 @@ function selectMeasurementInfoList(wardCode = null, sickRoomCode = null, sickBed
         measurementStatusList: null,
         search: null
     })
-
+    
     serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoList", "POST", req, (res) => {
         console.log(res)
         if(res.result){

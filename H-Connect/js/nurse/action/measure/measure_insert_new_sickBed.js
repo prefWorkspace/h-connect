@@ -2,9 +2,9 @@
 
 function insertMeasurementInfo(){
 
-    const _wardCode = $(".section.new_hospital .hospital_patient .ward_label2").data("wardcode");
-    const _sickRoomCode = $(".section.new_hospital .hospital_patient .room_label2").data("sickroomcode");
-    const _sickBedCode = $(".section.new_hospital .hospital_patient .patient_room .bed_label").data("sickbedcode");
+    const _wardCode = $(".section.new_hospital .hospital_patient .ward_label2").attr("data-wardcode");
+    const _sickRoomCode = $(".section.new_hospital .hospital_patient .room_label2").attr("data-sickroomcode");
+    const _sickBedCode = $(".section.new_hospital .hospital_patient .patient_room .bed_label").attr("data-sickbedcode");
     const _sickBed = $(".section.new_hospital .hospital_patient .bed_label").text();
 
     const _name = $("#patient_name").val();
@@ -13,12 +13,12 @@ function insertMeasurementInfo(){
     const _patientCode = $("#patient_MRN").val(); 
 
     const _deviceInfoList = [];
-    
     $(".section.new_hospital #device").each(function(index, item){
+        console.log(getMacaddress($(item).data("device"), $(item).data("serial")))
         const obj = {
             deviceType: $(item).data("device"),
             serialNumber: $(item).data("serial"),
-            macAddress: custom.etc.getMacaddress($(item).data("device"), $(item).data("serial"))
+            macAddress: getMacaddress($(item).data("device"), $(item).data("serial"))
         }
         _deviceInfoList.push(obj);
     });
@@ -84,5 +84,4 @@ function insertMeasurementInfo(){
 }
 
 //병상등록 버튼 이벤트 and measureInsertInfo
-$("#btn_new_hospital").on("click", insertMeasurementInfo);
-
+$("#btn_new_hospital").off().on("click", insertMeasurementInfo);

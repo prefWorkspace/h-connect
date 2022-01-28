@@ -21,7 +21,8 @@
         if(res.result){
             $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
             selectSickRoom(wardCode);
-            $(".pop.new_room .overlay .pop_cont .content .selectBox2 .room_label").text("")
+            $(".pop.new_room .overlay .pop_cont .content .selectBox2 .room_label").text("");
+            $(".pop.new_room .overlay").fadeOut();
         }
     }, (err) => {console.log(err)})
 }

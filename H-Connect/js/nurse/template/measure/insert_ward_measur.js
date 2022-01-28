@@ -35,7 +35,7 @@ function Create_Ward_measure(data_List){
     
                 <p>
                     <span>${name}</span>.
-                    (<span>${birthday}</span>.
+                    (<span>${birthday || "0000-00-00"}</span>.
                     <span>${gender === 1 ? "남자" : "여자"}</span>.
                     <span>${patientCode}</span>)
                 </p>
