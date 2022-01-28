@@ -156,8 +156,8 @@ $(function () {
     });
 
     $('#wrap_content').on('click', function(){
-         $('.pop.search_patient').fadeOut();
-         $('.pc_header .search_container .btn_search').removeClass('on');
+        $('.pop.search_patient').fadeOut();
+        $('.pc_header .search_container .btn_search').removeClass('on');
     });
 
     // 환자선택하면 배경색이 바뀜
