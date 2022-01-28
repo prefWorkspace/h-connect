@@ -17,7 +17,7 @@ function _insertPatientInform(){
 
     return new Promise((resolve, reject)=>{
         const { name, birthday, gender, patientCode, ward, sickRoom, sickBed } = PATIENT.inform || {};
-        function setting(){
+        function _setting(){
             // 환자 정보 뷰 세팅
             _$p_inform_name.text(name);
             _$p_inform_age.text(ageCalc(birthday));
@@ -33,7 +33,7 @@ function _insertPatientInform(){
             //다 붙였으면 영역 보이기
             _$p_informEl.animate({opacity:'1'},60);
         }
-        resolve(setting);
+        resolve(_setting);
     }).then((res)=>{
         res();
     })

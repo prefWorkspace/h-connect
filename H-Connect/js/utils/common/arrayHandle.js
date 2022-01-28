@@ -10,11 +10,11 @@ Array.prototype.htmlFor = function (callback) {
 
     // 사용예시
     // [{test:1, test2:"asdf"},{test:1, test2:"asdf"}].htmlFor((item, index, arr)=>{return SickBed_Block(item)})
-    let htmlFor = [], idx = 0, value = {};
-    while(idx < this.length){
-        htmlFor += callback(this[idx], idx, this);
-        idx++;
+    let _htmlFor = [], _idx = 0, value = {};
+    while(_idx < this.length){
+        _htmlFor += callback(this[_idx], _idx, this);
+        _idx++;
     }
-    return htmlFor;
+    return _htmlFor;
 };
 /* e: html을 문자열로 합쳐주는 함수*/
