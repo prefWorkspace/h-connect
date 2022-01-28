@@ -13,6 +13,8 @@
 /nurse/device_management.html
 /nurse/measure.html
 */
+
+
 async function getPatientApi(){
     await serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoList", "POST",
     JSON.stringify({

@@ -14,6 +14,8 @@ function _insertPatientVital(){
 
 function _vitalHeaderInform(){
     const { name, birthday, gender, patientCode } = PATIENT.inform || {};
+
+    /* 환자 정보 jquery dom 선언 */
     const _$h_p_informEl = $('.monitoring_patient .vital_chart .title .pati_info');
 
     const _$h_p_name = $('.monitoring_patient .vital_chart .title .pati_info .name');

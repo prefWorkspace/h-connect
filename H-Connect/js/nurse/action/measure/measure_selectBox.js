@@ -1,7 +1,7 @@
 
 //측정현황 셀렉트 박스 이벤트 
 function measure_selectBox_handle(wardList){
-
+    
     //병동 셀렉트 박스 활성화
     $(".section.measure_status .search_select .selectBox2.s_select .ward_label").on("click", function(){
         $(this).parent().toggleClass("active");
