@@ -2,7 +2,7 @@
  * 해당 파일은 /nurse/monitoring.html 에서 환자 실시간 모니터링을 하는 페이지에 관련된 화면입니다.
  */
 
-async function getMonitoringAllApi(){
+async function getMonitoringAll(){
 
     let _sickBedLen = 50; // 병상의 총 갯수
     /* s: 환자 병상 갯수 확인 */
@@ -14,7 +14,6 @@ async function getMonitoringAllApi(){
             includeSickBed : true
         }),
         (res) => {
-        console.log("ddd:",res);
         if(res.result){
             // 병상의 갯수(비어있든 안비어있든) 를 _sickBedLen에 넣어줍니다.
             const _bedList = res.sickBedList;
@@ -38,14 +37,13 @@ async function getMonitoringAllApi(){
             count : 1000
         }),
         (res) => {
-        console.log(res);
         if(res.result){
         const _patient_list = res.measurementInfoSimpleBioDataList;
-        first_insert_monitoring(_patient_list, _sickBedLen);
+        _monitoring_patientList_insert(_patient_list, _sickBedLen);
         }else{
             
         }
     }, (err) => console.log(err));
     /* e: 환자 측정 리스트 가져오기 */
 }
-getMonitoringAllApi();
+getMonitoringAll();

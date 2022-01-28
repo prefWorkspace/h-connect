@@ -1,12 +1,12 @@
 /* s: 생년월일으로 '만' 나이를 계산합니다. */
-function ageCalc(birth){
-    const todayD = new Date();
-    const birthD = new Date(birth);
-    let age = todayD.getFullYear() - birthD.getFullYear();
-    const m = todayD.getMonth() - birthD.getMonth();
-    if (m < 0 || (m === 0 && todayD.getDate() < birthD.getDate())) {
-        age--;
+function AGE_CALC(_birth){
+    const _todayD = new Date();
+    const _birthD = new Date(_birth);
+    let _age = _todayD.getFullYear() - _birthD.getFullYear();
+    const _m = _todayD.getMonth() - _birthD.getMonth();
+    if (_m < 0 || (_m === 0 && _todayD.getDate() < _birthD.getDate())) {
+        _age--;
     }
-    return age;
+    return _age;
 }
 /* e: 생년월일으로 '만' 나이를 계산합니다. */

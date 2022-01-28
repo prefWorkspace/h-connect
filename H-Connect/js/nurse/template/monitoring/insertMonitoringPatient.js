@@ -1,8 +1,8 @@
 /*
     s : 모니터링 블록
 */
-function _monitorBlock_have(data){
-    const {measurementCode, patientCode, name, bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = data || {};
+function _monitorBlock_have(_data){
+    const {measurementCode, patientCode, name, bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = _data || {};
     /**
      * EWS : emergency warning system => 비상 경고 시스템
      * HR : heartRate => 심박수
@@ -55,7 +55,7 @@ function _monitorBlock_have(data){
     </div>
     `;
 }
-function _monitorBlock_none(index){
+function _monitorBlock_none(){
     return `
     <div class="patient_monitor" onclick="history.push('/nurse/measure.html')">
         <div class="empty_bed">
@@ -72,22 +72,23 @@ function _monitorBlock_none(index){
     </div>
     `;
 }
-function first_insert_monitoring(patient_list, sickBed_len){
+function _monitoring_patientList_insert(_patient_list, _sickBed_len){
     /*
-    patient_list : 환자 측정 리스트
-    sickBed_len : 병상 갯수
+    _patient_list : 환자 측정 리스트
+    _sickBed_len : 병상 갯수
     */  
-    let html = '';
-    const patientLen = patient_list ? patient_list.length : 0;
-    for(let i = 0; i < sickBed_len; i++){
-        if(i < patientLen){
-            html+=_monitorBlock_have(patient_list[i]);
+    let _html = '';
+    // 환자 수를 판단합니다.
+    const _patientLen = _patient_list ? _patient_list.length : 0;
+    for(let i = 0; i < _sickBed_len; i++){
+        if(i < _patientLen){
+            _html+=_monitorBlock_have(_patient_list[i]);
         }else{
-            html+=_monitorBlock_none();
+            _html+=_monitorBlock_none();
         }
     }
     
-    $('.nurse.patient_vital .wrap_inner .all_patient').html(html);
+    $('.nurse.patient_vital .wrap_inner .all_patient').html(_html);
 }
 /*
     e : 모니터링 블록

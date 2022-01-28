@@ -122,7 +122,7 @@ const VERSION = {
     'nurse' : {
         'template' : {
             'header' : {
-                'insertSearchPatient.js' : {
+                'headerSearchPatientInsert.js' : {
                     priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/header/',
@@ -159,7 +159,7 @@ const VERSION = {
                 }
             },
             'monitoring' : {
-                'insertMonitoring.js' : {
+                'insertMonitoringPatient.js' : {
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/template/monitoring/',
                     version:'2022.01.18.15.22'
@@ -208,7 +208,7 @@ const VERSION = {
         },
         'action' : {
             'header' : {
-                'getSearchPatient.js' : {
+                'getPatientSearchList.js' : {
                     priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/header/',
@@ -236,7 +236,20 @@ const VERSION = {
                     version:'2022.01.18.15.22'
                 },
                 'patient' : {
-
+                    'patientInit.js' : {
+                        priority:2,
+                        url_path:'/nurse/patient',
+                        file_path:'/H-Connect/js/nurse/action/patient_monitoring/patient/',
+                        version:'2022.01.28.11.56'
+                    },
+                },
+                'arteriotony' : {
+                    'arteriotonyInit.js' : {
+                        priority:2,
+                        url_path:'/nurse/arteriotony',
+                        file_path:'/H-Connect/js/nurse/action/patient_monitoring/arteriotony/',
+                        version:'2022.01.28.11.56'
+                    },
                 }
             },
             'dashboard' : {

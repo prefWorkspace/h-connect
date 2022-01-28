@@ -1,15 +1,7 @@
-function _insertPatientVital(){
+function _patient_patientVital_insert(){
     /* 환자 측정 상세정보 vital 화면 정보 세팅 */
 
-    return new Promise((resolve, reject)=>{
-        function setting(){
-            // 환자 정보 뷰 세팅
-            _vitalHeaderInform();
-        }
-        resolve(setting);
-    }).then((res)=>{
-        res();
-    })
+    _vitalHeaderInform();
 }
 
 function _vitalHeaderInform(){
@@ -25,7 +17,7 @@ function _vitalHeaderInform(){
     const _$h_p_type = $('.monitoring_patient .vital_chart .title .pati_info .p_type');
 
     _$h_p_name.text(name);
-    _$h_p_age.text(ageCalc(birthday));
+    _$h_p_age.text(AGE_CALC(birthday));
     _$h_p_gender.text(gender === 1 ? "남" : "여");
     _$h_p_id.text(patientCode);
     _$h_p_type.text(name);
