@@ -25,6 +25,7 @@ function updateSickRoom(_wardCode){
                 $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
                 selectSickRoom(_wardCode);
                 $(".pop.update_room .overlay .pop_cont .content input").val("");
+                $(".pop.update_room .overlay").fadeOut();
             }
         }, (err) => {console.log(err)})
 

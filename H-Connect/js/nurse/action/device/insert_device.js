@@ -6,7 +6,7 @@ function insert_device(){
     const req = JSON.stringify({
         ...commonRequest(),
         serialNumber,
-        deviceType: device_name_type(device_name)
+        deviceType: device_NameToType(device_name)
     });
 
     serverController.ajaxAwaitController("API/Device/InsertDeviceRegister", "POST", req, (res) => {

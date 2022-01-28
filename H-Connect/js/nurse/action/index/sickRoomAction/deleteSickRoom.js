@@ -23,6 +23,7 @@ function deleteSickRoom(_wardCode){
             if(res.result){
                 $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
                 selectSickRoom(_wardCode);
+                $('.pop.delete_room .overlay').fadeOut();
             }
         }, (err) => {console.log(err)})
 

@@ -9,7 +9,7 @@ function select_device_list(deviceRegisterList){
     for(let i = 0; i < deviceRegisterList.length; i++){
         deviceList += `
             <div class="item_row">
-                <p class="item_name">${deviceName(deviceRegisterList[i].deviceType)}</p>
+                <p class="item_name">${device_TypeToName(deviceRegisterList[i].deviceType)}</p>
                 <p class="item_num">${deviceRegisterList[i].serialNumber}</p>
                 <p class="use_line">사용가능</p>
 

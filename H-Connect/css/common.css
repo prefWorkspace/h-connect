@@ -2165,6 +2165,7 @@ textarea::-webkit-scrollbar-button {
     margin-left: 112px;
     font-size: 12px;
     color: #940045;
+    display: none;
 }
 
 /* 장치반납 */

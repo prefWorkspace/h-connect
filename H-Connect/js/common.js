@@ -45,7 +45,7 @@ $(function () {
 
     // 병동생성 팝업에서 확인 누르면 나오게
     $('.pop .overlay .pop_cont .btn_list .btn_check').on('click', function () {
-        $('.pop .overlay').fadeOut();
+        // $('.pop .overlay').fadeOut();
         // $('.nurse .ward .cont').fadeIn();  //병동 더미 데이터 나오게 하는 애
     });
 
@@ -1559,7 +1559,7 @@ $(document).ready(function(){
 })
 
 //간호사단 장치 이름 변환 이름=> 번호
-function device_name_type(devieName){
+function device_NameToType(devieName){
     switch(devieName){
         case "심전도 패치":
             return 1;
@@ -1571,7 +1571,7 @@ function device_name_type(devieName){
 }
 
 //간호사단 장치 이름 변환 번호 => 이름
-function deviceName(deviceType){
+function device_TypeToName(deviceType){
     switch(deviceType){
         case 1: 
             return "심전도 패치";

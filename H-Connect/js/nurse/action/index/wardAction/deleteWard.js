@@ -19,7 +19,7 @@ function deleteWard(){
             console.log(res);
             if(res.result){
                 $('.nurse .ward .cont .ward_list').hide();
-                $('.pop.delete .overlay').hide();
+                $('.pop.delete .overlay').fadeOut();
                 // location.reload();
                 $("div").remove(".nurse .ward .cont");
                 selectWard();
