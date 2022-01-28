@@ -1,35 +1,35 @@
 
 //병상 수정 이벤트 
-function sickBed_Update_Handle(){
+function updateMeasurementInfo(){
     
-    const wardCode = $(".section.modifi_hospital .hospital_patient .mward_label").data("wardcode");
-    const sickRoomCode = $(".section.modifi_hospital .hospital_patient .mroom_label").data("sickroomcode");
-    const sickBedCode = $(".section.modifi_hospital .hospital_patient .mbed_label").data("sickbedcode");
-    const route = $(this).data("route");
-    const measurementCode = $(this).data("measurementcode");
-    const name = $(".section.modifi_hospital #patient_name").val();
-    const birthday = $(".section.modifi_hospital #patient_age").val(); 
-    const gender = $(".section.modifi_hospital .hospital_patient .patient_info .sex_label").text(); 
-    const patientCode = $(".section.modifi_hospital #patient_MRN").val(); 
+    const _wardCode = $(".section.modifi_hospital .hospital_patient .mward_label").data("wardcode");
+    const _sickRoomCode = $(".section.modifi_hospital .hospital_patient .mroom_label").data("sickroomcode");
+    const _sickBedCode = $(".section.modifi_hospital .hospital_patient .mbed_label").data("sickbedcode");
+    const _route = $(this).data("route");
+    const _measurementCode = $(this).data("measurementcode");
+    const _name = $(".section.modifi_hospital #patient_name").val();
+    const _birthday = $(".section.modifi_hospital #patient_age").val(); 
+    const _gender = $(".section.modifi_hospital .hospital_patient .patient_info .sex_label").text(); 
+    const _patientCode = $(".section.modifi_hospital #patient_MRN").val(); 
 
     //유효성 검사
-    const valid = wardCode === undefined || sickRoomCode === undefined ||
-        name === "" || birthday === "" || patientCode === "" || gender === "성별";
+    const valid = _wardCode === undefined || _sickRoomCode === undefined ||
+        _name === "" || _birthday === "" || _patientCode === "" || _gender === "성별";
 
     //유효성 검사 차단
     if(valid) return;
     
-    const { requestDateTime:startDateTime } = commonRequest();
+    const { requestDateTime:_startDateTime } = commonRequest();
 
     const req = JSON.stringify({
         ...commonRequest(),
-        wardCode,
-        sickRoomCode,
-        sickBedCode,
-        name,
+        wardCode: _wardCode,
+        sickRoomCode: _sickRoomCode,
+        sickBedCode: _sickBedCode,
+        name: _name,
         birthday: null,
-        gender: gender === "남" ? 1 : 2,
-        patientCode,
+        gender: _gender === "남" ? 1 : 2,
+        patientCode: _patientCode,
         etc: null,
         patientStatus: 3,
         ssn: null,
@@ -38,16 +38,16 @@ function sickBed_Update_Handle(){
         measurementType: "BM",
         measurementStatus: 2,
         duration: 1,
-        startDateTime,
-        measurementCode,
+        _startDateTime,
+        measurementCode: _measurementCode,
         deviceInfoList,
     });
     
-    serverController.ajaxMeasurementController("API/Measurement/UpdateMeasurementInfo", route ,"POST", req, (res) => {
+    serverController.ajaxMeasurementController("API/Measurement/UpdateMeasurementInfo", _route ,"POST", req, (res) => {
         if(res.result){
             location.reload();
         }
     }, (err) => {console.log(err)})
 }
 
-$(".section.modifi_hospital .container .btn_list .btn_add").on("click", sickBed_Update_Handle);
+$(".section.modifi_hospital .container .btn_list .btn_add").on("click", updateMeasurementInfo);

@@ -53,7 +53,7 @@ function update_SickBed_selectBox_handle(wardList, e){
    });
 
    // 첫화면에서 병실 셀렉트 박스 이벤트 걸기
-   // $(".section.modifi_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .optionItem.room_list2").on("click",roomSelectHandle2) 
+   // $(".section.modifi_hospital .hospital_patient .selectBox2.s_select .optionList.room_option2 .optionItem.room_list2").on("click",new_sickBed_selectBox_handle) 
 }
 
 // 측정관리 => 수정 병실 셀렉트 박스

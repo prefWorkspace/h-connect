@@ -1,8 +1,9 @@
-
-function selectSickRoom(wardCode){
+"use strict";
+//병실 조회
+function selectSickRoom(_wardCode){
 
     const req = JSON.stringify({
-        wardCode,
+        wardCode: _wardCode,
         includeSickBed: true,
         ...commonRequest()
     })
@@ -14,8 +15,8 @@ function selectSickRoom(wardCode){
             $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
 
             Create_newSickRoom(sickRoomList)
-            deleteSickRoomHandle(wardCode);
-            updateSickRoomHandle(wardCode);
+            deleteSickRoom(_wardCode);
+            updateSickRoom(_wardCode);
         }
     }, (err) => {console.log(err)})
 }

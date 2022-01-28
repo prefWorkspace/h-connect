@@ -1,5 +1,5 @@
 
-const TEN_YEAR_DAY = 10 * 365;
+"use strict";
 
 function auto_Login(){
     if(autoLogin_input.checked){
@@ -31,7 +31,7 @@ function Login_Fetch(){
             const userData = res.userAccount; 
             const apiServerinfoList = res.apiServerinfoList;
             
-            cookieController.setCookie("accesToken", res.accessToken, TEN_YEAR_DAY);
+            sessionController.setSession("accesToken", res.accessToken);
             localStorageController.setLocalS("userData", userData);
 
             if(apiServerinfoList){
@@ -61,6 +61,7 @@ function Login_Fetch(){
             }
         }else{
             cookieController.removeCookie("accesToken");
+            alert("로그인이 실패 했습니다");
         }
     }, (err) => console.log(err));
 }

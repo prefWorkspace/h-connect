@@ -1,6 +1,7 @@
+"use strict";
 
-
-function deleteSickRoomHandle(wardCode){
+//병실 삭제
+function deleteSickRoom(_wardCode){
     let sickRoomCode;
     $('.nurse .hospital_room .cont .ward_list .btn_list .btn_delete').on('click', function () {
         $('.pop.delete_room .overlay').fadeIn();
@@ -12,7 +13,7 @@ function deleteSickRoomHandle(wardCode){
         const req = JSON.stringify({
             requester,
             organizationCode,
-            wardCode,
+            _wardCode,
             sickRoomCode,
             ...commonRequest()
         })
@@ -21,7 +22,7 @@ function deleteSickRoomHandle(wardCode){
             console.log(res);
             if(res.result){
                 $("div").remove(".section.right.hospital_room .container .cont .container .ward_list");
-                selectSickRoom(wardCode);
+                selectSickRoom(_wardCode);
             }
         }, (err) => {console.log(err)})
 
