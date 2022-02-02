@@ -171,12 +171,7 @@ const VERSION = {
                 }
             },
             'dashboard' : {
-                'insert_ward.js' : {
-                    url_path:'/nurse/dashboard',
-                    file_path:'/H-Connect/js/nurse/template/dashboard/',
-                    version:'2022.01.18.15.22'
-                },
-                'insert_dashboard.js' : {
+                'insertWardList.js' : {
                     url_path:'/nurse/dashboard',
                     file_path:'/H-Connect/js/nurse/template/dashboard/',
                     version:'2022.01.18.15.22'
@@ -242,12 +237,7 @@ const VERSION = {
                 }
             },
             'dashboard' : {
-                'insert_dashboard.js' : {
-                    url_path:'/nurse/dashboard',
-                    file_path:'/H-Connect/js/nurse/action/dashboard/',
-                    version:'2022.01.18.15.22'
-                },
-                'select_ward.js' : {
+                'getWardList.js' : {
                     url_path:'/nurse/dashboard',
                     file_path:'/H-Connect/js/nurse/action/dashboard/',
                     version:'2022.01.18.15.22'
@@ -428,6 +418,12 @@ function setScript(){
             return 1;
         }
     });
+    /* 
+    jquery 라이브러리 붙이기 전에
+    versionController를 로드하기 때문에 
+    해당 파일에서만 dom관련 함수를
+    vanilla js로 작성
+    */
     for(let i = 0; i < SCRIPT_ARR.length; i++){
         const _arr = SCRIPT_ARR[i];
         const {file_path, file_name, version } = _arr;
