@@ -328,7 +328,7 @@
             this.ws.onclose = (function(_this) {
                 return function() {
                     var msg;
-                    msg = "Whoops! Lost connection to " + _this.ws.url + "(" + Date.getNow() + ")";
+                    msg = "Whoops! Lost connection to " + _this.ws.url + "(" + Date.now() + ")";
                     if (typeof _this.debug === "function") {
                         _this.debug(msg);
                     }
