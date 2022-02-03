@@ -22,8 +22,6 @@
 // };
 // ws.send(JSON.stringify(sendData));
 
-
-
 // const {requester} = commonRequest();
 // const accessToken = cookieController.getCookie("accesToken");
 
@@ -36,29 +34,35 @@
 //     // console.log("message:",e)
 // })
 
-
-
 const { requester, requestDateTime } = commonRequest();
-
 
 const headers = {
     "SX-Auth-Token": `${LOGIN_TOKEN}`,
     deviceKinde: 3,
     apiRoute: "GWS-1",
-    requester, 
-    requestDateTime
+    requester,
+    requestDateTime 
 };
-// `${ip}ws?SX-API-Route=${"GWS-1"}&SX-Auth-Token=${LOGIN_TOKEN}&deviceKind=${3}&requester=${requester}&requestDateTime=${requestDateTime}`
-let sockJs = new SockJS(`${ip}ws`);
 
-let stompClient = Stomp.over(sockJs);
+let sockJs = new SockJS(`${ip}ws?SX-API-Route=GWS-1&clientKeyName=${"bioSignalData"}&connType=${1}`);
 
-stompClient.connect(headers, function(frame){
-    stompClient.subscribe("/topic/public/bioSignalData/SEERS_2201251404_IEU0/", function(data){
+function callvak(frame){
+    console.log("asedfasdfas");
+    console.log(frame);
+    stompClient.subscribe("/topic/public/bioSignalData/SEERS_2201251404_IEU0", function(data){
         const aaa = JSON.parse(data);
         console.log("aaa===");
         console.log(aaa);
     }, (err) => {
-        console.log(err)
+        console.log(err);
     })
-})
+};
+
+function connectonError(err){
+    console.log(err)
+};
+
+let stompClient = Stomp.over(sockJs);
+console.log("stompClient===");
+console.log(stompClient);
+stompClient.connect(headers, callvak, connectonError);
