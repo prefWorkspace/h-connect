@@ -18,6 +18,28 @@ const NOW_URL_PATH = pathCalc();
  */
 const VERSION = {
     'lib' : {
+        'chartjs' : {
+            'd3-7.3.0.js' : {
+                priority:0,
+                url_path:'/nurse/patient',
+                file_path:'/H-Connect/js/lib/chartjs/',
+                version:'2022.01.17.11.33'
+            },
+        },
+        'chartjs' : {
+            'chartjs-3.7.0.js' : {
+                priority:0,
+                url_path:'/nurse/patient',
+                file_path:'/H-Connect/js/lib/chartjs/',
+                version:'2022.01.17.11.33'
+            },
+            'chartjs-3.7.0.min.js' : {
+                priority:0,
+                url_path:'/nurse/patient',
+                file_path:'/H-Connect/js/lib/chartjs/',
+                version:'2022.01.17.11.33'
+            },
+        },
         'socket' : {
             'sockjs-1.5.0.js' : {
                 priority:0,
@@ -222,6 +244,11 @@ const VERSION = {
                 'patient' : {
                     'patientInit.js' : {
                         priority:2,
+                        url_path:'/nurse/patient',
+                        file_path:'/H-Connect/js/nurse/action/patient_monitoring/patient/',
+                        version:'2022.01.28.11.56'
+                    },
+                    'chartTest.js' : {
                         url_path:'/nurse/patient',
                         file_path:'/H-Connect/js/nurse/action/patient_monitoring/patient/',
                         version:'2022.01.28.11.56'

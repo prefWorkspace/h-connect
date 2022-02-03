@@ -24,7 +24,6 @@ function _dashboard_wardSelectBoxList_insert(_ward_list){
 
 function _dashboard_sickRoom_insert(_ward){
     /* 병실 블록 생성입니다. */
-    console.log("dd",_ward);
     if(_ward){
         const {sickRoomList} = _ward || {};
         if(sickRoomList){
@@ -42,8 +41,7 @@ function _dashboard_sickRoom_insert(_ward){
                     </div>
                     <div class="patient_info">
                         ${
-                            "d"
-                            // INFO.ward?.patientList?.htmlFor((_item)=>{return _sickBed_Block(_item)})
+                            sickRoomList[i]?.patientList?.htmlFor((_item)=>{return _sickBed_Block(_item)})
                         }
                     </div>
                 </div>
@@ -64,12 +62,13 @@ function _dashboard_sickRoom_insert(_ward){
 }
 
 function _sickBed_Block(data){
+    const {name, birthday, gender, patientCode} = data || {};
     /* 병상 블록 HTML 템플릿 입니다. */
     return `
     <div class="input_wrap">
         <input type="checkbox" name="patient_no" class="green_custom" id="patient_1">
         <label for="patient_1"></label>
-        <label for="patient_1"><span>${"test"}(63.남.patient no)</span></label>
+        <label for="patient_1"><span>${name}(${AGE_CALC(birthday)}.${gender === 1 ? "남" : "여"}.${patientCode})</span></label>
     </div>
     `;
 }
@@ -84,8 +83,8 @@ function _dashboard_firstWard_addEvent(){
         // 설렉트 박스 선택 이벤트
         const _selectedWard = INFO.wardList[$(this).index()];
         $ward_selectBox_selected_el.text(_selectedWard.ward);
-        $sickRoomWrap_el.html(''); // 초기화
-        // _getPatientList();
+        
+        _dashboard_sickRoom_insert(_selectedWard);
     });
 }
 
