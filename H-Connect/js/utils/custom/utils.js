@@ -38,3 +38,4 @@ function getMacaddress(type = CUSTOM.DEVICE.TYPE.CODE.ECG, value) {
     }
     return CUSTOM.DEVICE.TYPE.PREFIX_ADDRESS.SPO2
 }
+
