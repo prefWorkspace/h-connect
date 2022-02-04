@@ -1020,9 +1020,7 @@
 
 .emergency_main .patient .symptome_info .unre .ure_list{ margin: 0;}
 
-.doctor_emergency .patient .symptome_info .unre .ure_list{
-    margin: 0;
-}
+/* .doctor_emergency .patient .symptome_info .unre .ure_list{ margin: 0;} */
 
 .emergency .patient .symptome_info .unre .ure_list p{
     color: #ccc;
@@ -2073,9 +2071,6 @@
 /* 환자상태 */
 .connect .pati_stat{
     width: 736px;
-}
-
-.connect.main .pati_stat{    
     position: absolute;
     z-index: 1;
 }
@@ -2550,7 +2545,7 @@
 
 .connect .scene_picture.on .big_picture{
     width: 100%;
-    height: 693px;
+    height: 700px;
 }
 
 .connect .scene_picture.on .small_picture{
@@ -2665,7 +2660,7 @@
 }
 
 .connect_tab .scene_picture .big_picture{
-    height: 698px;
+    height: 692px;
 }
 
 /* connect_scroll */
@@ -2802,7 +2797,6 @@
 
 .connect_scroll .scene_picture .swiper{
     width: 100%;
-    height: 108px;
     display: block;
 }
 
@@ -2810,6 +2804,20 @@
     height: 692px;
 }
 
+/* .connect_scroll .swiper-container-free-mode>.swiper-wrapper{
+    margin: 0 0 0 30px;
+} */
+
+
+/* doctor_emergency */
+
+.doctor_emergency{
+    min-width: 1248px;
+}
+
+.doctor_emergency .wrap_inner{
+    min-width: 1220px;
+}
 
 /* 응급호출 */
 .doctor_emergency .section{
@@ -3294,7 +3302,7 @@
     padding: 8px 16px 8px 32px;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .doctor_emergency .vital .control> :first-child{

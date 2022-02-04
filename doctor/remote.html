@@ -193,16 +193,12 @@
                 <!-- 원격협진 현황 -->
                 <section class="section status">
                     <!-- 원격협진 진행중 -->
-                    <!-- 원격 협진이 진행중일때 on을 붙여주세요 -->
-                    <div class="status_label on">
+                    <div class="btn_today status_label">
                         <div class="img_container">
                             <img src="/H-Connect/img/header/clinic.svg" alt="로고">
                         </div>
-                        
-                        <!-- on을 붙이면 보이게 해주세요 -->
-                        <h1 class="ing">원격협진이 진행중입니다.</h1>
 
-                        <h1 class="done">진행중인 원격 협진이 없습니다.</h1>
+                        <h1>원격협진이 진행중입니다.</h1>
                     </div>
 
                     <div class="container">
@@ -265,27 +261,27 @@
                     <div class="title">
                         <h2>전체 협진 일정보기</h2>
 
-                        <div class="btn_list">
-                            <button type="button" class="btn_cal on">
-                                <div>
-                                    <img src="/H-Connect/img/doctor/list.svg" alt="리스트 아이콘">
-                                </div>
+                        <div>
+                            <ul class="tab">
+                                <li class="tab-btn current btn_cal" data-tab="tab-01">
+                                    <div>
+                                        <img src="/H-Connect/img/doctor/list.svg" alt="리스트 아이콘">
+                                    </div>
+                                    달력보기
+                                </li>
 
-                                <span>달력보기</span>
-                            </button>
-
-                            <button type="button" class="btn_week">
-                                <div>
-                                    <img src="/H-Connect/img/icon/clock.svg" alt="시계 아이콘">
-                                </div> 
-
-                                <span>시간표 보기</span>     
-                            </button>
+                                <li class="tab-btn btn_week" data-tab="tab-02">
+                                    <div>
+                                        <img src="/H-Connect/img/icon/clock.svg" alt="시계 아이콘">
+                                    </div> 
+                                    시간표 보기
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- 달력보기 -->
-                    <div class="cal_view">
+                    <div id="tab-01" class="cal_view tab-cont current">
                         <!-- 1280 아코디언 -->
                         <div class="cal_container_top">
                             <h2>날짜선택</h2>
@@ -393,7 +389,7 @@
                     </div>
 
                     <!-- 시간표 보기 -->
-                    <div class="week">
+                    <div id="tab-02" class="week tab-cont">
                         <div class="title">
                             <h2>주간일정 보기</h2>
 
@@ -838,8 +834,7 @@
                                             <div class="img_container">
                                                 <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
                                             </div>
-                                        </div>
-                                        
+                                        </div>                                        
                                     </div>
 
                                     <div class="case_cont">
@@ -876,7 +871,7 @@
                             <div class="time">
                                 <h2>일정 요청 마감일자</h2>
 
-                                <p>21.09.15. 11:00 까지</p>
+                                <p>21.09.15 11:00 까지</p>
                             </div>
 
                             <!-- 협진 내용 -->
@@ -1061,7 +1056,7 @@
                                         <div class="check">
                                             <input type="checkbox" id="frist" class="green_custom">
                                             <label for="frist"></label>
-                                            <label for="frist">21.09.22. 월요일. 09:00 ~ 12:00</label>
+                                            <label for="frist">21.09.22 월요일 09:00 ~ 12:00</label>
                                         </div>
 
                                         <!-- 일정 중복시 보이게 해주세요 -->
@@ -1072,7 +1067,7 @@
                                         <div class="check">
                                             <input type="checkbox" id="second" class="green_custom">
                                             <label for="second"></label>
-                                            <label for="second">21.09.22. 화요일. 09:00 ~ 12:00</label>
+                                            <label for="second">21.09.22 화요일 09:00 ~ 12:00</label>
                                         </div>
 
                                         <!-- 일정 중복시 보이게 해주세요 -->
@@ -1083,7 +1078,7 @@
                                         <div class="check">
                                             <input type="checkbox" id="third" class="green_custom">
                                             <label for="third"></label>
-                                            <label for="third">21.09.22. 수요일. 09:00 ~ 12:00</label>
+                                            <label for="third">21.09.22 수요일 09:00 ~ 12:00</label>
                                         </div>                                        
 
                                         <!-- 일정 중복시 보이게 해주세요 -->
@@ -1094,7 +1089,7 @@
                                         <div class="check">
                                             <input type="checkbox" id="fourth" class="green_custom">
                                             <label for="fourth"></label>
-                                            <label for="fourth">21.09.22. 목요일. 09:00 ~ 12:00</label>  
+                                            <label for="fourth">21.09.22 목요일 09:00 ~ 12:00</label>  
                                         </div>
                                         
                                         <!-- 일정 중복시 보이게 해주세요 -->
@@ -1105,7 +1100,7 @@
                                         <div class="check">
                                             <input type="checkbox" id="fifth" class="green_custom">
                                             <label for="fifth"></label> 
-                                            <label for="fifth">21.09.22. 금요일. 09:00 ~ 12:00</label>   
+                                            <label for="fifth">21.09.22 금요일 09:00 ~ 12:00</label>   
                                         </div>
                                         
                                         <!-- 일정 중복시 보이게 해주세요 -->
@@ -1310,8 +1305,8 @@
                                 <h2>소견요청 협진 기간</h2>
 
                                 <div>
-                                    <p>시작시간. 21.09.11. 09:00</p>
-                                    <p>마감시간. 21.09.15. 13:25</p>
+                                    <p>시작시간. 21.09.11 09:00</p>
+                                    <p>마감시간. 21.09.15 13:25</p>
                                 </div>
                             </div>  
 
@@ -1554,7 +1549,7 @@
                             <div class="time">
                                 <h2>일정 요청 마감일자</h2>
 
-                                <p>21.09.15. 11:00 까지</p>
+                                <p>21.09.15 11:00 까지</p>
                             </div>
 
                             <!-- 협진 내용 -->
@@ -1740,7 +1735,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time1" class="green_custom">
                                                 <label for="time1"></label>
-                                                <label for="time1">21.09.22. 월요일. 09:00 ~ 10:00</label>
+                                                <label for="time1">21.09.22 월요일 09:00 ~ 10:00</label>
                                             </div>                                            
 
                                             <span>3명 참석</span>
@@ -1758,7 +1753,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time2" class="green_custom">
                                                 <label for="time2"></label>
-                                                <label for="time2">21.09.22. 월요일. 10:00 ~ 11:00</label>
+                                                <label for="time2">21.09.22 월요일 10:00 ~ 11:00</label>
                                             </div>  
 
                                             <span>4명 참석</span>
@@ -1777,7 +1772,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time3" class="green_custom">
                                                 <label for="time3"></label>
-                                                <label for="time3">21.09.22. 월요일. 11:00 ~ 12:00</label>
+                                                <label for="time3">21.09.22 월요일 11:00 ~ 12:00</label>
                                             </div>                                            
 
                                             <span>5명 참석</span>
@@ -1797,7 +1792,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time4" class="green_custom">
                                                 <label for="time4"></label>
-                                                <label for="time4">21.09.22. 화요일. 13:00 ~ 15:00</label>
+                                                <label for="time4">21.09.22 화요일 13:00 ~ 15:00</label>
                                             </div>                                            
 
                                             <span>6명 참석</span>
@@ -1818,7 +1813,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time5" class="green_custom">
                                                 <label for="time5"></label>
-                                                <label for="time5">21.09.22. 화요일. 15:00 ~ 16:00</label>
+                                                <label for="time5">21.09.22 화요일 15:00 ~ 16:00</label>
                                             </div>                                              
                                             
                                             <span>6명 참석</span>
@@ -1839,7 +1834,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time6" class="green_custom">
                                                 <label for="time6"></label>  
-                                                <label for="time6">21.09.22. 화요일. 16:00 ~ 17:00</label>  
+                                                <label for="time6">21.09.22 화요일 16:00 ~ 17:00</label>  
                                             </div>                                              
 
                                             <span>7명 참석</span>
@@ -1861,7 +1856,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time7" class="green_custom">
                                                 <label for="time7"></label>
-                                                <label for="time7">21.09.22. 화요일. 17:00 ~ 18:00</label>
+                                                <label for="time7">21.09.22 화요일 17:00 ~ 18:00</label>
                                             </div>                                            
                                             
                                             <span>6명 참석</span>
@@ -1882,7 +1877,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time8" class="green_custom">
                                                 <label for="time8"></label>
-                                                <label for="time8">21.09.22. 목요일. 17:00 ~ 18:00</label>
+                                                <label for="time8">21.09.22 목요일 17:00 ~ 18:00</label>
                                             </div>   
                                             
                                             <span>6명 참석</span>
@@ -1903,7 +1898,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time9" class="green_custom">
                                                 <label for="time9"></label>
-                                                <label for="time9">21.09.22. 목요일. 17:00 ~ 18:00</label>
+                                                <label for="time9">21.09.22 목요일 17:00 ~ 18:00</label>
                                             </div> 
                                             
                                             <span>5명 참석</span>
@@ -1923,7 +1918,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time10" class="green_custom">
                                                 <label for="time10"></label>
-                                                <label for="time10">21.09.22. 금요일.  13:00 ~ 14:00</label>
+                                                <label for="time10">21.09.22 금요일  13:00 ~ 14:00</label>
                                             </div> 
                                             
                                             <span>6명 참석</span>
@@ -1944,7 +1939,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time11" class="green_custom">
                                                 <label for="time11"></label>
-                                                <label for="time11">21.09.22. 금요일. 14:00 ~ 15:00</label>
+                                                <label for="time11">21.09.22 금요일 14:00 ~ 15:00</label>
                                             </div> 
                                             
                                             <span>5명 참석</span>
@@ -1964,7 +1959,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time12" class="green_custom">
                                                 <label for="time12"></label>
-                                                <label for="time12">21.09.22. 금요일. 15:00 ~ 16:00</label>
+                                                <label for="time12">21.09.22 금요일 15:00 ~ 16:00</label>
                                             </div> 
                                             
                                             <span>4명 참석</span>
@@ -1983,7 +1978,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time13" class="green_custom">
                                                 <label for="time13"></label>
-                                                <label for="time13">21.09.22. 금요일. 16:00 ~ 17:00</label>
+                                                <label for="time13">21.09.22 금요일 16:00 ~ 17:00</label>
                                             </div> 
                                             
                                             <span>3명 참석</span>
@@ -2001,7 +1996,7 @@
                                             <div class="input_wrap">
                                                 <input type="checkbox" id="time14" class="green_custom">
                                                 <label for="time14"></label>
-                                                <label for="time14">21.09.22. 금요일. 17:00 ~ 18:00</label>
+                                                <label for="time14">21.09.22 금요일 17:00 ~ 18:00</label>
                                             </div> 
                                             
                                             <span>2명 참석</span>
@@ -2023,7 +2018,7 @@
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="time13" class="green_custom">
                                                     <label for="time13"></label>
-                                                    <label for="time13">21.09.22. 금요일. 16:00 ~ 17:00</label>
+                                                    <label for="time13">21.09.22 금요일 16:00 ~ 17:00</label>
                                                 </div>
                                                 
                                                 <span>3명 참석</span>
@@ -2041,7 +2036,7 @@
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="time14" class="green_custom">
                                                     <label for="time14"></label>
-                                                    <label for="time14">21.09.22. 금요일. 17:00 ~ 18:00</label>
+                                                    <label for="time14">21.09.22 금요일 17:00 ~ 18:00</label>
                                                 </div> 
                                                 
                                                 <span>2명 참석</span>
@@ -2212,6 +2207,7 @@
                 initialView: 'dayGridMonth',
                 timeZone: 'local',
                 defaultDate: '2018-06-01',
+                // selectable: true, 선택 할 수 있음
                 // locale: "ko",
 
                 header:{
@@ -2283,6 +2279,7 @@
                 monthLabel.parentNode.classList.add('active');
             }
             })
+
     </script>
   </body>
 </html>

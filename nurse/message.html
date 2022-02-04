@@ -110,9 +110,9 @@
 
             <div class="wrap_inner">
                 <!-- 메세지 목록 -->
+                <!-- 대화 상대가 없으면 대화창에 add class no_message -->
                 <section class="section message_list">
                         <div class="title message_title">
-
                             <div>
                                 <div class="title_text">
                                     <div>
@@ -151,15 +151,11 @@
 
                                     <div class="message talk_time">
                                         <p>
-                                            <span>21</span>.
-                                            <span>09</span>.
-                                            <span>15</span>.
+                                            <span>21.09.15</span>
                                         </p>
                                         &nbsp;
                                         <p>
-                                            <span>10</span>:
-                                            <span>09</span>:
-                                            <span>25</span>
+                                            <span>10:09:25</span>
                                         </p>
                                     </div>
 
@@ -182,15 +178,11 @@
 
                                     <div class="message talk_time">
                                         <p>
-                                            <span>21</span>.
-                                            <span>09</span>.
-                                            <span>15</span>.
+                                            <span>21.09.15</span>
                                         </p>
                                         &nbsp;
                                         <p>
-                                            <span>10</span>:
-                                            <span>09</span>:
-                                            <span>25</span>
+                                            <span>10:09:25</span>
                                         </p>
                                     </div>
 
@@ -214,15 +206,11 @@
 
                                     <div class="message talk_time">
                                         <p>
-                                            <span>21</span>.
-                                            <span>09</span>.
-                                            <span>15</span>.
+                                            <span>21.09.15</span>
                                         </p>
                                         &nbsp;
                                         <p>
-                                            <span>10</span>:
-                                            <span>09</span>:
-                                            <span>25</span>
+                                            <span>10:09:25</span>
                                         </p>
                                     </div>
 
@@ -236,21 +224,27 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 대화한 상대가 없을때 보이게 해주세요 -->
+                        <div class="no_talk">
+                            메세지 함이 비어있습니다.
+                        </div>
                 </section>
 
                 <!-- 대화창 -->
+                <!-- 대화 상대가 없으면 대화창에 add class no_message -->
                 <section class="section right message_talk">
                     <div class="title talk_title">
                         <p>김골절 교수님</p>
                         <p>마지막 메세지.
-                            <span>21</span>.
-                            <span>09</span>.
-                            <span>15</span>.
+                            <span>21.09.15</span>
+                            <span>09:48:43</span>
+                        </p>                        
+                    </div>
 
-                            <span>09</span>:
-                            <span>48</span>:
-                            <span>43</span>
-                        </p>
+                    <!-- 대화한 상대가 없을때 보이게 해주세요 -->
+                    <div class="title no_talk_title">
+                        메세지 함이 비어있습니다.
                     </div>
 
                     <div class="search_container">
@@ -299,9 +293,9 @@
                                 </div>
                                 
                                 <small>
-                                    <time datetime="21.09.15"><span>21.09.15</span></time>
-                                    .
-                                    <time datetime="09:48:43"><span>09:48:43</span></time>
+                                    <span>21.09.15</span>
+                                    
+                                    <span>09:48:43</span>
                                 </small>
                             </div>
 
@@ -313,9 +307,9 @@
                                     </div>
                                     
                                     <small>
-                                        <time datetime="21.09.15"><span>21.09.15</span></time>
-                                        .
-                                        <time datetime="09:48:43"><span>09:48:43</span></time>
+                                        <span>21.09.15</span>
+                                        
+                                        <span>09:48:43</span>
                                     </small>
                                 </div>                        
                             </div>
@@ -327,9 +321,9 @@
                                     </div>
                                     
                                     <small>
-                                        <time datetime="21.09.15"><span>21.09.15</span></time>
-                                        .
-                                        <time datetime="09:48:43"><span>09:48:43</span></time>
+                                        <span>21.09.15</span>
+                                        
+                                        <span>09:48:43</span>
                                     </small>
                                 </div>                        
                             </div>
@@ -338,9 +332,9 @@
                             <div class="start_clinic" id="fourth_taget">
                                 <p>박입원님. 진료가 시작되었습니다.</p>
                                 <p>
-                                    <time datetime="21.09.15"><span>21.09.15</span></time>
-                                    .
-                                    <time datetime="09:48:43"><span>09:48:43</span></time>
+                                    <span>21.09.15</span>
+                                    
+                                    <span>09:48:43</span>
                                 </p>
                             </div>
 
@@ -353,9 +347,9 @@
                                 </div>
                                 
                                 <small>
-                                    <time datetime="21.09.15"><span>21.09.15</span></time>
-                                    .
-                                    <time datetime="09:48:43"><span>09:48:43</span></time>
+                                    <span>21.09.15</span>
+                                    
+                                    <span>09:48:43</span>
                                 </small>
                             </div>
 
@@ -367,9 +361,9 @@
                                     </div>
                                     
                                     <small>
-                                        <time datetime="21.09.15"><span>21.09.15</span></time>
-                                        .
-                                        <time datetime="09:48:43"><span>09:48:43</span></time>
+                                        <span>21.09.15</span>
+                                        
+                                        <span>09:48:43</span>
                                     </small>
                                 </div>                        
                             </div>
@@ -378,9 +372,9 @@
                             <div class="end_clinic" id="third_taget">
                                 <p>박입원님. 진료가 종료되었습니다.</p>
                                 <p>
-                                    <time datetime="21.09.15"><span>21.09.15</span></time>
-                                    .
-                                    <time datetime="09:48:43"><span>09:48:43</span></time>
+                                    <span>21.09.15</span>
+                                    
+                                    <span>09:48:43</span>
                                 </p>
                             </div>
                             
@@ -392,9 +386,9 @@
                                     </div>
                                     
                                     <small>
-                                        <time datetime="21.09.15"><span>21.09.15</span></time>
-                                        .
-                                        <time datetime="09:48:43"><span>09:48:43</span></time>
+                                        <span>21.09.15</span>
+                                        
+                                        <span>09:48:43</span>
                                     </small>
                                 </div>                        
                             </div>

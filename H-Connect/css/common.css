@@ -3711,6 +3711,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_content{
+    height: 32px;
     padding: 7px 16px;
     display: flex;
     color: #ccc;
@@ -3727,7 +3728,7 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .table_content .bell p{color: #00FF22;}
 
 .pop.monitor .table_content .date_time{
-    margin-right: 83px;
+    margin-right: 100px;
 }
 
 .pop.monitor .table_content .hr{
@@ -3739,7 +3740,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_content .ews{
-    margin-right: 72px;
+    margin-right: 68px;
 }
 
 .pop.monitor .table_content .spo{
@@ -3843,7 +3844,7 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .event .table_body{
     padding-right: 5px;
     height: 380px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -3858,7 +3859,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_wrap{
-    padding: 7px 100px 7px 16px;
+    padding: 7px 16px;
     font-size: 12px;
     font-weight: normal;
     /* color: #ccc; */
@@ -3874,7 +3875,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_wrap .date_time{
-    margin-right: 83px;
+    margin-right: 100px;
 }
 
 .pop.monitor .table_wrap .hr{
@@ -3894,6 +3895,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .event  .table_content{
+    height: fit-content;
     padding: 20px 0;
     display: none;
 }

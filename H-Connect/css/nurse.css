@@ -34,20 +34,18 @@
 
 .nurse .management .title> div{
     margin-bottom: 13px;
+    display: flex;
+    align-items: center;
 }
 
 .nurse .management .title> div h2{
     color: #007A94;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .nurse .management .title> div> div{
     width: 16px;
     height: 16px;
     margin-right: 15px;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .nurse .management .title> div> div img{
@@ -70,6 +68,7 @@
     padding: 16px;
     border-radius: 4px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -78,19 +77,15 @@
     cursor: pointer;
 }
 
-.nurse .management .management_list .list p{
-    vertical-align: middle;
-}
-
 .nurse .management .management_list .list div{
     width: 6px;
     height: 12px;
-    vertical-align: middle;
 }
 
-.nurse .management .management_list .list.on div img{
+.nurse .management .management_list .list.on img{
     width: 100%;
     height: 100%;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(165%) contrast(150%);
 }
 
 .nurse .management .management_list .list.on{
@@ -100,10 +95,6 @@
 
 .nurse .management .management_list .list.off{
     border-bottom: 1px solid #eee;
-}
-
-.nurse .management .management_list .list.off div img{
-    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
 }
 
 /* 병동관리 */
@@ -2798,7 +2789,7 @@
 
 .ward_dashboard .wrap_inner> div{
     width: 1880px;
-    height: 100%;
+    height: calc(100vh - 20px);
     max-height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -2827,10 +2818,6 @@
 .ward_dashboard .wrap_inner> div > div{
     width: 624px;
     height: 112px;
-}
-
-.ward_dashboard .wrap_inner> div :nth-child(n+9):nth-child(-n+16){
-    margin: 0 4px 4px;
 }
 
 .ward_dashboard .system_title{

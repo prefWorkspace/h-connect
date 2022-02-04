@@ -1533,6 +1533,13 @@ $(document).ready(function() {
     $('.text_wrap').find( 'textarea' ).keyup();
 });
 
+// 메세지 페이지 대화상대 없을때 버튼 비활성화
+$(document).ready(function(){
+    $('.no_message input').prop('readonly', true);
+    $('.no_search button').attr('disabled', true);
+    $('.no_message .chat_window textarea').attr('disabled', true);
+})
+
 // 선별진료소 버튼 누르면 소독중으로 바뀜
 $(document).ready(function(){
     $('.wait_list .entry_call').on('click', function(){
