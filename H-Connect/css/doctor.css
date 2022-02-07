@@ -1,4 +1,3 @@
-/* pop up */
 /*================= 의사 =================*/
 p{font-size: 12px;}
 
@@ -83,16 +82,17 @@ p{font-size: 12px;}
     position: relative;
 }
 
-.doctor .btn_today> h1::after{
+.doctor .btn_today> :last-child:after{
     content: ''; 
     width: 9px;
     height: 18px; 
     position: absolute;
     display: block;
-    background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px/ contain;
+    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat 0 0px/ contain;
     top: 50%; 
     transform: translateY(-50%);
-    right: -83px;
+    right: -50px;
+    filter: invert(99%) sepia(46%) saturate(0%) hue-rotate(185deg) brightness(112%) contrast(100%);
 }
 
 .doctor .schedule .btn_today h2{
@@ -109,7 +109,7 @@ p{font-size: 12px;}
 }
 
 .doctor .schedule .container{
-    height: 616px;
+    height: 605px;
 }
 
 .doctor .schedule .title{
@@ -179,12 +179,13 @@ p{font-size: 12px;}
 }
 
 .doctor .schedule_list .row.on img{
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(209deg) brightness(109%) contrast(101%);
+    filter: invert(0) sepia(11%) saturate(7500%) hue-rotate(209deg) brightness(2222%) contrast(2222%);
 }
 
 .doctor .schedule_list .row img{
     width: 100%;
     height: 100%;
+    /* filter: invert(73%) sepia(74%) saturate(1646%) hue-rotate(163deg) brightness(98%) contrast(101%); */
 }
 
 /* 나의 일정 */
@@ -253,7 +254,7 @@ p{font-size: 12px;}
 
 /* 2주보기 주간달력 */
 .doctor .my_plan .weekly{
-    /* width: 1248px; */
+    width: 1248px;
     height: 512px;
     padding: 16px;
     position: relative;
@@ -284,7 +285,7 @@ p{font-size: 12px;}
 }
 
 .doctor .my_plan .weekly .inner{
-    width: 1210px;
+    width: 1158px;
     height: 495px;
     display: flex;
     top: 16px;
@@ -751,7 +752,8 @@ p{font-size: 12px;}
     font-weight: 500;
 }
 
-.doctor .right .time p{font-size: 16px;}
+.doctor .right .time p{margin-bottom:16px; font-size: 16px;}
+.doctor .right .time p:last-child{margin-bottom: 0;}
 
 .doctor .right .cont .title{
     border:none;
@@ -916,18 +918,15 @@ p{font-size: 12px;}
 }
 
 .doctor .right .member .case_cont div{
-    padding: 16px 15px 11px;
+    padding: 16px 15px;
     border-radius: 4px;
     background: #fff;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .doctor .right .member .case_cont p{
     width: 100px;
-    margin-bottom: 5px;
     font-size: 12px;
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 .doctor .emergency_section .title .btn_colla{
@@ -951,7 +950,7 @@ p{font-size: 12px;}
     font-size: 16px;
     font-weight: 500;
 }
-
+.doctor .emergency_section .recep_time p{font-size: 16px;}
 .doctor .emergency_section .recep_time,
 .doctor .emergency_section .cont{
     padding: 20px 32px;
@@ -961,7 +960,6 @@ p{font-size: 12px;}
     display: inherit;
 }
 
-.doctor .emergency_section .recep_time p{font-size: 16px;}
 .doctor .emergency_section .cont p{
     font-size: 16px;
     font-weight: 500;
@@ -1000,7 +998,7 @@ p{font-size: 12px;}
 /* 실시간 원격 협진 */
 .connect_remote,
 .connect_opinion{
-    min-width: 1280px;
+    min-width: 1248px;
     height: 100%;
     min-height: calc(100vh - 64px);
     padding-top: 64px;
@@ -1118,8 +1116,6 @@ p{font-size: 12px;}
 
 
 /* 원격협진알림 */
-.doctor_remote .schedule .btn_section{display: flex;}
-.doctor_remote .schedule .btn_today{display: none;}
 .doctor .remote_alarm{
     width: 1312px;
     padding: 16px;
@@ -1206,7 +1202,6 @@ p{font-size: 12px;}
 
 .doctor .remote_alarm .reply{
     width: 160px;
-    color: #007A94;
 }
 
 .doctor .remote_alarm .case{
@@ -1308,7 +1303,7 @@ p{font-size: 12px;}
 
 /* 응급협진하기 - 로딩 */
 .connect_emergency{
-    min-width: 1280px;
+    min-width: 1248px;
     height: 100%;
     min-height: calc(100vh - 64px);
     background: #222;
@@ -1428,9 +1423,11 @@ p{font-size: 12px;}
 }
 
 .doctor_monitor .new_patient .row> p{
-    color: #007A94;
     font-size: 10px;
+    color: #007A94;
 }
+
+.doctor_monitor .new_patient.pre .row> p{color: #888;}
 
 .doctor_monitor .new_patient .row> div{
     display: flex;
@@ -1452,18 +1449,18 @@ p{font-size: 12px;}
 .doctor_monitor .new_patient .row .img_container img{
     width: 100%;
     height: 100%;
+    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
 }
 
 .doctor_monitor .new_patient .row.on{
     background: #007A94;
-    color: #fff;
     border-bottom: 1px solid #007A94;
 }
 
 .doctor_monitor .new_patient .row.on p{color: #fff;}
 
 .doctor_monitor .new_patient .row.on .img_container img{
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(209deg) brightness(109%) contrast(101%);
+    filter: none;
 }
 
 .doctor_monitor .new_patient .search_container{
@@ -1609,11 +1606,6 @@ p{font-size: 12px;}
     background: #ccc;
 }
 
-.doctor_monitor .pre_rhythm .event_inner> div{
-    height: 200px;
-    position: relative;
-}
-
 .doctor_monitor .rhythm .graph{
     padding: 12px 16px 20px;
     background: #eee;
@@ -1672,7 +1664,6 @@ p{font-size: 12px;}
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
 }
 
 .doctor_monitor .rhythm .size button{
@@ -1697,7 +1688,6 @@ p{font-size: 12px;}
 
 .doctor_monitor .rhythm .info{
     padding: 23px 20px;
-    margin-top: 88px;
     border-top: 1px solid #eee;
 }
 
@@ -2223,13 +2213,17 @@ p{font-size: 12px;}
 }
 
 /* event */
+.monitoring_patient .cont .event .table_title .date_time{
+    margin-right: 83px;
+}
+
 .monitoring_patient .cont .event .table_title .alarm_des{
-    margin-right: 666px;
+    margin-right: 703px;
 }
 
 .monitoring_patient .cont .event .table_body {
     height: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .monitoring_patient .cont .event .table_body::-webkit-scrollbar{
@@ -2293,14 +2287,12 @@ p{font-size: 12px;}
 .monitoring_patient .cont .event .table_body .table_wrap.on .more{display: none;}
 .monitoring_patient .cont .event .table_body .table_wrap.on .close{display: inline-block;}
 
-.monitoring_patient .cont .event .table_body .table_wrap> div{display: flex;}
-
 .monitoring_patient .cont .event .table_body .table_wrap> div> div{
-    display: flex;
+    display: inline-block;
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap .date_time{
-    margin-right: 75px;
+    margin-right: 42px;
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap p,
@@ -2344,6 +2336,7 @@ p{font-size: 12px;}
     width: 1010px;
     height: 70px;
     padding: 10px 0;
+    margin-top: 10px;
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -2715,30 +2708,13 @@ p{font-size: 12px;}
     margin-bottom: 32px;
     padding: 20px 32px;
     border-radius: 8px;
-    background: #ccc;
     display: flex;
     align-items: center;
 }
 
-.doctor .status_label.on{
-    background: linear-gradient(to right, #004F60, #350039);
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-.doctor .status_label.on h1.ing{display: block;}
-
-.doctor .status_label h1{color: #fff;}
-
-.doctor .status_label h1.done{
-    display: none;
-}
-
-.doctor_remote .status_label h1.ing{position: relative;}
-
 .doctor .status_label div{
     width: 32px;
     height: 32px;
-    margin-right: 28px;
 }
 
 .doctor .status_label img{
@@ -2748,15 +2724,16 @@ p{font-size: 12px;}
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(210%) contrast(103%);
 }
 
-.doctor_remote .status_label h1.ing::after {
+.doctor_remote .btn_today> :last-child:after {
     content: '';
     width: 9px;
     height: 18px;
     position: absolute;
-    background: url(/H-Connect/img/right_arrow.svg) no-repeat 0 0px /contain;
+    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat 0 0px /contain;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
+    filter: invert(10%) brightness(100000%) contrast(10000%);
 }
 
 .doctor .status .title{
@@ -2828,13 +2805,13 @@ p{font-size: 12px;}
     color: #007A94;
 }  
 
-.doctor .all_plan .title .btn_list{
+.doctor .all_plan .title .tab{
     width: 248px;
     display: flex;
     justify-content: space-between;
 }
 
-.doctor .all_plan .title button{
+.doctor .all_plan .title .tab li{
     width: 120px;
     height: 40px;
     padding: 10px 15px;
@@ -2845,31 +2822,36 @@ p{font-size: 12px;}
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
-.doctor .all_plan .title button.on{
+.doctor .all_plan .title .tab .btn_cal{
+    padding: 10px 20px;
+}
+
+.doctor .all_plan .title li.current{
     background: #f80;
     color: #fff;
 }
 
-.doctor .all_plan .title button div{
+.doctor .all_plan .title li div{
     width: 15px;
     height: 15px;
 }
 
-.doctor .all_plan .title button div img{
+.doctor .all_plan .title div img{
     filter: invert(58%) sepia(0%) saturate(5644%) hue-rotate(134deg) brightness(98%) contrast(49%); 
 }
 
-.doctor .all_plan .title button.on div img{
+.doctor .all_plan .title li.current div img{
     filter: none;
 }
 
-.doctor .all_plan .title .btn_list .btn_cal{
+.doctor .all_plan .title .tabs .btn_cal{
     padding: 10px 20px;
 }
 
-.doctor .cal_view{
+.doctor .cal_view.current.tab-cont{
     display: flex;
     justify-content: space-between;
 }
@@ -2928,10 +2910,6 @@ p{font-size: 12px;}
 
 .doctor_remote .collabor_wrap .time{
     padding: 20px 30px;
-}
-
-.doctor_remote .collabor_wrap .time div> :first-child{
-    margin-bottom: 16px;
 }
 
 .doctor_remote .collabor_wrap> div .title{
@@ -3119,6 +3097,7 @@ p{font-size: 12px;}
 }
 
 .doctor .time_select .week_view .time p{
+    font-size: 12px;
     position: relative;
 }
 
@@ -3421,14 +3400,18 @@ p{font-size: 12px;}
     width: 64px;
     height: 32px;
     padding: 7px 10px;
+    background: #ccc;
     font-size: 12px;
+    color: #888;
 }
 
 .doctor_remote .week .btn_list button.on{
     background: #007A94;
+    color: #fff;
 }
+.doctor_remote .all_plan .tab-cont{display: none;}
 
-.doctor_remote .all_plan .week{display: none;}
+.doctor_remote .all_plan .week.current{display: block;}
 
 .doctor_remote .all_plan .weekly{
     width: 736px;
@@ -3712,6 +3695,7 @@ p{font-size: 12px;}
 .doctor .find_request .time div h2{
     font-weight: normal;
 }
+.doctor .find_request .time div h2:first-child{margin-bottom: 16px;}
 
 .doctor .no_opinion .title{
     border: none;
@@ -4166,7 +4150,7 @@ p{font-size: 12px;}
     margin-bottom: 10px;
     width: fit-content;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .doctor_new .mem p{
@@ -4248,7 +4232,7 @@ p{font-size: 12px;}
 }
 
 .attendee .atten_inner{
-    padding: 0 16px 16px;
+    padding: 16px;
     display: flex;
     justify-content: space-between;
 }
@@ -4333,7 +4317,7 @@ p{font-size: 12px;}
 .attendee .choice_member{
     width: 100%;
     min-height: 48px;
-    padding: 16px 8px 6px;
+    padding: 16px 16px 6px;
     border-radius: 4px;
     background: #eee;
     display: flex;
@@ -4414,7 +4398,7 @@ p{font-size: 12px;}
 
 .attendee .weekly .time{
     width: 100%;
-    padding: 32px 0 0 0;
+    padding-top: 32px;
     position: absolute;
     display: inherit;
 }
@@ -4443,7 +4427,7 @@ p{font-size: 12px;}
     height: 490px;
     display: flex;
     top: 91px;
-    left: 46px;
+    left: 56px;
     position: absolute;
     overflow: scroll hidden;
 }

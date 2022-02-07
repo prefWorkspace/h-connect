@@ -5,7 +5,7 @@
 
 .message .wrap_inner{
     width: 100%;
-    min-width: 1860px;
+    min-width: 1820px;
     padding: 40px;
     display: flex;
     background: #eee;
@@ -148,6 +148,7 @@
     right: 50%;
     width: 48px;
     height: 32px;
+    /* margin-right: 16px; */
     border-radius: 4px;
     background-color: #fff;
 }
@@ -307,9 +308,10 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 54%;
+    left: 53%;
     width: 48px;
     height: 30px;
+    margin-right: 21px;
     border-radius: 4px;
     background-color: #fff;
 }
@@ -765,16 +767,9 @@
 }
 
 /* all_check */
-.nurse_message .all_check input[type="checkbox"] + label{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 0 15px 0 0;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid #007A94;
+.message .group_container .all_check input[type="checkbox"] + label{
+    border-color: #007A94;
 }
-
 .nurse_message .all_check input[type="checkbox"] + label + label{
     color: #007A94;
 }

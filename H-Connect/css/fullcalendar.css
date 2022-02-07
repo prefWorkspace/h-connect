@@ -28,7 +28,7 @@
 
 .doctor .fc-theme-standard{
   width: 360px;
-  height: 512px;
+  height: 488px;
   /* padding: 8px; */
   background: linear-gradient(to right, #004F60, #350039);
   border-radius: 8px;
@@ -77,7 +77,12 @@
 .fc .fc-header-toolbar> :nth-child(3) .fc-today-button {display: none;}
 
 
-
+.fc .fc-daygrid-day-bg .fc-highlight{
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: #FF8800;
+}
 
 
 
