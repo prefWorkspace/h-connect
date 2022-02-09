@@ -1542,26 +1542,6 @@
     filter: invert(58%) sepia(152%) saturate(863%) hue-rotate(154deg) brightness(60%) contrast(100%);
 }
 
-.doc_screen .group_container .green_custom[type="checkbox"] + label{
-    background: #eee;
-    border: #eee;
-}
-
-.doc_screen .group_container .green_custom[type="checkbox"]:checked + label{
-    background: #007A94;
-    border: #eee;
-}
-
-/* all check */
-.doc_screen .group_container .all_check input[type="checkbox"] + label{
-    border: 1px solid #007A94;
-}
-
-.doc_screen .group_container .all_check input[type="checkbox"] + label + label{
-    color: #007A94;
-}
-
-
 /* 선별진료실 -의사 */
 .screening_doc {
     padding-top: 80px;
