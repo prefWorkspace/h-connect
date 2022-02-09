@@ -2325,6 +2325,7 @@
     width: 129px;
     margin: 0;
 }
+.arteriotony .table_title :nth-child(3){margin-right: 7px;}
 
 .arteriotony .table_body> div{
     height: 48px;

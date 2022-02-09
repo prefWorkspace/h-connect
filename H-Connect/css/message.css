@@ -848,7 +848,7 @@
 
 
 /* checkbox */
-.message .group_container input[type="checkbox"] + label{
+/* .message .group_container input[type="checkbox"] + label{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -862,37 +862,7 @@
 
 .doctor_message .group_container .red_custom[type="checkbox"]:checked + label{
     border: 1px solid #940045;
-}
-
-
-/* all_check */
-.all_check input[type="checkbox"] + label{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-}
-
-.all_check .red_custom[type="checkbox"] + label{
-    border: 1px solid #940045;
-    background: #fff;
-}
-
-.all_check .red_custom[type="checkbox"] + label + label{
-    color: #940045;
-}
-
-.doctor_message .all_check .red_custom[type="checkbox"] + label{
-    border: 1px solid #940045;
-}
-
-.nurse_message .all_check .green_custom[type="checkbox"] + label{
-    border: 1px solid #007A94;
-}
-
-.nurse_message .all_check .green_custom[type="checkbox"] + label + label{
-    color: #007A94;
-}
-
+} */
 
 /* favorite check */
 .message .favorite_container input[type="checkbox"] + label{
@@ -1283,14 +1253,14 @@
     margin: 19px 0;
 }
 
-.doctor_message .select_doctor .red_custom[type="checkbox"] + label{
+/* .doctor_message .select_doctor .red_custom[type="checkbox"] + label{
     background: #eee;
     border: 1px solid #eee;
 }
 
 .doctor_message .select_doctor .red_custom[type="checkbox"]:checked + label{
     background: #940045;
-}
+} */
 
 /* 의사 - 선별진료 */
 .doc_screen{
@@ -1617,6 +1587,8 @@
     display: flex;
     align-items: center;
 }
+
+.screening_doc .message_list .title> div{ justify-content: space-between;}
 
 .screening_doc .title_text{
     width: 80px;

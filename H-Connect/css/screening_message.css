@@ -766,14 +766,6 @@
     margin-right: 14px;
 }
 
-/* all_check */
-.message .group_container .all_check input[type="checkbox"] + label{
-    border-color: #007A94;
-}
-.nurse_message .all_check input[type="checkbox"] + label + label{
-    color: #007A94;
-}
-
 /* check box */
 .green_custom[type="checkbox"] + label {
     width: 18px;

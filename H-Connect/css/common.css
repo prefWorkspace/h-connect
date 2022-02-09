@@ -372,6 +372,8 @@ button{border-radius: 4px; background: none;}
     background: #fff;
     cursor: pointer;
 }
+.green_custom.all[type="checkbox"] + label + label{color: #007A94;}
+.green_custom.all[type="checkbox"] + label{border-color: #007A94;}
 
 .green_custom[type='checkbox']:checked + label{
     background: #007A94;
@@ -384,9 +386,10 @@ button{border-radius: 4px; background: none;}
 }
 
 .green_custom[type='checkbox']:disabled + label{
-    background: #eee;
-    border: 1px solid #eee;
+    background: #ccc;
+    border: 1px solid #ccc;
 }
+.green_custom[type='checkbox']:disabled + label + label{color: #aaa;}
 
 .red_custom[type="checkbox"] + label{
     display: inline-block;
@@ -398,10 +401,15 @@ button{border-radius: 4px; background: none;}
     border: 1px solid #ccc;
 }
 
+.red_custom.all[type="checkbox"] + label{border-color: #940045;}
+.red_custom.all[type="checkbox"] + label + label{color: #940045;}
+
 .red_custom[type="checkbox"]:checked + label{
     background: #940045;
     border: 1px solid #940045;
 }
+.red_custom[type="checkbox"]:disabled + label{background: #ccc; border-color: #ccc;}
+.red_custom[type="checkbox"]:disabled + label + label{color: #aaa;}
 
 
 
@@ -599,6 +607,7 @@ button{border-radius: 4px; background: none;}
     min-width: 1880px;
     padding: 15px 24px;
     background: linear-gradient(to right, #940045, #4A0000);
+    z-index: 15;
 }
 
 .paramedic .title{
@@ -763,6 +772,7 @@ button{border-radius: 4px; background: none;}
 
 #header.re_header{
     padding: 12px 24px;
+    z-index: 15;
 }
 
 
@@ -2642,6 +2652,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_select .favorite_list .group .group_list.on{
     background-color: #007A94;
+    border-radius: 4px 4px 0 0;
 }
 
 .pop.send_doctor .doctor_select .favorite_list .group .group_list.on p{
@@ -2883,28 +2894,6 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .favorite_list .input_wrap label{
     font-size: 12px;
-}
-
-.pop.send_doctor .green_custom[type="checkbox"]:checked + label + label{
-    color: #007A94;
-    cursor: pointer;
-}
-
-.pop.send_doctor .green_custom[type="checkbox"]:disabled + label{
-    background: #ccc;
-}
-
-.pop.send_doctor .green_custom[type="checkbox"]:disabled + label + label{
-    color: #ccc;
-}
-
-
-.pop.send_doctor .favorite_list .group_container input[type="checkbox"]{
-    display: none;
-}
-
-.pop.send_doctor .favorite_list .group_container input[type="checkbox"]:disabled + label{
-    color: gray;
 }
 
 .pop.send_doctor .favorite_container input[type="checkbox"] + label span{
@@ -4160,16 +4149,6 @@ textarea::-webkit-scrollbar-button {
 
 .pop.doctor_call .input_wrap label :first-child{
     margin-right: 14px;
-}
-
-
-/* all check */
-.pop.doctor_call .all_check .red_custom[type="checkbox"] + label{
-    border: 1px solid #940045;
-}
-
-.pop.doctor_call .all_check .red_custom[type="checkbox"] + label + label{
-    color: #940045;
 }
 
 
