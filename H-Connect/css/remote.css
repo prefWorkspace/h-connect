@@ -49,13 +49,10 @@ img{
     background: #eee;
 }
 
-/* .ecg p, .sp p, .resp p{font-size: 14px;} */
-
 /* remote main */
 .remote{
     width: 100%;
-    min-width: 1280px;
-    /* height: 100%; */
+    min-width: 1880px;
     min-height: calc(100vh - 64px);
     padding-top: 64px;
     background: #222;
@@ -187,6 +184,7 @@ img{
     left: 8px;
     z-index: 5;
 }
+.tab .message .notice{top: 60px;}
 
 .message .notice> div> div {
     display: flex;
@@ -814,6 +812,9 @@ img{
     color: #fff;
     background: #007A94 ;
 }
+.patient_view .btn_list button.on {
+    background: #004F60;
+}
 
 .patient_view .btn_list button:hover{
     background: #004F60;
@@ -877,10 +878,11 @@ img{
 /* 탭으로 보기 */
 .several{
     width: 100%;
-    height: 849px;
+    height: 100%;
     /* min-height: 792px; */
     /* max-height: 845px; */
     position: relative;
+    background: #101010;
 }
 
 .several> div{
@@ -1204,10 +1206,10 @@ img{
     overflow: hidden;
 }
 
-.default .vital .ecg_graph img:not(.vital #tab-1 .ecg_graph img){
+/* .default .vital .ecg_graph img:not(.vital #tab-1 .ecg_graph img){
     width: fit-content;
     height: fit-content;
-}
+} */
 
 .vital .ecg_graph> div{
     width: 468px;
@@ -1284,11 +1286,11 @@ img{
 
 .vital .control .temp{
     width: 160px;
-    height: 104px;
+    height: 136px;
     padding: 8px 16px;
     color: #FF3184;
 }
-
+.vital .control .temp .bell_num{margin-top: 7px;}
 .vital .control .time{
     display: flex;
     align-items: center;
@@ -1302,12 +1304,12 @@ img{
 
 .vital .control .time p{
     font-size: 11px;
+    display: flex;
 }
 
 .vital .bell_name input{
     display: none;
 }
-
 
 .vital.on{
     width: 100%;
@@ -1331,8 +1333,8 @@ img{
     height: 100px;
 }
 
-.vital.on #tab-2 .ecg_graph p {
-    margin-bottom: 14px;
+.vital.on .ecg_graph p {
+    margin-bottom: 0px;
 }
 
 .vital.on .graphical .hr_line{
@@ -1341,25 +1343,14 @@ img{
     width: 100%;
 }
 
-.vital.on .cont .graphical .hr_time> p {
-    margin-right: 255px;
-    display: inline-block;
-}
-
 .vital.on .cont .graphical .hr_time> :last-child{
     margin: 0;
 }
 
-.vital.on .cont .graphical .hr_img{
-    left: 505px;
-}
-
 .vital.on .ecg_graph> div {
     width: 1172px;
-}
-
-.vital.on .ecg_graph p{
-    margin-bottom: 15px;
+    height: 64px;
+    padding: 20px 0;
 }
 
 .vital.on .table_body .table_content .ecg .ecg_graph> div{
@@ -1371,9 +1362,10 @@ img{
 
 
 /* tabular trend */
+#tab-1 .ecg_graph p{margin: 0;}
 .tab-content .ecg_graph p{
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .tabular_table .table_title{
@@ -1409,24 +1401,27 @@ img{
     height: 32px;
     padding: 7px 16px;
     border-bottom: 1px solid #888;
-}
-
-.tabular_table .table_content div{
-    display: inline-block;
+    display: flex;
+    align-items: center;
 }
 
 .tabular_table .table_content p{
     font-size: 12px;
     color: #ccc;
-    display: inline-block;
+    display: flex;
 }
 
 .tabular_table .table_content .date_time{
-    margin-right: 40px;
+    margin-right: 63px;
+    display: flex;
+    align-items: center;
 }
 
+.tab .tabular_table .table_content .date_time{margin-right: 52px;}
+
+.scroll .tabular_table .table_content .hr{margin-right: 88px;}
 .tabular_table .table_content .hr{
-    margin-right: 78px;
+    margin-right: 92px;
 }
 
 .tabular_table .table_content .temp{
@@ -1468,16 +1463,16 @@ img{
 
 .graphical .hr_chart{
     display: flex;
-    position: relative;
 }
 
 .graphical .hr_chart p{
     color: #888;
+    display: flex;
 }
 
-.cont .graphical .hr_index p{
+/* .cont .graphical .hr_index p{
     margin-right: 31px;
-}
+} */
 
 .graphical .hr_index p{
     color: #fff;
@@ -1513,14 +1508,16 @@ img{
     height: 36px;
     position: absolute;
     top: 23px;
-    left: 176px;
-    z-index: 999;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
 }
 
 .cont .graphical .time_line{
     position: absolute;
     top: -38px;
     left: 50%;
+    transform: translateX(-50%);
 }
 
 .cont .graphical .time_line .time{
@@ -1536,7 +1533,8 @@ img{
     height: 220px;
     background-color: #ff0;
     top: 29px;
-    left: 29px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .cont .graphical .time_line::before{
@@ -1546,7 +1544,8 @@ img{
     width: 12px;
     height: 8px;
     top: 19px;
-    left: 24px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* event */
@@ -1569,7 +1568,7 @@ img{
 }
 
 .cont .event .table_body .table_wrap{
-    height: 31px;
+    height: 32px;
     padding: 7px 45px 7px 16px;
     border-bottom: 1px solid #888;
     display: flex;
@@ -1598,7 +1597,6 @@ img{
     top: 50%;
     right: -35px;
     transition: .3s;
-    margin-top: 7px;
     filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
 }
 
@@ -1611,27 +1609,23 @@ img{
     top: 50%;
     right: -35px;
     transition: .3s;
-    margin-top: 7px;
     filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
     transform: rotate(180deg);
 }
 
 .cont .event .table_body .table_wrap.on .more{display: none;}
 .cont .event .table_body .table_wrap.on .close{display: inline-block;}
-
-.cont .event .table_body .table_wrap> div> div{
-    display: inline-block;
-}
-
+.cont .event .table_body .table_wrap> div{display: flex;}
 .cont .event .table_body .table_wrap .date_time{
-    margin-right: 42px;
+    margin-right: 50px;
+    display: flex;
 }
+.cont .event .table_body .table_wrap .date_time p{display: flex;}
 
 .cont .event .table_body .table_wrap p,
 .cont .event .table_body .table_wrap span{
     font-size: 12px;
     color: #ccc;
-    display: inline-block;
 }
 
 .cont .event .table_body .table_content{
@@ -1665,7 +1659,7 @@ img{
 
 .table_body .table_content .ecg .ecg_graph> div{
     /* width: 444px; */
-    height: 64px;
+    height: 50px;
     /* padding: 30px 0; */
     overflow-x: scroll;
     overflow-y: hidden;
@@ -2752,7 +2746,7 @@ img{
 .scroll .inner .cont .cont_wrap .cont{
     margin-left: 48px;
 }
-#tab-4 .table_title {display: flex; justify-content: space-between;}
+.default #tab-4 .table_title {display: flex; justify-content: space-between;}
 #tab-4 .table_title .left{
     display: flex;
 }
@@ -2769,14 +2763,13 @@ img{
     margin-top: 40px;
 }
 
-.scroll .cont .graphical .hr_time {
-    padding: 13px 0 0;
+.hr_chart .chart_wrap{width: 100%; padding: 0 32px;position: relative;}
+.hr_chart .hr_date{display: flex;}
+.cont .graphical .hr_time {
+    padding: 13px 28px 0;
 }
-
-.scroll .cont .graphical .hr_time> p {
-    margin-right: 253px;
-}
-
+.cont .graphical .time_wrap{display: flex; justify-content: space-between;}
+.cont .graphical .time_wrap p{display: flex;}
 .scroll .cont .graphical .hr_time> :last-child{margin: 0;}
 
 .scroll .cont .graphical .hr_img {

@@ -411,9 +411,24 @@ button{border-radius: 4px; background: none;}
 .red_custom[type="checkbox"]:disabled + label{background: #ccc; border-color: #ccc;}
 .red_custom[type="checkbox"]:disabled + label + label{color: #aaa;}
 
+/* favorite checkbox */
+.favorite_container{display: flex; padding-right: 5px;}
+.favorite_container input[type='checkbox'] + label{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background: url('/H-Connect/img/icon/favorite_gray.svg') no-repeat;
+    cursor: pointer;
+}
 
+.favorite_container.green input[type='checkbox']:checked + label{
+    background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat;
+}
 
-
+.favorite_container.red input[type='checkbox']:checked + label{
+    background: url('/H-Connect/img/icon/favorite_red.svg') no-repeat;
+}
 
 
 /*================= 헤더 =================*/
@@ -748,7 +763,7 @@ button{border-radius: 4px; background: none;}
 
 /* connect header */
 #header.con_header{
-    min-width: 1280px;
+    /* min-width: 1280px; */
     height: 64px;
     padding: 16px 24px;
     /* padding: 12px 24px; */
@@ -2878,6 +2893,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .favorite_list .group_container> div{
+    height: 32px;
     padding: 4px 0;
     display: flex;
     justify-content: space-between;
@@ -2908,11 +2924,6 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .favorite_container input[type='checkbox']:checked + label span{
     background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-}
-
-.pop.send_doctor .favorite_list .favorite_container{
-    display: inline-block;
-    float: right;
 }
 
 .pop.send_doctor .btn_send{
@@ -4151,23 +4162,6 @@ textarea::-webkit-scrollbar-button {
     margin-right: 14px;
 }
 
-
-/* favorite check */
-.pop.doctor_call .favorite_container input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.pop.doctor_call .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
-}
-
 .pop.doctor_call .select_doctor{
     width: 296px;
 }
@@ -4253,22 +4247,6 @@ textarea::-webkit-scrollbar-button {
 
 .pop.doctor_call .list_inner input{
     display: none;
-}
-
-/* 의료진선택 즐겨찾기 */
-.pop.doctor_call .list_inner .favorite_container input[type="checkbox"]+label> span{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin: 4px 15px 0 0;
-    vertical-align: middle;
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.pop.doctor_call .list_inner .favorite_container input[type='checkbox']:checked+label span{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
 }
 
 /* 구급대원 전화시 팝업창 위치 */

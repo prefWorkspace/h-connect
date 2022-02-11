@@ -845,49 +845,6 @@
 .para_message .doctor_list .input_wrap{
     margin: 0;
 }
-
-
-/* checkbox */
-/* .message .group_container input[type="checkbox"] + label{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.doctor_message .group_container .red_custom[type="checkbox"] + label{
-    background: #eee;
-    border: none;
-}
-
-.doctor_message .group_container .red_custom[type="checkbox"]:checked + label{
-    border: 1px solid #940045;
-} */
-
-/* favorite check */
-.message .favorite_container input[type="checkbox"] + label{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
-}
-
-.doctor_message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);}
-
-.nurse_message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
-}
-
 .message .select_doctor{
     width: 400px;
 }

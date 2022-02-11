@@ -85,7 +85,7 @@
 .nurse .management .management_list .list.on img{
     width: 100%;
     height: 100%;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(165%) contrast(150%);
+    /* filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(165%) contrast(150%); */
 }
 
 .nurse .management .management_list .list.on{
@@ -95,6 +95,9 @@
 
 .nurse .management .management_list .list.off{
     border-bottom: 1px solid #eee;
+}
+.nurse .management .management_list .list.off div img {
+    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
 }
 
 /* 병동관리 */
@@ -1618,7 +1621,7 @@
     margin-top: 7px;
     margin-left: 16px;
     display: flex;
-    justify-content: initial;
+    justify-content: center;
     align-items: center;
 }
 
@@ -1626,9 +1629,9 @@
     margin-top: -4px;
 }
 
-.monitoring_patient .control .ews .bell_num> p{
+/* .monitoring_patient .control .ews .bell_num> p{
     margin-right: 8px;
-}
+} */
 
 .monitoring_patient .control .ews .bell_num button{
     width: 20px;
@@ -1654,20 +1657,19 @@
     color: #fff;
     cursor: pointer;
 }
+.monitoring_patient .time{display: flex; align-items: center;}
 
 .monitoring_patient .time div{
     width: 15px;
     height: 15px;
-    display: inline-block;
-    vertical-align: middle;
+    margin-right: 8px;
 }
 
 .monitoring_patient .time p{
     margin-top: -2px;
     margin-right: 8px;
     font-size: 11px;
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
 }
 
 .monitoring_patient .pulse{
@@ -1687,11 +1689,13 @@
 
 .monitoring_patient .temp{
     width: 160px;
-    height: 104px;
-    padding: 8px 16px;
+    height: 136px;
+    padding: 16px;
     color: #FF3184;
     cursor: pointer;
 }
+
+.monitoring_patient .temp .bell_num{margin-top: 7px;}   
 
 /* tabular trend */
 .monitoring_patient .wrap_inner{
@@ -1939,8 +1943,8 @@
     top: 50%;
     right: -35px;
     transition: .3s;
-    margin-top: 7px;
     filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    transform: translateY(-50%);
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap.on> :last-child span::after{
@@ -1952,9 +1956,8 @@
     top: 50%;
     right: -35px;
     transition: .3s;
-    margin-top: 7px;
     filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateY(0);
 }
 
 .monitoring_patient .event .table_body .table_wrap.on .more{display: none;}
@@ -2141,17 +2144,17 @@
 }
 
 .warning .cont .active .bell_name input[type="checkbox"]+ label span{
-    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(108%) contrast(101%); 
-}
-
+    background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat;
+     filter:none;
+ }
+ .warning .cont .active .bell_name input[type="checkbox"]:checked + label span{
+     background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat;
+ }
+ 
 .warning .cont .control .active{
     height: 136px;
     background: #f00;
     border-radius: 8px;
-}
-
-.warning .cont .control .active input[type="checkbox"]+ label span{
-    filter: invert(0) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(250%) contrast(205%);
 }
 
 
