@@ -539,12 +539,12 @@
                                 <p>
                                     <span>김심장</span> 교수
                                 </p>
-    
+
                                 <button type="button">
-                                    <img src="/H-Connect/img/emergency/delete.png" alt="빨간색 닫기 아이콘">
+                                    <img src="/H-Connect/img/icon/delete.svg" alt="빨간색 닫기 아이콘">
                                 </button>
                             </div>
-                                                      
+                                                    
                         </div>
 
                         <div class="favorite_list">
@@ -556,18 +556,18 @@
                                         <div class="group_list on">
                                             <p>심장내과</p>
                                         </div>
-    
+
                                         <div class="group_list">
                                             <p>그룹2</p>
                                         </div>
-    
+
                                         <div class="group_list">
                                             <p>그룹3</p>
                                         </div>
                                     </div>
 
                                     <button type="button">
-                                        <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표">
+                                        <img src="/H-Connect/img/icon/open.png" alt="오른쪽 화살표">
                                     </button>
 
                                     <div>
@@ -576,9 +576,15 @@
                                 </div>
 
                                 <div class="group_container">
+                                    <div class="input_wrap all">
+                                        <input type="checkbox" name="select_all" id="all_check" class="green_custom all" onclick="selectAll(this)">
+                                        <label for="all_check"></label>
+                                        <label for="all_check">모두선택</label>
+                                    </div>
+
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check1" class="green_custom" disabled>
+                                            <input type="checkbox" name="doctor" id="check1" class="green_custom"  onclick="checkSelectAll(this)" disabled >
                                             <label for="check1"></label>
                                             <label for="check1">
                                                 <span>강내과 교수님</span>
@@ -595,7 +601,7 @@
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check2" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check2" class="green_custom"  onclick="checkSelectAll(this)">
                                             <label for="check2"></label>
                                             <label for="check2">
                                                 <span>강내과 교수님</span>
@@ -612,7 +618,7 @@
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check3" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check3" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check3"></label>
                                             <label for="check3">
                                                 <span>강내과 교수님</span>
@@ -629,7 +635,7 @@
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check4" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check4" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check4"></label>
                                             <label for="check4">
                                                 <span>강내과 교수님</span>
@@ -646,7 +652,7 @@
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check5" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check5" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check5"></label>
                                             <label for="check5">
                                                 <span>강내과 교수님</span>
@@ -663,7 +669,7 @@
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check6" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check6" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check6"></label>
                                             <label for="check6">
                                                 <span>강내과 교수님</span>
@@ -2715,5 +2721,31 @@
 
     </div>
     <!--// end wrap-->
+
+    <script>
+        function checkSelectAll()  {
+            const checkboxes 
+                = document.querySelectorAll('input[name="doctor"]');
+            const checked 
+                = document.querySelectorAll('input[name="doctor"]:checked');
+            const selectAll 
+                = document.querySelector('input[name="selectall"]');
+            
+            if(checkboxes.length === checked.length)  {
+                selectAll.checked = true;
+            }else {
+                selectAll.checked = false;
+            }
+        }
+
+        function selectAll(selectAll)  {
+            const checkboxes 
+                = document.getElementsByName('doctor');
+            
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked
+            })
+        }
+    </script>
   </body>
 </html>
