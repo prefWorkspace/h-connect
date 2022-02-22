@@ -395,16 +395,13 @@
 .nurse .search_container{
     width: 392px;
     height: 36px;
-    padding-left: 16px;
     border-radius: 4px;
-    background: #eee;
-    display: inline-block;
+    border: 1px solid #007A94;
 }
 
 .nurse .search_container input{
-    background: #eee;
     height: 34px;
-    float: left;
+    background: #fff;
 }
 
 .nurse .search_container input::placeholder{

@@ -585,6 +585,10 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
 
 
     // connect fold full close
+    $('.patient_view .btn_list button').click(function(){
+        $('#wrap_content.connect .patient_view .btn_list button').not($(this)).removeClass('active');
+        $(this).addClass('active');
+    })
     // 환자상태
     $('.several .pati_stat .title .btn_fold').on('click', function(){
         $('.several .patient_status').toggle();
@@ -601,6 +605,8 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
         $('.connect .several > div').not('.connect .pati_stat').removeClass('active');
     })
     $('.connect .pati_stat .title').on('click', function(){
+        $('#wrap_content.connect .patient_view .btn_list button').not($('.patient_view .btn_patient')).removeClass('active');
+        $('.patient_view .btn_patient').addClass('active');
         $('.connect .pati_stat').addClass('active');
         $('.connect .several > div').not('.connect .pati_stat').removeClass('active');
     })
@@ -614,10 +620,11 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
         $('.connect .several > div').not('.connect .vital').removeClass('active');
     })
     $('.connect .vital .title').on('click', function(){
+        $('#wrap_content.connect .patient_view .btn_list button').not($('.patient_view .btn_vital')).removeClass('active');
+        $('.patient_view .btn_vital').addClass('active');
         $('.connect .vital').addClass('active');
         $('.connect .several > div').not('.connect .vital').removeClass('active');
     })
-
 
 
     // 화상연결
@@ -638,6 +645,8 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
         $('.connect .several > div').not('.connect .connect_video').removeClass('active');
     })
     $('.connect .connect_video .title').on('click', function(){
+        $('#wrap_content.connect .patient_view .btn_list button').not($('.patient_view .btn_videocall')).removeClass('active');
+        $('.patient_view .btn_videocall').addClass('active');
         $('.connect .connect_video').addClass('active');
         $('.connect .several > div').not('.connect .connect_video').removeClass('active');
     })
@@ -655,11 +664,13 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
     $('.several .scene_picture .title .btn_close').on('click', function(){
         $('.several .scene_picture').hide();
     })
-    $('.patient_view .btn_videocall').on('click', function(){
+    $('.patient_view .btn_picture').on('click', function(){
         $('.connect .scene_picture').show().addClass('active');
         $('.connect .several > div').not('.connect .scene_picture').removeClass('active');
     })
     $('.connect .scene_picture .title').on('click', function(){
+        $('#wrap_content.connect .patient_view .btn_list button').not($('.patient_view .btn_picture')).removeClass('active');
+        $('.patient_view .btn_picture').addClass('active');
         $('.connect .scene_picture').addClass('active');
         $('.connect .several > div').not('.connect .scene_picture').removeClass('active');
     })
@@ -1026,15 +1037,15 @@ $('.doctor .nurse_send').on('click', function(){
     $('.doctor .all_plan .title .btn_week').on('click', function(){
         $('.doctor_remote .cal_view').hide();
         $('.doctor_remote .week').show();
-        $(this).addClass('on');
-        $('.doctor .all_plan> .title button').not(this).removeClass('on');
+        // $(this).addClass('on');
+        // $('.doctor .all_plan> .title button').not(this).removeClass('on');
     })
 
     $('.doctor .all_plan .title .btn_cal').on('click', function(){
         $('.doctor_remote .cal_view').show();
         $('.doctor_remote .week').hide();
-        $(this).addClass('on');
-        $('.doctor .all_plan> .title button').not(this).removeClass('on');
+        // $(this).addClass('on');
+        // $('.doctor .all_plan> .title button').not(this).removeClass('on');
     })
 
     // remote_alarm
@@ -1207,10 +1218,6 @@ $('.doctor .nurse_send').on('click', function(){
     $('.screening_doc .waiting .btn_treat').on('click', function(){
         location.href="connect_screening.html"
     })
-
-    // $('.select_case .case_list .row').on('click', function(){
-    //     location.href="connect.html"
-    // })
 
 
 //---------------------- 원격협진  ----------------------//
@@ -1474,9 +1481,8 @@ $('.doctor .nurse_send').on('click', function(){
 
 });
 
-// 모니터링 탭메뉴
+// 탭메뉴
 $(document).ready(function(){
-
     $('ul.tabs li').click(function(){
         var tab_id = $(this).attr('data-tab');
 
@@ -1486,10 +1492,31 @@ $(document).ready(function(){
         $(this).addClass('current');
         $("#"+tab_id).addClass('current');
     })
+
+    // 달력보기
+    $('.all_plan ul.tab li').click(function(){
+        var tab_id01 = $(this).attr('data-tab');
+
+        $('.all_plan  ul.tab li').removeClass('current');
+        $('.all_plan .tab-cont').removeClass('current');
+
+        $(this).addClass('current');
+        $("#"+tab_id01).addClass('current');
+    })
+
+    // 시간선택
+    $('.time_sele ul.tabs li').click(function(){
+        var tab_id01 = $(this).attr('data-tab');
+
+        $('.all_plan  ul.tabs li').removeClass('current');
+        $('.all_plan .tab-cont').removeClass('current');
+
+        $(this).addClass('current');
+        $("#"+tab_id01).addClass('current');
+    })
 })
 
-$(document).ready(function(){
-    
+$(document).ready(function(){    
     // 담당의에게 메시지 보내는 버튼 활성화
     $('#to_doctor').on('keyup', function() {
         var inputVal = $('#to_doctor').val();

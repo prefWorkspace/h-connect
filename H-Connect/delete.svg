@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <g id="delete" transform="translate(-1568.5)">
-    <circle id="타원_3" data-name="타원 3" cx="8" cy="8" r="8" transform="translate(1568.5)" fill="#940045"/>
-    <path id="_1x_cancel" data-name="@1x cancel" d="M20977.645,9600.355l-3.145-3.146-3.146,3.146a.5.5,0,0,1-.354.143.5.5,0,0,1-.354-.854l3.145-3.145-3.145-3.146a.5.5,0,0,1,.707-.706l3.146,3.146,3.145-3.146a.5.5,0,0,1,.711.706l-3.148,3.146,3.148,3.145a.5.5,0,0,1-.354.854A.514.514,0,0,1,20977.645,9600.355Z" transform="translate(-19398.002 -9588.502)" fill="#fff"/>
-  </g>
-</svg>

@@ -667,7 +667,9 @@ button{border-radius: 4px; background: none;}
     font-size: 14px;
     color: #940045;
 }
-
+.paramedic .header_right .btn_list button:hover{
+    background: #F5EEF1;
+}
 .btn_attendee{
     width: 98px;
     background: #fff;
@@ -2702,25 +2704,25 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_search .search_container{
     width: 360px;
-    height: 40px;
-    padding: 4px 4px 4px 8px;
     margin-bottom: 36px;
+
+    position: relative;
+}
+
+.pop.send_doctor .doctor_search .search_container input{
+    width: 100%;
+    height: 40px;
+    padding-right: 55px;
+    padding-left: 8px;
+    font-size: 14px;
+    text-align: left;
     border-radius: 4px;
     border: 1px solid #007A94;
 }
 
-.pop.send_doctor .doctor_search .search_container input{
-    width: 85%;
-    height: 30px;
-    padding-top: 5px;
-    font-size: 14px;
-    text-align: left;
-}
-
 .pop.send_doctor .doctor_search .search_container input::placeholder{
-    font-size: 14px;
-    color: #ccc;
-    float: left;
+    font-size: 12px;
+    color: #aaa;
 }
 
 .pop.send_doctor .doctor_search .search_container button{
@@ -2728,13 +2730,13 @@ textarea::-webkit-scrollbar-button {
     height: 31px;
     padding: 2px 0 0 0;
     border-radius: 4px;
-    background-color: #ccc;
-    float: right;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
 }
-
-.pop.send_doctor .doctor_search .search_container button img{
-    filter: invert(154%) sepia(100%) saturate(0%) hue-rotate(47deg) brightness(169%) contrast(209%);
-}
+.pop.send_doctor .doctor_search .search_container button img{width: 16px; height: 100%;}
 
 .pop.send_doctor .doctor_search .search_container::after{
     content: '';
@@ -2764,7 +2766,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .doctor_list> div{
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2779,15 +2781,6 @@ textarea::-webkit-scrollbar-button {
     margin-right: 14px;
 }
 
-/* .pop.send_doctor .doctor_list .green_custom[type="checkbox"] + label{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: #eee;
-    border: 1px solid #eee;
-    cursor: pointer;
-} */
-
 .pop.send_doctor .doctor_list .green_custom[type="checkbox"]:checked + label{
     background: #007A94;
 }
@@ -2798,17 +2791,6 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_list input[type="checkbox"]{
     display: none;
-}
-
-.pop.send_doctor .doctor_search .doctor_list .favorite_container{
-    display: inline-block;
-    float: right;
-}
-
-.pop.send_doctor .doctor_search .doctor_list .favorite_container::after{
-    content: '';
-    display: block;
-    clear: both;
 }
 
 .pop.send_doctor .doctor_search .doctor_list .favorite_container input[type="checkbox"] + label> span{
@@ -2891,7 +2873,7 @@ textarea::-webkit-scrollbar-button {
     border-radius: 10px;
     background: #ccc;
 }
-
+.pop.send_doctor .favorite_list .input_wrap.all{justify-content: flex-start;}
 .pop.send_doctor .favorite_list .group_container> div{
     height: 32px;
     padding: 4px 0;
@@ -3032,18 +3014,20 @@ textarea::-webkit-scrollbar-button {
 
 .pop.nurse_view .search_container> :first-child{
     position: relative;
+    border: 1px solid #007A94;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .pop.nurse_view .search_container input{
     width: 400px;
-    height: 32px;
-    padding: 8px 30px 8px 8px;
-    border-radius: 4px;
+    height: 100%;
+    padding: 0 30px 0 8px;
 }
 
 .pop.nurse_view .search_container input::placeholder{
     font-size: 12px;
-    color: #ccc;
+    color: #aaa;
 }
 
 .pop.nurse_view .search_container .btn_search{
@@ -4167,21 +4151,27 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.doctor_call .search_container{
+    width: 296px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #940045;
     position: relative;
+    overflow: hidden;
 }
 
 .pop.doctor_call .search_container input{
-    width: 296px;
-    padding: 7px 30px 7px 7px;
-    background: #eee;
-    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px 0 7px;
+    background: #fff;
     font-size: 12px;
     font-weight: normal;
 }
 
 .pop.doctor_call .search_container input::placeholder{
+    font-size: 12px;
     font-weight: normal;
-    color: #ccc;
+    color: #aaa;
 }
 
 .pop.doctor_call .search_container .btn_search{
@@ -4203,7 +4193,7 @@ textarea::-webkit-scrollbar-button {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(278deg) brightness(135%) contrast(0);
+    filter: invert(103%) sepia(79%) saturate(7126%) hue-rotate(322deg) brightness(59%) contrast(68%);
 }
 
 .pop.doctor_call .list_inner{
@@ -4596,6 +4586,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.full_vital .control_data .time_data p{
     font-size: 11px;
+    display: flex;
 }
 
 .pop.full_vital .pulse{

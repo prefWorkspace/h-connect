@@ -35,6 +35,7 @@ $(function () {
 		},
 		scrollbar: {
 			el: ".swiper-scrollbar",
+			draggable: true,
 		},
 		mousewheel: true,
 		observer: true,
