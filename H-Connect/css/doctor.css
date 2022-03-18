@@ -109,7 +109,7 @@ p{font-size: 12px;}
 }
 
 .doctor .schedule .container{
-    height: 605px;
+    height: calc(100% - 104px);
 }
 
 .doctor .schedule .title{
@@ -134,7 +134,7 @@ p{font-size: 12px;}
 }
 
 .doctor .schedule_list{
-    height: 530px;
+    /* height: 530px; */
     padding: 16px;
 }
 
@@ -558,7 +558,7 @@ p{font-size: 12px;}
     top: 30px;
     z-index: 5;
     border: 1px solid #000;
-    border-top: 1px solid #fff;
+    border-top: none;
     border-radius: 0 0 4px 4px;
 }
 
@@ -1193,7 +1193,7 @@ p{font-size: 12px;}
     width: 150px;
 }
 
-.doctor .remote_alarm .inner .time{padding: 0;color: #000;}
+.doctor .remote_alarm .inner .time{padding: 0;color: #007A94;}
 
 .doctor .remote_alarm .answer{
     width: 150px;
@@ -1563,6 +1563,7 @@ p{font-size: 12px;}
 }
 
 .doctor_monitor .rhythm .event .title .left h2{
+    width: fit-content;
     font-weight: normal;
     color: #000;
 }
@@ -2708,6 +2709,9 @@ p{font-size: 12px;}
     margin-bottom: 32px;
     padding: 20px 32px;
     border-radius: 8px;
+    background: linear-gradient(to right, #004F60, #350039);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+
     display: flex;
     align-items: center;
 }
@@ -2716,6 +2720,7 @@ p{font-size: 12px;}
     width: 32px;
     height: 32px;
 }
+.doctor .status_label .img_container{margin-right: 22px;}
 
 .doctor .status_label img{
     width: 100%;
@@ -2724,15 +2729,17 @@ p{font-size: 12px;}
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(210%) contrast(103%);
 }
 
-.doctor_remote .btn_today> :last-child:after {
+.doctor .status_label> :last-child{text-align: left; color: #fff; position: relative;}
+
+.doctor_remote .status_label> :last-child:after {
     content: '';
     width: 9px;
     height: 18px;
     position: absolute;
     background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat 0 0px /contain;
     top: 50%;
-    transform: translateY(-50%);
     right: -80px;
+    transform: translateY(-50%);
     filter: invert(10%) brightness(100000%) contrast(10000%);
 }
 
@@ -3582,7 +3589,7 @@ p{font-size: 12px;}
 }
 
 .remote_request .title{
-    padding-bottom: 40px;
+    padding-bottom: 55px;
     border-bottom: 1px solid #eee;
 }
 

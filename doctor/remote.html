@@ -193,7 +193,7 @@
                 <!-- 원격협진 현황 -->
                 <section class="section status">
                     <!-- 원격협진 진행중 -->
-                    <div class="btn_today status_label">
+                    <div class="status_label">
                         <div class="img_container">
                             <img src="/H-Connect/img/header/clinic.svg" alt="로고">
                         </div>
@@ -352,7 +352,7 @@
                                 <div class="row start_remote on">
                                     <div>
                                         <p>10:30</p>
-                                        <p>협진시작</p>
+                                        <p>원격협진</p>
                                     </div>
 
                                     <p>박협진 교수님 외 5명</p>
@@ -421,9 +421,9 @@
                                         <p>15.월 </p>
                                     </div>
     
-                                    <!-- 협진시작 -->
+                                    <!-- 원격협진 -->
                                     <div class="plan start active green">
-                                        <p>협진시작</p>
+                                        <p>원격협진</p>
                                     </div>
     
                                     <!-- 협진일정요청 -->
@@ -447,9 +447,9 @@
                                         <p>16. 화 </p>
                                     </div>
 
-                                    <!-- 협진시작 -->
+                                    <!-- 원격협진 -->
                                     <div class="plan start green">
-                                        <p>협진시작</p>
+                                        <p>원격협진</p>
                                     </div>                                
                                 </div>
     
@@ -469,9 +469,9 @@
                                         <p>18. 목</p>
                                     </div>
     
-                                    <!-- 협진시작 -->
+                                    <!-- 원격협진 -->
                                     <div class="plan start green">
-                                        <p>협진시작</p>
+                                        <p>원격협진</p>
                                     </div>
     
                                     <!-- 소견요청 -->
@@ -633,7 +633,7 @@
                     </div>  
                 </section>
 
-                <!-- 협진시작 -->
+                <!-- 원격협진 -->
                 <section class="section right collabor">
                     <div class="container">
                         <div class="title">
@@ -2206,8 +2206,7 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
                 timeZone: 'local',
-                defaultDate: '2018-06-01',
-                // selectable: true, 선택 할 수 있음
+                selectable: true, //선택 할 수 있음
                 // locale: "ko",
 
                 header:{
@@ -2216,19 +2215,19 @@
                     right: 'next today'
                 },
                 titleFormat: function(date){
-                    return date.date.year + "." + (date.date.month + 1) + "월";
+                    return date.date.year + "년" + " " + (date.date.month + 1) + "월";
                 },          
                 events:[{
-                    title: '협진시작',
+                    title: '원격협진',
                     start: '2021-12-10T10:00:00',
                     constraint: 'businessHours'
                 },
-                { title: '협진시작',
+                { title: '원격협진',
                     start: '2021-12-15T10:00:00',
                     constraint: 'businessHours'
                 },
 
-                { title: '협진시작',
+                { title: '원격협진',
                     start: '2021-12-16T10:00:00',
                     constraint: 'businessHours'
                 },

@@ -145,23 +145,22 @@
 .message .message_list .search_container input{
     width: 480px;
     height: 32px;
-    padding: 7px 56px 7px 8px;
+    padding: 0 56px 0 8px;
     border-radius: 4px;
     background: #fff;
+    border: 1px solid #940045;
 }
 
 .message .message_list .search_container input::placeholder{
-    color: #ccc;
+    color: #aaa;
 }
 
 .message .message_list .search_container .btn_search{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 50%;
+    right: 51%;
     width: 48px;
-    height: 32px;
-    margin-right: 16px;
     border-radius: 4px;
     background-color: #fff;
 }
@@ -309,16 +308,18 @@
     padding: 7px 56px 7px 8px;
     border-radius: 4px;
     background: #fff;
+    border: 1px solid #940045;
 }
 
 .nurse_message .message_list .search_container input{
     height: 32px;
+    border: 1px solid #007A94;
 }
 
 .message .message_talk .search_container input::placeholder{
     font-size: 12px;
     font-weight: normal;
-    color: #ccc;
+    color: #aaa;
 }
 
 .message .message_talk .search_container .btn_search{
@@ -845,49 +846,6 @@
 .para_message .doctor_list .input_wrap{
     margin: 0;
 }
-
-
-/* checkbox */
-/* .message .group_container input[type="checkbox"] + label{
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.doctor_message .group_container .red_custom[type="checkbox"] + label{
-    background: #eee;
-    border: none;
-}
-
-.doctor_message .group_container .red_custom[type="checkbox"]:checked + label{
-    border: 1px solid #940045;
-} */
-
-/* favorite check */
-.message .favorite_container input[type="checkbox"] + label{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
-}
-
-.doctor_message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/H-Connect/img/icon/favorite_green.svg') no-repeat 0 0px / contain;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);}
-
-.nurse_message .favorite_container input[type='checkbox']:checked + label{
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter:invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
-}
-
 .message .select_doctor{
     width: 400px;
 }
@@ -1004,7 +962,7 @@
 
 .message .send_message .title{
     padding: 16px 16px 24px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #eee;
 }
 
@@ -1031,11 +989,11 @@
 
 .message .send_message form textarea{
     width: 100%;
-    height: 150px;
+    height: 100px;
     padding: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 4px;
-    border: 1px solid #eee;
+    border: 1px solid #A2A2A2;
 }
 
 .message .send_message form textarea::placeholder{
@@ -1044,6 +1002,7 @@
 
 .message .send_message .btn_list{
     float: right;
+    display: flex;
 }
 
 .emergency .emergency_recep .list_container .arrival_time::after{

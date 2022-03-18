@@ -1489,7 +1489,7 @@
     overflow:hidden
 }
 
-.emergency .small_picture .swiper-wrapper{padding-left: 8px; padding-bottom: 8px;}
+.emergency .small_picture .swiper-wrapper{padding-bottom: 8px;}
 
 .emergency .small_picture .swiper-slide{
     width: 95px;
@@ -1967,7 +1967,7 @@
     background: #fff;
     color: #940045;
 }
-
+.connect .patient_view .btn_list button.active{background: #940045; color: #fff;}
 .connect .patient_view .btn_list> :last-child{
     margin: 0;
 }
@@ -2029,9 +2029,9 @@
     width: 100%;
     height: 40px;
     padding: 11px 16px;
-    background: #940045;
     display: flex;
     justify-content: space-between;
+    cursor: default;
 }
 
 .connect .several .title p{
@@ -2063,10 +2063,15 @@
 .connect .several .title .btn_list .btn_full{
     margin: 0 32px;
 }
+.connect .several> div > .title{
+    background: #4A0022;
+}
 
 .connect .several> div.active{
     z-index: 10;
 }
+
+.connect .several> div.active > .title{background: #940045;}
 
 /* 환자상태 */
 .connect .pati_stat{

@@ -539,12 +539,12 @@
                                 <p>
                                     <span>김심장</span> 교수
                                 </p>
-    
+
                                 <button type="button">
-                                    <img src="/H-Connect/img/emergency/delete.png" alt="빨간색 닫기 아이콘">
+                                    <img src="/H-Connect/img/icon/delete.svg" alt="빨간색 닫기 아이콘">
                                 </button>
                             </div>
-                                                      
+                                                    
                         </div>
 
                         <div class="favorite_list">
@@ -556,11 +556,11 @@
                                         <div class="group_list on">
                                             <p>심장내과</p>
                                         </div>
-    
+
                                         <div class="group_list">
                                             <p>그룹2</p>
                                         </div>
-    
+
                                         <div class="group_list">
                                             <p>그룹3</p>
                                         </div>
@@ -576,9 +576,15 @@
                                 </div>
 
                                 <div class="group_container">
+                                    <div class="input_wrap all">
+                                        <input type="checkbox" name="select_all" id="all_check" class="green_custom all" onclick="selectAll(this)">
+                                        <label for="all_check"></label>
+                                        <label for="all_check">모두선택</label>
+                                    </div>
+
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check1" class="green_custom" disabled>
+                                            <input type="checkbox" name="doctor" id="check1" class="green_custom"  onclick="checkSelectAll(this)" disabled >
                                             <label for="check1"></label>
                                             <label for="check1">
                                                 <span>강내과 교수님</span>
@@ -587,17 +593,15 @@
                                             </label>        
                                         </div>
                                         
-                                        <div class="favorite_container">
+                                        <div class="favorite_container green">
                                             <input type="checkbox" id="favorite1" checked>
-                                            <label for="favorite1">
-                                                <span></span>
-                                            </label>
+                                            <label for="favorite1"></label>
                                         </div>  
                                     </div>
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check2" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check2" class="green_custom"  onclick="checkSelectAll(this)">
                                             <label for="check2"></label>
                                             <label for="check2">
                                                 <span>강내과 교수님</span>
@@ -606,17 +610,15 @@
                                             </label>        
                                         </div>
                                         
-                                        <div class="favorite_container">
+                                        <div class="favorite_container green">
                                             <input type="checkbox" id="favorite2" checked>
-                                            <label for="favorite2">
-                                                <span></span>
-                                            </label>
+                                            <label for="favorite2"></label>
                                         </div>  
                                     </div>
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check3" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check3" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check3"></label>
                                             <label for="check3">
                                                 <span>강내과 교수님</span>
@@ -625,17 +627,15 @@
                                             </label>        
                                         </div>
                                         
-                                        <div class="favorite_container">
+                                        <div class="favorite_container green">
                                             <input type="checkbox" id="favorite3" checked>
-                                            <label for="favorite3">
-                                                <span></span>
-                                            </label>
+                                            <label for="favorite3"></label>
                                         </div>  
                                     </div>
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check4" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check4" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check4"></label>
                                             <label for="check4">
                                                 <span>강내과 교수님</span>
@@ -644,17 +644,15 @@
                                             </label>        
                                         </div>
                                         
-                                        <div class="favorite_container">
+                                        <div class="favorite_container green">
                                             <input type="checkbox" id="favorite4" checked>
-                                            <label for="favorite4">
-                                                <span></span>
-                                            </label>
+                                            <label for="favorite4"></label>
                                         </div>  
                                     </div>
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check5" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check5" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check5"></label>
                                             <label for="check5">
                                                 <span>강내과 교수님</span>
@@ -663,17 +661,15 @@
                                             </label>        
                                         </div>
                                         
-                                        <div class="favorite_container">
+                                        <div class="favorite_container green">
                                             <input type="checkbox" id="favorite5" checked>
-                                            <label for="favorite5">
-                                                <span></span>
-                                            </label>
+                                            <label for="favorite5"></label>
                                         </div>  
                                     </div>
 
                                     <div>
                                         <div class="input_wrap">
-                                            <input type="checkbox" id="check6" class="green_custom">
+                                            <input type="checkbox" name="doctor" id="check6" class="green_custom" onclick="checkSelectAll(this)">
                                             <label for="check6"></label>
                                             <label for="check6">
                                                 <span>강내과 교수님</span>
@@ -682,11 +678,9 @@
                                             </label>        
                                         </div>
                                         
-                                        <div class="favorite_container">
+                                        <div class="favorite_container green">
                                             <input type="checkbox" id="favorite6" checked>
-                                            <label for="favorite6">
-                                                <span></span>
-                                            </label>
+                                            <label for="favorite6"></label>
                                         </div>  
                                     </div>
                                 </div>
@@ -714,11 +708,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list">
-                                    <label for="favorite_list">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list"></label>
                                 </div>
                                 
                             </div>
@@ -734,11 +726,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list2">
-                                    <label for="favorite_list2">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list2"></label>
                                 </div>
                                 
                             </div>
@@ -754,11 +744,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list3">
-                                    <label for="favorite_list3">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list3"></label>
                                 </div>
                                 
                             </div>
@@ -774,11 +762,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list4">
-                                    <label for="favorite_list4">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list4"></label>
                                 </div>
                                 
                             </div>
@@ -794,11 +780,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list5">
-                                    <label for="favorite_list5">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list5"></label>
                                 </div>
                                 
                             </div>
@@ -814,11 +798,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list6">
-                                    <label for="favorite_list6">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list6"></label>
                                 </div>
                                 
                             </div>
@@ -834,11 +816,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list7">
-                                    <label for="favorite_list7">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list7"></label>
                                 </div>
                                 
                             </div>
@@ -854,11 +834,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list8">
-                                    <label for="favorite_list8">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list8"></label>
                                 </div>
                                 
                             </div>
@@ -874,11 +852,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list9">
-                                    <label for="favorite_list9">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list9"></label>
                                 </div>
                                 
                             </div>
@@ -894,11 +870,9 @@
                                     </label>
                                 </div>
                                 
-                                <div class="favorite_container">
+                                <div class="favorite_container green">
                                     <input type="checkbox" id="favorite_list10">
-                                    <label for="favorite_list10">
-                                        <span></span>
-                                    </label>
+                                    <label for="favorite_list10"></label>
                                 </div>
                                 
                             </div>
@@ -1293,7 +1267,7 @@
                                     마지막 업데이트 시간 : 
                                     <span>21</span>.
                                     <span>09</span>.
-                                    <span>15</span>.
+                                    <span>15</span>
                                 </p>
                                 &nbsp;
                                 <p>
@@ -1309,7 +1283,7 @@
 
                                 <!-- 탭메뉴 -->
                                 <ul class="tabs">
-                                    <li class="tab-link  current" data-tab="tab-1">current vital</li>
+                                    <li class="tab-link  current" data-tab="tab-1">Current Vital</li>
                                     <li class="tab-link" data-tab="tab-2">Tabular Trend</li>
                                     <li class="tab-link" data-tab="tab-3">Graphical Trend</li>
                                     <li class="tab-link" data-tab="tab-4">Event</li>
@@ -1461,7 +1435,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1495,7 +1469,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1576,7 +1550,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1605,7 +1579,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1634,7 +1608,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1663,7 +1637,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1692,7 +1666,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1721,7 +1695,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1750,7 +1724,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1779,7 +1753,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1808,7 +1782,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1837,7 +1811,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -1868,18 +1842,18 @@
                                                 <li><a href=""><<</a></li>
                                                 <li><a href=""><</a></li>
 
-                                                <li class="active"><a href="">1.</a></li>
-                                                <li><a href="">2.</a></li>
-                                                <li><a href="">3.</a></li>
-                                                <li><a href="">4.</a></li>
-                                                <li><a href="">5.</a></li>
-                                                <li><a href="">6.</a></li>
-                                                <li><a href="">7.</a></li>
-                                                <li><a href="">8.</a></li>
-                                                <li><a href="">9.</a></li>
-                                                <li><a href="">10.</a></li>
+                                                <li class="active"><a href="">1</a></li>
+                                                <li><a href="">2</a></li>
+                                                <li><a href="">3</a></li>
+                                                <li><a href="">4</a></li>
+                                                <li><a href="">5</a></li>
+                                                <li><a href="">6</a></li>
+                                                <li><a href="">7</a></li>
+                                                <li><a href="">8</a></li>
+                                                <li><a href="">9</a></li>
+                                                <li><a href="">10</a></li>
                                                 <li><a href="">...</a></li>
-                                                <li><a href="">52.</a></li>
+                                                <li><a href="">52</a></li>
 
                                                 <li><a href="">></a></li>
                                                 <li><a href="">>></a></li>
@@ -1932,7 +1906,7 @@
                                                     <p>
                                                         <span>21</span>.
                                                         <span>09</span>.
-                                                        <span>15</span>.
+                                                        <span>15</span>
                                                     </p>
             
                                                     <p>
@@ -2076,7 +2050,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2140,7 +2114,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2204,7 +2178,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2268,7 +2242,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2332,7 +2306,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2396,7 +2370,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2460,7 +2434,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2524,7 +2498,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2588,7 +2562,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2652,7 +2626,7 @@
                                                         <p>
                                                             <span>21</span>.
                                                             <span>09</span>.
-                                                            <span>15</span>.
+                                                            <span>15</span>
                                                         </p>
                 
                                                         <p>
@@ -2747,5 +2721,31 @@
 
     </div>
     <!--// end wrap-->
+
+    <script>
+        function checkSelectAll()  {
+            const checkboxes 
+                = document.querySelectorAll('input[name="doctor"]');
+            const checked 
+                = document.querySelectorAll('input[name="doctor"]:checked');
+            const selectAll 
+                = document.querySelector('input[name="selectall"]');
+            
+            if(checkboxes.length === checked.length)  {
+                selectAll.checked = true;
+            }else {
+                selectAll.checked = false;
+            }
+        }
+
+        function selectAll(selectAll)  {
+            const checkboxes 
+                = document.getElementsByName('doctor');
+            
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked
+            })
+        }
+    </script>
   </body>
 </html>
