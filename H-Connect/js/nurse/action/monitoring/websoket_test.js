@@ -1,3 +1,4 @@
+import {commonRequest} from '../../../utils/controller/commonRequest.js';
 // websoket 선언 ()안에는 호출할 url을 작성해준다.
 // const wsUrl = '127.0.0.1:5501';
 // const ws = new WebSocket(`ws://${wsUrl}`);
@@ -34,35 +35,45 @@
 //     // console.log("message:",e)
 // })
 
-const { requester, requestDateTime } = commonRequest();
+// const { requester, requestDateTime } = commonRequest();
 
-const headers = {
-    "SX-Auth-Token": `${LOGIN_TOKEN}`,
-    deviceKinde: 3,
-    apiRoute: "GWS-1",
-    requester,
-    requestDateTime 
-};
+// const headers = {
+//     "SX-Auth-Token": `${LOGIN_TOKEN}`,
+//     deviceKinde: 3,
+//     apiRoute: "GWS-1",
+//     requester,
+//     requestDateTime 
+// };
 
-let sockJs = new SockJS(`${ip}ws?SX-API-Route=GWS-1&clientKeyName=${"bioSignalData"}&connType=${1}`);
+// let sockJs = new SockJS(`${ip}ws?SX-API-Route=GWS-1&clientKeyName=${"bioSignalData"}&connType=${1}`);
+// console.log("sockJs:",sockJs);
+// function callvak(frame){
+//     console.log("asedfasdfas");
+//     console.log(frame);
+//     stompClient.subscribe("/topic/public/bioSignalData/SEERS_2201251404_IEU0", function(data){
+//         const aaa = JSON.parse(data);
+//         console.log("aaa===");
+//         console.log(aaa);
+//     }, (err) => {
+//         console.log(err);
+//     })
+// };
 
-function callvak(frame){
-    console.log("asedfasdfas");
-    console.log(frame);
-    stompClient.subscribe("/topic/public/bioSignalData/SEERS_2201251404_IEU0", function(data){
-        const aaa = JSON.parse(data);
-        console.log("aaa===");
-        console.log(aaa);
-    }, (err) => {
-        console.log(err);
-    })
-};
+// function connectonError(err){
+//     console.log(err)
+// };
+// let sockJs = new SockJS(``);
 
-function connectonError(err){
-    console.log(err)
-};
+// let stompClient = Stomp.over(sockJs);
+// console.log("stompClient===");
+// console.log(stompClient);
+// stompClient.connect(headers, callvak, connectonError);
 
-let stompClient = Stomp.over(sockJs);
-console.log("stompClient===");
-console.log(stompClient);
-stompClient.connect(headers, callvak, connectonError);
+
+let passingParameter = {
+    'SX-Auth-Token': GBL.ACCOUNT.TOKEN,
+    deviceKind: custom.request.getDeviceKindCode(),
+    // connType: connType,
+    apiRoute: 'GWS-1',
+    requester
+}
