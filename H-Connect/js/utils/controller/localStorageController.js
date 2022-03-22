@@ -1,5 +1,5 @@
 
-const localStorageController = {
+export const localStorageController = {
     setLocalS: (key, value) => {
         let setValue = "";
         if(typeof value === "string" || typeof value === "number"){
