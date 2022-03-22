@@ -1,11 +1,11 @@
-function _patient_patientVital_insert(){
+export function _patient_patientVital_insert(_patient){
     /* 환자 측정 상세정보 vital 화면 정보 세팅 */
 
-    _vitalHeaderInform();
+    _vitalHeaderInform(_patient);
 }
 
-function _vitalHeaderInform(){
-    const { name, birthday, gender, patientCode } = PATIENT.inform || {};
+export function _vitalHeaderInform(_patient){
+    const { name, birthday, gender, patientCode } = _patient || {};
 
     /* 환자 정보 jquery dom 선언 */
     const _$h_p_informEl = $('.monitoring_patient .vital_chart .title .pati_info');

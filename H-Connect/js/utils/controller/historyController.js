@@ -1,5 +1,5 @@
-const history = {
-    push: (link, target)=> {
+export const history = {
+    linkTo: (link, target)=> {
         if(!target || target === "_self" || target === "self"){
             window.location.href = link;
         }else if(target === "_blank" || target === "blank"){

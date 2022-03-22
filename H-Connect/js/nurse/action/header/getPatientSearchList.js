@@ -1,3 +1,6 @@
+import {commonRequest} from '../../../utils/controller/commonRequest.js';
+import { serverController } from '../../../utils/controller/serverController.js';
+import {_header_searchPatientList_insert} from '../../template/header/headerSearchPatientInsert.js';
 async function getPatientSearchList(){
     /* 환자 검색 정보 리스트 불러오기 API */
     /* 

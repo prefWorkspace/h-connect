@@ -1,6 +1,6 @@
 "use strict";
 
-const sessionController = {
+export const sessionController = {
     setSession: (key, value) => {
         let setValue = "";
 

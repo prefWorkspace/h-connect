@@ -1,7 +1,9 @@
+import { history } from "../../../utils/controller/historyController.js";
 /*
     s : 모니터링 블록
 */
-function _monitorBlock_have(_data){
+window._history = history;
+export function _monitorBlock_have(_data){
     const {measurementCode, patientCode, name, bioSignalECGLastData, bioSignalSpO2LastData, bioSignalTempLastData} = _data || {};
     /**
      * EWS : emergency warning system => 비상 경고 시스템
@@ -19,8 +21,11 @@ function _monitorBlock_have(_data){
     * active yellow(노란색) : 장치 이상
     * active blue(파란색) : 시스템 이상
     */
+    const test = ()=> {
+        
+    }
     return `
-    <div class="patient_monitor" onclick="history.push('/nurse/patient.html?measurement_code=${measurementCode}')">
+    <div class="patient_monitor" onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${measurementCode}')">
         <div class="patient_info">
             <p>
                 <span>${patientCode}</span>.
@@ -55,7 +60,7 @@ function _monitorBlock_have(_data){
     </div>
     `;
 }
-function _monitorBlock_none(){
+export function _monitorBlock_none(){
     return `
     <div class="patient_monitor" onclick="history.push('/nurse/measure.html')">
         <div class="empty_bed">
@@ -72,7 +77,7 @@ function _monitorBlock_none(){
     </div>
     `;
 }
-function _monitoring_patientList_insert(_patient_list, _sickBed_len){
+export function _monitoring_patientList_insert(_patient_list, _sickBed_len){
     /*
     _patient_list : 환자 측정 리스트
     _sickBed_len : 병상 갯수

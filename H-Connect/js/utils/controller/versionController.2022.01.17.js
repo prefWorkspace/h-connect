@@ -73,36 +73,42 @@ const VERSION = {
         },
         'controller' : {
             'commonRequest.js' : {
+                type:'module',
                 priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
             },
             'historyController.js' : {
+                type:'module',
                 priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.26.12.45'
             },
             'cookieController.js' : {
+                type:'module',
                 priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
             },
             'localStorageController.js' : {
+                type:'module',
                 priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.17.11.33'
             },
             'sessionController.js' : {
+                type:'module',
                 priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
                 version:'2022.01.27.09.24'
             },
             'serverController.js' : {
+                type:'module',
                 priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
@@ -112,6 +118,7 @@ const VERSION = {
         'module' : {
             'auth' : {
                 'login.js' : {
+                    type:'module',
                     url_path:'/||/index',
                     file_path:'/H-Connect/js/utils/module/auth/',
                     version:'2022.01.17.11.33',
@@ -135,6 +142,7 @@ const VERSION = {
         'template' : {
             'header' : {
                 'headerSearchPatientInsert.js' : {
+                    type:'module',
                     priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/template/header/',
@@ -180,6 +188,7 @@ const VERSION = {
             },
             'patient_monitoring' : {
                 'insertPatientInform.js' : {
+                    type:'module',
                     priority:2,
                     url_path:'/nurse/patient||/nurse/arteriotony',
                     file_path:'/H-Connect/js/nurse/template/patient_monitoring/',
@@ -187,6 +196,7 @@ const VERSION = {
                 },
                 'patient' : {
                     'insertPatientVital.js' : {
+                        type:"module",
                         priority:2,
                         url_path:'/nurse/patient',
                         file_path:'/H-Connect/js/nurse/template/patient_monitoring/patient/',
@@ -217,6 +227,7 @@ const VERSION = {
         'action' : {
             'header' : {
                 'getPatientSearchList.js' : {
+                    type:'module',
                     priority:0,
                     url_path:'/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                     file_path:'/H-Connect/js/nurse/action/header/',
@@ -231,6 +242,7 @@ const VERSION = {
                     version:'2022.01.18.15.22'
                 },
                 'websoket_test.js' : {
+                    type:'module',
                     priority : 1,
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/action/monitoring/',
@@ -239,6 +251,7 @@ const VERSION = {
             },
             'patient_monitoring' : {
                 'getPatientInform.js' : {
+                    type:'module',
                     priority:1,
                     url_path:'/nurse/patient||/nurse/arteriotony',
                     file_path:'/H-Connect/js/nurse/action/patient_monitoring/',
@@ -246,6 +259,7 @@ const VERSION = {
                 },
                 'patient' : {
                     'patientInit.js' : {
+                        type:'module',
                         priority:2,
                         url_path:'/nurse/patient',
                         file_path:'/H-Connect/js/nurse/action/patient_monitoring/patient/',

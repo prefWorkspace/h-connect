@@ -1,5 +1,5 @@
 
-const cookieController = {
+export const cookieController = {
     setCookie: (key, value, time)  => {
         let toDay = new Date();
         toDay.setDate(toDay.getDate() + time);

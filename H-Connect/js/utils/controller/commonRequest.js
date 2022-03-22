@@ -1,5 +1,5 @@
-
-const request_Date_Data = ()=> {
+import { localStorageController } from "./localStorageController.js";
+export const request_Date_Data = ()=> {
     const today = new Date();
 
     const year = today.getFullYear().toString();
@@ -13,7 +13,7 @@ const request_Date_Data = ()=> {
     return `${year.padStart(2, "0")}-${month.padStart(2, "0")}-${day.padStart(2, "0")} ${hour.padStart(2, "0")}:${min.padStart(2, "0")}:${seconds.padStart(2, "0")}`;
 }
 
-const request_Data = () => {
+export const request_Data = () => {
     const userData = JSON.parse(localStorageController.getLocalS("userData"));
     return {
         requester: userData.userCode,
@@ -21,7 +21,7 @@ const request_Data = () => {
     }
 }
 
-const commonRequest = () => {
+export const commonRequest = () => {
     return {
         ...request_Data(),
         requestDateTime: request_Date_Data(),
@@ -32,7 +32,7 @@ const commonRequest = () => {
     }
 }
 
-const timestamp = () => {
+export const timestamp = () => {
     let date = yyyymmddhhmmss;
     const res = date.replaceAll("-", "").replaceAll(":", "").replaceAll(" ", "");
     return res;

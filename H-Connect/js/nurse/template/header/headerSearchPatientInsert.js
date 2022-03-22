@@ -1,8 +1,11 @@
+import { history } from "../../../utils/controller/historyController.js";
+import {serverController} from '../../../utils/controller/serverController.js';
+window._history = history;
 /* s: 환자검색 리스트블록 */
-function _searchPatientBlock(_data){
+export function _searchPatientBlock(_data){
     const {measurementCode, name, birthday, gender, patientCode, ward, sickRoom, sickBed} = _data || {};
     return `
-    <p class="patient_list" onclick='history.push("/nurse/patient.html?measurement_code=${measurementCode}")'>
+    <p class="patient_list" onclick='window._history.push("/nurse/patient.html?measurement_code=${measurementCode}")'>
         <span>${name}</span>
         (<span>${AGE_CALC(birthday)}</span>.
         <span>${gender === 1 ? '남자' : '여자'}</span>).
@@ -32,7 +35,7 @@ function _searchPatientBlock(_data){
 
 
 /* s: 환자검색 리스트 렌더 */
-function _header_searchPatientList_insert(_patient_list){
+export function _header_searchPatientList_insert(_patient_list){
 
     const _$header_searchPatientList_wrap = $('.search_patient .wrap_inner');
     if(_patient_list && _$header_searchPatientList_wrap){
@@ -50,7 +53,7 @@ function _header_searchPatientList_insert(_patient_list){
 
 
 /* s: 환자검색 기능 */
-function _header_findPatient_handle(_patient_list){
+export function _header_findPatient_handle(_patient_list){
 
     /* 환자 정보(이름, 코드) 가공 */
     const _tempPatientList = _patient_list;

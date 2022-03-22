@@ -1,14 +1,13 @@
-// import cookieController from "./cookieController.js";
-// import localStorageController from "./localStorageController.js";
+import { sessionController } from "./sessionController.js";
 
 // 서버 ip
-const ip = "https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/"; 
-const sockeIp = "wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole";
-const LOGIN_TOKEN = sessionController.getSession("accesToken");
+export const ip = "https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/"; 
+export const sockeIp = "wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole";
+export const LOGIN_TOKEN = sessionController.getSession("accesToken");
 
 
 /* jquery ajax */
-const serverController = {
+export const serverController = {
     ajaxAwaitController: (path,type,formData,callBack,errorCallBack) => {
         return  $.ajax({
             beforeSend: function (xhr){
@@ -56,7 +55,7 @@ const serverController = {
     }
 };
 
-const session_renew = (res) => {
+export const session_renew = (res) => {
 
     if(res.message !== "session_renew") return;
 

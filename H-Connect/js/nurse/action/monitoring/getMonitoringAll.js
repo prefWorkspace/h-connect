@@ -1,3 +1,6 @@
+import { serverController } from '../../../utils/controller/serverController.js';
+import {commonRequest} from '../../../utils/controller/commonRequest.js';
+import {_monitorBlock_have, _monitorBlock_none, _monitoring_patientList_insert} from '../../template/monitoring/insertMonitoringPatient.js';
 /**
  * 해당 파일은 /nurse/monitoring.html 에서 환자 실시간 모니터링을 하는 페이지에 관련된 화면입니다.
  */

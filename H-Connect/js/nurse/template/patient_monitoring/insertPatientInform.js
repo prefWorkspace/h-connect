@@ -1,8 +1,9 @@
-function _patient_inform_insert(){
+import {history} from '../../../utils/controller/historyController.js';
+export function _patient_inform_insert(_patient){
     /* 환자 측정 상세정보 왼쪽 환자 정보 세팅 */
     
     /* 환자 정보 jquery dom 선언 */
-    const { name, birthday, gender, patientCode, ward, sickRoom, sickBed } = PATIENT.inform || {};
+    const { name, birthday, gender, patientCode, ward, sickRoom, sickBed } = _patient || {};
     const _$p_informEl = $('.monitoring_patient .management.patient .title');
     
     const _$p_inform_name = $('.monitoring_patient .management.patient .title .name');
@@ -45,12 +46,12 @@ function _patient_nav_handle(){
 
     _$link_patient_el.off().on("click", function(){
         if(!$(this).hasClass("on")){
-            history.push(`/nurse/patient.html?${_measurementCode}`);
+            history.linkTo(`/nurse/patient.html?${_measurementCode}`);
         }
     })
     _$link_arteriotony_el.off().on("click", function(){
         if(!$(this).hasClass("on")){
-            history.push(`/nurse/arteriotony.html?${_measurementCode}`);
+            history.linkTo(`/nurse/arteriotony.html?${_measurementCode}`);
         }
     })
 }
