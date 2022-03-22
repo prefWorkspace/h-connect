@@ -397,7 +397,7 @@
 
 
 .nurse .search_container{
-    width: 392px;
+    width: 100%;
     height: 36px;
     border-radius: 4px;
     border: 1px solid #007A94;
@@ -1553,18 +1553,10 @@
     color: #fff;
 }
 
-.monitoring_patient .vital_chart .title div{
-    display: flex;
-}
-
-.monitoring_patient .vital_chart .title> :first-child :first-child {
-    width: 150px;
-}
-
-.monitoring_patient .chart_time{
-    display: flex;
-    justify-content: flex-end;
-}
+.monitoring_patient .vital_chart .title div{ display: flex;}
+.monitoring_patient .vital_chart .title> :first-child :first-child {width: 150px;}
+.monitoring_patient .chart_time{justify-content: flex-end;}
+.monitoring_patient .chart_time p{display: flex;}
 
 .monitoring_patient .vital_chart .cont{
     width: 1316px;
@@ -1573,6 +1565,8 @@
     background: #000;
     border-radius: 0 0 8px 8px;
 }
+
+.monitoring_patient .tab_wrap{display: flex; align-items: center; justify-content: space-between;}
 
 .monitoring_patient ul.tabs li{
     width: 144px;
@@ -1593,6 +1587,13 @@
     background: #007A94;
     color: #fff;
 }
+
+.monitoring_patient .tab_wrap button{
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+}
+.monitoring_patient .tab_wrap button:hover{background: #eee;}
   
 .monitoring_patient .tab-content{
     display: none;
@@ -1830,100 +1831,96 @@
     color: #fff;
 }
 
-.monitoring_patient .cont .graphical .hr_chart{
-    margin-top: 62px;
+.monitoring_patient .graph_wrap{
+    height: 392px;
+    overflow: auto;
 }
 
-.monitoring_patient .graphical .hr_chart{
+.monitoring_patient .graph_wrap::-webkit-scrollbar{display: none;}
+.monitoring_patient .graph_wrap .chart{
+    padding: 42px 0 41px;
     display: flex;
-    position: relative;
 }
+.monitoring_patient .graph_wrap .left{width: fit-content;padding: 0;margin: -4px 11px 0 0;display: flex;}
+.monitoring_patient .graph_wrap .chart p{color: #8A9296;}
+.monitoring_patient .chart .index p{margin-right: 20px;}
+.monitoring_patient .hr_chart .index p{color: #00FE19;}
+.monitoring_patient .sp_chart .index p{color: #00FFFF;}
+.monitoring_patient .resp_chart .index p{color: #EEFF00;}
+.monitoring_patient .temp_chart .index p{color: #FF5499;}
 
-.monitoring_patient .graphical .hr_chart p{
-    color: #888;
+.monitoring_patient .graph_wrap .chart .bpm{
+    line-height: 30px;
+    text-align: right;
 }
-
-.monitoring_patient .cont .graphical .hr_index p{
-    margin-right: 31px;
-}
-
-.monitoring_patient .graphical .hr_index p{
-    color: #fff;
-}
-
-.monitoring_patient .graphical .hr_line{
-    width: 1136px;
-    margin-bottom: 31px;
-    border-bottom: 1px solid #eee;
-}
-
-.monitoring_patient .cont .graphical .hr_chart> div> div> :last-child{
-    margin: 0;
-}
-
-.monitoring_patient .cont .graphical .hr_time{
-    width: 1082px;
-    margin: 0 auto;
-    padding: 27px 0 0;
+.monitoring_patient .graph_wrap .right{width: 1153px;padding: 0;position: relative;}
+.monitoring_patient .graph_wrap .bg_graph{height: 190px;}
+.monitoring_patient .row_time{
+    padding: 0 0 0 27px;
+    margin: 7px 0 0;
     font-size: 12px;
-    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
 }
 
-.monitoring_patient .cont .graphical .hr_time> p{
-    display: flex;
-}
+.monitoring_patient .row_time > :last-child{margin: 0;}
 
-.monitoring_patient .cont .graphical .hr_time> :last-child{
-    margin: 0;
-}
-
-.monitoring_patient .cont .graphical .hr_img{
-    width: 400px;
-    height: 36px;
+.monitoring_patient .time_line{
     position: absolute;
-    top: 23px;
-    left: 365px;
-    /* z-index: 999; */
-}
-
-.monitoring_patient .cont .graphical .time_line{
-    position: absolute;
-    top: -38px;
+    top: -27px;
     left: 50%;
     transform: translateX(-50%);
+    margin-left: -21px;
 }
 
-.monitoring_patient .cont .graphical .time_line .time{
+.monitoring_patient .time_line .time{
     font-size: 12px;
     text-align: center;
-    color: yellow;
     display: flex;
 }
 
-.monitoring_patient .cont .graphical .time_line::after{
+.monitoring_patient .time_line::after{
     position: absolute;
     content: '';
     width: 2px;
-    height: 220px;
-    background-color: #ff0;
+    height: 190px;
     top: 29px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.monitoring_patient .cont .graphical .time_line::before{
+.monitoring_patient .time_line::before{
     position: absolute;
     content: '';
-    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 19px;
     left: 50%;
     transform: translateX(-50%);
 }
+
+.monitoring_patient .graph_wrap .hr_chart .time{color: #00FE22;}
+.monitoring_patient .hr_chart .row_time{color: #00FE22;}
+.monitoring_patient .hr_chart .time_line::after{background: #00FE22;}
+.monitoring_patient .hr_chart .time_line::before{background: url('../img/icon/tri_green.svg') no-repeat center / contain;}
+
+.monitoring_patient .graph_wrap .sp_chart .time{color: #00FFFF;}
+.monitoring_patient .sp_chart .row_time{color: #00FFFF;}
+.monitoring_patient .sp_chart .time_line::after{background: #00FFFF;}
+.monitoring_patient .sp_chart .time_line::before{background: url('../img/icon/tri_blue.svg') no-repeat center / contain;}
+
+.monitoring_patient .graph_wrap .resp_chart .time{color: #EEFF00;}
+.monitoring_patient .resp_chart .row_time{color: #EEFF00;}
+.monitoring_patient .resp_chart .time_line::after{background: #EEFF00;}
+.monitoring_patient .resp_chart .time_line::before{background: url('../img/icon/tri_yellow.svg') no-repeat center / contain;}
+
+.monitoring_patient .graph_wrap .temp_chart .time{color: #FF5499;}
+.monitoring_patient .temp_chart .row_time{color: #FF5499;}
+.monitoring_patient .temp_chart .time_line::after{background: #FF5499;}
+.monitoring_patient .temp_chart .time_line::before{background: url('../img/icon/tri_pink.svg') no-repeat center / contain;}
+
+
+
 
 /* event */
 /* .monitoring_patient .cont .event .table_title .date_time{
@@ -2402,7 +2399,10 @@
     border-radius: 4px;
     background-color: #fff;
     font-size: 12px;
+    color: #940045;
 }
+
+.arteriotony .table_body> div .btn_list .bl{color: #007A94;}
 
 .arteriotony .table_body> div .btn_list .btn_delete{
     margin-left: 8px;

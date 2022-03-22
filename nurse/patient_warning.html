@@ -1336,12 +1336,16 @@
                     <div class="container">
 
                         <!-- 탭메뉴 -->
-                        <ul class="tabs">
-                            <li class="tab-link current" data-tab="tab-1">Current Vital</li>
-                            <li class="tab-link" data-tab="tab-2">Tabular Trend</li>
-                            <li class="tab-link" data-tab="tab-3">Graphical Trend</li>
-                            <li class="tab-link" data-tab="tab-4">Event</li>
-                        </ul>
+                        <div class="tab_wrap">
+                            <ul class="tabs">
+                                <li class="tab-link  current" data-tab="tab-1">Current Vital</li>
+                                <li class="tab-link" data-tab="tab-2">Tabular Trend</li>
+                                <li class="tab-link" data-tab="tab-3">Graphical Trend</li>
+                                <li class="tab-link" data-tab="tab-4">Event</li>
+                            </ul>
+
+                            <button type="button" class="btn bl btn_set">Setting</button>
+                        </div> 
                       
                         <!-- current vital -->
                         <div id="tab-1" class="tab-content current">
@@ -1985,79 +1989,196 @@
                                         <div class="error"><p>-</p></div>
                                     </div>
                                 </div>
+<!-- graph_wrap -->
+                                        <div class="graph_wrap">
+                                            <!-- hr_chart -->
+                                            <div class="chart hr_chart">
+                                                <!-- left -->
+                                                <div class="left">
+                                                    <div class="index">
+                                                        <p>HR<br>(bpm)</p>
+                                                    </div>
 
-                                <div class="hr_chart">
-                                    <div class="hr_index">
-                                        <p>HR</p>
-                                        <p>(bpm)</p>
-                                    </div>
+                                                    <p class="bpm">
+                                                        240<br>
+                                                        200<br>
+                                                        160<br>
+                                                        120<br>
+                                                        80<br>
+                                                        40<br>
+                                                        0
+                                                    </p>
+                                                </div>                                                
 
-                                    <div>
-                                        <div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
-                                            <div class="hr_line"></div>
+                                                <div class="right">
+                                                    <div class="bg_graph">
+                                                        <img src="../H-Connect/img/graph/background.png" alt="그래프 백그라운드 이미지">
+                                                    </div>
+
+                                                    <div class="row_time">
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                    </div>
+
+                                                    <div class="time_line">
+                                                        <p class="time">
+                                                            <span>00</span>:
+                                                            <span>02</span>:
+                                                            <span>00</span>
+                                                        </p>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+
+                                            <!-- sp_chart -->
+                                            <div class="chart sp_chart">
+                                                <!-- left -->
+                                                <div class="left">
+                                                    <div class="index">
+                                                        <p>SPO2<br>(%)</p>
+                                                    </div>
+
+                                                    <p class="bpm">
+                                                        240<br>
+                                                        200<br>
+                                                        160<br>
+                                                        120<br>
+                                                        80<br>
+                                                        40<br>
+                                                        0
+                                                    </p>
+                                                </div>                                                
+
+                                                <div class="right">
+                                                    <div class="bg_graph">
+                                                        <img src="../H-Connect/img/graph/background.png" alt="그래프 백그라운드 이미지">
+                                                    </div>
+
+                                                    <div class="row_time">
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                    </div>
+
+                                                    <div class="time_line">
+                                                        <p class="time">
+                                                            <span>00</span>:
+                                                            <span>02</span>:
+                                                            <span>00</span>
+                                                        </p>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+
+                                            <!-- resp_chart -->
+                                            <div class="chart resp_chart">
+                                                <!-- left -->
+                                                <div class="left">
+                                                    <div class="index">
+                                                        <p>RESP</p>
+                                                    </div>
+
+                                                    <p class="bpm">
+                                                        240<br>
+                                                        200<br>
+                                                        160<br>
+                                                        120<br>
+                                                        80<br>
+                                                        40<br>
+                                                        0
+                                                    </p>
+                                                </div>                                                
+
+                                                <div class="right">
+                                                    <div class="bg_graph">
+                                                        <img src="../H-Connect/img/graph/background.png" alt="그래프 백그라운드 이미지">
+                                                    </div>
+
+                                                    <div class="row_time">
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                    </div>
+
+                                                    <div class="time_line">
+                                                        <p class="time">
+                                                            <span>00</span>:
+                                                            <span>02</span>:
+                                                            <span>00</span>
+                                                        </p>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+
+                                            <!-- temp_chart -->
+                                            <div class="chart temp_chart">
+                                                <!-- left -->
+                                                <div class="left">
+                                                    <div class="index">
+                                                        <p>TEMP<br>(°C)</p>
+                                                    </div>
+
+                                                    <p class="bpm">
+                                                        240<br>
+                                                        200<br>
+                                                        160<br>
+                                                        120<br>
+                                                        80<br>
+                                                        40<br>
+                                                        0
+                                                    </p>
+                                                </div>                                                
+
+                                                <div class="right">
+                                                    <div class="bg_graph">
+                                                        <img src="../H-Connect/img/graph/background.png" alt="그래프 백그라운드 이미지">
+                                                    </div>
+
+                                                    <div class="row_time">
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                       <p>00:00:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:01:00</p>
+                                                       <p>00:02:00</p>
+                                                    </div>
+
+                                                    <div class="time_line">
+                                                        <p class="time">
+                                                            <span>00</span>:
+                                                            <span>02</span>:
+                                                            <span>00</span>
+                                                        </p>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
                                         </div>
-                                        
-
-                                       <div class="hr_time">
-                                           <div>
-                                                <p>
-                                                    <span>21</span>.
-                                                    <span>09</span>.
-                                                    <span>15</span>
-                                                </p>
-                                           </div>
-
-                                            <p class="start_time">
-                                                <span>00</span>:
-                                                <span>00</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="second_time">
-                                                <span>00</span>:
-                                                <span>01</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="third_time">
-                                                <span>00</span>:
-                                                <span>02</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="fourth_time">
-                                                <span>00</span>:
-                                                <span>03</span>:
-                                                <span>00</span>
-                                            </p>
-
-                                            <p class="fifth_time">
-                                                <span>00</span>:
-                                                <span>04</span>:
-                                                <span>00</span>
-                                            </p>
-                                       </div>
-                                    </div>
-
-                                    <div class="hr_img">
-                                        <img src="/H-Connect/img/graph/hr_dot.png" alt="점으로된 그래프">
-                                    </div>
-
-                                    <div class="time_line">
-                                        <p class="time">
-                                            <span>00</span>:
-                                            <span>02</span>:
-                                            <span>00</span>
-                                        </p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
 

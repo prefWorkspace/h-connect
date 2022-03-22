@@ -206,7 +206,11 @@ $(function () {
         location.href="patient_warning.html";
     })
     $('.patient_vital .all_patient .patient_monitor.empty').on('click', function(){
-        location.href="measure.html";
+        $('.new_room_pop.pop .overlay').fadeIn();
+    })
+
+    $('.monitoring_patient .tab_wrap button').click(function(){
+        $('.interval_set .overlay').fadeIn();
     })
 
     $('.cont .resp .bell_num').on('click', function(){

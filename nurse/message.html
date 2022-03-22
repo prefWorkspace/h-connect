@@ -110,8 +110,8 @@
 
             <div class="wrap_inner">
                 <!-- 메세지 목록 -->
-                <!-- 대화 상대가 없으면 대화창에 add class no_message -->
-                <section class="section message_list">
+                <!-- 대화 상대가 없으면 message_list addclass no_message -->
+                <section class="section message_list no_message">
                         <div class="title message_title">
                             <div>
                                 <div class="title_text">
@@ -232,8 +232,8 @@
                 </section>
 
                 <!-- 대화창 -->
-                <!-- 대화 상대가 없으면 대화창에 add class no_message -->
-                <section class="section right message_talk">
+                <!-- 대화 상대가 없으면 message_talk addclass no_message -->
+                <section class="section right message_talk no_message">
                     <div class="title talk_title">
                         <p>김골절 교수님</p>
                         <p>마지막 메세지.
@@ -247,7 +247,8 @@
                         메세지 함이 비어있습니다.
                     </div>
 
-                    <div class="search_container">
+                    <!-- 메세지 없을떄 addClass no_search -->
+                    <div class="search_container no_search">
                         <div>
                             <input type="text" placeholder="메세지 내용을 입력해주세요">
 
