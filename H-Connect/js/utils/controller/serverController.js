@@ -1,9 +1,9 @@
 import { sessionController } from "./sessionController.js";
 
 // 서버 ip
-const ip = "https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/"; 
-const sockeIp = "wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole";
-const LOGIN_TOKEN = sessionController.getSession("accesToken");
+export const ip = "https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/"; 
+export const sockeIp = "wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole";
+export const LOGIN_TOKEN = sessionController.getSession("accesToken");
 
 
 /* jquery ajax */
