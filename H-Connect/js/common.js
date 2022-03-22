@@ -362,9 +362,24 @@ $(function () {
     $('.nurse_message .message_list').hide();
     $('.nurse_message .message_talk').hide();
 
+<<<<<<< HEAD
     $('.nurse_message .select_medi').show();
     $('.nurse_message .send_message').show();
   });
+=======
+$('.dashboard .account').on('click', function(){
+    $('.pop.dash_ward_name .overlay').fadeIn();
+})
+$('.dashboard .taget_view .title .btn_list .delete div').click(function(){
+    $('.delete_ward_set.pop .overlay').fadeIn();
+})
+
+    // 상황해제 버튼 클릭함
+    $('.pop.monitor .btn_clear').on('click', function(){
+        $('.pop.monitor .btn_clear').hide();
+        $('.pop.monitor .btn_situ').show();
+    })
+>>>>>>> 315823e3c90cc5acb01ec963213f9278e22eac5a
 
   // 메세지 전송완료 팝업
   $('.message .send_message .btn_list .btn_send').on('click', function () {
