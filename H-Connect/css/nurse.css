@@ -524,7 +524,7 @@
 
 .nurse_measure .measure_status .search_container input{
     width: 90%;
-    height: 40px;
+    height: 100%;
 }
 
 .nurse_measure .measure_status .search_container button{
@@ -678,9 +678,7 @@
     height: 32px;
     padding: 0;
     border-radius: 4px;
-    background: none;
     font-size: 12px;
-    background-color: #fff;
     display: block;
 }
 
@@ -884,14 +882,11 @@
     margin-bottom: 13px;
 }
 
-.modifi_hospital .title .btn_new_hospital{
-    width: 96px;
-    height: 40px;
-    border-radius: 4px;
-    background: #007A94;
-    font-size: 14px;
-    color: #fff;
-}
+.modifi_hospital .title button{width: 64px;height: 40px;font-size: 14px;}
+
+.modifi_hospital .title .btn_delete{background: #940045;margin-right: 10px;}
+
+.modifi_hospital .title .btn_new_hospital:disabled{background: #CCCCCC; color: #888888;}
 
 .modifi_hospital .container .cont{
     padding: 16px 16px 45px;
@@ -906,16 +901,16 @@
     border-radius: 4px;
     background: #eee;
     font-size: 12px;
+    color: #000;
+}
+
+.modifi_hospital .cont .hospital_patient input::placeholder{
+    color: #888888;
 }
 
 .modifi_hospital .cont .hospital_patient .patient_info{
     display: flex;
 }
-
-.modifi_hospital .hospital_patient input::placeholder{
-    color: #000;
-}
-
 .modifi_hospital .hospital_patient> div{
     display: flex;
 }
@@ -969,26 +964,25 @@
 
 .modifi_hospital .device_room> div{
     padding: 16px;
+    border-bottom:1px solid #eee;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom:1px solid #eee;
 }
+
+.modifi_hospital .device_room> div:not(.control, .btn_add){display: none;}
 
 .modifi_hospital .device_room> div p{
-    width: 110px;
+    width: 120px;
     font-size: 12px;
-    vertical-align: middle;
 }
 
-.modifi_hospital .device_room> div> :first-child{
-    margin-right: 58px;
-}
+.modifi_hospital .device_room> div p:nth-child(2){width: fit-content; margin-right: 130px;}
 
 .modifi_hospital .device_room> div .btn_list{
+    width: 136px;
     display: flex;
     justify-content: space-between;
-    vertical-align: middle;
 }
 
 .modifi_hospital .device_room> div .btn_list button{
@@ -1009,16 +1003,17 @@
     display: block;
 }
 
-.modifi_hospital .device_room .btn_add a{
+.modifi_hospital .device_room .btn_add button{
     margin: 0;
     font-size: 14px;
-    color: #888;
+    color: #007A94;
 }
 
 .modifi_hospital .device_room> div{
     border-bottom: 1px solid #eee;
 }
 
+.modifi_hospital .device_room .control{justify-content: space-between;}
 .modifi_hospital .device_room .control div{
     display: flex;
 }
