@@ -73,6 +73,7 @@ const VERSION = {
         },
         'controller' : {
             'commonRequest.js' : {
+                type:'module',
                 priority:0,
                 url_path:'*',
                 file_path:'/H-Connect/js/utils/controller/',
