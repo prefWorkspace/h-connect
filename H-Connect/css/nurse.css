@@ -524,7 +524,7 @@
 
 .nurse_measure .measure_status .search_container input{
     width: 90%;
-    height: 40px;
+    height: 100%;
 }
 
 .nurse_measure .measure_status .search_container button{
@@ -678,9 +678,7 @@
     height: 32px;
     padding: 0;
     border-radius: 4px;
-    background: none;
     font-size: 12px;
-    background-color: #fff;
     display: block;
 }
 
@@ -884,14 +882,11 @@
     margin-bottom: 13px;
 }
 
-.modifi_hospital .title .btn_new_hospital{
-    width: 96px;
-    height: 40px;
-    border-radius: 4px;
-    background: #007A94;
-    font-size: 14px;
-    color: #fff;
-}
+.modifi_hospital .title button{width: 64px;height: 40px;font-size: 14px;}
+
+.modifi_hospital .title .btn_delete{background: #940045;margin-right: 10px;}
+
+.modifi_hospital .title .btn_new_hospital:disabled{background: #CCCCCC; color: #888888;}
 
 .modifi_hospital .container .cont{
     padding: 16px 16px 45px;
@@ -906,16 +901,16 @@
     border-radius: 4px;
     background: #eee;
     font-size: 12px;
+    color: #000;
+}
+
+.modifi_hospital .cont .hospital_patient input::placeholder{
+    color: #888888;
 }
 
 .modifi_hospital .cont .hospital_patient .patient_info{
     display: flex;
 }
-
-.modifi_hospital .hospital_patient input::placeholder{
-    color: #000;
-}
-
 .modifi_hospital .hospital_patient> div{
     display: flex;
 }
@@ -969,26 +964,25 @@
 
 .modifi_hospital .device_room> div{
     padding: 16px;
+    border-bottom:1px solid #eee;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom:1px solid #eee;
 }
+
+.modifi_hospital .device_room> div:not(.control, .btn_add){display: none;}
 
 .modifi_hospital .device_room> div p{
-    width: 110px;
+    width: 120px;
     font-size: 12px;
-    vertical-align: middle;
 }
 
-.modifi_hospital .device_room> div> :first-child{
-    margin-right: 58px;
-}
+.modifi_hospital .device_room> div p:nth-child(2){width: fit-content; margin-right: 130px;}
 
 .modifi_hospital .device_room> div .btn_list{
+    width: 136px;
     display: flex;
     justify-content: space-between;
-    vertical-align: middle;
 }
 
 .modifi_hospital .device_room> div .btn_list button{
@@ -1009,16 +1003,17 @@
     display: block;
 }
 
-.modifi_hospital .device_room .btn_add a{
+.modifi_hospital .device_room .btn_add button{
     margin: 0;
     font-size: 14px;
-    color: #888;
+    color: #007A94;
 }
 
 .modifi_hospital .device_room> div{
     border-bottom: 1px solid #eee;
 }
 
+.modifi_hospital .device_room .control{justify-content: space-between;}
 .modifi_hospital .device_room .control div{
     display: flex;
 }
@@ -2728,9 +2723,12 @@
 }
 
 .dashboard .taget_view .btn_list button{
+    margin-right: 8px;
     border: 1px solid #007A94;
     color: #007A94;
 }
+
+.dashboard .taget_view .btn_list button:nth-last-child(2){margin: 0;}
 
 .dashboard .taget_view .btn_first{
     margin-left: 68px;
@@ -2741,9 +2739,9 @@
     color: #fff;
 }
 
-.dashboard .taget_view .btn_second{
-    margin: 0 32px 0 8px;
-}
+.dashboard .taget_view .btn_list .btn_addView{margin: 0 0 0 32px;}
+
+.dashboard .taget_view .title .btn_list .delete{padding-left: 16px;display: flex;align-items: center; justify-content: space-between;}
 
 .dashboard .taget_view .btn_state{
     width: 120px;
@@ -2771,14 +2769,37 @@
     height: 48px;
     padding: 17px;
     margin-bottom: 16px;
+    border-radius: 4px;
     background: #007A94;
     color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
+
+.dashboard .inpat .account:hover{background: #004F60;}
 
 .dashboard .inpat .account p{
     font-size: 10px;
     font-weight: normal;
     text-align: center;
+}
+
+.dashboard .inpat .account div{
+    line-height: 12px;
+    font-size: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .inpat .account img{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px;
+    filter: invert(94%) sepia(6%) saturate(26%) hue-rotate(302deg) brightness(106%) contrast(107%)
 }
 
 .dashboard .check_pati{
