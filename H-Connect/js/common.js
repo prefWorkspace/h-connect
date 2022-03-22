@@ -312,6 +312,13 @@ $('.ward_dashboard .sys_vital.active').on('click', function(){
     $('.pop.monitor .overlay').fadeIn();
 })
 
+$('.dashboard .account').on('click', function(){
+    $('.pop.dash_ward_name .overlay').fadeIn();
+})
+$('.dashboard .taget_view .title .btn_list .delete div').click(function(){
+    $('.delete_ward_set.pop .overlay').fadeIn();
+})
+
     // 상황해제 버튼 클릭함
     $('.pop.monitor .btn_clear').on('click', function(){
         $('.pop.monitor .btn_clear').hide();

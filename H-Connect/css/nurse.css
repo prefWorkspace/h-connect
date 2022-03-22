@@ -2723,9 +2723,12 @@
 }
 
 .dashboard .taget_view .btn_list button{
+    margin-right: 8px;
     border: 1px solid #007A94;
     color: #007A94;
 }
+
+.dashboard .taget_view .btn_list button:nth-last-child(2){margin: 0;}
 
 .dashboard .taget_view .btn_first{
     margin-left: 68px;
@@ -2736,9 +2739,9 @@
     color: #fff;
 }
 
-.dashboard .taget_view .btn_second{
-    margin: 0 32px 0 8px;
-}
+.dashboard .taget_view .btn_list .btn_addView{margin: 0 0 0 32px;}
+
+.dashboard .taget_view .title .btn_list .delete{padding-left: 16px;display: flex;align-items: center; justify-content: space-between;}
 
 .dashboard .taget_view .btn_state{
     width: 120px;
@@ -2766,14 +2769,37 @@
     height: 48px;
     padding: 17px;
     margin-bottom: 16px;
+    border-radius: 4px;
     background: #007A94;
     color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
+
+.dashboard .inpat .account:hover{background: #004F60;}
 
 .dashboard .inpat .account p{
     font-size: 10px;
     font-weight: normal;
     text-align: center;
+}
+
+.dashboard .inpat .account div{
+    line-height: 12px;
+    font-size: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .inpat .account img{
+    width: 6px;
+    height: 12px;
+    margin-left: 8px;
+    filter: invert(94%) sepia(6%) saturate(26%) hue-rotate(302deg) brightness(106%) contrast(107%)
 }
 
 .dashboard .check_pati{
