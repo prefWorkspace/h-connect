@@ -67,12 +67,12 @@
                 <div class="title">
                     <h2>병실생성</h2>
                 </div>
-
-                 <div class="content">
+                
+                <div class="content">
                      <p>병실이름 </p>
 
                      <input type="text">
-                 </div>
+                </div>
 
                  <div class="content">
                     <p>병상 수 </p>
@@ -86,7 +86,7 @@
                             <li data-number="3" class="optionItem room_option">3인실</li>
                             <li data-number="4" class="optionItem room_option">4인실</li>
                             <li data-number="5" class="optionItem room_option">5인실</li>
-                            <li data-number="6" class="optionItem room_option">6인실</li>
+                            <li data-number="6" class="optionItem room_option active">6인실</li>
                         </ul>
                     </div>
                 </div>
@@ -125,15 +125,15 @@
                             <li data-number="3" class="optionItem room_option">3인실</li>
                             <li data-number="4" class="optionItem room_option">4인실</li>
                             <li data-number="5" class="optionItem room_option">5인실</li>
-                            <li data-number="6" class="optionItem room_option">6인실</li>
+                            <li data-number="6" class="optionItem room_option active">6인실</li>
                         </ul>
                     </div>
                 </div>
 
-                 <div class="btn_list">
-                     <button type="button" class="btn rd btn_cancel">취소</button>
-                     <button type="button" class="btn blf btn_check">확인</button>
-                 </div>
+                <div class="btn_list">
+                    <button type="button" class="btn rd btn_cancel">취소</button>
+                    <button type="button" class="btn blf btn_check">확인</button>
+                </div>
             </div>
         </div>
     </div>
@@ -721,12 +721,21 @@
         update_label.parentNode.classList.remove('active');
         update_label.innerHTML = item.textContent;
         }
-        // 옵션 클릭시 클릭한 옵션을 넘김
+        // 옵션 클릭시 클릭한 옵션을 넘김 대박...
         newRoom_options.forEach(option => {
-            option.addEventListener('click', () => handleSelect(option))
+            option.addEventListener('click', () => {
+                handleSelect(option);
+                reset(newRoom_options, 'active');
+                option.classList.add('active');
+            })
         })
+
         update_options.forEach(option => {
-            option.addEventListener('click', () => updateHandleSelect(option))
+            option.addEventListener('click', () => {
+                updateHandleSelect(option)
+                reset(update_options, 'active');
+                option.classList.add('active');
+            })
         })
 
         // 라벨을 클릭시 옵션 목록이 열림/닫힘
@@ -741,6 +750,13 @@
         update_label.addEventListener('click', () => {
             update_label.parentNode.classList.toggle("active");
         })
+
+        // 리셋 코드
+        function reset(content, className) {
+            Array.from(content).forEach((element) => {
+                element.classList.remove(className);
+            });
+        }
     </script>
   </body>
 </html>

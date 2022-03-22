@@ -32,7 +32,7 @@
                         <ul class="optionList left_option">
                             <li class="optionItem left_list">전체</li>
                             <li class="optionItem left_list">심전도 패치</li>
-                            <li class="optionItem left_list">산소포화도 측정장치</li>
+                            <li class="optionItem left_list active">산소포화도 측정장치</li>
                             <li class="optionItem left_list">체온 패치</li>
                         </ul>
                     </div> 
@@ -69,7 +69,7 @@
                         <ul class="optionList right_option">
                             <li class="optionItem right_list">전체</li>
                             <li class="optionItem right_list">심전도 패치</li>
-                            <li class="optionItem right_list">산소포화도 측정장치</li>
+                            <li class="optionItem right_list active">산소포화도 측정장치</li>
                             <li class="optionItem right_list">체온 패치</li>
                         </ul>
                     </div> 
@@ -279,7 +279,7 @@
                                     <button class="label device_label" data-type="0">전체</button>
 
                                     <ul class="optionList device_option">
-                                        <li class="optionItem device_optionItem" data-type="0">전체</li>
+                                        <li class="optionItem device_optionItem active" data-type="0">전체</li>
                                         <li class="optionItem device_optionItem" data-type="1">심전도 패치</li>
                                         <li class="optionItem device_optionItem" data-type="3">산소포화도 측정장치</li>
                                         <li class="optionItem device_optionItem" data-type="2">체온 패치</li>
@@ -350,7 +350,7 @@
                                 <div class="selectBox2 select_return s_select">
                                     <button class="label return_label" data-type="0">전체</button>
                                     <ul class="optionList return_option">
-                                        <li class="optionItem return_list" data-type="0">전체</li>
+                                        <li class="optionItem return_list active" data-type="0">전체</li>
                                         <li class="optionItem return_list" data-type="1">심전도 패치</li>
                                         <li class="optionItem return_list" data-type="3">산소포화도 측정장치</li>
                                         <li class="optionItem return_list" data-type="2">체온 패치</li>
@@ -388,95 +388,82 @@
             const leftlabel = document.querySelector('.left_label');
             const leftoptions = document.querySelectorAll('.left_list');
 
+            const rightlabel = document.querySelector('.right_label');
+            const rightoptions = document.querySelectorAll('.right_list');
+
+            const devicelabel = document.querySelector('.device_label');
+            const deviceoptions = document.querySelectorAll('.device_optionItem');
+
+            const returnLabel = document.querySelector('.return_label');
+            const returnOption = document.querySelectorAll('.return_list');
+
             // 클릭한 옵션의 텍스트를 라벨 안에 넣음
             const handleSelect = (item) => {
                 leftlabel.parentNode.classList.remove('active');
                 leftlabel.innerHTML = item.textContent;
             }
-            // 옵션 클릭시 클릭한 옵션을 넘김
-            leftoptions.forEach(option => {
-                option.addEventListener('click', () => handleSelect(option))
-            })
-
-            // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            leftlabel.addEventListener('click', () => {
-            if(leftlabel.parentNode.classList.contains('active')) {
-                leftlabel.parentNode.classList.remove('active');
-            } else {
-                leftlabel.parentNode.classList.add('active');
-            }
-            })
-
-        //장치반납 팝업 셀렉트
-            const rightlabel = document.querySelector('.right_label');
-            const rightoptions = document.querySelectorAll('.right_list');
-
-            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
             const handleSelect2 = (item) => {
                 rightlabel.parentNode.classList.remove('active');
                 rightlabel.innerHTML = item.textContent;
             }
-            // 옵션 클릭시 클릭한 옵션을 넘김
-            rightoptions.forEach(option => {
-                option.addEventListener('click', () => handleSelect2(option))
-            })
-
-            // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            rightlabel.addEventListener('click', () => {
-            if(rightlabel.parentNode.classList.contains('active')) {
-                rightlabel.parentNode.classList.remove('active');
-            } else {
-                rightlabel.parentNode.classList.add('active');
-            }
-            })
-
-       //신규장치 등록 리스트 셀렉트 
-            const devicelabel = document.querySelector('.device_label');
-            const deviceoptions = document.querySelectorAll('.device_optionItem');
-
-            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
             const deviceSelect = (item) => {
                 devicelabel.parentNode.classList.remove('active');
                 devicelabel.innerHTML = item.textContent;
             }
-            // 옵션 클릭시 클릭한 옵션을 넘김
-            deviceoptions.forEach(option => {
-                option.addEventListener('click', () => deviceSelect(option))
-            })
-
-            // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            devicelabel.addEventListener('click', () => {
-            if(devicelabel.parentNode.classList.contains('active')) {
-                devicelabel.parentNode.classList.remove('active');
-            } else {
-                devicelabel.parentNode.classList.add('active');
-            }
-            })
-
-        //신규장치 등록 리스트 셀렉트 
-            const returnLabel = document.querySelector('.return_label');
-            const returnOption = document.querySelectorAll('.return_list');
-
-            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
             const returnSelect = (item) => {
                 returnLabel.parentNode.classList.remove('active');
                 returnLabel.innerHTML = item.textContent;
             }
 
             // 옵션 클릭시 클릭한 옵션을 넘김
+            leftoptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    handleSelect(option);
+                    reset(leftoptions, 'active');
+                    option.classList.add('active');
+                })
+            })
+            rightoptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    handleSelect2(option);
+                    reset(rightoptions, 'active');
+                    option.classList.add('active');
+                })
+            })
+            deviceoptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    deviceSelect(option);
+                    reset(deviceoptions, 'active');
+                    option.classList.add('active');
+                })
+            })
             returnOption.forEach(option => {
-                option.addEventListener('click', () => returnSelect(option))
+                option.addEventListener('click', () => {
+                    returnSelect(option);
+                    reset(returnOption, 'active');
+                    option.classList.add('active');
+                })
             })
 
             // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            returnLabel.addEventListener('click', () => {
-            if(returnLabel.parentNode.classList.contains('active')) {
-                returnLabel.parentNode.classList.remove('active');
-            } else {
-                returnLabel.parentNode.classList.add('active');
-            }
+            leftlabel.addEventListener('click', () => {
+                leftlabel.parentNode.classList.toggle('active');
             })
-        
+            rightlabel.addEventListener('click', () => {
+                rightlabel.parentNode.classList.toggle('active');
+            })
+            devicelabel.addEventListener('click', () => {
+                devicelabel.parentNode.classList.toggle('active');
+            })
+            returnLabel.addEventListener('click', () => {
+                returnLabel.parentNode.classList.toggle('active');
+            })
+        // 리셋 코드
+        function reset(content, className) {
+            Array.from(content).forEach((element) => {
+                element.classList.remove(className);
+            });
+        }
     </script>
    
   </body>
