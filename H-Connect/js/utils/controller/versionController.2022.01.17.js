@@ -11,6 +11,7 @@ const NOW_URL_PATH = pathCalc();
  * 파일명은 확장자가 표시된 (.js) key ex) commonRequest.js
  * --------------------------------------------------------------
  * 파일명에는 다음과 같은 key와 value값이 들어갑니다.
+ * @property {type} : text/javascript / module
  * @property {priority} : 우선순위
  * @property {url_path} : 적용될 url 작성합니다. 여러 파일에 작성되어야 하는경우 || 로 나누고 모든것에 적용이 되어야 하는 경우엔 *을 작성합니다.
  * @property {file_path} : script에 src로 들어갈 path를 작성합니다.(절대경로 기준)
@@ -171,6 +172,7 @@ const VERSION = {
             },
             'monitoring' : {
                 'insertMonitoringPatient.js' : {
+                    type:'module',
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/template/monitoring/',
                     version:'2022.01.18.15.22'
@@ -223,6 +225,7 @@ const VERSION = {
             },
             'monitoring' : {
                 'getMonitoringAll.js' : {
+                    type:'module',
                     url_path:'/nurse/monitoring',
                     file_path:'/H-Connect/js/nurse/action/monitoring/',
                     version:'2022.01.18.15.22'
@@ -453,8 +456,9 @@ function setScript(){
     */
     for(let i = 0; i < SCRIPT_ARR.length; i++){
         const _arr = SCRIPT_ARR[i];
-        const {file_path, file_name, version } = _arr;
+        const {file_path, file_name, version, type } = _arr;
         const scriptEl = document.createElement('script');
+        scriptEl.type = type ? type : 'text/javascript';
         scriptEl.defer = true;
         scriptEl.async = false;
         scriptEl.src = file_path + file_name + '?v=' + version;
