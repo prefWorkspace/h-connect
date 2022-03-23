@@ -1,16 +1,18 @@
-import {commonRequest} from '../../../utils/controller/commonRequest.js';
+import { commonRequest } from '../../../utils/controller/commonRequest.js';
+import { sessionController } from '../../../utils/controller/sessionController.js';
+import { ip, LOGIN_TOKEN } from '../../../utils/controller/serverController.js';
 // websoket 선언 ()안에는 호출할 url을 작성해준다.
 // const wsUrl = '127.0.0.1:5501';
 // const ws = new WebSocket(`ws://${wsUrl}`);
 
-// ws.onopen = (event) => { // 
+// ws.onopen = (event) => { //
 //     let sendData = { event : 'open'};
 //     ws.send(JSON.stringify(sendData));
 // }
 // ws.onmessage = (event)=> { // 받는거
 //     let recData = JSON.parse(event.data);
 //     switch (recData.event) {
-//         case 'response' : 
+//         case 'response' :
 //         console.log(recData.data);
 //         break;
 //     }
@@ -42,7 +44,7 @@ import {commonRequest} from '../../../utils/controller/commonRequest.js';
 //     deviceKinde: 3,
 //     apiRoute: "GWS-1",
 //     requester,
-//     requestDateTime 
+//     requestDateTime
 // };
 
 // let sockJs = new SockJS(`${ip}ws?SX-API-Route=GWS-1&clientKeyName=${"bioSignalData"}&connType=${1}`);
@@ -69,11 +71,32 @@ import {commonRequest} from '../../../utils/controller/commonRequest.js';
 // console.log(stompClient);
 // stompClient.connect(headers, callvak, connectonError);
 
+// const { requester, requestDateTime } = commonRequest();
 
-let passingParameter = {
-    'SX-Auth-Token': GBL.ACCOUNT.TOKEN,
-    deviceKind: custom.request.getDeviceKindCode(),
-    // connType: connType,
-    apiRoute: 'GWS-1',
-    requester
-}
+// let passingParameter = {
+//     'SX-Auth-Token': LOGIN_TOKEN,
+//     deviceKind: 3,
+//     // connType: connType,
+//     apiRoute: 'GWS-1',
+//     requester
+// }
+
+// let streamming = new SockJS(`${ip}ws?SX-API-Route=${'GWS-1'}&clientKeyName=${"bioSignalData"}&connType=${1}`)
+// let stompClient = Stomp.over(streamming);
+// console.log(stompClient);
+// stompClient.connect(passingParameter, callBack, connectonError);
+// function callBack(frame){
+//     console.log("asedfasdfas");
+//     console.log(frame);
+//     stompClient.subscribe("/topic/public/bioSignalData/SEERS_2201251404_IEU0", function(data){
+//         const aaa = JSON.parse(data);
+//         console.log("aaa===");
+//         console.log(aaa);
+//     }, (err) => {
+//         console.log(err);
+//     })
+// };
+
+// function connectonError(err){
+//     console.log(err)
+// };
