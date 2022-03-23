@@ -1820,7 +1820,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop .overlay .pop_cont .content p{
     width: 52px;
-    margin: 10px 64px 0 0;
+    margin: 0 64px 0 0;
     font-size: 14px;
     vertical-align: middle;
     color: #000;
@@ -2228,13 +2228,13 @@ textarea::-webkit-scrollbar-button {
 
 
 /* resp setting menu */
-.pop.setting_menu .overlay .content{
-    display: block;
-}
+.pop.setting_menu .overlay .content{height: 300px;padding: 0;margin-top: 16px; display: block; overflow: auto;}
 
+.pop.setting_menu .overlay .content::-webkit-scrollbar{width: 4px;}
+.pop.setting_menu .overlay .content::-webkit-scrollbar-thumb{border-radius: 10px;background: #ccc;}
 .pop.setting_menu .overlay .content> div{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 /* resp setting */
@@ -2313,7 +2313,9 @@ textarea::-webkit-scrollbar-button {
     display: inline-block;
 }
 
-.pop.setting_menu .content .sweep{
+.pop.setting_menu .overlay .content .sweep,
+.pop.setting_menu .overlay .content .apnea{
+    align-items: flex-start;
     margin-bottom: 16px;
 }
 
@@ -2416,7 +2418,6 @@ textarea::-webkit-scrollbar-button {
 
 .pop.setting_menu .resp .container{
     width: 180px;
-    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
 }
@@ -2514,6 +2515,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 /* temp setting menu */
+.pop.temp_set .content .resp{margin-bottom: 16px;}
 .pop.temp_set .content .sweep .container{
     width: 150px;
     display: flex;
@@ -2525,9 +2527,20 @@ textarea::-webkit-scrollbar-button {
     margin-right: 32px;
 }
 
-.pop.temp_set .content .input_num{
-    margin: 0;
+/* interval setting menu */
+.interval_set.pop .overlay .content> div{align-items: flex-start;}
+.interval_set.pop .overlay .pop_cont .content p{width: fit-content;}
+.interval_set.pop .container{width: 361px;}
+.interval_set.pop .container > div{
+    width: 100%;
+    display: flex;
 }
+
+.interval_set.pop .container .input_wrap{
+    width: 72px;
+    margin: 0 0 8px;
+}
+.interval_set.pop .input_wrap input{display: none;}
 
 
 
