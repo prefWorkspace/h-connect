@@ -1,15 +1,16 @@
 'use strict';
 import { serverController } from '../../../../utils/controller/serverController.js';
 import { commonRequest } from '../../../../utils/controller/commonRequest.js';
+import { device_NameToType } from '../../../../utils/controller/deviceNameHandle.js';
 
-export function cancel_device_unused() {
-    const serialNumber = $(this).data('serialnumber');
-    const deviceType = $(this).data('type');
+export function createDevice() {
+    const device_name = $('#device_name').text();
+    const serialNumber = $('#device_serial').val();
 
     const req = JSON.stringify({
         ...commonRequest(),
         serialNumber,
-        deviceType,
+        deviceType: device_NameToType(device_name),
     });
 
     serverController.ajaxAwaitController(
@@ -17,6 +18,7 @@ export function cancel_device_unused() {
         'POST',
         req,
         (res) => {
+            console.log(res);
             if (res.result) {
                 select_device(0, null);
             }
@@ -27,7 +29,4 @@ export function cancel_device_unused() {
     );
 }
 
-$('.pop.delete_return .overlay .btn_list .btn_cut').on(
-    'click',
-    cancel_device_unused
-);
+$('.pop.regi_device .overlay .btn_list .btn_check').on('click', insert_device);
