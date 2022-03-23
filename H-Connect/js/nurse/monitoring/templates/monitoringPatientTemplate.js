@@ -4,31 +4,31 @@ import { history } from '../../../utils/controller/historyController.js';
 
 window._history = history;
 export function monitorBlock_have(_data) {
-  const {
-    measurementCode,
-    patientCode,
-    name,
-    bioSignalECGLastData,
-    bioSignalSpO2LastData,
-    bioSignalTempLastData,
-  } = _data || {};
-  /**
-   * EWS : emergency warning system => 비상 경고 시스템
-   * HR : heartRate => 심박수
-   * RESP : respiration => 호흡?
-   * SP02 : S(포화도), P(경피), O2(산소) => 산소포화도
-   * TEMP : Temperature => 온도
-   */
-  const { ews, heartRate, resp } = bioSignalECGLastData || {};
-  const { spO2 } = bioSignalSpO2LastData || {};
-  const { temperature } = bioSignalTempLastData || {};
-  /**
-   * < patient_monitor에 해당 클래스 추가되었을 시 >
-   * active(빨간색) : 환자 이상
-   * active yellow(노란색) : 장치 이상
-   * active blue(파란색) : 시스템 이상
-   */
-  return `
+    const {
+        measurementCode,
+        patientCode,
+        name,
+        bioSignalECGLastData,
+        bioSignalSpO2LastData,
+        bioSignalTempLastData,
+    } = _data || {};
+    /**
+     * EWS : emergency warning system => 비상 경고 시스템
+     * HR : heartRate => 심박수
+     * RESP : respiration => 호흡?
+     * SP02 : S(포화도), P(경피), O2(산소) => 산소포화도
+     * TEMP : Temperature => 온도
+     */
+    const { ews, heartRate, resp } = bioSignalECGLastData || {};
+    const { spO2 } = bioSignalSpO2LastData || {};
+    const { temperature } = bioSignalTempLastData || {};
+    /**
+     * < patient_monitor에 해당 클래스 추가되었을 시 >
+     * active(빨간색) : 환자 이상
+     * active yellow(노란색) : 장치 이상
+     * active blue(파란색) : 시스템 이상
+     */
+    return `
     <div class="patient_monitor" onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${measurementCode}')">
         <div class="patient_info">
             <p>
@@ -64,9 +64,10 @@ export function monitorBlock_have(_data) {
     </div>
     `;
 }
-export function monitorBlock_none() {
-  return `
-    <div class="patient_monitor" onclick="_history.linkTo('/nurse/measure.html')">
+export function monitorBlock_none(_data) {
+    const { sickRoomCode, wardCode, sickBedCode } = _data || {};
+    return `
+    <div class="patient_monitor" onclick="_history.linkTo('/nurse/measure.html?sickRoomCode=${sickRoomCode}&sickBedCode=${sickBedCode}&wardCode=${wardCode}')">
         <div class="empty_bed">
             <p>empty_bed</p>
 
@@ -87,17 +88,17 @@ export function monitorBlock_none() {
 /* s : 병실 블록 */
 
 export function monitorRoomBlock(_data) {
-  const { sickRoomItem, patientList } = _data || {};
-  const {
-    sickRoom,
-    sickRoomCode,
-    roomPatientCount, // 병실 환자수
-    roomTotalSickBed, // 병동에 총 병상수
-    roomSpareBedCount, // 여유 병상 수
-    wardCode,
-  } = sickRoomItem || {};
-  //   console.log(sickRoomItem, patientList);
-  return `
+    const { sickRoomItem, patientList } = _data || {};
+    const {
+        sickRoom,
+        sickRoomCode,
+        sickBedList,
+        roomPatientCount, // 병실 환자수
+        roomTotalSickBed, // 병동에 총 병상수
+        roomSpareBedCount, // 여유 병상 수
+        wardCode,
+    } = sickRoomItem || {};
+    return `
     <section class="all_patient room_view">
         <div class="container">
             <div class="pateint_room">
@@ -124,22 +125,38 @@ export function monitorRoomBlock(_data) {
             </div>
 
             <div class="monitor_wrap">
-                ${patientList?.htmlFor((_patient, _index) => {
-                  if (_patient?.sickRoomCode === sickRoomCode) {
-                    return monitorBlock_have(_patient);
-                  } else {
-                    return '';
-                  }
+                ${sickBedList?.htmlFor((_sickBedItem, _index) => {
+                    const findPatient_in_sickBedList = patientList?.find(
+                        (_patientItem) => {
+                            return (
+                                _patientItem?.sickBedCode ===
+                                _sickBedItem?.sickBedCode
+                            );
+                        }
+                    );
+                    if (findPatient_in_sickBedList) {
+                        return monitorBlock_have(findPatient_in_sickBedList);
+                    } else {
+                        return monitorBlock_none(_sickBedItem);
+                    }
                 })}
-                ${Array(roomSpareBedCount > 0 ? roomSpareBedCount : 0)
-                  ?.fill('')
-                  .htmlFor(() => {
-                    return monitorBlock_none();
-                  })}
             </div>
-        </div>
-    </section>  
-  `;
+            </div>
+            </section>  
+            `;
 }
+
+// ${patientList?.htmlFor((_patient, _index) => {
+//     if (_patient?.sickRoomCode === sickRoomCode) {
+//         return monitorBlock_have(_patient);
+//     } else {
+//         return '';
+//     }
+// })}
+// ${Array(roomSpareBedCount > 0 ? roomSpareBedCount : 0)
+//     ?.fill('')
+//     .htmlFor(() => {
+//         return monitorBlock_none();
+//     })}
 
 /* e : 병실 블록 */

@@ -1474,42 +1474,42 @@ img{
     margin-right: 350px;
 }
 
-.default .graph_wrap{
+.remote_connect .graph_wrap{
     height: 392px;
     overflow: auto;
 }
 
-.default .graph_wrap::-webkit-scrollbar{display: none;}
-.default .graph_wrap .chart{
+.remote_connect .graph_wrap::-webkit-scrollbar{display: none;}
+.remote_connect .graph_wrap .chart{
     padding: 42px 0 41px;
     display: flex;
     justify-content: center;
 }
-.default .graph_wrap .left{width: fit-content;padding: 0;margin: -4px 11px 0 0;display: flex;}
-.default .graph_wrap .chart p{color: #8A9296;}
-.default .chart .index p{margin-right: 20px;}
-.default .hr_chart .index p{color: #00FE19;}
-.default .sp_chart .index p{color: #00FFFF;}
-.default .resp_chart .index p{color: #EEFF00;}
-.default .temp_chart .index p{color: #FF5499;}
+.remote_connect .graph_wrap .left{width: fit-content;padding: 0;margin: -4px 11px 0 0;display: flex;}
+.remote_connect .graph_wrap .chart p{color: #8A9296;}
+.remote_connect .chart .index p{margin-right: 20px;}
+.remote_connect .hr_chart .index p{color: #00FE19;}
+.remote_connect .sp_chart .index p{color: #00FFFF;}
+.remote_connect .resp_chart .index p{color: #EEFF00;}
+.remote_connect .temp_chart .index p{color: #FF5499;}
 
-.default .graph_wrap .chart .bpm{
+.remote_connect .graph_wrap .chart .bpm{
     line-height: 30px;
     text-align: right;
 }
-.default .graph_wrap .right{width: 560px;padding: 0;position: relative;}
-.default .graph_wrap .bg_graph{height: 190px;}
-.default .row_time{
+.remote_connect .graph_wrap .right{width: 560px;padding: 0;position: relative;}
+.remote_connect .graph_wrap .bg_graph{height: 190px;}
+.remote_connect .row_time{
     padding: 0 7px 0 27px;
     margin: 7px 0 0;
     font-size: 12px;
     display: flex;
     justify-content: space-between;
 }
-.default .row_time p:nth-last-child(-n+5){display: none;}
-.default .row_time > :last-child{margin: 0;}
+.remote_connect .row_time p:nth-last-child(-n+5){display: none;}
+.remote_connect .row_time > :last-child{margin: 0;}
 
-.default .time_line{
+.remote_connect .time_line{
     position: absolute;
     top: -27px;
     left: 50%;
@@ -1517,13 +1517,13 @@ img{
     margin-left: -21px;
 }
 
-.default .time_line .time{
+.remote_connect .time_line .time{
     font-size: 12px;
     text-align: center;
     display: flex;
 }
 
-.default .time_line::after{
+.remote_connect .time_line::after{
     position: absolute;
     content: '';
     width: 2px;
@@ -1533,7 +1533,7 @@ img{
     transform: translateX(-50%);
 }
 
-.default .time_line::before{
+.remote_connect .time_line::before{
     position: absolute;
     content: '';
     width: 12px;
@@ -1543,25 +1543,25 @@ img{
     transform: translateX(-50%);
 }
 
-.default .graph_wrap .hr_chart .time{color: #00FE22;}
-.default .hr_chart .row_time{color: #00FE22;}
-.default .hr_chart .time_line::after{background: #00FE22;}
-.default .hr_chart .time_line::before{background: url('/img/icon/tri_green.svg') no-repeat center / contain;}
+.remote_connect .graph_wrap .hr_chart .time{color: #00FE22;}
+.remote_connect .hr_chart .row_time{color: #00FE22;}
+.remote_connect .hr_chart .time_line::after{background: #00FE22;}
+.remote_connect .hr_chart .time_line::before{background: url('/img/icon/tri_green.svg') no-repeat center / contain;}
 
-.default .graph_wrap .sp_chart .time{color: #00FFFF;}
-.default .sp_chart .row_time{color: #00FFFF;}
-.default .sp_chart .time_line::after{background: #00FFFF;}
-.default .sp_chart .time_line::before{background: url('/img/icon/tri_blue.svg') no-repeat center / contain;}
+.remote_connect .graph_wrap .sp_chart .time{color: #00FFFF;}
+.remote_connect .sp_chart .row_time{color: #00FFFF;}
+.remote_connect .sp_chart .time_line::after{background: #00FFFF;}
+.remote_connect .sp_chart .time_line::before{background: url('/img/icon/tri_blue.svg') no-repeat center / contain;}
 
-.default .graph_wrap .resp_chart .time{color: #EEFF00;}
-.default .resp_chart .row_time{color: #EEFF00;}
-.default .resp_chart .time_line::after{background: #EEFF00;}
-.default .resp_chart .time_line::before{background: url('/img/icon/tri_yellow.svg') no-repeat center / contain;}
+.remote_connect .graph_wrap .resp_chart .time{color: #EEFF00;}
+.remote_connect .resp_chart .row_time{color: #EEFF00;}
+.remote_connect .resp_chart .time_line::after{background: #EEFF00;}
+.remote_connect .resp_chart .time_line::before{background: url('/img/icon/tri_yellow.svg') no-repeat center / contain;}
 
-.default .graph_wrap .temp_chart .time{color: #FF5499;}
-.default .temp_chart .row_time{color: #FF5499;}
-.default .temp_chart .time_line::after{background: #FF5499;}
-.default .temp_chart .time_line::before{background: url('/img/icon/tri_pink.svg') no-repeat center / contain;}
+.remote_connect .graph_wrap .temp_chart .time{color: #FF5499;}
+.remote_connect .temp_chart .row_time{color: #FF5499;}
+.remote_connect .temp_chart .time_line::after{background: #FF5499;}
+.remote_connect .temp_chart .time_line::before{background: url('/img/icon/tri_pink.svg') no-repeat center / contain;}
 
 .vital.on .row_time p:nth-last-child(-n+5){display: block;}
 .vital.on .graph_wrap .right{width: 1290px;}
@@ -1682,8 +1682,7 @@ img{
     /* width: 444px; */
     height: 50px;
     /* padding: 30px 0; */
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: scroll hidden;
 }
 
 .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar{
@@ -1693,10 +1692,6 @@ img{
 .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar-thumb{
     border-radius: 10px;
     background: #ccc;
-}
-
-.tab .table_body .table_content .ecg .ecg_graph> div{
-    height: 50px;
 }
 
 .img_container{
@@ -2493,12 +2488,12 @@ img{
     height: 795px;
 }
 
-.lab .list_view .title{height: fit-content; padding: 0; margin-bottom: 28px; border: none; display: flex;}
-.lab .list_view .title h3{font-size: 14px;}
-.lab .list_view .title h3 span{margin: 0 0 0 3px;}
-.lab .list_view .title h3::after{content: '/'; margin: 0 5px;}
-.lab .list_view .title h3:last-child::after{display: none;}
-.lab .list_view > div:not(.title){padding: 0 0 0 16px; margin-bottom: 32px;}
+.inner .list_view .title{height: fit-content; padding: 0; margin-bottom: 28px; border: none; display: flex;}
+.inner .list_view .title h3{font-size: 14px;}
+.inner .list_view .title h3 span{margin: 0 0 0 3px;}
+.inner .list_view .title h3::after{content: '/'; margin: 0 5px;}
+.inner .list_view .title h3:last-child::after{display: none;}
+.inner .list_view > div:not(.title){padding: 0 0 0 16px; margin-bottom: 32px;}
 .lab .list_view > div > p{margin-bottom: 16px; font-size: 14px;}
 .lab li{margin-bottom: 8px; display: flex;}
 .lab li:last-child{margin: 0;}
@@ -2525,9 +2520,18 @@ img{
     right: 0;
 }
 
+.list_view .emr{position: initial}
 
-
-
+.list_view .emr p{margin-bottom: 16px; font-size: 14px;}
+.list_view .emr_content{
+    width: 640px;
+    padding: 8px 16px 15px;
+    background: #EEEEEE; 
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 17px;
+    white-space: pre-line;
+}
 
 
 
@@ -2599,7 +2603,7 @@ img{
 .tab #tab-3 .ecg_graph p,
 .tab #tab-4 .ecg_graph p{
     font-size: 14px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .tab .tabular_table .table_title .date_time{
@@ -2637,6 +2641,7 @@ img{
 
 .tab .table_body .table_content .ecg .ecg_graph> div{
     width: 1172px;
+    height: 70px;
 }
 
 .tab .several .pacs{
@@ -2688,19 +2693,18 @@ img{
     max-height: 796px;
 }
 
-.tab .inner .cont .cont_wrap{
+.tab .inner .cont .lise_view{
     height: 620px;
     justify-content: initial;
 }
 
-.tab .inner .cont .cont_wrap .list,
-.tab .inner .cont .cont_wrap .cont{
+.tab .cont_wrap .list_wrap,
+.tab .cont_wrap .list_view{
     height: 100%;
 }
 
-.tab .inner .cont .cont_wrap .cont{
-    width: 704px;
-    margin-left: 48px;
+.tab .inner .cont .cont_wrap > div{
+    height: 640px;
 }
 
 .tab .cam{
@@ -2760,7 +2764,6 @@ img{
     min-width: 500px;
     max-width: 1172px;
     width: 100%;
-    height: 28px;
 }
 
 .scroll .several .pacs_inner> div{
@@ -2825,27 +2828,10 @@ img{
 .scroll .tabular_table .table_title .date_time {
     margin-right: 91px;
 }
-
-.scroll .cont .graphical .hr_chart {
-    margin-top: 40px;
-}
-
-.hr_chart .chart_wrap{width: 100%; padding: 0 32px;position: relative;}
-.hr_chart .hr_date{display: flex;}
-.cont .graphical .hr_time {
-    padding: 13px 28px 0;
-}
-.cont .graphical .time_wrap{display: flex; justify-content: space-between;}
-.cont .graphical .time_wrap p{display: flex;}
-.scroll .cont .graphical .hr_time> :last-child{margin: 0;}
-
-.scroll .cont .graphical .hr_img {
-    left: 504px;
-}
-
 .scroll .tabular_table .table_title .alarm_des{
     margin-right: 100px;
 }
+.scroll .vital.on .graph_wrap{height: 358px;}
 
 /* multi */
 .multi .wrap_inner{
