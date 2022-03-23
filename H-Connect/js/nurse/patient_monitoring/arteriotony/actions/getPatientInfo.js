@@ -4,7 +4,6 @@ import { commonRequest } from '../../../../utils/controller/commonRequest.js';
 import { history } from '../../../../utils/controller/historyController.js';
 
 export const getPatientInfo = async () => {
-    /* s: 환자 측정 상세 정보 */
     const res = await serverController.ajaxAwaitController(
         'API/Measurement/SelectMeasurementInfoDetail',
         'POST',
