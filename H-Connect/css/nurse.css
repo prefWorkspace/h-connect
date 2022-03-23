@@ -378,6 +378,7 @@
     height: 380px;
     width: 100%;
     padding-top: 16px;
+<<<<<<< HEAD
     overflow-y: auto;
 }
 
@@ -391,6 +392,10 @@
     height: 17%;
     border-radius: 10px;
     background: #ccc;
+=======
+    padding-right: 5px;
+    overflow-y: scroll;
+>>>>>>> d26b147b9ef425a4494a70e35b3bd5f7cb4398f5
 }
 
 .nurse_measure .left.measure_status .ward_list {
@@ -614,8 +619,27 @@
 .measure_status .container::-webkit-scrollbar {
     width: 8px;
 }
+.new_device .device_item::-webkit-scrollbar {
+    width: 8px;
+}
+
+.return_device .device_item::-webkit-scrollbar {
+    width: 8px;
+}
 
 .measure_status .container::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.new_device .device_item::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.return_device .device_item::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
     background: #ccc;

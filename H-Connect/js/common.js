@@ -183,6 +183,7 @@ $(function () {
         }
     );
 
+<<<<<<< HEAD
 
 //모니터링
     $('.patient_vital .all_patient .patient_monitor').on('click', function(){
@@ -198,9 +199,43 @@ $(function () {
     $('.monitoring_patient .tab_wrap button').click(function(){
         $('.interval_set .overlay').fadeIn();
     })
+=======
+    // 신규병상 등록 생체신호 리스트 삭제 팝업
+    $('.new_hospital .device_room> div .btn_list .btn_delete').on(
+        'click',
+        function () {
+            $('.pop.delete_new_measure .overlay').fadeIn();
+        }
+    );
 
-    $('.cont .resp .bell_num').on('click', function(){
+    // 장치추가
+    $('.new_hospital .device_room .btn_add').on('click', function () {
+        $('.pop.regi_device .overlay').fadeIn();
     });
+>>>>>>> d26b147b9ef425a4494a70e35b3bd5f7cb4398f5
+
+    //모니터링
+    $('.patient_vital .all_patient .patient_monitor').on('click', function () {
+        location.href = 'patient.html';
+    });
+    $('.patient_vital .all_patient .patient_monitor.active').on(
+        'click',
+        function () {
+            location.href = 'patient_warning.html';
+        }
+    );
+    $('.patient_vital .all_patient .patient_monitor.empty').on(
+        'click',
+        function () {
+            $('.new_room_pop.pop .overlay').fadeIn();
+        }
+    );
+
+    $('.monitoring_patient .tab_wrap button').click(function () {
+        $('.interval_set .overlay').fadeIn();
+    });
+
+    $('.cont .resp .bell_num').on('click', function () {});
 
     //모니터링
     $('.patient_vital .all_patient .patient_monitor').on('click', function () {
@@ -1421,9 +1456,7 @@ $(function () {
                 .removeClass('on');
             $('.remote .vital').show().addClass('on');
             $('.remote .several .section').not('.remote .vital').hide();
-            $('.remote .several > div')
-                .not('.remote .vital')
-                .removeClass('on');
+            $('.remote .several > div').not('.remote .vital').removeClass('on');
         }
     );
     $('.remote.default .vital .title').on('click', function () {
@@ -1568,27 +1601,27 @@ $(function () {
     });
 
     // tab으로 보기 connect_tab.html
-    $('.tab .patient_view .btn_pacs').click(function(){
+    $('.tab .patient_view .btn_pacs').click(function () {
         $('.tab .patient_view .several > div').hide();
         $('.tab .patient_view .several .pacs').show();
         $('.tab .study_list').show();
-    }) 
-    $('.tab .patient_view .btn_lab').click(function(){
+    });
+    $('.tab .patient_view .btn_lab').click(function () {
         $('.tab .patient_view .several > div').hide();
         $('.tab .patient_view .several .lab').show();
-    }) 
-    $('.tab .patient_view .btn_emr').click(function(){
+    });
+    $('.tab .patient_view .btn_emr').click(function () {
         $('.tab .patient_view .several > div').hide();
         $('.tab .patient_view .several .emr').show();
-    })
-    $('.tab .patient_view .btn_ocs').click(function(){
+    });
+    $('.tab .patient_view .btn_ocs').click(function () {
         $('.tab .patient_view .several > div').hide();
         $('.tab .patient_view .several .ocs').show();
-    })
-    $('.tab .patient_view .btn_vital').click(function(){
+    });
+    $('.tab .patient_view .btn_vital').click(function () {
         $('.tab .patient_view .several > div').hide();
         $('.tab .patient_view .several .vital').show();
-    })
+    });
 
     // 메세지창 작성 이미지 보기
     $('.bottom .file div').on('click', function () {
@@ -1597,7 +1630,9 @@ $(function () {
 
     $('.remote .patient_view .title .btn_list button').on('click', function () {
         $(this).addClass('on');
-        $('.remote .patient_view .title .btn_list button').not(this).removeClass('on');
+        $('.remote .patient_view .title .btn_list button')
+            .not(this)
+            .removeClass('on');
     });
 
     $('.remote .btn_video').on('click', function () {
