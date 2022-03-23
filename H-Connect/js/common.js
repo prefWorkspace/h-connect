@@ -168,18 +168,6 @@ $(function () {
     // $('.nurse_measure .modifi_hospital').toggle();
     // });
 
-    // 측정 수정
-    $(
-        '.nurse .measure_status .cont .container .status_list .btn_list .btn_modify'
-    ).on('click', function () {
-        $('.modifi_hospital').toggle();
-        $('.new_hospital').toggle();
-    });
-    $('.modifi_hospital .title .btn_new_hospital').on('click', function () {
-        $('.modifi_hospital').hide();
-        $('.new_hospital').show();
-    });
-
     // 측정현황 생체신호 리스트 삭제 팝업
     $(
         '.nurse .measure_status .cont .container .status_list .btn_list .btn_delete'
@@ -195,18 +183,6 @@ $(function () {
         }
     );
 
-    // 신규병상 등록 생체신호 리스트 삭제 팝업
-    $('.new_hospital .device_room> div .btn_list .btn_delete').on(
-        'click',
-        function () {
-            $('.pop.delete_new_measure .overlay').fadeIn();
-        }
-    );
-
-    // 장치추가
-    $('.new_hospital .device_room .btn_add').on('click', function () {
-        $('.pop.regi_device .overlay').fadeIn();
-    })
 
 //모니터링
     $('.patient_vital .all_patient .patient_monitor').on('click', function(){

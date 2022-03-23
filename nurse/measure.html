@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -16,7 +17,8 @@
     <link rel="stylesheet" href="/H-Connect/css/nurse.css">
 
 </head>
-  <body>
+
+<body>
     <!-- 병상 삭제 -->
     <div class="pop delete delete_measure">
         <div class="overlay">
@@ -24,10 +26,10 @@
                 <div>
                     <img src="/H-Connect/img/logo.png" alt="로고">
                 </div>
-                        
+
                 <h3>선택된 항목을 삭제하시면 저장된 모든 설정이 삭제됩니다.</h3>
                 <h2>삭제 하시겠습니까?</h2>
-            
+
                 <div class="btn_list">
                     <button type="button" class="btn gr btn_no">아니요</button>
                     <button type="button" class="btn rdf btn_cut">네, 삭제합니다</button>
@@ -51,7 +53,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
     <!-- 장치추가 팝업 -->
     <div class="pop regi_device">
@@ -63,7 +65,7 @@
 
                 <div class="content">
                     <p>장치종류 </p>
-                    
+
                     <div class="selectBox2">
                         <button class="label left_label">산소포화도 측정장치<span></span></button>
 
@@ -72,7 +74,7 @@
                             <li class="optionItem left_list active">산소포화도 측정장치</li>
                             <li class="optionItem left_list">체온 패치</li>
                         </ul>
-                    </div> 
+                    </div>
                 </div>
 
                 <div class="content">
@@ -100,7 +102,7 @@
 
                 <div class="content">
                     <p>장치종류 </p>
-                    
+
                     <div class="selectBox2">
                         <button class="label left_label">산소포화도 측정장치<span></span></button>
 
@@ -109,7 +111,7 @@
                             <li class="optionItem left_list active">산소포화도 측정장치</li>
                             <li class="optionItem left_list">체온 패치</li>
                         </ul>
-                    </div> 
+                    </div>
                 </div>
 
                 <div class="content">
@@ -133,15 +135,15 @@
             <div class="pop_cont">
                 <div class="title">
                     <h2>신규 병상등록</h2>
-                    
+
                     <p>새로운 병상을 생성하고 모니터링을 실행합니다.</p>
                 </div>
-                
+
                 <div class="cont">
                     <!-- 입력 -->
                     <div class="hospital_patient">
                         <input id="patient_name" type="text" placeholder="환자명">
-                        
+
                         <div class="patient_info">
                             <input id="patient_age" type="number" placeholder="환자나이">
 
@@ -250,7 +252,7 @@
 
                     <div class="selectBox2 type_select">
                         <button class="label">산소포화도 측정장치<span></span></button>
-    
+
                         <ul class="optionList">
                             <li class="optionItem">심전도 패치</li>
                             <li class="optionItem">산소포화도 측정장치</li>
@@ -286,14 +288,14 @@
                             <img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
                         </a>
                     </h1>
-        
+
                     <div class="header_title">
                         <h1>관리</h1>
                         <h3>담당 병동, 병실, 병상을 생성하고 관리합니다. 또한 환자를 등록하고, 생체신호 장비를 관리합니다.</h3>
                     </div>
                 </div>
-        
-                <div>    
+
+                <div>
                     <!-- <div class="search_container">
                         <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
         
@@ -301,7 +303,7 @@
                             <img src="/H-Connect/img/header/search.svg" alt="검색표시">
                         </button>
                     </div> -->
-        
+
                     <button type="button" class="btn_logout">
                         심장병동 간호사실
                     </button>
@@ -315,10 +317,10 @@
                         <p>심장병동</p>
                         <h3>심장병동 간호사실</h3>
                     </div>
-                    <button type="button" class="btn_bye">로그아웃</button>  
+                    <button type="button" class="btn_bye">로그아웃</button>
                 </div>
             </div>
-            
+
             <!-- 환자 검색 -->
             <!-- <div class="pop search_patient measure_patient">
                 <div class="wrap_inner">
@@ -365,38 +367,38 @@
         <!--콘텐츠-->
         <div id="wrap_content" class="nurse nurse_measure">
 
-        <nav class="nav">
-            <ul class="main_depth gnb">
-              <li class="gnb_list">
-                <a class="link" href="monitoring.html">
-                    모니터링
-                </a>
-              </li>
+            <nav class="nav">
+                <ul class="main_depth gnb">
+                    <li class="gnb_list">
+                        <a class="link" href="monitoring.html">
+                            모니터링
+                        </a>
+                    </li>
 
-              <li class="gnb_list active">
-                <a class="link" href="index.html">
-                   관리
-                </a>
-              </li>
+                    <li class="gnb_list active">
+                        <a class="link" href="index.html">
+                            관리
+                        </a>
+                    </li>
 
-              <li class="gnb_list">
-                <a class="link" href="dashboard.html">
-                    대시보드
-                </a>
-              </li>
+                    <li class="gnb_list">
+                        <a class="link" href="dashboard.html">
+                            대시보드
+                        </a>
+                    </li>
 
-              <li class="gnb_list">
-                <a class="link" href="message.html">
-                    메세지
-                </a>
-              </li>
-            </ul>
-        </nav>
+                    <li class="gnb_list">
+                        <a class="link" href="message.html">
+                            메세지
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-        <div class="wrap_inner">
-            <div>
-                <!-- 관리 -->
-                <section class="section management">
+            <div class="wrap_inner">
+                <div>
+                    <!-- 관리 -->
+                    <section class="section management">
                         <div class="container">
                             <div class="title">
                                 <div>
@@ -405,10 +407,10 @@
                                     </div>
                                     <h2>관리</h2>
                                 </div>
-                                
+
                                 <p>병동 및 환자를 관리하고, 장치를 등록합니다.</p>
                             </div>
-            
+
                             <div class="management_list">
                                 <div class="list off" onclick="location.href='index.html'">
                                     <p>병동관리</p>
@@ -416,14 +418,14 @@
                                         <img src="/H-Connect/img/right_arrow.svg" alt="오른쪽 화살표">
                                     </div>
                                 </div>
-            
+
                                 <div class="list off" onclick="location.href='device_management.html'">
                                     <p>장치관리</p>
                                     <div>
                                         <img src="/H-Connect/img/right_arrow.svg" alt="오른쪽 화살표">
                                     </div>
                                 </div>
-            
+
                                 <div class="list on" onclick="location.href='measure.html'">
                                     <p>측정관리</p>
                                     <div>
@@ -432,31 +434,31 @@
                                 </div>
                             </div>
                         </div>
-                </section>
-            
-                <!-- 측정현황 -->
-                <section class="section left measure_status">
+                    </section>
+
+                    <!-- 측정현황 -->
+                    <section class="section left measure_status">
                         <div class="container">
                             <div class="title">
                                 <div>
                                     <h2>측정현황</h2>
                                 </div>
-                                
+
                                 <p>병동 혹은 병실별로 환자모니터링 현황을 관리합니다.</p>
                             </div>
-            
+
                             <div class="cont">
-                
+
                                 <div class="search_container">
                                     <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
-                    
+
                                     <button type="button" class="btn_search">
                                         <img src="/H-Connect/img/header/search.svg" alt="검색표시">
                                     </button>
                                 </div>
-            
+
                                 <div class="search_select">
-                                    
+
                                     <!-- 병동선택 selecbox -->
                                     <div class="selectBox2 s_select">
                                         <button class="label ward_label">병동선택<span></span></button>
@@ -465,7 +467,7 @@
                                             <li class="optionItem ward_list">12병동</li> -->
                                         </ul>
                                     </div>
-            
+
                                     <!-- 병실선택 selectbox -->
                                     <div class="selectBox2 s_select">
                                         <button class="label room_label">병실선택<span></span></button>
@@ -474,11 +476,11 @@
                                             <!-- <li class="optionItem room_list">1301 호실</li> -->
                                         </ul>
                                     </div>
-            
+
                                     <p>
                                         <span>42</span> 명의 환자를 모니터링 하고있습니다.
                                     </p>
-                                </div>                           
+                                </div>
                             </div>
 
                             <div class="container">
@@ -489,52 +491,52 @@
                                         <span>1301</span>호실.
                                         <span>1</span>병상.
                                     </p>
-        
+
                                     <p>
                                         <span>김환자</span>.
                                         (<span>63</span>.
                                         <span>남</span>.
                                         <span>patient no</span>)
                                     </p>
-        
+
                                     <div class="device_list">
                                         <!-- 사용 안할때 addClass off 해주세요 -->
                                         <div class="off">심전도</div>
                                         <div>산소포화도</div>
                                         <div>체온</div>
                                     </div>
-        
+
                                     <div class="btn_list">
                                         <!-- 측정 종료시 disabled -->
                                         <button class="btn rdf btn_end">측정종료</button>
                                     </div>
                                 </div>
-                            </div> 
-                        </div> 
-                </section>
-
-                <!-- 병상수정 -->
-                <section class="section right modifi_hospital">
-                    <div class="container">
-                        <div class="title">
-                            <div>
-                                <h2>병상정보 수정</h2>
-
-                                <div class="btn_list">
-                                    <!-- 삭제 버튼은 병상 있을때만 보이게 해주세요. -->
-                                    <button type="button" class="btn rdf btn_delete">삭제</button>
-                                    <button type="button" class="btn blf btn_new_hospital" disabled>수정</button>
-                                </div>
                             </div>
-                                
-                            <p>기존의 병상정보를 수정합니다.</p>
                         </div>
-            
-                        <!-- 입력 -->
-                        <div class="cont">
+                    </section>
+
+                    <!-- 병상수정 -->
+                    <section class="section right modifi_hospital">
+                        <div class="container">
+                            <div class="title">
+                                <div>
+                                    <h2>병상정보 수정</h2>
+
+                                    <div class="btn_list">
+                                        <!-- 삭제 버튼은 병상 있을때만 보이게 해주세요. -->
+                                        <button type="button" class="btn rdf btn_delete">삭제</button>
+                                        <button type="button" class="btn blf btn_new_hospital" disabled>수정</button>
+                                    </div>
+                                </div>
+
+                                <p>기존의 병상정보를 수정합니다.</p>
+                            </div>
+
+                            <!-- 입력 -->
+                            <div class="cont">
                                 <div class="hospital_patient">
                                     <input type="text" id="patient_name" placeholder="환자이름" readonly>
-                                    
+
                                     <div class="patient_info">
                                         <input type="number" id="patient_age" placeholder="나이" readonly>
 
@@ -587,93 +589,92 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <!-- 연결 장치 -->
+                            <div class="device_room">
+                                <div>
+                                    <p>심전도 측정장치</p>
+                                    <p>serial no.</p>
+
+                                    <div class="btn_list">
+                                        <button type="button" class="btn bl">장치수정</button>
+                                        <button type="button" class="btn rd btn_delete">장치제거</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p>산소포화도 측정장치</p>
+                                    <p>serial no.</p>
+
+                                    <div class="btn_list">
+                                        <button type="button" class="btn bl">장치수정</button>
+                                        <button type="button" class="btn rd btn_delete">장치제거</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p>체온 측정장치</p>
+                                    <p>serial no.</p>
+
+                                    <div class="btn_list">
+                                        <button type="button" class="btn bl">장치수정</button>
+                                        <button type="button" class="btn rd btn_delete">장치제거</button>
+                                    </div>
+                                </div>
+
+                                <!-- 기본화면에서 보이게 해주세요 -->
+                                <div class="control">
+                                    <div class="text_wrap">
+                                        <p>측정장치 상태</p>
+                                        <span>작동 중지</span>
+                                    </div>
+
+                                    <button type="button" class="btn_end">측정종료</button>
+                                </div>
+
+                                <!-- 기본화면에서 보이게 해주세요 -->
+                                <div class="control data_control">
+                                    <p>측정데이터 관리</p>
+
+                                    <button type="button" class="btn_end">측정 데이터 모두삭제</button>
+                                </div>
+
+                                <div class="btn_add">
+                                    <button>+ 장치추가</button>
+                                </div>
+                            </div>
                         </div>
-
-                        <!-- 연결 장치 -->
-                        <div class="device_room">
-                            <div>
-                                <p>심전도 측정장치</p>
-                                <p>serial no.</p>
-
-                                <div class="btn_list">
-                                    <button type="button" class="btn bl">장치정보</button>
-                                    <button type="button" class="btn rd btn_delete">장치제거</button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <p>산소포화도 측정장치</p>
-                                <p>serial no.</p>
-
-                                <div class="btn_list">
-                                    <button type="button" class="btn bl">장치정보</button>
-                                    <button type="button" class="btn rd btn_delete">장치제거</button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <p>체온 측정장치</p>
-                                <p>serial no.</p>
-
-                                <div class="btn_list">
-                                    <button type="button" class="btn bl">장치정보</button>
-                                    <button type="button" class="btn rd btn_delete">장치제거</button>
-                                </div>
-                            </div>
-
-                            <!-- 기본화면에서 보이게 해주세요 -->
-                            <div class="control">
-                                <div class="text_wrap">
-                                    <p>측정장치 상태</p>
-                                    <span>작동 중지</span>
-                                </div>
-
-                                <button type="button" class="btn_end">측정종료</button>
-                            </div>
-
-                            <!-- 기본화면에서 보이게 해주세요 -->
-                            <div class="control data_control">
-                                <p>측정데이터 관리</p>
-
-                                <button type="button" class="btn_end">측정 데이터 모두삭제</button>
-                            </div>
-
-                            <div class="btn_add">
-                                <button>+ 장치추가</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
-      </div>
 
     </div>
     <!--// end wrap-->
     <script>
-
         //장치등록 팝업 셀렉트
-            const leftlabel = document.querySelector('.pop.regi_device .left_label');
-            const leftoptions = document.querySelectorAll('.pop.regi_device .left_list');
+        const leftlabel = document.querySelector('.pop.regi_device .left_label');
+        const leftoptions = document.querySelectorAll('.pop.regi_device .left_list');
 
-            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-            const handleSelect = (item) => {
-                leftlabel.parentNode.classList.remove('active');
-                leftlabel.innerHTML = item.textContent;
-            }
-            // 옵션 클릭시 클릭한 옵션을 넘김
-            leftoptions.forEach(option => {
-                option.addEventListener('click', () => handleSelect(option))
-            })
+        // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+        const handleSelect = (item) => {
+            leftlabel.parentNode.classList.remove('active');
+            leftlabel.innerHTML = item.textContent;
+        }
+        // 옵션 클릭시 클릭한 옵션을 넘김
+        leftoptions.forEach(option => {
+            option.addEventListener('click', () => handleSelect(option))
+        })
 
-            // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            leftlabel.addEventListener('click', () => {
-            if(leftlabel.parentNode.classList.contains('active')) {
+        // 라벨을 클릭시 옵션 목록이 열림/닫힘
+        leftlabel.addEventListener('click', () => {
+            if (leftlabel.parentNode.classList.contains('active')) {
                 leftlabel.parentNode.classList.remove('active');
             } else {
                 leftlabel.parentNode.classList.add('active');
             }
-            })
+        })
 
         //장치수정 팝업 셀렉트
         const update_leftlabel = document.querySelector('.pop.update_device .left_label');
@@ -691,243 +692,243 @@
 
         // 라벨을 클릭시 옵션 목록이 열림/닫힘
         update_leftlabel.addEventListener('click', () => {
-        if(update_leftlabel.parentNode.classList.contains('active')) {
-            update_leftlabel.parentNode.classList.remove('active');
-        } else {
-            update_leftlabel.parentNode.classList.add('active');
-        }
+            if (update_leftlabel.parentNode.classList.contains('active')) {
+                update_leftlabel.parentNode.classList.remove('active');
+            } else {
+                update_leftlabel.parentNode.classList.add('active');
+            }
         })
 
         //measure_status 병동 셀렉트
-            const wardlabel = document.querySelector('.ward_label');
-            const wardOptions = document.querySelectorAll('.ward_list');
+        const wardlabel = document.querySelector('.ward_label');
+        const wardOptions = document.querySelectorAll('.ward_list');
 
-            // const wardSelect = (item) => {
-            //     wardlabel.parentNode.classList.remove('active');
-            //     wardlabel.innerHTML = item.textContent;
-            // }
+        // const wardSelect = (item) => {
+        //     wardlabel.parentNode.classList.remove('active');
+        //     wardlabel.innerHTML = item.textContent;
+        // }
 
-            // wardOptions.forEach(option => {
-            //     option.addEventListener('click', () => wardSelect(option))
-            // })
+        // wardOptions.forEach(option => {
+        //     option.addEventListener('click', () => wardSelect(option))
+        // })
 
-            // wardlabel.addEventListener('click', () => {
-            // if(wardlabel.parentNode.classList.contains('active')) {
-            //     wardlabel.parentNode.classList.remove('active');
-            // } else {
-            //     wardlabel.parentNode.classList.add('active');
-            // }
-            // })
+        // wardlabel.addEventListener('click', () => {
+        // if(wardlabel.parentNode.classList.contains('active')) {
+        //     wardlabel.parentNode.classList.remove('active');
+        // } else {
+        //     wardlabel.parentNode.classList.add('active');
+        // }
+        // })
 
         //measure_status 병실 셀렉트
-            const roomlabel = document.querySelector('.room_label');
-            const roomOptions = document.querySelectorAll('.room_list');
+        const roomlabel = document.querySelector('.room_label');
+        const roomOptions = document.querySelectorAll('.room_list');
 
-            // const roomSelect = (item) => {
-            //     roomlabel.parentNode.classList.remove('active');
-            //     roomlabel.innerHTML = item.textContent;
-            // }
+        // const roomSelect = (item) => {
+        //     roomlabel.parentNode.classList.remove('active');
+        //     roomlabel.innerHTML = item.textContent;
+        // }
 
-            // roomOptions.forEach(option => {
-            //     option.addEventListener('click', () => roomSelect(option))
-            // })
+        // roomOptions.forEach(option => {
+        //     option.addEventListener('click', () => roomSelect(option))
+        // })
 
-            // roomlabel.addEventListener('click', () => {
-            // if(roomlabel.parentNode.classList.contains('active')) {
-            //     roomlabel.parentNode.classList.remove('active');
-            // } else {
-            //     roomlabel.parentNode.classList.add('active');
-            // }
-            // })
+        // roomlabel.addEventListener('click', () => {
+        // if(roomlabel.parentNode.classList.contains('active')) {
+        //     roomlabel.parentNode.classList.remove('active');
+        // } else {
+        //     roomlabel.parentNode.classList.add('active');
+        // }
+        // })
 
         //measure_status 병상등록 성별 셀렉트
-            const sexlabel = document.querySelector('.sex_label');
-            const sexOptions = document.querySelectorAll('.sex_list');
+        const sexlabel = document.querySelector('.sex_label');
+        const sexOptions = document.querySelectorAll('.sex_list');
 
-            const sexSelect = (item) => {
-                sexlabel.parentNode.classList.remove('active');
-                sexlabel.innerHTML = item.textContent;
-            }
+        const sexSelect = (item) => {
+            sexlabel.parentNode.classList.remove('active');
+            sexlabel.innerHTML = item.textContent;
+        }
 
-            sexOptions.forEach(option => {
-                option.addEventListener('click', () => sexSelect(option))
-            })
+        sexOptions.forEach(option => {
+            option.addEventListener('click', () => sexSelect(option))
+        })
 
-            sexlabel.addEventListener('click', () => {
-            if(sexlabel.parentNode.classList.contains('active')) {
+        sexlabel.addEventListener('click', () => {
+            if (sexlabel.parentNode.classList.contains('active')) {
                 sexlabel.parentNode.classList.remove('active');
             } else {
                 sexlabel.parentNode.classList.add('active');
             }
-            })
+        })
 
         //measure_status 병상등록 병동 셀렉트
-            const wardlabel2 = document.querySelector('.ward_label2');
-            const wardOptions2 = document.querySelectorAll('.ward_list2');
+        const wardlabel2 = document.querySelector('.ward_label2');
+        const wardOptions2 = document.querySelectorAll('.ward_list2');
 
-            // const wardSelect2 = (item) => {
-            //     wardlabel2.parentNode.classList.remove('active');
-            //     wardlabel2.innerHTML = item.textContent;
-            // }
+        // const wardSelect2 = (item) => {
+        //     wardlabel2.parentNode.classList.remove('active');
+        //     wardlabel2.innerHTML = item.textContent;
+        // }
 
-            // wardOptions2.forEach(option => {
-            //     option.addEventListener('click', () => wardSelect2(option))
-            // })
+        // wardOptions2.forEach(option => {
+        //     option.addEventListener('click', () => wardSelect2(option))
+        // })
 
-            // wardlabel2.addEventListener('click', () => {
-            // if(wardlabel2.parentNode.classList.contains('active')) {
-            //     wardlabel2.parentNode.classList.remove('active');
-            // } else {
-            //     wardlabel2.parentNode.classList.add('active');
-            // }
-            // })
-
-        //measure_status 병실 셀렉트
-            const roomlabel2 = document.querySelector('.room_label2');
-            const roomOptions2 = document.querySelectorAll('.room_list2');
-
-            // const roomSelect2 = (item) => {
-            //     roomlabel2.parentNode.classList.remove('active');
-            //     roomlabel2.innerHTML = item.textContent;
-            // }
-      
-            // roomOptions2.forEach(option => {
-            //     option.addEventListener('click', () => roomSelect2(option))
-            // })
-
-            // roomlabel2.addEventListener('click', () => {
-            // if(roomlabel2.parentNode.classList.contains('active')) {
-            //     roomlabel2.parentNode.classList.remove('active');
-            // } else {
-            //     roomlabel2.parentNode.classList.add('active');
-            // }
-            // })
+        // wardlabel2.addEventListener('click', () => {
+        // if(wardlabel2.parentNode.classList.contains('active')) {
+        //     wardlabel2.parentNode.classList.remove('active');
+        // } else {
+        //     wardlabel2.parentNode.classList.add('active');
+        // }
+        // })
 
         //measure_status 병실 셀렉트
-            const bedlabel = document.querySelector('.bed_label');
-            const bedOptions = document.querySelectorAll('.bed_list');
+        const roomlabel2 = document.querySelector('.room_label2');
+        const roomOptions2 = document.querySelectorAll('.room_list2');
 
-            // const bedSelect = (item) => {
-            //     bedlabel.parentNode.classList.remove('active');
-            //     bedlabel.innerHTML = item.textContent;
-            // }
+        // const roomSelect2 = (item) => {
+        //     roomlabel2.parentNode.classList.remove('active');
+        //     roomlabel2.innerHTML = item.textContent;
+        // }
 
-            // bedOptions.forEach(option => {
-            //     option.addEventListener('click', () => bedSelect(option))
-            // })
+        // roomOptions2.forEach(option => {
+        //     option.addEventListener('click', () => roomSelect2(option))
+        // })
 
-            // bedlabel.addEventListener('click', () => {
-            // if(bedlabel.parentNode.classList.contains('active')) {
-            //     bedlabel.parentNode.classList.remove('active');
-            // } else {
-            //     bedlabel.parentNode.classList.add('active');
-            // }
-            // })
+        // roomlabel2.addEventListener('click', () => {
+        // if(roomlabel2.parentNode.classList.contains('active')) {
+        //     roomlabel2.parentNode.classList.remove('active');
+        // } else {
+        //     roomlabel2.parentNode.classList.add('active');
+        // }
+        // })
+
+        //measure_status 병실 셀렉트
+        const bedlabel = document.querySelector('.bed_label');
+        const bedOptions = document.querySelectorAll('.bed_list');
+
+        // const bedSelect = (item) => {
+        //     bedlabel.parentNode.classList.remove('active');
+        //     bedlabel.innerHTML = item.textContent;
+        // }
+
+        // bedOptions.forEach(option => {
+        //     option.addEventListener('click', () => bedSelect(option))
+        // })
+
+        // bedlabel.addEventListener('click', () => {
+        // if(bedlabel.parentNode.classList.contains('active')) {
+        //     bedlabel.parentNode.classList.remove('active');
+        // } else {
+        //     bedlabel.parentNode.classList.add('active');
+        // }
+        // })
 
         //measure_status 병상수정 성별 셀렉트
-            const sexlabel2 = document.querySelector('.sex_label2');
-            const sexOptions2 = document.querySelectorAll('.sex_list2');
+        const sexlabel2 = document.querySelector('.sex_label2');
+        const sexOptions2 = document.querySelectorAll('.sex_list2');
 
-            const sexSelect2 = (item) => {
-                sexlabel2.parentNode.classList.remove('active');
-                sexlabel2.innerHTML = item.textContent;
-            }
+        const sexSelect2 = (item) => {
+            sexlabel2.parentNode.classList.remove('active');
+            sexlabel2.innerHTML = item.textContent;
+        }
 
-            sexOptions2.forEach(option => {
-                option.addEventListener('click', () => sexSelect2(option))
-            })
+        sexOptions2.forEach(option => {
+            option.addEventListener('click', () => sexSelect2(option))
+        })
 
-            sexlabel2.addEventListener('click', () => {
-            if(sexlabel2.parentNode.classList.contains('active')) {
+        sexlabel2.addEventListener('click', () => {
+            if (sexlabel2.parentNode.classList.contains('active')) {
                 sexlabel2.parentNode.classList.remove('active');
             } else {
                 sexlabel2.parentNode.classList.add('active');
             }
-            })
+        })
 
         //measure_status 병상수정 병동 셀렉트
-            const modiWardlabel = document.querySelector('.mward_label');
-            const modiWardOptions = document.querySelectorAll('.mward_list');
+        const modiWardlabel = document.querySelector('.mward_label');
+        const modiWardOptions = document.querySelectorAll('.mward_list');
 
-            const modiWardSelect = (item) => {
-                modiWardlabel.parentNode.classList.remove('active');
-                modiWardlabel.innerHTML = item.textContent;
-            }
+        const modiWardSelect = (item) => {
+            modiWardlabel.parentNode.classList.remove('active');
+            modiWardlabel.innerHTML = item.textContent;
+        }
 
-            modiWardOptions.forEach(option => {
-                option.addEventListener('click', () => modiWardSelect(option))
-            })
+        modiWardOptions.forEach(option => {
+            option.addEventListener('click', () => modiWardSelect(option))
+        })
 
-            modiWardlabel.addEventListener('click', () => {
-            if(modiWardlabel.parentNode.classList.contains('active')) {
+        modiWardlabel.addEventListener('click', () => {
+            if (modiWardlabel.parentNode.classList.contains('active')) {
                 modiWardlabel.parentNode.classList.remove('active');
             } else {
                 modiWardlabel.parentNode.classList.add('active');
             }
-            })
+        })
 
         //measure_status 병상수정 병실 셀렉트
-            const modiRoomlabel = document.querySelector('.mroom_label');
-            const modiRoomOptions = document.querySelectorAll('.mroom_list');
+        const modiRoomlabel = document.querySelector('.mroom_label');
+        const modiRoomOptions = document.querySelectorAll('.mroom_list');
 
-            const modiRoomSelect = (item) => {
-                modiRoomlabel.parentNode.classList.remove('active');
-                modiRoomlabel.innerHTML = item.textContent;
-            }
+        const modiRoomSelect = (item) => {
+            modiRoomlabel.parentNode.classList.remove('active');
+            modiRoomlabel.innerHTML = item.textContent;
+        }
 
-            modiRoomOptions.forEach(option => {
-                option.addEventListener('click', () => modiRoomOptions(option))
-            })
+        modiRoomOptions.forEach(option => {
+            option.addEventListener('click', () => modiRoomOptions(option))
+        })
 
-            modiRoomlabel.addEventListener('click', () => {
-            if(modiRoomlabel.parentNode.classList.contains('active')) {
+        modiRoomlabel.addEventListener('click', () => {
+            if (modiRoomlabel.parentNode.classList.contains('active')) {
                 modiRoomlabel.parentNode.classList.remove('active');
             } else {
                 modiRoomlabel.parentNode.classList.add('active');
             }
-            })
+        })
 
         //measure_status 병상수정 병상 셀렉트
-            const modiBedlabel = document.querySelector('.mbed_label');
-            const modiBedOptions = document.querySelectorAll('.mbed_list');
+        const modiBedlabel = document.querySelector('.mbed_label');
+        const modiBedOptions = document.querySelectorAll('.mbed_list');
 
-            const modiBedSelect = (item) => {
-                modiBedlabel.parentNode.classList.remove('active');
-                modiBedlabel.innerHTML = item.textContent;
-            }
+        const modiBedSelect = (item) => {
+            modiBedlabel.parentNode.classList.remove('active');
+            modiBedlabel.innerHTML = item.textContent;
+        }
 
-            modiBedOptions.forEach(option => {
-                option.addEventListener('click', () => modiBedSelect(option))
-            })
+        modiBedOptions.forEach(option => {
+            option.addEventListener('click', () => modiBedSelect(option))
+        })
 
-            modiBedlabel.addEventListener('click', () => {
-            if(modiBedlabel.parentNode.classList.contains('active')) {
+        modiBedlabel.addEventListener('click', () => {
+            if (modiBedlabel.parentNode.classList.contains('active')) {
                 modiBedlabel.parentNode.classList.remove('active');
             } else {
                 modiBedlabel.parentNode.classList.add('active');
             }
+        })
+
+        // 장치등록팝업
+        const regilabel = document.querySelector('.type_select .label');
+        const regiOptions = document.querySelectorAll('.type_select .optionItem');
+
+        const regidSelect = (item) => {
+            regilabel.parentNode.classList.remove('active');
+            regilabel.innerHTML = item.textContent;
+        }
+
+        regiOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                regidSelect(option)
+                reset(regiOptions, 'active');
+                option.classList.add('active');
             })
+        })
 
-            // 장치등록팝업
-            const regilabel = document.querySelector('.type_select .label');
-            const regiOptions = document.querySelectorAll('.type_select .optionItem');
-
-            const regidSelect = (item) => {
-                regilabel.parentNode.classList.remove('active');
-                regilabel.innerHTML = item.textContent;
-            }
-
-            regiOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    regidSelect(option)
-                    reset(regiOptions, 'active');
-                    option.classList.add('active');
-                })
-            })
-
-            regilabel.addEventListener('click', () => {
-                regilabel.parentNode.classList.toggle('active');
-            })
+        regilabel.addEventListener('click', () => {
+            regilabel.parentNode.classList.toggle('active');
+        })
 
         // 리셋 코드
         function reset(content, className) {
@@ -935,7 +936,7 @@
                 element.classList.remove(className);
             });
         }
+    </script>
+</body>
 
-    </script>   
-  </body>
 </html>
