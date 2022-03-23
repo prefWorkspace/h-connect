@@ -1902,22 +1902,22 @@
 .monitoring_patient .graph_wrap .hr_chart .time{color: #00FE22;}
 .monitoring_patient .hr_chart .row_time{color: #00FE22;}
 .monitoring_patient .hr_chart .time_line::after{background: #00FE22;}
-.monitoring_patient .hr_chart .time_line::before{background: url('../img/icon/tri_green.svg') no-repeat center / contain;}
+.monitoring_patient .hr_chart .time_line::before{background: url('/H-Connect/img/icon/tri_green.svg') no-repeat center / contain;}
 
 .monitoring_patient .graph_wrap .sp_chart .time{color: #00FFFF;}
 .monitoring_patient .sp_chart .row_time{color: #00FFFF;}
 .monitoring_patient .sp_chart .time_line::after{background: #00FFFF;}
-.monitoring_patient .sp_chart .time_line::before{background: url('../img/icon/tri_blue.svg') no-repeat center / contain;}
+.monitoring_patient .sp_chart .time_line::before{background: url('/H-Connect/img/icon/tri_blue.svg') no-repeat center / contain;}
 
 .monitoring_patient .graph_wrap .resp_chart .time{color: #EEFF00;}
 .monitoring_patient .resp_chart .row_time{color: #EEFF00;}
 .monitoring_patient .resp_chart .time_line::after{background: #EEFF00;}
-.monitoring_patient .resp_chart .time_line::before{background: url('../img/icon/tri_yellow.svg') no-repeat center / contain;}
+.monitoring_patient .resp_chart .time_line::before{background: url('/H-Connect/img/icon/tri_yellow.svg') no-repeat center / contain;}
 
 .monitoring_patient .graph_wrap .temp_chart .time{color: #FF5499;}
 .monitoring_patient .temp_chart .row_time{color: #FF5499;}
 .monitoring_patient .temp_chart .time_line::after{background: #FF5499;}
-.monitoring_patient .temp_chart .time_line::before{background: url('../img/icon/tri_pink.svg') no-repeat center / contain;}
+.monitoring_patient .temp_chart .time_line::before{background: url('/H-Connect/img/icon/tri_pink.svg') no-repeat center / contain;}
 
 
 

@@ -204,7 +204,6 @@ $(function () {
     // 장치추가
     $('.new_hospital .device_room .btn_add').on('click', function () {
         $('.pop.regi_device .overlay').fadeIn();
-<<<<<<< HEAD
     })
 
 //모니터링
@@ -223,7 +222,6 @@ $(function () {
     })
 
     $('.cont .resp .bell_num').on('click', function(){
-=======
     });
 
     //모니터링
@@ -244,7 +242,6 @@ $(function () {
     );
 
     $('.cont .resp .bell_num').on('click', function () {
->>>>>>> aaf6e2b569450ae3917866db04895217d82ff98d
         $('.pop.resp_set .overlay').fadeIn();
     });
 
