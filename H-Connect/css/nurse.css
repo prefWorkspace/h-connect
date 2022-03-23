@@ -379,6 +379,7 @@
     height: 380px;
     width: 100%;
     padding-top: 16px;
+    padding-right: 5px;
     overflow-y: scroll;
 }
 
@@ -401,14 +402,8 @@
     font-size: 12px;
 }
 
-<<<<<<< HEAD
 .nurse .search_container {
     width: 392px;
-=======
-
-.nurse .search_container{
-    width: 100%;
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     height: 36px;
     border-radius: 4px;
     border: 1px solid #007a94;
@@ -609,8 +604,27 @@
 .measure_status .container::-webkit-scrollbar {
     width: 8px;
 }
+.new_device .device_item::-webkit-scrollbar {
+    width: 8px;
+}
+
+.return_device .device_item::-webkit-scrollbar {
+    width: 8px;
+}
 
 .measure_status .container::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.new_device .device_item::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.return_device .device_item::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
     background: #ccc;
@@ -1589,7 +1603,6 @@
     color: #fff;
 }
 
-<<<<<<< HEAD
 .monitoring_patient .vital_chart .title div {
     display: flex;
 }
@@ -1602,12 +1615,6 @@
     display: flex;
     justify-content: flex-end;
 }
-=======
-.monitoring_patient .vital_chart .title div{ display: flex;}
-.monitoring_patient .vital_chart .title> :first-child :first-child {width: 150px;}
-.monitoring_patient .chart_time{justify-content: flex-end;}
-.monitoring_patient .chart_time p{display: flex;}
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
 
 .monitoring_patient .vital_chart .cont {
     width: 1316px;
@@ -1617,13 +1624,7 @@
     border-radius: 0 0 8px 8px;
 }
 
-<<<<<<< HEAD
 .monitoring_patient ul.tabs li {
-=======
-.monitoring_patient .tab_wrap{display: flex; align-items: center; justify-content: space-between;}
-
-.monitoring_patient ul.tabs li{
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     width: 144px;
     height: 40px;
     padding: 10px 15px;
@@ -1643,18 +1644,7 @@
     color: #fff;
 }
 
-<<<<<<< HEAD
 .monitoring_patient .tab-content {
-=======
-.monitoring_patient .tab_wrap button{
-    width: 80px;
-    height: 40px;
-    font-size: 14px;
-}
-.monitoring_patient .tab_wrap button:hover{background: #eee;}
-  
-.monitoring_patient .tab-content{
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     display: none;
     padding: 32px 0;
 }
@@ -1897,7 +1887,6 @@
     color: #fff;
 }
 
-<<<<<<< HEAD
 .monitoring_patient .cont .graphical .hr_chart {
     margin-top: 62px;
 }
@@ -1909,27 +1898,32 @@
 
 .monitoring_patient .graphical .hr_chart p {
     color: #888;
-=======
-.monitoring_patient .graph_wrap{
-    height: 392px;
-    overflow: auto;
 }
-
-.monitoring_patient .graph_wrap::-webkit-scrollbar{display: none;}
-.monitoring_patient .graph_wrap .chart{
-    padding: 42px 0 41px;
+.monitoring_patient .graph_wrap .left {
+    width: fit-content;
+    padding: 0;
+    margin: -4px 11px 0 0;
     display: flex;
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
 }
-.monitoring_patient .graph_wrap .left{width: fit-content;padding: 0;margin: -4px 11px 0 0;display: flex;}
-.monitoring_patient .graph_wrap .chart p{color: #8A9296;}
-.monitoring_patient .chart .index p{margin-right: 20px;}
-.monitoring_patient .hr_chart .index p{color: #00FE19;}
-.monitoring_patient .sp_chart .index p{color: #00FFFF;}
-.monitoring_patient .resp_chart .index p{color: #EEFF00;}
-.monitoring_patient .temp_chart .index p{color: #FF5499;}
+.monitoring_patient .graph_wrap .chart p {
+    color: #8a9296;
+}
+.monitoring_patient .chart .index p {
+    margin-right: 20px;
+}
+.monitoring_patient .hr_chart .index p {
+    color: #00fe19;
+}
+.monitoring_patient .sp_chart .index p {
+    color: #00ffff;
+}
+.monitoring_patient .resp_chart .index p {
+    color: #eeff00;
+}
+.monitoring_patient .temp_chart .index p {
+    color: #ff5499;
+}
 
-<<<<<<< HEAD
 .monitoring_patient .cont .graphical .hr_index p {
     margin-right: 31px;
 }
@@ -1952,21 +1946,9 @@
     width: 1082px;
     margin: 0 auto;
     padding: 27px 0 0;
-=======
-.monitoring_patient .graph_wrap .chart .bpm{
-    line-height: 30px;
-    text-align: right;
-}
-.monitoring_patient .graph_wrap .right{width: 1153px;padding: 0;position: relative;}
-.monitoring_patient .graph_wrap .bg_graph{height: 190px;}
-.monitoring_patient .row_time{
-    padding: 0 0 0 27px;
-    margin: 7px 0 0;
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     font-size: 12px;
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
     align-items: flex-end;
 }
 
@@ -1988,13 +1970,6 @@
 }
 
 .monitoring_patient .cont .graphical .time_line {
-=======
-}
-
-.monitoring_patient .row_time > :last-child{margin: 0;}
-
-.monitoring_patient .time_line{
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     position: absolute;
     top: -27px;
     left: 50%;
@@ -2002,21 +1977,13 @@
     margin-left: -21px;
 }
 
-<<<<<<< HEAD
 .monitoring_patient .cont .graphical .time_line .time {
-=======
-.monitoring_patient .time_line .time{
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     font-size: 12px;
     text-align: center;
     display: flex;
 }
 
-<<<<<<< HEAD
 .monitoring_patient .cont .graphical .time_line::after {
-=======
-.monitoring_patient .time_line::after{
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     position: absolute;
     content: '';
     width: 2px;
@@ -2026,17 +1993,11 @@
     transform: translateX(-50%);
 }
 
-<<<<<<< HEAD
 .monitoring_patient .cont .graphical .time_line::before {
     position: absolute;
     content: '';
     background: url('/H-Connect/img/icon/trend_tri.png') no-repeat 0 0px /
         contain;
-=======
-.monitoring_patient .time_line::before{
-    position: absolute;
-    content: '';
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     width: 12px;
     height: 8px;
     top: 19px;
@@ -2044,28 +2005,57 @@
     transform: translateX(-50%);
 }
 
-.monitoring_patient .graph_wrap .hr_chart .time{color: #00FE22;}
-.monitoring_patient .hr_chart .row_time{color: #00FE22;}
-.monitoring_patient .hr_chart .time_line::after{background: #00FE22;}
-.monitoring_patient .hr_chart .time_line::before{background: url('../img/icon/tri_green.svg') no-repeat center / contain;}
+.monitoring_patient .graph_wrap .hr_chart .time {
+    color: #00fe22;
+}
+.monitoring_patient .hr_chart .row_time {
+    color: #00fe22;
+}
+.monitoring_patient .hr_chart .time_line::after {
+    background: #00fe22;
+}
+.monitoring_patient .hr_chart .time_line::before {
+    background: url('../img/icon/tri_green.svg') no-repeat center / contain;
+}
 
-.monitoring_patient .graph_wrap .sp_chart .time{color: #00FFFF;}
-.monitoring_patient .sp_chart .row_time{color: #00FFFF;}
-.monitoring_patient .sp_chart .time_line::after{background: #00FFFF;}
-.monitoring_patient .sp_chart .time_line::before{background: url('../img/icon/tri_blue.svg') no-repeat center / contain;}
+.monitoring_patient .graph_wrap .sp_chart .time {
+    color: #00ffff;
+}
+.monitoring_patient .sp_chart .row_time {
+    color: #00ffff;
+}
+.monitoring_patient .sp_chart .time_line::after {
+    background: #00ffff;
+}
+.monitoring_patient .sp_chart .time_line::before {
+    background: url('../img/icon/tri_blue.svg') no-repeat center / contain;
+}
 
-.monitoring_patient .graph_wrap .resp_chart .time{color: #EEFF00;}
-.monitoring_patient .resp_chart .row_time{color: #EEFF00;}
-.monitoring_patient .resp_chart .time_line::after{background: #EEFF00;}
-.monitoring_patient .resp_chart .time_line::before{background: url('../img/icon/tri_yellow.svg') no-repeat center / contain;}
+.monitoring_patient .graph_wrap .resp_chart .time {
+    color: #eeff00;
+}
+.monitoring_patient .resp_chart .row_time {
+    color: #eeff00;
+}
+.monitoring_patient .resp_chart .time_line::after {
+    background: #eeff00;
+}
+.monitoring_patient .resp_chart .time_line::before {
+    background: url('../img/icon/tri_yellow.svg') no-repeat center / contain;
+}
 
-.monitoring_patient .graph_wrap .temp_chart .time{color: #FF5499;}
-.monitoring_patient .temp_chart .row_time{color: #FF5499;}
-.monitoring_patient .temp_chart .time_line::after{background: #FF5499;}
-.monitoring_patient .temp_chart .time_line::before{background: url('../img/icon/tri_pink.svg') no-repeat center / contain;}
-
-
-
+.monitoring_patient .graph_wrap .temp_chart .time {
+    color: #ff5499;
+}
+.monitoring_patient .temp_chart .row_time {
+    color: #ff5499;
+}
+.monitoring_patient .temp_chart .time_line::after {
+    background: #ff5499;
+}
+.monitoring_patient .temp_chart .time_line::before {
+    background: url('../img/icon/tri_pink.svg') no-repeat center / contain;
+}
 
 /* event */
 /* .monitoring_patient .cont .event .table_title .date_time{
@@ -2571,13 +2561,7 @@
     color: #940045;
 }
 
-<<<<<<< HEAD
 .arteriotony .table_body > div .btn_list .btn_delete {
-=======
-.arteriotony .table_body> div .btn_list .bl{color: #007A94;}
-
-.arteriotony .table_body> div .btn_list .btn_delete{
->>>>>>> dac86f09ffa590b577340e81b4c0af67129d74bd
     margin-left: 8px;
 }
 
