@@ -206,6 +206,24 @@ $(function () {
     // 장치추가
     $('.new_hospital .device_room .btn_add').on('click', function () {
         $('.pop.regi_device .overlay').fadeIn();
+    })
+
+//모니터링
+    $('.patient_vital .all_patient .patient_monitor').on('click', function(){
+        location.href="patient.html";
+    })
+    $('.patient_vital .all_patient .patient_monitor.active').on('click', function(){
+        location.href="patient_warning.html";
+    })
+    $('.patient_vital .all_patient .patient_monitor.empty').on('click', function(){
+        $('.new_room_pop.pop .overlay').fadeIn();
+    })
+
+    $('.monitoring_patient .tab_wrap button').click(function(){
+        $('.interval_set .overlay').fadeIn();
+    })
+
+    $('.cont .resp .bell_num').on('click', function(){
     });
 
     //모니터링
