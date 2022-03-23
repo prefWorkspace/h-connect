@@ -19,8 +19,8 @@ export function sickRoomList(item) {
             </div>
 
             <div class="btn_list">
-                <button type="button" class="btn btn_modify bl" data-sickroomcode=${item.sickRoomCode} >수정</button>
-                <button type="button" class="btn rd btn_delete" data-sickroomcode=${item.sickRoomCode} >삭제</button>
+                <button type="button" class="btn btn_modify bl" data-sickroomcode=${item.sickRoomCode} data-wardcode=${item.wardCode} >수정</button>
+                <button type="button" class="btn rd btn_delete" data-sickroomcode=${item.sickRoomCode} data-wardcode=${item.wardCode} >삭제</button>
             </div>
         </div>
     `;
