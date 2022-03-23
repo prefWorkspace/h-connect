@@ -5,7 +5,7 @@ window._history = history;
 export function _searchPatientBlock(_data){
     const {measurementCode, name, birthday, gender, patientCode, ward, sickRoom, sickBed} = _data || {};
     return `
-    <p class="patient_list" onclick='window._history.push("/nurse/patient.html?measurement_code=${measurementCode}")'>
+    <p class="patient_list" onclick='window._history.linkTo("/nurse/patient.html?measurement_code=${measurementCode}")'>
         <span>${name}</span>
         (<span>${AGE_CALC(birthday)}</span>.
         <span>${gender === 1 ? '남자' : '여자'}</span>).

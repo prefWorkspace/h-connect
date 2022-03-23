@@ -1,68 +1,68 @@
-
 /*================= nurse =================*/
 /* main */
-.nurse{
+.nurse {
     min-width: 1880px;
     min-height: calc(100vh - 80px);
     padding-top: 80px;
     display: flex;
-    background-color: #eee;   
+    background-color: #eee;
 }
 
-.nurse .wrap_inner{
+.nurse .wrap_inner {
     width: 100%;
     min-width: 1820px;
     padding: 40px;
     display: flex;
 }
 
-.nurse section{
+.nurse section {
     height: 720px;
     border-radius: 8px;
     background-color: #fff;
 }
 
-.nurse .management{
+.nurse .management {
     width: 360px;
     padding: 16px;
 }
 
-.nurse .management .title{
+.nurse .management .title {
     padding: 16px 16px 26px;
     border-bottom: 1px solid #eee;
 }
 
-.nurse .management .title> div{
+.nurse .management .title > div {
     margin-bottom: 13px;
     display: flex;
     align-items: center;
 }
 
-.nurse .management .title> div h2{
-    color: #007A94;
+.nurse .management .title > div h2 {
+    color: #007a94;
 }
 
-.nurse .management .title> div> div{
+.nurse .management .title > div > div {
     width: 16px;
     height: 16px;
     margin-right: 15px;
 }
 
-.nurse .management .title> div> div img{
+.nurse .management .title > div > div img {
     width: 100%;
     height: 100%;
-    filter:invert(39%) sepia(74%) saturate(6980%) hue-rotate(174deg) brightness(90%) contrast(101%);
+    filter: invert(39%) sepia(74%) saturate(6980%) hue-rotate(174deg)
+        brightness(90%) contrast(101%);
 }
 
-.nurse .management .title p{
+.nurse .management .title p {
     color: #444;
 }
 
-.nurse .management .management_list{
+.nurse .management .management_list {
     padding: 16px;
 }
 
-.nurse .management .management_list .list{
+.nurse .management .management_list .list {
     width: 296px;
     height: 48px;
     padding: 16px;
@@ -72,36 +72,37 @@
     justify-content: space-between;
 }
 
-.nurse .management .management_list .list:hover{
+.nurse .management .management_list .list:hover {
     background: #eee;
     cursor: pointer;
 }
 
-.nurse .management .management_list .list div{
+.nurse .management .management_list .list div {
     width: 6px;
     height: 12px;
 }
 
-.nurse .management .management_list .list.on img{
+.nurse .management .management_list .list.on img {
     width: 100%;
     height: 100%;
     /* filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(165%) contrast(150%); */
 }
 
-.nurse .management .management_list .list.on{
-    background-color: #007A94;
+.nurse .management .management_list .list.on {
+    background-color: #007a94;
     color: #fff;
 }
 
-.nurse .management .management_list .list.off{
+.nurse .management .management_list .list.off {
     border-bottom: 1px solid #eee;
 }
 .nurse .management .management_list .list.off div img {
-    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
+    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg)
+        brightness(91%) contrast(87%);
 }
 
 /* 병동관리 */
-.nurse .left{
+.nurse .left {
     width: 640px;
     /* height: fit-content; */
     padding: 16px;
@@ -109,28 +110,27 @@
 }
 
 .nurse .left .title,
-.nurse .right .title{
+.nurse .right .title {
     border-bottom: 1px solid #eee;
     padding: 16px 16px 26px;
 }
 
 .nurse .left .title div,
-.nurse .right .title div{
+.nurse .right .title div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-
 .nurse .left .title h2,
-.nurse .right .title h2{
-    color: #007A94;
+.nurse .right .title h2 {
+    color: #007a94;
     vertical-align: middle;
 }
 
 .nurse .btn_new_ward,
 .nurse .btn_new_device,
-.nurse .btn_use_device{
+.nurse .btn_use_device {
     width: 96px;
     height: 40px;
     background: none;
@@ -139,12 +139,12 @@
 }
 
 .nurse .left .title p,
-.nurse .right .title p{
+.nurse .right .title p {
     color: #444;
 }
 
 .nurse .left .cont,
-.nurse .right .cont{
+.nurse .right .cont {
     padding: 16px;
     font-size: 12px;
     /* display: none; */
@@ -153,110 +153,110 @@
 /* .nurse .ward .cont, .nurse .hospital_room .cont{display: none;} */
 
 .nurse .left .cont .ward_list,
-.nurse .right .cont .ward_list{
+.nurse .right .cont .ward_list {
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
     display: flex;
 }
 
 .nurse .left .cont .ward_list:hover,
-.nurse .right .cont .ward_list:hover{
+.nurse .right .cont .ward_list:hover {
     background: #eee;
     cursor: pointer;
 }
 
-.nurse .left .cont .ward_list .on{
-    background: #007A94;
+.nurse .left .cont .ward_list .on {
+    background: #007a94;
     color: #fff;
 }
 
-.nurse .left .cont .ward_list.on{
-    background: #007A94;
+.nurse .left .cont .ward_list.on {
+    background: #007a94;
     color: #fff;
 }
 
-.nurse .left .cont .ward_list> p{
+.nurse .left .cont .ward_list > p {
     width: 100px;
     margin-top: 8px;
     margin-right: 20px;
 }
 
-.nurse .left .cont .ward_list .ward_count{
+.nurse .left .cont .ward_list .ward_count {
     display: flex;
 }
 
 .nurse .left .cont .ward_list .ward_count p,
-.nurse .right .cont .ward_list .ward_count p{
+.nurse .right .cont .ward_list .ward_count p {
     margin-right: 24px;
     margin-top: 6px;
 }
 
 .nurse .left .cont .ward_list .ward_count span,
-.nurse .right .cont .ward_list .ward_count span{
-    color: #007A94;
+.nurse .right .cont .ward_list .ward_count span {
+    color: #007a94;
 }
 
-.nurse .left .cont .ward_list.on .ward_count span{
+.nurse .left .cont .ward_list.on .ward_count span {
     color: #fff;
 }
 
-.nurse .cont .ward_list .btn_list{
+.nurse .cont .ward_list .btn_list {
     display: flex;
 }
 
-.nurse .cont .ward_list .btn_list button{
+.nurse .cont .ward_list .btn_list button {
     width: 56px;
     height: 32px;
     padding: 4px 0;
     border-radius: 4px;
 }
 
-.nurse .cont .ward_list .btn_list .btn_modify{
-    margin:0 6px 0 24px;
+.nurse .cont .ward_list .btn_list .btn_modify {
+    margin: 0 6px 0 24px;
 }
 
-.nurse .hospital_room .cont .ward_list .btn_list .btn_modify{
+.nurse .hospital_room .cont .ward_list .btn_list .btn_modify {
     margin: 0 6px 0;
 }
 
-.ward .cont .ward_list.on .btn_list .btn_modify{
-    margin:0 6px 0 24px;
+.ward .cont .ward_list.on .btn_list .btn_modify {
+    margin: 0 6px 0 24px;
     border: 0;
     background: #fff;
 }
 
-.ward .cont .ward_list.on .btn_list .btn_delete{
+.ward .cont .ward_list.on .btn_list .btn_delete {
     background: #fff;
     border: 0;
 }
 
-.ward .cont .ward_list.on img{
+.ward .cont .ward_list.on img {
     width: 100%;
     height: 100%;
     filter: brightness(0) invert(1);
 }
 
-.ward .cont .ward_list> :last-child{
+.ward .cont .ward_list > :last-child {
     width: 6px;
     height: 12px;
     margin: 11px 0 0 20px;
 }
 
-.ward .cont .ward_list img{
+.ward .cont .ward_list img {
     width: 100%;
     height: 100%;
-    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg) brightness(91%) contrast(87%);
+    filter: invert(67%) sepia(2%) saturate(15%) hue-rotate(342deg)
+        brightness(91%) contrast(87%);
 }
 
-
 /* 병실관리 */
-.nurse .right{
+.nurse .right {
     width: 640px;
     /* height: fit-content; */
     padding: 16px;
 }
 
-.right .title .btn_new_room{
+.right .title .btn_new_room {
     width: 96px;
     height: 40px;
     background: none;
@@ -264,7 +264,7 @@
     font-size: 14px;
 }
 
-.right .title .btn_new_room:disabled{
+.right .title .btn_new_room:disabled {
     width: 96px;
     height: 40px;
     background: #ccc !important;
@@ -275,47 +275,47 @@
     border: none !important;
 }
 
-.hospital_room .cont{
+.hospital_room .cont {
     height: 590px;
     overflow-y: scroll;
 }
 
-.hospital_room .cont .ward_list> p{
+.hospital_room .cont .ward_list > p {
     margin-top: 8px;
     margin-right: 40px;
 }
 
-.hospital_room .cont .ward_list .ward_count{
+.hospital_room .cont .ward_list .ward_count {
     width: 250px;
     display: flex;
 }
 
-.hospital_room .cont::-webkit-scrollbar{
+.hospital_room .cont::-webkit-scrollbar {
     width: 8px;
 }
 
-.hospital_room .cont::-webkit-scrollbar-thumb{
+.hospital_room .cont::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
     background: #ccc;
 }
 
-.room_box.active{
+.room_box.active {
     box-shadow: none;
-    border:none;
+    border: none;
 }
 
-.room_box.active .label{
+.room_box.active .label {
     border-radius: 4px 4px 0 0;
 }
 
-.room_box .label{
+.room_box .label {
     border-radius: 4px;
     background: #eee;
 }
 
-.room_box .room_list{
-    left : 0;
+.room_box .room_list {
+    left: 0;
     padding: 8px 0;
     border: none;
     border-radius: 0 0 4px 4px;
@@ -323,30 +323,28 @@
     box-shadow: none;
 }
 
-.room_box .room_list::after{
+.room_box .room_list::after {
     content: '';
     position: absolute;
     width: 88px;
     height: 1px;
-    background: #007A94;
+    background: #007a94;
     top: 0;
     left: 16px;
 }
 
-.room_box li{
+.room_box li {
     font-size: 14px;
     color: #000;
 }
 
-.room_box .room_option.active{
+.room_box .room_option.active {
     background: #ddd;
 }
 
-
-
 /* 신규장치등록 */
 .new_device .device_count,
-.return_device .device_count{
+.return_device .device_count {
     padding: 8px 48px;
     border-bottom: 1px solid #eee;
     display: flex;
@@ -354,7 +352,7 @@
 }
 
 .new_device .device_count div,
-.return_device .device_count div{
+.return_device .device_count div {
     width: 144px;
     height: 120px;
     padding: 16px;
@@ -362,98 +360,109 @@
 }
 
 .new_device .device_count div h1,
-.return_device .device_count div h1{
+.return_device .device_count div h1 {
     font-size: 36px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.new_device .device_count div .use_line{
-    color: #007A94;
+.new_device .device_count div .use_line {
+    color: #007a94;
 }
 
 .new_device .device_search,
-.return_device .device_search{
+.return_device .device_search {
     padding: 6px;
 }
 
-.nurse_measure .left.measure_status .ward_list{
+.new_device .device_item,
+.return_device .device_item {
+    height: 380px;
+    width: 100%;
+    padding-top: 16px;
+    padding-right: 5px;
+    overflow-y: scroll;
+}
+
+.nurse_measure .left.measure_status .ward_list {
     border: none;
 }
 
-.nurse_measure .left.measure_status .ward_list:hover{
+.nurse_measure .left.measure_status .ward_list:hover {
     background: #fff;
 }
 
-.s_select .optionList::after{
+.s_select .optionList::after {
     width: 128px;
 }
 
 .selectBox2 .return_option,
-.selectBox2 .device_option{
+.selectBox2 .device_option {
     width: 160px;
     top: 35px;
     font-size: 12px;
 }
 
-
-.nurse .search_container{
+.nurse .search_container {
     width: 100%;
     height: 36px;
     border-radius: 4px;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
 }
 
-.nurse .search_container input{
+.nurse .search_container input {
     width: calc(100% - 56px);
     height: 34px;
     padding: 0 8px;
     background: transparent;
 }
 
-.nurse .search_container input::placeholder{
+.nurse .search_container input::placeholder {
     font-size: 12px;
     color: #ccc;
 }
 
-.nurse .search_container button{
+.nurse .search_container button {
     float: right;
     height: 36px;
     padding: 5px 20px;
     border-radius: 4px;
 }
 
-.section .item_row{
+.section .item_row {
     padding: 3px 0 5px 19px;
     border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.section .item_row:hover{
+.section .item_row:hover {
     background: #eee;
 }
 
-.section .item_row p{
+.section .item_row p {
     display: inline-block;
     vertical-align: middle;
 }
 
-.section .item_name{
+.section .item_name {
     width: 120px;
     margin-right: 50px;
 }
 
-.section .item_num{
+.section .item_num {
     width: 80px;
     margin-right: 130px;
 }
 
-.new_device .item_row .use_line{
+.new_device .item_row .use_line {
     width: 60px;
     margin-right: 38px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .section .btn_cancel,
-.section .btn_delete{
+.section .btn_delete {
     width: 56px;
     height: 24px;
     background: none;
@@ -462,87 +471,87 @@
     vertical-align: middle;
 }
 
-.section .device_search{
+.section .device_search {
     display: flex;
 }
 
-.s_select{
+.s_select {
     width: 160px;
     height: 36px;
     margin-right: 8px;
 }
 
-.s_select .label{
+.s_select .label {
     font-size: 12px;
     font-weight: normal;
 }
 
 /* 사용한 장치 반납 */
-.return_device .container .title h2{
+.return_device .container .title h2 {
     color: #940045;
 }
-.return_device .device_count div h1{
+.return_device .device_count div h1 {
     color: #000;
 }
 
-.return_device .use_line{
+.return_device .use_line {
     color: #940045;
 }
 
-.return_device .item_row .use_line{margin-right: 38px;}
-
-
+.return_device .item_row .use_line {
+    margin-right: 38px;
+}
 
 /* 측정 관리 */
-.nurse .measure_status{
+.nurse .measure_status {
     width: 744px;
     margin: 0 32px;
 }
 
-.nurse_measure .wrap_inner{
+.nurse_measure .wrap_inner {
     padding: 0;
 }
 
-.nurse_measure .wrap_inner> div{
+.nurse_measure .wrap_inner > div {
     width: 100%;
     margin: 40px;
     display: flex;
 }
 
-.nurse_measure .right{
+.nurse_measure .right {
     width: 536px;
 }
 
-.nurse_measure .measure_status .title div{
+.nurse_measure .measure_status .title div {
     margin-bottom: 13px;
 }
 
-.nurse_measure .measure_status .search_container{
+.nurse_measure .measure_status .search_container {
     width: 100%;
     height: 40px;
 }
 
-.nurse_measure .measure_status .search_container input{
+.nurse_measure .measure_status .search_container input {
     width: 90%;
     height: 100%;
 }
 
-.nurse_measure .measure_status .search_container button{
+.nurse_measure .measure_status .search_container button {
     height: 40px;
 }
 
-.nurse_measure .label{
+.nurse_measure .label {
     font-size: 12px;
 }
 
-.nurse_measure .optionItem{
+.nurse_measure .optionItem {
     padding: 10px 15px;
     font-size: 12px;
     display: flex;
     justify-content: space-between;
 }
 
-.nurse_measure .measure_status .search_select{
+.nurse_measure .measure_status .search_select {
     margin-top: 16px;
     padding-bottom: 16px;
     border-bottom: 1px solid #eee;
@@ -551,56 +560,77 @@
     align-items: center;
 }
 
-.nurse_measure .measure_status .selectBox2{
+.nurse_measure .measure_status .selectBox2 {
     width: 160px;
     height: 36px;
     margin: 0 16px 0 0;
 }
 
-.nurse_measure .optionList{
+.nurse_measure .optionList {
     width: 160px;
     top: 35px;
 }
 
-.nurse_measure .mbed_option{
+.nurse_measure .mbed_option {
     width: 120px;
 }
 
-.selectBox2 .mbed_option::after{width: 88px;}
+.selectBox2 .mbed_option::after {
+    width: 88px;
+}
 
-.nurse_measure .measure_status .cont{
+.nurse_measure .measure_status .cont {
     padding-bottom: 0;
-} 
+}
 
-.nurse_measure .measure_status .search_select .ward_label{
+.nurse_measure .measure_status .search_select .ward_label {
     font-weight: normal;
 }
 
-.nurse_measure  .measure_status .search_select p{
+.nurse_measure .measure_status .search_select p {
     margin-left: 125px;
 }
 
-.measure_status .search_select p span{
-    color: #007A94;
+.measure_status .search_select p span {
+    color: #007a94;
 }
 
-.measure_status div .container{
+.measure_status div .container {
     height: 444px;
     padding-top: 16px;
     overflow-y: scroll;
 }
 
-.measure_status .container::-webkit-scrollbar{
+.measure_status .container::-webkit-scrollbar {
+    width: 8px;
+}
+.new_device .device_item::-webkit-scrollbar {
     width: 8px;
 }
 
-.measure_status .container::-webkit-scrollbar-thumb{
+.return_device .device_item::-webkit-scrollbar {
+    width: 8px;
+}
+
+.measure_status .container::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
     background: #ccc;
 }
 
-.measure_status .container .status_list{
+.new_device .device_item::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.return_device .device_item::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.measure_status .container .status_list {
     width: 100%;
     height: 40px;
     padding: 4px 16px;
@@ -608,72 +638,72 @@
     display: table;
 }
 
-.measure_status .container .status_list:hover{
+.measure_status .container .status_list:hover {
     background-color: #eee;
     cursor: pointer;
 }
 
-.measure_status .container .status_list.on{
-    background-color: #007A94;
+.measure_status .container .status_list.on {
+    background-color: #007a94;
 }
 
-.measure_status .container .status_list.on .device_list div{
+.measure_status .container .status_list.on .device_list div {
     border: 1px solid #fff;
 }
 
-.measure_status .container .status_list.on p{
+.measure_status .container .status_list.on p {
     color: #fff;
 }
 
-.measure_status .container .status_list.on .btn_list .btn_modify{
+.measure_status .container .status_list.on .btn_list .btn_modify {
     border: 1px solid #fff;
 }
 
-.measure_status .container .status_list p{
+.measure_status .container .status_list p {
     width: 187px;
     margin-right: 25px;
     display: table-cell;
     vertical-align: middle;
 }
 
-.measure_status .container .status_list> :first-child{
+.measure_status .container .status_list > :first-child {
     width: 164px;
     margin-right: 16px;
 }
 
-.measure_status .status_list{
+.measure_status .status_list {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.measure_status .status_list .btn_list{
+.measure_status .status_list .btn_list {
     width: 100px;
     justify-content: space-between;
     display: flex;
 }
 
-.measure_status .container .status_list .device_list{
+.measure_status .container .status_list .device_list {
     width: 210px;
     display: table-cell;
 }
 
-.measure_status .container .status_list .device_list div{
+.measure_status .container .status_list .device_list div {
     padding: 7px;
     border-radius: 4px;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
     background-color: #fff;
     font-size: 12px;
-    color: #007A94;
+    color: #007a94;
     display: inline-block;
 }
 
-.measure_status .container .status_list .device_list div.off{
+.measure_status .container .status_list .device_list div.off {
     border: none;
-    background: #CCCCCC;
+    background: #cccccc;
     color: #888888;
 }
 
-.measure_status .status_list .btn_list button{
+.measure_status .status_list .btn_list button {
     width: 100%;
     height: 32px;
     padding: 0;
@@ -682,17 +712,17 @@
     display: block;
 }
 
-.measure_status .status_list .btn_list button:disabled{
-    background: #CCCCCC;
+.measure_status .status_list .btn_list button:disabled {
+    background: #cccccc;
     color: #888888;
 }
 
-.nurse .new_hospital .title{
+.nurse .new_hospital .title {
     height: 96px;
     padding: 8px 16px 26px;
 }
 
-.new_hospital .title .btn_new_hospital{
+.new_hospital .title .btn_new_hospital {
     width: 96px;
     height: 40px;
     padding: 10px 17px;
@@ -701,11 +731,11 @@
     font-size: 14px;
 }
 
-.new_hospital .title p{
+.new_hospital .title p {
     margin-top: 5px;
 }
 
-.new_hospital .hospital_patient input{
+.new_hospital .hospital_patient input {
     width: 100%;
     height: 36px;
     margin-bottom: 16px;
@@ -715,134 +745,136 @@
     border-radius: 4px;
 }
 
-.hospital_patient input::placeholder{
+.hospital_patient input::placeholder {
     color: #ccc;
 }
 
-.hospital_patient> div{
+.hospital_patient > div {
     display: flex;
 }
 
-.hospital_patient .patient_info> :first-child{
+.hospital_patient .patient_info > :first-child {
     width: 64px;
     padding: 10px;
 }
 
-.hospital_patient .patient_info input[type="number"]::-webkit-outer-spin-button,
-.hospital_patient .patient_info input[type="number"]::-webkit-inner-spin-button {
+.hospital_patient .patient_info input[type='number']::-webkit-outer-spin-button,
+.hospital_patient
+    .patient_info
+    input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.new_hospital .sex_select{
+.new_hospital .sex_select {
     width: 80px;
     height: 36px;
     margin: 0 16px;
 }
 
-.new_hospital .sex_label{
+.new_hospital .sex_label {
     color: #ccc;
 }
 
-.new_hospital .sex_option{
+.new_hospital .sex_option {
     width: 80px;
     top: 35px;
     z-index: 1;
 }
 
 .nurse .sex_option::after,
-.nurse .sex_option2::after{
+.nurse .sex_option2::after {
     width: 60px;
     left: 8px;
 }
 
-.new_hospital .hospital_patient .patient_info> :last-child{
+.new_hospital .hospital_patient .patient_info > :last-child {
     width: 296px;
 }
 
-.new_hospital .hospital_patient .patient_room .select_ward{
+.new_hospital .hospital_patient .patient_room .select_ward {
     width: 160px;
     height: 36px;
     margin: 0;
 }
 
-.nurse_measure .hospital_patient .patient_room .bed_count.lot{
-    color: #007A94;
+.nurse_measure .hospital_patient .patient_room .bed_count.lot {
+    color: #007a94;
 }
 
-.nurse_measure .hospital_patient .patient_room .bed_count.none{
+.nurse_measure .hospital_patient .patient_room .bed_count.none {
     color: #ccc;
 }
 
-.new_hospital .hospital_patient .patient_room .select_room{
+.new_hospital .hospital_patient .patient_room .select_room {
     width: 160px;
     height: 36px;
     margin: 0 16px;
 }
 
-.nurse .select_bed{
+.nurse .select_bed {
     width: 120px;
     height: 36px;
 }
 
 .select_bed .bed_option::after,
-.select_bed .bed_option2::after{
+.select_bed .bed_option2::after {
     width: 85px;
 }
 
-.new_hospital .hospital_patient .patient_room .bed_option{
+.new_hospital .hospital_patient .patient_room .bed_option {
     width: 120px;
 }
 
-.new_hospital .cont{
+.new_hospital .cont {
     border-bottom: 1px solid #eee;
 }
 
-.new_hospital .cont .select_box .label{
+.new_hospital .cont .select_box .label {
     font-size: 12px;
     font-weight: normal;
     color: #000;
 }
 
-.new_hospital .cont> p{
+.new_hospital .cont > p {
     margin-top: 12px;
     font-size: 12px;
     text-align: right;
 }
 
-.new_hospital .cont> p span{
-    color: #007A94;
+.new_hospital .cont > p span {
+    color: #007a94;
 }
 
-.new_hospital .device_room{
+.new_hospital .device_room {
     padding: 16px;
 }
 
-.new_hospital .device_room> div{
+.new_hospital .device_room > div {
     padding: 16px;
     display: flex;
     justify-content: space-between;
-    border-bottom:1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-.new_hospital .device_room> div p{
+.new_hospital .device_room > div p {
     width: 110px;
     margin-top: 8px;
     font-size: 12px;
     vertical-align: middle;
 }
 
-.new_hospital .device_room> div> :first-child{
+.new_hospital .device_room > div > :first-child {
     margin-right: 58px;
 }
 
-.new_hospital .device_room> div .btn_list{
+.new_hospital .device_room > div .btn_list {
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
 }
 
-.new_hospital .device_room> div .btn_list button{
+.new_hospital .device_room > div .btn_list button {
     width: 64px;
     height: 32px;
     border-radius: 4px;
@@ -850,50 +882,59 @@
     font-size: 12px;
 }
 
-.new_hospital .device_room> div .btn_list .btn_modify{
+.new_hospital .device_room > div .btn_list .btn_modify {
     margin-right: 8px;
-    border:1px solid #007A94;
-    color: #007A94;
+    border: 1px solid #007a94;
+    color: #007a94;
 }
 
-
-.new_hospital .device_room .btn_add{
+.new_hospital .device_room .btn_add {
     padding: 16px;
     text-align: right;
     display: block;
     cursor: pointer;
 }
 
-.new_hospital .device_room .btn_add a{
+.new_hospital .device_room .btn_add a {
     margin: 0;
     font-size: 14px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.new_hospital .device_room> div{
+.new_hospital .device_room > div {
     border-bottom: 1px solid #eee;
 }
 
-.modifi_hospital .title{
+.modifi_hospital .title {
     height: 96px;
 }
 
-.modifi_hospital .title h2{
+.modifi_hospital .title h2 {
     margin-bottom: 13px;
 }
 
-.modifi_hospital .title button{width: 64px;height: 40px;font-size: 14px;}
+.modifi_hospital .title button {
+    width: 64px;
+    height: 40px;
+    font-size: 14px;
+}
 
-.modifi_hospital .title .btn_delete{background: #940045;margin-right: 10px;}
+.modifi_hospital .title .btn_delete {
+    background: #940045;
+    margin-right: 10px;
+}
 
-.modifi_hospital .title .btn_new_hospital:disabled{background: #CCCCCC; color: #888888;}
+.modifi_hospital .title .btn_new_hospital:disabled {
+    background: #cccccc;
+    color: #888888;
+}
 
-.modifi_hospital .container .cont{
+.modifi_hospital .container .cont {
     padding: 16px 16px 45px;
     border-bottom: 1px solid #eee;
 }
 
-.modifi_hospital .cont .hospital_patient input{
+.modifi_hospital .cont .hospital_patient input {
     width: 100%;
     height: 36px;
     padding: 0 16px;
@@ -904,88 +945,97 @@
     color: #000;
 }
 
-.modifi_hospital .cont .hospital_patient input::placeholder{
+.modifi_hospital .cont .hospital_patient input::placeholder {
     color: #888888;
 }
 
-.modifi_hospital .cont .hospital_patient .patient_info{
+.modifi_hospital .cont .hospital_patient .patient_info {
     display: flex;
 }
-.modifi_hospital .hospital_patient> div{
+.modifi_hospital .hospital_patient > div {
     display: flex;
 }
 
-.modifi_hospital .hospital_patient .patient_info> :first-child{
+.modifi_hospital .hospital_patient .patient_info > :first-child {
     width: 64px;
     padding: 0 16px;
 }
 
-.modifi_hospital .hospital_patient .patient_info .select_sex{
+.modifi_hospital .hospital_patient .patient_info .select_sex {
     width: 80px;
     height: 36px;
     margin: 0 16px;
 }
 
-.modifi_hospital .hospital_patient .patient_info .select_sex .sex_label{
+.modifi_hospital .hospital_patient .patient_info .select_sex .sex_label {
     font-weight: normal;
     color: #000;
 }
 
-.modifi_hospital .hospital_patient .patient_info> :last-child{
+.modifi_hospital .hospital_patient .patient_info > :last-child {
     width: 296px;
 }
 
-.modifi_hospital .hospital_patient .patient_room .select_ward{
+.modifi_hospital .hospital_patient .patient_room .select_ward {
     width: 160px;
     height: 36px;
 }
 
-.modifi_hospital .hospital_patient .patient_room .select_room{
+.modifi_hospital .hospital_patient .patient_room .select_room {
     width: 160px;
     height: 36px;
     margin: 0 16px;
 }
 
-.modifi_hospital .select_option{
+.modifi_hospital .select_option {
     width: 120px;
 }
 
-.modifi_hospital .select_box .label{
+.modifi_hospital .select_box .label {
     font-size: 12px;
     font-weight: normal;
 }
 
-.selectBox2 .mward_option::after{width: 125px;}
-.selectBox2 .mroom_option::after{width: 125px;}
+.selectBox2 .mward_option::after {
+    width: 125px;
+}
+.selectBox2 .mroom_option::after {
+    width: 125px;
+}
 
-.modifi_hospital .device_room{
+.modifi_hospital .device_room {
     padding: 16px;
 }
 
-.modifi_hospital .device_room> div{
+.modifi_hospital .device_room > div {
     padding: 16px;
-    border-bottom:1px solid #eee;
+    border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.modifi_hospital .device_room> div:not(.control, .btn_add){display: none;}
+.modifi_hospital .device_room > div:not(.control, .btn_add) {
+    display: none;
+}
 
-.modifi_hospital .device_room> div p{
+.modifi_hospital .device_room > div p {
     width: 120px;
     font-size: 12px;
 }
 
-.modifi_hospital .device_room> div p:nth-child(2){width: fit-content; margin-right: 130px;}
+.modifi_hospital .device_room > div p:nth-child(2) {
+    width: fit-content;
+    margin-right: 130px;
+}
 
-.modifi_hospital .device_room> div .btn_list{
+.modifi_hospital .device_room > div .btn_list {
     width: 136px;
     display: flex;
     justify-content: space-between;
 }
 
-.modifi_hospital .device_room> div .btn_list button{
+.modifi_hospital .device_room > div .btn_list button {
     width: 64px;
     height: 32px;
     border-radius: 4px;
@@ -993,84 +1043,89 @@
     font-size: 12px;
 }
 
-.modifi_hospital .device_room> div .btn_list .btn_modify{
+.modifi_hospital .device_room > div .btn_list .btn_modify {
     margin-right: 8px;
 }
 
-.modifi_hospital .device_room .btn_add{
+.modifi_hospital .device_room .btn_add {
     padding: 16px;
     text-align: right;
     display: block;
 }
 
-.modifi_hospital .device_room .btn_add button{
+.modifi_hospital .device_room .btn_add button {
     margin: 0;
     font-size: 14px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.modifi_hospital .device_room> div{
+.modifi_hospital .device_room > div {
     border-bottom: 1px solid #eee;
 }
 
-.modifi_hospital .device_room .control{justify-content: space-between;}
-.modifi_hospital .device_room .control div{
+.modifi_hospital .device_room .control {
+    justify-content: space-between;
+}
+.modifi_hospital .device_room .control div {
     display: flex;
 }
 
-.modifi_hospital .device_room .control p{width: fit-content;}
+.modifi_hospital .device_room .control p {
+    width: fit-content;
+}
 
-.modifi_hospital .device_room .control span{
+.modifi_hospital .device_room .control span {
     margin-left: 17px;
     font-size: 12px;
     font-weight: 500;
-    color: #CCCCCC;
+    color: #cccccc;
 }
 
 .modifi_hospital .device_room .control button,
-.modifi_hospital .device_room .data_control button{
+.modifi_hospital .device_room .data_control button {
     width: 216px;
     height: 32px;
     padding: 0;
-    background: #CCCCCC;
+    background: #cccccc;
     text-align: center;
     font-size: 12px;
     color: #888888;
     display: block;
 }
 
-.modifi_hospital .sex_option2{
+.modifi_hospital .sex_option2 {
     width: 80px;
     z-index: 2;
 }
 
-.modifi_hospital .container> .btn_list{
+.modifi_hospital .container > .btn_list {
     width: 100%;
     display: flex;
     justify-content: flex-end;
 }
 
-.modifi_hospital .container> .btn_list button{
+.modifi_hospital .container > .btn_list button {
     width: 98px;
     height: 32px;
 }
 
-.modifi_hospital .container> .btn_list .btn_no{
+.modifi_hospital .container > .btn_list .btn_no {
     margin-right: 8px;
 }
 
-.modifi_hospital .container> .btn_list .btn_add{
-    background: #007A94;
+.modifi_hospital .container > .btn_list .btn_add {
+    background: #007a94;
     color: #fff;
 }
 
-.modifi_hospital .container> .btn_list .btn_add:hover{
-    background: #004F60;
+.modifi_hospital .container > .btn_list .btn_add:hover {
+    background: #004f60;
 }
 
-
 /* 셀렉트 박스 */
-.select_box * { box-sizing: border-box; }
+.select_box * {
+    box-sizing: border-box;
+}
 .select_box {
     position: relative;
     width: 120px;
@@ -1081,25 +1136,25 @@
 }
 
 .select_box:after {
-    content: ''; 
+    content: '';
     width: 12px;
-    height: 6px; 
-    position: absolute; 
+    height: 6px;
+    position: absolute;
     background: url('/H-Connect/img/under_arrow.svg') no-repeat;
-    top: 50%; 
+    top: 50%;
     right: 20px;
 }
 
-.select_box.on:after{
-    content: ''; 
+.select_box.on:after {
+    content: '';
     width: 12px;
-    height: 6px; 
-    position: absolute; 
+    height: 6px;
+    position: absolute;
     background: url('/H-Connect/img/under_arrow.svg') no-repeat;
-    top: 50%; 
+    top: 50%;
     right: 20px;
     transform: rotate(180deg);
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .select_box .label {
@@ -1119,7 +1174,7 @@
 
 .select_box .option {
     width: 100%;
-    position: absolute; 
+    position: absolute;
     top: 48px;
     left: 0;
     font-size: 14px;
@@ -1128,36 +1183,36 @@
     color: #000;
     overflow: hidden;
     max-height: 0;
-    transition: .3s ease-in;
+    transition: 0.3s ease-in;
 }
 
-.selectBox2 .ward_option::after{
+.selectBox2 .ward_option::after {
     width: 125px;
 }
 
 .select_box .option_item {
     padding: 5px 15px 5px;
-    transition: .1s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
 
-.select_box.active .ward_option> :first-child{
-    border-top: 1px solid #007A94;
+.select_box.active .ward_option > :first-child {
+    border-top: 1px solid #007a94;
 }
 
-.select_box .ward_option> :last-child {
-    border-radius:4px;
+.select_box .ward_option > :last-child {
+    border-radius: 4px;
 }
 
-.select_box.on{
+.select_box.on {
     background: #fff;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
     border-bottom: 1px solid #fff;
-    border-bottom-right-radius:0px;
+    border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-.select_box.on .optionList{
+.select_box.on .optionList {
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     transition: 0;
@@ -1165,13 +1220,13 @@
 
 .select_box .optionList {
     width: 420px;
-    position: absolute; 
+    position: absolute;
     top: 46px;
     left: -1px;
     font-size: 14px;
     font-weight: normal;
     background: #fff;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
     color: #000;
     overflow: hidden;
     max-height: 0;
@@ -1179,15 +1234,15 @@
     display: block;
 }
 
-.select_box .device_option{
+.select_box .device_option {
     width: 160px;
-    position: absolute; 
+    position: absolute;
     top: 35px;
     left: -1px;
     font-size: 14px;
     font-weight: normal;
     background: #fff;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
     color: #000;
     overflow: hidden;
     max-height: 0;
@@ -1195,21 +1250,17 @@
     z-index: 999;
 }
 
-
-
-
-
 /* 모니터링 */
-.patient_vital{
+.patient_vital {
     background-color: #444;
 }
 
-.patient_vital .wrap_inner{
+.patient_vital .wrap_inner {
     min-width: 1820px;
     display: block;
 }
 
-.patient_vital .all_patient{
+.patient_vital .all_patient {
     width: 1758px;
     height: fit-content;
     max-height: 720px;
@@ -1220,11 +1271,11 @@
     flex-wrap: wrap;
 }
 
-.patient_vital .all_patient::-webkit-scrollbar{
+.patient_vital .all_patient::-webkit-scrollbar {
     display: none;
 }
 
-.patient_vital .all_patient .patient_monitor{
+.patient_vital .all_patient .patient_monitor {
     background-color: #000;
     width: 240px;
     height: 88px;
@@ -1235,29 +1286,29 @@
     margin-right: 8px;
 }
 
-.patient_vital .all_patient> :last-child{
+.patient_vital .all_patient > :last-child {
     margin: 0;
 }
 
-.patient_vital .all_patient .patient_monitor:hover{
+.patient_vital .all_patient .patient_monitor:hover {
     background-color: #222;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.patient_vital .all_patient .patient_monitor .patient_info{
+.patient_vital .all_patient .patient_monitor .patient_info {
     color: #fff;
     font-size: 12px;
     line-height: 17px;
 }
 
-.patient_vital .all_patient .patient_monitor .vital_moniter{
+.patient_vital .all_patient .patient_monitor .vital_moniter {
     margin-top: 7px;
     display: flex;
     /* justify-content: space-between; */
     color: #fff;
 }
 
-.patient_vital .all_patient .patient_monitor .vital_moniter div{
+.patient_vital .all_patient .patient_monitor .vital_moniter div {
     width: 40px;
     height: 48px;
     padding: 4px;
@@ -1265,50 +1316,50 @@
     text-align: center;
 }
 
-.patient_vital .all_patient .patient_monitor .vital_moniter div h3{
+.patient_vital .all_patient .patient_monitor .vital_moniter div h3 {
     font-size: 12px;
     font-family: 'Bebas Neue', cursive;
 }
 
-.patient_vital .all_patient .patient_monitor .vital_moniter div p{
+.patient_vital .all_patient .patient_monitor .vital_moniter div p {
     font-size: 24px;
     font-family: 'Bebas Neue', cursive;
 }
 
-.patient_vital .all_patient .patient_monitor .vital_moniter .hr{
-     margin: 0 4px;
+.patient_vital .all_patient .patient_monitor .vital_moniter .hr {
+    margin: 0 4px;
 }
 
-.patient_vital .all_patient .patient_monitor .vital_moniter .sp{
+.patient_vital .all_patient .patient_monitor .vital_moniter .sp {
     margin-right: 4px;
 }
 
-.patient_vital .all_patient .patient_monitor .vital_moniter .resp{
+.patient_vital .all_patient .patient_monitor .vital_moniter .resp {
     margin-right: 4px;
 }
 
-.patient_vital .all_patient .patient_monitor .empty_bed{
+.patient_vital .all_patient .patient_monitor .empty_bed {
     /* width: 240px; */
     position: relative;
 }
 
-.patient_vital .all_patient .patient_monitor .empty_bed p{
+.patient_vital .all_patient .patient_monitor .empty_bed p {
     float: left;
     color: #444;
 }
 
-.patient_vital .all_patient .patient_monitor .empty_bed div{
+.patient_vital .all_patient .patient_monitor .empty_bed div {
     width: 64px;
     height: 64px;
     margin: 3px auto 0 80px;
 }
 
-.patient_vital .all_patient .patient_monitor .empty_bed div img{
+.patient_vital .all_patient .patient_monitor .empty_bed div img {
     width: 100%;
     height: 100%;
 }
 
-.patient_vital .all_patient .patient_monitor .empty_bed .btn_hover{
+.patient_vital .all_patient .patient_monitor .empty_bed .btn_hover {
     position: absolute;
     top: -3px;
     left: 50%;
@@ -1316,53 +1367,50 @@
     opacity: 0;
 }
 
-.patient_vital .all_patient .patient_monitor .empty_bed .btn_hover:hover{
+.patient_vital .all_patient .patient_monitor .empty_bed .btn_hover:hover {
     opacity: 1;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.patient_vital .all_patient .patient_monitor.active{
+.patient_vital .all_patient .patient_monitor.active {
     background-color: #f00;
 }
 
-.patient_vital .all_patient .patient_monitor.active:hover{
-    background: #C20000;
-    transition: .3s;
+.patient_vital .all_patient .patient_monitor.active:hover {
+    background: #c20000;
+    transition: 0.3s;
 }
 
-.patient_vital .all_patient .patient_monitor.active .vital_moniter .ews{
+.patient_vital .all_patient .patient_monitor.active .vital_moniter .ews {
     background-color: #fff;
     color: #f00;
 }
 
-.patient_vital .all_patient .patient_monitor.active .vital_moniter .hr{
+.patient_vital .all_patient .patient_monitor.active .vital_moniter .hr {
     background-color: #fff;
     color: #f00;
 }
 
-.patient_vital .all_patient .patient_monitor.active.yellow{
-    background: #FFBA00;
+.patient_vital .all_patient .patient_monitor.active.yellow {
+    background: #ffba00;
 }
 
-.patient_vital .all_patient .patient_monitor.active.yellow:hover{
-    background: #FF9D00;
-    transition: .3s;
+.patient_vital .all_patient .patient_monitor.active.yellow:hover {
+    background: #ff9d00;
+    transition: 0.3s;
 }
 
-.patient_vital .all_patient .patient_monitor.active.blue{
-    background: #0062FF;
+.patient_vital .all_patient .patient_monitor.active.blue {
+    background: #0062ff;
 }
 
-.patient_vital .all_patient .patient_monitor.active.blue:hover{
-    background: #044CBF;
-    transition: .3s;
+.patient_vital .all_patient .patient_monitor.active.blue:hover {
+    background: #044cbf;
+    transition: 0.3s;
 }
-
-
-
 
 /* 모니터링- 병실별 보기 */
-.patient_vital .wrap_inner> .container{
+.patient_vital .wrap_inner > .container {
     width: auto;
     height: 780px;
     padding-right: 25px;
@@ -1370,69 +1418,72 @@
     overflow-y: scroll;
 }
 
-.patient_vital .wrap_inner> .container::-webkit-scrollbar{
+.patient_vital .wrap_inner > .container::-webkit-scrollbar {
     width: 8px;
 }
 
-.patient_vital .wrap_inner> .container::-webkit-scrollbar-thumb{
+.patient_vital .wrap_inner > .container::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
     background: #ccc;
 }
 
-.patient_vital .room_view{
+.patient_vital .room_view {
     height: fit-content;
     margin-bottom: 8px;
 }
 
-.patient_vital .room_view .container{
+.patient_vital .room_view .container {
     width: fit-content;
     max-width: 1708px;
     padding: 8px 0 0 32px;
-    background: linear-gradient(to right, #007A94,#003D4A);
+    background: linear-gradient(to right, #007a94, #003d4a);
     border-radius: 8px;
     display: flex;
 }
 
-.patient_vital .room_view .pateint_room{
+.patient_vital .room_view .pateint_room {
     width: 140px;
     height: 64px;
     margin: 12px 48px 0 0;
 }
 
-.patient_vital .room_view .room_num{
+.patient_vital .room_view .room_num {
     display: flex;
     justify-content: space-between;
 }
 
-.patient_vital .room_view .room_num p{
+.patient_vital .room_view .room_num p {
     font-size: 24px;
     line-height: 35px;
     color: #fff;
 }
-.patient_vital .room_view .room_count{display:flex;}
+.patient_vital .room_view .room_count {
+    display: flex;
+}
 
-.patient_vital .room_view .room_count p{
+.patient_vital .room_view .room_count p {
     font-size: 14px;
     color: #fff;
 }
 
-.patient_vital .room_view  .btn_setting{
+.patient_vital .room_view .btn_setting {
     width: 32px;
     height: 32px;
     background: none;
 }
 
-.patient_vital .room_view .btn_setting img{
-    filter: invert(99%) sepia(99%) saturate(3%) hue-rotate(256deg) brightness(201%) contrast(155%);
+.patient_vital .room_view .btn_setting img {
+    filter: invert(99%) sepia(99%) saturate(3%) hue-rotate(256deg)
+        brightness(201%) contrast(155%);
 }
 
-.patient_vital .room_view .btn_setting:hover{
+.patient_vital .room_view .btn_setting:hover {
     background: #004f60;
     border-radius: 4px;
 }
 
-.patient_vital .room_view .monitor_wrap{
+.patient_vital .room_view .monitor_wrap {
     width: calc(100% - 188px);
     display: flex;
     flex-wrap: wrap;
@@ -1442,99 +1493,98 @@
     margin-bottom:0;
 } */
 
-
 /* 모니터링 환자 선택 */
-.monitoring_patient section{
+.monitoring_patient section {
     background: none;
 }
 
-.monitoring_patient .patient{
+.monitoring_patient .patient {
     padding: 0;
 }
 
-.monitoring_patient .btn_list button{
+.monitoring_patient .btn_list button {
     width: 100%;
     margin-bottom: 16px;
     height: 72px;
     border-radius: 8px;
 }
 
-.monitoring_patient .btn_list .btn_alarm{
+.monitoring_patient .btn_list .btn_alarm {
     font-size: 24px;
     text-align: center;
 }
 
-.monitoring_patient .btn_list .btn_alarm{
+.monitoring_patient .btn_list .btn_alarm {
     background: #ccc;
     color: #eee;
 }
 
-.monitoring_patient .btn_list .btn_alarm_red{
+.monitoring_patient .btn_list .btn_alarm_red {
     font-size: 24px;
     color: #fff;
-    background: linear-gradient(to right, #940045,#4A0000);
+    background: linear-gradient(to right, #940045, #4a0000);
     display: none;
 }
 
-.monitoring_patient .emergency_list{
+.monitoring_patient .emergency_list {
     width: 360px;
     display: none;
 }
 
-.monitoring_patient .emergency_list .response{
+.monitoring_patient .emergency_list .response {
     font-size: 24px;
-    color: #007A94;
+    color: #007a94;
     background: #fff;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
 }
 
-.monitoring_patient .emergency_list .circum{
+.monitoring_patient .emergency_list .circum {
     padding: 16px;
-    background: linear-gradient(to right, #940045,#4A0000);
+    background: linear-gradient(to right, #940045, #4a0000);
     font-size: 16px;
     color: #fff;
 }
 
-.monitoring_patient .emergency_list .circum span{
+.monitoring_patient .emergency_list .circum span {
     font-size: 12px;
 }
 
-.monitoring_patient .patient> .container{
+.monitoring_patient .patient > .container {
     height: 630px;
     background-color: #fff;
     border-radius: 8px;
 }
 
-.monitoring_patient .patient .title{
+.monitoring_patient .patient .title {
     padding: 32px 32px 26px;
 }
 
-.monitoring_patient .patient .title p{
+.monitoring_patient .patient .title p {
     display: inline-block;
 }
 
-.monitoring_patient .patient .title> :last-child{
+.monitoring_patient .patient .title > :last-child {
     float: right;
 }
 
-.monitoring_patient .patient .container .container{
-    padding:0 16px 16px;
+.monitoring_patient .patient .container .container {
+    padding: 0 16px 16px;
 }
 
-.monitoring_patient .management_list{
+.monitoring_patient .management_list {
     margin: 0;
     padding: 24px 8px;
 }
 
-.monitoring_patient .management_list .list{
+.monitoring_patient .management_list .list {
     width: 100%;
 }
 
-.monitoring_patient .patient .management_list .list.off div img{
+.monitoring_patient .patient .management_list .list.off div img {
     filter: none;
 }
 
-.monitoring_patient .vital_chart{
+.monitoring_patient .vital_chart {
     width: 1316px;
     height: 720px;
     /* margin:0 72px 0 32px; */
@@ -1542,23 +1592,31 @@
     margin-left: 32px;
 }
 
-.monitoring_patient .vital_chart .title{
+.monitoring_patient .vital_chart .title {
     width: 100%;
     height: 40px;
     padding: 11px 16px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     border-radius: 8px 8px 0 0;
     display: flex;
     justify-content: space-between;
     color: #fff;
 }
 
-.monitoring_patient .vital_chart .title div{ display: flex;}
-.monitoring_patient .vital_chart .title> :first-child :first-child {width: 150px;}
-.monitoring_patient .chart_time{justify-content: flex-end;}
-.monitoring_patient .chart_time p{display: flex;}
+.monitoring_patient .vital_chart .title div {
+    display: flex;
+}
+.monitoring_patient .vital_chart .title > :first-child :first-child {
+    width: 150px;
+}
+.monitoring_patient .chart_time {
+    justify-content: flex-end;
+}
+.monitoring_patient .chart_time p {
+    display: flex;
+}
 
-.monitoring_patient .vital_chart .cont{
+.monitoring_patient .vital_chart .cont {
     width: 1316px;
     height: 680px;
     padding: 32px;
@@ -1566,9 +1624,13 @@
     border-radius: 0 0 8px 8px;
 }
 
-.monitoring_patient .tab_wrap{display: flex; align-items: center; justify-content: space-between;}
+.monitoring_patient .tab_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-.monitoring_patient ul.tabs li{
+.monitoring_patient ul.tabs li {
     width: 144px;
     height: 40px;
     padding: 10px 15px;
@@ -1582,78 +1644,82 @@
     display: inline-block;
     cursor: pointer;
 }
-  
-.monitoring_patient ul.tabs li.current{
-    background: #007A94;
+
+.monitoring_patient ul.tabs li.current {
+    background: #007a94;
     color: #fff;
 }
 
-.monitoring_patient .tab_wrap button{
+.monitoring_patient .tab_wrap button {
     width: 80px;
     height: 40px;
     font-size: 14px;
 }
-.monitoring_patient .tab_wrap button:hover{background: #eee;}
-  
-.monitoring_patient .tab-content{
+.monitoring_patient .tab_wrap button:hover {
+    background: #eee;
+}
+
+.monitoring_patient .tab-content {
     display: none;
     padding: 32px 0;
 }
-  
-.monitoring_patient .tab-content.current{
+
+.monitoring_patient .tab-content.current {
     display: inherit;
 }
 
 .monitoring_patient .ecg,
 .monitoring_patient .sp,
 .monitoring_patient .resp,
-.monitoring_patient .control{
+.monitoring_patient .control {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.monitoring_patient .sp{
+.monitoring_patient .sp {
     margin: 10px 0;
 }
 
-.monitoring_patient .g_type> div{
+.monitoring_patient .g_type > div {
     margin-top: 20px;
 }
 
-.monitoring_patient .g_type> p{font-size: 14px;}
+.monitoring_patient .g_type > p {
+    font-size: 14px;
+}
 
-.monitoring_patient .bell{
+.monitoring_patient .bell {
     width: 160px;
     height: 104px;
     padding: 8px 16px;
     cursor: pointer;
 }
 
-.monitoring_patient .bell_name p{
+.monitoring_patient .bell_name p {
     font-size: 14px;
 }
 
-.monitoring_patient .control{
+.monitoring_patient .control {
     margin-bottom: 39px;
 }
 
-.monitoring_patient .control> div:not(.temp){
+.monitoring_patient .control > div:not(.temp) {
     display: flex;
 }
 
-.monitoring_patient .control .ews{
+.monitoring_patient .control .ews {
     width: 88px;
     padding: 16px;
     color: #fff;
     cursor: pointer;
 }
 
-.monitoring_patient .control .ews .bell_name p{
+.monitoring_patient .control .ews .bell_name p {
     margin-right: 7px;
 }
 
-.monitoring_patient .control .ews .bell_num{
+.monitoring_patient .control .ews .bell_num {
     width: 50px;
     margin-top: 7px;
     margin-left: 16px;
@@ -1662,7 +1728,7 @@
     align-items: center;
 }
 
-.monitoring_patient .control .ews .bell_num> div{
+.monitoring_patient .control .ews .bell_num > div {
     margin-top: -4px;
 }
 
@@ -1670,7 +1736,7 @@
     margin-right: 8px;
 } */
 
-.monitoring_patient .control .ews .bell_num button{
+.monitoring_patient .control .ews .bell_num button {
     width: 20px;
     height: 20px;
     display: flex;
@@ -1678,7 +1744,7 @@
     align-items: center;
 }
 
-.monitoring_patient .control .bell_name input[type="checkbox"]+label span{
+.monitoring_patient .control .bell_name input[type='checkbox'] + label span {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -1687,59 +1753,64 @@
     background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat / contain;
 }
 
-.monitoring_patient .mmhg{
+.monitoring_patient .mmhg {
     width: 260px;
     padding: 16px;
     margin: 0 72px 0 64px;
     color: #fff;
     cursor: pointer;
 }
-.monitoring_patient .time{display: flex; align-items: center;}
+.monitoring_patient .time {
+    display: flex;
+    align-items: center;
+}
 
-.monitoring_patient .time div{
+.monitoring_patient .time div {
     width: 15px;
     height: 15px;
     margin-right: 8px;
 }
 
-.monitoring_patient .time p{
+.monitoring_patient .time p {
     margin-top: -2px;
     margin-right: 8px;
     font-size: 11px;
     display: flex;
 }
 
-.monitoring_patient .pulse{
+.monitoring_patient .pulse {
     width: 160px;
     padding: 16px;
-    color: #00FFFF;
+    color: #00ffff;
     cursor: pointer;
 }
 
-.monitoring_patient .pulse .time p{
+.monitoring_patient .pulse .time p {
     margin: 0 4px 0 0;
 }
 
-.monitoring_patient .pulse .time> :last-child {
+.monitoring_patient .pulse .time > :last-child {
     margin-right: 0px;
 }
 
-.monitoring_patient .temp{
+.monitoring_patient .temp {
     width: 160px;
     height: 136px;
     padding: 16px;
-    color: #FF3184;
+    color: #ff3184;
     cursor: pointer;
 }
 
-.monitoring_patient .temp .bell_num{margin-top: 7px;}   
+.monitoring_patient .temp .bell_num {
+    margin-top: 7px;
+}
 
 /* tabular trend */
-.monitoring_patient .wrap_inner{
+.monitoring_patient .wrap_inner {
     overflow: hidden;
 }
 
-.monitoring_patient .tabular_table .table_title{
+.monitoring_patient .tabular_table .table_title {
     height: 32px;
     padding: 7px 16px;
     background: #222;
@@ -1753,109 +1824,134 @@
     color: #ccc;
 }
 
-.monitoring_patient .tabular_table .table_title .date_time{
+.monitoring_patient .tabular_table .table_title .date_time {
     margin-right: 120px;
 }
 
-.monitoring_patient .tabular_table .table_title .hr{
+.monitoring_patient .tabular_table .table_title .hr {
     margin-right: 50px;
 }
 
-.monitoring_patient .tabular_table .table_title .temp{
+.monitoring_patient .tabular_table .table_title .temp {
     width: fit-content;
     height: fit-content;
     padding: 0;
     margin-right: 58px;
 }
 
-.monitoring_patient .tabular_table .table_title .ews{
+.monitoring_patient .tabular_table .table_title .ews {
     margin-right: 55px;
 }
 
-.monitoring_patient .tabular_table .table_title .spo{
+.monitoring_patient .tabular_table .table_title .spo {
     margin-right: 60px;
 }
 
-.monitoring_patient .tabular_table .table_content{
+.monitoring_patient .tabular_table .table_content {
     height: 32px;
     padding: 8px 16px 7px;
     border-bottom: 1px solid #888;
     display: flex;
 }
 
-.monitoring_patient .table_content p{
+.monitoring_patient .table_content p {
     color: #ccc;
     display: flex;
 }
 
-.monitoring_patient .table_content .date_time{
+.monitoring_patient .table_content .date_time {
     margin-right: 88px;
     display: flex;
 }
 
-.monitoring_patient .table_content .date_time> :first-child{
+.monitoring_patient .table_content .date_time > :first-child {
     margin-right: 4px;
 }
 
-.monitoring_patient .table_content .hr{
+.monitoring_patient .table_content .hr {
     margin-right: 85px;
 }
 
-.monitoring_patient .table_content .temp{
+.monitoring_patient .table_content .temp {
     width: fit-content;
     height: fit-content;
     margin-right: 85px;
     padding: 0;
 }
 
-.monitoring_patient .tabular_table .table_content .ews{
+.monitoring_patient .tabular_table .table_content .ews {
     margin-right: 79px;
 }
 
-.monitoring_patient .tabular_table .table_content .spo{
+.monitoring_patient .tabular_table .table_content .spo {
     margin-right: 99px;
 }
 
-.monitoring_patient .tabular_table .table_page ul{
+.monitoring_patient .tabular_table .table_page ul {
     margin-top: 56px;
     text-align: center;
 }
 
-.monitoring_patient .tabular_table .table_page ul li{
+.monitoring_patient .tabular_table .table_page ul li {
     display: inline-block;
     font-size: 11px;
     color: #888;
 }
 
-.monitoring_patient .tabular_table .table_page ul li.active{
+.monitoring_patient .tabular_table .table_page ul li.active {
     color: #fff;
 }
 
-.monitoring_patient .graph_wrap{
+.monitoring_patient .graph_wrap {
     height: 392px;
     overflow: auto;
 }
 
-.monitoring_patient .graph_wrap::-webkit-scrollbar{display: none;}
-.monitoring_patient .graph_wrap .chart{
+.monitoring_patient .graph_wrap::-webkit-scrollbar {
+    display: none;
+}
+.monitoring_patient .graph_wrap .chart {
     padding: 42px 0 41px;
     display: flex;
 }
-.monitoring_patient .graph_wrap .left{width: fit-content;padding: 0;margin: -4px 11px 0 0;display: flex;}
-.monitoring_patient .graph_wrap .chart p{color: #8A9296;}
-.monitoring_patient .chart .index p{margin-right: 20px;}
-.monitoring_patient .hr_chart .index p{color: #00FE19;}
-.monitoring_patient .sp_chart .index p{color: #00FFFF;}
-.monitoring_patient .resp_chart .index p{color: #EEFF00;}
-.monitoring_patient .temp_chart .index p{color: #FF5499;}
+.monitoring_patient .graph_wrap .left {
+    width: fit-content;
+    padding: 0;
+    margin: -4px 11px 0 0;
+    display: flex;
+}
+.monitoring_patient .graph_wrap .chart p {
+    color: #8a9296;
+}
+.monitoring_patient .chart .index p {
+    margin-right: 20px;
+}
+.monitoring_patient .hr_chart .index p {
+    color: #00fe19;
+}
+.monitoring_patient .sp_chart .index p {
+    color: #00ffff;
+}
+.monitoring_patient .resp_chart .index p {
+    color: #eeff00;
+}
+.monitoring_patient .temp_chart .index p {
+    color: #ff5499;
+}
 
-.monitoring_patient .graph_wrap .chart .bpm{
+.monitoring_patient .graph_wrap .chart .bpm {
     line-height: 30px;
     text-align: right;
 }
-.monitoring_patient .graph_wrap .right{width: 1153px;padding: 0;position: relative;}
-.monitoring_patient .graph_wrap .bg_graph{height: 190px;}
-.monitoring_patient .row_time{
+.monitoring_patient .graph_wrap .right {
+    width: 1153px;
+    padding: 0;
+    position: relative;
+}
+.monitoring_patient .graph_wrap .bg_graph {
+    height: 190px;
+}
+.monitoring_patient .row_time {
     padding: 0 0 0 27px;
     margin: 7px 0 0;
     font-size: 12px;
@@ -1863,9 +1959,11 @@
     justify-content: space-between;
 }
 
-.monitoring_patient .row_time > :last-child{margin: 0;}
+.monitoring_patient .row_time > :last-child {
+    margin: 0;
+}
 
-.monitoring_patient .time_line{
+.monitoring_patient .time_line {
     position: absolute;
     top: -27px;
     left: 50%;
@@ -1873,13 +1971,13 @@
     margin-left: -21px;
 }
 
-.monitoring_patient .time_line .time{
+.monitoring_patient .time_line .time {
     font-size: 12px;
     text-align: center;
     display: flex;
 }
 
-.monitoring_patient .time_line::after{
+.monitoring_patient .time_line::after {
     position: absolute;
     content: '';
     width: 2px;
@@ -1889,7 +1987,7 @@
     transform: translateX(-50%);
 }
 
-.monitoring_patient .time_line::before{
+.monitoring_patient .time_line::before {
     position: absolute;
     content: '';
     width: 12px;
@@ -1899,35 +1997,68 @@
     transform: translateX(-50%);
 }
 
-.monitoring_patient .graph_wrap .hr_chart .time{color: #00FE22;}
-.monitoring_patient .hr_chart .row_time{color: #00FE22;}
-.monitoring_patient .hr_chart .time_line::after{background: #00FE22;}
-.monitoring_patient .hr_chart .time_line::before{background: url('../img/icon/tri_green.svg') no-repeat center / contain;}
+.monitoring_patient .graph_wrap .hr_chart .time {
+    color: #00fe22;
+}
+.monitoring_patient .hr_chart .row_time {
+    color: #00fe22;
+}
+.monitoring_patient .hr_chart .time_line::after {
+    background: #00fe22;
+}
+.monitoring_patient .hr_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_green.svg') no-repeat center /
+        contain;
+}
 
-.monitoring_patient .graph_wrap .sp_chart .time{color: #00FFFF;}
-.monitoring_patient .sp_chart .row_time{color: #00FFFF;}
-.monitoring_patient .sp_chart .time_line::after{background: #00FFFF;}
-.monitoring_patient .sp_chart .time_line::before{background: url('../img/icon/tri_blue.svg') no-repeat center / contain;}
+.monitoring_patient .graph_wrap .sp_chart .time {
+    color: #00ffff;
+}
+.monitoring_patient .sp_chart .row_time {
+    color: #00ffff;
+}
+.monitoring_patient .sp_chart .time_line::after {
+    background: #00ffff;
+}
+.monitoring_patient .sp_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_blue.svg') no-repeat center /
+        contain;
+}
 
-.monitoring_patient .graph_wrap .resp_chart .time{color: #EEFF00;}
-.monitoring_patient .resp_chart .row_time{color: #EEFF00;}
-.monitoring_patient .resp_chart .time_line::after{background: #EEFF00;}
-.monitoring_patient .resp_chart .time_line::before{background: url('../img/icon/tri_yellow.svg') no-repeat center / contain;}
+.monitoring_patient .graph_wrap .resp_chart .time {
+    color: #eeff00;
+}
+.monitoring_patient .resp_chart .row_time {
+    color: #eeff00;
+}
+.monitoring_patient .resp_chart .time_line::after {
+    background: #eeff00;
+}
+.monitoring_patient .resp_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_yellow.svg') no-repeat center /
+        contain;
+}
 
-.monitoring_patient .graph_wrap .temp_chart .time{color: #FF5499;}
-.monitoring_patient .temp_chart .row_time{color: #FF5499;}
-.monitoring_patient .temp_chart .time_line::after{background: #FF5499;}
-.monitoring_patient .temp_chart .time_line::before{background: url('../img/icon/tri_pink.svg') no-repeat center / contain;}
-
-
-
+.monitoring_patient .graph_wrap .temp_chart .time {
+    color: #ff5499;
+}
+.monitoring_patient .temp_chart .row_time {
+    color: #ff5499;
+}
+.monitoring_patient .temp_chart .time_line::after {
+    background: #ff5499;
+}
+.monitoring_patient .temp_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_pink.svg') no-repeat center /
+        contain;
+}
 
 /* event */
 /* .monitoring_patient .cont .event .table_title .date_time{
     margin-right: 83px;
 } */
 
-.monitoring_patient .cont .event .table_title .alarm_des{
+.monitoring_patient .cont .event .table_title .alarm_des {
     margin-right: 703px;
 }
 
@@ -1936,16 +2067,16 @@
     overflow-y: auto;
 }
 
-.monitoring_patient .cont .event .table_body::-webkit-scrollbar{
+.monitoring_patient .cont .event .table_body::-webkit-scrollbar {
     width: 8px;
 }
 
-.monitoring_patient .cont .event .table_body::-webkit-scrollbar-thumb{
+.monitoring_patient .cont .event .table_body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: #ccc;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap{
+.monitoring_patient .cont .event .table_body .table_wrap {
     height: 32px;
     padding: 8px 45px 7px 16px;
     border-bottom: 1px solid #888;
@@ -1954,97 +2085,112 @@
     cursor: pointer;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap.on{
+.monitoring_patient .cont .event .table_body .table_wrap.on {
     border-bottom: 0px solid #888;
 }
 
-
-.monitoring_patient .cont .event .table_body .table_wrap .close{
+.monitoring_patient .cont .event .table_body .table_wrap .close {
     display: none;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap> :last-child span{
+.monitoring_patient .cont .event .table_body .table_wrap > :last-child span {
     position: relative;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap> :last-child span::after{
-    content: ''; 
+.monitoring_patient
+    .cont
+    .event
+    .table_body
+    .table_wrap
+    > :last-child
+    span::after {
+    content: '';
     width: 12px;
-    height: 6px; 
-    position: absolute; 
+    height: 6px;
+    position: absolute;
     background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
-    transition: .3s;
-    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    transition: 0.3s;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg)
+        brightness(108%) contrast(101%);
     transform: translateY(-50%);
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap.on> :last-child span::after{
-    content: ''; 
+.monitoring_patient
+    .cont
+    .event
+    .table_body
+    .table_wrap.on
+    > :last-child
+    span::after {
+    content: '';
     width: 12px;
-    height: 6px; 
-    position: absolute; 
+    height: 6px;
+    position: absolute;
     background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: -35px;
-    transition: .3s;
-    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    transition: 0.3s;
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg)
+        brightness(108%) contrast(101%);
     transform: rotate(180deg) translateY(0);
 }
 
-.monitoring_patient .event .table_body .table_wrap.on .more{display: none;}
-.monitoring_patient .event .table_body .table_wrap.on .close{display: inline-block;}
+.monitoring_patient .event .table_body .table_wrap.on .more {
+    display: none;
+}
+.monitoring_patient .event .table_body .table_wrap.on .close {
+    display: inline-block;
+}
 
-
-.monitoring_patient .event .table_body .table_wrap> div{
+.monitoring_patient .event .table_body .table_wrap > div {
     display: flex;
 }
-.monitoring_patient .event .table_body .date_time{
+.monitoring_patient .event .table_body .date_time {
     margin-right: 85px;
     display: flex;
 }
 
-.monitoring_patient .event .table_body .date_time > :first-child{
+.monitoring_patient .event .table_body .date_time > :first-child {
     margin-right: 4px;
 }
 
-.monitoring_patient .event .table_body .table_wrap p{
+.monitoring_patient .event .table_body .table_wrap p {
     font-size: 12px;
     color: #ccc;
     display: flex;
 }
 
-.monitoring_patient .event .table_body .table_content{
-    height: 120px;  
+.monitoring_patient .event .table_body .table_content {
+    height: 120px;
     overflow: hidden;
     display: none;
 }
 
-.monitoring_patient .table_body .table_content .cont_inner{
+.monitoring_patient .table_body .table_content .cont_inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.monitoring_patient .table_body .table_content .cont_inner .btn_list{
+.monitoring_patient .table_body .table_content .cont_inner .btn_list {
     width: 80px;
     display: block;
 }
 
-.monitoring_patient .cont .event .table_body .table_content .ecg{
+.monitoring_patient .cont .event .table_body .table_content .ecg {
     display: flex;
     justify-content: space-between;
 }
 
-
-.monitoring_patient .table_body .table_content .ecg p{
+.monitoring_patient .table_body .table_content .ecg p {
     font-size: 14px;
-    color: #00FF22;
+    color: #00ff22;
     display: block;
 }
 
-.monitoring_patient .table_body .table_content .ecg .bell{
+.monitoring_patient .table_body .table_content .ecg .bell {
     width: 160px;
     height: 104px;
     padding: 8px 16px;
@@ -2052,7 +2198,7 @@
     cursor: pointer;
 }
 
-.monitoring_patient .table_body .table_content .ecg .ecg_graph> div{
+.monitoring_patient .table_body .table_content .ecg .ecg_graph > div {
     width: 916px;
     height: 70px;
     padding: 13px 0;
@@ -2060,43 +2206,53 @@
     overflow-y: hidden;
 }
 
-.monitoring_patient .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar{
+.monitoring_patient
+    .table_body
+    .table_content
+    .ecg
+    .ecg_graph
+    > div::-webkit-scrollbar {
     width: 3px;
     height: 8px;
 }
 
-.monitoring_patient .table_body .table_content .ecg .ecg_graph> div::-webkit-scrollbar-thumb{
+.monitoring_patient
+    .table_body
+    .table_content
+    .ecg
+    .ecg_graph
+    > div::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: #ccc;
 }
 
-.monitoring_patient .img_container{
+.monitoring_patient .img_container {
     width: 1090px;
     height: 64px;
 }
 
-.monitoring_patient .table_body .table_content .ecg .bell> div{
+.monitoring_patient .table_body .table_content .ecg .bell > div {
     display: flex;
 }
 
-.monitoring_patient .table_body .table_content .bell_num div p{
+.monitoring_patient .table_body .table_content .bell_num div p {
     font-size: 18px;
 }
 
-.monitoring_patient .table_body .table_content .bell_num> p{
+.monitoring_patient .table_body .table_content .bell_num > p {
     font-size: 48px;
 }
 
-.monitoring_patient .table_body .table_content .ecg .bell_name{
+.monitoring_patient .table_body .table_content .ecg .bell_name {
     display: flex;
     justify-content: space-between;
 }
 
-.monitoring_patient .table_body .table_content .ecg .bell_name p{
+.monitoring_patient .table_body .table_content .ecg .bell_name p {
     font-size: 14px;
 }
 
-.monitoring_patient .table_body .btn_list button{
+.monitoring_patient .table_body .btn_list button {
     width: 80px;
     height: 32px;
     padding: 6px 15px;
@@ -2104,96 +2260,93 @@
     border-radius: 4px;
 }
 
-.monitoring_patient .table_body .btn_confirm{
-    background: #007A94;
+.monitoring_patient .table_body .btn_confirm {
+    background: #007a94;
     color: #fff;
 }
 
-.monitoring_patient  .table_body .btn_confirm:hover{
-    background: #004F60;
+.monitoring_patient .table_body .btn_confirm:hover {
+    background: #004f60;
 }
 
-.monitoring_patient .table_body .btn_confirm:disabled{
+.monitoring_patient .table_body .btn_confirm:disabled {
     background: #888;
     color: #444;
 }
 
-.monitoring_patient .table_body .btn_delete{
+.monitoring_patient .table_body .btn_delete {
     background: #940045;
     color: #fff;
 }
 
-.monitoring_patient .tabular_table .table_body .btn_delete:hover{
-    background: #60002D;
+.monitoring_patient .tabular_table .table_body .btn_delete:hover {
+    background: #60002d;
 }
 
-
 /* 모니터링 경보 warning */
-.warning .tabs{
+.warning .tabs {
     margin-bottom: 32px;
 }
 
-.warning .btn_alarm{
+.warning .btn_alarm {
     display: none;
 }
 
-.warning .patient .btn_list .btn_alarm_red{
+.warning .patient .btn_list .btn_alarm_red {
     display: block;
 }
 
-.warning .tab-content{
+.warning .tab-content {
     padding: 0;
 }
 
-.warning .vital_chart .title{
-    background: linear-gradient(to right, #940045, #4A0000);
+.warning .vital_chart .title {
+    background: linear-gradient(to right, #940045, #4a0000);
 }
 
-.warning .active .img_graph{
+.warning .active .img_graph {
     background: #f00;
     border-radius: 8px;
 }
 
-.warning .img_graph{
+.warning .img_graph {
     height: 104px;
     padding: 8px 16px;
 }
 
-.warning .img_graph div{
+.warning .img_graph div {
     margin-top: 20px;
 }
 
-.warning .cont .active .bell{
+.warning .cont .active .bell {
     background: #f00;
     border-radius: 8px;
 }
 
-.warning .cont .active .bell_name p{
+.warning .cont .active .bell_name p {
     color: #fff;
 }
 
-.warning .cont .active .bell_num p{
+.warning .cont .active .bell_num p {
     color: #fff;
 }
 
-.warning .cont .active .bell_name input[type="checkbox"]+ label span{
+.warning .cont .active .bell_name input[type='checkbox'] + label span {
     background: url('/H-Connect/img/icon/btn_alarmOn.svg') no-repeat;
-     filter:none;
- }
- .warning .cont .active .bell_name input[type="checkbox"]:checked + label span{
-     background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat;
- }
- 
-.warning .cont .control .active{
+    filter: none;
+}
+.warning .cont .active .bell_name input[type='checkbox']:checked + label span {
+    background: url('/H-Connect/img/icon/btn_mute_off.png') no-repeat;
+}
+
+.warning .cont .control .active {
     height: 136px;
     background: #f00;
     border-radius: 8px;
 }
 
-
-
 /* arteriotony */
-.arteriotony .arteriotony_input{
+.arteriotony .arteriotony_input {
     width: 1312px;
     height: 720px;
     padding: 16px 80px 32px 32px;
@@ -2201,29 +2354,29 @@
     background-color: #fff;
     display: flex;
     justify-content: space-between;
-}  
+}
 
-.arteriotony_input .manual_input{
+.arteriotony_input .manual_input {
     width: 568px;
 }
 
-.arteriotony_input .manual_input .title{
+.arteriotony_input .manual_input .title {
     margin-bottom: 25px;
     display: flex;
     justify-content: space-between;
 }
 
-.arteriotony_input .title h2{
+.arteriotony_input .title h2 {
     margin-top: 16px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.arteriotony_input .manual_input .title .btn_list{
+.arteriotony_input .manual_input .title .btn_list {
     display: flex;
     justify-content: space-between;
 }
 
-.arteriotony_input .manual_input .title button{
+.arteriotony_input .manual_input .title button {
     width: 120px;
     height: 40px;
     margin: 0;
@@ -2231,53 +2384,53 @@
     border-radius: 4px;
 }
 
-.arteriotony_input .manual_input .title .btn_no{
+.arteriotony_input .manual_input .title .btn_no {
     margin-right: 13px;
     color: #888;
 }
 
-.arteriotony_input .manual_input .title .btn_add{
-    background: #007A94;
+.arteriotony_input .manual_input .title .btn_add {
+    background: #007a94;
     color: #fff;
 }
 
-.arteriotony_input .manual_input .title .btn_add:hover{
-    background-color: #004F60;
+.arteriotony_input .manual_input .title .btn_add:hover {
+    background-color: #004f60;
 }
 
-.arteriotony .form_arter{
+.arteriotony .form_arter {
     height: 576px;
     padding: 63px 32px 45px;
     border-radius: 8px;
     background-color: #eee;
 }
 
-.arteriotony .form_arter .arter_title{
+.arteriotony .form_arter .arter_title {
     width: 100%;
     padding-bottom: 24px;
     margin-bottom: 23px;
     border-bottom: 1px solid #007a94;
 }
 
-.arteriotony .form_arter h2{
+.arteriotony .form_arter h2 {
     font-weight: 500;
     font-size: 16px;
 }
 
-.arteriotony .form_arter .arter_input{
+.arteriotony .form_arter .arter_input {
     display: flex;
     justify-content: space-between;
 }
 
-.arteriotony .form_arter .arter_input div{
+.arteriotony .form_arter .arter_input div {
     width: 246px;
 }
 
-.arteriotony .form_arter .arter_input> div> h2{
+.arteriotony .form_arter .arter_input > div > h2 {
     margin-bottom: 16px;
 }
 
-.arteriotony .form_arter input{
+.arteriotony .form_arter input {
     width: 100%;
     height: 48px;
     padding: 12px 24px;
@@ -2286,65 +2439,65 @@
     font-size: 16px;
 }
 
-.arteriotony .form_arter .pulse{
+.arteriotony .form_arter .pulse {
     width: 100%;
     padding: 41px 0 0 0;
     cursor: default;
 }
 
-.arteriotony .form_arter .pulse .arter_title{
+.arteriotony .form_arter .pulse .arter_title {
     width: 100%;
     margin-bottom: 16px;
 }
 
-.arteriotony .form_arter .pulse .arter_title h2{
+.arteriotony .form_arter .pulse .arter_title h2 {
     margin-bottom: 0;
 }
 
-.arteriotony .form_arter .pulse> div{
+.arteriotony .form_arter .pulse > div {
     margin: 0;
 }
 
-.arteriotony .form_arter .pulse> div h2{
+.arteriotony .form_arter .pulse > div h2 {
     margin-bottom: 16px;
     color: #000;
 }
 
-.arteriotony .form_arter .btn_list{
+.arteriotony .form_arter .btn_list {
     padding-top: 75px;
     display: flex;
     justify-content: flex-end;
 }
 
-.arteriotony .form_arter .btn_list button{
+.arteriotony .form_arter .btn_list button {
     width: 96px;
     height: 32px;
     border-radius: 4px;
 }
 
-.arteriotony .form_arter .btn_list .btn_no{
+.arteriotony .form_arter .btn_list .btn_no {
     margin-right: 8px;
     background: #fff;
 }
 
-.arteriotony .form_arter .btn_list .btn_add{
-    background: #007A94;
+.arteriotony .form_arter .btn_list .btn_add {
+    background: #007a94;
     color: #fff;
 }
 
-.arteriotony .form_arter .btn_list .btn_add:hover{
-    background: #004F60;
+.arteriotony .form_arter .btn_list .btn_add:hover {
+    background: #004f60;
 }
 
-.arteriotony .pre_record .title{
+.arteriotony .pre_record .title {
     margin-bottom: 56px;
 }
 
-.arteriotony .record_table{
+.arteriotony .record_table {
     width: 568px;
 }
 
-.arteriotony .table_title{
+.arteriotony .table_title {
     width: 100%;
     height: 48px;
     padding: 16px 16px 14px;
@@ -2352,18 +2505,20 @@
     display: flex;
 }
 
-.arteriotony .table_title p{
+.arteriotony .table_title p {
     width: 81px;
     margin: 0;
 }
 
-.arteriotony .table_title :first-child{
+.arteriotony .table_title :first-child {
     width: 129px;
     margin: 0;
 }
-.arteriotony .table_title :nth-child(3){margin-right: 7px;}
+.arteriotony .table_title :nth-child(3) {
+    margin-right: 7px;
+}
 
-.arteriotony .table_body> div{
+.arteriotony .table_body > div {
     height: 48px;
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
@@ -2371,29 +2526,29 @@
     justify-content: space-between;
 }
 
-.arteriotony .table_body> div .text_box{
+.arteriotony .table_body > div .text_box {
     padding: 8px 0 0;
     display: flex;
 }
 
-.arteriotony .table_body> div> div p{
+.arteriotony .table_body > div > div p {
     margin-right: 33px;
     display: inline-flex;
 }
 
-.arteriotony .table_body> div> div> :first-child{
+.arteriotony .table_body > div > div > :first-child {
     margin-right: 4px;
 }
 
-.arteriotony .table_body> div> :first-child> :last-child{
+.arteriotony .table_body > div > :first-child > :last-child {
     margin-right: 0;
 }
 
-.arteriotony .table_body> div .btn_list{
+.arteriotony .table_body > div .btn_list {
     display: flex;
 }
 
-.arteriotony .table_body> div .btn_list button{
+.arteriotony .table_body > div .btn_list button {
     width: 80px;
     height: 32px;
     border-radius: 4px;
@@ -2402,245 +2557,252 @@
     color: #940045;
 }
 
-.arteriotony .table_body> div .btn_list .bl{color: #007A94;}
+.arteriotony .table_body > div .btn_list .bl {
+    color: #007a94;
+}
 
-.arteriotony .table_body> div .btn_list .btn_delete{
+.arteriotony .table_body > div .btn_list .btn_delete {
     margin-left: 8px;
 }
 
-.arteriotony .table_page{
+.arteriotony .table_page {
     margin-top: 15px;
     text-align: center;
 }
 
-.arteriotony .table_page ul li{
+.arteriotony .table_page ul li {
     font-size: 12px;
     color: #888;
-    display: inline-block;  
+    display: inline-block;
 }
 
-.arteriotony .table_page ul> :nth-child(2){
+.arteriotony .table_page ul > :nth-child(2) {
     margin: 0 2px 0 3px;
 }
 
-.arteriotony .table_page ul> :nth-child(15){
+.arteriotony .table_page ul > :nth-child(15) {
     margin: 0 3px 0 2px;
 }
 
-.arteriotony .table_page ul li.active{
-    color: #007A94;
+.arteriotony .table_page ul li.active {
+    color: #007a94;
 }
 
 /* 대시보드 */
-.dashboard .taget_list{
+.dashboard .taget_list {
     width: 360px;
     height: 720px;
     margin: 0;
 }
 
-.dashboard .taget_list .title{
+.dashboard .taget_list .title {
     margin-bottom: 13px;
 }
 
-.dashboard .taget_list .title div{
+.dashboard .taget_list .title div {
     justify-content: flex-start;
     align-items: center;
 }
 
-.dashboard .taget_list .title> div{margin-bottom: 13px;}
-
-.dashboard .taget_list .title div img{
-    filter: invert(57%) sepia(50%) saturate(4029%) hue-rotate(176deg) brightness(69%) contrast(54%);
+.dashboard .taget_list .title > div {
+    margin-bottom: 13px;
 }
 
-.dashboard .taget_list .title div div{
+.dashboard .taget_list .title div img {
+    filter: invert(57%) sepia(50%) saturate(4029%) hue-rotate(176deg)
+        brightness(69%) contrast(54%);
+}
+
+.dashboard .taget_list .title div div {
     width: 16px;
     height: 12px;
 }
 
-.dashboard .taget_list .title h2{
+.dashboard .taget_list .title h2 {
     margin: 0 0 0 15px;
 }
 
-.dashboard .select_ward{
+.dashboard .select_ward {
     width: 160px;
     height: 36px;
 }
 
-.dashboard .label{
+.dashboard .label {
     font-size: 12px;
 }
 
-.dashboard .label::after{
-    content: ''; 
+.dashboard .label::after {
+    content: '';
     width: 12px;
-    height: 6px; 
-    position: absolute; 
+    height: 6px;
+    position: absolute;
     background: url('/H-Connect/img/under_arrow.svg') no-repeat;
-    top: 50%; 
+    top: 50%;
     right: 20px;
     transition: 0.3s;
     transform: translateY(-50%);
 }
 
 .dashboard .selectBox2.active .label::after {
-    content: ''; 
+    content: '';
     width: 12px;
-    height: 6px; 
-    position: absolute; 
+    height: 6px;
+    position: absolute;
     background: url('/H-Connect/img/under_arrow.svg') no-repeat;
-    top: 50%; 
+    top: 50%;
     right: 20px;
     transform: rotate(180deg);
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.dashboard .ward_option{
+.dashboard .ward_option {
     width: 160px;
     top: 35px;
     font-size: 12px;
 }
 
-.dashboard .ward_option{
+.dashboard .ward_option {
     padding: 10px 0;
     z-index: 2;
 }
 
 /* 대시보드 아코디언 */
-.dashboard .select_head{
+.dashboard .select_head {
     padding: 14px 0 14px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.dashboard label{
+.dashboard label {
     display: flex;
     align-items: center;
 }
 
-.dashboard input{
+.dashboard input {
     display: none;
 }
 
-.dashboard input[type="checkbox"]+label p{
+.dashboard input[type='checkbox'] + label p {
     font-size: 12px;
 }
 
-.dashboard input[type="checkbox"]+label span{
+.dashboard input[type='checkbox'] + label span {
     margin-top: 10px;
 }
 
-.dashboard input[type="checkbox"]+ label span{
+.dashboard input[type='checkbox'] + label span {
     display: inline-block;
     width: 24px;
     height: 24px;
     margin: -3px 16px 0 0;
     vertical-align: middle;
-    background: url("/H-Connect/img/icon/checkbox.png") no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px /
+        contain;
 }
 
-.dashboard input[type='checkbox']:checked+label span{
-    background: url("/H-Connect/img/icon/checkbox_check.png") no-repeat 0 0px / contain;
+.dashboard input[type='checkbox']:checked + label span {
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px /
+        contain;
 }
 
-.emergency .emergency_recep .title .textbox{
+.emergency .emergency_recep .title .textbox {
     margin-top: 13px;
     display: flex;
     justify-content: space-between;
 }
 
-.dashboard .select_head .select_box{
+.dashboard .select_head .select_box {
     width: 160px;
     height: 36px;
 }
 
-.dashboard .select_head .select_box .ward_label{
+.dashboard .select_head .select_box .ward_label {
     font-size: 12px;
     font-weight: normal;
 }
 
-.dashboard .select_inner{
+.dashboard .select_inner {
     height: 500px;
     overflow-y: scroll;
 }
 
-.dashboard .select_inner::-webkit-scrollbar{
+.dashboard .select_inner::-webkit-scrollbar {
     display: none;
 }
 
-.dashboard .select_inner .ward_count{
+.dashboard .select_inner .ward_count {
     height: 40px;
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
     position: relative;
 }
 
-.dashboard .select_inner .ward_count::after{
+.dashboard .select_inner .ward_count::after {
     content: '';
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url("/H-Connect/img/under_arrow.svg") no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: 20px;
 }
 
-.dashboard .select_inner .ward_count.on::after{
+.dashboard .select_inner .ward_count.on::after {
     content: '';
     width: 12px;
     height: 6px;
     position: absolute;
-    background: url("/H-Connect/img/under_arrow.svg") no-repeat;
+    background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 50%;
     right: 20px;
     transform: rotate(180deg);
 }
 
 .dashboard .ward_count:hover,
-.dashboard .select_inner .patient_info> div:hover{
+.dashboard .select_inner .patient_info > div:hover {
     background-color: #eee;
 }
 
-.dashboard .input_wrap{
+.dashboard .input_wrap {
     display: flex;
     align-items: center;
 }
 
-.dashboard .input_wrap .green_custom[type="checkbox"] + label{
+.dashboard .input_wrap .green_custom[type='checkbox'] + label {
     width: 24px;
     height: 24px;
 }
 
-.dashboard .input_wrap label{
+.dashboard .input_wrap label {
     font-size: 12px;
     cursor: pointer;
 }
 
-.dashboard .patient_info{
+.dashboard .patient_info {
     height: fit-content;
     display: none;
 }
 
-.dashboard .patient_info> div{
+.dashboard .patient_info > div {
     padding: 8px 50px;
     border-bottom: 1px solid #eee;
 }
 
-.dashboard .middle{
+.dashboard .middle {
     width: 105px;
     margin: 0 32px;
     background: none;
     position: relative;
 }
 
-.dashboard .middle div{
+.dashboard .middle div {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.dashboard .middle button{
+.dashboard .middle button {
     width: 104px;
     height: fit-content;
     margin-bottom: 16px;
@@ -2649,23 +2811,24 @@
     font-size: 16px;
 }
 
-.dashboard .middle .btn_delete{
+.dashboard .middle .btn_delete {
     position: relative;
     padding: 12px 24px 12px 45px;
 }
 
-.dashboard .middle .btn_delete:disabled{
+.dashboard .middle .btn_delete:disabled {
     background: rgba(238, 238, 238, 0.5) !important;
     border-color: rgba(148, 0, 69, 0.5) !important;
     color: #94004580 !important;
     border: 1px solid;
 }
 
-.dashboard .middle .btn_delete:disabled::after{
-    filter: invert(51%) sepia(10%) saturate(1994%) hue-rotate(279deg) brightness(95%) contrast(84%);
+.dashboard .middle .btn_delete:disabled::after {
+    filter: invert(51%) sepia(10%) saturate(1994%) hue-rotate(279deg)
+        brightness(95%) contrast(84%);
 }
 
-.dashboard .middle .btn_delete::after{
+.dashboard .middle .btn_delete::after {
     content: '';
     width: 12px;
     height: 16px;
@@ -2674,18 +2837,18 @@
     transform: rotate(180deg);
     top: 16px;
     left: 24px;
-    filter: invert(55%) sepia(59%) saturate(7031%) hue-rotate(321deg) brightness(56%) contrast(114%);
+    filter: invert(55%) sepia(59%) saturate(7031%) hue-rotate(321deg)
+        brightness(56%) contrast(114%);
 }
 
-
-.dashboard .btn_add{
+.dashboard .btn_add {
     padding: 12px 45px 12px 24px;
-    border: 1px solid #007A94;
-    color: #007A94;
+    border: 1px solid #007a94;
+    color: #007a94;
     position: relative;
 }
 
-.dashboard .btn_add::after{
+.dashboard .btn_add::after {
     content: '';
     width: 12px;
     height: 16px;
@@ -2695,12 +2858,12 @@
     right: 24px;
 }
 
-.dashboard .taget_view{
+.dashboard .taget_view {
     width: 1176px;
     height: 720px;
 }
 
-.dashboard .taget_view .title{
+.dashboard .taget_view .title {
     border: 0;
     padding: 8px 0 0 0;
     margin-bottom: 48px;
@@ -2709,11 +2872,11 @@
     align-items: center;
 }
 
-.dashboard .taget_view .title div{
+.dashboard .taget_view .title div {
     align-items: center;
 }
 
-.dashboard .taget_view .title .btn_list button{
+.dashboard .taget_view .title .btn_list button {
     width: 96px;
     height: 40px;
     padding: 11px;
@@ -2722,39 +2885,48 @@
     background: #fff;
 }
 
-.dashboard .taget_view .btn_list button{
+.dashboard .taget_view .btn_list button {
     margin-right: 8px;
-    border: 1px solid #007A94;
-    color: #007A94;
+    border: 1px solid #007a94;
+    color: #007a94;
 }
 
-.dashboard .taget_view .btn_list button:nth-last-child(2){margin: 0;}
+.dashboard .taget_view .btn_list button:nth-last-child(2) {
+    margin: 0;
+}
 
-.dashboard .taget_view .btn_first{
+.dashboard .taget_view .btn_first {
     margin-left: 68px;
 }
 
-.dashboard .taget_view .title .btn_list button.on{
-    background: #007A94;
+.dashboard .taget_view .title .btn_list button.on {
+    background: #007a94;
     color: #fff;
 }
 
-.dashboard .taget_view .btn_list .btn_addView{margin: 0 0 0 32px;}
+.dashboard .taget_view .btn_list .btn_addView {
+    margin: 0 0 0 32px;
+}
 
-.dashboard .taget_view .title .btn_list .delete{padding-left: 16px;display: flex;align-items: center; justify-content: space-between;}
+.dashboard .taget_view .title .btn_list .delete {
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-.dashboard .taget_view .btn_state{
+.dashboard .taget_view .btn_state {
     width: 120px;
     height: 40px;
     padding: 11px;
     border-radius: 4px;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
     background: #fff;
     font-size: 12px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.dashboard .inpat{
+.dashboard .inpat {
     padding: 16px 0 0 16px;
     background: #eee;
     border-radius: 8px;
@@ -2764,13 +2936,13 @@
     height: 589px;
 }
 
-.dashboard .inpat .account{
+.dashboard .inpat .account {
     width: 360px;
     height: 48px;
     padding: 17px;
     margin-bottom: 16px;
     border-radius: 4px;
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 
     display: flex;
@@ -2779,15 +2951,17 @@
     cursor: pointer;
 }
 
-.dashboard .inpat .account:hover{background: #004F60;}
+.dashboard .inpat .account:hover {
+    background: #004f60;
+}
 
-.dashboard .inpat .account p{
+.dashboard .inpat .account p {
     font-size: 10px;
     font-weight: normal;
     text-align: center;
 }
 
-.dashboard .inpat .account div{
+.dashboard .inpat .account div {
     line-height: 12px;
     font-size: 10px;
     color: #fff;
@@ -2795,14 +2969,15 @@
     align-items: center;
 }
 
-.dashboard .inpat .account img{
+.dashboard .inpat .account img {
     width: 6px;
     height: 12px;
     margin-left: 8px;
-    filter: invert(94%) sepia(6%) saturate(26%) hue-rotate(302deg) brightness(106%) contrast(107%)
+    filter: invert(94%) sepia(6%) saturate(26%) hue-rotate(302deg)
+        brightness(106%) contrast(107%);
 }
 
-.dashboard .check_pati{
+.dashboard .check_pati {
     width: 360px;
     height: 48px;
     padding: 17px;
@@ -2811,18 +2986,18 @@
     background: #444;
 }
 
-.dashboard .check_pati input{
+.dashboard .check_pati input {
     margin-right: 8px;
     display: block;
 }
 
-.dashboard .check_pati label{
+.dashboard .check_pati label {
     font-size: 10px;
     color: #fff;
     position: relative;
 }
 
-.dashboard .check_pati label::after{
+.dashboard .check_pati label::after {
     position: absolute;
     content: '';
     width: 360px;
@@ -2831,29 +3006,28 @@
     left: -39px;
 }
 
-.dashboard .pati_inner{
+.dashboard .pati_inner {
     display: flex;
 }
 
-
 /* 대시보드 전체화면 */
-.ward_dashboard{
+.ward_dashboard {
     min-width: 1880px;
     padding: 0;
     background: #222;
 }
 
-.ward_dashboard .wrap_inner{
+.ward_dashboard .wrap_inner {
     min-width: 1880px;
     height: 100vh;
     padding: 20px;
-    background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px/ contain;
+    background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px / contain;
     background-position: 80% 95%;
     background-size: 90px;
     display: block;
 }
 
-.ward_dashboard .wrap_inner> div{
+.ward_dashboard .wrap_inner > div {
     width: 1880px;
     height: calc(100vh - 20px);
     max-height: 100vh;
@@ -2863,11 +3037,11 @@
     /* justify-content: space-between; */
 }
 
-.ward_dashboard .wrap_inner> div::-webkit-scrollbar{
+.ward_dashboard .wrap_inner > div::-webkit-scrollbar {
     display: none;
 }
 
-.ward_dashboard .wrap_inner .img{
+.ward_dashboard .wrap_inner .img {
     position: fixed;
     width: 92px;
     height: 64px;
@@ -2875,184 +3049,184 @@
     right: 286px;
 }
 
-.ward_dashboard .wrap_inner .img img{
+.ward_dashboard .wrap_inner .img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.ward_dashboard .wrap_inner> div > div{
+.ward_dashboard .wrap_inner > div > div {
     width: 624px;
     height: 112px;
 }
 
-.ward_dashboard .system_title{
+.ward_dashboard .system_title {
     height: 100%;
     padding: 32px;
     margin-bottom: 4px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
 }
 
-.ward_dashboard .title_inner{
+.ward_dashboard .title_inner {
     display: flex;
 }
 
-.ward_dashboard .title_inner div{
+.ward_dashboard .title_inner div {
     width: 69px;
     height: 48px;
 }
 
-.ward_dashboard .title_inner div img{
+.ward_dashboard .title_inner div img {
     width: 100%;
     height: 100%;
 }
 
-.ward_dashboard .title_inner .text_box{
+.ward_dashboard .title_inner .text_box {
     width: 250px;
     margin-left: 43px;
     color: #fff;
 }
 
-.ward_dashboard .text_box p{
+.ward_dashboard .text_box p {
     font-weight: normal;
 }
 
-.ward_dashboard .text_box h1{
+.ward_dashboard .text_box h1 {
     font-size: 24px;
     font-weight: 500;
     font-weight: normal;
 }
 
-.ward_dashboard .text_box h1 span{
+.ward_dashboard .text_box h1 span {
     font-size: 18px;
     font-weight: normal;
     vertical-align: middle;
 }
 
-.ward_dashboard .sys_vital{
+.ward_dashboard .sys_vital {
     margin-bottom: 4px;
     background: #000;
 }
 
-.ward_dashboard .empty{
+.ward_dashboard .empty {
     background: #111;
 }
 
-.ward_dashboard .vital_inner{
+.ward_dashboard .vital_inner {
     height: 112px;
     display: flex;
     justify-content: space-between;
 }
 
-.ward_dashboard .graph{
+.ward_dashboard .graph {
     width: 470px;
     padding: 2px;
 }
 
-.ward_dashboard .graph> div{
+.ward_dashboard .graph > div {
     padding: 8px 16px;
 }
 
-.ward_dashboard .graph_title{
+.ward_dashboard .graph_title {
     margin-bottom: 28px;
     display: flex;
     justify-content: space-between;
 }
 
-.ward_dashboard .graph_title p{
+.ward_dashboard .graph_title p {
     font-size: 14px;
     font-weight: normal;
     color: #fff;
 }
 
-.ward_dashboard .img_container{
+.ward_dashboard .img_container {
     width: 446px;
     height: 24px;
     overflow: hidden;
 }
 
-.ward_dashboard .character{
+.ward_dashboard .character {
     padding: 2px;
 }
 
-.ward_dashboard .character> div{
+.ward_dashboard .character > div {
     display: flex;
 }
 
-.ward_dashboard .character> div> div{
+.ward_dashboard .character > div > div {
     width: 72px;
     height: 56px;
     padding: 4px;
 }
 
-.ward_dashboard .character .ecg{
-    color: #0F2;
+.ward_dashboard .character .ecg {
+    color: #0f2;
 }
 
-.ward_dashboard .character .sp{
-    color: #0FF;
+.ward_dashboard .character .sp {
+    color: #0ff;
 }
 
-.ward_dashboard .character .resp{
+.ward_dashboard .character .resp {
     color: #ff0;
 }
 
-.ward_dashboard .character .temp{
-    color: #FF3184;
+.ward_dashboard .character .temp {
+    color: #ff3184;
 }
 
-.ward_dashboard .bell_name{
+.ward_dashboard .bell_name {
     height: auto;
     font-size: 10px;
 }
 
-.ward_dashboard .bell_num{
-   display: flex;
-   justify-content: space-between;
+.ward_dashboard .bell_num {
+    display: flex;
+    justify-content: space-between;
 }
 
-.ward_dashboard .bell_num div p{
+.ward_dashboard .bell_num div p {
     font-size: 10px;
 }
 
-.ward_dashboard .bell_num> p{
+.ward_dashboard .bell_num > p {
     font-size: 24px;
     align-items: center;
 }
 
 /* 병실 대시보드 긴급 */
-.ward_dashboard .active .graph> div{
+.ward_dashboard .active .graph > div {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #DE0076, #CB0000);
+    background: linear-gradient(to right, #de0076, #cb0000);
     border-radius: 4px;
 }
 
-.ward_dashboard .active{
+.ward_dashboard .active {
     cursor: pointer;
 }
 
-.ward_dashboard .active .ecg{
-    background: linear-gradient(to right, #DE0076, #CB0000);
+.ward_dashboard .active .ecg {
+    background: linear-gradient(to right, #de0076, #cb0000);
     border-radius: 4px;
 }
 
 /* 병실 대시보드 데이터 없음 */
 .ward_dashboard .no_data,
-.ward_dashboard .no_bell{
+.ward_dashboard .no_bell {
     display: none;
 }
 
-.ward_dashboard .no_data{
+.ward_dashboard .no_data {
     width: 480px;
     color: #444;
 }
 
-.ward_dashboard .no_data div{
+.ward_dashboard .no_data div {
     display: flex;
     justify-content: space-between;
 }
 
-.ward_dashboard .no_bell{
+.ward_dashboard .no_bell {
     color: #444;
 }

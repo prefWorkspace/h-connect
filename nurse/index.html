@@ -100,6 +100,16 @@
             defer
             src="/H-Connect/js/nurse/management/ward/renders/insertRoomList.js"
         ></script>
+        <script
+            type="module"
+            defer
+            src="/H-Connect/js/nurse/management/ward/actions/deleteSickRoom.js"
+        ></script>
+        <script
+            type="module"
+            defer
+            src="/H-Connect/js/nurse/management/ward/actions/updateSickRoom.js"
+        ></script>
         <!-- <script src="/H-Connect/js/nurse/management/ward/actions/"></script> -->
         <!-- <script type='module' defer src='/H-Connect/js/nurse/insertWard.js'></script>
   <script type='module' defer src='/H-Connect/js/nurse/selectWard.js'></script> -->
@@ -950,6 +960,8 @@
             const updateHandleSelect = (item) => {
                 update_label.parentNode.classList.remove('active');
                 update_label.innerHTML = item.textContent;
+                const number = item.dataset.number;
+                update_label.dataset.number = number;
             };
             // 옵션 클릭시 클릭한 옵션을 넘김 대박...
             newRoom_options.forEach((option) => {
