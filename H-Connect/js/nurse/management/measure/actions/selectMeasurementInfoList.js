@@ -4,7 +4,8 @@ import { serverController } from '../../../../utils/controller/serverController.
 import { createMeasureList } from '../renders/createMeasureList.js';
 import { CONSTANT_MEASURE } from '../renders/constant.js';
 import { wardSelectBoxList } from '../renders/wardSelectBoxList.js';
-
+import { sickRoomSelectBoxList } from '../renders/sickRoomSelectBoxList.js';
+import { selectWardList } from '../../../../utils/module/select/selectList.js';
 //입원한 환자 카운트
 let patient_count;
 const { userCode: requester, organization } = CONSTANT_MEASURE.userData;
@@ -55,8 +56,6 @@ function selectWard_measurement() {
         'POST',
         req,
         (res) => {
-            console.log('res===');
-            console.log(res);
             if (res.result) {
                 const wardList = [...res.wardList];
                 CONSTANT_MEASURE.wardList = wardList;
@@ -97,6 +96,7 @@ export function selectRoomList(wardCode) {
         includeSickBed: true,
         ...commonRequest(),
     });
+
     serverController.ajaxAwaitController(
         'API/Manager/SelectSickRoom',
         'POST',
@@ -104,7 +104,10 @@ export function selectRoomList(wardCode) {
         (res) => {
             if (res.result) {
                 const sickRoomList = [...res.sickRoomList];
+                return sickRoomList;
                 CONSTANT_MEASURE.sickRoomList = sickRoomList;
+                sickRoomSelectBoxList();
+            } else {
             }
         }
     );

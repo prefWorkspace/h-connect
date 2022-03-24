@@ -3,14 +3,13 @@ import { wardSelectBox } from '../templates/wardSelectBox.js';
 import { selectRoomList } from '../actions/selectMeasurementInfoList.js';
 import { CONSTANT_MEASURE } from './constant.js';
 import { sickRoomSelectBoxList } from './sickRoomSelectBoxList.js';
+
 function wardOptionHandle(_target) {
     const wardCode = _target.data('wardcode');
     const title = _target.text();
-    $(this).parent().parent().toggleClass('active');
+    $('.measure_status .selectBox2 .ward_label').text(title);
+    _target.parent().parent().toggleClass('active');
     selectRoomList(wardCode);
-    sickRoomSelectBoxList();
-    console.log('CONSTANT_MEASURE===');
-    console.log(CONSTANT_MEASURE);
 }
 
 export function wardSelectBoxList(wardList) {
