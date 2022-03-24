@@ -9,9 +9,7 @@ import {
     getMonitoringSickRoom,
 } from '../actions/getMonitoringAll.js';
 
-async function monitoring_sickRoomList_insert() {
-    // sickRoomCode
-    // wardCode
+async function monitoringSickRoomListInsert() {
     const { sickRoomList } = await getMonitoringSickRoom(); // 병실 리스트
     const { sickBedList } = await getMonitoringSickBed(); // 병상 리스트
     const { measurementInfoSimpleList: patientList } =
@@ -32,4 +30,4 @@ async function monitoring_sickRoomList_insert() {
 
     $('.nurse.patient_vital .wrap_inner .patient_room_wrap').html(_html);
 }
-monitoring_sickRoomList_insert();
+monitoringSickRoomListInsert();
