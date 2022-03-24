@@ -1,58 +1,62 @@
 export const parseWardList = (wardList) => {
     let tmpl = dashboardWardListTmpl;
-    tmpl = tmpl.replace(`{{firstWardName}}`, wardList[0]['ward']);
     let tmplWardOptionList = ``;
     for (let i = 0; i < wardList.length; i++) {
-        tmplWardOptionList += `<li class="optionItem ward_list">${wardList[i]['ward']}</li>`;
+        tmplWardOptionList += `<li class="optionItem ward_list" name='${wardList[i]['wardCode']}'>${wardList[i]['ward']}</li>`;
     }
     tmpl = tmpl.replace(`{{wardList}}`, tmplWardOptionList);
     return tmpl;
 };
 
-export const parseSickRoom = (sickRoomList, patientList) => {
-    let templ = ``;
-    for (let i = 0; i < sickRoomList.length; i++) {
-        let tmpl = `<div class="ward_block">`;
-        let sickRoomTmpl = `<div class="ward_count">
-        <div class="input_wrap">
-            <input
-                type="checkbox"
-                class="green_custom"
-                id="${sickRoomList[i].sickRoomCode}"
-                name="room_no"
-            />
-            <label for="${sickRoomList[i].sickRoomCode}"></label>
-            <label for="${sickRoomList[i].sickRoomCode}">${sickRoomList[i].sickRoom}</label>
-        </div>
-    </div>`;
-        let patientsBySickRoom = patientList.filter(
-            (patient) => patient['sickRoomCode'] == sickRoomList[i].sickRoomCode
-        );
-        let patientTmpl = `<div class="patient_info">`;
-        for (let j = 0; j < patientsBySickRoom.length; j++) {
-            const { patientCode, name, age, gender } = patientsBySickRoom[j];
-            patientTmpl += `<div class="input_wrap">
-                <input
-                    type="checkbox"
-                    name="patient_no"
-                    class="green_custom"
-                    id="${patientCode}"
-                />
-                <label for="${patientCode}"></label>
-                <label for="${patientCode}"
-                    ><span
-                        >${name}(${age}.${
-                gender === 1 ? '남' : '여'
-            }.${patientCode})</span
-                    ></label
-                >
-            </div>`;
-        }
-        patientTmpl += `</div>`;
-        templ += tmpl + sickRoomTmpl + patientTmpl + `</div>`;
-    }
+export const parsePatientsBySickRoom = (wardList, patientList) => {
+    const _wardList = wardList;
+    let tmpl = ``;
+    _wardList.forEach((_ward) => {
+        const { ward, wardCode, sickRoomList } = _ward;
 
-    return dashboardPatienListTmpl.replace(`{{tmpl}}`, templ);
+        sickRoomList.forEach((sickRoom) => {
+            let sickRoomTmpl = `
+            <div class='ward_block ${wardCode}'>
+                <div class="ward_count">
+                    <div class='input_wrap'>
+                        <input
+                            type="checkbox"
+                            class="green_custom"
+                            id="${sickRoom.sickRoomCode}"
+                            name="room_no"
+                        />
+                        <label for="${sickRoom.sickRoomCode}"></label>
+                        <label for="${sickRoom.sickRoomCode}">${sickRoom.sickRoom}</label>
+                    </div>
+                </div>
+            `;
+            let patientsBySickRoom = patientList.filter(
+                (patient) => patient['sickRoomCode'] == sickRoom.sickRoomCode
+            );
+            let patientTmpl = `<div class="patient_info ${sickRoom.sickRoomCode}">`;
+            patientsBySickRoom.forEach((patient) => {
+                const { patientCode, name, age, gender } = patient;
+                patientTmpl += `<div class="input_wrap">
+                    <input
+                        type="checkbox"
+                        name="patient_no"
+                        class="green_custom"
+                        id="${patientCode}"
+                    />
+                    <label for="${patientCode}"></label>
+                    <label for="${patientCode}">
+                        <span>${name}(${age}.${
+                    gender === 1 ? '남' : '여'
+                }.${patientCode})</span></label>
+                </div>`;
+            });
+            patientTmpl += `</div>`;
+
+            tmpl += sickRoomTmpl + patientTmpl + `</div>`;
+        });
+    });
+
+    return dashboardPatienListTmpl.replace(`{{tmpl}}`, tmpl);
 };
 
 const dashboardWardListTmpl = `
@@ -69,7 +73,7 @@ const dashboardWardListTmpl = `
         </div>
 
         <div class="selectBox2 select_ward">
-            <button class="label ward_label">{{firstWardName}}</button>
+            <button class="label ward_label"></button>
 
             <ul class="optionList ward_option">{{wardList}}</ul>
         </div>

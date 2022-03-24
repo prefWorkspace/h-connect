@@ -183,23 +183,6 @@ $(function () {
         }
     );
 
-<<<<<<< HEAD
-
-//모니터링
-    $('.patient_vital .all_patient .patient_monitor').on('click', function(){
-        location.href="patient.html";
-    })
-    $('.patient_vital .all_patient .patient_monitor.active').on('click', function(){
-        location.href="patient_warning.html";
-    })
-    $('.patient_vital .all_patient .patient_monitor.empty').on('click', function(){
-        $('.new_room_pop.pop .overlay').fadeIn();
-    })
-
-    $('.monitoring_patient .tab_wrap button').click(function(){
-        $('.interval_set .overlay').fadeIn();
-    })
-=======
     // 신규병상 등록 생체신호 리스트 삭제 팝업
     $('.new_hospital .device_room> div .btn_list .btn_delete').on(
         'click',
@@ -212,7 +195,6 @@ $(function () {
     $('.new_hospital .device_room .btn_add').on('click', function () {
         $('.pop.regi_device .overlay').fadeIn();
     });
->>>>>>> d26b147b9ef425a4494a70e35b3bd5f7cb4398f5
 
     //모니터링
     $('.patient_vital .all_patient .patient_monitor').on('click', function () {
