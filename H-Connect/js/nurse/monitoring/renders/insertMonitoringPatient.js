@@ -12,7 +12,6 @@ async function monitoringPatientListInsert() {
     const { sickBedList } = await getMonitoringSickBed(); // 병상 리스트
     const { measurementInfoSimpleList: patientList } =
         await getPatientMeasurementInfoList(); // 환자 측정 리스트
-
     let _html = '';
     let _temp_emptyBed = '';
 
@@ -21,7 +20,6 @@ async function monitoringPatientListInsert() {
             return _patientItem?.sickBedCode === _sickBedItem?.sickBedCode;
         });
         if (findPatient_in_sickBedList) {
-            console.log(findPatient_in_sickBedList);
             return monitorBlock_have(findPatient_in_sickBedList);
         } else {
             _temp_emptyBed += monitorBlock_none(_sickBedItem);
