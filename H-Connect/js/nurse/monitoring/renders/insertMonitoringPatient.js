@@ -1,26 +1,34 @@
 import {
-  monitorBlock_have,
-  monitorBlock_none,
+    monitorBlock_have,
+    monitorBlock_none,
 } from '../templates/monitoringPatientTemplate.js';
 import {
-  getMonitoringSickBed,
-  getPatientMeasurementInfoList,
+    getMonitoringSickBed,
+    getPatientMeasurementInfoList,
 } from '../actions/getMonitoringAll.js';
 
-async function monitoring_patientList_insert() {
-  const { sickBedList } = await getMonitoringSickBed(); // 병상 리스트
-  const { measurementInfoSimpleList } = await getPatientMeasurementInfoList(); // 환자 측정 리스트
-  let _html = '';
-  const _patientLen = measurementInfoSimpleList?.length || 0;
-  for (let i = 0, _sickBedLen = sickBedList?.length; i < _sickBedLen; i++) {
-    if (i < _patientLen) {
-      // 환자 수를 판단합니다.
-      _html += monitorBlock_have(measurementInfoSimpleList[i]);
-    } else {
-      _html += monitorBlock_none();
-    }
-  }
+// 모니터링 > 전체환자 보기 렌더
+async function monitoringPatientListInsert() {
+    const { sickBedList } = await getMonitoringSickBed(); // 병상 리스트
+    const { measurementInfoSimpleList: patientList } =
+        await getPatientMeasurementInfoList(); // 환자 측정 리스트
 
-  $('.nurse.patient_vital .wrap_inner .all_patient').html(_html);
+    let _html = '';
+    let _temp_emptyBed = '';
+
+    _html = sickBedList?.htmlFor((_sickBedItem, _index) => {
+        const findPatient_in_sickBedList = patientList?.find((_patientItem) => {
+            return _patientItem?.sickBedCode === _sickBedItem?.sickBedCode;
+        });
+        if (findPatient_in_sickBedList) {
+            console.log(findPatient_in_sickBedList);
+            return monitorBlock_have(findPatient_in_sickBedList);
+        } else {
+            _temp_emptyBed += monitorBlock_none(_sickBedItem);
+            return '';
+        }
+    });
+    _html += _temp_emptyBed;
+    $('.nurse.patient_vital .wrap_inner .all_patient').html(_html);
 }
-monitoring_patientList_insert();
+monitoringPatientListInsert();
