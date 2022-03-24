@@ -6,8 +6,9 @@ import {
     getMonitoringSickBed,
     getPatientMeasurementInfoList,
 } from '../actions/getMonitoringAll.js';
-// 모니터링 > 전체환자 보기 작업
-async function monitoring_patientList_insert() {
+
+// 모니터링 > 전체환자 보기 렌더
+async function monitoringPatientListInsert() {
     const { sickBedList } = await getMonitoringSickBed(); // 병상 리스트
     const { measurementInfoSimpleList: patientList } =
         await getPatientMeasurementInfoList(); // 환자 측정 리스트
@@ -20,6 +21,7 @@ async function monitoring_patientList_insert() {
             return _patientItem?.sickBedCode === _sickBedItem?.sickBedCode;
         });
         if (findPatient_in_sickBedList) {
+            console.log(findPatient_in_sickBedList);
             return monitorBlock_have(findPatient_in_sickBedList);
         } else {
             _temp_emptyBed += monitorBlock_none(_sickBedItem);
@@ -29,4 +31,4 @@ async function monitoring_patientList_insert() {
     _html += _temp_emptyBed;
     $('.nurse.patient_vital .wrap_inner .all_patient').html(_html);
 }
-monitoring_patientList_insert();
+monitoringPatientListInsert();

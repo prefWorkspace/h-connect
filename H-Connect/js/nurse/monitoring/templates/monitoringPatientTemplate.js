@@ -12,6 +12,7 @@ export function monitorBlock_have(_data) {
         bioSignalSpO2LastData,
         bioSignalTempLastData,
     } = _data || {};
+    // console.log(_data);
     /**
      * EWS : emergency warning system => 비상 경고 시스템
      * HR : heartRate => 심박수
@@ -24,6 +25,7 @@ export function monitorBlock_have(_data) {
     const { temperature } = bioSignalTempLastData || {};
     /**
      * < patient_monitor에 해당 클래스 추가되었을 시 >
+     * // ********* 작업필요 *********
      * active(빨간색) : 환자 이상
      * active yellow(노란색) : 장치 이상
      * active blue(파란색) : 시스템 이상
@@ -125,25 +127,29 @@ export function monitorRoomBlock(_data) {
             </div>
 
             <div class="monitor_wrap">
-                ${sickBedList?.htmlFor((_sickBedItem, _index) => {
-                    const findPatient_in_sickBedList = patientList?.find(
-                        (_patientItem) => {
-                            return (
-                                _patientItem?.sickBedCode ===
-                                _sickBedItem?.sickBedCode
+                ${
+                    sickBedList?.htmlFor((_sickBedItem, _index) => {
+                        const findPatient_in_sickBedList = patientList?.find(
+                            (_patientItem) => {
+                                return (
+                                    _patientItem?.sickBedCode ===
+                                    _sickBedItem?.sickBedCode
+                                );
+                            }
+                        );
+                        if (findPatient_in_sickBedList) {
+                            return monitorBlock_have(
+                                findPatient_in_sickBedList
                             );
+                        } else {
+                            return monitorBlock_none(_sickBedItem);
                         }
-                    );
-                    if (findPatient_in_sickBedList) {
-                        return monitorBlock_have(findPatient_in_sickBedList);
-                    } else {
-                        return monitorBlock_none(_sickBedItem);
-                    }
-                })}
+                    }) || ''
+                }
             </div>
-            </div>
-            </section>  
-            `;
+        </div>
+    </section>  
+    `;
 }
 
 // ${patientList?.htmlFor((_patient, _index) => {
