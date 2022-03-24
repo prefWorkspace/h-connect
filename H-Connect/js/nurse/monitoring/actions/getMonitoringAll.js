@@ -3,7 +3,6 @@ import { commonRequest } from '../../../utils/controller/commonRequest.js';
 
 /* s: 환자 병상 갯수 확인 */
 export async function getMonitoringSickBed() {
-    //   let _sickBedLen = 50; // 병상의 총 갯수
     return await serverController.ajaxAwaitController(
         'API/Manager/SelectSickBed',
         'POST',
@@ -14,9 +13,6 @@ export async function getMonitoringSickBed() {
         }),
         (res) => {
             if (res.result) {
-                // 병상의 갯수(비어있든 안비어있든) 를 _sickBedLen에 넣어줍니다.
-                // const _bedList = res.sickBedList;
-                // _sickBedLen = _bedList ? _bedList.length : 50;
             } else {
             }
         },
