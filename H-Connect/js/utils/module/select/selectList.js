@@ -3,7 +3,7 @@ import { commonRequest } from '../../controller/commonRequest.js';
 import { serverController } from '../../controller/serverController.js';
 import { localStorageController } from '../../controller/localStorageController.js';
 import { CONSTANT_MEASURE } from '../../../nurse/management/measure/renders/constant.js';
-
+import { session_renew } from '../../controller/serverController.js';
 //병동 병실 병상 조회하는 함수
 const { userCode: requester, organization } = CONSTANT_MEASURE.userData;
 export async function selectWardList(
@@ -19,7 +19,13 @@ export async function selectWardList(
     return await serverController.ajaxAwaitController(
         'API/Manager/SelectWard',
         'POST',
-        req
+        req,
+        (res) => {
+            if (res.result) {
+            } else {
+                session_renew(res);
+            }
+        }
     );
 }
 
@@ -39,7 +45,13 @@ export async function selectSickRoomList(
     return await serverController.ajaxAwaitController(
         'API/Manager/SelectSickRoom',
         'POST',
-        req
+        req,
+        (res) => {
+            if (res.result) {
+            } else {
+                session_renew(res);
+            }
+        }
     );
 }
 
@@ -56,6 +68,12 @@ export async function selectSickBedList(wardCode = null, sickRoomCode = null) {
     return await serverController.ajaxAwaitController(
         'API/Manager/SelectSickRoom',
         'POST',
-        req
+        req,
+        (res) => {
+            if (res.result) {
+            } else {
+                session_renew(res);
+            }
+        }
     );
 }

@@ -1,8 +1,24 @@
 'use strict';
 import { wardList } from '../templates/wardList.js';
 import { selectSickRoom } from '../actions/selectSickRoom.js';
+import { history } from '../../../../utils/controller/historyController.js';
+
+const params = ['wardCode', 'sickRoomCode'];
+const { wardCode } = history.getParams(params);
+
 //병동 클릭시 배경색 변경 active
 function _wardclickActive() {
+    if (wardCode) {
+        $('.nurse .ward .cont .ward_list').each((index, value) => {
+            console.log('value===');
+            console.log(value);
+            const $wardCode = $(value).data('wardcode');
+            if ($wardCode === wardCode) {
+                $(value).addClass('on');
+                selectSickRoom(wardCode);
+            }
+        });
+    }
     $('.nurse .ward .cont .ward_list').on('click', function () {
         const wardcode = $(this).data('wardcode');
         $('.nurse .ward .cont .ward_list').removeClass('on');
