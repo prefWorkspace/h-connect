@@ -1,5 +1,5 @@
 import { sessionController } from './sessionController.js';
-
+import { history } from './historyController.js';
 // 서버 ip
 export const ip =
     'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/';
@@ -23,6 +23,11 @@ export const serverController = {
             processData: false,
             contentType: 'application/json;charset=UTF-8',
             success: function (data) {
+                if (data.error === 241) {
+                    // session closed
+                    history.linkTo('/index.html');
+                    return alert('세션이 만료되었습니다');
+                }
                 if (callBack) callBack(data);
                 return data;
             },
