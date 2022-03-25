@@ -3988,8 +3988,9 @@ textarea::-webkit-scrollbar-button {
 .pop.new_room_pop #patient_age{padding: 0 10px;}
 .pop.new_room_pop .patient_info{justify-content: space-between;}
 .pop.new_room_pop .selectBox2{height: 36px;}
-.pop.new_room_pop .sex_select{width: 80px;}
+.pop.new_room_pop .sex_select{width: 80px; z-index: 2;}
 .pop.new_room_pop .sex_select .label{color: #ccc;}
+.pop.new_room_pop .sex_select li{font-size: 12px;}
 .pop.new_room_pop .selectBox2 .label{font-size: 12px;}
 .pop.new_room_pop .patient_info input:last-child{width: 296px;}
 .pop.new_room_pop .patient_room{justify-content: space-between;}
