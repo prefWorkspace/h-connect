@@ -17,7 +17,7 @@ export const parsePatientsBySickRoom = (wardList, patientList) => {
         sickRoomList.forEach((sickRoom) => {
             let sickRoomTmpl = `
             <div class='ward_block ${wardCode}'>
-                <div class="ward_count">
+                <div class="ward_count ${sickRoom.sickRoomCode}">
                     <div class='input_wrap'>
                         <input
                             type="checkbox"

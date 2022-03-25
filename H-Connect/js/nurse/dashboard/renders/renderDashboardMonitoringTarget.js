@@ -83,6 +83,13 @@ const dummy_patients = [
         gender: 2,
         sickRoomCode: 'SEERS_01_02',
     },
+    {
+        patientCode: 'PATI_4',
+        name: '정석원',
+        age: 35,
+        gender: 1,
+        sickRoomCode: 'SEERS_02_02',
+    },
 ];
 
 import {
@@ -132,6 +139,7 @@ function _dashboard_wardSelectBox_select() {
                 _wardSelect($(this));
                 selected_ward = $(this).attr('name');
                 showSickRoom(selected_ward);
+                showPatients(selected_ward);
             });
     });
 
@@ -149,10 +157,65 @@ function showSickRoom(wardCode) {
     if (wardCode) $(`.ward_block.${wardCode}`).css('display', 'block');
 }
 
+function showPatients(wardCode) {
+    function findSickRoomByWardCode(ele) {
+        if (ele.wardCode === wardCode) return true;
+    }
+
+    if (wardCode) {
+        const { sickRoomList } = dummy_wardList.find(findSickRoomByWardCode);
+        sickRoomList.forEach((sickRoom) => {
+            $(`.ward_count.${sickRoom.sickRoomCode}`)
+                .off()
+                .on('click', () => {
+                    if (
+                        $(`.patient_info.${sickRoom.sickRoomCode}`).css(
+                            'display'
+                        ) == 'block'
+                    ) {
+                        $(`.patient_info.${sickRoom.sickRoomCode}`).css(
+                            'display',
+                            'none'
+                        );
+                        $(
+                            `.ward_count.${sickRoom.sickRoomCode}.on`
+                        ).removeClass('on');
+                    } else {
+                        $(`.patient_info.${sickRoom.sickRoomCode}`).css(
+                            'display',
+                            'block'
+                        );
+                        $(`.ward_count.${sickRoom.sickRoomCode}`).addClass(
+                            'on'
+                        );
+                    }
+                });
+        });
+    }
+}
+
+function addEventToAddBtn() {
+    function addPatients() {
+        let patient_Array = [];
+        $.each($(`input[name=patient_no]:checked`), function () {
+            patient_Array.push($(this).attr('id'));
+        });
+        patient_Array.sort();
+        console.log(patient_Array);
+    }
+    $('.btn.bl.btn_add')
+        .off()
+        .on('click', () => {
+            addPatients();
+        });
+}
+
 function _dashboard_target_monitoring_init() {
     renderDashboard();
     _dashboard_wardSelectBox_select();
     showSickRoom(null);
+    showPatients(null);
+    addEventToAddBtn();
 }
 
 _dashboard_target_monitoring_init();
