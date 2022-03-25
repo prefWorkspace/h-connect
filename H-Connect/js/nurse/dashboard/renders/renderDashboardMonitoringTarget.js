@@ -68,6 +68,7 @@ const dummy_patients = [
         age: 28,
         gender: 1,
         sickRoomCode: 'SEERS_01_01',
+        wardCode: 'SEERS_HEART',
     },
     {
         patientCode: 'PATI_2',
@@ -75,6 +76,7 @@ const dummy_patients = [
         age: 45,
         gender: 1,
         sickRoomCode: 'SEERS_01_01',
+        wardCode: 'SEERS_HEART',
     },
     {
         patientCode: 'PATI_3',
@@ -82,6 +84,7 @@ const dummy_patients = [
         age: 40,
         gender: 2,
         sickRoomCode: 'SEERS_01_02',
+        wardCode: 'SEERS_HEART',
     },
     {
         patientCode: 'PATI_4',
@@ -89,6 +92,7 @@ const dummy_patients = [
         age: 35,
         gender: 1,
         sickRoomCode: 'SEERS_02_02',
+        wardCode: 'SEERS_BONE',
     },
 ];
 
@@ -99,7 +103,9 @@ import {
 
 const $target_select = $('.taget_select');
 let selected_ward = 'NONE';
-
+// 모니터링 대상 체크된 환자 배열
+let monitoring_patient_array = [];
+// 모니터링 대상 렌더
 const renderDashboard = async () => {
     try {
         // 병동 선택
@@ -116,6 +122,7 @@ const renderDashboard = async () => {
     }
 };
 
+//병동선택 콤보박스 펼치고 선택
 function _dashboard_wardSelectBox_select() {
     const _$ward_selectBox_el = $(
         '.nurse.dashboard .taget_select .select_ward'
@@ -130,16 +137,34 @@ function _dashboard_wardSelectBox_select() {
     const _wardSelect = (item) => {
         _$ward_selectBox_el.removeClass('active');
         _$ward_selectBox_selected_el.html(item.text());
+        return item.attr('name');
     };
 
+    //병동 선택했을 때
     _$ward_option_list_el.each(function () {
         $(this)
             .off()
             .on('click', () => {
-                _wardSelect($(this));
-                selected_ward = $(this).attr('name');
-                showSickRoom(selected_ward);
-                showPatients(selected_ward);
+                const _change_ward = _wardSelect($(this));
+                if (_change_ward != selected_ward) {
+                    selected_ward = $(this).attr('name');
+                    //병동의 병실 출력
+                    showSickRoom(selected_ward);
+                    //병실의 병상 출력
+                    showPatients(selected_ward);
+                    //병동 체크박스 이벤트 부여
+                    addEventOnWardCheck(selected_ward);
+                    //병동 선택되어
+                    isWardChecked();
+                    //모니터랑 대상 병실 병상 체크 해제
+                    $(`input[name=patient_no]`).prop('checked', false);
+                    //병동 바꾸면 체크된 환자 초기화
+                    allSickRoomUnchecked();
+                    //병실 체크박스 이벤트
+                    addEventOnSickRoomCheck(selected_ward);
+                    //병상 체크박스 이벤트
+                    addEventOnSickBed();
+                }
             });
     });
 
@@ -194,14 +219,90 @@ function showPatients(wardCode) {
     }
 }
 
+//병동 바꿀 시 병동 선택되어 있으면 선택 해제
+function isWardChecked() {
+    const _$ward_check = $('#ward_check');
+    if (_$ward_check.prop('checked')) {
+        _$ward_check.prop('checked', false);
+    }
+}
+
+//병실 선택 해제
+function allSickRoomUnchecked() {
+    const _$sickRoom_check = $('input[name=room_no]');
+    if (_$sickRoom_check.prop('checked')) {
+        _$sickRoom_check.prop('checked', false);
+    }
+}
+
+//병동 체크박스에 이벤트 부여
+function addEventOnWardCheck(wardCode) {
+    const _$ward_check = $('#ward_check');
+    _$ward_check.off().on('click', () => {
+        //병실 체크
+        const sickRoomByWard = dummy_wardList
+            .filter((ward) => ward.wardCode === wardCode)[0]
+            .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+        sickRoomByWard.forEach((sickRoomCode) => {
+            if (_$ward_check.prop('checked')) {
+                $(`#${sickRoomCode}`).prop('checked', true);
+            } else {
+                $(`#${sickRoomCode}`).prop('checked', false);
+            }
+        });
+        //병상 체크
+        const check_patients_array = dummy_patients
+            .filter((patient) => patient.wardCode === wardCode)
+            .map((patient) => patient.patientCode);
+        check_patients_array.forEach((patient_code) => {
+            if (_$ward_check.prop('checked')) {
+                $(`#${patient_code}`).prop('checked', true);
+            } else {
+                $(`#${patient_code}`).prop('checked', false);
+            }
+        });
+    });
+}
+
+//병실 체크박스 이벤트 부여
+function addEventOnSickRoomCheck(wardCode) {
+    const sickRoomByWard = dummy_wardList
+        .filter((ward) => ward.wardCode === wardCode)[0]
+        .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+    sickRoomByWard.forEach((sickRoomCode) => {
+        const _$sickRoom_check = $(`#${sickRoomCode}`);
+
+        _$sickRoom_check.off().on('click', () => {
+            //병실 체크박스 체크시 이벤트 부여
+            const check_patients_array = dummy_patients
+                .filter((patient) => patient.sickRoomCode === sickRoomCode)
+                .map((patient) => patient.patientCode);
+            check_patients_array.forEach((patientCode) => {
+                if (_$sickRoom_check.prop('checked')) {
+                    $(`#${patientCode}`).prop('checked', true);
+                } else {
+                    $(`#${patientCode}`).prop('checked', false);
+                }
+            });
+        });
+    });
+}
+
+//병상 체크박스 이벤트부여
+function addEventOnSickBed() {
+    // const check_patients_array = dummy_patients
+    //     .filter((patient) => patient.sickRoomCode === sickRoomCode)
+    //     .map((patient) => patient.patientCode);
+}
+
 function addEventToAddBtn() {
     function addPatients() {
-        let patient_Array = [];
+        monitoring_patient_array.length = 0;
         $.each($(`input[name=patient_no]:checked`), function () {
-            patient_Array.push($(this).attr('id'));
+            monitoring_patient_array.push($(this).attr('id'));
         });
-        patient_Array.sort();
-        console.log(patient_Array);
+        monitoring_patient_array.sort();
+        console.log(monitoring_patient_array);
     }
     $('.btn.bl.btn_add')
         .off()
@@ -219,66 +320,6 @@ function _dashboard_target_monitoring_init() {
 }
 
 _dashboard_target_monitoring_init();
-// const renderDashboard = async () => {
-//     try {
-//         const wardList = dummy_wardList;
-//         const wardList_el = parseWardList(wardList);
-//         const sickRoomList = parseSickRoom(
-//             wardList[0].sickRoomList,
-//             dummy_patients
-//         );
-//         $target_select.html(wardList_el + sickRoomList);
-//     } catch (err) {
-//         console.log(err);
-//     }
-// };
-
-// const attachEvents = async () => {
-//     try {
-//         const _$ward_selectBox_el = $(
-//             '.nurse.dashboard .taget_select .select_ward'
-//         );
-//         const _$ward_selectBox_selected_el = $(
-//             '.nurse.dashboard .taget_select .select_ward .ward_label'
-//         );
-
-//         const _$ward_option_list_el = $(
-//             '.nurse.dashboard .taget_select .select_ward .ward_option .ward_list'
-//         );
-//         _dashboard_wardSelectBox_select(
-//             _$ward_selectBox_el,
-//             _$ward_selectBox_selected_el,
-//             _$ward_option_list_el
-//         );
-//         _dashboard_sickRoom_select();
-//     } catch (err) {
-//         console.log(err);
-//     }
-// };
-// function _dashboard_wardSelectBox_select(
-//     selectBox_el,
-//     selectBox_select,
-//     option_list_el
-// ) {
-//     const _wardSelect = (item) => {
-//         selectBox_el.removeClass('active');
-//         selectBox_select.html(item.text());
-//     };
-
-//     option_list_el.each(function () {
-//         $(this)
-//             .off()
-//             .on('click', () => _wardSelect($(this)));
-//     });
-
-//     selectBox_select.on('click', () => {
-//         if (selectBox_el.hasClass('active')) {
-//             selectBox_el.removeClass('active');
-//         } else {
-//             selectBox_el.addClass('active');
-//         }
-//     });
-// }
 
 // function _dashboard_sickRoom_select() {
 //     // 병동선택 체크박스 클릭시 아래의 전체 병실 선택됨
