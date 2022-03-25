@@ -31,7 +31,7 @@ export function monitorBlock_have(_data) {
      * active blue(파란색) : 시스템 이상
      */
     return `
-    <div class="patient_monitor" onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${measurementCode}')">
+    <div class="patient_monitor" data-measurementCode=${measurementCode} onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${measurementCode}')">
         <div class="patient_info">
             <p>
                 <span>${patientCode}</span>.
@@ -69,7 +69,7 @@ export function monitorBlock_have(_data) {
 export function monitorBlock_none(_data) {
     const { sickRoomCode, wardCode, sickBedCode } = _data || {};
     return `
-    <div class="patient_monitor" onclick="_history.linkTo('/nurse/measure.html?sickRoomCode=${sickRoomCode}&sickBedCode=${sickBedCode}&wardCode=${wardCode}')">
+    <div class="patient_monitor" data-sickBedCode=${sickBedCode}">
         <div class="empty_bed">
             <p>empty_bed</p>
 

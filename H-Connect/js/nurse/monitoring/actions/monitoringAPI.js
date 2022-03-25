@@ -2,7 +2,7 @@ import { serverController } from '../../../utils/controller/serverController.js'
 import { commonRequest } from '../../../utils/controller/commonRequest.js';
 
 /* s: 환자 병상 갯수 확인 */
-export async function getMonitoringSickBed() {
+export async function selectSickBed() {
     return await serverController.ajaxAwaitController(
         'API/Manager/SelectSickBed',
         'POST',
@@ -22,7 +22,7 @@ export async function getMonitoringSickBed() {
 /* e: 환자 병상 갯수 확인 */
 
 /* s: 환자 측정 리스트 가져오기 */
-export async function getPatientMeasurementInfoList() {
+export async function selectMeasurementInfoList() {
     return await serverController.ajaxAwaitController(
         'API/Measurement/SelectMeasurementInfoList',
         'POST',
@@ -45,7 +45,7 @@ export async function getPatientMeasurementInfoList() {
 }
 
 /* s : 환자 병실 리스트 */
-export async function getMonitoringSickRoom() {
+export async function selectSickRoom() {
     return await serverController.ajaxAwaitController(
         'API/Manager/SelectSickRoom',
         'POST',

@@ -1,11 +1,8 @@
-export const parsePatientInfo = ({
-    name,
-    age,
-    gender,
-    patientCode,
-    sickBed,
-    sickRoom,
-}) => {
+import { history } from '../../../../utils/controller/historyController.js';
+window._history = history;
+const historyParams = history.getParams(['measurement_code']);
+export const parsePatientInfo = (_data) => {
+    const { name, age, gender, patientCode, sickBed, sickRoom } = _data || {};
     return `
    <div class="btn_list">
        <button type="button" class="btn_alarm" disabled="">
@@ -55,11 +52,23 @@ export const parsePatientInfo = ({
 
        <div class="container">
            <div class="management_list">
-               <div class="list off link_to_patient">
+               <div class="list ${
+                   history.getLink().pathname === '/nurse/patient.html'
+                       ? 'on'
+                       : 'off'
+               } link_to_patient" onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${
+        historyParams.measurement_code
+    }')">
                    <p>모니터링</p>
                </div>
 
-               <div class="list on link_to_arteriotony">
+               <div class="list ${
+                   history.getLink().pathname === '/nurse/arteriotony.html'
+                       ? 'on'
+                       : 'off'
+               } link_to_arteriotony" onclick="window._history.linkTo('/nurse/arteriotony.html?measurement_code=${
+        historyParams.measurement_code
+    }')">
                    <p>혈압 수동입력</p>
                </div>
 

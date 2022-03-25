@@ -13,6 +13,7 @@ export const getPrerecordByPage = async (page) => {
             count: 10,
         })
     );
+    console.log(res);
     return {
         totalCount: res.totalCount,
         records:

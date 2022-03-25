@@ -6,6 +6,12 @@ export const history = {
             window.open(link, target);
         }
     },
+    getLink: () => {
+        const locationObj = window.location;
+        return {
+            pathname: locationObj.pathname,
+        };
+    },
     getParams: (params) => {
         if (params.length > 0) {
             //js 내장함수로 replace안쓰고 좀더 쉽게 객체로 파람스 가져올수 있음
@@ -15,7 +21,6 @@ export const history = {
             for (let i = 0; i < params.length; i++) {
                 const name = params[i];
                 const res = paramsObj.get(params[i]);
-                console.log(res);
                 obj = { ...obj, [name]: res };
             }
             return obj;

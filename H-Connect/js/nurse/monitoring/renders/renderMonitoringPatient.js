@@ -1,17 +1,18 @@
 import {
     monitorBlock_have,
     monitorBlock_none,
-} from '../templates/monitoringPatientTemplate.js';
+} from '../templates/monitoringPatientTml.js';
 import {
-    getMonitoringSickBed,
-    getPatientMeasurementInfoList,
-} from '../actions/getMonitoringAll.js';
+    selectSickBed,
+    selectMeasurementInfoList,
+} from '../actions/monitoringAPI.js';
+import { updateMonitoringPatientItem } from './updateMonitoringPatient.js';
 
 // 모니터링 > 전체환자 보기 렌더
-async function monitoringPatientListInsert() {
-    const { sickBedList } = await getMonitoringSickBed(); // 병상 리스트
+async function renderMonitoringPatientList() {
+    const { sickBedList } = await selectSickBed(); // 병상 리스트
     const { measurementInfoSimpleList: patientList } =
-        await getPatientMeasurementInfoList(); // 환자 측정 리스트
+        await selectMeasurementInfoList(); // 환자 측정 리스트
     let _html = '';
     let _temp_emptyBed = '';
 
@@ -29,4 +30,5 @@ async function monitoringPatientListInsert() {
     _html += _temp_emptyBed;
     $('.nurse.patient_vital .wrap_inner .all_patient').html(_html);
 }
-monitoringPatientListInsert();
+await renderMonitoringPatientList();
+await updateMonitoringPatientItem();
