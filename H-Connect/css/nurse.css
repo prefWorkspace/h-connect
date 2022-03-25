@@ -977,11 +977,12 @@
     width: 80px;
     height: 36px;
     margin: 0 16px;
+    z-index: 2;
 }
 
 .modifi_hospital .hospital_patient .patient_info .select_sex .sex_label {
     font-weight: normal;
-    color: #000;
+    /* color: #000; */
 }
 
 .modifi_hospital .hospital_patient .patient_info > :last-child {

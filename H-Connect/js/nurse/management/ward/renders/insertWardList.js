@@ -10,12 +10,14 @@ const { wardCode } = history.getParams(params);
 function _wardclickActive() {
     if (wardCode) {
         $('.nurse .ward .cont .ward_list').each((index, value) => {
-            console.log('value===');
-            console.log(value);
             const $wardCode = $(value).data('wardcode');
             if ($wardCode === wardCode) {
                 $(value).addClass('on');
                 selectSickRoom(wardCode);
+                $('.nurse .hospital_room .title .btn_new_room').attr(
+                    'disabled',
+                    false
+                );
             }
         });
     }

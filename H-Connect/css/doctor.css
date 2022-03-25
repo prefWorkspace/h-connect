@@ -135,7 +135,7 @@ p{font-size: 12px;}
 
 .doctor .schedule_list{
     /* height: 530px; */
-    padding: 16px;
+    /* padding: 16px; */
 }
 
 .doctor .schedule_list .row{
@@ -146,6 +146,8 @@ p{font-size: 12px;}
     justify-content: space-between;
     cursor: pointer;
 }
+
+.doctor .schedule_list .row:first-child{border-top: 1px solid #eee;}
 
 .doctor .schedule_list .row span{
     color: #007A94;
@@ -1116,6 +1118,8 @@ p{font-size: 12px;}
 
 
 /* 원격협진알림 */
+.remote_main .schedule .btn_section{display: flex;}
+.remote_main .schedule .btn_today{display: none;}
 .doctor .remote_alarm{
     width: 1312px;
     padding: 16px;
@@ -1449,7 +1453,6 @@ p{font-size: 12px;}
 .doctor_monitor .new_patient .row .img_container img{
     width: 100%;
     height: 100%;
-    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
 }
 
 .doctor_monitor .new_patient .row.on{
@@ -1460,7 +1463,7 @@ p{font-size: 12px;}
 .doctor_monitor .new_patient .row.on p{color: #fff;}
 
 .doctor_monitor .new_patient .row.on .img_container img{
-    filter: none;
+    filter: invert(0%) sepia(0) saturate(7451%) hue-rotate(176deg) brightness(508%) contrast(505%);
 }
 
 .doctor_monitor .new_patient .search_container{
@@ -1607,6 +1610,8 @@ p{font-size: 12px;}
     background: #ccc;
 }
 
+.doctor_monitor .rhythm .event_graph{height: 183px;position: relative;margin-bottom: 16px;}
+
 .doctor_monitor .rhythm .graph{
     padding: 12px 16px 20px;
     background: #eee;
@@ -1661,10 +1666,13 @@ p{font-size: 12px;}
 
 .doctor_monitor .rhythm .size{
     width: 160px;
-    margin: 16px 20px 40px;
+    /* margin: 16px 20px 40px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
 }
 
 .doctor_monitor .rhythm .size button{
@@ -1836,15 +1844,15 @@ p{font-size: 12px;}
 }
 
 .doctor_patient .vital_chart .title div{
-    /* width: 345px; */
     display: flex;
 }
 
-/* .doctor_patient .vital_chart .title .pati_info{margin-left: 56px;} */
 .doctor_patient .vital_chart .title .chart_time{
     display: flex;
     justify-content: flex-end;
 }
+.doctor_patient .vital_chart .title .chart_time p{display: flex;}
+.doctor_patient .vital_chart .title .chart_time p> :first-child{margin-left: 5px;}
 
 .doctor_patient .vital_chart .cont{
     width: 1316px;
@@ -1984,19 +1992,18 @@ p{font-size: 12px;}
     color: #fff;
 }
 
+.monitoring_patient .time{display: flex; align-items: center;}
 .monitoring_patient .time div{
     width: 15px;
     height: 15px;
-    display: inline-block;
-    vertical-align: middle;
+    margin-right: 8px;
 }
 
 .monitoring_patient .time p{
     margin-top: -2px;
     margin-right: 8px;
     font-size: 11px;
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
 }
 
 .monitoring_patient .pulse{
@@ -2042,6 +2049,7 @@ p{font-size: 12px;}
 .monitoring_patient .tabular_table .table_title .date_time{
     margin-right: 120px;
 }
+.monitoring_patient .tabular_table .table_title .date_time p{display: flex;}
 
 .monitoring_patient .tabular_table .table_title .hr{
     margin-right: 50px;
@@ -2074,16 +2082,20 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .tabular_table .table_content p{
+    width: 100%;
     font-size: 12px;
+    text-align: center;
     color: #ccc;
 }
 
 .monitoring_patient .tabular_table .table_content .date_time{
-    margin-right: 80px;
+    margin-right: 78px;
 }
+.monitoring_patient .tabular_table .table_content .date_time p{display: flex;}
 
 .monitoring_patient .tabular_table .table_content .hr{
-    margin-right: 78px;
+    width: 50px;
+    margin-right: 63px;
 }
 
 .monitoring_patient .tabular_table .table_content .temp{
@@ -2116,96 +2128,95 @@ p{font-size: 12px;}
     color: #fff;
 }
 
-.monitoring_patient .cont .graphical .hr_chart{
-    margin-top: 62px;
+.monitoring_patient .graph_wrap {
+    height: 375px;
+    overflow: auto;
 }
 
-.monitoring_patient .graphical .hr_chart{
+.monitoring_patient .graph_wrap::-webkit-scrollbar {
+    display: none;
+}
+.monitoring_patient .graph_wrap .chart {
+    padding: 42px 0 41px;
     display: flex;
+}
+.monitoring_patient .graph_wrap .left {
+    width: fit-content;
+    padding: 0;
+    margin: -4px 11px 0 0;
+    display: flex;
+}
+.monitoring_patient .graph_wrap .chart p {
+    color: #8a9296;
+}
+.monitoring_patient .chart .index p {
+    margin-right: 20px;
+}
+.monitoring_patient .hr_chart .index p {
+    color: #00fe19;
+}
+.monitoring_patient .sp_chart .index p {
+    color: #00ffff;
+}
+.monitoring_patient .resp_chart .index p {
+    color: #eeff00;
+}
+.monitoring_patient .temp_chart .index p {
+    color: #ff5499;
+}
+
+.monitoring_patient .graph_wrap .chart .bpm {
+    line-height: 30px;
+    text-align: right;
+}
+.monitoring_patient .graph_wrap .right {
+    width: 1153px;
+    padding: 0;
     position: relative;
 }
-
-.monitoring_patient .graphical .hr_chart p{
-    color: #888;
+.monitoring_patient .graph_wrap .bg_graph {
+    height: 190px;
 }
-
-.monitoring_patient .cont .graphical .hr_index p{
-    margin-right: 31px;
-}
-
-.monitoring_patient .graphical .hr_index p{
-    color: #fff;
-}
-
-.monitoring_patient .graphical .hr_line{
-    width: 1136px;
-    margin-bottom: 31px;
-    border-bottom: 1px solid #eee;
-}
-
-.monitoring_patient .cont .graphical .hr_chart> div> div> :last-child{
-    margin: 0;
-}
-
-.monitoring_patient .cont .graphical .hr_time{
-    width: 1082px;
-    margin: 0 auto;
-    padding: 27px 0 0;
+.monitoring_patient .row_time {
+    padding: 0 0 0 27px;
+    margin: 7px 0 0;
     font-size: 12px;
-    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
 }
 
-.monitoring_patient .cont .graphical .hr_time> p{
-    /* margin-right: 201px;
-    display: inline-block; */
-    display: flex;
-}
-
-.monitoring_patient .cont .graphical .hr_time> :last-child{
+.monitoring_patient .row_time > :last-child {
     margin: 0;
 }
 
-.monitoring_patient .cont .graphical .hr_img{
-    width: 400px;
-    height: 36px;
+.monitoring_patient .time_line {
     position: absolute;
-    top: 23px;
-    left: 365px;
-    /* z-index: 999; */
-}
-
-.monitoring_patient .cont .graphical .time_line{
-    position: absolute;
-    top: -38px;
+    top: -27px;
     left: 50%;
     transform: translateX(-50%);
+    margin-left: -21px;
 }
 
-.monitoring_patient .cont .graphical .time_line .time{
+.monitoring_patient .time_line .time {
+    padding: 0;
     font-size: 12px;
     text-align: center;
-    color: yellow;
     display: flex;
 }
 
-.monitoring_patient .cont .graphical .time_line::after{
+.monitoring_patient .time_line::after {
     position: absolute;
     content: '';
     width: 2px;
-    height: 220px;
-    background-color: #ff0;
+    height: 190px;
     top: 29px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.monitoring_patient .cont .graphical .time_line::before{
+.monitoring_patient .time_line::before {
     position: absolute;
     content: '';
-    background: url('/H-Connect/img/icon/trend_tri.png')no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 19px;
@@ -2213,13 +2224,69 @@ p{font-size: 12px;}
     transform: translateX(-50%);
 }
 
-/* event */
-.monitoring_patient .cont .event .table_title .date_time{
-    margin-right: 83px;
+.monitoring_patient .graph_wrap .hr_chart .time {
+    color: #00fe22;
+}
+.monitoring_patient .hr_chart .row_time {
+    color: #00fe22;
+}
+.monitoring_patient .hr_chart .time_line::after {
+    background: #00fe22;
+}
+.monitoring_patient .hr_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_green.svg') no-repeat center /
+        contain;
 }
 
+.monitoring_patient .graph_wrap .sp_chart .time {
+    color: #00ffff;
+}
+.monitoring_patient .sp_chart .row_time {
+    color: #00ffff;
+}
+.monitoring_patient .sp_chart .time_line::after {
+    background: #00ffff;
+}
+.monitoring_patient .sp_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_blue.svg') no-repeat center /
+        contain;
+}
+
+.monitoring_patient .graph_wrap .resp_chart .time {
+    color: #eeff00;
+}
+.monitoring_patient .resp_chart .row_time {
+    color: #eeff00;
+}
+.monitoring_patient .resp_chart .time_line::after {
+    background: #eeff00;
+}
+.monitoring_patient .resp_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_yellow.svg') no-repeat center /
+        contain;
+}
+
+.monitoring_patient .graph_wrap .temp_chart .time {
+    color: #ff5499;
+}
+.monitoring_patient .temp_chart .row_time {
+    color: #ff5499;
+}
+.monitoring_patient .temp_chart .time_line::after {
+    background: #ff5499;
+}
+.monitoring_patient .temp_chart .time_line::before {
+    background: url('/H-Connect/img/icon/tri_pink.svg') no-repeat center /
+        contain;
+}
+
+/* event */
+/* .monitoring_patient .cont .event .table_title .date_time{
+    margin-right: 83px;
+} */
+
 .monitoring_patient .cont .event .table_title .alarm_des{
-    margin-right: 703px;
+    margin-right: 675px;
 }
 
 .monitoring_patient .cont .event .table_body {
@@ -2237,7 +2304,7 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap{
-    height: 31px;
+    height: 32px;
     padding: 7px 45px 7px 16px;
     border-bottom: 1px solid #888;
     display: flex;
@@ -2248,7 +2315,6 @@ p{font-size: 12px;}
 .monitoring_patient .cont .event .table_body .table_wrap.on{
     border-bottom: 0px solid #888;
 }
-
 
 .monitoring_patient .cont .event .table_body .table_wrap .close{
     display: none;
@@ -2293,14 +2359,17 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .cont .event .table_body .table_wrap .date_time{
-    margin-right: 42px;
+    margin-right: 75px;
+    display: flex;
 }
+.monitoring_patient .cont .event .table_body .table_wrap .date_time p{display: flex;}
+.monitoring_patient .cont .event .table_body .table_wrap> div{display: flex;}
+.monitoring_patient .cont .event .table_wrap .alarm_des{width: 100px; text-align: center;}
 
 .monitoring_patient .cont .event .table_body .table_wrap p,
 .monitoring_patient .cont .event .table_body .table_wrap span{
     font-size: 12px;
     color: #ccc;
-    display: inline-block;
 }
 
 .monitoring_patient .cont .event .table_body .table_content{
@@ -2315,13 +2384,13 @@ p{font-size: 12px;}
 }
 
 .monitoring_patient .cont .event .table_body .table_content .ecg{
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
-
-
 .monitoring_patient .table_body .table_content .ecg p{
     font-size: 14px;
+    text-align: left;
     color: #00FF22;
     display: block;
 }
@@ -2366,6 +2435,7 @@ p{font-size: 12px;}
 
 .monitoring_patient .table_body .table_content .bell_num> p{
     font-size: 48px;
+    text-align: right;
 }
 
 .monitoring_patient .table_body .table_content .ecg .bell_name{
@@ -2711,7 +2781,6 @@ p{font-size: 12px;}
     border-radius: 8px;
     background: linear-gradient(to right, #004F60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-
     display: flex;
     align-items: center;
 }
@@ -2721,16 +2790,13 @@ p{font-size: 12px;}
     height: 32px;
 }
 .doctor .status_label .img_container{margin-right: 22px;}
-
 .doctor .status_label img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(210%) contrast(103%);
 }
-
 .doctor .status_label> :last-child{text-align: left; color: #fff; position: relative;}
-
 .doctor_remote .status_label> :last-child:after {
     content: '';
     width: 9px;
@@ -3118,7 +3184,7 @@ p{font-size: 12px;}
     right: 41px;
 }
 
-.doctor .me_request .time_select .week_view .possible p{
+.doctor .me_request .time_select .week_view .possible > div{
     opacity: 1;
 }
 
@@ -3128,7 +3194,7 @@ p{font-size: 12px;}
     /* padding-bottom: 22px; */
     top: 10px;
     left: 50px;
-    overflow: scroll hidden;
+    overflow: visible;
     display: flex;
     position: absolute;
 }
@@ -3161,10 +3227,10 @@ p{font-size: 12px;}
     position: relative;
 }
 
-.doctor .time_select .inner .plan p{
+/* .doctor .time_select .inner .plan p{
     color: #fff;
-    /* z-index: 2; */
-}
+    z-index: 2;
+} */
 
 .doctor .time_select .inner .plan> p{
     color: #fff;
@@ -3182,14 +3248,15 @@ p{font-size: 12px;}
     opacity: 0;
 }
 
-.doctor .time_select .possible p{
+.doctor .time_select .possible > div{
     width: 48px;
     line-height: 48px;
     background: #004F60;
+    font-size: 10px;
     cursor: pointer;
 }
 
-.doctor .time_select .possible.active p{
+.doctor .time_select .possible.active > div{
     opacity: 1;
     transition: .3s;
     background: #004F60;
@@ -3200,15 +3267,54 @@ p{font-size: 12px;}
     z-index: 3;
 }
 
-.doctor_remote .time_select .possible p{
+.doctor_remote .time_select .possible > div{
    background: none;
-   opacity: 0;
+   opacity: 0;   
+   position: relative;
 }
 
-.doctor_remote .time_select .possible p.active{
+.doctor_remote .time_select .possible > div.active{
     background: #004f60;
     opacity: 1;
 }
+
+.doctor_remote .time_select .possible > div:hover .select_info{display: flex; opacity: 1; transition: .3s;}
+
+.doctor_remote .time_select .possible .select_info{
+    position: absolute;
+    top: 0;
+    left: 54px;
+    width: 140px;
+    padding: 4px 8px 8px;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1;
+    display: none;
+    opacity: 0;
+}
+.doctor_remote .possible .select_info::before{
+    position: absolute;
+    top: 0;
+    left: -20px;
+    content: '';
+    width: 80px;
+    height: 60px;
+    display: inline-block;
+}
+
+.doctor_remote .time_select .possible .select_info p{
+    width: 50%;
+    margin-bottom: 4px;
+    line-height: normal;
+    color: #000;
+}
+
+.doctor_remote .time_select .possible .select_info p:nth-last-child(-n+2){margin: 0;}
 
 .doctor .time_select .inner> :first-child{
     width: 48px;
@@ -3354,11 +3460,11 @@ p{font-size: 12px;}
     top: 233px;
 }
 
-.doctor .me_request .inner> :nth-child(2) .possible :first-child{
+.doctor .me_request .inner> :nth-child(2) .possible > div:first-child{
     line-height: 96px;
 }
 
-.doctor .me_request .inner> :nth-child(2) .possible :last-child{
+.doctor .me_request .inner> :nth-child(2) .possible > div:last-child{
     line-height: 48px;
 }
 
@@ -3367,11 +3473,11 @@ p{font-size: 12px;}
     top: 41px;
 }
 
-.doctor .me_request .inner> :nth-child(3) .possible :first-child{
+.doctor .me_request .inner> :nth-child(3) .possible > div:first-child{
     line-height: 47px;
 }
 
-.doctor .me_request .inner> :nth-child(3) .possible :last-child{
+.doctor .me_request .inner> :nth-child(3) .possible > div:last-child{
     line-height: 96px;
 }
 
@@ -3695,6 +3801,8 @@ p{font-size: 12px;}
     color: #007A94;
 }
 
+.doctor .remote_check .count span:last-child{margin-left: 8px;}
+
 .doctor .remote_check .row.on .count span{
     color: #fff;
 }
@@ -3798,7 +3906,7 @@ p{font-size: 12px;}
 .new_remote .inner{
     width: 476px;
     height: 576px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .new_remote .inner::-webkit-scrollbar{
@@ -3833,10 +3941,6 @@ p{font-size: 12px;}
 
 .new_remote .type .surgery_list{
     width: 184px;
-}
-
-.new_remote .surgery_view{
-    display: none;
 }
 
 .new_remote .rt_view .type{
@@ -3876,7 +3980,8 @@ p{font-size: 12px;}
 
 .new_remote .surgery_view {
     width: 444px;
-    margin: 20px auto;
+    margin: 8px auto 20px;
+    display: none;
 }   
 
 .new_remote .surgery_view h2{
@@ -3965,7 +4070,7 @@ p{font-size: 12px;}
 }
 
 .new_remote .rt_time {
-    margin: 20px 0 0;
+    margin: 28px 0 0;
 }
 
 .new_remote .t_view .type{
@@ -3980,14 +4085,31 @@ p{font-size: 12px;}
     margin-bottom: 16px;
 }
 
-.new_remote .up_time{
-    position: relative;
+.new_remote .up_box{
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.new_remote .up_box .btn_delete_time{
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #940045;
+    display: flex;
+    align-items: center;
+}
+
+.new_remote .up_box .btn_delete_time img{margin-left: 8px;}
+
+.new_remote .up_time{   
+    width: 100%;
     padding: 16px;
-    margin-bottom: 8px;
     border-radius: 4px;
     background: #eee;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    position: relative;
 }
 
 .new_remote .up_time .date{
@@ -4013,6 +4135,7 @@ p{font-size: 12px;}
     width: 184px;
     border: 1px solid #ccc;
     border-top: none;
+    display: block;
 }
 
 .surgery_box .surgery_list::after{
@@ -4026,13 +4149,27 @@ p{font-size: 12px;}
 
 .new_remote .content{
     padding: 20px 16px;
+    display: none;
 }
+
+.new_remote .content > h2{margin-bottom: 20px;}
+
+.new_remote .content > button{
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #940045;
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.new_remote .content .btn_case_delete div{margin-left: 8px;}
 
 .new_remote .content form{
     padding: 16px;
-    margin-top: 20px;
     background: #eee;
     border-radius: 4px;
+    clear: both;
 }
 
 .new_remote .content p{
@@ -4059,6 +4196,8 @@ p{font-size: 12px;}
 
 .new_remote .content .search_container{
     position: relative;
+    border-radius: 4px;
+    border: 1px solid #007A94;
 }
 
 .new_remote .content .search_container .btn_search{
@@ -4076,7 +4215,8 @@ p{font-size: 12px;}
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: invert(10%) sepia(99998%) saturate(999%) hue-rotate(264deg) brightness(9999%) contrast(8%);
+    /* filter: invert(10%) sepia(99998%) saturate(999%) hue-rotate(264deg) brightness(9999%) contrast(8%); */
+    filter: none;
 }
 
 .new_remote .content .search_container .btn_search.on img{
@@ -4100,9 +4240,11 @@ p{font-size: 12px;}
 
 .new_remote .content textarea{
     width: 100%;
-    /* min-height: 32px; */
-    padding: 8px 16px;
+    height: fit-content;
+    max-height: 200px;
+    padding: 8px 16px 0;
     border-radius: 4px;
+    line-height: 20px;
     font-size: 12px;
     overflow-y: hidden;
 }
@@ -4118,7 +4260,9 @@ p{font-size: 12px;}
     margin-top: 8px;
     border: 1px dashed #ccc;
     background: #fff;
+    font-size: 14px;
     color: #007A94;
+    justify-content: center;
 }
 
 .new_remote .content .participant{
@@ -4126,6 +4270,7 @@ p{font-size: 12px;}
 }
 
 .new_remote .content .title{
+    width: 100%;
     padding: 0;
     border: none;
     display: flex;
@@ -4150,6 +4295,7 @@ p{font-size: 12px;}
     display: flex;
     flex-wrap: wrap;
 }
+.doctor_new .content .btn_add{font-size: 14px;}
 
 .doctor_new .mem{
     height: 17px;
@@ -4167,12 +4313,8 @@ p{font-size: 12px;}
 .doctor_new .btn_del{
     width: 16px;
     height: 16px;
-    padding: 3px;
     margin-left: 7px;
     border-radius: 50%;
-    background: #940045 url('/H-Connect/img/icon/nurse/close.svg') no-repeat;
-    background-position: 50% 50%;
-    vertical-align: inherit;
 }
 
 .doctor_new.message .favorite_container input[type='checkbox']:checked+label{
@@ -4193,6 +4335,7 @@ p{font-size: 12px;}
 .doctor_new .favorite_container{
     width: 16px;
     height: 16px;
+    padding: 0;
     display: flex;
     align-items: center;
 }
@@ -4355,11 +4498,12 @@ p{font-size: 12px;}
     width: 32px;
     height: 32px;
     padding: 6px;
-    transform: translateY(-30%);
+    transform: translateY(-50%);
 }
 
 .doctor .attendee .search_container button img{
-    filter: invert(78%) sepia(6%) saturate(12%) hue-rotate(314deg) brightness(106%) contrast(89%);
+    filter: none;
+    /* filter: invert(78%) sepia(6%) saturate(12%) hue-rotate(314deg) brightness(106%) contrast(89%); */
 }
 
 .attendee .weekly{

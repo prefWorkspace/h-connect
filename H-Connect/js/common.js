@@ -78,6 +78,7 @@ $(function () {
     // 병실관리
     // 병실관리 팝업 열고 닫기
     $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
+        console.log('asf');
         $('.pop.new_room .overlay').fadeIn();
     });
 
@@ -383,7 +384,6 @@ $(function () {
     $('.message .send_message .btn_list .btn_send').on('click', function () {
         $('.pop.message_send .overlay').fadeIn();
     });
-
     $('.pop.message_send .btn_check').on('click', function () {
         $('.pop.message_send .overlay').fadeOut();
 
@@ -392,7 +392,29 @@ $(function () {
 
         $('.nurse_message .select_medi').hide();
         $('.nurse_message .send_message').hide();
-    });
+        $('.message .group_talk').hide();
+    })
+
+    $('.message .talk_list .list').click(function(){
+        $('.message .talk_list .list').removeClass('on');
+        $(this).addClass('on');
+
+        if($(this).hasClass('off')){
+            $(this).removeClass('off');
+            console.log("클래스 off있음");
+        } else {
+            // 퍼블리싱 완성용에서만 보이게 해주세요(개발시 필요X 2번에 그냥 안읽은거 표시하기 위함)
+            $('.message .talk_list .list:nth-child(2)').addClass('off');
+        }
+
+        if($(this).hasClass('group_list')){
+            $('.message .message_talk').hide();
+            $('.message .group_talk').show();
+        } else {
+            $('.message .message_talk').show();
+            $('.message .group_talk').hide();
+        }
+    })
 
     // 메세지 정렬 팝업
     $('.nurse_message .message_talk .search_container .btn_sort').on(
@@ -538,6 +560,7 @@ $(function () {
 
         $('.message .message_list').show();
         $('.message .message_talk').show();
+        $('.message .group_talk').hide();
     });
 
     // 메세지 보내기 창에서 다시 돌아가기(전송버튼 누름)
@@ -547,6 +570,7 @@ $(function () {
 
         $('.message .message_list').show();
         $('.message .message_talk').show();
+        $('.message .group_talk').hide();
     });
 
     // 구급대원에게 전화
@@ -1091,6 +1115,22 @@ $(function () {
         }
     );
 
+    $('.message .group_talk .title > button').on('click', function () {
+        $(this).toggleClass('on');
+        $('.message .group_talk .title .info').fadeToggle();
+    })
+    $('.message .group_talk .info button').on('click', function () {
+        $('.delete_group_chat .overlay').fadeIn();
+    })
+    $('.delete_group_chat .btn_cut').on('click', function () {        
+        $('.message .message_talk').show();
+        $('.message section.group_talk').hide();
+        $('.message .group_talk .title button').removeClass('on');
+        $('.message .group_talk .title .info').hide();        
+        $('.nurse_message .talk_list .list.group_list').hide();
+        $('.nurse_message .talk_list .list:first-child').addClass('on');
+    })
+
     // 모니터링 페이지의 메세지
     $('.doctor .nurse_send').on('click', function () {
         $('.nurse_view').show();
@@ -1236,6 +1276,14 @@ $(function () {
     $('.doctor_message .btn_cancel').on('click', function () {
         location.href = 'index.html';
     });
+
+    $('.doctor .vital_chart .btn_group .btn_set').on('click', function () {
+        $('.interval_set .overlay').fadeIn();
+    })
+
+
+
+
 
     // 모니터링
     // 모니터링 버튼 클릭시 링크 이동
