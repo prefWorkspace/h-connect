@@ -145,7 +145,6 @@
 
 .message .message_list .search_container input{
     width: 480px;
-    height: 32px;
     padding: 0 56px 0 8px;
     border-radius: 4px;
     background: #fff;
@@ -219,14 +218,14 @@
 }
 
 .message .talk_list .talk_time{
-    width: 130px;
+    /* width: 130px; */
     margin: 0 16px 0 12px;
     display: flex;
 }
 
-.message .talk_list .talk_name{
+/* .message .talk_list .talk_name{
     width: 100px;
-}
+} */
 
 .message .talk_list .list.on{
     background: #940045;
@@ -298,10 +297,10 @@
     height: 48px;
     padding: 8px 32px;
     border-radius: 0;
-    border: none;
     background: linear-gradient(to right, #007A94, #003D4A);
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -311,13 +310,10 @@
     padding: 7px 56px 7px 8px;
     border-radius: 4px;
     background: #fff;
-    /* border: 1px solid #940045; */
+    border: 1px solid #007A94;
 }
 
-.nurse_message .message_list .search_container input{
-    height: 32px;
-    /* border: 1px solid #007A94; */
-}
+.nurse_message .message_list .search_container input{border: 1px solid #007A94;}
 
 .message .message_talk .search_container input::placeholder{
     font-size: 12px;
@@ -359,6 +355,72 @@
     transform: translate( 20px ,-50%);
 }
 
+/* group_talk */
+.message .group_talk{display: none;}
+.message .group_talk .title{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.message .group_talk .title .info{
+    position: absolute;
+    top: 80px;
+    right: 32px;
+    width: 360px;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    background: #fff;
+    box-shadow: 3px 3px 6px rgba(0 0 0 /30%);
+    z-index: 1;
+    display: none;
+}
+
+.message .group_talk .title .info .top{
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.message .group_talk .title .info h3{
+    font-size: 14px;
+    color: #007A94;
+}
+
+.message .group_talk .title .info button{
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    color: #940045;
+    display: flex;
+    align-items: center;
+}
+
+.message .group_talk .title .info button img{margin-left: 12px;}
+
+.message .group_talk .title button{width: 96px; height: 40px;}
+.message .group_talk .title button span:last-child{display: none;}
+.message .group_talk .title button.on{
+    border-color: #940045;
+    background: #940045;
+    color: #fff;
+}
+
+.message .group_talk .title button.on span:first-child{display: none;}
+.message .group_talk .title button.on span:last-child{display: block;}
+
+.message .group_talk .title .info p{
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.message .group_talk .title .info p:last-child{margin: 0;}
+
+
+
 /* 대화창 비어있음 no_message*/
 .message .no_talk{
     width: 968px;
@@ -392,6 +454,7 @@
 .message .no_message .chat_container> div{display: none;}
 .message .no_message .chat_window .btn_send{background: #ccc; color: #888;}
 .message .no_message .chat_window textarea:disabled{background: none;}
+
 
 
 /* 채팅 */
@@ -669,7 +732,7 @@
     width: 100%;
     height: fit-content;
     margin: 18px auto 0;
-    padding: 16px;
+    padding: 16px 16px 11px;
     border: 1px solid #000;
     border-radius: 4px;
     display: flex;
@@ -777,6 +840,10 @@
     background: none;
 }
 
+.nurse_message .group .btn_next img{
+    filter: invert(124%) sepia(100%) saturate(5863%) hue-rotate(154deg) brightness(48%) contrast(97%);
+}
+
 .message .group .btn_add{
     background: none;
     color: #940045;
@@ -850,21 +917,28 @@
 .para_message .doctor_list .input_wrap{
     margin: 0;
 }
+
 .message .select_doctor{
     width: 400px;
 }
 
 .message .search_container{
     width: 100%;
-    position: relative;
+    height: 32px;
     padding: 0;
+    margin-top: 12px;
+    border-radius: 4px;
+    border: 1px solid #007A94;
+    position: relative;
 }
 
 .message .search_container input{
     width: 100%;
-    padding: 7px 30px 7px 7px;
-    background: #eee;
+    height: 100%;
+    padding: 0 45px 0 8px;
+    margin: 0;
     border-radius: 4px;
+    background: transparent;
     font-size: 12px;
     font-weight: normal;
 }
@@ -880,6 +954,7 @@
     transform: translateY(-50%);
     right: 5px;
     width: 35px;
+    height: 100%;
     padding: 5px 0;
     background: none;
 }
@@ -944,6 +1019,32 @@
 .message .list_inner input{
     display: none;
 }
+
+/* 의료진선택 checkbox */
+/* .message .list_inner div input[type="checkbox"] + label >span {
+    width: 18px;
+    height: 18px;
+    margin: 0 15px 0 0;
+    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
+    cursor: pointer;
+}
+
+.message .list_inner div input[type='checkbox']:checked + label span{
+    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
+}
+
+.nurse_message .list_inner div input[type='checkbox']:checked + label,
+.nurse_message .list_inner div input[type='checkbox']:checked + label span {
+    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
+} */
+
+/* 의료진선택 즐겨찾기 */
+/* .message .list_inner .favorite_container input[type="checkbox"]+label{
+    width: 18px;
+    height: 18px;
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
+    cursor: pointer;
+} */
 
 .message .list_inner .favorite_container input[type='checkbox']:checked+label span{
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
@@ -1216,14 +1317,14 @@
     margin: 19px 0;
 }
 
-/* .doctor_message .select_doctor .red_custom[type="checkbox"] + label{
+.doctor_message .select_doctor .red_custom[type="checkbox"] + label{
     background: #eee;
     border: 1px solid #eee;
 }
 
 .doctor_message .select_doctor .red_custom[type="checkbox"]:checked + label{
     background: #940045;
-} */
+}
 
 /* 의사 - 선별진료 */
 .doc_screen{
@@ -1362,6 +1463,7 @@
 
 .doc_screen .message_talk .title{
     padding: 32px 32px 25px;
+    border: none;
 }
 
 .doc_screen .message_talk .title h2{
@@ -1371,6 +1473,7 @@
 
 .doc_screen .message_talk .title p{
     font-size: 12px;
+    color: #000;
 }
 
 .doc_screen .message_talk .search_container{
@@ -1428,7 +1531,7 @@
 }
 
 .doctor_new.message .container{
-    height: 380px;
+    height: 312px;
     padding: 0 8px;
     margin-top: 12px;
     overflow-y: scroll;
@@ -1461,9 +1564,9 @@
     background: #007A94;
 }
 
-/* .doctor_new.message .group .btn_next img{
+.doctor_new.message .group .btn_next img{
     filter: invert(30%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
-} */
+}
 
 .doctor_new.message .group .btn_add{color: #007A94;}
 
@@ -1505,6 +1608,21 @@
     filter: invert(58%) sepia(152%) saturate(863%) hue-rotate(154deg) brightness(60%) contrast(100%);
 }
 
+.doc_screen .group_container .green_custom[type="checkbox"]:checked + label{
+    background: #007A94;
+    border: #eee;
+}
+
+/* all check */
+.doc_screen .group_container .all_check input[type="checkbox"] + label{
+    border: 1px solid #007A94;
+}
+
+.doc_screen .group_container .all_check input[type="checkbox"] + label + label{
+    color: #007A94;
+}
+
+
 /* 선별진료실 -의사 */
 .screening_doc {
     padding-top: 80px;
@@ -1516,27 +1634,28 @@
 
 .screening_doc .wrap_inner{
     width: 100%;
-    min-width: 1820px;
+    min-width: 1860px;
     min-height: calc(100vh - 80px);
     background: #eee;
 }
 
 .screening_doc .message_list .title{
-    padding: 8px 16px 24px;
+    padding: 16px 16px 24px;
     border-bottom: 1px solid #eee;
 }
+
+.screening_doc .message_list .title> div{justify-content: space-between;}
 
 .screening_doc .message_list .title div{
     display: flex;
     align-items: center;
 }
 
-.screening_doc .message_list .title> div{ justify-content: space-between;}
+.screening_doc .message_list .title> div> div{ width: fit-content;}
 
 .screening_doc .title_text{
-    width: 80px;
-    align-items: center;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: inherit;
 }
 
 .screening_doc .title_text div{
@@ -1549,12 +1668,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin-top: 0;
 }
 
 .screening_doc .btn_message{
     width: 120px;
-    padding: 12px 13px;
+    padding: 12px 11px;
     font-size: 12px;
     color: #fff;
 }
