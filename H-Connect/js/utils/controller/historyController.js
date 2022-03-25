@@ -15,7 +15,6 @@ export const history = {
             for (let i = 0; i < params.length; i++) {
                 const name = params[i];
                 const res = paramsObj.get(params[i]);
-                console.log(res);
                 obj = { ...obj, [name]: res };
             }
             return obj;

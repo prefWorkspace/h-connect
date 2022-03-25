@@ -78,6 +78,7 @@ $(function () {
     // 병실관리
     // 병실관리 팝업 열고 닫기
     $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
+        console.log('asf');
         $('.pop.new_room .overlay').fadeIn();
     });
 
