@@ -158,12 +158,14 @@ function _dashboard_wardSelectBox_select() {
                     isWardChecked();
                     //모니터랑 대상 병실 병상 체크 해제
                     $(`input[name=patient_no]`).prop('checked', false);
+                    // 병동 변경시 펼쳐진 병실병상 리스트 접기
+                    $('.ward_count.on').trigger('click');
                     //병동 바꾸면 체크된 환자 초기화
                     allSickRoomUnchecked();
                     //병실 체크박스 이벤트
                     addEventOnSickRoomCheck(selected_ward);
                     //병상 체크박스 이벤트
-                    addEventOnSickBed();
+                    addEventOnSickBed(selected_ward);
                 }
             });
     });
@@ -269,11 +271,25 @@ function addEventOnSickRoomCheck(wardCode) {
     const sickRoomByWard = dummy_wardList
         .filter((ward) => ward.wardCode === wardCode)[0]
         .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+    //다 체크되면 병동선택 체크하는 함수
+    function checkWardByCheckRoom(roomLength) {
+        let checkedLen = 0;
+        sickRoomByWard.forEach((sickRoomCode) => {
+            if ($(`#${sickRoomCode}`).prop('checked')) checkedLen += 1;
+        });
+
+        if (roomLength === checkedLen) {
+            $('#ward_check').prop('checked', true);
+        } else {
+            $('#ward_check').prop('checked', false);
+        }
+    }
     sickRoomByWard.forEach((sickRoomCode) => {
         const _$sickRoom_check = $(`#${sickRoomCode}`);
 
         _$sickRoom_check.off().on('click', () => {
             //병실 체크박스 체크시 이벤트 부여
+            checkWardByCheckRoom(sickRoomByWard.length);
             const check_patients_array = dummy_patients
                 .filter((patient) => patient.sickRoomCode === sickRoomCode)
                 .map((patient) => patient.patientCode);
@@ -289,10 +305,62 @@ function addEventOnSickRoomCheck(wardCode) {
 }
 
 //병상 체크박스 이벤트부여
-function addEventOnSickBed() {
-    // const check_patients_array = dummy_patients
-    //     .filter((patient) => patient.sickRoomCode === sickRoomCode)
-    //     .map((patient) => patient.patientCode);
+function addEventOnSickBed(wardCode) {
+    //병상에 따른 병실 체크박스 제어
+    const sickRoomByWard = dummy_wardList
+        .filter((ward) => ward.wardCode === wardCode)[0]
+        .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+    let patients_by_sickRoom_many = {};
+    sickRoomByWard.forEach((sickRoomCode) => {
+        if (!patients_by_sickRoom_many[sickRoomCode]) {
+            patients_by_sickRoom_many[sickRoomCode] = 0;
+        }
+    });
+    const check_patients_array = dummy_patients
+        .filter((patient) => patient.wardCode === wardCode)
+        .map((patient) => {
+            patients_by_sickRoom_many[patient.sickRoomCode] += 1;
+            return {
+                sickRoomCode: patient.sickRoomCode,
+                patientCode: patient.patientCode,
+            };
+        });
+    check_patients_array.forEach((patient) => {
+        $(`#${patient.patientCode}`)
+            .off()
+            .on('click', () => {
+                const sickRoomCode_of_patient = check_patients_array.filter(
+                    (pat) => pat.patientCode === patient.patientCode
+                )[0].sickRoomCode;
+                let check_sickBed = 0;
+                const patients_by_sickRoom = check_patients_array
+                    .filter(
+                        (pat) => pat['sickRoomCode'] === sickRoomCode_of_patient
+                    )
+                    .map((p) => p['patientCode']);
+                patients_by_sickRoom.forEach((pat) => {
+                    if ($(`#${pat}`).prop('checked')) check_sickBed += 1;
+                });
+                if (
+                    check_sickBed ===
+                    patients_by_sickRoom_many[sickRoomCode_of_patient]
+                ) {
+                    $(`#${sickRoomCode_of_patient}`).prop('checked', true);
+                } else {
+                    $(`#${sickRoomCode_of_patient}`).prop('checked', false);
+                }
+
+                let check_sickBed_by_ward = 0;
+                check_patients_array.forEach((pat) => {
+                    if ($(`#${pat.patientCode}`).prop('checked'))
+                        check_sickBed_by_ward += 1;
+                });
+                if (check_patients_array.length == check_sickBed_by_ward) {
+                } else {
+                    $(`#ward_check`).prop('checked', false);
+                }
+            });
+    });
 }
 
 function addEventToAddBtn() {
