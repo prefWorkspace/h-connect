@@ -1,15 +1,24 @@
-import {
+const { request_Date_Data } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
+const {
     selectBloodPressurePage,
     insertBloodPressure,
     updateBloodPressure,
     deleteBloodPressure,
-} from './bloodPressureAPI.js';
-
-import { request_Date_Data } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
-
-import { renderPrerecordList } from '../renders/renderPrerecord.js';
-
-import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
+} = await import(
+    importVersion(
+        '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/bloodPressureAPI.js'
+    )
+);
+const { renderPrerecordList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/renderPrerecord.js'
+    )
+);
 
 const historyMeasurementCode = history.getParams('measurement_code');
 const historyPage = history.getParams('page');
