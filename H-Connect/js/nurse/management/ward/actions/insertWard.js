@@ -2,7 +2,7 @@
 import { localStorageController } from '../../../../utils/controller/localStorageController.js';
 import { serverController } from '../../../../utils/controller/serverController.js';
 import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { selectWard } from './selectWard.js';
+import { selectWard } from './selectWard.js?v=2022.03.25.12.01';
 import { CONSTANT } from '../renders/constant.js';
 
 function insertWard() {

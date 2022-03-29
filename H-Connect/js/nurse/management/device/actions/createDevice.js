@@ -1,7 +1,7 @@
 'use strict';
 import { serverController } from '../../../../utils/controller/serverController.js';
 import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { device_NameToType } from '../../../../utils/controller/deviceNameHandle.js';
+import { device_NameToType } from '../../../../utils/controller/deviceNameController.js';
 
 export function createDevice() {
     const device_name = $('#device_name').text();
@@ -29,4 +29,5 @@ export function createDevice() {
     );
 }
 
-$('.pop.regi_device .overlay .btn_list .btn_check').on('click', insert_device);
+//아직 작업전
+// $('.pop.regi_device .overlay .btn_list .btn_check').on('click', insert_device);

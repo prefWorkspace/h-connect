@@ -1,7 +1,7 @@
 'use strict';
 import { commonRequest } from '../../../../utils/controller/commonRequest.js';
 import { CONSTANT } from '../renders/constant.js';
-import { selectWard } from './selectWard.js';
+import { selectWard } from './selectWard.js?v=2022.03.25.12.01';
 import { serverController } from '../../../../utils/controller/serverController.js';
 
 const { userCode: requester, organizationCode } = CONSTANT.userData;
