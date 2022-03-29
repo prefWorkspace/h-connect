@@ -557,13 +557,13 @@ const VERSION = {
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
                     version: '2022.03.25.12.01',
                 },
-                'websocket_test.js': {
+                'websoket_test.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring',
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
                     version: '2022.03.25.12.01',
                 },
-                'stramingMonitoring.js': {
+                'streamingMonitoring.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring',
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
@@ -602,37 +602,16 @@ const VERSION = {
         patientMonitoring: {
             arteriotony: {
                 actions: {
-                    'bloodPressureAction.js': {
+                    'bloodPressureActions.js': {
                         type: 'module',
-                        url_path: '/nurse/patient',
+                        url_path: '/nurse/arteriotony',
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
                         version: '2022.03.25.12.01',
                     },
                     'bloodPressureAPI.js': {
                         type: 'module',
-                        url_path: '/nurse/patient',
-                        file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
-                        version: '2022.03.25.12.01',
-                    },
-                    'getPatientInfo.js': {
-                        type: 'module',
-                        url_path: '/nurse/patient',
-                        file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
-                        version: '2022.03.25.12.01',
-                    },
-                    'getPrerecordByPage.js': {
-                        type: 'module',
-                        url_path: '/nurse/patient',
-                        file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
-                        version: '2022.03.25.12.01',
-                    },
-                    'insertBloodPressure.js': {
-                        type: 'module',
-                        url_path: '/nurse/patient',
+                        url_path: '/nurse/arteriotony',
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
                         version: '2022.03.25.12.01',
@@ -682,7 +661,7 @@ const VERSION = {
                 actions: {
                     'patientMonitoringAPI.js': {
                         type: 'module',
-                        url_path: '/nurse/patient',
+                        url_path: '/nurse/patient||/nurse/arteriotony',
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/common/actions/',
                         version: '2022.03.25.12.01',
@@ -691,7 +670,7 @@ const VERSION = {
                 renders: {
                     'renderPatientInfo.js': {
                         type: 'module',
-                        url_path: '/nurse/patient',
+                        url_path: '/nurse/patient||/nurse/arteriotony',
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/common/renders/',
                         version: '2022.03.25.12.01',
@@ -700,7 +679,7 @@ const VERSION = {
                 templates: {
                     'pateintInfoTmpl.js': {
                         type: 'module',
-                        url_path: '/nurse/patient',
+                        url_path: '/nurse/patient||/nurse/arteriotony',
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/common/templates/',
                         version: '2022.03.25.12.01',
@@ -784,3 +763,19 @@ function setScript() {
 }
 
 setScript(); // 스크립트 생성해주는 함수
+
+/* s : 파일 버전별 임포트 */
+/*
+사용 방법
+const { serverController } = await import( importVersion('/H-Connect/js/utils/controller/serverController.js') );
+위와 같이 import 가 필요한 파일에서 await import 구문과 함께 인자로 파일의 "절대경로"를 작성해줍니다.
+무조건 절대경로로로 작성해주세요 해당 파일의 버전을 찾는 로직이 절대경로 기준으로 찾습니다.
+*/
+function importVersion(_path) {
+    let _findTargetPath = SCRIPT_ARR.find((_target) => {
+        const _filePath = _target.file_path + _target.file_name;
+        return _filePath === _path;
+    });
+    return _path + '?v=' + _findTargetPath.version;
+}
+/* e : 파일 버전별 임포트 */
