@@ -772,7 +772,6 @@ const { serverController } = await import( importVersion('/H-Connect/js/utils/co
 무조건 절대경로로로 작성해주세요 해당 파일의 버전을 찾는 로직이 절대경로 기준으로 찾습니다.
 */
 function importVersion(_path) {
-    //
     let _findTargetPath = SCRIPT_ARR.find((_target) => {
         const _filePath = _target.file_path + _target.file_name;
         return _filePath === _path;
