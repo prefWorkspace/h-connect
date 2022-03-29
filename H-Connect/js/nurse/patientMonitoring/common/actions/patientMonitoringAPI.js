@@ -1,4 +1,6 @@
-import { serverController } from '../../../../utils/controller/serverController.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
 
 import { commonRequest } from '../../../../utils/controller/commonRequest.js';
 import { history } from '../../../../utils/controller/historyController.js';

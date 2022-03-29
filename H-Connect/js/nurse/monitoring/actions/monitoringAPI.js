@@ -1,5 +1,9 @@
-import { serverController } from '../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../utils/controller/commonRequest.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
 
 /* s: 환자 병상 갯수 확인 */
 export async function selectSickBed() {

@@ -1,5 +1,6 @@
-import { history } from '../../../utils/controller/historyController.js';
-
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
 /* s : 모니터링 블록 */
 
 window._history = history;

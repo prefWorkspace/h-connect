@@ -1,4 +1,6 @@
-import { bioSignalData } from './fakeData.js';
+const { bioSignalData } = await import(
+    importVersion('/H-Connect/js/nurse/monitoring/actions/fakeData.js')
+);
 
 export const socketGetPatientData = {
     get: function () {
@@ -8,6 +10,7 @@ export const socketGetPatientData = {
         setInterval(() => {
             if (callBack) {
                 const test = socketGetPatientData.get();
+                // console.log(test);
                 callBack(test);
             }
         }, 1000);
