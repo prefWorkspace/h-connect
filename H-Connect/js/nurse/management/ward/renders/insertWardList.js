@@ -4,6 +4,7 @@ import { selectSickRoom } from '../actions/selectSickRoom.js';
 import { history } from '../../../../utils/controller/historyController.js';
 
 const params = ['wardCode', 'sickRoomCode'];
+// const params = 'wardCode';
 const { wardCode } = history.getParams(params);
 
 //병동 클릭시 배경색 변경 active

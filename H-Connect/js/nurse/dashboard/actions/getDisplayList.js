@@ -1,20 +1,19 @@
 import { serverController } from '../../../utils/controller/serverController.js';
 import { commonRequest } from '../../../utils/controller/commonRequest.js';
 
-/* s : 모니터링 대상 데이터 가져오기 */
-export async function getWardList() {
-    //병동, 병실, 병상 가져오기
+export async function getDisplayList(page, count) {
     let result = {};
     await serverController.ajaxAwaitController(
-        'API/Manager/SelectWard',
+        'API/Manager/SelectDisplay',
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            includeSickRoom: true,
+            pageNumber: page,
+            count: count,
         }),
         (res) => {
             if (res.result) {
-                result = res.wardList;
+                result = res.displayInfoList;
             }
         }
     );
