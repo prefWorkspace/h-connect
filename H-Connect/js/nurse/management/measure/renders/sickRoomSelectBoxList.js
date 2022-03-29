@@ -1,5 +1,5 @@
 'use strict';
-import { CONSTANT_MEASURE } from './constant.js';
+import { CONSTANT_MEASURE } from './constant.js?v=2022.03.25.12.01';
 import { sickRoomSelectBox } from '../templates/sickRoomSelectBox.js';
 import { selectMeasurementInfoList } from '../actions/selectMeasurementInfoList.js';
 

@@ -1,7 +1,7 @@
-import { serverController } from '../../../utils/controller/serverController.js';
+import { serverController } from '../../../utils/controller/serverController.js?v=2022.01.17.11.33';
 
-import { commonRequest } from '../../../utils/controller/commonRequest.js';
-import { getWardList } from './getWardList.js';
+import { commonRequest } from '../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
+import { getWardList } from './getwardList.js?v=2022.03.25.12.01';
 
 export async function getPatientList() {
     let result = {};

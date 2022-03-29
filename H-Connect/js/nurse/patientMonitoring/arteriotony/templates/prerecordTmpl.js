@@ -1,4 +1,6 @@
-import { request_Date_Data } from '../../../../utils/controller/commonRequest.js';
+const { request_Date_Data } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
 // import { onClickDeleteBloodPressureBtn } from '../actions/bloodPressureActions';
 // export const parsePrerecordTmpl = ({
 //     records,
@@ -94,7 +96,7 @@ export const parsePaginationBlock = ({ page, records, totalCount }) => {
 
     const returnPageList = () => {
         const min = page < 6 ? 1 : page - 5;
-        const max = page < 6 ? 10 : page + 4;
+        const max = page < 6 ? 10 : page > totalPageCount - 4 ? 1 : page + 4;
         // console.log(min, max);
         let pageArr = [];
         for (let i = min; i <= max; i++) {

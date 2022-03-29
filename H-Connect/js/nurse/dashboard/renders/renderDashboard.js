@@ -1,5 +1,5 @@
 // API
-import { getWardList } from '../actions/getWardList.js';
+import { getWardList } from '../actions/getwardList.js?v=2022.03.25.12.01';
 import { getPatientList } from '../actions/getPatientList.js';
 import { getDisplayList } from '../actions/getDisplayList.js';
 
@@ -22,7 +22,6 @@ let displayPatientsNumber = 20;
 
 const $target_select = $('.taget_select');
 const $display_inpat = $('.inpat');
-
 
 let selected_ward = 'NONE';
 // 모니터링 대상 체크된 환자 배열

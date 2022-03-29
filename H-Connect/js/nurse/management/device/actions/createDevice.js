@@ -1,6 +1,6 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
+import { serverController } from '../../../../utils/controller/serverController.js?v=2022.01.17.11.33';
+import { commonRequest } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
 import { device_NameToType } from '../../../../utils/controller/deviceNameController.js';
 
 export function createDevice() {

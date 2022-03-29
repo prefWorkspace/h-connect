@@ -1,5 +1,13 @@
-import { SelectMeasurementInfoDetail } from '../actions/patientMonitoringAPI.js';
-import { parsePatientInfo } from '../templates/pateintInfoTmpl.js';
+const { SelectMeasurementInfoDetail } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/patientMonitoring/common/actions/patientMonitoringAPI.js'
+    )
+);
+const { parsePatientInfo } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/patientMonitoring/common/templates/pateintInfoTmpl.js'
+    )
+);
 
 export const renderPatientInfo = async () => {
     const _patientInfo = await SelectMeasurementInfoDetail();

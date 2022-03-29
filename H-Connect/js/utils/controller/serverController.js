@@ -1,5 +1,5 @@
-import { sessionController } from './sessionController.js';
-import { history } from './historyController.js';
+import { sessionController } from './sessionController.js?v=2022.01.27.09.24';
+import { history } from './historyController.js?v=2022.01.26.12.45';
 // 서버 ip
 export const ip =
     'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/';

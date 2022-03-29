@@ -1,7 +1,7 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { selectSickRoom } from './selectSickRoom.js';
+import { serverController } from '../../../../utils/controller/serverController.js?v=2022.01.17.11.33';
+import { commonRequest } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
+import { selectSickRoom } from './selectSickRoom.js?v=2022.03.25.12.01';
 
 //병실 생성
 function insertSickRoom() {

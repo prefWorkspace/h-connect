@@ -1,10 +1,14 @@
-import { selectBloodPressurePage } from '../actions/bloodPressureAPI.js';
+const { parseRecord, parsePaginationBlock } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/prerecordTmpl.js'
+    )
+);
 
-import {
-    parseRecord,
-    parsePaginationBlock,
-} from '../templates/prerecordTmpl.js';
-import { getPrerecordByPage } from '../actions/getPrerecordByPage.js';
+const { selectBloodPressurePage } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/bloodPressureAPI.js'
+    )
+);
 
 export const renderPrerecordList = async () => {
     const { page, records, totalCount } = await selectBloodPressurePage(1);

@@ -1,9 +1,12 @@
 const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
-
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { history } from '../../../../utils/controller/historyController.js';
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
 
 const historyMeasurementCode = history.getParams('measurement_code');
 

@@ -1,4 +1,6 @@
-import { history } from '../../../../utils/controller/historyController.js';
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
 window._history = history;
 const historyMeasurementCode = history.getParams('measurement_code');
 export const parsePatientInfo = (_data) => {

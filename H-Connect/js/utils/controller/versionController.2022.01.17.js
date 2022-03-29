@@ -211,7 +211,7 @@ const VERSION = {
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
                     version: '2022.03.25.12.01',
                 },
-                'insertWardList.js': {
+                'insertWardList.js?v=2022.03.25.12.01': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
@@ -612,43 +612,22 @@ const VERSION = {
                     },
                 },
                 renders: {
-                    'renderAriteriotonyInputForm.js': {
-                        type: 'module',
-                        url_path: '/nurse/patient',
-                        file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
-                        version: '2022.03.25.12.01',
-                    },
                     'renderPrerecord.js': {
                         type: 'module',
-                        url_path: '/nurse/patient',
+                        url_path: '/nurse/arteriotony',
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
                         version: '2022.03.25.12.01',
                     },
                 },
                 templates: {
-                    'ariteriotonyInputFormTmpl.js': {
-                        type: 'module',
-                        url_path: '/nurse/patient',
-                        file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
-                        version: '2022.03.25.12.01',
-                    },
                     'prerecordTmpl.js': {
                         type: 'module',
-                        url_path: '/nurse/patient',
+                        url_path: '/nurse/arteriotony',
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
                         version: '2022.03.25.12.01',
                     },
-                },
-                'init.js': {
-                    type: 'module',
-                    url_path: '/nurse/patient',
-                    file_path:
-                        '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
-                    version: '2022.03.25.12.01',
                 },
             },
             common: {
@@ -770,6 +749,7 @@ function importVersion(_path) {
         const _filePath = _target.file_path + _target.file_name;
         return _filePath === _path;
     });
+    console.log(_findTargetPath, _path);
     return _path + '?v=' + _findTargetPath.version;
 }
 /* e : 파일 버전별 임포트 */

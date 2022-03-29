@@ -1,5 +1,5 @@
 'use strict';
-import { sickRoomList } from '../templates/sickRoomList.js';
+import { sickRoomList } from '../templates/sickRoomList.js?v=2022.03.25.12.01';
 
 export function insertRoomList(_sickRoomList) {
     let data = '';
