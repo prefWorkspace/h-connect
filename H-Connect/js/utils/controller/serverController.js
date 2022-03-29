@@ -1,5 +1,9 @@
-import { sessionController } from './sessionController.js?v=2022.01.27.09.24';
-import { history } from './historyController.js?v=2022.01.26.12.45';
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
+const { sessionController } = await import(
+    importVersion('/H-Connect/js/utils/controller/sessionController.js')
+);
 // 서버 ip
 export const ip =
     'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/';

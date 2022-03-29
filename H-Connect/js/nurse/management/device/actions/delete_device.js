@@ -1,7 +1,16 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js?v=2022.01.17.11.33';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
-import { select_device } from './select_device.js';
+
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { select_device } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/device/actions/select_device.js'
+    )
+);
 
 function delete_devive() {
     const serialNumber = $(this).data('serialnumber');

@@ -9,71 +9,15 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>H-Connect</title>
         <!--Import-->
-        <!-- <script type='text/javascript' defer src='/H-Connect/js/utils/controller/versionController.2022.01.17.js'></script> -->
         <script
-            type="module"
+            type="text/javascript"
             defer
-            src="/H-Connect/js/utils/controller/commonRequest.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/utils/controller/cookieController.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/utils/controller/historyController.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/utils/controller/localStorageController.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/utils/controller/serverController.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/utils/controller/sessionController.js"
+            src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"
         ></script>
         <script
             type="text/javascript"
             defer
             src="/H-Connect/js/jquery-3.6.0.js"
-        ></script>
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/common.js"
-        ></script>
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/index.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/utils/module/select/selectList.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/nurse/management/measure/actions/selectMeasurementInfoList.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/nurse/management/measure/renders/createMeasureList.js"
-        ></script>
-        <script
-            type="module"
-            defer
-            src="/H-Connect/js/nurse/management/measure/renders/constant.js"
         ></script>
 
         <!--css-->
@@ -235,106 +179,172 @@
                     <div class="pop_inner new_room">
                         <div class="title">
                             <h2>신규 병상등록</h2>
-                            
+
                             <p>새로운 병상을 생성하고 모니터링을 실행합니다.</p>
                         </div>
-                        
+
                         <div class="cont">
                             <!-- 입력 -->
                             <div class="hospital_patient">
-                                <input id="patient_name" type="text" placeholder="환자명">
-                                
+                                <input
+                                    id="patient_name"
+                                    type="text"
+                                    placeholder="환자명"
+                                />
+
                                 <div class="patient_info">
-                                    <input id="patient_age" type="number" placeholder="환자나이">
-        
+                                    <input
+                                        id="patient_age"
+                                        type="number"
+                                        placeholder="환자나이"
+                                    />
+
                                     <div class="selectBox2 sex_select">
-                                        <button class="label sex_label">성별<span></span></button>
-        
+                                        <button class="label sex_label">
+                                            성별<span></span>
+                                        </button>
+
                                         <ul class="optionList sex_option">
-                                            <li class="optionItem sex_list">여자</li>
-                                            <li class="optionItem sex_list">남자</li>
+                                            <li class="optionItem sex_list">
+                                                여자
+                                            </li>
+                                            <li class="optionItem sex_list">
+                                                남자
+                                            </li>
                                         </ul>
                                     </div>
-        
-                                    <input id="patient_MRN" type="text" placeholder="MRN code">
+
+                                    <input
+                                        id="patient_MRN"
+                                        type="text"
+                                        placeholder="MRN code"
+                                    />
                                 </div>
-        
+
                                 <div class="patient_room">
-                                    <div class="selectBox2 select_ward s_select">
-                                        <button class="label ward_label2">병동선택<span></span></button>
+                                    <div
+                                        class="selectBox2 select_ward s_select"
+                                    >
+                                        <button class="label ward_label2">
+                                            병동선택<span></span>
+                                        </button>
                                         <ul class="optionList ward_option2">
                                             <li class="optionItem ward_list2">
                                                 <p>심장병동</p>
-                                                <span class="bed_count lot">+8 여유</span>
+                                                <span class="bed_count lot"
+                                                    >+8 여유</span
+                                                >
                                             </li>
                                             <li class="optionItem ward_list2">
                                                 <p>12 병동</p>
-                                                <span class="bed_count">없음</span>
+                                                <span class="bed_count"
+                                                    >없음</span
+                                                >
                                             </li>
                                         </ul>
                                     </div>
-        
-                                    <div class="selectBox2 select_room s_select">
-                                        <button class="label room_label2">병실선택<span></span></button>
+
+                                    <div
+                                        class="selectBox2 select_room s_select"
+                                    >
+                                        <button class="label room_label2">
+                                            병실선택<span></span>
+                                        </button>
                                         <ul class="optionList room_option2">
-                                            <li class="optionItem room_list2">병실전체</li>
                                             <li class="optionItem room_list2">
-                                                <p>
-                                                    <span>1301</span> 호실
-                                                </p>
-                                                <span class="bed_count lot">+1 여유</span>
+                                                병실전체
+                                            </li>
+                                            <li class="optionItem room_list2">
+                                                <p><span>1301</span> 호실</p>
+                                                <span class="bed_count lot"
+                                                    >+1 여유</span
+                                                >
                                             </li>
                                         </ul>
                                     </div>
-        
+
                                     <div class="selectBox2 select_bed">
-                                        <button class="label bed_label">병상선택<span></span></button>
+                                        <button class="label bed_label">
+                                            병상선택<span></span>
+                                        </button>
                                         <ul class="optionList bed_option">
-                                            <li class="optionItem bed_list">6번 병상</li>
+                                            <li class="optionItem bed_list">
+                                                6번 병상
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <p><span>8</span> 개의 여유병상</p>
                         </div>
-        
+
                         <!-- 연결 장치 -->
                         <div class="device_room">
                             <div class="cardio">
                                 <p>심전도 측정장치</p>
                                 <p>serial no.</p>
-        
+
                                 <div class="btn_list">
-                                    <button type="button" class="btn bl btn_modify">수정</button>
-                                    <button type="button" class="btn rd btn_delete">삭제</button>
+                                    <button
+                                        type="button"
+                                        class="btn bl btn_modify"
+                                    >
+                                        수정
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn rd btn_delete"
+                                    >
+                                        삭제
+                                    </button>
                                 </div>
                             </div>
-        
+
                             <div class="oxy">
                                 <p>산소포화도 측정장치</p>
                                 <p>serial no.</p>
-        
+
                                 <div class="btn_list">
-                                    <button type="button" class="btn bl btn_modify">수정</button>
-                                    <button type="button" class="btn rd btn_delete">삭제</button>
+                                    <button
+                                        type="button"
+                                        class="btn bl btn_modify"
+                                    >
+                                        수정
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn rd btn_delete"
+                                    >
+                                        삭제
+                                    </button>
                                 </div>
                             </div>
-        
+
                             <div class="temp">
                                 <p>체온 측정장치</p>
                                 <p>serial no.</p>
-        
+
                                 <div class="btn_list">
-                                    <button type="button" class="btn bl btn_modify">수정</button>
-                                    <button type="button" class="btn rd btn_delete">삭제</button>
+                                    <button
+                                        type="button"
+                                        class="btn bl btn_modify"
+                                    >
+                                        수정
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn rd btn_delete"
+                                    >
+                                        삭제
+                                    </button>
                                 </div>
                             </div>
-        
+
                             <div class="btn_add">
                                 <button>+ 장치추가</button>
                             </div>
                         </div>
-        
+
                         <div class="btn_list">
                             <button type="button" class="btn rd">취소</button>
                             <button type="button" class="btn blf">등록</button>
@@ -345,33 +355,42 @@
                         <div class="title">
                             <h2>장치등록</h2>
                         </div>
-        
+
                         <div class="input_box">
                             <p>장치종류</p>
-        
+
                             <div class="selectBox2 type_select">
-                                <button class="label">산소포화도 측정장치<span></span></button>
-            
+                                <button class="label">
+                                    산소포화도 측정장치<span></span>
+                                </button>
+
                                 <ul class="optionList">
                                     <li class="optionItem">심전도 패치</li>
-                                    <li class="optionItem">산소포화도 측정장치</li>
+                                    <li class="optionItem">
+                                        산소포화도 측정장치
+                                    </li>
                                     <li class="optionItem">체온 패치</li>
                                 </ul>
                             </div>
                         </div>
-        
+
                         <div class="input_box">
                             <p>serial no.</p>
-        
+
                             <div class="input_wrap">
-                                <input type="text" placeholder="시리얼 넘버를 입력해주세요.">
+                                <input
+                                    type="text"
+                                    placeholder="시리얼 넘버를 입력해주세요."
+                                />
                                 <span>올바르지 않은 번호 입니다.</span>
                             </div>
                         </div>
-        
+
                         <div class="btn_list">
                             <button type="button" class="btn rd">취소</button>
-                            <button type="button" class="btn blf check">확인</button>
+                            <button type="button" class="btn blf check">
+                                확인
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -383,7 +402,7 @@
             <div class="overlay">
                 <div class="pop_cont">
                     <div>
-                        <img src="/H-Connect/img/logo.png" alt="로고">
+                        <img src="/H-Connect/img/logo.png" alt="로고" />
                     </div>
 
                     <h3>
@@ -393,7 +412,9 @@
 
                     <h1>병상 등록완료</h1>
 
-                    <button type="button" class="btn blf btn_check">확인</button>
+                    <button type="button" class="btn blf btn_check">
+                        확인
+                    </button>
                 </div>
             </div>
         </div>
@@ -586,11 +607,16 @@
                                 <div class="title">
                                     <div>
                                         <h2>측정현황</h2>
-                                        <p>병동 혹은 병실별로 환자모니터링 현황을 관리합니다.</p>
+                                        <p>
+                                            병동 혹은 병실별로 환자모니터링
+                                            현황을 관리합니다.
+                                        </p>
                                     </div>
-    
+
                                     <!--btn_new_room 클릭시 병상등록팝업 보이게 해주세요 -->
-                                    <button class="btn bl btn_new_room">+ 신규 병상등록</button>
+                                    <button class="btn bl btn_new_room">
+                                        + 신규 병상등록
+                                    </button>
                                 </div>
 
                                 <div class="cont">

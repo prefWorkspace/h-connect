@@ -1,7 +1,13 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js?v=2022.01.17.11.33';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
-import { device_NameToType } from '../../../../utils/controller/deviceNameController.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { device_NameToType } = await import(
+    importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
+);
 
 export function createDevice() {
     const device_name = $('#device_name').text();

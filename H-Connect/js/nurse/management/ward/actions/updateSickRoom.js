@@ -1,6 +1,10 @@
 'use strict';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
-import { serverController } from '../../../../utils/controller/serverController.js?v=2022.01.17.11.33';
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
 import { CONSTANT } from '../renders/constant.js?v=2022.03.25.12.01';
 import { selectSickRoom } from './selectSickRoom.js?v=2022.03.25.12.01';
 

@@ -335,7 +335,7 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.03.25.12.01',
                     },
-                    'new_sickBed_selectBox.js': {
+                    'new_sickBed__selectBox.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
@@ -402,7 +402,7 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/templates/',
                         version: '2022.03.25.12.01',
                     },
-                    'measureList.js': {
+                    'measurList.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:

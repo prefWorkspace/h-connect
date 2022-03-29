@@ -1,6 +1,7 @@
 'use strict';
-import { device_TypeToName } from '../../../../utils/controller/deviceNameController.js';
-
+const { device_TypeToName } = await import(
+    importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
+);
 export function deviceList(item) {
     return `
         <div class="item_row">

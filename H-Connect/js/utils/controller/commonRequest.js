@@ -1,4 +1,6 @@
-import { localStorageController } from './localStorageController.js?v=2022.01.17.11.33';
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
+);
 
 export const request_Date_Data = (_date) => {
     const today = _date ? new Date(_date) : new Date();

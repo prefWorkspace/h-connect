@@ -1,6 +1,15 @@
 'use strict';
-import { select_device } from './select_device.js';
-import { select_device_unused } from './select_device_unused.js';
+const { select_device } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/device/actions/select_device.js'
+    )
+);
+const { select_device_unused } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/device/actions/select_device_unused.js'
+    )
+);
+
 //enter 키 누름 감지 함수
 function pressEnter(e, callback) {
     if (e.key === 'Enter') {
