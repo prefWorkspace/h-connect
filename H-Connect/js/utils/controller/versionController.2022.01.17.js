@@ -749,7 +749,6 @@ function importVersion(_path) {
         const _filePath = _target.file_path + _target.file_name;
         return _filePath === _path;
     });
-    console.log(_findTargetPath, _path);
     return _path + '?v=' + _findTargetPath.version;
 }
 /* e : 파일 버전별 임포트 */
