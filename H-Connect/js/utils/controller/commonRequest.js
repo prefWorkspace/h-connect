@@ -1,4 +1,4 @@
-import { localStorageController } from './localStorageController.js';
+import { localStorageController } from './localStorageController.js?v=2022.01.17.11.33';
 
 export const request_Date_Data = (_date) => {
     const today = _date ? new Date(_date) : new Date();

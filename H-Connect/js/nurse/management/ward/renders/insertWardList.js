@@ -1,11 +1,11 @@
 'use strict';
-import { wardList } from '../templates/wardList.js';
-import { selectSickRoom } from '../actions/selectSickRoom.js';
-import { history } from '../../../../utils/controller/historyController.js';
+import { wardList } from '../templates/wardList.js?v=2022.03.25.12.01';
+import { selectSickRoom } from '../actions/selectSickRoom.js?v=2022.03.25.12.01';
+import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
 
-const params = ['wardCode', 'sickRoomCode'];
-// const params = 'wardCode';
-const { wardCode } = history.getParams(params);
+// const params = ['wardCode', 'sickRoomCode'];
+const params = 'wardCode';
+const wardCode = history.getParams(params);
 
 //병동 클릭시 배경색 변경 active
 function _wardclickActive() {

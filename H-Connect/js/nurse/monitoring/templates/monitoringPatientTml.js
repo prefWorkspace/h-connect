@@ -1,4 +1,4 @@
-import { history } from '../../../utils/controller/historyController.js';
+import { history } from '../../../utils/controller/historyController.js?v=2022.01.26.12.45';
 
 /* s : 모니터링 블록 */
 

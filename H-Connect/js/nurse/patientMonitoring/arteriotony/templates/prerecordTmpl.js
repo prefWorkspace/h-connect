@@ -1,4 +1,4 @@
-import { request_Date_Data } from '../../../../utils/controller/commonRequest.js';
+import { request_Date_Data } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
 // import { onClickDeleteBloodPressureBtn } from '../actions/bloodPressureActions';
 // export const parsePrerecordTmpl = ({
 //     records,

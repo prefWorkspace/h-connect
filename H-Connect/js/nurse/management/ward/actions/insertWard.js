@@ -1,9 +1,7 @@
 'use strict';
-import { localStorageController } from '../../../../utils/controller/localStorageController.js';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
+import { serverController } from '../../../../utils/controller/serverController.js?v=2022.01.17.11.33';
+import { commonRequest } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
 import { selectWard } from './selectWard.js?v=2022.03.25.12.01';
-import { CONSTANT } from '../renders/constant.js';
 
 function insertWard() {
     const _ward_Name = $('.new_ward .content #ward_Name').val();

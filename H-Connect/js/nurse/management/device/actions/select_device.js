@@ -1,6 +1,6 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
+import { serverController } from '../../../../utils/controller/serverController.js?v=2022.01.17.11.33';
+import { commonRequest } from '../../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
 import { select_device_list } from '../renders/select_device_list.js';
 
 //신규 장치 등록 장치 조회 첫화면

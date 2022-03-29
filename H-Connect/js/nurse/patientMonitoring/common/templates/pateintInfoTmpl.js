@@ -1,4 +1,4 @@
-import { history } from '../../../../utils/controller/historyController.js';
+import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
 window._history = history;
 const historyMeasurementCode = history.getParams('measurement_code');
 export const parsePatientInfo = (_data) => {
