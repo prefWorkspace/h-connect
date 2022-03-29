@@ -3,16 +3,19 @@ import { serverController } from '../../../../utils/controller/serverController.
 import { commonRequest } from '../../../../utils/controller/commonRequest.js';
 import { history } from '../../../../utils/controller/historyController.js';
 
-const historyParams = history.getParams(['measurement_code', 'page']);
+const historyMesurementCode = history.getParams('measurement_code');
+// const historyPage = history.getParams('page');
 
 export const selectBloodPressurePage = async () => {
-    const resPage = historyParams.page || 1;
+    const historyPage = history.getParams('page');
+    const resPage = parseInt(historyPage, 10) || 1;
+    console.log('resPage:', resPage);
     const res = await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBloodPressurePage',
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            measurementCode: historyParams.measurement_code,
+            measurementCode: historyMesurementCode,
             pageNumber: resPage,
             count: 10,
         })
@@ -35,18 +38,19 @@ export async function insertBloodPressure(_data) {
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            measurementCode: historyParams.measurement_code,
+            measurementCode: historyMesurementCode,
             ..._data,
         })
     );
 }
 export async function updateBloodPressure(_data) {
-    const res = await serverController.ajaxAwaitController(
+    console.log(_data);
+    return await serverController.ajaxAwaitController(
         'API/BioSignal/UpdateBloodPressure',
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            measurementCode: historyParams.measurement_code,
+            measurementCode: historyMesurementCode,
             ..._data,
         })
     );
@@ -59,7 +63,7 @@ export async function deleteBloodPressure(_data) {
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            measurementCode: historyParams.measurement_code,
+            measurementCode: historyMesurementCode,
             ..._data,
         })
     );

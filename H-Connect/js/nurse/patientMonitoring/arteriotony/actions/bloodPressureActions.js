@@ -1,4 +1,5 @@
 import {
+    selectBloodPressurePage,
     insertBloodPressure,
     updateBloodPressure,
     deleteBloodPressure,
@@ -8,26 +9,75 @@ import { request_Date_Data } from '../../../../utils/controller/commonRequest.js
 
 import { renderPrerecordList } from '../renders/renderPrerecord.js';
 
-async function insertBloodPressureAction() {
+import { history } from '../../../../utils/controller/historyController.js';
+
+const historyMeasurementCode = history.getParams('measurement_code');
+const historyPage = history.getParams('page');
+
+function getBloodPressureDomIndexedInfo(_target) {
+    const curItemEl = $(_target).parents('.bloodPressure_item');
+    const indexId = curItemEl.attr('data-indexId');
+    const recordDateTime = curItemEl.attr('data-recordDateTime');
+    const SYS = curItemEl.find('.SYS-item').text();
+    const DIA = curItemEl.find('.DIA-item').text();
+    const Pulse = curItemEl.find('.Pulse-item').text();
+
+    return {
+        curItemEl,
+        indexId,
+        recordDateTime,
+        SYS,
+        DIA,
+        Pulse,
+    };
+}
+let tmpUpdateData = {};
+
+function resetBloodPressue() {
+    $('#SYS').val('');
+    $('#DIA').val('');
+    $('#Pulse').val('');
+    tmpUpdateData = {};
+}
+
+async function initBloodPressureAction() {
     const onClickInsertBloodPressureBtn = async () => {
         // 등록 버튼 클릭 시 혈압 데이터 등록
-        const res = await insertBloodPressure({
-            systolic: $('#SYS').val(),
-            diastolic: $('#DIA').val(),
-            pulse: $('#Pulse').val(),
-            dateTime: request_Date_Data(),
-        });
-        if (res.result) {
-            // 병상 등록 성공시
-            $('#add_popup').css('display', 'block');
-            await renderPrerecordList();
+
+        if (!$('.btn_list .btn_add').hasClass('modify-mode')) {
+            // 기본 등록
+            const res = await insertBloodPressure({
+                systolic: $('#SYS').val(),
+                diastolic: $('#DIA').val(),
+                pulse: $('#Pulse').val(),
+                dateTime: request_Date_Data(),
+            });
+            if (res.result) {
+                // 병상 등록 성공시
+                $('#add_popup').css('display', 'block');
+                await renderPrerecordList();
+                resetBloodPressue();
+            }
+        } else {
+            // 수정 등록
+            const res = await updateBloodPressure({
+                indexId: parseInt(tmpUpdateData.indexId, 10),
+                systolic: $('#SYS').val(),
+                diastolic: $('#DIA').val(),
+                pulse: $('#Pulse').val(),
+                dateTime: tmpUpdateData.recordDateTime,
+            });
+            if (res.result) {
+                // 병상 수정 성공시
+                $('#add_popup').css('display', 'block');
+                await renderPrerecordList();
+                resetBloodPressue();
+            }
         }
     };
 
     const onClickCancelBloodPressureBtn = () => {
-        $('#SYS').val('');
-        $('#DIA').val('');
-        $('#Pulse').val('');
+        resetBloodPressue();
         $('.btn_list .btn_add').removeClass('modify-mode');
     };
 
@@ -37,28 +87,34 @@ async function insertBloodPressureAction() {
 export async function onClickUpdateBloodPressureBtn(_this) {
     // 수정 버튼 클릭 시 혈압 데이터 수정
     $('.btn_list .btn_add').addClass('modify-mode');
-    const _curItemEl = $(_this).parents('.bloodPressure_item');
-    const _indexId = _curItemEl.attr("data-indexId");
-    const _recordDateTime = _curItemEl.attr("data-recordDateTime");
-    const _SYS = _curItemEl.children('.SYS-item');
-    const _DIA = _curItemEl.children('.DIA-item').val();
-    const _Pulse = _curItemEl.children('.Pulse-item').val();
-
-    // $('#SYS').val()
-    // $('#DIA').val(),
-    // $('#Pulse').val(),
-    // await updateBloodPressure({ indexId: _indexId });
+    const { indexId, SYS, DIA, Pulse, recordDateTime } =
+        getBloodPressureDomIndexedInfo(_this);
+    $('#SYS').val(SYS);
+    $('#DIA').val(DIA);
+    $('#Pulse').val(Pulse);
+    tmpUpdateData = { indexId, recordDateTime };
 }
 
 export async function onClickDeleteBloodPressureBtn(_this) {
     // 삭제 버튼 클릭 시 혈압 데이터 삭제
-    const _indexId = $(_this).attr('data-indexId');
-    await deleteBloodPressure({ indexId: _indexId });
+    const { indexId } = getBloodPressureDomIndexedInfo(_this);
+    await deleteBloodPressure({ indexId: indexId });
+    await renderPrerecordList();
+}
+
+async function onClickPaginationNumBtn(_number) {
+    window.history.pushState(
+        '',
+        '',
+        `arteriotony.html?measurement_code=${historyMeasurementCode}&page=${_number}`
+    );
+    await renderPrerecordList();
 }
 
 function actionInit() {
-    insertBloodPressureAction();
+    initBloodPressureAction();
     window.onClickUpdateBloodPressureBtn = onClickUpdateBloodPressureBtn;
     window.onClickDeleteBloodPressureBtn = onClickDeleteBloodPressureBtn;
+    window.onClickPaginationNumBtn = onClickPaginationNumBtn;
 }
 actionInit();

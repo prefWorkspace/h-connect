@@ -3,7 +3,7 @@ import { serverController } from '../../../../utils/controller/serverController.
 import { commonRequest } from '../../../../utils/controller/commonRequest.js';
 import { history } from '../../../../utils/controller/historyController.js';
 
-const historyParams = history.getParams(['measurement_code']);
+const historyMeasurementCode = history.getParams('measurement_code');
 
 export const SelectMeasurementInfoDetail = async () => {
     const res = await serverController.ajaxAwaitController(
@@ -11,7 +11,7 @@ export const SelectMeasurementInfoDetail = async () => {
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            measurementCode: historyParams.measurement_code,
+            measurementCode: historyMeasurementCode,
         })
     );
     if (!res.measurementInfo) {

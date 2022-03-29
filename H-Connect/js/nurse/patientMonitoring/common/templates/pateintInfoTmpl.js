@@ -1,6 +1,6 @@
 import { history } from '../../../../utils/controller/historyController.js';
 window._history = history;
-const historyParams = history.getParams(['measurement_code']);
+const historyMeasurementCode = history.getParams('measurement_code');
 export const parsePatientInfo = (_data) => {
     const { name, age, gender, patientCode, sickBed, sickRoom } = _data || {};
     return `
@@ -56,9 +56,7 @@ export const parsePatientInfo = (_data) => {
                    history.getLink().pathname === '/nurse/patient.html'
                        ? 'on'
                        : 'off'
-               } link_to_patient" onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${
-        historyParams.measurement_code
-    }')">
+               } link_to_patient" onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${historyMeasurementCode}')">
                    <p>모니터링</p>
                </div>
 
@@ -66,9 +64,7 @@ export const parsePatientInfo = (_data) => {
                    history.getLink().pathname === '/nurse/arteriotony.html'
                        ? 'on'
                        : 'off'
-               } link_to_arteriotony" onclick="window._history.linkTo('/nurse/arteriotony.html?measurement_code=${
-        historyParams.measurement_code
-    }')">
+               } link_to_arteriotony" onclick="window._history.linkTo('/nurse/arteriotony.html?measurement_code=${historyMeasurementCode}')">
                    <p>혈압 수동입력</p>
                </div>
 

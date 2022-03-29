@@ -1,4 +1,3 @@
-import { history } from '../../../../utils/controller/historyController.js';
 import { SelectMeasurementInfoDetail } from '../actions/patientMonitoringAPI.js';
 import { parsePatientInfo } from '../templates/pateintInfoTmpl.js';
 

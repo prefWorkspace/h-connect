@@ -1,7 +1,7 @@
 import { localStorageController } from './localStorageController.js';
 
-export const request_Date_Data = () => {
-    const today = new Date();
+export const request_Date_Data = (_date) => {
+    const today = _date ? new Date(_date) : new Date();
 
     const year = today.getFullYear().toString();
     const month = (today.getMonth() + 1).toString();
