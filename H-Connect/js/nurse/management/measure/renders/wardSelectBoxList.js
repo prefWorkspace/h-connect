@@ -2,8 +2,8 @@
 import { wardSelectBox } from '../templates/wardSelectBox.js';
 // import { selectRoomList } from '../actions/selectMeasurementInfoList.js';
 import { CONSTANT_MEASURE } from './constant.js';
-import { selectWardList } from '../../../../utils/module/select/selectList.js';
-import { selectSickRoomList } from '../../../../utils/module/select/selectList.js';
+import { selectWardList } from '../../../../utils/module/select/selectList.js?v=2022.03.25.12.37';
+import { selectSickRoomList } from '../../../../utils/module/select/selectList.js?v=2022.03.25.12.37';
 import { sickRoomSelectBoxList } from './sickRoomSelectBoxList.js';
 import { selectMeasurementInfoList } from '../actions/selectMeasurementInfoList.js';
 

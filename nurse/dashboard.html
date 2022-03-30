@@ -19,7 +19,7 @@
             defer
             src="/H-Connect/js/jquery-3.6.0.js"
         ></script>
-        <script
+        <!-- <script
             type="text/javascript"
             defer
             src="/H-Connect/js/common.js"
@@ -29,13 +29,23 @@
             defer
             src="/H-Connect/js/index.js"
         ></script>
-
-        <!-- 임시 import -->
         <script
             type="module"
             defer
+            src="/H-Connect/js/utils/module/select/selectList.js"
+        ></script> -->
+
+        <!-- 임시 import -->
+        <!-- <script
+            type="module"
+            defer
             src="/H-Connect/js/nurse/dashboard/renders/renderDashboard.js"
-        ></script>
+        ></script> -->
+        <!-- <script
+            type="module"
+            defer
+            src="/H-Connect/js/nurse/dashboard/renders/renderDashboard_1.js"
+        ></script> -->
         <!--css-->
         <link rel="stylesheet" href="/H-Connect/css/reset.css" />
         <link rel="stylesheet" href="/H-Connect/css/common.css" />
@@ -234,30 +244,7 @@
                     <!-- 대시보드 화면 -->
                     <section class="section right taget_view">
                         <div class="title">
-                            <div>
-                                <h2>대시보드 화면</h2>
-
-                                <div class="btn_list">
-                                    <button
-                                        type="button"
-                                        class="btn btn_first on"
-                                    >
-                                        1번 화면
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn_second"
-                                    >
-                                        2번 화면
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn_addView"
-                                    >
-                                        + 화면추가
-                                    </button>
-                                </div>
-                            </div>
+                            <div class="btn_display"></div>
 
                             <button
                                 type="button"

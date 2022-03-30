@@ -33,6 +33,7 @@ export const parsePatientsBySickRoom = (wardList, patientList) => {
             let patientsBySickRoom = patientList.filter(
                 (patient) => patient['sickRoomCode'] == sickRoom.sickRoomCode
             );
+
             let patientTmpl = `<div class="patient_info ${sickRoom.sickRoomCode}">`;
             patientsBySickRoom.forEach((patient) => {
                 const { patientCode, name, age, gender } = patient;

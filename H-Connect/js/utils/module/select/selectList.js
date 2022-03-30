@@ -12,7 +12,7 @@ export async function selectWardList(
 ) {
     const req = JSON.stringify({
         includeSickBed,
-        includeSickBed,
+        includeSickRoom,
         ...commonRequest(),
     });
 
@@ -66,7 +66,7 @@ export async function selectSickBedList(wardCode = null, sickRoomCode = null) {
     });
 
     return await serverController.ajaxAwaitController(
-        'API/Manager/SelectSickRoom',
+        'API/Manager/SelectSickBed',
         'POST',
         req,
         (res) => {

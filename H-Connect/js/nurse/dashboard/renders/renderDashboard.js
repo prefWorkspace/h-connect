@@ -2,6 +2,7 @@
 import { getWardList } from '../actions/getWardList.js';
 import { getPatientList } from '../actions/getPatientList.js';
 import { getDisplayList } from '../actions/getDisplayList.js';
+import { getSickbedList } from '../actions/getSickBedList.js';
 
 // Template
 import {
@@ -9,20 +10,24 @@ import {
     parsePatientsBySickRoom,
 } from '../templates/dashboardWardListTmpl.js';
 import { parsePatientListToDashboardScreen } from '../templates/dashboardScreenTmpl.js';
+import { parseDashboardDisplayBtnTmpl } from '../templates/dashboardDisplayBtnTmpl.js';
+
+// 디스플레이 화면당 최대 병상 개수
+const MAX_DISPLAY_SHOW = 26;
 
 //API 저장 변수 (병동, 환자)
 const wardList_api = await getWardList();
+console.log(wardList_api);
 const patientList_api = await getPatientList();
-const dispiaylist_api = await getDisplayList(1, 10);
+let displaylist_api = await getDisplayList(1, MAX_DISPLAY_SHOW);
+const sickbedlist_api = await getSickbedList();
 
 // 대시보드 화면 번호
-let displayNumber = 1;
-// 대시보드 출력 대상 수
-let displayPatientsNumber = 20;
+let selected_displayCode = displaylist_api[0].displayCode;
 
 const $target_select = $('.taget_select');
+const $btnlist_display = $('.btn_display');
 const $display_inpat = $('.inpat');
-
 
 let selected_ward = 'NONE';
 // 모니터링 대상 체크된 환자 배열
@@ -32,6 +37,9 @@ let patients_by_dashboard_screen = [];
 // 모니터링 대상 렌더
 const renderDashboard = async () => {
     try {
+        patients_by_dashboard_screen = getPatientsListBySickBed(
+            getSickBedListByDisplayCode(selected_displayCode)
+        );
         // 병동, 병상 선택
         const wardList = parseWardList(wardList_api);
         // 모니터링 대상 환자 리스트
@@ -41,10 +49,15 @@ const renderDashboard = async () => {
         );
         // 모니터링 대상 DOM 연결
         $target_select.html(wardList + patientList);
+
+        const displayList = parseDashboardDisplayBtnTmpl(displaylist_api);
+        $btnlist_display.html(displayList);
+
         // 대시보드 화면 환자 리스트
         const displayPatient = parsePatientListToDashboardScreen(
             patients_by_dashboard_screen
         );
+
         // 대시보드 화면 DOM 연결
         $display_inpat.html(displayPatient);
         // 이벤트 바인딩
@@ -58,8 +71,10 @@ const renderDashboardScreen = (addedList) => {
         (patient) => patient.patientCode
     );
     addedList.forEach((patient) => {
-        if (!patientsIdList.includes(patient)) patientsIdList.push(patient);
+        if (!patientsIdList.includes(patient) && patientsIdList.length <= 26)
+            patientsIdList.push(patient);
     });
+
     const displayPatient = parsePatientListToDashboardScreen(
         getPatientsInfoByIds(patientsIdList)
     );
@@ -340,7 +355,7 @@ function addBtnUpdate() {
 }
 
 // 병상 제거 버튼 이벤트
-function addEventToDeleveBtn() {
+function addEventToDeleteBtn() {
     function deletePatients() {
         let patients = patients_by_dashboard_screen.map(
             (patient) => patient.patientCode
@@ -387,6 +402,28 @@ function addEventsToDashboardSickbeds() {
         });
 }
 
+// 대시보드 디스플레이 버튼 이벤트 부여
+function addEventToDisplayBtn() {
+    for (let i = 0; i < $('.btn_display_el').length; i++) {
+        $(`#${$('.btn_display_el')[i].id}`)
+            .off()
+            .on('click', () => {
+                changeDisplayBtnState($('.btn_display_el')[i].id);
+                console.log(displaylist_api);
+            });
+    }
+}
+
+// 디스플레이 버튼 클릭시 클릭된 버튼 활성화 아닌 버튼 비활성화
+function changeDisplayBtnState(displayCode) {
+    selected_displayCode = displayCode;
+    $('.btn_display_el').removeClass('on');
+    $(`#${selected_displayCode}`).addClass('on');
+}
+
+// 디스플레이 버튼 클릭시 이벤트
+function selectDisplayBtn(displayCode) {}
+
 // 환자의 id array로 환자의 정보를 불러옴
 const getPatientsInfoByIds = (patientIds) => {
     let patientsInfo = [];
@@ -399,6 +436,27 @@ const getPatientsInfoByIds = (patientIds) => {
     return patientsInfo;
 };
 
+// 디스플레이 코드에 따른 병상 정보를 불러옴
+const getSickBedListByDisplayCode = (displayCode) => {
+    return sickbedlist_api.filter(
+        (sickbed) => sickbed.displayCode === displayCode
+    );
+};
+
+// 병상 정보에 따른 환자 정보를 불러옴
+const getPatientsListBySickBed = (sickBedList) => {
+    let result = [];
+    sickBedList.forEach((sickBed) => {
+        for (let i = 0; i < patientList_api.length; i++) {
+            if (sickBed.sickBedCode === patientList_api[i].sickBedCode) {
+                result.push(patientList_api[i]);
+                break;
+            }
+        }
+    });
+    return result;
+};
+
 function _dashboard_target_monitoring_init() {
     renderDashboard();
     _dashboard_wardSelectBox_select();
@@ -406,9 +464,10 @@ function _dashboard_target_monitoring_init() {
     showPatients(null);
     addEventToAddBtn();
     //addBtnUpdate();
-    addEventToDeleveBtn();
+    addEventToDeleteBtn();
     deleteBtnUpdate();
-    console.log(dispiaylist_api);
+    addEventToDisplayBtn();
+    addEventsToDashboardSickbeds();
 }
 
 _dashboard_target_monitoring_init();

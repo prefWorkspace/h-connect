@@ -185,7 +185,7 @@ const VERSION = {
                 },
             },
             renders: {
-                'renderDashboard.js': {
+                'renderDashboard_1.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/renders/',
@@ -193,25 +193,25 @@ const VERSION = {
                 },
             },
             templates: {
-                'dashboard_dummyData.js': {
+                // 'dashboardScreenTmpl.js': {
+                //     type: 'module',
+                //     url_path: '/nurse/dashboard',
+                //     file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                //     version: '2022.03.25.12.01',
+                // },
+                // 'dashboardWardListTmpl.js': {
+                //     type: 'module',
+                //     url_path: '/nurse/dashboard',
+                //     file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                //     version: '2022.03.25.12.01',
+                // },
+                'templateWardListLeft.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
                     version: '2022.03.25.12.01',
                 },
-                'dashboardScreenTmpl.js': {
-                    type: 'module',
-                    url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
-                    version: '2022.03.25.12.01',
-                },
-                'dashboardWardListTmpl.js': {
-                    type: 'module',
-                    url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
-                    version: '2022.03.25.12.01',
-                },
-                'insertWardList.js': {
+                'templateSickRoomListLeft.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',

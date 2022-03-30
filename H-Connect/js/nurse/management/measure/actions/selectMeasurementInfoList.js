@@ -5,7 +5,7 @@ import { createMeasureList } from '../renders/createMeasureList.js';
 import { CONSTANT_MEASURE } from '../renders/constant.js';
 import { wardSelectBoxList } from '../renders/wardSelectBoxList.js';
 import { sickRoomSelectBoxList } from '../renders/sickRoomSelectBoxList.js';
-import { selectWardList } from '../../../../utils/module/select/selectList.js';
+import { selectWardList } from '../../../../utils/module/select/selectList.js?v=2022.03.25.12.37';
 //입원한 환자 카운트
 let patient_count;
 const { userCode: requester, organization } = CONSTANT_MEASURE.userData;
