@@ -3,7 +3,7 @@ const { serverController } = await import(
 );
 import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
 const { commonRequest } = await import(
-    importVersion('/H-Connect/js/utils/controller/serverController.js')
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
 
 export const getPrerecordByPage = async (page) => {

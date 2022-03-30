@@ -16,7 +16,6 @@ const { selectSickRoom } = await import(
 const { CONSTANT } = await import(
     importVersion('/H-Connect/js/nurse/management/ward/renders/constant.js')
 );
-
 const { userCode: requester, organizationCode } = CONSTANT.userData;
 //병실 삭제
 export async function deleteSickRoom(_wardCode) {

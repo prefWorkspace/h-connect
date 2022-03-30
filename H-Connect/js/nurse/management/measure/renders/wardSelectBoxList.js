@@ -1,23 +1,29 @@
 'use strict';
+
 const { wardSelectBox } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/templates/wardSelectBox.js'
     )
 );
+
 const { CONSTANT_MEASURE } = await import(
     importVersion('/H-Connect/js/nurse/management/measure/renders/constant.js')
 );
+
 const { selectWardList } = await import(
     importVersion('/H-Connect/js/utils/module/select/selectList.js')
 );
+
 const { selectSickRoomList } = await import(
     importVersion('/H-Connect/js/utils/module/select/selectList.js')
 );
+
 const { sickRoomSelectBoxList } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/renders/sickRoomSelectBoxList.js'
     )
 );
+
 const { selectMeasurementInfoList } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/selectMeasurementInfoList.js'
