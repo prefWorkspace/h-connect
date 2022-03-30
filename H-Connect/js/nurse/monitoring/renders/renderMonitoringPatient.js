@@ -3,7 +3,11 @@ const { monitorBlock_have, monitorBlock_none } = await import(
         '/H-Connect/js/nurse/monitoring/templates/monitoringPatientTml.js'
     )
 );
-const { selectSickBed, selectMeasurementInfoList } = await import(
+const {
+    selectSickBed,
+    selectMeasurementInfoList,
+    selectMeasurementInfoBioDataPage,
+} = await import(
     importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringAPI.js')
 );
 const { updateMonitoringPatientItem } = await import(
@@ -11,12 +15,19 @@ const { updateMonitoringPatientItem } = await import(
         '/H-Connect/js/nurse/monitoring/renders/updateMonitoringPatient.js'
     )
 );
+const { addMonitoringEmptyBedClickEvent } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/monitoring/renders/addMonitoringEmptyBed.js'
+    )
+);
 
 // 모니터링 > 전체환자 보기 렌더
 async function renderMonitoringPatientList() {
     const { sickBedList } = await selectSickBed(); // 병상 리스트
-    const { measurementInfoSimpleList: patientList } =
-        await selectMeasurementInfoList(); // 환자 측정 리스트
+    // const { measurementInfoSimpleList: patientList } =
+    //     await selectMeasurementInfoList(); // 환자 측정 리스트
+    const { measurementInfoSimpleBioDataList: patientList } =
+        await selectMeasurementInfoBioDataPage();
     let _html = '';
     let _temp_emptyBed = '';
 

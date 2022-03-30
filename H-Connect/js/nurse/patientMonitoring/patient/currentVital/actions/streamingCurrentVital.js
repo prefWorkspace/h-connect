@@ -1,0 +1,70 @@
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { sessionController } = await import(
+    importVersion('/H-Connect/js/utils/controller/sessionController.js')
+);
+const { serverController, ip, LOGIN_TOKEN } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { requester, requestDateTime } = commonRequest();
+let stompClient = {};
+function connectStreamServer() {
+    let headers = {
+        'SX-Auth-Token': LOGIN_TOKEN,
+        deviceKind: 3,
+        // connType: connType,
+        apiRoute: 'GWS-1',
+        requester,
+        requestDateTime: requestDateTime,
+    };
+
+    // `${ip}ws?SX-API-Route=${'GWS-1'}&clientKeyName=${'etc'}&connType=${1}`
+    let streamming = new SockJS(`${ip}ws`);
+    stompClient = Stomp.over(streamming);
+
+    stompClient.connect(headers, stompConnectCallBack, stompDisConnectCallBack);
+}
+
+function stompSubCribe() {
+    console.log('stompClient:', stompClient);
+    stompClient.subscribe(
+        '/topic/public/bioSignalSimpleData/SEERS_2203111725_41K2',
+        onMessage
+    );
+}
+
+function onMessage(response) {
+    console.log('--------------------------------------------');
+    console.log('subcribe:::', response);
+}
+
+function stompDisConnect() {}
+
+async function stompConnectCallBack(e) {
+    console.log('--------------------------------------------');
+    console.log('connect callBack:::', e);
+    stompSubCribe();
+    // await getMonitoringSickBed();
+}
+
+async function stompDisConnectCallBack() {}
+
+connectStreamServer();
+
+export async function getMonitoringSickBed() {
+    return await serverController.ajaxAwaitController(
+        'API/Util/CheckingPing',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+        }),
+        (res) => {
+            console.log('checkPing:', res);
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}

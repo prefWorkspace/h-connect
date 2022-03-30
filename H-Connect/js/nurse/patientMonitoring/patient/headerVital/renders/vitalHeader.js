@@ -1,6 +1,6 @@
 const { selectMeasurementInfoDetail } = await import(
     importVersion(
-        '/H-Connect/js/nurse/patientMonitoring/patient/actions/vitalInformAPI.js'
+        '/H-Connect/js/nurse/patientMonitoring/patient/headerVital/actions/vitalInformAPI.js'
     )
 );
 // (async () => {
@@ -25,6 +25,8 @@ const { selectMeasurementInfoDetail } = await import(
 // }
 
 export async function vitalHeaderRender() {
+    // const test = await selectMeasurementInfoDetail();
+    // console.log(test);
     const { name, age, gender, patientCode } =
         await selectMeasurementInfoDetail();
     $('.monitoring_patient .vital_chart .title .pati_info .name').text(name);
