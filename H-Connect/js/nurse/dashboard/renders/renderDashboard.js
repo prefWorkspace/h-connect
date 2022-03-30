@@ -407,7 +407,6 @@ function _dashboard_target_monitoring_init() {
     //addBtnUpdate();
     addEventToDeleveBtn();
     deleteBtnUpdate();
-    console.log(dispiaylist_api);
 }
 
 _dashboard_target_monitoring_init();

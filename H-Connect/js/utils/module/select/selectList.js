@@ -78,7 +78,7 @@ export async function selectSickBedList(wardCode = null, sickRoomCode = null) {
     });
 
     return await serverController.ajaxAwaitController(
-        'API/Manager/SelectSickRoom',
+        'API/Manager/SelectSickBed',
         'POST',
         req,
         (res) => {
