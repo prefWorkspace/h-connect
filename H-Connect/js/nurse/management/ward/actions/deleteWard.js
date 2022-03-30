@@ -2,12 +2,16 @@
 const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
-import { CONSTANT } from '../renders/constant.js?v=2022.03.25.12.01';
-import { selectWard } from './selectWard.js?v=2022.03.25.12.01';
 const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
 
+const { CONSTANT } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/renders/constant.js')
+);
+const { selectWard } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/actions/selectWard.js')
+);
 const { userCode: requester, organizationCode } = CONSTANT.userData;
 
 export function deleteWard() {

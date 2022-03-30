@@ -1,3 +1,5 @@
+'use strict';
+
 const { localStorageController } = await import(
     importVersion('/H-Connect/js/utils/controller/localStorageController.js')
 );

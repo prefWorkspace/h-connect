@@ -5,8 +5,11 @@ const { serverController } = await import(
 const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
-import { selectSickRoom } from './selectSickRoom.js?v=2022.03.25.12.01';
-
+const { selectSickRoom } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
+    )
+);
 //병실 생성
 function insertSickRoom() {
     const sickRoom = $('.pop.new_room .overlay .pop_cont .content input').val();

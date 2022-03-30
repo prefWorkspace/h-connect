@@ -8,8 +8,8 @@ const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
 
-const { CONSTANT_MEASURE } = await import(
-    importVersion('/H-Connect/js/nurse/management/measure/renders/constant.js')
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
 );
 
 const { session_renew } = await import(
@@ -17,7 +17,10 @@ const { session_renew } = await import(
 );
 
 //병동 병실 병상 조회하는 함수
-const { userCode: requester, organization } = CONSTANT_MEASURE.userData;
+const { userCode: requester, organizationCode: organization } = JSON.parse(
+    localStorageController.getLocalS('userData')
+);
+
 export async function selectWardList(
     includeSickBed = true,
     includeSickRoom = true

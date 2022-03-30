@@ -5,8 +5,9 @@ const { serverController } = await import(
 const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
-import { selectWard } from './selectWard.js?v=2022.03.25.12.01';
-
+const { selectWard } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/actions/selectWard.js')
+);
 function insertWard() {
     const _ward_Name = $('.new_ward .content #ward_Name').val();
     const _orderNumber = $('.nurse .ward .cont').length + 1;

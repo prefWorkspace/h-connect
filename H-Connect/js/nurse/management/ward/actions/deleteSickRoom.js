@@ -1,16 +1,25 @@
 'use strict';
+
 const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
-import { selectSickRoom } from './selectSickRoom.js?v=2022.03.25.12.01';
-import { CONSTANT } from '../renders/constant.js?v=2022.03.25.12.01';
 const { commonRequest } = await import(
-    importVersion('/H-Connect/js/utils/controller/serverController.js')
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+
+const { selectSickRoom } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
+    )
+);
+
+const { CONSTANT } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/renders/constant.js')
 );
 
 const { userCode: requester, organizationCode } = CONSTANT.userData;
 //병실 삭제
-export function deleteSickRoom(_wardCode) {
+export async function deleteSickRoom(_wardCode) {
     let sickRoomCode;
     $('.nurse .hospital_room .cont .ward_list .btn_list .btn_delete').on(
         'click',

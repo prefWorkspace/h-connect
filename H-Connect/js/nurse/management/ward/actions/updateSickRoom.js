@@ -5,8 +5,16 @@ const { commonRequest } = await import(
 const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
-import { CONSTANT } from '../renders/constant.js?v=2022.03.25.12.01';
-import { selectSickRoom } from './selectSickRoom.js?v=2022.03.25.12.01';
+
+const { CONSTANT } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/renders/constant.js')
+);
+
+const { selectSickRoom } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
+    )
+);
 
 const { userCode: requester, organizationCode } = CONSTANT.userData;
 

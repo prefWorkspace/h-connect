@@ -64,14 +64,14 @@ const VERSION = {
                 priority: 0,
                 url_path: '*',
                 file_path: '/H-Connect/js/utils/common/',
-                version: '2022.01.17.11.33',
+                version: '2022.01.20.11.33',
             },
             'arrayHandle.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
                 file_path: '/H-Connect/js/utils/common/',
-                version: '2022.01.17.11.33',
+                version: '2022.01.20.11.33',
             },
         },
         controller: {
@@ -80,28 +80,28 @@ const VERSION = {
                 priority: 0,
                 url_path: '*',
                 file_path: '/H-Connect/js/utils/controller/',
-                version: '2022.01.17.11.33',
+                version: '2022.01.20.11.33',
             },
             'historyController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
                 file_path: '/H-Connect/js/utils/controller/',
-                version: '2022.01.26.12.45',
+                version: '2022.01.25.12.45',
             },
             'cookieController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
                 file_path: '/H-Connect/js/utils/controller/',
-                version: '2022.01.17.11.33',
+                version: '2022.01.20.11.33',
             },
             'localStorageController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
                 file_path: '/H-Connect/js/utils/controller/',
-                version: '2022.01.17.11.33',
+                version: '2022.01.20.11.33',
             },
             'sessionController.js': {
                 type: 'module',
@@ -234,35 +234,35 @@ const VERSION = {
                         url_path: '/nurse/device_management',
                         file_path:
                             '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.12.30',
                     },
                     'delete_device.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
                             '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.12.30',
                     },
                     'searchHandle.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
                             '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.12.30',
                     },
                     'select_device_unused.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
                             '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.12.30',
                     },
                     'select_device.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
                             '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.12.30',
                     },
                 },
                 renders: {
@@ -432,56 +432,56 @@ const VERSION = {
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.14.01',
                     },
                     'deleteWard.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.13.01',
                     },
                     'insertSickRoom.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.13.01',
                     },
                     'insertWard.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.13.01',
                     },
                     'selectSickRoom.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.13.01',
                     },
                     'selectWard.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.13.01',
                     },
                     'updateSickRoom.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.13.01',
                     },
                     'updateWard.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.25.13.01',
                     },
                 },
                 renders: {
@@ -490,21 +490,21 @@ const VERSION = {
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/renders/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.27.12.01',
                     },
                     'insertRoomList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/renders/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.27.12.01',
                     },
                     'insertWardList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/renders/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.27.12.01',
                     },
                 },
                 templates: {
@@ -513,14 +513,14 @@ const VERSION = {
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/templates/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.26.12.01',
                     },
                     'wardList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/templates/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.26.12.01',
                     },
                 },
             },
