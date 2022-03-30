@@ -54,6 +54,7 @@ const renderDashboardScreen = async () => {
             sickBedList
         );
         $display_inpat.html(parsedDashboardScreen);
+        await addEventToDashboardSickBeds();
     } catch (err) {
         console.log(err);
     }
@@ -73,19 +74,55 @@ async function addEventToDisplayBtn() {
     });
 }
 
+async function addEventToDeleteBtn() {
+    const $btn_delete = $('.btn_delete');
+    $btn_delete.off().on('click', () => {
+        console.log(1);
+    });
+}
+
 async function addEventToAddDisplayBtn() {
     const $btn_addView = $('.btn_addView');
+    const $add_display_pop = $('.dash_ward_name .overlay');
     $btn_addView.each(function () {
         $(this)
             .off()
             .on('click', () => {
-                console.log('화면추가');
+                $add_display_pop.css('display', 'block');
             });
+    });
+}
+
+async function addEventToDashboardSickBeds() {
+    const $dashboard_sickbeds = $('.inpat_sickbed');
+    $dashboard_sickbeds.each(function () {
+        $(this)
+            .off()
+            .on('click', () => {
+                const $dashboard_sickbeds_checked = $('.inpat_sickbed:checked');
+                const $btn_delete = $('.btn_delete');
+                if ($dashboard_sickbeds_checked.length) {
+                    $btn_delete.prop('disabled', false);
+                } else {
+                    $btn_delete.prop('disabled', true);
+                }
+            });
+    });
+}
+
+//팝업 이벤트 부여
+async function addEventToMakeDisplayPop() {
+    const $add_display_pop = $('.dash_ward_name .overlay');
+    const $cancel_btn = $('.btn.rd.btn_cancel');
+    $cancel_btn.off().on('click', () => {
+        $add_display_pop.css('display', 'none');
     });
 }
 
 // Rendering Initialize
 async function firstRender() {
+    addEventToDeleteBtn();
+    addEventToMakeDisplayPop();
     await renderDisplayBtn();
     await renderDashboardScreen();
 }

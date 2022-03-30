@@ -33,7 +33,7 @@ export const parseDashboardScreen = async (displayCode, sickBedList) => {
                 <div class="pati_inner">
                     <input type="checkbox" class='inpat_sickbed' id="inpat_${sickBed.sickBedCode}" />
                     <label for="inpat_${sickBed.sickBedCode}"
-                        >Empty SickBed</label
+                        >${sickBed.sickRoomCode}-${sickBed.nickname}-Empty SickBed</label
                     >
                 </div>
             </div>`
