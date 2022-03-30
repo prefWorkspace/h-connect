@@ -231,13 +231,7 @@ const VERSION = {
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
                     version: '2022.03.25.12.01',
                 },
-                'dashboardScreenTmpl.js': {
-                    type: 'module',
-                    url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
-                    version: '2022.03.25.12.01',
-                },
-                'dashboardWardListTmpl.js': {
+                'templateDashboardScreen.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
