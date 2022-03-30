@@ -185,7 +185,7 @@ const VERSION = {
                 },
             },
             renders: {
-                'renderDashboard.js': {
+                'renderDashboard_2.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/renders/',
@@ -193,12 +193,13 @@ const VERSION = {
                 },
             },
             templates: {
-                'dashboard_dummyData.js': {
+                'templateDisplayBtn.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
                     version: '2022.03.25.12.01',
                 },
+<<<<<<< HEAD
                 'dashboardScreenTmpl.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
@@ -206,11 +207,23 @@ const VERSION = {
                     version: '2022.03.25.12.01',
                 },
                 'dashboardWardListTmpl.js': {
+=======
+                'templateDashboardScreen.js': {
+>>>>>>> 23d7ec38d673eac56a45cc0a23dff5fecd887caf
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
                     version: '2022.03.25.12.01',
                 },
+<<<<<<< HEAD
+=======
+                // 'dashboardScreenTmpl.js': {
+                //     type: 'module',
+                //     url_path: '/nurse/dashboard',
+                //     file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                //     version: '2022.03.25.12.01',
+                // },
+>>>>>>> 23d7ec38d673eac56a45cc0a23dff5fecd887caf
             },
         },
         management: {
