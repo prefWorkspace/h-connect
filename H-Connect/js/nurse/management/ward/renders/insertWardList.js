@@ -3,13 +3,12 @@
 const { wardList } = await import(
     importVersion('/H-Connect/js/nurse/management/ward/templates/wardList.js')
 );
-
 const { selectSickRoom } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
     )
 );
-console.log('dasdf');
+console.log(selectSickRoom);
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );

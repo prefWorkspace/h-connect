@@ -3,7 +3,7 @@ const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
 const { commonRequest } = await import(
-    importVersion('/H-Connect/js/utils/controller/serverController.js')
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
 const { selectWard } = await import(
     importVersion('/H-Connect/js/nurse/management/ward/actions/selectWard.js')

@@ -5,12 +5,12 @@ const { insertRoomList } = await import(
         '/H-Connect/js/nurse/management/ward/renders/insertRoomList.js'
     )
 );
-
 const { updateSickRoom } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/ward/actions/updateSickRoom.js'
     )
 );
+console.log('test1111');
 const { deleteSickRoom } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/ward/actions/deleteSickRoom.js'

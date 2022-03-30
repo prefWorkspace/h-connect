@@ -217,7 +217,7 @@ const VERSION = {
                 },
             },
             renders: {
-                'renderDashboard.js': {
+                'renderDashboard_2.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/renders/',
@@ -225,7 +225,7 @@ const VERSION = {
                 },
             },
             templates: {
-                'dashboard_dummyData.js': {
+                'templateDisplayBtn.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
@@ -238,12 +238,6 @@ const VERSION = {
                     version: '2022.03.25.12.01',
                 },
                 'dashboardWardListTmpl.js': {
-                    type: 'module',
-                    url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
-                    version: '2022.03.25.12.01',
-                },
-                'insertWardList.js?v=2022.03.25.12.01': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
