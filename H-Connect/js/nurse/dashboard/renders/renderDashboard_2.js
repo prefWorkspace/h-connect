@@ -25,6 +25,7 @@ const $display_inpat = $('.inpat');
 // 일반 상수
 const DISPLAY_START = 1;
 const DISPLAY_END = 10;
+const DISPLAY_MAX_BED = 26;
 
 // API variable
 const displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
@@ -32,7 +33,17 @@ const { sickBedList } = await selectSickBedList();
 
 //전역 변수들
 let selected_display = '';
+let bed_number_by_display = {}
+displayList.forEach(display => {
+    if(!bed_number_by_display[`${display.displayCode}`]){
+        bed_number_by_display[`${display.displayCode}`] = 0;
+    }
+})
+sickBedList.forEach(sickBed => {
+    bed_number_by_display[`${sickBed.displayCode}`] += 1
+});
 
+console.log(bed_number_by_display)
 // Rendering BisplayBtn
 const renderDisplayBtn = async () => {
     try {
@@ -74,10 +85,19 @@ async function addEventToDisplayBtn() {
     });
 }
 
+async function addEventToAddBtn(){
+    const $btn_add = $('.btn.bl.btn_add');
+}
+
 async function addEventToDeleteBtn() {
     const $btn_delete = $('.btn_delete');
     $btn_delete.off().on('click', () => {
-        console.log(1);
+        let checked_sickbed = []
+        $('.inpat_sickbed:checked').each(function(){
+            checked_sickbed.push($(this).attr('id'))
+        })
+        console.log(checked_sickbed)
+        renderDashboardScreen();
     });
 }
 
@@ -112,9 +132,24 @@ async function addEventToDashboardSickBeds() {
 
 //팝업 이벤트 부여
 async function addEventToMakeDisplayPop() {
+    // DOM element
     const $add_display_pop = $('.dash_ward_name .overlay');
+    const $ward_name = $('#ward_Name');
+    const $ok_btn = $('.btn.blf.btn_check');
     const $cancel_btn = $('.btn.rd.btn_cancel');
+
+    $ok_btn.off().on('click', () => {
+        if ($ward_name.val()) {
+            // Creat Action Part
+            console.log('병동생성: ', $ward_name.val());
+
+            $ward_name.val('');
+            $add_display_pop.css('display', 'none');
+        }
+    });
+
     $cancel_btn.off().on('click', () => {
+        $ward_name.val('');
         $add_display_pop.css('display', 'none');
     });
 }

@@ -1,4 +1,6 @@
-const { getPatientList } = await import(importVersion('/H-Connect/js/nurse/dashboard/actions/getPatientList.js'));
+const { getPatientList } = await import(
+    importVersion('/H-Connect/js/nurse/dashboard/actions/getPatientList.js')
+);
 
 export const parseDashboardScreen = async (displayCode, sickBedList) => {
     let tmpl = `<div class="account">
@@ -10,33 +12,30 @@ export const parseDashboardScreen = async (displayCode, sickBedList) => {
     );
     const patientList = await getPatientList();
     sickBedListByDisplayCode.forEach((sickBed) => {
-        let HasPatient = false;
-        for(let i=0; i<patientList.length; i++){
-            if(sickBed.sickBedCode === patientList[i].sickBedCode){
-                HasPatient = true;
-                tmpl += `
+        if (sickBed.measurementCode) {
+            for (let i = 0; i < patientList.length; i++) {
+                if (sickBed.sickBedCode === patientList[i].sickBedCode) {
+                    tmpl += `
                 <div class="check_pati">
                     <div class="pati_inner">
-                        <input type="checkbox" class='inpat_sickbed' id="inpat_${sickBed.sickBedCode}" />
+                        <input type="checkbox" class='inpat_sickbed' id="inpat_${sickBed.sickBedCode}" data-diplaycode="${displayCode}"/>
                         <label for="inpat_${sickBed.sickBedCode}">
-                            Patient Type-${patientList[i].patientCode}
+                             ${sickBed.sickRoom}/${sickBed.sickBed}/${patientList[i].name}/${patientList[i].patientCode}
                         </label>
                     </div>
-                </div>`
-                break;
+                </div>`;
+                    break;
+                }
             }
-            
-        }
-        // 해당 병상이 환자를 갖고 있지 않을때
-        if(!HasPatient){
-                tmpl += `<div class="check_pati">
+        } else {
+            tmpl += `<div class="check_pati">
                 <div class="pati_inner">
-                    <input type="checkbox" class='inpat_sickbed' id="inpat_${sickBed.sickBedCode}" />
+                    <input type="checkbox" class='inpat_sickbed' id="inpat_${sickBed.sickBedCode}" data-diplaycode="${displayCode}"/>
                     <label for="inpat_${sickBed.sickBedCode}"
-                        >${sickBed.sickRoomCode}-${sickBed.nickname}-Empty SickBed</label
+                        >${sickBed.sickRoom}/${sickBed.sickBed}</label
                     >
                 </div>
-            </div>`
+            </div>`;
         }
     });
 
