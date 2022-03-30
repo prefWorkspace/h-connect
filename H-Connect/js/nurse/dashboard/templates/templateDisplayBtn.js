@@ -1,4 +1,4 @@
-export function parseDisplayBtn(displayList) {
+export const parseDisplayBtn = async (displayList) =>  {
     let template = ``;
     displayList.forEach((display, index) => {
         if (index === 0) {
