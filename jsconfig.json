@@ -1,6 +1,0 @@
-{
-    "compilerOptions": {
-        "baseUrl": "H-Connect"
-    },
-    "include": ["H-Connect"]
-}
