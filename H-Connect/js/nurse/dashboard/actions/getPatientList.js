@@ -1,4 +1,4 @@
-import { serverController } from '../../../utils/controller/serverController.js';
+import { serverController } from '../../../utils/controller/serverController.js?v=2022.01.17.11.33';
 
 import { commonRequest } from '../../../utils/controller/commonRequest.js';
 

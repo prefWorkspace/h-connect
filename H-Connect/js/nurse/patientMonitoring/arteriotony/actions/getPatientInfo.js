@@ -1,7 +1,11 @@
-import { serverController } from '../../../../utils/controller/serverController.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
 
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { history } from '../../../../utils/controller/historyController.js';
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
 
 export const getPatientInfo = async () => {
     const res = await serverController.ajaxAwaitController(

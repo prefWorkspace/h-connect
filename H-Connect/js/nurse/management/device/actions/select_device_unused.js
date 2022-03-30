@@ -1,9 +1,21 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { countingDevice } from './select_device.js';
-import { select_device_unused_list } from '../renders/select_device_unused_list.js';
 
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { countingDevice } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/device/actions/select_device.js'
+    )
+);
+const { select_device_unused_list } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/device/renders/select_device_unused_list.js'
+    )
+);
 export function select_device_unused(deviceType = 0, search = null) {
     const req = JSON.stringify({
         ...commonRequest(),

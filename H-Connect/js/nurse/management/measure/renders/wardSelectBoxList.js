@@ -1,11 +1,34 @@
 'use strict';
-import { wardSelectBox } from '../templates/wardSelectBox.js';
-// import { selectRoomList } from '../actions/selectMeasurementInfoList.js';
-import { CONSTANT_MEASURE } from './constant.js';
-import { selectWardList } from '../../../../utils/module/select/selectList.js?v=2022.03.25.12.37';
-import { selectSickRoomList } from '../../../../utils/module/select/selectList.js?v=2022.03.25.12.37';
-import { sickRoomSelectBoxList } from './sickRoomSelectBoxList.js';
-import { selectMeasurementInfoList } from '../actions/selectMeasurementInfoList.js';
+
+const { wardSelectBox } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/templates/wardSelectBox.js'
+    )
+);
+
+const { CONSTANT_MEASURE } = await import(
+    importVersion('/H-Connect/js/nurse/management/measure/renders/constant.js')
+);
+
+const { selectWardList } = await import(
+    importVersion('/H-Connect/js/utils/module/select/selectList.js')
+);
+
+const { selectSickRoomList } = await import(
+    importVersion('/H-Connect/js/utils/module/select/selectList.js')
+);
+
+const { sickRoomSelectBoxList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/renders/sickRoomSelectBoxList.js'
+    )
+);
+
+const { selectMeasurementInfoList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/actions/selectMeasurementInfoList.js'
+    )
+);
 
 const { wardList } = (await selectWardList()) || [];
 

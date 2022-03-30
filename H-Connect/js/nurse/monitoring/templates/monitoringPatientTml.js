@@ -1,5 +1,6 @@
-import { history } from '../../../utils/controller/historyController.js';
-
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
 /* s : 모니터링 블록 */
 
 window._history = history;
@@ -69,7 +70,7 @@ export function monitorBlock_have(_data) {
 export function monitorBlock_none(_data) {
     const { sickRoomCode, wardCode, sickBedCode } = _data || {};
     return `
-    <div class="patient_monitor" data-sickBedCode=${sickBedCode}">
+    <div class="patient_monitor empty_bed" data-sickBedCode=${sickBedCode}>
         <div class="empty_bed">
             <p>empty_bed</p>
 

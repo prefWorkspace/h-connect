@@ -1,5 +1,9 @@
-import { serverController } from '../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../utils/controller/commonRequest.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
 
 export async function getDisplayList(page, count) {
     let result = {};

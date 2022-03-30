@@ -1,5 +1,9 @@
 'use strict';
-import { unusedDeviceList } from '../templates/unusedDeviceList.js';
+const { unusedDeviceList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/device/templates/unusedDeviceList.js'
+    )
+);
 
 export function select_device_unused_list(deviceRegisterList) {
     let deviceList = '';

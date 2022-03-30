@@ -1,5 +1,9 @@
 'use strict';
-import { sickRoomList } from '../templates/sickRoomList.js';
+const { sickRoomList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/templates/sickRoomList.js'
+    )
+);
 
 export function insertRoomList(_sickRoomList) {
     let data = '';

@@ -1,11 +1,21 @@
 'use strict';
-import { wardList } from '../templates/wardList.js';
-import { selectSickRoom } from '../actions/selectSickRoom.js';
-import { history } from '../../../../utils/controller/historyController.js';
 
-const params = ['wardCode', 'sickRoomCode'];
-// const params = 'wardCode';
-const { wardCode } = history.getParams(params);
+const { wardList } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/templates/wardList.js')
+);
+const { selectSickRoom } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
+    )
+);
+console.log(selectSickRoom);
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
+
+// const params = ['wardCode', 'sickRoomCode'];
+const params = 'wardCode';
+const wardCode = history.getParams(params);
 
 //병동 클릭시 배경색 변경 active
 function _wardclickActive() {

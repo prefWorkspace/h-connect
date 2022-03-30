@@ -1,7 +1,7 @@
-import {commonRequest} from '../../../utils/controller/commonRequest.js';
-import { serverController } from '../../../utils/controller/serverController.js';
-import {_header_searchPatientList_insert} from '../../template/header/headerSearchPatientInsert.js';
-async function getPatientSearchList(){
+import { commonRequest } from '../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
+import { serverController } from '../../../utils/controller/serverController.js?v=2022.01.17.11.33';
+import { _header_searchPatientList_insert } from '../../template/header/headerSearchPatientInsert.js';
+async function getPatientSearchList() {
     /* 환자 검색 정보 리스트 불러오기 API */
     /* 
     간호사 header에 환자 검색에 해당하는 액션 입니다. 
@@ -18,18 +18,21 @@ async function getPatientSearchList(){
     /nurse/device_management.html
     /nurse/measure.html
     */
-    await serverController.ajaxAwaitController("API/Measurement/SelectMeasurementInfoList", "POST",
-    JSON.stringify({
-        ...commonRequest(),
-        measurementType : 'BM' // ET : 긴급이송 / BM : 병상모니터링
-    }),
-    (res) => {
-        if(res.result){
-            const _patientList = res.measurementInfoSimpleList; // 환자 정보
-            _header_searchPatientList_insert(_patientList); // 리스트 템플릿 렌더
-        }else{
-            
-        }
-    }, (err) => console.log(err));
+    await serverController.ajaxAwaitController(
+        'API/Measurement/SelectMeasurementInfoList',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementType: 'BM', // ET : 긴급이송 / BM : 병상모니터링
+        }),
+        (res) => {
+            if (res.result) {
+                const _patientList = res.measurementInfoSimpleList; // 환자 정보
+                _header_searchPatientList_insert(_patientList); // 리스트 템플릿 렌더
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
 }
 getPatientSearchList();

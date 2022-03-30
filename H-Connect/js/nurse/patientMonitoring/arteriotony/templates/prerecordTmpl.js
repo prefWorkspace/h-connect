@@ -1,33 +1,6 @@
-import { request_Date_Data } from '../../../../utils/controller/commonRequest.js';
-// import { onClickDeleteBloodPressureBtn } from '../actions/bloodPressureActions';
-// export const parsePrerecordTmpl = ({
-//     records,
-//     currentPage,
-//     totalCount,
-//     onModify,
-// }) => {
-//     if (!records) {
-//         throw new Error('records is required');
-//     }
-//     const recordList = records
-//         .map((record) => parseRecord({ record, onModify }))
-//         .join('');
-//     const pagenation = parsePagenation({ currentPage, totalCount });
-//     return `
-//     <div class="record_table">
-//     <div class="table_title">
-//         <p>날짜</p>
-//         <p>수축기혈압</p>
-//         <p>이완기혈압</p>
-//         <p>맥박</p>
-//     </div>
-
-//     <div class="table_body">
-//        ${recordList}
-//     </div>
-//       ${pagenation}
-//     </div>`;
-// };
+const { request_Date_Data } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
 
 export const parseRecord = (_data) => {
     const { recordDateTime, systolic, diastolic, pulse, indexId } = _data || {};
@@ -86,36 +59,79 @@ export const parseRecord = (_data) => {
     `;
 };
 
-export const parsePaginationBlock = ({ page, records, totalCount }) => {
-    // console.log(page, records, totalCount);
+export const parsePaginationBlock = ({ page, list, totalCount }) => {
     const totalPageCount = Math.ceil(totalCount / 10);
-    const totalTurnCount = Math.ceil(totalPageCount / 10);
-    // console.log(totalPageCount, totalTurnCount);
+    const returnMin = () => {
+        if (totalPageCount <= 10) {
+            // 전체 페이지 10 이하
+            return 1;
+        } else {
+            // 전체 페이지 10 초과
+            if (page < 6) {
+                return 1;
+            } else if (page > 6 && page > totalPageCount - 4) {
+                return totalPageCount - 9;
+            } else {
+                return page - 5;
+            }
+        }
+    };
+    const returnMax = () => {
+        if (totalPageCount <= 10) {
+            // 전체 페이지 10 이하
+            return totalPageCount;
+        } else {
+            // 전체 페이지 10 초과
+            if (page < 6) {
+                return 10;
+            } else if (page >= 6 && page > totalPageCount - 4) {
+                return totalPageCount;
+            } else {
+                return page + 4;
+            }
+        }
+    };
+    console.log(returnMin(), returnMax());
 
     const returnPageList = () => {
-        const min = page < 6 ? 1 : page - 5;
-        const max = page < 6 ? 10 : page + 4;
-        // console.log(min, max);
         let pageArr = [];
-        for (let i = min; i <= max; i++) {
+        for (let i = returnMin(); i <= returnMax(); i++) {
             pageArr.push(i);
         }
         return pageArr;
     };
-    // console.log(returnPageList());
+    const sendPageControllerInform = JSON.stringify({
+        page: page,
+        totalCount: totalCount,
+        totalPageCount: totalPageCount,
+    });
     return `
-    <ul>
-        <li><a href=""><<</a></li>
-        <li><a href=""><</a></li>
+    ${
+        totalCount > 0
+            ? `
+        <ul>
+            <li><a href="#" onclick='event.preventDefault(); window.onClickPageControllBtn("first",${sendPageControllerInform})'>&lt;&lt;</a></li>
+            <li><a href="#" onclick='event.preventDefault(); window.onClickPageControllBtn("prev",${sendPageControllerInform})'>&lt;</a></li>
 
-        ${returnPageList().htmlFor((item, index) => {
-            return parsePageNumber({ number: item, isActive: item === page });
-        })}
-        <li>${totalPageCount > 10 ? ' ... ' + totalPageCount : ''}</li>
+            ${returnPageList().htmlFor((item, index) => {
+                return parsePageNumber({
+                    number: item,
+                    isActive: item === page,
+                });
+            })}
+            ${
+                totalPageCount > 10 && page !== totalPageCount
+                    ? `<li> ... <a href="#" onclick='event.preventDefault(); window.onClickPageControllBtn("end",${sendPageControllerInform})'>${totalPageCount}</a></li>`
+                    : ''
+            }
+            
 
-        <li><a href="">></a></li>
-        <li><a href="">>></a></li>
-    </ul>
+            <li><a href="#" onclick='event.preventDefault(); window.onClickPageControllBtn("next",${sendPageControllerInform})'>&gt;</a></li>
+            <li><a href="#" onclick='event.preventDefault(); window.onClickPageControllBtn("end",${sendPageControllerInform})'>&gt;&gt;</a></li>
+        </ul>
+        `
+            : ''
+    }
     `;
 };
 const parsePageNumber = ({ number, isActive }) => {
@@ -125,30 +141,3 @@ const parsePageNumber = ({ number, isActive }) => {
     </li>
     `;
 };
-
-// const parsePagenation = ({ currentPage, totalCount }) => {
-//     const pageCount = Math.ceil(totalCount / 10);
-//     const pageNumberList = [];
-//     for (let i = 1; i <= pageCount; i++) {
-//         pageNumberList.push(
-//             parsePageNumber({ number: i, isActive: i === currentPage })
-//         );
-//     }
-//     return `
-//     <div class="table_page">
-//         <ul>
-//             <li><a href=""><<</a></li>
-//             <li><a href=""><</a></li>
-//             ${pageNumberList.join('')}
-//             <li><a href="">></a></li>
-//             <li><a href="">>></a></li>
-//         </ul>
-//     </div>
-//     `;
-// };
-
-// const parsePageNumber = ({ number, isActive }) => {
-//     return `<li class="${isActive ? 'isActive' : ''}">
-//         <a href="">${number}</a>
-//     </li>`;
-// };

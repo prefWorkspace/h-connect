@@ -1,5 +1,5 @@
 // API
-import { getWardList } from '../actions/getWardList.js';
+import { getWardList } from '../actions/getwardList.js?v=2022.03.25.12.01';
 import { getPatientList } from '../actions/getPatientList.js';
 import { getDisplayList } from '../actions/getDisplayList.js';
 import { getSickbedList } from '../actions/getSickBedList.js';

@@ -1,15 +1,17 @@
-import {
-    monitorBlock_have,
-    monitorBlock_none,
-    monitorRoomBlock,
-} from '../templates/monitoringPatientTml.js';
-import {
-    selectSickBed,
-    selectMeasurementInfoList,
-    selectSickRoom,
-} from '../actions/monitoringAPI.js';
-import { updateMonitoringPatientItem } from './updateMonitoringPatient.js';
-
+const { monitorBlock_have, monitorBlock_none, monitorRoomBlock } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/monitoring/templates/monitoringPatientTml.js'
+    )
+);
+const { selectSickBed, selectMeasurementInfoList, selectSickRoom } =
+    await import(
+        importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringAPI.js')
+    );
+const { updateMonitoringPatientItem } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/monitoring/renders/updateMonitoringPatient.js'
+    )
+);
 async function renderMonitoringSickRoomList() {
     const { sickRoomList } = await selectSickRoom(); // 병실 리스트
     const { measurementInfoSimpleList: patientList } =

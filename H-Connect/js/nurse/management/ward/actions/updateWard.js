@@ -1,9 +1,16 @@
 'use strict';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { selectWard } from './selectWard.js?v=2022.03.25.12.01';
-import { CONSTANT } from '../renders/constant.js';
-
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { CONSTANT } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/renders/constant.js')
+);
+const { selectWard } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/actions/selectWard.js')
+);
 //수정 api
 function updateWardAPI(wardCode, orderNumber, deactivate) {
     const _ward = $('.update_ward .content #ward_Name').val();

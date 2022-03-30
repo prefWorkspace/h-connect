@@ -1,6 +1,9 @@
-import { commonRequest } from '../../../utils/controller/commonRequest.js';
-import { sessionController } from '../../../utils/controller/sessionController.js';
-import { ip, LOGIN_TOKEN } from '../../../utils/controller/serverController.js';
+import { commonRequest } from '../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
+import { sessionController } from '../../../utils/controller/sessionController.js?v=2022.01.27.09.24';
+import {
+    ip,
+    LOGIN_TOKEN,
+} from '../../../utils/controller/serverController.js?v=2022.01.17.11.33';
 // websoket 선언 ()안에는 호출할 url을 작성해준다.
 // const wsUrl = '127.0.0.1:5501';
 // const ws = new WebSocket(`ws://${wsUrl}`);

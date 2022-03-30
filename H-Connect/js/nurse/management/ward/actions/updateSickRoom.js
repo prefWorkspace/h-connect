@@ -1,8 +1,21 @@
 'use strict';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { CONSTANT } from '../renders/constant.js';
-import { selectSickRoom } from './selectSickRoom.js';
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+
+const { CONSTANT } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/renders/constant.js')
+);
+
+const { selectSickRoom } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
+    )
+);
+console.log('testtt');
 
 const { userCode: requester, organizationCode } = CONSTANT.userData;
 

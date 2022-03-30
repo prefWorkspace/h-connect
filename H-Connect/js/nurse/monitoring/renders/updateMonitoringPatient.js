@@ -1,4 +1,6 @@
-import { socketGetPatientData } from '../actions/fakeSocket.js';
+const { socketGetPatientData } = await import(
+    importVersion('/H-Connect/js/nurse/monitoring/actions/fakeSocket.js')
+);
 function getPatientEls() {
     // 환자 리스트 dom 반환
     return (

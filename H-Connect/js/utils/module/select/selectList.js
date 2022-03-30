@@ -1,11 +1,26 @@
 'use strict';
-import { commonRequest } from '../../controller/commonRequest.js';
-import { serverController } from '../../controller/serverController.js';
-import { localStorageController } from '../../controller/localStorageController.js';
-import { CONSTANT_MEASURE } from '../../../nurse/management/measure/renders/constant.js';
-import { session_renew } from '../../controller/serverController.js';
+
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
+);
+
+const { session_renew } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+
 //병동 병실 병상 조회하는 함수
-const { userCode: requester, organization } = CONSTANT_MEASURE.userData;
+const { userCode: requester, organizationCode: organization } = JSON.parse(
+    localStorageController.getLocalS('userData')
+);
+
 export async function selectWardList(
     includeSickBed = true,
     includeSickRoom = true

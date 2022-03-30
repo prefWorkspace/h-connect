@@ -1,7 +1,15 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { select_device_list } from '../renders/select_device_list.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { select_device_list } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/device/renders/select_device_list.js'
+    )
+);
 
 //신규 장치 등록 장치 조회 첫화면
 export function select_device(deviceType = 0, search = null) {

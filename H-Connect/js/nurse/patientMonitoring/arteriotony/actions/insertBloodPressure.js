@@ -1,6 +1,10 @@
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { history } from '../../../../utils/controller/historyController.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
 
 $('.btn_list .btn_add').off().on('click', insertBloodPressure);
 

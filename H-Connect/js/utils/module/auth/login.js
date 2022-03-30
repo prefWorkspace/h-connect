@@ -1,8 +1,17 @@
 'use strict';
-import { serverController } from '../../../utils/controller/serverController.js';
-import { sessionController } from '../../../utils/controller/sessionController.js';
-import { localStorageController } from '../../../utils/controller/localStorageController.js';
-import { commonRequest } from '../../../utils/controller/commonRequest.js';
+
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { sessionController } = await import(
+    importVersion('/H-Connect/js/utils/controller/sessionController.js')
+);
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
 
 function auto_Login() {
     if (autoLogin_input.checked) {

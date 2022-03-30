@@ -1,8 +1,12 @@
-import { commonRequest } from '../../../utils/controller/commonRequest.js';
-import { sessionController } from '../../../utils/controller/sessionController.js';
-import { ip, LOGIN_TOKEN } from '../../../utils/controller/serverController.js';
-import { serverController } from '../../../utils/controller/serverController.js';
-
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { sessionController } = await import(
+    importVersion('/H-Connect/js/utils/controller/sessionController.js')
+);
+const { serverController, ip, LOGIN_TOKEN } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
 const { requester, requestDateTime } = commonRequest();
 let stompClient = {};
 function connectStreamServer() {

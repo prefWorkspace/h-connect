@@ -1,6 +1,10 @@
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { history } from '../../../../utils/controller/historyController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
 
 export const getPrerecordByPage = async (page) => {
     const res = await serverController.ajaxAwaitController(

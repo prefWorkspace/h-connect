@@ -1,7 +1,20 @@
 'use strict';
-import { CONSTANT_MEASURE } from './constant.js';
-import { sickRoomSelectBox } from '../templates/sickRoomSelectBox.js';
-import { selectMeasurementInfoList } from '../actions/selectMeasurementInfoList.js';
+
+const { CONSTANT_MEASURE } = await import(
+    importVersion('/H-Connect/js/nurse/management/measure/renders/constant.js')
+);
+
+const { sickRoomSelectBox } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/templates/sickRoomSelectBox.js'
+    )
+);
+
+const { selectMeasurementInfoList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/actions/selectMeasurementInfoList.js'
+    )
+);
 
 async function sickRoomOptionHandle(_target) {
     const wardCode = _target.data('wardcode');

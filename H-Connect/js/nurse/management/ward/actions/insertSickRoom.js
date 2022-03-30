@@ -1,8 +1,15 @@
 'use strict';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { selectSickRoom } from './selectSickRoom.js';
-
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { selectSickRoom } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
+    )
+);
 //병실 생성
 function insertSickRoom() {
     const sickRoom = $('.pop.new_room .overlay .pop_cont .content input').val();

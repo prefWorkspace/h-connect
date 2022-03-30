@@ -1,10 +1,13 @@
 'use strict';
-import { localStorageController } from '../../../../utils/controller/localStorageController.js';
-import { serverController } from '../../../../utils/controller/serverController.js';
-import { commonRequest } from '../../../../utils/controller/commonRequest.js';
-import { selectWard } from './selectWard.js?v=2022.03.25.12.01';
-import { CONSTANT } from '../renders/constant.js';
-
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { selectWard } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/actions/selectWard.js')
+);
 function insertWard() {
     const _ward_Name = $('.new_ward .content #ward_Name').val();
     const _orderNumber = $('.nurse .ward .cont').length + 1;
