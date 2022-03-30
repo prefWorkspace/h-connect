@@ -1,6 +1,8 @@
 'use strict';
 const { Create_newWard } = await import(
-    importVersion('/js/nurse/management/ward/renders/insertWardList.js')
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/renders/insertWardList.js'
+    )
 );
 console.log('Create_newWard===');
 console.log(Create_newWard);
