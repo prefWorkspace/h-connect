@@ -1,9 +1,21 @@
 'use strict';
-import { Create_newWard } from '../renders/insertwardList.js?v=2022.03.25.12.01?v=2022.03.25.12.01';
-import { updateWard } from './updateWard.js?v=2022.03.25.12.01';
-import { CONSTANT } from '../renders/constant.js?v=2022.03.25.12.01';
-import { deleteWard } from './deleteWard.js?v=2022.03.25.12.01';
-import { selectWardList } from '../../../../utils/module/select/selectList.js?v=2022.03.25.12.37?v=2022.03.25.12.01';
+const { Create_newWard } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/renders/insertWardList.js'
+    )
+);
+const { updateWard } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/actions/updateWard.js')
+);
+const { CONSTANT } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/renders/constant.js')
+);
+const { deleteWard } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/actions/deleteWard.js')
+);
+const { selectWardList } = await import(
+    importVersion('/H-Connect/js/utils/module/select/selectList.js')
+);
 
 //병동 조회
 export async function selectWard() {

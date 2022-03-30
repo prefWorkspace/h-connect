@@ -10,9 +10,15 @@ const { selectBloodPressurePage } = await import(
     )
 );
 
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
+
+const historyMeasurementCode = history.getParams('measurement_code');
+
 export const renderPrerecordList = async () => {
     const { page, records, totalCount } = await selectBloodPressurePage(1);
-    renderPrerecordPagination({ page, records, totalCount });
+    renderPrerecordPagination({ page, list: records, totalCount });
     let _html = '';
     if (totalCount && records) {
         _html = records?.htmlFor((_item) => {
@@ -21,7 +27,18 @@ export const renderPrerecordList = async () => {
     }
     $('.pre_record .table_body').html(_html);
 };
-export const renderPrerecordPagination = async (_listData) => {
+const renderPrerecordPagination = async (_listData) => {
+    const { page, list } = _listData || {};
     $('.pre_record .table_page').html(parsePaginationBlock(_listData));
+    if (page > 1 && !list) {
+        window.history.pushState(
+            '',
+            '',
+            `arteriotony.html?measurement_code=${historyMeasurementCode}&page=${
+                page - 1
+            }`
+        );
+        renderPrerecordList();
+    }
 };
 renderPrerecordList();

@@ -20,4 +20,9 @@ export const history = {
             ? ''
             : decodeURIComponent(results[1].replace(/\+/g, ' '));
     },
+    onPopState: (callBack) => {
+        if (callBack) {
+            window.onpopstate = callBack;
+        }
+    },
 };

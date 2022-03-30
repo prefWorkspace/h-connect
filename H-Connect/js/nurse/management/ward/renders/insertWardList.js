@@ -1,7 +1,18 @@
 'use strict';
-import { wardList } from '../templates/wardList.js?v=2022.03.25.12.01';
-import { selectSickRoom } from '../actions/selectSickRoom.js?v=2022.03.25.12.01';
-import { history } from '../../../../utils/controller/historyController.js?v=2022.01.26.12.45';
+
+const { wardList } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/templates/wardList.js')
+);
+
+const { selectSickRoom } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
+    )
+);
+console.log('dasdf');
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
 
 // const params = ['wardCode', 'sickRoomCode'];
 const params = 'wardCode';
