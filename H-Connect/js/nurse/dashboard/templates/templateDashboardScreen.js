@@ -2,9 +2,10 @@ const { getPatientList } = await import(
     importVersion('/H-Connect/js/nurse/dashboard/actions/getPatientList.js')
 );
 
-export const parseDashboardScreen = async (displayCode, sickBedList) => {
+export const parseDashboardScreen = async (displayCode, displayName, sickBedList) => {
     let tmpl = `<div class="account">
-        <p>H-Connect inpatient monitoring system</p>
+        <p>${displayName}</p>
+        <div class="delete">병동이름설정<img src="/H-Connect/img/icon/btn_next_green.svg" alt=""></div>
     </div>`;
 
     const patientList = await getPatientList();

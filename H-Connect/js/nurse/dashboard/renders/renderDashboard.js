@@ -48,6 +48,7 @@ const { sickBedList } = await selectSickBedList();
 let selectedWard = null;
 let selected_display = '';
 let sickBedsByDisplay = {};
+let arraySickBedCodesByDisplay = [];
 displayList.forEach((display) => {
     if (!sickBedsByDisplay[`${display.displayCode}`]) {
         sickBedsByDisplay[`${display.displayCode}`] = [];
@@ -56,6 +57,7 @@ displayList.forEach((display) => {
 sickBedList.forEach((sickBed) => {
     if (sickBed.displayCode) {
         sickBedsByDisplay[`${sickBed.displayCode}`].push(sickBed);
+        arraySickBedCodesByDisplay.push(sickBed.sickBedCode);
     }
 });
 
@@ -97,8 +99,12 @@ const renderDisplayBtn = async () => {
 // Rendering Dashboard Screen
 const renderDashboardScreen = async () => {
     try {
+        const selectDisplay = displayList.filter(
+            (display) => display.displayCode === selected_display
+        )[0];
         const parsedDashboardScreen = await parseDashboardScreen(
             selected_display,
+            selectDisplay.displayName,
             sickBedsByDisplay[selected_display]
         );
         $display_inpat.html(parsedDashboardScreen);
@@ -392,13 +398,31 @@ async function addEventToAddBtn() {
 
                         if (
                             i ==
-                            sickBedsByDisplay[selected_display].length - 1
+                                sickBedsByDisplay[selected_display].length -
+                                    1 &&
+                            sickBedsByDisplay[selected_display].length <
+                                DISPLAY_MAX_BED
                         ) {
-                            sickBedsByDisplay[selected_display].push(sickBed);
+                            let newSickBed = {
+                                ...sickBed,
+                                displayCode: selected_display,
+                            };
+                            sickBedsByDisplay[selected_display].push(
+                                newSickBed
+                            );
                         }
                     }
                 } else {
-                    sickBedsByDisplay[selected_display].push(sickBed);
+                    if (
+                        sickBedsByDisplay[selected_display].length <
+                        DISPLAY_MAX_BED
+                    ) {
+                        let newSickBed = {
+                            ...sickBed,
+                            displayCode: selected_display,
+                        };
+                        sickBedsByDisplay[selected_display].push(newSickBed);
+                    }
                 }
             });
             renderDashboardScreen();
