@@ -254,47 +254,26 @@ const VERSION = {
         management: {
             device: {
                 actions: {
-                    'cancel_device_unused.js': {
+                    // 'searchHandle.js': {
+                    //     type: 'module',
+                    //     url_path: '/nurse/device_management',
+                    //     file_path:
+                    //         '/H-Connect/js/nurse/management/device/actions/',
+                    //     version: '2022.03.25.12.30',
+                    // },
+                    'deviceAPI.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
                             '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.01',
+                        version: '2022.03.31.14.40',
                     },
-                    'createDevice.js': {
+                    'deviceHandle.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
                             '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.30',
-                    },
-                    'delete_device.js': {
-                        type: 'module',
-                        url_path: '/nurse/device_management',
-                        file_path:
-                            '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.30',
-                    },
-                    'searchHandle.js': {
-                        type: 'module',
-                        url_path: '/nurse/device_management',
-                        file_path:
-                            '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.30',
-                    },
-                    'select_device_unused.js': {
-                        type: 'module',
-                        url_path: '/nurse/device_management',
-                        file_path:
-                            '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.30',
-                    },
-                    'select_device.js': {
-                        type: 'module',
-                        url_path: '/nurse/device_management',
-                        file_path:
-                            '/H-Connect/js/nurse/management/device/actions/',
-                        version: '2022.03.25.12.30',
+                        version: '2022.03.31.14.40',
                     },
                 },
                 renders: {
