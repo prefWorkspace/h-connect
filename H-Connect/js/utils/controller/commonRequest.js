@@ -51,4 +51,3 @@ export const timestamp = () => {
         .replaceAll(' ', '');
     return res;
 };
-// export default commonRequest;

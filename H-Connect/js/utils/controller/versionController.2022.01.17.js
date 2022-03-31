@@ -421,84 +421,57 @@ const VERSION = {
             },
             ward: {
                 actions: {
-                    'deleteSickRoom.js': {
+                    'wardAPI.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.14.01',
+                        version: '2022.03.31.11.20',
                     },
-                    'deleteWard.js': {
+                    'wardEvent.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.13.01',
+                        version: '2022.03.31.12.20',
                     },
-                    'insertSickRoom.js': {
+                    'sickRoomAPI.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.13.01',
+                        version: '2022.03.26.13.20',
                     },
-                    'insertWard.js': {
+                    'sickRoomEvent.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.13.01',
-                    },
-                    'selectSickRoom.js': {
-                        type: 'module',
-                        url_path: '/nurse/index',
-                        file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.13.01',
-                    },
-                    'selectWard.js': {
-                        type: 'module',
-                        url_path: '/nurse/index',
-                        file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.13.01',
-                    },
-                    'updateSickRoom.js': {
-                        type: 'module',
-                        url_path: '/nurse/index',
-                        file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.13.01',
-                    },
-                    'updateWard.js': {
-                        type: 'module',
-                        url_path: '/nurse/index',
-                        file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
-                        version: '2022.03.25.13.01',
+                        version: '2022.03.26.13.20',
                     },
                 },
                 renders: {
                     'constant.js': {
+                        priority: 0,
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/renders/',
-                        version: '2022.03.27.12.01',
-                    },
-                    'insertRoomList.js': {
-                        type: 'module',
-                        url_path: '/nurse/index',
-                        file_path:
-                            '/H-Connect/js/nurse/management/ward/renders/',
-                        version: '2022.03.27.12.01',
+                        version: '2022.03.23.14.10',
                     },
                     'insertWardList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/renders/',
-                        version: '2022.03.27.12.01',
+                        version: '2022.03.23.15.10',
+                    },
+                    'insertRoomList.js': {
+                        type: 'module',
+                        url_path: '/nurse/index',
+                        file_path:
+                            '/H-Connect/js/nurse/management/ward/renders/',
+                        version: '2022.03.23.15.30',
                     },
                 },
                 templates: {
@@ -507,14 +480,14 @@ const VERSION = {
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/templates/',
-                        version: '2022.03.26.12.01',
+                        version: '2022.03.24.10.12',
                     },
                     'wardList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
                             '/H-Connect/js/nurse/management/ward/templates/',
-                        version: '2022.03.26.12.01',
+                        version: '2022.03.24.11.15',
                     },
                 },
             },

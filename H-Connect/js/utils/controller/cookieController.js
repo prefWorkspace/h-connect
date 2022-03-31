@@ -23,5 +23,3 @@ export const cookieController = {
         document.cookie = `${key}=;path=/;expires=${toDay.toGMTString()};`;
     },
 };
-
-// export default cookieController;

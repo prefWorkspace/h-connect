@@ -77,25 +77,24 @@ $(function () {
 
     // 병실관리
     // 병실관리 팝업 열고 닫기
-    $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
-        console.log('asf');
-        $('.pop.new_room .overlay').fadeIn();
-    });
+    // $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
+    //     $('.pop.new_room .overlay').fadeIn();
+    // });
 
     //병실관리 확인 누르면 리스트 나오게
-    $('.pop.new_room .overlay .pop_cont .btn_list .btn_check').on(
-        'click',
-        function () {
-            // $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
-        }
-    );
+    // $('.pop.new_room .overlay .pop_cont .btn_list .btn_check').on(
+    //     'click',
+    //     function () {
+    //         // $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
+    //     }
+    // );
     //병실관리 수정
-    $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on(
-        'click',
-        function () {
-            // $('.pop.new_room .overlay').fadeIn();
-        }
-    );
+    // $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on(
+    //     'click',
+    //     function () {
+    //         // $('.pop.new_room .overlay').fadeIn();
+    //     }
+    // );
 
     // 병실삭제
     // $('.nurse .hospital_room .cont .ward_list .btn_list .btn_delete').on('click', function () {
