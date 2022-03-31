@@ -39,7 +39,7 @@ const DISPLAY_END = 10;
 const DISPLAY_MAX_BED = 26;
 
 // API variable
-const displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
+let displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
 const { wardList } = await selectWardList();
 const { sickRoomList } = await selectSickRoomList();
 const { sickBedList } = await selectSickBedList();
@@ -90,7 +90,6 @@ const renderDisplayBtn = async () => {
         $btn_Viewlist.html(parsedDisplayBtn);
         selected_display = displayList[0].displayCode;
         await addEventToDisplayBtn();
-        await addEventToAddDisplayBtn();
     } catch (err) {
         console.log(err);
     }
@@ -401,12 +400,18 @@ async function addEventToAddBtn() {
                                 sickBedsByDisplay[selected_display].length -
                                     1 &&
                             sickBedsByDisplay[selected_display].length <
-                                DISPLAY_MAX_BED
+                                DISPLAY_MAX_BED &&
+                            !arraySickBedCodesByDisplay.includes(
+                                sickBed.sickBedCode
+                            )
                         ) {
                             let newSickBed = {
                                 ...sickBed,
                                 displayCode: selected_display,
                             };
+                            arraySickBedCodesByDisplay.push(
+                                sickBed.sickBedCode
+                            );
                             sickBedsByDisplay[selected_display].push(
                                 newSickBed
                             );
@@ -415,12 +420,16 @@ async function addEventToAddBtn() {
                 } else {
                     if (
                         sickBedsByDisplay[selected_display].length <
-                        DISPLAY_MAX_BED
+                            DISPLAY_MAX_BED &&
+                        !arraySickBedCodesByDisplay.includes(
+                            sickBed.sickBedCode
+                        )
                     ) {
                         let newSickBed = {
                             ...sickBed,
                             displayCode: selected_display,
                         };
+                        arraySickBedCodesByDisplay.push(sickBed.sickBedCode);
                         sickBedsByDisplay[selected_display].push(newSickBed);
                     }
                 }
@@ -447,7 +456,16 @@ async function addEventToDeleteBtn() {
                     checked_sickbed[j] ===
                     sickBedsByDisplay[selected_display][i].sickBedCode
                 ) {
+                    arraySickBedCodesByDisplay =
+                        arraySickBedCodesByDisplay.filter(
+                            (code) =>
+                                code !==
+                                sickBedsByDisplay[selected_display][i]
+                                    .sickBedCode
+                        );
+                    console.log(arraySickBedCodesByDisplay);
                     sickBedsByDisplay[selected_display].splice(i, 1);
+
                     i--;
                 }
             }
@@ -457,17 +475,7 @@ async function addEventToDeleteBtn() {
     });
 }
 
-async function addEventToAddDisplayBtn() {
-    const $btn_addView = $('.btn_addView');
-    const $add_display_pop = $('.dash_ward_name .overlay');
-    $btn_addView.each(function () {
-        $(this)
-            .off()
-            .on('click', () => {
-                $add_display_pop.css('display', 'block');
-            });
-    });
-}
+async function addEventToAddDisplayBtn() {}
 
 async function addEventToDashboardSickBeds() {
     const $dashboard_sickbeds = $('.inpat_sickbed');
@@ -486,29 +494,40 @@ async function addEventToDashboardSickBeds() {
     });
 }
 
-//팝업 이벤트 부여
-async function addEventToMakeDisplayPop() {
-    // DOM element
-    const $add_display_pop = $('.dash_ward_name .overlay');
+async function addEventToChangeDisplayNameBtn() {
+    const $account = $('.account');
+    const $name_change_pop = $('.dash_ward_name .overlay');
     const $ward_name = $('#ward_Name');
     const $ok_btn = $('.btn.blf.btn_check');
     const $cancel_btn = $('.btn.rd.btn_cancel');
 
-    $ok_btn.off().on('click', () => {
-        if ($ward_name.val()) {
-            // Creat Action Part
-            console.log('병동생성: ', $ward_name.val());
+    $account.off().on('click', () => {
+        $name_change_pop.css('display', 'block');
+    });
 
-            $ward_name.val('');
-            $add_display_pop.css('display', 'none');
-        }
+    $ok_btn.off().on('click', () => {
+        let restDisplayList = displayList.filter(
+            (display) => display.displayCode !== selected_display
+        );
+        let selectedDp = displayList.filter(
+            (display) => display.displayCode === selected_display
+        )[0];
+        selectedDp.displayName = $ward_name.val();
+        displayList = [...restDisplayList, selectedDp];
+        console.log(displayList);
+        $ward_name.val('');
+        $name_change_pop.css('display', 'none');
+        renderDashboardScreen();
     });
 
     $cancel_btn.off().on('click', () => {
         $ward_name.val('');
-        $add_display_pop.css('display', 'none');
+        $name_change_pop.css('display', 'none');
     });
 }
+
+//팝업 이벤트 부여
+async function addEventToMakeDisplayPop() {}
 
 // Rendering Initialize
 async function firstRender() {
@@ -524,6 +543,7 @@ async function firstRender() {
     await renderDisplayBtn();
 
     await renderDashboardScreen();
+    addEventToChangeDisplayNameBtn();
 }
 
 firstRender();
