@@ -1,12 +1,10 @@
 import { serverController } from '../../../utils/controller/serverController.js?v=2022.01.17.11.33';
 
-import { commonRequest } from '../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
-import { getWardList } from './getwardList.js?v=2022.03.25.12.01';
+import { commonRequest } from '../../../utils/controller/commonRequest.js';
 
 export async function getPatientList() {
     let result = {};
     let patients_in_hospital = [];
-    const wardList = await getWardList();
     await serverController.ajaxAwaitController(
         'API/Measurement/SelectMeasurementInfoList',
         'POST',

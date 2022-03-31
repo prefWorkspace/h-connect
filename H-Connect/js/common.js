@@ -77,25 +77,24 @@ $(function () {
 
     // 병실관리
     // 병실관리 팝업 열고 닫기
-    $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
-        console.log('asf');
-        $('.pop.new_room .overlay').fadeIn();
-    });
+    // $('.nurse .hospital_room .title .btn_new_room').on('click', function () {
+    //     $('.pop.new_room .overlay').fadeIn();
+    // });
 
     //병실관리 확인 누르면 리스트 나오게
-    $('.pop.new_room .overlay .pop_cont .btn_list .btn_check').on(
-        'click',
-        function () {
-            // $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
-        }
-    );
+    // $('.pop.new_room .overlay .pop_cont .btn_list .btn_check').on(
+    //     'click',
+    //     function () {
+    //         // $('.nurse .ward .cont, .nurse .hospital_room .cont').show();
+    //     }
+    // );
     //병실관리 수정
-    $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on(
-        'click',
-        function () {
-            // $('.pop.new_room .overlay').fadeIn();
-        }
-    );
+    // $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on(
+    //     'click',
+    //     function () {
+    //         // $('.pop.new_room .overlay').fadeIn();
+    //     }
+    // );
 
     // 병실삭제
     // $('.nurse .hospital_room .cont .ward_list .btn_list .btn_delete').on('click', function () {
@@ -112,42 +111,42 @@ $(function () {
     });
 
     //장치등록
-    $('.nurse .new_device .title .btn_new_device').on('click', function () {
-        $('.pop.regi_device .overlay').fadeIn();
-    });
+    // $('.nurse .new_device .title .btn_new_device').on('click', function () {
+    //     $('.pop.regi_device .overlay').fadeIn();
+    // });
 
     // 장치삭제
-    $('.nurse .new_device .item_row .btn_delete').on('click', function () {
-        // $('.pop.delete_regi .overlay').fadeIn();
-    });
-    // 아니요
-    $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function () {
-        $('.pop.delete .overlay').fadeOut();
-    });
-    // 네 삭제합니다.
-    $('.pop.delete .pop_cont .btn_list .btn_cut').on('click', function () {
-        // $('.nurse .new_device .item_row').hide();
-        $('.pop.delete .overlay').fadeOut();
-    });
+    // $('.nurse .new_device .item_row .btn_delete').on('click', function () {
+    //     // $('.pop.delete_regi .overlay').fadeIn();
+    // });
+    // // 아니요
+    // $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function () {
+    //     $('.pop.delete .overlay').fadeOut();
+    // });
+    // // 네 삭제합니다.
+    // $('.pop.delete .pop_cont .btn_list .btn_cut').on('click', function () {
+    //     // $('.nurse .new_device .item_row').hide();
+    //     $('.pop.delete .overlay').fadeOut();
+    // });
 
-    //장치반납
-    $('.nurse .return_device .title .btn_use_device').on('click', function () {
-        $('.pop.re_device .overlay').fadeIn();
-    });
+    // //장치반납
+    // $('.nurse .return_device .title .btn_use_device').on('click', function () {
+    //     $('.pop.re_device .overlay').fadeIn();
+    // });
 
-    // 장치반납 취소
-    $('.nurse .return_device .item_row .btn_cancel').on('click', function () {
-        $('.pop.delete_return .overlay').fadeIn();
-    });
-    // 아니요
-    $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function () {
-        $('.pop.delete_return .overlay').fadeOut();
-    });
-    // 네 삭제합니다.
-    $('.pop.delete .pop_cont .btn_list .btn_cut').on('click', function () {
-        // $('.nurse .new_device .item_row').hide();
-        $('.pop.delete .overlay').fadeOut();
-    });
+    // // 장치반납 취소
+    // $('.nurse .return_device .item_row .btn_cancel').on('click', function () {
+    //     $('.pop.delete_return .overlay').fadeIn();
+    // });
+    // // 아니요
+    // $('.pop.delete .pop_cont .btn_list .btn_no').on('click', function () {
+    //     $('.pop.delete_return .overlay').fadeOut();
+    // });
+    // // 네 삭제합니다.
+    // $('.pop.delete .pop_cont .btn_list .btn_cut').on('click', function () {
+    //     // $('.nurse .new_device .item_row').hide();
+    //     $('.pop.delete .overlay').fadeOut();
+    // });
 
     //측정관리
     // 환자검색

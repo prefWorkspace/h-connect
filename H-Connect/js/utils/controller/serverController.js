@@ -103,5 +103,3 @@ export const session_renew = (res) => {
         }
     );
 };
-
-// export default serverController;

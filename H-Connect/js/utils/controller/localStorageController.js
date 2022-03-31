@@ -24,5 +24,3 @@ export const localStorageController = {
         localStorage.removeItem(key);
     },
 };
-
-// export default localStorageController;

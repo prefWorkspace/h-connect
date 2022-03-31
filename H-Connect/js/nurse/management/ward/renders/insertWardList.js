@@ -1,19 +1,16 @@
 'use strict';
-
 const { wardList } = await import(
     importVersion('/H-Connect/js/nurse/management/ward/templates/wardList.js')
 );
-const { selectSickRoom } = await import(
-    importVersion(
-        '/H-Connect/js/nurse/management/ward/actions/selectSickRoom.js'
-    )
-);
-console.log(selectSickRoom);
+
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
 
-// const params = ['wardCode', 'sickRoomCode'];
+const { selectSickRoom } = await import(
+    importVersion('/H-Connect/js/nurse/management/ward/actions/sickRoomAPI.js')
+);
+
 const params = 'wardCode';
 const wardCode = history.getParams(params);
 

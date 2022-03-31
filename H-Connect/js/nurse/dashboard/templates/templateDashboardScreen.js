@@ -7,11 +7,8 @@ export const parseDashboardScreen = async (displayCode, sickBedList) => {
         <p>H-Connect inpatient monitoring system</p>
     </div>`;
 
-    const sickBedListByDisplayCode = sickBedList.filter(
-        (sickBed) => sickBed.displayCode === displayCode
-    );
     const patientList = await getPatientList();
-    sickBedListByDisplayCode.forEach((sickBed) => {
+    sickBedList.forEach((sickBed) => {
         if (sickBed.measurementCode) {
             for (let i = 0; i < patientList.length; i++) {
                 if (sickBed.sickBedCode === patientList[i].sickBedCode) {
