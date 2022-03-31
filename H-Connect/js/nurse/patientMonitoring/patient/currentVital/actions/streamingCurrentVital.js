@@ -50,7 +50,7 @@ async function stompConnectCallBack(e) {
 
 async function stompDisConnectCallBack() {}
 
-connectStreamServer();
+// connectStreamServer();
 
 export async function getMonitoringSickBed() {
     return await serverController.ajaxAwaitController(

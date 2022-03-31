@@ -20,25 +20,11 @@ const NOW_URL_PATH = pathCalc();
 
 const VERSION = {
     lib: {
-        chartjs: {
+        d3: {
             'd3-7.3.0.js': {
                 priority: 0,
                 url_path: '/nurse/patient',
-                file_path: '/H-Connect/js/lib/chartjs/',
-                version: '2022.01.17.11.33',
-            },
-        },
-        chartjs: {
-            'chartjs-3.7.0.js': {
-                priority: 0,
-                url_path: '/nurse/patient',
-                file_path: '/H-Connect/js/lib/chartjs/',
-                version: '2022.01.17.11.33',
-            },
-            'chartjs-3.7.0.min.js': {
-                priority: 0,
-                url_path: '/nurse/patient',
-                file_path: '/H-Connect/js/lib/chartjs/',
+                file_path: '/H-Connect/js/lib/d3/',
                 version: '2022.01.17.11.33',
             },
         },
@@ -680,6 +666,20 @@ const VERSION = {
                 },
                 currentVital: {
                     actions: {
+                        'fakeData.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
+                            version: '2022.03.30.12.18',
+                        },
+                        'fakeSocket.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
+                            version: '2022.03.30.12.18',
+                        },
                         'streamingCurrentVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
@@ -688,7 +688,15 @@ const VERSION = {
                             version: '2022.03.30.12.18',
                         },
                     },
-                    renders: {},
+                    renders: {
+                        'renderECGVital.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/renders/',
+                            version: '2022.03.30.12.18',
+                        },
+                    },
                     templates: {},
                 },
             },
