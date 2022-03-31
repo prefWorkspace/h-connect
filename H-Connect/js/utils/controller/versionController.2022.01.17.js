@@ -163,6 +163,38 @@ const VERSION = {
         },
     },
     nurse: {
+        common: {
+            header: {
+                actions: {
+                    'searchPatientAPI.js': {
+                        type: 'module',
+                        url_path:
+                            '/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
+                        file_path: '/H-Connect/js/nurse/common/header/actions/',
+                        version: '2022.01.25.18.16',
+                    },
+                },
+                renders: {
+                    'searchPatientRender.js': {
+                        type: 'module',
+                        url_path:
+                            '/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
+                        file_path: '/H-Connect/js/nurse/common/header/renders/',
+                        version: '2022.01.25.18.16',
+                    },
+                },
+                templates: {
+                    'searchPatientTmpl.js': {
+                        type: 'module',
+                        url_path:
+                            '/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/common/header/templates/',
+                        version: '2022.01.25.18.16',
+                    },
+                },
+            },
+        },
         dashboard: {
             actions: {
                 'getDisplayList.js': {
@@ -193,19 +225,25 @@ const VERSION = {
                 },
             },
             templates: {
+                'templateWardListLeft.js': {
+                    type: 'module',
+                    url_path: '/nurse/dashboard',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    version: '2022.03.25.12.01',
+                },
+                'templateSickBedListLeft.js': {
+                    type: 'module',
+                    url_path: '/nurse/dashboard',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    version: '2022.03.25.12.01',
+                },
                 'templateDisplayBtn.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
                     version: '2022.03.25.12.01',
                 },
-                'dashboardScreenTmpl.js': {
-                    type: 'module',
-                    url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
-                    version: '2022.03.25.12.01',
-                },
-                'dashboardWardListTmpl.js': {
+                'templateDashboardScreen.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/templates/',
@@ -550,6 +588,12 @@ const VERSION = {
                     file_path: '/H-Connect/js/nurse/monitoring/renders/',
                     version: '2022.03.25.12.01',
                 },
+                'addMonitoringEmptyBed.js': {
+                    type: 'module',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
+                    version: '2022.03.25.12.01',
+                },
             },
             templates: {
                 'monitoringPatientTml.js': {
@@ -595,6 +639,42 @@ const VERSION = {
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
                         version: '2022.03.25.12.01',
                     },
+                },
+            },
+            patient: {
+                headerVital: {
+                    actions: {
+                        'vitalInformAPI.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/headerVital/actions/',
+                            version: '2022.03.30.12.18',
+                        },
+                    },
+                    renders: {
+                        'vitalHeader.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/headerVital/renders/',
+                            version: '2022.03.30.12.18',
+                        },
+                    },
+                    templates: {},
+                },
+                currentVital: {
+                    actions: {
+                        'streamingCurrentVital.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
+                            version: '2022.03.30.12.18',
+                        },
+                    },
+                    renders: {},
+                    templates: {},
                 },
             },
             common: {
