@@ -217,7 +217,7 @@ const VERSION = {
                 },
             },
             renders: {
-                'renderDashboard_2.js': {
+                'renderDashboard.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/renders/',
