@@ -47,16 +47,17 @@ const { sickBedList } = await selectSickBedList();
 //전역 변수들
 let selectedWard = null;
 let selected_display = '';
-let bed_number_by_display = {};
+let sickBedsByDisplay = {};
 displayList.forEach((display) => {
-    if (!bed_number_by_display[`${display.displayCode}`]) {
-        bed_number_by_display[`${display.displayCode}`] = 0;
+    if (!sickBedsByDisplay[`${display.displayCode}`]) {
+        sickBedsByDisplay[`${display.displayCode}`] = [];
     }
 });
 sickBedList.forEach((sickBed) => {
-    bed_number_by_display[`${sickBed.displayCode}`] += 1;
+    if (sickBed.displayCode) {
+        sickBedsByDisplay[`${sickBed.displayCode}`].push(sickBed);
+    }
 });
-console.log(bed_number_by_display);
 
 // Rendering Monitoring Target Ward Select Box
 const renderWardSelectBox = async () => {
@@ -98,7 +99,7 @@ const renderDashboardScreen = async () => {
     try {
         const parsedDashboardScreen = await parseDashboardScreen(
             selected_display,
-            sickBedList
+            sickBedsByDisplay[selected_display]
         );
         $display_inpat.html(parsedDashboardScreen);
         await addEventToDashboardSickBeds();
@@ -203,7 +204,8 @@ async function addEventToDisplayBtn() {
                 $btn_View.removeClass('on');
                 $(this).addClass('on');
                 selected_display = $(this).data('id');
-                renderDashboardScreen(selected_display, sickBedList);
+                renderDashboardScreen();
+                $('.btn_delete').prop('disabled', true);
             });
     });
 }
@@ -364,6 +366,44 @@ async function addEventOnSickBed(wardCode) {
 
 async function addEventToAddBtn() {
     const $btn_add = $('.btn.bl.btn_add');
+    let checkedSickBeds = [];
+    $btn_add.off().on('click', () => {
+        checkedSickBeds.length = 0;
+        if ($('input[name=sickBed_no]:checked').length) {
+            $.each($('input[name=sickBed_no]:checked'), function () {
+                let checkedSickBed = sickBedList.filter(
+                    (bed) => bed.sickBedCode === $(this).attr('id')
+                )[0];
+                checkedSickBeds.push(checkedSickBed);
+            });
+            checkedSickBeds.forEach((sickBed) => {
+                if (sickBedsByDisplay[selected_display].length) {
+                    for (
+                        let i = 0;
+                        i < sickBedsByDisplay[selected_display].length;
+                        i++
+                    ) {
+                        if (
+                            sickBed.sickBedCode ===
+                            sickBedsByDisplay[selected_display][i].sickBedCode
+                        ) {
+                            break;
+                        }
+
+                        if (
+                            i ==
+                            sickBedsByDisplay[selected_display].length - 1
+                        ) {
+                            sickBedsByDisplay[selected_display].push(sickBed);
+                        }
+                    }
+                } else {
+                    sickBedsByDisplay[selected_display].push(sickBed);
+                }
+            });
+            renderDashboardScreen();
+        }
+    });
 }
 
 async function addEventToDeleteBtn() {
@@ -371,10 +411,25 @@ async function addEventToDeleteBtn() {
     $btn_delete.off().on('click', () => {
         let checked_sickbed = [];
         $('.inpat_sickbed:checked').each(function () {
-            checked_sickbed.push($(this).attr('id'));
+            checked_sickbed.push($(this).attr('id').replace('inpat_', ''));
         });
-        console.log(checked_sickbed);
+        for (let j = 0; j < checked_sickbed.length; j++) {
+            for (
+                let i = 0;
+                i < sickBedsByDisplay[selected_display].length;
+                i++
+            ) {
+                if (
+                    checked_sickbed[j] ===
+                    sickBedsByDisplay[selected_display][i].sickBedCode
+                ) {
+                    sickBedsByDisplay[selected_display].splice(i, 1);
+                    i--;
+                }
+            }
+        }
         renderDashboardScreen();
+        $('.btn_delete').prop('disabled', true);
     });
 }
 
@@ -438,6 +493,7 @@ async function firstRender() {
 
     addEventToSickRoomArrow();
 
+    addEventToAddBtn();
     addEventToDeleteBtn();
     addEventToMakeDisplayPop();
 
