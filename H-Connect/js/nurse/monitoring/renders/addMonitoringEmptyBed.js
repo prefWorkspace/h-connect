@@ -20,8 +20,9 @@ function newSickBedPopupViewControll(_visible) {
 async function onClickEmptyBed(e) {
     // 병상 클릭시
     const _selectEmptyBedEl = $(e.currentTarget);
-    const _selectEmptyBedMeasurementCode =
-        _selectEmptyBedEl.attr('data-sickbedcode');
+    const _selectEmptyBedCode = _selectEmptyBedEl.attr('data-sickbedcode');
+    console.log('_selectEmptyBedCode===');
+    console.log(_selectEmptyBedCode);
     newSickBedPopupViewControll('block');
 }
 function onClickNewSickBedCancleBtn() {
