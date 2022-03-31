@@ -225,6 +225,18 @@ const VERSION = {
                 },
             },
             templates: {
+                'templateWardListLeft.js': {
+                    type: 'module',
+                    url_path: '/nurse/dashboard',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    version: '2022.03.25.12.01',
+                },
+                'templateSickBedListLeft.js': {
+                    type: 'module',
+                    url_path: '/nurse/dashboard',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    version: '2022.03.25.12.01',
+                },
                 'templateDisplayBtn.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',

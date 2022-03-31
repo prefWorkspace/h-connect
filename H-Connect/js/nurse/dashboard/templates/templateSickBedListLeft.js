@@ -1,6 +1,6 @@
 import { getPatientList } from '../actions/getPatientList.js?v=2022.03.25.12.01';
 
-export const parseSickRoomListLeft = async (sickRoomList, sickBedList) => {
+export const parseSickBedListLeft = async (sickRoomList, sickBedList) => {
     let template = dashboardSickRoomList;
     let templateSickRoom = ``;
     let patients = await getPatientList();
