@@ -5,6 +5,14 @@ const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
 
+const { device_NameToType } = await import(
+    importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
+);
+
+const { getMacaddress } = await import(
+    importVersion('/H-Connect/js/utils/custom/utils.js')
+);
+
 /* s: 환자 병상 갯수 확인 */
 export async function selectSickBed() {
     return await serverController.ajaxAwaitController(
@@ -114,3 +122,36 @@ export async function selectSickRoom() {
     );
 }
 /* e : 환자 병실 리스트 */
+
+// 퍼블 푸시 안되있어서 잠시 적어놓음
+// 월요일날 이부분 작업 할테니 놔둬주세요 !!!! - 정인아
+$('.pop.new_room_pop .overlay .btn_add').on('click', function () {
+    $('.pop.new_regi_pop .overlay').fadeIn();
+    $('.pop.new_regi_pop .overlay .blf.btn').attr('disabled', false);
+});
+
+$('.pop.new_regi_pop .overlay .rd').on('click', function () {
+    $('.pop.new_regi_pop .overlay').fadeOut();
+});
+
+const deviceInfoList = [];
+$('.pop.new_regi_pop .overlay .blf.btn').on('click', function () {
+    const deviceName = $('.pop.new_regi_pop .selectBox2 .label').text();
+    const deviceType = device_NameToType(deviceName);
+    const serialNumber = $(
+        '.pop.new_regi_pop .input_box .input_wrap input'
+    ).val();
+    const obj = {
+        deviceType,
+        serialNumber,
+        macAddress: getMacaddress(deviceType, serialNumber),
+    };
+    deviceInfoList.push(objdeviceInfoList);
+    $('.pop.new_regi_pop .overlay').fadeOut();
+});
+
+/* s: 신규 병상등록 (전체환자 보기) */
+export async function insertSickBed() {
+    // 담주 월요일에 작업
+}
+/* e: 신규 병상등록 (전체환자 보기) */
