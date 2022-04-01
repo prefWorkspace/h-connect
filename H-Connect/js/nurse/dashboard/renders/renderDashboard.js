@@ -14,7 +14,9 @@ const {
 } = await import(
     importVersion('/H-Connect/js/nurse/dashboard/actions/displayActions.js')
 );
-
+const { updateSickBed } = await import(
+    importVersion('/H-Connect/js/nurse/dashboard/actions/sickBedActions.js')
+);
 // Template Function Import
 const { parseWardListLeft } = await import(
     importVersion(
@@ -434,6 +436,7 @@ async function addEventToAddBtn() {
                             sickBedsByDisplay[selected_display].push(
                                 newSickBed
                             );
+                            updateSickBed(newSickBed);
                         }
                     }
                 } else {
@@ -450,6 +453,7 @@ async function addEventToAddBtn() {
                         };
                         arraySickBedCodesByDisplay.push(sickBed.sickBedCode);
                         sickBedsByDisplay[selected_display].push(newSickBed);
+                        updateSickBed(newSickBed);
                     }
                 }
             });
@@ -482,8 +486,15 @@ async function addEventToDeleteBtn() {
                                 sickBedsByDisplay[selected_display][i]
                                     .sickBedCode
                         );
+                    updateSickBed({
+                        ...sickBedsByDisplay[selected_display][i],
+                        displayCode: null,
+                    });
+                    console.log({
+                        ...sickBedsByDisplay[selected_display][i],
+                        displayCode: null,
+                    });
                     sickBedsByDisplay[selected_display].splice(i, 1);
-
                     i--;
                 }
             }
@@ -532,6 +543,19 @@ async function addEventToDeleteDisplayBtns() {
         $('.pop_cont .btn_no').click(function () {
             $('.pop.delete .overlay').css('display', 'none');
         });
+    });
+}
+
+async function addEventToApplyBtn() {
+    $('.btn.btn_state').on('click', function () {
+        let sickBedDisplayCodeList = [];
+        sickBedsByDisplay[selected_display].forEach((sickBed) => {
+            sickBedDisplayCodeList.push({
+                sickbedCode: sickBed.sickBedCode,
+                monitoringDeactivate: sickBed.monitoringDeactivate,
+            });
+        });
+        console.log(sickBedDisplayCodeList);
     });
 }
 
@@ -590,6 +614,8 @@ async function firstRender() {
     await displayInfoUpdate();
     await renderDisplayBtn();
     await renderDashboardScreen();
+
+    await addEventToApplyBtn();
 }
 
 firstRender();
