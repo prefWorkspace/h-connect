@@ -8,7 +8,7 @@ export const parseDisplayBtn = async (displayList) => {
         } else if (index >= 2) {
             template += `<button type='button' class='btn btn_View delete' data-id='${display.displayCode}'>
                 ${display.displayNumber}
-                <div>
+                <div class="display_delete" data-dpid="${display.displayCode}">
 				    <img src="/H-Connect/img/icon/delete.svg" alt="화면삭제버튼 아이콘">
 				</div>
             </button>`;

@@ -5,7 +5,13 @@ const { getDisplayList } = await import(
 const { selectWardList, selectSickRoomList, selectSickBedList } = await import(
     importVersion('/H-Connect/js/utils/module/select/selectList.js')
 );
-const { selectDisplaycodeList, selectDisplayDetail, updateDisplayName } = await import(
+const {
+    insertDisplay,
+    selectDisplaycodeList,
+    selectDisplayDetail,
+    updateDisplayName,
+    deleteDisplay,
+} = await import(
     importVersion('/H-Connect/js/nurse/dashboard/actions/displayActions.js')
 );
 
@@ -42,27 +48,34 @@ const DISPLAY_END = 10;
 const DISPLAY_MAX_BED = 26;
 
 // API variable
-let displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
+let displayList = {};
 const { wardList } = await selectWardList();
 const { sickRoomList } = await selectSickRoomList();
 const { sickBedList } = await selectSickBedList();
+
 //전역 변수들
 let selectedWard = null;
 let selected_display = '';
 let sickBedsByDisplay = {};
 let arraySickBedCodesByDisplay = [];
 
-displayList.forEach((display) => {
-    if (!sickBedsByDisplay[`${display.displayCode}`]) {
-        sickBedsByDisplay[`${display.displayCode}`] = [];
-    }
-});
-sickBedList.forEach((sickBed) => {
-    if (sickBed.displayCode) {
-        sickBedsByDisplay[`${sickBed.displayCode}`].push(sickBed);
-        arraySickBedCodesByDisplay.push(sickBed.sickBedCode);
-    }
-});
+async function displayInfoUpdate() {
+    displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
+    selected_display = displayList[0].displayCode;
+    sickBedsByDisplay = {};
+    arraySickBedCodesByDisplay = [];
+    displayList.forEach((display) => {
+        if (!sickBedsByDisplay[`${display.displayCode}`]) {
+            sickBedsByDisplay[`${display.displayCode}`] = [];
+        }
+    });
+    sickBedList.forEach((sickBed) => {
+        if (sickBed.displayCode) {
+            sickBedsByDisplay[`${sickBed.displayCode}`].push(sickBed);
+            arraySickBedCodesByDisplay.push(sickBed.sickBedCode);
+        }
+    });
+}
 
 // Rendering Monitoring Target Ward Select Box
 const renderWardSelectBox = async () => {
@@ -91,8 +104,9 @@ const renderDisplayBtn = async () => {
     try {
         const parsedDisplayBtn = await parseDisplayBtn(displayList);
         $btn_Viewlist.html(parsedDisplayBtn);
-        selected_display = displayList[0].displayCode;
         await addEventToDisplayBtn();
+        await addEventToAddDisplayBtn();
+        await addEventToDeleteDisplayBtns();
     } catch (err) {
         console.log(err);
     }
@@ -479,7 +493,47 @@ async function addEventToDeleteBtn() {
     });
 }
 
-async function addEventToAddDisplayBtn() {}
+async function addEventToAddDisplayBtn() {
+    $('.btn.btn_addView')
+        .off()
+        .on('click', () => {
+            insertDisplay(displayList.length + 1);
+            location.reload();
+        });
+}
+
+async function addEventToDeleteDisplayBtns() {
+    $('.display_delete').click(function () {
+        const del_dis = displayList.filter(
+            (display) => display.displayCode === $(this).data('dpid')
+        )[0];
+        $('.pop.delete .overlay .pop_cont').html(`
+            <div>
+                <img src="/H-Connect/img/logo.png" alt="로고" />
+            </div>
+            <h3>현재 화면에 설정된 내용들이 삭제됩니다.</h3>
+            <h2><span>${del_dis.displayNumber}번 화면</span> 을 삭제합니다.</h2>
+            <div class="btn_list">
+                <button type="button" class="btn gr btn_no">
+                    아니요
+                </button>
+                <button type="button" class="btn rdf btn_cut">
+                    네, 삭제합니다
+                </button>
+            </div>
+        `);
+        $('.pop.delete .overlay').css('display', 'block');
+
+        $('.pop_cont .btn_cut').click(function () {
+            deleteDisplay(del_dis.displayCode);
+            location.reload();
+        });
+
+        $('.pop_cont .btn_no').click(function () {
+            $('.pop.delete .overlay').css('display', 'none');
+        });
+    });
+}
 
 async function addEventToDashboardSickBeds() {
     const $dashboard_sickbeds = $('.inpat_sickbed');
@@ -511,9 +565,9 @@ async function addEventToChangeDisplayNameBtn() {
     });
 
     $ok_btn.off().on('click', () => {
-        updateDisplayName(selected_display, $ward_name.val())
-        $(`.account.acc_${selected_display} p`).text($ward_name.val())
-        
+        updateDisplayName(selected_display, $ward_name.val());
+        $(`.account.acc_${selected_display} p`).text($ward_name.val());
+
         $ward_name.val('');
         $name_change_pop.css('display', 'none');
     });
@@ -523,10 +577,6 @@ async function addEventToChangeDisplayNameBtn() {
         $name_change_pop.css('display', 'none');
     });
 }
-
-//팝업 이벤트 부여
-async function addEventToMakeDisplayPop() {}
-
 // Rendering Initialize
 async function firstRender() {
     await renderWardSelectBox();
@@ -536,12 +586,10 @@ async function firstRender() {
 
     addEventToAddBtn();
     addEventToDeleteBtn();
-    addEventToMakeDisplayPop();
 
+    await displayInfoUpdate();
     await renderDisplayBtn();
-
     await renderDashboardScreen();
-    addEventToChangeDisplayNameBtn();
 }
 
 firstRender();

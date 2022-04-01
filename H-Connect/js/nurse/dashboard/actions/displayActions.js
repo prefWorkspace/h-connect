@@ -21,6 +21,29 @@ const { userCode: requester, organizationCode: organization } = JSON.parse(
     localStorageController.getLocalS('userData')
 );
 
+export async function insertDisplay(displayNumber, displayName = '') {
+    const req = JSON.stringify({
+        requester,
+        organization,
+        displayNumber,
+        displayName,
+        ...commonRequest(),
+    });
+
+    return await serverController.ajaxAwaitController(
+        'API/Manager/InsertDisplay',
+        'POST',
+        req,
+        (res) => {
+            if (res.result) {
+                console.log("생성!")
+            } else {
+                session_renew(res);
+            }
+        }
+    );
+}
+
 export async function selectDisplay(pageNumber, count){
     const req = JSON.stringify({
         requester,
@@ -99,6 +122,27 @@ export const updateDisplayName = async (displayCode, displayName) => {
 
     return await serverController.ajaxAwaitController(
         'API/Manager/UpdateDisplay',
+        'POST',
+        req,
+        (res) => {
+            if (res.result) {
+            } else {
+                session_renew(res);
+            }
+        }
+    );
+};
+
+export const deleteDisplay = async (displayCode) => {
+    const req = JSON.stringify({
+        requester,
+        organization,
+        displayCode,
+        ...commonRequest(),
+    });
+
+    return await serverController.ajaxAwaitController(
+        'API/Manager/DeleteDisplay',
         'POST',
         req,
         (res) => {
