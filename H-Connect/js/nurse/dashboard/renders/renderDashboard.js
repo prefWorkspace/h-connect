@@ -5,6 +5,9 @@ const { getDisplayList } = await import(
 const { selectWardList, selectSickRoomList, selectSickBedList } = await import(
     importVersion('/H-Connect/js/utils/module/select/selectList.js')
 );
+const { selectDisplaycodeList, selectDisplayDetail, updateDisplayName } = await import(
+    importVersion('/H-Connect/js/nurse/dashboard/actions/displayActions.js')
+);
 
 // Template Function Import
 const { parseWardListLeft } = await import(
@@ -43,12 +46,12 @@ let displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
 const { wardList } = await selectWardList();
 const { sickRoomList } = await selectSickRoomList();
 const { sickBedList } = await selectSickBedList();
-
 //전역 변수들
 let selectedWard = null;
 let selected_display = '';
 let sickBedsByDisplay = {};
 let arraySickBedCodesByDisplay = [];
+
 displayList.forEach((display) => {
     if (!sickBedsByDisplay[`${display.displayCode}`]) {
         sickBedsByDisplay[`${display.displayCode}`] = [];
@@ -98,6 +101,7 @@ const renderDisplayBtn = async () => {
 // Rendering Dashboard Screen
 const renderDashboardScreen = async () => {
     try {
+        displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
         const selectDisplay = displayList.filter(
             (display) => display.displayCode === selected_display
         )[0];
@@ -108,6 +112,7 @@ const renderDashboardScreen = async () => {
         );
         $display_inpat.html(parsedDashboardScreen);
         await addEventToDashboardSickBeds();
+        await addEventToChangeDisplayNameBtn();
     } catch (err) {
         console.log(err);
     }
@@ -463,7 +468,6 @@ async function addEventToDeleteBtn() {
                                 sickBedsByDisplay[selected_display][i]
                                     .sickBedCode
                         );
-                    console.log(arraySickBedCodesByDisplay);
                     sickBedsByDisplay[selected_display].splice(i, 1);
 
                     i--;
@@ -503,21 +507,15 @@ async function addEventToChangeDisplayNameBtn() {
 
     $account.off().on('click', () => {
         $name_change_pop.css('display', 'block');
+        $ward_name.val($(`.acc_${selected_display} p`).text());
     });
 
     $ok_btn.off().on('click', () => {
-        let restDisplayList = displayList.filter(
-            (display) => display.displayCode !== selected_display
-        );
-        let selectedDp = displayList.filter(
-            (display) => display.displayCode === selected_display
-        )[0];
-        selectedDp.displayName = $ward_name.val();
-        displayList = [...restDisplayList, selectedDp];
-        console.log(displayList);
+        updateDisplayName(selected_display, $ward_name.val())
+        $(`.account.acc_${selected_display} p`).text($ward_name.val())
+        
         $ward_name.val('');
         $name_change_pop.css('display', 'none');
-        renderDashboardScreen();
     });
 
     $cancel_btn.off().on('click', () => {
