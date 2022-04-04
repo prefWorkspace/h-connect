@@ -1032,9 +1032,9 @@
     justify-content: space-between;
 }
 
-.modifi_hospital .device_room > div:not(.control, .btn_add) {
+/* .modifi_hospital .device_room > div:not(.control, .btn_add) {
     display: none;
-}
+} */
 
 .modifi_hospital .device_room > div p {
     width: 120px;
@@ -1082,6 +1082,7 @@
 
 .modifi_hospital .device_room .control {
     justify-content: space-between;
+    display: none;
 }
 .modifi_hospital .device_room .control div {
     display: flex;
