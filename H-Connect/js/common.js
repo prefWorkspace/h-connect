@@ -1824,20 +1824,39 @@ $('.pop.new_room_pop .overlay .rd').on('click', function () {
     $('.pop.new_room_pop').removeClass('active');
 });
 
-$('.pop.new_room_pop .overlay .new_room .blf').on('click', function () {
-    $('.pop.new_room_pop .overlay').hide();
-});
+$('.pop.new_room_pop .overlay .new_room .selectBox2 .label').on(
+    'click',
+    function () {
+        $(this).parent().toggleClass('active');
+    }
+);
+
+// $('.pop.new_room_pop .overlay .new_room .selectBox2 .optionList li').on(
+//     'click',
+//     function () {
+//         const item = $(this).text();
+//         $(this).parent().parent().find('.label').text(item);
+//         $(this).parent().parent().toggleClass('active');
+//     }
+// );
+
+// $('.pop.new_room_pop .overlay .new_room .blf').on('click', function () {
+//     $('.pop.new_room_pop .overlay').hide();
+// });
 
 $('.pop.new_room_pop .overlay .new_room .rd').on('click', function () {
     $('.pop.new_room_pop .overlay').hide();
 });
 
 //모니터링 화면 장치 추가 셀렉트 박스 이벤트
-$('.pop.new_room_pop .overlay .selectBox2 .label').on('click', function () {
-    $(this).parent().toggleClass('active');
-});
+$('.pop.new_room_pop .overlay .new_regi .selectBox2 .label').on(
+    'click',
+    function () {
+        $(this).parent().toggleClass('active');
+    }
+);
 
-$('.pop.new_room_pop .overlay .selectBox2 .optionList li').on(
+$('.pop.new_room_pop .overlay .new_regi .selectBox2 .optionList li').on(
     'click',
     function () {
         const deviceName = $(this).text();

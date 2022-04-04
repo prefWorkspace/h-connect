@@ -4,9 +4,10 @@ const { deviceTemplate } = await import(
 
 export function addDeviceList(list) {
     let html = '';
-    for (let i = 0; list.length; i++) {
+    for (let i = 0; i < list.length; i++) {
         html += deviceTemplate(list[i]);
     }
 
-    $('.pop.new_room_pop .device_room').html(html);
+    $('div').remove('.pop.new_room_pop .new_room .device_room .device_item');
+    $('.pop.new_room_pop .new_room .device_room .btn_add').before(html);
 }

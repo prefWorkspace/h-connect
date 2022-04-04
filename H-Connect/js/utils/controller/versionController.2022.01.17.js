@@ -545,6 +545,12 @@ const VERSION = {
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
                     version: '2022.03.25.12.01',
                 },
+                'monitoringHandle.js': {
+                    type: 'module',
+                    url_path: '/nurse/monitoring',
+                    file_path: '/H-Connect/js/nurse/monitoring/actions/',
+                    version: '2022.04.04.17.12',
+                },
             },
             renders: {
                 'renderMonitoringPatient.js': {
@@ -577,6 +583,12 @@ const VERSION = {
                     file_path: '/H-Connect/js/nurse/monitoring/renders/',
                     version: '2022.04.04.15.44',
                 },
+                'addSickBedSelectBox.js': {
+                    type: 'module',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
+                    version: '2022.04.04.15.44',
+                },
             },
             templates: {
                 'monitoringPatientTml.js': {
@@ -590,6 +602,12 @@ const VERSION = {
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
                     file_path: '/H-Connect/js/nurse/monitoring/templates/',
                     version: '2022.04.04.15.38',
+                },
+                'selectBoxTemplate.js': {
+                    type: 'module',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
+                    file_path: '/H-Connect/js/nurse/monitoring/templates/',
+                    version: '2022.04.04.18.54',
                 },
             },
         },

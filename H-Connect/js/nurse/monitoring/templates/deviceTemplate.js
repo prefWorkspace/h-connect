@@ -4,7 +4,7 @@ const { device_TypeToName } = await import(
 
 export function deviceTemplate(item) {
     return `
-        <div class="temp">
+        <div class="device_item">
             <p>${device_TypeToName(item.deviceType)}</p>
             <p>${item.serialNumber}</p>
 
