@@ -546,10 +546,12 @@
 .nurse_measure .measure_status .search_container input {
     width: 90%;
     height: 100%;
+    font-size: 14px;
 }
+.nurse_measure .measure_status .search_container input::placeholder{font-size: 14px;}
 
 .nurse_measure .measure_status .search_container button {
-    height: 40px;
+    height: 100%;
 }
 
 .nurse_measure .label {
@@ -604,6 +606,7 @@
 }
 
 .measure_status .search_select p span {
+    margin-right: 4px;
     color: #007a94;
 }
 
