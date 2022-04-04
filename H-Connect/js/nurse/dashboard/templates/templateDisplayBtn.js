@@ -1,6 +1,6 @@
 export const parseDisplayBtn = async (displayList) => {
     let template = ``;
-    displayList.forEach((display, index) => {
+    displayList.forEach(async (display, index) => {
         if (index === 0) {
             template += `<button type='button' class='btn btn_View btn_first on' data-id='${display.displayCode}'>
                 ${display.displayNumber}번 화면

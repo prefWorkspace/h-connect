@@ -104,6 +104,7 @@ const renderSickBedListLeft = async () => {
 // Rendering Display Button
 const renderDisplayBtn = async () => {
     try {
+        displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
         const parsedDisplayBtn = await parseDisplayBtn(displayList);
         $btn_Viewlist.html(parsedDisplayBtn);
         await addEventToDisplayBtn();
@@ -356,7 +357,7 @@ async function addEventOnSickBed(wardCode) {
     checkSickBedsArray.forEach((sickBed) => {
         $(`#${sickBed.sickBedCode}`)
             .off()
-            .on('click', () => {
+            .on('click', async () => {
                 const sickRoomCodeofSickBed = checkSickBedsArray.filter(
                     (bed) => bed.sickBedCode === sickBed.sickBedCode
                 )[0].sickRoomCode;
@@ -393,7 +394,7 @@ async function addEventOnSickBed(wardCode) {
 async function addEventToAddBtn() {
     const $btn_add = $('.btn.bl.btn_add');
     let checkedSickBeds = [];
-    $btn_add.off().on('click', () => {
+    $btn_add.off().on('click', async () => {
         checkedSickBeds.length = 0;
         if ($('input[name=sickBed_no]:checked').length) {
             $.each($('input[name=sickBed_no]:checked'), function () {
@@ -402,29 +403,52 @@ async function addEventToAddBtn() {
                 )[0];
                 checkedSickBeds.push(checkedSickBed);
             });
-            checkedSickBeds.forEach((sickBed) => {
-                if (sickBedsByDisplay[selected_display].length) {
-                    for (
-                        let i = 0;
-                        i < sickBedsByDisplay[selected_display].length;
-                        i++
+            checkedSickBeds.forEach(async (sickBed) => {
+                if (!arraySickBedCodesByDisplay.includes(sickBed.sickBedCode)) {
+                    if (
+                        arraySickBedCodesByDisplay.length !==
+                        Object.keys(sickBedsByDisplay).length * DISPLAY_MAX_BED
                     ) {
-                        if (
-                            sickBed.sickBedCode ===
-                            sickBedsByDisplay[selected_display][i].sickBedCode
-                        ) {
-                            break;
-                        }
-                        if (
-                            i ==
-                                sickBedsByDisplay[selected_display].length -
-                                    1 &&
-                            sickBedsByDisplay[selected_display].length <
-                                DISPLAY_MAX_BED &&
-                            !arraySickBedCodesByDisplay.includes(
-                                sickBed.sickBedCode
-                            )
-                        ) {
+                        if (sickBedsByDisplay[selected_display].length) {
+                            if (
+                                sickBedsByDisplay[selected_display].length !==
+                                DISPLAY_MAX_BED
+                            ) {
+                                let newSickBed = {
+                                    ...sickBed,
+                                    displayCode: selected_display,
+                                };
+                                arraySickBedCodesByDisplay.push(
+                                    sickBed.sickBedCode
+                                );
+                                sickBedsByDisplay[selected_display].push(
+                                    newSickBed
+                                );
+                                updateSickBed(newSickBed);
+                            } else {
+                                for (let key in sickBedsByDisplay) {
+                                    if (key !== selected_display) {
+                                        if (
+                                            sickBedsByDisplay[key].length <
+                                            DISPLAY_MAX_BED
+                                        ) {
+                                            let newSickBed = {
+                                                ...sickBed,
+                                                displayCode: key,
+                                            };
+                                            arraySickBedCodesByDisplay.push(
+                                                sickBed.sickBedCode
+                                            );
+                                            sickBedsByDisplay[key].push(
+                                                newSickBed
+                                            );
+                                            updateSickBed(newSickBed);
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
                             let newSickBed = {
                                 ...sickBed,
                                 displayCode: selected_display,
@@ -435,28 +459,23 @@ async function addEventToAddBtn() {
                             sickBedsByDisplay[selected_display].push(
                                 newSickBed
                             );
-                            console.log(newSickBed);
                             updateSickBed(newSickBed);
                         }
-                    }
-                } else {
-                    if (
-                        sickBedsByDisplay[selected_display].length <
-                            DISPLAY_MAX_BED &&
-                        !arraySickBedCodesByDisplay.includes(
-                            sickBed.sickBedCode
-                        )
-                    ) {
+                    } else {
+                        insertDisplay(displayList.length + 1);
                         let newSickBed = {
                             ...sickBed,
-                            displayCode: selected_display,
+                            displayCode:
+                                displayList[displayList.length - 1].displayCode,
                         };
-                        arraySickBedCodesByDisplay.push(sickBed.sickBedCode);
-                        sickBedsByDisplay[selected_display].push(newSickBed);
                         updateSickBed(newSickBed);
+
+                        location.reload();
                     }
                 }
             });
+            //displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
+            console.log(displayList);
             renderDashboardScreen();
         }
     });
@@ -464,12 +483,12 @@ async function addEventToAddBtn() {
 
 async function addEventToDeleteBtn() {
     const $btn_delete = $('.btn_delete');
-    $btn_delete.off().on('click', () => {
+    $btn_delete.off().on('click', async () => {
         let checked_sickbed = [];
         $('.inpat_sickbed:checked').each(function () {
             checked_sickbed.push($(this).attr('id').replace('inpat_', ''));
         });
-        let sickBedDisplayCodeList = []
+        let sickBedDisplayCodeList = [];
         for (let j = 0; j < checked_sickbed.length; j++) {
             for (
                 let i = 0;
@@ -506,15 +525,17 @@ async function addEventToDeleteBtn() {
 async function addEventToAddDisplayBtn() {
     $('.btn.btn_addView')
         .off()
-        .on('click', () => {
-            insertDisplay(displayList.length + 1);
-            renderDisplayBtn();
-            location.reload();
+        .on('click', async () => {
+            await insertDisplay(displayList.length + 1);
+            await displayInfoUpdate();
+            await renderDisplayBtn();
+            await renderDashboardScreen();
+            
         });
 }
 
 async function addEventToDeleteDisplayBtns() {
-    $('.display_delete').click(function () {
+    $('.display_delete').click(async function () {
         const del_dis = displayList.filter(
             (display) => display.displayCode === $(this).data('dpid')
         )[0];
@@ -535,20 +556,22 @@ async function addEventToDeleteDisplayBtns() {
         `);
         $('.pop.delete .overlay').css('display', 'block');
 
-        $('.pop_cont .btn_cut').click(function () {
-            deleteDisplay(del_dis.displayCode);
-            renderDisplayBtn();
-            location.reload();
+        $('.pop_cont .btn_cut').click(async function () {
+            await deleteDisplay(del_dis.displayCode);
+            await displayInfoUpdate();
+            await renderDisplayBtn();
+            await renderDashboardScreen();
+            await $('.pop.delete .overlay').css('display', 'none');
         });
 
-        $('.pop_cont .btn_no').click(function () {
+        $('.pop_cont .btn_no').click(async function () {
             $('.pop.delete .overlay').css('display', 'none');
         });
     });
 }
 
 async function addEventToApplyBtn() {
-    $('.btn.btn_state').on('click', function () {
+    $('.btn.btn_state').on('click', async function () {
         let sickBedDisplayCodeList = [];
         sickBedsByDisplay[selected_display].forEach((sickBed) => {
             sickBedDisplayCodeList.push({
@@ -562,7 +585,7 @@ async function addEventToApplyBtn() {
 
 async function addEventToDashboardSickBeds() {
     const $dashboard_sickbeds = $('.inpat_sickbed');
-    $dashboard_sickbeds.each(function () {
+    $dashboard_sickbeds.each(async function () {
         $(this)
             .off()
             .on('click', () => {
