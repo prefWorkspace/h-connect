@@ -1814,3 +1814,36 @@ $(document).ready(function () {
         }
     });
 });
+
+//모니터링 페이지 신규병상등록 및 장치추가 팝업
+$('.pop.new_room_pop .overlay .btn_add').on('click', function () {
+    $('.pop.new_room_pop').addClass('active');
+});
+
+$('.pop.new_room_pop .overlay .rd').on('click', function () {
+    $('.pop.new_room_pop').removeClass('active');
+});
+
+$('.pop.new_room_pop .overlay .new_room .blf').on('click', function () {
+    $('.pop.new_room_pop .overlay').hide();
+});
+
+$('.pop.new_room_pop .overlay .new_room .rd').on('click', function () {
+    $('.pop.new_room_pop .overlay').hide();
+});
+
+//모니터링 화면 장치 추가 셀렉트 박스 이벤트
+$('.pop.new_room_pop .overlay .selectBox2 .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.pop.new_room_pop .overlay .selectBox2 .optionList li').on(
+    'click',
+    function () {
+        const deviceName = $(this).text();
+        $('.pop.new_room_pop .overlay .selectBox2.type_select .label').text(
+            deviceName
+        );
+        $(this).parent().parent().toggleClass('active');
+    }
+);

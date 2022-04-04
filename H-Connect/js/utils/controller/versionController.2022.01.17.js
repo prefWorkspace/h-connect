@@ -571,6 +571,12 @@ const VERSION = {
                     file_path: '/H-Connect/js/nurse/monitoring/renders/',
                     version: '2022.03.25.12.01',
                 },
+                'addDeviceList.js': {
+                    type: 'module',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
+                    version: '2022.04.04.15.44',
+                },
             },
             templates: {
                 'monitoringPatientTml.js': {
@@ -578,6 +584,12 @@ const VERSION = {
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
                     file_path: '/H-Connect/js/nurse/monitoring/templates/',
                     version: '2022.03.25.12.01',
+                },
+                'deviceTemplate.js': {
+                    type: 'module',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
+                    file_path: '/H-Connect/js/nurse/monitoring/templates/',
+                    version: '2022.04.04.15.38',
                 },
             },
         },

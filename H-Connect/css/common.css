@@ -4229,7 +4229,8 @@ textarea::-webkit-scrollbar-button {
 .pop.new_room_pop .new_regi .input_box {
     margin-bottom: 16px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    align-items: baseline;
     justify-content: space-between;
 }
 .pop.new_room_pop .new_regi .input_box p {

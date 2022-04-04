@@ -31,6 +31,8 @@ export async function insertSickRoom() {
         '.pop.new_room .overlay .pop_cont .content .selectBox2 .room_label'
     )
         .text()
+        .replaceAll(' ', '')
+        .replaceAll('\n', '')
         .slice(0, 1);
     const wardCode = $(this).attr('data-wardcode');
 
@@ -45,7 +47,6 @@ export async function insertSickRoom() {
         orderNumber,
         ...commonRequest(),
     });
-
     serverController.ajaxAwaitController(
         'API/Manager/InsertSickRoom',
         'POST',
@@ -90,8 +91,11 @@ export async function updateSickRoom(_wardCode) {
             ).val();
             const numberPatientRoom = +$(
                 '.pop.update_room .overlay .pop_cont .content .selectBox2 .room_label'
-            ).data('number');
-            console.log(numberPatientRoom);
+            )
+                .text()
+                .replaceAll(' ', '')
+                .replaceAll('\n', '')
+                .slice(0, 1);
             const orderNumber =
                 $(
                     '.section.right.hospital_room .container .cont .container .ward_list'
@@ -115,6 +119,8 @@ export async function updateSickRoom(_wardCode) {
                 'POST',
                 req,
                 (res) => {
+                    console.log('res==');
+                    console.log(res);
                     if (res.result) {
                         $('div').remove(
                             '.section.right.hospital_room .container .cont .container .ward_list'
