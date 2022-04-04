@@ -546,10 +546,12 @@
 .nurse_measure .measure_status .search_container input {
     width: 90%;
     height: 100%;
+    font-size: 14px;
 }
+.nurse_measure .measure_status .search_container input::placeholder{font-size: 14px;}
 
 .nurse_measure .measure_status .search_container button {
-    height: 40px;
+    height: 100%;
 }
 
 .nurse_measure .label {
@@ -604,6 +606,7 @@
 }
 
 .measure_status .search_select p span {
+    margin-right: 4px;
     color: #007a94;
 }
 
@@ -1029,9 +1032,9 @@
     justify-content: space-between;
 }
 
-.modifi_hospital .device_room > div:not(.control, .btn_add) {
+/* .modifi_hospital .device_room > div:not(.control, .btn_add) {
     display: none;
-}
+} */
 
 .modifi_hospital .device_room > div p {
     width: 120px;
@@ -1079,6 +1082,7 @@
 
 .modifi_hospital .device_room .control {
     justify-content: space-between;
+    display: none;
 }
 .modifi_hospital .device_room .control div {
     display: flex;

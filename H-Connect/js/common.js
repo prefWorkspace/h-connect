@@ -1484,7 +1484,7 @@ $(function () {
             $('.remote .several > div').not('.remote .vital').removeClass('on');
         }
     );
-    $('.remote.default .vital .title').on('click', function () {
+    $('.remote.default .vital > .title').on('click', function () {
         $('.remote .patient_view .btn_list .btn_vital').addClass('on');
         $('.remote .patient_view .btn_list button')
             .not('.remote .patient_view .btn_list .btn_vital')
@@ -1507,7 +1507,7 @@ $(function () {
                 .removeClass('active');
         }
     );
-    $('.remote.default .pacs .title').on('click', function () {
+    $('.remote.default .pacs > .title').on('click', function () {
         $('.remote .patient_view .btn_list .btn_pacs').addClass('on');
         $('.remote .patient_view .btn_list button')
             .not('.remote .patient_view .btn_list .btn_pacs')
@@ -1530,7 +1530,7 @@ $(function () {
                 .removeClass('active');
         }
     );
-    $('.remote.default .lab .title').on('click', function () {
+    $('.remote.default .lab > .title').on('click', function () {
         $('.remote .patient_view .btn_list .btn_lab').addClass('on');
         $('.remote .patient_view .btn_list button')
             .not('.remote .patient_view .btn_list .btn_lab')
@@ -1553,7 +1553,7 @@ $(function () {
                 .removeClass('active');
         }
     );
-    $('.remote.default .emr .title').on('click', function () {
+    $('.remote.default .emr > .title').on('click', function () {
         $('.remote .patient_view .btn_list .btn_emr').addClass('on');
         $('.remote .patient_view .btn_list button')
             .not('.remote .patient_view .btn_list .btn_emr')
@@ -1572,7 +1572,7 @@ $(function () {
                 .removeClass('active');
         }
     );
-    $('.remote.default .ocs .title').on('click', function () {
+    $('.remote.default .ocs > .title').on('click', function () {
         $('.remote .patient_view .btn_list .btn_ocs').addClass('on');
         $('.remote .patient_view .btn_list button')
             .not('.remote .patient_view .btn_list .btn_ocs')
@@ -1583,19 +1583,24 @@ $(function () {
     // btn_fold
     $('.remote .pacs .btn_fold').on('click', function () {
         $('.pacs .pacs_inner').toggle();
-    });
+        $('.remote .pacs').toggleClass('fold');
+    })
     $('.remote .vital .btn_fold').on('click', function () {
         $('.vital .cont').toggle();
-    });
+        $('.remote .vital').toggleClass('fold');
+    })
     $('.remote .lab .btn_fold').on('click', function () {
         $('.lab .cont').toggle();
-    });
+        $('.remote .lab').toggleClass('fold');
+    })
     $('.remote .emr .btn_fold').on('click', function () {
         $('.emr .cont').toggle();
-    });
+        $('.remote .emr').toggleClass('fold');
+    })
     $('.remote .ocs .btn_fold').on('click', function () {
         $('.ocs .cont').toggle();
-    });
+        $('.remote .ocs').toggleClass('fold');
+    })
 
     // btn_full
     $('.remote .pacs .btn_full').on('click', function () {
@@ -1617,6 +1622,7 @@ $(function () {
     // close 버튼 누름
     $('.remote .lab .title .btn_close').on('click', function () {
         $('.lab').hide();
+        $('.patient_view .btn_list button').removeClass('on');
     });
     $('.remote .pacs .title .btn_close').on('click', function () {
         $('.pacs').hide();
