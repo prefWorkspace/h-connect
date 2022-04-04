@@ -36,8 +36,8 @@ export const updateSickBed = async (_sickBed) => {
     } = _sickBed;
 
     const req = JSON.stringify({
-        // requester,
-        // organization,
+        requester,
+        organization,
         wardCode,
         sickRoomCode,
         sickBedCode,
@@ -50,21 +50,6 @@ export const updateSickBed = async (_sickBed) => {
         monitoringDeactivate,
         ...commonRequest(),
     });
-    console.log({
-        // requester,
-        // organization,
-        wardCode,
-        sickRoomCode,
-        sickBedCode,
-        sickRoom,
-        nickname,
-        orderNumber,
-        deactivate,
-        displayCode,
-        monitoringDeactivate,
-        ...commonRequest(),
-    });
-
     return await serverController.ajaxAwaitController(
         'API/Manager/UpdateSickBed',
         'POST',

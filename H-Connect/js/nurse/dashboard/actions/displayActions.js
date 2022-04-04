@@ -36,7 +36,6 @@ export async function insertDisplay(displayNumber, displayName = '') {
         req,
         (res) => {
             if (res.result) {
-                console.log("생성!")
             } else {
                 session_renew(res);
             }
