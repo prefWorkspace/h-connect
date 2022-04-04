@@ -206,7 +206,13 @@ const VERSION = {
                     url_path: '/nurse/dashboard',
                     file_path: '/H-Connect/js/nurse/dashboard/actions/',
                     version: '2022.03.25.12.01',
-                }
+                },
+                'sickBedActions.js': {
+                    type: 'module',
+                    url_path: '/nurse/dashboard',
+                    file_path: '/H-Connect/js/nurse/dashboard/actions/',
+                    version: '2022.03.25.12.01',
+                },
             },
             renders: {
                 'renderDashboard.js': {
