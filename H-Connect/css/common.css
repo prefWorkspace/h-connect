@@ -3828,7 +3828,7 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .time_line::before {
     position: absolute;
     content: '';
-    background: url(/H-Connect/img/icon/trend_tri.png)no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/icon/trend_tri.png) no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
     top: 30px;
