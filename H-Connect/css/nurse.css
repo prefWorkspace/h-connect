@@ -2943,8 +2943,9 @@
     background: #eee;
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-content: flex-start;
     height: 589px;
 }
 
@@ -2952,7 +2953,8 @@
     width: 360px;
     height: 48px;
     padding: 17px;
-    margin-bottom: 16px;
+    margin-bottom: 15px;
+    margin-right: 15px;
     border-radius: 4px;
     background: #007a94;
     color: #fff;
@@ -2994,8 +2996,10 @@
     height: 48px;
     padding: 17px;
     margin-bottom: 15px;
+    margin-right: 15px;
     border-radius: 4px;
     background: #444;
+    
 }
 
 .dashboard .check_pati input {

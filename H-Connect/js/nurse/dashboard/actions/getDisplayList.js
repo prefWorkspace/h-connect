@@ -17,7 +17,6 @@ export async function getDisplayList(page, count) {
         }),
         (res) => {
             if (res.result) {
-                console.log(res);
                 result = res.displayInfoList;
             }
         }
