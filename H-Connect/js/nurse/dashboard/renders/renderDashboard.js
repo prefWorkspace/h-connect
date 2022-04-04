@@ -415,7 +415,6 @@ async function addEventToAddBtn() {
                         ) {
                             break;
                         }
-
                         if (
                             i ==
                                 sickBedsByDisplay[selected_display].length -
@@ -436,6 +435,7 @@ async function addEventToAddBtn() {
                             sickBedsByDisplay[selected_display].push(
                                 newSickBed
                             );
+                            console.log(newSickBed);
                             updateSickBed(newSickBed);
                         }
                     }
@@ -469,6 +469,7 @@ async function addEventToDeleteBtn() {
         $('.inpat_sickbed:checked').each(function () {
             checked_sickbed.push($(this).attr('id').replace('inpat_', ''));
         });
+        let sickBedDisplayCodeList = []
         for (let j = 0; j < checked_sickbed.length; j++) {
             for (
                 let i = 0;
@@ -486,14 +487,12 @@ async function addEventToDeleteBtn() {
                                 sickBedsByDisplay[selected_display][i]
                                     .sickBedCode
                         );
-                    updateSickBed({
+                    let newSickBed = {
                         ...sickBedsByDisplay[selected_display][i],
                         displayCode: null,
-                    });
-                    console.log({
-                        ...sickBedsByDisplay[selected_display][i],
-                        displayCode: null,
-                    });
+                    };
+
+                    updateSickBed(newSickBed);
                     sickBedsByDisplay[selected_display].splice(i, 1);
                     i--;
                 }
@@ -509,6 +508,7 @@ async function addEventToAddDisplayBtn() {
         .off()
         .on('click', () => {
             insertDisplay(displayList.length + 1);
+            renderDisplayBtn();
             location.reload();
         });
 }
@@ -537,6 +537,7 @@ async function addEventToDeleteDisplayBtns() {
 
         $('.pop_cont .btn_cut').click(function () {
             deleteDisplay(del_dis.displayCode);
+            renderDisplayBtn();
             location.reload();
         });
 

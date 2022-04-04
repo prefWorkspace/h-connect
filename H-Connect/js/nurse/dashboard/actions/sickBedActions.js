@@ -21,33 +21,38 @@ const { userCode: requester, organizationCode: organization } = JSON.parse(
     localStorageController.getLocalS('userData')
 );
 
-export const updateSickBed = async (sickBed) => {
+export const updateSickBed = async (_sickBed) => {
     const {
         wardCode,
         sickRoomCode,
         sickBedCode,
         sickRoom,
+        sickBed,
         nickname,
         orderNumber,
         deactivate,
         displayCode,
-    } = sickBed;
+        monitoringDeactivate,
+    } = _sickBed;
+
     const req = JSON.stringify({
-        requester,
-        organization,
+        // requester,
+        // organization,
         wardCode,
         sickRoomCode,
         sickBedCode,
+        sickBed,
         sickRoom,
         nickname,
         orderNumber,
         deactivate,
         displayCode,
+        monitoringDeactivate,
         ...commonRequest(),
     });
-    console.log(
-        requester,
-        organization,
+    console.log({
+        // requester,
+        // organization,
         wardCode,
         sickRoomCode,
         sickBedCode,
@@ -55,8 +60,10 @@ export const updateSickBed = async (sickBed) => {
         nickname,
         orderNumber,
         deactivate,
-        displayCode
-    );
+        displayCode,
+        monitoringDeactivate,
+        ...commonRequest(),
+    });
 
     return await serverController.ajaxAwaitController(
         'API/Manager/UpdateSickBed',
@@ -66,6 +73,26 @@ export const updateSickBed = async (sickBed) => {
             if (res.result) {
                 if (displayCode) console.log('수정 완료!');
                 else console.log('삭제 요청');
+            } else {
+                session_renew(res);
+            }
+        }
+    );
+};
+
+export const updateSickBedDisplayCode = async (sickBedDisplayCodeList) => {
+    const req = JSON.stringify({
+        requester,
+        organization,
+        sickBedDisplayCodeList,
+    });
+
+    return await serverController.ajaxAwaitController(
+        'API/Manager/UpdateSickBed',
+        'POST',
+        req,
+        (res) => {
+            if (res.result) {
             } else {
                 session_renew(res);
             }
