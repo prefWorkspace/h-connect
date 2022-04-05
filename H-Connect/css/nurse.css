@@ -418,7 +418,7 @@
     width: 100%;
     height: 36px;
     border-radius: 4px;
-    background: #eeeeee;
+    border: 1px solid #007a94;
 }
 
 .nurse .search_container input {
@@ -441,7 +441,7 @@
 }
 
 .section .item_row {
-    padding: 3px 0 5px 19px;
+    padding: 4px 16px;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
@@ -477,10 +477,8 @@
 .section .btn_delete {
     width: 56px;
     height: 24px;
-    background: none;
+    background: #fff;
     border-radius: 4px;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .section .device_search {
@@ -534,13 +532,22 @@
     width: 536px;
 }
 
+.nurse_measure .measure_status .title{display: flex; justify-content: space-between;}
 .nurse_measure .measure_status .title div {
-    margin-bottom: 13px;
+    padding: 7px 0 0;
+    margin: 0 0 13px;
+    display: block;
+}
+.nurse_measure .measure_status .title p{margin-top: 13px;}
+.nurse_measure .measure_status .title button{
+    width: 120px;
+    height: 40px;
 }
 
 .nurse_measure .measure_status .search_container {
     width: 100%;
     height: 40px;
+    border: 1px solid #007a94;
 }
 
 .nurse_measure .measure_status .search_container input {
@@ -554,6 +561,29 @@
     height: 100%;
 }
 
+.nurse_measure .select_name{width: 100%; height: 36px; margin-bottom: 16px;}
+.nurse_measure .select_name .label{color: #ccc;}
+.nurse_measure .select_name ul{
+    width: 472px;
+    padding: 15px 0;
+    z-index: 3;
+}
+.nurse_measure .select_name .optionList::after{
+    width: 440px;
+    background: #888888;
+}
+
+.nurse_measure .select_name .optionItem{
+    padding: 0 15px;
+    margin-bottom: 7px;
+    justify-content: flex-start;
+}
+
+.nurse_measure .select_name .optionItem:last-child{margin: 0;}
+
+.nurse_measure .select_name span:first-child{width: 95px;}
+.nurse_measure .select_name span:nth-child(2){width: 77px;}
+.nurse_measure .select_name span:last-child{margin-left: 86px;}
 .nurse_measure .label {
     font-size: 12px;
 }
@@ -594,7 +624,7 @@
 }
 
 .nurse_measure .measure_status .cont {
-    padding-bottom: 0;
+    padding: 8px 16px 0;
 }
 
 .nurse_measure .measure_status .search_select .ward_label {
@@ -605,10 +635,25 @@
     margin-left: 125px;
 }
 
+
 .measure_status .search_select p span {
     margin-right: 4px;
     color: #007a94;
 }
+
+.nurse_measure .cont .patient_info input{line-height: 36px;}
+
+.nurse_measure .cont .patient_info input:nth-child(1){
+    width: 80px;
+}
+
+.nurse_measure .cont .patient_info input:nth-child(2){
+    width: 64px;
+    padding: 0 21px;
+    margin: 0 16px;
+}
+
+.nurse_measure .cont .patient_info input:nth-child(3){width: 296px;}
 
 .measure_status div .container {
     height: 444px;
@@ -724,6 +769,7 @@
     height: 32px;
     padding: 0;
     border-radius: 4px;
+    background: #fff;
     font-size: 12px;
     display: block;
 }
@@ -2224,6 +2270,7 @@
     overflow-x: scroll;
     overflow-y: hidden;
 }
+
 .monitoring_patient
     .table_body
     .table_content

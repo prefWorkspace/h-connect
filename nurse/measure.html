@@ -603,25 +603,52 @@
                             <!-- 입력 -->
                             <div class="cont">
                                 <div class="hospital_patient">
-                                    <input type="text" id="patient_name" placeholder="환자이름" readonly />
-
-                                    <div class="patient_info">
-                                        <input type="number" id="patient_age" placeholder="나이" readonly />
-
-                                        <div class="selectBox2 select_sex">
-                                            <button class="label sex_label2">
-                                                남<span></span>
+                                    <!-- 이름 선택 드롭박스 -->
+                                    <div class="patient_name">
+                                        <div class="selectBox2 select_name">
+                                            <button class="label name_label">
+                                                환자를 선택해 주세요.
                                             </button>
-                                            <ul class="optionList sex_option2">
-                                                <li class="optionItem sex_list2">
-                                                    여
+                                            <ul class="optionList name_option">
+                                                <li class="optionItem name_list">
+                                                    <span>김O림</span>
+                                                    <span>1967</span>
+                                                    <span>남</span>
+                                                    <span>MRN code</span>
                                                 </li>
-                                                <li class="optionItem sex_list2">
-                                                    남
+                                                <li class="optionItem name_list">
+                                                    <span>김O림</span>
+                                                    <span>1967</span>
+                                                    <span>남</span>
+                                                    <span>MRN code</span>
+                                                </li>
+                                                <li class="optionItem name_list">
+                                                    <span>김O림</span>
+                                                    <span>1967</span>
+                                                    <span>남</span>
+                                                    <span>MRN code</span>
+                                                </li>
+                                                <li class="optionItem name_list">
+                                                    <span>김O림</span>
+                                                    <span>1967</span>
+                                                    <span>남</span>
+                                                    <span>MRN code</span>
+                                                </li>
+                                                <li class="optionItem name_list">
+                                                    <span>김O림</span>
+                                                    <span>1967</span>
+                                                    <span>남</span>
+                                                    <span>MRN code</span>
                                                 </li>
                                             </ul>
                                         </div>
+                                    </div>
+                                    <!-- <input type="text" id="patient_name" placeholder="환자이름" readonly /> -->
 
+                                    <div class="patient_info">
+                                        <!-- <input type="number" id="patient_age" placeholder="나이" readonly /> -->
+                                        <input type="number" placeholder="생년월일" readonly/>
+                                        <input type="text" placeholder="성별" readonly/>
                                         <input type="text" id="patient_MRN" placeholder="patient no" readonly />
                                     </div>
 
@@ -931,28 +958,7 @@
         // } else {
         //     bedlabel.parentNode.classList.add('active');
         // }
-        // })
-
-        //measure_status 병상수정 성별 셀렉트
-        const sexlabel2 = document.querySelector('.sex_label2');
-        const sexOptions2 = document.querySelectorAll('.sex_list2');
-
-        const sexSelect2 = (item) => {
-            sexlabel2.parentNode.classList.remove('active');
-            sexlabel2.innerHTML = item.textContent;
-        };
-
-        sexOptions2.forEach((option) => {
-            option.addEventListener('click', () => sexSelect2(option));
-        });
-
-        sexlabel2.addEventListener('click', () => {
-            if (sexlabel2.parentNode.classList.contains('active')) {
-                sexlabel2.parentNode.classList.remove('active');
-            } else {
-                sexlabel2.parentNode.classList.add('active');
-            }
-        });
+        // }
 
         //measure_status 병상수정 병동 셀렉트
         const modiWardlabel = document.querySelector('.mward_label');
