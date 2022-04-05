@@ -4,6 +4,14 @@ const { serverController } = await import(
 const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
+);
+
+//유저 데이터
+const { userCode: requester, organizationCode } = JSON.parse(
+    localStorageController.getLocalS('userData')
+);
 
 /* s: 환자 병상 갯수 확인 */
 export async function selectSickBed() {
@@ -114,3 +122,35 @@ export async function selectSickRoom() {
     );
 }
 /* e : 환자 병실 리스트 */
+
+export async function InsertMeasurementInfo(codeObj, patientData) {
+    const obj = {
+        ...commonRequest(),
+        ...codeObj,
+        requester,
+        organizationCode,
+        orderNumber: 1,
+        patientData,
+    };
+    console.log('obj===');
+    console.log(obj);
+    // return serverController.ajaxAwaitController(
+    //     'API/Measurement/InsertMeasurementInfo',
+    //     'POST',
+    //     JSON.stringify({
+    //         ...commonRequest(),
+    //         ...codeObj,
+    //         requester,
+    //         organizationCode,
+    //         orderNumber: 1,
+    //         deviceInfoList,
+    //         userData,
+    //     }),
+    //     (res) => {
+    //         if (res.result) {
+    //         } else {
+    //         }
+    //     },
+    //     (err) => console.log(err)
+    // );
+}

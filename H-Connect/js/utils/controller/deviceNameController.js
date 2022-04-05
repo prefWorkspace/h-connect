@@ -3,7 +3,6 @@
 //간호사단 장치 이름 변환 이름=> 번호
 export function device_NameToType(devieName) {
     const name = devieName.replaceAll(' ', '').replaceAll('\n', '');
-    console.log(name);
     switch (name) {
         case '심전도패치':
             return 1;

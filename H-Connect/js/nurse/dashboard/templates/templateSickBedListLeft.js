@@ -37,7 +37,7 @@ export const parseSickBedListLeft = async (sickRoomList, sickBedList) => {
                     />
                     <label for="${sickBed.sickBedCode}"></label>
                     <label for="${sickBed.sickBedCode}">
-                        <span>${sickBed.sickBed},${name}(${age}.${
+                        <span>${sickBed.nickname},${name}(${age}.${
                     gender === 1 ? '남' : '여'
                 }.${patientCode})</span></label>
                 </div>`;
@@ -51,7 +51,7 @@ export const parseSickBedListLeft = async (sickRoomList, sickBedList) => {
                     />
                     <label for="${sickBed.sickBedCode}"></label>
                     <label for="${sickBed.sickBedCode}">
-                        <span>${sickBed.sickBed}</span></label>
+                        <span>${sickBed.nickname}</span></label>
                 </div>`;
             }
         });

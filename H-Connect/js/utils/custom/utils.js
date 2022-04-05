@@ -28,7 +28,7 @@ function decimalToHexadecimal(value, notation = 16) {
         .toUpperCase()}:${number.slice(-2).toUpperCase()}`;
 }
 
-function getMacaddress(type = CUSTOM.DEVICE.TYPE.CODE.ECG, value) {
+export function getMacaddress(type = CUSTOM.DEVICE.TYPE.CODE.ECG, value) {
     if (type == CUSTOM.DEVICE.TYPE.CODE.ECG) {
         return `${CUSTOM.DEVICE.TYPE.PREFIX_ADDRESS.ECG}${decimalToHexadecimal(
             value
