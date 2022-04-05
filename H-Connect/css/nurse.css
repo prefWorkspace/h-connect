@@ -342,6 +342,14 @@
 }
 
 /* 신규장치등록 */
+.nurse_device .new_device .btn_add_device{
+    width: 120px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.nurse_device .new_device .title p{margin-top: 5px;}
+
 .new_device .device_count,
 .return_device .device_count {
     padding: 8px 48px;
@@ -380,6 +388,8 @@
     padding-top: 16px;
     overflow-y: auto;
 }
+
+.nurse_device .device_item{padding: 0;}
 
 .new_device .device_item::-webkit-scrollbar,
 .return_device .device_item::-webkit-scrollbar {
