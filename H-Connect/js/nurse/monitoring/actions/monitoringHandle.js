@@ -20,12 +20,17 @@ const { selectBoxSickRoom, selectBoxWard, selectBoxSickBed } = await import(
     )
 );
 
+const { InsertMeasurementInfo } = await import(
+    importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringAPI.js')
+);
+
 const deviceInfoList = [];
 
 //병상 추가 팝업창 병동, 병실, 병상 셀렉트 박스 셋팅
 
 //장치 추가
-$('.pop.new_room_pop .overlay .new_regi .check').on('click', function () {
+function insertDevice() {
+    let serial_Reg;
     const deviceName = $(
         '.pop.new_room_pop .new_regi .selectBox2 .label'
     ).text();
@@ -34,7 +39,11 @@ $('.pop.new_room_pop .overlay .new_regi .check').on('click', function () {
         '.pop.new_room_pop .input_box .input_wrap input'
     ).val();
 
-    if (serialNumber) {
+    deviceName === '심전도 패치'
+        ? (serial_Reg = /[A-Z0-9]{6,7}/)
+        : (serial_Reg = /[B-Z0-9]{6,7}/);
+
+    if (serial_Reg.test(serialNumber)) {
         const obj = {
             deviceType,
             serialNumber,
@@ -45,14 +54,14 @@ $('.pop.new_room_pop .overlay .new_regi .check').on('click', function () {
         $('.pop.new_room_pop').removeClass('active');
         addDeviceList(deviceInfoList);
     } else {
-        alert('시리얼넘버를 바르게 입력해주세요');
+        $('.pop.new_room_pop .new_regi .input_wrap span').addClass('active');
     }
-});
+}
 
 //병상 추가
-$('.pop.new_room_pop .new_room .btn_list .blf').on('click', function () {
+function insertSickBed() {
     const name = $('.pop.new_room_pop .new_room #patient_name').val();
-    const age = $('.pop.new_room_pop .new_room #patient_age').val();
+    const age = +$('.pop.new_room_pop .new_room #patient_age').val();
     const gender =
         $('.pop.new_room_pop .new_room .patient_info .sex_label')
             .text()
@@ -61,12 +70,14 @@ $('.pop.new_room_pop .new_room .btn_list .blf').on('click', function () {
             ? 1
             : 2;
     const patientCode = $('.pop.new_room_pop .new_room #patient_MRN').val();
-    // const wardCode =
+    const wardCode = $('#ward_code').data('wardcode');
+    const sickRoomCode = $('#sickroom_code').data('sickroomcode');
+    const sickBedCode = $('#sickbed_code').data('sickbedcode');
 
     const codeObj = {
-        wardCode: '',
-        sickRoomCode: '',
-        sickBedCode: '',
+        wardCode,
+        sickRoomCode,
+        sickBedCode,
     };
 
     const patientData = {
@@ -84,23 +95,77 @@ $('.pop.new_room_pop .new_room .btn_list .blf').on('click', function () {
         duration: 24,
         startDateTime: request_Date_Data(),
     };
-});
 
-//병상 추가 셀렉트 박스 이벤트
-export function selectBoxHandle() {
-    $('.pop.new_room_pop .overlay .new_room .selectBox2 .optionList li').on(
+    InsertMeasurementInfo(codeObj, patientData);
+}
+
+//병동 추가 셀렉트 박스 이벤트
+export async function sickbedSelectBoxHandle() {
+    $(
+        '.pop.new_room_pop .overlay .new_room .selectBox2 .bed_option .bed_list'
+    ).on('click', function () {
+        const item = $(this).text();
+        const sickBedCode = $(this).data('sickbedcode');
+        $(this).parent().parent().find('.label').text(item);
+        $(this)
+            .parent()
+            .parent()
+            .find('.label')
+            .attr('data-sickbedcode', sickBedCode);
+        $(this).parent().parent().toggleClass('active');
+        $('.pop.new_room_pop .new_room #spare_Bed').text(1);
+    });
+}
+
+export async function sickRoomSelectBoxHandle(wardCode) {
+    $(
+        '.pop.new_room_pop .overlay .new_room .selectBox2 .room_option2 .room_list2'
+    ).on('click', async function () {
+        const item = $(this).find('p').text();
+        const sickRoomCode = $(this).data('sickroomcode');
+        const spareBed = $(this).data('sparebed');
+        $(this).parent().parent().find('.label').text(item);
+        $(this)
+            .parent()
+            .parent()
+            .find('.label')
+            .attr('data-sickroomcode', sickRoomCode);
+        $(this).parent().parent().toggleClass('active');
+        $('.pop.new_room_pop .new_room #spare_Bed').text(spareBed);
+        await selectBoxSickBed(wardCode, sickRoomCode);
+        sickbedSelectBoxHandle();
+    });
+}
+
+export async function wardSelectBoxHandle() {
+    await selectBoxWard();
+    $('.pop.new_room_pop .new_room .selectBox2 .ward_option2 .ward_list2').on(
         'click',
-        function () {
+        async function () {
             const item = $(this).find('p').text();
+            const wardCode = $(this).data('wardcode');
+            const spareBed = $(this).data('sparebed');
             $(this).parent().parent().find('.label').text(item);
             $(this)
                 .parent()
                 .parent()
                 .find('.label')
-                .attr('data-wardcode', $(this).data('wardcode'));
+                .attr('data-wardcode', wardCode);
             $(this).parent().parent().toggleClass('active');
+            $('.pop.new_room_pop .new_room .selectBox2 .room_label2').text(
+                '병실선택'
+            );
+            $('.pop.new_room_pop .new_room .selectBox2 .bed_label').text(
+                '병상선택'
+            );
+            $('.pop.new_room_pop .new_room #spare_Bed').text(spareBed);
+            await selectBoxSickRoom(wardCode);
+            sickRoomSelectBoxHandle(wardCode);
         }
     );
 }
 
-selectBoxWard();
+wardSelectBoxHandle();
+
+$('.pop.new_room_pop .new_room .btn_list .blf').on('click', insertSickBed);
+$('.pop.new_room_pop .overlay .new_regi .check').on('click', insertDevice);

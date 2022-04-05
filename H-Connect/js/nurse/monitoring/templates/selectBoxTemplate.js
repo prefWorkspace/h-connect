@@ -2,10 +2,16 @@
 
 export function wardListItem(item) {
     return `
-        <li class="optionItem ward_list2" data-wardcode="${item.wardCode}">
+        <li class="optionItem ward_list2" data-sparebed="${
+            item.wardSpareBedCount
+        }" data-wardcode="${item.wardCode}">
             <p>${item.ward}</p>
-            <span class="bed_count lot"
-                >+8 여유</span
+            <span class="bed_count lot" 
+                >${
+                    item.wardSpareBedCount > 0
+                        ? '+' + item.wardSpareBedCount
+                        : '0'
+                } 여유</span
             >
         </li>
     `;
@@ -13,10 +19,16 @@ export function wardListItem(item) {
 
 export function sickRoomListItem(item) {
     return `
-        <li class="optionItem room_list2" data-sickroomcode="${item.sickRoomCode}">
+        <li class="optionItem room_list2" data-sparebed="${
+            item.roomSpareBedCount
+        }" data-sickroomcode="${item.sickRoomCode}">
             <p><span>${item.sickRoom}</span> 호실</p>
             <span class="bed_count lot"
-                >+1 여유</span
+                >${
+                    item.roomSpareBedCount > 0
+                        ? '+' + item.roomSpareBedCount
+                        : '0'
+                } 여유</span
             >
         </li>
     `;

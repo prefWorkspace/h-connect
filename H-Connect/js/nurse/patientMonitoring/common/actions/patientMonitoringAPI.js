@@ -31,3 +31,19 @@ export const SelectMeasurementInfoDetail = async () => {
 const decodeGender = (number) => {
     return number === 1 ? '남' : '여';
 };
+
+export const SelectAlarmSettingMeasurement = async () => {
+    const res = await serverController.ajaxAwaitController(
+        'API/Measurement/SelectAlarmSettingMeasurement',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+        })
+    );
+    if (!res?.measurementAlarmSetting) {
+        throw new Error('조회된 데이타가 없습니다');
+    }
+    return res.measurementAlarmSetting;
+    // if(!res.)
+};

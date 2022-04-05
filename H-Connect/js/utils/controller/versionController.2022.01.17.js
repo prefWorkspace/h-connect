@@ -550,13 +550,13 @@ const VERSION = {
                 },
                 'streamingMonitoring.js': {
                     type: 'module',
-                    url_path: '/nurse/monitoring',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
                     version: '2022.03.25.12.01',
                 },
                 'monitoringHandle.js': {
                     type: 'module',
-                    url_path: '/nurse/monitoring',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
                     version: '2022.04.04.17.12',
                 },
@@ -658,22 +658,29 @@ const VERSION = {
                 },
             },
             patient: {
-                headerVital: {
+                common: {
                     actions: {
                         'vitalInformAPI.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/headerVital/actions/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
                             version: '2022.03.30.12.18',
                         },
                     },
                     renders: {
-                        'vitalHeader.js': {
+                        'vitalHeaderRender.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/headerVital/renders/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
+                            version: '2022.03.30.12.18',
+                        },
+                        'vitalRender.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
                             version: '2022.03.30.12.18',
                         },
                     },
@@ -704,7 +711,7 @@ const VERSION = {
                         },
                     },
                     renders: {
-                        'renderECGVital.js': {
+                        'renderCurrentVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
@@ -746,6 +753,12 @@ const VERSION = {
             },
         },
     },
+    // 'common.js': {
+    //     priority: 0,
+    //     url_path: '*',
+    //     file_path: '/H-Connect/js/',
+    //     version: '2022.01.17.11.33',
+    // },
 };
 
 /* s: settings function */

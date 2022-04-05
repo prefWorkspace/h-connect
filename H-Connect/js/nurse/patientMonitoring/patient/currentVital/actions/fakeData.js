@@ -1,8 +1,45 @@
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-export const bioSignalEcgData = () => {
+export const bioSignalSimpleData = () => {
+    /*
+    EWS: bioSignalSimpleData.ews
+    HR: bioSignalSimpleData.hr
+    SPO2: bioSignalSimpleData.spo2
+    RESP: bioSignalSimpleData.resp
+    TEMP: bioSignalSimpleData.temp
+    */
+    return {
+        deviceType: 1,
+        serialNumber: '005811',
+        macAddress: '08:D5:C0:50:16:B3',
+        measurementCode: 'SEERS_2201251115_AJE2',
+        bioSignalSimpleData: {
+            activity: 1,
+            hr: random(0, 100),
+            ews: random(-1, 100),
+            temp: random(34, 36),
+            resp: random(0, 100),
+            spo2: random(0, 100),
+            pulse: random(0, 100),
+            arrhythmiaCount: 0,
+        },
+        batteryValue: 85,
+        deviceStatusInfo: null,
+        dateTime: '2022-01-25 11:18:44',
+    };
+};
+export const bioSignalData = () => {
+    /* 
+    deviceType
+    1(ECG) ecgDataList, activityLevelPacketList, heartRatePacketList, ewsSimpleList, respDataList, batteryValue
+    ------------
+    2(Temperature)
+    tempPacketList, batteryValue
+    ------------
+    9(Device Status)
+    deviceStatusInfo
+    */
     return {
         deviceType: 1,
         serialNumber: '004273',
