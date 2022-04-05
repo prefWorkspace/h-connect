@@ -16,6 +16,7 @@ const { wardListItem, sickRoomListItem, sickBedListItem } = await import(
 
 export async function selectBoxSickBed(wardCode, sickRoomCode) {
     let html = '';
+
     const { sickBedList } = await selectSickBedList(wardCode, sickRoomCode);
     for (let i = 0; i < sickBedList.length; i++) {
         html += sickBedListItem(sickBedList[i]);
@@ -36,10 +37,16 @@ export async function selectBoxSickRoom(wardCode) {
 
 export async function selectBoxWard() {
     let html = '';
+    let spareBed = 0;
+    const path = window.location.pathname;
     const { wardList } = await selectWardList();
     for (let i = 0; i < wardList.length; i++) {
         html += wardListItem(wardList[i]);
+        spareBed += wardList[i].wardSpareBedCount;
     }
 
     $('.pop.new_room_pop .new_room .selectBox2 .ward_option2').html(html);
+    if (path.indexOf('monitoring_room') === -1) {
+        $('.pop.new_room_pop .new_room #spare_Bed').text(spareBed);
+    }
 }
