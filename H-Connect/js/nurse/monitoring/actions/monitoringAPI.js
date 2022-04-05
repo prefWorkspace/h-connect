@@ -127,13 +127,16 @@ export async function InsertMeasurementInfo(codeObj, patientData) {
     const obj = {
         ...commonRequest(),
         ...codeObj,
+        ...patientData,
         requester,
         organizationCode,
         orderNumber: 1,
-        patientData,
     };
     console.log('obj===');
     console.log(obj);
+    $('.pop.new_room_pop .overlay').hide();
+    //밑에는 API확실해 지면 실행
+
     // return serverController.ajaxAwaitController(
     //     'API/Measurement/InsertMeasurementInfo',
     //     'POST',

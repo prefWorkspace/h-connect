@@ -1,14 +1,6 @@
 'use strict';
 
-const { selectWardList } = await import(
-    importVersion('/H-Connect/js/utils/module/select/selectList.js')
-);
-
-const { selectSickRoomList } = await import(
-    importVersion('/H-Connect/js/utils/module/select/selectList.js')
-);
-
-const { selectSickBedList } = await import(
+const { selectWardList, selectSickRoomList, selectSickBedList } = await import(
     importVersion('/H-Connect/js/utils/module/select/selectList.js')
 );
 
@@ -17,6 +9,10 @@ const { wardListItem, sickRoomListItem, sickBedListItem } = await import(
         '/H-Connect/js/nurse/monitoring/templates/selectBoxTemplate.js'
     )
 );
+
+// const { wardSelectBoxHandle, sickRoomSelectBoxHandle } = await import(
+//     importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringHandle.js')
+// );
 
 export async function selectBoxSickBed(wardCode, sickRoomCode) {
     let html = '';

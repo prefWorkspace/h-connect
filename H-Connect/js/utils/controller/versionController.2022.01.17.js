@@ -541,13 +541,13 @@ const VERSION = {
                 },
                 'streamingMonitoring.js': {
                     type: 'module',
-                    url_path: '/nurse/monitoring',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
                     version: '2022.03.25.12.01',
                 },
                 'monitoringHandle.js': {
                     type: 'module',
-                    url_path: '/nurse/monitoring',
+                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
                     file_path: '/H-Connect/js/nurse/monitoring/actions/',
                     version: '2022.04.04.17.12',
                 },
@@ -737,6 +737,12 @@ const VERSION = {
             },
         },
     },
+    // 'common.js': {
+    //     priority: 0,
+    //     url_path: '*',
+    //     file_path: '/H-Connect/js/',
+    //     version: '2022.01.17.11.33',
+    // },
 };
 
 /* s: settings function */
