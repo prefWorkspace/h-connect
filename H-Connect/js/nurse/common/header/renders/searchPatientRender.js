@@ -17,13 +17,13 @@ window._history = history;
 const $searchBtnEl = $('.search_container .btn_search');
 const $searchInputEl = $('.header_inner .search_container input');
 
-//
+// 검색모드 관리
 let searchMode = false;
 
 /* s: 환자검색 리스트 렌더 */
 export async function headerSearchPatientListRender() {
-    const searchValue = $searchInputEl.val();
-    const _patientList = await selectMeasurementInfoList(searchValue);
+    const _searchValue = $searchInputEl.val();
+    const _patientList = await selectMeasurementInfoList(_searchValue);
     if (_patientList && _patientList.length > 0) {
         // 환자 정보 검색 성공
         let _html = '';
@@ -56,6 +56,7 @@ function onSearchStart() {
     /* e: 환자 검색 기능 */
 
     $searchInputEl.on('input', (e) => {
+        // input의 길이가 0이되면 검색모드 종료
         const _target = e.currentTarget;
         if (_target.value.length <= 0) {
             $('.search_patient .wrap_inner').html('');
@@ -66,6 +67,7 @@ function onSearchStart() {
 }
 function onSearchMode() {
     $searchInputEl.on('click', () => {
+        // 검색모드 시 환자리스트 영역 다시 보이기
         if (searchMode) {
             $('.pop.search_patient').fadeIn();
         }
@@ -73,6 +75,7 @@ function onSearchMode() {
 }
 
 function addEventSearchPatient() {
+    // 이벤트 및 렌더 추가
     onSearchStart();
     onSearchMode();
 }

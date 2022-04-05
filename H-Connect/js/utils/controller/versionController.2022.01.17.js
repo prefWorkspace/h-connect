@@ -658,22 +658,29 @@ const VERSION = {
                 },
             },
             patient: {
-                headerVital: {
+                common: {
                     actions: {
                         'vitalInformAPI.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/headerVital/actions/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
                             version: '2022.03.30.12.18',
                         },
                     },
                     renders: {
-                        'vitalHeader.js': {
+                        'vitalHeaderRender.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/headerVital/renders/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
+                            version: '2022.03.30.12.18',
+                        },
+                        'vitalRender.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
                             version: '2022.03.30.12.18',
                         },
                     },
@@ -704,7 +711,7 @@ const VERSION = {
                         },
                     },
                     renders: {
-                        'renderECGVital.js': {
+                        'renderCurrentVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:

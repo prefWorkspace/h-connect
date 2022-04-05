@@ -1,4 +1,4 @@
-const { bioSignalEcgData } = await import(
+const { bioSignalData, bioSignalSimpleData } = await import(
     importVersion(
         '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/fakeData.js'
     )
@@ -8,17 +8,17 @@ export class socketGetPatientData {
         this.toggle = true;
     }
     get() {
-        return bioSignalEcgData();
+        return bioSignalData();
     }
     update(callBack) {
-        callBack(bioSignalEcgData());
+        callBack(bioSignalData());
         this.toggle = !this.toggle;
         setInterval(() => {
             if (callBack) {
                 if (this.toggle) {
-                    callBack(bioSignalEcgData());
+                    callBack(bioSignalData());
                 } else {
-                    let tmpData = bioSignalEcgData();
+                    let tmpData = bioSignalData();
                     let reverseData =
                         tmpData.bioSignalData.ecgDataList.reverse();
                     let returnData = [];
@@ -32,5 +32,19 @@ export class socketGetPatientData {
                 this.toggle = !this.toggle;
             }
         }, 3000);
+    }
+}
+
+export class fakeSoketBioSignalSimpleData {
+    get() {
+        return bioSignalSimpleData();
+    }
+    update(callBack) {
+        callBack(this.get());
+        setInterval(() => {
+            if (callBack) {
+                callBack(this.get());
+            }
+        }, 1500);
     }
 }
