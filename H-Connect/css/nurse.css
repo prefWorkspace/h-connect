@@ -1518,6 +1518,7 @@
 
 .monitoring_patient .patient {
     padding: 0;
+    overflow: hidden;
 }
 
 .monitoring_patient .btn_list button {
@@ -2223,7 +2224,6 @@
     overflow-x: scroll;
     overflow-y: hidden;
 }
-
 .monitoring_patient
     .table_body
     .table_content
@@ -2302,7 +2302,7 @@
 }
 
 /* 모니터링 경보 warning */
-.warning .tabs {
+.warning .tab_wrap {
     margin-bottom: 32px;
 }
 
@@ -2943,22 +2943,21 @@
 }
 
 .dashboard .inpat {
-    padding: 16px 0 0 16px;
-    background: #eee;
+    height: 589px;
+    padding: 8px;
     border-radius: 8px;
+    background: #eee;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
-    height: 589px;
 }
 
 .dashboard .inpat .account {
     width: 360px;
     height: 48px;
     padding: 17px;
-    margin-bottom: 15px;
-    margin-right: 15px;
+    margin: 8px;
     border-radius: 4px;
     background: #007a94;
     color: #fff;
@@ -2999,11 +2998,9 @@
     width: 360px;
     height: 48px;
     padding: 17px;
-    margin-bottom: 15px;
-    margin-right: 15px;
+    margin: 8px;
     border-radius: 4px;
     background: #444;
-    
 }
 
 .dashboard .check_pati input {
@@ -3054,7 +3051,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .ward_dashboard .wrap_inner > div::-webkit-scrollbar {

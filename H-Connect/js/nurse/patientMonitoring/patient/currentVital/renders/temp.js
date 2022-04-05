@@ -1,99 +1,78 @@
-console.log('load');
-// const { Chart } = await import(
-//     importVersion('/H-Connect/js/lib/chartjs/chartjs-3.7.0.js')
-// );
 const { socketGetPatientData } = await import(
     importVersion(
         '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/fakeSocket.js'
     )
 );
-
 let data = [];
-let myChart = {};
+let secondsMinMax = [];
+let valueMinMax = [];
+const getDataMinMax = (_list, _key) => {
+    return d3.extent(
+        _list.map((_item) => {
+            return _item[_key];
+        })
+    );
+};
 socketGetPatientData.update((_data) => {
     const { ecgDataList } = _data.bioSignalData;
+    // console.log(ecgDataList);
+    // data = ecgDataList;
+    // let firstObj = ecgDataList[0];
+    // let lastObj = ecgDataList[ecgDataList.length - 1];
+    // firstSeconds = 0;
+    // lastSeconds = lastObj.seconds - firstObj.seconds;
+
+    // firstValue = firstObj.value;
+
+    // lastValue = lastObj.value;
+
+    secondsMinMax = getDataMinMax(ecgDataList, 'seconds');
+    valueMinMax = getDataMinMax(ecgDataList, 'value');
+
     for (let i = 0, len = ecgDataList.length; i < len; i++) {
-        const { value } = ecgDataList[i];
-        data.push({ x: i, y: value });
+        const { value, seconds } = ecgDataList[i];
+        data.push({ value: value, seconds: seconds });
+        // if (firstValue < value) {
+        //     firstValue = value;
+        // }
+        // if (lastValue > value) {
+        //     lastValue = value;
+        // }
     }
     // myChart.update();
 });
-const totalDuration = 3000;
-const delayBetweenPoints = totalDuration / data.length;
-// const previousY = (ctx) =>
-//     ctx.index === 0
-//         ? ctx.chart.scales.y.getPixelForValue(100)
-//         : ctx.chart
-//               .getDatasetMeta(ctx.datasetIndex)
-//               .data[ctx.index - 1].getProps(['yAxes'], true);
-const animation = {
-    x: {
-        type: 'number',
-        easing: 'linear',
-        duration: delayBetweenPoints,
-        from: NaN, // the point is initially skipped
-        delay(ctx) {
-            if (ctx.type !== 'data' || ctx.xStarted) {
-                return 0;
-            }
-            ctx.xStarted = true;
-            return ctx.index * delayBetweenPoints;
-        },
-    },
-    y: {
-        duration: false,
-    },
-    onProgress: function () {
-        // console.log('test');
-    },
-    onComplete: function (e) {
-        // console.log(e);
-    },
-    // loop: true,
-    tension: {},
-};
+const xScale = d3
+    .scaleLinear()
+    .domain([secondsMinMax[0], secondsMinMax[1]])
+    .range([0, 1028]);
 
-const config = {
-    type: 'line',
-    data: {
-        datasets: [
-            {
-                borderColor: '#00FF19',
-                borderWidth: 1,
-                radius: 0,
-                data: data,
-            },
-        ],
-    },
-    options: {
-        responsive: false,
-        animation,
-        interaction: {
-            intersect: false,
-        },
-        plugins: {
-            legend: false,
-            tooltip: {
-                enabled: false,
-            },
-            hover: {
-                mode: null,
-            },
-        },
-        scales: {
-            x: {
-                type: 'linear',
-                beginAtZero: true,
-                display: false,
-            },
-            y: {
-                beginAtZero: true,
-                display: false,
-            },
-        },
-    },
-};
+const yScale = d3
+    .scaleLinear()
+    .domain([valueMinMax[0], valueMinMax[1]])
+    .range([0, 64]);
 
-const ctx = $('#vital-ecg-graph canvas').get(0).getContext('2d');
-console.log(ctx);
-myChart = new Chart(ctx, config);
+const lineGenerator = d3
+    .line()
+    .x((d) => xScale(d.seconds))
+    .y((d) => yScale(d.value));
+
+// d3.select('svg').append('path').attr('d');
+const path = d3
+    .select('svg')
+    .append('path') // SVG 태그 안에 path 속성을 추가한다.
+    .attr('d', lineGenerator(data)) // - 라인 생성기로 'd' 속성에 들어갈 좌표정보를 얻는다.
+    .attr('fill', 'none') // - 라인 안쪽 채우지 않음.
+    .attr('stroke-width', 1) // - 굵기
+    .attr('stroke', '#00FF19');
+// .attr('stroke-dasharray', '3, 3');
+
+const pathLength = path.node().getTotalLength();
+
+const transitionPath = d3.transition().ease(d3.easeSin).duration(3000);
+
+path.attr('stroke-dashoffset', pathLength)
+    .attr('stroke-dasharray', pathLength)
+    .transition(transitionPath)
+    .attr('stroke-dashoffset', 0);
+
+// d3.select('svg').remove();

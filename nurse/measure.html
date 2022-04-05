@@ -1040,6 +1040,101 @@
             regilabel.parentNode.classList.toggle('active');
         });
 
+        const typeLabel3 = document.querySelector('.type_select .label');
+        const tyepOption3 = document.querySelectorAll('.type_select .optionItem');
+
+        const sexLabel3 = document.querySelector('.pop .select_sex .label');
+        const sexOption3 = document.querySelectorAll('.pop .select_sex .optionItem');
+
+        const wardLabel3 = document.querySelector('.pop .select_ward .label');
+        const wardOption3 = document.querySelectorAll('.pop .select_ward .optionItem');
+
+        const roomLabel3 = document.querySelector('.pop .select_room .label');
+        const roomOption3 = document.querySelectorAll('.pop .select_room .optionItem');
+
+        const bedLabel3 = document.querySelector('.select_bed .label');
+        const bedOption3 = document.querySelectorAll('.select_bed .optionItem');
+
+
+        // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+        const typeSelect3 = (item) => {
+            typeLabel3.parentNode.classList.remove('active');
+            typeLabel3.innerHTML = item.textContent;
+        }
+        const sexSelect3 = (item) => {
+            sexLabel3.parentNode.classList.remove('active');
+            sexLabel3.innerHTML = item.textContent;
+        }
+        const wardSelect3 = (item) => {
+            wardLabel3.parentNode.classList.remove('active');
+            wardLabel3.innerHTML = item.textContent;
+        }
+        const roomSelect3 = (item) => {
+            roomLabel3.parentNode.classList.remove('active');
+            roomLabel3.innerHTML = item.textContent;
+        }
+        const bedSelect3 = (item) => {
+            bedLabel3.parentNode.classList.remove('active');
+            bedLabel3.innerHTML = item.textContent;
+        }
+
+
+        // 옵션 클릭시 클릭한 옵션을 넘김
+        tyepOption3.forEach(option => {
+            option.addEventListener('click', () => {
+                typeSelect3(option);
+                reset(tyepOption3, 'active');
+                option.classList.add('active');
+            });
+        })
+        sexOption3.forEach(option => {
+            option.addEventListener('click', () => {
+                sexSelect3(option);
+                reset(sexOption3, 'active');
+                option.classList.add('active');
+            });
+        })
+        wardOption3.forEach(option => {
+            option.addEventListener('click', () => {
+                wardSelect3(option);
+                reset(wardOption3, 'active');
+                option.classList.add('active');
+            });
+        })
+        roomOption3.forEach(option => {
+            option.addEventListener('click', () => {
+                roomSelect3(option);
+                reset(roomOption3, 'active');
+                option.classList.add('active');
+            });
+        })
+        bedOption3.forEach(option => {
+            option.addEventListener('click', () => {
+                bedSelect3(option);
+                reset(bedOption3, 'active');
+                option.classList.add('active');
+            });
+        })
+
+
+        // 라벨을 클릭시 옵션 목록이 열림/닫힘
+        typeLabel3.addEventListener('click', () => {
+            typeLabel3.parentNode.classList.toggle('active');
+        })
+        sexLabel3.addEventListener('click', () => {
+            sexLabel3.parentNode.classList.toggle('active');
+        })
+        wardLabel3.addEventListener('click', () => {
+            wardLabel3.parentNode.classList.toggle('active');
+        })
+        roomLabel3.addEventListener('click', () => {
+            roomLabel3.parentNode.classList.toggle('active');
+        })
+        bedLabel3.addEventListener('click', () => {
+            bedLabel3.parentNode.classList.toggle('active');
+        })
+
+
         // 리셋 코드
         function reset(content, className) {
             Array.from(content).forEach((element) => {

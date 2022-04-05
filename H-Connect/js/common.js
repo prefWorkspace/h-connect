@@ -26,15 +26,15 @@ $(function () {
     });
 
     // 환자검색
-    $('.pc_header .search_container').on('click', function () {
-        $('.pop.search_patient').fadeToggle();
-        $('.pc_header .search_container .btn_search').toggleClass('on');
-    });
+    // $('.pc_header .search_container').on('click', function () {
+    //     $('.pop.search_patient').fadeToggle();
+    //     $('.pc_header .search_container .btn_search').toggleClass('on');
+    // });
 
-    $('#wrap_content').on('click', function () {
-        $('.pop.search_patient').fadeOut();
-        $('.pc_header .search_container .btn_search').removeClass('on');
-    });
+    // $('#wrap_content').on('click', function () {
+    //     $('.pop.search_patient').fadeOut();
+    //     $('.pc_header .search_container .btn_search').removeClass('on');
+    // });
 
     // 병동관리
     // 병동생성 팝업 열고 닫기
@@ -854,6 +854,10 @@ $(function () {
     $('.connect_scroll .btn_picture').on('click', function () {
         $('.connect_scroll .scene_picture').show();
     });
+
+    $('.connect_scroll .patient_view .btn_list button').click(function(){
+        $(this).removeClass('active');
+    })
 
     //---------------------- 의사 ----------------------//
     // 협진시작 버튼

@@ -88,14 +88,6 @@
     align-items: center;
 }
 
-.para_message .section{
-    height: 720px;
-}
-
-.para_message .title_text h2{
-    color: #940045;
-}
-
 .nurse_message .btn_message{
     background: #007A94;
 }
@@ -106,18 +98,6 @@
 
 .nurse_message .btn_message img{
     filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(104deg) brightness(112%) contrast(101%);
-}
-
-.para_message .btn_message{
-    background: #940045;
-}
-
-.para_message .btn_message:hover{
-    background: #4A0000;
-}
-
-.para_message .btn_message img{
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(287deg) brightness(106%) contrast(102%);
 }
 
 .message .btn_message p{
@@ -168,10 +148,6 @@
     width: 16px;
     height: 16px;
     margin: 0 auto;
-}
-
-.para_message .message_list .search_container .btn_search img{
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
 }
 
 .message .talk_list{
@@ -239,9 +215,6 @@
     color: #fff;
 }
 
-.para_message .talk_list .list.off .message_bell img{
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
-}
 
 /* 대화창 */
 .message .message_talk{
@@ -283,13 +256,6 @@
     margin-top: 13px;
     font-size: 12px;
     font-weight: normal;
-}
-
-.para_message .message_talk .search_container{
-    height: 48px;
-    padding: 8px 32px;
-    background: linear-gradient(to right, #940045, #4A0000);
-    position: relative;
 }
 
 .nurse_message .message_talk .search_container{
@@ -439,6 +405,7 @@
 .message .no_message .message_title{display: block;}
 .message .no_message .no_talk_title{
     height: 112px;
+    padding: 36px 36px 56px;
     font-size: 16px;
     font-weight: 400;
     color: #888;
@@ -703,12 +670,6 @@
     border-radius: 8px;
 }
 
-.para_message .emergency_title{
-    padding: 8px 16px;
-    border: 0;
-    color: #940045;
-}
-
 .nurse_message .left .emergency_title{
     border: 0;
 }
@@ -717,10 +678,6 @@
     margin-bottom: 13px;
     display: flex;
     justify-content: space-between;
-}
-
-.para_message .emergency_title h2{
-    color: #940045;
 }
 
 .message .emergency_title p{
@@ -786,10 +743,6 @@
 
 .message .favorite_list{
     width: 480px;
-}
-
-.para_message .favorite_list .input_wrap{
-    margin: 0;
 }
 
 .message .group{
@@ -914,10 +867,6 @@
     margin-right: 14px;
 }
 
-.para_message .doctor_list .input_wrap{
-    margin: 0;
-}
-
 .message .select_doctor{
     width: 400px;
 }
@@ -947,6 +896,36 @@
     font-weight: normal;
     color: #ccc;
 }
+
+/* 값 입력 됐을 때 */
+.message .search_container input:valid {
+    background: #FFFFFF;
+    border: 1px solid #007A94;
+}
+
+.message .search_container.red input:valid {
+    border-color: #940045;
+}
+
+.message .search_container.red input:valid + .btn_search img {
+    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg) brightness(43%) contrast(100%);
+}
+
+
+/* ====== 찾을 수 없습니다 일때 ======*/
+.message .search_container.not_find {
+    background: #CCCCCC;
+    border: none;
+}
+
+.message .search_container.not_find input::placeholder {
+    color: #AAAAAA;
+}
+
+.message .search_container.not_find .btn_search img {
+    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg) brightness(90%) contrast(90%);
+}
+/* =========================== */
 
 .message .search_container .btn_search{
     position: absolute;
@@ -1753,3 +1732,71 @@
     margin-bottom: 13px;
 }
 
+
+
+/* para_message */
+.para_message .section {
+    height: 720px;
+}
+
+.para_message .search_container{border: none;}
+
+.para_message .search_container input{border: 1px solid #940045;}
+.para_message .search_container input:valid{border: 1px solid #940045;}
+
+.para_message .title_text h2 {
+    color: #940045;
+}
+.para_message .favorite_list .input_wrap {
+    margin: 0;
+}
+.para_message .doctor_list .input_wrap {
+    margin: 0;
+}
+.para_message .message_talk .search_container input{border: 1px solid #940045;}
+
+.para_message .chat_me .bubble:after{filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg) brightness(43%) contrast(100%);}
+
+.para_message .btn_message{
+    background: #940045;
+}
+
+.para_message .btn_message:hover{
+    background: #4A0000;
+}
+
+.para_message .btn_message img{
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(287deg) brightness(106%) contrast(102%);
+}
+.para_message .doctor_list .input_wrap{
+    margin: 0;
+}
+.para_message .message_list .search_container .btn_search img{
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.para_message .talk_list .list.off .message_bell img{
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+}
+
+.para_message .message_talk .search_container{
+    height: 48px;
+    padding: 8px 32px;
+    margin: 0;
+    border-radius: 0;
+    background: linear-gradient(to right, #940045, #4A0000);
+    position: relative;
+}
+.para_message .emergency_title{
+    padding: 8px 16px;
+    border: 0;
+    color: #940045;
+}
+.para_message .emergency_title h2{
+    color: #940045;
+}
+.para_message .favorite_list .input_wrap{
+    margin: 0;
+}
+
+.para_message .message_list .search_container .btn_search{width: 20px; margin-right: 11px;}
