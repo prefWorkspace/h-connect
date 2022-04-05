@@ -51,9 +51,9 @@ const DISPLAY_MAX_BED = 26;
 
 // API variable
 let displayList = {};
-const { wardList } = await selectWardList();
-const { sickRoomList } = await selectSickRoomList();
-const { sickBedList } = await selectSickBedList();
+let _wardList = [];
+let _sickRoomList = [];
+let _sickBedList = [];
 
 //전역 변수들
 let selectedWard = null;
@@ -66,12 +66,15 @@ async function displayInfoUpdate() {
     selected_display = displayList[0].displayCode;
     sickBedsByDisplay = {};
     arraySickBedCodesByDisplay = [];
-    displayList.forEach((display) => {
+
+    displayList.forEach(async (display) => {
         if (!sickBedsByDisplay[`${display.displayCode}`]) {
             sickBedsByDisplay[`${display.displayCode}`] = [];
         }
     });
-    sickBedList.forEach((sickBed) => {
+
+    _sickBedList = (await selectSickBedList()).sickBedList;
+    _sickBedList.forEach(async (sickBed) => {
         if (sickBed.displayCode) {
             sickBedsByDisplay[`${sickBed.displayCode}`].push(sickBed);
             arraySickBedCodesByDisplay.push(sickBed.sickBedCode);
@@ -82,7 +85,8 @@ async function displayInfoUpdate() {
 // Rendering Monitoring Target Ward Select Box
 const renderWardSelectBox = async () => {
     try {
-        const templateWardSelect = await parseWardListLeft(wardList);
+        _wardList = (await selectWardList()).wardList;
+        const templateWardSelect = await parseWardListLeft(_wardList);
         $target_select.html(templateWardSelect);
         await addEventToWardSelectBox();
     } catch (err) {
@@ -92,9 +96,11 @@ const renderWardSelectBox = async () => {
 
 const renderSickBedListLeft = async () => {
     const $select_head = $('.select_head');
+    _sickRoomList = (await selectSickRoomList()).sickRoomList;
+    _sickBedList = (await selectSickBedList()).sickBedList;
     const templateSickBedList = await parseSickBedListLeft(
-        sickRoomList,
-        sickBedList
+        _sickRoomList,
+        _sickBedList
     );
     $select_head.after(templateSickBedList);
     $('.ward_block').css('display', 'none');
@@ -195,7 +201,8 @@ async function addEventToWardSelectBox() {
 
 // Add Event To Left SickRoom Arrow
 async function addEventToSickRoomArrow() {
-    sickRoomList.forEach((sickRoom) => {
+    _sickRoomList = (await selectSickRoomList()).sickRoomList;
+    _sickRoomList.forEach((sickRoom) => {
         $(`.ward_count.${sickRoom.sickRoomCode}`)
             .off()
             .on('click', () => {
@@ -239,11 +246,18 @@ async function addEventToDisplayBtn() {
 
 async function addEventOnWardCheck(wardCode) {
     const $ward_check = $('#ward_check');
-    $ward_check.off().on('click', () => {
+    $ward_check.off().on('click', async () => {
         //병실 체크
-        const sickRoomByWard = wardList
-            .filter((ward) => ward.wardCode === wardCode)[0]
-            .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+        let sickRoomByWard = [];
+        _wardList = (await selectWardList()).wardList;
+        if (
+            _wardList.filter((ward) => ward.wardCode === wardCode)[0]
+                .sickRoomList
+        ) {
+            sickRoomByWard = _wardList
+                .filter((ward) => ward.wardCode === wardCode)[0]
+                .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+        }
         sickRoomByWard.forEach((sickRoomCode) => {
             if ($ward_check.prop('checked')) {
                 $(`#${sickRoomCode}`).prop('checked', true);
@@ -252,7 +266,8 @@ async function addEventOnWardCheck(wardCode) {
             }
         });
         // 병상 체크
-        const checkSickbedsArray = sickBedList
+        _sickBedList = (await selectSickBedList()).sickBedList;
+        const checkSickbedsArray = _sickBedList
             .filter((sickBed) => sickBed.wardCode === wardCode)
             .map((bed) => bed.sickBedCode);
         checkSickbedsArray.forEach((sickBedCode) => {
@@ -284,9 +299,15 @@ async function allSickBedsUnchecked() {
 
 //병실 체크박스 이벤트 부여
 async function addEventOnSickRoomCheck(wardCode) {
-    const sickRoomByWard = wardList
-        .filter((ward) => ward.wardCode === wardCode)[0]
-        .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+    let sickRoomByWard = [];
+    _wardList = (await selectWardList()).wardList;
+    if (
+        _wardList.filter((ward) => ward.wardCode === wardCode)[0].sickRoomList
+    ) {
+        sickRoomByWard = _wardList
+            .filter((ward) => ward.wardCode === wardCode)[0]
+            .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+    }
     //다 체크되면 병동선택 체크하는 함수
     function checkWardByCheckRoom(roomLength) {
         let checkedLen = 0;
@@ -300,13 +321,14 @@ async function addEventOnSickRoomCheck(wardCode) {
             $('#ward_check').prop('checked', false);
         }
     }
+    _sickBedList = (await selectSickBedList()).sickBedList;
     sickRoomByWard.forEach((sickRoomCode) => {
         const $sickRoom_check = $(`#${sickRoomCode}`);
 
         $sickRoom_check.off().on('click', () => {
             //병실 체크박스 체크시 이벤트 부여
             checkWardByCheckRoom(sickRoomByWard.length);
-            const checkSickBedsArray = sickBedList
+            const checkSickBedsArray = _sickBedList
                 .filter((sickBed) => sickBed.sickRoomCode === sickRoomCode)
                 .map((sickBed) => sickBed.sickBedCode);
             checkSickBedsArray.forEach((sickBedCode) => {
@@ -322,9 +344,15 @@ async function addEventOnSickRoomCheck(wardCode) {
 
 //병상 체크박스 이벤트부여
 async function addEventOnSickBed(wardCode) {
-    const sickRoomByWard = wardList
-        .filter((ward) => ward.wardCode === wardCode)[0]
-        .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+    let sickRoomByWard = [];
+    _wardList = (await selectWardList()).wardList;
+    if (
+        _wardList.filter((ward) => ward.wardCode === wardCode)[0].sickRoomList
+    ) {
+        sickRoomByWard = _wardList
+            .filter((ward) => ward.wardCode === wardCode)[0]
+            .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
+    }
     function checkWardByCheckRoom(roomLength) {
         let checkedLen = 0;
         sickRoomByWard.forEach((sickRoomCode) => {
@@ -343,8 +371,8 @@ async function addEventOnSickBed(wardCode) {
             sickBedsBySickRoomMany[sickRoomCode] = 0;
         }
     });
-
-    const checkSickBedsArray = sickBedList
+    _sickBedList = (await selectSickBedList()).sickBedList;
+    const checkSickBedsArray = _sickBedList
         .filter((sickBed) => sickBed.wardCode === wardCode)
         .map((sickBed) => {
             sickBedsBySickRoomMany[sickBed.sickRoomCode] += 1;
@@ -396,87 +424,87 @@ async function addEventToAddBtn() {
     let checkedSickBeds = [];
     $btn_add.off().on('click', async () => {
         checkedSickBeds.length = 0;
+        _sickBedList = (await selectSickBedList()).sickBedList;
         if ($('input[name=sickBed_no]:checked').length) {
-            $.each($('input[name=sickBed_no]:checked'), function () {
-                let checkedSickBed = sickBedList.filter(
+            $.each($('input[name=sickBed_no]:checked'), async function () {
+                let checkedSickBed = _sickBedList.filter(
                     (bed) => bed.sickBedCode === $(this).attr('id')
                 )[0];
                 checkedSickBeds.push(checkedSickBed);
             });
-            checkedSickBeds.forEach(async (sickBed) => {
-                if (!arraySickBedCodesByDisplay.includes(sickBed.sickBedCode)) {
-                    if (
-                        arraySickBedCodesByDisplay.length !==
-                        Object.keys(sickBedsByDisplay).length * DISPLAY_MAX_BED
-                    ) {
-                        if (sickBedsByDisplay[selected_display].length) {
-                            if (
-                                sickBedsByDisplay[selected_display].length !==
-                                DISPLAY_MAX_BED
-                            ) {
-                                let newSickBed = {
-                                    ...sickBed,
-                                    displayCode: selected_display,
-                                };
-                                arraySickBedCodesByDisplay.push(
-                                    sickBed.sickBedCode
-                                );
-                                sickBedsByDisplay[selected_display].push(
-                                    newSickBed
-                                );
-                                updateSickBed(newSickBed);
-                            } else {
-                                for (let key in sickBedsByDisplay) {
-                                    if (key !== selected_display) {
-                                        if (
-                                            sickBedsByDisplay[key].length <
-                                            DISPLAY_MAX_BED
-                                        ) {
-                                            let newSickBed = {
-                                                ...sickBed,
-                                                displayCode: key,
-                                            };
-                                            arraySickBedCodesByDisplay.push(
-                                                sickBed.sickBedCode
-                                            );
-                                            sickBedsByDisplay[key].push(
-                                                newSickBed
-                                            );
-                                            updateSickBed(newSickBed);
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            let newSickBed = {
-                                ...sickBed,
+
+            checkedSickBeds = checkedSickBeds.filter(
+                (bed) => bed.displayCode === null
+            );
+            
+            for (let i = 0; i < checkedSickBeds.length; i++){
+                let newSickBed = {};
+                if (
+                    arraySickBedCodesByDisplay.length <
+                    Object.keys(sickBedsByDisplay).length * DISPLAY_MAX_BED
+                ) {
+                    if (sickBedsByDisplay[selected_display].length) {
+                        if (
+                            sickBedsByDisplay[selected_display].length !==
+                            DISPLAY_MAX_BED
+                        ) {
+                            newSickBed = {
+                                ...checkedSickBeds[i],
                                 displayCode: selected_display,
                             };
                             arraySickBedCodesByDisplay.push(
-                                sickBed.sickBedCode
+                                newSickBed.sickBedCode
                             );
                             sickBedsByDisplay[selected_display].push(
                                 newSickBed
                             );
                             updateSickBed(newSickBed);
+                        } else {
+                            for (let key in sickBedsByDisplay) {
+                                if (key !== selected_display) {
+                                    if (
+                                        sickBedsByDisplay[key].length <
+                                        DISPLAY_MAX_BED
+                                    ) {
+                                        newSickBed = {
+                                            ...checkedSickBeds[i],
+                                            displayCode: key,
+                                        };
+                                        arraySickBedCodesByDisplay.push(
+                                            newSickBed.sickBedCode
+                                        );
+                                        sickBedsByDisplay[key].push(newSickBed);
+                                        updateSickBed(newSickBed);
+
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     } else {
-                        insertDisplay(displayList.length + 1);
-                        let newSickBed = {
-                            ...sickBed,
-                            displayCode:
-                                displayList[displayList.length - 1].displayCode,
+                        newSickBed = {
+                            ...checkedSickBeds[i],
+                            displayCode: selected_display,
                         };
+                        arraySickBedCodesByDisplay.push(newSickBed.sickBedCode);
+                        sickBedsByDisplay[selected_display].push(newSickBed);
                         updateSickBed(newSickBed);
-
-                        location.reload();
                     }
+                } else {
+                    const { displayCode } = await insertDisplay(displayList.length + 1);
+                    newSickBed = {
+                        ...checkedSickBeds[i],
+                        displayCode,
+                    };
+                    if (!sickBedsByDisplay[displayCode]) sickBedsByDisplay[displayCode] = []
+                    sickBedsByDisplay[displayCode].push(newSickBed)
+                    arraySickBedCodesByDisplay.push(newSickBed.sickBedCode)
+                    updateSickBed(newSickBed);
+                    continue;
                 }
-            });
-            //displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
-            console.log(displayList);
-            renderDashboardScreen();
+            }
+            await renderDisplayBtn();
+            await renderDashboardScreen();
         }
     });
 }
@@ -517,7 +545,7 @@ async function addEventToDeleteBtn() {
                 }
             }
         }
-        renderDashboardScreen();
+        await renderDashboardScreen();
         $('.btn_delete').prop('disabled', true);
     });
 }
@@ -530,7 +558,6 @@ async function addEventToAddDisplayBtn() {
             await displayInfoUpdate();
             await renderDisplayBtn();
             await renderDashboardScreen();
-            
         });
 }
 
@@ -554,18 +581,18 @@ async function addEventToDeleteDisplayBtns() {
                 </button>
             </div>
         `);
-        $('.pop.delete .overlay').css('display', 'block');
+        $('.pop.delete .overlay').fadeIn();
 
         $('.pop_cont .btn_cut').click(async function () {
             await deleteDisplay(del_dis.displayCode);
             await displayInfoUpdate();
             await renderDisplayBtn();
             await renderDashboardScreen();
-            await $('.pop.delete .overlay').css('display', 'none');
+            await $('.pop.delete .overlay').fadeOut();
         });
 
         $('.pop_cont .btn_no').click(async function () {
-            $('.pop.delete .overlay').css('display', 'none');
+            $('.pop.delete .overlay').fadeOut();
         });
     });
 }
@@ -608,7 +635,7 @@ async function addEventToChangeDisplayNameBtn() {
     const $cancel_btn = $('.btn.rd.btn_cancel');
 
     $account.off().on('click', () => {
-        $name_change_pop.css('display', 'block');
+        $name_change_pop.fadeIn();
         $ward_name.val($(`.acc_${selected_display} p`).text());
     });
 
@@ -616,13 +643,17 @@ async function addEventToChangeDisplayNameBtn() {
         updateDisplayName(selected_display, $ward_name.val());
         $(`.account.acc_${selected_display} p`).text($ward_name.val());
 
-        $ward_name.val('');
-        $name_change_pop.css('display', 'none');
+        
+        $name_change_pop.fadeOut(() => {
+            $ward_name.val('');
+        });
     });
 
     $cancel_btn.off().on('click', () => {
         $ward_name.val('');
-        $name_change_pop.css('display', 'none');
+        $name_change_pop.fadeOut(() => {
+            $ward_name.val('');
+        });
     });
 }
 // Rendering Initialize

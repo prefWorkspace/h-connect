@@ -137,6 +137,15 @@ const VERSION = {
                     version: '2022.03.25.12.37',
                 },
             },
+            d3js: {
+                'd3Module.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/d3js/',
+                    version: '2022.04.01.10.52',
+                },
+            },
         },
         custom: {
             'utils.js': {

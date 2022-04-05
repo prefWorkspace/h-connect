@@ -35,4 +35,4 @@ async function getPatientSearchList() {
         (err) => console.log(err)
     );
 }
-getPatientSearchList();
+// getPatientSearchList();
