@@ -405,6 +405,7 @@
 .message .no_message .message_title{display: block;}
 .message .no_message .no_talk_title{
     height: 112px;
+    padding: 36px 36px 56px;
     font-size: 16px;
     font-weight: 400;
     color: #888;
@@ -895,6 +896,36 @@
     font-weight: normal;
     color: #ccc;
 }
+
+/* 값 입력 됐을 때 */
+.message .search_container input:valid {
+    background: #FFFFFF;
+    border: 1px solid #007A94;
+}
+
+.message .search_container.red input:valid {
+    border-color: #940045;
+}
+
+.message .search_container.red input:valid + .btn_search img {
+    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg) brightness(43%) contrast(100%);
+}
+
+
+/* ====== 찾을 수 없습니다 일때 ======*/
+.message .search_container.not_find {
+    background: #CCCCCC;
+    border: none;
+}
+
+.message .search_container.not_find input::placeholder {
+    color: #AAAAAA;
+}
+
+.message .search_container.not_find .btn_search img {
+    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg) brightness(90%) contrast(90%);
+}
+/* =========================== */
 
 .message .search_container .btn_search{
     position: absolute;
@@ -1711,6 +1742,7 @@
 .para_message .search_container{border: none;}
 
 .para_message .search_container input{border: 1px solid #940045;}
+.para_message .search_container input:valid{border: 1px solid #940045;}
 
 .para_message .title_text h2 {
     color: #940045;
@@ -1750,6 +1782,8 @@
 .para_message .message_talk .search_container{
     height: 48px;
     padding: 8px 32px;
+    margin: 0;
+    border-radius: 0;
     background: linear-gradient(to right, #940045, #4A0000);
     position: relative;
 }
@@ -1764,3 +1798,5 @@
 .para_message .favorite_list .input_wrap{
     margin: 0;
 }
+
+.para_message .message_list .search_container .btn_search{width: 20px; margin-right: 11px;}

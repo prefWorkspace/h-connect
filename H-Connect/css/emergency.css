@@ -27,7 +27,7 @@
 }
 
 .emergency .emergency_recep .title{
-    padding: 16px 16px 25px;
+    padding: 16px 16px 26px;
     border-bottom: 1px solid #eee;
 }
 
@@ -504,12 +504,7 @@
     margin-top: 16px;
 }
 
-.emergency .patient_status .patient .type .disease> :first-child input{
-    vertical-align: middle;
-}
-
-.emergency .patient_status .patient .type .disease> :first-child input[type="checkbox"]+label{
-    margin-top: 3px;
+.emergency .patient_status .type .disease> :first-child input[type="checkbox"] + label + label{
     color: #940045;
 }
 
@@ -1015,7 +1010,7 @@
 }
 
 .emergency .patient .symptome_info .unre .ure_list{
-    margin-left: 15px;
+    margin-left: 17px;
 }
 
 .emergency_main .patient .symptome_info .unre .ure_list{ margin: 0;}
@@ -1315,8 +1310,12 @@
     color: #fff;
 }
 
-.emergency .patient_status .mmhg .time div{
-    display: inline-block;
+.emergency .patient_status .time{display: flex; align-items: center;}
+
+.emergency .patient_status .time div{
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
 }
 
 .emergency .patient_status .mmhg .time p{
@@ -1970,6 +1969,9 @@
 .connect .patient_view .btn_list button.active{background: #940045; color: #fff;}
 .connect .patient_view .btn_list> :last-child{
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .connect .patient_view .view_list,
@@ -2152,7 +2154,10 @@
 
 .connect .patient_status .red_custom[type='checkbox'] + label + label{
     font-size: 14px;
+    color: #000;
 }
+
+.connect .patient_status .red_custom[type='checkbox'] + label + label.gray_font{color: #ccc;}
 
 .two_red + label + label{
     color: #940045;
@@ -2177,6 +2182,7 @@
 
 .connect .green_custom[type="checkbox"] + label + label{
     font-size: 14px;
+    color: #000;
 }
 
 .connect .green_custom[type="checkbox"]:checked + label + label{
@@ -2415,7 +2421,7 @@
 .connect .vital .ecg_graph,
 .connect .vital .sp_graph,
 .connect .vital .resp_graph{
-    width: 1172px;
+    width: 924px;
     padding: 8px 16px;
 }
 
@@ -2522,6 +2528,7 @@
 
 .connect .vital .control .time p{
     font-size: 11px;
+    display: flex;
 }
 
 .connect .vital .bell_name input{
@@ -2668,6 +2675,11 @@
     height: 698px;
 }
 
+.connect_tab .vital .ecg_graph, 
+.connect_tab .vital .sp_graph,
+.connect_tab .vital .resp_graph{width: 1172px;}
+
+
 /* connect_scroll */
 .connect_scroll {
     padding-top: 64px;
@@ -2682,8 +2694,27 @@
     display: none;
 }
 
+.connect_scroll .tab_view > div > .title{
+    height: 40px;
+    padding: 10px 15px 10px 24px;
+    background: #940045;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.connect_scroll .tab_view > div .title p{color: #fff;}
+
 .connect_scroll .patient_view> .title{
     margin: 0;
+}
+
+.connect .patient_view> .title div{display: flex; align-items: center;}
+
+.connect_scroll .vital .ecg_graph,
+.connect_scroll .vital .sp_graph,
+.connect_scroll .vital .resp_graph{
+    width: 1172px;
 }
 
 .connect_scroll .pati_stat{
@@ -2693,23 +2724,13 @@
     display: block;
 }
 
-.connect_scroll .pati_stat> .title{
-    height: 40px;
-    padding: 10px 24px;
-    background: #940045;
-    display: flex;
-    justify-content: space-between;
-}
-
-.connect_scroll .pati_stat .title p{
-    color: #fff;
-}
-
 .connect_scroll .tab_view .title button{
     width: 20px;
     height: 20px;
     background: none;
 }
+
+.connect_scroll .tab_view .title button div{width: 10px; height: 10px;}
 
 .connect_scroll .full_wrap> div{
     display: flex;
@@ -2746,32 +2767,10 @@
     position: initial;
 }
 
-.connect_scroll .vital .title{
-    height: 40px;
-    padding: 10px 24px;
-    background: #940045;
-}
-
-.connect_scroll .vital .title p{
-    color: #fff;
-}
-
 .connect_scroll .connect_video{
     width: 100%;
     height: fit-content;
     position: initial;
-}
-
-.connect_scroll .connect_video .title{
-    height: 40px;
-    padding: 10px 24px;
-    background: #940045;
-    display: flex;
-    justify-content: space-between;
-}
-
-.connect_scroll .connect_video .title p{
-    color: #fff;
 }
 
 .connect_scroll .connect_video .video_view{
@@ -2788,26 +2787,19 @@
     position: initial;
 }
 
-.connect_scroll .scene_picture .title{
-    height: 40px;
-    padding: 10px 24px;
-    background: #940045;
-    display: flex;
-    justify-content: space-between;
-}
-
-.connect_scroll .scene_picture .title p{
-    color: #fff;
-}
-
 .connect_scroll .scene_picture .swiper{
     width: 100%;
+    height: 107px;
+    padding-left: 8px;
     display: block;
 }
 
 .connect_scroll .scene_picture .big_picture{
     height: 692px;
+    padding: 0;
 }
+
+.connect_scroll .big_picture .swiper-slide{width: 1428px !important;}
 
 /* .connect_scroll .swiper-container-free-mode>.swiper-wrapper{
     margin: 0 0 0 30px;

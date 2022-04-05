@@ -855,6 +855,10 @@ $(function () {
         $('.connect_scroll .scene_picture').show();
     });
 
+    $('.connect_scroll .patient_view .btn_list button').click(function(){
+        $(this).removeClass('active');
+    })
+
     //---------------------- 의사 ----------------------//
     // 협진시작 버튼
     $('.doctor .btn_colla').on('click', function () {
@@ -1584,23 +1588,23 @@ $(function () {
     $('.remote .pacs .btn_fold').on('click', function () {
         $('.pacs .pacs_inner').toggle();
         $('.remote .pacs').toggleClass('fold');
-    })
+    });
     $('.remote .vital .btn_fold').on('click', function () {
         $('.vital .cont').toggle();
         $('.remote .vital').toggleClass('fold');
-    })
+    });
     $('.remote .lab .btn_fold').on('click', function () {
         $('.lab .cont').toggle();
         $('.remote .lab').toggleClass('fold');
-    })
+    });
     $('.remote .emr .btn_fold').on('click', function () {
         $('.emr .cont').toggle();
         $('.remote .emr').toggleClass('fold');
-    })
+    });
     $('.remote .ocs .btn_fold').on('click', function () {
         $('.ocs .cont').toggle();
         $('.remote .ocs').toggleClass('fold');
-    })
+    });
 
     // btn_full
     $('.remote .pacs .btn_full').on('click', function () {
@@ -1837,14 +1841,14 @@ $('.pop.new_room_pop .overlay .new_room .selectBox2 .label').on(
     }
 );
 
-// $('.pop.new_room_pop .overlay .new_room .selectBox2 .optionList li').on(
-//     'click',
-//     function () {
-//         const item = $(this).text();
-//         $(this).parent().parent().find('.label').text(item);
-//         $(this).parent().parent().toggleClass('active');
-//     }
-// );
+$('.pop.new_room_pop .overlay .new_room .sex_select .sex_option li').on(
+    'click',
+    function () {
+        const item = $(this).text();
+        $(this).parent().parent().find('.label').text(item);
+        $(this).parent().parent().toggleClass('active');
+    }
+);
 
 // $('.pop.new_room_pop .overlay .new_room .blf').on('click', function () {
 //     $('.pop.new_room_pop .overlay').hide();

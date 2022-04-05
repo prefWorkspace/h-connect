@@ -22,17 +22,11 @@
         <script
             type="text/javascript"
             defer
-            src="/H-Connect/js/index.js"
-        ></script>
-        <script
-            type="text/javascript"
-            defer
             src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"
         ></script>
         <!--css-->
         <link rel="stylesheet" href="/H-Connect/css/reset.css" />
         <link rel="stylesheet" href="/H-Connect/css/common.css" />
-        <link rel="stylesheet" href="/H-Connect/css/style.css" />
         <link rel="stylesheet" href="/H-Connect/css/nurse.css" />
     </head>
     <body>
@@ -89,33 +83,33 @@
                                     <div
                                         class="selectBox2 select_ward s_select"
                                     >
-                                        <button class="label ward_label2">
+                                        <button
+                                            id="ward_code"
+                                            class="label ward_label2"
+                                        >
                                             병동선택<span></span>
                                         </button>
                                         <ul class="optionList ward_option2">
-                                            <li class="optionItem ward_list2">
+                                            <!-- <li class="optionItem ward_list2">
                                                 <p>심장병동</p>
                                                 <span class="bed_count lot"
                                                     >+8 여유</span
                                                 >
-                                            </li>
-                                            <li class="optionItem ward_list2">
-                                                <p>12 병동</p>
-                                                <span class="bed_count"
-                                                    >없음</span
-                                                >
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
 
                                     <div
                                         class="selectBox2 select_room s_select"
                                     >
-                                        <button class="label room_label2">
+                                        <button
+                                            id="sickroom_code"
+                                            class="label room_label2"
+                                        >
                                             병실선택<span></span>
                                         </button>
                                         <ul class="optionList room_option2">
-                                            <li class="optionItem room_list2">
+                                            <!-- <li class="optionItem room_list2">
                                                 병실전체
                                             </li>
                                             <li class="optionItem room_list2">
@@ -123,28 +117,31 @@
                                                 <span class="bed_count lot"
                                                     >+1 여유</span
                                                 >
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
 
                                     <div class="selectBox2 select_bed">
-                                        <button class="label bed_label">
+                                        <button
+                                            id="sickbed_code"
+                                            class="label bed_label"
+                                        >
                                             병상선택<span></span>
                                         </button>
                                         <ul class="optionList bed_option">
-                                            <li class="optionItem bed_list">
+                                            <!-- <li class="optionItem bed_list">
                                                 6번 병상
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <p><span>8</span> 개의 여유병상</p>
+                            <p><span>1</span> 개의 여유병상</p>
                         </div>
 
                         <!-- 연결 장치 -->
                         <div class="device_room">
-                            <div class="cardio">
+                            <!-- <div class="cardio">
                                 <p>심전도 측정장치</p>
                                 <p>serial no.</p>
 
@@ -202,7 +199,7 @@
                                         삭제
                                     </button>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="btn_add">
                                 <button>+ 장치추가</button>

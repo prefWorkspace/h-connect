@@ -56,8 +56,6 @@ export const updateSickBed = async (_sickBed) => {
         req,
         (res) => {
             if (res.result) {
-                if (displayCode) console.log('수정 완료!');
-                else console.log('삭제 요청');
             } else {
                 session_renew(res);
             }
