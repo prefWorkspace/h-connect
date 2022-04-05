@@ -4,7 +4,7 @@ const { serverController } = await import(
 const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
-export async function selectMeasurementInfoList() {
+export async function selectMeasurementInfoList(_searchVal) {
     /* 환자 검색 정보 리스트 불러오기 API */
     /* 
   간호사 header에 환자 검색에 해당하는 액션 입니다. 
@@ -27,6 +27,7 @@ export async function selectMeasurementInfoList() {
         JSON.stringify({
             ...commonRequest(),
             measurementType: 'BM', // ET : 긴급이송 / BM : 병상모니터링
+            search: _searchVal,
         }),
         (res) => {
             if (res.result) {
