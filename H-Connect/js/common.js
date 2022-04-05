@@ -855,6 +855,10 @@ $(function () {
         $('.connect_scroll .scene_picture').show();
     });
 
+    $('.connect_scroll .patient_view .btn_list button').click(function(){
+        $(this).removeClass('active');
+    })
+
     //---------------------- 의사 ----------------------//
     // 협진시작 버튼
     $('.doctor .btn_colla').on('click', function () {

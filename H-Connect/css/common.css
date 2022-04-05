@@ -4511,6 +4511,7 @@ textarea::-webkit-scrollbar-button {
     width: 100%;
     height: 100%;
     padding: 0 30px 0 7px;
+    border: none;
     background: #fff;
     font-size: 12px;
     font-weight: normal;
@@ -4548,7 +4549,7 @@ textarea::-webkit-scrollbar-button {
 .pop.doctor_call .list_inner {
     height: 336px;
     margin-top: 8px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .pop.doctor_call .list_inner::-webkit-scrollbar {
@@ -4783,6 +4784,7 @@ textarea::-webkit-scrollbar-button {
     font-size: 12px;
     font-weight: normal;
     color: #fff;
+    display: flex;
 }
 
 .pop.full_vital .pop_cont .monitor div {
@@ -4798,7 +4800,9 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.full_vital .graph_data {
+    padding: 0 16px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -4924,12 +4928,15 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.full_vital .control_data .time_data {
+    margin-top: 5px;
     display: flex;
+    align-items: center;
 }
 
 .pop.full_vital .control_data .time_data div {
+    width: 15px;
+    height: 15px;
     margin: 0 8px 0 0;
-    vertical-align: middle;
 }
 
 .pop.full_vital .control_data .time_data p {
@@ -4945,6 +4952,7 @@ textarea::-webkit-scrollbar-button {
 .pop.full_vital .control .temp {
     width: 160px;
     padding: 16px;
+    margin-right: 16px;
     color: #ff3184;
     display: block;
 }
@@ -5006,7 +5014,7 @@ textarea::-webkit-scrollbar-button {
 /* 참석자 명단 팝업 */
 .pop.attendee {
     position: absolute;
-    top: 64px;
+    top: 72px;
     right: 312px;
     width: 480px;
     padding: 20px 16px;
@@ -5028,6 +5036,7 @@ textarea::-webkit-scrollbar-button {
 .pop.attendee .atten .count {
     margin-bottom: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
