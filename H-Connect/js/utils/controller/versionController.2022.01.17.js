@@ -403,6 +403,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/renders/',
                         version: '2022.03.25.12.01',
                     },
+                    'selectBoxRender.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/renders/',
+                        version: '2022.04.06.18.01',
+                    },
                     // 'sickRoomSelectBoxList.js': {
                     //     type: 'module',
                     //     url_path: '/nurse/measure',
@@ -439,6 +446,20 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/management/measure/templates/',
                         version: '2022.03.25.12.01',
+                    },
+                    'deviceList.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/templates/',
+                        version: '2022.04.06.18.25',
+                    },
+                    'selectBoxItem.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/templates/',
+                        version: '2022.04.06.18.25',
                     },
                     // 'sickRoomSelectBox.js': {
                     //     type: 'module',

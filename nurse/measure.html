@@ -41,9 +41,7 @@
                         <img src="/H-Connect/img/logo.png" alt="로고" />
                     </div>
 
-                    <h3>
-                        측정을 종료하고 장치를 정지합니다.
-                    </h3>
+                    <h3>측정을 종료하고 장치를 정지합니다.</h3>
                     <h2>측정을 종료 하시겠습니까?</h2>
 
                     <div class="btn_list">
@@ -265,7 +263,7 @@
 
                                     <input type="text" placeholder="생년월일" />
                                     <input type="text" placeholder="성별" />
-                                    
+
                                     <input
                                         id="patient_MRN"
                                         type="text"
@@ -747,19 +745,19 @@
                                         </p>
 
                                         <div class="device_list"> -->
-                                            <!-- 사용 안할때 addClass off 해주세요 -->
-                                            <!-- <div class="off">심전도</div>
+                                    <!-- 사용 안할때 addClass off 해주세요 -->
+                                    <!-- <div class="off">심전도</div>
                                             <div>산소포화도</div>
                                             <div>체온</div>
                                         </div>
 
                                         <div class="btn_list"> -->
-                                            <!-- 측정 종료시 disabled -->
-                                            <!-- <button class="btn rdf btn_end">
+                                    <!-- 측정 종료시 disabled -->
+                                    <!-- <button class="btn rdf btn_end">
                                                 측정종료
                                             </button>
                                         </div> -->
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
                             </div>
                         </section>
@@ -935,7 +933,7 @@
                                 <!-- 연결 장치 -->
                                 <div class="device_room">
                                     <!-- 기본화면에서 안보이게 해주세요 -->
-                                    <div>
+                                    <!-- <div>
                                         <p>심전도 측정장치</p>
                                         <p>serial no.</p>
 
@@ -953,49 +951,7 @@
                                                 장치제거
                                             </button>
                                         </div>
-                                    </div>
-
-                                    <!-- 기본화면에서 안보이게 해주세요 -->
-                                    <div>
-                                        <p>산소포화도 측정장치</p>
-                                        <p>serial no.</p>
-
-                                        <div class="btn_list">
-                                            <button
-                                                type="button"
-                                                class="btn bl"
-                                            >
-                                                장치정보
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn rd btn_delete"
-                                            >
-                                                장치제거
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- 기본화면에서 안보이게 해주세요 -->
-                                    <div>
-                                        <p>체온 측정장치</p>
-                                        <p>serial no.</p>
-
-                                        <div class="btn_list">
-                                            <button
-                                                type="button"
-                                                class="btn bl"
-                                            >
-                                                장치정보
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn rd btn_delete"
-                                            >
-                                                장치제거
-                                            </button>
-                                        </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- 기본화면에서 보이게 해주세요 -->
                                     <div class="control">
@@ -1029,7 +985,8 @@
             </div>
         </div>
         <!--// end wrap-->
-        <<script>
+
+        <script>
             //장치등록 팝업 셀렉트
             const leftlabel = document.querySelector(
                 '.pop.regi_device .left_label'
@@ -1039,56 +996,56 @@
             );
 
             // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-            const handleSelect = (item) => {
-                leftlabel.parentNode.classList.remove('active');
-                leftlabel.innerHTML = item.textContent;
-            };
-            // 옵션 클릭시 클릭한 옵션을 넘김
-            leftoptions.forEach((option) => {
-                option.addEventListener('click', () => handleSelect(option));
-            });
+            // const handleSelect = (item) => {
+            //     leftlabel.parentNode.classList.remove('active');
+            //     leftlabel.innerHTML = item.textContent;
+            // };
+            // // 옵션 클릭시 클릭한 옵션을 넘김
+            // leftoptions.forEach((option) => {
+            //     option.addEventListener('click', () => handleSelect(option));
+            // });
 
             // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            leftlabel.addEventListener('click', () => {
-                if (leftlabel.parentNode.classList.contains('active')) {
-                    leftlabel.parentNode.classList.remove('active');
-                } else {
-                    leftlabel.parentNode.classList.add('active');
-                }
-            });
+            // leftlabel.addEventListener('click', () => {
+            //     if (leftlabel.parentNode.classList.contains('active')) {
+            //         leftlabel.parentNode.classList.remove('active');
+            //     } else {
+            //         leftlabel.parentNode.classList.add('active');
+            //     }
+            // });
 
             //장치수정 팝업 셀렉트
-            const update_leftlabel = document.querySelector(
-                '.pop.update_device .left_label'
-            );
-            const update_leftoptions = document.querySelectorAll(
-                '.pop.update_device .left_list'
-            );
+            // const update_leftlabel = document.querySelector(
+            //     '.pop.update_device .left_label'
+            // );
+            // const update_leftoptions = document.querySelectorAll(
+            //     '.pop.update_device .left_list'
+            // );
 
-            // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-            const update_handleSelect = (item) => {
-                update_leftlabel.parentNode.classList.remove('active');
-                update_leftlabel.innerHTML = item.textContent;
-            };
-            // 옵션 클릭시 클릭한 옵션을 넘김
-            update_leftoptions.forEach((option) => {
-                option.addEventListener('click', () =>
-                    update_handleSelect(option)
-                );
-            });
+            // // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+            // const update_handleSelect = (item) => {
+            //     update_leftlabel.parentNode.classList.remove('active');
+            //     update_leftlabel.innerHTML = item.textContent;
+            // };
+            // // 옵션 클릭시 클릭한 옵션을 넘김
+            // update_leftoptions.forEach((option) => {
+            //     option.addEventListener('click', () =>
+            //         update_handleSelect(option)
+            //     );
+            // });
 
-            // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            update_leftlabel.addEventListener('click', () => {
-                if (update_leftlabel.parentNode.classList.contains('active')) {
-                    update_leftlabel.parentNode.classList.remove('active');
-                } else {
-                    update_leftlabel.parentNode.classList.add('active');
-                }
-            });
+            // // 라벨을 클릭시 옵션 목록이 열림/닫힘
+            // update_leftlabel.addEventListener('click', () => {
+            //     if (update_leftlabel.parentNode.classList.contains('active')) {
+            //         update_leftlabel.parentNode.classList.remove('active');
+            //     } else {
+            //         update_leftlabel.parentNode.classList.add('active');
+            //     }
+            // });
 
-            //measure_status 병동 셀렉트
-            const wardlabel = document.querySelector('.ward_label');
-            const wardOptions = document.querySelectorAll('.ward_list');
+            // //measure_status 병동 셀렉트
+            // const wardlabel = document.querySelector('.ward_label');
+            // const wardOptions = document.querySelectorAll('.ward_list');
 
             // const wardSelect = (item) => {
             //     wardlabel.parentNode.classList.remove('active');
@@ -1129,17 +1086,17 @@
             // })
 
             //measure_status 병상등록 성별 셀렉트
-            const sexlabel = document.querySelector('.sex_label');
-            const sexOptions = document.querySelectorAll('.sex_list');
+            // const sexlabel = document.querySelector('.sex_label');
+            // const sexOptions = document.querySelectorAll('.sex_list');
 
-            const sexSelect = (item) => {
-                sexlabel.parentNode.classList.remove('active');
-                sexlabel.innerHTML = item.textContent;
-            };
+            // const sexSelect = (item) => {
+            //     sexlabel.parentNode.classList.remove('active');
+            //     sexlabel.innerHTML = item.textContent;
+            // };
 
-            sexOptions.forEach((option) => {
-                option.addEventListener('click', () => sexSelect(option));
-            });
+            // sexOptions.forEach((option) => {
+            //     option.addEventListener('click', () => sexSelect(option));
+            // });
 
             // sexlabel.addEventListener('click', () => {
             //     if (sexlabel.parentNode.classList.contains('active')) {
@@ -1213,67 +1170,67 @@
             // }
 
             //measure_status 병상수정 병동 셀렉트
-            const modiWardlabel = document.querySelector('.mward_label');
-            const modiWardOptions = document.querySelectorAll('.mward_list');
+            // const modiWardlabel = document.querySelector('.mward_label');
+            // const modiWardOptions = document.querySelectorAll('.mward_list');
 
-            const modiWardSelect = (item) => {
-                modiWardlabel.parentNode.classList.remove('active');
-                modiWardlabel.innerHTML = item.textContent;
-            };
+            // const modiWardSelect = (item) => {
+            //     modiWardlabel.parentNode.classList.remove('active');
+            //     modiWardlabel.innerHTML = item.textContent;
+            // };
 
-            modiWardOptions.forEach((option) => {
-                option.addEventListener('click', () => modiWardSelect(option));
-            });
+            // modiWardOptions.forEach((option) => {
+            //     option.addEventListener('click', () => modiWardSelect(option));
+            // });
 
-            modiWardlabel.addEventListener('click', () => {
-                if (modiWardlabel.parentNode.classList.contains('active')) {
-                    modiWardlabel.parentNode.classList.remove('active');
-                } else {
-                    modiWardlabel.parentNode.classList.add('active');
-                }
-            });
+            // modiWardlabel.addEventListener('click', () => {
+            //     if (modiWardlabel.parentNode.classList.contains('active')) {
+            //         modiWardlabel.parentNode.classList.remove('active');
+            //     } else {
+            //         modiWardlabel.parentNode.classList.add('active');
+            //     }
+            // });
 
             //measure_status 병상수정 병실 셀렉트
-            const modiRoomlabel = document.querySelector('.mroom_label');
-            const modiRoomOptions = document.querySelectorAll('.mroom_list');
+            // const modiRoomlabel = document.querySelector('.mroom_label');
+            // const modiRoomOptions = document.querySelectorAll('.mroom_list');
 
-            const modiRoomSelect = (item) => {
-                modiRoomlabel.parentNode.classList.remove('active');
-                modiRoomlabel.innerHTML = item.textContent;
-            };
+            // const modiRoomSelect = (item) => {
+            //     modiRoomlabel.parentNode.classList.remove('active');
+            //     modiRoomlabel.innerHTML = item.textContent;
+            // };
 
-            modiRoomOptions.forEach((option) => {
-                option.addEventListener('click', () => modiRoomOptions(option));
-            });
+            // modiRoomOptions.forEach((option) => {
+            //     option.addEventListener('click', () => modiRoomOptions(option));
+            // });
 
-            modiRoomlabel.addEventListener('click', () => {
-                if (modiRoomlabel.parentNode.classList.contains('active')) {
-                    modiRoomlabel.parentNode.classList.remove('active');
-                } else {
-                    modiRoomlabel.parentNode.classList.add('active');
-                }
-            });
+            // modiRoomlabel.addEventListener('click', () => {
+            //     if (modiRoomlabel.parentNode.classList.contains('active')) {
+            //         modiRoomlabel.parentNode.classList.remove('active');
+            //     } else {
+            //         modiRoomlabel.parentNode.classList.add('active');
+            //     }
+            // });
 
             //measure_status 병상수정 병상 셀렉트
-            const modiBedlabel = document.querySelector('.mbed_label');
-            const modiBedOptions = document.querySelectorAll('.mbed_list');
+            // const modiBedlabel = document.querySelector('.mbed_label');
+            // const modiBedOptions = document.querySelectorAll('.mbed_list');
 
-            const modiBedSelect = (item) => {
-                modiBedlabel.parentNode.classList.remove('active');
-                modiBedlabel.innerHTML = item.textContent;
-            };
+            // const modiBedSelect = (item) => {
+            //     modiBedlabel.parentNode.classList.remove('active');
+            //     modiBedlabel.innerHTML = item.textContent;
+            // };
 
-            modiBedOptions.forEach((option) => {
-                option.addEventListener('click', () => modiBedSelect(option));
-            });
+            // modiBedOptions.forEach((option) => {
+            //     option.addEventListener('click', () => modiBedSelect(option));
+            // });
 
-            modiBedlabel.addEventListener('click', () => {
-                if (modiBedlabel.parentNode.classList.contains('active')) {
-                    modiBedlabel.parentNode.classList.remove('active');
-                } else {
-                    modiBedlabel.parentNode.classList.add('active');
-                }
-            });
+            // modiBedlabel.addEventListener('click', () => {
+            //     if (modiBedlabel.parentNode.classList.contains('active')) {
+            //         modiBedlabel.parentNode.classList.remove('active');
+            //     } else {
+            //         modiBedlabel.parentNode.classList.add('active');
+            //     }
+            // });
 
             // 장치등록팝업
             const regilabel = document.querySelector('.type_select .label');
@@ -1286,17 +1243,17 @@
                 regilabel.innerHTML = item.textContent;
             };
 
-            regiOptions.forEach((option) => {
-                option.addEventListener('click', () => {
-                    regidSelect(option);
-                    reset(regiOptions, 'active');
-                    option.classList.add('active');
-                });
-            });
+            // regiOptions.forEach((option) => {
+            //     option.addEventListener('click', () => {
+            //         regidSelect(option);
+            //         reset(regiOptions, 'active');
+            //         option.classList.add('active');
+            //     });
+            // });
 
-            regilabel.addEventListener('click', () => {
-                regilabel.parentNode.classList.toggle('active');
-            });
+            // regilabel.addEventListener('click', () => {
+            //     regilabel.parentNode.classList.toggle('active');
+            // });
 
             const typeLabel3 = document.querySelector('.type_select .label');
             const tyepOption3 = document.querySelectorAll(
@@ -1328,87 +1285,87 @@
             );
 
             // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-            const typeSelect3 = (item) => {
-                typeLabel3.parentNode.classList.remove('active');
-                typeLabel3.innerHTML = item.textContent;
-            };
-            const sexSelect3 = (item) => {
-                sexLabel3.parentNode.classList.remove('active');
-                sexLabel3.innerHTML = item.textContent;
-            };
-            const wardSelect3 = (item) => {
-                wardLabel3.parentNode.classList.remove('active');
-                wardLabel3.innerHTML = item.textContent;
-            };
-            const roomSelect3 = (item) => {
-                roomLabel3.parentNode.classList.remove('active');
-                roomLabel3.innerHTML = item.textContent;
-            };
-            const bedSelect3 = (item) => {
-                bedLabel3.parentNode.classList.remove('active');
-                bedLabel3.innerHTML = item.textContent;
-            };
+            // const typeSelect3 = (item) => {
+            //     typeLabel3.parentNode.classList.remove('active');
+            //     typeLabel3.innerHTML = item.textContent;
+            // };
+            // const sexSelect3 = (item) => {
+            //     sexLabel3.parentNode.classList.remove('active');
+            //     sexLabel3.innerHTML = item.textContent;
+            // };
+            // const wardSelect3 = (item) => {
+            //     wardLabel3.parentNode.classList.remove('active');
+            //     wardLabel3.innerHTML = item.textContent;
+            // };
+            // const roomSelect3 = (item) => {
+            //     roomLabel3.parentNode.classList.remove('active');
+            //     roomLabel3.innerHTML = item.textContent;
+            // };
+            // const bedSelect3 = (item) => {
+            //     bedLabel3.parentNode.classList.remove('active');
+            //     bedLabel3.innerHTML = item.textContent;
+            // };
 
-            // 옵션 클릭시 클릭한 옵션을 넘김
-            tyepOption3.forEach((option) => {
-                option.addEventListener('click', () => {
-                    typeSelect3(option);
-                    reset(tyepOption3, 'active');
-                    option.classList.add('active');
-                });
-            });
-            sexOption3.forEach((option) => {
-                option.addEventListener('click', () => {
-                    sexSelect3(option);
-                    reset(sexOption3, 'active');
-                    option.classList.add('active');
-                });
-            });
-            wardOption3.forEach((option) => {
-                option.addEventListener('click', () => {
-                    wardSelect3(option);
-                    reset(wardOption3, 'active');
-                    option.classList.add('active');
-                });
-            });
-            roomOption3.forEach((option) => {
-                option.addEventListener('click', () => {
-                    roomSelect3(option);
-                    reset(roomOption3, 'active');
-                    option.classList.add('active');
-                });
-            });
-            bedOption3.forEach((option) => {
-                option.addEventListener('click', () => {
-                    bedSelect3(option);
-                    reset(bedOption3, 'active');
-                    option.classList.add('active');
-                });
-            });
-
-            // 라벨을 클릭시 옵션 목록이 열림/닫힘
-            typeLabel3.addEventListener('click', () => {
-                typeLabel3.parentNode.classList.toggle('active');
-            });
-            // sexLabel3.addEventListener('click', () => {
-            //     sexLabel3.parentNode.classList.toggle('active');
+            // // 옵션 클릭시 클릭한 옵션을 넘김
+            // tyepOption3.forEach((option) => {
+            //     option.addEventListener('click', () => {
+            //         typeSelect3(option);
+            //         reset(tyepOption3, 'active');
+            //         option.classList.add('active');
+            //     });
             // });
-            wardLabel3.addEventListener('click', () => {
-                wardLabel3.parentNode.classList.toggle('active');
-            });
-            roomLabel3.addEventListener('click', () => {
-                roomLabel3.parentNode.classList.toggle('active');
-            });
-            bedLabel3.addEventListener('click', () => {
-                bedLabel3.parentNode.classList.toggle('active');
-            });
+            // sexOption3.forEach((option) => {
+            //     option.addEventListener('click', () => {
+            //         sexSelect3(option);
+            //         reset(sexOption3, 'active');
+            //         option.classList.add('active');
+            //     });
+            // });
+            // wardOption3.forEach((option) => {
+            //     option.addEventListener('click', () => {
+            //         wardSelect3(option);
+            //         reset(wardOption3, 'active');
+            //         option.classList.add('active');
+            //     });
+            // });
+            // roomOption3.forEach((option) => {
+            //     option.addEventListener('click', () => {
+            //         roomSelect3(option);
+            //         reset(roomOption3, 'active');
+            //         option.classList.add('active');
+            //     });
+            // });
+            // bedOption3.forEach((option) => {
+            //     option.addEventListener('click', () => {
+            //         bedSelect3(option);
+            //         reset(bedOption3, 'active');
+            //         option.classList.add('active');
+            //     });
+            // });
 
-            // 리셋 코드
-            function reset(content, className) {
-                Array.from(content).forEach((element) => {
-                    element.classList.remove(className);
-                });
-            }
-        </script>>
+            // // 라벨을 클릭시 옵션 목록이 열림/닫힘
+            // typeLabel3.addEventListener('click', () => {
+            //     typeLabel3.parentNode.classList.toggle('active');
+            // });
+            // // sexLabel3.addEventListener('click', () => {
+            // //     sexLabel3.parentNode.classList.toggle('active');
+            // // });
+            // wardLabel3.addEventListener('click', () => {
+            //     wardLabel3.parentNode.classList.toggle('active');
+            // });
+            // roomLabel3.addEventListener('click', () => {
+            //     roomLabel3.parentNode.classList.toggle('active');
+            // });
+            // bedLabel3.addEventListener('click', () => {
+            //     bedLabel3.parentNode.classList.toggle('active');
+            // });
+
+            // // 리셋 코드
+            // function reset(content, className) {
+            //     Array.from(content).forEach((element) => {
+            //         element.classList.remove(className);
+            //     });
+            // }
+        </script>
     </body>
 </html>

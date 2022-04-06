@@ -47,11 +47,6 @@ export async function selectMeasurementInfoList(
         req,
         (res) => {
             if (res.result) {
-                // patient_count = data_List ? data_List.length : 0;
-                // $('.section.measure_status .cont .search_select p span').text(
-                //     patient_count
-                // );
-                // createMeasureList(data_List);
             }
         },
         (err) => {
