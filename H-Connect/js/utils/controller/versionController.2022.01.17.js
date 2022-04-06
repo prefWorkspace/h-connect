@@ -396,13 +396,13 @@ const VERSION = {
                     // },
                 },
                 renders: {
-                    // 'createMeasureList.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/renders/',
-                    //     version: '2022.03.25.12.01',
-                    // },
+                    'createMeasureList.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/renders/',
+                        version: '2022.03.25.12.01',
+                    },
                     // 'sickRoomSelectBoxList.js': {
                     //     type: 'module',
                     //     url_path: '/nurse/measure',
@@ -433,13 +433,13 @@ const VERSION = {
                     //         '/H-Connect/js/nurse/management/measure/templates/',
                     //     version: '2022.03.25.12.01',
                     // },
-                    // 'measurList.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/templates/',
-                    //     version: '2022.03.25.12.01',
-                    // },
+                    'measurList.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/templates/',
+                        version: '2022.03.25.12.01',
+                    },
                     // 'sickRoomSelectBox.js': {
                     //     type: 'module',
                     //     url_path: '/nurse/measure',
