@@ -2067,9 +2067,11 @@ textarea::-webkit-scrollbar-button {
 
 .pop.delete .pop_cont .btn_list {
     width: 400px;
+    height: fit-content;
     bottom: 64px;
     left: 27px;
     font-size: 16px;
+    justify-content: center;
 }
 
 .pop.delete .pop_cont .btn_list .btn_no {

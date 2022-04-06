@@ -2982,25 +2982,38 @@
 .dashboard .taget_view .title div {
     align-items: center;
 }
+.dashboard .taget_view .btn_ViewlistScroll{
+    max-width: 720px;
+    margin-left: 68px;
+    overflow: auto;
+}
+
+.dashboard .taget_view .btn_ViewlistScroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dashboard .taget_view .btn_ViewlistScroll::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
 
 .dashboard .taget_view .title .btn_list button {
     width: 96px;
     height: 40px;
     padding: 11px;
     margin-right: 8px;
-
     border-radius: 4px;
     border: 1px solid #007a94;
     color: #007a94;
     font-size: 12px;
     background: #fff;
+    flex: 0 0 auto;
 }
+
 .dashboard .taget_view .btn_ViewlistScroll button:last-child{margin: 0;}
-.dashboard .taget_view .title .btn_ViewlistScroll{
-    max-width: 720px;
-    margin-left: 68px;
-    overflow: auto;
-}
+
 /* .dashboard .taget_view .btn_list button:nth-last-child(2) {
     margin: 0;
 } */
