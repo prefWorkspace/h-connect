@@ -855,9 +855,9 @@ $(function () {
         $('.connect_scroll .scene_picture').show();
     });
 
-    $('.connect_scroll .patient_view .btn_list button').click(function(){
+    $('.connect_scroll .patient_view .btn_list button').click(function () {
         $(this).removeClass('active');
-    })
+    });
 
     //---------------------- 의사 ----------------------//
     // 협진시작 버튼
@@ -1876,3 +1876,12 @@ $('.pop.new_room_pop .overlay .new_regi .selectBox2 .optionList li').on(
         $(this).parent().parent().toggleClass('active');
     }
 );
+
+//간호사 측정관리 셀렉트 박스 및 팝업 띄우기
+
+// 병상 등록 팝업
+console.log($('.wrap_inner .measure_status .btn_new_room'));
+$('.wrap_inner .measure_status .btn_new_room').on('click', function () {
+    console.log('dddd');
+    $('.pop.new_room_pop .overlay').fadeIn();
+});

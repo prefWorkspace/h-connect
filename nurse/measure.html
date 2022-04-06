@@ -9,15 +9,21 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>H-Connect</title>
         <!--Import-->
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"
-        ></script>
+
         <script
             type="text/javascript"
             defer
             src="/H-Connect/js/jquery-3.6.0.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/common.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"
         ></script>
 
         <!--css-->
@@ -1333,10 +1339,9 @@
             typeLabel3.addEventListener('click', () => {
                 typeLabel3.parentNode.classList.toggle('active');
             });
-            console.log(sexLabel3);
-            sexLabel3.addEventListener('click', () => {
-                sexLabel3.parentNode.classList.toggle('active');
-            });
+            // sexLabel3.addEventListener('click', () => {
+            //     sexLabel3.parentNode.classList.toggle('active');
+            // });
             wardLabel3.addEventListener('click', () => {
                 wardLabel3.parentNode.classList.toggle('active');
             });
