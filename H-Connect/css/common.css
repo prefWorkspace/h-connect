@@ -1853,7 +1853,10 @@ textarea::-webkit-scrollbar-button {
     position: absolute;
     bottom: 32px;
     right: 32px;
+    display: flex;
 }
+
+.pop .overlay .pop_cont .btn_list button:first-child{margin-right: 8px;}
 
 .pop .overlay .pop_cont .btn_list .btn_cancel {
     width: 120px;
@@ -4072,25 +4075,36 @@ textarea::-webkit-scrollbar-button {
 .pop.new_room_pop .patient_info {
     justify-content: space-between;
 }
+
 .pop.new_room_pop .selectBox2 {
     height: 36px;
-}
-.pop.new_room_pop .sex_select {
-    width: 80px;
-    z-index: 2;
-}
-.pop.new_room_pop .sex_select .label {
-    color: #ccc;
-}
-.pop.new_room_pop .sex_select li {
-    font-size: 12px;
 }
 .pop.new_room_pop .selectBox2 .label {
     font-size: 12px;
 }
-.pop.new_room_pop .patient_info input:last-child {
-    width: 296px;
+.pop.new_room_pop .select_name{width: 100%; margin: 0 0 16px; color: #CCCCCC;}
+.pop.new_room_pop .select_name ul{
+    top: 100%;
+    width: 472px;
+    z-index: 1;
 }
+.pop.new_room_pop .select_name li{font-size: 12px; display: flex;}
+.pop.new_room_pop .select_name span:first-child{width: 95px;}
+.pop.new_room_pop .select_name span:nth-child(2){width: 77px;}
+.pop.new_room_pop .select_name span:last-child{margin-left: 86px;}
+.pop.new_room_pop .patient_info input{line-height: 36px;}
+
+.pop.new_room_pop .patient_info input:nth-child(1){
+    width: 80px;
+}
+
+.pop.new_room_pop .patient_info input:nth-child(2){
+    width: 64px;
+    padding: 0 21px;
+    margin: 0 16px;
+}
+
+.pop.new_room_pop .patient_info input:nth-child(3){width: 296px;}
 .pop.new_room_pop .patient_room {
     justify-content: space-between;
 }
@@ -4226,7 +4240,7 @@ textarea::-webkit-scrollbar-button {
     margin: 0;
 }
 .pop.new_room_pop .new_regi .btn_list {
-    bottom: -30px;
+    bottom: -95px;
     right: 17px;
 }
 .pop.new_room_pop .new_regi .btn_list button {
@@ -4237,12 +4251,15 @@ textarea::-webkit-scrollbar-button {
     margin-bottom: 16px;
     display: flex;
     /* align-items: center; */
-    align-items: baseline;
+    /* align-items: baseline; */
     justify-content: space-between;
 }
 .pop.new_room_pop .new_regi .input_box p {
+    margin-top: 14px;
     font-size: 14px;
 }
+
+.pop.new_room_pop .new_regi .input_wrap input{margin: 0;}
 .pop.new_room_pop .new_regi .type_select {
     width: 356px;
     height: 48px;
@@ -4268,6 +4285,7 @@ textarea::-webkit-scrollbar-button {
     color: #940045;
     display: inline-block;
     opacity: 0;
+    display: none;
 }
 .pop.new_room_pop .new_regi .input_wrap span.active {
     opacity: 1;
