@@ -132,6 +132,28 @@ export const updateDisplayName = async (displayCode, displayName) => {
     );
 };
 
+export const updateDisplayNumber = async (displayCode, displayNumber) => {
+    const req = JSON.stringify({
+        requester,
+        organization,
+        displayCode,
+        displayNumber,
+        ...commonRequest(),
+    });
+
+    return await serverController.ajaxAwaitController(
+        'API/Manager/UpdateDisplay',
+        'POST',
+        req,
+        (res) => {
+            if (res.result) {
+            } else {
+                session_renew(res);
+            }
+        }
+    );
+}
+
 export const deleteDisplay = async (displayCode) => {
     const req = JSON.stringify({
         requester,

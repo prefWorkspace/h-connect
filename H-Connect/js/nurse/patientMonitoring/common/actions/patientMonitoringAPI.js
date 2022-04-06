@@ -45,5 +45,4 @@ export const SelectAlarmSettingMeasurement = async () => {
         throw new Error('조회된 데이타가 없습니다');
     }
     return res.measurementAlarmSetting;
-    // if(!res.)
 };

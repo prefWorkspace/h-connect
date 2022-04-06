@@ -703,13 +703,6 @@ const VERSION = {
                         },
                     },
                     renders: {
-                        'vitalHeaderRender.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
-                            version: '2022.03.30.12.18',
-                        },
                         'vitalRender.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
@@ -718,7 +711,15 @@ const VERSION = {
                             version: '2022.03.30.12.18',
                         },
                     },
-                    templates: {},
+                    templates: {
+                        'vitalHeaderTmpl.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
+                            version: '2022.03.30.12.18',
+                        },
+                    },
                 },
                 currentVital: {
                     actions: {
@@ -776,6 +777,13 @@ const VERSION = {
                     },
                 },
                 templates: {
+                    'alarmSettingPopupTmpl.js': {
+                        type: 'module',
+                        url_path: '/nurse/patient',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/common/templates/',
+                        version: '2022.04.06.18.33',
+                    },
                     'pateintInfoTmpl.js': {
                         type: 'module',
                         url_path: '/nurse/patient||/nurse/arteriotony',

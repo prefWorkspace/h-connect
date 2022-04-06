@@ -1804,7 +1804,7 @@ textarea::-webkit-scrollbar-button {
     z-index: 100;
 }
 
-.pop .overlay .pop_cont {
+.pop .pop_cont {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1817,21 +1817,21 @@ textarea::-webkit-scrollbar-button {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.pop .overlay .pop_cont .title {
+.pop .pop_cont .title {
     padding-bottom: 15px;
     border-bottom: 1px solid #007a94;
 }
 
-.pop .overlay .pop_cont .title h2 {
+.pop .pop_cont .title h2 {
     color: #007a94;
 }
 
-.pop .overlay .pop_cont .content {
+.pop .pop_cont .content {
     padding: 31px 0 0;
     display: flex;
 }
 
-.pop .overlay .pop_cont .content p {
+.pop  .pop_cont .content p {
     width: 52px;
     margin: 0 64px 0 0;
     font-size: 14px;
@@ -1839,7 +1839,7 @@ textarea::-webkit-scrollbar-button {
     color: #000;
 }
 
-.pop .overlay .pop_cont .content input {
+.pop .pop_cont .content input {
     width: 420px;
     height: 48px;
     padding: 14px 16px;
@@ -1849,16 +1849,16 @@ textarea::-webkit-scrollbar-button {
     vertical-align: middle;
 }
 
-.pop .overlay .pop_cont .btn_list {
+.pop .pop_cont .btn_list {
     position: absolute;
     bottom: 32px;
     right: 32px;
     display: flex;
 }
 
-.pop .overlay .pop_cont .btn_list button:first-child{margin-right: 8px;}
+.pop .pop_cont .btn_list button:first-child{margin-right: 8px;}
 
-.pop .overlay .pop_cont .btn_list .btn_cancel {
+.pop .pop_cont .btn_list .btn_cancel {
     width: 120px;
     height: 40px;
     border-radius: 4px;
@@ -1866,7 +1866,7 @@ textarea::-webkit-scrollbar-button {
     font-size: 14px;
 }
 
-.pop .overlay .pop_cont .btn_list .btn_check {
+.pop .pop_cont .btn_list .btn_check {
     width: 120px;
     height: 40px;
     border-radius: 4px;
