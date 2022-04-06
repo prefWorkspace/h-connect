@@ -5,9 +5,10 @@ const { getDisplayList } = await import(
 const { selectWardList, selectSickRoomList, selectSickBedList } = await import(
     importVersion('/H-Connect/js/utils/module/select/selectList.js')
 );
-const { insertDisplay, updateDisplayName, deleteDisplay } = await import(
-    importVersion('/H-Connect/js/nurse/dashboard/actions/displayActions.js')
-);
+const { insertDisplay, updateDisplayName, updateDisplayNumber, deleteDisplay } =
+    await import(
+        importVersion('/H-Connect/js/nurse/dashboard/actions/displayActions.js')
+    );
 const { updateSickBed } = await import(
     importVersion('/H-Connect/js/nurse/dashboard/actions/sickBedActions.js')
 );
@@ -41,7 +42,7 @@ const { parseDisplayDeletePop } = await import(
 
 // 일반 상수
 const DISPLAY_START = 1;
-const DISPLAY_END = 10;
+const DISPLAY_END = 99;
 const DISPLAY_MAX_BED = 26;
 
 // API variable
@@ -261,6 +262,7 @@ async function addEventToDisplayBtn() {
                 $btn_View.removeClass('on');
                 $(this).addClass('on');
                 selected_display = $(this).data('id');
+                moveScrollBarByDisplayCode(selected_display);
                 renderDashboardScreen();
                 $('.btn_delete').prop('disabled', true);
             });
@@ -268,8 +270,7 @@ async function addEventToDisplayBtn() {
 }
 
 async function addEventOnWardCheck(wardCode) {
-    const $ward_check = $('#ward_check');
-    $ward_check.off().on('click', async () => {
+    $('#ward_check').off().on('click', async () => {
         //병실 체크
         let sickRoomByWard = [];
         _wardList = (await selectWardList()).wardList;
@@ -282,7 +283,7 @@ async function addEventOnWardCheck(wardCode) {
                 .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
         }
         sickRoomByWard.forEach((sickRoomCode) => {
-            if ($ward_check.prop('checked')) {
+            if ($('#ward_check').prop('checked')) {
                 $(`#${sickRoomCode}`).prop('checked', true);
             } else {
                 $(`#${sickRoomCode}`).prop('checked', false);
@@ -294,7 +295,7 @@ async function addEventOnWardCheck(wardCode) {
             .filter((sickBed) => sickBed.wardCode === wardCode)
             .map((bed) => bed.sickBedCode);
         checkSickbedsArray.forEach((sickBedCode) => {
-            if ($ward_check.prop('checked')) {
+            if ($('#ward_check').prop('checked')) {
                 $(`#${sickBedCode}`).prop('checked', true);
             } else {
                 $(`#${sickBedCode}`).prop('checked', false);
@@ -530,6 +531,9 @@ async function addEventToAddBtn() {
                 await renderDisplayBtn();
                 moveScrollBarByDisplayCode(selected_display);
                 await renderDashboardScreen();
+                $('#ward_check:checked').prop('checked', false);
+                $('input[name=room_no]:checked').prop('checked', false);
+                $('input[name=sickBed_no]:checked').prop('checked', false);
             }
         });
 }
@@ -542,7 +546,6 @@ async function addEventToDeleteBtn() {
             $('.inpat_sickbed:checked').each(function () {
                 checked_sickbed.push($(this).attr('id').replace('inpat_', ''));
             });
-            //let sickBedDisplayCodeList = [];
             for (let j = 0; j < checked_sickbed.length; j++) {
                 for (
                     let i = 0;
@@ -601,13 +604,17 @@ async function addEventToDeleteDisplayBtns() {
 
         $('.pop_cont .btn_cut').click(async function () {
             displayList.forEach((display, index) => {
-                if(display.displayCode === del_dis.displayCode){
+                if (display.displayCode === del_dis.displayCode) {
                     selected_display = displayList[index - 1].displayCode;
                     return false;
                 }
-            })
+            });
             await deleteDisplay(del_dis.displayCode);
             await displayInfoUpdate();
+            displayList.forEach(async (display, index) => {
+                await updateDisplayNumber(display.displayCode, index + 1);
+            });
+            displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
             await renderDisplayBtn();
             moveScrollBarByDisplayCode(selected_display);
             await renderDashboardScreen();
@@ -622,14 +629,7 @@ async function addEventToDeleteDisplayBtns() {
 
 function addEventToApplyBtn() {
     $('.btn.btn_state').on('click', function () {
-        let sickBedDisplayCodeList = [];
-        sickBedsByDisplay[selected_display].forEach((sickBed) => {
-            sickBedDisplayCodeList.push({
-                sickbedCode: sickBed.sickBedCode,
-                monitoringDeactivate: sickBed.monitoringDeactivate,
-            });
-        });
-        console.log(sickBedDisplayCodeList);
+        console.log(sickBedsByDisplay[selected_display]);
     });
 }
 
