@@ -1,11 +1,12 @@
-const { selectMeasurementInfoDetail } = await import(
+const { selectMeasurementInfoDetail, SelectAlarmSettingMeasurement } =
+    await import(
+        importVersion(
+            '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/vitalInformAPI.js'
+        )
+    );
+const { vitalHeaderTmpl } = await import(
     importVersion(
-        '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/vitalInformAPI.js'
-    )
-);
-const { vitalHeaderRender } = await import(
-    importVersion(
-        '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/vitalHeaderRender.js'
+        '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/vitalHeaderTmpl.js'
     )
 );
 const { currentVitalInitData } = await import(
@@ -16,8 +17,9 @@ const { currentVitalInitData } = await import(
 
 async function vitalRenderInit() {
     const _measurementInfo = await selectMeasurementInfoDetail();
-    vitalHeaderRender(_measurementInfo);
-    currentVitalInitData(_measurementInfo);
+    const _alarmSettingInfo = await SelectAlarmSettingMeasurement();
+    vitalHeaderTmpl(_measurementInfo);
+    currentVitalInitData(_alarmSettingInfo);
 }
 
 vitalRenderInit();
