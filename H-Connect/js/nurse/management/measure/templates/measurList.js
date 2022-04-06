@@ -8,7 +8,7 @@ export function measureList(data_List) {
         sickRoom,
         sickBed,
         patientCode,
-        birthday,
+        age,
         wardCode,
         sickRoomCode,
         sickBedCode,
@@ -26,7 +26,7 @@ export function measureList(data_List) {
 
             <p>
                 <span>${name}</span>.
-                (<span>${birthday || '0000-00-00'}</span>.
+                (<span>${age || '00'}</span>.
                 <span>${gender === 1 ? '남자' : '여자'}</span>.
                 <span>${patientCode}</span>)
             </p>
