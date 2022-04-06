@@ -56,6 +56,30 @@ let selected_display = '';
 let sickBedsByDisplay = {};
 let arraySickBedCodesByDisplay = [];
 
+$.fn.hasScrollBar = function () {
+    return (
+        (this.prop('scrollWidth') == 0 && this.prop('clientWidth') == 0) ||
+        this.prop('scrollWidth') > this.prop('clientWidth')
+    );
+};
+
+// displayCode에 따라서 스크롤 이동
+function moveScrollBarByDisplayCode(displayCode) {
+    if ($('.btn_ViewlistScroll').hasScrollBar()) {
+        $('.btn_ViewlistScroll').scrollLeft($('.btn_ViewlistScroll').width());
+        Object.keys(sickBedsByDisplay).forEach((code, index) => {
+            if (code === displayCode) {
+                $('.btn_ViewlistScroll').scrollLeft(
+                    ($('.btn_ViewlistScroll').width() /
+                        Object.keys(sickBedsByDisplay).length) *
+                        index
+                );
+                return false;
+            }
+        });
+    }
+}
+
 async function displayInfoUpdate() {
     displayList = await getDisplayList(DISPLAY_START, DISPLAY_END);
     sickBedsByDisplay = {};
@@ -216,15 +240,13 @@ async function addEventToSickRoomArrow() {
                         'display',
                         'none'
                     );
-                    $(`.ward_count.${sickRoom.sickRoomCode}.on`).removeClass(
-                        'on'
-                    );
+                    $(`.ward_count.${sickRoom.sickRoomCode}`).toggleClass('on');
                 } else {
                     $(`.patient_info.${sickRoom.sickRoomCode}`).css(
                         'display',
                         'block'
                     );
-                    $(`.ward_count.${sickRoom.sickRoomCode}`).addClass('on');
+                    $(`.ward_count.${sickRoom.sickRoomCode}`).toggleClass('on');
                 }
             });
     });
@@ -506,6 +528,7 @@ async function addEventToAddBtn() {
                     }
                 }
                 await renderDisplayBtn();
+                moveScrollBarByDisplayCode(selected_display);
                 await renderDashboardScreen();
             }
         });
@@ -519,7 +542,7 @@ async function addEventToDeleteBtn() {
             $('.inpat_sickbed:checked').each(function () {
                 checked_sickbed.push($(this).attr('id').replace('inpat_', ''));
             });
-            let sickBedDisplayCodeList = [];
+            //let sickBedDisplayCodeList = [];
             for (let j = 0; j < checked_sickbed.length; j++) {
                 for (
                     let i = 0;
@@ -561,6 +584,7 @@ async function addEventToAddDisplayBtn() {
             await displayInfoUpdate();
             selected_display = displayList[displayList.length - 1].displayCode;
             await renderDisplayBtn();
+            moveScrollBarByDisplayCode(selected_display);
             await renderDashboardScreen();
         });
 }
@@ -576,13 +600,16 @@ async function addEventToDeleteDisplayBtns() {
         $('.pop.delete .overlay').fadeIn();
 
         $('.pop_cont .btn_cut').click(async function () {
+            displayList.forEach((display, index) => {
+                if(display.displayCode === del_dis.displayCode){
+                    selected_display = displayList[index - 1].displayCode;
+                    return false;
+                }
+            })
             await deleteDisplay(del_dis.displayCode);
             await displayInfoUpdate();
-            if (displayList.length >= 1)
-                selected_display =
-                    displayList[displayList.length - 1].displayCode;
-            else selected_display = null;
             await renderDisplayBtn();
+            moveScrollBarByDisplayCode(selected_display);
             await renderDashboardScreen();
             $('.pop.delete .overlay').fadeOut();
         });
