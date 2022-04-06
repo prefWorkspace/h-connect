@@ -2961,14 +2961,19 @@
     font-size: 12px;
     background: #fff;
 }
-
-.dashboard .taget_view .btn_list button:nth-last-child(2) {
-    margin: 0;
-}
-
-.dashboard .taget_view .btn_first {
+.dashboard .taget_view .btn_ViewlistScroll button:last-child{margin: 0;}
+.dashboard .taget_view .title .btn_ViewlistScroll{
+    max-width: 720px;
     margin-left: 68px;
+    overflow: auto;
 }
+/* .dashboard .taget_view .btn_list button:nth-last-child(2) {
+    margin: 0;
+} */
+
+/* .dashboard .taget_view .btn_first {
+    margin-left: 68px;
+} */
 
 .dashboard .taget_view .title .btn_list button.on {
     background: #007a94;
