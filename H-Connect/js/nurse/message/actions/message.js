@@ -1,845 +1,846 @@
 'use strict';
-import { commonRequest } from '../../../utils/controller/commonRequest.js?v=2022.01.17.11.33';
-import { sessionController } from '../../../utils/controller/sessionController.js?v=2022.01.27.09.24';
-import {
-    ip,
-    LOGIN_TOKEN,
-} from '../../../utils/controller/serverController.js?v=2022.01.17.11.33';
-import { localStorageController } from '../../../utils/controller/localStorageController.js?v=2022.01.17.11.33';
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+
+const { serverController, ip } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
+);
 
 const userData = JSON.parse(localStorageController.getLocalS('userData'));
-
-console.log(commonRequest());
 const { userCode: requester, organization: organizationCode } = userData;
-// const { requester, requestDateTime } = commonRequest();
 
-// let passingParameter = {
-//     'SX-Auth-Token': LOGIN_TOKEN,
-//     deviceKind: 3,
-//     // connType: connType,
-//     apiRoute: 'GWS-1',
-//     requester,
+let passingParameter = {
+    'SX-Auth-Token': LOGIN_TOKEN,
+    deviceKind: 3,
+    // connType: connType,
+    apiRoute: 'GWS-1',
+    requester,
+};
+// `${ip}ws?SX-API-Route=${'GWS-1'}&clientKeyName=${'bioSignalData'}&connType=${1}`
+console.log('io');
+console.log(ip);
+let streamming = new SockJS(`${ip}ws`);
+let stompClient = Stomp.over(streamming);
+
+function callBack(frame) {
+    const data = frame.headers;
+    console.log('data===');
+    console.log(data);
+    stompClient.subscribe(
+        '/topic/public/bioSignalData/SEERS_2203031645_V9U6',
+        function (data) {
+            const aaa = JSON.parse(data);
+            console.log('aaa===');
+            console.log(aaa);
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+}
+
+function connectonError(err) {
+    console.log(err);
+}
+
+stompClient.connect(passingParameter, callBack, connectonError);
+
+// let requestAPI = function () {
+//     this.headers = {
+//         'Content-Type': 'application/json;charset=UTF-8',
+//     };
+//     this.dataType = 'json';
+//     this.parameters = null;
+//     this.async = true;
+//     this.url = null;
+//     this.type = 'POST';
+//     this.timeout = 30000;
+//     this.cache = false;
+//     this.successParameters = null;
+//     this.errorFunction = null;
+
+//     this.setHeader = function (headers) {
+//         this.headers = headers;
+//     };
+//     this.setDataType = function (dataType) {
+//         this.dataType = dataType;
+//     };
+//     this.setParameter = function (parameters) {
+//         this.parameters = parameters;
+//     };
+//     this.setAsync = function (async) {
+//         this.async = async;
+//     };
+//     this.setUrl = function (url) {
+//         this.url = url;
+//     };
+//     this.etType = function (type) {
+//         this.type = type;
+//     };
+//     this.setTimeout = function (timeout) {
+//         this.timeout = timeout;
+//     };
+//     this.setCache = function (cache) {
+//         this.cache = cache;
+//     };
+//     this.setSuccessParameters = function (parameters) {
+//         this.successParameters = parameters;
+//     };
+//     this.setErrorFunction = function (callback) {
+//         this.errorFunction = callback;
+//     };
+
+//     this.API = function (
+//         onSuccessFunc = null,
+//         etcParams = { isFormData: false }
+//     ) {
+//         let isFormData = false;
+//         if (etcParams.hasOwnProperty('isFormData') === true) {
+//             isFormData = etcParams.isFormData;
+//         }
+//         let _self = this;
+//         let cloneObj = {
+//             url: this.url,
+//             parameters: this.parameters,
+//             async: this.async,
+//             successParameters: this.successParameters,
+//         };
+//         let res = null;
+//         let options = {
+//             url: this.url,
+//             type: this.type,
+//             async: this.async,
+//             cache: this.cache,
+//             timeout: this.timeout,
+//             headers: this.headers,
+//             dataType: this.dataType,
+//             data:
+//                 isFormData === false
+//                     ? JSON.stringify(this.parameters)
+//                     : this.parameters,
+//             success: function (data) {
+//                 // let log = `
+//                 //         =============== API log ===============
+//                 //         url:::::::::::::, ${cloneObj.url}
+//                 //         parameter::::::::, ${JSON.stringify(cloneObj.parameters)}
+//                 //         =======================================
+//                 // `;
+//                 // console.log(log);
+
+//                 if (data.result == false) {
+//                     _self.errorFunction(data);
+//                     return;
+//                 }
+
+//                 if (cloneObj.async === false) {
+//                     res = data;
+//                 } else if (onSuccessFunc != null) {
+//                     onSuccessFunc(
+//                         data,
+//                         cloneObj.parameters,
+//                         cloneObj.successParameters
+//                     );
+//                     return;
+//                 }
+//             },
+//             error: function (xhr, ajaxOptions, thrownError) {
+//                 console.log(xhr.status);
+//                 console.log(xhr.statusText);
+//                 console.log(xhr.responseText);
+//                 console.log(xhr.readyState);
+//                 console.log('xhr.status::::::::::', xhr.status);
+//                 console.log('xhr.statusText::::::::::', xhr.statusText);
+//                 console.log('xhr.responseText::::::::::', xhr.responseText);
+//                 console.log('xhr.readyState::::::::::', xhr.readyState);
+//                 _self.errorFunction(xhr);
+//                 return;
+//             },
+//         };
+//         if (isFormData === true) {
+//             options['processData'] = false;
+//             options['contentType'] = false;
+//             options['mimeType'] = 'multipart/form-data';
+//         }
+//         $.ajax(options);
+//         return res;
+//     };
+// };
+// // CUSTOM.MODULE['socket'].STOMP.CLIENT
+// let CUSTOM = {
+//     MODULE: {
+//         socket: {
+//             STOMP: {
+//                 CLIENT: null,
+//             },
+//         },
+//     },
+//     EVENT: {
+//         HTML: [],
+//     },
 // };
 
-// let streamming = new SockJS(
-//     `${ip}ws?SX-API-Route=${'GWS-1'}&clientKeyName=${'bioSignalData'}&connType=${1}`
-// );
-// let stompClient = Stomp.over(streamming);
-
-// function callBack(frame) {
-//     const data = frame.headers;
-//     console.log('data===');
-//     console.log(data);
-//     stompClient.subscribe(
-//         '/topic/public/bioSignalData/SEERS_2203031645_V9U6',
-//         function (data) {
-//             const aaa = JSON.parse(data);
-//             console.log('aaa===');
-//             console.log(aaa);
+// let GBL = {
+//     DEBUG: {
+//         USE: true,
+//     },
+//     DEEP_COPY: {
+//         TYPE: 'stringify', // stringify, cloneDeep
+//     },
+//     SESSION_RENEW: {
+//         IS_USE: false,
+//         INTERVAL: {
+//             START: false,
+//             TERM: 1000,
 //         },
-//         (err) => {
-//             console.log(err);
-//         }
-//     );
-// }
+//     },
+//     DESIGN: {
+//         SITE_META: {
+//             NAME: null,
+//             TYPE: null,
+//             TITLE: null,
+//             DESCRIPTION: null,
+//             KEYWORDS: null,
+//             AUTHOR: null,
+//             IMAGE: null,
+//             IMAGE_WIDTH: null,
+//             IMAGE_HEIGHT: null,
+//             URL: null,
+//         },
+//         THEME: 'default',
+//         MAIN_DIV_NAME: '#app',
+//         HEADER_NAME: '#header',
+//         FOOTER_NAME: '#footer',
+//         SIDE_MENU_NAME: '#side-menu',
+//         PAGE_DIV_NAME: '#main-contents',
+//         PAGE_PARENT_DIV_NAME: '#page-wrapper',
+//         APP_VER_DIV_NAME: '#wrap',
+//         PAGING_DIV_NAME: 'paging',
+//         NO_DATA_MSG: '등록된 데이타가 없습니다.',
+//         LAYOUT: {
+//             IGNORE_CONTROLLER_NAMES: [],
+//             IS_USE: function (controllerName) {
+//                 for (
+//                     let i = 0;
+//                     i < GBL.DESIGN.LAYOUT.IGNORE_CONTROLLER_NAMES.length;
+//                     i++
+//                 ) {
+//                     if (
+//                         GBL.DESIGN.LAYOUT.IGNORE_CONTROLLER_NAMES[i] ==
+//                         controllerName
+//                     ) {
+//                         return false;
+//                     }
+//                 }
+//                 return true;
+//             },
+//             // LOADING_DONE: false, // interval로 로딩 여부를 확인하지 않고, async promise로 처리함
+//             EXIST: false,
+//             CLEAR: function () {
+//                 $(`${GBL.DESIGN.MAIN_DIV_NAME}`).html('');
+//                 GBL.DESIGN.LAYOUT.EXIST = false;
+//             },
+//         },
+//         // CUSTOM_ASSET_LOADING_DONE: false,
+//         SET_SITE_NAME: function () {
+//             document.title = GBL.DESIGN.SITE_META.NAME;
+//         },
+//         SET_SITE_META_ALL: function () {
+//             document
+//                 .querySelector('meta[name="name"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.NAME);
+//             document
+//                 .querySelector('meta[name="type"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.TYPE);
+//             document
+//                 .querySelector('meta[name="title"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.TITLE);
+//             document
+//                 .querySelector('meta[name="description"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.DESCRIPTION);
+//             document
+//                 .querySelector('meta[name="keywords"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.KEYWORDS);
+//             document
+//                 .querySelector('meta[name="author"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.AUTHOR);
 
-// function connectonError(err) {
-//     console.log(err);
-// }
+//             document
+//                 .querySelector('meta[property="og:name"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.NAME);
+//             document
+//                 .querySelector('meta[property="og:type"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.TYPE);
+//             document
+//                 .querySelector('meta[property="og:title"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.TITLE);
+//             document
+//                 .querySelector('meta[property="og:description"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.DESCRIPTION);
+//             document
+//                 .querySelector('meta[property="og:keywords"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.KEYWORDS);
+//             document
+//                 .querySelector('meta[property="og:author"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.AUTHOR);
+//             document
+//                 .querySelector('meta[property="og:image"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.IMAGE);
+//             document
+//                 .querySelector('meta[property="og:image:width"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.IMAGE_WIDTH);
+//             document
+//                 .querySelector('meta[property="og:image:height"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.IMAGE_HEIGHT);
+//             document
+//                 .querySelector('meta[property="og:url"]')
+//                 .setAttribute('content', GBL.DESIGN.SITE_META.URL);
+//         },
+//         SELECT_MENU: function () {},
+//         SET_PAGE_PARENT_DIV_HTML: function () {},
+//         DEFAULT_CONTROLLER: null,
+//         APP_EXPLAIN_CONFIRM: false,
+//     },
+//     SITE_MENU: {
+//         URL: null,
+//         CHOICE_CONTROLLER: null,
+//     },
+//     MODULE: {
+//         OBJ: {},
+//         IS_LOADING: {},
+//         IS_PRE_LOADING: {},
+//     },
+//     CONTROLLER: {
+//         OBJ: {},
+//         IS_PRE_LOADING: {},
+//     },
+//     WINDOW_HISTORY_STATE: {
+//         DEPTH: 5,
+//         URL: [],
+//         IS_CHANGE: function () {
+//             if (GBL.WINDOW_HISTORY_STATE.URL.length > 1) {
+//                 let back = GBL.WINDOW_HISTORY_STATE.URL[1].split('/')[1];
+//                 let current = GBL.WINDOW_HISTORY_STATE.URL[0].split('/')[1];
+//                 if (back != current) {
+//                     return true;
+//                 }
+//             }
+//             return false;
+//         },
+//         IS_SUB_CHANGE: function () {
+//             if (GBL.WINDOW_HISTORY_STATE.URL.length > 1) {
+//                 let back = GBL.WINDOW_HISTORY_STATE.URL[1].split('/');
+//                 let current = GBL.WINDOW_HISTORY_STATE.URL[0].split('/');
+//                 if (back[1] == current[1]) {
+//                     if (back[2] != current[2]) {
+//                         return true;
+//                     }
+//                 }
+//             }
+//             return false;
+//         },
+//         IS_FULL_CHANGE: function () {
+//             if (GBL.WINDOW_HISTORY_STATE.URL.length > 1) {
+//                 let back = GBL.WINDOW_HISTORY_STATE.URL[1];
+//                 let current = GBL.WINDOW_HISTORY_STATE.URL[0];
+//                 if (back != current) {
+//                     return true;
+//                 }
+//             }
+//             return false;
+//         },
+//         GET_NOW_CONTROLLER: function () {
+//             return GBL.WINDOW_HISTORY_STATE.URL[0].split('/')[1];
+//         },
+//         GET_NOW_ACTION: function () {
+//             return GBL.WINDOW_HISTORY_STATE.URL[0].split('/')[2];
+//         },
+//     },
+//     ACCOUNT: {
+//         INFO: localStorageController.getLocalS('userData'),
+//         TOKEN: sessionController.getSession('accesToken'),
+//         CHECK: {
+//             INTERVAL: {
+//                 OBJ: null,
+//                 TERM: 1000,
+//                 COUNT: 0,
+//                 INIT: function () {
+//                     if (GBL.ACCOUNT.CHECK.INTERVAL.OBJ != null) {
+//                         window.clearInterval(GBL.ACCOUNT.CHECK.INTERVAL.OBJ);
+//                         GBL.ACCOUNT.CHECK.INTERVAL.OBJ = null;
+//                         GBL.ACCOUNT.CHECK.INTERVAL.COUNT = 0;
+//                     }
+//                 },
+//             },
+//             RUN: function () {},
+//         },
+//         AFTER_LOGIN_URL: '/patient/index',
+//         COOKIE: {
+//             TERM: {
+//                 REMEMBER_ID: 30, // days
+//                 AUTO_LOGIN: 365,
+//             },
+//         },
+//         LOGIN_FAIL: {
+//             TYPE: 'normal', // normal(실패만 알려줌), detail(자세히 알려줌)
+//             CODE: {
+//                 // 아래 문구가 포함되는 걸 찾는다.
+//                 NULL: 'Account is null',
+//                 INCORRECT: 'The password is incorrect',
+//                 BOTH: ['Account is null', 'The password is incorrect'],
+//             },
+//             MESSAGE: {
+//                 NULL: '계정이 존재하지 않습니다. 아이디와 비밀번호를 정확하게 입력하세요.',
+//                 INCORRECT:
+//                     '비밀번호가 정확하지 않습니다. 비밀번호를 정확하게 입력하세요.',
+//                 BOTH: '로그인에 실패하였습니다. 아이디와 비밀번호를 정확하게 입력하세요.',
+//             },
+//             GET_MESSAGE: function (code) {
+//                 let msg = GBL.ACCOUNT.CHECK.LOGIN_FAIL.MESSAGE.BOTH;
+//                 if (GBL.ACCOUNT.CHECK.LOGIN_FAIL.TYPE === 'detail') {
+//                     if (
+//                         code.indexOf(GBL.ACCOUNT.CHECK.LOGIN_FAIL.CODE.NULL) !==
+//                         -1
+//                     ) {
+//                         msg = GBL.ACCOUNT.CHECK.LOGIN_FAIL.MESSAGE.NULL;
+//                     } else if (
+//                         code.indexOf(
+//                             GBL.ACCOUNT.CHECK.LOGIN_FAIL.CODE.INCORRECT
+//                         ) !== -1
+//                     ) {
+//                         msg = GBL.ACCOUNT.CHECK.LOGIN_FAIL.MESSAGE.INCORRECT;
+//                     }
+//                 }
+//                 return msg;
+//             },
+//         },
+//         IS_AUTH: function () {},
+//         SET: function () {},
+//         REFRESH_SET: function () {},
+//         IS_RUN_ACTION: function (name, nowAction, ignoreAction = []) {
+//             let ignoreAuth = false;
+//             let checkAuth = false;
+//             for (let i = 0; i < ignoreAction.length; i++) {
+//                 if (ignoreAction[i] == nowAction) {
+//                     ignoreAuth = true;
+//                 }
+//             }
 
-// stompClient.connect(passingParameter, callBack, connectonError);
+//             if (ignoreAuth === false) {
+//                 checkAuth = GBL.ACCOUNT.IS_AUTH(true);
+//             }
+//             let log = `
+//                 =============== IS_RUN_ACTION log ===============
+//                 name:::::::::::::, ${name}
+//                 nowAction:::::::::::::, ${nowAction}
+//                 ignoreAuth:::::::::::::, ${ignoreAuth}
+//                 checkAuth::::::::, ${checkAuth}
+//                 =================================================
+//             `;
+//             console.log(log);
 
-let requestAPI = function () {
-    this.headers = {
-        'Content-Type': 'application/json;charset=UTF-8',
-    };
-    this.dataType = 'json';
-    this.parameters = null;
-    this.async = true;
-    this.url = null;
-    this.type = 'POST';
-    this.timeout = 30000;
-    this.cache = false;
-    this.successParameters = null;
-    this.errorFunction = null;
+//             if (
+//                 ignoreAuth === true ||
+//                 (ignoreAuth === false && checkAuth === true)
+//             ) {
+//                 return true;
+//             }
+//             return false;
+//         },
+//     },
+//     API: {
+//         BASE_URL:
+//             'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole',
+//         FAKE: {
+//             ['/API/Manager/SelectWard']: true,
+//         }, // true/false, false일 경우 실제 호출을 하지 않고, 임의로 등록한 json으로 가상 api 처리를 한다. 단! api 주소 자체를 키값으로 지정한다. example 확인 필요
+//         URL: {
+//             ACCOUNT: {
+//                 LOGIN: 'aaa',
+//             },
+//         },
+//         RESPONSE: {
+//             CODE: {},
+//         },
+//         SET_BASE_URL: function () {
+//             if (
+//                 (location.hostname.indexOf('seers') != -1 ||
+//                     location.hostname.indexOf('13.209.51.114') != -1) &&
+//                 location.hostname.indexOf('test') == -1
+//             ) {
+//                 console.log('############################## base - 운영 서버');
+//                 GBL.API.BASE_URL =
+//                     'https://www.apirelease.seers-pet.com/mobiCAREPet/API'; // release
+//             } else {
+//                 console.log(
+//                     '############################## base - 테스트 서버'
+//                 );
+//                 GBL.API.BASE_URL =
+//                     'https://www.apirelease.seers-pet.com/mobiCAREPet/API'; // test
+//             }
+//         },
+//     },
+//     PAGING: {
+//         DATA: {
+//             PAGE: {
+//                 PER_COUNT: 10,
+//                 PER_PAGE: 10,
+//             },
+//         },
+//     },
+// };
+// let FAKE_API_JSON = {};
+// FAKE_API_JSON[GBL.API.URL.ACCOUNT.LOGIN] = {
+//     result: true,
+//     extra: null,
+//     error: 0,
+//     message: null,
+//     remoteIp: '1.223.237.86',
+//     accessToken: 'SEERS_zaid_20211112155200907_2941D8D3_TOKEN_MNG',
+//     userAccount: {
+//         id: 'zaid',
+//         password: null,
+//         organizationCode: 'SEERS',
+//         userCode: 'SEERS_zaid',
+//         employeeCode: 'SXzaid',
+//         department: null,
+//         position: null,
+//         level: 8,
+//         name: 'zaid',
+//         phoneNumber: '+821073665332',
+//         email: 'zaid.yoon@seerstech.com',
+//         status: 0,
+//         deactivate: 0,
+//         dateTime: '2021-04-29 10:28:49',
+//         gmtCode: 'GMT+0900',
+//         timezone: 'Asia/Seoul',
+//         updateDateTime: null,
+//         lastUpdatePwDateTime: null,
+//         modifyPwAlertDateTime: null,
+//         deactivateDateTime: null,
+//         organizationName: 'Seerstechnology',
+//         profilePhotoUrl: null,
+//     },
+//     organization: {
+//         organizationId: 1,
+//         organizationCode: 'SEERS',
+//         organizationName: 'Seerstechnology',
+//         countryCode: 'KR',
+//         countryName: 'Republic of Korea',
+//         state: 'Gyeonggi-do',
+//         city: 'Sujeong-gu, Seongnam-si',
+//         address: '76, Bokjeong-ro',
+//         latitude: 37.59549224936482,
+//         longitude: 127.0795200273486,
+//         phoneNumber: '+8224947582',
+//         level: 10,
+//         expiration: 0,
+//         expirationDateTime: '2220-10-27 12:04:24',
+//         dateTime: '2021-04-29 10:34:24',
+//         gmtCode: 'GMT+0900',
+//         timezone: 'Asia/Seoul',
+//         etc: '(주)씨어스테크놀로지',
+//     },
+//     apiServerInfoList: [
+//         {
+//             apiServerId: 1,
+//             serverType: 2,
+//             apiRoute: 'GWS-1',
+//             main: 1,
+//             unused: 0,
+//             baseUrl: 'https://www.apitest.seers-pet.com/mobiCAREPet',
+//             etc: 'Data Server 1',
+//             dateTime: '2021-04-14 20:50:00',
+//         },
+//         {
+//             apiServerId: 3,
+//             serverType: 3,
+//             apiRoute: 'GWS-1',
+//             main: 0,
+//             unused: 0,
+//             baseUrl: 'https://www.apitest.seers-pet.com/mobiCAREPet',
+//             etc: 'Gateway Server 1',
+//             dateTime: '2021-05-24 10:50:00',
+//         },
+//     ],
+//     wardList: [
+//         {
+//             organizationCode: 'SEERS',
+//             wardCode: 'SEERS_B4CR',
+//             ward: '씨어스테크놀로지',
+//             orderNumber: 0,
+//             etc: null,
+//             deactivate: 0,
+//             sickRoomList: [
+//                 {
+//                     organizationCode: 'SEERS',
+//                     wardCode: 'SEERS_B4CR',
+//                     sickRoomCode: 'SEERS_SICK_ROOM_KYT2',
+//                     sickRoom: '1401호',
+//                     etc: null,
+//                     deactivate: 0,
+//                     ward: '씨어스테크놀로지',
+//                     sickBedList: null,
+//                 },
+//                 {
+//                     organizationCode: 'SEERS',
+//                     wardCode: 'SEERS_B4CR',
+//                     sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                     sickRoom: '1402호',
+//                     etc: null,
+//                     deactivate: 0,
+//                     ward: '씨어스테크놀로지',
+//                     sickBedList: [
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_FGW5',
+//                             sickBed: '1-1',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_4F2A',
+//                             sickBed: '1-2',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_TQ13',
+//                             sickBed: '1-3',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_L1E0',
+//                             sickBed: '1-4',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_21D4',
+//                             sickBed: '2-1',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_69U2',
+//                             sickBed: '2-2',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_7HQE',
+//                             sickBed: '2-3',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_78GH',
+//                             sickBed: '2-4',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_4592',
+//                             sickBed: '3-1',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_3STW',
+//                             sickBed: '3-2',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_OU54',
+//                             sickBed: '4-1',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                         {
+//                             organizationCode: 'SEERS',
+//                             wardCode: 'SEERS_B4CR',
+//                             sickRoomCode: 'SEERS_SICK_ROOM_C84F',
+//                             sickBedCode: 'SEERS_SICK_BED_R001',
+//                             sickBed: '4-2',
+//                             etc: null,
+//                             deactivate: 0,
+//                             ward: '씨어스테크놀로지',
+//                             sickRoom: '1402호',
+//                         },
+//                     ],
+//                 },
+//             ],
+//         },
+//     ],
+//     loginFailCount: 0,
+//     loginFailMaxCount: 0,
+// };
+// FAKE_API_JSON[GBL.API.URL.ACCOUNT.LOGOUT] = {
+//     result: true,
+//     extra: null,
+//     error: 0,
+//     message: null,
+//     remoteIp: null,
+// };
+// const CONST = {
+//     VERSION: '0.1.0',
+//     API: {
+//         BASE_URL: GBL.API.BASE_URL.replace('/API', ''),
+//         URL: {
+//             SERVER: {
+//                 // STREAM_LIST: '/Server/SelectAPIServer',
+//                 // STREAM_LIST: `/ws?SX-API-Route=${'GWS-1'}&clientKeyName=${'bioSignalData'}&connType=${1}`,
+//                 // STREAM_LIST: `/topic/public/bioSignalData/SEERS_2203031645_V9U6`,
+//                 STREAM_LIST: `/API/Manager/SelectWard`,
+//             },
+//         },
+//     },
+//     STOMP: {
+//         SERVER_TYPE: {
+//             CODE: {
+//                 EVENT: 1,
+//                 DATA: 2,
+//                 GATEWAY: 3,
+//             },
+//             STR: {
+//                 EVENT: 'EVENT',
+//                 DATA: 'DATA',
+//             },
+//             TITLE: {},
+//         },
+//         DATA_TYPE: {
+//             NORMAL: 'bioSignalData',
+//             SIMPLE: 'bioSignalSimpleData',
+//         },
+//         CONNECT_TYPE: {
+//             CODE: {
+//                 GATEWAY: 1,
+//                 WEB: 2,
+//                 EVENT: 1,
+//             },
+//         },
+//         EVENT_TYPE: {
+//             CODE: {
+//                 MEASUREMENT: 10,
+//                 WARD: 20,
+//             },
+//             OBJ_NAME: {},
+//         },
+//         CLIENT: null,
+//         CLIENT_KEY: {
+//             DATA: null,
+//             EVENT: null,
+//         },
+//         SUBSCRIBE: {},
+//     },
+//     FUNCTION: null,
 
-    this.setHeader = function (headers) {
-        this.headers = headers;
-    };
-    this.setDataType = function (dataType) {
-        this.dataType = dataType;
-    };
-    this.setParameter = function (parameters) {
-        this.parameters = parameters;
-    };
-    this.setAsync = function (async) {
-        this.async = async;
-    };
-    this.setUrl = function (url) {
-        this.url = url;
-    };
-    this.etType = function (type) {
-        this.type = type;
-    };
-    this.setTimeout = function (timeout) {
-        this.timeout = timeout;
-    };
-    this.setCache = function (cache) {
-        this.cache = cache;
-    };
-    this.setSuccessParameters = function (parameters) {
-        this.successParameters = parameters;
-    };
-    this.setErrorFunction = function (callback) {
-        this.errorFunction = callback;
-    };
+//     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//     // 사이트별 모듈에서 상이하게 처리해야 할 부분은 init 에 추가를 하던가? 아니면 새로운 함수를 추가하여 활용한다.
+//     // INIT : config 값 변경시 사용, default.js 에 선언된 함수를 사이트별로 변경시 사용.
+//     // POST_PROCESS: 해당 모듈의 액션 처리 후 진행해야 할 부분이 있다면 추가, controller에 index이외의 action이 있다면 추가 가능
+//     // 예시 - init)
+//     // // 버전은 기본 버전 뒤에 .0부터 올린다.
+//     // CONST.VERSION = `${CONST.VERSION}.0`;
+//     // 예시 - 함수 변경(일단! custom에 default 함수 그대로 복사해서 통째로 바꾼다. - 아직 더 좋은 방법이 생각나지 않는다. ㅠㅠ )
+//     // if(CUSTOM_FUNCTION.getApiServerList !== null) {
+//     //     CONST.FUNCTION.getApiServerList = CUSTOM_FUNCTION.getApiServerList;
+//     // }
+//     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//     INIT: function () {
+//         let date = new Date();
+//         let stime = date.toString('yyyy-MM-dd HH:mm:ss');
+//         console.log('now - ', stime);
+//         // 아래 영역에 코드 작성
+//         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//     },
+//     POST_PROCESS: {
+//         index: function () {
+//             // 아래 영역에 코드 작성
+//             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//         },
 
-    this.API = function (
-        onSuccessFunc = null,
-        etcParams = { isFormData: false }
-    ) {
-        let isFormData = false;
-        if (etcParams.hasOwnProperty('isFormData') === true) {
-            isFormData = etcParams.isFormData;
-        }
-        let _self = this;
-        let cloneObj = {
-            url: this.url,
-            parameters: this.parameters,
-            async: this.async,
-            successParameters: this.successParameters,
-        };
-        let res = null;
-        let options = {
-            url: this.url,
-            type: this.type,
-            async: this.async,
-            cache: this.cache,
-            timeout: this.timeout,
-            headers: this.headers,
-            dataType: this.dataType,
-            data:
-                isFormData === false
-                    ? JSON.stringify(this.parameters)
-                    : this.parameters,
-            success: function (data) {
-                // let log = `
-                //         =============== API log ===============
-                //         url:::::::::::::, ${cloneObj.url}
-                //         parameter::::::::, ${JSON.stringify(cloneObj.parameters)}
-                //         =======================================
-                // `;
-                // console.log(log);
-
-                if (data.result == false) {
-                    _self.errorFunction(data);
-                    return;
-                }
-
-                if (cloneObj.async === false) {
-                    res = data;
-                } else if (onSuccessFunc != null) {
-                    onSuccessFunc(
-                        data,
-                        cloneObj.parameters,
-                        cloneObj.successParameters
-                    );
-                    return;
-                }
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                console.log(xhr.status);
-                console.log(xhr.statusText);
-                console.log(xhr.responseText);
-                console.log(xhr.readyState);
-                console.log('xhr.status::::::::::', xhr.status);
-                console.log('xhr.statusText::::::::::', xhr.statusText);
-                console.log('xhr.responseText::::::::::', xhr.responseText);
-                console.log('xhr.readyState::::::::::', xhr.readyState);
-                _self.errorFunction(xhr);
-                return;
-            },
-        };
-        if (isFormData === true) {
-            options['processData'] = false;
-            options['contentType'] = false;
-            options['mimeType'] = 'multipart/form-data';
-        }
-        $.ajax(options);
-        return res;
-    };
-};
-// CUSTOM.MODULE['socket'].STOMP.CLIENT
-let CUSTOM = {
-    MODULE: {
-        socket: {
-            STOMP: {
-                CLIENT: null,
-            },
-        },
-    },
-    EVENT: {
-        HTML: [],
-    },
-};
-
-let GBL = {
-    DEBUG: {
-        USE: true,
-    },
-    DEEP_COPY: {
-        TYPE: 'stringify', // stringify, cloneDeep
-    },
-    SESSION_RENEW: {
-        IS_USE: false,
-        INTERVAL: {
-            START: false,
-            TERM: 1000,
-        },
-    },
-    DESIGN: {
-        SITE_META: {
-            NAME: null,
-            TYPE: null,
-            TITLE: null,
-            DESCRIPTION: null,
-            KEYWORDS: null,
-            AUTHOR: null,
-            IMAGE: null,
-            IMAGE_WIDTH: null,
-            IMAGE_HEIGHT: null,
-            URL: null,
-        },
-        THEME: 'default',
-        MAIN_DIV_NAME: '#app',
-        HEADER_NAME: '#header',
-        FOOTER_NAME: '#footer',
-        SIDE_MENU_NAME: '#side-menu',
-        PAGE_DIV_NAME: '#main-contents',
-        PAGE_PARENT_DIV_NAME: '#page-wrapper',
-        APP_VER_DIV_NAME: '#wrap',
-        PAGING_DIV_NAME: 'paging',
-        NO_DATA_MSG: '등록된 데이타가 없습니다.',
-        LAYOUT: {
-            IGNORE_CONTROLLER_NAMES: [],
-            IS_USE: function (controllerName) {
-                for (
-                    let i = 0;
-                    i < GBL.DESIGN.LAYOUT.IGNORE_CONTROLLER_NAMES.length;
-                    i++
-                ) {
-                    if (
-                        GBL.DESIGN.LAYOUT.IGNORE_CONTROLLER_NAMES[i] ==
-                        controllerName
-                    ) {
-                        return false;
-                    }
-                }
-                return true;
-            },
-            // LOADING_DONE: false, // interval로 로딩 여부를 확인하지 않고, async promise로 처리함
-            EXIST: false,
-            CLEAR: function () {
-                $(`${GBL.DESIGN.MAIN_DIV_NAME}`).html('');
-                GBL.DESIGN.LAYOUT.EXIST = false;
-            },
-        },
-        // CUSTOM_ASSET_LOADING_DONE: false,
-        SET_SITE_NAME: function () {
-            document.title = GBL.DESIGN.SITE_META.NAME;
-        },
-        SET_SITE_META_ALL: function () {
-            document
-                .querySelector('meta[name="name"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.NAME);
-            document
-                .querySelector('meta[name="type"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.TYPE);
-            document
-                .querySelector('meta[name="title"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.TITLE);
-            document
-                .querySelector('meta[name="description"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.DESCRIPTION);
-            document
-                .querySelector('meta[name="keywords"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.KEYWORDS);
-            document
-                .querySelector('meta[name="author"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.AUTHOR);
-
-            document
-                .querySelector('meta[property="og:name"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.NAME);
-            document
-                .querySelector('meta[property="og:type"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.TYPE);
-            document
-                .querySelector('meta[property="og:title"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.TITLE);
-            document
-                .querySelector('meta[property="og:description"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.DESCRIPTION);
-            document
-                .querySelector('meta[property="og:keywords"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.KEYWORDS);
-            document
-                .querySelector('meta[property="og:author"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.AUTHOR);
-            document
-                .querySelector('meta[property="og:image"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.IMAGE);
-            document
-                .querySelector('meta[property="og:image:width"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.IMAGE_WIDTH);
-            document
-                .querySelector('meta[property="og:image:height"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.IMAGE_HEIGHT);
-            document
-                .querySelector('meta[property="og:url"]')
-                .setAttribute('content', GBL.DESIGN.SITE_META.URL);
-        },
-        SELECT_MENU: function () {},
-        SET_PAGE_PARENT_DIV_HTML: function () {},
-        DEFAULT_CONTROLLER: null,
-        APP_EXPLAIN_CONFIRM: false,
-    },
-    SITE_MENU: {
-        URL: null,
-        CHOICE_CONTROLLER: null,
-    },
-    MODULE: {
-        OBJ: {},
-        IS_LOADING: {},
-        IS_PRE_LOADING: {},
-    },
-    CONTROLLER: {
-        OBJ: {},
-        IS_PRE_LOADING: {},
-    },
-    WINDOW_HISTORY_STATE: {
-        DEPTH: 5,
-        URL: [],
-        IS_CHANGE: function () {
-            if (GBL.WINDOW_HISTORY_STATE.URL.length > 1) {
-                let back = GBL.WINDOW_HISTORY_STATE.URL[1].split('/')[1];
-                let current = GBL.WINDOW_HISTORY_STATE.URL[0].split('/')[1];
-                if (back != current) {
-                    return true;
-                }
-            }
-            return false;
-        },
-        IS_SUB_CHANGE: function () {
-            if (GBL.WINDOW_HISTORY_STATE.URL.length > 1) {
-                let back = GBL.WINDOW_HISTORY_STATE.URL[1].split('/');
-                let current = GBL.WINDOW_HISTORY_STATE.URL[0].split('/');
-                if (back[1] == current[1]) {
-                    if (back[2] != current[2]) {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        },
-        IS_FULL_CHANGE: function () {
-            if (GBL.WINDOW_HISTORY_STATE.URL.length > 1) {
-                let back = GBL.WINDOW_HISTORY_STATE.URL[1];
-                let current = GBL.WINDOW_HISTORY_STATE.URL[0];
-                if (back != current) {
-                    return true;
-                }
-            }
-            return false;
-        },
-        GET_NOW_CONTROLLER: function () {
-            return GBL.WINDOW_HISTORY_STATE.URL[0].split('/')[1];
-        },
-        GET_NOW_ACTION: function () {
-            return GBL.WINDOW_HISTORY_STATE.URL[0].split('/')[2];
-        },
-    },
-    ACCOUNT: {
-        INFO: localStorageController.getLocalS('userData'),
-        TOKEN: sessionController.getSession('accesToken'),
-        CHECK: {
-            INTERVAL: {
-                OBJ: null,
-                TERM: 1000,
-                COUNT: 0,
-                INIT: function () {
-                    if (GBL.ACCOUNT.CHECK.INTERVAL.OBJ != null) {
-                        window.clearInterval(GBL.ACCOUNT.CHECK.INTERVAL.OBJ);
-                        GBL.ACCOUNT.CHECK.INTERVAL.OBJ = null;
-                        GBL.ACCOUNT.CHECK.INTERVAL.COUNT = 0;
-                    }
-                },
-            },
-            RUN: function () {},
-        },
-        AFTER_LOGIN_URL: '/patient/index',
-        COOKIE: {
-            TERM: {
-                REMEMBER_ID: 30, // days
-                AUTO_LOGIN: 365,
-            },
-        },
-        LOGIN_FAIL: {
-            TYPE: 'normal', // normal(실패만 알려줌), detail(자세히 알려줌)
-            CODE: {
-                // 아래 문구가 포함되는 걸 찾는다.
-                NULL: 'Account is null',
-                INCORRECT: 'The password is incorrect',
-                BOTH: ['Account is null', 'The password is incorrect'],
-            },
-            MESSAGE: {
-                NULL: '계정이 존재하지 않습니다. 아이디와 비밀번호를 정확하게 입력하세요.',
-                INCORRECT:
-                    '비밀번호가 정확하지 않습니다. 비밀번호를 정확하게 입력하세요.',
-                BOTH: '로그인에 실패하였습니다. 아이디와 비밀번호를 정확하게 입력하세요.',
-            },
-            GET_MESSAGE: function (code) {
-                let msg = GBL.ACCOUNT.CHECK.LOGIN_FAIL.MESSAGE.BOTH;
-                if (GBL.ACCOUNT.CHECK.LOGIN_FAIL.TYPE === 'detail') {
-                    if (
-                        code.indexOf(GBL.ACCOUNT.CHECK.LOGIN_FAIL.CODE.NULL) !==
-                        -1
-                    ) {
-                        msg = GBL.ACCOUNT.CHECK.LOGIN_FAIL.MESSAGE.NULL;
-                    } else if (
-                        code.indexOf(
-                            GBL.ACCOUNT.CHECK.LOGIN_FAIL.CODE.INCORRECT
-                        ) !== -1
-                    ) {
-                        msg = GBL.ACCOUNT.CHECK.LOGIN_FAIL.MESSAGE.INCORRECT;
-                    }
-                }
-                return msg;
-            },
-        },
-        IS_AUTH: function () {},
-        SET: function () {},
-        REFRESH_SET: function () {},
-        IS_RUN_ACTION: function (name, nowAction, ignoreAction = []) {
-            let ignoreAuth = false;
-            let checkAuth = false;
-            for (let i = 0; i < ignoreAction.length; i++) {
-                if (ignoreAction[i] == nowAction) {
-                    ignoreAuth = true;
-                }
-            }
-
-            if (ignoreAuth === false) {
-                checkAuth = GBL.ACCOUNT.IS_AUTH(true);
-            }
-            let log = `
-                =============== IS_RUN_ACTION log ===============
-                name:::::::::::::, ${name}
-                nowAction:::::::::::::, ${nowAction}
-                ignoreAuth:::::::::::::, ${ignoreAuth}
-                checkAuth::::::::, ${checkAuth}
-                =================================================
-            `;
-            console.log(log);
-
-            if (
-                ignoreAuth === true ||
-                (ignoreAuth === false && checkAuth === true)
-            ) {
-                return true;
-            }
-            return false;
-        },
-    },
-    API: {
-        BASE_URL:
-            'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole',
-        FAKE: {
-            ['/API/Manager/SelectWard']: true,
-        }, // true/false, false일 경우 실제 호출을 하지 않고, 임의로 등록한 json으로 가상 api 처리를 한다. 단! api 주소 자체를 키값으로 지정한다. example 확인 필요
-        URL: {
-            ACCOUNT: {
-                LOGIN: 'aaa',
-            },
-        },
-        RESPONSE: {
-            CODE: {},
-        },
-        SET_BASE_URL: function () {
-            if (
-                (location.hostname.indexOf('seers') != -1 ||
-                    location.hostname.indexOf('13.209.51.114') != -1) &&
-                location.hostname.indexOf('test') == -1
-            ) {
-                console.log('############################## base - 운영 서버');
-                GBL.API.BASE_URL =
-                    'https://www.apirelease.seers-pet.com/mobiCAREPet/API'; // release
-            } else {
-                console.log(
-                    '############################## base - 테스트 서버'
-                );
-                GBL.API.BASE_URL =
-                    'https://www.apirelease.seers-pet.com/mobiCAREPet/API'; // test
-            }
-        },
-    },
-    PAGING: {
-        DATA: {
-            PAGE: {
-                PER_COUNT: 10,
-                PER_PAGE: 10,
-            },
-        },
-    },
-};
-let FAKE_API_JSON = {};
-FAKE_API_JSON[GBL.API.URL.ACCOUNT.LOGIN] = {
-    result: true,
-    extra: null,
-    error: 0,
-    message: null,
-    remoteIp: '1.223.237.86',
-    accessToken: 'SEERS_zaid_20211112155200907_2941D8D3_TOKEN_MNG',
-    userAccount: {
-        id: 'zaid',
-        password: null,
-        organizationCode: 'SEERS',
-        userCode: 'SEERS_zaid',
-        employeeCode: 'SXzaid',
-        department: null,
-        position: null,
-        level: 8,
-        name: 'zaid',
-        phoneNumber: '+821073665332',
-        email: 'zaid.yoon@seerstech.com',
-        status: 0,
-        deactivate: 0,
-        dateTime: '2021-04-29 10:28:49',
-        gmtCode: 'GMT+0900',
-        timezone: 'Asia/Seoul',
-        updateDateTime: null,
-        lastUpdatePwDateTime: null,
-        modifyPwAlertDateTime: null,
-        deactivateDateTime: null,
-        organizationName: 'Seerstechnology',
-        profilePhotoUrl: null,
-    },
-    organization: {
-        organizationId: 1,
-        organizationCode: 'SEERS',
-        organizationName: 'Seerstechnology',
-        countryCode: 'KR',
-        countryName: 'Republic of Korea',
-        state: 'Gyeonggi-do',
-        city: 'Sujeong-gu, Seongnam-si',
-        address: '76, Bokjeong-ro',
-        latitude: 37.59549224936482,
-        longitude: 127.0795200273486,
-        phoneNumber: '+8224947582',
-        level: 10,
-        expiration: 0,
-        expirationDateTime: '2220-10-27 12:04:24',
-        dateTime: '2021-04-29 10:34:24',
-        gmtCode: 'GMT+0900',
-        timezone: 'Asia/Seoul',
-        etc: '(주)씨어스테크놀로지',
-    },
-    apiServerInfoList: [
-        {
-            apiServerId: 1,
-            serverType: 2,
-            apiRoute: 'GWS-1',
-            main: 1,
-            unused: 0,
-            baseUrl: 'https://www.apitest.seers-pet.com/mobiCAREPet',
-            etc: 'Data Server 1',
-            dateTime: '2021-04-14 20:50:00',
-        },
-        {
-            apiServerId: 3,
-            serverType: 3,
-            apiRoute: 'GWS-1',
-            main: 0,
-            unused: 0,
-            baseUrl: 'https://www.apitest.seers-pet.com/mobiCAREPet',
-            etc: 'Gateway Server 1',
-            dateTime: '2021-05-24 10:50:00',
-        },
-    ],
-    wardList: [
-        {
-            organizationCode: 'SEERS',
-            wardCode: 'SEERS_B4CR',
-            ward: '씨어스테크놀로지',
-            orderNumber: 0,
-            etc: null,
-            deactivate: 0,
-            sickRoomList: [
-                {
-                    organizationCode: 'SEERS',
-                    wardCode: 'SEERS_B4CR',
-                    sickRoomCode: 'SEERS_SICK_ROOM_KYT2',
-                    sickRoom: '1401호',
-                    etc: null,
-                    deactivate: 0,
-                    ward: '씨어스테크놀로지',
-                    sickBedList: null,
-                },
-                {
-                    organizationCode: 'SEERS',
-                    wardCode: 'SEERS_B4CR',
-                    sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                    sickRoom: '1402호',
-                    etc: null,
-                    deactivate: 0,
-                    ward: '씨어스테크놀로지',
-                    sickBedList: [
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_FGW5',
-                            sickBed: '1-1',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_4F2A',
-                            sickBed: '1-2',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_TQ13',
-                            sickBed: '1-3',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_L1E0',
-                            sickBed: '1-4',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_21D4',
-                            sickBed: '2-1',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_69U2',
-                            sickBed: '2-2',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_7HQE',
-                            sickBed: '2-3',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_78GH',
-                            sickBed: '2-4',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_4592',
-                            sickBed: '3-1',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_3STW',
-                            sickBed: '3-2',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_OU54',
-                            sickBed: '4-1',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                        {
-                            organizationCode: 'SEERS',
-                            wardCode: 'SEERS_B4CR',
-                            sickRoomCode: 'SEERS_SICK_ROOM_C84F',
-                            sickBedCode: 'SEERS_SICK_BED_R001',
-                            sickBed: '4-2',
-                            etc: null,
-                            deactivate: 0,
-                            ward: '씨어스테크놀로지',
-                            sickRoom: '1402호',
-                        },
-                    ],
-                },
-            ],
-        },
-    ],
-    loginFailCount: 0,
-    loginFailMaxCount: 0,
-};
-FAKE_API_JSON[GBL.API.URL.ACCOUNT.LOGOUT] = {
-    result: true,
-    extra: null,
-    error: 0,
-    message: null,
-    remoteIp: null,
-};
-const CONST = {
-    VERSION: '0.1.0',
-    API: {
-        BASE_URL: GBL.API.BASE_URL.replace('/API', ''),
-        URL: {
-            SERVER: {
-                // STREAM_LIST: '/Server/SelectAPIServer',
-                // STREAM_LIST: `/ws?SX-API-Route=${'GWS-1'}&clientKeyName=${'bioSignalData'}&connType=${1}`,
-                // STREAM_LIST: `/topic/public/bioSignalData/SEERS_2203031645_V9U6`,
-                STREAM_LIST: `/API/Manager/SelectWard`,
-            },
-        },
-    },
-    STOMP: {
-        SERVER_TYPE: {
-            CODE: {
-                EVENT: 1,
-                DATA: 2,
-                GATEWAY: 3,
-            },
-            STR: {
-                EVENT: 'EVENT',
-                DATA: 'DATA',
-            },
-            TITLE: {},
-        },
-        DATA_TYPE: {
-            NORMAL: 'bioSignalData',
-            SIMPLE: 'bioSignalSimpleData',
-        },
-        CONNECT_TYPE: {
-            CODE: {
-                GATEWAY: 1,
-                WEB: 2,
-                EVENT: 1,
-            },
-        },
-        EVENT_TYPE: {
-            CODE: {
-                MEASUREMENT: 10,
-                WARD: 20,
-            },
-            OBJ_NAME: {},
-        },
-        CLIENT: null,
-        CLIENT_KEY: {
-            DATA: null,
-            EVENT: null,
-        },
-        SUBSCRIBE: {},
-    },
-    FUNCTION: null,
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // 사이트별 모듈에서 상이하게 처리해야 할 부분은 init 에 추가를 하던가? 아니면 새로운 함수를 추가하여 활용한다.
-    // INIT : config 값 변경시 사용, default.js 에 선언된 함수를 사이트별로 변경시 사용.
-    // POST_PROCESS: 해당 모듈의 액션 처리 후 진행해야 할 부분이 있다면 추가, controller에 index이외의 action이 있다면 추가 가능
-    // 예시 - init)
-    // // 버전은 기본 버전 뒤에 .0부터 올린다.
-    // CONST.VERSION = `${CONST.VERSION}.0`;
-    // 예시 - 함수 변경(일단! custom에 default 함수 그대로 복사해서 통째로 바꾼다. - 아직 더 좋은 방법이 생각나지 않는다. ㅠㅠ )
-    // if(CUSTOM_FUNCTION.getApiServerList !== null) {
-    //     CONST.FUNCTION.getApiServerList = CUSTOM_FUNCTION.getApiServerList;
-    // }
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    INIT: function () {
-        let date = new Date();
-        let stime = date.toString('yyyy-MM-dd HH:mm:ss');
-        console.log('now - ', stime);
-        // 아래 영역에 코드 작성
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    },
-    POST_PROCESS: {
-        index: function () {
-            // 아래 영역에 코드 작성
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-        },
-
-        // controller에 index이외의 action이 있다면 직접 추가
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    },
-    SET_FUNCTION: function (defaultFunction, customFunction) {
-        // vanilla 로 구현 방법이 생각이 안나서 jquery 씀.
-        $.extend(true, defaultFunction, customFunction);
-        CONST.FUNCTION = defaultFunction;
-    },
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-};
-CONST.STOMP.SERVER_TYPE.TITLE[CONST.STOMP.SERVER_TYPE.CODE.EVENT] =
-    CONST.STOMP.SERVER_TYPE.STR.EVENT;
-CONST.STOMP.SERVER_TYPE.TITLE[CONST.STOMP.SERVER_TYPE.CODE.DATA] =
-    CONST.STOMP.SERVER_TYPE.STR.DATA;
-CONST.STOMP.EVENT_TYPE.OBJ_NAME[CONST.STOMP.EVENT_TYPE.CODE.MEASUREMENT] =
-    'measurementInfo';
-CONST.STOMP.EVENT_TYPE.OBJ_NAME[CONST.STOMP.EVENT_TYPE.CODE.WARD] = 'wardList';
-CONST.INIT();
+//         // controller에 index이외의 action이 있다면 직접 추가
+//         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//     },
+//     SET_FUNCTION: function (defaultFunction, customFunction) {
+//         // vanilla 로 구현 방법이 생각이 안나서 jquery 씀.
+//         $.extend(true, defaultFunction, customFunction);
+//         CONST.FUNCTION = defaultFunction;
+//     },
+//     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// };
+// CONST.STOMP.SERVER_TYPE.TITLE[CONST.STOMP.SERVER_TYPE.CODE.EVENT] =
+//     CONST.STOMP.SERVER_TYPE.STR.EVENT;
+// CONST.STOMP.SERVER_TYPE.TITLE[CONST.STOMP.SERVER_TYPE.CODE.DATA] =
+//     CONST.STOMP.SERVER_TYPE.STR.DATA;
+// CONST.STOMP.EVENT_TYPE.OBJ_NAME[CONST.STOMP.EVENT_TYPE.CODE.MEASUREMENT] =
+//     'measurementInfo';
+// CONST.STOMP.EVENT_TYPE.OBJ_NAME[CONST.STOMP.EVENT_TYPE.CODE.WARD] = 'wardList';
+// CONST.INIT();
 
 export { CONST };
 

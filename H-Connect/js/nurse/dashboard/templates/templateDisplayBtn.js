@@ -1,5 +1,5 @@
 export const parseDisplayBtn = async (displayList, selectedDisplayCode) => {
-    let template = ``;
+    let template = `<div class="btn_ViewlistScroll">`;
     displayList.forEach(async (display, index) => {
         if (index === 0) {
             template += `<button type='button' class='btn btn_View btn_first ${display.displayCode === selectedDisplayCode ? 'on' : ''}' data-id='${display.displayCode}'>
@@ -18,7 +18,7 @@ export const parseDisplayBtn = async (displayList, selectedDisplayCode) => {
             </button>`;
         }
     });
-    template += `<button type="button" class="btn btn_addView">
+    template += `</div><button type="button" class="btn btn_addView">
         + 화면추가
     </button>`;
     return template;

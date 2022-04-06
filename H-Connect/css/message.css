@@ -999,32 +999,6 @@
     display: none;
 }
 
-/* 의료진선택 checkbox */
-/* .message .list_inner div input[type="checkbox"] + label >span {
-    width: 18px;
-    height: 18px;
-    margin: 0 15px 0 0;
-    background: url('/H-Connect/img/icon/checkbox.png') no-repeat 0 0px / contain;
-    cursor: pointer;
-}
-
-.message .list_inner div input[type='checkbox']:checked + label span{
-    background: url('/H-Connect/img/emergency/square.png') no-repeat 0 0px / contain;
-}
-
-.nurse_message .list_inner div input[type='checkbox']:checked + label,
-.nurse_message .list_inner div input[type='checkbox']:checked + label span {
-    background: url('/H-Connect/img/icon/checkbox_check.png') no-repeat 0 0px / contain;
-} */
-
-/* 의료진선택 즐겨찾기 */
-/* .message .list_inner .favorite_container input[type="checkbox"]+label{
-    width: 18px;
-    height: 18px;
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    cursor: pointer;
-} */
-
 .message .list_inner .favorite_container input[type='checkbox']:checked+label span{
     background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
     filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);

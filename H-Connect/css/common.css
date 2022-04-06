@@ -610,7 +610,7 @@ button {
 
 .pc_header .search_container input {
     width: 100%;
-    height: 40px;
+    height: 100%;
     padding: 4px 0 4px 16px;
     border-radius: 4px;
     border: 1px solid #007a94;
@@ -1804,7 +1804,7 @@ textarea::-webkit-scrollbar-button {
     z-index: 100;
 }
 
-.pop .overlay .pop_cont {
+.pop .pop_cont {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1817,21 +1817,21 @@ textarea::-webkit-scrollbar-button {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.pop .overlay .pop_cont .title {
+.pop .pop_cont .title {
     padding-bottom: 15px;
     border-bottom: 1px solid #007a94;
 }
 
-.pop .overlay .pop_cont .title h2 {
+.pop .pop_cont .title h2 {
     color: #007a94;
 }
 
-.pop .overlay .pop_cont .content {
+.pop .pop_cont .content {
     padding: 31px 0 0;
     display: flex;
 }
 
-.pop .overlay .pop_cont .content p {
+.pop  .pop_cont .content p {
     width: 52px;
     margin: 0 64px 0 0;
     font-size: 14px;
@@ -1839,7 +1839,7 @@ textarea::-webkit-scrollbar-button {
     color: #000;
 }
 
-.pop .overlay .pop_cont .content input {
+.pop .pop_cont .content input {
     width: 420px;
     height: 48px;
     padding: 14px 16px;
@@ -1849,13 +1849,16 @@ textarea::-webkit-scrollbar-button {
     vertical-align: middle;
 }
 
-.pop .overlay .pop_cont .btn_list {
+.pop .pop_cont .btn_list {
     position: absolute;
     bottom: 32px;
     right: 32px;
+    display: flex;
 }
 
-.pop .overlay .pop_cont .btn_list .btn_cancel {
+.pop .pop_cont .btn_list button:first-child{margin-right: 8px;}
+
+.pop .pop_cont .btn_list .btn_cancel {
     width: 120px;
     height: 40px;
     border-radius: 4px;
@@ -1863,7 +1866,7 @@ textarea::-webkit-scrollbar-button {
     font-size: 14px;
 }
 
-.pop .overlay .pop_cont .btn_list .btn_check {
+.pop .pop_cont .btn_list .btn_check {
     width: 120px;
     height: 40px;
     border-radius: 4px;
@@ -2064,9 +2067,11 @@ textarea::-webkit-scrollbar-button {
 
 .pop.delete .pop_cont .btn_list {
     width: 400px;
+    height: fit-content;
     bottom: 64px;
     left: 27px;
     font-size: 16px;
+    justify-content: center;
 }
 
 .pop.delete .pop_cont .btn_list .btn_no {
@@ -2163,7 +2168,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.regi_device
     .selectbox
-    .select_listm
+    .select_list,
     .pop.update_device
     .selectbox
     .select_list {
@@ -4072,25 +4077,36 @@ textarea::-webkit-scrollbar-button {
 .pop.new_room_pop .patient_info {
     justify-content: space-between;
 }
+
 .pop.new_room_pop .selectBox2 {
     height: 36px;
-}
-.pop.new_room_pop .sex_select {
-    width: 80px;
-    z-index: 2;
-}
-.pop.new_room_pop .sex_select .label {
-    color: #ccc;
-}
-.pop.new_room_pop .sex_select li {
-    font-size: 12px;
 }
 .pop.new_room_pop .selectBox2 .label {
     font-size: 12px;
 }
-.pop.new_room_pop .patient_info input:last-child {
-    width: 296px;
+.pop.new_room_pop .select_name{width: 100%; margin: 0 0 16px; color: #CCCCCC;}
+.pop.new_room_pop .select_name ul{
+    top: 100%;
+    width: 472px;
+    z-index: 1;
 }
+.pop.new_room_pop .select_name li{font-size: 12px; display: flex;}
+.pop.new_room_pop .select_name span:first-child{width: 95px;}
+.pop.new_room_pop .select_name span:nth-child(2){width: 77px;}
+.pop.new_room_pop .select_name span:last-child{margin-left: 86px;}
+.pop.new_room_pop .patient_info input{line-height: 36px;}
+
+.pop.new_room_pop .patient_info input:nth-child(1){
+    width: 80px;
+}
+
+.pop.new_room_pop .patient_info input:nth-child(2){
+    width: 64px;
+    padding: 0 21px;
+    margin: 0 16px;
+}
+
+.pop.new_room_pop .patient_info input:nth-child(3){width: 296px;}
 .pop.new_room_pop .patient_room {
     justify-content: space-between;
 }
@@ -4226,7 +4242,7 @@ textarea::-webkit-scrollbar-button {
     margin: 0;
 }
 .pop.new_room_pop .new_regi .btn_list {
-    bottom: -30px;
+    bottom: -95px;
     right: 17px;
 }
 .pop.new_room_pop .new_regi .btn_list button {
@@ -4237,12 +4253,15 @@ textarea::-webkit-scrollbar-button {
     margin-bottom: 16px;
     display: flex;
     /* align-items: center; */
-    align-items: baseline;
+    /* align-items: baseline; */
     justify-content: space-between;
 }
 .pop.new_room_pop .new_regi .input_box p {
+    margin-top: 14px;
     font-size: 14px;
 }
+
+.pop.new_room_pop .new_regi .input_wrap input{margin: 0;}
 .pop.new_room_pop .new_regi .type_select {
     width: 356px;
     height: 48px;
@@ -4268,6 +4287,7 @@ textarea::-webkit-scrollbar-button {
     color: #940045;
     display: inline-block;
     opacity: 0;
+    display: none;
 }
 .pop.new_room_pop .new_regi .input_wrap span.active {
     opacity: 1;
@@ -5103,6 +5123,41 @@ textarea::-webkit-scrollbar-button {
     margin-top: -83px;
     margin-left: 442px;
 }
+
+/* 추가장치요청 */
+.add_device .type_box{
+    margin-top: 32px;display: flex; align-items: center; justify-content: space-between;}
+.add_device .type{
+    display: flex;
+    align-items: center;
+}
+
+.add_device .type p{margin-right: 64px; font-size: 14px;}
+.add_device .type .selectBox2{width: 240px; height: 48px;}
+.add_device .type .label{font-size: 14px;}
+.add_device .type .optionList{width: 240px; top: 47px;}
+.add_device .type .optionItem{font-size: 14px;}
+.add_device .case{display: flex; align-items: center;}
+.add_device .case p{margin-right: 26px; font-size: 14px;}
+
+.add_device .case .input_wrap{width: 92px; position: relative}
+.add_device .case input{width: 100%; height: 48px; padding: 0 16px; background: #EEEEEE; border-radius: 4px;}
+.add_device .case button{position: absolute;}
+.add_device .btn_up{
+    width: 12px;
+    height: 6px;
+    top: 12px;
+    right: 16px;
+}
+
+.add_device .btn_down{
+    width: 12px;
+    height: 6px;
+    bottom: 12px;
+    right: 16px;
+}
+
+.add_device .btn_down img{transform: rotate(180deg);}
 
 /*====================== 의사 ======================*/
 /* 응급호출 */

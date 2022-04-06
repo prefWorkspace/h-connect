@@ -855,9 +855,9 @@ $(function () {
         $('.connect_scroll .scene_picture').show();
     });
 
-    $('.connect_scroll .patient_view .btn_list button').click(function(){
+    $('.connect_scroll .patient_view .btn_list button').click(function () {
         $(this).removeClass('active');
-    })
+    });
 
     //---------------------- 의사 ----------------------//
     // 협진시작 버튼
@@ -1876,3 +1876,30 @@ $('.pop.new_room_pop .overlay .new_regi .selectBox2 .optionList li').on(
         $(this).parent().parent().toggleClass('active');
     }
 );
+
+//===========================간호사 측정관리 셀렉트 박스 및 팝업 띄우기
+
+// 병상 등록 팝업
+$('.wrap_inner .measure_status .btn_new_room').on('click', function () {
+    $('.pop.new_room_pop .overlay').fadeIn();
+});
+
+//병상정보 수정 부분 삭제 팝업
+$('.wrap_inner .modifi_hospital .btn_delete').on('click', function () {
+    $('.pop.delete_measure .overlay').fadeIn();
+});
+
+//병상 정보 수정 장치추가 팝업
+$('.modifi_hospital .device_room .btn_add').on('click', function () {
+    $('.pop.regi_device .overlay').fadeIn();
+});
+
+//측정현황 병동 셀렉트박스
+$('.wrap_inner .measure_status .selectBox2 .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+//병상정보수정 병실 셀렉트박스
+$('.wrap_inner .modifi_hospital .selectBox2 .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});

@@ -100,12 +100,10 @@ function insertSickBed() {
 }
 
 //병동 추가 셀렉트 박스 이벤트
-
 export async function sickbedSelectBoxHandle() {
     $(
         '.pop.new_room_pop .overlay .new_room .selectBox2 .bed_option .bed_list'
     ).on('click', function () {
-        console.log('sss');
         const item = $(this).text();
         const sickBedCode = $(this).data('sickbedcode');
         $(this).parent().parent().find('.label').text(item);
@@ -115,6 +113,7 @@ export async function sickbedSelectBoxHandle() {
             .find('.label')
             .attr('data-sickbedcode', sickBedCode);
         $(this).parent().parent().toggleClass('active');
+        $('.pop.new_room_pop .new_room #spare_Bed').text(1);
     });
 }
 
@@ -124,6 +123,7 @@ export async function sickRoomSelectBoxHandle(wardCode) {
     ).on('click', async function () {
         const item = $(this).find('p').text();
         const sickRoomCode = $(this).data('sickroomcode');
+        const spareBed = $(this).data('sparebed');
         $(this).parent().parent().find('.label').text(item);
         $(this)
             .parent()
@@ -131,12 +131,12 @@ export async function sickRoomSelectBoxHandle(wardCode) {
             .find('.label')
             .attr('data-sickroomcode', sickRoomCode);
         $(this).parent().parent().toggleClass('active');
+        $('.pop.new_room_pop .new_room #spare_Bed').text(spareBed);
         await selectBoxSickBed(wardCode, sickRoomCode);
         sickbedSelectBoxHandle();
     });
 }
 
-//병상 추가 셀렉트 박스 이벤트
 export async function wardSelectBoxHandle() {
     await selectBoxWard();
     $('.pop.new_room_pop .new_room .selectBox2 .ward_option2 .ward_list2').on(
@@ -144,6 +144,7 @@ export async function wardSelectBoxHandle() {
         async function () {
             const item = $(this).find('p').text();
             const wardCode = $(this).data('wardcode');
+            const spareBed = $(this).data('sparebed');
             $(this).parent().parent().find('.label').text(item);
             $(this)
                 .parent()
@@ -157,6 +158,7 @@ export async function wardSelectBoxHandle() {
             $('.pop.new_room_pop .new_room .selectBox2 .bed_label').text(
                 '병상선택'
             );
+            $('.pop.new_room_pop .new_room #spare_Bed').text(spareBed);
             await selectBoxSickRoom(wardCode);
             sickRoomSelectBoxHandle(wardCode);
         }
