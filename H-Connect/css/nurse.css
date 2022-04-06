@@ -149,6 +149,9 @@
     /* display: none; */
 }
 
+.nurse_main .ward .title{margin-bottom: 16px;}
+.nurse_main .ward .cont{width: 576px; padding: 0; margin: 0 auto;}
+
 /* .nurse .ward .cont, .nurse .hospital_room .cont{display: none;} */
 
 .nurse .left .cont .ward_list,
@@ -156,6 +159,8 @@
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nurse .left .cont .ward_list:hover,
@@ -176,7 +181,6 @@
 
 .nurse .left .cont .ward_list > p {
     width: 100px;
-    margin-top: 8px;
     margin-right: 20px;
 }
 
@@ -187,7 +191,6 @@
 .nurse .left .cont .ward_list .ward_count p,
 .nurse .right .cont .ward_list .ward_count p {
     margin-right: 24px;
-    margin-top: 6px;
 }
 
 .nurse .left .cont .ward_list .ward_count span,
@@ -214,7 +217,7 @@
     margin: 0 6px 0 24px;
 }
 
-.nurse .hospital_room .cont .ward_list .btn_list .btn_modify {
+.nurse .hospital_room .ward_list .btn_modify {
     margin: 0 6px 0;
 }
 
@@ -238,7 +241,7 @@
 .ward .cont .ward_list > :last-child {
     width: 6px;
     height: 12px;
-    margin: 11px 0 0 20px;
+    margin: 0 0 0 20px;
 }
 
 .ward .cont .ward_list img {
@@ -280,7 +283,6 @@
 }
 
 .hospital_room .cont .ward_list > p {
-    margin-top: 8px;
     margin-right: 40px;
 }
 
@@ -446,12 +448,12 @@
 .nurse .search_container button {
     float: right;
     height: 36px;
-    padding: 5px 20px;
+    padding: 5px 16px;
     border-radius: 4px;
 }
 
 .section .item_row {
-    padding: 4px 16px;
+    padding: 4px 16px 4px 21px;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
@@ -460,11 +462,6 @@
 
 .section .item_row:hover {
     background: #eee;
-}
-
-.section .item_row p {
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .section .item_name {
@@ -545,7 +542,7 @@
 .nurse_measure .measure_status .title{display: flex; justify-content: space-between;}
 .nurse_measure .measure_status .title div {
     padding: 7px 0 0;
-    margin: 0 0 13px;
+    /* margin: 0 0 13px; */
     display: block;
 }
 .nurse_measure .measure_status .title p{margin-top: 13px;}
@@ -573,6 +570,7 @@
 
 .nurse_measure .select_name{width: 100%; height: 36px; margin-bottom: 16px;}
 .nurse_measure .select_name .label{color: #ccc;}
+
 .nurse_measure .select_name ul{
     width: 472px;
     padding: 15px 0;
@@ -1002,7 +1000,7 @@
 }
 
 .modifi_hospital .container .cont {
-    padding: 16px 16px 45px;
+    padding: 8px 16px 25px;
     border-bottom: 1px solid #eee;
 }
 
