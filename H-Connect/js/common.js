@@ -309,24 +309,58 @@ $(function () {
     });
 
     // 담당의 메시지 창
+    $('.doctor_send').on('click', function () {
+        $('.pop.send_doctor .overlay').fadeIn();
+        $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').show();
+    })
+
+    $('.pop.send_doctor .btn_exit').on('click', function () {
+        $('.pop.send_doctor .overlay').fadeOut();
+    })
+
+    $('.pop.send_doctor .overlay .btn_send').on('click', function () {
+        $('.pop.nurse_view').fadeIn();
+        $('.pop.send_doctor .overlay').fadeOut();
+    })
+
+    // 담당의 메시지 창
     $('.pop.nurse_view .btn_close').on('click', function () {
-        $('.pop.nurse_view').fadeOut();
-    });
+        $('.pop.nurse_view').hide();
+        $('.pop.nurse_view').removeClass('active');
+        $('.pop.nurse_view').removeClass('on');
+        $('.pop.chat_sort').hide();
+    })
 
     $('.pop.nurse_view .search_container .sort').on('click', function () {
-        $('.pop.chat_sort').fadeToggle();
-    });
+        $('.pop.chat_sort').toggle();
+    })
 
     $('.pop.nurse_view .btn_fold').on('click', function () {
-        $(
-            '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
-        ).toggle();
-        $('.pop.nurse_view').toggleClass('on');
-    });
+        $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').hide();
+        $('.pop.nurse_view').removeClass('active');
+        $('.pop.nurse_view').addClass('on');
+        $('.btn_full img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+    })
 
-    $('.pop.nurse_view .btn_full').on('click', function () {
+    $('.pop.nurse_view .btn_full').on('click', function (e) {
+        // e.preventDefault();
+        // e.stopPropagation();
         $('.pop.nurse_view').toggleClass('active');
-    });
+
+        if($('.pop.nurse_view').hasClass('active')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+
+        if($('.pop.nurse_view').hasClass('on')){
+            $('.pop.nurse_view').removeClass('on');
+            $('.pop.nurse_view').removeClass('active');
+            $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').show();
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
+
+    })
     // 경보해제
     $('.warning .emergency_list .circum').on('click', function () {
         location.href = 'patient.html';
@@ -964,7 +998,7 @@ $(function () {
     // h-works 리스트 원격협진 알림
     $('.doctor_main .collabor').click(function () {
         $('.doctor_main .remote_alarm').show();
-        $('.doctor_main .section').not('.schedule, .remote_alarm').hide();
+        // $('.doctor_main .section').not('.schedule, .remote_alarm').hide();
     });
 
     // 주간일정 보기
@@ -1089,8 +1123,8 @@ $(function () {
 
     // 가능
     $('.doctor .time_select .possible').on('click', function () {
-        $('.doctor .time_select .possible p').show();
-    });
+        $('.doctor .time_select .possible > div').show();
+    })
 
     $('.doctor .my_return').on('click', function () {
         $('.doctor .me_request').show();
@@ -1141,11 +1175,11 @@ $(function () {
 
     // 원격협진
     // 스케줄 클릭 하면 배경색 활성화
-    $('.doctor_remote .time_select .possible p').on('click', function () {
+    $('.doctor_remote .time_select .possible > div').on('click', function () {
         $(this).toggleClass('active');
         $('.doctor_remote .select_week> :first-child').toggle();
         $('.doctor_remote .week_view2').toggleClass('on');
-    });
+    })
 
     // 리스트 클릭시 배경색 바뀜
     $('.doctor .status_list .row').on('click', function () {
@@ -1235,6 +1269,7 @@ $(function () {
     $('.doctor .surgery_list .real_time').on('click', function () {
         $('.doctor .rt_view').show();
         $('.doctor .surgery_view').not('.rt_view').hide();
+        $('.new_remote .content').show();
         $('.new_remote .btn_creat').show();
         $('.new_remote .btn_request').hide();
     });

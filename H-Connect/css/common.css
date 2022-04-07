@@ -495,7 +495,7 @@ button {
 /* favorite checkbox */
 .favorite_container {
     display: flex;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 .favorite_container input[type='checkbox'] + label {
     display: inline-block;
@@ -1833,7 +1833,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop  .pop_cont .content p {
     width: 52px;
-    margin: 0 64px 0 0;
+    margin: 10px 64px 0 0;
     font-size: 14px;
     vertical-align: middle;
     color: #000;
@@ -1905,6 +1905,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .selectBox2.active .optionList {
+    max-height: 500px;
     opacity: 1;
 }
 
@@ -1964,25 +1965,21 @@ textarea::-webkit-scrollbar-button {
 }
 
 .selectBox2 .optionList {
+    width: 420px;
+    padding: 8px 0;
     position: absolute;
     top: 46px;
     left: -1px;
-    width: 420px;
-    padding: 8px 0;
-
+    font-size: 14px;
+    font-weight: normal;
     background: #fff;
     border: 1px solid #ccc;
     border-top: none;
     border-radius: 0 0 4px 4px;
-
-    font-size: 14px;
-    font-weight: normal;
     color: #000;
-
     overflow: hidden;
     max-height: 0;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-    display: none;
 }
 
 .selectBox2 .optionList::after {
@@ -2029,6 +2026,7 @@ textarea::-webkit-scrollbar-button {
     padding: 8px 15px 8px;
     transition: 0.1s ease-in-out;
 }
+
 .selectBox2 .optionItem:hover,
 .selectBox2 .optionItem.active {
     background: #eee;
@@ -2254,11 +2252,12 @@ textarea::-webkit-scrollbar-button {
 
 /* resp setting menu */
 .pop.setting_menu .overlay .content {
-    height: 300px;
-    padding: 0;
-    margin-top: 16px;
     display: block;
-    overflow: auto;
+}
+
+.pop.setting_menu .overlay .content>div {
+    display: flex;
+    align-items: flex-start;
 }
 
 .pop.setting_menu .overlay .content::-webkit-scrollbar {
@@ -2544,6 +2543,10 @@ textarea::-webkit-scrollbar-button {
 
 .pop.ecg_set .st_set .toggle_container label:last-of-type {
     border-radius: 0 4px 4px 0;
+}
+
+.pop.ecg_set .st_set .input_num {
+    margin-bottom: 0;
 }
 
 /* temp setting menu */
@@ -3257,7 +3260,7 @@ textarea::-webkit-scrollbar-button {
     color: #fff;
 }
 
-.pop.nurse_view .chat_me .bubble:after {
+/* .pop.nurse_view .chat_me .bubble:after {
     content: '';
     position: absolute;
     right: 0;
@@ -3269,13 +3272,20 @@ textarea::-webkit-scrollbar-button {
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
+} */
+
+.pop.nurse_view .chat_me small {
+    width: 100%;
+    text-align: right;
+    display: block;
+    padding-right: 7px;
 }
 
 .pop.nurse_view .chat_me .bubble {
     background: #007a94;
 }
 
-.pop.nurse_view .chat_me .bubble:after {
+/* .pop.nurse_view .chat_me .bubble:after {
     content: '';
     position: absolute;
     right: 0;
@@ -3287,6 +3297,17 @@ textarea::-webkit-scrollbar-button {
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
+} */
+
+.pop.nurse_view .chat_me .bubble:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 34%;
+    width: 8px;
+    height: 8px;
+    margin-right: -8px;
+    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
 }
 
 .pop.nurse_view .chat_you {
@@ -3308,7 +3329,7 @@ textarea::-webkit-scrollbar-button {
     color: #000;
 }
 
-.pop.nurse_view .chat_you .bubble:after {
+/* .pop.nurse_view .chat_you .bubble:after {
     content: '';
     position: absolute;
     left: 0;
@@ -3320,17 +3341,41 @@ textarea::-webkit-scrollbar-button {
     border-left: 0;
     margin-top: -8px;
     margin-left: -8px;
+} */
+
+.pop.nurse_view .chat_you .bubble:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 34%;
+    width: 8px;
+    height: 8px;
+    margin-left: -8px;
+    transform: rotate(180deg);
+    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
+    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg) brightness(200%) contrast(100%);
+}
+
+.pop.nurse_view .chat_you small {
+    padding-left: 7px;
 }
 
 .pop.nurse_view .chat_window {
-    height: 122px;
-    padding: 16px;
+    height: auto;
+    padding: 8px 16px 16px;
     display: flex;
     justify-content: space-between;
+    background: #C5D8DC;
+    border-radius: 0 0 8px 8px;
+    position: relative;
 }
 
 .pop.nurse_view .chat_window textarea {
-    width: 90%;
+    width: 100%;
+    height: 96px;
+    border-radius: 4px;
+    padding: 10px 8px;
+    padding-right: 55px;
 }
 
 .pop.nurse_view .chat_window textarea::placeholder {
@@ -3339,6 +3384,9 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.nurse_view .chat_window .btn_send {
+    position: absolute;
+    top: 12px;
+    right: 20px;
     width: 48px;
     height: 32px;
     border-radius: 4px;
