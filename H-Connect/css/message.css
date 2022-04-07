@@ -40,8 +40,10 @@
     justify-content: space-between;
 }
 
+.nurse_message .title_text{justify-content: flex-start;}
+
 .message .message_list .title_text div{
-    display: initial;
+    margin-right: 15px;
 }
 
 .message .message_title{
