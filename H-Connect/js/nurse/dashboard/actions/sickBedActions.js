@@ -50,6 +50,7 @@ export const updateSickBed = async (_sickBed) => {
         monitoringDeactivate,
         ...commonRequest(),
     });
+
     return await serverController.ajaxAwaitController(
         'API/Manager/UpdateSickBed',
         'POST',
@@ -69,9 +70,8 @@ export const updateSickBedDisplayCode = async (sickBedDisplayCodeList) => {
         organization,
         sickBedDisplayCodeList,
     });
-
     return await serverController.ajaxAwaitController(
-        'API/Manager/UpdateSickBed',
+        'API/Manager/UpdateSickBedDisplayCode',
         'POST',
         req,
         (res) => {
