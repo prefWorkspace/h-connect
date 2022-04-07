@@ -143,7 +143,8 @@
     top: 50%;
     transform: translateY(-50%);
     right: 51%;
-    width: 48px;
+    width: 24px;
+    height: 24px;
     border-radius: 4px;
 }
 
@@ -303,7 +304,12 @@
 }
 
 .nurse_message .message_talk .search_container .btn_search{
+    left: 57%;
+    width: 24px;
+    height: 24px;
     padding: 0;
+    margin: 0 0 0 -2px;
+    background: transparent;
 }
 
 .nurse_message .message_talk .search_container .btn_sort{
@@ -416,7 +422,6 @@
 }
 
 .message .no_message .no_search input{ background: #CCC;}
-.message .no_message .no_search .btn_search{background: none;}
 .message .no_message .no_search button img{
     filter: invert(57%) sepia(1%) saturate(0%) hue-rotate(43deg) brightness(94%) contrast(87%);
 }

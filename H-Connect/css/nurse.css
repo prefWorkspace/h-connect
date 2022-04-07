@@ -220,7 +220,7 @@
 }
 
 .nurse .cont .ward_list .btn_list .btn_modify {
-    margin: 0 6px 0 24px;
+    margin: 0 6px 0 0;
 }
 
 .nurse .hospital_room .ward_list .btn_modify {
@@ -228,7 +228,7 @@
 }
 
 .ward .cont .ward_list.on .btn_list .btn_modify {
-    margin: 0 6px 0 24px;
+    margin: 0 6px 0 0;
     border: 0;
     background: #fff;
 }
@@ -289,12 +289,14 @@
 }
 
 .hospital_room .cont .ward_list > p {
-    margin-right: 40px;
+    width: 130px;
+    /* margin-right: 40px; */
 }
 
 .hospital_room .cont .ward_list .ward_count {
-    width: 250px;
+    /* width: 250px; */
     display: flex;
+    align-items: center;
 }
 
 .hospital_room .cont::-webkit-scrollbar {

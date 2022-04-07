@@ -4112,8 +4112,9 @@ textarea::-webkit-scrollbar-button {
 
 .pop.new_room_pop .patient_info input:nth-child(2){
     width: 64px;
-    padding: 0 21px;
+    /* padding: 0 21px; */
     margin: 0 16px;
+    text-align: center;
 }
 
 .pop.new_room_pop .patient_info input:nth-child(3){width: 296px;}
