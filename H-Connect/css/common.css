@@ -2029,6 +2029,7 @@ textarea::-webkit-scrollbar-button {
     padding: 8px 15px 8px;
     transition: 0.1s ease-in-out;
 }
+.selectBox2 .optionItem:hover,
 .selectBox2 .optionItem.active {
     background: #eee;
 }
@@ -4090,11 +4091,19 @@ textarea::-webkit-scrollbar-button {
     width: 472px;
     z-index: 1;
 }
-.pop.new_room_pop .select_name li{font-size: 12px; display: flex;}
+.pop.new_room_pop .select_name li{
+    padding: 0 16px;
+    margin: 0 0 7px;
+    font-size: 12px; 
+    display: flex;
+    align-items: center;
+}
+.pop.new_room_pop .select_name li:last-child{margin: 0;}
+
 .pop.new_room_pop .select_name span:first-child{width: 97px;}
 .pop.new_room_pop .select_name span:nth-child(2){width: 80px;}
 .pop.new_room_pop .select_name span:last-child{margin-left: 85px;}
-.pop.new_room_pop .selectBox2 .optionList::after{width: 440px;}
+.pop.new_room_pop .select_name .optionList::after{width: 440px;}
 .pop.new_room_pop .patient_info input{line-height: 36px;}
 
 .pop.new_room_pop .patient_info input:nth-child(1){
