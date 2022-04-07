@@ -768,6 +768,15 @@
     vertical-align: middle; */
 }
 
+.measure_status .container .status_list p:nth-child(2){
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+}
+
 .measure_status .container .status_list > :first-child {
     width: 164px;
     margin-right: 16px;
