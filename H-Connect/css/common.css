@@ -4139,10 +4139,19 @@ textarea::-webkit-scrollbar-button {
     width: 472px;
     z-index: 1;
 }
-.pop.new_room_pop .select_name li{font-size: 12px; display: flex;}
-.pop.new_room_pop .select_name span:first-child{width: 95px;}
-.pop.new_room_pop .select_name span:nth-child(2){width: 77px;}
-.pop.new_room_pop .select_name span:last-child{margin-left: 86px;}
+.pop.new_room_pop .select_name li{
+    padding: 0 16px;
+    margin: 0 0 7px;
+    font-size: 12px; 
+    display: flex;
+    align-items: center;
+}
+.pop.new_room_pop .select_name li:last-child{margin: 0;}
+
+.pop.new_room_pop .select_name span:first-child{width: 97px;}
+.pop.new_room_pop .select_name span:nth-child(2){width: 80px;}
+.pop.new_room_pop .select_name span:last-child{margin-left: 85px;}
+.pop.new_room_pop .select_name .optionList::after{width: 440px;}
 .pop.new_room_pop .patient_info input{line-height: 36px;}
 
 .pop.new_room_pop .patient_info input:nth-child(1){
@@ -4195,14 +4204,15 @@ textarea::-webkit-scrollbar-button {
     height: 32px;
 }
 
-.pop.new_room_pop .device_room div p:nth-child(1) {
+/* .pop.new_room_pop .device_room div p:nth-child(1) {
     width: 120px;
-}
+} */
 
 .pop.new_room_pop .device_room div p:nth-child(2) {
-    margin-left: 58px;
-    width: 54px;
+    margin-left: 82px;
 }
+.pop.new_room_pop .device_room .oxy p:nth-child(2){margin-left: 60px;}
+.pop.new_room_pop .device_room .temp p:nth-child(2){margin-left: 93px;}
 /* .pop.new_room_pop .device_room .cardio p:nth-child(2) {
     margin-left: 82px;
 }
@@ -4215,9 +4225,9 @@ textarea::-webkit-scrollbar-button {
 /* .pop.new_room_pop .device_room .temp p:nth-child(2) {
     margin-left: 93px;
 } */
-.pop.new_room_pop .device_room .rd {
+/* .pop.new_room_pop .device_room .rd {
     margin-left: 8px;
-}
+} */
 
 .pop.new_room_pop .device_room .btn_add {
     padding: 16px 16px 0;

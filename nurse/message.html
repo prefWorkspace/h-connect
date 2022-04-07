@@ -198,18 +198,14 @@
                             </p>
                         </div>
 
-                        <div class="search_container">
-                            <input
-                                type="text"
-                                placeholder="보낸사람 혹은 메세지 내용을 입력해주세요"
-                            />
+                        <!-- 1. 검색 결과가 없을시 placehoder="찾을 수 없습니다" 로 표시-->
+                        <!-- 2. 검색 결과가 없을시 not_find 클래스를 붙여주세요-->
+                        <div class="search_container not_find">
+                            <input type="text" placeholder="보낸사람 혹은 메세지 내용을 입력해주세요">
 
                             <button type="button" class="btn_search">
                                 <div>
-                                    <img
-                                        src="/H-Connect/img/header/search.svg"
-                                        alt="검색표시"
-                                    />
+                                    <img src="/H-Connect/img/header/search.svg" alt="검색표시">
                                 </div>
                             </button>
                         </div>

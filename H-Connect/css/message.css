@@ -45,6 +45,14 @@
     display: initial;
 }
 
+.nurse_message .title_text{
+    justify-content: flex-start;
+}
+
+.message .message_list .title_text div{
+    margin-right: 15px;
+}
+
 .message .message_title {
     padding: 8px 16px 24px;
 }
@@ -127,6 +135,7 @@
 
 .message .message_list .search_container input {
     width: 480px;
+    height: 32px;
     padding: 0 56px 0 8px;
     border-radius: 4px;
     background: #fff;
