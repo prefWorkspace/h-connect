@@ -338,62 +338,6 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.06.12.21',
                     },
-                    // 'measure_delete_sickBed.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'measure_insert_new_sickBed.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'measure_selectBox.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'measure_update_sickBed.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'new_device_list.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'new_sickBed__selectBox.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'selectMeasurementInfoList.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'update_sickBed_selectBox.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/actions/',
-                    //     version: '2022.03.25.12.01',
-                    // },
                 },
                 renders: {
                     'createMeasureList.js': {
@@ -410,36 +354,8 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/renders/',
                         version: '2022.04.06.18.01',
                     },
-                    // 'sickRoomSelectBoxList.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/renders/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'wardSelectBoxList.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/renders/',
-                    //     version: '2022.03.25.12.01',
-                    // },
                 },
                 templates: {
-                    // 'insert_device_list.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/templates/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'insert_new_sickBed_measure.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/templates/',
-                    //     version: '2022.03.25.12.01',
-                    // },
                     'measurList.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
@@ -461,20 +377,6 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/templates/',
                         version: '2022.04.06.18.25',
                     },
-                    // 'sickRoomSelectBox.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/templates/',
-                    //     version: '2022.03.25.12.01',
-                    // },
-                    // 'wardSelectBox.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/measure',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/measure/templates/',
-                    //     version: '2022.03.25.12.01',
-                    // },
                 },
             },
             ward: {

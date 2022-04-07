@@ -10,17 +10,6 @@ const { localStorageController } = await import(
     importVersion('/H-Connect/js/utils/controller/localStorageController.js')
 );
 
-// const { createMeasureList } = await import(
-//     importVersion(
-//         '/H-Connect/js/nurse/management/measure/renders/createMeasureList.js'
-//     )
-// );
-
-// const { CONSTANT_MEASURE } = await import(
-//     importVersion('/H-Connect/js/nurse/management/measure/renders/constant.js')
-// );
-//입원한 환자 카운트
-let patient_count;
 const userData = localStorageController.getLocalS('userData');
 const { userCode: requester, organizationCode: organization } =
     JSON.parse(userData);
@@ -52,5 +41,30 @@ export async function selectMeasurementInfoList(
         (err) => {
             console.log(err);
         }
+    );
+}
+
+export async function insertMeasurementInfo(codeObj, patientData) {
+    const obj = {
+        ...commonRequest(),
+        ...codeObj,
+        ...patientData,
+        requester,
+        organizationCode,
+        orderNumber: 1,
+    };
+
+    $('.pop.new_room_pop .overlay').hide();
+
+    return serverController.ajaxAwaitController(
+        'API/Measurement/InsertMeasurementInfo',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
     );
 }

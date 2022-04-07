@@ -16,11 +16,6 @@ const { session_renew } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
 
-//병동 병실 병상 조회하는 함수
-const { userCode: requester, organizationCode: organization } = JSON.parse(
-    localStorageController.getLocalS('userData')
-);
-
 export const updateSickBed = async (_sickBed) => {
     const {
         wardCode,
@@ -36,8 +31,6 @@ export const updateSickBed = async (_sickBed) => {
     } = _sickBed;
 
     const req = JSON.stringify({
-        requester,
-        organization,
         wardCode,
         sickRoomCode,
         sickBedCode,
@@ -66,8 +59,7 @@ export const updateSickBed = async (_sickBed) => {
 
 export const updateSickBedDisplayCode = async (sickBedDisplayCodeList) => {
     const req = JSON.stringify({
-        requester,
-        organization,
+        ...commonRequest(),
         sickBedDisplayCodeList,
     });
     return await serverController.ajaxAwaitController(
