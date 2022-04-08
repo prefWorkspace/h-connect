@@ -703,7 +703,14 @@ const VERSION = {
                         },
                     },
                     renders: {
-                        'vitalRender.js': {
+                        'renderSimpleData.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
+                            version: '2022.03.30.12.18',
+                        },
+                        'renderVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
@@ -765,6 +772,13 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/common/actions/',
                         version: '2022.03.25.12.01',
+                    },
+                    'alarmSettingPopupActions.js': {
+                        type: 'module',
+                        url_path: '/nurse/patient',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/common/actions/',
+                        version: '2022.04.06.18.33',
                     },
                 },
                 renders: {

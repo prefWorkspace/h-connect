@@ -6,7 +6,7 @@ export const patientInsertData = {
     apiServerInfoList: null,
     gatewayFwInfo: null,
     measurementInfo: {
-        measurementCode: 'SEERS_2203101132_082X',
+        measurementCode: 'SEERS_2203220944_176V',
         organizationCode: 'SEERS',
         wardCode: 'SEERS_W6GG',
         sickRoomCode: 'SEERS_SICK_ROOM_2431',
@@ -45,7 +45,7 @@ export const patientInsertData = {
         deviceInfoList: [
             {
                 deviceInfoId: 1388,
-                measurementCode: 'SEERS_2203101132_082X',
+                measurementCode: 'SEERS_2203101102_Y8F0',
                 deviceType: 1,
                 deviceCode: 'C4005',
                 serialNumber: '004005',
