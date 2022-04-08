@@ -129,29 +129,29 @@
     width: 100%;
 }
 
-.message .message_list .search_container input{
+/* .message .message_list .search_container input{
     width: 480px;
     height: 32px;
     padding: 7px 56px 7px 8px;
     border-radius: 4px;
     background: #fff;
-}
+} */
 
 .message .message_list .search_container input::placeholder{
     color: #ccc;
 }
 
-.message .message_list .search_container .btn_search{
+/* .message .message_list .search_container .btn_search{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 50%;
     width: 48px;
     height: 32px;
-    /* margin-right: 16px; */
+    margin-right: 16px;
     border-radius: 4px;
     background-color: #fff;
-}
+} */
 
 .nurse_message .btn_search div{
     width: 16px;
@@ -438,7 +438,7 @@
     color: #fff;
 }
 
-.message .chat_me .bubble:after{
+/* .message .chat_me .bubble:after{
     content: '';
     position: absolute;
     right: 0;
@@ -450,24 +450,10 @@
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
-}
+} */
 
 .nurse_message .chat_me .bubble{
 	background: #007A94;
-}
-
-.nurse_message .chat_me .bubble:after{
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 40%;
-    width: 0;
-    height: 0;
-    border: 8px solid transparent;
-    border-left-color: #007A94;
-    border-right: 0;
-    margin-top: -8px;
-    margin-right: -8px;
 }
 
 .message .chat_you{
@@ -488,19 +474,12 @@
 	border-radius: .4em;
     color: #000;
 }
+.message .chat_you .bubble p {
+    font-size: 14px;
+}
 
-.message .chat_you .bubble:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 40%;
-    width: 0;
-    height: 0;
-    border: 8px solid transparent;
-    border-right-color: #fff;
-    border-left: 0;
-    margin-top: -8px;
-    margin-left: -8px;
+.message .chat_you small {
+    padding-left: 7px;
 }
 
 .message .chat_window{
@@ -585,7 +564,7 @@
 }
 
 .message .select_medi .title div{
-    margin-bottom: 13px;
+    /* margin-bottom: 13px; */
     display: flex;
     justify-content: space-between;
 }
@@ -979,7 +958,7 @@
 
 .message .send_message .btn_list .btn_send{
     border: 1px solid #007A94;
-    color: #007A94;
+    /* color: #007A94; */
 }
 
 
@@ -1013,11 +992,11 @@
 
 .message .send_message form textarea{
     width: 100%;
-    height: 150px;
+    min-height: 100px;
     padding: 10px;
     margin-bottom: 30px;
+    border: 1px solid #a2a2a2;
     border-radius: 4px;
-    border: 1px solid #eee;
 }
 
 .message .send_message form textarea::placeholder{

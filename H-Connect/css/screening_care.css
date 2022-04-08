@@ -1,12 +1,14 @@
 @charset "utf-8";
 #contents_wrap.screening{   
     width: 100%; 
-    min-width: 1880px;
+    width: 1880px;
+}
+#section {
+    justify-content: flex-start;
 }
 
 /* card */
 .card {
-    width: 360px;
     /* flex: 1; */
 }
 .care_card1 {
@@ -14,23 +16,20 @@
 }
 
 .care_card2 {
-    min-width: 800px;
-    flex: 2;
+    width: 800px;
+    /* flex: 2; */
 }
 
 .care_card3 {
-    min-width: 480px;
+    width: 480px;
 }
 
 
 /* care_card1 */
 /* card_header */
 .care_card1 .card_header {
-    padding: 8px 16px 0;
     border: none;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .card_title{color: #000;}
@@ -107,7 +106,6 @@
 
 
 /* care_card2 */
-.care_card2{border: 1px solid red;}
 .care_card2 {
     display: flex;
 }
@@ -196,10 +194,10 @@
 
 
 
-/* .common_table.card2_table tr > td:nth-child(1), 
+.common_table.card2_table tr > td:nth-child(1), 
 .common_table.card2_table tr > th:nth-child(1) {
     flex: 2;
-} */
+}
 
 .common_table.card2_table tr > td:first-child > span, 
 .common_table.card2_table tr > th:first-child > span {
@@ -210,7 +208,7 @@
 .common_table.card2_table tr > td:last-child > span, 
 .common_table.card2_table tr > th:last-child > span {
     text-align: right;
-    padding-right: 16px;
+    padding-right: 11px;
 }
 
 
@@ -255,7 +253,6 @@
 
 .btn_thead .call_btn.on .cancel {
     display: block;
-    border-radius: 4px;
 }
 
 .btn_thead .call_btn.on .call {
@@ -342,7 +339,7 @@
 
 /* care_card3 */
 .care_card3 {
- padding: 32px 0 0;
+ padding: 23px 0 0;
 }
 
 .care_card3 h2{color: #007A94; font-size: 16px;}
@@ -462,7 +459,7 @@
     color: #fff;
 }
 
-.chat_me .bubble:after{
+/* .chat_me .bubble:after{
     content: '';
     position: absolute;
     right: 0;
@@ -474,24 +471,30 @@
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
-}
+} */
 
 .chat_me .bubble{
 	background: #007A94;
 }
 
-.chat_me .bubble:after{
+.chat_me .bubble:after {
     content: '';
     position: absolute;
     right: 0;
-    top: 40%;
-    width: 0;
-    height: 0;
-    border: 8px solid transparent;
-    border-left-color: #007A94;
-    border-right: 0;
-    margin-top: -8px;
+    top: 34%;
+    width: 8px;
+    height: 8px;
     margin-right: -8px;
+    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
+}
+
+.chat_me small {
+    width: 100%;
+    text-align: right;
+    display: block;
+    padding-right: 7px;
+    margin-top: 7px;
+    font-size: 12px;
 }
 
 .chat_you{
@@ -513,7 +516,7 @@
     color: #000;
 }
 
-.chat_you .bubble:after{
+/* .chat_you .bubble:after{
     content: '';
     position: absolute;
     left: 0;
@@ -525,7 +528,26 @@
     border-left: 0;
     margin-top: -8px;
     margin-left: -8px;
+} */
+
+.chat_you .bubble:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 34%;
+    width: 8px;
+    height: 8px;
+    margin-left: -8px;
+    transform: rotate(180deg);
+    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
+    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg) brightness(200%) contrast(100%);
 }
+
+.chat_you small {
+    font-size: 12px;
+    padding-left: 7px;
+}
+
 
 .start_clinic{
     height: 48px;
@@ -568,4 +590,9 @@
 
 .modal_form{padding-top: 0;}
 
-.check_ex_text{font-size: 16px;}
+.card_header {
+    display: flex;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 10px 15px 20px;
+    justify-content: space-between;
+}
