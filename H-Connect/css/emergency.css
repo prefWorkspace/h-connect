@@ -504,6 +504,7 @@
     margin-top: 16px;
 }
 
+
 .emergency .patient_status .type .disease> :first-child input[type="checkbox"] + label + label{
     color: #940045;
 }
@@ -568,7 +569,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/front.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/front.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .front_toggle{
@@ -587,7 +588,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/back.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/back.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .back_toggle{
@@ -721,7 +722,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/head left.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/head left.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .left_toggle{
@@ -809,7 +810,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/head right.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/head right.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .right_toggle{
@@ -897,7 +898,7 @@
     position: relative;
     width: 144px;
     height: 340px;
-    background: url('/H-Connect/img/emergency/body.png')no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/body.png') no-repeat 0 0px / contain;
 }
 
 .emergency .patient_status .body_toggle{
@@ -1215,10 +1216,11 @@
 }
 
 .emergency .vital .vital_monitor .graph{
-    padding: 16px 16px 0;
+    padding: 0 16px;
 }
 
 .emergency .vital .vital_monitor p{
+    padding-left: 8px;
     font-size: 14px;
 }
 
@@ -1232,6 +1234,8 @@
 
 .emergency .graph> div{
     height: 104px;
+    display: flex;
+    align-items: center;
 }
 
 .emergency .graph> div> div> div{
@@ -1305,7 +1309,7 @@
 /* mmhg */
 .emergency .patient_status .mmhg{
     width: 262px;
-    height: 104px;
+    /* height: 104px; */
     padding: 8px 16px;
     color: #fff;
 }
@@ -1488,7 +1492,9 @@
     overflow:hidden
 }
 
-.emergency .small_picture .swiper-wrapper{padding-bottom: 8px;}
+.emergency .small_picture .swiper-wrapper{
+    /* padding: 0 0 8px 8px; */
+}
 
 .emergency .small_picture .swiper-slide{
     width: 95px;
@@ -1507,12 +1513,13 @@
 }
 
 .para_connect .wrap_inner{
+    min-width: 1880px;
     padding-top: 240px;
     display: initial;
 }
 
 .para_connect{
-    min-width: 1280px;
+    min-width: 1880px;
     min-height: calc(100vh - 64px);
     background: #222;
     height: 100%;
@@ -1640,6 +1647,8 @@
     padding: 4px;
     background: #222;
 }
+
+.connect .patient_view> .title div{display: flex; align-items: center;}
 
 .connect .emer_message{
     width: 480px;
@@ -1966,7 +1975,9 @@
     background: #fff;
     color: #940045;
 }
+
 .connect .patient_view .btn_list button.active{background: #940045; color: #fff;}
+
 .connect .patient_view .btn_list> :last-child{
     margin: 0;
     display: flex;
@@ -2033,7 +2044,6 @@
     padding: 11px 16px;
     display: flex;
     justify-content: space-between;
-    cursor: default;
 }
 
 .connect .several .title p{
@@ -2065,6 +2075,7 @@
 .connect .several .title .btn_list .btn_full{
     margin: 0 32px;
 }
+
 .connect .several> div > .title{
     background: #4A0022;
 }
@@ -2150,6 +2161,7 @@
 
 .connect .patient_status .patient .symptome .part .swiper-scrollbar{
     width: 627px;
+    z-index: 0;
 }
 
 .connect .patient_status .red_custom[type='checkbox'] + label + label{
@@ -2239,9 +2251,6 @@
 
 .connect .pati_stat.on .full_wrap> div{
     display: flex;
-    /* justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row; */
 }
 
 .connect .pati_stat.on .full_wrap> div> :first-child{
@@ -2616,6 +2625,7 @@
 .connect_tab .tab_view .pati_stat,
 .connect_tab .tab_view .patient_status{
     width: 100%;
+    z-index: 0;
 }
 
 .connect_tab .tab_view .patient .title{
@@ -2651,6 +2661,7 @@
 
 .connect_tab .connect_video{
     width: 100%;
+    z-index: 0;
 }
 
 .connect_tab .connect_video .para_cam{
@@ -2672,13 +2683,12 @@
 }
 
 .connect_tab .scene_picture .big_picture{
-    height: 698px;
+    height: 697px;
 }
 
 .connect_tab .vital .ecg_graph, 
 .connect_tab .vital .sp_graph,
 .connect_tab .vital .resp_graph{width: 1172px;}
-
 
 /* connect_scroll */
 .connect_scroll {
@@ -2696,7 +2706,7 @@
 
 .connect_scroll .tab_view > div > .title{
     height: 40px;
-    padding: 10px 15px 10px 24px;
+    padding: 10px 24px;
     background: #940045;
     display: flex;
     align-items: center;
@@ -2708,8 +2718,6 @@
 .connect_scroll .patient_view> .title{
     margin: 0;
 }
-
-.connect .patient_view> .title div{display: flex; align-items: center;}
 
 .connect_scroll .vital .ecg_graph,
 .connect_scroll .vital .sp_graph,
@@ -2790,7 +2798,6 @@
 .connect_scroll .scene_picture .swiper{
     width: 100%;
     height: 107px;
-    padding-left: 8px;
     display: block;
 }
 
@@ -2800,10 +2807,6 @@
 }
 
 .connect_scroll .big_picture .swiper-slide{width: 1428px !important;}
-
-/* .connect_scroll .swiper-container-free-mode>.swiper-wrapper{
-    margin: 0 0 0 30px;
-} */
 
 
 /* doctor_emergency */
@@ -3012,12 +3015,18 @@
     background: #eee;
 }
 
+
 .doctor_emergency .control div{
     display: flex;
 }
 
 .doctor_emergency .control span{
     color: #007a94;
+}
+
+.doctor_emergency ul.tabs {
+    display: flex;
+    align-items: center;
 }
 
 .doctor_emergency ul.tabs li{
@@ -3136,7 +3145,7 @@
     position: relative;
     width: 160px;
     height: 240px;
-    background: url(/H-Connect/img/emergency/body.png)no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/emergency/body.png') no-repeat 0 0px / contain;
     background-size: cover;
 }
 

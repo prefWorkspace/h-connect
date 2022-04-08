@@ -44,6 +44,10 @@ button {
     display: flex;
 }
 
+.progress {
+    margin-left: 25px;
+}
+
 .title h2 {
     font-size: 16px;
     font-weight: 500;
@@ -237,7 +241,7 @@ button {
 .card_title {
     font-weight: 500;
     color: #007a94;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
 }
 
 /* card_btn, btn_active - card 버튼 스타일 */
@@ -495,7 +499,7 @@ button {
 /* favorite checkbox */
 .favorite_container {
     display: flex;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 .favorite_container input[type='checkbox'] + label {
     display: inline-block;
@@ -1180,7 +1184,7 @@ button {
     padding: 40px 40px 60px;
     display: flex;
     height: 100%;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 /* card 공통 */
@@ -1196,10 +1200,10 @@ button {
 }
 
 .card_header {
-    display: flex;
+    /* display: flex; */
     border-bottom: 1px solid #eeeeee;
-    padding: 10px 15px 20px;
-    justify-content: space-between;
+    padding: 16px;
+    /* justify-content: space-between; */
 }
 
 .card_ex_text {
@@ -1207,7 +1211,7 @@ button {
 }
 
 .first_card_title .card_title {
-    padding-left: 30px;
+    padding-left: 32px;
     background: url('/H-Connect/img/icon/setting_green.svg') no-repeat left top
         5px;
 }
@@ -1251,7 +1255,8 @@ button {
 /* re_del_btn */
 .re_del_btn {
     width: 56px;
-    line-height: 32px;
+    height: 32px;
+    /* line-height: 32px; */
     font-size: 12px;
 }
 
@@ -1826,13 +1831,13 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop .pop_cont .content {
-    padding: 31px 0 0;
+    padding: 16px 0 0;
     display: flex;
 }
 
 .pop .pop_cont .content p {
     width: 52px;
-    margin: 0 64px 0 0;
+    margin: 10px 64px 0 0;
     font-size: 14px;
     vertical-align: middle;
     color: #000;
@@ -1906,7 +1911,9 @@ textarea::-webkit-scrollbar-button {
 }
 
 .selectBox2.active .optionList {
+    max-height: 500px;
     opacity: 1;
+    display: block;
 }
 
 .selectBox2 .label {
@@ -1965,25 +1972,21 @@ textarea::-webkit-scrollbar-button {
 }
 
 .selectBox2 .optionList {
+    width: 420px;
+    padding: 8px 0;
     position: absolute;
     top: 46px;
     left: -1px;
-    width: 420px;
-    padding: 8px 0;
-
+    font-size: 14px;
+    font-weight: normal;
     background: #fff;
     border: 1px solid #ccc;
     border-top: none;
     border-radius: 0 0 4px 4px;
-
-    font-size: 14px;
-    font-weight: normal;
     color: #000;
-
     overflow: hidden;
     max-height: 0;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-    display: none;
 }
 
 .selectBox2 .optionList::after {
@@ -2030,6 +2033,8 @@ textarea::-webkit-scrollbar-button {
     padding: 8px 15px 8px;
     transition: 0.1s ease-in-out;
 }
+
+.selectBox2 .optionItem:hover,
 .selectBox2 .optionItem.active {
     background: #eee;
 }
@@ -2112,10 +2117,12 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.search_patient .wrap_inner {
+    min-width: fit-content;
     height: 130px;
     padding: 0;
     display: inherit;
     overflow: auto;
+    background: none;
 }
 
 .pop.search_patient .wrap_inner::-webkit-scrollbar {
@@ -2217,11 +2224,10 @@ textarea::-webkit-scrollbar-button {
 .pop.regi_device small,
 .pop.re_device small,
 .pop.update_device small {
-    margin-top: 8px;
-    margin-left: 112px;
+    margin: 8px 0 0 129px;
     font-size: 12px;
     color: #940045;
-    display: none;
+    display: inline-block;
 }
 
 /* 장치반납 */
@@ -2250,11 +2256,12 @@ textarea::-webkit-scrollbar-button {
 
 /* resp setting menu */
 .pop.setting_menu .overlay .content {
-    height: 300px;
-    padding: 0;
-    margin-top: 16px;
     display: block;
-    overflow: auto;
+}
+
+.pop.setting_menu .overlay .content > div {
+    display: flex;
+    align-items: flex-start;
 }
 
 .pop.setting_menu .overlay .content::-webkit-scrollbar {
@@ -2355,7 +2362,12 @@ textarea::-webkit-scrollbar-button {
 .pop.setting_menu .content .apnea p {
     width: 89px;
     margin-top: 0;
-    margin-right: 29px;
+    margin-right: 48px;
+}
+
+.pop.setting_menu .overlay .content .sweep .container,
+.pop.setting_menu .content .apnea .container {
+    padding-left: 11px;
 }
 
 .pop.setting_menu .sweep .container > div {
@@ -2542,6 +2554,10 @@ textarea::-webkit-scrollbar-button {
     border-radius: 0 4px 4px 0;
 }
 
+.pop.ecg_set .st_set .input_num {
+    margin-bottom: 0;
+}
+
 /* temp setting menu */
 .pop.temp_set .content .resp {
     margin-bottom: 16px;
@@ -2554,7 +2570,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.temp_set .content .sweep p {
     width: 89px;
-    margin-right: 32px;
+    margin-right: 48px;
 }
 
 /* interval setting menu */
@@ -3253,7 +3269,7 @@ textarea::-webkit-scrollbar-button {
     color: #fff;
 }
 
-.pop.nurse_view .chat_me .bubble:after {
+/* .pop.nurse_view .chat_me .bubble:after {
     content: '';
     position: absolute;
     right: 0;
@@ -3265,13 +3281,20 @@ textarea::-webkit-scrollbar-button {
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
+} */
+
+.pop.nurse_view .chat_me small {
+    width: 100%;
+    text-align: right;
+    display: block;
+    padding-right: 7px;
 }
 
 .pop.nurse_view .chat_me .bubble {
     background: #007a94;
 }
 
-.pop.nurse_view .chat_me .bubble:after {
+/* .pop.nurse_view .chat_me .bubble:after {
     content: '';
     position: absolute;
     right: 0;
@@ -3283,6 +3306,17 @@ textarea::-webkit-scrollbar-button {
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
+} */
+
+.pop.nurse_view .chat_me .bubble:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 34%;
+    width: 8px;
+    height: 8px;
+    margin-right: -8px;
+    background: url('../img/icon/bubble_triangle.svg') no-repeat center / 100%;
 }
 
 .pop.nurse_view .chat_you {
@@ -3304,7 +3338,7 @@ textarea::-webkit-scrollbar-button {
     color: #000;
 }
 
-.pop.nurse_view .chat_you .bubble:after {
+/* .pop.nurse_view .chat_you .bubble:after {
     content: '';
     position: absolute;
     left: 0;
@@ -3316,17 +3350,42 @@ textarea::-webkit-scrollbar-button {
     border-left: 0;
     margin-top: -8px;
     margin-left: -8px;
+} */
+
+.pop.nurse_view .chat_you .bubble:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 34%;
+    width: 8px;
+    height: 8px;
+    margin-left: -8px;
+    transform: rotate(180deg);
+    background: url('../img/icon/bubble_triangle.svg') no-repeat center / 100%;
+    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg)
+        brightness(200%) contrast(100%);
+}
+
+.pop.nurse_view .chat_you small {
+    padding-left: 7px;
 }
 
 .pop.nurse_view .chat_window {
-    height: 122px;
-    padding: 16px;
+    height: auto;
+    padding: 8px 16px 16px;
     display: flex;
     justify-content: space-between;
+    background: #c5d8dc;
+    border-radius: 0 0 8px 8px;
+    position: relative;
 }
 
 .pop.nurse_view .chat_window textarea {
-    width: 90%;
+    width: 100%;
+    height: 96px;
+    border-radius: 4px;
+    padding: 10px 8px;
+    padding-right: 55px;
 }
 
 .pop.nurse_view .chat_window textarea::placeholder {
@@ -3335,6 +3394,9 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.nurse_view .chat_window .btn_send {
+    position: absolute;
+    top: 12px;
+    right: 20px;
     width: 48px;
     height: 32px;
     border-radius: 4px;
@@ -3660,15 +3722,21 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .bell_num {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.pop.monitor .bell_num div {
+/* .pop.monitor .bell_num div {
     margin-top: 8px;
-}
+} */
 
 .pop.monitor .bell_num div p {
+    margin: 0 0 4px;
     font-size: 12px;
+}
+
+.pop.monitor .bell_num div p:last-child {
+    margin: 0;
 }
 
 .pop.monitor .bell_num > p {
@@ -3703,7 +3771,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .ews .bell_num > div {
     height: 30px;
-    margin: 0 5px 5px 0;
+    /* margin: 0 5px 5px 0; */
 }
 
 .pop.monitor .ews .bell_num > div div {
@@ -3737,6 +3805,11 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .time p {
     margin-left: 8px;
     font-size: 12px;
+    line-height: 15px;
+}
+
+.pop.monitor .time p span {
+    line-height: 15px;
 }
 
 .pop.monitor .mmhg .bell_name,
@@ -3820,11 +3893,11 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_content .ews {
-    margin-right: 68px;
+    margin-right: 72px;
 }
 
 .pop.monitor .table_content .spo {
-    margin-right: 84px;
+    margin-right: 79px;
 }
 
 .pop.monitor .table_page {
@@ -3865,14 +3938,19 @@ textarea::-webkit-scrollbar-button {
     border-bottom: 1px solid #888;
 }
 
-.pop.monitor .hr_chart > :nth-child(2) > :first-child {
+.pop.monitor .hr_line:first-child {
+    padding: 8px 0 0;
+}
+
+.pop.monitor .hr_chart > :nth-child(2) {
     position: relative;
 }
 
 .pop.monitor .hr_img {
     position: absolute;
-    top: 66%;
-    left: 148px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .pop.monitor .hr_time {
@@ -3895,20 +3973,28 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .time_line {
     position: absolute;
-    top: 51%;
-    left: 49%;
-    margin-left: -2px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* margin-left: -2px; */
     color: #ff0;
+}
+
+.pop.monitor .time_line .time {
+    width: fit-content;
 }
 
 .pop.monitor .time_line::before {
     position: absolute;
     content: '';
-    background: url(/H-Connect/img/icon/trend_tri.png) no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/icon/tri_yellow.svg) no-repeat 0 0px /
+        contain;
     width: 12px;
     height: 8px;
-    top: 30px;
-    left: 24px;
+    margin: 4px 0 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .pop.monitor .time_line::after {
@@ -3917,15 +4003,15 @@ textarea::-webkit-scrollbar-button {
     width: 2px;
     height: 220px;
     background-color: #ff0;
-    top: 49px;
-    left: 29px;
+    top: 35px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .pop.monitor .event .table_body {
-    padding-right: 5px;
+    /* padding-right: 5px; */
     height: 380px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden scroll;
 }
 
 .pop.monitor .table_body::-webkit-scrollbar {
@@ -3959,7 +4045,9 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .table_wrap .date_time {
     margin-right: 100px;
 }
-
+.pop.monitor .date_time p:first-child {
+    margin-right: 4px;
+}
 .pop.monitor .table_wrap .hr {
     margin-right: 85px;
 }
@@ -3973,7 +4061,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_wrap .spo {
-    margin-right: 84px;
+    margin-right: 79px;
 }
 
 .pop.monitor .event .table_content {
@@ -4117,8 +4205,9 @@ textarea::-webkit-scrollbar-button {
 
 .pop.new_room_pop .patient_info input:nth-child(2) {
     width: 64px;
-    padding: 0 21px;
+    /* padding: 0 21px; */
     margin: 0 16px;
+    text-align: center;
 }
 
 .pop.new_room_pop .patient_info input:nth-child(3) {
@@ -5264,13 +5353,13 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.doc_full .swiper-button-prev {
-    left: 0;
+    left: -143px;
     background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg);
 }
 
 .pop.doc_full .swiper-button-next {
-    right: 0;
+    right: -143px;
     background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
 }
 
