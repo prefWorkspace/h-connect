@@ -14,8 +14,8 @@
   <!--css-->
   <link rel='stylesheet' href='/H-Connect/css/reset.css'>
   <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/doctor.css">
   <link rel="stylesheet" href="/H-Connect/css/message.css">
+  <link rel="stylesheet" href="/H-Connect/css/doctor.css">
   <link rel="stylesheet" href="/H-Connect/css/fullcalendar.css">
 
 </head>
@@ -99,7 +99,7 @@
     
         
                 <div class="btn_list">
-                    <button type="button" class="btn_no">아니요</button>
+                    <button type="button" class="btn gr btn_no">아니요</button>
                     <button type="button" class="btn_cut">네, 취소합니다</button>
                 </div>
             </div>
@@ -117,7 +117,6 @@
                 <h2>
                     <span>실시간 원격 협진</span> 이 생성 되었습니다.
                 </h2>
-    
         
                 <div class="btn_list">
                     <button type="button" class="btn_check">확인</button>
@@ -126,8 +125,8 @@
         </div>
     </div>
 
-     <!-- 실시간 원격 협진 생성 -->
-     <div class="pop create_remote create_opinion">
+    <!-- 실시간 원격 협진 생성 -->
+    <div class="pop create_remote create_opinion">
         <div class="overlay">
             <div class="pop_cont">
                 <div>
@@ -447,200 +446,228 @@
                             <h2>협진 가능시간 선택</h2>
 
                             <div class="ut_wrap">
-                                <div class="up_time">
-                                    <div class="date">
-                                        <p>협진일자</p>
-         
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>월</p>
+                                <div class="up_box">
+                                    <button type="button" class="btn_delete_time">
+                                        시간삭제
+                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
+                                    </button>
+
+                                    <div class="up_time">
+                                        <div class="date">
+                                            <p>협진일자</p>
+             
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>월</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>일</p>
+                                            </div>
                                         </div>
-    
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>일</p>
+            
+                                        <div class="date_time">
+                                            <div>
+                                                <p>시작시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
+            
+                                            <div>
+                                                <p>종료시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
                                         </div>
+        
+                                        <!-- 중복시 보여주세요 -->
+                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                     </div>
-        
-                                    <div class="date_time">
-                                        <div>
-                                            <p>시작시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-        
-                                        <div>
-                                            <p>종료시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <!-- 중복시 보여주세요 -->
-                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                 </div>
     
-                                <div class="up_time">
-                                    <div class="date">
-                                        <p>협진일자</p>
-         
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>월</p>
+                                <div class="up_box">
+                                    <button type="button" class="btn_delete_time">
+                                        시간삭제
+                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
+                                    </button>
+                                    
+                                    <div class="up_time">
+                                        <div class="date">
+                                            <p>협진일자</p>
+             
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>월</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>일</p>
+                                            </div>
                                         </div>
-    
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>일</p>
+            
+                                        <div class="date_time">
+                                            <div>
+                                                <p>시작시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
+            
+                                            <div>
+                                                <p>종료시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
                                         </div>
+        
+                                        <!-- 중복시 보여주세요 -->
+                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                     </div>
-        
-                                    <div class="date_time">
-                                        <div>
-                                            <p>시작시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-        
-                                        <div>
-                                            <p>종료시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <!-- 중복시 보여주세요 -->
-                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                 </div>
     
-                                <div class="up_time">
-                                    <div class="date">
-                                        <p>협진일자</p>
-         
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>월</p>
+                                <div class="up_box">
+                                    <button type="button" class="btn_delete_time">
+                                        시간삭제
+                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
+                                    </button>
+                                    
+                                    <div class="up_time">
+                                        <div class="date">
+                                            <p>협진일자</p>
+             
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>월</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>일</p>
+                                            </div>
                                         </div>
-    
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>일</p>
+            
+                                        <div class="date_time">
+                                            <div>
+                                                <p>시작시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
+            
+                                            <div>
+                                                <p>종료시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
                                         </div>
+        
+                                        <!-- 중복시 보여주세요 -->
+                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                     </div>
-        
-                                    <div class="date_time">
-                                        <div>
-                                            <p>시작시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-        
-                                        <div>
-                                            <p>종료시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <!-- 중복시 보여주세요 -->
-                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                 </div>
     
-                                <div class="up_time">
-                                    <div class="date">
-                                        <p>협진일자</p>
-         
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>월</p>
+                                <div class="up_box">
+                                    <button type="button" class="btn_delete_time">
+                                        시간삭제
+                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
+                                    </button>
+                                    
+                                    <div class="up_time">
+                                        <div class="date">
+                                            <p>협진일자</p>
+             
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>월</p>
+                                            </div>
+        
+                                            <div class="input_wrap">
+                                                <input type="text" placeholder="00">
+                                                <p>일</p>
+                                            </div>
                                         </div>
-    
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>일</p>
+            
+                                        <div class="date_time">
+                                            <div>
+                                                <p>시작시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
+            
+                                            <div>
+                                                <p>종료시간</p>
+                                                    
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>시</p>
+                                                </div>
+            
+                                                <div class="input_wrap">
+                                                    <input type="text" placeholder="00">
+                                                    <p>분</p>
+                                                </div>
+                                            </div>
                                         </div>
+        
+                                        <!-- 중복시 보여주세요 -->
+                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                     </div>
-        
-                                    <div class="date_time">
-                                        <div>
-                                            <p>시작시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-        
-                                        <div>
-                                            <p>종료시간</p>
-                                                
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <!-- 중복시 보여주세요 -->
-                                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
                                 </div>
 
                                 <button type="button" class="btn_tadd">+ 시간추가</button>
@@ -657,8 +684,8 @@
                                     <img src="/H-Connect/img/icon/delete.svg" alt="케이스삭제 버튼 아이콘"/>
                                 </div>
                             </button>
-                            
-                            <form>
+
+                            <form>                               
                                 <div class="case">
                                     <p>Case 명.</p>
 
@@ -672,6 +699,8 @@
                                 <div class="patient_select">
                                     <p>환자 선택</p>
 
+                                    <!-- 1. 검색 결과가 없을시 placehoder="찾을 수 없습니다" 로 표시-->
+                                    <!-- 2. 검색 결과가 없을시 not_find 클래스를 붙여주세요-->
                                     <div class="search_container">
                                         <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
                         
@@ -744,27 +773,37 @@
                                 <div class="member">
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>다섯 글자자</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>                                    
 
                                     <div class="mem">
                                         <p>다섯글자자</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>                                    
 
                                     <div class="mem">
                                         <p>네 글자자</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>                                    
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>                                    
                                 </div>
                             </div>
@@ -853,7 +892,7 @@
                                     </div>
                                 </div>
                                
-                                <button type="button" class="btn_check">확인</button>
+                                <!-- <button type="button" class="btn_check">확인</button> -->
                             </div>
 
                             <!-- 시간 time -->
@@ -873,7 +912,7 @@
                             <div class="inner">
                                 <div class="day today">
                                     <div class="title">
-                                        <p>15.월 </p>
+                                        <p>15 월 </p>
                                     </div>
 
                                     <!-- 협진요청 -->
@@ -889,7 +928,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>16. 화 </p>
+                                        <p>16  화 </p>
                                     </div>
 
                                     <!-- 외래진료 -->
@@ -905,7 +944,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>17. 수</p>
+                                        <p>17  수</p>
                                     </div>
 
                                     <!-- 휴가 -->
@@ -916,7 +955,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>18. 목</p>
+                                        <p>18  목</p>
                                     </div>
 
                                     <!-- 협진요청 -->
@@ -932,7 +971,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>19. 금</p>
+                                        <p>19  금</p>
                                     </div>
                                     
                                     <div class="plan holiday">
@@ -942,19 +981,19 @@
                                     
                                 <div class="day weekend">
                                     <div class="title">
-                                        <p>20. 토</p>
+                                        <p>20  토</p>
                                     </div>
                                 </div>
 
                                 <div class="day weekend">
                                     <div class="title">
-                                        <p>21. 일</p>
+                                        <p>21  일</p>
                                     </div>
                                 </div>
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>15.월 </p>
+                                        <p>15 월 </p>
                                     </div>
                                   
                                     <div class="plan new create_op start">
@@ -967,7 +1006,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>16. 화 </p>
+                                        <p>16  화 </p>
                                     </div>
 
                                     <div class="plan new create_start">
@@ -980,7 +1019,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>17. 수</p>
+                                        <p>17  수</p>
                                     </div>
 
                                     <!-- 시작과 끝을 누르면 보이게 해주세요/H-Connect. /H-Connect. -->
@@ -989,7 +1028,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>18. 목</p>
+                                        <p>18  목</p>
                                     </div>
 
                                     <!-- 시작과 끝을 누르면 보이게 해주세요/H-Connect. /H-Connect. -->
@@ -998,7 +1037,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>19. 금</p>
+                                        <p>19  금</p>
                                     </div>
 
                                     <div class="plan new create_op end">
@@ -1011,13 +1050,13 @@
                                     
                                 <div class="day weekend">
                                     <div class="title">
-                                        <p>20. 토</p>
+                                        <p>20  토</p>
                                     </div>
                                 </div>
 
                                 <div class="day weekend">
                                     <div class="title">
-                                        <p>21. 일</p>
+                                        <p>21  일</p>
                                     </div>
                                 </div>
 
@@ -1026,85 +1065,85 @@
                                     <div class="wrap">
                                         <div class="day">
                                             <div class="title">
-                                                <p>15.월 </p>
+                                                <p>15 월 </p>
                                             </div>
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>16. 화 </p>
+                                                <p>16  화 </p>
                                             </div>                        
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>17. 수</p>
+                                                <p>17  수</p>
                                             </div>
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>18. 목</p>
+                                                <p>18  목</p>
                                             </div>
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>19. 금</p>
+                                                <p>19  금</p>
                                             </div>
                                         </div>
             
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>20. 토</p>
+                                                <p>20  토</p>
                                             </div>
                                         </div>
             
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>21. 일</p>
+                                                <p>21  일</p>
                                             </div>
                                         </div>   
                                         
                                         <div class="day">
                                             <div class="title">
-                                                <p>15.월 </p>
+                                                <p>15 월 </p>
                                             </div>
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>16. 화 </p>
+                                                <p>16  화 </p>
                                             </div>                            
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>17. 수</p>
+                                                <p>17  수</p>
                                             </div>
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>18. 목</p>
+                                                <p>18  목</p>
                                             </div>
                                         </div>
             
                                         <div class="day">
                                             <div class="title">
-                                                <p>19. 금</p>
+                                                <p>19  금</p>
                                             </div>
                                         </div>
             
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>20. 토</p>
+                                                <p>20  토</p>
                                             </div>
                                         </div>
             
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>21. 일</p>
+                                                <p>21  일</p>
                                             </div>
                                         </div> 
                                     </div>
@@ -1127,35 +1166,49 @@
                                 <div class="choice_member">
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del"></button>
+                                        <button type="button" class="btn_del">
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                        </button>
                                     </div>
                                 </div>
 
+                                <!-- 1. 검색 결과가 없을시 placehoder="찾을 수 없습니다" 로 표시-->
+                                <!-- 2. 검색 결과가 없을시 not_find 클래스를 붙여주세요-->
                                 <div class="search_container">
                                     <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
                     
@@ -1563,15 +1616,15 @@
             }
 
             surgeryOptions.forEach(option => {
-                option.addEventListener('click', () => surgerySelect(option))
+                option.addEventListener('click', () => {
+                    surgerySelect(option);
+                    reset(surgeryOptions, 'active');
+                    option.classList.add('active');
+                });
             })
 
             surgeryLabel.addEventListener('click', () => {
-            if(surgeryLabel.parentNode.classList.contains('active')) {
-                surgeryLabel.parentNode.classList.remove('active');
-            } else {
-                surgeryLabel.parentNode.classList.add('active');
-            }
+                surgeryLabel.parentNode.classList.toggle('active');
             })
 
         //   년도 선택
@@ -1584,15 +1637,15 @@
             }
 
             yearOptions.forEach(option => {
-                option.addEventListener('click', () => yearSelect(option))
+                option.addEventListener('click', () => {
+                    yearSelect(option);
+                    reset(yearOptions, 'active');
+                    option.classList.add('active');
+                });
             })
 
             yearLabel.addEventListener('click', () => {
-            if(yearLabel.parentNode.classList.contains('active')) {
-                yearLabel.parentNode.classList.remove('active');
-            } else {
-                yearLabel.parentNode.classList.add('active');
-            }
+                yearLabel.parentNode.classList.toggle('active');
             })
 
         // 월 선택
@@ -1605,16 +1658,23 @@
             }
 
             monthOptions.forEach(option => {
-                option.addEventListener('click', () => monthSelect(option))
+                option.addEventListener('click', () => {
+                    monthSelect(option);
+                    reset(monthOptions, 'active');
+                    option.classList.add('active');
+                });
             })
 
             monthLabel.addEventListener('click', () => {
-            if(monthLabel.parentNode.classList.contains('active')) {
-                monthLabel.parentNode.classList.remove('active');
-            } else {
-                monthLabel.parentNode.classList.add('active');
-            }
+                monthLabel.parentNode.classList.toggle('active');
             })
+
+            // reset
+            function reset(content, className) {
+                Array.from(content).forEach((element) => {
+                    element.classList.remove(className);
+                });
+            }
     </script>
   </body>
 </html>

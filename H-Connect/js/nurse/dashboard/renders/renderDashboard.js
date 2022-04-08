@@ -9,7 +9,7 @@ const { insertDisplay, updateDisplayName, updateDisplayNumber, deleteDisplay } =
     await import(
         importVersion('/H-Connect/js/nurse/dashboard/actions/displayActions.js')
     );
-const { updateSickBed } = await import(
+const { updateSickBed, updateSickBedDisplayCode } = await import(
     importVersion('/H-Connect/js/nurse/dashboard/actions/sickBedActions.js')
 );
 // Template Function Import
@@ -270,38 +270,40 @@ async function addEventToDisplayBtn() {
 }
 
 async function addEventOnWardCheck(wardCode) {
-    $('#ward_check').off().on('click', async () => {
-        //병실 체크
-        let sickRoomByWard = [];
-        _wardList = (await selectWardList()).wardList;
-        if (
-            _wardList.filter((ward) => ward.wardCode === wardCode)[0]
-                .sickRoomList
-        ) {
-            sickRoomByWard = _wardList
-                .filter((ward) => ward.wardCode === wardCode)[0]
-                .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
-        }
-        sickRoomByWard.forEach((sickRoomCode) => {
-            if ($('#ward_check').prop('checked')) {
-                $(`#${sickRoomCode}`).prop('checked', true);
-            } else {
-                $(`#${sickRoomCode}`).prop('checked', false);
+    $('#ward_check')
+        .off()
+        .on('click', async () => {
+            //병실 체크
+            let sickRoomByWard = [];
+            _wardList = (await selectWardList()).wardList;
+            if (
+                _wardList.filter((ward) => ward.wardCode === wardCode)[0]
+                    .sickRoomList
+            ) {
+                sickRoomByWard = _wardList
+                    .filter((ward) => ward.wardCode === wardCode)[0]
+                    .sickRoomList.map((sickRoom) => sickRoom.sickRoomCode);
             }
+            sickRoomByWard.forEach((sickRoomCode) => {
+                if ($('#ward_check').prop('checked')) {
+                    $(`#${sickRoomCode}`).prop('checked', true);
+                } else {
+                    $(`#${sickRoomCode}`).prop('checked', false);
+                }
+            });
+            // 병상 체크
+            _sickBedList = (await selectSickBedList()).sickBedList;
+            const checkSickbedsArray = _sickBedList
+                .filter((sickBed) => sickBed.wardCode === wardCode)
+                .map((bed) => bed.sickBedCode);
+            checkSickbedsArray.forEach((sickBedCode) => {
+                if ($('#ward_check').prop('checked')) {
+                    $(`#${sickBedCode}`).prop('checked', true);
+                } else {
+                    $(`#${sickBedCode}`).prop('checked', false);
+                }
+            });
         });
-        // 병상 체크
-        _sickBedList = (await selectSickBedList()).sickBedList;
-        const checkSickbedsArray = _sickBedList
-            .filter((sickBed) => sickBed.wardCode === wardCode)
-            .map((bed) => bed.sickBedCode);
-        checkSickbedsArray.forEach((sickBedCode) => {
-            if ($('#ward_check').prop('checked')) {
-                $(`#${sickBedCode}`).prop('checked', true);
-            } else {
-                $(`#${sickBedCode}`).prop('checked', false);
-            }
-        });
-    });
 }
 
 //병실 체크박스 이벤트 부여
@@ -336,9 +338,9 @@ async function addEventOnSickRoomCheck(wardCode) {
                 //병실 체크박스 체크시 이벤트 부여
                 checkWardByCheckRoom(sickRoomByWard.length);
                 const checkSickBedsArray = _sickBedList
-                    .filter((sickBed) => sickBed.sickRoomCode === sickRoomCode)
+                    ?.filter((sickBed) => sickBed.sickRoomCode === sickRoomCode)
                     .map((sickBed) => sickBed.sickBedCode);
-                checkSickBedsArray.forEach((sickBedCode) => {
+                checkSickBedsArray?.forEach((sickBedCode) => {
                     if ($(`#${sickRoomCode}`).prop('checked')) {
                         $(`#${sickBedCode}`).prop('checked', true);
                     } else {
@@ -441,6 +443,10 @@ async function addEventToAddBtn() {
                     checkedSickBeds.push(checkedSickBed);
                 });
 
+                checkedSickBeds = checkedSickBeds.filter(
+                    (bed) => bed.displayCode === null
+                );
+
                 for (let i = 0; i < checkedSickBeds.length; i++) {
                     if (
                         !arraySickBedCodesByDisplay.includes(
@@ -468,7 +474,29 @@ async function addEventToAddBtn() {
                                     sickBedsByDisplay[selected_display].push(
                                         newSickBed
                                     );
-                                    updateSickBed(newSickBed);
+                                    updateSickBedDisplayCode([
+                                        {
+                                            sickbedCode: newSickBed.sickBedCode,
+                                            displayCode: newSickBed.displayCode,
+                                        },
+                                    ]);
+                                    sickBedsByDisplay[selected_display].sort(
+                                        function (a, b) {
+                                            if (a.wardCode < b.wardCode)
+                                                return 1;
+                                            if (a.wardCode > b.wardCode)
+                                                return -1;
+                                            if (a.sickRoomCode < b.sickRoomCode)
+                                                return 1;
+                                            if (a.sickRoomCode > b.sickRoomCode)
+                                                return -1;
+                                            if (a.orderNumber > b.orderNumber)
+                                                return 1;
+                                            if (a.orderNumber < b.orderNumber)
+                                                return -1;
+                                            return 0;
+                                        }
+                                    );
                                 } else {
                                     for (let key in sickBedsByDisplay) {
                                         if (key !== selected_display) {
@@ -486,7 +514,49 @@ async function addEventToAddBtn() {
                                                 sickBedsByDisplay[key].push(
                                                     newSickBed
                                                 );
-                                                updateSickBed(newSickBed);
+                                                updateSickBedDisplayCode([
+                                                    {
+                                                        sickbedCode:
+                                                            newSickBed.sickBedCode,
+                                                        displayCode:
+                                                            newSickBed.displayCode,
+                                                    },
+                                                ]);
+                                                sickBedsByDisplay[key].sort(
+                                                    function (a, b) {
+                                                        if (
+                                                            a.wardCode <
+                                                            b.wardCode
+                                                        )
+                                                            return 1;
+                                                        if (
+                                                            a.wardCode >
+                                                            b.wardCode
+                                                        )
+                                                            return -1;
+                                                        if (
+                                                            a.sickRoomCode <
+                                                            b.sickRoomCode
+                                                        )
+                                                            return 1;
+                                                        if (
+                                                            a.sickRoomCode >
+                                                            b.sickRoomCode
+                                                        )
+                                                            return -1;
+                                                        if (
+                                                            a.orderNumber >
+                                                            b.orderNumber
+                                                        )
+                                                            return 1;
+                                                        if (
+                                                            a.orderNumber <
+                                                            b.orderNumber
+                                                        )
+                                                            return -1;
+                                                        return 0;
+                                                    }
+                                                );
                                                 selected_display = key;
                                                 break;
                                             }
@@ -504,7 +574,27 @@ async function addEventToAddBtn() {
                                 sickBedsByDisplay[selected_display].push(
                                     newSickBed
                                 );
-                                updateSickBed(newSickBed);
+                                updateSickBedDisplayCode([
+                                    {
+                                        sickbedCode: newSickBed.sickBedCode,
+                                        displayCode: newSickBed.displayCode,
+                                    },
+                                ]);
+                                sickBedsByDisplay[selected_display].sort(
+                                    function (a, b) {
+                                        if (a.wardCode < b.wardCode) return 1;
+                                        if (a.wardCode > b.wardCode) return -1;
+                                        if (a.sickRoomCode < b.sickRoomCode)
+                                            return 1;
+                                        if (a.sickRoomCode > b.sickRoomCode)
+                                            return -1;
+                                        if (a.orderNumber > b.orderNumber)
+                                            return 1;
+                                        if (a.orderNumber < b.orderNumber)
+                                            return -1;
+                                        return 0;
+                                    }
+                                );
                             }
                         } else {
                             const { displayCode } = await insertDisplay(
@@ -514,26 +604,45 @@ async function addEventToAddBtn() {
                                 ...checkedSickBeds[i],
                                 displayCode,
                             };
-                            if (!sickBedsByDisplay[displayCode])
-                                sickBedsByDisplay[displayCode] = [];
+                            sickBedsByDisplay[displayCode] =
+                                sickBedsByDisplay[displayCode] ?? [];
                             sickBedsByDisplay[displayCode].push(newSickBed);
                             arraySickBedCodesByDisplay.push(
                                 newSickBed.sickBedCode
                             );
-                            updateSickBed(newSickBed);
+
+                            updateSickBedDisplayCode([
+                                {
+                                    sickbedCode: newSickBed.sickBedCode,
+                                    displayCode: newSickBed.displayCode,
+                                },
+                            ]);
                             displayInfoUpdate();
+
                             selected_display =
                                 displayList[displayList.length - 1].displayCode;
+                            sickBedsByDisplay[selected_display].sort(function (
+                                a,
+                                b
+                            ) {
+                                if (a.wardCode < b.wardCode) return 1;
+                                if (a.wardCode > b.wardCode) return -1;
+                                if (a.sickRoomCode < b.sickRoomCode) return 1;
+                                if (a.sickRoomCode > b.sickRoomCode) return -1;
+                                if (a.orderNumber > b.orderNumber) return 1;
+                                if (a.orderNumber < b.orderNumber) return -1;
+                                return 0;
+                            });
                             continue;
                         }
                     }
+                    $('#ward_check:checked').prop('checked', false);
+                    $('input[name=room_no]:checked').prop('checked', false);
+                    $('input[name=sickBed_no]:checked').prop('checked', false);
                 }
                 await renderDisplayBtn();
                 moveScrollBarByDisplayCode(selected_display);
                 await renderDashboardScreen();
-                $('#ward_check:checked').prop('checked', false);
-                $('input[name=room_no]:checked').prop('checked', false);
-                $('input[name=sickBed_no]:checked').prop('checked', false);
             }
         });
 }
@@ -565,15 +674,21 @@ async function addEventToDeleteBtn() {
                             );
                         let newSickBed = {
                             ...sickBedsByDisplay[selected_display][i],
-                            displayCode: null,
+                            displayCode: 'NONE',
                         };
 
-                        updateSickBed(newSickBed);
+                        updateSickBedDisplayCode([
+                            {
+                                sickbedCode: newSickBed.sickBedCode,
+                                displayCode: newSickBed.displayCode,
+                            },
+                        ]);
                         sickBedsByDisplay[selected_display].splice(i, 1);
                         i--;
                     }
                 }
             }
+            moveScrollBarByDisplayCode(selected_display);
             await renderDashboardScreen();
             $('.btn_delete').prop('disabled', true);
         });
@@ -660,13 +775,15 @@ function addEventToChangeDisplayNameBtn() {
 
     $('.btn.blf.btn_check')
         .off()
-        .on('click', () => {
-            updateDisplayName(selected_display, $ward_name.val());
-            $(`.account.acc_${selected_display} p`).text($ward_name.val());
+        .on({
+            click: function () {
+                updateDisplayName(selected_display, $ward_name.val());
+                $(`.account.acc_${selected_display} p`).text($ward_name.val());
 
-            $name_change_pop.fadeOut(() => {
-                $ward_name.val('');
-            });
+                $name_change_pop.fadeOut(() => {
+                    $ward_name.val('');
+                });
+            },
         });
 
     $('.btn.rd.btn_cancel')
@@ -691,6 +808,25 @@ async function firstRender() {
 
     await displayInfoUpdate();
     selected_display = displayList[0].displayCode;
+    Object.keys(sickBedsByDisplay).forEach(display => {
+        sickBedsByDisplay[display].sort(
+            function (a, b) {
+                if (a.wardCode < b.wardCode)
+                    return 1;
+                if (a.wardCode > b.wardCode)
+                    return -1;
+                if (a.sickRoomCode < b.sickRoomCode)
+                    return 1;
+                if (a.sickRoomCode > b.sickRoomCode)
+                    return -1;
+                if (a.orderNumber > b.orderNumber)
+                    return 1;
+                if (a.orderNumber < b.orderNumber)
+                    return -1;
+                return 0;
+            }
+        );
+    })
     await renderDisplayBtn();
     await renderDashboardScreen();
 

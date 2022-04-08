@@ -4,11 +4,12 @@ const { device_TypeToName } = await import(
     importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
 );
 
-export function modifiDeviceList(item) {
+export function newSickBed_device(item) {
+    console.log(item);
     return `
         <div>
             <p>${device_TypeToName(item.deviceType)}</p>
-            <p>serial no.</p>
+            <p>${item.serialNumber}</p>
 
             <div class="btn_list">
                 <button
