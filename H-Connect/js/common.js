@@ -702,13 +702,21 @@ $(function () {
     $('.several .pati_stat .title .btn_fold').on('click', function () {
         $('.several .patient_status').toggle();
     });
+
     $('.several .pati_stat .title .btn_full').on('click', function () {
         $('.several .pati_stat').toggleClass('on');
+        if($('.several .pati_stat').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
         $('.several .patient_status').show();
-    });
+    })
+
     $('.several .pati_stat .title .btn_close').on('click', function () {
         $('.several .pati_stat').hide();
     });
+
     $('.patient_view .btn_patient').on('click', function () {
         $('.connect .pati_stat').show().addClass('active');
         $('.connect .several > div')
@@ -754,8 +762,13 @@ $(function () {
 
     $('.several .connect_video .title .btn_full').on('click', function () {
         $('.several .connect_video').toggleClass('on');
+        if($('.several .connect_video').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
         $('.several .video_view').show();
-    });
+    })
 
     $('.several .connect_video .title .btn_close').on('click', function () {
         $('.several .connect_video').hide();
@@ -784,8 +797,13 @@ $(function () {
 
     $('.several .scene_picture .title .btn_full').on('click', function () {
         $('.several .scene_picture').toggleClass('on');
+        if($('.several .scene_picture').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
         $('.several .swiper').show();
-    });
+    })
 
     $('.several .scene_picture .title .btn_close').on('click', function () {
         $('.several .scene_picture').hide();
@@ -1826,7 +1844,7 @@ $(document).ready(function () {
         $(this).height(this.scrollHeight);
     });
 
-    $('.text_wrap').find('textarea').keyup();
+    // $('.text_wrap').find('textarea').keyup();
 });
 
 // 메세지 페이지 대화상대 없을때 버튼 비활성화

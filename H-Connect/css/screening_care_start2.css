@@ -67,7 +67,7 @@
 #care_sect {
     /* max-width: 1920px; */
     min-width: 1880px;
-    height: calc(100vh - 64px);
+    /* height: calc(100vh - 64px); */
     background-color: #222222;
     padding: 5px;
 }
@@ -82,9 +82,7 @@
 
 /* care_start_card1 */
 .care_start_card1 {
-    flex: 3;
-    min-width: 600px;
-    max-width: 600px;
+    width: 600px;
     background-color: #444444;
     margin-right: 5px;
 }
@@ -218,7 +216,7 @@
     color: #fff;
 }
 
-.chat_me .bubble:after{
+/* .chat_me .bubble:after{
     content: '';
     position: absolute;
     right: 0;
@@ -230,14 +228,36 @@
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
+} */
+
+.chat_me .bubble:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 34%;
+    width: 8px;
+    height: 8px;
+    margin-right: -8px;
+    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
 }
+
+
+.chat_me small {
+    width: 100%;
+    text-align: right;
+    display: block;
+    margin-top: 7px;
+    padding-right: 7px;
+    font-size: 12px;
+}
+
 
 .chat_you{
     width: 100%;
     margin-bottom: 16px;
 }
 
-.chat_you> p{
+.chat_you > p {
     font-size: 12px;
 }
 
@@ -251,6 +271,20 @@
     color: #000;
 }
 
+.chat_you .bubble:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 34%;
+    width: 8px;
+    height: 8px;
+    margin-left: -8px;
+    transform: rotate(180deg);
+    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
+    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg) brightness(200%) contrast(100%);
+}
+
+/* 
 .chat_you .bubble:after{
     content: '';
     position: absolute;
@@ -263,6 +297,15 @@
     border-left: 0;
     margin-top: -8px;
     margin-left: -8px;
+} */
+
+.chat_you .bubble p{
+    font-size: 14px;
+}
+
+.chat_you small {
+    padding-left: 7px;
+    font-size: 12px;
 }
 
 .start_clinic{
@@ -331,9 +374,7 @@
 
 /* care_start_card2 */
 .care_start_card2 {
-    flex: 5;
-    min-width: 1308px;
-    max-width: 1308px;
+    width: 1308px;
     background-color: #EEEEEE;
 }
 
@@ -501,3 +542,5 @@
 
 .check_ex_text{font-size: 16px;}
 .modal_form{padding-top: 0;}
+
+

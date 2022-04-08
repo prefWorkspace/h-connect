@@ -44,6 +44,10 @@ button {
     display: flex;
 }
 
+.progress {
+    margin-left: 25px;
+}
+
 .title h2 {
     font-size: 16px;
     font-weight: 500;
@@ -1827,7 +1831,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop .pop_cont .content {
-    padding: 31px 0 0;
+    padding: 16px 0 0;
     display: flex;
 }
 
@@ -2110,10 +2114,12 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.search_patient .wrap_inner {
+    min-width: fit-content;
     height: 130px;
     padding: 0;
     display: inherit;
     overflow: auto;
+    background: none;
 }
 
 .pop.search_patient .wrap_inner::-webkit-scrollbar {
@@ -2358,7 +2364,12 @@ textarea::-webkit-scrollbar-button {
 .pop.setting_menu .content .apnea p {
     width: 89px;
     margin-top: 0;
-    margin-right: 29px;
+    margin-right: 48px;
+}
+
+.pop.setting_menu .overlay .content .sweep .container,
+.pop.setting_menu .content .apnea .container {
+    padding-left: 11px;
 }
 
 .pop.setting_menu .sweep .container > div {
@@ -2561,7 +2572,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.temp_set .content .sweep p {
     width: 89px;
-    margin-right: 32px;
+    margin-right: 48px;
 }
 
 /* interval setting menu */
@@ -5259,13 +5270,13 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.doc_full .swiper-button-prev {
-    left: 0;
+    left: -143px;
     background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
     transform: rotate(180deg);
 }
 
 .pop.doc_full .swiper-button-next {
-    right: 0;
+    right: -143px;
     background: url('/H-Connect/img/right_arrow.svg') no-repeat 0 0px / contain;
 }
 

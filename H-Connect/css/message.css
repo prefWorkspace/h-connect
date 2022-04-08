@@ -298,7 +298,7 @@
 }
 
 .message .message_talk .search_container input {
-    width: 480px;
+    width: 360px;
     height: 32px;
     padding: 7px 56px 7px 8px;
     border-radius: 4px;
@@ -321,7 +321,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 75%;
+    left: 53%;
     width: 25px;
     height: 30px;
     margin-right: 21px;
@@ -339,7 +339,7 @@
     width: 32px;
     height: 32px;
     padding: 8px;
-    background: #fff;
+    /* background: #fff; */
 }
 
 .nurse_message .message_talk .search_container .btn_sort div {
@@ -350,7 +350,7 @@
 .screening_doc .message_talk .search_container .btn_search {
     width: 30px;
     height: 30px;
-    transform: translate(20px, -50%);
+    /* transform: translate(20px, -50%); */
 }
 
 .message_talk.no_message .search_container input {
@@ -1998,7 +1998,10 @@
     margin: 0;
 }
 
-.para_message .message_list .search_container .btn_search{width: 20px; margin-right: 11px;}
+.para_message .message_list .search_container .btn_search{
+    width: 20px; 
+    /* margin-right: 11px;s */
+}
 
 .para_message .chat_container{
     height: 440px;
