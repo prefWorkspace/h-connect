@@ -1907,6 +1907,7 @@ textarea::-webkit-scrollbar-button {
 .selectBox2.active .optionList {
     max-height: 500px;
     opacity: 1;
+    display: block;
 }
 
 .selectBox2 .label {
@@ -2219,11 +2220,10 @@ textarea::-webkit-scrollbar-button {
 .pop.regi_device small,
 .pop.re_device small,
 .pop.update_device small {
-    margin-top: 8px;
-    margin-left: 112px;
+    margin: 8px 0 0 129px;
     font-size: 12px;
     color: #940045;
-    display: none;
+    display: inline-block;
 }
 
 /* 장치반납 */
@@ -3712,16 +3712,20 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .bell_num {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.pop.monitor .bell_num div {
+/* .pop.monitor .bell_num div {
     margin-top: 8px;
-}
+} */
 
 .pop.monitor .bell_num div p {
+    margin: 0 0 4px;
     font-size: 12px;
 }
+
+.pop.monitor .bell_num div p:last-child{margin: 0;}
 
 .pop.monitor .bell_num > p {
     font-size: 32px;
@@ -3755,7 +3759,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .ews .bell_num > div {
     height: 30px;
-    margin: 0 5px 5px 0;
+    /* margin: 0 5px 5px 0; */
 }
 
 .pop.monitor .ews .bell_num > div div {
@@ -3789,7 +3793,10 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .time p {
     margin-left: 8px;
     font-size: 12px;
+    line-height: 15px;
 }
+
+.pop.monitor .time p span{line-height: 15px;}
 
 .pop.monitor .mmhg .bell_name,
 .pop.monitor .pulse .bell_name,
@@ -3872,11 +3879,11 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_content .ews {
-    margin-right: 68px;
+    margin-right: 72px;
 }
 
 .pop.monitor .table_content .spo {
-    margin-right: 84px;
+    margin-right: 79px;
 }
 
 .pop.monitor .table_page {
@@ -3917,14 +3924,17 @@ textarea::-webkit-scrollbar-button {
     border-bottom: 1px solid #888;
 }
 
-.pop.monitor .hr_chart > :nth-child(2) > :first-child {
+.pop.monitor .hr_line:first-child{padding: 8px 0 0;}
+
+.pop.monitor .hr_chart > :nth-child(2){
     position: relative;
 }
 
 .pop.monitor .hr_img {
     position: absolute;
-    top: 66%;
-    left: 148px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .pop.monitor .hr_time {
@@ -3947,20 +3957,25 @@ textarea::-webkit-scrollbar-button {
 
 .pop.monitor .time_line {
     position: absolute;
-    top: 51%;
-    left: 49%;
-    margin-left: -2px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* margin-left: -2px; */
     color: #ff0;
 }
+
+.pop.monitor .time_line .time{width: fit-content;}
 
 .pop.monitor .time_line::before {
     position: absolute;
     content: '';
-    background: url(/H-Connect/img/icon/trend_tri.png) no-repeat 0 0px / contain;
+    background: url(/H-Connect/img/icon/tri_yellow.svg) no-repeat 0 0px / contain;
     width: 12px;
     height: 8px;
-    top: 30px;
-    left: 24px;
+    margin: 4px 0 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .pop.monitor .time_line::after {
@@ -3969,15 +3984,15 @@ textarea::-webkit-scrollbar-button {
     width: 2px;
     height: 220px;
     background-color: #ff0;
-    top: 49px;
-    left: 29px;
+    top: 35px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .pop.monitor .event .table_body {
-    padding-right: 5px;
+    /* padding-right: 5px; */
     height: 380px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden scroll;
 }
 
 .pop.monitor .table_body::-webkit-scrollbar {
@@ -4011,7 +4026,7 @@ textarea::-webkit-scrollbar-button {
 .pop.monitor .table_wrap .date_time {
     margin-right: 100px;
 }
-
+.pop.monitor .date_time p:first-child{margin-right: 4px;}
 .pop.monitor .table_wrap .hr {
     margin-right: 85px;
 }
@@ -4025,7 +4040,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.monitor .table_wrap .spo {
-    margin-right: 84px;
+    margin-right: 79px;
 }
 
 .pop.monitor .event .table_content {

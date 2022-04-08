@@ -139,6 +139,7 @@
 
 .nurse .left .title p,
 .nurse .right .title p {
+    margin: 5px 0 0;
     color: #444;
 }
 
@@ -181,23 +182,25 @@
 }
 
 .nurse .left .cont .ward_list.on {
+    border-radius: 4px;
     background: #007a94;
     color: #fff;
 }
 
 .nurse .left .cont .ward_list > p {
-    width: 100px;
-    margin-right: 20px;
+    width: 130px;
 }
 
 .nurse .left .cont .ward_list .ward_count {
     display: flex;
 }
 
-.nurse .left .cont .ward_list .ward_count p,
-.nurse .right .cont .ward_list .ward_count p {
+.nurse .left .ward_count p{width: 120px;}
+.nurse .right .ward_count p{width: 144px;}
+/* .nurse .left .ward_count p,
+.nurse .right .ward_count p{
     margin-right: 24px;
-}
+} */
 
 .nurse .left .cont .ward_list .ward_count span,
 .nurse .right .cont .ward_list .ward_count span {
@@ -358,9 +361,9 @@
     margin-right: 8px;
 }
 
-.nurse_device .new_device .title p {
+/* .nurse_device .new_device .title p {
     margin-top: 5px;
-}
+} */
 
 .new_device .device_count,
 .return_device .device_count {
@@ -611,6 +614,7 @@
     width: 472px;
     padding: 15px 0;
     z-index: 3;
+    display: none;
 }
 .nurse_measure .select_name .optionList::after {
     width: 440px;
@@ -1082,7 +1086,7 @@
 }
 
 .modifi_hospital .cont .hospital_patient input::placeholder {
-    color: #888888;
+    color: #ccc;
 }
 
 .modifi_hospital .cont .hospital_patient .patient_info {
@@ -2956,7 +2960,7 @@
     padding: 12px 24px 12px 45px;
 }
 
-.dashboard .middle .btn_delete:disabled {
+/* .dashboard .middle .btn_delete:disabled {
     background: rgba(238, 238, 238, 0.5) !important;
     border-color: rgba(148, 0, 69, 0.5) !important;
     color: #94004580 !important;
@@ -2966,7 +2970,7 @@
 .dashboard .middle .btn_delete:disabled::after {
     filter: invert(51%) sepia(10%) saturate(1994%) hue-rotate(279deg)
         brightness(95%) contrast(84%);
-}
+} */
 
 .dashboard .middle .btn_delete::after {
     content: '';
@@ -3131,7 +3135,7 @@
     height: 12px;
     margin-left: 8px;
     filter: invert(94%) sepia(6%) saturate(26%) hue-rotate(302deg)
-        brightness(106%) contrast(107%);
+    brightness(204%) contrast(239%);
 }
 
 .dashboard .check_pati {
@@ -3168,37 +3172,37 @@
 }
 
 /* 대시보드 전체화면 */
-.ward_dashboard {
-    min-width: 1880px;
+.ward_dashboard{
+    min-width: 1920px;
     padding: 0;
     background: #222;
 }
 
-.ward_dashboard .wrap_inner {
+.ward_dashboard .wrap_inner{
     min-width: 1880px;
     height: 100vh;
     padding: 20px;
-    background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px/ contain;
     background-position: 80% 95%;
     background-size: 90px;
     display: block;
 }
 
-.ward_dashboard .wrap_inner > div {
+.ward_dashboard .wrap_inner > div{
     width: 1880px;
     height: calc(100vh - 20px);
     max-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
+    align-content: space-between;
 }
 
-.ward_dashboard .wrap_inner > div::-webkit-scrollbar {
+.ward_dashboard .wrap_inner > div::-webkit-scrollbar{
     display: none;
 }
 
-.ward_dashboard .wrap_inner .img {
+.ward_dashboard .wrap_inner .img{
     position: fixed;
     width: 92px;
     height: 64px;
@@ -3206,147 +3210,147 @@
     right: 286px;
 }
 
-.ward_dashboard .wrap_inner .img img {
+.ward_dashboard .wrap_inner .img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.ward_dashboard .wrap_inner > div > div {
+.ward_dashboard .wrap_inner > div > div{
     width: 624px;
     height: 112px;
 }
 
-.ward_dashboard .system_title {
+.ward_dashboard .system_title{
     height: 100%;
     padding: 32px;
     margin-bottom: 4px;
-    background: linear-gradient(to right, #004f60, #350039);
+    background: linear-gradient(to right, #004F60, #350039);
 }
 
-.ward_dashboard .title_inner {
+.ward_dashboard .title_inner{
     display: flex;
 }
 
-.ward_dashboard .title_inner div {
+.ward_dashboard .title_inner div{
     width: 69px;
     height: 48px;
 }
 
-.ward_dashboard .title_inner div img {
+.ward_dashboard .title_inner div img{
     width: 100%;
     height: 100%;
 }
 
-.ward_dashboard .title_inner .text_box {
+.ward_dashboard .title_inner .text_box{
     width: 250px;
     margin-left: 43px;
     color: #fff;
 }
 
-.ward_dashboard .text_box p {
+.ward_dashboard .text_box p{
     font-weight: normal;
 }
 
-.ward_dashboard .text_box h1 {
+.ward_dashboard .text_box h1{
     font-size: 24px;
     font-weight: 500;
     font-weight: normal;
 }
 
-.ward_dashboard .text_box h1 span {
+.ward_dashboard .text_box h1 span{
     font-size: 18px;
     font-weight: normal;
     vertical-align: middle;
 }
 
-.ward_dashboard .sys_vital {
+.ward_dashboard .sys_vital{
     margin-bottom: 4px;
     background: #000;
 }
 
-.ward_dashboard .empty {
+.ward_dashboard .empty{
     background: #111;
 }
 
-.ward_dashboard .vital_inner {
+.ward_dashboard .vital_inner{
     height: 112px;
     display: flex;
     justify-content: space-between;
 }
 
-.ward_dashboard .graph {
+.ward_dashboard .graph{
     width: 470px;
     padding: 2px;
 }
 
-.ward_dashboard .graph > div {
+.ward_dashboard .graph > div{
     padding: 8px 16px;
 }
 
-.ward_dashboard .graph_title {
+.ward_dashboard .graph_title{
     margin-bottom: 28px;
     display: flex;
     justify-content: space-between;
 }
 
-.ward_dashboard .graph_title p {
+.ward_dashboard .graph_title p{
     font-size: 14px;
     font-weight: normal;
     color: #fff;
 }
 
-.ward_dashboard .img_container {
+.ward_dashboard .img_container{
     width: 446px;
     height: 24px;
     overflow: hidden;
 }
 
-.ward_dashboard .character {
+.ward_dashboard .character{
     padding: 2px;
 }
 
-.ward_dashboard .character > div {
+.ward_dashboard .character > div{
     display: flex;
 }
 
-.ward_dashboard .character > div > div {
+.ward_dashboard .character > div > div{
     width: 72px;
     height: 56px;
     padding: 4px;
 }
 
-.ward_dashboard .character .ecg {
-    color: #0f2;
+.ward_dashboard .character .ecg{
+    color: #0F2;
 }
 
-.ward_dashboard .character .sp {
-    color: #0ff;
+.ward_dashboard .character .sp{
+    color: #0FF;
 }
 
-.ward_dashboard .character .resp {
+.ward_dashboard .character .resp{
     color: #ff0;
 }
 
-.ward_dashboard .character .temp {
-    color: #ff3184;
+.ward_dashboard .character .temp{
+    color: #FF3184;
 }
 
-.ward_dashboard .bell_name {
+.ward_dashboard .bell_name{
     height: auto;
     font-size: 10px;
 }
 
-.ward_dashboard .bell_num {
-    display: flex;
-    justify-content: space-between;
+.ward_dashboard .bell_num{
+   display: flex;
+   justify-content: space-between;
 }
 
-.ward_dashboard .bell_num div p {
+.ward_dashboard .bell_num div p{
     font-size: 10px;
 }
 
-.ward_dashboard .bell_num > p {
+.ward_dashboard .bell_num > p{
     font-size: 24px;
     align-items: center;
 }
