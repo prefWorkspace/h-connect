@@ -354,6 +354,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/renders/',
                         version: '2022.04.06.18.01',
                     },
+                    'newSickBedPopDeviceList.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/renders/',
+                        version: '2022.04.08.17.01',
+                    },
                 },
                 templates: {
                     'measurList.js': {

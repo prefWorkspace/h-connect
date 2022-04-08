@@ -311,17 +311,19 @@ $(function () {
     // 담당의 메시지 창
     $('.doctor_send').on('click', function () {
         $('.pop.send_doctor .overlay').fadeIn();
-        $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').show();
-    })
+        $(
+            '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
+        ).show();
+    });
 
     $('.pop.send_doctor .btn_exit').on('click', function () {
         $('.pop.send_doctor .overlay').fadeOut();
-    })
+    });
 
     $('.pop.send_doctor .overlay .btn_send').on('click', function () {
         $('.pop.nurse_view').fadeIn();
         $('.pop.send_doctor .overlay').fadeOut();
-    })
+    });
 
     // 담당의 메시지 창
     $('.pop.nurse_view .btn_close').on('click', function () {
@@ -329,38 +331,47 @@ $(function () {
         $('.pop.nurse_view').removeClass('active');
         $('.pop.nurse_view').removeClass('on');
         $('.pop.chat_sort').hide();
-    })
+    });
 
     $('.pop.nurse_view .search_container .sort').on('click', function () {
         $('.pop.chat_sort').toggle();
-    })
+    });
 
     $('.pop.nurse_view .btn_fold').on('click', function () {
-        $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').hide();
+        $(
+            '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
+        ).hide();
         $('.pop.nurse_view').removeClass('active');
         $('.pop.nurse_view').addClass('on');
         $('.btn_full img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-    })
+    });
 
     $('.pop.nurse_view .btn_full').on('click', function (e) {
         // e.preventDefault();
         // e.stopPropagation();
         $('.pop.nurse_view').toggleClass('active');
 
-        if($('.pop.nurse_view').hasClass('active')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
-
-        if($('.pop.nurse_view').hasClass('on')){
-            $('.pop.nurse_view').removeClass('on');
-            $('.pop.nurse_view').removeClass('active');
-            $('.pop.nurse_view .chat_container, .pop.nurse_view .chat_window').show();
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        if ($('.pop.nurse_view').hasClass('active')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
         }
 
-    })
+        if ($('.pop.nurse_view').hasClass('on')) {
+            $('.pop.nurse_view').removeClass('on');
+            $('.pop.nurse_view').removeClass('active');
+            $(
+                '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
+            ).show();
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
+    });
     // 경보해제
     $('.warning .emergency_list .circum').on('click', function () {
         location.href = 'patient.html';
@@ -705,13 +716,17 @@ $(function () {
 
     $('.several .pati_stat .title .btn_full').on('click', function () {
         $('.several .pati_stat').toggleClass('on');
-        if($('.several .pati_stat').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
+        if ($('.several .pati_stat').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
         $('.several .patient_status').show();
-    })
+    });
 
     $('.several .pati_stat .title .btn_close').on('click', function () {
         $('.several .pati_stat').hide();
@@ -762,13 +777,17 @@ $(function () {
 
     $('.several .connect_video .title .btn_full').on('click', function () {
         $('.several .connect_video').toggleClass('on');
-        if($('.several .connect_video').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
+        if ($('.several .connect_video').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
         $('.several .video_view').show();
-    })
+    });
 
     $('.several .connect_video .title .btn_close').on('click', function () {
         $('.several .connect_video').hide();
@@ -797,13 +816,17 @@ $(function () {
 
     $('.several .scene_picture .title .btn_full').on('click', function () {
         $('.several .scene_picture').toggleClass('on');
-        if($('.several .scene_picture').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
+        if ($('.several .scene_picture').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
         $('.several .swiper').show();
-    })
+    });
 
     $('.several .scene_picture .title .btn_close').on('click', function () {
         $('.several .scene_picture').hide();
@@ -1142,7 +1165,7 @@ $(function () {
     // 가능
     $('.doctor .time_select .possible').on('click', function () {
         $('.doctor .time_select .possible > div').show();
-    })
+    });
 
     $('.doctor .my_return').on('click', function () {
         $('.doctor .me_request').show();
@@ -1197,7 +1220,7 @@ $(function () {
         $(this).toggleClass('active');
         $('.doctor_remote .select_week> :first-child').toggle();
         $('.doctor_remote .week_view2').toggleClass('on');
-    })
+    });
 
     // 리스트 클릭시 배경색 바뀜
     $('.doctor .status_list .row').on('click', function () {
@@ -1884,7 +1907,7 @@ $('.pop.new_room_pop .overlay .btn_add').on('click', function () {
 });
 
 $('.pop.new_room_pop .overlay .rd').on('click', function () {
-    $('.pop.new_room_pop').removeClass('active');
+    // $('.pop.new_room_pop').removeClass('active');
 });
 
 $('.pop.new_room_pop .overlay .new_room .selectBox2 .label').on(

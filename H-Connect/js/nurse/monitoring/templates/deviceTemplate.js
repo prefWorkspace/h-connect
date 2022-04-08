@@ -10,12 +10,20 @@ export function deviceTemplate(item) {
 
             <div class="btn_list">
                 <button
+                    data-serialnumber="${
+                        item.serialNumber
+                    }"                        
+                    data-macaddress="${item.macAddress}"      
                     type="button"
                     class="btn bl btn_modify"
                 >
                     수정
                 </button>
                 <button
+                    data-serialnumber="${
+                        item.serialNumber
+                    }"                        
+                    data-macaddress="${item.macAddress}"   
                     type="button"
                     class="btn rd btn_delete"
                 >

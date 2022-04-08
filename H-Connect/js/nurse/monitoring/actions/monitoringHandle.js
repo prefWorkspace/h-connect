@@ -24,9 +24,63 @@ const { InsertMeasurementInfo } = await import(
     importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringAPI.js')
 );
 
-const deviceInfoList = [];
-
+let deviceInfoList = [];
+let deviceCancel = [];
 //병상 추가 팝업창 병동, 병실, 병상 셀렉트 박스 셋팅
+
+// 장치 수정
+function newSickBedPop_updateDevice() {
+    const deviceName = $(this)
+        .parent()
+        .parent()
+        .find('p:nth-of-type(1)')
+        .text();
+    const serialNumber = $(this)
+        .parent()
+        .parent()
+        .find('p:nth-of-type(2)')
+        .text();
+
+    $('.pop.new_room_pop').addClass('active');
+    console.log($('.pop.new_room_pop .new_regi .selectBox2 .label'));
+    $('.pop.new_room_pop .new_regi .selectBox2 .label').text(deviceName);
+    $('.pop.new_room_pop .new_regi .input_box .input_wrap input').val(
+        serialNumber
+    );
+
+    const updateArr = deviceInfoList.filter(
+        (item) => item.serialNumber !== serialNumber
+    );
+    deviceInfoList = [...updateArr];
+}
+
+//장치 수정 취소
+function newSickBedPop_updateCancel() {
+    if (deviceCancel.length > 0) {
+        deviceInfoList.push(deviceCancel);
+    }
+    deviceCancel = [];
+    $('.pop.new_room_pop').removeClass('active');
+}
+
+//장치 삭제
+function newSickBedPop_deleteDevice() {
+    const serialNumber = $(this).data('serialnumber');
+    const updateArr = deviceInfoList.filter(
+        (item) => item.serialNumber !== serialNumber
+    );
+    deviceInfoList = [...updateArr];
+    addDeviceList(deviceInfoList);
+
+    $('.pop.new_room_pop .new_room .device_room .btn_list .bl').on(
+        'click',
+        newSickBedPop_updateDevice
+    );
+    $('.pop.new_room_pop .new_room .device_room .btn_list .btn_delete').on(
+        'click',
+        newSickBedPop_deleteDevice
+    );
+}
 
 //장치 추가
 function insertDevice() {
@@ -53,6 +107,14 @@ function insertDevice() {
         $('.pop.new_room_pop .input_box .input_wrap input').val('');
         $('.pop.new_room_pop').removeClass('active');
         addDeviceList(deviceInfoList);
+        $('.pop.new_room_pop .new_room .device_room .btn_list .bl').on(
+            'click',
+            newSickBedPop_updateDevice
+        );
+        $('.pop.new_room_pop .new_room .device_room .btn_list .btn_delete').on(
+            'click',
+            newSickBedPop_deleteDevice
+        );
     } else {
         $('.pop.new_room_pop .new_regi .input_wrap span').addClass('active');
     }
@@ -169,3 +231,7 @@ wardSelectBoxHandle();
 
 $('.pop.new_room_pop .new_room .btn_list .blf').on('click', insertSickBed);
 $('.pop.new_room_pop .overlay .new_regi .check').on('click', insertDevice);
+$('.pop.new_room_pop .new_regi .btn_list .rd').on(
+    'click',
+    newSickBedPop_updateCancel
+);

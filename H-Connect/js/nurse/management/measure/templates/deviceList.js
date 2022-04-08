@@ -5,9 +5,8 @@ const { device_TypeToName } = await import(
 );
 
 export function newSickBed_device(item) {
-    console.log(item);
     return `
-        <div>
+        <div class="add_device">
             <p>${device_TypeToName(item.deviceType)}</p>
             <p>${item.serialNumber}</p>
 

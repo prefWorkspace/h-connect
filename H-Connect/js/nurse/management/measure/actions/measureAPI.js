@@ -10,9 +10,12 @@ const { localStorageController } = await import(
     importVersion('/H-Connect/js/utils/controller/localStorageController.js')
 );
 
+const { request_Date_Data } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+
 const userData = localStorageController.getLocalS('userData');
-const { userCode: requester, organizationCode: organization } =
-    JSON.parse(userData);
+const { userCode: requester, organizationCode } = JSON.parse(userData);
 
 //모든 측정 정보가져오기
 export async function selectMeasurementInfoList(
@@ -44,7 +47,7 @@ export async function selectMeasurementInfoList(
     );
 }
 
-export async function insertMeasurementInfo(codeObj, patientData) {
+export async function insertMeasurementInfo(codeObj, patientData, pop) {
     const obj = {
         ...commonRequest(),
         ...codeObj,
@@ -53,11 +56,39 @@ export async function insertMeasurementInfo(codeObj, patientData) {
         organizationCode,
         orderNumber: 1,
     };
+    const { ward, sickRoom, sickBed } = pop;
 
-    $('.pop.new_room_pop .overlay').hide();
+    $('.pop.new_room_pop .overlay').fadeOut();
+    $('.pop.arteriotony_regi h3 span:nth-of-type(1)').text(ward + ' ');
+    $('.pop.arteriotony_regi h3 span:nth-of-type(2)').text(sickRoom);
+    $('.pop.arteriotony_regi h3 span:nth-of-type(3)').text(sickBed);
+
+    $('.pop.arteriotony_regi .overlay').fadeIn();
 
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertMeasurementInfo',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            console.log(res);
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
+
+export async function recodingEndMeasurementInfo(measurementCode) {
+    const obj = {
+        requester,
+        measurementCode,
+        measurementStatus: 3,
+        dateTime: request_Date_Data(),
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Measurement/UpdateMeasurementInfoStatus',
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -65,6 +96,8 @@ export async function insertMeasurementInfo(codeObj, patientData) {
             } else {
             }
         },
-        (err) => console.log(err)
+        (err) => {
+            console.log(err);
+        }
     );
 }

@@ -46,6 +46,6 @@ export function nSicRoomItem(item) {
 
 export function nSickBedItem(item) {
     return `
-        <li class="optionItem bed_list">${item.sickBed}번 병상</li>
+        <li class="optionItem bed_list" data-sickbedcode="${item.sickBedCode}">${item.sickBed}번 병상</li>
     `;
 }
