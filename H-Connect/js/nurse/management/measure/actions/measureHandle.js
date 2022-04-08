@@ -12,7 +12,7 @@ const { getMacaddress } = await import(
     importVersion('/H-Connect/js/utils/custom/utils.js')
 );
 
-const { modifiDeviceList } = await import(
+const { newSickBed_device } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/templates/deviceList.js'
     )
@@ -257,12 +257,12 @@ export function insertDevice() {
             serialNumber,
             macAddress: getMacaddress(deviceType, serialNumber),
         };
-        deviceInfoList.push(obj);
         $('.pop.new_room_pop .input_box .input_wrap input').val('');
         $('.pop.new_room_pop').removeClass('active');
-        // addDeviceList(deviceInfoList);
+        const html = newSickBed_device(obj);
+        $('.pop.new_room_pop .new_room .device_room .btn_add').before(html);
     } else {
-        // $('.pop.new_room_pop .new_regi .input_wrap span').addClass('active');
+        $('.pop.new_room_pop .new_regi .input_wrap span').addClass('active');
     }
 }
 //환자 셀렉트 박스 이벤트, 병동 병실 선택시에만 가능하게 분기처리 해야함
@@ -281,6 +281,7 @@ export function patientSelectBoxHandle() {
 
 $('.pop.new_room_pop .new_room .name_list').on('click', patientSelectBoxHandle);
 $('.pop.new_room_pop .new_regi .btn_list .check').on('click', insertDevice);
+
 measureListhanlde();
 selecBoxWard();
 wardSelectBoxHandle();
