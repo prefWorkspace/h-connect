@@ -831,7 +831,7 @@
 .message .select_list {
     width: 100%;
     height: fit-content;
-    margin: 18px auto 0;
+    /* margin: 18px auto 0; */
     padding: 16px 16px 11px;
     border: 1px solid #000;
     border-radius: 4px;

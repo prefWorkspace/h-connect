@@ -237,7 +237,7 @@ button {
 .card_title {
     font-weight: 500;
     color: #007a94;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
 }
 
 /* card_btn, btn_active - card 버튼 스타일 */
@@ -1181,7 +1181,7 @@ button {
     padding: 40px 40px 60px;
     display: flex;
     height: 100%;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 /* card 공통 */
@@ -1197,10 +1197,10 @@ button {
 }
 
 .card_header {
-    display: flex;
+    /* display: flex; */
     border-bottom: 1px solid #eeeeee;
-    padding: 10px 15px 20px;
-    justify-content: space-between;
+    padding: 16px;
+    /* justify-content: space-between; */
 }
 
 .card_ex_text {
@@ -1208,7 +1208,7 @@ button {
 }
 
 .first_card_title .card_title {
-    padding-left: 30px;
+    padding-left: 32px;
     background: url('/H-Connect/img/icon/setting_green.svg') no-repeat left top
         5px;
 }
@@ -1252,7 +1252,8 @@ button {
 /* re_del_btn */
 .re_del_btn {
     width: 56px;
-    line-height: 32px;
+    height: 32px;
+    /* line-height: 32px; */
     font-size: 12px;
 }
 

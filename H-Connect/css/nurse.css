@@ -2960,7 +2960,7 @@
     padding: 12px 24px 12px 45px;
 }
 
-/* .dashboard .middle .btn_delete:disabled {
+.dashboard .middle .btn_delete:disabled {
     background: rgba(238, 238, 238, 0.5) !important;
     border-color: rgba(148, 0, 69, 0.5) !important;
     color: #94004580 !important;
@@ -2970,7 +2970,7 @@
 .dashboard .middle .btn_delete:disabled::after {
     filter: invert(51%) sepia(10%) saturate(1994%) hue-rotate(279deg)
         brightness(95%) contrast(84%);
-} */
+}
 
 .dashboard .middle .btn_delete::after {
     content: '';
