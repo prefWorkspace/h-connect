@@ -236,25 +236,25 @@ $(function () {
         }
     );
 
-    $('.cont .resp .bell_num').on('click', function () {
-        $('.pop.resp_set .overlay').fadeIn();
-    });
+    // $('.cont .resp .bell_num').on('click', function () {
+    //     $('.pop.resp_set .overlay').fadeIn();
+    // });
 
-    $(' .cont .ecg .bell_num').on('click', function () {
-        $('.pop.ecg_set .overlay').fadeIn();
-    });
+    // $(' .cont .ecg .bell_num').on('click', function () {
+    //     $('.pop.ecg_set .overlay').fadeIn();
+    // });
 
-    $('.cont .sp .bell_num').on('click', function () {
-        $('.pop.sp_set .overlay').fadeIn();
-    });
+    // $('.cont .sp .bell_num').on('click', function () {
+    //     $('.pop.sp_set .overlay').fadeIn();
+    // });
 
-    $('.temp .bell_num').on('click', function () {
-        $('.pop.temp_set .overlay').fadeIn();
-    });
+    // $('.temp .bell_num').on('click', function () {
+    //     $('.pop.temp_set .overlay').fadeIn();
+    // });
 
-    $('.ews .bell_num').on('click', function () {
-        $('.pop.ews_set .overlay').fadeIn();
-    });
+    // $('.ews .bell_num').on('click', function () {
+    //     $('.pop.ews_set .overlay').fadeIn();
+    // });
 
     $('.monitoring_patient .patient .btn_list .btn_alarm').on(
         'click',

@@ -46,3 +46,45 @@ export const SelectAlarmSettingMeasurement = async () => {
     }
     return res.measurementAlarmSetting;
 };
+
+/* s : 환자 생체 신호 알람 업데이트 */
+export const UpdateAlarmSettingMeasurement = async (_data) => {
+    console.log('_data:', _data);
+    const res = await serverController.ajaxAwaitController(
+        'API/Measurement/UpdateAlarmSettingMeasurement',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            ..._data,
+        }),
+        (res) => {
+            console.log(res);
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+    if (res.result) {
+        return res;
+    } else {
+        return null;
+    }
+};
+
+/* e : 환자 생체 신호 알람 업데이트 */
+export const SelectArrhythmiaSettingInfo = async () => {
+    const res = await serverController.ajaxAwaitController(
+        'API/Measurement/SelectArrhythmiaSettingInfo',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+        })
+    );
+    if (!res?.arrhythmiaSettingInfo) {
+        throw new Error('조회된 데이타가 없습니다');
+    }
+    return res.arrhythmiaSettingInfo;
+};

@@ -1281,20 +1281,20 @@ button {
 
 /* card1 */
 .card1 {
-    min-width: 360px;
-    flex: 1;
+    width: 360px;
+    /* flex: 1; */
 }
 
 /* card2 */
 .card2 {
-    min-width: 640px;
-    flex: 2;
+    width: 640px;
+    /* flex: 2; */
 }
 
 /* card3 */
 .card3 {
-    min-width: 640px;
-    flex: 2;
+    width: 640px;
+    /* flex: 2; */
 }
 
 .create_btn.off {
