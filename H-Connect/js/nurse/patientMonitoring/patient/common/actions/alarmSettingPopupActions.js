@@ -37,7 +37,7 @@ const {
     ewsAlarmPopupTmpl,
 } = await import(
     importVersion(
-        '/H-Connect/js/nurse/patientMonitoring/common/templates/alarmSettingPopupTmpl.js'
+        '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/alarmSettingPopupTmpl.js'
     )
 );
 const $alarmPopupWrapEl = $('.alarm_popup_wrap');
@@ -98,6 +98,7 @@ function findObjWithClassKey(_classKey) {
     }
 }
 function settingObjParams(_wrapEl, _classKey, _paramsKeys) {
+    // object 파라미터 합치는 세팅 진행
     let resultObj = {};
     for (let i = 0, len = _paramsKeys?.length; i < len; i++) {
         Object.assign(resultObj, _paramsKeys[i](_wrapEl, _classKey));
@@ -131,12 +132,15 @@ function getAlarmOnOff(_wrapEl, _classKey) {
 /* e : 팝업 창 띄우기 이벤트 추가 */
 
 function onClickAlarmPopupCancelBtn(e) {
+    /* 알람 취소 버튼 클릭시 실행 함수 */
     const $popupOverlayEl = $(e).closest('.overlay');
     $popupOverlayEl.fadeOut(() => {
         $alarmPopupWrapEl.html('');
     });
 }
 async function onClickAlarmPopupSubmitBtn(e, _classKey) {
+    /* 알람 확인 버튼 클릭시 실행 함수 */
+    const $popupOverlayEl = $(e).closest('.overlay');
     const $settingMenuEl = $(`.pop.setting_menu.${_classKey}_set`);
     const { paramsKeys } = findObjWithClassKey(_classKey) || {};
     const alarmSetting = settingObjParams(
@@ -144,10 +148,18 @@ async function onClickAlarmPopupSubmitBtn(e, _classKey) {
         _classKey,
         paramsKeys
     );
-    await UpdateAlarmSettingMeasurement(alarmSetting);
-    const _alarmSettingInfo = await SelectAlarmSettingMeasurement();
-    console.log('_alarmSettingInfo:', _alarmSettingInfo);
-    vitalSimpleDataInit(_alarmSettingInfo);
+    // 알람 변경 정보 업데이트
+    const updateFetchSuccess = await UpdateAlarmSettingMeasurement(
+        alarmSetting
+    );
+    if (updateFetchSuccess) {
+        // 업데이트 성공시 화면 재 렌더링 및 팝업창 닫기
+        $popupOverlayEl.fadeOut(async () => {
+            $alarmPopupWrapEl.html('');
+            const _alarmSettingInfo = await SelectAlarmSettingMeasurement();
+            vitalSimpleDataInit(_alarmSettingInfo);
+        });
+    }
 }
 
 function addAlarmPopupEventInit() {
@@ -156,4 +168,3 @@ function addAlarmPopupEventInit() {
     window.onClickAlarmPopupSubmitBtn = onClickAlarmPopupSubmitBtn;
 }
 addAlarmPopupEventInit();
-$('body').on('click', '.alarm_popup_wrap .setting_menu .btn_check', () => {});
