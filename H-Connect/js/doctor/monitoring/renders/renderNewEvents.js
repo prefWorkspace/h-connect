@@ -6,14 +6,18 @@ const { newEventListItem } = await import(
     )
 );
 
-const { getNewEventList } = await import(importVersion('/H-Connect/js/doctor/monitoring/dummyData.js'));
+const { getNewEventList } = await import(
+    importVersion('/H-Connect/js/doctor/monitoring/dummyData.js')
+);
 
 export function renderNewEventList() {
     // declare tempNewEventList
     let templateNewEventList = ``;
 
     if (getNewEventList().result) {
-        let eventList = getNewEventList().eventList;
+        let eventList = getNewEventList().eventList.filter(
+            (list) => !list.isConfirm
+        );
         // render NewEventList Header
         templateNewEventList += `
         <div class="title">
@@ -43,6 +47,9 @@ export function renderNewEventList() {
             </div>
         </div>
         <div class='ecglist'>`;
+        eventList.sort(function (a, b) {
+            return new Date('20' + b.date) - new Date('20' + a.date);
+        });
         // render NewEventList
         eventList.forEach((evt) => {
             templateNewEventList += newEventListItem(evt);
@@ -64,15 +71,17 @@ export function addEventToNewEventList(params) {
                 return false;
             }
         });
-    } 
+    }
 
     // Add Event To Select Pre Events Btn
-    $('.btn_pre').off().on('click', function () {
-        selectedId = null;
-        $('.section.new_patient.new').css('display', 'none');
-        $('.section.new_patient.pre').css('display', 'BLOCK');
-        
-    })
+    $('.btn_pre')
+        .off()
+        .on('click', function () {
+            $newEventRow.removeClass('on');
+            selectedId = null;
+            $('.section.new_patient.new').css('display', 'none');
+            $('.section.new_patient.pre').css('display', 'BLOCK');
+        });
 
     // Add Event To New Event List
     $newEventRow.off().on('click', function () {

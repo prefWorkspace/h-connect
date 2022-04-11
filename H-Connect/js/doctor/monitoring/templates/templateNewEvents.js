@@ -1,5 +1,9 @@
 'use strict';
 
+const { devType } = await import(
+    importVersion('/H-Connect/js/doctor/monitoring/common.js')
+);
+
 export function newEventListItem(item) {
     return `
         <div class='row' data-id='${item.eventId}'>
@@ -17,17 +21,4 @@ export function newEventListItem(item) {
             </div>
         </div>
     `;
-}
-
-function devType(deviceType) {
-    switch (deviceType) {
-        case 1:
-            return 'ECG';
-        case 2:
-            return 'TEMP';
-        case 3:
-            return 'SPO2';
-        default:
-            return 'UNKNOWNTYPE';
-    }
 }
