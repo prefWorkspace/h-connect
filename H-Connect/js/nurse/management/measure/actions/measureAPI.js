@@ -47,7 +47,8 @@ export async function selectMeasurementInfoList(
     );
 }
 
-export async function insertMeasurementInfo(codeObj, patientData, pop) {
+//측정 추가
+export async function insertMeasurementInfo(codeObj, patientData) {
     const obj = {
         ...commonRequest(),
         ...codeObj,
@@ -56,14 +57,7 @@ export async function insertMeasurementInfo(codeObj, patientData, pop) {
         organizationCode,
         orderNumber: 1,
     };
-    const { ward, sickRoom, sickBed } = pop;
-
-    $('.pop.new_room_pop .overlay').fadeOut();
-    $('.pop.arteriotony_regi h3 span:nth-of-type(1)').text(ward + ' ');
-    $('.pop.arteriotony_regi h3 span:nth-of-type(2)').text(sickRoom);
-    $('.pop.arteriotony_regi h3 span:nth-of-type(3)').text(sickBed);
-
-    $('.pop.arteriotony_regi .overlay').fadeIn();
+    //birthday 값이 좀 상이함. 이거는 API 업데이트되는데로 수정
 
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertMeasurementInfo',
@@ -79,16 +73,18 @@ export async function insertMeasurementInfo(codeObj, patientData, pop) {
     );
 }
 
-export async function recodingEndMeasurementInfo(measurementCode) {
+//측정 상태 종료
+export async function recodingEndMeasurementInfo(measurementCode, route) {
     const obj = {
+        ...commonRequest(),
         requester,
         measurementCode,
         measurementStatus: 3,
         dateTime: request_Date_Data(),
     };
-
-    return serverController.ajaxAwaitController(
+    return serverController.ajaxMeasurementController(
         'API/Measurement/UpdateMeasurementInfoStatus',
+        route,
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -99,5 +95,75 @@ export async function recodingEndMeasurementInfo(measurementCode) {
         (err) => {
             console.log(err);
         }
+    );
+}
+
+// 측정 정보 수정
+export async function updateMeasurementInfo(codeObj, patientData, route) {
+    const obj = {
+        ...commonRequest(),
+        ...codeObj,
+        ...patientData,
+    };
+
+    return serverController.ajaxMeasurementController(
+        'API/Measurement/UpdateMeasurementInfo',
+        route,
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+}
+
+//측정 추가 및 수정 시, 장치 조회
+export async function selectDeviceRegisterUnused(search) {
+    const obj = {
+        ...commonRequest(),
+        requester,
+        organizationCode,
+        search,
+        deviceType: 0,
+        pageNumber: 1,
+        count: 1000,
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Device/SelectDeviceRegisterUnusedPage',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
+
+// 측정 코드 삭제
+export async function deleteMeasurementInfo(measureMentCode, route) {
+    const obj = {
+        ...commonRequest(),
+        requester,
+        measureMentCode,
+    };
+    return serverController.ajaxMeasurementController(
+        'API/Measurement/DeleteMeasurementInfo',
+        route,
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
     );
 }

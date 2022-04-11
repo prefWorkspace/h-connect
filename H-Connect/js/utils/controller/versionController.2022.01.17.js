@@ -157,6 +157,39 @@ const VERSION = {
             },
         },
     },
+    doctor: {
+        monitoring: {
+            actions: {},
+            templates: {
+                'templateNewEvents.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/templates/',
+                    version: '2022.03.25.12.01',
+                },
+            },
+            renders: {
+                'renderNewEvents.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
+                    version: '2022.03.25.12.01',
+                },
+                'renderMonitoring.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
+                    version: '2022.03.25.12.01',
+                },
+            },
+            'dummyData.js': {
+                type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/',
+                    version: '2022.03.25.12.01',
+            }
+        },
+    },
     nurse: {
         common: {
             header: {
@@ -337,6 +370,13 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.06.12.21',
+                    },
+                    'updateMeasureHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.11.16.11',
                     },
                 },
                 renders: {

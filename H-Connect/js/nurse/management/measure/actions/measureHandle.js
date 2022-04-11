@@ -2,6 +2,7 @@ const {
     selectMeasurementInfoList,
     insertMeasurementInfo,
     recodingEndMeasurementInfo,
+    selectDeviceRegisterUnused,
 } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/measureAPI.js'
@@ -44,6 +45,12 @@ const { createMeasureList } = await import(
     )
 );
 
+const { updateDeviceList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/actions/updateMeasureHandle.js'
+    )
+);
+
 const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 await createMeasureList(measurementInfoSimpleList);
 const displayCount = measurementInfoSimpleList
@@ -58,6 +65,9 @@ export async function measureListhanlde() {
     $('.wrap_inner .measure_status .status_list').on('click', function () {
         $(this).addClass('on').siblings().removeClass('on');
         const sickBedCode = $(this).data('sickbedcode');
+        const wardCode = $(this).data('wardcode');
+        const sickRoomCode = $(this).data('sickroomcode');
+
         const measureData = measurementInfoSimpleList.find(
             (item) => item.sickBedCode === sickBedCode
         );
@@ -70,6 +80,8 @@ export async function measureListhanlde() {
             sickRoom,
             sickBed,
             deviceInfoList,
+            apiRoute,
+            measurementCode,
         } = measureData;
         $('.modifi_hospital .hospital_patient .name_label').text(name);
         $('.modifi_hospital .hospital_patient .patient_age').val(birthday);
@@ -80,16 +92,50 @@ export async function measureListhanlde() {
         $('.modifi_hospital .hospital_patient .selectBox2 .mward_label').text(
             ward
         );
+        $('.modifi_hospital .hospital_patient .selectBox2 .mward_label').attr(
+            'data-wardcode',
+            wardCode
+        );
         $('.modifi_hospital .hospital_patient .selectBox2 .mroom_label').text(
             sickRoom
+        );
+        $('.modifi_hospital .hospital_patient .selectBox2 .mroom_label').attr(
+            'data-sickroomcode',
+            sickRoomCode
         );
         $('.modifi_hospital .hospital_patient .selectBox2 .mbed_label').text(
             sickBed + '번 병상'
         );
 
+        $('.modifi_hospital .hospital_patient .selectBox2 .mbed_label').attr(
+            'data-sickbedcode',
+            sickBedCode
+        );
+
+        $('.section.modifi_hospital .btn_list .btn_new_hospital').attr(
+            'data-apiroute',
+            apiRoute
+        );
+
+        $('.section.modifi_hospital .btn_list .btn_delete').attr(
+            'disabled',
+            false
+        );
+
+        $('.section.modifi_hospital .btn_list .btn_delete').attr(
+            'data-measurementcode',
+            measurementCode
+        );
+
+        $('.section.modifi_hospital .btn_list .btn_delete').attr(
+            'data-apiroute',
+            apiRoute
+        );
+
         if (!deviceInfoList) {
             return;
         }
+        updateDeviceList = [...deviceInfoList];
         let html = '';
         for (let i = 0; i < deviceInfoList.length; i++) {
             html += modifiDeviceList(deviceInfoList[i]);
@@ -101,18 +147,25 @@ export async function measureListhanlde() {
         'click',
         function () {
             const measureCode = $(this).data('measurementcode');
+            const API_ROUTE = $(this).data('route');
             $('.pop.end_measure .overlay').fadeIn();
             $('.pop.end_measure .btn_list .btn_cut').attr(
                 'data-measurecode',
                 measureCode
             );
+            $('.pop.end_measure .btn_list .btn_cut').attr(
+                'data-route',
+                API_ROUTE
+            );
         }
     );
 }
-
+//측정 종료
 export async function recodingEndHandle() {
     const measureCode = $(this).attr('data-measurecode');
-    const { result } = await recodingEndMeasurementInfo(measureCode);
+    const API_ROUTE = $(this).attr('data-route');
+    const { result } = await recodingEndMeasurementInfo(measureCode, API_ROUTE);
+
     if (result) {
         console.log('ddd');
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
@@ -135,6 +188,7 @@ export async function selectBoxSickRoom() {
             const wardCode = $('.measure_status .selectBox2 .ward_label').data(
                 'wardcode'
             );
+            $(this).addClass('active').siblings().removeClass('active');
             const { measurementInfoSimpleList } =
                 await selectMeasurementInfoList(wardCode, sickRoomCode);
             const displayCount = measurementInfoSimpleList
@@ -158,7 +212,7 @@ export async function selectBoxSickRoom() {
 export async function selecBoxWard() {
     await wardListSelectHandle();
 
-    $('.section .selectBox2 .optionList .ward_list').on(
+    $('.section.measure_status .selectBox2 .optionList .ward_list').on(
         'click',
         async function () {
             const text = $(this)
@@ -166,6 +220,7 @@ export async function selecBoxWard() {
                 .replaceAll(' ', '')
                 .replaceAll('\n', '');
             const wardCode = $(this).data('wardcode') || null;
+            $(this).addClass('active').siblings().removeClass('active');
             const { measurementInfoSimpleList } =
                 await selectMeasurementInfoList(wardCode);
             const displayCount = measurementInfoSimpleList
@@ -190,12 +245,13 @@ export async function selecBoxWard() {
 
 //신규 병상 등록 팝업 ==========================
 
-//병동 셀렉트 박스 이벤트
+//병상 셀렉트 박스 이벤트
 export async function sickbedSelectBoxHandle() {
     $(
         '.pop.new_room_pop .overlay .new_room .selectBox2 .bed_option .bed_list'
     ).on('click', function () {
         const item = $(this).text();
+        $(this).addClass('active').siblings().removeClass('active');
         const sickBedCode = $(this).data('sickbedcode');
         $(this).parent().parent().find('.label').text(item);
         $(this)
@@ -216,6 +272,7 @@ export async function sickRoomSelectBoxHandle(wardCode) {
         const item = $(this).find('p').text();
         const sickRoomCode = $(this).data('sickroomcode');
         const spareBed = $(this).data('sparebed');
+        $(this).addClass('active').siblings().removeClass('active');
         $(this).parent().parent().find('.label').text(item);
         $(this)
             .parent()
@@ -229,7 +286,7 @@ export async function sickRoomSelectBoxHandle(wardCode) {
     });
 }
 
-//병상 셀렉트 박스 이벤트
+//병동 셀렉트 박스 이벤트
 export async function wardSelectBoxHandle() {
     await newSickBedPop_wardListSelectHandle();
     $('.pop.new_room_pop .new_room .selectBox2 .ward_option2 .ward_list2').on(
@@ -314,7 +371,7 @@ function newSickBedPop_updateCancel() {
 }
 
 //장치 추가
-export function insertDevice() {
+export async function insertDevice() {
     let serial_Reg;
     const deviceName = $(
         '.pop.new_room_pop .new_regi .selectBox2 .label'
@@ -324,11 +381,11 @@ export function insertDevice() {
         '.pop.new_room_pop .input_box .input_wrap input'
     ).val();
 
-    deviceName === '심전도 패치'
-        ? (serial_Reg = /[A-Z0-9]{6,7}/)
-        : (serial_Reg = /[B-Z0-9]{6,7}/);
+    const { deviceRegisterList } = await selectDeviceRegisterUnused(
+        serialNumber
+    );
 
-    if (serial_Reg.test(serialNumber)) {
+    if (deviceRegisterList) {
         const obj = {
             deviceType,
             serialNumber,
@@ -351,6 +408,7 @@ export function insertDevice() {
         newSickBedPop_deleteDevice
     );
 }
+
 //환자 셀렉트 박스 이벤트, 병동 병실 선택시에만 가능하게 분기처리 해야함
 export function patientSelectBoxHandle() {
     const name = $(this).find('span:nth-of-type(1)').text();
@@ -365,14 +423,17 @@ export function patientSelectBoxHandle() {
     $(this).parent().parent().removeClass('active');
 }
 
-export function newMeasurement() {
-    const name = $('.pop.new_room_pop .new_room #patient_name').val();
-    const birthday = +$('.pop.new_room_pop .new_room #patient_age').val();
+// 신규 병상 등록 이벤트
+export async function newMeasurement() {
+    const name = $(
+        '.pop.new_room_pop .new_room .selectBox2 .name_label'
+    ).text();
+    const birthday = +$('.pop.new_room_pop .new_room #birthday').val();
     const gender =
-        $('.pop.new_room_pop .new_room .patient_info .sex_label')
+        $('.pop.new_room_pop .new_room .patient_info .gender')
             .text()
             .replaceAll(' ', '')
-            .replaceAll('\n', '') === '남자'
+            .replaceAll('\n', '') === '남'
             ? 1
             : 2;
     const patientCode = $('.pop.new_room_pop .new_room #patient_MRN').val();
@@ -394,7 +455,7 @@ export function newMeasurement() {
         patientCode,
         name,
         gender,
-        birthday,
+        birthday: birthday + '-01-01',
         deviceInfoList,
         patientStatus: 3,
         ssn: '000000-9999999', //주민등록번호
@@ -406,13 +467,19 @@ export function newMeasurement() {
         startDateTime: request_Date_Data(),
     };
 
-    const pop = {
-        ward,
-        sickRoom,
-        sickBed,
-    };
+    const { result } = insertMeasurementInfo(codeObj, patientData);
+    if (result) {
+        $('.pop.new_room_pop .overlay').fadeOut();
+        $('.pop.arteriotony_regi h3 span:nth-of-type(1)').text(ward + ' ');
+        $('.pop.arteriotony_regi h3 span:nth-of-type(2)').text(sickRoom);
+        $('.pop.arteriotony_regi h3 span:nth-of-type(3)').text(sickBed);
 
-    insertMeasurementInfo(codeObj, patientData, pop);
+        $('.pop.arteriotony_regi .overlay').fadeIn();
+
+        const { measurementInfoSimpleList } = await selectMeasurementInfoList();
+
+        await createMeasureList(measurementInfoSimpleList);
+    }
 }
 
 //이벤트
@@ -424,7 +491,8 @@ $('.pop.new_room_pop .new_regi .btn_list .rd').on(
     newSickBedPop_updateCancel
 );
 $('.pop.end_measure .btn_list .btn_cut').on('click', recodingEndHandle);
-//함수실행
+
+//함수실행=====================
 measureListhanlde();
 selecBoxWard();
 wardSelectBoxHandle();
