@@ -94,6 +94,7 @@ function updateMeasurement_wardSelectBoxHandle() {
 }
 
 //병상 정보 수정 수정 버튼 이벤트
+//더 작업 해야함 장치 리스트 넘어오면 그때 한번에 작업
 function updateMeasurement_insertDevice() {
     //지금 장치 리스트 제대로 안나옴
     const name = $('.section.modifi_hospital .selectBox2 .name_label').text();
@@ -147,11 +148,16 @@ function updateMeasurement_insertDevice() {
 
 //병상 정보 수정 삭제 버튼 이벤트
 async function deleteMeasurement() {
+    console.log('start');
     const measureMentCode = $(this).attr('data-measurementcode');
     const API_ROUTE = $(this).attr('data-apiroute');
-    const aaa = await deleteMeasurementInfo(measureMentCode, API_ROUTE);
-    console.log('result===');
-    console.log(aaa);
+    const { result, message } = await deleteMeasurementInfo(
+        measureMentCode,
+        API_ROUTE
+    );
+    console.log('message===');
+    console.log(message);
+
     if (result) {
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
         await createMeasureList(measurementInfoSimpleList);
@@ -163,4 +169,11 @@ $('.section.modifi_hospital .btn_list .btn_new_hospital').on(
     'click',
     updateMeasurement_insertDevice
 );
+
+// $('.section.modifi_hospital .selectBox2 .ward_list').on('click', function () {
+//     $(this).parent().parent().removeClass('active');
+//     console.log('ddd');
+// });
+
 updateMeasurement_wardSelectBoxHandle();
+console.log('ddd');

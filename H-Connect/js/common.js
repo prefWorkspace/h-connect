@@ -2003,3 +2003,27 @@ $('.pop.regi_device .selectBox2 .optionItem').on('click', function () {
     $('.pop.regi_device .selectBox2 .label').text(deviceName);
     $(this).parent().parent().toggleClass('active');
 });
+
+$('.section.return_device .btn_use_device').on('click', function () {
+    $('.pop.re_device .overlay').fadeIn();
+});
+
+$('.pop.re_device .overlay .btn_cancel').on('click', function () {
+    $('.pop.re_device .overlay').fadeOut();
+});
+
+$('.section.new_device .btn_new_device').on('click', function () {
+    $('.pop.regi_device .overlay').fadeIn();
+});
+
+$('.pop.regi_device .overlay .btn_cancel').on('click', function () {
+    $('.pop.regi_device .overlay').fadeOut();
+});
+
+$('.pop.delete_regi .overlay .btn_no').on('click', function () {
+    $('.pop.delete_regi .overlay').fadeOut();
+});
+
+$('.pop.delete_return .overlay .btn_no').on('click', function () {
+    $('.pop.delete_return .overlay').fadeOut();
+});
