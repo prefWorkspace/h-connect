@@ -49,7 +49,7 @@ export async function wardListSelectHandle() {
 export async function newSickBedPop_wardListSelectHandle() {
     let html = '';
     let sparedCount = 0;
-    console.log(wardList);
+
     for (let i = 0; i < wardList.length; i++) {
         html += nWardItem(wardList[i]);
         sparedCount += wardList[i].wardSpareBedCount;
@@ -80,4 +80,31 @@ export async function newSickBedPop_sickBedListSelectHandle(
     }
 
     $('.pop.new_room_pop .new_room .selectBox2 .bed_option').html(html);
+}
+
+//병상정보 수정 셀렉트 박스 ===================
+
+//병실 셀렉트 박스
+export async function updateWard_sickroomListSelectHandle(wardCode) {
+    let html = '';
+    const { sickRoomList } = await selectSickRoomList(wardCode);
+    for (let i = 0; i < sickRoomList.length; i++) {
+        html += nSicRoomItem(sickRoomList[i]);
+    }
+
+    $('.section.modifi_hospital .selectBox2 .mroom_option').html(html);
+}
+
+//병상 셀렉트 박스
+export async function updateWard_sickBedListSelectHandle(
+    wardCode,
+    sickRoomCode
+) {
+    let html = '';
+    const { sickBedList } = await selectSickBedList(wardCode, sickRoomCode);
+    for (let i = 0; i < sickBedList.length; i++) {
+        html += nSickBedItem(sickBedList[i]);
+    }
+
+    $('.section.modifi_hospital .selectBox2 .mbed_option').html(html);
 }

@@ -27,7 +27,7 @@
 }
 
 .nurse .management .title {
-    padding: 16px 16px 26px;
+    padding: 32px 32px 26px;
     border-bottom: 1px solid #eee;
 }
 
@@ -195,8 +195,12 @@
     display: flex;
 }
 
-.nurse .left .ward_count p{width: 120px;}
-.nurse .right .ward_count p{width: 144px;}
+.nurse .left .ward_count p {
+    width: 120px;
+}
+.nurse .right .ward_count p {
+    width: 144px;
+}
 /* .nurse .left .ward_count p,
 .nurse .right .ward_count p{
     margin-right: 24px;
@@ -644,9 +648,10 @@
     font-size: 12px;
 }
 
-.nurse_measure .optionItem {
+.nurse_measure .right .cont .optionItem {
     padding: 10px 15px;
     font-size: 12px;
+    border-bottom: none;
     display: flex;
     justify-content: space-between;
 }
@@ -785,13 +790,13 @@
     vertical-align: middle; */
 }
 
-.measure_status .container .status_list p:nth-child(2){
+.measure_status .container .status_list p:nth-child(2) {
     word-break: break-all;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .measure_status .container .status_list > :first-child {
@@ -799,7 +804,7 @@
     margin-right: 16px;
 }
 
-.measure_status .status_list p:nth-child(2) span:nth-child(1){
+.measure_status .status_list p:nth-child(2) span:nth-child(1) {
     max-width: 45px;
     overflow: hidden;
     display: inline-block;
@@ -827,7 +832,7 @@
 
 .measure_status .container .status_list .device_list div {
     padding: 7px;
-    margin: 0 4px 0 0; 
+    margin: 0 4px 0 0;
     border-radius: 4px;
     border: 1px solid #007a94;
     background-color: #fff;
@@ -835,7 +840,9 @@
     color: #007a94;
 }
 
-.measure_status .container .status_list .device_list div:last-child{margin: 0;}
+.measure_status .container .status_list .device_list div:last-child {
+    margin: 0;
+}
 
 .measure_status .container .status_list .device_list div.off {
     border-color: #ccc;
@@ -1069,6 +1076,11 @@
     color: #888888;
 }
 
+.modifi_hospital .title .btn_delete:disabled {
+    background: #cccccc;
+    color: #888888;
+}
+
 .modifi_hospital .container .cont {
     padding: 8px 16px 25px;
     border-bottom: 1px solid #eee;
@@ -1193,6 +1205,11 @@
     padding: 16px;
     text-align: right;
     display: block;
+    cursor: pointer;
+}
+
+.modifi_hospital .device_room .btn_add:hover {
+    background: #eee;
 }
 
 .modifi_hospital .device_room .btn_add button {
@@ -1697,10 +1714,12 @@
     height: 630px;
     background-color: #fff;
     border-radius: 8px;
-}
+}s
 
 .monitoring_patient .patient .title {
-    padding: 32px 32px 26px;
+    padding: 32px 15px 26px;
+    width: 328px;
+    margin: 0 auto;
 }
 
 .monitoring_patient .patient .title p {
@@ -2591,7 +2610,7 @@
 
 .arteriotony .form_arter .pulse .arter_title {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 23px;
 }
 
 .arteriotony .form_arter .pulse .arter_title h2 {
@@ -2650,42 +2669,47 @@
 }
 
 .arteriotony .table_title p {
-    width: 81px;
+    width: 79px;
     margin: 0;
 }
+
+.arteriotony .table_title p:nth-child(3){width: 88px;}
 
 .arteriotony .table_title :first-child {
-    width: 129px;
+    width: 130px;
     margin: 0;
 }
-.arteriotony .table_title :nth-child(3) {
-    margin-right: 7px;
-}
-
 .arteriotony .table_body > div {
     height: 48px;
     padding: 8px 16px;
     border-bottom: 1px solid #eee;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 .arteriotony .table_body > div .text_box {
-    padding: 8px 0 0;
+    /* padding: 8px 0 0; */
     display: flex;
+    align-items: center;
 }
 
-.arteriotony .table_body > div > div p {
+.arteriotony .table_body .text_box p{
     margin-right: 33px;
     display: inline-flex;
+    align-items: center;
 }
 
-.arteriotony .table_body > div > div > :first-child {
+.arteriotony .table_body .text_box > :first-child{
     margin-right: 4px;
 }
 
-.arteriotony .table_body > div > :first-child > :last-child {
+.arteriotony .table_body .text_box > :last-child {
     margin-right: 0;
+}
+
+.arteriotony .table_body .text_box p:nth-last-child(-n+3) span{
+    margin-left: 4px;
 }
 
 .arteriotony .table_body > div .btn_list {
@@ -2695,6 +2719,7 @@
 .arteriotony .table_body > div .btn_list button {
     width: 80px;
     height: 32px;
+    margin: 0;
     border-radius: 4px;
     background-color: #fff;
     font-size: 12px;
@@ -2714,22 +2739,28 @@
     text-align: center;
 }
 
-.arteriotony .table_page ul li {
+.arteriotony .table_page ul{display: flex; align-items: center; justify-content: center;}
+
+.arteriotony .table_page ul li{
     font-size: 12px;
     color: #888;
-    display: inline-block;
 }
 
-.arteriotony .table_page ul > :nth-child(2) {
-    margin: 0 2px 0 3px;
+.arteriotony .table_page ul li{margin-right: 3px;}
+.arteriotony .table_page ul li:last-child,
+.arteriotony .table_page ul li:first-child,
+.arteriotony .table_page ul li:nth-last-child(3){margin: 0;}
+
+.arteriotony .table_page ul li:nth-child(2){
+    margin: 0 4px 0 8px;
 }
 
-.arteriotony .table_page ul > :nth-child(15) {
-    margin: 0 3px 0 2px;
+.arteriotony .table_page ul li:nth-last-child(2){
+    margin: 0 8px 0 4px;
 }
 
-.arteriotony .table_page ul li.active {
-    color: #007a94;
+.arteriotony .table_page ul li.active{
+    color: #007A94;
 }
 
 /* 대시보드 */
@@ -3019,7 +3050,7 @@
 .dashboard .taget_view .title div {
     align-items: center;
 }
-.dashboard .taget_view .btn_ViewlistScroll{
+.dashboard .taget_view .btn_ViewlistScroll {
     max-width: 720px;
     margin-left: 68px;
     overflow: auto;
@@ -3049,7 +3080,9 @@
     flex: 0 0 auto;
 }
 
-.dashboard .taget_view .btn_ViewlistScroll button:last-child{margin: 0;}
+.dashboard .taget_view .btn_ViewlistScroll button:last-child {
+    margin: 0;
+}
 
 /* .dashboard .taget_view .btn_list button:nth-last-child(2) {
     margin: 0;
@@ -3135,7 +3168,7 @@
     height: 12px;
     margin-left: 8px;
     filter: invert(94%) sepia(6%) saturate(26%) hue-rotate(302deg)
-    brightness(204%) contrast(239%);
+        brightness(204%) contrast(239%);
 }
 
 .dashboard .check_pati {
@@ -3172,23 +3205,23 @@
 }
 
 /* 대시보드 전체화면 */
-.ward_dashboard{
+.ward_dashboard {
     min-width: 1920px;
     padding: 0;
     background: #222;
 }
 
-.ward_dashboard .wrap_inner{
+.ward_dashboard .wrap_inner {
     min-width: 1880px;
     height: 100vh;
     padding: 20px;
-    background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px/ contain;
+    background: url('/H-Connect/img/logo_gray.png') no-repeat 0 0px / contain;
     background-position: 80% 95%;
     background-size: 90px;
     display: block;
 }
 
-.ward_dashboard .wrap_inner > div{
+.ward_dashboard .wrap_inner > div {
     width: 1880px;
     height: calc(100vh - 20px);
     max-height: 100vh;
@@ -3198,11 +3231,11 @@
     align-content: space-between;
 }
 
-.ward_dashboard .wrap_inner > div::-webkit-scrollbar{
+.ward_dashboard .wrap_inner > div::-webkit-scrollbar {
     display: none;
 }
 
-.ward_dashboard .wrap_inner .img{
+.ward_dashboard .wrap_inner .img {
     position: fixed;
     width: 92px;
     height: 64px;
@@ -3210,147 +3243,147 @@
     right: 286px;
 }
 
-.ward_dashboard .wrap_inner .img img{
+.ward_dashboard .wrap_inner .img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.ward_dashboard .wrap_inner > div > div{
+.ward_dashboard .wrap_inner > div > div {
     width: 624px;
     height: 112px;
 }
 
-.ward_dashboard .system_title{
+.ward_dashboard .system_title {
     height: 100%;
     padding: 32px;
     margin-bottom: 4px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
 }
 
-.ward_dashboard .title_inner{
+.ward_dashboard .title_inner {
     display: flex;
 }
 
-.ward_dashboard .title_inner div{
+.ward_dashboard .title_inner div {
     width: 69px;
     height: 48px;
 }
 
-.ward_dashboard .title_inner div img{
+.ward_dashboard .title_inner div img {
     width: 100%;
     height: 100%;
 }
 
-.ward_dashboard .title_inner .text_box{
+.ward_dashboard .title_inner .text_box {
     width: 250px;
     margin-left: 43px;
     color: #fff;
 }
 
-.ward_dashboard .text_box p{
+.ward_dashboard .text_box p {
     font-weight: normal;
 }
 
-.ward_dashboard .text_box h1{
+.ward_dashboard .text_box h1 {
     font-size: 24px;
     font-weight: 500;
     font-weight: normal;
 }
 
-.ward_dashboard .text_box h1 span{
+.ward_dashboard .text_box h1 span {
     font-size: 18px;
     font-weight: normal;
     vertical-align: middle;
 }
 
-.ward_dashboard .sys_vital{
+.ward_dashboard .sys_vital {
     margin-bottom: 4px;
     background: #000;
 }
 
-.ward_dashboard .empty{
+.ward_dashboard .empty {
     background: #111;
 }
 
-.ward_dashboard .vital_inner{
+.ward_dashboard .vital_inner {
     height: 112px;
     display: flex;
     justify-content: space-between;
 }
 
-.ward_dashboard .graph{
+.ward_dashboard .graph {
     width: 470px;
     padding: 2px;
 }
 
-.ward_dashboard .graph > div{
+.ward_dashboard .graph > div {
     padding: 8px 16px;
 }
 
-.ward_dashboard .graph_title{
+.ward_dashboard .graph_title {
     margin-bottom: 28px;
     display: flex;
     justify-content: space-between;
 }
 
-.ward_dashboard .graph_title p{
+.ward_dashboard .graph_title p {
     font-size: 14px;
     font-weight: normal;
     color: #fff;
 }
 
-.ward_dashboard .img_container{
+.ward_dashboard .img_container {
     width: 446px;
     height: 24px;
     overflow: hidden;
 }
 
-.ward_dashboard .character{
+.ward_dashboard .character {
     padding: 2px;
 }
 
-.ward_dashboard .character > div{
+.ward_dashboard .character > div {
     display: flex;
 }
 
-.ward_dashboard .character > div > div{
+.ward_dashboard .character > div > div {
     width: 72px;
     height: 56px;
     padding: 4px;
 }
 
-.ward_dashboard .character .ecg{
-    color: #0F2;
+.ward_dashboard .character .ecg {
+    color: #0f2;
 }
 
-.ward_dashboard .character .sp{
-    color: #0FF;
+.ward_dashboard .character .sp {
+    color: #0ff;
 }
 
-.ward_dashboard .character .resp{
+.ward_dashboard .character .resp {
     color: #ff0;
 }
 
-.ward_dashboard .character .temp{
-    color: #FF3184;
+.ward_dashboard .character .temp {
+    color: #ff3184;
 }
 
-.ward_dashboard .bell_name{
+.ward_dashboard .bell_name {
     height: auto;
     font-size: 10px;
 }
 
-.ward_dashboard .bell_num{
-   display: flex;
-   justify-content: space-between;
+.ward_dashboard .bell_num {
+    display: flex;
+    justify-content: space-between;
 }
 
-.ward_dashboard .bell_num div p{
+.ward_dashboard .bell_num div p {
     font-size: 10px;
 }
 
-.ward_dashboard .bell_num > p{
+.ward_dashboard .bell_num > p {
     font-size: 24px;
     align-items: center;
 }

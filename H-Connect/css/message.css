@@ -1149,6 +1149,45 @@
     background: #ccc;
 }
 
+.message .list_inner .medical_depart{
+    padding: 0;
+    display: block;
+}
+
+.message .list_inner .medical_depart .title{
+    padding: 7px 16px 8px;
+    font-size: 12px;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.message .medical_depart .title::before{
+    content: '';
+    width: 13px;
+    height: 13px;
+    margin-right: 11px;
+    background: url('/H-Connect/img/icon/accodian_plus.svg') no-repeat 0 0 / contain;
+    display: block;
+}
+
+.message .medical_depart .title.active::before{
+    content: '';
+    width: 13px;
+    height: 13px;
+    margin-right: 11px;
+    background: url('/H-Connect/img/icon/accodian_minus.svg') no-repeat 0 0 / contain;
+    display: block;
+}
+
+.message .medical_depart .input_container{
+    display: none;
+}
+
+.message .medical_depart .input_container > div{
+    padding: 7px 16px 7px 32px;
+}
+
+.message .medical_depart .favorite_container{padding: 0;}
+
 .message .list_inner div {
     display: flex;
     justify-content: space-between;
