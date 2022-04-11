@@ -772,7 +772,7 @@ p {
 }
 
 .doctor .collabor_wrap {
-    height: 578px;
+    height: 544px;
     /* padding-top: 12px; */
     overflow-y: scroll;
 }
@@ -1254,8 +1254,10 @@ p {
 }
 
 .doctor .remote_alarm .row {
+    height: 48px;
     padding: 16px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #eee;
     cursor: pointer;
@@ -1263,8 +1265,13 @@ p {
 
 .doctor .remote_alarm .right .row div {
     display: flex;
+    align-items: center;
     flex-shrink: 0;
 }
+민지님바보
+빨리씨어스해주세요  
+
+.doctor .remote_alarm .right .time{padding: 0;}
 
 .doctor .row:hover {
     background: #eee;
@@ -1283,7 +1290,8 @@ p {
     width: 150px;
 }
 
-.doctor .remote_alarm .inner .time {
+.doctor .remote_alarm .left .time {
+    width: 144px;
     padding: 0;
     flex-shrink: 0;
     /* color: #007A94; */
@@ -1293,12 +1301,12 @@ p {
 }
 
 .doctor .remote_alarm .answer {
-    width: 150px;
+    width: 122px;
     text-align: left;
 }
 
 .doctor .remote_alarm .reply {
-    width: 160px;
+    width: 196px;
 }
 
 .doctor .remote_alarm .case {
@@ -4067,6 +4075,8 @@ p {
     cursor: pointer;
 }
 
+.remote_request .list .row .count{display: flex;}
+
 .remote_request .list .row div {
     width: 400px;
     display: flex;
@@ -4681,6 +4691,7 @@ p {
 
 .doctor_new .mem p {
     margin: 0;
+    line-height: 16px;
 }
 
 .doctor_new .btn_del {
@@ -4754,6 +4765,7 @@ p {
 }
 
 .attendee .atten_inner {
+    height: 576px;
     padding: 0 16px 16px;
     display: flex;
     justify-content: space-between;
