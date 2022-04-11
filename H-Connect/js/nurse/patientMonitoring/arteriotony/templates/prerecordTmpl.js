@@ -91,7 +91,6 @@ export const parsePaginationBlock = ({ page, list, totalCount }) => {
             }
         }
     };
-    console.log(returnMin(), returnMax());
 
     const returnPageList = () => {
         let pageArr = [];
