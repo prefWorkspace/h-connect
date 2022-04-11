@@ -15,7 +15,16 @@ export function measureList(data_List) {
         apiRoute,
         measurementCode,
         deviceInfoList,
+        measurementStatus,
     } = data_List;
+
+    // measurementStatus의 상태 값에 따라 측정 종료 버튼 달라짐
+    // 0 : NONE
+    // 1 : WAITING
+    // 2 : RECODING_START
+    // 3 : RECODING_END
+    // 8 : COMPLETED
+    // console.log(measurementStatus);
 
     const device = [];
     if (deviceInfoList !== null) {
@@ -25,7 +34,7 @@ export function measureList(data_List) {
     }
 
     return `
-        <div class="status_list" data-sickbedcode="${sickBedCode}" >
+        <div class="status_list" data-wardcode="${wardCode}" data-sickroomcode="${sickRoomCode}" data-sickbedcode="${sickBedCode}" >
             <p>
                 <span>${ward}동</span>.
                 <span>${sickRoom}</span>. 
