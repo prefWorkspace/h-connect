@@ -750,14 +750,15 @@ p {
 .doctor .right .title button {
     width: 120px;
     height: 40px;
-    padding: 12px 18px;
+    /* padding: 12px 18px; */
     border-radius: 4px;
     background: linear-gradient(to right, #004F60, #350039);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     color: #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -774,7 +775,7 @@ p {
 .doctor .collabor_wrap {
     height: 544px;
     /* padding-top: 12px; */
-    overflow-y: scroll;
+    overflow: hidden auto;
 }
 
 /* .doctor .collabor_wrap::-webkit-scrollbar {
@@ -835,6 +836,7 @@ p {
 
 .doctor .right .cont_list {
     padding: 0 16px 16px;
+    /* padding: 0 16px; */
 }
 .doctor .right .member .cont_list {
     padding: 0;
@@ -994,13 +996,18 @@ p {
     padding: 16px 15px;
     border-radius: 4px;
     background: #fff;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .doctor .right .member .case_cont p {
     width: 100px;
+    margin: 0 0 16px;
     font-size: 12px;
-    display: inline-block;
+    /* display: inline-block; */
 }
+
+.doctor .right .member .case_cont p:nth-last-child(-n+3){margin: 0;}
 
 .doctor .emergency_section .title .btn_colla {
     background: linear-gradient(to right, #940045, #4A0000);
@@ -1044,6 +1051,7 @@ p {
 }
 
 .doctor .opinion .collabor_wrap {
+    height: 544px;
     padding: 0 16px;
 }
 
@@ -1052,7 +1060,8 @@ p {
 }
 
 .doctor .opinion .collabor_wrap>div:not(.time) {
-    padding: 20px 0;
+    /* padding: 20px 0; */
+    padding: 20px 0 0;
 }
 
 
@@ -1268,8 +1277,6 @@ p {
     align-items: center;
     flex-shrink: 0;
 }
-민지님바보
-빨리씨어스해주세요  
 
 .doctor .remote_alarm .right .time{padding: 0;}
 
@@ -1281,6 +1288,8 @@ p {
 .doctor .remote_alarm .inner .left .check {
     color: #007a94;
 }
+
+.doctor .remote_alarm .inner .left .time{margin-left: 2px;}
 
 .doctor .remote_alarm .no_check {
     color: #940045;
@@ -1307,7 +1316,15 @@ p {
 
 .doctor .remote_alarm .reply {
     width: 196px;
+    color: #007A94;
 }
+
+.doctor .remote_alarm .name{
+    width: 76px;
+    text-align: right;
+}
+
+.doctor .remote_alarm .name.my{color: #007A94;}
 
 .doctor .remote_alarm .case {
     padding: 0;
@@ -3281,20 +3298,20 @@ p {
 }
 
 .doctor .ask_request .collabor_wrap {
-    overflow-y: scroll
+    overflow: hidden auto;
 }
 
 .doctor .ask_request .collabor_wrap::-webkit-scrollbar {
-    /* width: 8px; */
-    display: none;
+    width: 8px;
+    /* display: none; */
 }
 
 .doctor_remote .collabor_wrap .time {
     padding: 20px 30px;
 }
 
-.doctor_remote .collabor_wrap>div .title {
-    padding: 20px 30px;
+.doctor_remote .collabor_wrap .week_view .member .title {
+    padding: 20px 0;
 }
 
 .doctor .ask_request .collabor_wrap .case_inner .title {
@@ -3382,6 +3399,7 @@ p {
 }
 
 .doctor .time_select .check label {
+    line-height: 24px;
     display: flex;
     align-items: center;
     font-size: 12px;
@@ -3423,8 +3441,9 @@ p {
 }
 
 .doctor .time_select .week_wrap {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    height: 503px;
+    overflow: auto hidden;
+    position: relative;
 }
 .doctor .time_select .week_wrap::-webkit-scrollbar {
     width: 8px;
@@ -3476,11 +3495,6 @@ p {
     width: 90px;
     display: inline-block;
     vertical-align: middle;
-}
-
-.doctor .time_select .week_wrap {
-    height: 530px;
-    position: relative;
 }
 
 .doctor .time_select .week_view .time {
