@@ -1946,6 +1946,7 @@ $('.pop.new_room_pop .overlay .new_regi .selectBox2 .optionList li').on(
     'click',
     function () {
         const deviceName = $(this).text();
+        $(this).addClass('active').siblings().removeClass('active');
         $('.pop.new_room_pop .overlay .selectBox2.type_select .label').text(
             deviceName
         );
@@ -1962,6 +1963,17 @@ $('.wrap_inner .measure_status .btn_new_room').on('click', function () {
 
 //병상정보 수정 부분 삭제 팝업
 $('.wrap_inner .modifi_hospital .btn_delete').on('click', function () {
+    const measureMentCode = $(this).attr('data-measurementcode');
+    const API_ROUTE = $(this).attr('data-apiroute');
+
+    $('.pop.delete_measure .btn_list .btn_cut').attr(
+        'data-measurementcode',
+        measureMentCode
+    );
+    $('.pop.delete_measure .btn_list .btn_cut').attr(
+        'data-apiroute',
+        API_ROUTE
+    );
     $('.pop.delete_measure .overlay').fadeIn();
 });
 
@@ -1978,4 +1990,16 @@ $('.wrap_inner .measure_status .selectBox2 .label').on('click', function () {
 //병상정보수정 병실 셀렉트박스
 $('.wrap_inner .modifi_hospital .selectBox2 .label').on('click', function () {
     $(this).parent().toggleClass('active');
+});
+
+// 병상정보 수정 장치 종류 셀렉트 박스
+$('.pop.regi_device .selectBox2 .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.pop.regi_device .selectBox2 .optionItem').on('click', function () {
+    const deviceName = $(this).text();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.pop.regi_device .selectBox2 .label').text(deviceName);
+    $(this).parent().parent().toggleClass('active');
 });

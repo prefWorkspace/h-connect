@@ -338,6 +338,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.06.12.21',
                     },
+                    'updateMeasureHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.11.16.11',
+                    },
                 },
                 renders: {
                     'createMeasureList.js': {
