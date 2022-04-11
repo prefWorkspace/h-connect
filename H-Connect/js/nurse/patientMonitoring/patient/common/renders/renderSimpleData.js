@@ -55,7 +55,7 @@ const currentVitalMinMaxRender = (_data) => {
         tempMax,
     } = _data || {};
     simpleMinMax('hr', [heartRateMin, heartRateMax]);
-    simpleMinMax('sp', [spo2Min, 0]); // 질문필요
+    simpleMinMax('sp', [spo2Min, '-']); // 질문필요
     simpleMinMax('resp', [respMin, respMax]);
     simpleMinMax('pulse', [0, 0]); // 질문필요
     simpleMinMax('temp', [tempMin, tempMax]);

@@ -146,6 +146,15 @@ const VERSION = {
                     version: '2022.04.01.10.52',
                 },
             },
+            pagination: {
+                'pagination.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/pagination/',
+                    version: '2022.04.11.16.52',
+                },
+            },
         },
         custom: {
             'utils.js': {
@@ -167,9 +176,21 @@ const VERSION = {
                     file_path: '/H-Connect/js/doctor/monitoring/templates/',
                     version: '2022.03.25.12.01',
                 },
+                'templatePreEvents.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/templates/',
+                    version: '2022.03.25.12.01',
+                }
             },
             renders: {
                 'renderNewEvents.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
+                    version: '2022.03.25.12.01',
+                },
+                'renderPreEvents.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/renders/',
@@ -182,12 +203,18 @@ const VERSION = {
                     version: '2022.03.25.12.01',
                 },
             },
+            'common.js': {
+                type: 'module',
+                url_path: '/doctor/monitoring',
+                file_path: '/H-Connect/js/doctor/monitoring/',
+                version: '2022.03.25.12.01',
+            },
             'dummyData.js': {
                 type: 'module',
-                    url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/',
-                    version: '2022.03.25.12.01',
-            }
+                url_path: '/doctor/monitoring',
+                file_path: '/H-Connect/js/doctor/monitoring/',
+                version: '2022.03.25.12.01',
+            },
         },
     },
     nurse: {
@@ -679,13 +706,6 @@ const VERSION = {
                                 '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
                             version: '2022.03.30.12.18',
                         },
-                        'alarmSettingPopupActions.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
-                            version: '2022.04.06.18.33',
-                        },
                     },
                     renders: {
                         'renderSimpleData.js': {
@@ -710,13 +730,6 @@ const VERSION = {
                             file_path:
                                 '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
                             version: '2022.03.30.12.18',
-                        },
-                        'alarmSettingPopupTmpl.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
-                            version: '2022.04.06.18.33',
                         },
                     },
                 },
@@ -743,6 +756,20 @@ const VERSION = {
                                 '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
                             version: '2022.03.30.12.18',
                         },
+                        'alarmSettingPopupActions.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
+                            version: '2022.04.06.18.33',
+                        },
+                        'simpleDataAction.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
+                            version: '2022.04.11.14.33',
+                        },
                     },
                     renders: {
                         'renderCurrentVital.js': {
@@ -753,7 +780,36 @@ const VERSION = {
                             version: '2022.03.30.12.18',
                         },
                     },
-                    templates: {},
+                    templates: {
+                        'alarmSettingPopupTmpl.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/templates/',
+                            version: '2022.04.06.18.33',
+                        },
+                    },
+                },
+                tabularTrend: {
+                    actions: {},
+                    renders: {
+                        'renderTabularTrendList.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/tabularTrend/renders/',
+                            version: '2022.04.11.14.33',
+                        },
+                    },
+                    templates: {
+                        'tabularTrendTmpl.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/tabularTrend/templates/',
+                            version: '2022.04.11.14.33',
+                        },
+                    },
                 },
             },
         },

@@ -9,12 +9,10 @@ const { history } = await import(
 );
 
 const historyMesurementCode = history.getParams('measurement_code');
-// const historyPage = history.getParams('page');
 
 export const selectBloodPressurePage = async () => {
     const historyPage = history.getParams('page');
     const resPage = parseInt(historyPage, 10) || 1;
-    console.log('resPage:', resPage);
     const res = await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBloodPressurePage',
         'POST',
@@ -49,7 +47,6 @@ export async function insertBloodPressure(_data) {
     );
 }
 export async function updateBloodPressure(_data) {
-    console.log(_data);
     return await serverController.ajaxAwaitController(
         'API/BioSignal/UpdateBloodPressure',
         'POST',

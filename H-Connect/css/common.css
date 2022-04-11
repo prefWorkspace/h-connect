@@ -445,6 +445,8 @@ button {
 .green_custom.all[type='checkbox'] + label + label {
     color: #007a94;
 }
+.green_custom[type="checkbox"] + label + label{font-size: 12px;}
+
 .green_custom.all[type='checkbox'] + label {
     border-color: #007a94;
 }
@@ -2263,12 +2265,6 @@ textarea::-webkit-scrollbar-button {
 .pop.setting_menu .overlay .content {
     display: block;
 }
-
-.pop.setting_menu .overlay .content > div {
-    display: flex;
-    align-items: flex-start;
-}
-
 .pop.setting_menu .overlay .content::-webkit-scrollbar {
     width: 4px;
 }
@@ -2284,7 +2280,7 @@ textarea::-webkit-scrollbar-button {
 /* resp setting */
 .pop.setting_menu .content > div > p {
     width: 89px;
-    margin-top: 2px;
+    margin-top: 0;
     margin-right: 48px;
 }
 
@@ -2861,13 +2857,13 @@ textarea::-webkit-scrollbar-button {
     margin-right: 14px;
 }
 
-.pop.send_doctor .doctor_list .green_custom[type='checkbox']:checked + label {
+/* .pop.send_doctor .doctor_list .green_custom[type='checkbox']:checked + label {
     background: #007a94;
 }
 
 .pop.send_doctor .doctor_list .green_custom[type='checkbox'] + label + label {
     font-size: 12px;
-}
+} */
 
 .pop.send_doctor .doctor_list input[type='checkbox'] {
     display: none;
@@ -3123,11 +3119,11 @@ textarea::-webkit-scrollbar-button {
     width: 400px;
     height: 100%;
     padding: 0 30px 0 8px;
+    font-size: 12px;
 }
 
 .pop.nurse_view .search_container input::placeholder {
-    font-size: 12px;
-    color: #aaa;
+    color: #ccc;
 }
 
 .pop.nurse_view .search_container .btn_search {
@@ -3227,9 +3223,9 @@ textarea::-webkit-scrollbar-button {
 
 .pop.nurse_view .chat_inner {
     height: 440px;
-    padding: 8px 20px;
+    padding: 8px 16px;
     background: #e3dbe6;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .pop.nurse_view .chat_inner {
