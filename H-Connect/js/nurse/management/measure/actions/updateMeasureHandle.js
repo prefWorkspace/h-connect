@@ -176,4 +176,3 @@ $('.section.modifi_hospital .btn_list .btn_new_hospital').on(
 // });
 
 updateMeasurement_wardSelectBoxHandle();
-console.log('ddd');

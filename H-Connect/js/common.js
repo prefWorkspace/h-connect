@@ -472,13 +472,13 @@ $(function () {
         $('.pop.chat_sort').fadeOut();
     });
 
-     // 메세지 아코디언
-     $('.message .medical_depart .title').click(function(){
+    // 메세지 아코디언
+    $('.message .medical_depart .title').click(function () {
         // $('.message .medical_depart .title').not(this).removeClass('active');
         $(this).toggleClass('active');
         $(this).siblings().slideToggle(300);
-    })
-    
+    });
+
     //---------------------- 응급상황실 ----------------------//
     // 의료진호출
     $('.emergency .btn_call').on('click', function () {
