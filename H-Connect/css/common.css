@@ -610,7 +610,8 @@ button {
     width: 640px;
     height: 40px;
     border-radius: 4px;
-    vertical-align: middle;
+    border: 1px solid #007a94;
+    background: #fff;
     position: relative;
 }
 
@@ -619,8 +620,8 @@ button {
     height: 100%;
     padding: 4px 0 4px 16px;
     border-radius: 4px;
-    border: 1px solid #007a94;
-    background-color: #fff;
+    /* border: 1px solid #007a94; */
+    /* background-color: #fff; */
 }
 
 .pc_header .search_container input::placeholder {
@@ -1452,7 +1453,7 @@ button {
 
 /* messge_cont_box */
 .care_card3 .messge_cont_box {
-    height: 621px;
+    /* height: 621px; */
     background-color: #c5d8dc;
     border-radius: 0 8px 8px;
 }
@@ -2088,6 +2089,8 @@ textarea::-webkit-scrollbar-button {
     margin-right: 16px;
     border-radius: 4px;
     font-size: 16px;
+    background: #EEEEEE;
+    color: #888888;
 }
 
 .pop.delete .pop_cont .btn_list .btn_cut {
@@ -2778,8 +2781,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_search .search_container {
     width: 360px;
-    margin-bottom: 36px;
-
+    margin-bottom: 34px;
     position: relative;
 }
 
@@ -2823,7 +2825,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_search .doctor_list {
     height: 348px;
-    overflow-y: scroll;
+    overflow: hidden auto;
 }
 
 .pop.send_doctor .doctor_search .doctor_list::-webkit-scrollbar {
@@ -2836,13 +2838,39 @@ textarea::-webkit-scrollbar-button {
     background: #ccc;
 }
 
-.pop.send_doctor .doctor_search .doctor_list p {
-    margin-right: 15px;
+.pop.send_doctor .medical_depart .title{
+    padding: 7px 0 8px;
     font-size: 12px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
 }
 
-.pop.send_doctor .doctor_list > div {
+.pop.send_doctor .medical_depart .title::before{
+    content: '';
+    width: 13px;
+    height: 13px;
+    margin-right: 11px;
+    background: url('/H-Connect/img/icon/accodian_plus.svg') no-repeat 0 0 / contain;
+    display: block;
+}
+
+.pop.send_doctor .medical_depart .title.active::before{
+    content: '';
+    width: 13px;
+    height: 13px;
+    margin-right: 11px;
+    background: url('/H-Connect/img/icon/accodian_minus.svg') no-repeat 0 0 / contain;
+    display: block;
+}
+
+.pop.send_doctor .medical_depart .input_container{
+    display: none;
+}
+
+.pop.send_doctor .input_container > div {
+    padding: 7px 16px;
     margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
@@ -2858,13 +2886,6 @@ textarea::-webkit-scrollbar-button {
     margin-right: 14px;
 }
 
-/* .pop.send_doctor .doctor_list .green_custom[type='checkbox']:checked + label {
-    background: #007a94;
-}
-
-.pop.send_doctor .doctor_list .green_custom[type='checkbox'] + label + label {
-    font-size: 12px;
-} */
 
 .pop.send_doctor .doctor_list input[type='checkbox'] {
     display: none;
@@ -2897,9 +2918,9 @@ textarea::-webkit-scrollbar-button {
         contain;
 }
 
-.pop.send_doctor .doctor_list > :last-child {
+/* .pop.send_doctor .doctor_list > :last-child {
     margin: 0;
-}
+} */
 
 .pop.send_doctor .input_message {
     width: 400px;
@@ -3057,6 +3078,7 @@ textarea::-webkit-scrollbar-button {
     border-radius: 8px;
     z-index: 101;
     display: none;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 30%);
 }
 
 .pop.nurse_view .wrap_inner {
@@ -3223,14 +3245,12 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.nurse_view .chat_inner {
+    width: calc(100% - 32px);
     height: 440px;
     padding: 8px 16px;
-    background: #e3dbe6;
-    overflow-y: auto;
-}
-
-.pop.nurse_view .chat_inner {
+    /* background: #e3dbe6; */
     background: #c5d8dc;
+    overflow-y: auto;
 }
 
 .pop.nurse_view .chat_inner::-webkit-scrollbar {
@@ -3266,6 +3286,7 @@ textarea::-webkit-scrollbar-button {
     position: relative;
     width: fit-content;
     padding: 14px 16px;
+    margin: 0 0 7px auto;
     background: #940045;
     border-radius: 0.4em;
     color: #fff;

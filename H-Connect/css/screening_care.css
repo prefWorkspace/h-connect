@@ -1,18 +1,13 @@
 @charset "utf-8";
-#contents_wrap.screening{   
-    width: 100%; 
-    width: 1880px;
-}
-#section {
-    justify-content: flex-start;
-}
 
 /* card */
-.card {
-    /* flex: 1; */
-}
+/* .card {
+    flex: 1;
+} */
+
 .care_card1 {
     position: relative;
+    width: 360px;
 }
 
 .care_card2 {
@@ -28,12 +23,20 @@
 /* care_card1 */
 /* card_header */
 .care_card1 .card_header {
+    padding: 8px 16px 0;
     border: none;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.card_title{color: #000;}
-.screening_care .card_title{color: #007A94;}
+.card_title {
+    color: #000;
+}
+
+.screening_care .card_title {
+    color: #007A94;
+}
 
 .care_card1 .card_title {
     background-image: url('/H-Connect/img/doctor/list.svg');
@@ -48,6 +51,25 @@
     line-height: 38px;
 }
 
+.care_card1 {
+    padding: 16px;
+}
+
+.care_card1 table {
+    margin: 24px 0 0;
+}
+
+.care_card1 table thead {
+    border: none;
+}
+
+.care_card1 table thead span {
+    padding: 0 0 8px;
+}
+
+.care_card1 table th span {
+    line-height: normal;
+}
 
 .care_card1 .table_box {
     padding: 0 15px;
@@ -68,7 +90,7 @@
     border-radius: 4px;
 }
 
-.common_radio > .radio[type="checkbox"]:checked {
+.common_radio>.radio[type="checkbox"]:checked {
     background-color: #007A94;
     border-color: #007A94;
     cursor: pointer;
@@ -110,6 +132,35 @@
     display: flex;
 }
 
+.care_card2 table thead {
+    height: 40px;
+}
+
+.care_card2 table thead span {
+    line-height: 40px;
+}
+
+.care_card2 table thead button span {
+    line-height: normal;
+}
+
+.care_card2 table thead button,
+.care_card2 table .call_doc_btn {
+    height: 32px;
+}
+
+.care_card2 .table_title.wait {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.care_card2 .wait_cancel {
+    margin: 0;
+    font-weight: 500;
+}
+
+
 /* inner_card */
 .care_card2 .inner_card {
     position: relative;
@@ -149,11 +200,11 @@
     margin-right: 10px;
 }
 
-.radi_box > input[type="radio"] {
+.radi_box>input[type="radio"] {
     display: none;
 }
 
-.radi_box > label {
+.radi_box>label {
     display: block;
     width: 64px;
     text-align: center;
@@ -166,7 +217,7 @@
     /* transition: 0.2s all; */
 }
 
-.radi_box > input[type="radio"]:checked + label {
+.radi_box>input[type="radio"]:checked+label {
     background-color: #007A94;
     border-color: #fff;
     color: #fff;
@@ -180,7 +231,7 @@
 }
 
 .next_table_box {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
 }
 
 .table_title {
@@ -194,21 +245,21 @@
 
 
 
-.common_table.card2_table tr > td:nth-child(1), 
+/* .common_table.card2_table tr > td:nth-child(1), 
 .common_table.card2_table tr > th:nth-child(1) {
     flex: 2;
-}
+} */
 
-.common_table.card2_table tr > td:first-child > span, 
-.common_table.card2_table tr > th:first-child > span {
+.common_table.card2_table tr>td:first-child>span,
+.common_table.card2_table tr>th:first-child>span {
     padding-left: 10px;
     text-align: left;
-} 
+}
 
-.common_table.card2_table tr > td:last-child > span, 
-.common_table.card2_table tr > th:last-child > span {
+.common_table.card2_table tr>td:last-child>span,
+.common_table.card2_table tr>th:last-child>span {
     text-align: right;
-    padding-right: 11px;
+    padding-right: 16px;
 }
 
 
@@ -232,7 +283,7 @@
     border-color: #007A94;
 }
 
-.btn_thead .call_btn > span {
+.btn_thead .call_btn>span {
     font-size: 12px;
 }
 
@@ -275,10 +326,11 @@
     /* transition: 0.2s all; */
 }
 
-.btn_thead .call_doc_btn > span {
+.btn_thead .call_doc_btn>span {
     background: url('/H-Connect/img/logo.svg') no-repeat left 12px top 10px;
     display: block;
     padding-left: 20px;
+    line-height: 32px;
     color: #000;
     filter: invert(176%) sepia(76%) saturate(369%) hue-rotate(246deg) brightness(194%) contrast(100%);
 }
@@ -301,18 +353,18 @@
 
 
 /* bot_table */
-.common_table.bot_table tr > td:nth-child(1), 
+/* .common_table.bot_table tr > td:nth-child(1), 
 .common_table.bot_table tr > th:nth-child(1) {
     flex: 3;
-}
+} */
 
-.common_table.bot_table tr > td:first-child > span {
+.common_table.bot_table tr>td:first-child>span {
     display: flex;
     align-items: center;
 }
 
 .wait_name {
-    margin-right: 20px;
+    margin-right: 18px;
 }
 
 .upDown {
@@ -339,10 +391,13 @@
 
 /* care_card3 */
 .care_card3 {
- padding: 23px 0 0;
+    padding: 32px 0 0;
 }
 
-.care_card3 h2{color: #007A94; font-size: 16px;}
+.care_card3 h2 {
+    color: #007A94;
+    font-size: 16px;
+}
 
 .care_card3 .card_header {
     padding: 0 32px 24px;
@@ -350,7 +405,7 @@
 }
 
 
-.left_bar a{
+.left_bar a {
     width: 100%;
     height: 100%;
     display: block;
@@ -365,14 +420,14 @@
     position: relative;
 }
 
-.chat_container{
+.chat_container {
     height: 454px;
     display: flex;
     justify-content: space-between;
     background: #C5D8DC;
 }
 
-.timeLine{
+.timeLine {
     width: 32px;
     height: 100%;
     padding: 8px 10px;
@@ -380,47 +435,47 @@
     flex-direction: column;
 }
 
-.timeLine a{
+.timeLine a {
     width: 12px;
     margin-bottom: 8px;
     background: #007A94;
     display: block;
 }
 
-.timeLine> :nth-child(2n-1){
+.timeLine> :nth-child(2n-1) {
     background: #eee;
 }
 
-.timeLine> :last-child{
+.timeLine> :last-child {
     margin: 0;
 }
 
-.timeLine .first{
+.timeLine .first {
     /* height: 140px; */
     flex: 2;
 }
 
-.timeLine .second{
+.timeLine .second {
     /* height: 40px; */
     flex: 3;
 }
 
-.timeLine .third{
+.timeLine .third {
     /* height: 80px; */
     flex: 1;
 }
 
-.timeLine .fourth{
+.timeLine .fourth {
     /* height: 60px; */
     flex: 2;
 }
 
-.timeLine .fifth{
+.timeLine .fifth {
     /* height: 72px; */
     flex: 1;
 }
 
-.chat_inner{
+.chat_inner {
     width: calc(100% - 32px);
     height: 445px;
     padding: 8px 20px;
@@ -428,16 +483,16 @@
     overflow-y: scroll;
 }
 
-.chat_inner::-webkit-scrollbar{
+.chat_inner::-webkit-scrollbar {
     width: 8px;
 }
 
-.chat_inner::-webkit-scrollbar-thumb{
+.chat_inner::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: #007A94;
 }
 
-.chat_me{
+.chat_me {
     width: 100%;
     margin-bottom: 16px;
     display: flex;
@@ -445,17 +500,17 @@
     align-items: stretch;
 }
 
-.chat_me p{
+.chat_me p {
     font-size: 14px;
     font-weight: normal;
 }
 
-.chat_me .bubble{
+.chat_me .bubble {
     position: relative;
     width: fit-content;
     padding: 14px 16px;
-	background: #940045;
-	border-radius: .4em;
+    background: #940045;
+    border-radius: .4em;
     color: #fff;
 }
 
@@ -473,8 +528,8 @@
     margin-right: -8px;
 } */
 
-.chat_me .bubble{
-	background: #007A94;
+.chat_me .bubble {
+    background: #007A94;
 }
 
 .chat_me .bubble:after {
@@ -497,22 +552,22 @@
     font-size: 12px;
 }
 
-.chat_you{
+.chat_you {
     width: 100%;
     margin-bottom: 16px;
 }
 
-.chat_you> p{
+.chat_you>p {
     font-size: 12px;
 }
 
-.chat_you .bubble{
+.chat_you .bubble {
     margin: 7px 0;
     position: relative;
     width: fit-content;
     padding: 14px 16px;
-	background: #fff;
-	border-radius: .4em;
+    background: #fff;
+    border-radius: .4em;
     color: #000;
 }
 
@@ -549,7 +604,7 @@
 }
 
 
-.start_clinic{
+.start_clinic {
     height: 48px;
     margin: 0 auto 16px;
     padding: 14px 32px;
@@ -560,12 +615,12 @@
     color: #fff;
 }
 
-.start_clinic p{
+.start_clinic p {
     font-size: 14px;
     font-weight: normal;
 }
 
-.end_clinic{
+.end_clinic {
     height: 48px;
     margin: 0 auto 16px;
     padding: 14px 32px;
@@ -575,24 +630,66 @@
     border-radius: 4px;
 }
 
-.end_clinic p{
+.end_clinic p {
     font-size: 14px;
     font-weight: normal;
 }
 
 
-.message_list, .message_talk{display: block;}
-.select_medi, .send_message{display: none;}
+.message_list,
+.message_talk {
+    display: block;
+}
 
-.data_modal .modal_header{
+.select_medi,
+.send_message {
+    display: none;
+}
+
+.data_modal .modal_header {
     margin-bottom: 31px;
 }
 
-.modal_form{padding-top: 0;}
+.modal_form {
+    padding-top: 0;
+}
 
-.card_header {
+
+
+
+/* screening_clinic */
+.card2 .card_header,
+.card3 .card_header {
+    padding: 8px 16px 25px;
+}
+
+.card2 .card_head_text,
+.card3 .card_head_text {
     display: flex;
-    border-bottom: 1px solid #EEEEEE;
-    padding: 10px 15px 20px;
+    align-items: center;
     justify-content: space-between;
+}
+
+.card2 .card_title,
+.card3 .card_title {
+    margin: 0 0 5px;
+}
+
+
+.card1 .common_table thead tr {
+    border-bottom: none;
+}
+
+
+/* screening_care */
+.screening .care_card3{padding: 0;}
+.screening .card3 .card_head_text{
+    display: block;
+}
+
+.screening .card3 .card_header{
+    padding: 32px 32px 24px;
+}
+.screening .card3 .card_title{
+    margin: 0 0 13px;
 }
