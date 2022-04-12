@@ -23,7 +23,7 @@ export const history = {
     },
     onPopState: (callBack) => {
         if (callBack) {
-            window.onpopstate = callBack;
+            window.addEventListener('popstate', callBack);
         }
     },
 };

@@ -3,9 +3,11 @@
 const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
+
 const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
+
 const { device_NameToType } = await import(
     importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
 );
@@ -15,11 +17,15 @@ const { select_device_unused_list } = await import(
         '/H-Connect/js/nurse/management/device/renders/select_device_unused_list.js'
     )
 );
+
 const { select_device_list } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/device/renders/select_device_list.js'
     )
 );
+
+const userData = localStorageController.getLocalS('userData');
+const { userCode: requester, organizationCode } = JSON.parse(userData);
 
 //장치 카운팅 함수
 export function countingDevice(deviceRegisterList) {
