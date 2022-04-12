@@ -1685,25 +1685,60 @@ $(function () {
         $('.remote .emr').toggleClass('fold');
     });
     $('.remote .ocs .btn_fold').on('click', function () {
-        $('.ocs .cont').toggle();
+        $('.ocs .cont').hide();
+        $('.remote .ocs').removeClass('on');
         $('.remote .ocs').toggleClass('fold');
-    });
+        $('.remote .ocs .btn_full').find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+    })
 
     // btn_full
     $('.remote .pacs .btn_full').on('click', function () {
         $('.pacs').toggleClass('on');
-    });
+        if($('.pacs').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .vital .btn_full').on('click', function () {
         $('.vital').toggleClass('on');
-    });
+        if($('.vital').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .lab .btn_full').on('click', function () {
         $('.lab').toggleClass('on');
-    });
+        if($('.lab').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .emr .btn_full').on('click', function () {
         $('.emr').toggleClass('on');
-    });
+        if($('.emr').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .ocs .btn_full').on('click', function () {
         $('.ocs').toggleClass('on');
+        $('.ocs .cont').show();
+        if($('.ocs').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+
+        if($('.ocs').hasClass('fold')){
+            $('.ocs .cont').show();
+            $('.ocs').removeClass('on');
+            $('.ocs').removeClass('fold');
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
     });
 
     // close 버튼 누름
