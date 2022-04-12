@@ -804,6 +804,13 @@ const VERSION = {
                                 '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
                             version: '2022.03.30.12.18',
                         },
+                        'globalSettingPopupTmpl.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
+                            version: '2022.04.12.12.01',
+                        },
                     },
                 },
                 currentVital: {
@@ -982,7 +989,7 @@ function importVersion(_path) {
         return _filePath === _path;
     });
     if (!_findTargetPath) {
-        throw new Error(`다음 파일을 찾을 수 없습니다 : ${_path}`);
+        throw new Error(`import 할 파일을 찾을 수 없습니다. : ${_path}`);
     }
     return _path + '?v=' + _findTargetPath.version;
 }
