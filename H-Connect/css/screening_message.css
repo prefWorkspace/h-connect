@@ -129,29 +129,32 @@
     width: 100%;
 }
 
-/* .message .message_list .search_container input{
+.message .message_list .search_container input{
     width: 480px;
     height: 32px;
     padding: 7px 56px 7px 8px;
     border-radius: 4px;
     background: #fff;
-} */
+}
 
 .message .message_list .search_container input::placeholder{
     color: #ccc;
 }
 
-/* .message .message_list .search_container .btn_search{
+.message .message_list .search_container .btn_search{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 50%;
     width: 48px;
     height: 32px;
-    margin-right: 16px;
-    border-radius: 4px;
-    background-color: #fff;
-} */
+    /* margin-right: 16px; */
+    border-radius: 0 4px 4px 0;
+    /* background-color: #fff;
+    border-top: 1px solid #007A94;
+    border-right: 1px solid #007A94;
+    border-bottom: 1px solid #007A94; */
+}
 
 .nurse_message .btn_search div{
     width: 16px;
@@ -292,10 +295,12 @@
     padding: 7px 56px 7px 8px;
     border-radius: 4px;
     background: #fff;
+    border: 1px solid #007A94;
 }
 
 .nurse_message .message_list .search_container input{
     height: 32px;
+    border: 1px solid #007A94;
 }
 
 .message .message_talk .search_container input::placeholder{
@@ -308,12 +313,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 53%;
-    width: 48px;
+    left: 56%;
+    width: 30px;
     height: 30px;
     margin-right: 21px;
     border-radius: 4px;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 .nurse_message .message_talk .search_container .btn_search{
@@ -438,7 +443,7 @@
     color: #fff;
 }
 
-/* .message .chat_me .bubble:after{
+.message .chat_me .bubble:after{
     content: '';
     position: absolute;
     right: 0;
@@ -450,10 +455,24 @@
     border-right: 0;
     margin-top: -8px;
     margin-right: -8px;
-} */
+}
 
 .nurse_message .chat_me .bubble{
 	background: #007A94;
+}
+
+.nurse_message .chat_me .bubble:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: #007A94;
+    border-right: 0;
+    margin-top: -8px;
+    margin-right: -8px;
 }
 
 .message .chat_you{
@@ -474,12 +493,19 @@
 	border-radius: .4em;
     color: #000;
 }
-.message .chat_you .bubble p {
-    font-size: 14px;
-}
 
-.message .chat_you small {
-    padding-left: 7px;
+.message .chat_you .bubble:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-right-color: #fff;
+    border-left: 0;
+    margin-top: -8px;
+    margin-left: -8px;
 }
 
 .message .chat_window{
@@ -564,7 +590,7 @@
 }
 
 .message .select_medi .title div{
-    /* margin-bottom: 13px; */
+    margin-bottom: 13px;
     display: flex;
     justify-content: space-between;
 }
@@ -579,7 +605,6 @@
     height: 48px;
     margin: 18px auto 0;
     padding: 16px;
-    border: 1px solid #000;
     border-radius: 4px;
     display: flex;
 }
@@ -588,7 +613,6 @@
     width: 968px;
     height: fit-content;
     margin: 0 auto;
-    border: 0;
     background: #eee;
     display: flex;
     flex-wrap: wrap;
@@ -745,6 +769,14 @@
     margin-right: 14px;
 }
 
+/* all_check */
+.message .group_container .all_check input[type="checkbox"] + label{
+    border-color: #007A94;
+}
+.nurse_message .all_check input[type="checkbox"] + label + label{
+    color: #007A94;
+}
+
 /* check box */
 .green_custom[type="checkbox"] + label {
     width: 18px;
@@ -780,10 +812,11 @@
 .message .search_container input{
     width: 100%;
     padding: 7px 30px 7px 7px;
-    background: #eee;
+    background: #fff;
     border-radius: 4px;
     font-size: 12px;
     font-weight: normal;
+    border: 1px solid #007A94;
 }
 
 .message .search_container input::placeholder{
@@ -957,8 +990,8 @@
 }
 
 .message .send_message .btn_list .btn_send{
-    border: 1px solid #007A94;
-    /* color: #007A94; */
+    background-color: #007A94;
+    color: #fff;
 }
 
 
@@ -996,7 +1029,7 @@
     padding: 10px;
     margin-bottom: 30px;
     border: 1px solid #a2a2a2;
-    border-radius: 4px;
+    border-radius: 4px
 }
 
 .message .send_message form textarea::placeholder{
@@ -1008,4 +1041,85 @@
 
 .common_table tr > td{
     width: 250px;
+}
+
+
+/* 메세지 없을 때 인풋 */
+.message .no_message.message_list .search_container input {
+    background: #CCCCCC;
+    border: none;
+}
+
+.message .no_message.message_list .search_container input::placeholder{color: #aaa;}
+
+.message .no_message.message_list .search_container .btn_search img {
+    filter: invert(57%) sepia(1%) saturate(0%) hue-rotate(43deg) brightness(94%) contrast(87%);
+}
+.message_talk.no_message .search_container input {
+    background: #CCCCCC;
+}
+/* 대화창 비어있음 no_message*/
+.message .no_talk {
+    width: 968px;
+    margin: 16px auto 0;
+    padding: 16px 40px;
+    border-radius: 4px;
+    background: #eee;
+    font-size: 12px;
+    color: #888;
+    display: none;
+}
+
+.message .no_talk_title {
+    display: none;
+}
+
+.message .no_message .no_talk {
+    display: block;
+}
+
+.message .no_message .talk_list {
+    display: none;
+}
+
+.message .no_message .title {
+    display: none;
+}
+
+.message .no_message .message_title {
+    display: block;
+}
+
+.message .no_message .no_talk_title {
+    height: 112px;
+    padding: 36px 36px 56px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+    display: block;
+}
+
+.message .no_message .no_search input {
+    background: #CCC;
+}
+
+.message .no_message .no_search button img {
+    /* filter: invert(57%) sepia(1%) saturate(0%) hue-rotate(43deg) brightness(94%) contrast(87%); */
+}
+
+.message .no_message .no_search .btn_sort {
+    background: #ccc;
+}
+
+.message .no_message .chat_container>div {
+    display: none;
+}
+
+.message .no_message .chat_window .btn_send {
+    background: #ccc;
+    color: #888;
+}
+
+.message .no_message .chat_window textarea:disabled {
+    background: none;
 }
