@@ -27,7 +27,10 @@
 }
 
 .nurse .management .title {
-    padding: 32px 32px 26px;
+    width: 328px;
+    margin: 0 auto;
+    padding: 32px 16px 26px;
+    /* padding: 32px 32px 26px; */
     border-bottom: 1px solid #eee;
 }
 
@@ -1751,7 +1754,7 @@
     width: 1316px;
     height: 720px;
     /* margin:0 72px 0 32px; */
-    margin: 0 55px 0 32px;
+    margin: 0 0 0 32px;
     margin-left: 32px;
 }
 

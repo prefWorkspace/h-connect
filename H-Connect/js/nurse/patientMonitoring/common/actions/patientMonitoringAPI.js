@@ -125,3 +125,34 @@ export const SelectBioSignalsTrendDataPage = async (_page) => {
             })),
     };
 };
+
+/* 글로벌 환경 세팅 */
+export const SelectGlobalSetting = async () => {
+    const res = await serverController.ajaxAwaitController(
+        'API/Global/SelectGlobalSetting',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+        })
+    );
+    if (res.result) {
+        return res;
+    } else {
+        return null;
+    }
+};
+export const UpdateGlobalSetting = async (_trendSecond) => {
+    const res = await serverController.ajaxAwaitController(
+        'API/Global/UpdateGlobalSetting',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            bioSignalsTrendSecond: _trendSecond,
+        })
+    );
+    if (res.result) {
+        return res;
+    } else {
+        return null;
+    }
+};

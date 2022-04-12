@@ -1789,6 +1789,12 @@ $(function () {
         $('.pop.you_send .overlay').fadeIn();
     });
 
+    
+    // 메세지창 작성 이미지 닫기
+    $('.pop.you_send .overlay .btn_check').on('click', function () {
+        $('.pop.you_send .overlay').fadeOut();
+    })
+
     $('.remote .patient_view .title .btn_list button').on('click', function () {
         $(this).addClass('on');
         $('.remote .patient_view .title .btn_list button')

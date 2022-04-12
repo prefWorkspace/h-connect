@@ -2873,7 +2873,6 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .input_container > div {
     padding: 7px 16px;
-    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -5783,6 +5782,7 @@ textarea::-webkit-scrollbar-button {
     border-radius: 4px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
 .pop.you_send .small_view .swiper-slide::after {
