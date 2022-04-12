@@ -18,6 +18,10 @@ const { select_device_unused_list } = await import(
     )
 );
 
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
+);
+
 const { select_device_list } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/device/renders/select_device_list.js'

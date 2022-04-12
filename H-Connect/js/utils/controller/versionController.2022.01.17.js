@@ -193,7 +193,7 @@ const VERSION = {
                     file_path: '/H-Connect/js/doctor/monitoring/actions/',
                     version: '2022.03.25.12.01',
                 },
-                'eventListEvent.js': {
+                'eventScreenAPI.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/actions/',
@@ -202,6 +202,12 @@ const VERSION = {
             },
             templates: {
                 'templateEvent.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/templates/',
+                    version: '2022.03.25.12.01',
+                },
+                'templateEventScreen.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/templates/',
@@ -216,6 +222,12 @@ const VERSION = {
                     version: '2022.03.25.12.01',
                 },
                 'renderPreEvents.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
+                    version: '2022.03.25.12.01',
+                },
+                'renderEventScreen.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/renders/',
@@ -702,6 +714,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
                         version: '2022.03.25.12.01',
                     },
+                    'sendDoctorHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/arteriotony',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
+                        version: '2022.04.12.15.38',
+                    },
                     'bloodPressureAPI.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
@@ -718,6 +737,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
                         version: '2022.03.25.12.01',
                     },
+                    'sendDoctorListRender.js': {
+                        type: 'module',
+                        url_path: '/nurse/arteriotony',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
+                        version: '2022.04.12.15.57',
+                    },
                 },
                 templates: {
                     'prerecordTmpl.js': {
@@ -726,6 +752,13 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
                         version: '2022.03.25.12.01',
+                    },
+                    'sendDoctorList.js': {
+                        type: 'module',
+                        url_path: '/nurse/arteriotony',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
+                        version: '2022.04.12.16.01',
                     },
                 },
             },
@@ -770,6 +803,13 @@ const VERSION = {
                             file_path:
                                 '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
                             version: '2022.03.30.12.18',
+                        },
+                        'globalSettingPopupTmpl.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
+                            version: '2022.04.12.12.01',
                         },
                     },
                 },
@@ -949,7 +989,7 @@ function importVersion(_path) {
         return _filePath === _path;
     });
     if (!_findTargetPath) {
-        throw new Error(`다음 파일을 찾을 수 없습니다 : ${_path}`);
+        throw new Error(`import 할 파일을 찾을 수 없습니다. : ${_path}`);
     }
     return _path + '?v=' + _findTargetPath.version;
 }
