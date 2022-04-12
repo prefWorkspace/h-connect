@@ -1,5 +1,9 @@
 'use strict';
 
+const { device_TypeToName } = await import(
+    importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
+);
+
 export function measureList(data_List) {
     const {
         name,
@@ -62,6 +66,33 @@ export function measureList(data_List) {
 
             <div class="btn_list">
                 <button type="button" class="btn rdf btn_end" data-measurementcode=${measurementCode} data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}" data-route=${apiRoute}>측정종료</button>
+            </div>
+        </div>
+    `;
+}
+
+export function modifiDeviceList(item) {
+    return `
+        <div id=${item.deviceInfoId} class="device_Item">
+            <p>${device_TypeToName(item.deviceType)}</p>
+            <p>${item.serialNumber}</p>
+
+            <div class="btn_list">
+                <button
+                    data-deviceinfoid="${item.deviceInfoId}"
+                    type="button"
+                    class="btn bl"
+                >
+                    장치수정
+                </button>
+                <button
+                    data-measurementcode="${item.measurementCode}"
+                    data-deviceinfoid="${item.deviceInfoId}"
+                    type="button"
+                    class="btn rd btn_delete"
+                >
+                    장치제거
+                </button>
             </div>
         </div>
     `;

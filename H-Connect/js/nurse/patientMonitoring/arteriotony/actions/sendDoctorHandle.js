@@ -19,4 +19,4 @@ async function selectDoctor() {
     }
 }
 
-await selectDoctor();
+// await selectDoctor();

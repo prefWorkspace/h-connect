@@ -171,3 +171,40 @@ export async function deleteMeasurementInfo(measureMentCode, route) {
         (err) => console.log(err)
     );
 }
+
+// 병상 정보 수정에서 장치 수정 API
+export async function updateDeviceInfo(obj) {
+    return serverController.ajaxAwaitController(
+        'API/Measurement/UpdateDeviceInfo',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
+
+// 병상 정보 수정에서 장치 삭제 APㅑ
+export async function deleteDeviceInfo(deviceInfoIdList, measurementCode) {
+    const obj = {
+        ...commonRequest(),
+        requester,
+        deviceInfoIdList,
+        measurementCode,
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Measurement/DeleteDeviceInfo',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
