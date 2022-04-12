@@ -29,6 +29,7 @@ export async function selectMeasurementInfoList(
         wardCode,
         sickRoomCode,
         sickBedCode,
+        includeDeviceStatus: true,
         measurementType: 'BM',
         measurementStatusList: [1, 2],
         search,

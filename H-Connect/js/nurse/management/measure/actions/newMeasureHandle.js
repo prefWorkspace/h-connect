@@ -17,6 +17,12 @@ const { newSickBedPopDeviceList } = await import(
     )
 );
 
+const { createMeasureList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/renders/createMeasureList.js'
+    )
+);
+
 const {
     newSickBedPop_wardListSelectHandle,
     newSickBedPop_sickroomListSelectHandle,
