@@ -294,10 +294,18 @@ $(function () {
         $('.pop.arteriotony_regi .overlay').fadeOut();
     });
 
+    $('body').on(
+        'click',
+        '.patient .management_list .doctor_send',
+        function () {
+            $('.pop.send_doctor .overlay').fadeIn();
+        }
+    );
+
     // 담당의에게 메시지 보내기
-    $('.doctor_send').on('click', function () {
-        $('.pop.send_doctor .overlay').fadeIn();
-    });
+    // $('.doctor_send').on('click', function () {
+    //     $('.pop.send_doctor .overlay').fadeIn();
+    // });
 
     $('.pop.send_doctor .btn_exit').on('click', function () {
         $('.pop.send_doctor .overlay').fadeOut();
@@ -309,12 +317,12 @@ $(function () {
     });
 
     // 담당의 메시지 창
-    $('.doctor_send').on('click', function () {
-        $('.pop.send_doctor .overlay').fadeIn();
-        $(
-            '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
-        ).show();
-    });
+    // $('.doctor_send').on('click', function () {
+    //     $('.pop.send_doctor .overlay').fadeIn()s;
+    //     $(
+    //         '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
+    //     ).show();
+    // });
 
     $('.pop.send_doctor .btn_exit').on('click', function () {
         $('.pop.send_doctor .overlay').fadeOut();
@@ -1685,25 +1693,60 @@ $(function () {
         $('.remote .emr').toggleClass('fold');
     });
     $('.remote .ocs .btn_fold').on('click', function () {
-        $('.ocs .cont').toggle();
+        $('.ocs .cont').hide();
+        $('.remote .ocs').removeClass('on');
         $('.remote .ocs').toggleClass('fold');
-    });
+        $('.remote .ocs .btn_full').find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+    })
 
     // btn_full
     $('.remote .pacs .btn_full').on('click', function () {
         $('.pacs').toggleClass('on');
-    });
+        if($('.pacs').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .vital .btn_full').on('click', function () {
         $('.vital').toggleClass('on');
-    });
+        if($('.vital').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .lab .btn_full').on('click', function () {
         $('.lab').toggleClass('on');
-    });
+        if($('.lab').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .emr .btn_full').on('click', function () {
         $('.emr').toggleClass('on');
-    });
+        if($('.emr').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+    })
     $('.remote .ocs .btn_full').on('click', function () {
         $('.ocs').toggleClass('on');
+        $('.ocs .cont').show();
+        if($('.ocs').hasClass('on')){
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        }else{
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        };
+
+        if($('.ocs').hasClass('fold')){
+            $('.ocs .cont').show();
+            $('.ocs').removeClass('on');
+            $('.ocs').removeClass('fold');
+            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
     });
 
     // close 버튼 누름
@@ -1778,11 +1821,16 @@ $(function () {
         $('.left_view .pacs_view').hide();
     });
 
-
     // lab 조회 목록 배경색
-    $('.lab_list .list').click(function(){
+    $('.lab_list .list').click(function () {
         $('.lab_list .list').not(this).removeClass('on');
         $(this).addClass('on');
+    });
+
+    // 의료진 선택 팝업 아코디언
+    $('.pop.send_doctor .medical_depart .title').click(function(){
+        $(this).toggleClass('active');
+        $(this).siblings().slideToggle(300);
     })
 });
 
@@ -1917,6 +1965,8 @@ $(document).ready(function () {
 
 //모니터링 페이지 신규병상등록 및 장치추가 팝업
 $('.pop.new_room_pop .overlay .btn_add').on('click', function () {
+    $('.pop.new_room_pop .new_regi .input_wrap span').removeClass('active');
+    $('.pop.new_room_pop .new_regi input').val('');
     $('.pop.new_room_pop').addClass('active');
 });
 

@@ -123,6 +123,31 @@ export async function selectSickRoom() {
 }
 /* e : 환자 병실 리스트 */
 
+//측정 추가 및 수정 시, 장치 조회
+export async function selectDeviceRegisterUnused(search) {
+    const obj = {
+        ...commonRequest(),
+        requester,
+        organizationCode,
+        search,
+        deviceType: 0,
+        pageNumber: 1,
+        count: 1000,
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Device/SelectDeviceRegisterUnusedPage',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
+
 export async function InsertMeasurementInfo(codeObj, patientData) {
     const obj = {
         ...commonRequest(),
@@ -132,28 +157,18 @@ export async function InsertMeasurementInfo(codeObj, patientData) {
         organizationCode,
         orderNumber: 1,
     };
-    console.log('obj===');
-    console.log(obj);
     $('.pop.new_room_pop .overlay').hide();
     //밑에는 API확실해 지면 실행
 
-    // return serverController.ajaxAwaitController(
-    //     'API/Measurement/InsertMeasurementInfo',
-    //     'POST',
-    //     JSON.stringify({
-    //         ...commonRequest(),
-    //         ...codeObj,
-    //         requester,
-    //         organizationCode,
-    //         orderNumber: 1,
-    //         deviceInfoList,
-    //         userData,
-    //     }),
-    //     (res) => {
-    //         if (res.result) {
-    //         } else {
-    //         }
-    //     },
-    //     (err) => console.log(err)
-    // );
+    return serverController.ajaxAwaitController(
+        'API/Measurement/InsertMeasurementInfo',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
 }

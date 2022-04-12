@@ -1,18 +1,13 @@
 @charset "utf-8";
-#contents_wrap.screening{   
-    width: 100%; 
-    width: 1880px;
-}
-#section {
-    justify-content: flex-start;
-}
+
 
 /* card */
-.card {
-    /* flex: 1; */
-}
+/* .card {
+    flex: 1; 
+} */
 .care_card1 {
     position: relative;
+    width: 360px;
 }
 
 .care_card2 {
@@ -28,8 +23,11 @@
 /* care_card1 */
 /* card_header */
 .care_card1 .card_header {
+    padding: 8px 16px 0;
     border: none;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .card_title{color: #000;}
@@ -39,7 +37,7 @@
     background-image: url('/H-Connect/img/doctor/list.svg');
     background-position: left top 6px;
     margin-bottom: 0;
-    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+    filter: invert(34%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
 }
 
 .care_card1 .medi_regist_btn {
@@ -48,6 +46,11 @@
     line-height: 38px;
 }
 
+.care_card1 {padding: 16px;}
+.care_card1 table{margin: 24px 0 0;}
+.care_card1 table thead{border: none;}
+.care_card1 table thead span{padding: 0 0 8px;}
+.care_card1 table th span{line-height: normal;}
 
 .care_card1 .table_box {
     padding: 0 15px;
@@ -109,6 +112,22 @@
 .care_card2 {
     display: flex;
 }
+.care_card2 table thead {height: 40px;}
+.care_card2 table thead span{line-height: 40px;}
+.care_card2 table thead button span{line-height: normal;}   
+.care_card2 table thead button,
+.care_card2 table .call_doc_btn{
+    height: 32px;
+}
+
+.care_card2 .table_title.wait{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.care_card2 .wait_cancel{margin: 0; font-weight: 500;}
+
 
 /* inner_card */
 .care_card2 .inner_card {
@@ -180,7 +199,7 @@
 }
 
 .next_table_box {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
 }
 
 .table_title {
@@ -194,10 +213,10 @@
 
 
 
-.common_table.card2_table tr > td:nth-child(1), 
+/* .common_table.card2_table tr > td:nth-child(1), 
 .common_table.card2_table tr > th:nth-child(1) {
     flex: 2;
-}
+} */
 
 .common_table.card2_table tr > td:first-child > span, 
 .common_table.card2_table tr > th:first-child > span {
@@ -208,7 +227,7 @@
 .common_table.card2_table tr > td:last-child > span, 
 .common_table.card2_table tr > th:last-child > span {
     text-align: right;
-    padding-right: 11px;
+    padding-right: 16px;
 }
 
 
@@ -279,6 +298,7 @@
     background: url('/H-Connect/img/logo.svg') no-repeat left 12px top 10px;
     display: block;
     padding-left: 20px;
+    line-height: 32px;
     color: #000;
     filter: invert(176%) sepia(76%) saturate(369%) hue-rotate(246deg) brightness(194%) contrast(100%);
 }
@@ -301,10 +321,10 @@
 
 
 /* bot_table */
-.common_table.bot_table tr > td:nth-child(1), 
+/* .common_table.bot_table tr > td:nth-child(1), 
 .common_table.bot_table tr > th:nth-child(1) {
     flex: 3;
-}
+} */
 
 .common_table.bot_table tr > td:first-child > span {
     display: flex;
@@ -312,7 +332,7 @@
 }
 
 .wait_name {
-    margin-right: 20px;
+    margin-right: 18px;
 }
 
 .upDown {
@@ -339,7 +359,7 @@
 
 /* care_card3 */
 .care_card3 {
- padding: 23px 0 0;
+    padding: 32px 0 0;
 }
 
 .care_card3 h2{color: #007A94; font-size: 16px;}
@@ -366,7 +386,7 @@
 }
 
 .chat_container{
-    height: 454px;
+    height: 440px;
     display: flex;
     justify-content: space-between;
     background: #C5D8DC;
@@ -422,7 +442,7 @@
 
 .chat_inner{
     width: calc(100% - 32px);
-    height: 445px;
+    height: 440px;
     padding: 8px 20px;
     background: #C5D8DC;
     overflow-y: scroll;
@@ -590,9 +610,51 @@
 
 .modal_form{padding-top: 0;}
 
-.card_header {
+
+
+/* screening_care */
+.screening .care_card3{padding: 0;}
+.screening .card3 .card_head_text{
+    display: block;
+}
+
+.screening .card3 .card_header{
+    padding: 32px 32px 24px;
+}
+.screening .card3 .card_title{
+    margin: 0 0 13px;
+}
+
+
+/* screening_clinic */
+.card2 .card_header, .card3 .card_header{padding: 8px 16px 25px;}
+.card2 .card_head_text,
+.card3 .card_head_text{
     display: flex;
-    border-bottom: 1px solid #EEEEEE;
-    padding: 10px 15px 20px;
+    align-items: center;
     justify-content: space-between;
+}
+
+.card2 .card_title, .card3 .card_title{margin: 0 0 5px;}
+
+.screening_care .card3 .card_header{padding: 8px 16px 25px;}
+.screening_care .card3 .card_head_text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+.screening_care .clic_care_box::-webkit-scrollbar{
+    width: 8px;
+}
+
+.screening_care .clic_care_box::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #ccc;
+}
+
+
+.card_cont_box{
+    max-height: 575px;
+    padding: 18px 10px;
+    overflow: hidden auto;
 }

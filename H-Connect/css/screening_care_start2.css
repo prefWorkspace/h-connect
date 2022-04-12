@@ -6,6 +6,7 @@
     background-color: #222222;
 }
 
+#wrap{min-width: 1880px;}
 
 /* header */
 #header {
@@ -74,6 +75,7 @@
 
 .care_cont_box {
     display: flex;
+    overflow: hidden;
 }
 
 .care_start_card {

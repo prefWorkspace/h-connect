@@ -20,7 +20,7 @@ const { selectBoxSickRoom, selectBoxWard, selectBoxSickBed } = await import(
     )
 );
 
-const { InsertMeasurementInfo } = await import(
+const { InsertMeasurementInfo, selectDeviceRegisterUnused } = await import(
     importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringAPI.js')
 );
 
@@ -42,7 +42,6 @@ function newSickBedPop_updateDevice() {
         .text();
 
     $('.pop.new_room_pop').addClass('active');
-    console.log($('.pop.new_room_pop .new_regi .selectBox2 .label'));
     $('.pop.new_room_pop .new_regi .selectBox2 .label').text(deviceName);
     $('.pop.new_room_pop .new_regi .input_box .input_wrap input').val(
         serialNumber
@@ -83,7 +82,7 @@ function newSickBedPop_deleteDevice() {
 }
 
 //장치 추가
-function insertDevice() {
+async function insertDevice() {
     let serial_Reg;
     const deviceName = $(
         '.pop.new_room_pop .new_regi .selectBox2 .label'
@@ -96,8 +95,11 @@ function insertDevice() {
     deviceName === '심전도 패치'
         ? (serial_Reg = /[A-Z0-9]{6,7}/)
         : (serial_Reg = /[B-Z0-9]{6,7}/);
+    const { deviceRegisterList } = await selectDeviceRegisterUnused(
+        serialNumber
+    );
 
-    if (serial_Reg.test(serialNumber)) {
+    if (deviceRegisterList) {
         const obj = {
             deviceType,
             serialNumber,

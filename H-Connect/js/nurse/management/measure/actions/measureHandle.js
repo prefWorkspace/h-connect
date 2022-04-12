@@ -25,7 +25,7 @@ const { updateDeviceList } = await import(
 
 const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 await createMeasureList(measurementInfoSimpleList);
-
+console.log(measurementInfoSimpleList);
 //측정현황 리스트 클릭 이벤트
 export async function measureListhanlde() {
     $('.wrap_inner .measure_status .status_list').on('click', function () {
@@ -185,7 +185,6 @@ export async function selecBoxWard() {
             $(this).addClass('active').siblings().removeClass('active');
             const { measurementInfoSimpleList } =
                 await selectMeasurementInfoList(wardCode);
-
             $('.section .selectBox2 .room_label').text('병실선택');
             $(this).parent().parent().find('.label').text(text);
             $(this)

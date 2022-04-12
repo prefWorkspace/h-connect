@@ -836,7 +836,7 @@ p {
 }
 
 .doctor .right .cont_list {
-    padding: 0 16px 16px;
+    /* padding: 0 16px 16px; */
     /* padding: 0 16px; */
 }
 .doctor .right .member .cont_list {
@@ -999,7 +999,7 @@ p {
     margin: 16px auto 0;
 }
 
-/* .doctor .right .member .case:nth-last-child(2){margin: 0 auto;} */
+.doctor .right .member .case:first-child{margin: 0 auto;}
 
 .doctor .right .member .case_cont {
     padding: 16px;
@@ -1069,13 +1069,15 @@ p {
 }
 
 .doctor .opinion .collabor_wrap .title:not(.case_inner .title) {
-    padding: 0 16px;
+    padding: 0 16px 20px;
 }
 
 .doctor .opinion .collabor_wrap>div:not(.time) {
     /* padding: 20px 0; */
     padding: 20px 0 0;
 }
+
+.doctor .opinion .collabor_wrap .member{margin: 16px 0 0;}
 
 
 .doctor .opinion .time :first-child {
@@ -1868,11 +1870,13 @@ p {
 }
 
 .doctor_patient .patient .title {
-    padding: 16px 0 26px 16px;
+    padding: 8px 0 26px 16px;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
 }
+
+.doctor_patient .patient .title div{margin: 8px 0 0;}
 
 .doctor_patient .patient .title h2 {
     color: #007A94;
@@ -1898,7 +1902,7 @@ p {
 .doctor_patient .patient .title .img_container {
     width: 16px;
     height: 15px;
-    margin-right: 9px;
+    margin: 0 9px 0 0;
 }
 
 .doctor_patient .patient .title::after {
@@ -4863,6 +4867,8 @@ p {
 .attendee .choice_staff.on {
     width: 292px;
 }
+
+.attendee .choice_staff.on .title .btn_check{display: none;}
 
 .attendee .choice_staff .title {
     padding: 12px 8px;

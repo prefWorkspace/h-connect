@@ -8,7 +8,21 @@ const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
 
+const { localStorageController } = await import(
+    importVersion('/H-Connect/js/utils/controller/localStorageController.js')
+);
+
+const { request_Date_Data } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+
 const historyMesurementCode = history.getParams('measurement_code');
+const userData = localStorageController.getLocalS('userData');
+const {
+    userCode: requester,
+    id: userId,
+    organizationCode,
+} = JSON.parse(userData);
 
 export const selectBloodPressurePage = async () => {
     const historyPage = history.getParams('page');
@@ -71,4 +85,22 @@ export async function deleteBloodPressure(_data) {
     );
     // if (!res.measurementInfo) {
     // }
+}
+
+//담당의 에게 메세지 보내기
+export async function selectHisDoctor() {
+    const obj = {
+        requester,
+        organizationCode,
+        userId,
+        searchDate: request_Date_Data(),
+        ...commonRequest(),
+    };
+    return serverController.ajaxAwaitController(
+        'API/Doctor/SelectHisDoctorList',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {},
+        (err) => console.log(err)
+    );
 }

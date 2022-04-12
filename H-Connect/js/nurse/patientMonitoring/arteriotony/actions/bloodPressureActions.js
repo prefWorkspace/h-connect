@@ -93,6 +93,7 @@ async function initBloodPressureAction() {
     $('.btn_list .btn_add').off().on('click', onClickInsertBloodPressureBtn);
     $('.btn_list .btn_no').off().on('click', onClickCancelBloodPressureBtn);
 }
+
 export async function onClickUpdateBloodPressureBtn(_this) {
     // 수정 버튼 클릭 시 혈압 데이터 수정
     $('.btn_list .btn_add').addClass('modify-mode');
@@ -160,4 +161,5 @@ function actionInit() {
     window.onClickPageControllBtn = onClickPageControllBtn;
     history.onPopState(oncheckHistoryPage);
 }
+
 actionInit();

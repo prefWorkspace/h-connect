@@ -10,7 +10,7 @@
 
 .nurse .wrap_inner {
     width: 100%;
-    min-width: 1820px;
+    /* min-width: 1820px; */
     padding: 40px;
     display: flex;
 }
