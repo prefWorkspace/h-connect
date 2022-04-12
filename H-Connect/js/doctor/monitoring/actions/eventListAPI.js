@@ -19,6 +19,10 @@ const { renderPreEventList } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/renders/renderPreEvents.js')
 );
 
+const { insertNewEventScreen } = await import(
+    importVersion('/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js')
+);
+
 export async function selectBioSignalEvemtSimpleList() {
     const req = JSON.stringify({
         confirm: 2,
@@ -49,6 +53,12 @@ export async function insertNewEventList() {
 
     $('.section.new_patient.new .ecglist').children().first().addClass('on');
     selectedEventId = $('.section.new_patient.new .row.on').data('id');
+    eventList.forEach(list => {
+        if (list.bioSignalEventId === selectedEventId) {
+            insertNewEventScreen(list);
+            return false;
+        }
+    })
 
     // Add Event To Select Pre Events Btn
     $('.btn_pre').on('click', async function () {
@@ -64,6 +74,12 @@ export async function insertNewEventList() {
         const $this = $(this);
         selectedEventId = $this.data('id');
         if (!$this.hasClass('on')) $this.addClass('on');
+        eventList.forEach(list => {
+            if (list.bioSignalEventId === selectedEventId) {
+                insertNewEventScreen(list);
+                return false;
+            }
+        })
     });
 }
 
@@ -95,7 +111,7 @@ export async function insertPreEventList() {
     $('.alarm .search_container .btn_search').on('click', function () {
         searchKeyword = $('.alarm .search_container input').val();
         insertEventList('SEA');
-    })
+    });
 }
 
 export async function insertEventList(listType) {
