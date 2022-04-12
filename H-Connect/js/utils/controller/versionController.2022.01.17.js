@@ -155,6 +155,15 @@ const VERSION = {
                     version: '2022.04.11.16.52',
                 },
             },
+            tabController: {
+                'tabController.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/tabController/',
+                    version: '2022.04.12.16.52',
+                },
+            },
         },
         custom: {
             'utils.js': {
@@ -181,7 +190,7 @@ const VERSION = {
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/templates/',
                     version: '2022.03.25.12.01',
-                }
+                },
             },
             renders: {
                 'renderNewEvents.js': {
@@ -708,6 +717,13 @@ const VERSION = {
                         },
                     },
                     renders: {
+                        'renderTab.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
+                            version: '2022.04.12.12.18',
+                        },
                         'renderSimpleData.js': {
                             type: 'module',
                             url_path: '/nurse/patient',

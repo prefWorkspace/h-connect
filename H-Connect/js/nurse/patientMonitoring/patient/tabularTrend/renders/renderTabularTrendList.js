@@ -24,6 +24,6 @@ new CreatePagination({
         listItem: tabularTrendListTmpl,
     },
     link: {
-        keepParams: ['measurement_code'],
+        keepParams: ['measurement_code', 'tab'],
     },
 });
