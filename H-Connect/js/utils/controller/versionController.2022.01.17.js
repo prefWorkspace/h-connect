@@ -177,15 +177,22 @@ const VERSION = {
     },
     doctor: {
         monitoring: {
-            actions: {},
-            templates: {
-                'templateNewEvents.js': {
+            actions: {
+                'eventListAPI.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/templates/',
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
                     version: '2022.03.25.12.01',
                 },
-                'templatePreEvents.js': {
+                'eventListEvent.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
+                    version: '2022.03.25.12.01',
+                },
+            },
+            templates: {
+                'templateEvent.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/templates/',
@@ -200,12 +207,6 @@ const VERSION = {
                     version: '2022.03.25.12.01',
                 },
                 'renderPreEvents.js': {
-                    type: 'module',
-                    url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
-                    version: '2022.03.25.12.01',
-                },
-                'renderMonitoring.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/renders/',

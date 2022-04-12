@@ -21,39 +21,14 @@ const { cancel_device_unused } = await import(
 );
 
 //장치 등록 이벤트=====================================================
-$('.section.new_device .btn_new_device').on('click', function () {
-    $('.pop.regi_device .overlay').fadeIn();
-});
-
-$('.pop.regi_device .overlay .btn_cancel').on('click', function () {
-    $('.pop.regi_device .overlay').fadeOut();
-});
-
 $('.pop.regi_device .overlay .btn_list .btn_check').on('click', createDevice);
 
-//장치 반납 이벤트=====================================================
-$('.section.return_device .btn_use_device').on('click', function () {
-    $('.pop.re_device .overlay').fadeIn();
-});
-
-$('.pop.re_device .overlay .btn_cancel').on('click', function () {
-    $('.pop.re_device .overlay').fadeOut();
-});
-
-$('.pop.re_device .overlay .btn_check').on('click');
+// $('.pop.re_device .overlay .btn_check').on('click');
 
 //장치 삭제 이벤트====================================================
-$('.pop.delete_regi .overlay .btn_no').on('click', function () {
-    $('.pop.delete_regi .overlay').fadeOut();
-});
-
 $('.pop.delete_regi .overlay .btn_list .btn_cut').on('click', delete_devive);
 
 //장치 취소 이벤트====================================================
-$('.pop.delete_return .overlay .btn_no').on('click', function () {
-    $('.pop.delete_return .overlay').fadeOut();
-});
-
 $('.pop.delete_return .overlay .btn_list .btn_cut').on(
     'click',
     cancel_device_unused

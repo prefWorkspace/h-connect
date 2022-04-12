@@ -45,6 +45,7 @@ const { createMeasureList } = await import(
     )
 );
 
+//수정 데이터 장치 담는 배열
 const { updateDeviceList } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/updateMeasureHandle.js'
@@ -53,10 +54,6 @@ const { updateDeviceList } = await import(
 
 const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 await createMeasureList(measurementInfoSimpleList);
-const displayCount = measurementInfoSimpleList
-    ? measurementInfoSimpleList.length
-    : 0;
-$('.measure_status .search_select p span').text(displayCount);
 let deviceInfoList = [];
 let deviceCancel = [];
 
@@ -167,7 +164,6 @@ export async function recodingEndHandle() {
     const { result } = await recodingEndMeasurementInfo(measureCode, API_ROUTE);
 
     if (result) {
-        console.log('ddd');
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
         await createMeasureList(measurementInfoSimpleList);
     }
@@ -188,13 +184,10 @@ export async function selectBoxSickRoom() {
             const wardCode = $('.measure_status .selectBox2 .ward_label').data(
                 'wardcode'
             );
+
             $(this).addClass('active').siblings().removeClass('active');
             const { measurementInfoSimpleList } =
                 await selectMeasurementInfoList(wardCode, sickRoomCode);
-            const displayCount = measurementInfoSimpleList
-                ? measurementInfoSimpleList.length
-                : 0;
-            $('.measure_status .search_select p span').text(displayCount);
             $(this).parent().parent().find('.label').text(text);
             $(this)
                 .parent()
@@ -223,10 +216,7 @@ export async function selecBoxWard() {
             $(this).addClass('active').siblings().removeClass('active');
             const { measurementInfoSimpleList } =
                 await selectMeasurementInfoList(wardCode);
-            const displayCount = measurementInfoSimpleList
-                ? measurementInfoSimpleList.length
-                : 0;
-            $('.measure_status .search_select p span').text(displayCount);
+
             $('.section .selectBox2 .room_label').text('병실선택');
             $(this).parent().parent().find('.label').text(text);
             $(this)
@@ -462,12 +452,12 @@ export async function newMeasurement() {
         foreigner: 0,
         phoneNumber: '010-0000-0000',
         measurementType: 'BM',
-        measurementStatus: 2,
+        measurementStatus: 1,
         duration: 24,
         startDateTime: request_Date_Data(),
     };
 
-    const { result } = insertMeasurementInfo(codeObj, patientData);
+    const { result } = await insertMeasurementInfo(codeObj, patientData);
     if (result) {
         $('.pop.new_room_pop .overlay').fadeOut();
         $('.pop.arteriotony_regi h3 span:nth-of-type(1)').text(ward + ' ');
