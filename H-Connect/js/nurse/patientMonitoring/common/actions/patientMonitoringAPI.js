@@ -105,7 +105,6 @@ export const UpdateArrhythmiaSettingInfo = async (_data) => {
 
 /* s : 생체신호 트렌드 데이터 페이지 조회 */
 export const SelectBioSignalsTrendDataPage = async (_page) => {
-    const historyPage = history.getParams('page');
     const res = await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBioSignalsTrendDataPage',
         'POST',
