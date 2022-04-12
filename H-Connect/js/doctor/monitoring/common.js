@@ -14,4 +14,4 @@ export function devType(deviceType) {
 
 export let selectedEventId = null;
 
-export function searchHanguel(hanguel) {}
+export let searchKeyword = null;
