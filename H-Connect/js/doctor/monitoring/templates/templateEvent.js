@@ -2,7 +2,7 @@
 
 export   function eventListItem(item) {
     return `
-        <div class='row' data-id='${item.bioSignalEventId}'>
+        <div class='row' data-id='${item.bioSignalEventId}' data-name='${item.name}' data-patientcode='${item.patientCode}'>
             <p>${item.eventDateTime}</p>
             <div>
                 <p>${item.name} (${item.age}. ${
