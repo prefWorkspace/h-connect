@@ -1777,6 +1777,13 @@ $(function () {
         $('.left_view .study_list').show();
         $('.left_view .pacs_view').hide();
     });
+
+
+    // lab 조회 목록 배경색
+    $('.lab_list .list').click(function(){
+        $('.lab_list .list').not(this).removeClass('on');
+        $(this).addClass('on');
+    })
 });
 
 // 탭메뉴

@@ -2257,6 +2257,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 /* resp setting menu */
+.pop.setting_menu .pop_cont .title{padding-bottom: 23px;}
 .pop.setting_menu .overlay .content {
     display: block;
 }
@@ -5508,9 +5509,9 @@ textarea::-webkit-scrollbar-button {
 
 .pop.create_remote .pop_cont .btn_list .btn_check {
     width: 100%;
+    height: 48px;
     margin-top: 96px;
-    height: auto;
-    padding: 12px;
+    font-size: 16px;
 }
 
 /*====================== 원격협진 ======================*/
