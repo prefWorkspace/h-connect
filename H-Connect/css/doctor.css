@@ -861,13 +861,15 @@ p {
 .doctor .right .case {
     width: 384px;
     padding: 16px;
-    margin: 0 auto 16px;
+    margin: 16px auto 0;
     border-radius: 4px;
     background: #eee;
     cursor: pointer;
 }
 
-.doctor .right .case:nth-last-child(2){margin: 0 auto;}
+.doctor .right .case:first-child{margin: 0 auto;}
+
+/* .doctor .right .case:nth-last-child(2){margin: 0 auto;} */
 
 .doctor .right .case p {
     margin-right: 10px;
@@ -887,7 +889,7 @@ p {
 }
 
 .doctor .right .case> :first-child :last-child {
-    width: 130px;
+    width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -994,10 +996,10 @@ p {
 }
 
 .doctor .right .member .case{
-    margin: 0 auto 16px;
+    margin: 16px auto 0;
 }
 
-.doctor .right .member .case:nth-last-child(2){margin: 0 auto;}
+/* .doctor .right .member .case:nth-last-child(2){margin: 0 auto;} */
 
 .doctor .right .member .case_cont {
     padding: 16px;
@@ -1095,7 +1097,7 @@ p {
 /* 실시간 원격 협진 */
 .connect_remote,
 .connect_opinion {
-    min-width: 1248px;
+    min-width: 1880px;
     height: 100%;
     min-height: calc(100vh - 64px);
     padding-top: 64px;
@@ -1105,7 +1107,7 @@ p {
 .connect_remote .wrap_inner,
 .connect_opinion .wrap_inner {
     width: 100%;
-    min-width: 1248px;
+    min-width: 1880px;
     padding: 0;
 }
 
@@ -3361,6 +3363,7 @@ p {
 .doctor .time_select .title {
     padding: 24px 33px;
     border: 0;
+    align-items: center;
 }
 
 .doctor .time_select .title h2 {
@@ -4211,6 +4214,7 @@ p {
 }
 
 .doctor .no_opinion .title {
+    padding: 20px 32px;
     border: none;
 }
 
@@ -4837,10 +4841,19 @@ p {
     background: #fff;
     font-size: 14px;
     color: #000;
+    justify-content: flex-start;
 }
 
 .doctor .attendee .month_box {
     margin: 0 0 0 8px;
+}
+
+.attendee .atten_inner .cal_container .month_label{
+    padding: 6px 24px;
+}
+
+.attendee .atten_inner .cal_container .month_label::after{
+    right: 16px;
 }
 
 .attendee .choice_staff {
@@ -4944,6 +4957,10 @@ p {
 
 .doctor .attendee .search_container input:valid + button img{
     filter:  none;
+}
+
+.doctor .attendee .search_container.not_find input:valid + button img{
+    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg) brightness(90%) contrast(90%);
 }
 
 .attendee .weekly {

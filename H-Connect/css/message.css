@@ -339,7 +339,7 @@
     width: 32px;
     height: 32px;
     padding: 8px;
-    /* background: #fff; */
+    background: #fff;
 }
 
 .nurse_message .message_talk .search_container .btn_sort div {
@@ -1566,6 +1566,7 @@
 
 .doc_screen .message_list .title .title_text {
     width: 100%;
+    padding: 0 0 10px;
     justify-content: initial;
     color: #007A94;
 }
@@ -1688,8 +1689,13 @@
 }
 
 .doc_screen .message_talk .search_container {
+    margin: 0;
     display: flex;
     justify-content: space-between;
+}
+
+.doc_screen .message_talk .search_container .btn_search{
+    left: 56%;
 }
 
 .doc_screen .message_talk .btn_sort {
@@ -1742,10 +1748,10 @@
 }
 
 .doctor_new.message .container {
-    height: 312px;
+    height: 366px;
     padding: 0 8px;
     margin-top: 12px;
-    overflow-y: scroll;
+    overflow: hidden auto;
     display: inherit;
 }
 
