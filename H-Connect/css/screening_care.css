@@ -1,18 +1,9 @@
 @charset "utf-8";
 
-#contents_wrap.screening {
-    width: 100%;
-    width: 1880px;
-}
-
-#section {
-    justify-content: flex-start;
-}
-
 /* card */
-.card {
-    /* flex: 1; */
-}
+/* .card {
+    flex: 1;
+} */
 
 .care_card1 {
     position: relative;
@@ -690,7 +681,15 @@
 }
 
 
-/* .waiting_table_box {
-    height: 390px;
-    overflow-y: scroll;
-} */
+/* screening_care */
+.screening .care_card3{padding: 0;}
+.screening .card3 .card_head_text{
+    display: block;
+}
+
+.screening .card3 .card_header{
+    padding: 32px 32px 24px;
+}
+.screening .card3 .card_title{
+    margin: 0 0 13px;
+}

@@ -1453,7 +1453,7 @@ button {
 
 /* messge_cont_box */
 .care_card3 .messge_cont_box {
-    height: 621px;
+    /* height: 621px; */
     background-color: #c5d8dc;
     border-radius: 0 8px 8px;
 }
@@ -2779,8 +2779,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_search .search_container {
     width: 360px;
-    margin-bottom: 36px;
-
+    margin-bottom: 34px;
     position: relative;
 }
 
@@ -2824,7 +2823,7 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_search .doctor_list {
     height: 348px;
-    overflow-y: scroll;
+    overflow: hidden auto;
 }
 
 .pop.send_doctor .doctor_search .doctor_list::-webkit-scrollbar {
@@ -2837,13 +2836,39 @@ textarea::-webkit-scrollbar-button {
     background: #ccc;
 }
 
-.pop.send_doctor .doctor_search .doctor_list p {
-    margin-right: 15px;
+.pop.send_doctor .medical_depart .title{
+    padding: 7px 0 8px;
     font-size: 12px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
 }
 
-.pop.send_doctor .doctor_list > div {
+.pop.send_doctor .medical_depart .title::before{
+    content: '';
+    width: 13px;
+    height: 13px;
+    margin-right: 11px;
+    background: url('/H-Connect/img/icon/accodian_plus.svg') no-repeat 0 0 / contain;
+    display: block;
+}
+
+.pop.send_doctor .medical_depart .title.active::before{
+    content: '';
+    width: 13px;
+    height: 13px;
+    margin-right: 11px;
+    background: url('/H-Connect/img/icon/accodian_minus.svg') no-repeat 0 0 / contain;
+    display: block;
+}
+
+.pop.send_doctor .medical_depart .input_container{
+    display: none;
+}
+
+.pop.send_doctor .input_container > div {
+    padding: 7px 16px;
     margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
@@ -2859,13 +2884,6 @@ textarea::-webkit-scrollbar-button {
     margin-right: 14px;
 }
 
-/* .pop.send_doctor .doctor_list .green_custom[type='checkbox']:checked + label {
-    background: #007a94;
-}
-
-.pop.send_doctor .doctor_list .green_custom[type='checkbox'] + label + label {
-    font-size: 12px;
-} */
 
 .pop.send_doctor .doctor_list input[type='checkbox'] {
     display: none;
@@ -2898,9 +2916,9 @@ textarea::-webkit-scrollbar-button {
         contain;
 }
 
-.pop.send_doctor .doctor_list > :last-child {
+/* .pop.send_doctor .doctor_list > :last-child {
     margin: 0;
-}
+} */
 
 .pop.send_doctor .input_message {
     width: 400px;

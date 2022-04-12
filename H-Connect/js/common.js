@@ -1818,6 +1818,12 @@ $(function () {
         $('.lab_list .list').not(this).removeClass('on');
         $(this).addClass('on');
     });
+
+    // 의료진 선택 팝업 아코디언
+    $('.pop.send_doctor .medical_depart .title').click(function(){
+        $(this).toggleClass('active');
+        $(this).siblings().slideToggle(300);
+    })
 });
 
 // 탭메뉴
