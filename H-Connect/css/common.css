@@ -2229,6 +2229,11 @@ textarea::-webkit-scrollbar-button {
     margin: 8px 0 0 129px;
     font-size: 12px;
     color: #940045;
+    display: none;
+}
+.pop.regi_device small.active,
+.pop.re_device small.active,
+.pop.update_device small.active {
     display: inline-block;
 }
 

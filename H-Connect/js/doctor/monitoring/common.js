@@ -1,3 +1,4 @@
+// Device Type function
 export function devType(deviceType) {
     switch (deviceType) {
         case 1:
@@ -10,3 +11,7 @@ export function devType(deviceType) {
             return 'UNKNOWNTYPE';
     }
 }
+
+export let selectedEventId = null;
+
+export function searchHanguel(hanguel) {}

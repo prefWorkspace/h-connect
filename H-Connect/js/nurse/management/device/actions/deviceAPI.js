@@ -58,16 +58,25 @@ export async function createDevice() {
         serialNumber,
         deviceType: device_NameToType(device_name),
     });
+    const reg = /^[A-Z0-9]{6,7}$/;
+    if (!reg.test(serialNumber)) {
+        $('.pop.regi_device small').addClass('active');
+        return;
+    }
 
     serverController.ajaxAwaitController(
         'API/Device/InsertDeviceRegister',
         'POST',
         req,
         (res) => {
+            console.log('res==');
+            console.log(res);
             if (res.result) {
                 select_device_unused(0, null);
                 select_device(0, null);
                 $('.pop.regi_device .overlay').fadeOut();
+            } else {
+                $('.pop.regi_device .content small').show();
             }
         },
         (err) => {

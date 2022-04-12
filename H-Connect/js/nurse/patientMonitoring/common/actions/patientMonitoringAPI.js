@@ -49,7 +49,6 @@ export const SelectAlarmSettingMeasurement = async () => {
 
 /* s : 환자 생체 신호 알람 업데이트 */
 export const UpdateAlarmSettingMeasurement = async (_data) => {
-    console.log('_data:', _data);
     const res = await serverController.ajaxAwaitController(
         'API/Measurement/UpdateAlarmSettingMeasurement',
         'POST',
@@ -59,7 +58,6 @@ export const UpdateAlarmSettingMeasurement = async (_data) => {
             ..._data,
         }),
         (res) => {
-            console.log(res);
             if (res.result) {
             } else {
             }
@@ -87,4 +85,43 @@ export const SelectArrhythmiaSettingInfo = async () => {
         throw new Error('조회된 데이타가 없습니다');
     }
     return res.arrhythmiaSettingInfo;
+};
+export const UpdateArrhythmiaSettingInfo = async (_data) => {
+    const res = await serverController.ajaxAwaitController(
+        'API/Measurement/UpdateArrhythmiaSettingInfo',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            ..._data,
+        })
+    );
+    if (res.result) {
+        return res;
+    } else {
+        return null;
+    }
+};
+
+/* s : 생체신호 트렌드 데이터 페이지 조회 */
+export const SelectBioSignalsTrendDataPage = async (_page) => {
+    const res = await serverController.ajaxAwaitController(
+        'API/BioSignal/SelectBioSignalsTrendDataPage',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            pageNumber: _page,
+            count: 10,
+        })
+    );
+    return {
+        page: _page,
+        totalCount: res.totalCount,
+        records:
+            res.bioSignalsTrendDataList &&
+            res.bioSignalsTrendDataList.map((record) => ({
+                ...record,
+            })),
+    };
 };

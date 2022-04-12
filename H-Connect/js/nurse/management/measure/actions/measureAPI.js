@@ -21,7 +21,8 @@ const { userCode: requester, organizationCode } = JSON.parse(userData);
 export async function selectMeasurementInfoList(
     wardCode = null,
     sickRoomCode = null,
-    sickBedCode = null
+    sickBedCode = null,
+    search
 ) {
     const req = JSON.stringify({
         ...commonRequest(),
@@ -29,8 +30,8 @@ export async function selectMeasurementInfoList(
         sickRoomCode,
         sickBedCode,
         measurementType: 'BM',
-        measurementStatusList: null,
-        search: null,
+        measurementStatusList: [1, 2],
+        search,
     });
 
     return serverController.ajaxAwaitController(
@@ -57,6 +58,8 @@ export async function insertMeasurementInfo(codeObj, patientData) {
         organizationCode,
         orderNumber: 1,
     };
+    console.log('obj====');
+    console.log(obj);
     //birthday 값이 좀 상이함. 이거는 API 업데이트되는데로 수정
 
     return serverController.ajaxAwaitController(

@@ -472,13 +472,13 @@ $(function () {
         $('.pop.chat_sort').fadeOut();
     });
 
-     // 메세지 아코디언
-     $('.message .medical_depart .title').click(function(){
+    // 메세지 아코디언
+    $('.message .medical_depart .title').click(function () {
         // $('.message .medical_depart .title').not(this).removeClass('active');
         $(this).toggleClass('active');
         $(this).siblings().slideToggle(300);
-    })
-    
+    });
+
     //---------------------- 응급상황실 ----------------------//
     // 의료진호출
     $('.emergency .btn_call').on('click', function () {
@@ -2016,4 +2016,28 @@ $('.pop.regi_device .selectBox2 .optionItem').on('click', function () {
     $(this).addClass('active').siblings().removeClass('active');
     $('.pop.regi_device .selectBox2 .label').text(deviceName);
     $(this).parent().parent().toggleClass('active');
+});
+
+$('.section.return_device .btn_use_device').on('click', function () {
+    $('.pop.re_device .overlay').fadeIn();
+});
+
+$('.pop.re_device .overlay .btn_cancel').on('click', function () {
+    $('.pop.re_device .overlay').fadeOut();
+});
+
+$('.section.new_device .btn_new_device').on('click', function () {
+    $('.pop.regi_device .overlay').fadeIn();
+});
+
+$('.pop.regi_device .overlay .btn_cancel').on('click', function () {
+    $('.pop.regi_device .overlay').fadeOut();
+});
+
+$('.pop.delete_regi .overlay .btn_no').on('click', function () {
+    $('.pop.delete_regi .overlay').fadeOut();
+});
+
+$('.pop.delete_return .overlay .btn_no').on('click', function () {
+    $('.pop.delete_return .overlay').fadeOut();
 });

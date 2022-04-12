@@ -5,11 +5,16 @@ const { SelectAlarmSettingMeasurement, SelectArrhythmiaSettingInfo } =
         )
     );
 export async function ecgAlarmPopupTmpl(_data, _classKey) {
-    const { hrAlertAlarm, heartRateMin, heartRateMax } = _data || {};
-    const test = await SelectArrhythmiaSettingInfo();
+    const {
+        hrAlertAlarm,
+        heartRateMin,
+        heartRateMax,
+        stAlertAlarm,
+        stMin,
+        stMax,
+    } = _data || {};
     const { extremeTachycardia, extremeBradycardia } =
         await SelectArrhythmiaSettingInfo();
-    console.log(test);
     return `
       <div class="pop setting_menu ecg_set">
         <div class="overlay">
@@ -19,7 +24,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                 </div>
 
                 <div class="content">
-                    <div class="alarm">
+                    <div class="alarm hr onOff">
                         <p>Alarm</p>
 
                         <div class="container">
@@ -29,6 +34,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                                 id="ecg_off"
                                 class="alarm_off"
                                 data-key="hrAlertAlarm"
+                                data-value="0"
                                 ${hrAlertAlarm === 0 ? 'checked' : ''}
                             />
                             <label for="ecg_off" class="btn_resp_alarm"
@@ -40,6 +46,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                                 name="ecg_alarm"
                                 id="ecg_on"
                                 class="alarm_on"
+                                data-value="1"
                                 ${hrAlertAlarm === 1 ? 'checked' : ''}
                             />
                             <label for="ecg_on" class="btn_resp_alarm"
@@ -53,7 +60,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" data-key="heartRateMin" value="${heartRateMin}"/>
+                                <input type="number" data-key="heartRateMax" value="${heartRateMax}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -73,7 +80,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                             </div>
 
                             <div class="num_wrap">
-                                <input type="number" data-key="heartRateMax" value="${heartRateMax}"/>
+                                <input type="number" data-key="heartRateMin" value="${heartRateMin}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -99,7 +106,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" value="${extremeTachycardia}"/>
+                                <input type="number" data-key="extremeTachycardia" value="${extremeTachycardia}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -125,7 +132,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" value="${extremeBradycardia}"/>
+                                <input type="number" data-key="extremeBradycardia" value="${extremeBradycardia}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -149,13 +156,15 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                     <div class="st_set">
                         <p>ST Setting</p>
 
-                        <div class="toggle_container">
+                        <div class="toggle_container st onOff">
                             <input
                                 type="radio"
                                 name="st_alarm"
                                 id="st_off"
                                 class="alarm_off"
-                                checked
+                                data-key="stAlertAlarm"
+                                data-value="0"
+                                ${stAlertAlarm === 0 ? 'checked' : ''}
                             />
                             <label for="st_off" class="btn_resp_alarm"
                                 >Off</label
@@ -166,16 +175,19 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                                 name="st_alarm"
                                 id="st_on"
                                 class="alarm_on"
+                                data-key="stAlertAlarm"
+                                data-value="1"
+                                ${stAlertAlarm === 1 ? 'checked' : ''}
                             />
                             <label for="st_on" class="btn_resp_alarm"
                                 >On</label
                             >
                         </div>
 
-                        <div class="input_num">
+                        <div class="input_num st minMax">
                             <div class="container">
                                 <div class="num_wrap">
-                                    <input type="number" />
+                                    <input type="number" data-key="stMax" value="${stMax}"/>
 
                                     <div class="num_control">
                                         <button type="button" class="up">
@@ -195,7 +207,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                                 </div>
 
                                 <div class="num_wrap">
-                                    <input type="number" />
+                                    <input type="number" data-key="stMin" value="${stMin}"/>
 
                                     <div class="num_control">
                                         <button type="button" class="up">
@@ -243,7 +255,7 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
                 </div>
 
                 <div class="content">
-                    <div class="alarm">
+                    <div class="alarm spo2 onOff">
                         <p>Alarm</p>
 
                         <div class="container">
@@ -253,6 +265,7 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
                                 id="sp_off"
                                 class="alarm_off"
                                 data-key="spo2AlertAlarm"
+                                data-value="0"
                                 ${spo2AlertAlarm === 0 ? 'checked' : ''}
                             />
                             <label for="sp_off" class="btn_resp_alarm"
@@ -264,6 +277,7 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
                                 name="sp_alarm"
                                 id="sp_on"
                                 class="alarm_on"
+                                data-value="1"
                                 ${spo2AlertAlarm === 1 ? 'checked' : ''}
                             />
                             <label for="sp_on" class="btn_resp_alarm"
@@ -277,7 +291,7 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" value="${spo2Min}"/>
+                                <input type="number" data-key="spo2Min" value="${spo2Min}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -296,8 +310,8 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
                                 </div>
                             </div>
 
-                            <div class="num_wrap">
-                                <input type="number" value="${spo2Max}"/>
+                            <!-- <div class="num_wrap">
+                                <input type="number" data-key="spo2Max" value="${spo2Max}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -314,7 +328,7 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
                                         />
                                     </button>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -344,7 +358,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                 </div>
 
                 <div class="content">
-                    <div class="alarm">
+                    <div class="alarm resp onOff">
                         <p>Alarm</p>
 
                         <div class="container">
@@ -354,6 +368,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                                 id="btn_off"
                                 class="alarm_off"
                                 data-key="respAlertAlarm"
+                                data-value="0"
                                 ${respAlertAlarm === 0 ? 'checked' : ''}
                             />
                             <label for="btn_off" class="btn_resp_alarm"
@@ -365,6 +380,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                                 name="resp_alarm"
                                 id="btn_on"
                                 class="alarm_on"
+                                data-value="1"
                                 ${respAlertAlarm === 1 ? 'checked' : ''}
                             />
                             <label for="btn_on" class="btn_resp_alarm"
@@ -378,7 +394,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" value="${respMin}"/>
+                                <input type="number" data-key="respMax" value="${respMax}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -398,7 +414,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                             </div>
 
                             <div class="num_wrap">
-                                <input type="number" value="${respMax}"/>
+                                <input type="number" data-key="respMin" value="${respMin}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -419,7 +435,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                         </div>
                     </div>
 
-                    <div class="sweep">
+                    <!-- <div class="sweep">
                         <p>Sweep Speed</p>
 
                         <div class="container">
@@ -571,7 +587,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="btn_list">
@@ -589,7 +605,9 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
 }
 
 export async function tempAlarmPopupTmpl(_data, _classKey) {
-    const { tempAlertAlarm, tempMin, tempMax } = _data || {};
+    const { tempAlertAlarm, tempMin, tempMax, tempUnit } = _data || {};
+    // 화씨 F | 2
+    // 섭씨 C | 1 : default
     return `
       <div class="pop setting_menu temp_set">
         <div class="overlay">
@@ -599,7 +617,7 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                 </div>
 
                 <div class="content">
-                    <div class="alarm">
+                    <div class="alarm temp onOff">
                         <p>Alarm</p>
 
                         <div class="container">
@@ -609,6 +627,7 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                                 id="temp_off"
                                 class="alarm_off"
                                 data-key="tempAlertAlarm"
+                                data-value="0"
                                 ${tempAlertAlarm === 0 ? 'checked' : ''}
                             />
                             <label for="temp_off" class="btn_resp_alarm"
@@ -620,6 +639,7 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                                 name="temp_alarm"
                                 id="temp_on"
                                 class="alarm_on"
+                                data-value="1"
                                 ${tempAlertAlarm === 1 ? 'checked' : ''}
                             />
                             <label for="temp_on" class="btn_resp_alarm"
@@ -628,12 +648,12 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                         </div>
                     </div>
 
-                    <div class="input_num resp minMax">
-                        <p>RESP</p>
+                    <div class="input_num temp minMax">
+                        <p>Temp</p>
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" value="${tempMin}" />
+                                <input type="number" data-key="tempMax" value="${tempMax}" />
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -653,7 +673,7 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                             </div>
 
                             <div class="num_wrap">
-                                <input type="number" value="${tempMax}"/>
+                                <input type="number" data-key="tempMin" value="${tempMin}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -674,7 +694,7 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                         </div>
                     </div>
 
-                    <div class="sweep UNIT">
+                    <div class="sweep UNIT onOff">
                         <p>UNIT</p>
 
                         <div class="container">
@@ -684,6 +704,9 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                                     name="UNIT"
                                     id="unit_first"
                                     class="radio_custom"
+                                    data-key="tempUnit"
+                                    data-value="2"
+                                    ${tempUnit === 2 ? 'checked' : ''}
                                 />
                                 <label for="unit_first"></label>
                                 <label for="unit_first">°F</label>
@@ -695,7 +718,9 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                                     name="UNIT"
                                     id="unit_second"
                                     class="radio_custom"
-                                    checked
+                                    data-key="tempUnit"
+                                    data-value="1"
+                                    ${tempUnit === 1 ? 'checked' : ''}
                                 />
                                 <label for="unit_second"></label>
                                 <label for="unit_second">°C</label>
@@ -729,7 +754,7 @@ export async function ewsAlarmPopupTmpl(_data, _classKey) {
                     </div>
 
                     <div class="content">
-                        <div class="alarm">
+                        <div class="alarm ews onOff">
                             <p>Alarm</p>
 
                             <div class="container">
@@ -739,6 +764,7 @@ export async function ewsAlarmPopupTmpl(_data, _classKey) {
                                     id="ews_off"
                                     class="alarm_off"
                                     data-key="ewsAlertAlarm"
+                                    data-value="0"
                                     ${ewsAlertAlarm === 0 ? 'checked' : ''}
                                 />
                                 <label for="ews_off" class="btn_resp_alarm"
@@ -750,6 +776,7 @@ export async function ewsAlarmPopupTmpl(_data, _classKey) {
                                     name="alarm"
                                     id="ews_on"
                                     class="alarm_on"
+                                    data-value="1"
                                     ${ewsAlertAlarm === 1 ? 'checked' : ''}
                                 />
                                 <label for="ews_on" class="btn_resp_alarm"
