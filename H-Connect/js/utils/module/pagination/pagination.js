@@ -1,12 +1,66 @@
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
+
+/*
+class 생성문
+
+new CreatePagination({
+    API: SelectBioSignalsTrendDataPage, // api 및 데이터 불러오기
+    target: {
+        listWrap: '#tabular_table_wrap .table_body', // 리스트 타겟
+        pagination: '#tabular_table_wrap .table_page', // 페이지네이션 타겟
+    },
+    templates: {
+        listItem: tabularTrendListTmpl, // 리스트 아이템 템플릿
+    },
+    link: {
+        keepParams: ['measurement_code'], // 유지되어야 할 url 파라미터
+    },
+});
+
+*/
+
+/*
+api 함수는 다음과 같이 선언합니다.
+
+예시 )
+
+export const SelectBioSignalsTrendDataPage = async (_page) => {
+
+    // _page 파라미터를 통해 페이지 정보를 받아옵니다.
+
+    const res = await serverController.ajaxAwaitController(
+        'API/BioSignal/SelectBioSignalsTrendDataPage',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            pageNumber: _page,
+            count: 10,
+        })
+    );
+
+    // 받아온 res 데이터를 키값 page, totalCount, records 으로 파싱해 리턴해줍니다.
+
+    return {
+        page: _page,
+        totalCount: res.totalCount,
+        records:
+            res.bioSignalsTrendDataList &&
+            res.bioSignalsTrendDataList.map((record) => ({
+                ...record,
+            })),
+    };
+};
+
+*/
+
 export class CreatePagination {
+    // 페이지 네이션 모듈
     constructor(_initData) {
-        this.historyMeasurementCode = history.getParams('measurement_code');
-        const { API, target, templates } = _initData || {};
         this.initData = _initData;
-        this.actionInit();
+        // this.actionInit();
         this.renderMain();
         this.addEventPageController();
     }
@@ -39,7 +93,7 @@ export class CreatePagination {
             // 만약 해당 페이지에 리스트 데이터가 없다면 페이지 -1 뒤로 보내기
             const _origin = window.location.origin;
             const _pathname = window.location.pathname;
-            window.history.pushState(
+            window.history.replaceState(
                 '',
                 '',
                 `${_origin + _pathname}?${window.paramFindToKeepParam()}&page=${
@@ -146,13 +200,11 @@ export class CreatePagination {
             `${target.pagination} .page-controll`,
             function (e) {
                 const pageControllData = e.currentTarget.dataset.pagecont;
-                console.log(pageControllData);
                 _this.onClickPageControllBtn(pageControllData);
             }
         );
     }
-
-    onClickPaginationNumBtn(_number) {
+    pagePushState(_page) {
         const _origin = window.location.origin;
         const _pathname = window.location.pathname;
 
@@ -161,14 +213,16 @@ export class CreatePagination {
             '',
             `${
                 _origin + _pathname
-            }?${this.paramFindToKeepParam()}&page=${_number}`
+            }?${this.paramFindToKeepParam()}&page=${_page}`
         );
+    }
+    onClickPaginationNumBtn(_number) {
+        this.pagePushState(_number);
         this.renderMain();
     }
 
     onClickPageControllBtn(_type) {
         const { page, totalCount, totalPageCount } = this.pageInform || {};
-        console.log(page);
         let _page = page;
         if (_type === 'first') {
             // << 클릭시
@@ -188,16 +242,7 @@ export class CreatePagination {
             _page = totalPageCount;
         }
 
-        const _origin = window.location.origin;
-        const _pathname = window.location.pathname;
-
-        window.history.pushState(
-            '',
-            '',
-            `${
-                _origin + _pathname
-            }?${this.paramFindToKeepParam()}&page=${_page}`
-        );
+        this.pagePushState(_page);
         this.renderMain();
     }
 
@@ -216,15 +261,13 @@ export class CreatePagination {
                 .join('&');
         }
     }
+    // 일시 사용 중단
+    // oncheckHistoryPage() {
+    //     // 윈도우 history 변경시 페이지 새로 불러오기
+    //     // this.renderMain();
+    // }
 
-    oncheckHistoryPage() {
-        // 윈도우 history 변경시 페이지 새로 불러오기
-        this.renderMain();
-    }
-
-    actionInit() {
-        // window.onClickPaginationNumBtn = this.onClickPaginationNumBtn;
-        // window.onClickPageControllBtn = this.onClickPageControllBtn;
-        history.onPopState(this.oncheckHistoryPage);
-    }
+    // actionInit() {
+    //     history.onPopState(this.oncheckHistoryPage);
+    // }
 }

@@ -155,6 +155,24 @@ const VERSION = {
                     version: '2022.04.11.16.52',
                 },
             },
+            tabController: {
+                'tabController.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/tabController/',
+                    version: '2022.04.12.16.52',
+                },
+            },
+            popupController: {
+                'popupController.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/popupController/',
+                    version: '2022.04.12.16.52',
+                },
+            },
         },
         custom: {
             'utils.js': {
@@ -168,20 +186,27 @@ const VERSION = {
     },
     doctor: {
         monitoring: {
-            actions: {},
+            actions: {
+                'eventListAPI.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
+                    version: '2022.03.25.12.01',
+                },
+                'eventListEvent.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
+                    version: '2022.03.25.12.01',
+                },
+            },
             templates: {
-                'templateNewEvents.js': {
+                'templateEvent.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/templates/',
                     version: '2022.03.25.12.01',
                 },
-                'templatePreEvents.js': {
-                    type: 'module',
-                    url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/templates/',
-                    version: '2022.03.25.12.01',
-                }
             },
             renders: {
                 'renderNewEvents.js': {
@@ -191,12 +216,6 @@ const VERSION = {
                     version: '2022.03.25.12.01',
                 },
                 'renderPreEvents.js': {
-                    type: 'module',
-                    url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
-                    version: '2022.03.25.12.01',
-                },
-                'renderMonitoring.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/renders/',
@@ -327,13 +346,13 @@ const VERSION = {
         management: {
             device: {
                 actions: {
-                    // 'searchHandle.js': {
-                    //     type: 'module',
-                    //     url_path: '/nurse/device_management',
-                    //     file_path:
-                    //         '/H-Connect/js/nurse/management/device/actions/',
-                    //     version: '2022.03.25.12.30',
-                    // },
+                    'searchHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/device_management',
+                        file_path:
+                            '/H-Connect/js/nurse/management/device/actions/',
+                        version: '2022.03.25.12.30',
+                    },
                     'deviceAPI.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
@@ -404,6 +423,20 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.11.16.11',
+                    },
+                    'newMeasureHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.12.10.26',
+                    },
+                    'searchMeasureHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.12.11.12',
                     },
                 },
                 renders: {
@@ -699,6 +732,13 @@ const VERSION = {
             patient: {
                 common: {
                     actions: {
+                        'patientActions.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
+                            version: '2022.04.12.12.18',
+                        },
                         'vitalInformAPI.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
@@ -908,6 +948,9 @@ function importVersion(_path) {
         const _filePath = _target.file_path + _target.file_name;
         return _filePath === _path;
     });
+    if (!_findTargetPath) {
+        throw new Error(`다음 파일을 찾을 수 없습니다 : ${_path}`);
+    }
     return _path + '?v=' + _findTargetPath.version;
 }
 /* e : 파일 버전별 임포트 */

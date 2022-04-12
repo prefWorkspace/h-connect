@@ -472,13 +472,13 @@ $(function () {
         $('.pop.chat_sort').fadeOut();
     });
 
-     // 메세지 아코디언
-     $('.message .medical_depart .title').click(function(){
+    // 메세지 아코디언
+    $('.message .medical_depart .title').click(function () {
         // $('.message .medical_depart .title').not(this).removeClass('active');
         $(this).toggleClass('active');
         $(this).siblings().slideToggle(300);
-    })
-    
+    });
+
     //---------------------- 응급상황실 ----------------------//
     // 의료진호출
     $('.emergency .btn_call').on('click', function () {
@@ -1812,6 +1812,12 @@ $(function () {
         $('.left_view .study_list').show();
         $('.left_view .pacs_view').hide();
     });
+
+    // lab 조회 목록 배경색
+    $('.lab_list .list').click(function () {
+        $('.lab_list .list').not(this).removeClass('on');
+        $(this).addClass('on');
+    });
 });
 
 // 탭메뉴
@@ -1945,6 +1951,8 @@ $(document).ready(function () {
 
 //모니터링 페이지 신규병상등록 및 장치추가 팝업
 $('.pop.new_room_pop .overlay .btn_add').on('click', function () {
+    $('.pop.new_room_pop .new_regi .input_wrap span').removeClass('active');
+    $('.pop.new_room_pop .new_regi input').val('');
     $('.pop.new_room_pop').addClass('active');
 });
 

@@ -1,99 +1,53 @@
 'use strict';
 
-const { newEventListItem } = await import(
+const { eventListItem } = await import(
     importVersion(
-        '/H-Connect/js/doctor/monitoring/templates/templateNewEvents.js'
+        '/H-Connect/js/doctor/monitoring/templates/templateEvent.js'
     )
 );
 
-const { getNewEventList } = await import(
-    importVersion('/H-Connect/js/doctor/monitoring/dummyData.js')
-);
-
-export function renderNewEventList() {
+export async function renderNewEventList(_eventList) {
+    if (!_eventList) return;
     // declare tempNewEventList
     let templateNewEventList = ``;
 
-    if (getNewEventList().result) {
-        let eventList = getNewEventList().eventList.filter(
-            (list) => !list.isConfirm
-        );
-        // render NewEventList Header
-        templateNewEventList += `
-        <div class="title">
-            <div>
-                <div class="img_container">
-                    <img
-                        src="/H-Connect/img/header/monitoring.svg"
-                        alt="모니터 아이콘"
-                    />
-                </div>
-                <h2>새로운 환자 이벤트</h2>
+    let eventList = _eventList;
+
+    // render NewEventList Header
+    templateNewEventList += `
+    <div class="title">
+        <div>
+            <div class="img_container">
+                <img
+                    src="/H-Connect/img/header/monitoring.svg"
+                    alt="모니터 아이콘"
+                />
             </div>
-            <p>
-                새로 발생한 이벤트 및 확인하지 않은 이벤트
-                목록입니다.
-            </p>
+            <h2>새로운 환자 이벤트</h2>
         </div>
-        <div class="alarm">
-            <p><span>${eventList.length}</span> 개의 확인하지 않은 이벤트</p>
-            <div>
-                <button type="button" class="btn_new on">
-                    신규 이벤트
-                </button>
-                <button type="button" class="btn_pre">
-                    지난 이벤트
-                </button>
-            </div>
+        <p>
+            새로 발생한 이벤트 및 확인하지 않은 이벤트
+            목록입니다.
+        </p>
+    </div>
+    <div class="alarm">
+        <p><span>${_eventList.length}</span> 개의 확인하지 않은 이벤트</p>
+        <div>
+            <button type="button" class="btn_new on">
+                신규 이벤트
+            </button>
+            <button type="button" class="btn_pre">
+                지난 이벤트
+            </button>
         </div>
-        <div class='ecglist'>`;
-        eventList.sort(function (a, b) {
-            return new Date('20' + b.date) - new Date('20' + a.date);
-        });
-        // render NewEventList
-        eventList.forEach((evt) => {
-            templateNewEventList += newEventListItem(evt);
-        });
-        templateNewEventList += '</div>';
-        // Attach To Parent
-        $('.section.new_patient.new').html(templateNewEventList);
-    }
-}
+    </div>
+    <div class='ecglist'>`;
 
-export function addEventToNewEventList(params) {
-    let { selectedId } = params;
-    const $newEventRow = $('.section.new_patient.new .row');
-
-    if (selectedId) {
-        $newEventRow.forEach((row) => {
-            if (row.data('id') === selectedId) {
-                row.addClass('on');
-                return false;
-            }
-        });
-    }
-
-    // Add Event To Select Pre Events Btn
-    $('.btn_pre')
-        .off()
-        .on('click', function () {
-            $newEventRow.removeClass('on');
-            selectedId = null;
-            $('.section.new_patient.new').css('display', 'none');
-            $('.section.new_patient.pre').css('display', 'BLOCK');
-        });
-
-    // Add Event To New Event List
-    $newEventRow.off().on('click', function () {
-        $newEventRow.removeClass('on');
-
-        const $this = $(this);
-        selectedId = $this.data('id');
-        if (!$this.hasClass('on')) $this.addClass('on');
+    // render NewEventList
+    _eventList.forEach((evt) => {
+        templateNewEventList += eventListItem(evt);
     });
-}
-
-export function renderAndAddEventNewEventList(params) {
-    renderNewEventList();
-    addEventToNewEventList(params);
+    templateNewEventList += '</div>';
+    // Attach To Parent
+    $('.section.new_patient.new').html(templateNewEventList);
 }

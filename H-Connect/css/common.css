@@ -610,7 +610,8 @@ button {
     width: 640px;
     height: 40px;
     border-radius: 4px;
-    vertical-align: middle;
+    border: 1px solid #007a94;
+    background: #fff;
     position: relative;
 }
 
@@ -619,8 +620,8 @@ button {
     height: 100%;
     padding: 4px 0 4px 16px;
     border-radius: 4px;
-    border: 1px solid #007a94;
-    background-color: #fff;
+    /* border: 1px solid #007a94; */
+    /* background-color: #fff; */
 }
 
 .pc_header .search_container input::placeholder {
@@ -2262,6 +2263,7 @@ textarea::-webkit-scrollbar-button {
 }
 
 /* resp setting menu */
+.pop.setting_menu .pop_cont .title{padding-bottom: 23px;}
 .pop.setting_menu .overlay .content {
     display: block;
 }
@@ -3056,6 +3058,7 @@ textarea::-webkit-scrollbar-button {
     border-radius: 8px;
     z-index: 101;
     display: none;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 30%);
 }
 
 .pop.nurse_view .wrap_inner {
@@ -3222,14 +3225,12 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.nurse_view .chat_inner {
+    width: calc(100% - 32px);
     height: 440px;
     padding: 8px 16px;
-    background: #e3dbe6;
-    overflow-y: auto;
-}
-
-.pop.nurse_view .chat_inner {
+    /* background: #e3dbe6; */
     background: #c5d8dc;
+    overflow-y: auto;
 }
 
 .pop.nurse_view .chat_inner::-webkit-scrollbar {
@@ -3265,6 +3266,7 @@ textarea::-webkit-scrollbar-button {
     position: relative;
     width: fit-content;
     padding: 14px 16px;
+    margin: 0 0 7px auto;
     background: #940045;
     border-radius: 0.4em;
     color: #fff;
@@ -5513,9 +5515,9 @@ textarea::-webkit-scrollbar-button {
 
 .pop.create_remote .pop_cont .btn_list .btn_check {
     width: 100%;
+    height: 48px;
     margin-top: 96px;
-    height: auto;
-    padding: 12px;
+    font-size: 16px;
 }
 
 /*====================== 원격협진 ======================*/

@@ -435,7 +435,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                         </div>
                     </div>
 
-                    <div class="sweep">
+                    <!-- <div class="sweep">
                         <p>Sweep Speed</p>
 
                         <div class="container">
@@ -587,7 +587,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="btn_list">

@@ -12,13 +12,8 @@ export async function createMeasureList(data_List) {
         data = `<div></div>`;
     } else {
         for (let i = 0; i < data_List.length; i++) {
-            if (
-                data_List[i].measurementStatus === 1 ||
-                data_List[i].measurementStatus === 2
-            ) {
-                data += measureList(data_List[i]);
-                count++;
-            }
+            data += measureList(data_List[i]);
+            count++;
         }
     }
     $('.section.measure_status .container .container').html(data);

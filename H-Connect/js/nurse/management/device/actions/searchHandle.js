@@ -1,17 +1,14 @@
 'use strict';
 const { select_device } = await import(
-    importVersion(
-        '/H-Connect/js/nurse/management/device/actions/select_device.js'
-    )
+    importVersion('/H-Connect/js/nurse/management/device/actions/deviceAPI.js')
 );
 const { select_device_unused } = await import(
-    importVersion(
-        '/H-Connect/js/nurse/management/device/actions/select_device_unused.js'
-    )
+    importVersion('/H-Connect/js/nurse/management/device/actions/deviceAPI.js')
 );
 
 //enter 키 누름 감지 함수
 function pressEnter(e, callback) {
+    console.log(e.key);
     if (e.key === 'Enter') {
         callback();
     }
@@ -26,13 +23,13 @@ function searchError(value) {
 }
 
 //장치 검색 기능 이벤트
-function search_Handel() {
+async function search_Handel() {
     const search = $(
         '.section.new_device .device_list .search_container input'
     ).val();
-    if (searchError(search)) {
-        return;
-    }
+    // if (searchError(search)) {
+    //     return;
+    // }
     select_device(8, search);
 }
 
@@ -53,9 +50,9 @@ function search_unused_Handel() {
     const search = $(
         '.section.return_device .device_list .search_container input'
     ).val();
-    if (searchError(search)) {
-        return;
-    }
+    // if (searchError(search)) {
+    //     return;
+    // }
     select_device_unused(8, search);
 }
 

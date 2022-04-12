@@ -21,7 +21,8 @@ const { userCode: requester, organizationCode } = JSON.parse(userData);
 export async function selectMeasurementInfoList(
     wardCode = null,
     sickRoomCode = null,
-    sickBedCode = null
+    sickBedCode = null,
+    search
 ) {
     const req = JSON.stringify({
         ...commonRequest(),
@@ -29,8 +30,8 @@ export async function selectMeasurementInfoList(
         sickRoomCode,
         sickBedCode,
         measurementType: 'BM',
-        measurementStatusList: null,
-        search: null,
+        measurementStatusList: [1, 2],
+        search,
     });
 
     return serverController.ajaxAwaitController(
