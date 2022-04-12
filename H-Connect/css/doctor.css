@@ -819,6 +819,7 @@ p {
 }
 
 .doctor .right .cont .title {
+    padding: 20px 32px;
     border: none;
     display: flex;
 }
@@ -866,6 +867,10 @@ p {
     cursor: pointer;
 }
 
+.doctor .right .case:first-child{margin: 0 auto;}
+
+/* .doctor .right .case:nth-last-child(2){margin: 0 auto;} */
+
 .doctor .right .case p {
     margin-right: 10px;
 }
@@ -884,7 +889,7 @@ p {
 }
 
 .doctor .right .case> :first-child :last-child {
-    width: 130px;
+    width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -973,6 +978,8 @@ p {
     color: #000;
 }
 
+.doctor .right .member .title p{margin: 0;}
+
 .doctor .right .member .title p span {
     color: #007A94;
 }
@@ -987,6 +994,12 @@ p {
 .doctor .right .member .count.red {
     color: #940045;
 }
+
+.doctor .right .member .case{
+    margin: 16px auto 0;
+}
+
+/* .doctor .right .member .case:nth-last-child(2){margin: 0 auto;} */
 
 .doctor .right .member .case_cont {
     padding: 16px;
@@ -1084,7 +1097,7 @@ p {
 /* 실시간 원격 협진 */
 .connect_remote,
 .connect_opinion {
-    min-width: 1248px;
+    min-width: 1880px;
     height: 100%;
     min-height: calc(100vh - 64px);
     padding-top: 64px;
@@ -1094,7 +1107,7 @@ p {
 .connect_remote .wrap_inner,
 .connect_opinion .wrap_inner {
     width: 100%;
-    min-width: 1248px;
+    min-width: 1880px;
     padding: 0;
 }
 
@@ -2033,15 +2046,15 @@ p {
 .doctor_patient ul.tabs li {
     width: 144px;
     height: 40px;
-    padding: 10px 15px;
     margin-right: 8px;
     border-radius: 4px;
     background: #888;
     font-size: 14px;
     font-weight: normal;
-    text-align: center;
     color: #222;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -2256,6 +2269,7 @@ p {
 
 .monitoring_patient .tabular_table .table_content .date_time {
     margin-right: 78px;
+    line-height: 17px;
 }
 
 .monitoring_patient .tabular_table .table_content .date_time p {
@@ -2937,7 +2951,7 @@ p {
 .doctor_patient .lab_list,
 .doctor_patient .emr_list,
 .doctor_patient .ocs_list {
-    width: 296px;
+    width: 360px;
     margin: 0 32px;
     padding: 32px;
 }
@@ -2958,7 +2972,6 @@ p {
 
 .doctor_patient .lab_list .list_inner li:hover {
     border-radius: 4px;
-    border: none;
     background-color: #eee;
     cursor: pointer;
 }
@@ -2973,6 +2986,16 @@ p {
     height: 12px;
     background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat center / contain;
     display: inline-block;
+}
+
+.doctor_patient .lab_list .list_inner li.on{
+    background: #007A94;
+    color: #fff;
+    border-radius: 4px;
+    border-color: transparent;
+}
+.doctor_patient .lab_list .list_inner li.on::after{
+    filter: invert(155%) sepia(100%) saturate(2%) hue-rotate(265deg) brightness(150%) contrast(180%);
 }
 
 .doctor_patient .lab_list .list_inner li span {
@@ -3307,7 +3330,7 @@ p {
 }
 
 .doctor_remote .collabor_wrap .time {
-    padding: 20px 30px;
+    padding: 20px 32px;
 }
 
 .doctor_remote .collabor_wrap .week_view .member .title {
@@ -3340,6 +3363,7 @@ p {
 .doctor .time_select .title {
     padding: 24px 33px;
     border: 0;
+    align-items: center;
 }
 
 .doctor .time_select .title h2 {
@@ -4190,6 +4214,7 @@ p {
 }
 
 .doctor .no_opinion .title {
+    padding: 20px 32px;
     border: none;
 }
 
@@ -4371,6 +4396,8 @@ p {
     margin-bottom: 16px;
 }
 
+/* .new_remote .surgery_view > div{padding-left: 16px;} */
+
 .new_remote .surgery_view>div:not(.new_remote .rt_time, .new_remote .ut_wrap),
 .new_remote .surgery_view .date>div,
 .new_remote .rt_time>div {
@@ -4380,8 +4407,11 @@ p {
 
 .new_remote .rt_time>div,
 .new_remote .t_view>div {
+    padding: 0;
     align-items: flex-start;
 }
+
+.new_remote .rt_time>div{padding-left: 16px;}
 
 .new_remote .surgery_view .date_time>div,
 .new_remote .surgery_view .date_time>div div,
@@ -4392,6 +4422,7 @@ p {
 }
 
 .new_remote .ro_view .date {
+    padding: 0 0 0 16px;
     display: block;
 }
 
@@ -4408,8 +4439,8 @@ p {
     margin: 0;
 }
 
-.new_remote .t_view .type {
-    padding: 0;
+.new_remote .inner .t_view .type {
+    padding: 0 16px 20px;
 }
 
 .new_remote .surgery_view .input_wrap {
@@ -4455,7 +4486,7 @@ p {
 }
 
 .new_remote .rt_time {
-    margin: 28px 0 0;
+    margin: 20px 0 0;
 }
 
 .new_remote .t_view .type {
@@ -4467,6 +4498,7 @@ p {
 }
 
 .new_remote .ro_view .date> :first-child {
+    /* padding-left: 16px; */
     margin-bottom: 16px;
 }
 
@@ -4543,13 +4575,19 @@ p {
     margin-bottom: 20px;
 }
 
-.new_remote .content>button {
+.new_remote .content > button {
     margin-bottom: 8px;
     font-size: 12px;
     color: #940045;
     display: flex;
     align-items: center;
     float: right;
+}
+
+.new_remote .content > button:disabled{color: #ccc;}
+.new_remote .content > button:disabled img{
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(84%) contrast(90%);
+    opacity: 0.2;
 }
 
 .new_remote .content .btn_case_delete div {
@@ -4695,7 +4733,7 @@ p {
 }
 
 .doctor_new .mem {
-    height: 17px;
+    height: 16px;
     margin-right: 16px;
     margin-bottom: 10px;
     width: fit-content;
@@ -4722,12 +4760,12 @@ p {
 .doctor_new .green_custom[type="checkbox"]+label {
     width: 18px;
     height: 18px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
-.doctor_new .green_custom[type="checkbox"]:checked+label {
+/* .doctor_new .green_custom[type="checkbox"]:checked+label {
     background: #007A94;
-}
+} */
 
 .doctor_new .favorite_container {
     width: 16px;
@@ -4803,10 +4841,19 @@ p {
     background: #fff;
     font-size: 14px;
     color: #000;
+    justify-content: flex-start;
 }
 
 .doctor .attendee .month_box {
     margin: 0 0 0 8px;
+}
+
+.attendee .atten_inner .cal_container .month_label{
+    padding: 6px 24px;
+}
+
+.attendee .atten_inner .cal_container .month_label::after{
+    right: 16px;
 }
 
 .attendee .choice_staff {
@@ -4910,6 +4957,10 @@ p {
 
 .doctor .attendee .search_container input:valid + button img{
     filter:  none;
+}
+
+.doctor .attendee .search_container.not_find input:valid + button img{
+    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg) brightness(90%) contrast(90%);
 }
 
 .attendee .weekly {

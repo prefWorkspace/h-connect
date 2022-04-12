@@ -472,13 +472,13 @@ $(function () {
         $('.pop.chat_sort').fadeOut();
     });
 
-     // 메세지 아코디언
-     $('.message .medical_depart .title').click(function(){
+    // 메세지 아코디언
+    $('.message .medical_depart .title').click(function () {
         // $('.message .medical_depart .title').not(this).removeClass('active');
         $(this).toggleClass('active');
         $(this).siblings().slideToggle(300);
-    })
-    
+    });
+
     //---------------------- 응급상황실 ----------------------//
     // 의료진호출
     $('.emergency .btn_call').on('click', function () {
@@ -1777,6 +1777,13 @@ $(function () {
         $('.left_view .study_list').show();
         $('.left_view .pacs_view').hide();
     });
+
+
+    // lab 조회 목록 배경색
+    $('.lab_list .list').click(function(){
+        $('.lab_list .list').not(this).removeClass('on');
+        $(this).addClass('on');
+    })
 });
 
 // 탭메뉴
