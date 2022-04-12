@@ -3278,6 +3278,7 @@ img {
 .multi .view {
     width: 826px;
     height: 840px;
+    flex-shrink: 0;
 }
 
 .multi .left_view {
@@ -3358,6 +3359,7 @@ img {
 
 .view .pacs_view {
     height: 800px;
+    overflow: hidden;
 }
 
 .view .slide {
@@ -3373,9 +3375,9 @@ img {
 }
 
 .view .slide .small {
-    width: 100%;
+    width: 820px;
     height: 64px;
-    margin-top: 11px;
+    margin: 11px auto 0;
     overflow: hidden;
 }
 

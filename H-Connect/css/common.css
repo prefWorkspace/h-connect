@@ -2089,6 +2089,8 @@ textarea::-webkit-scrollbar-button {
     margin-right: 16px;
     border-radius: 4px;
     font-size: 16px;
+    background: #EEEEEE;
+    color: #888888;
 }
 
 .pop.delete .pop_cont .btn_list .btn_cut {
