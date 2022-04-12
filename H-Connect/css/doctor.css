@@ -4868,6 +4868,8 @@ p {
     width: 292px;
 }
 
+.attendee .choice_staff.on .title .btn_check{display: none;}
+
 .attendee .choice_staff .title {
     padding: 12px 8px;
     border: none;
