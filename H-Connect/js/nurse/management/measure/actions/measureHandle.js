@@ -185,7 +185,6 @@ export async function selecBoxWard() {
             $(this).addClass('active').siblings().removeClass('active');
             const { measurementInfoSimpleList } =
                 await selectMeasurementInfoList(wardCode);
-
             $('.section .selectBox2 .room_label').text('병실선택');
             $(this).parent().parent().find('.label').text(text);
             $(this)
