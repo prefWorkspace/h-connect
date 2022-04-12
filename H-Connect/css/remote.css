@@ -1862,6 +1862,10 @@ img {
     overflow: scroll hidden;
 }
 
+.on .table_body .table_content .ecg .ecg_graph>div {
+    height: auto;
+}
+
 .table_body .table_content .ecg .ecg_graph>div::-webkit-scrollbar {
     height: 8px;
 }
