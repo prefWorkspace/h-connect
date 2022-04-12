@@ -60,7 +60,7 @@ export class CreatePagination {
     // 페이지 네이션 모듈
     constructor(_initData) {
         this.initData = _initData;
-        this.actionInit();
+        // this.actionInit();
         this.renderMain();
         this.addEventPageController();
     }
@@ -93,7 +93,7 @@ export class CreatePagination {
             // 만약 해당 페이지에 리스트 데이터가 없다면 페이지 -1 뒤로 보내기
             const _origin = window.location.origin;
             const _pathname = window.location.pathname;
-            window.history.pushState(
+            window.history.replaceState(
                 '',
                 '',
                 `${_origin + _pathname}?${window.paramFindToKeepParam()}&page=${
@@ -261,13 +261,13 @@ export class CreatePagination {
                 .join('&');
         }
     }
+    // 일시 사용 중단
+    // oncheckHistoryPage() {
+    //     // 윈도우 history 변경시 페이지 새로 불러오기
+    //     // this.renderMain();
+    // }
 
-    oncheckHistoryPage() {
-        // 윈도우 history 변경시 페이지 새로 불러오기
-        this.renderMain();
-    }
-
-    actionInit() {
-        history.onPopState(this.oncheckHistoryPage);
-    }
+    // actionInit() {
+    //     history.onPopState(this.oncheckHistoryPage);
+    // }
 }

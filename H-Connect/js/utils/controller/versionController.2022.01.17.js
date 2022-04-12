@@ -164,6 +164,15 @@ const VERSION = {
                     version: '2022.04.12.16.52',
                 },
             },
+            popupController: {
+                'popupController.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/popupController/',
+                    version: '2022.04.12.16.52',
+                },
+            },
         },
         custom: {
             'utils.js': {
@@ -709,6 +718,13 @@ const VERSION = {
             patient: {
                 common: {
                     actions: {
+                        'patientActions.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
+                            version: '2022.04.12.12.18',
+                        },
                         'vitalInformAPI.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
@@ -718,13 +734,6 @@ const VERSION = {
                         },
                     },
                     renders: {
-                        'renderTab.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
-                            version: '2022.04.12.12.18',
-                        },
                         'renderSimpleData.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
@@ -925,6 +934,9 @@ function importVersion(_path) {
         const _filePath = _target.file_path + _target.file_name;
         return _filePath === _path;
     });
+    if (!_findTargetPath) {
+        throw new Error(`다음 파일을 찾을 수 없습니다 : ${_path}`);
+    }
     return _path + '?v=' + _findTargetPath.version;
 }
 /* e : 파일 버전별 임포트 */

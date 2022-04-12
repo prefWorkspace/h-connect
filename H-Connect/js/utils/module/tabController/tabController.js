@@ -1,13 +1,33 @@
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
+
+/*
+사용방법
+
+사용할 파일에서 해당 class를 임포트해옵니다.
+
+// import
+const { TabController } = await import(
+    importVersion('/H-Connect/js/utils/module/tabController/tabController.js')
+);
+
+// class 생성문
+// link.keepParams 배열의 키값으로 유지시킬 url parameter을 설정해줍니다.
+const tabPatientController = new TabController({
+    link: {
+        keepParams: ['measurement_code'],
+    },
+});
+
+*/
+
 export class TabController {
     constructor(_initData) {
         this.initData = _initData;
         this.initTabData();
         this.initTabView();
         this.addEventTabBtn();
-        this.actionInit();
     }
 
     initTabData() {
@@ -67,23 +87,10 @@ export class TabController {
         const _origin = window.location.origin;
         const _pathname = window.location.pathname;
 
-        window.history.pushState(
+        window.history.replaceState(
             '',
             '',
             `${_origin + _pathname}?${this.paramFindToKeepParam()}&tab=${_tab}`
         );
-    }
-
-    oncheckHistoryPage() {
-        // 윈도우 history 변경시 페이지 새로 불러오기
-        console.log('11');
-    }
-
-    actionInit() {
-        console.log('----');
-        history.onPopState(this.oncheckHistoryPage);
-    }
-    onTab() {
-        console.log('dd');
     }
 }
