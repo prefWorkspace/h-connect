@@ -294,10 +294,18 @@ $(function () {
         $('.pop.arteriotony_regi .overlay').fadeOut();
     });
 
+    $('body').on(
+        'click',
+        '.patient .management_list .doctor_send',
+        function () {
+            $('.pop.send_doctor .overlay').fadeIn();
+        }
+    );
+
     // 담당의에게 메시지 보내기
-    $('.doctor_send').on('click', function () {
-        $('.pop.send_doctor .overlay').fadeIn();
-    });
+    // $('.doctor_send').on('click', function () {
+    //     $('.pop.send_doctor .overlay').fadeIn();
+    // });
 
     $('.pop.send_doctor .btn_exit').on('click', function () {
         $('.pop.send_doctor .overlay').fadeOut();
@@ -309,12 +317,12 @@ $(function () {
     });
 
     // 담당의 메시지 창
-    $('.doctor_send').on('click', function () {
-        $('.pop.send_doctor .overlay').fadeIn();
-        $(
-            '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
-        ).show();
-    });
+    // $('.doctor_send').on('click', function () {
+    //     $('.pop.send_doctor .overlay').fadeIn()s;
+    //     $(
+    //         '.pop.nurse_view .chat_container, .pop.nurse_view .chat_window'
+    //     ).show();
+    // });
 
     $('.pop.send_doctor .btn_exit').on('click', function () {
         $('.pop.send_doctor .overlay').fadeOut();

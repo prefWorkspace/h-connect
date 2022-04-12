@@ -702,6 +702,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
                         version: '2022.03.25.12.01',
                     },
+                    'sendDoctorHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/arteriotony',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
+                        version: '2022.04.12.15.38',
+                    },
                     'bloodPressureAPI.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
@@ -718,6 +725,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
                         version: '2022.03.25.12.01',
                     },
+                    'sendDoctorListRender.js': {
+                        type: 'module',
+                        url_path: '/nurse/arteriotony',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
+                        version: '2022.04.12.15.57',
+                    },
                 },
                 templates: {
                     'prerecordTmpl.js': {
@@ -726,6 +740,13 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
                         version: '2022.03.25.12.01',
+                    },
+                    'sendDoctorList.js': {
+                        type: 'module',
+                        url_path: '/nurse/arteriotony',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
+                        version: '2022.04.12.16.01',
                     },
                 },
             },
