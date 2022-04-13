@@ -41,7 +41,6 @@ export async function wardListSelectHandle() {
     }
 
     $('.section .selectBox2 .ward_option .ward_list').after(html);
-    $('.section .selectBox2 .mward_option').html(html);
 }
 
 // 신규병상등록 팝업 ==============================
@@ -83,6 +82,17 @@ export async function newSickBedPop_sickBedListSelectHandle(
 }
 
 //병상정보 수정 셀렉트 박스 ===================
+
+//병동 셀렉트 박스
+export async function updateWard_wardListSelectHandle() {
+    let html = '';
+
+    for (let i = 0; i < wardList.length; i++) {
+        html += wardItem(wardList[i]);
+    }
+
+    $('.section.modifi_hospital .selectBox2 .mward_option').html(html);
+}
 
 //병실 셀렉트 박스
 export async function updateWard_sickroomListSelectHandle(wardCode) {

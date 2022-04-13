@@ -2108,6 +2108,14 @@ $('.pop.update_device .selectBox2 .optionItem').on('click', function () {
     $(this).parent().parent().toggleClass('active');
 });
 
+$('.section.new_device .selectBox2 .device_label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.section.return_device .selectBox2 .return_label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
 $('.section.return_device .btn_use_device').on('click', function () {
     $('.pop.re_device .overlay').fadeIn();
 });

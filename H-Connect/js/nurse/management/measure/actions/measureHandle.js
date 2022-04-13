@@ -9,7 +9,12 @@ const {
     )
 );
 
-const { sickRoomListSelectHandle, wardListSelectHandle } = await import(
+const {
+    sickRoomListSelectHandle,
+    wardListSelectHandle,
+    updateWard_sickroomListSelectHandle,
+    updateWard_sickBedListSelectHandle,
+} = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/renders/selectBoxRender.js'
     )
@@ -43,10 +48,9 @@ const { modifiDeviceList } = await import(
     )
 );
 
+//측정 리스트 가져와서 렌더링
 const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 await createMeasureList(measurementInfoSimpleList);
-console.log('measurementInfoSimpleList===');
-console.log(measurementInfoSimpleList);
 
 //측정 종료 버튼 클릭시, 측정 종료 버튼 모달창 띄우기
 function recodingEndPopOpen() {
@@ -155,6 +159,7 @@ async function updateDevicePop() {
     // );
 
     // updateDeviceList = [...newArr, updateItem];
+
     const deviceInfo = {
         measurementCode,
         deviceInfoId,
@@ -163,18 +168,18 @@ async function updateDevicePop() {
         macAddress: getMacaddress(deviceType, serialNumber),
     };
 
-    const aaa = await updateDeviceInfo(deviceInfo);
-    console.log('aaa===');
-    console.log(aaa);
+    const { result } = await updateDeviceInfo(deviceInfo);
+    if (result) {
+        $(
+            `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(1)`
+        ).text(deviceName);
 
-    $(
-        `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(1)`
-    ).text(deviceName);
-    $(
-        `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(2)`
-    ).text(serialNumber);
+        $(
+            `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(2)`
+        ).text(serialNumber);
 
-    // $('.pop.update_device .overlay').fadeOut();
+        $('.pop.update_device .overlay').fadeOut();
+    }
 }
 
 //병상 정보 변경에서 장치 삭제
@@ -202,10 +207,13 @@ export async function measureListhanlde() {
             const sickBedCode = $(this).data('sickbedcode');
             const wardCode = $(this).data('wardcode');
             const sickRoomCode = $(this).data('sickroomcode');
+            let html = '';
 
+            //클릭한 측정정보 찾기
             const measureData = measurementInfoSimpleList.find(
                 (item) => item.sickBedCode === sickBedCode
             );
+
             const {
                 name,
                 birthday,
@@ -219,6 +227,11 @@ export async function measureListhanlde() {
                 measurementCode,
             } = measureData;
 
+            //병상정보 수정 섹션에 병실, 병상 셀렉트 박스 렌더링
+            await updateWard_sickroomListSelectHandle(wardCode);
+            await updateWard_sickBedListSelectHandle(wardCode, sickRoomCode);
+
+            //병상정보 수정 섹션에 데이터 바인딩
             $('.modifi_hospital .hospital_patient .name_label').text(name);
             $('.modifi_hospital .hospital_patient .patient_age').val(birthday);
             $('.modifi_hospital .hospital_patient .patient_gender').val(
@@ -266,13 +279,45 @@ export async function measureListhanlde() {
                 'data-apiroute',
                 apiRoute
             );
+
+            //이전 측정정보의 장치 리스트 삭제
             $('div').remove('.modifi_hospital .device_room .device_Item');
+
+            //해당 병동 active
+            $('.section.modifi_hospital .selectBox2 .ward_list').each(
+                (_, value) => {
+                    if ($(value).data('wardcode') === wardCode) {
+                        $(value).addClass('active');
+                    }
+                }
+            );
+
+            //해당 병실 active
+            $('.section.modifi_hospital .selectBox2 .room_list2').each(
+                (_, value) => {
+                    if ($(value).data('sickroomcode') === sickRoomCode) {
+                        $(value).addClass('active');
+                    }
+                }
+            );
+
+            //해당 병상 active
+            $('.section.modifi_hospital .selectBox2 .bed_list').each(
+                (_, value) => {
+                    if ($(value).data('sickbedcode') === sickBedCode) {
+                        $(value).addClass('active');
+                    }
+                }
+            );
+
+            //장치 리스트 없는 병상은 여기까지
             if (!deviceInfoList) {
                 return;
             }
+
             updateDeviceList = [...deviceInfoList];
 
-            let html = '';
+            // 장치 리스트 탬플릿 만들기
             for (let i = 0; i < deviceInfoList.length; i++) {
                 html += modifiDeviceList(deviceInfoList[i]);
             }
@@ -367,6 +412,7 @@ export async function selecBoxWard() {
 $('.pop.end_measure .btn_list .btn_cut').on('click', recodingEndHandle);
 $('.pop.update_device .btn_list .btn_check').on('click', updateDevicePop);
 $('.pop.delete_device .btn_list .btn_cut').on('click', deleteDevicePop);
+
 //함수실행=====================
 measureListhanlde();
 selecBoxWard();

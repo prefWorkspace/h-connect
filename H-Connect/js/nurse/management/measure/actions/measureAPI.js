@@ -17,7 +17,7 @@ const { request_Date_Data } = await import(
 const userData = localStorageController.getLocalS('userData');
 const { userCode: requester, organizationCode } = JSON.parse(userData);
 
-//모든 측정 정보가져오기
+//모든 측정 데이터 리스트 select API
 export async function selectMeasurementInfoList(
     wardCode = null,
     sickRoomCode = null,
@@ -49,7 +49,7 @@ export async function selectMeasurementInfoList(
     );
 }
 
-//측정 추가
+//측정 추가 API
 export async function insertMeasurementInfo(codeObj, patientData) {
     const obj = {
         ...commonRequest(),
@@ -75,7 +75,7 @@ export async function insertMeasurementInfo(codeObj, patientData) {
     );
 }
 
-//측정 상태 종료
+//측정 상태 종료 API
 export async function recodingEndMeasurementInfo(measurementCode, route) {
     const obj = {
         ...commonRequest(),
@@ -100,7 +100,7 @@ export async function recodingEndMeasurementInfo(measurementCode, route) {
     );
 }
 
-// 측정 정보 수정
+// 측정 정보 수정 API
 export async function updateMeasurementInfo(codeObj, patientData, route) {
     const obj = {
         ...commonRequest(),
@@ -124,7 +124,7 @@ export async function updateMeasurementInfo(codeObj, patientData, route) {
     );
 }
 
-//측정 추가 및 수정 시, 장치 조회
+//측정 추가 및 수정 시, 장치 조회 API
 export async function selectDeviceRegisterUnused(search) {
     const obj = {
         ...commonRequest(),
@@ -149,7 +149,7 @@ export async function selectDeviceRegisterUnused(search) {
     );
 }
 
-// 측정 코드 삭제
+// 측정 코드 삭제 API
 export async function deleteMeasurementInfo(measureMentCode, route) {
     const obj = {
         ...commonRequest(),
@@ -177,8 +177,6 @@ export async function updateDeviceInfo(deviceInfo) {
         requester,
         ...deviceInfo,
     };
-    console.log('obj===');
-    console.log(obj);
     return serverController.ajaxAwaitController(
         'API/Measurement/UpdateDeviceInfo',
         'POST',
@@ -192,7 +190,7 @@ export async function updateDeviceInfo(deviceInfo) {
     );
 }
 
-// 병상 정보 수정에서 장치 삭제 APㅑ
+// 병상 정보 수정에서 장치 삭제 API
 export async function deleteDeviceInfo(deviceInfoIdList, measurementCode) {
     const obj = {
         ...commonRequest(),
@@ -205,6 +203,28 @@ export async function deleteDeviceInfo(deviceInfoIdList, measurementCode) {
         'API/Measurement/DeleteDeviceInfo',
         'POST',
         JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
+
+export async function updateMeasurement_insertDevice(
+    measureMentCode,
+    deviceInfoList
+) {
+    const obj = {
+        ...commonRequest(),
+        measureMentCode,
+        deviceInfoList,
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Measurement/InsertDeviceInfo',
+        'POST',
         (res) => {
             if (res.result) {
             } else {

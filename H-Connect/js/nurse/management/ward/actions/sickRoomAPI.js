@@ -40,6 +40,10 @@ export async function insertSickRoom() {
         $('.section.right.hospital_room .container .cont .container .ward_list')
             .length + 1;
 
+    if (sickRoom === '') {
+        return;
+    }
+
     const req = JSON.stringify({
         wardCode,
         sickRoom,
@@ -80,6 +84,21 @@ export async function updateSickRoom(_wardCode) {
             $('.pop.update_room .overlay').fadeIn();
             sickRoomCode = $(this).data('sickroomcode');
             wardCode = $(this).data('wardcode');
+            const sickRoom = $(this).parent().parent().find('#sickRoom').text();
+            const patientNumber = +$(this)
+                .parent()
+                .parent()
+                .find('#patientNumber')
+                .text();
+            $('.pop.update_room .content input').val(sickRoom);
+            $('.pop.update_room .selectBox2 .room_label').text(
+                patientNumber + '인실'
+            );
+            $('.pop.update_room .selectBox2 .room_option').each((_, value) => {
+                if ($(value).data('number') == patientNumber) {
+                    $(value).addClass('active');
+                }
+            });
         }
     );
 
