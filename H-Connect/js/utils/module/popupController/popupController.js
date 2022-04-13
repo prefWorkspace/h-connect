@@ -34,12 +34,13 @@ const globalSettingPopup = new PopupController({
 export class PopupController {
     constructor(_initData) {
         this.initData = _initData;
+        this.payload = {};
         this.initEvent();
     }
     initEvent() {
         const { target, templates, popupBtn } = this.initData || {};
         $('body').on('click', `${target?.openButton}`, async () => {
-            const _getTemplate = await templates?.popup();
+            const _getTemplate = await templates?.popup(); // 팝업의 템플릿 받아옴
             $(target?.appendWrap)
                 .html(_getTemplate)
                 .find('.overlay')
@@ -59,7 +60,7 @@ export class PopupController {
                                 .off()
                                 .on('click', async () => {
                                     if (btnAction) {
-                                        await btnAction();
+                                        await btnAction(this);
                                     }
                                     if (btnClose) {
                                         $(target?.appendWrap)
@@ -73,5 +74,16 @@ export class PopupController {
                     }
                 });
         });
+    }
+    saveData(key, value) {
+        // 데이터를 저장해둬서 action 또는 다른 곳에서 사용할 수 있습니다.
+        let copyPayload = { ...this.payload };
+        copyPayload[key] = value;
+        this.payload = copyPayload;
+        return this;
+    }
+    getData() {
+        // 저장해 둔 데이터를 사용합니다.
+        return this.payload;
     }
 }

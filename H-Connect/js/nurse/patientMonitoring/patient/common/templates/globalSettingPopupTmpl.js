@@ -25,6 +25,7 @@ const trendSecondRadioItem = ({ _item, _index, bioSignalsTrendSecond }) => {
 };
 
 export const globalSettingPopupTmpl = async () => {
+    // 글로벌 세팅 팝업
     const { globalVariableSetting } = await SelectGlobalSetting();
     const { bioSignalsTrendSecond } = globalVariableSetting || {};
     const settingSeconds = [

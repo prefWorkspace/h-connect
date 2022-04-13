@@ -8,6 +8,7 @@ const { CreateVitalLineD3 } = await import(
 );
 
 /* s : ecg vital test */
+/* 예상 바이탈 사인 데이터 소켓 렌더링 -> 임시 주석처리 오류가 있어 추후 작업예정
 let vitalSignalLine = null;
 const ecgPatientdata = new socketGetPatientData();
 ecgPatientdata.update((_data) => {
@@ -28,4 +29,5 @@ ecgPatientdata.update((_data) => {
         vitalSignalLine.chartUpdate(ecgDataList);
     }
 });
+*/
 /* e : ecg vital test */

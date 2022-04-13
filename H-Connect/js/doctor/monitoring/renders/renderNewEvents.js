@@ -31,7 +31,7 @@ export async function renderNewEventList(_eventList) {
         </p>
     </div>
     <div class="alarm">
-        <p><span>${_eventList.length}</span> 개의 확인하지 않은 이벤트</p>
+        <p><span>${eventList.length}</span> 개의 확인하지 않은 이벤트</p>
         <div>
             <button type="button" class="btn_new on">
                 신규 이벤트
@@ -44,7 +44,7 @@ export async function renderNewEventList(_eventList) {
     <div class='ecglist'>`;
 
     // render NewEventList
-    _eventList.forEach((evt) => {
+    eventList.forEach((evt) => {
         templateNewEventList += eventListItem(evt);
     });
     templateNewEventList += '</div>';

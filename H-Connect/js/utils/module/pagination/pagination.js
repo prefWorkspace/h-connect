@@ -14,6 +14,10 @@ new CreatePagination({
     templates: {
         listItem: tabularTrendListTmpl, // 리스트 아이템 템플릿
     },
+    afterRender: (target)=>{
+        // 렌더링이 끝난 직후 함수를 정의해 줄 수 있습니다.
+        // 1번째 인자값으로 class pagination을 반환합니다.
+    }
     link: {
         keepParams: ['measurement_code'], // 유지되어야 할 url 파라미터
     },
@@ -46,11 +50,7 @@ export const SelectBioSignalsTrendDataPage = async (_page) => {
     return {
         page: _page,
         totalCount: res.totalCount,
-        records:
-            res.bioSignalsTrendDataList &&
-            res.bioSignalsTrendDataList.map((record) => ({
-                ...record,
-            })),
+        records: 리스트값
     };
 };
 
@@ -66,7 +66,7 @@ export class CreatePagination {
     }
 
     async renderMain() {
-        const { API, target, templates } = this.initData || {};
+        const { API, target, templates, afterRender } = this.initData || {};
         const historyPage = history.getParams('page');
         const resPage = parseInt(historyPage, 10) || 1;
         const { page, records, totalCount } = await API(resPage);
@@ -78,11 +78,16 @@ export class CreatePagination {
         });
         let _html = '';
         if (totalCount && records) {
-            _html = records?.htmlFor((_item) => {
-                return templates?.listItem(_item);
-            });
+            for await (const _item of records) {
+                _html += await templates?.listItem(_item);
+            }
         }
         $(`${target?.listWrap}`).html(_html);
+        this.wrapElement = $(`${target?.listWrap}`);
+        if (afterRender) {
+            // 렌더링이 끝난 직후 실행 함수
+            afterRender(this);
+        }
     }
 
     renderPagination(_listData) {
@@ -96,7 +101,7 @@ export class CreatePagination {
             window.history.replaceState(
                 '',
                 '',
-                `${_origin + _pathname}?${window.paramFindToKeepParam()}&page=${
+                `${_origin + _pathname}?${this.paramFindToKeepParam()}&page=${
                     page - 1
                 }`
             );
