@@ -11,24 +11,27 @@ const { UpdateAlarmSettingMeasurement, SelectMeasurementInfoDetail } =
     );
 
 /* s : bioSignal SimpleData */
-const bioSignalSimplData = new fakeSoketBioSignalSimpleData();
-bioSignalSimplData.update((_data) => {
-    const { bioSignalSimpleData } = _data || {};
-    const { hr, spo2, resp, ews, pulse, temp } = bioSignalSimpleData || {};
-    simpleDataVal('hr', hr);
-    simpleDataVal('sp', spo2);
-    simpleDataVal('resp', resp);
-    simpleDataVal('ews', ews);
-    simpleDataVal('pulse', pulse);
-    simpleDataVal('temp', temp);
-});
-
+// 예상 simple data 소켓 fake data
+// const bioSignalSimplData = new fakeSoketBioSignalSimpleData();
+// bioSignalSimplData.update((_data) => {
+//     const { bioSignalSimpleData } = _data || {};
+//     const { hr, spo2, resp, ews, pulse, temp } = bioSignalSimpleData || {};
+//     simpleDataVal('hr', hr);
+//     simpleDataVal('sp', spo2);
+//     simpleDataVal('resp', resp);
+//     simpleDataVal('ews', ews);
+//     simpleDataVal('pulse', pulse);
+//     simpleDataVal('temp', temp);
+// });
 /* e : bioSignal SimpleData */
+
 export const vitalSimpleDataInit = (_data) => {
+    // simple data 공통 렌더링
     currentVitalMinMaxRender(_data);
     currentVitalAlarmRender(_data);
 };
 const currentVitalAlarmRender = (_data) => {
+    // 알람 켜져있는지 아닌지 렌더링
     const {
         hrAlertAlarm,
         spo2AlertAlarm,
@@ -45,6 +48,7 @@ const currentVitalAlarmRender = (_data) => {
 
 /* s : bioSignal minMax render */
 const currentVitalMinMaxRender = (_data) => {
+    // 바이탈 min max 값 렌더링
     const {
         heartRateMin,
         heartRateMax,
@@ -67,6 +71,7 @@ function simpleDataVal(_target, _value) {
     $(`#tab-1 .${_target} .bell_num .value`).text(_value);
 }
 function simpleMinMax(_target, [_min, _max]) {
+    // min max 값 처리
     const $wrapEl = $(`#tab-1 .${_target} .bell_num .minMax`).find('p');
     $wrapEl.eq(0).text(_max);
     $wrapEl.eq(1).text(_min);
@@ -80,7 +85,9 @@ function simpleAlarmSetting(_target, _alramState) {
     // 알람 버튼 클릭 시 알람 on/off 기능
     alarmChangeState({ _target, $alarmInputEl });
 }
+
 function alarmChangeState({ _target, $alarmInputEl }) {
+    // 해당 input change 가 일어나면 알람 상태 update
     const _alarmKey = {
         hr: 'hrAlertAlarm',
         sp: 'spo2AlertAlarm',
