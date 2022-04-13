@@ -5,7 +5,7 @@ export function wardList(item) {
     return `
         <div class="cont">
             <div class="ward_list" data-wardcode=${item.wardCode}>
-                <p>${item.ward}</p>
+                <p id="ward">${item.ward}</p>
                 <div class="ward_count">
                     <p>
                         <span>${item.wardPatientCount}</span> 명의 환자 입원 중

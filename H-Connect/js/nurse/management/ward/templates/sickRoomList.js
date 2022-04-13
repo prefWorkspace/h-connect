@@ -4,8 +4,8 @@ export function sickRoomList(item) {
     return `
         <div class="ward_list" data-sickroomcode=${item.sickRoomCode}>
             <p>
-                <span>${item.sickRoom}</span> 호실.
-                <span>${item.numberPatientRoom}</span>인실
+                <span id="sickRoom">${item.sickRoom}</span> 호실.
+                <span id="patientNumber">${item.numberPatientRoom}</span>인실
             </p>
 
             <div class="ward_count">

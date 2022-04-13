@@ -26,6 +26,10 @@ const { userCode: requester, organizationCode } = CONSTANT.userData;
 //수정 api
 export async function updateWardAPI(wardCode, orderNumber, deactivate) {
     const _ward = $('.update_ward .content #ward_Name').val();
+
+    if (_ward === '') {
+        return;
+    }
     const _req = JSON.stringify({
         wardCode,
         orderNumber,
@@ -96,6 +100,11 @@ export async function deleteWard() {
 export async function insertWard() {
     const _ward_Name = $('.new_ward .content #ward_Name').val();
     const _orderNumber = $('.nurse .ward .cont').length + 1;
+
+    if (_ward_Name === '') {
+        return;
+    }
+
     const _req = JSON.stringify({
         ward: _ward_Name,
         _orderNumber,
@@ -145,8 +154,10 @@ export async function updateWard() {
             _wardCode = $(this).data('wardcode');
             _orderNumber = $(this).data('on');
             _deactivate = $(this).data('deactivate');
+            const ward = $(this).parent().parent().find('#ward').text();
+            $('.pop.update_ward #ward_Name').val(ward);
         });
-    $('.update_ward .btn_list .btn_cancel').on('click', () => {
+    $('.update_ward .btn_list .btn_cancel').on('click', function () {
         $('.pop.update_ward .overlay').fadeOut();
     });
     $('.update_ward .btn_list #ward_update_Button').on('click', () =>
