@@ -891,15 +891,7 @@ const VERSION = {
                     },
                 },
                 event: {
-                    actions: {
-                        'eventSimpleDetailActions.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/event/actions/',
-                            version: '2022.04.12.14.33',
-                        },
-                    },
+                    actions: {},
                     renders: {
                         'renderEventSimpleList.js': {
                             type: 'module',

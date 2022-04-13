@@ -1,4 +1,9 @@
-const { SelectBioSignalEventSimplePage, SelectBioSignalEvent } = await import(
+const {
+    SelectBioSignalEventSimplePage,
+    SelectBioSignalEvent,
+    UpdateBioSignalEvent,
+    DeleteBioSignalEvent,
+} = await import(
     importVersion(
         '/H-Connect/js/nurse/patientMonitoring/common/actions/patientMonitoringAPI.js'
     )
@@ -22,33 +27,11 @@ const { eventDeletePopupTmpl } = await import(
         '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/eventDeletePopupTmpl.js'
     )
 );
+// 페이지네이션 처리와 팝업처리, 등등 한번에 처리하면 용이한 부분이 많아 액션함수도 한 파일에서 처리.
 
 const createEventSimpleTabController = () => {
-    const deleteEventPopup = new PopupController({
-        target: {
-            openButton: '#event_table_wrap .btn_delete',
-            appendWrap: '.event_delete_popup_wrap',
-        },
-        templates: {
-            popup: eventDeletePopupTmpl,
-        },
-        popupBtn: {
-            cancelBtn: {
-                target: '.btn_no',
-                close: true,
-            },
-            deleteBtn: {
-                target: '.btn_delete',
-                close: true,
-                action: async (_this) => {
-                    const { eventid } = _this.getData();
-                    // 클릭시 실행될 함수 선언 함수가 다 실행이 된 후 팝업이 닫힙니다.
-                },
-            },
-        },
-    });
     // 이벤트 탭 리스트 페이지네이션 생성
-    new CreatePagination({
+    const eventListPagination = new CreatePagination({
         API: SelectBioSignalEventSimplePage,
         target: {
             listWrap: '#event_table_wrap .table_body .table_list_wrap',
@@ -62,6 +45,39 @@ const createEventSimpleTabController = () => {
         },
         link: {
             keepParams: ['measurement_code', 'tab'],
+        },
+    });
+
+    const deleteEventPopup = new PopupController({
+        target: {
+            openButton: '#event_table_wrap .btn_delete',
+            appendWrap: '.event_delete_popup_wrap',
+        },
+        templates: {
+            popup: eventDeletePopupTmpl,
+        },
+        popupBtn: {
+            cancelBtn: {
+                target: '.btn_no',
+                close: true,
+                action: (_this) => {
+                    // 클릭한 객체의 id 를 팝업에 임시 전달
+                    _this.saveData('eventId', null);
+                },
+            },
+            deleteBtn: {
+                target: '.btn_delete',
+                close: true,
+                action: async (_this) => {
+                    const { eventid } = _this.getData();
+                    const deleteSuccess = await DeleteBioSignalEvent(eventid);
+                    if (deleteSuccess) {
+                        eventListPagination.renderMain();
+                    } else {
+                        alert('선택한 이벤트 삭제에 실패했습니다.');
+                    }
+                },
+            },
         },
     });
 
@@ -85,7 +101,6 @@ const createEventSimpleTabController = () => {
                         .html(eventSimpleDataDetailTmpl(bioSignalEvent));
                     // confirm 버튼 클릭 이벤트 추가
                     addEventOnClickConfirm(_$tableItemEl, _this);
-                    addEventOnClickDelete(_$tableItemEl, _this);
                 }
                 // 클릭한 객체의 id 를 팝업에 임시 전달
                 deleteEventPopup.saveData('eventId', _getEventId);
@@ -110,18 +125,6 @@ const createEventSimpleTabController = () => {
                 const _getEventId = getEventId(_$tableItemEl);
                 console.log('_getEventId: ', _getEventId);
             });
-    };
-
-    // delete버튼 클릭 시
-
-    const addEventOnClickDelete = (_$tableItemEl, _this) => {
-        // delete 버튼 클릭 이벤트
-        const { wrapElement, renderMain } = _this || {};
-        // wrapElement.find('.table_content .btn_confirm').on('click', (e) => {
-        //     const _getEventId = getEventId(_$tableItemEl);
-        //     console.log('_getEventId: ', _getEventId);
-        //     // deleteEventPopup.dataSave('eventId', _getEventId);
-        // });
     };
 
     const getEventId = (_targetEl) => {
