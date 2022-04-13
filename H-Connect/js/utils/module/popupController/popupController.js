@@ -57,6 +57,7 @@ export class PopupController {
 
                             $(target?.appendWrap)
                                 .find(btnTarget)
+                                .off()
                                 .on('click', async () => {
                                     if (btnAction) {
                                         await btnAction(this);

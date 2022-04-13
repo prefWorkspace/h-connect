@@ -184,6 +184,19 @@ const VERSION = {
             },
         },
     },
+    common: {
+        header: {
+            actions: {
+                'accountPopupActions.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/common/header/actions/',
+                    version: '2022.04.13.12.01',
+                },
+            },
+        },
+    },
     doctor: {
         monitoring: {
             actions: {
@@ -816,13 +829,6 @@ const VERSION = {
                             version: '2022.03.30.12.18',
                         },
                         'fakeSocket.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
-                            version: '2022.03.30.12.18',
-                        },
-                        'streamingCurrentVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
