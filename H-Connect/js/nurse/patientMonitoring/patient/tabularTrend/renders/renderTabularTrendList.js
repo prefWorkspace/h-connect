@@ -14,7 +14,7 @@ const { tabularTrendListTmpl } = await import(
     )
 );
 
-new CreatePagination({
+const tabularTrendListPagination = new CreatePagination({
     API: SelectBioSignalsTrendDataPage,
     target: {
         listWrap: '#tabular_table_wrap .table_body',

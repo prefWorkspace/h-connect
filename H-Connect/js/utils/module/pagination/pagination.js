@@ -87,6 +87,7 @@ export class CreatePagination {
         if (afterRender) {
             // 렌더링이 끝난 직후 실행 함수
             afterRender(this);
+            return this;
         }
     }
 
