@@ -1753,22 +1753,24 @@ textarea::-webkit-scrollbar-button {
 
 /*====================== 간호사 팝업 ======================*/
 /* 공통 팝업(파란색) */
-.pop.check_bl .pop_cont{
+.pop.check_bl .pop_cont,
+.pop.lg_btn .pop_cont{
     height: 360px;
     padding: 64px 0 48px;
     text-align: center;
 }
 
-.pop.check_bl .img{
+.pop.check_bl .img,
+.pop.lg_btn .img{
     width: 46px;
     height: 32px;
     margin: 0 auto 48px;
 }
 
-.pop.check_bl img{width: 100%; height: 100%;}
+.pop.check_bl img, .pop.lg_btn img{width: 100%; height: 100%;}
 
-.pop.check_bl h3{font-size: 16px;}
-.pop.check_bl h2{margin:8px 0 0;font-size: 24px; color: #007a94;}
+.pop.check_bl h3, .pop.lg_btn h3{font-size: 16px;}
+.pop.check_bl h2, .pop.lg_btn h2{margin:8px 0 0;font-size: 24px; color: #007a94;}
 .pop.check_bl .pop_cont .btn_list{
     margin: 48px 0 0;
     display: flex;
@@ -1778,6 +1780,23 @@ textarea::-webkit-scrollbar-button {
 }
 .pop.check_bl button{width: 128px;  height: 48px; font-size: 16px;}
 .pop.check_bl .pop_cont .btn_list button:first-child{margin-right: 16px;}
+.pop.check_bl button:last-child{background: #007a94; color: #fff;}
+
+/* 빨간색공통 */
+.pop.check_bl.rd button:last-child{background: #940045;}
+.pop.check_bl.rd h2{color: #940045;}
+
+/* 하나의 버튼 */
+.pop.lg_btn button{
+    width: 272px;
+    height: 48px;
+    margin: 48px auto 0;
+    background: #007a94;
+    font-size: 16px;
+    color: #fff;
+    display: inline-block;
+}
+
 /* 로그아웃 팝업 */
 .pop.logout {
     width: 304px;
