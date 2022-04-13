@@ -1696,56 +1696,80 @@ $(function () {
         $('.ocs .cont').hide();
         $('.remote .ocs').removeClass('on');
         $('.remote .ocs').toggleClass('fold');
-        $('.remote .ocs .btn_full').find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-    })
+        $('.remote .ocs .btn_full')
+            .find('img')
+            .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+    });
 
     // btn_full
     $('.remote .pacs .btn_full').on('click', function () {
         $('.pacs').toggleClass('on');
-        if($('.pacs').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
-    })
+        if ($('.pacs').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
+    });
     $('.remote .vital .btn_full').on('click', function () {
         $('.vital').toggleClass('on');
-        if($('.vital').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
-    })
+        if ($('.vital').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
+    });
     $('.remote .lab .btn_full').on('click', function () {
         $('.lab').toggleClass('on');
-        if($('.lab').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
-    })
+        if ($('.lab').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
+    });
     $('.remote .emr .btn_full').on('click', function () {
         $('.emr').toggleClass('on');
-        if($('.emr').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
-    })
+        if ($('.emr').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
+    });
     $('.remote .ocs .btn_full').on('click', function () {
         $('.ocs').toggleClass('on');
         $('.ocs .cont').show();
-        if($('.ocs').hasClass('on')){
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/redo.svg');
-        }else{
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
-        };
+        if ($('.ocs').hasClass('on')) {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/redo.svg');
+        } else {
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
+        }
 
-        if($('.ocs').hasClass('fold')){
+        if ($('.ocs').hasClass('fold')) {
             $('.ocs .cont').show();
             $('.ocs').removeClass('on');
             $('.ocs').removeClass('fold');
-            $(this).find('img').attr('src', '/H-Connect/img/icon/nurse/full.svg');
+            $(this)
+                .find('img')
+                .attr('src', '/H-Connect/img/icon/nurse/full.svg');
         }
     });
 
@@ -1789,6 +1813,11 @@ $(function () {
         $('.pop.you_send .overlay').fadeIn();
     });
 
+    // 메세지창 작성 이미지 닫기
+    $('.pop.you_send .overlay .btn_check').on('click', function () {
+        $('.pop.you_send .overlay').fadeOut();
+    });
+
     $('.remote .patient_view .title .btn_list button').on('click', function () {
         $(this).addClass('on');
         $('.remote .patient_view .title .btn_list button')
@@ -1828,10 +1857,10 @@ $(function () {
     });
 
     // 의료진 선택 팝업 아코디언
-    $('.pop.send_doctor .medical_depart .title').click(function(){
+    $('.pop.send_doctor .medical_depart .title').click(function () {
         $(this).toggleClass('active');
         $(this).siblings().slideToggle(300);
-    })
+    });
 });
 
 // 탭메뉴
@@ -2065,6 +2094,17 @@ $('.pop.regi_device .selectBox2 .optionItem').on('click', function () {
     const deviceName = $(this).text();
     $(this).addClass('active').siblings().removeClass('active');
     $('.pop.regi_device .selectBox2 .label').text(deviceName);
+    $(this).parent().parent().toggleClass('active');
+});
+
+$('.pop.update_device .selectBox2 .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.pop.update_device .selectBox2 .optionItem').on('click', function () {
+    const deviceName = $(this).text();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.pop.update_device .selectBox2 .label').text(deviceName);
     $(this).parent().parent().toggleClass('active');
 });
 

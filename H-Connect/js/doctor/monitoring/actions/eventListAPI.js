@@ -19,13 +19,16 @@ const { renderPreEventList } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/renders/renderPreEvents.js')
 );
 
-const { insertNewEventScreen } = await import(
-    importVersion('/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js')
-);
+const { insertNewEventScreen, insertPreEventScreen, deleteBioSignalEvent } =
+    await import(
+        importVersion(
+            '/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js'
+        )
+    );
 
-export async function selectBioSignalEvemtSimpleList() {
+export async function selectBioSignalEvemtSimpleList(confirm) {
     const req = JSON.stringify({
-        confirm: 2,
+        confirm,
         order: 'DESC',
         ...commonRequest(),
     });
@@ -46,25 +49,28 @@ export async function selectBioSignalEvemtSimpleList() {
 
     return result;
 }
+
 export async function insertNewEventList() {
-    let res = await selectBioSignalEvemtSimpleList();
+    let res = await selectBioSignalEvemtSimpleList(2);
     let eventList = res.bioSignalEventSimpleList;
     await renderNewEventList(eventList);
 
     $('.section.new_patient.new .ecglist').children().first().addClass('on');
     selectedEventId = $('.section.new_patient.new .row.on').data('id');
-    eventList.forEach(list => {
+    eventList.forEach((list) => {
         if (list.bioSignalEventId === selectedEventId) {
             insertNewEventScreen(list);
             return false;
         }
-    })
+    });
 
     // Add Event To Select Pre Events Btn
     $('.btn_pre').on('click', async function () {
         await insertEventList('PRE');
         $('.section.new_patient.new').css('display', 'none');
-        $('.section.new_patient.pre').css('display', 'BLOCK');
+        $('.section.rhythm.new_rhythm').css('display', 'none');
+        $('.section.new_patient.pre').css('display', 'block');
+        $('.section.rhythm.pre_rhythm').css('display', 'block');
     });
 
     // Add Event To New Event List
@@ -74,28 +80,36 @@ export async function insertNewEventList() {
         const $this = $(this);
         selectedEventId = $this.data('id');
         if (!$this.hasClass('on')) $this.addClass('on');
-        eventList.forEach(list => {
+        eventList.forEach((list) => {
             if (list.bioSignalEventId === selectedEventId) {
                 insertNewEventScreen(list);
                 return false;
             }
-        })
+        });
     });
 }
 
 export async function insertPreEventList() {
-    let res = await selectBioSignalEvemtSimpleList();
-    let eventList = res.bioSignalEventSimpleList;
+    let res = await selectBioSignalEvemtSimpleList(0);
+    let eventList = res.bioSignalEventSimpleList.slice(0, 10);
     await renderPreEventList(eventList);
 
     $('.section.new_patient.pre .ecglist').children().first().addClass('on');
     selectedEventId = $('.section.new_patient.pre .row.on').data('id');
+    eventList.forEach((list) => {
+        if (list.bioSignalEventId === selectedEventId) {
+            insertPreEventScreen(list);
+            return false;
+        }
+    });
 
     // Add Event To Select New Events Btn
     $('.btn_new').on('click', async function () {
         await insertEventList('NEW');
         $('.section.new_patient.pre').css('display', 'none');
-        $('.section.new_patient.new').css('display', 'BLOCK');
+        $('.section.rhythm.pre_rhythm').css('display', 'none');
+        $('.section.new_patient.new').css('display', 'block');
+        $('.section.rhythm.new_rhythm').css('display', 'block');
     });
 
     // Add Event To New Event List
@@ -105,6 +119,21 @@ export async function insertPreEventList() {
         const $this = $(this);
         selectedEventId = $this.data('id');
         if (!$this.hasClass('on')) $this.addClass('on');
+        eventList.forEach((list) => {
+            if (list.bioSignalEventId === selectedEventId) {
+                insertPreEventScreen(list);
+
+                $('.title_preSection .btn_delete').on('click', function () {
+                    selectedEventId = $(
+                        '.section.new_patient.pre .row.on'
+                    ).data('id');
+                    console.log(selectedEventId);
+                    deleteBioSignalEvent(selectedEventId);
+                    insertEventList('PRE');
+                });
+                return false;
+            }
+        });
     });
 
     // Add Event to Search Button

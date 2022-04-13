@@ -5782,6 +5782,7 @@ textarea::-webkit-scrollbar-button {
     border-radius: 4px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
 .pop.you_send .small_view .swiper-slide::after {
