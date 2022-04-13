@@ -28,8 +28,12 @@ let { updateDeviceList } = await import(
     )
 );
 
-const { device_NameToType, device_TypeToName } = await import(
+const { device_NameToType } = await import(
     importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
+);
+
+const { getMacaddress } = await import(
+    importVersion('/H-Connect/js/utils/custom/utils.js')
 );
 
 //병상 수정 디바이스 리스트
@@ -41,6 +45,8 @@ const { modifiDeviceList } = await import(
 
 const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 await createMeasureList(measurementInfoSimpleList);
+console.log('measurementInfoSimpleList===');
+console.log(measurementInfoSimpleList);
 
 //측정 종료 버튼 클릭시, 측정 종료 버튼 모달창 띄우기
 function recodingEndPopOpen() {
@@ -54,7 +60,7 @@ function recodingEndPopOpen() {
     $('.pop.end_measure .btn_list .btn_cut').attr('data-route', API_ROUTE);
 }
 
-// 병상 정보수정 장치 수정 제거 추가 이벤트
+// 병상 정보수정 장치 수정 제거 모달창 이벤트
 async function updateSickBed_updateDevice() {
     //병상 정보 수정 "장치수정 버튼"
     $('.section.modifi_hospital .device_room .device_Item .bl').on(
@@ -72,6 +78,7 @@ async function updateSickBed_updateDevice() {
                 .find('p:nth-of-type(1)')
                 .text();
             const deviceInfoId = $(this).data('deviceinfoid');
+            const measurementCode = $(this).data('measurementcode');
 
             $('.pop.update_device .content .selectBox2 .left_label').text(
                 deviceName
@@ -82,9 +89,15 @@ async function updateSickBed_updateDevice() {
                 'data-deviceinfoId',
                 deviceInfoId
             );
+
+            $('.pop.update_device .btn_list .btn_check').attr(
+                'data-measurementcode',
+                measurementCode
+            );
         }
     );
 
+    //병상 정보 수정 "장치삭제 버튼"
     $('.section.modifi_hospital .device_room .device_Item .btn_delete').on(
         'click',
         function () {
@@ -128,19 +141,31 @@ async function updateDevicePop() {
         deviceName.replaceAll(' ', '').replaceAll('\n', '')
     );
     const serialNumber = $('.pop.update_device .content input').val();
-    const deviceInfoId = $(this).attr('data-deviceinfoid');
-    let updateItem = {};
-    updateDeviceList.forEach((value, index) => {
-        if (value.deviceInfoId == deviceInfoId) {
-            updateItem = { ...value, serialNumber, deviceType };
-        }
-    });
+    const deviceInfoId = +$(this).attr('data-deviceinfoid');
+    const measurementCode = $(this).attr('data-measurementcode');
+    // let updateItem = {};
+    // updateDeviceList.forEach((value, index) => {
+    //     if (value.deviceInfoId == deviceInfoId) {
+    //         updateItem = { ...value, serialNumber, deviceType };
+    //     }
+    // });
 
-    const newArr = updateDeviceList.filter(
-        (item) => item.deviceInfoId != deviceInfoId
-    );
+    // const newArr = updateDeviceList.filter(
+    //     (item) => item.deviceInfoId != deviceInfoId
+    // );
 
-    updateDeviceList = [...newArr, updateItem];
+    // updateDeviceList = [...newArr, updateItem];
+    const deviceInfo = {
+        measurementCode,
+        deviceInfoId,
+        serialNumber,
+        deviceType,
+        macAddress: getMacaddress(deviceType, serialNumber),
+    };
+
+    const aaa = await updateDeviceInfo(deviceInfo);
+    console.log('aaa===');
+    console.log(aaa);
 
     $(
         `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(1)`

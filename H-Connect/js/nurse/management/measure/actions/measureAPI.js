@@ -59,8 +59,6 @@ export async function insertMeasurementInfo(codeObj, patientData) {
         organizationCode,
         orderNumber: 1,
     };
-    console.log('obj====');
-    console.log(obj);
     //birthday 값이 좀 상이함. 이거는 API 업데이트되는데로 수정
 
     return serverController.ajaxAwaitController(
@@ -173,7 +171,14 @@ export async function deleteMeasurementInfo(measureMentCode, route) {
 }
 
 // 병상 정보 수정에서 장치 수정 API
-export async function updateDeviceInfo(obj) {
+export async function updateDeviceInfo(deviceInfo) {
+    const obj = {
+        ...commonRequest(),
+        requester,
+        ...deviceInfo,
+    };
+    console.log('obj===');
+    console.log(obj);
     return serverController.ajaxAwaitController(
         'API/Measurement/UpdateDeviceInfo',
         'POST',

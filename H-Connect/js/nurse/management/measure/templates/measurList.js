@@ -65,7 +65,9 @@ export function measureList(data_List) {
             </div>
 
             <div class="btn_list">
-                <button type="button" class="btn rdf btn_end" data-measurementcode=${measurementCode} data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}" data-route=${apiRoute}>측정종료</button>
+                <button ${
+                    measurementStatus === 1 && 'disabled'
+                } type="button" class="btn rdf btn_end" data-measurementcode=${measurementCode} data-sickroomcode="${sickRoomCode}" data-wardcode="${wardCode}" data-sickbedcode="${sickBedCode}" data-route=${apiRoute}>측정종료</button>
             </div>
         </div>
     `;
@@ -80,6 +82,7 @@ export function modifiDeviceList(item) {
             <div class="btn_list">
                 <button
                     data-deviceinfoid="${item.deviceInfoId}"
+                    data-measurementcode="${item.measurementCode}"
                     type="button"
                     class="btn bl"
                 >
