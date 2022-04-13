@@ -23,9 +23,9 @@ const { insertNewEventScreen } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js')
 );
 
-export async function selectBioSignalEvemtSimpleList() {
+export async function selectBioSignalEvemtSimpleList(confirm) {
     const req = JSON.stringify({
-        confirm: 2,
+        confirm,
         order: 'DESC',
         ...commonRequest(),
     });
@@ -47,7 +47,7 @@ export async function selectBioSignalEvemtSimpleList() {
     return result;
 }
 export async function insertNewEventList() {
-    let res = await selectBioSignalEvemtSimpleList();
+    let res = await selectBioSignalEvemtSimpleList(2);
     let eventList = res.bioSignalEventSimpleList;
     await renderNewEventList(eventList);
 
@@ -84,8 +84,8 @@ export async function insertNewEventList() {
 }
 
 export async function insertPreEventList() {
-    let res = await selectBioSignalEvemtSimpleList();
-    let eventList = res.bioSignalEventSimpleList;
+    let res = await selectBioSignalEvemtSimpleList(0)
+    let eventList = res.bioSignalEventSimpleList.slice(0, 10);
     await renderPreEventList(eventList);
 
     $('.section.new_patient.pre .ecglist').children().first().addClass('on');
