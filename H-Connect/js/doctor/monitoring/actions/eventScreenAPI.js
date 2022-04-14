@@ -17,9 +17,11 @@ const { renderNewEventScreen, renderPreEventScreen } = await import(
 // );
 
 export async function updateBioSignalEvent(_bse, confirm) {
+    const { bioSignalEventId, measurementCode } = _bse;
     const req = JSON.stringify({
         ...commonRequest(),
-        bioSignalEventId: _bseId,
+        measurementCode,
+        bioSignalEventId,
         confirm,
     });
 

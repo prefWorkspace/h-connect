@@ -19,12 +19,14 @@ const { renderPreEventList } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/renders/renderPreEvents.js')
 );
 
-const { insertNewEventScreen, insertPreEventScreen, deleteBioSignalEvent } =
-    await import(
-        importVersion(
-            '/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js'
-        )
-    );
+const {
+    insertNewEventScreen,
+    insertPreEventScreen,
+    updateBioSignalEvent,
+    deleteBioSignalEvent,
+} = await import(
+    importVersion('/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js')
+);
 
 export async function selectBioSignalEvemtSimpleList(confirm) {
     const req = JSON.stringify({
@@ -34,23 +36,21 @@ export async function selectBioSignalEvemtSimpleList(confirm) {
     });
 
     let result = {};
-    return {
-        bioSignalEventSimpleList: null,
-        error: 0,
-        extra: '',
-        message: null,
-        remoteIp: null,
-        result: true,
-        totalCount: 0,
-    };
+    // return {
+    //     bioSignalEventSimpleList: null,
+    //     error: 0,
+    //     extra: '',
+    //     message: null,
+    //     remoteIp: null,
+    //     result: true,
+    //     totalCount: 0,
+    // };
     await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBioSignalEventSimpleList',
         'POST',
         req,
         (res) => {
             result = res;
-            console.log(result);
-            result.bioSignalEventSimpleList = null;
         },
         (err) => {
             console.log(err);
@@ -61,8 +61,8 @@ export async function selectBioSignalEvemtSimpleList(confirm) {
 }
 
 export async function insertNewEventList() {
-    let res = await selectBioSignalEvemtSimpleList(2);
-    let eventList = res.bioSignalEventSimpleList;
+    let res = await selectBioSignalEvemtSimpleList(0);
+    let eventList = res.bioSignalEventSimpleList?.slice(0, 10);
     await renderNewEventList(eventList);
     if (!eventList) {
         insertNewEventScreen(null);
@@ -76,6 +76,10 @@ export async function insertNewEventList() {
         eventList.forEach((list) => {
             if (list.bioSignalEventId === selectedEventId) {
                 insertNewEventScreen(list);
+                $(document).on('click', '.event .btn_con', function () {
+                    updateBioSignalEvent(list, 2);
+                    insertNewEventList();
+                });
                 $(document).on('click', '.event .btn_delete', function () {
                     deleteBioSignalEvent(list);
                     insertNewEventList();
@@ -94,6 +98,10 @@ export async function insertNewEventList() {
             eventList.forEach((list) => {
                 if (list.bioSignalEventId === selectedEventId) {
                     insertNewEventScreen(list);
+                    $(document).on('click', '.event .btn_con', function () {
+                        updateBioSignalEvent(list, 2);
+                        insertNewEventList();
+                    });
                     $(document).on('click', '.event .btn_delete', function () {
                         deleteBioSignalEvent(list);
                         insertNewEventList();
@@ -115,8 +123,8 @@ export async function insertNewEventList() {
 }
 
 export async function insertPreEventList() {
-    let res = await selectBioSignalEvemtSimpleList(0);
-    let eventList = res.bioSignalEventSimpleList?.slice(0, 10);
+    let res = await selectBioSignalEvemtSimpleList(2);
+    let eventList = res.bioSignalEventSimpleList;
     await renderPreEventList(eventList);
     if (!eventList) {
         insertPreEventScreen(null);
