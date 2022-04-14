@@ -1,8 +1,9 @@
 const {
     selectMeasurementInfoList,
     recodingEndMeasurementInfo,
-    updateDeviceInfo,
-    deleteDeviceInfo,
+    updateMeasurement_updateDeviceInfo,
+    updateMeasurement_deleteDeviceInfo,
+    updateMeasurement_insertDevice,
 } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/measureAPI.js'
@@ -136,7 +137,7 @@ async function updateSickBed_updateDevice() {
 }
 
 //장치 수정 로직
-// updateDeviceList 이 배열로 updateDeviceInfo API 연동 하면됨
+// updateDeviceList 이 배열로 updateMeasurement_updateDeviceInfo API 연동 하면됨
 async function updateDevicePop() {
     const deviceName = $(
         '.pop.update_device .content .selectBox2 .left_label'
@@ -168,7 +169,7 @@ async function updateDevicePop() {
         macAddress: getMacaddress(deviceType, serialNumber),
     };
 
-    const { result } = await updateDeviceInfo(deviceInfo);
+    const { result } = await updateMeasurement_updateDeviceInfo(deviceInfo);
     if (result) {
         $(
             `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(1)`
@@ -189,13 +190,18 @@ async function deleteDevicePop() {
     const deviceId = +$(this).attr('data-deviceinfoid');
     deviceInfoIdList.push(deviceId);
 
-    const { result } = await deleteDeviceInfo(
+    const { result } = await updateMeasurement_deleteDeviceInfo(
         deviceInfoIdList,
         measurementCode
     );
     if (result) {
         $('.pop.delete_device .overlay').fadeOut();
     }
+}
+
+//병상 정보 수정에서 장치 추가
+async function updateSickBed_insertDevice() {
+    //여기부터작업
 }
 
 //측정현황 리스트 클릭 이벤트
