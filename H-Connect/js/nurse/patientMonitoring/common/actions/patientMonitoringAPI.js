@@ -192,7 +192,7 @@ export const SelectBioSignalEvent = async (_eventId) => {
 };
 
 /* 생체 신호 알림 confirm 업데이트 */
-export const UpdateBioSignalEvent = async ({ _eventId, _confirm }) => {
+export const UpdateBioSignalEvent = async (_eventId, _confirm) => {
     const res = await serverController.ajaxAwaitController(
         'API/BioSignal/UpdateBioSignalEvent',
         'POST',
@@ -221,7 +221,6 @@ export const DeleteBioSignalEvent = async (_eventId) => {
             bioSignalEventId: _eventId,
         })
     );
-    console.log(res);
     if (res.result) {
         return res;
     } else {

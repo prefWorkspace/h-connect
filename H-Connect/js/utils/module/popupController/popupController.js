@@ -3,7 +3,7 @@
 
 class 선언법
 
-const globalSettingPopup = new PopupController({
+const popupCreated = new PopupController({
     target: {
         openButton: '.btn_set', // 팝업 오픈용 클릭 타겟
         appendWrap: '.globalSetting_popup_wrap', // 팝업을 감싸는 타겟
@@ -28,6 +28,9 @@ const globalSettingPopup = new PopupController({
         },
     },
 });
+
+saveData , getData 를 통해 해당 모듈의 데이터를 저장 및 가져와 쓸 수 있는데,
+버튼 클릭 시에 저장된 데이터를 가져와 쓸 수 있도록 만들었다.
 
 */
 
