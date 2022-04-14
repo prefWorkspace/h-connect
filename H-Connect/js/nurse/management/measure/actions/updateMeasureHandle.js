@@ -99,8 +99,7 @@ async function updateMeasurement_wardSelectBoxHandle() {
 
 //병상 정보 수정 수정 버튼 이벤트
 //더 작업 해야함 장치 리스트 넘어오면 그때 한번에 작업
-function updateMeasurement_insertDevice() {
-    //지금 장치 리스트 제대로 안나옴
+function updateMeasurementHandle() {
     const name = $('.section.modifi_hospital .selectBox2 .name_label').text();
     const birthday = +$(
         '.section.modifi_hospital .patient_info .patient_age'
@@ -171,7 +170,7 @@ async function deleteMeasurement() {
 $('.pop.delete_measure .btn_list .btn_cut').on('click', deleteMeasurement);
 $('.section.modifi_hospital .btn_list .btn_new_hospital').on(
     'click',
-    updateMeasurement_insertDevice
+    updateMeasurementHandle
 );
 
 await updateMeasurement_wardSelectBoxHandle();

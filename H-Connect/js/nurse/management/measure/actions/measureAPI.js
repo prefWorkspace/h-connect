@@ -171,14 +171,14 @@ export async function deleteMeasurementInfo(measureMentCode, route) {
 }
 
 // 병상 정보 수정에서 장치 수정 API
-export async function updateDeviceInfo(deviceInfo) {
+export async function updateMeasurement_updateDeviceInfo(deviceInfo) {
     const obj = {
         ...commonRequest(),
         requester,
         ...deviceInfo,
     };
     return serverController.ajaxAwaitController(
-        'API/Measurement/UpdateDeviceInfo',
+        'API/Measurement/updateMeasurement_updateDeviceInfo',
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -191,7 +191,10 @@ export async function updateDeviceInfo(deviceInfo) {
 }
 
 // 병상 정보 수정에서 장치 삭제 API
-export async function deleteDeviceInfo(deviceInfoIdList, measurementCode) {
+export async function updateMeasurement_deleteDeviceInfo(
+    deviceInfoIdList,
+    measurementCode
+) {
     const obj = {
         ...commonRequest(),
         requester,
@@ -200,7 +203,7 @@ export async function deleteDeviceInfo(deviceInfoIdList, measurementCode) {
     };
 
     return serverController.ajaxAwaitController(
-        'API/Measurement/DeleteDeviceInfo',
+        'API/Measurement/updateMeasurement_deleteDeviceInfo',
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -212,6 +215,7 @@ export async function deleteDeviceInfo(deviceInfoIdList, measurementCode) {
     );
 }
 
+// 병상 정보 수정에서 장치 추가  API
 export async function updateMeasurement_insertDevice(
     measureMentCode,
     deviceInfoList
