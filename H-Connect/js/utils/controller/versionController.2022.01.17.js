@@ -253,12 +253,6 @@ const VERSION = {
                 file_path: '/H-Connect/js/doctor/monitoring/',
                 version: '2022.03.25.12.01',
             },
-            'dummyData.js': {
-                type: 'module',
-                url_path: '/doctor/monitoring',
-                file_path: '/H-Connect/js/doctor/monitoring/',
-                version: '2022.03.25.12.01',
-            },
         },
     },
     nurse: {

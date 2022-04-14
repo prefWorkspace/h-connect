@@ -12,11 +12,11 @@ const { renderNewEventScreen, renderPreEventScreen } = await import(
     )
 );
 
-let { selectedEventId } = await import(
-    importVersion('/H-Connect/js/doctor/monitoring/common.js')
-);
+// let { selectedEventId } = await import(
+//     importVersion('/H-Connect/js/doctor/monitoring/common.js')
+// );
 
-export async function updateBioSignalEvent(_bseId, confirm) {
+export async function updateBioSignalEvent(_bse, confirm) {
     const req = JSON.stringify({
         ...commonRequest(),
         bioSignalEventId: _bseId,
@@ -38,10 +38,12 @@ export async function updateBioSignalEvent(_bseId, confirm) {
     );
 }
 
-export async function deleteBioSignalEvent(_bseId) {
+export async function deleteBioSignalEvent(_bse) {
+    const { bioSignalEventId, measurementCode } = _bse;
     const req = JSON.stringify({
         ...commonRequest(),
-        bioSignalEventId: _bseId,
+        measurementCode,
+        bioSignalEventId,
     });
 
     await serverController.ajaxAwaitController(
@@ -67,4 +69,5 @@ export async function insertNewEventScreen(_bse) {
 export async function insertPreEventScreen(_bse) {
     if (!_bse) return;
     await renderPreEventScreen(_bse);
+    
 }

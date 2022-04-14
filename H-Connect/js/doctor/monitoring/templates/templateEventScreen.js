@@ -2,17 +2,17 @@
 
 export async function eventPatientInfo(_bse) {
     if (!_bse) return;
-    
+
     const { name, age, gender, patientCode } = _bse;
     return `
         <div>
             <h2>${name} (${age}. ${gender & 1 ? '남' : '여'})</h2>
             <p>${patientCode}</p>
         </div>
-    `
+    `;
 }
 
-export async function monitoringButton(){
+export async function monitoringButton() {
     return `
     <button type="button" class="btn_monitor">
                 
@@ -24,30 +24,30 @@ export async function monitoringButton(){
         </div>
         모니터링
     </button>
-    `
+    `;
 }
 
-export async function titleDate(_ymd, _hms){
+export async function titleDate(_ymd, _hms) {
     return `
         <div>
             <h2>${_ymd}</h2>
             &nbsp;
             <h2>${_hms}</h2>
         </div>
-    `
+    `;
 }
 
-export async function eventBasicInfo(_evtName, _evtDetail){
+export async function eventBasicInfo(_evtName, _evtDetail) {
     return `
     <div>
         <h2>${_evtName}</h2>
         &nbsp;
         <h2>${_evtDetail}</h2>
     </div>
-    `
+    `;
 }
 
-export async function screenRightBtnList(_type){
+export async function screenRightBtnList(_type) {
     return `
     <div class="right btn_list">
         <button
@@ -63,5 +63,5 @@ export async function screenRightBtnList(_type){
             confirm
         </button>
     </div>
-    `
+    `;
 }

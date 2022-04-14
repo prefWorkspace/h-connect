@@ -17,11 +17,13 @@ const {
 );
 
 export async function renderNewEventScreen(_bse) {
+    $('.event .title_preSection').html('');
     renderNewEventScreenTitleHead(_bse);
     renderNewEventScreenBodyTitle(_bse);
 }
 
 export async function renderPreEventScreen(_bse) {
+    $('.event .title_newSection').html('');
     renderPreEventScreenTitleHead(_bse);
     renderPreEventScreenBodyTitle(_bse);
 }
