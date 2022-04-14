@@ -38,6 +38,8 @@ const createEventSimpleTabController = () => {
             pagination: '#event_table_wrap .table_page',
         },
         templates: {
+            loading: true,
+            error: true,
             listItem: eventSimpleDataListTmpl,
         },
         afterRender: (_this) => {
