@@ -202,6 +202,7 @@ async function deleteDevicePop() {
 //병상 정보 수정에서 장치 추가
 async function updateSickBed_insertDevice() {
     //여기부터작업
+    //xxx
 }
 
 //측정현황 리스트 클릭 이벤트
