@@ -55,10 +55,9 @@ function onSearchStart() {
     );
     /* e: 환자 검색 기능 */
 
-    $searchInputEl.on('input', (e) => {
+    $searchInputEl.on('input', function () {
         // input의 길이가 0이되면 검색모드 종료
-        const _target = e.currentTarget;
-        if (_target.value.length <= 0) {
+        if ($(this).val().length <= 0) {
             $('.search_patient .wrap_inner').html('');
             $('.pop.search_patient').fadeOut();
             searchMode = false;
@@ -66,7 +65,7 @@ function onSearchStart() {
     });
 }
 function onSearchMode() {
-    $searchInputEl.on('click', () => {
+    $searchInputEl.on('click', function () {
         // 검색모드 시 환자리스트 영역 다시 보이기
         if (searchMode) {
             $('.pop.search_patient').fadeIn();
