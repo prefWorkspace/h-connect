@@ -118,11 +118,7 @@ export const SelectBioSignalsTrendDataPage = async (_page) => {
     return {
         page: _page,
         totalCount: res.totalCount,
-        records:
-            res.bioSignalsTrendDataList &&
-            res.bioSignalsTrendDataList.map((record) => ({
-                ...record,
-            })),
+        records: res.bioSignalsTrendDataList,
     };
 };
 
@@ -148,6 +144,81 @@ export const UpdateGlobalSetting = async (_trendSecond) => {
         JSON.stringify({
             ...commonRequest(),
             bioSignalsTrendSecond: _trendSecond,
+        })
+    );
+    if (res.result) {
+        return res;
+    } else {
+        return null;
+    }
+};
+
+/* 생체 신호 알림 페이지 조회 */
+export const SelectBioSignalEventSimplePage = async (_page) => {
+    const res = await serverController.ajaxAwaitController(
+        'API/BioSignal/SelectBioSignalEventSimplePage',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            pageNumber: _page,
+            count: 10,
+        })
+    );
+    return {
+        page: _page,
+        totalCount: res.totalCount,
+        records: res.bioSignalEventSimpleList,
+    };
+};
+
+/* 생체 신호 알림 상세 조회 */
+export const SelectBioSignalEvent = async (_eventId) => {
+    console.log('_eventId: ', _eventId);
+    const res = await serverController.ajaxAwaitController(
+        'API/BioSignal/SelectBioSignalEvent',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            bioSignalEventId: _eventId,
+        })
+    );
+    if (res.result) {
+        return res;
+    } else {
+        return null;
+    }
+};
+
+/* 생체 신호 알림 confirm 업데이트 */
+export const UpdateBioSignalEvent = async (_eventId, _confirm) => {
+    const res = await serverController.ajaxAwaitController(
+        'API/BioSignal/UpdateBioSignalEvent',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            bioSignalEventId: _eventId,
+            confirm: _confirm,
+        })
+    );
+    console.log(res);
+    if (res.result) {
+        return res;
+    } else {
+        return null;
+    }
+};
+/* 생체 신호 알림 삭제 */
+export const DeleteBioSignalEvent = async (_eventId) => {
+    const res = await serverController.ajaxAwaitController(
+        'API/BioSignal/DeleteBioSignalEvent',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            measurementCode: historyMeasurementCode,
+            bioSignalEventId: _eventId,
         })
     );
     if (res.result) {

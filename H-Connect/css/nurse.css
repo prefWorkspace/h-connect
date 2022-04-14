@@ -2435,7 +2435,7 @@
     background: #004f60;
 }
 
-.monitoring_patient .table_body .btn_confirm:disabled {
+.monitoring_patient .table_body .btn_confirm.disabled {
     background: #888;
     color: #444;
 }

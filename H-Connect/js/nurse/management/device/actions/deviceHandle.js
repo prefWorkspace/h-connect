@@ -40,7 +40,10 @@ $('.section.new_device .device_list .select_device .device_optionItem').on(
     function () {
         $('.section.new_device .device_list .search_container input').val('');
         const deviceType = $(this).data('type');
+        const deviceName = $(this).text();
         select_device(deviceType);
+        $(this).parent().parent().find('.label').text(deviceName);
+        $(this).parent().parent().removeClass('active');
     }
 );
 
@@ -52,6 +55,9 @@ $('.section.return_device .device_list .select_return .return_list').on(
             ''
         );
         const deviceType = $(this).data('type');
+        const deviceName = $(this).text();
         select_device_unused(deviceType, null);
+        $(this).parent().parent().find('.label').text(deviceName);
+        $(this).parent().parent().removeClass('active');
     }
 );

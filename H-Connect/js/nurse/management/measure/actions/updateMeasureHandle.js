@@ -1,6 +1,8 @@
 const {
     updateWard_sickroomListSelectHandle,
     updateWard_sickBedListSelectHandle,
+    wardListSelectHandle,
+    updateWard_wardListSelectHandle,
 } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/renders/selectBoxRender.js'
@@ -45,6 +47,7 @@ async function updateMeasurement_sickBedSelectBoxHandle() {
 
 //병상 정보 수정 병실 셀렉트 박스
 async function updateMeasurement_sickRoomSelectBoxHandle(wardCode) {
+    // await wardListSelectHandle();
     $('.section.modifi_hospital .selectBox2 .mroom_option .room_list2').on(
         'click',
         async function () {
@@ -69,7 +72,8 @@ async function updateMeasurement_sickRoomSelectBoxHandle(wardCode) {
 }
 
 // 병상 정보 수정 병동 셀렉트 박스
-function updateMeasurement_wardSelectBoxHandle() {
+async function updateMeasurement_wardSelectBoxHandle() {
+    await updateWard_wardListSelectHandle();
     $('.section.modifi_hospital .selectBox2 .optionList .ward_list').on(
         'click',
         async function () {
@@ -95,8 +99,7 @@ function updateMeasurement_wardSelectBoxHandle() {
 
 //병상 정보 수정 수정 버튼 이벤트
 //더 작업 해야함 장치 리스트 넘어오면 그때 한번에 작업
-function updateMeasurement_insertDevice() {
-    //지금 장치 리스트 제대로 안나옴
+function updateMeasurementHandle() {
     const name = $('.section.modifi_hospital .selectBox2 .name_label').text();
     const birthday = +$(
         '.section.modifi_hospital .patient_info .patient_age'
@@ -167,12 +170,7 @@ async function deleteMeasurement() {
 $('.pop.delete_measure .btn_list .btn_cut').on('click', deleteMeasurement);
 $('.section.modifi_hospital .btn_list .btn_new_hospital').on(
     'click',
-    updateMeasurement_insertDevice
+    updateMeasurementHandle
 );
 
-// $('.section.modifi_hospital .selectBox2 .ward_list').on('click', function () {
-//     $(this).parent().parent().removeClass('active');
-//     console.log('ddd');
-// });
-
-updateMeasurement_wardSelectBoxHandle();
+await updateMeasurement_wardSelectBoxHandle();

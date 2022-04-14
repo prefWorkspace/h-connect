@@ -23,13 +23,17 @@ function get_Saved_Id() {
     const getId = localStorageController.getLocalS('Hconnect-id'); //로컬스토리지에 저장된 id
     if (getId) {
         $('.login #id').val(getId);
+        $('.login .check #id_save').attr('checked', true);
     }
 }
 
 function Login_Fetch() {
     const id_Input = $('.login #id').val(); //아이디 input 값
     const pw_Input = $('.login #pw').val(); //비밀번호 input 값
-    const saveId_input = $('.login .check #id_save').is(':checked'); // 아이디 저장 체크 박스 boolean
+
+    if (id_Input === '' || pw_Input === '') {
+        return;
+    }
 
     const req = JSON.stringify({
         id: id_Input,
@@ -54,10 +58,6 @@ function Login_Fetch() {
                         'apiserverinfoList',
                         apiServerinfoList
                     );
-                }
-
-                if (saveId_input) {
-                    localStorageController.setLocalS('Hconnect-id', id_Input);
                 }
 
                 switch (userData.level) {
@@ -92,8 +92,20 @@ function Enter_Press_Login(e) {
     }
 }
 
+function saved_Id() {
+    const saveId_input = $('.login .check #id_save').is(':checked'); // 아이디 저장 체크 박스 boolean
+
+    if (saveId_input) {
+        localStorageController.setLocalS('Hconnect-id', id_Input);
+    } else {
+        localStorageController.removeLocalS('Hconnect-id');
+    }
+}
+
 get_Saved_Id();
 
 $('.login #pw').on('keypress', Enter_Press_Login);
 
 $('.login #login_button').on('click', Login_Fetch);
+
+$('.login .input_wrap').on('click', saved_Id);

@@ -14,7 +14,6 @@ const { commonRequest } = await import(
 
 $('#header .pop.logout .btn_bye').on('click', function () {
     const req = JSON.stringify({
-        requester,
         ...commonRequest(),
     });
 

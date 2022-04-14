@@ -184,6 +184,19 @@ const VERSION = {
             },
         },
     },
+    common: {
+        header: {
+            actions: {
+                'accountPopupActions.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/common/header/actions/',
+                    version: '2022.04.13.12.01',
+                },
+            },
+        },
+    },
     doctor: {
         monitoring: {
             actions: {
@@ -772,13 +785,6 @@ const VERSION = {
                                 '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
                             version: '2022.04.12.12.18',
                         },
-                        'vitalInformAPI.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
-                            version: '2022.03.30.12.18',
-                        },
                     },
                     renders: {
                         'renderSimpleData.js': {
@@ -823,13 +829,6 @@ const VERSION = {
                             version: '2022.03.30.12.18',
                         },
                         'fakeSocket.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
-                            version: '2022.03.30.12.18',
-                        },
-                        'streamingCurrentVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
@@ -888,6 +887,34 @@ const VERSION = {
                             file_path:
                                 '/H-Connect/js/nurse/patientMonitoring/patient/tabularTrend/templates/',
                             version: '2022.04.11.14.33',
+                        },
+                    },
+                },
+                event: {
+                    actions: {},
+                    renders: {
+                        'renderEventSimpleList.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/event/renders/',
+                            version: '2022.04.12.14.33',
+                        },
+                    },
+                    templates: {
+                        'eventSimpleTmpl.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/',
+                            version: '2022.04.12.14.33',
+                        },
+                        'eventDeletePopupTmpl.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/',
+                            version: '2022.04.13.14.33',
                         },
                     },
                 },
