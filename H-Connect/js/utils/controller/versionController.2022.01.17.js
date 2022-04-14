@@ -449,6 +449,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.11.16.11',
                     },
+                    'deleteMeasureHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.14.16.11',
+                    },
                     'newMeasureHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
@@ -462,6 +469,13 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.12.11.12',
+                    },
+                    'selectBoxHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.14.16.14',
                     },
                 },
                 renders: {

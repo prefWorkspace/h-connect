@@ -3,6 +3,7 @@ const {
     recodingEndMeasurementInfo,
     updateMeasurement_updateDeviceInfo,
     updateMeasurement_deleteDeviceInfo,
+    selectDeviceRegisterUnused,
     updateMeasurement_insertDevice,
 } = await import(
     importVersion(
@@ -24,6 +25,16 @@ const {
 const { createMeasureList } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/renders/createMeasureList.js'
+    )
+);
+
+const {
+    updateMeasurement_wardSelectBoxHandle,
+    updateMeasurement_sickBedSelectBoxHandle,
+    updateMeasurement_sickRoomSelectBoxHandle,
+} = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/actions/selectBoxHandle.js'
     )
 );
 
@@ -201,8 +212,39 @@ async function deleteDevicePop() {
 
 //병상 정보 수정에서 장치 추가
 async function updateSickBed_insertDevice() {
-    //여기부터작업
-    //xxx
+    const deviceInfoList = [];
+    const measurementCode = $(this).attr('data-measurementcode');
+    const deviceName = $('.pop.regi_device .selectBox2 .laebl')
+        .text()
+        .replaceAll(' ', '')
+        .replaceAll('\n', '');
+    const serialNumber = $('.pop.regi_device .content input').val();
+    const deviceType = device_NameToType(deviceName);
+
+    const { deviceRegisterList } = await selectDeviceRegisterUnused(
+        serialNumber
+    );
+
+    if (deviceRegisterList) {
+        const obj = {
+            deviceType,
+            serialNumber,
+            macAddress: getMacaddress(deviceType, serialNumber),
+        };
+        deviceInfoList.push(obj);
+        const { result } = await updateMeasurement_insertDevice(
+            measurementCode,
+            deviceInfoList
+        );
+
+        if (result) {
+            $('.pop.regi_device .overlay').fadeOut();
+        } else {
+            $('.pop.regi_device small').addClass('active');
+        }
+    } else {
+        $('.pop.regi_device small').addClass('active');
+    }
 }
 
 //측정현황 리스트 클릭 이벤트
@@ -239,10 +281,23 @@ export async function measureListhanlde() {
             //병상정보 수정 섹션에 병실, 병상 셀렉트 박스 렌더링
             await updateWard_sickroomListSelectHandle(wardCode);
             await updateWard_sickBedListSelectHandle(wardCode, sickRoomCode);
+            //병상정보 수정 섹션에 셀렉트 박스 이벤트
+            await updateMeasurement_wardSelectBoxHandle();
+            await updateMeasurement_sickRoomSelectBoxHandle(wardCode);
+            await updateMeasurement_sickBedSelectBoxHandle(
+                wardCode,
+                sickRoomCode
+            );
 
             //병상정보 수정 섹션에 데이터 바인딩
             $('.modifi_hospital .hospital_patient .name_label').text(name);
-            $('.modifi_hospital .hospital_patient .patient_age').val(birthday);
+            $('.modifi_hospital .hospital_patient .patient_age').val(
+                birthday ? birthday.replaceAll('-', '') : '00000000'
+            );
+            $('.modifi_hospital .hospital_patient .patient_age').attr(
+                'data-birthday',
+                birthday ? birthday : '0000-00-00'
+            );
             $('.modifi_hospital .hospital_patient .patient_gender').val(
                 gender === 1 ? '남' : '여'
             );
@@ -280,6 +335,11 @@ export async function measureListhanlde() {
             );
 
             $('.section.modifi_hospital .btn_list .btn_delete').attr(
+                'data-measurementcode',
+                measurementCode
+            );
+
+            $('.modifi_hospital .device_room .btn_add').attr(
                 'data-measurementcode',
                 measurementCode
             );
@@ -426,6 +486,10 @@ export async function selecBoxWard() {
 $('.pop.end_measure .btn_list .btn_cut').on('click', recodingEndHandle);
 $('.pop.update_device .btn_list .btn_check').on('click', updateDevicePop);
 $('.pop.delete_device .btn_list .btn_cut').on('click', deleteDevicePop);
+$('.pop.regi_device .btn_list .btn_check').on(
+    'click',
+    updateSickBed_insertDevice
+);
 
 //함수실행=====================
 measureListhanlde();

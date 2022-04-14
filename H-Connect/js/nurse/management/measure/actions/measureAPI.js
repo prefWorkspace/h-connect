@@ -156,7 +156,6 @@ export async function deleteMeasurementInfo(measurementCode, route) {
         requester,
         measurementCode,
     };
-    console.log(obj);
 
     return serverController.ajaxMeasurementController(
         'API/Measurement/DeleteMeasurementInfo',
