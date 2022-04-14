@@ -1220,9 +1220,10 @@
 }
 
 .emergency .vital .vital_monitor p{
-    padding-left: 8px;
     font-size: 14px;
 }
+
+.emergency .vital .vital_monitor .graph p{padding-left: 8px;}
 
 .emergency .vital .vital_monitor .bell_num div p{
     font-size: 18px;
@@ -1323,8 +1324,8 @@
 }
 
 .emergency .patient_status .mmhg .time p{
+    line-height: 15px;
     font-size: 11px;
-    display: inline-block;
 }
 
 /* ews */
@@ -1493,7 +1494,7 @@
 }
 
 .emergency .small_picture .swiper-wrapper{
-    /* padding: 0 0 8px 8px; */
+    padding: 0 0 8px 8px;
 }
 
 .emergency .small_picture .swiper-slide{
@@ -2702,6 +2703,11 @@
 
 .connect_scroll .tab_view::-webkit-scrollbar{
     display: none;
+}
+
+.connect_scroll .patient_view .btn_list button.active{
+    background: #fff;
+    color: #940045;
 }
 
 .connect_scroll .tab_view > div > .title{

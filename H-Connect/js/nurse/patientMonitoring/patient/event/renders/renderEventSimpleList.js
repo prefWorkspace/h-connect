@@ -69,8 +69,8 @@ const createEventSimpleTabController = () => {
                 target: '.btn_delete',
                 close: true,
                 action: async (_this) => {
-                    const { eventid } = _this.getData();
-                    const deleteSuccess = await DeleteBioSignalEvent(eventid);
+                    const { eventId } = _this.getData();
+                    const deleteSuccess = await DeleteBioSignalEvent(eventId);
                     if (deleteSuccess) {
                         eventListPagination.renderMain();
                     } else {
@@ -121,9 +121,11 @@ const createEventSimpleTabController = () => {
             .next('.table_content')
             .find('.btn_confirm')
             .off()
-            .on('click', (e) => {
+            .on('click', async (e) => {
                 const _getEventId = getEventId(_$tableItemEl);
                 console.log('_getEventId: ', _getEventId);
+                const res = await UpdateBioSignalEvent(_getEventId, 1);
+                console.log('res: ', res);
             });
     };
 

@@ -321,7 +321,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 53%;
+    left: 56%;
     width: 25px;
     height: 30px;
     margin-right: 21px;
@@ -488,11 +488,12 @@
 }
 
 .message .no_message .no_search .btn_search {
+    left: 56%;
     background: none;
 }
 
 .message .no_message .no_search button img {
-    /* filter: invert(57%) sepia(1%) saturate(0%) hue-rotate(43deg) brightness(94%) contrast(87%); */
+    filter: invert(57%) sepia(1%) saturate(0%) hue-rotate(43deg) brightness(94%) contrast(87%);
 }
 
 .message .no_message .no_search .btn_sort {

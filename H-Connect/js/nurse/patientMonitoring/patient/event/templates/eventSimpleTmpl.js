@@ -30,7 +30,9 @@ export const eventSimpleDataListTmpl = async (_data) => {
 };
 
 export const eventSimpleDataDetailTmpl = (_data) => {
-    const { maxValue, minValue, value, ecgJson, ecgJsonInclude } = _data || {};
+    const { maxValue, minValue, value, ecgJson, ecgJsonInclude, confirm } =
+        _data || {};
+    console.log('_data: ', _data);
     return `
       <div class="cont_inner">
           <div class="ecg">
@@ -68,7 +70,9 @@ export const eventSimpleDataDetailTmpl = (_data) => {
           </div>
 
           <div class="btn_list">
-              <button type="button" class="btn_confirm">
+              <button type="button" class="btn_confirm ${
+                  confirm !== 0 ? 'disabled' : ''
+              }">
                   confirm
               </button>
               <button type="button" class="btn_delete">
