@@ -27,6 +27,9 @@ const { eventDeletePopupTmpl } = await import(
         '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/eventDeletePopupTmpl.js'
     )
 );
+const { confirmTwoPopupTmpl } = await import(
+    importVersion('/H-Connect/js/common/popup/templates/commonPopupTmpl.js')
+);
 // 페이지네이션 처리와 팝업처리, 등등 한번에 처리하면 용이한 부분이 많아 액션함수도 한 파일에서 처리.
 
 const createEventSimpleTabController = () => {
@@ -47,6 +50,43 @@ const createEventSimpleTabController = () => {
         },
         link: {
             keepParams: ['measurement_code', 'tab'],
+        },
+    });
+    const confirmEventPopup = new PopupController({
+        target: {
+            openButton: '#event_table_wrap .btn_confirm',
+            appendWrap: '.event_delete_popup_wrap',
+        },
+        templates: {
+            popup: () => {
+                return confirmTwoPopupTmpl({ type: 'confirm' });
+            },
+        },
+        popupBtn: {
+            cancelBtn: {
+                target: '.btn.gr',
+                close: true,
+                action: (_this) => {
+                    // 클릭한 객체의 id 를 팝업에 임시 전달
+                    _this.saveData('eventId', null);
+                },
+            },
+            submitBtn: {
+                target: '.btn.blf',
+                close: true,
+                action: async (_this) => {
+                    const { eventId } = _this.getData();
+                    const updateSuccess = await UpdateBioSignalEvent(
+                        eventId,
+                        1
+                    );
+                    if (updateSuccess) {
+                        eventListPagination.renderMain();
+                    } else {
+                        alert('선택한 이벤트 저장에 실패했습니다.');
+                    }
+                },
+            },
         },
     });
 
@@ -125,9 +165,7 @@ const createEventSimpleTabController = () => {
             .off()
             .on('click', async (e) => {
                 const _getEventId = getEventId(_$tableItemEl);
-                console.log('_getEventId: ', _getEventId);
-                const res = await UpdateBioSignalEvent(_getEventId, 1);
-                console.log('res: ', res);
+                confirmEventPopup.saveData('eventId', _getEventId);
             });
     };
 
