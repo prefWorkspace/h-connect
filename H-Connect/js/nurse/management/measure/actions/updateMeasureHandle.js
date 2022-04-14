@@ -9,6 +9,16 @@ const {
     )
 );
 
+const { measureListhanlde } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/actions/measureHandle.js'
+    )
+);
+
+const { request_Date_Data } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+
 const {
     selectMeasurementInfoList,
     updateMeasurementInfo,
@@ -16,6 +26,12 @@ const {
 } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/measureAPI.js'
+    )
+);
+
+const { createMeasureList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/renders/createMeasureList.js'
     )
 );
 
@@ -99,7 +115,7 @@ async function updateMeasurement_wardSelectBoxHandle() {
 
 //병상 정보 수정 수정 버튼 이벤트
 //더 작업 해야함 장치 리스트 넘어오면 그때 한번에 작업
-function updateMeasurementHandle() {
+async function updateMeasurementHandle() {
     const name = $('.section.modifi_hospital .selectBox2 .name_label').text();
     const birthday = +$(
         '.section.modifi_hospital .patient_info .patient_age'
@@ -123,11 +139,14 @@ function updateMeasurementHandle() {
     const sickBedCode = $(
         '.section.modifi_hospital .patient_room .mbed_label'
     ).attr('data-sickbedcode');
+    const measurementCode = $(this).attr('data-measurementcode');
     const API_ROUTE = $(this).attr('data-apiroute');
+
     const codeObj = {
         wardCode,
         sickRoomCode,
         sickBedCode,
+        measurementCode,
     };
 
     const patientData = {
@@ -135,35 +154,53 @@ function updateMeasurementHandle() {
         name,
         gender,
         birthday: birthday + '-01-01',
-        deviceInfoList,
         patientStatus: 3,
-        ssn: '000000-9999999', //주민등록번호
-        foreigner: 0,
-        phoneNumber: '010-0000-0000',
+        ssn: null,
+        foreigner: null,
+        phoneNumber: null,
         measurementType: 'BM',
-        measurementStatus: 2,
         duration: 24,
         startDateTime: request_Date_Data(),
     };
 
-    const { result } = updateMeasurementInfo(codeObj, patientData, API_ROUTE);
+    const aaa = await updateMeasurementInfo(codeObj, patientData, API_ROUTE);
+    console.log('aaa===');
+    console.log(aaa);
 }
 
 //병상 정보 수정 삭제 버튼 이벤트
 async function deleteMeasurement() {
-    console.log('start');
     const measureMentCode = $(this).attr('data-measurementcode');
     const API_ROUTE = $(this).attr('data-apiroute');
-    const { result, message } = await deleteMeasurementInfo(
-        measureMentCode,
-        API_ROUTE
-    );
-    console.log('message===');
-    console.log(message);
+    const { result } = await deleteMeasurementInfo(measureMentCode, API_ROUTE);
 
     if (result) {
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
         await createMeasureList(measurementInfoSimpleList);
+        await measureListhanlde();
+        $('.pop.delete_measure .overlay').fadeOut();
+
+        $('.modifi_hospital .hospital_patient .name_label').text(
+            '환자를 선택해 주세요.'
+        );
+        $('.modifi_hospital .hospital_patient .patient_age').val('생년월일');
+        $('.modifi_hospital .hospital_patient .patient_gender').val('성별');
+        $('.modifi_hospital .hospital_patient .selectBox2 .mward_label').text(
+            '병동선택'
+        );
+        $('.modifi_hospital .hospital_patient .selectBox2 .mroom_label').text(
+            '병실선택'
+        );
+        $('.modifi_hospital .hospital_patient .selectBox2 .mbed_label').text(
+            '병상선택'
+        );
+        $('.section,modifi_hospital .selectBox2 .optionItem').removeClass(
+            'active'
+        );
+        $('.section.modifi_hospital .btn_list .btn_delete').attr(
+            'disabled',
+            true
+        );
     }
 }
 

@@ -1,5 +1,5 @@
 /* s: 생년월일으로 '만' 나이를 계산합니다. */
-export function AGE_CALC(_birth) {
+export function birthdayToAge(_birth) {
     const _todayD = new Date();
     const _birthD = new Date(_birth);
     let _age = _todayD.getFullYear() - _birthD.getFullYear();

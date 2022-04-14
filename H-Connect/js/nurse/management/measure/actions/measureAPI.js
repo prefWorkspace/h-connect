@@ -150,12 +150,14 @@ export async function selectDeviceRegisterUnused(search) {
 }
 
 // 측정 코드 삭제 API
-export async function deleteMeasurementInfo(measureMentCode, route) {
+export async function deleteMeasurementInfo(measurementCode, route) {
     const obj = {
         ...commonRequest(),
         requester,
-        measureMentCode,
+        measurementCode,
     };
+    console.log(obj);
+
     return serverController.ajaxMeasurementController(
         'API/Measurement/DeleteMeasurementInfo',
         route,

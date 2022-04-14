@@ -4,6 +4,10 @@ const { device_TypeToName } = await import(
     importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
 );
 
+const { birthdayToAge } = await import(
+    importVersion('/H-Connect/js/utils/common/utils.js')
+);
+
 export function measureList(data_List) {
     const {
         name,
@@ -13,6 +17,7 @@ export function measureList(data_List) {
         sickBed,
         patientCode,
         age,
+        birthday,
         wardCode,
         sickRoomCode,
         sickBedCode,
@@ -21,6 +26,7 @@ export function measureList(data_List) {
         deviceInfoList,
         measurementStatus,
     } = data_List;
+    console.log(data_List);
 
     // measurementStatus의 상태 값에 따라 측정 종료 버튼 달라짐
     // 0 : NONE
@@ -47,7 +53,9 @@ export function measureList(data_List) {
 
             <p>
                 <span>${name}</span>.
-                (<span>${age || '00'}</span>.
+                (<span>${
+                    birthday ? birthday.replaceAll('-', '') : '00000000'
+                }</span>.
                 <span>${gender === 1 ? '남자' : '여자'}</span>.
                 <span>${patientCode}</span>)
             </p>

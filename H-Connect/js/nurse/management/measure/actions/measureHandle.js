@@ -28,11 +28,11 @@ const { createMeasureList } = await import(
 );
 
 //수정 데이터 장치 담는 배열
-let { updateDeviceList } = await import(
-    importVersion(
-        '/H-Connect/js/nurse/management/measure/actions/updateMeasureHandle.js'
-    )
-);
+// let { updateDeviceList } = await import(
+//     importVersion(
+//         '/H-Connect/js/nurse/management/measure/actions/updateMeasureHandle.js'
+//     )
+// );
 
 const { device_NameToType } = await import(
     importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
@@ -210,6 +210,8 @@ export async function measureListhanlde() {
     $('.wrap_inner .measure_status .status_list').on(
         'click',
         async function () {
+            const { measurementInfoSimpleList } =
+                await selectMeasurementInfoList();
             $(this).addClass('on').siblings().removeClass('on');
             const sickBedCode = $(this).data('sickbedcode');
             const wardCode = $(this).data('wardcode');
@@ -282,6 +284,11 @@ export async function measureListhanlde() {
                 measurementCode
             );
 
+            $('.section.modifi_hospital .btn_list .btn_new_hospital').attr(
+                'data-measurementcode',
+                measurementCode
+            );
+
             $('.section.modifi_hospital .btn_list .btn_delete').attr(
                 'data-apiroute',
                 apiRoute
@@ -322,7 +329,7 @@ export async function measureListhanlde() {
                 return;
             }
 
-            updateDeviceList = [...deviceInfoList];
+            // updateDeviceList = [...deviceInfoList];
 
             // 장치 리스트 탬플릿 만들기
             for (let i = 0; i < deviceInfoList.length; i++) {
