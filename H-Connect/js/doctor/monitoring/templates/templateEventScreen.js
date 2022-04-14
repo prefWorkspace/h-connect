@@ -1,7 +1,14 @@
 'use strict';
 
 export async function eventPatientInfo(_bse) {
-    if (!_bse) return;
+    if (!_bse) {
+        return `
+            <div>
+                <h2>NULL (null. null)</h2>
+                <p>null</p>
+            </div>
+        `;
+    }
 
     const { name, age, gender, patientCode } = _bse;
     return `

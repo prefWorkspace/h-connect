@@ -62,12 +62,9 @@ export async function deleteBioSignalEvent(_bse) {
 }
 
 export async function insertNewEventScreen(_bse) {
-    if (!_bse) return;
     await renderNewEventScreen(_bse);
 }
 
 export async function insertPreEventScreen(_bse) {
-    if (!_bse) return;
     await renderPreEventScreen(_bse);
-    
 }

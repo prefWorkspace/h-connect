@@ -1,18 +1,13 @@
 'use strict';
 
 const { eventListItem } = await import(
-    importVersion(
-        '/H-Connect/js/doctor/monitoring/templates/templateEvent.js'
-    )
+    importVersion('/H-Connect/js/doctor/monitoring/templates/templateEvent.js')
 );
 
 export async function renderNewEventList(_eventList) {
-    if (!_eventList) return;
     // declare tempNewEventList
     let templateNewEventList = ``;
-
     let eventList = _eventList;
-
     // render NewEventList Header
     templateNewEventList += `
     <div class="title">
@@ -31,7 +26,9 @@ export async function renderNewEventList(_eventList) {
         </p>
     </div>
     <div class="alarm">
-        <p><span>${eventList.length}</span> 개의 확인하지 않은 이벤트</p>
+        <p><span>${
+            eventList ? eventList.length : 0
+        }</span> 개의 확인하지 않은 이벤트</p>
         <div>
             <button type="button" class="btn_new on">
                 신규 이벤트
@@ -42,11 +39,12 @@ export async function renderNewEventList(_eventList) {
         </div>
     </div>
     <div class='ecglist'>`;
-
-    // render NewEventList
-    eventList.forEach((evt) => {
-        templateNewEventList += eventListItem(evt);
-    });
+    if (_eventList) {
+        // render NewEventList
+        eventList.forEach((evt) => {
+            templateNewEventList += eventListItem(evt);
+        });
+    }
     templateNewEventList += '</div>';
     // Attach To Parent
     $('.section.new_patient.new').html(templateNewEventList);

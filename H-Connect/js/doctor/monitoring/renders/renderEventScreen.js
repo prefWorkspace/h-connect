@@ -29,8 +29,6 @@ export async function renderPreEventScreen(_bse) {
 }
 
 export async function renderNewEventScreenTitleHead(_bse) {
-    if (!_bse) return;
-
     const $sectionRhythm = $('.section.rhythm.new_rhythm');
     $sectionRhythm.find('.title.title_head').html(`
         ${await eventPatientInfo(_bse)}
@@ -45,10 +43,7 @@ export async function renderNewEventScreenTitleHead(_bse) {
 }
 
 export async function renderPreEventScreenTitleHead(_bse) {
-    if (!_bse) return;
-
     const $sectionRhythm = $('.section.rhythm.pre_rhythm');
-
     $sectionRhythm.find('.title.title_head').html(`
         ${await eventPatientInfo(_bse)}
         ${await monitoringButton()}
@@ -61,27 +56,25 @@ export async function renderPreEventScreenTitleHead(_bse) {
         });
 }
 
-async function renderEventScreenBody(_bse) {}
-
 export async function renderNewEventScreenBodyTitle(_bse) {
-    const { ymd, hms } = dateFormat(new Date(_bse.eventDateTime));
+    const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_newSection');
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
-        ${await eventBasicInfo('New Example Name', _bse.eventDetail)}
+        ${await eventBasicInfo('New Example Name', _bse?.eventDetail)}
     </div>
     ${await screenRightBtnList(false)}
     `);
 }
 
 export async function renderPreEventScreenBodyTitle(_bse) {
-    const { ymd, hms } = dateFormat(new Date(_bse.eventDateTime));
+    const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_preSection');
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
-        ${await eventBasicInfo('Previous Example Name', _bse.eventDetail)}
+        ${await eventBasicInfo('Previous Example Name', _bse?.eventDetail)}
     </div>
     ${await screenRightBtnList(true)}
     `);

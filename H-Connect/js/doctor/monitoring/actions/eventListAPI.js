@@ -34,15 +34,23 @@ export async function selectBioSignalEvemtSimpleList(confirm) {
     });
 
     let result = {};
-
+    return {
+        bioSignalEventSimpleList: null,
+        error: 0,
+        extra: '',
+        message: null,
+        remoteIp: null,
+        result: true,
+        totalCount: 0,
+    };
     await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBioSignalEventSimpleList',
         'POST',
         req,
         (res) => {
             result = res;
-            if (confirm <= 1)
-                console.log(result.bioSignalEventSimpleList.length);
+            console.log(result);
+            result.bioSignalEventSimpleList = null;
         },
         (err) => {
             console.log(err);
@@ -56,36 +64,15 @@ export async function insertNewEventList() {
     let res = await selectBioSignalEvemtSimpleList(2);
     let eventList = res.bioSignalEventSimpleList;
     await renderNewEventList(eventList);
-
-    $('.section.new_patient.new .ecglist').children().first().addClass('on');
-    selectedEventId = $('.section.new_patient.new .row.on').data('id');
-    eventList.forEach((list) => {
-        if (list.bioSignalEventId === selectedEventId) {
-            insertNewEventScreen(list);
-            $(document).on('click', '.event .btn_delete', function () {
-                deleteBioSignalEvent(list);
-                insertNewEventList();
-            });
-            return false;
-        }
-    });
-
-    // Add Event To Select Pre Events Btn
-    $('.btn_pre').on('click', async function () {
-        await insertEventList('PRE');
-        $('.section.new_patient.new').css('display', 'none');
-        $('.section.rhythm.new_rhythm').css('display', 'none');
-        $('.section.new_patient.pre').css('display', 'block');
-        $('.section.rhythm.pre_rhythm').css('display', 'block');
-    });
-
-    // Add Event To New Event List
-    $('.section.new_patient.new .row').on('click', function () {
-        $('.section.new_patient.new .row').removeClass('on');
-
-        const $this = $(this);
-        selectedEventId = $this.data('id');
-        if (!$this.hasClass('on')) $this.addClass('on');
+    if (!eventList) {
+        insertNewEventScreen(null);
+    }
+    if (eventList) {
+        $('.section.new_patient.new .ecglist')
+            .children()
+            .first()
+            .addClass('on');
+        selectedEventId = $('.section.new_patient.new .row.on').data('id');
         eventList.forEach((list) => {
             if (list.bioSignalEventId === selectedEventId) {
                 insertNewEventScreen(list);
@@ -96,26 +83,81 @@ export async function insertNewEventList() {
                 return false;
             }
         });
+
+        // Add Event To New Event List
+        $('.section.new_patient.new .row').on('click', function () {
+            $('.section.new_patient.new .row').removeClass('on');
+
+            const $this = $(this);
+            selectedEventId = $this.data('id');
+            if (!$this.hasClass('on')) $this.addClass('on');
+            eventList.forEach((list) => {
+                if (list.bioSignalEventId === selectedEventId) {
+                    insertNewEventScreen(list);
+                    $(document).on('click', '.event .btn_delete', function () {
+                        deleteBioSignalEvent(list);
+                        insertNewEventList();
+                    });
+                    return false;
+                }
+            });
+        });
+    }
+
+    // Add Event To Select Pre Events Btn
+    $('.btn_pre').on('click', async function () {
+        await insertEventList('PRE');
+        $('.section.new_patient.new').css('display', 'none');
+        $('.section.rhythm.new_rhythm').css('display', 'none');
+        $('.section.new_patient.pre').css('display', 'block');
+        $('.section.rhythm.pre_rhythm').css('display', 'block');
     });
 }
 
 export async function insertPreEventList() {
     let res = await selectBioSignalEvemtSimpleList(0);
-    let eventList = res.bioSignalEventSimpleList.slice(0, 10);
+    let eventList = res.bioSignalEventSimpleList?.slice(0, 10);
     await renderPreEventList(eventList);
+    if (!eventList) {
+        insertPreEventScreen(null);
+    }
+    if (eventList) {
+        $('.section.new_patient.pre .ecglist')
+            .children()
+            .first()
+            .addClass('on');
+        selectedEventId = $('.section.new_patient.pre .row.on').data('id');
+        eventList.forEach((list) => {
+            if (list.bioSignalEventId === selectedEventId) {
+                insertPreEventScreen(list);
+                $(document).on('click', '.event .btn_delete', function () {
+                    deleteBioSignalEvent(list);
+                    insertPreEventList();
+                });
+                return false;
+            }
+        });
 
-    $('.section.new_patient.pre .ecglist').children().first().addClass('on');
-    selectedEventId = $('.section.new_patient.pre .row.on').data('id');
-    eventList.forEach((list) => {
-        if (list.bioSignalEventId === selectedEventId) {
-            insertPreEventScreen(list);
-            $(document).on('click', '.event .btn_delete', function () {
-                deleteBioSignalEvent(list);
-                insertPreEventList();
-            });
-            return false;
-        }
-    });
+        // Add Event To New Event List
+        $('.section.new_patient.pre .row').on('click', async function () {
+            $('.section.new_patient.pre .row').removeClass('on');
+
+            const $this = $(this);
+            selectedEventId = $this.data('id');
+            if (!$this.hasClass('on')) $this.addClass('on');
+            for await (const list of eventList) {
+                if (list.bioSignalEventId === selectedEventId) {
+                    await insertPreEventScreen(list);
+                    $(document).on('click', '.event .btn_delete', function () {
+                        deleteBioSignalEvent(list);
+                        insertPreEventList();
+                    });
+
+                    break;
+                }
+            }
+        });
+    }
 
     // Add Event To Select New Events Btn
     $('.btn_new').on('click', async function () {
@@ -124,26 +166,6 @@ export async function insertPreEventList() {
         $('.section.rhythm.pre_rhythm').css('display', 'none');
         $('.section.new_patient.new').css('display', 'block');
         $('.section.rhythm.new_rhythm').css('display', 'block');
-    });
-
-    // Add Event To New Event List
-    $('.section.new_patient.pre .row').on('click', async function () {
-        $('.section.new_patient.pre .row').removeClass('on');
-
-        const $this = $(this);
-        selectedEventId = $this.data('id');
-        if (!$this.hasClass('on')) $this.addClass('on');
-        for await (const list of eventList) {
-            if (list.bioSignalEventId === selectedEventId) {
-                await insertPreEventScreen(list);
-                $(document).on('click', '.event .btn_delete', function () {
-                    deleteBioSignalEvent(list);
-                    insertPreEventList();
-                });
-
-                break;
-            }
-        }
     });
 
     // Add Event to Search Button
@@ -165,10 +187,12 @@ async function insertPreEventListBySearch(_searchKeyword) {
     const $preSectionRow = $('.section.new_patient.pre .row');
     const searchKeywordLower = String(_searchKeyword).toLowerCase();
     if (!searchKeywordLower) {
-        $preSectionRow.css('display', 'block')
+        $preSectionRow.css('display', 'block');
     } else {
         $.each($preSectionRow, function () {
-            const targetCode = String($(this).data('patientcode')).toLowerCase();
+            const targetCode = String(
+                $(this).data('patientcode')
+            ).toLowerCase();
             const targetName = String($(this).data('name')).toLowerCase();
             if (
                 targetCode.includes(searchKeywordLower) ||
@@ -179,9 +203,8 @@ async function insertPreEventListBySearch(_searchKeyword) {
                 $(this).css('display', 'none');
             }
         });
-        
     }
-    $preSectionRow.removeClass('on')
+    $preSectionRow.removeClass('on');
 }
 
 insertEventList('NEW');
