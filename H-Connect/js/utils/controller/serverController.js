@@ -13,13 +13,27 @@ export const LOGIN_TOKEN = sessionController.getSession('accesToken');
 
 /* jquery ajax */
 export const serverController = {
-    ajaxAwaitController: (path, type, formData, callBack, errorCallBack) => {
+    ajaxAwaitController: (
+        path,
+        type,
+        formData,
+        callBack,
+        errorCallBack,
+        route = null
+    ) => {
         return $.ajax({
             beforeSend: function (xhr) {
                 xhr.setRequestHeader(
                     'SX-Auth-Token',
                     LOGIN_TOKEN ? LOGIN_TOKEN : null
                 );
+                // if(typeof route === "object"){
+                //     const keys = Object.keys(route);
+                //     xhr.setRequestHeader(
+                //         'SX-Auth-Token',
+                //         LOGIN_TOKEN ? LOGIN_TOKEN : null
+                //     );
+                // }
             },
             url: `${ip}${path}`,
             type: type,

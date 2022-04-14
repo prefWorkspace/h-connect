@@ -230,6 +230,7 @@ export async function updateMeasurement_insertDevice(
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertDeviceInfo',
         'POST',
+        JSON.stringify(obj),
         (res) => {
             if (res.result) {
             } else {
