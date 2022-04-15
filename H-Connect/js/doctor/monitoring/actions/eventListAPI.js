@@ -52,31 +52,6 @@ export async function selectBioSignalEvemtSimpleList(confirm) {
     return result;
 }
 
-export async function selectBioSignalEvent(_bse) {
-    const { bioSignalEventId, measurementCode } = _bse;
-    const req = JSON.stringify({
-        ...commonRequest(),
-        bioSignalEventId,
-        measurementCode,
-    });
-
-    let result = {};
-
-    await serverController.ajaxAwaitController(
-        'API/BioSignal/SelectBioSignalEvent',
-        'POST',
-        req,
-        (res) => {
-            result = res;
-        },
-        (err) => {
-            alert(`서버 통신에 실패하였습니다 (Error: ${err})`);
-        }
-    );
-
-    return result;
-}
-
 export async function insertNewEventList() {
     let res = await selectBioSignalEvemtSimpleList(0);
     let eventList = res.bioSignalEventSimpleList?.slice(0, 10);
