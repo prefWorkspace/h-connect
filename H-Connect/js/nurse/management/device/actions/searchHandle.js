@@ -30,7 +30,7 @@ async function search_Handel() {
     // if (searchError(search)) {
     //     return;
     // }
-    select_device(8, search);
+    select_device(0, search);
 }
 
 //search 검색 기능
@@ -53,7 +53,7 @@ function search_unused_Handel() {
     // if (searchError(search)) {
     //     return;
     // }
-    select_device_unused(8, search);
+    select_device_unused(0, search);
 }
 
 $('.section.return_device .device_list .search_container button').on(

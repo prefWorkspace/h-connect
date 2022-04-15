@@ -2047,6 +2047,18 @@ $('.pop.new_room_pop .overlay .new_regi .selectBox2 .optionList li').on(
     }
 );
 
+// 사용한 장치 반납 모달창 셀렉트 박스
+$('.pop.re_device .selectBox2 .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.pop.re_device .selectBox2 .right_list').on('click', function () {
+    const deviceName = $(this).text();
+    $(this).addClass('active').siblings().removeClass('active');
+    $(this).parent().parent().toggleClass('active');
+    $(this).parent().parent().find('.label').text(deviceName);
+});
+
 //===========================간호사 측정관리 셀렉트 박스 및 팝업 띄우기
 
 // 병상 등록 팝업

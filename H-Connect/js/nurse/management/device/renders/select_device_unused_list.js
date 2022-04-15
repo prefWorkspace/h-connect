@@ -14,7 +14,7 @@ export function select_device_unused_list(deviceRegisterList) {
     );
 
     if (!deviceRegisterList) {
-        deviceList += `<p style="text-align: center; color: #444444">조회된 데이터가 없습니다.</p>`;
+        deviceList += `<p style="text-align: center; color: #aaa">조회된 데이터가 없습니다.</p>`;
     } else {
         for (let i = 0; i < deviceRegisterList.length; i++) {
             deviceList += unusedDeviceList(deviceRegisterList[i]);

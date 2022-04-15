@@ -6,7 +6,9 @@
     background-color: #222222;
 }
 
-#wrap{min-width: 1880px;}
+#wrap {
+    min-width: 1880px;
+}
 
 /* header */
 #header {
@@ -19,7 +21,7 @@
     margin-right: 10px;
 }
 
-.logo img{
+.logo img {
     object-fit: contain;
 }
 
@@ -45,7 +47,6 @@
     margin-right: 25px;
 }
 
-
 /* care_end_btn */
 .care_end_btn {
     display: inline-block;
@@ -58,11 +59,11 @@
     border-radius: 4px;
     font-size: 14px;
     padding-left: 20px;
-    color: #007A94;
+    color: #007a94;
     text-align: center;
-    background: #fff url('/H-Connect/img/icon/btn_logo_green.svg') no-repeat left 18px center;
+    background: #fff url('/H-Connect/img/icon/btn_logo_green.svg') no-repeat
+        left 18px center;
 }
-
 
 /* care_sect */
 #care_sect {
@@ -85,7 +86,7 @@
 /* care_start_card1 */
 .care_start_card1 {
     width: 600px;
-    background-color: #444444;
+    background-color: #aaa;
     margin-right: 5px;
 }
 
@@ -103,7 +104,7 @@
 }
 
 .care_tab_list {
-    background-color: #007A94;
+    background-color: #007a94;
     padding: 0 10px 0 30px;
     border-radius: 4px 4px 0 0;
 }
@@ -116,19 +117,20 @@
 }
 
 .mess_tab {
-    background: #007A94 url('/H-Connect/img/icon/message_white.svg') no-repeat left 8px top 9px;
+    background: #007a94 url('/H-Connect/img/icon/message_white.svg') no-repeat
+        left 8px top 9px;
 }
 
 /* messge_cont_box */
-.chat_container{
+.chat_container {
     height: 728px;
     display: flex;
     justify-content: space-between;
-    background: #C5D8DC;
+    background: #c5d8dc;
 }
 
 .messge_cont_box {
-    background-color: #C5D8DC;
+    background-color: #c5d8dc;
 }
 
 .mess_text_box {
@@ -136,7 +138,7 @@
     display: flex;
 }
 
-.timeLine{
+.timeLine {
     width: 32px;
     height: 100%;
     padding: 8px 10px;
@@ -144,59 +146,59 @@
     flex-direction: column;
 }
 
-.timeLine a{
+.timeLine a {
     width: 12px;
     margin-bottom: 8px;
     display: block;
-    background: #007A94;
+    background: #007a94;
 }
 
-.timeLine> :nth-child(2n-1){
+.timeLine > :nth-child(2n-1) {
     background: #eee;
 }
 
-.timeLine> :last-child{
+.timeLine > :last-child {
     margin: 0;
 }
 
-.timeLine .first{
+.timeLine .first {
     flex: 3;
 }
 
-.timeLine .second{
+.timeLine .second {
     flex: 2;
 }
 
-.timeLine .third{
+.timeLine .third {
     flex: 1;
 }
 
-.timeLine .fourth{
+.timeLine .fourth {
     flex: 2;
 }
 
-.timeLine .fifth{
+.timeLine .fifth {
     flex: 1;
 }
 
-.chat_inner{
+.chat_inner {
     width: calc(100% - 32px);
     height: 725px;
     padding: 8px 20px;
     overflow-y: scroll;
 }
 
-.chat_inner::-webkit-scrollbar{
+.chat_inner::-webkit-scrollbar {
     width: 8px;
 }
 
-.chat_inner::-webkit-scrollbar-thumb{
+.chat_inner::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
-    background: #007A94;
+    background: #007a94;
 }
 
-.chat_me{
+.chat_me {
     width: 100%;
     margin-bottom: 16px;
     display: flex;
@@ -204,17 +206,17 @@
     align-items: stretch;
 }
 
-.chat_me p{
+.chat_me p {
     font-size: 14px;
     font-weight: normal;
 }
 
-.chat_me .bubble{
+.chat_me .bubble {
     position: relative;
     width: fit-content;
     padding: 14px 16px;
-	background: #007A94;
-	border-radius: .4em;
+    background: #007a94;
+    border-radius: 0.4em;
     color: #fff;
 }
 
@@ -240,9 +242,8 @@
     width: 8px;
     height: 8px;
     margin-right: -8px;
-    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
+    background: url('../img/icon/bubble_triangle.svg') no-repeat center / 100%;
 }
-
 
 .chat_me small {
     width: 100%;
@@ -253,8 +254,7 @@
     font-size: 12px;
 }
 
-
-.chat_you{
+.chat_you {
     width: 100%;
     margin-bottom: 16px;
 }
@@ -263,13 +263,13 @@
     font-size: 12px;
 }
 
-.chat_you .bubble{
+.chat_you .bubble {
     margin: 7px 0;
     position: relative;
     width: fit-content;
     padding: 14px 16px;
-	background: #fff;
-	border-radius: .4em;
+    background: #fff;
+    border-radius: 0.4em;
     color: #000;
 }
 
@@ -282,8 +282,9 @@
     height: 8px;
     margin-left: -8px;
     transform: rotate(180deg);
-    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
-    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg) brightness(200%) contrast(100%);
+    background: url('../img/icon/bubble_triangle.svg') no-repeat center / 100%;
+    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg)
+        brightness(200%) contrast(100%);
 }
 
 /* 
@@ -301,7 +302,7 @@
     margin-left: -8px;
 } */
 
-.chat_you .bubble p{
+.chat_you .bubble p {
     font-size: 14px;
 }
 
@@ -310,23 +311,23 @@
     font-size: 12px;
 }
 
-.start_clinic{
+.start_clinic {
     height: 48px;
     margin: 0 auto 16px;
     padding: 14px 32px;
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to right, #007A94, #003D4A);
+    background: linear-gradient(to right, #007a94, #003d4a);
     border-radius: 4px;
     color: #fff;
 }
 
-.start_clinic p{
+.start_clinic p {
     font-size: 14px;
     font-weight: normal;
 }
 
-.end_clinic{
+.end_clinic {
     height: 48px;
     margin: 0 auto 16px;
     padding: 14px 32px;
@@ -336,18 +337,16 @@
     border-radius: 4px;
 }
 
-.end_clinic p{
+.end_clinic p {
     font-size: 14px;
     font-weight: normal;
 }
 
-
-
-.messge_cont_box .mess_send_box{
+.messge_cont_box .mess_send_box {
     border-radius: 0;
 }
 
-.chat_window{
+.chat_window {
     height: 122px;
     padding: 16px;
     display: flex;
@@ -355,29 +354,28 @@
     background: #fff;
 }
 
-.chat_window textarea{
+.chat_window textarea {
     width: 90%;
 }
 
-.chat_window textarea::placeholder{
+.chat_window textarea::placeholder {
     font-size: 14px;
     color: #ccc;
 }
 
-.chat_window .btn_send{
+.chat_window .btn_send {
     width: 48px;
     height: 32px;
     border-radius: 4px;
-    background: #007A94;
+    background: #007a94;
     font-size: 14px;
     color: #fff;
 }
 
-
 /* care_start_card2 */
 .care_start_card2 {
     width: 1308px;
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
 }
 
 .care_start_card2 .card_cont_box {
@@ -385,7 +383,7 @@
 }
 
 .care_start_card2 .care_header {
-    background-color: #007A94;
+    background-color: #007a94;
     align-items: center;
     padding: 0 0 0 30px;
 }
@@ -420,13 +418,14 @@
 
 .right_cont_header .import_btn {
     line-height: 40px;
-    background-color: #007A94;
+    background-color: #007a94;
     color: #fff;
     display: inline-block;
     padding: 0 15px 0 35px;
     border-radius: 4px;
     font-size: 14px;
-    background: #007A94 url('/H-Connect/img/icon/care_icon.png') no-repeat left 12px center;
+    background: #007a94 url('/H-Connect/img/icon/care_icon.png') no-repeat left
+        12px center;
 }
 
 /* prescription_box */
@@ -440,26 +439,22 @@
 
 .prescription_box .prescription {
     width: 100%;
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     height: 1000px;
 }
 
-
-
-
-
 /* 스크롤 바 */
-.prescription_box::-webkit-scrollbar { 
+.prescription_box::-webkit-scrollbar {
     width: 8px;
-} 
+}
 .prescription_box::-webkit-scrollbar-track {
 }
 
 /* 실질적 스크롤 바 */
-.prescription_box::-webkit-scrollbar-thumb { 
+.prescription_box::-webkit-scrollbar-thumb {
     border-radius: 50px;
-    background:#007A94; 
-} 
+    background: #007a94;
+}
 /* 실질적 스크롤 바 위에 마우스를 올려다 둘 때
 .prescription_box::-webkit-scrollbar-thumb:hover { 
     background: #00698177; 
@@ -474,50 +469,46 @@
 } 
  */
 
-
 .modal_footer .sure_btn {
     display: inline-block;
 }
 
-
 /* 선별진료소 - 담당의 */
-.scroll .care_header{
+.scroll .care_header {
     padding: 0 0 0 16px;
     background: #888;
 }
-.camera{
+.camera {
     width: 80px;
     height: 24px;
     padding: 3px 18px;
     border-radius: 4px;
     background: #fff;
     font-size: 12px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.scroll .card_cont_box{
+.scroll .card_cont_box {
     padding: 0;
     height: 848px;
     overflow: hidden;
-
 }
 
-.scroll .cont_header{
+.scroll .cont_header {
     padding: 11px 23px;
     height: 40px;
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 }
 
-.scroll .card_cont_box .you_cam{
+.scroll .card_cont_box .you_cam {
     width: 100%;
     height: 100%;
     background: url('/H-Connect/img/emergency/you.jpg') no-repeat;
     position: relative;
-
 }
 
-.scroll .card_cont_box .my_cam{
+.scroll .card_cont_box .my_cam {
     position: absolute;
     width: 240px;
     height: 135px;
@@ -529,7 +520,7 @@
     right: 8px;
 }
 
-.scroll .card_cont_box .my_info{
+.scroll .card_cont_box .my_info {
     width: 144px;
     height: 40px;
     padding: 8px 10px;
@@ -542,7 +533,9 @@
     right: 8px;
 }
 
-.check_ex_text{font-size: 16px;}
-.modal_form{padding-top: 0;}
-
-
+.check_ex_text {
+    font-size: 16px;
+}
+.modal_form {
+    padding-top: 0;
+}

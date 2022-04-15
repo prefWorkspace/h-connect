@@ -16,6 +16,8 @@ $('.section.right .btn_new_room').on('click', function () {
         $(value).data('number') === 6 ? $(value).addClass('active') : null;
     });
 
+    console.log('ddd');
+
     $('.pop.new_room .overlay').fadeIn();
 });
 

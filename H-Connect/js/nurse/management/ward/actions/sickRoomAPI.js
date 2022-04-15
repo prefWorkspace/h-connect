@@ -104,9 +104,9 @@ export async function updateSickRoom(_wardCode) {
             });
         });
 
-    $('.pop.update_room .overlay .btn_list .btn_check').on(
-        'click',
-        function () {
+    $('.pop.update_room .overlay .btn_list .btn_check')
+        .off()
+        .on('click', function () {
             const sickRoom = $(
                 '.pop.update_room .overlay .pop_cont .content input'
             ).val();
@@ -157,8 +157,7 @@ export async function updateSickRoom(_wardCode) {
                     console.log(err);
                 }
             );
-        }
-    );
+        });
 }
 
 //병실 삭제 api
@@ -182,8 +181,6 @@ export async function deleteSickRoom(_wardCode) {
                 sickRoomCode,
                 ...commonRequest(),
             });
-            console.log('req===');
-            console.log(req);
 
             serverController.ajaxAwaitController(
                 'API/Manager/DeleteSickRoom',
@@ -197,7 +194,7 @@ export async function deleteSickRoom(_wardCode) {
                         selectSickRoom(_wardCode);
                         $('.pop.delete_room .overlay').fadeOut();
                     } else {
-                        // alert('병실삭제에 실패 하였습니다.');
+                        alert('병실삭제에 실패 하였습니다.');
                     }
                 },
                 (err) => {
