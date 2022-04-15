@@ -5,7 +5,6 @@ const { eventListItem } = await import(
 );
 
 export async function renderPreEventList(_eventList) {
-    if (!_eventList) return;
     // declare tempPreEventList
     let templatePreEventList = ``;
     let eventList = _eventList;
@@ -52,10 +51,14 @@ export async function renderPreEventList(_eventList) {
     </div>
     <div class='ecglist'>
     `;
-    // render PreEventList
-    eventList.forEach((evt) => {
-        templatePreEventList += eventListItem(evt);
-    });
+    if (_eventList) {
+        // render PreEventList
+        eventList.forEach((evt) => {
+            templatePreEventList += eventListItem(evt);
+        });
+    }
+    
+    
     templatePreEventList += `</div>`;
     // Attach To Parent
     $('.section.new_patient.pre').html(templatePreEventList);

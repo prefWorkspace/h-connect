@@ -1,18 +1,25 @@
 'use strict';
 
 export async function eventPatientInfo(_bse) {
-    if (!_bse) return;
-    
+    if (!_bse) {
+        return `
+            <div>
+                <h2>NULL (null. null)</h2>
+                <p>null</p>
+            </div>
+        `;
+    }
+
     const { name, age, gender, patientCode } = _bse;
     return `
         <div>
             <h2>${name} (${age}. ${gender & 1 ? '남' : '여'})</h2>
             <p>${patientCode}</p>
         </div>
-    `
+    `;
 }
 
-export async function monitoringButton(){
+export async function monitoringButton() {
     return `
     <button type="button" class="btn_monitor">
                 
@@ -24,30 +31,30 @@ export async function monitoringButton(){
         </div>
         모니터링
     </button>
-    `
+    `;
 }
 
-export async function titleDate(_ymd, _hms){
+export async function titleDate(_ymd, _hms) {
     return `
         <div>
             <h2>${_ymd}</h2>
             &nbsp;
             <h2>${_hms}</h2>
         </div>
-    `
+    `;
 }
 
-export async function eventBasicInfo(_evtName, _evtDetail){
+export async function eventBasicInfo(_evtName, _evtDetail) {
     return `
     <div>
         <h2>${_evtName}</h2>
         &nbsp;
         <h2>${_evtDetail}</h2>
     </div>
-    `
+    `;
 }
 
-export async function screenRightBtnList(_type){
+export async function screenRightBtnList(_type) {
     return `
     <div class="right btn_list">
         <button
@@ -62,6 +69,69 @@ export async function screenRightBtnList(_type){
         >
             confirm
         </button>
+    </div>
+    `;
+}
+
+export async function newScreenBody(_bse) {
+    return `
+    <div class="event_inner">
+        <div class="event_graph">
+            <div class="graph">
+                <p>rhythm title</p>
+
+                <div class="graph_wrap">
+                    <div class="img_container left">
+                        <img
+                            src="/H-Connect/img/graph/blue.svg"
+                            alt="파란색 아이콘"
+                        />
+                    </div>
+
+                    <div class="graph_scroll">
+                        <div
+                            class="img_container right"
+                        >
+                            <img
+                                src="/H-Connect/img/graph/black.svg"
+                                alt="검은색 그래프"
+                                id="cur_graph"
+                                />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="size">
+                <button
+                    type="button"
+                    class="plus"
+                ></button>
+
+                <label>100%</label>
+
+                <button
+                    type="button"
+                    class="minus"
+                ></button>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>rhythm infomation</h2>
+
+            <p>
+                Lorem ipsum : dolor sit amet,
+                consectetur adipisicing elit, sed do
+                eiusmod tempor<br />
+                Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat.<br />
+                Duis aute irure dolor in reprehenderit
+                in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.
+            </p>
+        </div>
     </div>
     `
 }

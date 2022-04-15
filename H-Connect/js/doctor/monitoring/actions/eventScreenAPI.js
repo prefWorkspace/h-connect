@@ -12,14 +12,12 @@ const { renderNewEventScreen, renderPreEventScreen } = await import(
     )
 );
 
-let { selectedEventId } = await import(
-    importVersion('/H-Connect/js/doctor/monitoring/common.js')
-);
-
-export async function updateBioSignalEvent(_bseId, confirm) {
+export async function updateBioSignalEvent(_bse, confirm) {
+    const { bioSignalEventId, measurementCode } = _bse;
     const req = JSON.stringify({
         ...commonRequest(),
-        bioSignalEventId: _bseId,
+        measurementCode,
+        bioSignalEventId,
         confirm,
     });
 
@@ -29,42 +27,39 @@ export async function updateBioSignalEvent(_bseId, confirm) {
         req,
         (res) => {
             if (res.result) {
-                console.log('successfully update');
             }
         },
         (err) => {
-            console.log(err);
+            alert(`서버 통신에 실패하였습니다 (Error: ${err})`)
         }
     );
 }
 
-export async function deleteBioSignalEvent(_bseId) {
+export async function deleteBioSignalEvent(_bse) {
+    const { bioSignalEventId, measurementCode } = _bse;
     const req = JSON.stringify({
         ...commonRequest(),
-        bioSignalEventId: _bseId,
+        measurementCode,
+        bioSignalEventId,
     });
-
     await serverController.ajaxAwaitController(
         'API/BioSignal/DeleteBioSignalEvent',
         'POST',
         req,
         (res) => {
             if (res.result) {
-                console.log('successfully delete');
             }
         },
         (err) => {
-            console.log(err);
+            alert(`서버 통신에 실패하였습니다 (Error: ${err})`)
         }
     );
 }
 
 export async function insertNewEventScreen(_bse) {
-    if (!_bse) return;
     await renderNewEventScreen(_bse);
 }
 
 export async function insertPreEventScreen(_bse) {
-    if (!_bse) return;
     await renderPreEventScreen(_bse);
 }

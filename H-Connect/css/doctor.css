@@ -3,7 +3,6 @@ p {
     font-size: 12px;
 }
 
-
 /* 의사 메인 (h-works) */
 .doctor {
     width: 100%;
@@ -69,7 +68,7 @@ p {
 }
 
 .doctor .btn_today {
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     /* display: none; */
 }
@@ -78,23 +77,25 @@ p {
     margin-right: 22px;
 }
 
-.doctor .btn_today> :last-child {
+.doctor .btn_today > :last-child {
     text-align: left;
     color: #fff;
     position: relative;
 }
 
-.doctor .btn_today> :last-child:after {
+.doctor .btn_today > :last-child:after {
     content: '';
     width: 9px;
     height: 18px;
     position: absolute;
     display: block;
-    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat 0 0px/ contain;
+    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat 0 0px /
+        contain;
     top: 50%;
     transform: translateY(-50%);
     right: -50px;
-    filter: invert(99%) sepia(46%) saturate(0%) hue-rotate(185deg) brightness(112%) contrast(100%);
+    filter: invert(99%) sepia(46%) saturate(0%) hue-rotate(185deg)
+        brightness(112%) contrast(100%);
 }
 
 .doctor .schedule .btn_today h2 {
@@ -119,20 +120,20 @@ p {
     border-bottom: 1px solid #eee;
 }
 
-.doctor .schedule .title>div {
+.doctor .schedule .title > div {
     margin-bottom: 13px;
     display: flex;
     align-items: center;
 }
 
-.doctor .schedule .title>div div {
+.doctor .schedule .title > div div {
     width: 16px;
     height: 16px;
     margin-right: 16px;
 }
 
 .doctor .schedule .title h2 {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .schedule_list {
@@ -162,11 +163,11 @@ p {
 }
 
 .doctor .schedule_list .row span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .schedule_list .row.on {
-    background: #007A94;
+    background: #007a94;
 }
 
 .doctor .schedule_list .row.on span {
@@ -181,19 +182,20 @@ p {
     color: #fff;
 }
 
-.doctor .schedule_list .row>div {
+.doctor .schedule_list .row > div {
     display: flex;
     align-items: center;
 }
 
-.doctor .schedule_list .row>div div {
+.doctor .schedule_list .row > div div {
     width: 6px;
     height: 12px;
     margin-left: 16px;
 }
 
 .doctor .schedule_list .row.on img {
-    filter: invert(0) sepia(11%) saturate(7500%) hue-rotate(209deg) brightness(2222%) contrast(2222%);
+    filter: invert(0) sepia(11%) saturate(7500%) hue-rotate(209deg)
+        brightness(2222%) contrast(2222%);
 }
 
 .doctor .schedule_list .row img {
@@ -217,7 +219,7 @@ p {
 
 .doctor .my_plan .title h2 {
     margin-bottom: 13px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .my_plan .title p {
@@ -263,7 +265,7 @@ p {
 }
 
 .doctor .my_plan .inner .title button.on {
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 }
 
@@ -314,7 +316,7 @@ p {
     display: none;
 }
 
-.doctor .weekly .four>div {
+.doctor .weekly .four > div {
     display: flex;
 }
 
@@ -382,7 +384,7 @@ p {
 
 .doctor .my_plan .weekly .today .title {
     width: 204px;
-    background: #007A94;
+    background: #007a94;
 }
 
 .doctor .my_plan .weekly .today .title p {
@@ -447,129 +449,129 @@ p {
     left: 156px;
 }
 
-.doctor .my_plan .inner> :nth-child(2) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(2) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
 
-.doctor .my_plan .inner> :nth-child(2) :nth-child(3) {
+.doctor .my_plan .inner > :nth-child(2) :nth-child(3) {
     height: 143px;
     top: 232px;
 }
 
-.doctor .my_plan .inner> :nth-child(3),
-.doctor .my_plan .inner> :nth-child(3) .title {
+.doctor .my_plan .inner > :nth-child(3),
+.doctor .my_plan .inner > :nth-child(3) .title {
     width: 100px;
 }
 
-.doctor .my_plan .inner> :nth-child(3) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(3) :nth-child(2) {
     height: 63px;
     top: 41px;
 }
 
-.doctor .my_plan .inner> :nth-child(3) :nth-child(3) {
+.doctor .my_plan .inner > :nth-child(3) :nth-child(3) {
     height: 433px;
     top: 41px;
     left: 52px;
 }
 
-.doctor .my_plan .inner> :nth-child(4),
-.doctor .my_plan .inner> :nth-child(4) .title {
+.doctor .my_plan .inner > :nth-child(4),
+.doctor .my_plan .inner > :nth-child(4) .title {
     width: 100px;
 }
 
-.doctor .my_plan .inner> :nth-child(4) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(4) :nth-child(2) {
     height: 74px;
     top: 111px;
 }
 
-.doctor .my_plan .inner> :nth-child(4) :nth-child(3) {
+.doctor .my_plan .inner > :nth-child(4) :nth-child(3) {
     height: 239px;
     top: 233px;
 }
 
-.doctor .my_plan .inner> :nth-child(4) :nth-child(4) {
+.doctor .my_plan .inner > :nth-child(4) :nth-child(4) {
     height: 286px;
     top: 41px;
     left: 52px;
 }
 
-.doctor .my_plan .inner> :nth-child(5) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(5) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
 
-.doctor .my_plan .inner> :nth-child(8) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(8) :nth-child(2) {
     height: 242px;
     top: 232px;
 }
 
-.doctor .my_plan .inner> :nth-child(9) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(9) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
 
-.doctor .my_plan .inner> :nth-child(10) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(10) :nth-child(2) {
     height: 433px;
     top: 41px;
 }
 
-.doctor .my_plan .inner> :nth-child(11) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(11) :nth-child(2) {
     height: 242px;
     top: 232px;
 }
 
-.doctor .my_plan .inner> :nth-child(12) :nth-child(2) {
+.doctor .my_plan .inner > :nth-child(12) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(1) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(1) :nth-child(2) {
     height: 242px;
     top: 232px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(2) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(2) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(3) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(3) :nth-child(2) {
     height: 433px;
     top: 41px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(4) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(4) :nth-child(2) {
     height: 242px;
     top: 232px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(5) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(5) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(8) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(8) :nth-child(2) {
     height: 242px;
     top: 232px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(9) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(9) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(10) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(10) :nth-child(2) {
     height: 433px;
     top: 41px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(11) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(11) :nth-child(2) {
     height: 242px;
     top: 232px;
 }
 
-.doctor .my_plan .four .wrap> :nth-child(12) :nth-child(2) {
+.doctor .my_plan .four .wrap > :nth-child(12) :nth-child(2) {
     height: 142px;
     top: 41px;
 }
@@ -607,7 +609,6 @@ p {
     border-radius: 0 0 4px 4px;
 }
 
-
 .doctor .selectBox2 .label.year_label::after,
 .doctor .selectBox2.active .label.year_label::after {
     right: 10px;
@@ -634,14 +635,13 @@ p {
     top: 50%;
     right: 20px;
     transform: rotate(180deg);
-    transition: .3s;
+    transition: 0.3s;
 }
-
 
 /* 캘린더 */
 .doctor .calendar {
     width: 360px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     border-radius: 4px;
     position: relative;
     display: block;
@@ -656,7 +656,8 @@ p {
     height: 32px;
     margin-left: -22px;
     background: url('/H-Connect/img/logo_gray.svg') no-repeat 0 0px / contain;
-    filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg) brightness(103%) contrast(96%);
+    filter: invert(50%) sepia(12%) saturate(0%) hue-rotate(287deg)
+        brightness(103%) contrast(96%);
 }
 
 .doctor .cal_container .img_container {
@@ -668,7 +669,6 @@ p {
 .doctor_remote .select {
     margin-left: 95px;
 }
-
 
 /* 오늘의 일정목록 */
 .doctor .today_plan .schedule_list {
@@ -687,7 +687,7 @@ p {
 }
 
 .doctor .today_plan .title p span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .my_plan .today_plan .schedule_list .list {
@@ -711,7 +711,7 @@ p {
 
 .doctor .my_plan .today_plan .schedule_list .list.on {
     border-radius: 4px;
-    background: #007A94;
+    background: #007a94;
 }
 
 .doctor .my_plan .today_plan .schedule_list .list.on p {
@@ -719,9 +719,8 @@ p {
 }
 
 .doctor .my_plan .today_plan .schedule_list .list .send_me {
-    color: #007A94;
+    color: #007a94;
 }
-
 
 /* 협진시작 */
 .doctor .right {
@@ -740,7 +739,7 @@ p {
 }
 
 .doctor .right .title h2 {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .right .title p {
@@ -752,7 +751,7 @@ p {
     height: 40px;
     /* padding: 12px 18px; */
     border-radius: 4px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     font-size: 14px;
     font-weight: normal;
     color: #fff;
@@ -769,7 +768,8 @@ p {
 }
 
 .doctor .right .title button img {
-    filter: invert(100%) sepia(6%) saturate(1%) hue-rotate(56deg) brightness(9999%) contrast(99%);
+    filter: invert(100%) sepia(6%) saturate(1%) hue-rotate(56deg)
+        brightness(9999%) contrast(99%);
 }
 
 .doctor .collabor_wrap {
@@ -782,11 +782,11 @@ p {
     display: none;
 } */
 
-.doctor .collabor_wrap::-webkit-scrollbar{
+.doctor .collabor_wrap::-webkit-scrollbar {
     width: 8px;
 }
 
-.doctor .collabor_wrap::-webkit-scrollbar-thumb{
+.doctor .collabor_wrap::-webkit-scrollbar-thumb {
     height: auto;
     border-radius: 10px;
     background: #ccc;
@@ -832,7 +832,7 @@ p {
     margin: 0;
     font-size: 16px;
     font-weight: 500;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .right .cont_list {
@@ -850,11 +850,11 @@ p {
     align-items: center;
 }
 
-.doctor .collabor .cont_list> :first-child {
+.doctor .collabor .cont_list > :first-child {
     margin: 0 auto 0;
 }
 
-.doctor .collabor .container .cont .case_inner>.title {
+.doctor .collabor .container .cont .case_inner > .title {
     padding: 0;
 }
 
@@ -867,7 +867,9 @@ p {
     cursor: pointer;
 }
 
-.doctor .right .case:first-child{margin: 0 auto;}
+.doctor .right .case:first-child {
+    margin: 0 auto;
+}
 
 /* .doctor .right .case:nth-last-child(2){margin: 0 auto;} */
 
@@ -875,12 +877,12 @@ p {
     margin-right: 10px;
 }
 
-.doctor .right .case> :first-child p {
+.doctor .right .case > :first-child p {
     width: 60px;
     margin-right: 0;
 }
 
-.doctor .right .member .case> :first-child p {
+.doctor .right .member .case > :first-child p {
     width: fit-content;
 }
 
@@ -888,15 +890,15 @@ p {
     margin-right: 10px;
 }
 
-.doctor .right .case> :first-child :last-child {
+.doctor .right .case > :first-child :last-child {
     width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.doctor .right .case> :last-child p {
-    color: #007A94;
+.doctor .right .case > :last-child p {
+    color: #007a94;
 }
 
 .doctor .right .case .fold {
@@ -921,15 +923,15 @@ p {
     width: 352px;
     margin: 0 auto;
     padding: 16px 0;
-    border-top: 1px solid #007A94;
+    border-top: 1px solid #007a94;
     border-radius: 0 0 4px 4px;
 }
 
-.doctor .right .case_inner>div {
+.doctor .right .case_inner > div {
     margin-bottom: 16px;
 }
 
-.doctor .right .case_inner> :last-child {
+.doctor .right .case_inner > :last-child {
     margin: 0;
 }
 
@@ -938,7 +940,7 @@ p {
     display: inherit;
 }
 
-.doctor .right .case_inner>div div {
+.doctor .right .case_inner > div div {
     height: fit-content;
     padding: 16px;
     border-radius: 4px;
@@ -965,7 +967,7 @@ p {
 
 .doctor .right .cont_list .case.on img {
     transform: rotate(180deg);
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .doctor .right .member .title {
@@ -978,28 +980,32 @@ p {
     color: #000;
 }
 
-.doctor .right .member .title p{margin: 0;}
+.doctor .right .member .title p {
+    margin: 0;
+}
 
 .doctor .right .member .title p span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .right .member .count {
     width: fit-content;
     margin-left: 8px;
     font-weight: 500;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .right .member .count.red {
     color: #940045;
 }
 
-.doctor .right .member .case{
+.doctor .right .member .case {
     margin: 16px auto 0;
 }
 
-.doctor .right .member .case:first-child{margin: 0 auto;}
+.doctor .right .member .case:first-child {
+    margin: 0 auto;
+}
 
 .doctor .right .member .case_cont {
     padding: 16px;
@@ -1020,10 +1026,12 @@ p {
     /* display: inline-block; */
 }
 
-.doctor .right .member .case_cont p:nth-last-child(-n+3){margin: 0;}
+.doctor .right .member .case_cont p:nth-last-child(-n + 3) {
+    margin: 0;
+}
 
 .doctor .emergency_section .title .btn_colla {
-    background: linear-gradient(to right, #940045, #4A0000);
+    background: linear-gradient(to right, #940045, #4a0000);
 }
 
 .doctor .emergency_section .title h2 {
@@ -1034,12 +1042,12 @@ p {
     margin: 0 auto;
 }
 
-.doctor .emergency_section .collabor_wrap>div {
+.doctor .emergency_section .collabor_wrap > div {
     display: flex;
     justify-content: space-between;
 }
 
-.doctor .emergency_section .collabor_wrap>div h2 {
+.doctor .emergency_section .collabor_wrap > div h2 {
     font-size: 16px;
     font-weight: 500;
 }
@@ -1072,13 +1080,14 @@ p {
     padding: 0 16px 20px;
 }
 
-.doctor .opinion .collabor_wrap>div:not(.time) {
+.doctor .opinion .collabor_wrap > div:not(.time) {
     /* padding: 20px 0; */
     padding: 20px 0 0;
 }
 
-.doctor .opinion .collabor_wrap .member{margin: 16px 0 0;}
-
+.doctor .opinion .collabor_wrap .member {
+    margin: 16px 0 0;
+}
 
 .doctor .opinion .time :first-child {
     margin-bottom: 16px;
@@ -1092,9 +1101,6 @@ p {
 .doctor .collabor .collabor_wrap .cont .title {
     padding: 20px 30px;
 }
-
-
-
 
 /* 실시간 원격 협진 */
 .connect_remote,
@@ -1182,7 +1188,7 @@ p {
 }
 
 .para_connect .layer p {
-    color: #007A94;
+    color: #007a94;
 }
 
 .para_connect .refuse_layer p {
@@ -1194,7 +1200,7 @@ p {
 .para_connect .webcam:hover .cam_layer {
     opacity: 1;
     cursor: pointer;
-    transition: .4s;
+    transition: 0.4s;
 }
 
 .para_connect .toggle_layer {
@@ -1209,14 +1215,11 @@ p {
     cursor: pointer;
 }
 
-
-
 /* 소견 요청 협진 */
 .connect_opinion .call_control .con_btn {
     width: 80px;
     margin: 0 auto;
 }
-
 
 /* 원격협진알림 */
 .remote_main .schedule .btn_section {
@@ -1240,7 +1243,7 @@ p {
 
 .doctor .remote_alarm .title h2 {
     margin-bottom: 13px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .remote_alarm .title p {
@@ -1253,7 +1256,7 @@ p {
     justify-content: space-between;
 }
 
-.doctor .remote_alarm .inner>div {
+.doctor .remote_alarm .inner > div {
     width: 570px;
 }
 
@@ -1293,7 +1296,9 @@ p {
     flex-shrink: 0;
 }
 
-.doctor .remote_alarm .right .time{padding: 0;}
+.doctor .remote_alarm .right .time {
+    padding: 0;
+}
 
 .doctor .row:hover {
     background: #eee;
@@ -1304,7 +1309,9 @@ p {
     color: #007a94;
 }
 
-.doctor .remote_alarm .inner .left .time{margin-left: 2px;}
+.doctor .remote_alarm .inner .left .time {
+    margin-left: 2px;
+}
 
 .doctor .remote_alarm .no_check {
     color: #940045;
@@ -1331,15 +1338,17 @@ p {
 
 .doctor .remote_alarm .reply {
     width: 196px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.doctor .remote_alarm .name{
+.doctor .remote_alarm .name {
     width: 76px;
     text-align: right;
 }
 
-.doctor .remote_alarm .name.my{color: #007A94;}
+.doctor .remote_alarm .name.my {
+    color: #007a94;
+}
 
 .doctor .remote_alarm .case {
     padding: 0;
@@ -1349,9 +1358,8 @@ p {
 }
 
 .doctor .remote_alarm .count span {
-    color: #007A94;
+    color: #007a94;
 }
-
 
 /* 진행중인 세션 목록 */
 .doctor .now_section {
@@ -1367,7 +1375,7 @@ p {
 
 .doctor .now_section .title h2 {
     margin-bottom: 13px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .now_section .title p {
@@ -1397,7 +1405,8 @@ p {
 .doctor .now_section .list img {
     width: 100%;
     height: 100%;
-    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg)
+        brightness(80%) contrast(101%);
 }
 
 .doctor .now_section .row {
@@ -1409,7 +1418,7 @@ p {
 }
 
 .doctor .now_section .row.on {
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
 }
 
 .doctor .now_section .row.on p {
@@ -1417,7 +1426,8 @@ p {
 }
 
 .doctor .now_section .row.on img {
-    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(273deg) brightness(210%) contrast(195%);
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(273deg)
+        brightness(210%) contrast(195%);
 }
 
 .doctor .now_section .red p {
@@ -1425,18 +1435,17 @@ p {
 }
 
 .doctor .now_section .red img {
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg)
+        brightness(55%) contrast(113%);
 }
 
 .doctor .now_section .red.on {
-    background: linear-gradient(to right, #940045, #4A0000);
+    background: linear-gradient(to right, #940045, #4a0000);
 }
 
 .doctor .now_section .red.on img {
     filter: none;
 }
-
-
 
 /* 응급협진하기 - 로딩 */
 .connect_emergency {
@@ -1460,7 +1469,6 @@ p {
     width: fit-content;
 }
 
-
 /* 입원환자 모니터링 */
 .doctor_monitor .new_patient {
     width: 360px;
@@ -1472,7 +1480,7 @@ p {
     padding: 16px 16px 26px;
 }
 
-.doctor_monitor .new_patient .title>div {
+.doctor_monitor .new_patient .title > div {
     margin-bottom: 13px;
     display: flex;
     align-items: center;
@@ -1485,11 +1493,12 @@ p {
 }
 
 .doctor_monitor .new_patient .title .img_container img {
-    filter: invert(24%) sepia(66%) saturate(2827%) hue-rotate(171deg) brightness(64%) contrast(69%);
+    filter: invert(24%) sepia(66%) saturate(2827%) hue-rotate(171deg)
+        brightness(64%) contrast(69%);
 }
 
 .doctor_monitor .new_patient .title h2 {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_monitor .new_patient .title p {
@@ -1508,7 +1517,7 @@ p {
 }
 
 .doctor_monitor .new_patient .alarm span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_monitor .new_patient .alarm button {
@@ -1518,7 +1527,7 @@ p {
 }
 
 .doctor_monitor .new_patient .alarm button.on {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_monitor .new_patient .alarm .btn_new {
@@ -1559,22 +1568,22 @@ p {
     cursor: pointer;
 }
 
-.doctor_monitor .new_patient .row>p {
+.doctor_monitor .new_patient .row > p {
     font-size: 10px;
-    color: #007A94;
+    color: #007a94;
 }
 
-.doctor_monitor .new_patient.pre .row>p {
+.doctor_monitor .new_patient.pre .row > p {
     color: #888;
 }
 
-.doctor_monitor .new_patient .row>div {
+.doctor_monitor .new_patient .row > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.doctor_monitor .new_patient .row>div div {
+.doctor_monitor .new_patient .row > div div {
     display: flex;
     align-items: center;
 }
@@ -1591,8 +1600,8 @@ p {
 }
 
 .doctor_monitor .new_patient .row.on {
-    background: #007A94;
-    border-bottom: 1px solid #007A94;
+    background: #007a94;
+    border-bottom: 1px solid #007a94;
 }
 
 .doctor_monitor .new_patient .row.on p {
@@ -1600,7 +1609,8 @@ p {
 }
 
 .doctor_monitor .new_patient .row.on .img_container img {
-    filter: invert(0%) sepia(0) saturate(7451%) hue-rotate(176deg) brightness(508%) contrast(505%);
+    filter: invert(0%) sepia(0) saturate(7451%) hue-rotate(176deg)
+        brightness(508%) contrast(505%);
 }
 
 .doctor_monitor .new_patient .search_container {
@@ -1612,7 +1622,7 @@ p {
     padding: 8px 29px 8px 8px;
     border-radius: 4px;
     font-size: 12px;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
 }
 
 .doctor_monitor .new_patient .search_container input::placeholder {
@@ -1653,7 +1663,7 @@ p {
 }
 
 .doctor_monitor .rhythm .title h2 {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_monitor .rhythm .title p {
@@ -1666,7 +1676,7 @@ p {
     height: 40px;
     padding: 10px 20px;
     border-radius: 4px;
-    background: #007A94;
+    background: #007a94;
     font-size: 14px;
     color: #fff;
     display: flex;
@@ -1680,7 +1690,8 @@ p {
 }
 
 .doctor_monitor .rhythm .btn_monitor .img_container img {
-    filter: invert(40%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(110%) contrast(311%);
+    filter: invert(40%) sepia(100%) saturate(0%) hue-rotate(88deg)
+        brightness(110%) contrast(311%);
 }
 
 .doctor_monitor .rhythm .event .title {
@@ -1762,7 +1773,7 @@ p {
     border-radius: 4px;
 }
 
-.doctor_monitor .rhythm .graph>p {
+.doctor_monitor .rhythm .graph > p {
     margin-bottom: 4px;
 }
 
@@ -1791,11 +1802,14 @@ p {
 
 .doctor_monitor .rhythm .graph_scroll {
     width: 1100px;
-    padding-bottom: 100px;
+    height: 140px;
+    /* padding-bottom: 100px; */
     overflow-x: scroll;
     position: absolute;
-    top: 25%;
+    /* top: 25%; */
+    top: 0;
     left: 84px;
+    margin: 20px 0 0;
 }
 
 .doctor_monitor .rhythm .graph_scroll::-webkit-scrollbar {
@@ -1860,7 +1874,7 @@ p {
 }
 
 /* 모니터링 - 환자 상세화면 */
-.doctor_patient .wrap_inner>div {
+.doctor_patient .wrap_inner > div {
     display: flex;
 }
 
@@ -1876,10 +1890,12 @@ p {
     justify-content: space-between;
 }
 
-.doctor_patient .patient .title div{margin: 8px 0 0;}
+.doctor_patient .patient .title div {
+    margin: 8px 0 0;
+}
 
 .doctor_patient .patient .title h2 {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_patient .patient .title p {
@@ -1892,7 +1908,7 @@ p {
     height: 40px;
     padding: 10px 20px;
     border-radius: 4px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     font-size: 14px;
     color: #fff;
     display: flex;
@@ -1940,7 +1956,8 @@ p {
 .doctor_patient .patient .management_list .list img {
     width: 100%;
     height: 100%;
-    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
+    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg)
+        brightness(64%) contrast(102%);
 }
 
 .doctor_patient .patient .management_list .doctor_send div {
@@ -1953,7 +1970,7 @@ p {
 }
 
 .doctor_patient .patient .management_list .list.on {
-    background: #007A94;
+    background: #007a94;
 }
 
 .doctor_patient .patient .management_list .list.on p {
@@ -1987,14 +2004,14 @@ p {
     width: 100%;
     height: 40px;
     padding: 11px 16px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     border-radius: 8px 8px 0 0;
     display: flex;
     justify-content: space-between;
     color: #fff;
 }
 
-.doctor_patient .vital_chart .title> :first-child :first-child {
+.doctor_patient .vital_chart .title > :first-child :first-child {
     width: 150px;
 }
 
@@ -2011,7 +2028,7 @@ p {
     display: flex;
 }
 
-.doctor_patient .vital_chart .title .chart_time p> :first-child {
+.doctor_patient .vital_chart .title .chart_time p > :first-child {
     margin-left: 5px;
 }
 
@@ -2063,7 +2080,7 @@ p {
 }
 
 .doctor_patient ul.tabs li.current {
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 }
 
@@ -2080,9 +2097,9 @@ p {
     width: 80px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
     background: #fff;
-    color: #007A94;
+    color: #007a94;
 }
 
 .monitoring_patient .ecg,
@@ -2098,11 +2115,11 @@ p {
     margin: 10px 0;
 }
 
-.monitoring_patient .g_type>div {
+.monitoring_patient .g_type > div {
     margin-top: 20px;
 }
 
-.monitoring_patient .g_type>p {
+.monitoring_patient .g_type > p {
     font-size: 14px;
 }
 
@@ -2121,7 +2138,7 @@ p {
     margin-bottom: 39px;
 }
 
-.monitoring_patient .control>div:not(.temp) {
+.monitoring_patient .control > div:not(.temp) {
     display: flex;
     align-items: center;
 }
@@ -2144,15 +2161,15 @@ p {
     justify-content: initial;
 }
 
-.monitoring_patient .control .ews .bell_num>div {
+.monitoring_patient .control .ews .bell_num > div {
     margin-top: -4px;
 }
 
-.monitoring_patient .control .ews .bell_num>p {
+.monitoring_patient .control .ews .bell_num > p {
     margin-right: 8px;
 }
 
-.monitoring_patient .control .bell_name input[type="checkbox"]+label span {
+.monitoring_patient .control .bell_name input[type='checkbox'] + label span {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -2189,14 +2206,14 @@ p {
 .monitoring_patient .pulse {
     width: 160px;
     padding: 16px;
-    color: #00FFFF;
+    color: #00ffff;
 }
 
 .monitoring_patient .pulse .time p {
     margin: 0 4px 0 0;
 }
 
-.monitoring_patient .pulse .time> :last-child {
+.monitoring_patient .pulse .time > :last-child {
     margin-right: 0px;
 }
 
@@ -2204,7 +2221,7 @@ p {
     width: 160px;
     height: 104px;
     padding: 8px 16px;
-    color: #FF3184;
+    color: #ff3184;
     cursor: pointer;
 }
 
@@ -2260,7 +2277,7 @@ p {
     display: flex;
 }
 
-.monitoring_patient .tabular_table .table_content>div {
+.monitoring_patient .tabular_table .table_content > div {
     display: flex;
 }
 
@@ -2383,7 +2400,7 @@ p {
     justify-content: space-between;
 }
 
-.monitoring_patient .row_time> :last-child {
+.monitoring_patient .row_time > :last-child {
     margin: 0;
 }
 
@@ -2435,7 +2452,8 @@ p {
 }
 
 .monitoring_patient .hr_chart .time_line::before {
-    background: url('/H-Connect/img/icon/tri_green.svg') no-repeat center / contain;
+    background: url('/H-Connect/img/icon/tri_green.svg') no-repeat center /
+        contain;
 }
 
 .monitoring_patient .graph_wrap .sp_chart .time {
@@ -2451,7 +2469,8 @@ p {
 }
 
 .monitoring_patient .sp_chart .time_line::before {
-    background: url('/H-Connect/img/icon/tri_blue.svg') no-repeat center / contain;
+    background: url('/H-Connect/img/icon/tri_blue.svg') no-repeat center /
+        contain;
 }
 
 .monitoring_patient .graph_wrap .resp_chart .time {
@@ -2467,7 +2486,8 @@ p {
 }
 
 .monitoring_patient .resp_chart .time_line::before {
-    background: url('/H-Connect/img/icon/tri_yellow.svg') no-repeat center / contain;
+    background: url('/H-Connect/img/icon/tri_yellow.svg') no-repeat center /
+        contain;
 }
 
 .monitoring_patient .graph_wrap .temp_chart .time {
@@ -2483,7 +2503,8 @@ p {
 }
 
 .monitoring_patient .temp_chart .time_line::before {
-    background: url('/H-Connect/img/icon/tri_pink.svg') no-repeat center / contain;
+    background: url('/H-Connect/img/icon/tri_pink.svg') no-repeat center /
+        contain;
 }
 
 /* event */
@@ -2526,11 +2547,11 @@ p {
     display: none;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap> :last-child {
+.monitoring_patient .cont .event .table_body .table_wrap > :last-child {
     position: relative;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap> :last-child::after {
+.monitoring_patient .cont .event .table_body .table_wrap > :last-child::after {
     content: '';
     width: 12px;
     height: 6px;
@@ -2540,10 +2561,16 @@ p {
     right: -35px;
     transition: 0.3s;
     transform: translateY(-50%);
-    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg)
+        brightness(108%) contrast(101%);
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap.on> :last-child::after {
+.monitoring_patient
+    .cont
+    .event
+    .table_body
+    .table_wrap.on
+    > :last-child::after {
     content: '';
     width: 12px;
     height: 6px;
@@ -2551,9 +2578,10 @@ p {
     background: url('/H-Connect/img/under_arrow.svg') no-repeat;
     top: 0;
     right: -35px;
-    transition: .3s;
+    transition: 0.3s;
     margin-top: 7px;
-    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg) brightness(108%) contrast(101%);
+    filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(85deg)
+        brightness(108%) contrast(101%);
     transform: rotate(180deg);
 }
 
@@ -2565,7 +2593,7 @@ p {
     display: inline-block;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap>div>div {
+.monitoring_patient .cont .event .table_body .table_wrap > div > div {
     display: inline-block;
 }
 
@@ -2578,7 +2606,7 @@ p {
     display: flex;
 }
 
-.monitoring_patient .cont .event .table_body .table_wrap>div {
+.monitoring_patient .cont .event .table_body .table_wrap > div {
     display: flex;
 }
 
@@ -2613,7 +2641,7 @@ p {
 .monitoring_patient .table_body .table_content .ecg p {
     font-size: 14px;
     text-align: left;
-    color: #00FF22;
+    color: #00ff22;
     display: block;
 }
 
@@ -2624,7 +2652,7 @@ p {
     cursor: pointer;
 }
 
-.monitoring_patient .table_body .table_content .ecg .ecg_graph>div {
+.monitoring_patient .table_body .table_content .ecg .ecg_graph > div {
     width: 1010px;
     height: 70px;
     padding: 10px 0;
@@ -2633,11 +2661,21 @@ p {
     overflow-y: hidden;
 }
 
-.monitoring_patient .table_body .table_content .ecg .ecg_graph>div::-webkit-scrollbar {
+.monitoring_patient
+    .table_body
+    .table_content
+    .ecg
+    .ecg_graph
+    > div::-webkit-scrollbar {
     height: 8px;
 }
 
-.monitoring_patient .table_body .table_content .ecg .ecg_graph>div::-webkit-scrollbar-thumb {
+.monitoring_patient
+    .table_body
+    .table_content
+    .ecg
+    .ecg_graph
+    > div::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: #ccc;
 }
@@ -2647,7 +2685,7 @@ p {
     height: 64px;
 }
 
-.monitoring_patient .table_body .table_content .ecg .bell>div {
+.monitoring_patient .table_body .table_content .ecg .bell > div {
     display: flex;
 }
 
@@ -2655,7 +2693,7 @@ p {
     font-size: 18px;
 }
 
-.monitoring_patient .table_body .table_content .bell_num>p {
+.monitoring_patient .table_body .table_content .bell_num > p {
     font-size: 48px;
     text-align: right;
 }
@@ -2668,7 +2706,6 @@ p {
 .monitoring_patient .table_body .table_content .ecg .bell_name p {
     font-size: 14px;
 }
-
 
 /* pacs */
 .doctor_patient .pacs {
@@ -2685,7 +2722,7 @@ p {
 
 .doctor_patient .pacs .title h2 {
     margin-bottom: 13px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_patient .pacs .title p {
@@ -2720,28 +2757,28 @@ p {
 }
 
 .doctor_patient .pacs .row div img {
-    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg) brightness(64%) contrast(102%);
+    filter: invert(21%) sepia(36%) saturate(7230%) hue-rotate(176deg)
+        brightness(64%) contrast(102%);
 }
 
-.doctor_patient .pacs .row> :first-child {
+.doctor_patient .pacs .row > :first-child {
     width: 150px;
 }
 
-.doctor_patient .pacs .row> :nth-child(2) {
+.doctor_patient .pacs .row > :nth-child(2) {
     width: 170px;
 }
 
-.doctor_patient .pacs .row> :nth-child(3),
-.doctor_patient .pacs .row> :nth-child(4),
-.doctor_patient .pacs .row> :nth-child(5) {
+.doctor_patient .pacs .row > :nth-child(3),
+.doctor_patient .pacs .row > :nth-child(4),
+.doctor_patient .pacs .row > :nth-child(5) {
     width: 200px;
 }
 
-.doctor_patient .pacs .row> :last-child {
+.doctor_patient .pacs .row > :last-child {
     width: 100px;
     margin-left: 80px;
 }
-
 
 /* pacs_img */
 .patient_img {
@@ -2832,7 +2869,7 @@ p {
 }
 
 .patient_img .swiper-slide-thumb-active {
-    border: 4px solid #FFB300;
+    border: 4px solid #ffb300;
 }
 
 .patient_img .control {
@@ -2840,7 +2877,7 @@ p {
     height: 64px;
     padding: 20px;
     margin: 8px auto;
-    background: #004F60;
+    background: #004f60;
     border-radius: 8px;
     position: relative;
 }
@@ -2870,7 +2907,8 @@ p {
     /* top: 45%; */
     top: 35%;
     right: 100px;
-    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px /
+        contain;
     /* transform: translateY(81%); */
     transform: translateY(0%);
 }
@@ -2881,7 +2919,8 @@ p {
     height: 17px;
     top: 45%;
     left: 100px;
-    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px / contain;
+    background: url('/H-Connect/img/icon/btn_tri2.svg') no-repeat 0 0px /
+        contain;
     /* transform: rotate(180deg) translateY(-100%); */
     transform: rotate(180deg) translateY(30%);
 }
@@ -2889,7 +2928,7 @@ p {
 .patient_img .swiper-scrollbar {
     width: 210px;
     height: 2px;
-    background: #007A94;
+    background: #007a94;
     border: 1px solid #fff;
     top: 50%;
     left: 50%;
@@ -2903,7 +2942,7 @@ p {
     top: -11px;
     width: 40px !important;
     height: 24px;
-    background: #007A94;
+    background: #007a94;
     border-radius: 4px;
     border: 1px solid #fff;
     cursor: pointer;
@@ -2917,7 +2956,7 @@ p {
     top: 6%;
     right: 50%;
     transform: translate(-7%, -32%);
-    color: #007A94;
+    color: #007a94;
 }
 
 .patient_img .swiper-pagination-current {
@@ -2932,7 +2971,6 @@ p {
 .patient_img .swiper-pagination-total {
     display: none;
 }
-
 
 .doctor_patient .tabular_table .table_title {
     padding: 7px 240px 7px 16px;
@@ -2949,7 +2987,6 @@ p {
     display: block;
     clear: both;
 }
-
 
 /* lab 조회 */
 .doctor_patient .lab_list,
@@ -2988,24 +3025,25 @@ p {
     content: '';
     width: 6px;
     height: 12px;
-    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat center / contain;
+    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat center /
+        contain;
     display: inline-block;
 }
 
-.doctor_patient .lab_list .list_inner li.on{
-    background: #007A94;
+.doctor_patient .lab_list .list_inner li.on {
+    background: #007a94;
     color: #fff;
     border-radius: 4px;
     border-color: transparent;
 }
-.doctor_patient .lab_list .list_inner li.on::after{
-    filter: invert(155%) sepia(100%) saturate(2%) hue-rotate(265deg) brightness(150%) contrast(180%);
+.doctor_patient .lab_list .list_inner li.on::after {
+    filter: invert(155%) sepia(100%) saturate(2%) hue-rotate(265deg)
+        brightness(150%) contrast(180%);
 }
 
 .doctor_patient .lab_list .list_inner li span {
     margin-left: 5px;
 }
-
 
 .doctor_patient .section .list_inner::-webkit-scrollbar {
     width: 8px;
@@ -3024,7 +3062,7 @@ p {
     padding: 32px 6px 32px 32px;
 }
 
-.doctor_patient .lab_result .list_inner>div:not(.title) {
+.doctor_patient .lab_result .list_inner > div:not(.title) {
     padding-left: 15px;
     margin-bottom: 32px;
 }
@@ -3046,7 +3084,9 @@ p {
     content: '/';
     margin: 0 3px;
 }
-.doctor_patient .lab_result .title h3:last-child::after{display: none;}
+.doctor_patient .lab_result .title h3:last-child::after {
+    display: none;
+}
 
 .doctor_patient .lab_result p {
     margin-bottom: 16px;
@@ -3066,7 +3106,7 @@ p {
 .doctor_patient .lab_result li div {
     width: 480px;
     padding: 8px 16px;
-    background: #EEEEEE;
+    background: #eeeeee;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -3074,7 +3114,7 @@ p {
 
 .doctor_patient .lab_result li span {
     font-size: 12px;
-    color: #C0C0C0;
+    color: #c0c0c0;
 }
 
 .doctor_patient .lab_result li p {
@@ -3086,27 +3126,24 @@ p {
     width: 345px;
     padding-right: 16px;
     margin-left: 16px;
-    background: #EEEEEE;
+    background: #eeeeee;
     line-height: 32px;
     text-align: right;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_patient .lab_result li > p.active {
     color: #940045;
 }
 
-.doctor_patient .lab_result .box{
+.doctor_patient .lab_result .box {
     max-width: 824px;
     padding: 8px 10px 27px 16px;
     border-radius: 4px;
-    background: #EEEEEE;
+    background: #eeeeee;
     font-size: 12px;
     white-space: pre-line;
 }
-
-
-
 
 /*  원격협진  */
 .doctor .status {
@@ -3119,7 +3156,7 @@ p {
     margin-bottom: 32px;
     padding: 20px 32px;
     border-radius: 8px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
@@ -3138,21 +3175,23 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg) brightness(210%) contrast(103%);
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(88deg)
+        brightness(210%) contrast(103%);
 }
 
-.doctor .status_label> :last-child {
+.doctor .status_label > :last-child {
     text-align: left;
     color: #fff;
     position: relative;
 }
 
-.doctor_remote .status_label> :last-child:after {
+.doctor_remote .status_label > :last-child:after {
     content: '';
     width: 9px;
     height: 18px;
     position: absolute;
-    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat 0 0px /contain;
+    background: url('/H-Connect/img/icon/btn_next_green.svg') no-repeat 0 0px /
+        contain;
     top: 50%;
     right: -80px;
     transform: translateY(-50%);
@@ -3177,25 +3216,26 @@ p {
 }
 
 .doctor .status .text_box img {
-    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg)
+        brightness(80%) contrast(101%);
 }
 
 .doctor .status .text_box h2 {
     font-weight: 500;
-    color: #007A94;
+    color: #007a94;
 }
 
-.doctor .status .title>p {
+.doctor .status .title > p {
     color: #444;
 }
 
 .doctor .status .title .btn_new {
     padding: 10px 16px;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
     border-radius: 4px;
     background: #fff;
     font-size: 14px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .status .title .btn_new:hover {
@@ -3207,7 +3247,7 @@ p {
 }
 
 .doctor .status_list span {
-    color: #007A94;
+    color: #007a94;
 }
 
 /* 전체 협진 일정보기 */
@@ -3225,7 +3265,7 @@ p {
 }
 
 .doctor .all_plan .title h2 {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .all_plan .title .tab {
@@ -3263,7 +3303,8 @@ p {
 }
 
 .doctor .all_plan .title div img {
-    filter: invert(58%) sepia(0%) saturate(5644%) hue-rotate(134deg) brightness(98%) contrast(49%);
+    filter: invert(58%) sepia(0%) saturate(5644%) hue-rotate(134deg)
+        brightness(98%) contrast(49%);
 }
 
 .doctor .all_plan .title li.current div img {
@@ -3313,7 +3354,7 @@ p {
 }
 
 .doctor .cal_list .title span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .cal_list .row div :first-child {
@@ -3321,7 +3362,7 @@ p {
 }
 
 .doctor .cal_list .row .me {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .ask_request .collabor_wrap {
@@ -3389,7 +3430,8 @@ p {
 }
 
 .doctor .time_select ul.tabs li img {
-    filter: invert(58%) sepia(0%) saturate(5644%) hue-rotate(134deg) brightness(98%) contrast(49%);
+    filter: invert(58%) sepia(0%) saturate(5644%) hue-rotate(134deg)
+        brightness(98%) contrast(49%);
 }
 
 .doctor .time_select ul.tabs li.current {
@@ -3410,7 +3452,7 @@ p {
     display: inherit;
 }
 
-.doctor .time_select .list_view>div {
+.doctor .time_select .list_view > div {
     width: 384px;
     padding: 12px 16px;
     margin: 0 auto;
@@ -3440,13 +3482,13 @@ p {
     align-items: center;
 }
 
-.doctor .green_custom[type="checkbox"]+label {
+.doctor .green_custom[type='checkbox'] + label {
     display: inline-block;
     width: 24px;
     height: 24px;
 }
 
-.doctor .time_select input[type="checkbox"] {
+.doctor .time_select input[type='checkbox'] {
     display: none;
 }
 
@@ -3454,7 +3496,7 @@ p {
     margin-bottom: 5px;
 }
 
-.doctor .time_select .list_view> :nth-child(3) .dupli {
+.doctor .time_select .list_view > :nth-child(3) .dupli {
     display: block;
 }
 
@@ -3493,7 +3535,7 @@ p {
     margin-bottom: 10px;
 }
 
-.doctor .time_select .week_view .select_week>div {
+.doctor .time_select .week_view .select_week > div {
     width: 100%;
     padding: 12px 16px 16px;
     margin-bottom: 8px;
@@ -3510,7 +3552,7 @@ p {
 
 .doctor .time_select .week_view .select_week .check span {
     font-size: 12px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .time_select .week_view .select_week .people {
@@ -3530,7 +3572,7 @@ p {
     padding: 0;
     display: initial;
     position: absolute;
-    top: 43px
+    top: 43px;
 }
 
 .doctor .time_select .week_view .time div {
@@ -3553,7 +3595,7 @@ p {
     right: 41px;
 }
 
-.doctor .me_request .time_select .week_view .possible>div {
+.doctor .me_request .time_select .week_view .possible > div {
     opacity: 1;
 }
 
@@ -3601,7 +3643,7 @@ p {
     z-index: 2;
 } */
 
-.doctor .time_select .inner .plan>p {
+.doctor .time_select .inner .plan > p {
     color: #fff;
     /* z-index: 2; */
     position: absolute;
@@ -3617,18 +3659,18 @@ p {
     opacity: 0;
 }
 
-.doctor .time_select .possible>div {
+.doctor .time_select .possible > div {
     width: 48px;
     line-height: 48px;
-    background: #004F60;
+    background: #004f60;
     font-size: 10px;
     cursor: pointer;
 }
 
-.doctor .time_select .possible.active>div .num {
+.doctor .time_select .possible.active > div .num {
     opacity: 1;
-    transition: .3s;
-    background: #004F60;
+    transition: 0.3s;
+    background: #004f60;
 }
 
 .doctor_remote .time_select .possible {
@@ -3636,7 +3678,7 @@ p {
     /* z-index: 3; */
 }
 
-.doctor_remote .time_select .possible>div {
+.doctor_remote .time_select .possible > div {
     background: none;
     opacity: 0;
     position: relative;
@@ -3648,10 +3690,10 @@ p {
     opacity: 1;
 }
 
-.doctor_remote .time_select .possible>div:hover .select_info {
+.doctor_remote .time_select .possible > div:hover .select_info {
     display: flex;
     opacity: 1;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .doctor_remote .time_select .possible .select_info {
@@ -3661,7 +3703,7 @@ p {
     width: 140px;
     padding: 4px 8px 8px;
     border-radius: 4px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
     background: #fff;
     display: flex;
     align-items: center;
@@ -3689,69 +3731,69 @@ p {
     color: #000;
 }
 
-.doctor_remote .time_select .possible .select_info p:nth-last-child(-n+2) {
+.doctor_remote .time_select .possible .select_info p:nth-last-child(-n + 2) {
     margin: 0;
 }
 
-.doctor .time_select .inner> :first-child {
+.doctor .time_select .inner > :first-child {
     width: 48px;
 }
 
-.doctor .time_select .inner> :first-child> :nth-child(2) {
+.doctor .time_select .inner > :first-child > :nth-child(2) {
     height: 146px;
     top: 41px;
 }
 
-.doctor .time_select .inner> :first-child> :nth-child(3) {
+.doctor .time_select .inner > :first-child > :nth-child(3) {
     height: 242px;
     top: 231px;
 }
 
-.doctor .time_select .inner> :nth-child(2),
-.doctor .time_select .inner> :nth-child(2) .title {
+.doctor .time_select .inner > :nth-child(2),
+.doctor .time_select .inner > :nth-child(2) .title {
     width: 100px;
 }
 
-.doctor .time_select .inner> :nth-child(2)> :nth-child(2) {
+.doctor .time_select .inner > :nth-child(2) > :nth-child(2) {
     top: 41px;
     height: 146px;
 }
 
-.doctor .time_select .inner> :nth-child(2)> :nth-child(3) {
+.doctor .time_select .inner > :nth-child(2) > :nth-child(3) {
     height: 146px;
     top: 41px;
     left: 52px;
 }
 
-.doctor .time_select .inner> :nth-child(2)> :nth-child(4) {
+.doctor .time_select .inner > :nth-child(2) > :nth-child(4) {
     height: 240px;
     top: 233px;
     left: 52px;
 }
 
-.doctor .time_select .inner> :nth-child(3)> :nth-child(2) {
+.doctor .time_select .inner > :nth-child(3) > :nth-child(2) {
     top: 41px;
     height: 432px;
 }
 
-.doctor .time_select .inner> :nth-child(4)> :nth-child(2) {
+.doctor .time_select .inner > :nth-child(4) > :nth-child(2) {
     /* height: 193px; */
     height: 145px;
     top: 41px;
 }
 
-.doctor .time_select .inner> :nth-child(4)> :nth-child(3) {
+.doctor .time_select .inner > :nth-child(4) > :nth-child(3) {
     top: 231px;
     height: 242px;
 }
 
-.doctor .time_select .inner> :nth-child(5)> :nth-child(2) {
+.doctor .time_select .inner > :nth-child(5) > :nth-child(2) {
     top: 41px;
     left: 0;
     height: 142px;
 }
 
-.doctor .time_select .inner> :nth-child(5)> :nth-child(3) {
+.doctor .time_select .inner > :nth-child(5) > :nth-child(3) {
     height: 242px;
     top: 231px;
     left: 0;
@@ -3771,8 +3813,8 @@ p {
 }
 
 .doctor .me_request .title .btn_modify {
-    border: 1px solid #007A94;
-    color: #007A94;
+    border: 1px solid #007a94;
+    color: #007a94;
 }
 
 .doctor .me_request .title .btn_modify:hover {
@@ -3785,12 +3827,12 @@ p {
 }
 
 .doctor .me_request .title .btn_delete:hover {
-    background: #4A0000;
+    background: #4a0000;
 }
 
 .doctor .me_request .title .btn_decide {
     width: 96px;
-    background: #007A94;
+    background: #007a94;
 }
 
 .doctor .me_request .title .btn_decide:disabled {
@@ -3809,9 +3851,9 @@ p {
     align-items: center;
 }
 
-.doctor .me_request .list_view .check>span {
+.doctor .me_request .list_view .check > span {
     font-size: 12px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .me_request .list_view .people {
@@ -3827,38 +3869,38 @@ p {
     vertical-align: middle;
 }
 
-.doctor .me_request .inner> :nth-child(2),
-.doctor .me_request .inner> :nth-child(2) .title {
+.doctor .me_request .inner > :nth-child(2),
+.doctor .me_request .inner > :nth-child(2) .title {
     width: 48px;
 }
 
-.doctor .me_request .inner> :nth-child(2)> :nth-child(2) {
+.doctor .me_request .inner > :nth-child(2) > :nth-child(2) {
     height: 240px;
     top: 233px;
 }
 
-.doctor .me_request .inner> :nth-child(2) .possible>div:first-child {
+.doctor .me_request .inner > :nth-child(2) .possible > div:first-child {
     line-height: 96px;
 }
 
-.doctor .me_request .inner> :nth-child(2) .possible>div:last-child {
+.doctor .me_request .inner > :nth-child(2) .possible > div:last-child {
     line-height: 48px;
 }
 
-.doctor .me_request .inner> :nth-child(3)> :nth-child(2) {
+.doctor .me_request .inner > :nth-child(3) > :nth-child(2) {
     height: 143px;
     top: 41px;
 }
 
-.doctor .me_request .inner> :nth-child(3) .possible>div:first-child {
+.doctor .me_request .inner > :nth-child(3) .possible > div:first-child {
     line-height: 47px;
 }
 
-.doctor .me_request .inner> :nth-child(3) .possible>div:last-child {
+.doctor .me_request .inner > :nth-child(3) .possible > div:last-child {
     line-height: 96px;
 }
 
-.doctor .me_request .inner> :nth-child(4)> :nth-child(2) {
+.doctor .me_request .inner > :nth-child(4) > :nth-child(2) {
     top: 185px;
 }
 
@@ -3900,7 +3942,7 @@ p {
 }
 
 .doctor_remote .week .btn_list button.on {
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 }
 
@@ -3968,7 +4010,7 @@ p {
     display: none;
 }
 
-.doctor_remote .all_plan .weekly .four>div {
+.doctor_remote .all_plan .weekly .four > div {
     display: flex;
 }
 
@@ -3994,20 +4036,20 @@ p {
 
 .doctor_remote .all_plan .weekly .start.active {
     background: #fff;
-    border: 1px solid #007A94;
-    color: #007A94;
+    border: 1px solid #007a94;
+    color: #007a94;
 }
 
 .doctor_remote .all_plan .weekly .request.active {
     background: #fff;
-    border: 1px solid #E13177;
-    color: #E13177;
+    border: 1px solid #e13177;
+    color: #e13177;
 }
 
 .doctor_remote .all_plan .weekly .opinion.active {
     background: #fff;
-    border: 1px solid #FF8000;
-    color: #FF8000;
+    border: 1px solid #ff8000;
+    color: #ff8000;
 }
 
 .doctor_remote .all_plan .weekly .plan {
@@ -4022,61 +4064,59 @@ p {
     color: #888;
 }
 
-.doctor_remote .all_plan .weekly .inner> :first-child,
-.doctor_remote .all_plan .weekly .inner> :first-child .title {
+.doctor_remote .all_plan .weekly .inner > :first-child,
+.doctor_remote .all_plan .weekly .inner > :first-child .title {
     width: 204px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(2) {
+.doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(2) {
     height: 74px;
     top: 42px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(3) {
+.doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(3) {
     height: 94px;
     top: 42px;
     left: 52px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(4) {
+.doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(4) {
     height: 286px;
     top: 42px;
     left: 104px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :first-child> :nth-child(5) {
+.doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(5) {
     height: 430px;
     top: 42px;
     left: 156px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :nth-child(2)> :nth-child(2) {
+.doctor_remote .all_plan .weekly .inner > :nth-child(2) > :nth-child(2) {
     height: 143px;
     top: 185px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :nth-child(3)> :nth-child(2) {
+.doctor_remote .all_plan .weekly .inner > :nth-child(3) > :nth-child(2) {
     height: 430px;
     top: 42px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :nth-child(4),
-.doctor_remote .all_plan .weekly .inner> :nth-child(4) .title {
+.doctor_remote .all_plan .weekly .inner > :nth-child(4),
+.doctor_remote .all_plan .weekly .inner > :nth-child(4) .title {
     width: 100px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :nth-child(4)> :nth-child(2) {
+.doctor_remote .all_plan .weekly .inner > :nth-child(4) > :nth-child(2) {
     height: 74px;
     top: 42px;
 }
 
-.doctor_remote .all_plan .weekly .inner> :nth-child(4)> :nth-child(3) {
+.doctor_remote .all_plan .weekly .inner > :nth-child(4) > :nth-child(3) {
     height: 286px;
     top: 42px;
     left: 52px;
 }
-
-
 
 /* remote_request */
 .remote_request {
@@ -4104,7 +4144,7 @@ p {
 }
 
 .remote_request .list .title span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .remote_request .list .row {
@@ -4117,7 +4157,9 @@ p {
     cursor: pointer;
 }
 
-.remote_request .list .row .count{display: flex;}
+.remote_request .list .row .count {
+    display: flex;
+}
 
 .remote_request .list .row div {
     width: 400px;
@@ -4134,7 +4176,7 @@ p {
 }
 
 .remote_request .list .row .me_or .green {
-    color: #007A94;
+    color: #007a94;
 }
 
 .remote_request .list .row .me_or .red {
@@ -4146,11 +4188,11 @@ p {
 }
 
 .remote_request .list .row .send_me {
-    color: #007A94;
+    color: #007a94;
 }
 
 .remote_request .list .row.on {
-    background: #007A94;
+    background: #007a94;
 }
 
 .remote_request .list .row.on p,
@@ -4161,7 +4203,7 @@ p {
 }
 
 .remote_request .my_return .time {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_remote2 .ask_request {
@@ -4193,12 +4235,12 @@ p {
 }
 
 .doctor .done_request .title .btn_accept {
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 }
 
 .doctor .remote_check .count span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor .remote_check .count span:last-child {
@@ -4235,7 +4277,7 @@ p {
 }
 
 .doctor .no_opinion .cont span {
-    color: #007A94;
+    color: #007a94;
 }
 
 /* 신규협진 생성 */
@@ -4253,7 +4295,7 @@ p {
     border-bottom: 1px solid #eee;
 }
 
-.new_remote .title>div {
+.new_remote .title > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -4269,10 +4311,11 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg) brightness(80%) contrast(101%);
+    filter: invert(18%) sepia(66%) saturate(5588%) hue-rotate(179deg)
+        brightness(80%) contrast(101%);
 }
 
-.new_remote .title>div>div {
+.new_remote .title > div > div {
     display: flex;
     align-items: center;
 }
@@ -4302,7 +4345,7 @@ p {
 }
 
 .new_remote .title .btn_creat {
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 }
 
@@ -4381,13 +4424,13 @@ p {
     border-radius: 50%;
 }
 
-.new_remote .radio[type="radio"] {
+.new_remote .radio[type='radio'] {
     background: #fff;
     border: none;
 }
 
-.new_remote .common_radio>.radio[type="radio"]:checked+span {
-    color: #007A94;
+.new_remote .common_radio > .radio[type='radio']:checked + span {
+    color: #007a94;
 }
 
 .new_remote .surgery_view {
@@ -4402,24 +4445,26 @@ p {
 
 /* .new_remote .surgery_view > div{padding-left: 16px;} */
 
-.new_remote .surgery_view>div:not(.new_remote .rt_time, .new_remote .ut_wrap),
-.new_remote .surgery_view .date>div,
-.new_remote .rt_time>div {
+.new_remote .surgery_view > div:not(.new_remote .rt_time, .new_remote .ut_wrap),
+.new_remote .surgery_view .date > div,
+.new_remote .rt_time > div {
     display: flex;
     justify-content: space-between;
 }
 
-.new_remote .rt_time>div,
-.new_remote .t_view>div {
+.new_remote .rt_time > div,
+.new_remote .t_view > div {
     padding: 0;
     align-items: flex-start;
 }
 
-.new_remote .rt_time>div{padding-left: 16px;}
+.new_remote .rt_time > div {
+    padding-left: 16px;
+}
 
-.new_remote .surgery_view .date_time>div,
-.new_remote .surgery_view .date_time>div div,
-.new_remote .surgery_view .date>div,
+.new_remote .surgery_view .date_time > div,
+.new_remote .surgery_view .date_time > div div,
+.new_remote .surgery_view .date > div,
 .new_remote .surgery_view .date {
     display: flex;
     align-items: center;
@@ -4430,15 +4475,15 @@ p {
     display: block;
 }
 
-.new_remote .surgery_view .date_time>div,
-.new_remote .surgery_view .date>div {
+.new_remote .surgery_view .date_time > div,
+.new_remote .surgery_view .date > div {
     margin-bottom: 16px;
     border-radius: 4px;
 }
 
-.new_remote .surgery_view .date>div,
+.new_remote .surgery_view .date > div,
 .doctor .new_remote .rt_time .date .input_wrap p,
-.new_remote .surgery_view .date_time> :last-child,
+.new_remote .surgery_view .date_time > :last-child,
 .doctor .new_remote .up_time .date .input_wrap p {
     margin: 0;
 }
@@ -4456,10 +4501,10 @@ p {
     justify-content: space-between;
 }
 
-.new_remote .surgery_view .date_time>div> :nth-child(2),
-.new_remote .surgery_view .date>div> :nth-child(2),
-.new_remote .rt_time .date> :nth-child(2),
-.new_remote .up_time .date> :nth-child(2) {
+.new_remote .surgery_view .date_time > div > :nth-child(2),
+.new_remote .surgery_view .date > div > :nth-child(2),
+.new_remote .rt_time .date > :nth-child(2),
+.new_remote .up_time .date > :nth-child(2) {
     margin: 0 8px 0 16px;
 }
 
@@ -4467,7 +4512,7 @@ p {
 .new_remote .surgery_view .date input {
     width: 15px;
     background: #eee;
-    color: #007A94;
+    color: #007a94;
 }
 
 .new_remote .surgery_view .date_time input::placeholder,
@@ -4476,8 +4521,8 @@ p {
     color: #ccc;
 }
 
-.new_remote .surgery_view input[type="number"]::-webkit-outer-spin-button,
-.new_remote .surgery_view input[type="number"]::-webkit-inner-spin-button {
+.new_remote .surgery_view input[type='number']::-webkit-outer-spin-button,
+.new_remote .surgery_view input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
     width: 20px;
@@ -4501,7 +4546,7 @@ p {
     padding-left: 16px;
 }
 
-.new_remote .ro_view .date> :first-child {
+.new_remote .ro_view .date > :first-child {
     /* padding-left: 16px; */
     margin-bottom: 16px;
 }
@@ -4575,7 +4620,7 @@ p {
     display: none;
 }
 
-.new_remote .content>h2 {
+.new_remote .content > h2 {
     margin-bottom: 20px;
 }
 
@@ -4588,9 +4633,12 @@ p {
     float: right;
 }
 
-.new_remote .content > button:disabled{color: #ccc;}
-.new_remote .content > button:disabled img{
-    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(84%) contrast(90%);
+.new_remote .content > button:disabled {
+    color: #ccc;
+}
+.new_remote .content > button:disabled img {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(84%)
+        contrast(90%);
     opacity: 0.2;
 }
 
@@ -4661,7 +4709,7 @@ p {
     margin-bottom: 32px;
 }
 
-.new_remote .content .patient_select>span {
+.new_remote .content .patient_select > span {
     width: 100%;
     padding: 12px 16px;
     margin-top: 16px;
@@ -4695,7 +4743,7 @@ p {
     border: 1px dashed #ccc;
     background: #fff;
     font-size: 14px;
-    color: #007A94;
+    color: #007a94;
     justify-content: center;
 }
 
@@ -4718,7 +4766,7 @@ p {
 }
 
 .new_remote .content .title span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_new .content .member {
@@ -4757,11 +4805,11 @@ p {
     border-radius: 50%;
 }
 
-.doctor_new.message .favorite_container input[type='checkbox']:checked+label {
+.doctor_new.message .favorite_container input[type='checkbox']:checked + label {
     filter: none;
 }
 
-.doctor_new .green_custom[type="checkbox"]+label {
+.doctor_new .green_custom[type='checkbox'] + label {
     width: 18px;
     height: 18px;
     /* border: 1px solid #ccc; */
@@ -4803,7 +4851,8 @@ p {
 }
 
 .attendee .title .btn_list button img {
-    filter: invert(59%) sepia(0%) saturate(1174%) hue-rotate(227deg) brightness(90%) contrast(107%);
+    filter: invert(59%) sepia(0%) saturate(1174%) hue-rotate(227deg)
+        brightness(90%) contrast(107%);
 }
 
 .attendee .title .btn_list button.on {
@@ -4852,11 +4901,11 @@ p {
     margin: 0 0 0 8px;
 }
 
-.attendee .atten_inner .cal_container .month_label{
+.attendee .atten_inner .cal_container .month_label {
     padding: 6px 24px;
 }
 
-.attendee .atten_inner .cal_container .month_label::after{
+.attendee .atten_inner .cal_container .month_label::after {
     right: 16px;
 }
 
@@ -4868,7 +4917,9 @@ p {
     width: 292px;
 }
 
-.attendee .choice_staff.on .title .btn_check{display: none;}
+.attendee .choice_staff.on .title .btn_check {
+    display: none;
+}
 
 .attendee .choice_staff .title {
     padding: 12px 8px;
@@ -4896,7 +4947,7 @@ p {
     padding: 6px;
     margin-left: 16px;
     box-shadow: none;
-    background: #007A94;
+    background: #007a94;
     text-align: center;
     font-size: 14px;
     display: block;
@@ -4904,7 +4955,7 @@ p {
 
 .attendee .weekly .title .btn_check:hover,
 .attendee .title .btn_check:hover {
-    background: #004F60;
+    background: #004f60;
 }
 
 .attendee .weekly .title .btn_check.on,
@@ -4914,7 +4965,7 @@ p {
 }
 
 .attendee .choice_staff .title span {
-    color: #007A94;
+    color: #007a94;
 }
 
 .attendee .choice_member {
@@ -4958,15 +5009,17 @@ p {
     width: 16px;
     height: 16px;
     filter: none;
-    filter: invert(78%) sepia(6%) saturate(12%) hue-rotate(314deg) brightness(106%) contrast(89%);
+    filter: invert(78%) sepia(6%) saturate(12%) hue-rotate(314deg)
+        brightness(106%) contrast(89%);
 }
 
-.doctor .attendee .search_container input:valid + button img{
-    filter:  none;
+.doctor .attendee .search_container input:valid + button img {
+    filter: none;
 }
 
-.doctor .attendee .search_container.not_find input:valid + button img{
-    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg) brightness(90%) contrast(90%);
+.doctor .attendee .search_container.not_find input:valid + button img {
+    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg)
+        brightness(90%) contrast(90%);
 }
 
 .attendee .weekly {
@@ -4981,26 +5034,26 @@ p {
     border-bottom: none;
 }
 
-.attendee .weekly>.title h2 {
+.attendee .weekly > .title h2 {
     margin-right: 50px;
     color: #000;
 }
 
-.attendee .weekly>.title>div {
+.attendee .weekly > .title > div {
     display: flex;
     align-items: center;
     text-align: center;
 }
 
-.attendee .weekly>.title .btn_list button.on {
-    background: #007A94;
+.attendee .weekly > .title .btn_list button.on {
+    background: #007a94;
 }
 
-.attendee .weekly>.title .btn_two {
+.attendee .weekly > .title .btn_two {
     margin-right: 8px;
 }
 
-.attendee .weekly>.title button {
+.attendee .weekly > .title button {
     width: 64px;
     height: 32px;
     padding: 8px;
@@ -5011,7 +5064,7 @@ p {
 }
 
 .attendee .weekly .title .btn_check {
-    background: #007A94;
+    background: #007a94;
     box-shadow: none;
 }
 
@@ -5061,90 +5114,89 @@ p {
     background: #ccc;
 }
 
-.attendee .weekly .inner> :nth-child(1) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(1) :nth-child(2) {
     height: 75px;
     top: 110px;
 }
 
-.attendee .weekly .inner> :nth-child(1) :nth-child(3) {
+.attendee .weekly .inner > :nth-child(1) :nth-child(3) {
     height: 241px;
     top: 232px;
 }
 
-.attendee .weekly .inner> :nth-child(2) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(2) :nth-child(2) {
     height: 75px;
     top: 110px;
 }
 
-.attendee .weekly .inner> :nth-child(2) :nth-child(3) {
+.attendee .weekly .inner > :nth-child(2) :nth-child(3) {
     height: 241px;
     top: 232px;
 }
 
-.attendee .weekly .inner> :nth-child(3) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(3) :nth-child(2) {
     height: 75px;
     top: 41px;
 }
 
-.attendee .weekly .inner> :nth-child(4) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(4) :nth-child(2) {
     height: 75px;
     top: 110px;
 }
 
-.attendee .weekly .inner> :nth-child(4) :nth-child(3) {
+.attendee .weekly .inner > :nth-child(4) :nth-child(3) {
     height: 241px;
     top: 232px;
 }
 
-.attendee .weekly .inner> :nth-child(5) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(5) :nth-child(2) {
     height: 75px;
     top: 110px;
 }
 
-.attendee .weekly .inner> :nth-child(5) :nth-child(3) {
+.attendee .weekly .inner > :nth-child(5) :nth-child(3) {
     height: 241px;
     top: 232px;
 }
 
-.attendee .weekly .inner> :nth-child(8) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(8) :nth-child(2) {
     height: 48px;
     top: 41px;
 }
 
-.attendee .weekly .inner> :nth-child(8) :nth-child(3) {
+.attendee .weekly .inner > :nth-child(8) :nth-child(3) {
     height: 432px;
     top: 41px;
 }
 
-.attendee .weekly .inner> :nth-child(9) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(9) :nth-child(2) {
     height: 320px;
     top: 41px;
 }
 
-
-.attendee .weekly .inner> :nth-child(9) :nth-child(3) {
+.attendee .weekly .inner > :nth-child(9) :nth-child(3) {
     height: 432px;
     top: 41px;
 }
 
-.attendee .weekly .inner> :nth-child(10) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(10) :nth-child(2) {
     width: 100%;
     height: 432px;
     top: 41px;
 }
 
-.attendee .weekly .inner> :nth-child(11) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(11) :nth-child(2) {
     width: 100%;
     height: 432px;
     top: 41px;
 }
 
-.attendee .weekly .inner> :nth-child(12) :nth-child(2) {
+.attendee .weekly .inner > :nth-child(12) :nth-child(2) {
     height: 239px;
     top: 232px;
 }
 
-.attendee .weekly .inner> :nth-child(12) :nth-child(3) {
+.attendee .weekly .inner > :nth-child(12) :nth-child(3) {
     height: 432px;
     top: 41px;
 }

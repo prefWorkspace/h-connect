@@ -4,6 +4,13 @@ const { dateFormat } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/common.js')
 );
 
+const { commonRequest } = await import(
+    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
+);
+const { serverController } = await import(
+    importVersion('/H-Connect/js/utils/controller/serverController.js')
+);
+
 const {
     eventPatientInfo,
     monitoringButton,
@@ -16,19 +23,44 @@ const {
     )
 );
 
+export async function selectBioSignalEvent(_bse) {
+    const { bioSignalEventId, measurementCode } = _bse;
+    const req = JSON.stringify({
+        ...commonRequest(),
+        bioSignalEventId,
+        measurementCode,
+    });
+
+    let result = {};
+
+    await serverController.ajaxAwaitController(
+        'API/BioSignal/SelectBioSignalEvent',
+        'POST',
+        req,
+        (res) => {
+            result = res;
+        },
+        (err) => {
+            alert(`서버 통신에 실패하였습니다 (Error: ${err})`);
+        }
+    );
+
+    return result;
+}
+
 export async function renderNewEventScreen(_bse) {
+    $('.event .title_preSection').html('');
     renderNewEventScreenTitleHead(_bse);
     renderNewEventScreenBodyTitle(_bse);
 }
 
 export async function renderPreEventScreen(_bse) {
+    $('.event .title_newSection').html('');
     renderPreEventScreenTitleHead(_bse);
     renderPreEventScreenBodyTitle(_bse);
 }
 
 export async function renderNewEventScreenTitleHead(_bse) {
-    if (!_bse) return;
-
     const $sectionRhythm = $('.section.rhythm.new_rhythm');
     $sectionRhythm.find('.title.title_head').html(`
         ${await eventPatientInfo(_bse)}
@@ -43,10 +75,7 @@ export async function renderNewEventScreenTitleHead(_bse) {
 }
 
 export async function renderPreEventScreenTitleHead(_bse) {
-    if (!_bse) return;
-
     const $sectionRhythm = $('.section.rhythm.pre_rhythm');
-
     $sectionRhythm.find('.title.title_head').html(`
         ${await eventPatientInfo(_bse)}
         ${await monitoringButton()}
@@ -59,27 +88,25 @@ export async function renderPreEventScreenTitleHead(_bse) {
         });
 }
 
-async function renderEventScreenBody(_bse) {}
-
 export async function renderNewEventScreenBodyTitle(_bse) {
-    const { ymd, hms } = dateFormat(new Date(_bse.eventDateTime));
+    const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_newSection');
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
-        ${await eventBasicInfo('New Example Name', _bse.eventDetail)}
+        ${await eventBasicInfo('New Example Name', _bse?.eventDetail)}
     </div>
     ${await screenRightBtnList(false)}
     `);
 }
 
 export async function renderPreEventScreenBodyTitle(_bse) {
-    const { ymd, hms } = dateFormat(new Date(_bse.eventDateTime));
+    const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_preSection');
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
-        ${await eventBasicInfo('Previous Example Name', _bse.eventDetail)}
+        ${await eventBasicInfo('Previous Example Name', _bse?.eventDetail)}
     </div>
     ${await screenRightBtnList(true)}
     `);
