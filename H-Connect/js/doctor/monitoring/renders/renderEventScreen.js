@@ -17,6 +17,7 @@ const {
     titleDate,
     eventBasicInfo,
     screenRightBtnList,
+    newScreenBody,
 } = await import(
     importVersion(
         '/H-Connect/js/doctor/monitoring/templates/templateEventScreen.js'
@@ -38,7 +39,9 @@ export async function selectBioSignalEvent(_bse) {
         'POST',
         req,
         (res) => {
-            result = res;
+            if (res.result) {
+                result = res.bioSignalEvent;
+            }
         },
         (err) => {
             alert(`서버 통신에 실패하였습니다 (Error: ${err})`);
@@ -91,6 +94,7 @@ export async function renderPreEventScreenTitleHead(_bse) {
 export async function renderNewEventScreenBodyTitle(_bse) {
     const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_newSection');
+    const _bseDetail = await selectBioSignalEvent(_bse);
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
@@ -98,6 +102,7 @@ export async function renderNewEventScreenBodyTitle(_bse) {
     </div>
     ${await screenRightBtnList(false)}
     `);
+    $('.new_rhythm .event_inner').html(`${await newScreenBody(_bseDetail)}`);
 }
 
 export async function renderPreEventScreenBodyTitle(_bse) {

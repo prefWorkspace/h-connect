@@ -75,7 +75,6 @@ export async function screenRightBtnList(_type) {
 
 export async function newScreenBody(_bse) {
     return `
-    <div class="event_inner">
         <div class="event_graph">
             <div class="graph">
                 <p>rhythm title</p>
@@ -106,14 +105,16 @@ export async function newScreenBody(_bse) {
                 <button
                     type="button"
                     class="plus"
-                ></button>
+                    id="cur_plus"
+                data-max="${_bse.maxValue}"></button>
 
-                <label>100%</label>
+                <label id="cur_graphScale">100%</label>
 
                 <button
                     type="button"
                     class="minus"
-                ></button>
+                    id="cur_minus"
+                data-min="${_bse.minValue}"></button>
             </div>
         </div>
 
@@ -132,6 +133,5 @@ export async function newScreenBody(_bse) {
                 fugiat nulla pariatur.
             </p>
         </div>
-    </div>
-    `
+    `;
 }
