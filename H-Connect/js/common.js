@@ -2102,9 +2102,9 @@ $('.pop.regi_device .selectBox2 .optionItem').on('click', function () {
     $(this).parent().parent().toggleClass('active');
 });
 
-$('.pop.update_device .selectBox2 .label').on('click', function () {
-    $(this).parent().toggleClass('active');
-});
+// $('.pop.update_device .selectBox2 .label').on('click', function () {
+//     $(this).parent().toggleClass('active');
+// });
 
 $('.pop.update_device .selectBox2 .optionItem').on('click', function () {
     const deviceName = $(this).text();

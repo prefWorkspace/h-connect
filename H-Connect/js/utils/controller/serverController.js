@@ -27,13 +27,14 @@ export const serverController = {
                     'SX-Auth-Token',
                     LOGIN_TOKEN ? LOGIN_TOKEN : null
                 );
-                // if(typeof route === "object"){
-                //     const keys = Object.keys(route);
-                //     xhr.setRequestHeader(
-                //         'SX-Auth-Token',
-                //         LOGIN_TOKEN ? LOGIN_TOKEN : null
-                //     );
-                // }
+
+                if (route !== null) {
+                    const keys = Object.keys(route);
+                    for (let i = 0; i < keys.length; i++) {
+                        let key = keys[i];
+                        xhr.setRequestHeader(key, route[key]);
+                    }
+                }
             },
             url: `${ip}${path}`,
             type: type,
@@ -42,42 +43,9 @@ export const serverController = {
             contentType: 'application/json;charset=UTF-8',
             success: function (data) {
                 if (data.error === 241) {
-                    // session closed
                     history.linkTo('/index.html');
                     return alert('세션이 만료되었습니다');
                 }
-                if (callBack) callBack(data);
-                return data;
-            },
-            error: function (e) {
-                if (errorCallBack) errorCallBack(e);
-                alert('실패하였습니다');
-                return null;
-            },
-        });
-    },
-    ajaxMeasurementController: (
-        path,
-        route,
-        type,
-        formData,
-        callBack,
-        errorCallBack
-    ) => {
-        return $.ajax({
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader(
-                    'SX-Auth-Token',
-                    LOGIN_TOKEN ? LOGIN_TOKEN : null
-                );
-                xhr.setRequestHeader('SX-API-ROUTE', route);
-            },
-            url: `${ip}${path}`,
-            type: type,
-            data: formData ? formData : null,
-            processData: false,
-            contentType: 'application/json;charset=UTF-8',
-            success: function (data) {
                 if (callBack) callBack(data);
                 return data;
             },
