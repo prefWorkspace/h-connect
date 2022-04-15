@@ -203,7 +203,6 @@ export const UpdateBioSignalEvent = async (_eventId, _confirm) => {
             confirm: _confirm,
         })
     );
-    console.log(res);
     if (res.result) {
         return res;
     } else {

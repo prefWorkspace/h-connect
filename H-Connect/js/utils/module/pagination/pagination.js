@@ -13,6 +13,8 @@ new CreatePagination({
     },
     templates: {
         listItem: tabularTrendListTmpl, // 리스트 아이템 템플릿
+        error:true,
+        loading:true,
     },
     afterRender: (target)=>{
         // 렌더링이 끝난 직후 함수를 정의해 줄 수 있습니다.
@@ -22,6 +24,8 @@ new CreatePagination({
         keepParams: ['measurement_code'], // 유지되어야 할 url 파라미터
     },
 });
+
+// error 과 loading은 boolean값, string dom 값, { meassage : 'text' } 값을 받습니다.
 
 */
 
@@ -67,8 +71,13 @@ export class CreatePagination {
 
     async renderMain() {
         const { API, target, templates, afterRender } = this.initData || {};
+        if (templates?.loading) {
+            // 로딩 처리
+            $(`${target?.listWrap}`).html(this.calcLoading(templates?.loading));
+        }
         const historyPage = history.getParams('page');
         const resPage = parseInt(historyPage, 10) || 1;
+
         const { page, records, totalCount } = await API(resPage);
         this.renderPagination({
             page,
@@ -76,8 +85,9 @@ export class CreatePagination {
             totalCount,
             target,
         });
-        let _html = '';
+        let _html = this.calcError(templates?.error);
         if (totalCount && records) {
+            _html = '';
             for await (const _item of records) {
                 _html += await templates?.listItem(_item);
             }
@@ -88,6 +98,54 @@ export class CreatePagination {
             // 렌더링이 끝난 직후 실행 함수
             afterRender(this);
             return this;
+        }
+    }
+
+    calcLoading(_getLoading) {
+        const inintialLoading =
+            '<p class="loading_text">데이타를 불러오는 중입니다.</p>';
+        if (_getLoading) {
+            if (typeof _getLoading === 'boolean') {
+                return inintialLoading;
+            } else if (_getLoading) {
+                if (typeof _getLoading === 'string') {
+                    return _getLoading;
+                } else if (typeof _getLoading === 'function') {
+                    return _getLoading();
+                } else if (typeof _getLoading === 'object') {
+                    if (_getLoading?.message) {
+                        return `<p class="loading_text">${_getLoading?.message}</p>`;
+                    }
+                } else {
+                    return inintialLoading;
+                }
+            }
+        } else {
+            return '';
+        }
+    }
+
+    calcError(_getError) {
+        const initialError =
+            '<p class="error_text">조회된 데이타가 없습니다</p>';
+        if (_getError) {
+            if (typeof _getError === 'boolean') {
+                return initialError;
+            } else if (_getError) {
+                if (typeof _getError === 'string') {
+                    return _getError;
+                } else if (typeof _getError === 'function') {
+                    return _getError();
+                } else if (typeof _getError === 'object') {
+                    if (_getError?.message) {
+                        return `<p class="loading_text">${_getError?.message}</p>`;
+                    }
+                } else {
+                    return initialError;
+                }
+            }
+        } else {
+            return '';
         }
     }
 

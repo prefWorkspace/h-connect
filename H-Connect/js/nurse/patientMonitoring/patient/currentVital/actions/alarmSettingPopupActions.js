@@ -179,11 +179,10 @@ async function onClickAlarmPopupSubmitBtn(_submitBtnEl, _classKey) {
 
 /* s : 화살표 버튼 클릭 시 조정 */
 function addOnClickAlarmPopupInputArrowBtn() {
-    $('body').on('click', '.alarm_popup_wrap .num_control button', (e) => {
-        const $targetEl = $(e.currentTarget);
-        const $findClosetInputEl = $targetEl.closest('.num_wrap').find('input');
+    $('body').on('click', '.alarm_popup_wrap .num_control button', function () {
+        const $findClosetInputEl = $(this).closest('.num_wrap').find('input');
         let valueOfTargetInput = $findClosetInputEl.val();
-        if ($targetEl.hasClass('up')) {
+        if ($(this).hasClass('up')) {
             $findClosetInputEl.val(++valueOfTargetInput);
         } else {
             $findClosetInputEl.val(--valueOfTargetInput);

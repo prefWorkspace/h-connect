@@ -196,6 +196,17 @@ const VERSION = {
                 },
             },
         },
+        popup: {
+            templates: {
+                'commonPopupTmpl.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/common/popup/templates/',
+                    version: '2022.04.14.12.01',
+                },
+            },
+        },
     },
     doctor: {
         monitoring: {

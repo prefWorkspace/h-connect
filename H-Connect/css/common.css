@@ -445,7 +445,9 @@ button {
 .green_custom.all[type='checkbox'] + label + label {
     color: #007a94;
 }
-.green_custom[type="checkbox"] + label + label{font-size: 12px;}
+.green_custom[type='checkbox'] + label + label {
+    font-size: 12px;
+}
 
 .green_custom.all[type='checkbox'] + label {
     border-color: #007a94;
@@ -1744,50 +1746,93 @@ textarea::-webkit-scrollbar-button {
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
     }
     100% {
         transform: rotate(360deg);
     }
 }
 
+/* 데이터 핸들링 */
+.loading_text {
+    padding-top: 5%;
+    color: #aaa;
+    text-align: center;
+    font-size: 14px;
+}
+
+.error_text {
+    padding-top: 5%;
+    color: #aaa;
+    text-align: center;
+    font-size: 14px;
+}
 
 /*====================== 간호사 팝업 ======================*/
 /* 공통 팝업(파란색) */
 .pop.check_bl .pop_cont,
-.pop.lg_btn .pop_cont{
+.pop.lg_btn .pop_cont {
     height: 360px;
     padding: 64px 0 48px;
     text-align: center;
 }
 
 .pop.check_bl .img,
-.pop.lg_btn .img{
+.pop.lg_btn .img {
     width: 46px;
     height: 32px;
     margin: 0 auto 48px;
 }
 
-.pop.check_bl img, .pop.lg_btn img{width: 100%; height: 100%;}
+.pop.check_bl img,
+.pop.lg_btn img {
+    width: 100%;
+    height: 100%;
+}
 
-.pop.check_bl h3, .pop.lg_btn h3{font-size: 16px;}
-.pop.check_bl h2, .pop.lg_btn h2{margin:8px 0 0;font-size: 24px; color: #007a94;}
-.pop.check_bl .pop_cont .btn_list{
+.pop.check_bl h3,
+.pop.lg_btn h3 {
+    font-size: 16px;
+}
+.pop.check_bl h2,
+.pop.lg_btn h2 {
+    margin: 8px 0 0;
+    font-size: 24px;
+    color: #007a94;
+}
+.pop.check_bl .pop_cont .btn_list {
     margin: 48px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     position: initial;
 }
-.pop.check_bl button{width: 128px;  height: 48px; font-size: 16px;}
-.pop.check_bl .pop_cont .btn_list button:first-child{margin-right: 16px;}
-.pop.check_bl button:last-child{background: #007a94; color: #fff;}
+.pop.check_bl button {
+    width: 128px;
+    height: 48px;
+    font-size: 16px;
+}
+.pop.check_bl .pop_cont .btn_list button:first-child {
+    margin-right: 16px;
+}
+.pop.check_bl button:last-child {
+    background: #007a94;
+    color: #fff;
+}
 
 /* 빨간색공통 */
-.pop.check_bl.rd button:last-child{background: #940045;}
-.pop.check_bl.rd h2{color: #940045;}
+.pop.check_bl.rd button:last-child {
+    background: #940045;
+}
+.pop.check_bl.rd h2 {
+    color: #940045;
+}
 
 /* 하나의 버튼 */
-.pop.lg_btn button{
+.pop.lg_btn button {
     width: 272px;
     height: 48px;
     margin: 48px auto 0;
@@ -2137,7 +2182,7 @@ textarea::-webkit-scrollbar-button {
     margin-right: 16px;
     border-radius: 4px;
     font-size: 16px;
-    background: #EEEEEE;
+    background: #eeeeee;
     color: #888888;
 }
 
@@ -2313,7 +2358,9 @@ textarea::-webkit-scrollbar-button {
 }
 
 /* resp setting menu */
-.pop.setting_menu .pop_cont .title{padding-bottom: 23px;}
+.pop.setting_menu .pop_cont .title {
+    padding-bottom: 23px;
+}
 .pop.setting_menu .overlay .content {
     display: block;
 }
@@ -2886,7 +2933,7 @@ textarea::-webkit-scrollbar-button {
     background: #ccc;
 }
 
-.pop.send_doctor .medical_depart .title{
+.pop.send_doctor .medical_depart .title {
     padding: 7px 0 8px;
     font-size: 12px;
     display: flex;
@@ -2895,25 +2942,27 @@ textarea::-webkit-scrollbar-button {
     cursor: pointer;
 }
 
-.pop.send_doctor .medical_depart .title::before{
+.pop.send_doctor .medical_depart .title::before {
     content: '';
     width: 13px;
     height: 13px;
     margin-right: 11px;
-    background: url('/H-Connect/img/icon/accodian_plus.svg') no-repeat 0 0 / contain;
+    background: url('/H-Connect/img/icon/accodian_plus.svg') no-repeat 0 0 /
+        contain;
     display: block;
 }
 
-.pop.send_doctor .medical_depart .title.active::before{
+.pop.send_doctor .medical_depart .title.active::before {
     content: '';
     width: 13px;
     height: 13px;
     margin-right: 11px;
-    background: url('/H-Connect/img/icon/accodian_minus.svg') no-repeat 0 0 / contain;
+    background: url('/H-Connect/img/icon/accodian_minus.svg') no-repeat 0 0 /
+        contain;
     display: block;
 }
 
-.pop.send_doctor .medical_depart .input_container{
+.pop.send_doctor .medical_depart .input_container {
     display: none;
 }
 
@@ -2932,7 +2981,6 @@ textarea::-webkit-scrollbar-button {
 .pop.send_doctor .doctor_list .input_wrap :first-child {
     margin-right: 14px;
 }
-
 
 .pop.send_doctor .doctor_list input[type='checkbox'] {
     display: none;

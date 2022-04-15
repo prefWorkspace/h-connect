@@ -95,11 +95,9 @@ function alarmChangeState({ _target, $alarmInputEl }) {
         ews: 'ewsAlertAlarm',
         temp: 'tempAlertAlarm',
     };
-    $($alarmInputEl).on('change', async (e) => {
-        const _targetEl = e.currentTarget;
-        const _checkVal = _targetEl.checked ? 0 : 1;
+    $($alarmInputEl).on('change', async function () {
+        const _checkVal = $(this).is(':checked') ? 0 : 1;
         let _alramObj = {};
-        // console.log(_alarmKey[_target]);
         _alramObj[_alarmKey[_target]] = _checkVal;
         UpdateAlarmSettingMeasurement(_alramObj);
     });
