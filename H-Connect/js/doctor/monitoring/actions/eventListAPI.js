@@ -36,17 +36,34 @@ export async function selectBioSignalEvemtSimpleList(confirm) {
     });
 
     let result = {};
-    // return {
-    //     bioSignalEventSimpleList: null,
-    //     error: 0,
-    //     extra: '',
-    //     message: null,
-    //     remoteIp: null,
-    //     result: true,
-    //     totalCount: 0,
-    // };
+
     await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBioSignalEventSimpleList',
+        'POST',
+        req,
+        (res) => {
+            result = res;
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+
+    return result;
+}
+
+export async function selectBioSignalEvent(_bse) {
+    const { bioSignalEventId, measurementCode } = _bse;
+    const req = JSON.stringify({
+        ...commonRequest(),
+        bioSignalEventId,
+        measurementCode,
+    });
+
+    let result = {};
+
+    await serverController.ajaxAwaitController(
+        'API/BioSignal/SelectBioSignalEvent',
         'POST',
         req,
         (res) => {
@@ -64,122 +81,126 @@ export async function insertNewEventList() {
     let res = await selectBioSignalEvemtSimpleList(0);
     let eventList = res.bioSignalEventSimpleList?.slice(0, 10);
     await renderNewEventList(eventList);
-    if (!eventList) {
-        insertNewEventScreen(null);
-    }
-    if (eventList) {
-        $('.section.new_patient.new .ecglist')
-            .children()
-            .first()
-            .addClass('on');
-        selectedEventId = $('.section.new_patient.new .row.on').data('id');
-        eventList.forEach((list) => {
-            if (list.bioSignalEventId === selectedEventId) {
-                insertNewEventScreen(list);
-                $(document).on('click', '.event .btn_con', function () {
-                    updateBioSignalEvent(list, 2);
-                    insertNewEventList();
-                });
-                $(document).on('click', '.event .btn_delete', function () {
-                    deleteBioSignalEvent(list);
-                    insertNewEventList();
-                });
-                return false;
-            }
-        });
+    $('.section.new_patient.new').ready(function () {
+        if (!eventList) {
+            insertNewEventScreen(null);
+        }
 
-        // Add Event To New Event List
-        $('.section.new_patient.new .row').on('click', function () {
-            $('.section.new_patient.new .row').removeClass('on');
-
-            const $this = $(this);
-            selectedEventId = $this.data('id');
-            if (!$this.hasClass('on')) $this.addClass('on');
-            eventList.forEach((list) => {
-                if (list.bioSignalEventId === selectedEventId) {
-                    insertNewEventScreen(list);
-                    $(document).on('click', '.event .btn_con', function () {
-                        updateBioSignalEvent(list, 2);
-                        insertNewEventList();
-                    });
-                    $(document).on('click', '.event .btn_delete', function () {
-                        deleteBioSignalEvent(list);
-                        insertNewEventList();
-                    });
-                    return false;
-                }
+        if (eventList) {
+            $('.section.new_patient.new .ecglist')
+                .children()
+                .first()
+                .addClass('on');
+            selectedEventId = $('.section.new_patient.new .row.on').data('id');
+            const targetEvent = eventList.filter(
+                (evt) =>
+                    String(evt.bioSignalEventId) === String(selectedEventId)
+            )[0];
+            insertNewEventScreen(targetEvent);
+            $('.event').off('click', '.btn_con');
+            $('.event').on('click', '.btn_con', async function () {
+                await updateBioSignalEvent(targetEvent, 2);
+                await insertNewEventList();
             });
-        });
-    }
+            $('.event').off('click', '.btn_delete');
+            $('.event').on('click', '.btn_delete', function () {
+                deleteBioSignalEvent(targetEvent);
+                insertNewEventList();
+            });
 
-    // Add Event To Select Pre Events Btn
-    $('.btn_pre').on('click', async function () {
-        await insertEventList('PRE');
-        $('.section.new_patient.new').css('display', 'none');
-        $('.section.rhythm.new_rhythm').css('display', 'none');
-        $('.section.new_patient.pre').css('display', 'block');
-        $('.section.rhythm.pre_rhythm').css('display', 'block');
+            // Add Event To New Event List
+            $('.section.new_patient.new .row').on('click', async function () {
+                if ($(this).hasClass('on')) return;
+                const $this = $(this);
+                $('.section.new_patient.new .row.on').removeClass('on');
+                $this.addClass('on');
+                const targetEvent2 = eventList.filter(
+                    (evt) =>
+                        String(evt.bioSignalEventId) ===
+                        String($(this).data('id'))
+                )[0];
+                await insertNewEventScreen(targetEvent2);
+                $('.event').off('click', '.btn_con');
+                $('.event').on('click', '.btn_con', function () {
+                    updateBioSignalEvent(targetEvent, 2);
+                    insertNewEventList();
+                });
+                $('.event').off('click', '.btn_delete');
+                $('.event').on('click', '.btn_delete', function () {
+                    deleteBioSignalEvent(targetEvent2);
+                    insertNewEventList();
+                });
+            });
+        }
+
+        // Add Event To Select Pre Events Btn
+        $('.btn_pre').on('click', async function () {
+            await insertEventList('PRE');
+            $('.section.new_patient.new').css('display', 'none');
+            $('.section.rhythm.new_rhythm').css('display', 'none');
+            $('.section.new_patient.pre').css('display', 'block');
+            $('.section.rhythm.pre_rhythm').css('display', 'block');
+        });
     });
 }
 
+//입원환자 모니터링 왼쪽 지난 이벤트 렌더링 및 이벤트 연결 함수
 export async function insertPreEventList() {
     let res = await selectBioSignalEvemtSimpleList(2);
     let eventList = res.bioSignalEventSimpleList;
+    console.log(eventList.length);
     await renderPreEventList(eventList);
-    if (!eventList) {
-        insertPreEventScreen(null);
-    }
-    if (eventList) {
-        $('.section.new_patient.pre .ecglist')
-            .children()
-            .first()
-            .addClass('on');
-        selectedEventId = $('.section.new_patient.pre .row.on').data('id');
-        eventList.forEach((list) => {
-            if (list.bioSignalEventId === selectedEventId) {
-                insertPreEventScreen(list);
-                $(document).on('click', '.event .btn_delete', function () {
-                    deleteBioSignalEvent(list);
+    $('.section.new_patient.new').ready(function () {
+        if (!eventList) {
+            insertPreEventScreen(null);
+        }
+        if (eventList) {
+            const targetEvent = eventList[0];
+            $(
+                `.section.new_patient.pre .row[data-id='${targetEvent.bioSignalEventId}']`
+            ).toggleClass('on');
+            insertPreEventScreen(targetEvent);
+            $('.event').off('click', '.btn_con');
+            $('.event').off('click', '.btn_delete');
+            $('.event').on('click', '.btn_delete', function () {
+                deleteBioSignalEvent(targetEvent);
+                insertPreEventList();
+            });
+
+            // Add Event To Pre Event List
+            $('.section.new_patient.pre .row').on('click', async function () {
+                if ($(this).hasClass('on')) return;
+                const $this = $(this);
+                $('.section.new_patient.pre .row.on').removeClass('on');
+                $this.addClass('on');
+                const targetEvent2 = eventList.filter(
+                    (evt) =>
+                        String(evt.bioSignalEventId) ===
+                        String($(this).data('id'))
+                )[0];
+                await insertPreEventScreen(targetEvent2);
+                $('.event').off('click', '.btn_delete');
+                $('.event').on('click', '.btn_delete', function () {
+                    deleteBioSignalEvent(targetEvent2);
                     insertPreEventList();
                 });
-                return false;
-            }
+            });
+        }
+
+        // Add Event To Select New Events Btn
+        $('.btn_new').on('click', async function () {
+            await insertEventList('NEW');
+            $('.section.new_patient.pre').css('display', 'none');
+            $('.section.rhythm.pre_rhythm').css('display', 'none');
+            $('.section.new_patient.new').css('display', 'block');
+            $('.section.rhythm.new_rhythm').css('display', 'block');
         });
 
-        // Add Event To New Event List
-        $('.section.new_patient.pre .row').on('click', async function () {
-            $('.section.new_patient.pre .row').removeClass('on');
-
-            const $this = $(this);
-            selectedEventId = $this.data('id');
-            if (!$this.hasClass('on')) $this.addClass('on');
-            for await (const list of eventList) {
-                if (list.bioSignalEventId === selectedEventId) {
-                    await insertPreEventScreen(list);
-                    $(document).on('click', '.event .btn_delete', function () {
-                        deleteBioSignalEvent(list);
-                        insertPreEventList();
-                    });
-
-                    break;
-                }
-            }
+        // Add Event to Search Button
+        $('.alarm .search_container .btn_search').on('click', function () {
+            searchKeyword = $('.alarm .search_container input').val();
+            insertEventList('SEA');
         });
-    }
-
-    // Add Event To Select New Events Btn
-    $('.btn_new').on('click', async function () {
-        await insertEventList('NEW');
-        $('.section.new_patient.pre').css('display', 'none');
-        $('.section.rhythm.pre_rhythm').css('display', 'none');
-        $('.section.new_patient.new').css('display', 'block');
-        $('.section.rhythm.new_rhythm').css('display', 'block');
-    });
-
-    // Add Event to Search Button
-    $('.alarm .search_container .btn_search').on('click', function () {
-        searchKeyword = $('.alarm .search_container input').val();
-        insertEventList('SEA');
     });
 }
 

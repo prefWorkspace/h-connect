@@ -25,6 +25,7 @@ export async function updateBioSignalEvent(_bse, confirm) {
         confirm,
     });
 
+    console.log(bioSignalEventId);
     await serverController.ajaxAwaitController(
         'API/BioSignal/UpdateBioSignalEvent',
         'POST',
@@ -47,7 +48,7 @@ export async function deleteBioSignalEvent(_bse) {
         measurementCode,
         bioSignalEventId,
     });
-
+    console.log(bioSignalEventId);
     await serverController.ajaxAwaitController(
         'API/BioSignal/DeleteBioSignalEvent',
         'POST',
