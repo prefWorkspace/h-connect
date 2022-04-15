@@ -709,7 +709,8 @@
 }
 
 .nurse_measure .cont .patient_info input:nth-child(1) {
-    width: 80px;
+    /* width: 80px; */
+    width: 85px;
 }
 
 .nurse_measure .cont .patient_info input:nth-child(2) {
@@ -1717,9 +1718,8 @@
     height: 630px;
     background-color: #fff;
     border-radius: 8px;
-}s
-
-.monitoring_patient .patient .title {
+}
+s .monitoring_patient .patient .title {
     padding: 32px 15px 26px;
     width: 328px;
     margin: 0 auto;
@@ -2676,7 +2676,9 @@
     margin: 0;
 }
 
-.arteriotony .table_title p:nth-child(3){width: 88px;}
+.arteriotony .table_title p:nth-child(3) {
+    width: 88px;
+}
 
 .arteriotony .table_title :first-child {
     width: 130px;
@@ -2697,13 +2699,13 @@
     align-items: center;
 }
 
-.arteriotony .table_body .text_box p{
+.arteriotony .table_body .text_box p {
     margin-right: 33px;
     display: inline-flex;
     align-items: center;
 }
 
-.arteriotony .table_body .text_box > :first-child{
+.arteriotony .table_body .text_box > :first-child {
     margin-right: 4px;
 }
 
@@ -2711,7 +2713,7 @@
     margin-right: 0;
 }
 
-.arteriotony .table_body .text_box p:nth-last-child(-n+3) span{
+.arteriotony .table_body .text_box p:nth-last-child(-n + 3) span {
     margin-left: 4px;
 }
 
@@ -2742,28 +2744,36 @@
     text-align: center;
 }
 
-.arteriotony .table_page ul{display: flex; align-items: center; justify-content: center;}
+.arteriotony .table_page ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.arteriotony .table_page ul li{
+.arteriotony .table_page ul li {
     font-size: 12px;
     color: #888;
 }
 
-.arteriotony .table_page ul li{margin-right: 3px;}
+.arteriotony .table_page ul li {
+    margin-right: 3px;
+}
 .arteriotony .table_page ul li:last-child,
 .arteriotony .table_page ul li:first-child,
-.arteriotony .table_page ul li:nth-last-child(3){margin: 0;}
+.arteriotony .table_page ul li:nth-last-child(3) {
+    margin: 0;
+}
 
-.arteriotony .table_page ul li:nth-child(2){
+.arteriotony .table_page ul li:nth-child(2) {
     margin: 0 4px 0 8px;
 }
 
-.arteriotony .table_page ul li:nth-last-child(2){
+.arteriotony .table_page ul li:nth-last-child(2) {
     margin: 0 8px 0 4px;
 }
 
-.arteriotony .table_page ul li.active{
-    color: #007A94;
+.arteriotony .table_page ul li.active {
+    color: #007a94;
 }
 
 /* 대시보드 */

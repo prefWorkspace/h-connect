@@ -21,25 +21,39 @@ const NOW_URL_PATH = pathCalc();
 const VERSION = {
     lib: {
         d3: {
-            'd3-7.3.0.js': {
-                priority: 0,
-                url_path: '/nurse/patient',
-                file_path: '/H-Connect/js/lib/d3/',
-                version: '2022.01.17.11.33',
+            custom: {
+                'customD3.js': {
+                    type: 'module',
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/d3/custom/',
+                    version: '2022.04.14.11.33',
+                },
+            },
+            library: {
+                'd3-7.3.0.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/d3/library/',
+                    version: '2022.01.17.11.33',
+                },
             },
         },
         socket: {
-            'sockjs-1.5.0.js': {
-                priority: 0,
-                url_path: '/nurse/monitoring||/nurse/patient',
-                file_path: '/H-Connect/js/lib/socket/',
-                version: '2022.01.17.11.33',
-            },
-            'stomp-1.7.1.js': {
-                priority: 0,
-                url_path: '/nurse/monitoring||/nurse/patient',
-                file_path: '/H-Connect/js/lib/socket/',
-                version: '2022.01.17.11.33',
+            custom: {},
+            library: {
+                'sockjs-1.5.0.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/socket/',
+                    version: '2022.01.17.11.33',
+                },
+                'stomp-1.7.1.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/socket/',
+                    version: '2022.01.17.11.33',
+                },
             },
         },
     },
@@ -454,6 +468,13 @@ const VERSION = {
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.11.16.11',
                     },
+                    'deleteMeasureHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.14.16.11',
+                    },
                     'newMeasureHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
@@ -467,6 +488,13 @@ const VERSION = {
                         file_path:
                             '/H-Connect/js/nurse/management/measure/actions/',
                         version: '2022.04.12.11.12',
+                    },
+                    'selectBoxHandle.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/actions/',
+                        version: '2022.04.14.16.14',
                     },
                 },
                 renders: {

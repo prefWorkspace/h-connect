@@ -2072,7 +2072,12 @@ $('.wrap_inner .modifi_hospital .btn_delete').on('click', function () {
 
 //병상 정보 수정 장치추가 팝업
 $('.modifi_hospital .device_room .btn_add').on('click', function () {
+    const measurementCode = $(this).attr('data-measurementcode');
     $('.pop.regi_device .overlay').fadeIn();
+    $('.pop.regi_device .btn_list .btn_check').attr(
+        'data-measurementcode',
+        measurementCode
+    );
 });
 
 //측정현황 병동 셀렉트박스
@@ -2097,9 +2102,9 @@ $('.pop.regi_device .selectBox2 .optionItem').on('click', function () {
     $(this).parent().parent().toggleClass('active');
 });
 
-$('.pop.update_device .selectBox2 .label').on('click', function () {
-    $(this).parent().toggleClass('active');
-});
+// $('.pop.update_device .selectBox2 .label').on('click', function () {
+//     $(this).parent().toggleClass('active');
+// });
 
 $('.pop.update_device .selectBox2 .optionItem').on('click', function () {
     const deviceName = $(this).text();

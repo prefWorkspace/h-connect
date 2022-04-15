@@ -4,22 +4,66 @@ const { history } = await import(
 const { sessionController } = await import(
     importVersion('/H-Connect/js/utils/controller/sessionController.js')
 );
+
+const urlObj = {
+    DEVELOPMENT: {
+        IP: 'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/',
+        SOCKET_IP:
+            'wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole',
+        CLIENT: ['127.0.0.1', 'localhost'], // 클라이언트 url 입력
+    },
+    PRODUCTION: {
+        IP: '',
+        SOCKET_IP: '',
+        CLIENT: ['', ''], // 클라이언트 url 입력
+    },
+};
+
 // 서버 ip
-export const ip =
-    'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/';
-export const sockeIp =
-    'wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole';
+export const ip = ipBaseUrl('IP');
+export const sockeIp = ipBaseUrl('SOCKET_IP');
+
+function ipBaseUrl(_base) {
+    // 개발 , 실서버 확인
+    const _getHostName = window.location.hostname;
+    let resultURL = urlObj?.PRODUCTION[_base];
+    for (const [modelKey, modelValue] of Object.entries(urlObj)) {
+        modelValue?.CLIENT?.map((_clientIp) => {
+            if (_clientIp == _getHostName) {
+                resultURL = urlObj[modelKey][_base];
+                return;
+            }
+        });
+    }
+    return resultURL;
+}
+
 export const LOGIN_TOKEN = sessionController.getSession('accesToken');
 
 /* jquery ajax */
 export const serverController = {
-    ajaxAwaitController: (path, type, formData, callBack, errorCallBack) => {
+    ajaxAwaitController: (
+        path,
+        type,
+        formData,
+        callBack,
+        errorCallBack,
+        route = null
+    ) => {
         return $.ajax({
             beforeSend: function (xhr) {
                 xhr.setRequestHeader(
                     'SX-Auth-Token',
                     LOGIN_TOKEN ? LOGIN_TOKEN : null
                 );
+
+                if (route !== null) {
+                    const keys = Object.keys(route);
+                    for (let i = 0; i < keys.length; i++) {
+                        let key = keys[i];
+                        xhr.setRequestHeader(key, route[key]);
+                    }
+                }
             },
             url: `${ip}${path}`,
             type: type,
@@ -28,42 +72,9 @@ export const serverController = {
             contentType: 'application/json;charset=UTF-8',
             success: function (data) {
                 if (data.error === 241) {
-                    // session closed
                     history.linkTo('/index.html');
                     return alert('세션이 만료되었습니다');
                 }
-                if (callBack) callBack(data);
-                return data;
-            },
-            error: function (e) {
-                if (errorCallBack) errorCallBack(e);
-                alert('실패하였습니다');
-                return null;
-            },
-        });
-    },
-    ajaxMeasurementController: (
-        path,
-        route,
-        type,
-        formData,
-        callBack,
-        errorCallBack
-    ) => {
-        return $.ajax({
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader(
-                    'SX-Auth-Token',
-                    LOGIN_TOKEN ? LOGIN_TOKEN : null
-                );
-                xhr.setRequestHeader('SX-API-ROUTE', route);
-            },
-            url: `${ip}${path}`,
-            type: type,
-            data: formData ? formData : null,
-            processData: false,
-            contentType: 'application/json;charset=UTF-8',
-            success: function (data) {
                 if (callBack) callBack(data);
                 return data;
             },

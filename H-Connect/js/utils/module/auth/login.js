@@ -32,6 +32,7 @@ function Login_Fetch() {
     const pw_Input = $('.login #pw').val(); //비밀번호 input 값
 
     if (id_Input === '' || pw_Input === '') {
+        alert('아이디 또는 비밀번호가 잘못되었습니다.');
         return;
     }
 
@@ -46,10 +47,15 @@ function Login_Fetch() {
         'POST',
         req,
         (res) => {
-            if (res.result) {
-                const userData = res.userAccount;
-                const apiServerinfoList = res.apiServerinfoList;
-
+            const {
+                loginFailCount,
+                loginFailMaxCount,
+                result,
+                userAccount: userData,
+                apiServerinfoList,
+                message,
+            } = res;
+            if (result) {
                 sessionController.setSession('accesToken', res.accessToken);
                 localStorageController.setLocalS('userData', userData);
 
@@ -78,8 +84,9 @@ function Login_Fetch() {
                         break;
                 }
             } else {
-                cookieController.removeCookie('accesToken');
-                alert('로그인이 실패 했습니다');
+                alert(
+                    `로그인에 실패 했습니다. ${loginFailMaxCount}회 중 ${loginFailCount}실패. \n ${loginFailMaxCount}이상 실패 시, 계정이 잠겨버립니다.`
+                );
             }
         },
         (err) => console.log(err)
@@ -94,6 +101,7 @@ function Enter_Press_Login(e) {
 
 function saved_Id() {
     const saveId_input = $('.login .check #id_save').is(':checked'); // 아이디 저장 체크 박스 boolean
+    const id_Input = $('#id').val();
 
     if (saveId_input) {
         localStorageController.setLocalS('Hconnect-id', id_Input);

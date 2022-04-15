@@ -32,8 +32,10 @@ export const eventSimpleDataListTmpl = async (_data) => {
 export const eventSimpleDataDetailTmpl = (_data) => {
     const { maxValue, minValue, value, ecgJson, ecgJsonInclude, confirm } =
         _data || {};
+    console.log('ecgJson, ecgJsonInclude: ', ecgJson, ecgJsonInclude);
 
-    const disabledCheck = confirm !== 0 ? 'disabled' : '';
+    const disabledCheck = confirm !== 0 ? 'disabled' : ''; // confirm 활성화 여부
+
     return `
       <div class="cont_inner">
           <div class="ecg">

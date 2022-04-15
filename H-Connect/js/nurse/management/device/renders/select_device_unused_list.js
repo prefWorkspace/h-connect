@@ -13,10 +13,12 @@ export function select_device_unused_list(deviceRegisterList) {
         '.section.return_device .device_list .device_item .item_row'
     );
 
-    if (!deviceRegisterList) return;
-
-    for (let i = 0; i < deviceRegisterList.length; i++) {
-        deviceList += unusedDeviceList(deviceRegisterList[i]);
+    if (!deviceRegisterList) {
+        deviceList += `<p style="text-align: center; color: #444444">조회된 데이터가 없습니다.</p>`;
+    } else {
+        for (let i = 0; i < deviceRegisterList.length; i++) {
+            deviceList += unusedDeviceList(deviceRegisterList[i]);
+        }
     }
 
     $('.section.return_device .device_list .device_item').html(deviceList);
