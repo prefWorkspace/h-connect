@@ -53,8 +53,8 @@ function Login_Fetch() {
                 result,
                 userAccount: userData,
                 apiServerinfoList,
+                message,
             } = res;
-
             if (result) {
                 sessionController.setSession('accesToken', res.accessToken);
                 localStorageController.setLocalS('userData', userData);
@@ -85,7 +85,7 @@ function Login_Fetch() {
                 }
             } else {
                 alert(
-                    `로그인에 실패 했습니다. ${loginFailMaxCount}회 중 ${loginFailCount}실패. ${loginFailMaxCount}이상 실패 시, 계정이 잠겨버립니다.`
+                    `로그인에 실패 했습니다. ${loginFailMaxCount}회 중 ${loginFailCount}실패. \n ${loginFailMaxCount}이상 실패 시, 계정이 잠겨버립니다.`
                 );
             }
         },

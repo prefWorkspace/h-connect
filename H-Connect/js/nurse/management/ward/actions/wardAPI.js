@@ -28,6 +28,7 @@ export async function updateWardAPI(wardCode, orderNumber, deactivate) {
     const _ward = $('.update_ward .content #ward_Name').val();
 
     if (_ward === '') {
+        alert('병동수정에 실패 하였습니다.');
         return;
     }
     const _req = JSON.stringify({
@@ -49,6 +50,8 @@ export async function updateWardAPI(wardCode, orderNumber, deactivate) {
                 $('div').remove('.nurse .ward .cont');
                 $('.pop.update_ward .overlay').fadeOut();
                 selectWard();
+            } else {
+                alert('병동수정에 실패 하였습니다.');
             }
         },
         (err) => {
@@ -84,6 +87,8 @@ export async function deleteWard() {
                     // location.reload();
                     $('div').remove('.nurse .ward .cont');
                     selectWard();
+                } else {
+                    alert('병동삭제에 실패 하였습니다.');
                 }
             },
             (err) => {
@@ -102,6 +107,7 @@ export async function insertWard() {
     const _orderNumber = $('.nurse .ward .cont').length + 1;
 
     if (_ward_Name === '') {
+        alert('병동생성에 실패 하였습니다.');
         return;
     }
 
@@ -121,6 +127,8 @@ export async function insertWard() {
                 $('div').remove('.cont');
                 $('.pop.new_ward .overlay').fadeOut();
                 selectWard();
+            } else {
+                alert('병동생성에 실패 하였습니다.');
             }
         },
         (err) => {
@@ -131,7 +139,11 @@ export async function insertWard() {
 
 //조회 api
 export async function selectWard() {
-    const { wardList } = await selectWardList();
+    const { result, wardList } = await selectWardList();
+    if (!result) {
+        alert('병동조회에 실패 하였습니다.');
+        return;
+    }
     CONSTANT.wardList = wardList;
     Create_newWard(wardList);
     updateWard(); //병동 수정 이벤트

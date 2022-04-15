@@ -9,7 +9,7 @@ export async function createMeasureList(data_List) {
     let data = '';
     let count = 0;
     if (!data_List) {
-        data = `<div></div>`;
+        data = `<p style="text-align: center; color: #444444">조회된 데이터가 없습니다.</p>`;
     } else {
         for (let i = 0; i < data_List.length; i++) {
             data += measureList(data_List[i]);

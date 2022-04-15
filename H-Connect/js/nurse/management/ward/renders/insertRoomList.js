@@ -8,10 +8,11 @@ const { sickRoomList } = await import(
 export function insertRoomList(_sickRoomList) {
     let data = '';
     if (!_sickRoomList) {
-        return;
-    }
-    for (let i = 0; i < _sickRoomList.length; i++) {
-        data += sickRoomList(_sickRoomList[i]);
+        data += `<p style="text-align: center; color: #444444">조회된 데이터가 없습니다.</p>`;
+    } else {
+        for (let i = 0; i < _sickRoomList.length; i++) {
+            data += sickRoomList(_sickRoomList[i]);
+        }
     }
 
     $('.section.right.hospital_room .container .cont .container').html(data);

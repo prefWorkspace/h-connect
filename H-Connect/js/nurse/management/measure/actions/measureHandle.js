@@ -38,13 +38,6 @@ const {
     )
 );
 
-//수정 데이터 장치 담는 배열
-// let { updateDeviceList } = await import(
-//     importVersion(
-//         '/H-Connect/js/nurse/management/measure/actions/updateMeasureHandle.js'
-//     )
-// );
-
 const { device_NameToType } = await import(
     importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
 );
@@ -159,38 +152,31 @@ async function updateDevicePop() {
     const serialNumber = $('.pop.update_device .content input').val();
     const deviceInfoId = +$(this).attr('data-deviceinfoid');
     const measurementCode = $(this).attr('data-measurementcode');
-    // let updateItem = {};
-    // updateDeviceList.forEach((value, index) => {
-    //     if (value.deviceInfoId == deviceInfoId) {
-    //         updateItem = { ...value, serialNumber, deviceType };
-    //     }
-    // });
 
-    // const newArr = updateDeviceList.filter(
-    //     (item) => item.deviceInfoId != deviceInfoId
-    // );
+    const { deviceRegisterList } = await selectDeviceRegisterUnused(
+        serialNumber
+    );
+    if (deviceRegisterList) {
+        const deviceInfo = {
+            measurementCode,
+            deviceInfoId,
+            serialNumber,
+            deviceType,
+            macAddress: getMacaddress(deviceType, serialNumber),
+        };
 
-    // updateDeviceList = [...newArr, updateItem];
+        const { result } = await updateMeasurement_updateDeviceInfo(deviceInfo);
+        if (result) {
+            $(
+                `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(1)`
+            ).text(deviceName);
 
-    const deviceInfo = {
-        measurementCode,
-        deviceInfoId,
-        serialNumber,
-        deviceType,
-        macAddress: getMacaddress(deviceType, serialNumber),
-    };
+            $(
+                `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(2)`
+            ).text(serialNumber);
 
-    const { result } = await updateMeasurement_updateDeviceInfo(deviceInfo);
-    if (result) {
-        $(
-            `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(1)`
-        ).text(deviceName);
-
-        $(
-            `.section.modifi_hospital .device_room #${deviceInfoId} p:nth-of-type(2)`
-        ).text(serialNumber);
-
-        $('.pop.update_device .overlay').fadeOut();
+            $('.pop.update_device .overlay').fadeOut();
+        }
     }
 }
 
@@ -334,6 +320,11 @@ export async function measureListhanlde() {
                 false
             );
 
+            $('.section.modifi_hospital .btn_list .btn_new_hospital').attr(
+                'disabled',
+                true
+            );
+
             $('.section.modifi_hospital .btn_list .btn_delete').attr(
                 'data-measurementcode',
                 measurementCode
@@ -436,6 +427,7 @@ export async function selectBoxSickRoom() {
             );
 
             $(this).addClass('active').siblings().removeClass('active');
+
             const { measurementInfoSimpleList } =
                 await selectMeasurementInfoList(wardCode, sickRoomCode);
             $(this).parent().parent().find('.label').text(text);
