@@ -45,7 +45,7 @@ export async function selectBioSignalEvemtSimpleList(confirm) {
             result = res;
         },
         (err) => {
-            console.log(err);
+            alert(`서버 통신에 실패하였습니다 (Error: ${err})`);
         }
     );
 
@@ -70,7 +70,7 @@ export async function selectBioSignalEvent(_bse) {
             result = res;
         },
         (err) => {
-            console.log(err);
+            alert(`서버 통신에 실패하였습니다 (Error: ${err})`);
         }
     );
 
@@ -148,7 +148,6 @@ export async function insertNewEventList() {
 export async function insertPreEventList() {
     let res = await selectBioSignalEvemtSimpleList(2);
     let eventList = res.bioSignalEventSimpleList;
-    console.log(eventList.length);
     await renderPreEventList(eventList);
     $('.section.new_patient.new').ready(function () {
         if (!eventList) {
