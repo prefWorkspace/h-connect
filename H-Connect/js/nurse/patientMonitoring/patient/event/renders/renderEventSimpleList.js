@@ -96,11 +96,17 @@ const createEventSimpleTabController = () => {
             appendWrap: '.event_delete_popup_wrap',
         },
         templates: {
-            popup: eventDeletePopupTmpl,
+            popup: () => {
+                return confirmTwoPopupTmpl({
+                    type: 'delete',
+                    title: '선택한 이벤트를 삭제합니다.',
+                    message: '삭제 하시겠습니까?',
+                });
+            },
         },
         popupBtn: {
             cancelBtn: {
-                target: '.btn_no',
+                target: '.btn.gr',
                 close: true,
                 action: (_this) => {
                     // 클릭한 객체의 id 를 팝업에 임시 전달
@@ -108,7 +114,7 @@ const createEventSimpleTabController = () => {
                 },
             },
             deleteBtn: {
-                target: '.btn_delete',
+                target: '.btn.blf',
                 close: true,
                 action: async (_this) => {
                     const { eventId } = _this.getData();

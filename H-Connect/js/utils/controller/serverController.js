@@ -4,11 +4,40 @@ const { history } = await import(
 const { sessionController } = await import(
     importVersion('/H-Connect/js/utils/controller/sessionController.js')
 );
+
+const urlObj = {
+    DEVELOPMENT: {
+        IP: 'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/',
+        SOCKET_IP:
+            'wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole',
+        CLIENT: ['127.0.0.1', 'localhost'], // 클라이언트 url 입력
+    },
+    PRODUCTION: {
+        IP: '',
+        SOCKET_IP: '',
+        CLIENT: ['', ''], // 클라이언트 url 입력
+    },
+};
+
 // 서버 ip
-export const ip =
-    'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/';
-export const sockeIp =
-    'wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole';
+export const ip = ipBaseUrl('IP');
+export const sockeIp = ipBaseUrl('SOCKET_IP');
+
+function ipBaseUrl(_base) {
+    // 개발 , 실서버 확인
+    const _getHostName = window.location.hostname;
+    let resultURL = urlObj?.PRODUCTION[_base];
+    for (const [modelKey, modelValue] of Object.entries(urlObj)) {
+        modelValue?.CLIENT?.map((_clientIp) => {
+            if (_clientIp == _getHostName) {
+                resultURL = urlObj[modelKey][_base];
+                return;
+            }
+        });
+    }
+    return resultURL;
+}
+
 export const LOGIN_TOKEN = sessionController.getSession('accesToken');
 
 /* jquery ajax */
