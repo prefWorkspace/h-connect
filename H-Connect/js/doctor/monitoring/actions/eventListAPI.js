@@ -28,6 +28,13 @@ const {
     importVersion('/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js')
 );
 
+$.fn.hasScrollBar = function () {
+    return (
+        (this.prop('scrollHeight') == 0 && this.prop('clientHeight') == 0) ||
+        this.prop('scrollHeight') > this.prop('clientHeight')
+    );
+};
+
 export async function selectBioSignalEvemtSimpleList(confirm) {
     const req = JSON.stringify({
         confirm,
@@ -86,6 +93,8 @@ export async function insertNewEventList() {
             // Add Event To New Event List
             $('.section.new_patient.new .row').on('click', async function () {
                 if ($(this).hasClass('on')) return;
+                if ($('.new_rhythm .event_inner').hasScrollBar())
+                    $('.new_rhythm .event_inner').scrollTop(0);
                 const $this = $(this);
                 $('.section.new_patient.new .row.on').removeClass('on');
                 $this.addClass('on');
@@ -144,6 +153,8 @@ export async function insertPreEventList() {
             // Add Event To Pre Event List
             $('.section.new_patient.pre .row').on('click', async function () {
                 if ($(this).hasClass('on')) return;
+                if ($('.pre_rhythm .event_inner').hasScrollBar())
+                    $('.pre_rhythm .event_inner').scrollTop(0);
                 const $this = $(this);
                 $('.section.new_patient.pre .row.on').removeClass('on');
                 $this.addClass('on');

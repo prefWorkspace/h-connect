@@ -18,6 +18,7 @@ const {
     eventBasicInfo,
     screenRightBtnList,
     newScreenBody,
+    preScreenBody,
 } = await import(
     importVersion(
         '/H-Connect/js/doctor/monitoring/templates/templateEventScreen.js'
@@ -53,12 +54,14 @@ export async function selectBioSignalEvent(_bse) {
 
 export async function renderNewEventScreen(_bse) {
     $('.event .title_preSection').html('');
+    $('.pre_rhythm .event_inner').html('');
     renderNewEventScreenTitleHead(_bse);
     renderNewEventScreenBodyTitle(_bse);
 }
 
 export async function renderPreEventScreen(_bse) {
     $('.event .title_newSection').html('');
+    $('.new_rhythm .event_inner').html('');
     renderPreEventScreenTitleHead(_bse);
     renderPreEventScreenBodyTitle(_bse);
 }
@@ -108,6 +111,7 @@ export async function renderNewEventScreenBodyTitle(_bse) {
 export async function renderPreEventScreenBodyTitle(_bse) {
     const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_preSection');
+    const _bseDetail = await selectBioSignalEvent(_bse);
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
@@ -115,4 +119,5 @@ export async function renderPreEventScreenBodyTitle(_bse) {
     </div>
     ${await screenRightBtnList(true)}
     `);
+    $('.pre_rhythm .event_inner').html(`${await preScreenBody(_bseDetail)}`);
 }
