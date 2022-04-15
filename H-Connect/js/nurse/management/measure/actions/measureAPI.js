@@ -84,9 +84,13 @@ export async function recodingEndMeasurementInfo(measurementCode, route) {
         measurementStatus: 3,
         dateTime: request_Date_Data(),
     };
-    return serverController.ajaxMeasurementController(
+
+    const routeObj = {
+        'SX-API-ROUTE': route,
+    };
+
+    return serverController.ajaxAwaitController(
         'API/Measurement/UpdateMeasurementInfoStatus',
-        route,
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -96,7 +100,8 @@ export async function recodingEndMeasurementInfo(measurementCode, route) {
         },
         (err) => {
             console.log(err);
-        }
+        },
+        routeObj
     );
 }
 
@@ -108,9 +113,12 @@ export async function updateMeasurementInfo(codeObj, patientData, route) {
         ...patientData,
     };
 
-    return serverController.ajaxMeasurementController(
+    const routeObj = {
+        'SX-API-ROUTE': route,
+    };
+
+    return serverController.ajaxAwaitController(
         'API/Measurement/UpdateMeasurementInfo',
-        route,
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -120,7 +128,8 @@ export async function updateMeasurementInfo(codeObj, patientData, route) {
         },
         (err) => {
             console.log(err);
-        }
+        },
+        routeObj
     );
 }
 
@@ -150,15 +159,19 @@ export async function selectDeviceRegisterUnused(search) {
 }
 
 // 측정 코드 삭제 API
-export async function deleteMeasurementInfo(measureMentCode, route) {
+export async function deleteMeasurementInfo(measurementCode, route) {
     const obj = {
         ...commonRequest(),
         requester,
-        measureMentCode,
+        measurementCode,
     };
-    return serverController.ajaxMeasurementController(
+
+    const routeObj = {
+        'SX-API-ROUTE': route,
+    };
+
+    return serverController.ajaxAwaitController(
         'API/Measurement/DeleteMeasurementInfo',
-        route,
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -166,7 +179,8 @@ export async function deleteMeasurementInfo(measureMentCode, route) {
             } else {
             }
         },
-        (err) => console.log(err)
+        (err) => console.log(err),
+        routeObj
     );
 }
 
@@ -229,6 +243,7 @@ export async function updateMeasurement_insertDevice(
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertDeviceInfo',
         'POST',
+        JSON.stringify(obj),
         (res) => {
             if (res.result) {
             } else {

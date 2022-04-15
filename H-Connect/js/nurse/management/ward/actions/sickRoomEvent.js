@@ -9,6 +9,13 @@ const { insertSickRoom } = await import(
 //     $('.pop.new_room .overlay').fadeIn();
 // });
 $('.section.right .btn_new_room').on('click', function () {
+    $('.pop.new_room .content input').val('');
+    $('.pop.new_room .selectBox2 .room_label').text('6인실');
+    $('.pop.new_room .selectBox2 .room_option').removeClass('active');
+    $('.pop.new_room .selectBox2 .room_option').each((_, value) => {
+        $(value).data('number') === 6 ? $(value).addClass('active') : null;
+    });
+
     $('.pop.new_room .overlay').fadeIn();
 });
 

@@ -23,6 +23,12 @@ const { createMeasureList } = await import(
     )
 );
 
+const { measureListhanlde } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/management/measure/actions/measureHandle.js'
+    )
+);
+
 const {
     newSickBedPop_wardListSelectHandle,
     newSickBedPop_sickroomListSelectHandle,
@@ -259,9 +265,9 @@ export async function newMeasurement() {
         birthday: birthday + '-01-01',
         deviceInfoList,
         patientStatus: 3,
-        ssn: '000000-9999999', //주민등록번호
-        foreigner: 0,
-        phoneNumber: '010-0000-0000',
+        ssn: null, //주민등록번호
+        foreigner: null,
+        phoneNumber: null,
         measurementType: 'BM',
         measurementStatus: 1,
         duration: 24,
@@ -280,6 +286,7 @@ export async function newMeasurement() {
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 
         await createMeasureList(measurementInfoSimpleList);
+        await measureListhanlde();
     }
 }
 

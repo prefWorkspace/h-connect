@@ -41,6 +41,7 @@ export async function insertSickRoom() {
             .length + 1;
 
     if (sickRoom === '') {
+        alert('병실생성에 실패 하였습니다.');
         return;
     }
 
@@ -66,6 +67,8 @@ export async function insertSickRoom() {
                     '.pop.new_room .overlay .pop_cont .content .selectBox2 .room_label'
                 ).text('');
                 $('.pop.new_room .overlay').fadeOut();
+            } else {
+                alert('병실생성에 실패 하였습니다.');
             }
         },
         (err) => {
@@ -78,9 +81,9 @@ export async function insertSickRoom() {
 export async function updateSickRoom(_wardCode) {
     let sickRoomCode;
     let wardCode;
-    $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify').on(
-        'click',
-        function () {
+    $('.nurse .hospital_room .cont .ward_list .btn_list .btn_modify')
+        .off()
+        .on('click', function () {
             $('.pop.update_room .overlay').fadeIn();
             sickRoomCode = $(this).data('sickroomcode');
             wardCode = $(this).data('wardcode');
@@ -99,8 +102,7 @@ export async function updateSickRoom(_wardCode) {
                     $(value).addClass('active');
                 }
             });
-        }
-    );
+        });
 
     $('.pop.update_room .overlay .btn_list .btn_check').on(
         'click',
@@ -138,8 +140,6 @@ export async function updateSickRoom(_wardCode) {
                 'POST',
                 req,
                 (res) => {
-                    console.log('res==');
-                    console.log(res);
                     if (res.result) {
                         $('div').remove(
                             '.section.right.hospital_room .container .cont .container .ward_list'
@@ -149,6 +149,8 @@ export async function updateSickRoom(_wardCode) {
                             '.pop.update_room .overlay .pop_cont .content input'
                         ).val('');
                         $('.pop.update_room .overlay').fadeOut();
+                    } else {
+                        alert('병실수정에 실패 하였습니다.');
                     }
                 },
                 (err) => {
@@ -170,38 +172,48 @@ export async function deleteSickRoom(_wardCode) {
         }
     );
 
-    $('.pop.delete_room .overlay .btn_list .btn_cut').on('click', function () {
-        const req = JSON.stringify({
-            requester,
-            organizationCode,
-            _wardCode,
-            sickRoomCode,
-            ...commonRequest(),
-        });
+    $('.pop.delete_room .overlay .btn_list .btn_cut')
+        .off()
+        .on('click', function () {
+            const req = JSON.stringify({
+                requester,
+                organizationCode,
+                _wardCode,
+                sickRoomCode,
+                ...commonRequest(),
+            });
+            console.log('req===');
+            console.log(req);
 
-        serverController.ajaxAwaitController(
-            'API/Manager/DeleteSickRoom',
-            'POST',
-            req,
-            (res) => {
-                if (res.result) {
-                    $('div').remove(
-                        '.section.right.hospital_room .container .cont .container .ward_list'
-                    );
-                    selectSickRoom(_wardCode);
-                    $('.pop.delete_room .overlay').fadeOut();
+            serverController.ajaxAwaitController(
+                'API/Manager/DeleteSickRoom',
+                'POST',
+                req,
+                (res) => {
+                    if (res.result) {
+                        $('div').remove(
+                            '.section.right.hospital_room .container .cont .container .ward_list'
+                        );
+                        selectSickRoom(_wardCode);
+                        $('.pop.delete_room .overlay').fadeOut();
+                    } else {
+                        // alert('병실삭제에 실패 하였습니다.');
+                    }
+                },
+                (err) => {
+                    console.log(err);
                 }
-            },
-            (err) => {
-                console.log(err);
-            }
-        );
-    });
+            );
+        });
 }
 
 //병실 조회 api
 export async function selectSickRoom(_wardCode) {
-    const { sickRoomList } = await selectSickRoomList(_wardCode);
+    const { sickRoomList, result } = await selectSickRoomList(_wardCode);
+    if (!result) {
+        alert('병실조회에 실패 하였습니다.');
+        return;
+    }
     $('div').remove(
         '.section.right.hospital_room .container .cont .container .ward_list'
     );

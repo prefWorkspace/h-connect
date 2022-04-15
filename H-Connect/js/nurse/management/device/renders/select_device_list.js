@@ -11,10 +11,12 @@ export function select_device_list(deviceRegisterList) {
     //리스트 지우기
     $('div').remove('.section.new_device .device_list .device_item .item_row');
 
-    if (!deviceRegisterList) return;
-
-    for (let i = 0; i < deviceRegisterList.length; i++) {
-        devicehtml += deviceList(deviceRegisterList[i]);
+    if (!deviceRegisterList) {
+        devicehtml += `<p style="text-align: center; color: #444444">조회된 데이터가 없습니다.</p>`;
+    } else {
+        for (let i = 0; i < deviceRegisterList.length; i++) {
+            devicehtml += deviceList(deviceRegisterList[i]);
+        }
     }
 
     $('.section.new_device .device_list .device_item').html(devicehtml);

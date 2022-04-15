@@ -4,6 +4,10 @@ const { device_TypeToName } = await import(
     importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
 );
 
+const { birthdayToAge } = await import(
+    importVersion('/H-Connect/js/utils/common/utils.js')
+);
+
 export function measureList(data_List) {
     const {
         name,
@@ -13,6 +17,7 @@ export function measureList(data_List) {
         sickBed,
         patientCode,
         age,
+        birthday,
         wardCode,
         sickRoomCode,
         sickBedCode,
@@ -47,7 +52,7 @@ export function measureList(data_List) {
 
             <p>
                 <span>${name}</span>.
-                (<span>${age || '00'}</span>.
+                (<span>${birthday ? birthdayToAge(birthday) : '00'}</span>.
                 <span>${gender === 1 ? '남자' : '여자'}</span>.
                 <span>${patientCode}</span>)
             </p>

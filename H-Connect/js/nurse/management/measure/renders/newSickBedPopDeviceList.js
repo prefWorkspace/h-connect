@@ -8,6 +8,7 @@ const { newSickBed_device } = await import(
 
 export async function newSickBedPopDeviceList(arr) {
     let html = '';
+
     for (let i = 0; i < arr.length; i++) {
         html += newSickBed_device(arr[i]);
     }
