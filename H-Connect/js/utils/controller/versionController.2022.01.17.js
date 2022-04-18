@@ -212,6 +212,11 @@ const FILE_TREE = {
                     url_path: '/doctor/monitoring',
                     file_path: '/H-Connect/js/doctor/monitoring/actions/',
                 },
+                'selectBioSignalEventActions.js': {
+                    type: 'module',
+                    url_path: '/doctor/monitoring',
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
+                },
             },
             templates: {
                 'templateEvent.js': {

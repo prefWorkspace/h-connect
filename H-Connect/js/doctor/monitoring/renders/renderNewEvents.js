@@ -38,14 +38,12 @@ export async function renderNewEventList(_eventList) {
             </button>
         </div>
     </div>
-    <div class='ecglist'>`;
-    if (_eventList) {
-        // render NewEventList
-        eventList.forEach((evt) => {
-            templateNewEventList += eventListItem(evt);
-        });
-    }
-    templateNewEventList += '</div>';
-    // Attach To Parent
+    <div class='ecglist'></div>`;
+    // Attach To Parent    // if (_eventList) {
+    //     // render NewEventList
+    //     eventList.forEach((evt) => {
+    //         templateNewEventList += eventListItem(evt);
+    //     });
+    // }
     $('.section.new_patient.new').html(templateNewEventList);
 }

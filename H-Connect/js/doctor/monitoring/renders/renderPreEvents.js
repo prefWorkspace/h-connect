@@ -49,17 +49,8 @@ export async function renderPreEventList(_eventList) {
             </button>
         </div>
     </div>
-    <div class='ecglist'>
+    <div class='ecglist'></div>
     `;
-    if (_eventList) {
-        // render PreEventList
-        eventList.forEach((evt) => {
-            templatePreEventList += eventListItem(evt);
-        });
-    }
-    
-    
-    templatePreEventList += `</div>`;
     // Attach To Parent
     $('.section.new_patient.pre').html(templatePreEventList);
 }

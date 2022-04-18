@@ -4,11 +4,10 @@ const { dateFormat } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/common.js')
 );
 
-const { commonRequest } = await import(
-    importVersion('/H-Connect/js/utils/controller/commonRequest.js')
-);
-const { serverController } = await import(
-    importVersion('/H-Connect/js/utils/controller/serverController.js')
+const { selectBioSignalEvent } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/monitoring/actions/selectBioSignalEventActions.js'
+    )
 );
 
 const {
@@ -24,33 +23,6 @@ const {
         '/H-Connect/js/doctor/monitoring/templates/templateEventScreen.js'
     )
 );
-
-export async function selectBioSignalEvent(_bse) {
-    const { bioSignalEventId, measurementCode } = _bse;
-    const req = JSON.stringify({
-        ...commonRequest(),
-        bioSignalEventId,
-        measurementCode,
-    });
-
-    let result = {};
-
-    await serverController.ajaxAwaitController(
-        'API/BioSignal/SelectBioSignalEvent',
-        'POST',
-        req,
-        (res) => {
-            if (res.result) {
-                result = res.bioSignalEvent;
-            }
-        },
-        (err) => {
-            alert(`서버 통신에 실패하였습니다 (Error: ${err})`);
-        }
-    );
-
-    return result;
-}
 
 export async function renderNewEventScreen(_bse) {
     $('.event .title_preSection').html('');
