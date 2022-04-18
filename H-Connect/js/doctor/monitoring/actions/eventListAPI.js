@@ -242,25 +242,21 @@ async function insertPreEventListBySearch(_searchKeyword) {
 }
 
 export async function addInfiniteScrollNewEvent(addedList) {
-    $('.section.new_patient.new').on('mousewheel', async function (event) {
-        if (event.originalEvent.deltaY > 0) {
-            if (
-                $('.section.new_patient.new .ecglist').scrollTop() +
-                    $('.section.new_patient.new .ecglist').innerHeight() +
-                    30 >=
-                $('.section.new_patient.new .ecglist').prop('scrollHeight')
-            ) {
-                for await (const evt of addedList) {
-                    insertNewEvent(evt);
-                }
-                $('.section.new_patient.new').off('mousewheel');
-                addInfiniteScrollNewEvent(addedList);
-                $(`.section.new_patient.new .alarm p`).html(
-                    `<span>${
-                        $('.section.new_patient.new .row').length
-                    } 개의 확인하지 않은 이벤트</span>`
-                );
+    $('.section.new_patient.new .ecglist').off('scroll').scroll(async function (event) {
+        if (
+            $('.section.new_patient.new .ecglist').scrollTop() +
+                $('.section.new_patient.new .ecglist').innerHeight() >=
+            $('.section.new_patient.new .ecglist').prop('scrollHeight')
+        ) {
+            for await (const evt of addedList) {
+                insertNewEvent(evt);
             }
+            addInfiniteScrollNewEvent(addedList);
+            $(`.section.new_patient.new .alarm p`).html(
+                `<span>${
+                    $('.section.new_patient.new .row').length
+                } 개의 확인하지 않은 이벤트</span>`
+            );
         }
     });
 }
