@@ -157,8 +157,6 @@ export async function InsertMeasurementInfo(codeObj, patientData) {
         organizationCode,
         orderNumber: 1,
     };
-    $('.pop.new_room_pop .overlay').hide();
-    //밑에는 API확실해 지면 실행
 
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertMeasurementInfo',

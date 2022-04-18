@@ -104,3 +104,20 @@ export async function selectHisDoctor() {
         (err) => console.log(err)
     );
 }
+
+//진료과 리스트
+export async function selectHusDoctorMedList() {
+    const obj = {
+        requester,
+        userId,
+        organizationCode,
+        ...commonRequest(),
+    };
+    return serverController.ajaxAwaitController(
+        'API/Doctor/SelectHisDoctorMedList',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {},
+        (err) => console.log(err)
+    );
+}

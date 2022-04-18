@@ -236,6 +236,23 @@ $(function () {
         }
     );
 
+    // 모니터링 신규 병상등록
+    $('.pop.new_room_pop .new_room .selectBox2 .name_list').on(
+        'click',
+        function () {
+            const name = $(this).find('span:nth-of-type(1)').text();
+            const birthday = $(this).find('span:nth-of-type(2)').text();
+            const gender = $(this).find('span:nth-of-type(3)').text();
+            const patientCode = $(this).find('span:nth-of-type(4)').text();
+
+            $(this).parent().parent().find('name_label').text(name);
+            $('.pop.new_room_pop .new_room #patient_birthday').val(birthday);
+            $('.pop.new_room_pop .new_room #patient_gender').val(gender);
+            $('.pop.new_room_pop .new_room #patient_MRN').val(patientCode);
+            $(this).parent().parent().removeClass('active');
+        }
+    );
+
     // $('.cont .resp .bell_num').on('click', function () {
     //     $('.pop.resp_set .overlay').fadeIn();
     // });
@@ -1994,7 +2011,7 @@ $(document).ready(function () {
 
 //모니터링 페이지 신규병상등록 및 장치추가 팝업
 $('.pop.new_room_pop .overlay .btn_add').on('click', function () {
-    $('.pop.new_room_pop .new_regi .input_wrap span').removeClass('active');
+    $('.pop.new_room_pop .new_regi .input_wrap > span').removeClass('active');
     $('.pop.new_room_pop .new_regi input').val('');
     $('.pop.new_room_pop').addClass('active');
 });

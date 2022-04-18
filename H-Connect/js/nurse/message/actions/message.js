@@ -1,9 +1,9 @@
 'use strict';
-const { commonRequest } = await import(
+const { commonRequest, request_Date_Data } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
 
-const { serverController, ip } = await import(
+const { serverController, ip, sockeIp } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
 );
 
@@ -18,23 +18,24 @@ const { sessionController } = await import(
 const userData = JSON.parse(localStorageController.getLocalS('userData'));
 const { userCode: requester, organization: organizationCode } = userData;
 const LOGIN_TOKEN = sessionController.getSession('accesToken');
+
 let passingParameter = {
     'SX-Auth-Token': LOGIN_TOKEN,
     deviceKind: 3,
     // connType: connType,
     apiRoute: 'GWS-1',
     requester,
+    requestDateTime: request_Date_Data(),
 };
 // `${ip}ws?SX-API-Route=${'GWS-1'}&clientKeyName=${'bioSignalData'}&connType=${1}`
-console.log('io');
-console.log(ip);
+
 let streamming = new SockJS(`${ip}ws`);
 let stompClient = Stomp.over(streamming);
 
 function callBack(frame) {
     const data = frame.headers;
-    console.log('data===');
-    console.log(data);
+    console.log('frame===');
+    console.log(frame);
     stompClient.subscribe(
         '/topic/public/bioSignalData/SEERS_2203031645_V9U6',
         function (data) {

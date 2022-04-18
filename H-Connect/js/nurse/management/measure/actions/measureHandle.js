@@ -193,6 +193,9 @@ async function deleteDevicePop() {
     );
     if (result) {
         $('.pop.delete_device .overlay').fadeOut();
+        $('div').remove(`.section.modifi_hospital .device_room #${deviceId}`);
+        const { measurementInfoSimpleList } = await selectMeasurementInfoList();
+        await createMeasureList(measurementInfoSimpleList);
     }
 }
 

@@ -138,6 +138,7 @@ export async function cancel_device_unused() {
         'POST',
         req,
         (res) => {
+            console.log(res);
             if (res.result) {
                 select_device_unused(0, null);
                 select_device(0, null);

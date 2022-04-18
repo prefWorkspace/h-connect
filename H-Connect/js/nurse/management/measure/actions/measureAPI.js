@@ -191,8 +191,11 @@ export async function updateMeasurement_updateDeviceInfo(deviceInfo) {
         requester,
         ...deviceInfo,
     };
+
+    console.log('obj===');
+    console.log(obj);
     return serverController.ajaxAwaitController(
-        'API/Measurement/updateMeasurement_updateDeviceInfo',
+        'API/Measurement/UpdateDeviceInfo',
         'POST',
         JSON.stringify(obj),
         (res) => {
@@ -217,7 +220,7 @@ export async function updateMeasurement_deleteDeviceInfo(
     };
 
     return serverController.ajaxAwaitController(
-        'API/Measurement/updateMeasurement_deleteDeviceInfo',
+        'API/Measurement/DeleteDeviceInfo',
         'POST',
         JSON.stringify(obj),
         (res) => {
