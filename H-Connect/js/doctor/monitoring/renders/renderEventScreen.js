@@ -73,7 +73,7 @@ export async function renderNewEventScreenBodyTitle(_bse) {
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
-        ${await eventBasicInfo('New Example Name', _bse?.eventDetail)}
+        ${await eventBasicInfo('New Event Name : ', _bse?.eventDetail)}
     </div>
     ${await screenRightBtnList(false)}
     `);
@@ -83,11 +83,11 @@ export async function renderNewEventScreenBodyTitle(_bse) {
 export async function renderPreEventScreenBodyTitle(_bse) {
     const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_preSection');
-    const _bseDetail = await selectBioSignalEvent(_bse);
+    const _bseDetail = await selectBioSignalEvent(_bse ? _bse : null);
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}
-        ${await eventBasicInfo('Previous Example Name', _bse?.eventDetail)}
+        ${await eventBasicInfo('Previous Event Name : ', _bse?.eventDetail)}
     </div>
     ${await screenRightBtnList(true)}
     `);

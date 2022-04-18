@@ -39,11 +39,5 @@ export async function renderNewEventList(_eventList) {
         </div>
     </div>
     <div class='ecglist'></div>`;
-    // Attach To Parent    // if (_eventList) {
-    //     // render NewEventList
-    //     eventList.forEach((evt) => {
-    //         templateNewEventList += eventListItem(evt);
-    //     });
-    // }
     $('.section.new_patient.new').html(templateNewEventList);
 }

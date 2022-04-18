@@ -33,7 +33,11 @@ export async function selectBioSignalEventSimpleList(confirm) {
 }
 
 // SelectBioSignalEventSimplePage
-export async function selectBioSignalEventSimplePage(confirm, pageNumber, count) {
+export async function selectBioSignalEventSimplePage(
+    confirm,
+    pageNumber,
+    count
+) {
     const req = JSON.stringify({
         ...commonRequest(),
         // confirm
@@ -61,6 +65,11 @@ export async function selectBioSignalEventSimplePage(confirm, pageNumber, count)
 
 // SelectBioSignalEvent
 export async function selectBioSignalEvent(_bse) {
+    if (!_bse)
+        return {
+            maxValue: -1,
+            minValue: -1,
+        };
     const { bioSignalEventId, measurementCode } = _bse;
     const req = JSON.stringify({
         ...commonRequest(),

@@ -35,10 +35,6 @@ const {
     )
 );
 
-const SCROLL_LIST_NUMBER = 10;
-let pageNumber = 1;
-let callListNumber = 10;
-
 $.fn.hasScrollBar = function () {
     return (
         (this.prop('scrollHeight') == 0 && this.prop('clientHeight') == 0) ||
@@ -59,7 +55,12 @@ export async function insertNewEventList() {
             for await (const evt of eventList) {
                 insertNewEvent(evt);
             }
-            $('.section.new_patient.new .ecglist .row').first().addClass('on');
+            if ($('.section.new_patient.new').hasScrollBar())
+                $('.section.new_patient.new').scrollTop(0);
+
+            $('.section.new_patient.new .ecglist .row')
+                .first()
+                .trigger('click');
             const targetEvent = await eventList[0];
             insertNewEventScreen(targetEvent);
         }
@@ -72,6 +73,8 @@ export async function insertNewEventList() {
             $('.section.new_patient.pre').css('display', 'block');
             $('.section.rhythm.pre_rhythm').css('display', 'block');
         });
+
+        addInfiniteScrollNewEvent(eventList);
     });
 }
 
@@ -89,14 +92,44 @@ export async function insertNewEvent(event) {
             $('.event').off('click', '.btn_con');
             $('.event').on('click', '.btn_con', function () {
                 updateBioSignalEvent(event, 2);
-                $(document).remove($this);
-                insertNewEventList();
+                //insertNewEventList();
+                const $target = $(
+                    `.section.new_patient.new .row[data-id=${event.bioSignalEventId}]`
+                );
+                if ($target.prev().length) {
+                    $target.prev().trigger('click');
+                } else {
+                    $target.next().trigger('click');
+                }
+
+                $target.remove();
+                $(`.section.new_patient.new .alarm p`).html(
+                    `<span>${
+                        $('.section.new_patient.new .row').length
+                    } 개의 확인하지 않은 이벤트</span>`
+                );
             });
             $('.event').off('click', '.btn_delete');
             $('.event').on('click', '.btn_delete', function () {
                 deleteBioSignalEvent(event);
-                $(document).remove($this);
-                insertNewEventList();
+                //insertNewEventList();
+                const $target = $(
+                    `.section.new_patient.new .row[data-id=${event.bioSignalEventId}]`
+                );
+                if ($target.prev().length) {
+                    $target.prev().trigger('click');
+                } else if ($target.next().length) {
+                    $target.next().trigger('click');
+                } else {
+                    insertNewEventScreen(null);
+                }
+
+                $target.remove();
+                $(`.section.new_patient.new .alarm p`).html(
+                    `<span>${
+                        $('.section.new_patient.new .row').length
+                    } 개의 확인하지 않은 이벤트</span>`
+                );
             });
         }
     );
@@ -115,7 +148,13 @@ export async function insertPreEventList() {
             for await (const evt of eventList) {
                 insertPreEvent(evt);
             }
-            $('.section.new_patient.pre .ecglist .row').first().addClass('on');
+
+            if ($('.section.new_patient.pre').hasScrollBar())
+                $('.section.new_patient.pre').scrollTop(0);
+
+            $('.section.new_patient.pre .ecglist .row')
+                .first()
+                .trigger('click');
             const targetEvent = await eventList[0];
             insertPreEventScreen(targetEvent);
         }
@@ -152,7 +191,19 @@ export async function insertPreEvent(event) {
             $('.event').off('click', '.btn_delete');
             $('.event').on('click', '.btn_delete', function () {
                 deleteBioSignalEvent(event);
-                insertPreEventList();
+                //insertPreEventList();
+                const $target = $(
+                    `.section.new_patient.pre .row[data-id=${event.bioSignalEventId}]`
+                );
+                if ($target.prev().length) {
+                    $target.prev().trigger('click');
+                } else if ($target.next().length) {
+                    $target.next().trigger('click');
+                } else {
+                    insertPreEventScreen(null);
+                }
+
+                $target.remove();
             });
         }
     );
@@ -188,6 +239,30 @@ async function insertPreEventListBySearch(_searchKeyword) {
         });
     }
     $preSectionRow.removeClass('on');
+}
+
+export async function addInfiniteScrollNewEvent(addedList) {
+    $('.section.new_patient.new').on('mousewheel', async function (event) {
+        if (event.originalEvent.deltaY > 0) {
+            if (
+                $('.section.new_patient.new .ecglist').scrollTop() +
+                    $('.section.new_patient.new .ecglist').innerHeight() +
+                    30 >=
+                $('.section.new_patient.new .ecglist').prop('scrollHeight')
+            ) {
+                for await (const evt of addedList) {
+                    insertNewEvent(evt);
+                }
+                $('.section.new_patient.new').off('mousewheel');
+                addInfiniteScrollNewEvent(addedList);
+                $(`.section.new_patient.new .alarm p`).html(
+                    `<span>${
+                        $('.section.new_patient.new .row').length
+                    } 개의 확인하지 않은 이벤트</span>`
+                );
+            }
+        }
+    });
 }
 
 insertEventList('NEW');
