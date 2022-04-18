@@ -113,11 +113,16 @@ export async function selectHusDoctorMedList() {
         organizationCode,
         ...commonRequest(),
     };
-    return serverController.ajaxAwaitController(
+
+    return await serverController.ajaxAwaitController(
         'API/Doctor/SelectHisDoctorMedList',
         'POST',
         JSON.stringify(obj),
-        (res) => {},
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
         (err) => console.log(err)
     );
 }

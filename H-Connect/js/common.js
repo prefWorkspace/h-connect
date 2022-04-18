@@ -2023,7 +2023,12 @@ $('.pop.new_room_pop .overlay .rd').on('click', function () {
 $('.pop.new_room_pop .overlay .new_room .selectBox2 .label').on(
     'click',
     function () {
-        $(this).parent().toggleClass('active');
+        const {
+            location: { pathname },
+        } = window;
+        if (pathname.indexOf('monitoring_room') === -1) {
+            $(this).parent().toggleClass('active');
+        }
     }
 );
 

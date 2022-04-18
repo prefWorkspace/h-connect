@@ -1,6 +1,6 @@
 'use strict';
 
-const { selectHisDoctor } = await import(
+const { selectHisDoctor, selectHusDoctorMedList } = await import(
     importVersion(
         '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/bloodPressureAPI.js'
     )
@@ -21,3 +21,4 @@ async function selectDoctor() {
 }
 
 // await selectDoctor();
+const aa = await selectHusDoctorMedList();
