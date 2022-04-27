@@ -245,7 +245,7 @@ $(function () {
             const gender = $(this).find('span:nth-of-type(3)').text();
             const patientCode = $(this).find('span:nth-of-type(4)').text();
 
-            $(this).parent().parent().find('name_label').text(name);
+            $(this).parent().parent().find('.name_label').text(name);
             $('.pop.new_room_pop .new_room #patient_birthday').val(birthday);
             $('.pop.new_room_pop .new_room #patient_gender').val(gender);
             $('.pop.new_room_pop .new_room #patient_MRN').val(patientCode);

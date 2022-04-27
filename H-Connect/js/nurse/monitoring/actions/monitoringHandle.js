@@ -127,8 +127,8 @@ async function insertDevice() {
 
 //병상 추가
 async function insertSickBed() {
-    const name = $('.pop.new_room_pop .new_room #patient_name').val();
-    const birthday = $('.pop.new_room_pop .new_room #patient_age').val();
+    const name = $('.pop.new_room_pop .new_room #patient_name').text();
+    const birthday = $('.pop.new_room_pop .new_room #patient_birthday').val();
     const gender =
         $('.pop.new_room_pop .new_room .patient_info .sex_label')
             .text()
@@ -151,7 +151,7 @@ async function insertSickBed() {
         patientCode,
         name,
         gender,
-        birthday,
+        birthday: birthday + '-01-01',
         deviceInfoList,
         patientStatus: 3,
         ssn: null, //주민등록번호
@@ -164,10 +164,8 @@ async function insertSickBed() {
     };
 
     const { result } = await InsertMeasurementInfo(codeObj, patientData);
-    console.log('result===');
-    console.log(result);
     if (result) {
-        $('.pop.new_room_pop .overlay').hide();
+        $('.pop.new_room_pop .overlay').fadeOut();
     }
 }
 

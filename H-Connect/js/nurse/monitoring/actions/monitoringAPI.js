@@ -149,7 +149,6 @@ export async function selectDeviceRegisterUnused(search) {
 }
 
 export async function InsertMeasurementInfo(codeObj, patientData) {
-    console.log('start');
     const obj = {
         ...commonRequest(),
         ...codeObj,
@@ -158,9 +157,6 @@ export async function InsertMeasurementInfo(codeObj, patientData) {
         organizationCode,
         orderNumber: 1,
     };
-    console.log('obj===');
-    console.log(obj);
-    console.log('end');
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertMeasurementInfo',
         'POST',
