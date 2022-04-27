@@ -70,6 +70,7 @@ export async function renderNewEventScreenBodyTitle(_bse) {
     const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_newSection');
     const _bseDetail = await selectBioSignalEvent(_bse);
+    console.log(_bseDetail);
     $titleNewSection.html(`
     <div class="left time">
         ${await titleDate(ymd, hms)}

@@ -119,18 +119,10 @@ export async function newScreenBody(_bse) {
         </div>
 
         <div class="info">
-            <h2>rhythm infomation</h2>
+            <h2>${_bse.arrhythmiaType}</h2>
 
             <p>
-                Lorem ipsum : dolor sit amet,
-                consectetur adipisicing elit, sed do
-                eiusmod tempor<br />
-                Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.<br />
-                Duis aute irure dolor in reprehenderit
-                in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
+                ${_bse.arrhythmiaDescription}
             </p>
         </div>
     `;
@@ -225,18 +217,10 @@ export async function preScreenBody(_bse) {
         </div>
         
     <div class="info">
-        <h2>rhythm infomation</h2>
+        <h2>${_bse.arrhythmiaType}</h2>
 
         <p>
-            Lorem ipsum : dolor sit amet,
-            consectetur adipisicing elit, sed do
-            eiusmod tempor<br />
-            Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.<br />
-            Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur.
+            ${_bse.arrhythmiaDescription}
         </p>
     </div>
     `;
