@@ -25,15 +25,15 @@ const {
     importVersion('/H-Connect/js/doctor/monitoring/actions/eventScreenAPI.js')
 );
 
-const {
-    selectBioSignalEventSimpleList,
-    selectBioSignalEventSimplePage,
-    selectBioSignalEvent,
-} = await import(
-    importVersion(
-        '/H-Connect/js/doctor/monitoring/actions/selectBioSignalEventActions.js'
-    )
-);
+const { selectBioSignalEventSimpleList, selectBioSignalEventSimpleDoctorPage } =
+    await import(
+        importVersion(
+            '/H-Connect/js/doctor/monitoring/actions/selectBioSignalEventActions.js'
+        )
+    );
+
+let page = 1;
+const bioSignalEventCount = 10;
 
 $.fn.hasScrollBar = function () {
     return (
@@ -43,8 +43,13 @@ $.fn.hasScrollBar = function () {
 };
 
 export async function insertNewEventList() {
-    let res = await selectBioSignalEventSimpleList(0);
-    let eventList = res.bioSignalEventSimpleList?.slice(0, 10);
+    let res = await selectBioSignalEventSimpleDoctorPage(
+        0,
+        page,
+        bioSignalEventCount
+    );
+    let eventList = res.bioSignalEventSimpleList;
+    console.log(eventList);
     await renderNewEventList(eventList);
     $('.section.new_patient.new').ready(async function () {
         if (!eventList) {
@@ -74,7 +79,7 @@ export async function insertNewEventList() {
             $('.section.rhythm.pre_rhythm').css('display', 'block');
         });
 
-        addInfiniteScrollNewEvent(eventList);
+        addInfiniteScrollNewEvent();
     });
 }
 
@@ -241,24 +246,33 @@ async function insertPreEventListBySearch(_searchKeyword) {
     $preSectionRow.removeClass('on');
 }
 
-export async function addInfiniteScrollNewEvent(addedList) {
-    $('.section.new_patient.new .ecglist').off('scroll').scroll(async function (event) {
-        if (
-            $('.section.new_patient.new .ecglist').scrollTop() +
-                $('.section.new_patient.new .ecglist').innerHeight() >=
-            $('.section.new_patient.new .ecglist').prop('scrollHeight')
-        ) {
-            for await (const evt of addedList) {
-                insertNewEvent(evt);
+export async function addInfiniteScrollNewEvent() {
+    $('.section.new_patient.new .ecglist')
+        .off('scroll')
+        .scroll(async function (event) {
+            if (
+                $('.section.new_patient.new .ecglist').scrollTop() +
+                    $('.section.new_patient.new .ecglist').innerHeight() >=
+                $('.section.new_patient.new .ecglist').prop('scrollHeight')
+            ) {
+                page += 1;
+                let res = await selectBioSignalEventSimpleDoctorPage(
+                    0,
+                    page,
+                    bioSignalEventCount
+                );
+                let addedList = res.bioSignalEventSimpleList;
+                for await (const evt of addedList) {
+                    insertNewEvent(evt);
+                }
+                addInfiniteScrollNewEvent();
+                $(`.section.new_patient.new .alarm p`).html(
+                    `<span>${
+                        $('.section.new_patient.new .row').length
+                    } 개의 확인하지 않은 이벤트</span>`
+                );
             }
-            addInfiniteScrollNewEvent(addedList);
-            $(`.section.new_patient.new .alarm p`).html(
-                `<span>${
-                    $('.section.new_patient.new .row').length
-                } 개의 확인하지 않은 이벤트</span>`
-            );
-        }
-    });
+        });
 }
 
 insertEventList('NEW');
