@@ -17,9 +17,9 @@ export let selectedEventId = null;
 export let searchKeyword = null;
 
 export function dateFormat(date) {
-    let year = String(date.getFullYear());
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
+    let year = date.getFullYear() ? String(date.getFullYear()) : '99999';
+    let month = date.getMonth() ? date.getMonth() + 1 : '99';
+    let day = date.getDate() ? date.getDate() : '99';
     let hour = date.getHours();
     let minute = date.getMinutes();
     let second = date.getSeconds();
