@@ -1,3 +1,6 @@
+const { CustomD3 } = await import(
+    importVersion('/H-Connect/js/lib/d3/custom/customD3.js')
+);
 export const eventSimpleDataListTmpl = async (_data) => {
     const { bioSignalEventId, eventDateTime, eventDetail } = _data || {};
     return `
@@ -29,10 +32,16 @@ export const eventSimpleDataListTmpl = async (_data) => {
   `;
 };
 
-export const eventSimpleDataDetailTmpl = (_data) => {
-    const { maxValue, minValue, value, ecgJson, ecgJsonInclude, confirm } =
-        _data || {};
-    console.log('ecgJson, ecgJsonInclude: ', ecgJson, ecgJsonInclude);
+export const eventSimpleDataDetailTmpl = (_data, _getEventId) => {
+    const {
+        maxValue,
+        minValue,
+        value,
+        ecgJson,
+        ecgJsonInclude,
+        confirm,
+        measurementCode,
+    } = _data || {};
 
     const disabledCheck = confirm !== 0 ? 'disabled' : ''; // confirm 활성화 여부
 
@@ -43,10 +52,7 @@ export const eventSimpleDataDetailTmpl = (_data) => {
                   <p>ECG</p>
 
                   <div>
-                      <div class="img_container">
-                          <img src="/H-Connect/img/graph/ECG.png"
-                              alt="ecg그래프" />
-                      </div>
+                    <div class="chart-wrap" id="event-ecg-chart-${_getEventId}"></div>
                   </div>
               </div>
 

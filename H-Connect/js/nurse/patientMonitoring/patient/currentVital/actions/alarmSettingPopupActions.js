@@ -229,8 +229,8 @@ async function respSettingMenuSubmit(_wrapEl, _classKey) {
         getTupleRadioValue(_wrapEl, '.resp'),
         getTupleInputMinMax(_wrapEl, '.resp'),
     ]);
-    // console.log(ownPrams);
-    // const updateOwnSuccess = await UpdateAlarmSettingMeasurement(ownPrams);
+    const updateOwnSuccess = await UpdateAlarmSettingMeasurement(ownPrams);
+    return updateOwnSuccess;
 }
 
 /* temp popup submit */

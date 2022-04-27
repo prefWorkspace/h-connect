@@ -13,7 +13,7 @@ function connectStreamServer() {
     let headers = {
         'SX-Auth-Token': LOGIN_TOKEN,
         deviceKind: 3,
-        // connType: connType,
+        // connType: 1,
         apiRoute: 'GWS-1',
         requester,
         requestDateTime: requestDateTime,
@@ -29,7 +29,7 @@ function connectStreamServer() {
 function stompSubCribe() {
     console.log('stompClient:', stompClient);
     stompClient.subscribe(
-        '/topic/public/bioSignalSimpleData/SEERS_2203111725_41K2',
+        '/topic/public/bioSignalSimpleData/SEERS_2204151030_23WQ',
         onMessage
     );
 }

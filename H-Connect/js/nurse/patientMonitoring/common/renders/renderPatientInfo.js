@@ -10,8 +10,8 @@ const { parsePatientInfo } = await import(
 );
 
 export const renderPatientInfo = async () => {
-    const _patientInfo = await SelectMeasurementInfoDetail();
-    const _el = parsePatientInfo(_patientInfo);
+    const { measurementInfo } = await SelectMeasurementInfoDetail();
+    const _el = parsePatientInfo(measurementInfo);
     $('section.management.patient').html(_el);
 };
 renderPatientInfo();

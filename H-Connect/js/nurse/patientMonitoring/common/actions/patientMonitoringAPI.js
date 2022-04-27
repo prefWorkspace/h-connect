@@ -10,6 +10,7 @@ const { history } = await import(
 
 const historyMeasurementCode = history.getParams('measurement_code');
 
+/* 환자 상세 정보 받아오기 */
 export const SelectMeasurementInfoDetail = async () => {
     const res = await serverController.ajaxAwaitController(
         'API/Measurement/SelectMeasurementInfoDetail',
@@ -19,19 +20,13 @@ export const SelectMeasurementInfoDetail = async () => {
             measurementCode: historyMeasurementCode,
         })
     );
-    if (!res.measurementInfo) {
+    if (!res.result) {
         throw new Error('환자 정보를 가져오는데 실패했습니다.');
     }
-    return {
-        ...res.measurementInfo,
-        gender: decodeGender(res.measurementInfo.gender),
-    };
+    return res;
 };
 
-const decodeGender = (number) => {
-    return number === 1 ? '남' : '여';
-};
-
+/* 환자 생체 신호 알람 조회 */
 export const SelectAlarmSettingMeasurement = async () => {
     const res = await serverController.ajaxAwaitController(
         'API/Measurement/SelectAlarmSettingMeasurement',
@@ -47,7 +42,7 @@ export const SelectAlarmSettingMeasurement = async () => {
     return res.measurementAlarmSetting;
 };
 
-/* s : 환자 생체 신호 알람 업데이트 */
+/* 환자 생체 신호 알람 업데이트 */
 export const UpdateAlarmSettingMeasurement = async (_data) => {
     const res = await serverController.ajaxAwaitController(
         'API/Measurement/UpdateAlarmSettingMeasurement',
@@ -71,7 +66,26 @@ export const UpdateAlarmSettingMeasurement = async (_data) => {
     }
 };
 
-/* e : 환자 생체 신호 알람 업데이트 */
+// 등록된 수동 혈압의 데이터
+export const SelectBloodPressurePage = async (page = 1, count = 10) => {
+    // 페이지별로 받아옴
+    const res = await serverController.ajaxAwaitController(
+        'API/BioSignal/SelectBloodPressurePage',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            pageNumber: page,
+            count: count,
+            measurementCode: historyMeasurementCode,
+        })
+    );
+    if (!res?.bloodPressureList) {
+        throw new Error('조회된 데이타가 없습니다');
+    }
+    return res.bloodPressureList;
+};
+
+//
 export const SelectArrhythmiaSettingInfo = async () => {
     const res = await serverController.ajaxAwaitController(
         'API/Measurement/SelectArrhythmiaSettingInfo',
@@ -174,7 +188,6 @@ export const SelectBioSignalEventSimplePage = async (_page) => {
 
 /* 생체 신호 알림 상세 조회 */
 export const SelectBioSignalEvent = async (_eventId) => {
-    console.log('_eventId: ', _eventId);
     const res = await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBioSignalEvent',
         'POST',

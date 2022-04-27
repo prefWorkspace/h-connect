@@ -681,7 +681,7 @@ const FILE_TREE = {
                     },
                 },
                 renders: {
-                    'renderPrerecord.js': {
+                    'renderArteriotonyList.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
@@ -695,7 +695,7 @@ const FILE_TREE = {
                     },
                 },
                 templates: {
-                    'prerecordTmpl.js': {
+                    'arteriotonyTmpl.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
@@ -769,6 +769,12 @@ const FILE_TREE = {
                                 '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
                         },
                         'simpleDataAction.js': {
+                            type: 'module',
+                            url_path: '/nurse/patient',
+                            file_path:
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
+                        },
+                        'test.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:

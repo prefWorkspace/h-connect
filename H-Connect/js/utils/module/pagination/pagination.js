@@ -138,7 +138,7 @@ export class CreatePagination {
                     return _getError();
                 } else if (typeof _getError === 'object') {
                     if (_getError?.message) {
-                        return `<p class="loading_text">${_getError?.message}</p>`;
+                        return `<p class="error_text">${_getError?.message}</p>`;
                     }
                 } else {
                     return initialError;

@@ -8,6 +8,10 @@ const {
         '/H-Connect/js/nurse/patientMonitoring/common/actions/patientMonitoringAPI.js'
     )
 );
+const { CustomD3 } = await import(
+    importVersion('/H-Connect/js/lib/d3/custom/customD3.js')
+);
+
 const { CreatePagination } = await import(
     importVersion('/H-Connect/js/utils/module/pagination/pagination.js')
 );
@@ -30,6 +34,7 @@ const { eventDeletePopupTmpl } = await import(
 const { confirmTwoPopupTmpl } = await import(
     importVersion('/H-Connect/js/common/popup/templates/commonPopupTmpl.js')
 );
+
 // 페이지네이션 처리와 팝업처리, 등등 한번에 처리하면 용이한 부분이 많아 액션함수도 한 파일에서 처리.
 
 const createEventSimpleTabController = () => {
@@ -46,6 +51,7 @@ const createEventSimpleTabController = () => {
             listItem: eventSimpleDataListTmpl,
         },
         afterRender: (_this) => {
+            // 페이지네이션 리스트 로드 후 List 에 이벤트 부여
             addEventClickTableListToRenderDetail(_this);
         },
         link: {
@@ -130,8 +136,8 @@ const createEventSimpleTabController = () => {
     });
 
     const addEventClickTableListToRenderDetail = (_this) => {
-        const { wrapElement } = _this || {};
         /* 리스트 아이템 클릭시 상세 렌더 액션 */
+        const { wrapElement } = _this || {};
         wrapElement
             .find('.table_wrap')
             .off()
@@ -142,17 +148,57 @@ const createEventSimpleTabController = () => {
                 if (!_$tableItemEl.hasClass('on')) {
                     // 테이블 아이템에 on클래스가 없다면
                     // 상세 데이터 요청후 렌더링 시킵니다.
+
+                    // biosignal Event 데이터 요청
                     const { bioSignalEvent } =
                         (await SelectBioSignalEvent(_getEventId)) || {};
+
+                    const { ecgJson } = bioSignalEvent || {};
+
+                    // 화면 렌더링
                     _$tableItemEl
                         .next('.table_content')
-                        .html(eventSimpleDataDetailTmpl(bioSignalEvent));
+                        .html(
+                            eventSimpleDataDetailTmpl(
+                                bioSignalEvent,
+                                _getEventId
+                            )
+                        );
                     // confirm 버튼 클릭 이벤트 추가
                     addEventOnClickConfirm(_$tableItemEl, _this);
+
+                    /* s: ecg 라인 그리기 */
+                    if (ecgJson && ecgJson.length) {
+                        // 384 데이터 한 화면 기준으로 가로폭 불러오기
+                        const initialWidth =
+                            916 * Math.floor(ecgJson.length / 384);
+                        // d3 커스텀 모듈 생성
+                        const ecgEventLine = new CustomD3();
+                        ecgEventLine.init({
+                            wrap: `#event-ecg-chart-${_getEventId}`,
+                            id: _getEventId,
+                            width: initialWidth,
+                            height: 36,
+                            settings: {
+                                strokeColor: 'rgba(0, 255, 25,100)',
+                            },
+                        });
+                        // 라인 그리기
+                        ecgEventLine.simpleLineDraw({
+                            dataList: ecgJson,
+                        });
+                    } else {
+                        // 데이터 없을때 처리
+                        const noDataHtml =
+                            '<p style="line-height:36px; vertical-align:middle; text-align:center; color:#aaa; font-size:14px;">조회된 데이타가 없습니다</p>';
+                        $(`#event-ecg-chart-${_getEventId}`).html(noDataHtml);
+                    }
+                    /* e: ecg 라인 그리기 */
                 }
                 // 클릭한 객체의 id 를 팝업에 임시 전달
                 deleteEventPopup.saveData('eventId', _getEventId);
 
+                // 아코디언 열기
                 _$tableItemEl.next('.table_content').stop().slideToggle(300);
                 _$tableItemEl.toggleClass('on').siblings().removeClass('on');
                 _$tableItemEl
@@ -164,7 +210,6 @@ const createEventSimpleTabController = () => {
 
     const addEventOnClickConfirm = (_$tableItemEl, _this) => {
         // confirm 버튼 클릭 이벤트 추가
-        const { wrapElement, renderMain } = _this || {};
         _$tableItemEl
             .next('.table_content')
             .find('.btn_confirm')
@@ -176,7 +221,7 @@ const createEventSimpleTabController = () => {
     };
 
     const getEventId = (_targetEl) => {
-        // event id를 가져옵니다.
+        // event id를 가져오는 함수
         return _targetEl.data('eventid') || null;
     };
 };
