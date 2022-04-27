@@ -42,6 +42,7 @@ function newSickBedPop_updateDevice() {
         .text();
 
     $('.pop.new_room_pop').addClass('active');
+    $('.pop.new_room_pop .new_regi .input_wrap > span').removeClass('active');
     $('.pop.new_room_pop .new_regi .selectBox2 .label').text(deviceName);
     $('.pop.new_room_pop .new_regi .input_box .input_wrap input').val(
         serialNumber
@@ -69,16 +70,18 @@ function newSickBedPop_deleteDevice() {
         (item) => item.serialNumber !== serialNumber
     );
     deviceInfoList = [...updateArr];
-    addDeviceList(deviceInfoList);
+    $('div').remove(`.pop.new_room_pop .device_room #${serialNumber}`);
 
-    $('.pop.new_room_pop .new_room .device_room .btn_list .bl').on(
-        'click',
-        newSickBedPop_updateDevice
-    );
-    $('.pop.new_room_pop .new_room .device_room .btn_list .btn_delete').on(
-        'click',
-        newSickBedPop_deleteDevice
-    );
+    // 해당 DOm만 지우는걸로 로직 변경
+    // addDeviceList(deviceInfoList);
+    // $('.pop.new_room_pop .new_room .device_room .btn_list .bl').on(
+    //     'click',
+    //     newSickBedPop_updateDevice
+    // );
+    // $('.pop.new_room_pop .new_room .device_room .btn_list .btn_delete').on(
+    //     'click',
+    //     newSickBedPop_deleteDevice
+    // );
 }
 
 //장치 추가
@@ -92,13 +95,13 @@ async function insertDevice() {
         '.pop.new_room_pop .input_box .input_wrap input'
     ).val();
 
-    deviceName === '심전도 패치'
-        ? (serial_Reg = /[A-Z0-9]{6,7}/)
-        : (serial_Reg = /[B-Z0-9]{6,7}/);
-    const { deviceRegisterList } = await selectDeviceRegisterUnused(
+    // deviceName === '심전도 패치'
+    //     ? (serial_Reg = /[A-Z0-9]{6,7}/)
+    //     : (serial_Reg = /[B-Z0-9]{6,7}/);
+
+    const { result, deviceRegisterList } = await selectDeviceRegisterUnused(
         serialNumber
     );
-
     if (deviceRegisterList) {
         const obj = {
             deviceType,
@@ -123,9 +126,9 @@ async function insertDevice() {
 }
 
 //병상 추가
-function insertSickBed() {
+async function insertSickBed() {
     const name = $('.pop.new_room_pop .new_room #patient_name').val();
-    const age = +$('.pop.new_room_pop .new_room #patient_age').val();
+    const birthday = $('.pop.new_room_pop .new_room #patient_age').val();
     const gender =
         $('.pop.new_room_pop .new_room .patient_info .sex_label')
             .text()
@@ -148,19 +151,24 @@ function insertSickBed() {
         patientCode,
         name,
         gender,
-        age,
+        birthday,
         deviceInfoList,
         patientStatus: 3,
-        ssn: '000000-9999999', //주민등록번호
-        foreigner: 0,
-        phoneNumber: '010-0000-0000',
+        ssn: null, //주민등록번호
+        foreigner: null,
+        phoneNumber: null,
         measurementType: 'BM',
-        measurementStatus: 2,
+        measurementStatus: 1,
         duration: 24,
         startDateTime: request_Date_Data(),
     };
 
-    InsertMeasurementInfo(codeObj, patientData);
+    const { result } = await InsertMeasurementInfo(codeObj, patientData);
+    console.log('result===');
+    console.log(result);
+    if (result) {
+        $('.pop.new_room_pop .overlay').hide();
+    }
 }
 
 //병동 추가 셀렉트 박스 이벤트

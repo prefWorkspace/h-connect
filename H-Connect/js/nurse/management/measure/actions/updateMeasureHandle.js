@@ -91,6 +91,15 @@ async function updateMeasurementHandle() {
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
         await createMeasureList(measurementInfoSimpleList);
         await measureListhanlde();
+        $(`.section.measure_status .status_list`).each((_, value) => {
+            if ($(value).data('sickbedcode') === sickBedCode) {
+                $(value).addClass('on');
+            }
+        });
+        $('.section.modifi_hospital .btn_list .btn_new_hospital').attr(
+            'disabled',
+            true
+        );
     }
 }
 

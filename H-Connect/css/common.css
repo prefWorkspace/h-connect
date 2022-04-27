@@ -4379,7 +4379,8 @@ textarea::-webkit-scrollbar-button {
     width: 105px;
 }
 .pop.new_room_pop .device_room div p:nth-child(2) {
-    margin-left: 82px;
+    /* margin-left: 82px; */
+    margin-left: 75px;
 }
 .pop.new_room_pop .device_room .oxy p:nth-child(2) {
     margin-left: 60px;

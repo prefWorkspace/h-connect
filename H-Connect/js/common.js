@@ -236,6 +236,23 @@ $(function () {
         }
     );
 
+    // 모니터링 신규 병상등록
+    $('.pop.new_room_pop .new_room .selectBox2 .name_list').on(
+        'click',
+        function () {
+            const name = $(this).find('span:nth-of-type(1)').text();
+            const birthday = $(this).find('span:nth-of-type(2)').text();
+            const gender = $(this).find('span:nth-of-type(3)').text();
+            const patientCode = $(this).find('span:nth-of-type(4)').text();
+
+            $(this).parent().parent().find('name_label').text(name);
+            $('.pop.new_room_pop .new_room #patient_birthday').val(birthday);
+            $('.pop.new_room_pop .new_room #patient_gender').val(gender);
+            $('.pop.new_room_pop .new_room #patient_MRN').val(patientCode);
+            $(this).parent().parent().removeClass('active');
+        }
+    );
+
     // $('.cont .resp .bell_num').on('click', function () {
     //     $('.pop.resp_set .overlay').fadeIn();
     // });
@@ -1994,7 +2011,7 @@ $(document).ready(function () {
 
 //모니터링 페이지 신규병상등록 및 장치추가 팝업
 $('.pop.new_room_pop .overlay .btn_add').on('click', function () {
-    $('.pop.new_room_pop .new_regi .input_wrap span').removeClass('active');
+    $('.pop.new_room_pop .new_regi .input_wrap > span').removeClass('active');
     $('.pop.new_room_pop .new_regi input').val('');
     $('.pop.new_room_pop').addClass('active');
 });
@@ -2003,10 +2020,19 @@ $('.pop.new_room_pop .overlay .rd').on('click', function () {
     // $('.pop.new_room_pop').removeClass('active');
 });
 
-$('.pop.new_room_pop .overlay .new_room .selectBox2 .label').on(
+$('.pop.new_room_pop .new_room .select_name .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.pop.new_room_pop .new_room .patient_room .selectBox2 .label').on(
     'click',
     function () {
-        $(this).parent().toggleClass('active');
+        const {
+            location: { pathname },
+        } = window;
+        if (pathname.indexOf('monitoring_room') === -1) {
+            $(this).parent().toggleClass('active');
+        }
     }
 );
 
@@ -2046,6 +2072,18 @@ $('.pop.new_room_pop .overlay .new_regi .selectBox2 .optionList li').on(
         $(this).parent().parent().toggleClass('active');
     }
 );
+
+// 사용한 장치 반납 모달창 셀렉트 박스
+$('.pop.re_device .selectBox2 .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.pop.re_device .selectBox2 .right_list').on('click', function () {
+    const deviceName = $(this).text();
+    $(this).addClass('active').siblings().removeClass('active');
+    $(this).parent().parent().toggleClass('active');
+    $(this).parent().parent().find('.label').text(deviceName);
+});
 
 //===========================간호사 측정관리 셀렉트 박스 및 팝업 띄우기
 

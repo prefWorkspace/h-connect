@@ -138,6 +138,7 @@ export async function cancel_device_unused() {
         'POST',
         req,
         (res) => {
+            console.log(res);
             if (res.result) {
                 select_device_unused(0, null);
                 select_device(0, null);
@@ -201,7 +202,7 @@ export async function select_device(deviceType = 0, search = null) {
         (res) => {
             if (res.result) {
                 select_device_list(res.deviceRegisterList); //신규장치 등록 모든 리스트 조회후 UI표현
-
+                console.log(res.deviceRegisterList);
                 // 장치 카운트
                 const { ECG_COUNT, TEMP_COUNT, SpO2_COUNT } = countingDevice(
                     res.deviceRegisterList

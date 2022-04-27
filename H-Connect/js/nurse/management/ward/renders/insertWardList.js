@@ -46,7 +46,7 @@ export function Create_newWard(_wardList) {
     //sickRoomList 이걸로 map 돌려서 환자 총 수 체크
     let data = '';
     if (!_wardList) {
-        data += `<p style="text-align: center; color: #444444">조회된 데이터가 없습니다.</p>`;
+        data += `<p style="text-align: center; color: #aaa">조회된 데이터가 없습니다.</p>`;
     } else {
         for (let i = 0; i < _wardList.length; i++) {
             data += wardList(_wardList[i]);

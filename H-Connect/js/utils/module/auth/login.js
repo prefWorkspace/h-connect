@@ -13,11 +13,11 @@ const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
 
-function auto_Login() {
+const userLevelHref = function auto_Login() {
     if (autoLogin_input.checked) {
         return;
     }
-}
+};
 
 function get_Saved_Id() {
     const getId = localStorageController.getLocalS('Hconnect-id'); //로컬스토리지에 저장된 id
@@ -58,6 +58,8 @@ function Login_Fetch() {
             if (result) {
                 sessionController.setSession('accesToken', res.accessToken);
                 localStorageController.setLocalS('userData', userData);
+                const level = userData.level;
+                let userLevelHref;
 
                 if (apiServerinfoList) {
                     localStorageController.setLocalS(
@@ -66,23 +68,28 @@ function Login_Fetch() {
                     );
                 }
 
-                switch (userData.level) {
+                switch (level) {
                     case 1:
-                        location.href = 'nurse/index.html';
+                        userLevelHref = 'nurse/index.html';
                         break;
                     case 2:
-                        location.href = 'nurse/index.html';
+                        userLevelHref = 'nurse/index.html';
                         break;
                     case 5:
-                        location.href = 'doctor/index.html';
+                        userLevelHref = 'doctor/index.html';
                         break;
                     case 8:
-                        location.href = 'nurse/index.html';
+                        userLevelHref = 'nurse/index.html';
                         break;
                     case 14:
-                        location.href = 'nurse/index.html';
+                        userLevelHref = 'nurse/index.html';
                         break;
                 }
+                localStorageController.setLocalS(
+                    'userLevelHref',
+                    userLevelHref
+                );
+                location.href = userLevelHref;
             } else {
                 alert(
                     `로그인에 실패 했습니다. ${loginFailMaxCount}회 중 ${loginFailCount}실패. \n ${loginFailMaxCount}이상 실패 시, 계정이 잠겨버립니다.`

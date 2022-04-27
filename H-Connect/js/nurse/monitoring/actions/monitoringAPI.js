@@ -149,6 +149,7 @@ export async function selectDeviceRegisterUnused(search) {
 }
 
 export async function InsertMeasurementInfo(codeObj, patientData) {
+    console.log('start');
     const obj = {
         ...commonRequest(),
         ...codeObj,
@@ -157,9 +158,9 @@ export async function InsertMeasurementInfo(codeObj, patientData) {
         organizationCode,
         orderNumber: 1,
     };
-    $('.pop.new_room_pop .overlay').hide();
-    //밑에는 API확실해 지면 실행
-
+    console.log('obj===');
+    console.log(obj);
+    console.log('end');
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertMeasurementInfo',
         'POST',

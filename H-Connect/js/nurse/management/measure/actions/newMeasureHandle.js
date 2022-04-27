@@ -82,13 +82,14 @@ async function sickRoomSelectBoxHandle(wardCode) {
         const spareBed = $(this).data('sparebed');
         $(this).addClass('active').siblings().removeClass('active');
         $(this).parent().parent().find('.label').text(item);
+
         $(this)
             .parent()
             .parent()
             .find('.label')
             .attr('data-sickroomcode', sickRoomCode);
         $(this).parent().parent().toggleClass('active');
-        $('.pop.new_room_pop .new_room .cont p span').text(spareBed);
+        $('.pop.new_room_pop .new_room .cont > p > span').text(spareBed);
         await newSickBedPop_sickBedListSelectHandle(wardCode, sickRoomCode);
         await sickbedSelectBoxHandle();
     });

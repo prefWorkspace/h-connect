@@ -18,6 +18,9 @@ export async function selectBoxSickBed(wardCode, sickRoomCode) {
     let html = '';
 
     const { sickBedList } = await selectSickBedList(wardCode, sickRoomCode);
+    if (!sickBedList) {
+        return;
+    }
     for (let i = 0; i < sickBedList.length; i++) {
         html += sickBedListItem(sickBedList[i]);
     }

@@ -61,3 +61,10 @@ $('.section.return_device .device_list .select_return .return_list').on(
         $(this).parent().parent().removeClass('active');
     }
 );
+
+// 추가 장치 요청
+$('.section.new_device .btn_list .btn_add_device')
+    .off()
+    .on('click', function () {
+        $('.pop.add_device .overlay').fadeIn();
+    });

@@ -6,6 +6,12 @@ const { selectWardList, selectSickRoomList, selectSickBedList } = await import(
     importVersion('/H-Connect/js/utils/module/select/selectList.js')
 );
 
+const { selectBoxSickBed, selectBoxSickRoom, selectBoxWard } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/monitoring/renders/addSickBedSelectBox.js'
+    )
+);
+
 export function addMonitoringEmptyBedClickEvent() {
     // 신규 병상 등록 취소 클릭 이벤트
     $('.pop.new_room_pop .overlay')
@@ -63,6 +69,10 @@ async function onClickEmptyBed(e) {
             _selectEmptyBedCode
         );
 
+        await selectBoxWard();
+        await selectBoxSickRoom(_selectEmptyWardCode);
+        await selectBoxSickBed(_selectEmptyWardCode, _selectEmptyRoomCode);
+
         $('.pop.new_room_pop .new_room .selectBox2 .ward_label2').text(ward);
         $('.pop.new_room_pop .new_room .selectBox2 .ward_label2').attr(
             'data-wardcode',
@@ -83,6 +93,8 @@ async function onClickEmptyBed(e) {
             _selectEmptyBedCode
         );
     }
+
+    
 }
 function onClickNewSickBedCancleBtn() {
     // 취소 클릭시

@@ -68,34 +68,35 @@ export async function deleteWard() {
         $('.pop.delete.delete_ward .overlay').fadeIn();
     });
 
-    $('.pop.delete_ward .btn_cut').on('click', function () {
-        const req = JSON.stringify({
-            requester,
-            organizationCode,
-            wardCode,
-            ...commonRequest(),
-        });
-
-        serverController.ajaxAwaitController(
-            'API/Manager/DeleteWard',
-            'POST',
-            req,
-            (res) => {
-                if (res.result) {
-                    $('.nurse .ward .cont .ward_list').hide();
-                    $('.pop.delete .overlay').fadeOut();
-                    // location.reload();
-                    $('div').remove('.nurse .ward .cont');
-                    selectWard();
-                } else {
-                    alert('병동삭제에 실패 하였습니다.');
+    $('.pop.delete_ward .btn_cut')
+        .off()
+        .on('click', function () {
+            const req = JSON.stringify({
+                requester,
+                organizationCode,
+                wardCode,
+                ...commonRequest(),
+            });
+            serverController.ajaxAwaitController(
+                'API/Manager/DeleteWard',
+                'POST',
+                req,
+                (res) => {
+                    if (res.result) {
+                        // $('.nurse .ward .cont .ward_list').hide();
+                        $('.pop.delete .overlay').fadeOut();
+                        $('div').remove('.nurse .ward .cont');
+                        $('div').remove('.hospital_room .container .ward_list');
+                        selectWard();
+                    } else {
+                        alert('병동삭제에 실패 하였습니다.');
+                    }
+                },
+                (err) => {
+                    console.log(err);
                 }
-            },
-            (err) => {
-                console.log(err);
-            }
-        );
-    });
+            );
+        });
     $('.pop.delete_ward .btn_no').on('click', function () {
         $('.pop.delete.delete_ward .overlay').fadeOut();
     });
@@ -124,7 +125,7 @@ export async function insertWard() {
         _req,
         (res) => {
             if (res.result) {
-                $('div').remove('.cont');
+                $('div').remove('.left.ward .container .cont');
                 $('.pop.new_ward .overlay').fadeOut();
                 selectWard();
             } else {
