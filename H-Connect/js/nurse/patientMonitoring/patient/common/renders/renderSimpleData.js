@@ -3,12 +3,16 @@ const { fakeSoketBioSignalSimpleData } = await import(
         '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/fakeSocket.js'
     )
 );
-const { UpdateAlarmSettingMeasurement, SelectMeasurementInfoDetail } =
-    await import(
-        importVersion(
-            '/H-Connect/js/nurse/patientMonitoring/common/actions/patientMonitoringAPI.js'
-        )
-    );
+const {
+    UpdateAlarmSettingMeasurement,
+    SelectMeasurementInfoDetail,
+    SelectAlarmSettingMeasurement,
+    SelectBloodPressurePage,
+} = await import(
+    importVersion(
+        '/H-Connect/js/nurse/patientMonitoring/common/actions/patientMonitoringAPI.js'
+    )
+);
 
 /* s : bioSignal SimpleData */
 // 예상 simple data 소켓 fake data
@@ -25,61 +29,72 @@ const { UpdateAlarmSettingMeasurement, SelectMeasurementInfoDetail } =
 // });
 /* e : bioSignal SimpleData */
 
-export const vitalSimpleDataInit = (_data) => {
-    // simple data 공통 렌더링
-    currentVitalMinMaxRender(_data);
-    currentVitalAlarmRender(_data);
-};
-const currentVitalAlarmRender = (_data) => {
-    // 알람 켜져있는지 아닌지 렌더링
-    const {
-        hrAlertAlarm,
-        spo2AlertAlarm,
-        respAlertAlarm,
-        tempAlertAlarm,
-        ewsAlertAlarm,
-    } = _data || {};
-    simpleAlarmSetting('hr', hrAlertAlarm);
-    simpleAlarmSetting('sp', spo2AlertAlarm);
-    simpleAlarmSetting('resp', respAlertAlarm);
-    simpleAlarmSetting('temp', tempAlertAlarm);
-    simpleAlarmSetting('ews', ewsAlertAlarm);
+export const vitalSimpleDataInit = async () => {
+    // 기본 최초 데이터 렌더러 ( renderVital.js 에서 실행됨 )
+    const _alarmSettingInfo = await SelectAlarmSettingMeasurement();
+    const [_bloodPressureLastData] = await SelectBloodPressurePage(1, 1);
+
+    currentHr(_alarmSettingInfo);
+    currentSpo2(_alarmSettingInfo);
+    currentResp(_alarmSettingInfo);
+    currentTemp(_alarmSettingInfo);
+    currentEws(_alarmSettingInfo);
+    currentNBPmmHg(_bloodPressureLastData);
+    currentPulse();
 };
 
-/* s : bioSignal minMax render */
-const currentVitalMinMaxRender = (_data) => {
-    // 바이탈 min max 값 렌더링
-    const {
-        heartRateMin,
-        heartRateMax,
-        spo2Min,
-        respMin,
-        respMax,
-        tempMin,
-        tempMax,
-    } = _data || {};
+const currentHr = ({ hrAlertAlarm, heartRateMin, heartRateMax }) => {
+    simpleAlarmSetting('hr', hrAlertAlarm);
     simpleMinMax('hr', [heartRateMin, heartRateMax]);
-    simpleMinMax('sp', [spo2Min, '-']); // 질문필요
+};
+
+const currentSpo2 = ({ spo2AlertAlarm, spo2Min }) => {
+    simpleAlarmSetting('sp', spo2AlertAlarm);
+    simpleMinMax('sp', [spo2Min, '-']);
+};
+
+const currentResp = ({ respAlertAlarm, respMin, respMax }) => {
+    simpleAlarmSetting('resp', respAlertAlarm);
     simpleMinMax('resp', [respMin, respMax]);
-    simpleMinMax('pulse', [0, 0]); // 질문필요
+};
+
+const currentTemp = ({ tempAlertAlarm, tempMin, tempMax }) => {
+    simpleAlarmSetting('temp', tempAlertAlarm);
     simpleMinMax('temp', [tempMin, tempMax]);
 };
-/* e : bioSignal minMax render */
+const currentEws = ({ ewsAlertAlarm }) => {
+    simpleAlarmSetting('ews', ewsAlertAlarm);
+};
+const currentPulse = () => {
+    simpleMinMax('pulse', [0, 0]); // 질문필요
+};
+const currentNBPmmHg = ({ recordDateTime, diastolic, systolic, pulse }) => {
+    const _nbpmmhgValue = `${diastolic}/${systolic} (${pulse})`;
+    simpleDataVal('mmhg', _nbpmmhgValue);
+    targetDataVal('.mmhg .time .recordDateTime', recordDateTime);
+};
 
 /* s : simple renderer */
 function simpleDataVal(_target, _value) {
-    $(`#tab-1 .${_target} .bell_num .value`).text(_value);
+    $(`.${_target} .bell_num .value`).text(_value);
 }
 function simpleMinMax(_target, [_min, _max]) {
     // min max 값 처리
-    const $wrapEl = $(`#tab-1 .${_target} .bell_num .minMax`).find('p');
-    $wrapEl.eq(0).text(_max);
-    $wrapEl.eq(1).text(_min);
+    const $wrapEl = $(`.${_target} .bell_num .minMax`);
+    for (let i = 0, len = $wrapEl?.length; i < len; i++) {
+        const _el = $wrapEl[i];
+        const [maxEl, minEl] = $(_el).children('p');
+        $(maxEl).text(_max);
+        $(minEl).text(_min);
+    }
+}
+function targetDataVal(_target, _value) {
+    $(`${_target}`).text(_value);
 }
 
 function simpleAlarmSetting(_target, _alramState) {
     // 알람 활성화 여부
-    const $alarmInputEl = $(`#tab-1 .${_target} .bell_name input`).get(0);
+    const $alarmInputEl = $(`.${_target} .bell_name input`).get(0);
     $alarmInputEl.checked = _alramState === 1 ? false : true;
 
     // 알람 버튼 클릭 시 알람 on/off 기능

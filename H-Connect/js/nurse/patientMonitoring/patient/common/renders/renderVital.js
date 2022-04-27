@@ -17,10 +17,10 @@ const { vitalSimpleDataInit } = await import(
 
 async function vitalRenderInit() {
     // 환자 상세정보 페이지 초기 렌더링
-    const _measurementInfo = await SelectMeasurementInfoDetail();
-    const _alarmSettingInfo = await SelectAlarmSettingMeasurement();
-    vitalHeaderTmpl(_measurementInfo);
-    vitalSimpleDataInit(_alarmSettingInfo);
+    const { measurementInfo } = await SelectMeasurementInfoDetail();
+
+    vitalHeaderTmpl(measurementInfo);
+    vitalSimpleDataInit();
 }
 
 vitalRenderInit();

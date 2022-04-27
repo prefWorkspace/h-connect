@@ -20,9 +20,6 @@ const { renderPrerecordList } = await import(
     )
 );
 
-const historyMeasurementCode = history.getParams('measurement_code');
-const historyPage = history.getParams('page');
-
 function getBloodPressureDomIndexedInfo(_target) {
     const curItemEl = $(_target).parents('.bloodPressure_item');
     const indexId = curItemEl.attr('data-indexId');
@@ -109,47 +106,6 @@ export async function onClickDeleteBloodPressureBtn(_this) {
     // 삭제 버튼 클릭 시 혈압 데이터 삭제
     const { indexId } = getBloodPressureDomIndexedInfo(_this);
     await deleteBloodPressure({ indexId: indexId });
-    await renderPrerecordList();
-}
-
-async function onClickPaginationNumBtn(_number) {
-    window.history.pushState(
-        '',
-        '',
-        `arteriotony.html?measurement_code=${historyMeasurementCode}&page=${_number}`
-    );
-    await renderPrerecordList();
-}
-async function onClickPageControllBtn(_type, _pageInform) {
-    const { page, totalCount, totalPageCount } = _pageInform || {};
-    let _page = page;
-    if (_type === 'first') {
-        // << 클릭시
-        if (_page === 1) return;
-        _page = 1;
-    } else if (_type === 'prev') {
-        // < 클릭시
-        if (_page - 1 <= 0) return;
-        _page -= 1;
-    } else if (_type === 'next') {
-        // > 클릭시
-        if (_page >= totalPageCount) return;
-        _page += 1;
-    } else if (_type === 'end') {
-        // >> 클릭시
-        if (_page === totalPageCount) return;
-        _page = totalPageCount;
-    }
-    window.history.pushState(
-        '',
-        '',
-        `arteriotony.html?measurement_code=${historyMeasurementCode}&page=${_page}`
-    );
-    await renderPrerecordList();
-}
-
-async function oncheckHistoryPage() {
-    // 윈도우 history 변경시 페이지 새로 불러오기
     await renderPrerecordList();
 }
 
