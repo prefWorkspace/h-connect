@@ -93,6 +93,8 @@ async function onClickEmptyBed(e) {
             _selectEmptyBedCode
         );
     }
+
+    
 }
 function onClickNewSickBedCancleBtn() {
     // 취소 클릭시

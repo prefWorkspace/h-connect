@@ -2020,7 +2020,11 @@ $('.pop.new_room_pop .overlay .rd').on('click', function () {
     // $('.pop.new_room_pop').removeClass('active');
 });
 
-$('.pop.new_room_pop .overlay .new_room .selectBox2 .label').on(
+$('.pop.new_room_pop .new_room .select_name .label').on('click', function () {
+    $(this).parent().toggleClass('active');
+});
+
+$('.pop.new_room_pop .new_room .patient_room .selectBox2 .label').on(
     'click',
     function () {
         const {

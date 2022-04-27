@@ -21,4 +21,4 @@ async function selectDoctor() {
 }
 
 // await selectDoctor();
-const aa = await selectHusDoctorMedList();
+// const aa = await selectHusDoctorMedList();

@@ -14,8 +14,12 @@ export function insertRoomList(_sickRoomList) {
             data += sickRoomList(_sickRoomList[i]);
         }
     }
+    console.log('data====');
+    console.log(data);
 
     $('.section.right.hospital_room .container .cont .container').html(data);
+    console.log('parent');
+    console.log($('.hospital_room .container .cont .container'));
     $(
         '.section.right.hospital_room .container .cont .container .ward_list'
     ).fadeIn();

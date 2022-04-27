@@ -119,6 +119,8 @@ export async function selectHusDoctorMedList() {
         'POST',
         JSON.stringify(obj),
         (res) => {
+            console.log('res===');
+            console.log(res);
             if (res.result) {
             } else {
             }
@@ -126,3 +128,5 @@ export async function selectHusDoctorMedList() {
         (err) => console.log(err)
     );
 }
+
+// await selectHusDoctorMedList();

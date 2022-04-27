@@ -164,6 +164,8 @@ async function insertSickBed() {
     };
 
     const { result } = await InsertMeasurementInfo(codeObj, patientData);
+    console.log('result===');
+    console.log(result);
     if (result) {
         $('.pop.new_room_pop .overlay').hide();
     }

@@ -77,16 +77,16 @@ export async function deleteWard() {
                 wardCode,
                 ...commonRequest(),
             });
-            console.log('dddfef');
             serverController.ajaxAwaitController(
                 'API/Manager/DeleteWard',
                 'POST',
                 req,
                 (res) => {
                     if (res.result) {
-                        $('.nurse .ward .cont .ward_list').hide();
+                        // $('.nurse .ward .cont .ward_list').hide();
                         $('.pop.delete .overlay').fadeOut();
                         $('div').remove('.nurse .ward .cont');
+                        $('div').remove('.hospital_room .container .ward_list');
                         selectWard();
                     } else {
                         alert('병동삭제에 실패 하였습니다.');
@@ -125,7 +125,7 @@ export async function insertWard() {
         _req,
         (res) => {
             if (res.result) {
-                $('div').remove('.cont');
+                $('div').remove('.left.ward .container .cont');
                 $('.pop.new_ward .overlay').fadeOut();
                 selectWard();
             } else {
