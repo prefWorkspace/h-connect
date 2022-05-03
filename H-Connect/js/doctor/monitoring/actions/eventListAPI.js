@@ -32,7 +32,8 @@ const { selectBioSignalEventSimpleList, selectBioSignalEventSimpleDoctorPage } =
         )
     );
 
-let page = 1;
+let newPage = 1;
+let prePage = 1;
 const bioSignalEventCount = 10;
 
 $.fn.hasScrollBar = function () {
@@ -45,7 +46,7 @@ $.fn.hasScrollBar = function () {
 export async function insertNewEventList() {
     let res = await selectBioSignalEventSimpleDoctorPage(
         0,
-        page,
+        newPage,
         bioSignalEventCount
     );
     let eventList = res.bioSignalEventSimpleList;
@@ -142,7 +143,11 @@ export async function insertNewEvent(event) {
 
 //입원환자 모니터링 왼쪽 지난 이벤트 렌더링 및 이벤트 연결 함수
 export async function insertPreEventList() {
-    let res = await selectBioSignalEventSimpleList(2);
+    let res = await selectBioSignalEventSimpleDoctorPage(
+        2,
+        prePage,
+        bioSignalEventCount
+    );
     let eventList = res.bioSignalEventSimpleList;
     await renderPreEventList(eventList);
     $('.section.new_patient.pre').ready(async function () {
@@ -172,6 +177,8 @@ export async function insertPreEventList() {
             $('.section.new_patient.new').css('display', 'block');
             $('.section.rhythm.new_rhythm').css('display', 'block');
         });
+
+        addInfiniteScrollPreEvent();
 
         // Add Event to Search Button
         $('.alarm .search_container .btn_search').on('click', function () {
@@ -255,10 +262,10 @@ export async function addInfiniteScrollNewEvent() {
                     $('.section.new_patient.new .ecglist').innerHeight() >=
                 $('.section.new_patient.new .ecglist').prop('scrollHeight')
             ) {
-                page += 1;
+                newPage += 1;
                 let res = await selectBioSignalEventSimpleDoctorPage(
                     0,
-                    page,
+                    newPage,
                     bioSignalEventCount
                 );
                 let addedList = res.bioSignalEventSimpleList;
@@ -271,6 +278,30 @@ export async function addInfiniteScrollNewEvent() {
                         $('.section.new_patient.new .row').length
                     } 개의 확인하지 않은 이벤트</span>`
                 );
+            }
+        });
+}
+
+export async function addInfiniteScrollPreEvent() {
+    $('.section.new_patient.pre .ecglist')
+        .off('scroll')
+        .scroll(async function (event) {
+            if (
+                $('.section.new_patient.pre .ecglist').scrollTop() +
+                    $('.section.new_patient.pre .ecglist').innerHeight() >=
+                $('.section.new_patient.pre .ecglist').prop('scrollHeight')
+            ) {
+                prePage += 1;
+                let res = await selectBioSignalEventSimpleDoctorPage(
+                    2,
+                    prePage,
+                    bioSignalEventCount
+                );
+                let addedList = res.bioSignalEventSimpleList;
+                for await (const evt of addedList) {
+                    insertPreEvent(evt);
+                }
+                addInfiniteScrollPreEvent();
             }
         });
 }
