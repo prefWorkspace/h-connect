@@ -1,1313 +1,1488 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>H-Connect</title>
-    <!--Import-->
-    <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-    <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-    <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
-    
-    <!--css-->
-    <link rel='stylesheet' href='/H-Connect/css/reset.css'>
-    <link rel="stylesheet" href="/H-Connect/css/common.css">
-    <link rel="stylesheet" href="/H-Connect/css/doctor.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>H-Connect</title>
+        <!--Import-->
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/jquery-3.6.0.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/common.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/index.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"
+        ></script>
 
-</head>
-  <body>
-
-    <!-- 연결요청 -->
-    <div class="pop connect connect_para connect_doctor">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div>
-                    <img src="/H-Connect/img/logo_white.png" alt="화이트 로고">
-                </div>
-
-                <h3>이연차 전공의로 부터 응급호출 요청을 받았습니다.</h3>
-                <h2>김환자 (63. 남) Patient ID. 심장병동. 1308호실. 3병상</h2>
-                <h1>연결 하시겠습니까?</h1>
-
-                <div class="btn_list">
-                    <div class="con_btn refuse">
-                        <button type="button" class="btn_refuse">
-                            <img src="/H-Connect/img/emergency/refuse.svg" alt="통화거절 아이콘">
-                        </button>
-
-                        <div class="layer refuse_layer">
-                            <p>대응불가</p>
-                        </div>
+        <!--css-->
+        <link rel="stylesheet" href="/H-Connect/css/reset.css" />
+        <link rel="stylesheet" href="/H-Connect/css/common.css" />
+        <link rel="stylesheet" href="/H-Connect/css/doctor.css" />
+    </head>
+    <body>
+        <!-- 연결요청 -->
+        <div class="pop connect connect_para connect_doctor">
+            <div class="overlay">
+                <div class="pop_cont">
+                    <div>
+                        <img
+                            src="/H-Connect/img/logo_white.png"
+                            alt="화이트 로고"
+                        />
                     </div>
 
-                    <div class="con_btn mic">
-                        <button type="button" class="btn_mic">
-                            <img src="/H-Connect/img/emergency/mic.svg" alt="마이크 아이콘">
-                        </button>
+                    <h3>이연차 전공의로 부터 응급호출 요청을 받았습니다.</h3>
+                    <h2>
+                        김환자 (63. 남) Patient ID. 심장병동. 1308호실. 3병상
+                    </h2>
+                    <h1>연결 하시겠습니까?</h1>
 
-                        <div class="layer mic_layer">
-                            <p>마이크</p>
-                        </div>
-                        
-                        <div class="toggle_layer mic_off">
-                            <img src="/H-Connect/img/icon/mic_off.svg" alt="마이크 끄는 아이콘">
-                        </div>
-                    </div>
+                    <div class="btn_list">
+                        <div class="con_btn refuse">
+                            <button type="button" class="btn_refuse">
+                                <img
+                                    src="/H-Connect/img/emergency/refuse.svg"
+                                    alt="통화거절 아이콘"
+                                />
+                            </button>
 
-                    <div class="con_btn webcam">
-                        <button type="button" class="btn_cam">
-                            <img src="/H-Connect/img/emergency/cam.svg" alt="화상카메라 아이콘">
-                        </button>
-
-                        <div class="layer cam_layer">
-                            <p>화상캠</p>
+                            <div class="layer refuse_layer">
+                                <p>대응불가</p>
+                            </div>
                         </div>
 
-                        <div class="toggle_layer cam_off">
-                            <img src="/H-Connect/img/icon/cam_off.svg" alt="캠끄는 아이콘">
+                        <div class="con_btn mic">
+                            <button type="button" class="btn_mic">
+                                <img
+                                    src="/H-Connect/img/emergency/mic.svg"
+                                    alt="마이크 아이콘"
+                                />
+                            </button>
+
+                            <div class="layer mic_layer">
+                                <p>마이크</p>
+                            </div>
+
+                            <div class="toggle_layer mic_off">
+                                <img
+                                    src="/H-Connect/img/icon/mic_off.svg"
+                                    alt="마이크 끄는 아이콘"
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="con_btn accept">
-                        <button type="button" class="btn_accept">
-                            <img src="/H-Connect/img/icon/call.svg" alt="전화기 아이콘">                        
-                        </button>
+                        <div class="con_btn webcam">
+                            <button type="button" class="btn_cam">
+                                <img
+                                    src="/H-Connect/img/emergency/cam.svg"
+                                    alt="화상카메라 아이콘"
+                                />
+                            </button>
 
-                        <div class="layer accept_layer">
-                            <p>연결</p>
+                            <div class="layer cam_layer">
+                                <p>화상캠</p>
+                            </div>
+
+                            <div class="toggle_layer cam_off">
+                                <img
+                                    src="/H-Connect/img/icon/cam_off.svg"
+                                    alt="캠끄는 아이콘"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="con_btn accept">
+                            <button type="button" class="btn_accept">
+                                <img
+                                    src="/H-Connect/img/icon/call.svg"
+                                    alt="전화기 아이콘"
+                                />
+                            </button>
+
+                            <div class="layer accept_layer">
+                                <p>연결</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div id="wrap">
-        <!--헤더 pc-->
-        <header id="header" class="pc_header doc_header">
-            <div class="header_inner">
-                <div>
-                    <h1 class="logo">
-                        <a class="link" href="index.html">
-                            <img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
-                        </a>
-                    </h1>
-        
-                    <div class="header_title">
-                        <h1>H-Works</h1>
-                        <h3>김한림 교수님 의 일정을 확인합니다</h3>
-                    </div>
-                </div>
-        
-                <div>
-                    <div class="btn_list">
-                        <button type="button" class="btn_red" onclick="location.href='emergency/index.html'">
-                            <div>
-                                <img src="/H-Connect/img/header/call_color.png" alt="전화기 아이콘">
-                            </div>
-                            응급호출
-                        </button>
-            
-                        <button type="button" class="btn_logout">
-                            김한림 교수님
-                        </button>
 
-                        <!-- 응급호출이 있을때 보이게 해주세요 -->
-                        <div class="red_alarm"></div>
-                    </div>                          
-                </div>
-            </div>
-
-            <!-- 로그아웃 팝업 -->
-            <div class="pop logout">
-                <div class="wrap_inner">
+        <div id="wrap">
+            <!--헤더 pc-->
+            <header id="header" class="pc_header doc_header">
+                <div class="header_inner">
                     <div>
-                        <p>심장병동</p>
-                        <h3>김한림 교수님</h3>
+                        <h1 class="logo">
+                            <a class="link" href="index.html">
+                                <img
+                                    class="img"
+                                    src="/H-Connect/img/header/logo.png"
+                                    alt="로고"
+                                />
+                            </a>
+                        </h1>
+
+                        <div class="header_title">
+                            <h1>H-Works</h1>
+                            <h3>김한림 교수님 의 일정을 확인합니다</h3>
+                        </div>
                     </div>
 
-                    <button type="button" class="btn_bye">로그아웃</button>  
+                    <div>
+                        <div class="btn_list">
+                            <button
+                                type="button"
+                                class="btn_red"
+                                onclick="location.href='emergency/index.html'"
+                            >
+                                <div>
+                                    <img
+                                        src="/H-Connect/img/header/call_color.png"
+                                        alt="전화기 아이콘"
+                                    />
+                                </div>
+                                응급호출
+                            </button>
+
+                            <button type="button" class="btn_logout">
+                                김한림 교수님
+                            </button>
+
+                            <!-- 응급호출이 있을때 보이게 해주세요 -->
+                            <div class="red_alarm"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </header>
 
-        <!--콘텐츠-->
-        <div id="wrap_content" class="doctor doctor_main">
-            <nav class="nav" id="nav">
-                <ul class="main_depth gnb">
-                    <li class="gnb_list active">
-                        <a class="link" href="index.html">
-                            H-Works
-                        </a>
-
-                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
-                        <span></span>
-                    </li>
-
-                    <li class="gnb_list clinic">
-                        <a class="link" href="remote.html">
-                        원격협진
-                        </a>
-
-                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
-                        <span></span>
-                    </li>
-
-                    <li class="gnb_list off">
-                        <a class="link" href="monitoring.html">
-                            모니터링
-                        </a>
-
-                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
-                        <span></span>
-                    </li>
-
-                    <li class="gnb_list off">
-                        <a class="link" href="screening.html">
-                            선별진료
-                        </a>
-
-                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
-                        <span></span>
-                    </li>
-
-                    <li class="gnb_list off">
-                        <a class="link" href="message.html">
-                            메세지
-                        </a>
-
-                        <!-- 새로운 알림이 있으면 보이게 해주세요 -->
-                        <span></span>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="wrap_inner">
-                <!-- h-works -->
-                <section class="section schedule">
-                    <!-- 진행중인 세션이 없을때 -->
-                    <button type="button" class="btn_section">
-                        <div class="img_container">
-                            <img src="/H-Connect/img/logo.png" alt="로고">
-                        </div>
-                        진행중인 세션이 없습니다.
-                    </button>
-
-                    <!-- 진행중인 세션이 있을때 -->
-                    <button type="button" class="btn_today">
-                        <div class="img_container">
-                            <img src="/H-Connect/img/logo_white.png" alt="로고">
-                        </div>
-                        
+                <!-- 로그아웃 팝업 -->
+                <div class="pop logout">
+                    <div class="wrap_inner">
                         <div>
-                            <h2>5개의 세션이 진행중입니다.</h2>
-                            <p>현재 진행중인 세션에 바로 참가 합니다.</p>
-                        </div>
-                    </button>
-
-                    <div class="container">
-                        <div class="title">
-                            <div> 
-                                <div>
-                                    <img src="/H-Connect/img/doctor/h.svg" alt="로고">
-                                </div>
-
-                                <h2>H-Works</h2>
-                            </div>
-
-                            <p>오늘의 일정 및 새로운 알림을 확인 합니다.</p>
+                            <p>심장병동</p>
+                            <h3>김한림 교수님</h3>
                         </div>
 
-                        <div class="schedule_list">
-                            <div class="row on my" onclick="location.href='index.html'">   
-                                <p>나의 일정</p>
-
-                                <div>
-                                    <p>오늘 <span>5</span> 개의 일정</p>
-
-                                    <div>
-                                        <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row collabor" onclick="location.href='my_remote.html'">   
-                                <p>원격협진 알림</p>
-
-                                <div>
-                                    <p><span>3</span> 개의 알림</p>
-
-                                    <div>
-                                        <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row no_check" onclick="location.href='monitoring.html'">   
-                                <p>확인하지 않은 이벤트</p>
-
-                                <div>
-                                    <p><span>15</span> 개의 알람</p>
-
-                                    <div>
-                                        <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <button type="button" class="btn_bye">로그아웃</button>
                     </div>
-                </section>
+                </div>
+            </header>
 
-                <!-- 나의 일정 -->
-                <section class="section left my_plan">
-                    <div class="title">
-                        <h2>나의 일정</h2>
+            <!--콘텐츠-->
+            <div id="wrap_content" class="doctor doctor_main">
+                <nav class="nav" id="nav">
+                    <ul class="main_depth gnb">
+                        <li class="gnb_list active">
+                            <a class="link" href="index.html"> H-Works </a>
 
-                        <p>오늘의 일정과 주간일정을 확인할 수 있습니다.
-                            일정을 클릭하면 해당화면으로 이동합니다.
-                        </p>
-                    </div>
+                            <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                            <span></span>
+                        </li>
 
-                    <div class="inner">
-                        <div class="title">
-                            <h2>주간일정 보기</h2>
+                        <li class="gnb_list clinic">
+                            <a class="link" href="remote.html"> 원격협진 </a>
 
-                            <div class="btn_list">
-                                <button type="button" class="btn_two on">2주 보기</button>
-                                <button type="button" class="btn_four">4주 보기</button>
-                            </div>
-                        </div>
-                    </div>
+                            <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                            <span></span>
+                        </li>
 
-                    <div class="weekly">
-                        <!-- 시간 time -->
-                        <div class="time">
-                            <div><p>09:00</p></div>
-                            <div><p>10:00</p></div>
-                            <div><p>11:00</p></div>
-                            <div><p>12:00</p></div>
-                            <div><p>13:00</p></div>
-                            <div><p>14:00</p></div>
-                            <div><p>15:00</p></div>
-                            <div><p>16:00</p></div>
-                            <div><p>17:00</p></div>
-                            <div><p>18:00</p></div>
-                        </div>
+                        <li class="gnb_list off">
+                            <a class="link" href="monitoring.html">
+                                모니터링
+                            </a>
 
-                        <!-- 2주 보기 -->
-                        <!-- 해당하는 스케줄을 클릭하면 remote.html로 이동하고 remote.html페이지의 
-                            시간표 보기 -> 클릭한 스케줄과 일치하는것이 선택이 됩니다..  -->
-                         <div class="inner two">
-                            <div class="day today">
-                                <div class="title">
-                                    <p>15 월 </p>
-                                </div>
+                            <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                            <span></span>
+                        </li>
 
-                                <!-- 원격협진 -->
-                                <div class="plan start" onclick="location.href='remote.html'">
-                                    <p>원격협진</p>
-                                </div>
+                        <li class="gnb_list off">
+                            <a class="link" href="screening.html"> 선별진료 </a>
 
-                                <!-- 외래진료 -->
-                                <div class="plan ambul" onclick="location.href='remote.html'">
-                                    <p>외래진료</p>
-                                </div>
+                            <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                            <span></span>
+                        </li>
 
-                                <!-- 협진일정요청 -->
-                                <div class="plan request" onclick="location.href='remote.html'">
-                                    <p>협진일정요청</p>
-                                </div>
+                        <li class="gnb_list off">
+                            <a class="link" href="message.html"> 메세지 </a>
 
-                                <!-- 소견요청 -->
-                                <div class="plan opinion" onclick="location.href='remote.html'">
-                                    <p>소견요쳥</p>
-                                </div>
+                            <!-- 새로운 알림이 있으면 보이게 해주세요 -->
+                            <span></span>
+                        </li>
+                    </ul>
+                </nav>
 
-                                <!-- 협진일정요청 -->
-                                <div class="plan request" onclick="location.href='remote.html'">
-                                    <p>협진일정요청</p>
-                                </div>
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>16 화 </p>
-                                </div>
-
-                                <!-- 외래진료 -->
-                                <div class="plan ambul">
-                                    <p>외래진료</p>
-                                </div>
-
-                                <!-- 원격협진 -->
-                                <div class="plan start">
-                                    <p>원격협진</p>
-                                </div>                                
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>17 수</p>
-                                </div>
-
-                                <!-- 수술 -->
-                                <div class="plan ambul surgery">
-                                    <p>수술</p>
-                                </div>
-
-                                <!-- 소견요청 -->
-                                <div class="plan opinion">
-                                    <p>소견요쳥</p>
-                                </div>
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>18 목</p>
-                                </div>
-
-                                <!-- 원격협진 -->
-                                <div class="plan start">
-                                    <p>원격협진</p>
-                                </div>
-
-                                <!-- 수술 -->
-                                <div class="plan ambul">
-                                    <p>외래진료</p>
-                                </div>
-
-                                <!-- 소견요청 -->
-                                <div class="plan opinion">
-                                    <p>소견요쳥</p>
-                                </div>
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>19 금</p>
-                                </div>
-
-                                <!-- 수술 -->
-                                <div class="plan ambul">
-                                    <p>외래진료</p>
-                                </div>
-                            </div>
-
-                            <div class="day weekend">
-                                <div class="title">
-                                    <p>20 토</p>
-                                </div>
-                            </div>
-
-                            <div class="day weekend">
-                                <div class="title">
-                                    <p>21 일</p>
-                                </div>
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>15 월 </p>
-                                </div>
-
-                                <!-- 외래진료 -->
-                                <div class="plan ambul">
-                                    <p>외래진료</p>
-                                </div>
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>16 화 </p>
-                                </div>
-
-                                <!-- 외래진료 -->
-                                <div class="plan ambul">
-                                    <p>외래진료</p>
-                                </div>                              
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>17 수</p>
-                                </div>
-
-                                <!-- 휴가 -->
-                                <div class="plan holiday">
-                                    <p>휴가</p>
-                                </div>
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>18 목</p>
-                                </div>
-
-                                <!-- 외래진료 -->
-                                <div class="plan ambul">
-                                    <p>외래진료</p>
-                                </div>
-                            </div>
-
-                            <div class="day">
-                                <div class="title">
-                                    <p>19 금</p>
-                                </div>
-
-                                <!-- 외래진료 -->
-                                <div class="plan ambul">
-                                    <p>외래진료</p>
-                                </div>
-                            </div>
-
-                            <div class="day weekend">
-                                <div class="title">
-                                    <p>20 토</p>
-                                </div>
-                            </div>
-
-                            <div class="day weekend">
-                                <div class="title">
-                                    <p>21 일</p>
-                                </div>
-                            </div> 
-                            
-                            <!-- 4주 보기 -->
-                            <div class="four">
-                                <div class="wrap">
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>15 월</p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>16 화 </p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>                              
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>17 수</p>
-                                        </div>
-        
-                                        <!-- 휴가 -->
-                                        <div class="plan holiday">
-                                            <p>휴가</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>18 목</p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>19 금</p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day weekend">
-                                        <div class="title">
-                                            <p>20 토</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day weekend">
-                                        <div class="title">
-                                            <p>21 일</p>
-                                        </div>
-                                    </div>   
-                                    
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>15 월</p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>16 화</p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>                              
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>17 수</p>
-                                        </div>
-        
-                                        <!-- 휴가 -->
-                                        <div class="plan holiday">
-                                            <p>휴가</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>18 목</p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day">
-                                        <div class="title">
-                                            <p>19 금</p>
-                                        </div>
-        
-                                        <!-- 외래진료 -->
-                                        <div class="plan ambul">
-                                            <p>외래진료</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day weekend">
-                                        <div class="title">
-                                            <p>20 토</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="day weekend">
-                                        <div class="title">
-                                            <p>21 일</p>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 세션 진행 버튼 눌렀을때 -->
-                <!-- 진행중인 세션 목룍 -->
-                <section class="section now_section" style="display: none;">
-                    <div class="title">
-                        <h2>진행중인 세션 목록</h2>
-                        <p>목록을 클릭하면 세션의 내용을 확인하고, 세션을 시작할 수 있습니다.</p>
-                    </div>
-                   
-                    <div class="list">
-                        <div class="row remote on">
-                            <div>
+                <div class="wrap_inner">
+                    <!-- h-works -->
+                    <section class="section schedule">
+                        <!-- 진행중인 세션이 없을때 -->
+                        <div style="height: 105px">
+                            <button type="button" class="btn_section">
                                 <div class="img_container">
-                                    <img src="/H-Connect/img/header/remote.svg" alt="청진기 아이콘">
+                                    <img
+                                        src="/H-Connect/img/logo.png"
+                                        alt="로고"
+                                    />
                                 </div>
-    
-                                <p class="time">10:18</p>
-                                <p class="place">선별진료.</p>
-                                <p class="wait">7분 경과</p>
-                            </div>                            
+                                진행중인 세션이 없습니다.
+                            </button>
 
-                            <p>김선별 님 (33.남)</p>
-                        </div>
-
-                        <div class="row clinic">
-                            <div>
+                            <!-- 진행중인 세션이 있을때 -->
+                            <button type="button" class="btn_today">
                                 <div class="img_container">
-                                    <img src="/H-Connect/img/header/clinic.svg" alt="사람 아이콘">
+                                    <img
+                                        src="/H-Connect/img/logo_white.png"
+                                        alt="로고"
+                                    />
                                 </div>
-    
-                                <p class="time">10:20</p>
-                                <p class="place">원격 협진.</p>
-                                <p class="wait">5분 경과</p>
-                            </div>                            
 
-                            <p>박협진 교수님 외 5명</p>
-                        </div>
-
-                        <div class="row red">
-                            <div>
-                                <div class="img_container">
-                                    <img src="/H-Connect/img/icon/call.svg" alt="전화기 아이콘">
-                                </div>
-    
-                                <p class="time">10:22</p>
-                                <p class="place">응급협진 요청.</p>
-                                <p class="wait">3분 경과</p>
-                            </div>                            
-
-                            <p>응급상황실</p>
-                        </div>
-
-                        <div class="row remote">
-                            <div>
-                                <div class="img_container">
-                                    <img src="/H-Connect/img/header/remote.svg" alt="사람 아이콘">
-                                </div>
-    
-                                <p class="time">10:23</p>
-                                <p class="place">선별진료.</p>
-                                <p class="wait">2분 경과</p>
-                            </div>                            
-
-                            <p>이선별 님 (44. 여)</p>
-                        </div>
-
-                        <div class="row opi">
-                            <div>
-                                <div class="img_container">
-                                    <img src="/H-Connect/img/header/clinic.svg" alt="청진기 아이콘">
-                                </div>
-    
-                                <p class="time">13:25 까지</p>
-                                <p class="place">소견요청 협진.</p>
-                                <p class="wait">2일 21시간 30분 경과</p>
-                            </div>                            
-
-                            <p>김소견 교수님 외 4명</p>
-                        </div>
-                    </div>                  
-                </section>
-
-                <!-- 선별진료 대기실 -->
-                <section class="section right waiting" style="display: none;">
-                    <div class="container">
-                        <div class="title">
-                            <div>
-                                <h2>선별진료 대기실</h2>
-                                <p>김선별 님 (33. 남)</p>
-                            </div>
-                            
-                            <button type="button" class="btn_colla">
                                 <div>
-                                    <img src="/H-Connect/img/header/Hlogo_gray.svg" alt="로고">
+                                    <h2>
+                                        <span id="session_count">-</span>개의
+                                        세션이 진행중입니다.
+                                    </h2>
+                                    <p>
+                                        현재 진행중인 세션에 바로 참가 합니다.
+                                    </p>
                                 </div>
-                                시작하기
                             </button>
                         </div>
 
-                        <div class="collabor_wrap">
-                            <!-- 협진 시간 -->
-                            <div class="time">
-                                <h2>접수시간</h2>
+                        <div class="container">
+                            <div class="title">
+                                <div>
+                                    <div>
+                                        <img
+                                            src="/H-Connect/img/doctor/h.svg"
+                                            alt="로고"
+                                        />
+                                    </div>
 
-                                <p>21.09.15 10:18:07</p>
+                                    <h2>H-Works</h2>
+                                </div>
+
+                                <p>오늘의 일정 및 새로운 알림을 확인 합니다.</p>
                             </div>
-                        </div>                   
 
-                    </div>               
-                </section>
+                            <div class="schedule_list">
+                                <div
+                                    class="row on my"
+                                    onclick="location.href='index.html'"
+                                >
+                                    <p>나의 일정</p>
 
-                <!-- 원격협진 -->
-                <section class="section right collabor" style="display: none;">
-                    <div class="container">
+                                    <div>
+                                        <p>
+                                            오늘
+                                            <span id="mySchedule">-</span> 개의
+                                            일정
+                                        </p>
+
+                                        <div>
+                                            <img
+                                                src="/H-Connect/img/icon/btn_next_green.svg"
+                                                alt="오른쪽 화살표"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="row collabor"
+                                    onclick="location.href='my_remote.html'"
+                                >
+                                    <p>원격협진 알림</p>
+
+                                    <div>
+                                        <p>
+                                            <span id="withSchedule">-</span>
+                                            개의 알림
+                                        </p>
+
+                                        <div>
+                                            <img
+                                                src="/H-Connect/img/icon/btn_next_green.svg"
+                                                alt="오른쪽 화살표"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="row no_check"
+                                    onclick="location.href='monitoring.html'"
+                                >
+                                    <p>확인하지 않은 이벤트</p>
+
+                                    <div>
+                                        <p>
+                                            <span id="noChecked">-</span> 개의
+                                            알람
+                                        </p>
+
+                                        <div>
+                                            <img
+                                                src="/H-Connect/img/icon/btn_next_green.svg"
+                                                alt="오른쪽 화살표"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 나의 일정 -->
+                    <section class="section left my_plan">
                         <div class="title">
-                            <div>
-                                <h2>원격 협진</h2>
+                            <h2>나의 일정</h2>
+
+                            <p>
+                                오늘의 일정과 주간일정을 확인할 수 있습니다.
+                                일정을 클릭하면 해당화면으로 이동합니다.
+                            </p>
+                        </div>
+
+                        <div class="inner">
+                            <div class="title">
+                                <h2>주간일정 보기</h2>
+
+                                <div class="btn_list">
+                                    <button type="button" class="btn_two on">
+                                        2주 보기
+                                    </button>
+                                    <button type="button" class="btn_four">
+                                        4주 보기
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weekly">
+                            <!-- 시간 time -->
+                            <div class="time">
+                                <div><p>09:00</p></div>
+                                <div><p>10:00</p></div>
+                                <div><p>11:00</p></div>
+                                <div><p>12:00</p></div>
+                                <div><p>13:00</p></div>
+                                <div><p>14:00</p></div>
+                                <div><p>15:00</p></div>
+                                <div><p>16:00</p></div>
+                                <div><p>17:00</p></div>
+                                <div><p>18:00</p></div>
+                            </div>
+
+                            <!-- 2주 보기 -->
+                            <!-- 해당하는 스케줄을 클릭하면 remote.html로 이동하고 remote.html페이지의 
+                            시간표 보기 -> 클릭한 스케줄과 일치하는것이 선택이 됩니다..  -->
+                            <div class="inner two">
+                                <div class="day today">
+                                    <div class="title">
+                                        <p>15 월</p>
+                                    </div>
+
+                                    <!-- 원격협진 -->
+                                    <div
+                                        class="plan start"
+                                        onclick="location.href='remote.html'"
+                                    >
+                                        <p>원격협진</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div
+                                        class="plan ambul"
+                                        onclick="location.href='remote.html'"
+                                    >
+                                        <p>외래진료</p>
+                                    </div>
+
+                                    <!-- 협진일정요청 -->
+                                    <div
+                                        class="plan request"
+                                        onclick="location.href='remote.html'"
+                                    >
+                                        <p>협진일정요청</p>
+                                    </div>
+
+                                    <!-- 소견요청 -->
+                                    <div
+                                        class="plan opinion"
+                                        onclick="location.href='remote.html'"
+                                    >
+                                        <p>소견요쳥</p>
+                                    </div>
+
+                                    <!-- 협진일정요청 -->
+                                    <div
+                                        class="plan request"
+                                        onclick="location.href='remote.html'"
+                                    >
+                                        <p>협진일정요청</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>16 화</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+
+                                    <!-- 원격협진 -->
+                                    <div class="plan start">
+                                        <p>원격협진</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>17 수</p>
+                                    </div>
+
+                                    <!-- 수술 -->
+                                    <div class="plan ambul surgery">
+                                        <p>수술</p>
+                                    </div>
+
+                                    <!-- 소견요청 -->
+                                    <div class="plan opinion">
+                                        <p>소견요쳥</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>18 목</p>
+                                    </div>
+
+                                    <!-- 원격협진 -->
+                                    <div class="plan start">
+                                        <p>원격협진</p>
+                                    </div>
+
+                                    <!-- 수술 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+
+                                    <!-- 소견요청 -->
+                                    <div class="plan opinion">
+                                        <p>소견요쳥</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>19 금</p>
+                                    </div>
+
+                                    <!-- 수술 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
+
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>20 토</p>
+                                    </div>
+                                </div>
+
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>21 일</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>15 월</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>16 화</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>17 수</p>
+                                    </div>
+
+                                    <!-- 휴가 -->
+                                    <div class="plan holiday">
+                                        <p>휴가</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>18 목</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
+
+                                <div class="day">
+                                    <div class="title">
+                                        <p>19 금</p>
+                                    </div>
+
+                                    <!-- 외래진료 -->
+                                    <div class="plan ambul">
+                                        <p>외래진료</p>
+                                    </div>
+                                </div>
+
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>20 토</p>
+                                    </div>
+                                </div>
+
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>21 일</p>
+                                    </div>
+                                </div>
+
+                                <!-- 4주 보기 -->
+                                <div class="four">
+                                    <div class="wrap">
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>15 월</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>16 화</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>17 수</p>
+                                            </div>
+
+                                            <!-- 휴가 -->
+                                            <div class="plan holiday">
+                                                <p>휴가</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>18 목</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>19 금</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>20 토</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>21 일</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>15 월</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>16 화</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>17 수</p>
+                                            </div>
+
+                                            <!-- 휴가 -->
+                                            <div class="plan holiday">
+                                                <p>휴가</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>18 목</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>19 금</p>
+                                            </div>
+
+                                            <!-- 외래진료 -->
+                                            <div class="plan ambul">
+                                                <p>외래진료</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>20 토</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="day weekend">
+                                            <div class="title">
+                                                <p>21 일</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 세션 진행 버튼 눌렀을때 -->
+                    <!-- 진행중인 세션 목룍 -->
+                    <section class="section now_section" style="display: none">
+                        <div class="title">
+                            <h2>진행중인 세션 목록</h2>
+                            <p>
+                                목록을 클릭하면 세션의 내용을 확인하고, 세션을
+                                시작할 수 있습니다.
+                            </p>
+                        </div>
+
+                        <div class="list">
+                            <!-- <div class="row remote on">
+                                <div>
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/header/remote.svg"
+                                            alt="청진기 아이콘"
+                                        />
+                                    </div>
+
+                                    <p class="time">10:18</p>
+                                    <p class="place">선별진료.</p>
+                                    <p class="wait">7분 경과</p>
+                                </div>
+
+                                <p>김선별 님 (33.남)</p>
+                            </div>
+
+                            <div class="row clinic">
+                                <div>
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/header/clinic.svg"
+                                            alt="사람 아이콘"
+                                        />
+                                    </div>
+
+                                    <p class="time">10:20</p>
+                                    <p class="place">원격 협진.</p>
+                                    <p class="wait">5분 경과</p>
+                                </div>
+
                                 <p>박협진 교수님 외 5명</p>
                             </div>
-                            
-                            <button type="button" class="btn_colla">
+
+                            <div class="row red">
                                 <div>
-                                    <img src="/H-Connect/img/header/Hlogo_gray.svg" alt="로고">
-                                </div>
-                                시작하기
-                            </button>
-                        </div>
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/icon/call.svg"
+                                            alt="전화기 아이콘"
+                                        />
+                                    </div>
 
-                        <div class="collabor_wrap">
-                            <!-- 협진 시간 -->
-                            <div class="time">
-                                <h2>협진 시간</h2>
-
-                                <p><span>21.09.15</span> <span>10:30</span>~<span>12:00</span></p>
-                            </div>
-
-                            <!-- 협진 내용 -->
-                            <div class="cont">
-                                <div class="title">
-                                    <h2>협진 내용</h2>
-
-                                    <p>실시간 원격 협진</p>
+                                    <p class="time">10:22</p>
+                                    <p class="place">응급협진 요청.</p>
+                                    <p class="wait">3분 경과</p>
                                 </div>
 
-                                <div class="cont_list">
-                                    <div class="case">
-                                        <div>
-                                            <p class="case_num">Case 1.</p>
-                                            <p>김입원 환자의 대장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p class="case_num">Case 1.</p>
-
-                                                <div>
-                                                    김입원 환자의 대장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    김입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p class="case_num">Case 2.</p>
-                                            <p>최입원 환자의 간암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p class="case_num">Case 2.</p>
-
-                                                <div>
-                                                    최입원 환자의 간암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    최입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p class="case_num">Case 3.</p>
-                                            <p>정입원 환자의 췌장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p class="case_num">Case 3.</p>
-
-                                                <div>
-                                                    정입원 환자의 췌장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    정입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- 협진 참여자 -->
-                            <div class="member">
-                                <div class="title">
-                                    <h2>협진 참여자 정보</h2>
-                                </div>
-
-                                <div class="cont_list">
-                                    <div class="case">
-                                        <div>
-                                            <p>현재 참석 인원.</p>
-                                            <p class="count">4명</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div> 
-                    </div>               
-                </section>
-
-                <!-- 응급협진 -->
-                <section class="section right emergency_section" style="display: none;">
-                    <div class="container">
-                        <div class="title">
-                            <div>
-                                <h2>응급협진</h2>
                                 <p>응급상황실</p>
                             </div>
-                            
-                            <button type="button" class="btn_colla">
+
+                            <div class="row remote">
                                 <div>
-                                    <img src="/H-Connect/img/header/Hlogo_gray.svg" alt="로고">
-                                </div>
-                                시작하기
-                            </button>
-                        </div>
-
-                        <div class="collabor_wrap">
-                            <!-- 접수시간 -->
-                            <div class="recep_time">
-                                <h2>응급상황 접수시간</h2>
-
-                                <p>21.09.15 10:22:17</p>
-                            </div>
-
-                            <!-- 협진 내용 -->
-                            <div class="cont">
-                                <h2>협진 내용</h2>
-
-                                <p>뇌졸증 환자 (70대. 여)</p>
-                            </div>
-
-                            <!-- 협진 참여자 -->
-                            <div class="member">
-                                <div class="title">
-                                    <h2>협진 참여자 정보</h2>
-                                </div>
-
-                                <div class="cont_list">
-                                    <div class="case">
-                                        <div>
-                                            <p>현재 참석 인원.</p>
-                                            <p class="count">4명</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>                                        
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/header/remote.svg"
+                                            alt="사람 아이콘"
+                                        />
                                     </div>
 
-                                    <div class="case_cont">
-                                        <div>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                        </div>
+                                    <p class="time">10:23</p>
+                                    <p class="place">선별진료.</p>
+                                    <p class="wait">2분 경과</p>
+                                </div>
+
+                                <p>이선별 님 (44. 여)</p>
+                            </div>
+
+                            <div class="row opi">
+                                <div>
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/header/clinic.svg"
+                                            alt="청진기 아이콘"
+                                        />
                                     </div>
 
+                                    <p class="time">13:25 까지</p>
+                                    <p class="place">소견요청 협진.</p>
+                                    <p class="wait">2일 21시간 30분 경과</p>
                                 </div>
-                            </div>
-                        </div>             
-                    </div> 
-                </section>
 
-                <!-- 소견요청 협진 -->
-                <section class="section right opinion"style="display: none;">
-                    <div class="container">
-                        <div class="title">
-                            <div>
-                                <h2>소견 요청 협진 진행중</h2>
                                 <p>김소견 교수님 외 4명</p>
-                            </div>
-                            
-                            <button type="button" class="btn_colla">
-                                <div>
-                                    <img src="/H-Connect/img/header/Hlogo_gray.svg" alt="로고">
-                                </div>
-                                시작하기
-                            </button>
+                            </div> -->
                         </div>
+                    </section>
 
-                        <div class="collabor_wrap">
-                            <!-- 협진 시간 -->
-                            <div class="time">
-                                <h2>소견요청 협진 기간</h2>
-
+                    <!-- 선별진료 대기실 -->
+                    <section
+                        id="consultChannel4"
+                        class="section right waiting"
+                        style="display: none"
+                    >
+                        <div class="container">
+                            <div class="title">
                                 <div>
-                                    <p>시작시간 21.09.11 09:00</p>
-                                    <p>마감시간 21.09.15 13:25</p>
+                                    <h2>선별진료 대기실</h2>
+                                    <p>김선별 님 (33. 남)</p>
                                 </div>
-                            </div>  
 
-                            <!-- 협진 내용 -->
-                            <div class="cont">
-                                <div class="title">
+                                <button type="button" class="btn_colla">
+                                    <div>
+                                        <img
+                                            src="/H-Connect/img/header/Hlogo_gray.svg"
+                                            alt="로고"
+                                        />
+                                    </div>
+                                    시작하기
+                                </button>
+                            </div>
+
+                            <div class="collabor_wrap">
+                                <!-- 협진 시간 -->
+                                <div class="time">
+                                    <h2>접수시간</h2>
+
+                                    <p>21.09.15 10:18:07</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 원격협진 -->
+                    <section
+                        id="consultChannel3"
+                        class="section right collabor"
+                        style="display: none"
+                    >
+                        <div class="container">
+                            <div class="title">
+                                <div>
+                                    <h2>원격 협진</h2>
+                                    <p>박협진 교수님 외 5명</p>
+                                </div>
+
+                                <button type="button" class="btn_colla">
+                                    <div>
+                                        <img
+                                            src="/H-Connect/img/header/Hlogo_gray.svg"
+                                            alt="로고"
+                                        />
+                                    </div>
+                                    시작하기
+                                </button>
+                            </div>
+
+                            <div class="collabor_wrap">
+                                <!-- 협진 시간 -->
+                                <div class="time">
+                                    <h2>협진 시간</h2>
+
+                                    <p>
+                                        <span>21.09.15</span>
+                                        <span>10:30</span>~<span>12:00</span>
+                                    </p>
+                                </div>
+
+                                <!-- 협진 내용 -->
+                                <div class="cont">
+                                    <div class="title">
+                                        <h2>협진 내용</h2>
+
+                                        <p>실시간 원격 협진</p>
+                                    </div>
+
+                                    <div class="cont_list">
+                                        <div class="case">
+                                            <div>
+                                                <p class="case_num">Case 1.</p>
+                                                <p>
+                                                    김입원 환자의 대장암
+                                                    검사입니다.
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
+
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case_cont">
+                                            <div class="case_inner">
+                                                <div class="title">
+                                                    <p class="case_num">
+                                                        Case 1.
+                                                    </p>
+
+                                                    <div>
+                                                        김입원 환자의 대장암
+                                                        수술 이후 예후에 관한
+                                                        정부의 동의없이 정부가
+                                                        제출한 지출예산 각항의
+                                                        금액을 증가 하거나 새
+                                                        비목을 설치 논의
+                                                    </div>
+                                                </div>
+
+                                                <div class="pati_name">
+                                                    <p>환자명.</p>
+
+                                                    <div>
+                                                        김입원 (68. 여).patient
+                                                        number
+                                                    </div>
+                                                </div>
+
+                                                <div class="content">
+                                                    <p>협진 내용.</p>
+
+                                                    <div>
+                                                        국회는 정부의 동의없이
+                                                        정부가 제출한 지출예산
+                                                        각항의 금액을 증가하거나
+                                                        새 비목을 설치할 수
+                                                        없다. 국가는 건전한
+                                                        소비행위를 계도하고
+                                                        생산품의 품질향상을
+                                                        촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다. 국회는 정부의
+                                                        동의없이 정부가 제출한
+                                                        지출예산 각항의 금액을
+                                                        증가하거나 새 비목을
+                                                        설치할 수 없다. 국가는
+                                                        건전한 소비행위를
+                                                        계도하고 생산품의
+                                                        품질향상을 촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case">
+                                            <div>
+                                                <p class="case_num">Case 2.</p>
+                                                <p>
+                                                    최입원 환자의 간암
+                                                    검사입니다.
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
+
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case_cont">
+                                            <div class="case_inner">
+                                                <div class="title">
+                                                    <p class="case_num">
+                                                        Case 2.
+                                                    </p>
+
+                                                    <div>
+                                                        최입원 환자의 간암 수술
+                                                        이후 예후에 관한 정부의
+                                                        동의없이 정부가 제출한
+                                                        지출예산 각항의 금액을
+                                                        증가 하거나 새 비목을
+                                                        설치 논의
+                                                    </div>
+                                                </div>
+
+                                                <div class="pati_name">
+                                                    <p>환자명.</p>
+
+                                                    <div>
+                                                        최입원 (68. 여).patient
+                                                        number
+                                                    </div>
+                                                </div>
+
+                                                <div class="content">
+                                                    <p>협진 내용.</p>
+
+                                                    <div>
+                                                        국회는 정부의 동의없이
+                                                        정부가 제출한 지출예산
+                                                        각항의 금액을 증가하거나
+                                                        새 비목을 설치할 수
+                                                        없다. 국가는 건전한
+                                                        소비행위를 계도하고
+                                                        생산품의 품질향상을
+                                                        촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다. 국회는 정부의
+                                                        동의없이 정부가 제출한
+                                                        지출예산 각항의 금액을
+                                                        증가하거나 새 비목을
+                                                        설치할 수 없다. 국가는
+                                                        건전한 소비행위를
+                                                        계도하고 생산품의
+                                                        품질향상을 촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case">
+                                            <div>
+                                                <p class="case_num">Case 3.</p>
+                                                <p>
+                                                    정입원 환자의 췌장암
+                                                    검사입니다.
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
+
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case_cont">
+                                            <div class="case_inner">
+                                                <div class="title">
+                                                    <p class="case_num">
+                                                        Case 3.
+                                                    </p>
+
+                                                    <div>
+                                                        정입원 환자의 췌장암
+                                                        수술 이후 예후에 관한
+                                                        정부의 동의없이 정부가
+                                                        제출한 지출예산 각항의
+                                                        금액을 증가 하거나 새
+                                                        비목을 설치 논의
+                                                    </div>
+                                                </div>
+
+                                                <div class="pati_name">
+                                                    <p>환자명.</p>
+
+                                                    <div>
+                                                        정입원 (68. 여).patient
+                                                        number
+                                                    </div>
+                                                </div>
+
+                                                <div class="content">
+                                                    <p>협진 내용.</p>
+
+                                                    <div>
+                                                        국회는 정부의 동의없이
+                                                        정부가 제출한 지출예산
+                                                        각항의 금액을 증가하거나
+                                                        새 비목을 설치할 수
+                                                        없다. 국가는 건전한
+                                                        소비행위를 계도하고
+                                                        생산품의 품질향상을
+                                                        촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다. 국회는 정부의
+                                                        동의없이 정부가 제출한
+                                                        지출예산 각항의 금액을
+                                                        증가하거나 새 비목을
+                                                        설치할 수 없다. 국가는
+                                                        건전한 소비행위를
+                                                        계도하고 생산품의
+                                                        품질향상을 촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 협진 참여자 -->
+                                <div class="member">
+                                    <div class="title">
+                                        <h2>협진 참여자 정보</h2>
+                                    </div>
+
+                                    <div class="cont_list">
+                                        <div class="case with">
+                                            <div>
+                                                <p>현재 참석 인원.</p>
+                                                <p class="count">4명</p>
+                                            </div>
+
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
+
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case_cont">
+                                            <div>
+                                                <!-- <p>박협진 교수님</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 응급협진 -->
+                    <section
+                        id="consultChannel5"
+                        class="section right emergency_section"
+                        style="display: none"
+                    >
+                        <div class="container">
+                            <div class="title">
+                                <div>
+                                    <h2>응급협진</h2>
+                                    <p>응급상황실</p>
+                                </div>
+
+                                <button type="button" class="btn_colla">
+                                    <div>
+                                        <img
+                                            src="/H-Connect/img/header/Hlogo_gray.svg"
+                                            alt="로고"
+                                        />
+                                    </div>
+                                    시작하기
+                                </button>
+                            </div>
+
+                            <div class="collabor_wrap">
+                                <!-- 접수시간 -->
+                                <div class="recep_time">
+                                    <h2>응급상황 접수시간</h2>
+
+                                    <p>21.09.15 10:22:17</p>
+                                </div>
+
+                                <!-- 협진 내용 -->
+                                <div class="cont">
                                     <h2>협진 내용</h2>
 
-                                    <p>소견 요청 협진</p>
+                                    <!-- <p>뇌졸증 환자 (70대. 여)</p> -->
                                 </div>
 
-                                <div class="cont_list">
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 1.</p>
-                                            <p>김입원 환자의 대장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
+                                <!-- 협진 참여자 -->
+                                <div class="member">
+                                    <div class="title">
+                                        <h2>협진 참여자 정보</h2>
                                     </div>
 
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
+                                    <div class="cont_list">
+                                        <div class="case">
+                                            <div>
+                                                <p>현재 참석 인원.</p>
+                                                <p class="count">4명</p>
+                                            </div>
+
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
+
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case_cont">
+                                            <div>
+                                                <!-- <p>박협진 교수님</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 소견요청 협진 -->
+                    <section
+                        id="consultChannel2"
+                        class="section right opinion"
+                        style="display: none"
+                    >
+                        <div class="container">
+                            <div class="title">
+                                <div>
+                                    <h2>소견 요청 협진 진행중</h2>
+                                    <p>김소견 교수님 외 4명</p>
+                                </div>
+
+                                <button type="button" class="btn_colla">
+                                    <div>
+                                        <img
+                                            src="/H-Connect/img/header/Hlogo_gray.svg"
+                                            alt="로고"
+                                        />
+                                    </div>
+                                    시작하기
+                                </button>
+                            </div>
+
+                            <div class="collabor_wrap">
+                                <!-- 협진 시간 -->
+                                <div class="time">
+                                    <h2>소견요청 협진 기간</h2>
+
+                                    <div>
+                                        <p>시작시간 21.09.11 09:00</p>
+                                        <p>마감시간 21.09.15 13:25</p>
+                                    </div>
+                                </div>
+
+                                <!-- 협진 내용 -->
+                                <div class="cont">
+                                    <div class="title">
+                                        <h2>협진 내용</h2>
+
+                                        <p>소견 요청 협진</p>
+                                    </div>
+
+                                    <div class="cont_list">
+                                        <!-- <div class="case">
+                                            <div>
                                                 <p>Case 1.</p>
-
-                                                <div>
-                                                    김입원 환자의 대장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
+                                                <p>
+                                                    김입원 환자의 대장암
+                                                    검사입니다.
+                                                </p>
                                             </div>
 
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
 
-                                                <div>
-                                                    김입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="case_cont">
+                                            <div class="case_inner">
+                                                <div class="title">
+                                                    <p>Case 1.</p>
+
+                                                    <div>
+                                                        김입원 환자의 대장암
+                                                        수술 이후 예후에 관한
+                                                        정부의 동의없이 정부가
+                                                        제출한 지출예산 각항의
+                                                        금액을 증가 하거나 새
+                                                        비목을 설치 논의
+                                                    </div>
+                                                </div>
+
+                                                <div class="pati_name">
+                                                    <p>환자명.</p>
+
+                                                    <div>
+                                                        김입원 (68. 여).patient
+                                                        number
+                                                    </div>
+                                                </div>
+
+                                                <div class="content">
+                                                    <p>협진 내용.</p>
+
+                                                    <div>
+                                                        국회는 정부의 동의없이
+                                                        정부가 제출한 지출예산
+                                                        각항의 금액을 증가하거나
+                                                        새 비목을 설치할 수
+                                                        없다. 국가는 건전한
+                                                        소비행위를 계도하고
+                                                        생산품의 품질향상을
+                                                        촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다. 국회는 정부의
+                                                        동의없이 정부가 제출한
+                                                        지출예산 각항의 금액을
+                                                        증가하거나 새 비목을
+                                                        설치할 수 없다. 국가는
+                                                        건전한 소비행위를
+                                                        계도하고 생산품의
+                                                        품질향상을 촉구하기 위한
+                                                        소비자보호운동을 법률이
+                                                        정하는 바에 의하여
+                                                        보장한다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
                                     </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 2.</p>
-                                            <p>최입원 환자의 간암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 2.</p>
-
-                                                <div>
-                                                    최입원 환자의 간암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    최입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="case">
-                                        <div>
-                                            <p>Case 3.</p>
-                                            <p>정입원 환자의 췌장암 검사입니다.</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="case_cont">
-                                        <div class="case_inner">
-                                            <div class="title">
-                                                <p>Case 3.</p>
-
-                                                <div>
-                                                    정입원 환자의 췌장암 수술 이후 예후에 관한 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가 하거나 새 비목을 설치 논의
-                                                </div>
-                                            </div>
-
-                                            <div class="pati_name">
-                                                <p>환자명.</p>
-
-                                                <div>
-                                                    정입원 (68. 여).patient number
-                                                </div>
-                                            </div>
-
-                                            <div class="content">
-                                                <p>협진 내용.</p>
-
-                                                <div>
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 
-                                                    국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 
-                                                    국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- 협진 참여자 -->
-                            <div class="member">
-                                <div class="title">
-                                    <h2>협진 참여자 정보</h2>
-                                    <p>협진 참여 요청. <span>5명</span></p>
                                 </div>
 
-                                <div class="cont_list">
-                                    <!-- 참여인원 -->
-                                    <div class="case">
-                                        <div>
-                                            <p>참여 인원.</p>
-                                            <p class="count">4명</p>
-                                        </div>
+                                <!-- 협진 참여자 -->
+                                <div class="member">
+                                    <div class="title">
+                                        <h2>협진 참여자 정보</h2>
+                                        <p>협진 참여 요청. <span>5명</span></p>
+                                    </div>
 
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
+                                    <div class="cont_list">
+                                        <!-- 참여인원 -->
+                                        <div class="case with">
+                                            <div>
+                                                <p>참여 인원.</p>
+                                                <p class="count">4명</p>
                                             </div>
-                                        </div>                                        
-                                    </div>
 
-                                    <div class="case_cont">
-                                        <div>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                            <p>박협진 교수님</p>
-                                        </div>
-                                    </div>
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
 
-                                    <!-- 미참여 -->
-                                    <div class="case">
-                                        <div>
-                                            <p>미참여.</p>
-                                            <p class="count red">1명</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="more">자세히</p>
-                                            <p class="fold">접기</p>
-
-                                            <div class="img_container">
-                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표">
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>                                        
-                                    </div>
+                                        </div>
 
-                                    <div class="case_cont">
-                                        <div>
-                                            <p>박협진 교수님</p>
+                                        <div class="case_cont">
+                                            <div>
+                                                <!-- <p>박협진 교수님</p> -->
+                                            </div>
+                                        </div>
+
+                                        <!-- 미참여 -->
+                                        <div class="case without">
+                                            <div>
+                                                <p>미참여.</p>
+                                                <p class="count red">1명</p>
+                                            </div>
+
+                                            <div>
+                                                <p class="more">자세히</p>
+                                                <p class="fold">접기</p>
+
+                                                <div class="img_container">
+                                                    <img
+                                                        src="/H-Connect/img/under_arrow.svg"
+                                                        alt="아래 화살표"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="case_cont">
+                                            <div>
+                                                <p>박협진 교수님</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> 
-                    </div>               
-                </section>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
+        <!--// end wrap-->
 
-    </div>
-    <!--// end wrap-->
-
-    <script>
-        //   년도 선택
+        <script>
+            //   년도 선택
             const yearLabel = document.querySelector('.year_label');
             const yearOptions = document.querySelectorAll('.year_option');
 
             const yearSelect = (item) => {
                 yearLabel.parentNode.classList.remove('active');
                 yearLabel.innerHTML = item.textContent;
-            }
+            };
 
-            yearOptions.forEach(option => {
-                option.addEventListener('click', () => yearSelect(option))
-            })
+            yearOptions.forEach((option) => {
+                option.addEventListener('click', () => yearSelect(option));
+            });
 
             yearLabel.addEventListener('click', () => {
-            if(yearLabel.parentNode.classList.contains('active')) {
-                yearLabel.parentNode.classList.remove('active');
-            } else {
-                yearLabel.parentNode.classList.add('active');
-            }
-            })
+                if (yearLabel.parentNode.classList.contains('active')) {
+                    yearLabel.parentNode.classList.remove('active');
+                } else {
+                    yearLabel.parentNode.classList.add('active');
+                }
+            });
 
-        // 월 선택
+            // 월 선택
             const monthLabel = document.querySelector('.month_label');
             const monthOptions = document.querySelectorAll('.month_option');
 
             const monthSelect = (item) => {
                 monthLabel.parentNode.classList.remove('active');
                 monthLabel.innerHTML = item.textContent;
-            }
+            };
 
-            monthOptions.forEach(option => {
-                option.addEventListener('click', () => monthSelect(option))
-            })
+            monthOptions.forEach((option) => {
+                option.addEventListener('click', () => monthSelect(option));
+            });
 
             monthLabel.addEventListener('click', () => {
-            if(monthLabel.parentNode.classList.contains('active')) {
-                monthLabel.parentNode.classList.remove('active');
-            } else {
-                monthLabel.parentNode.classList.add('active');
-            }
-            })
-    </script>
-  </body>
+                if (monthLabel.parentNode.classList.contains('active')) {
+                    monthLabel.parentNode.classList.remove('active');
+                } else {
+                    monthLabel.parentNode.classList.add('active');
+                }
+            });
+        </script>
+    </body>
 </html>

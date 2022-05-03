@@ -245,7 +245,7 @@ $(function () {
             const gender = $(this).find('span:nth-of-type(3)').text();
             const patientCode = $(this).find('span:nth-of-type(4)').text();
 
-            $(this).parent().parent().find('name_label').text(name);
+            $(this).parent().parent().find('.name_label').text(name);
             $('.pop.new_room_pop .new_room #patient_birthday').val(birthday);
             $('.pop.new_room_pop .new_room #patient_gender').val(gender);
             $('.pop.new_room_pop .new_room #patient_MRN').val(patientCode);
@@ -990,6 +990,13 @@ $(function () {
     // 세션 진행중
     $('.doctor_main .btn_today').on('click', function () {
         $('.doctor .my_plan').hide();
+        $('.doctor .now_section').show();
+        $('.doctor .waiting').show();
+        $('.doctor .schedule_list .row').removeClass('on');
+    });
+
+    $('.remote_main .btn_today').on('click', function () {
+        $('.doctor .remote_alarm').hide();
         $('.doctor .now_section').show();
         $('.doctor .waiting').show();
         $('.doctor .schedule_list .row').removeClass('on');
@@ -1948,7 +1955,7 @@ $(function () {
     });
 
     //  doctor 메인 협진내용 아코디언
-    $('.case').click(function () {
+    $('body').on('click', '.case', function () {
         $(this).next('.case_cont').stop().slideToggle(300);
         $(this).toggleClass('on').siblings().removeClass('on');
         $(this).next('.case_cont').siblings('.case_cont').slideUp(300); // 1개씩 펼치기

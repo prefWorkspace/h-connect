@@ -100,7 +100,10 @@ export async function selectHisDoctor() {
         'API/Doctor/SelectHisDoctorList',
         'POST',
         JSON.stringify(obj),
-        (res) => {},
+        (res) => {
+            console.log('res==');
+            console.log(res);
+        },
         (err) => console.log(err)
     );
 }
@@ -129,4 +132,4 @@ export async function selectHusDoctorMedList() {
     );
 }
 
-// await selectHusDoctorMedList();
+await selectHisDoctor();

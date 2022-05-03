@@ -53,9 +53,9 @@ export function Create_newWard(_wardList) {
         }
     }
 
-    $('.nurse_main .wrap_inner .section.left.ward .container .title').after(
-        data
-    );
+    $(
+        '.nurse_main .wrap_inner .section.left.ward .container .wardList_box'
+    ).html(data);
     _wardclickActive();
     $('.nurse .ward .cont').fadeIn();
 }

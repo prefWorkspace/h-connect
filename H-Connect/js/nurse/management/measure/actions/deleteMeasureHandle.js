@@ -51,6 +51,7 @@ async function deleteMeasurement() {
             'disabled',
             true
         );
+        $('div').remove('.modifi_hospital .device_room .device_Item');
     }
 }
 

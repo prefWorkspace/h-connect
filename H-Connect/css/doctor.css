@@ -42,7 +42,7 @@ p {
     padding: 20px 16px;
     margin-bottom: 32px;
     border-radius: 8px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 
@@ -67,10 +67,18 @@ p {
     display: none;
 }
 
+.doctor .schedule .btn_section.active {
+    display: flex;
+}
+
 .doctor .btn_today {
     background: linear-gradient(to right, #004f60, #350039);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    /* display: none; */
+    display: none;
+}
+
+.doctor .btn_today.active {
+    display: flex;
 }
 
 .doctor .btn_today .img_container {
@@ -1223,11 +1231,19 @@ p {
 
 /* 원격협진알림 */
 .remote_main .schedule .btn_section {
-    display: flex;
+    display: none;
 }
 
 .remote_main .schedule .btn_today {
     display: none;
+}
+
+.remote_main .schedule .btn_section.active {
+    display: flex;
+}
+
+.remote_main .schedule .btn_today.active {
+    display: flex;
 }
 
 .doctor .remote_alarm {
@@ -1384,6 +1400,20 @@ p {
 
 .doctor .now_section .list {
     padding: 16px;
+    max-height: 550px;
+    overflow: hidden auto;
+}
+
+.doctor_monitor .new_patient .ecglist::-webkit-scrollbar,
+.doctor .now_section .list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.doctor_monitor .new_patient .ecglist::-webkit-scrollbar-thumb,
+.doctor .now_section .list::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
 }
 
 .doctor .now_section .list div {
