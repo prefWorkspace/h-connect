@@ -728,31 +728,22 @@
     padding-top: 16px;
     overflow-y: scroll;
 }
+.section.ward .wardList_box {
+    height: 560px;
+    overflow: hidden auto;
+}
 
-.measure_status .container::-webkit-scrollbar {
+.new_device .device_item::-webkit-scrollbar,
+.return_device .device_item::-webkit-scrollbar,
+.measure_status .container::-webkit-scrollbar,
+.section.ward .wardList_box::-webkit-scrollbar {
     width: 8px;
 }
-.new_device .device_item::-webkit-scrollbar {
-    width: 8px;
-}
 
-.return_device .device_item::-webkit-scrollbar {
-    width: 8px;
-}
-
-.measure_status .container::-webkit-scrollbar-thumb {
-    height: 17%;
-    border-radius: 10px;
-    background: #ccc;
-}
-
-.new_device .device_item::-webkit-scrollbar-thumb {
-    height: 17%;
-    border-radius: 10px;
-    background: #ccc;
-}
-
-.return_device .device_item::-webkit-scrollbar-thumb {
+.measure_status .container::-webkit-scrollbar-thumb,
+.new_device .device_item::-webkit-scrollbar-thumb,
+.return_device .device_item::-webkit-scrollbar-thumb,
+.section.ward .wardList_box::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
     background: #ccc;
