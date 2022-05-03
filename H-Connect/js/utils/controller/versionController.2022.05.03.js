@@ -4,7 +4,7 @@ const NOW_URL_PATH = pathCalc();
 
 /**
  * --------------------------------------------------------------
- * @version 2022.01.27, 버전표시
+ * @version 2022.05.03, 버전표시
  * --------------------------------------------------------------
  * 각 폴더와 파일을 오브젝트 형식으로 관리합니다.
  * 폴더명은 확장자가 표시되지 않은 key ex) controller
@@ -17,7 +17,7 @@ const NOW_URL_PATH = pathCalc();
  * @property {file_path} : script에 src로 들어갈 path를 작성합니다.(절대경로 기준)
  * @property {version} : 스크립트가 적용될 버전을 명시해줍니다.
  */
-const VERSION = '2022.04.14.11.33';
+const VERSION = '2022.05.03.16.36';
 const FILE_TREE = {
     lib: {
         d3: {
