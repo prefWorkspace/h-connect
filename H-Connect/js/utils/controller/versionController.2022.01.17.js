@@ -273,15 +273,13 @@ const FILE_TREE = {
                 actions: {
                     'hWorksAPI.js': {
                         type: 'module',
-                        url_path:
-                            '/doctor/index||/doctor/my_remote||/doctor/remote',
+                        url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
                             '/H-Connect/js/doctor/hworks/session/actions/',
                     },
                     'hWorkHandle.js': {
                         type: 'module',
-                        url_path:
-                            '/doctor/index||/doctor/my_remote||/doctor/remote',
+                        url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
                             '/H-Connect/js/doctor/hworks/session/actions/',
                     },
@@ -289,15 +287,13 @@ const FILE_TREE = {
                 renders: {
                     'hWorkRender.js': {
                         type: 'module',
-                        url_path:
-                            '/doctor/index||/doctor/my_remote||/doctor/remote',
+                        url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
                             '/H-Connect/js/doctor/hworks/session/renders/',
                     },
                     'caseInfoListRender.js': {
                         type: 'module',
-                        url_path:
-                            '/doctor/index||/doctor/my_remote||/doctor/remote',
+                        url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
                             '/H-Connect/js/doctor/hworks/session/renders/',
                     },
@@ -305,22 +301,37 @@ const FILE_TREE = {
                 templates: {
                     'sessionListTemplate.js': {
                         type: 'module',
-                        url_path:
-                            '/doctor/index||/doctor/my_remote||/doctor/remote',
+                        url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
                             '/H-Connect/js/doctor/hworks/session/templates/',
                     },
                     'caseInfoListTemplates.js': {
                         type: 'module',
-                        url_path:
-                            '/doctor/index||/doctor/my_remote||/doctor/remote',
+                        url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
                             '/H-Connect/js/doctor/hworks/session/templates/',
                     },
                 },
             },
             mySchedule: {},
-            remoteHworks: {},
+            remoteHworks: {
+                actions: {
+                    'myRemoteAPI.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/actions/',
+                    },
+                    'myRemoteHandle.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/actions/',
+                    },
+                },
+                renders: {},
+                templates: {},
+            },
         },
     },
     nurse: {

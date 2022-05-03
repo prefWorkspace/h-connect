@@ -18,7 +18,7 @@ const { caseInfoListRender, remoteDoctorRender, emergencyTitleRender } =
     );
 
 const { mok } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/actions/mok.js')
+    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
 );
 
 // 세션클릭 이벤트.

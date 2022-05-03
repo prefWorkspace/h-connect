@@ -22,6 +22,7 @@ const {
     id: userId,
 } = JSON.parse(userData);
 
+// 스케쥴 카운트 API
 export async function selectScheduleCount() {
     const obj = {
         ...commonRequest(),
@@ -45,6 +46,7 @@ export async function selectScheduleCount() {
     );
 }
 
+// 세션 리스트 목록 조회 API
 export async function selectRemoteSessionList(counsultChannel = null) {
     const obj = {
         ...commonRequest(),
@@ -69,6 +71,7 @@ export async function selectRemoteSessionList(counsultChannel = null) {
     );
 }
 
+// 실시간협진,소견협진,응급협진 상세 API
 export async function selectRealTimeAndOpinionAndEmergencyConsultView(
     _consultId
 ) {

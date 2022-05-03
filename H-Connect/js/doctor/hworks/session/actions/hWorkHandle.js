@@ -1,3 +1,5 @@
+'use strict';
+
 const { localStorageController } = await import(
     importVersion('/H-Connect/js/utils/controller/localStorageController.js')
 );
@@ -15,7 +17,7 @@ const { hworkSessionList } = await import(
 );
 
 const { mok } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/actions/mok.js')
+    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
 );
 
 // 일정 및 알림 카운트 표시
