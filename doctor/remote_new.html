@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>H-Connect</title>
-  <!--Import-->
-  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/fullcalendar.js'></script>
-  
-  <!--css-->
-  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
-  <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/message.css">
-  <link rel="stylesheet" href="/H-Connect/css/doctor.css">
-  <link rel="stylesheet" href="/H-Connect/css/fullcalendar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H-Connect</title>
+    <!--Import-->
+    <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
+    <!-- <script type='text/javascript' defer src='/H-Connect/js/common.js'></script> -->
+    <!-- <script type='text/javascript' defer src='/H-Connect/js/index.js'></script> -->
+    <script type='text/javascript' defer src='/H-Connect/js/fullcalendar.js'></script>
+    <script type="text/javascript" defer src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"></script>
+
+    <!--css-->
+    <link rel='stylesheet' href='/H-Connect/css/reset.css'>
+    <link rel="stylesheet" href="/H-Connect/css/common.css">
+    <link rel="stylesheet" href="/H-Connect/css/message.css">
+    <link rel="stylesheet" href="/H-Connect/css/doctor.css">
+    <link rel="stylesheet" href="/H-Connect/css/fullcalendar.css">
 
 </head>
-  <body>
+
+<body>
 
     <!-- 연결요청 -->
     <div class="pop connect connect_para connect_doctor">
@@ -52,7 +55,7 @@
                         <div class="layer mic_layer">
                             <p>마이크</p>
                         </div>
-                        
+
                         <div class="toggle_layer mic_off">
                             <img src="/H-Connect/img/icon/mic_off.svg" alt="마이크 끄는 아이콘">
                         </div>
@@ -74,7 +77,7 @@
 
                     <div class="con_btn accept">
                         <button type="button" class="btn_accept">
-                            <img src="/H-Connect/img/icon/call.svg" alt="전화기 아이콘">                        
+                            <img src="/H-Connect/img/icon/call.svg" alt="전화기 아이콘">
                         </button>
 
                         <div class="layer accept_layer">
@@ -93,11 +96,11 @@
                 <div>
                     <img src="/H-Connect/img/logo.png" alt="로고">
                 </div>
-                    
+
                 <h3>신규협진이 생성되지 않았습니다. 모든 설정이 취소됩니다.</h3>
                 <h2>취소 하시겠습니까?</h2>
-    
-        
+
+
                 <div class="btn_list">
                     <button type="button" class="btn gr btn_no">아니요</button>
                     <button type="button" class="btn_cut">네, 취소합니다</button>
@@ -113,11 +116,11 @@
                 <div>
                     <img src="/H-Connect/img/logo.png" alt="로고">
                 </div>
-                    
+
                 <h2>
                     <span>실시간 원격 협진</span> 이 생성 되었습니다.
                 </h2>
-        
+
                 <div class="btn_list">
                     <button type="button" class="btn blf btn_check">확인</button>
                 </div>
@@ -136,13 +139,13 @@
                             <img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
                         </a>
                     </h1>
-        
+
                     <div class="header_title">
                         <h1>원격협진</h1>
                         <h3>원격협진에 참석하고, 새로운 협진을 생성합니다.</h3>
                     </div>
                 </div>
-        
+
                 <div>
                     <div class="btn_list">
                         <button type="button" class="btn_red">
@@ -151,14 +154,14 @@
                             </div>
                             응급호출
                         </button>
-            
+
                         <button type="button" class="btn_logout">
                             김한림 교수님
                         </button>
 
                         <!-- 응급호출이 있을때 보이게 해주세요 -->
                         <div class="red_alarm"></div>
-                    </div>                          
+                    </div>
                 </div>
             </div>
 
@@ -170,7 +173,7 @@
                         <h3>김한림 교수님</h3>
                     </div>
 
-                    <button type="button" class="btn_bye">로그아웃</button>  
+                    <button type="button" class="btn_bye">로그아웃</button>
                 </div>
             </div>
         </header>
@@ -187,7 +190,7 @@
 
                     <li class="gnb_list clinic active">
                         <a class="link" href="remote.html">
-                        원격협진
+                            원격협진
                         </a>
                     </li>
 
@@ -220,7 +223,7 @@
                                 <div class="img_container">
                                     <img src="/H-Connect/img/header/clinic.svg" alt="사람 아이콘">
                                 </div>
-        
+
                                 <h2>신규 협진 생성</h2>
                             </div>
 
@@ -234,7 +237,7 @@
                                 <button type="button" class="btn_creat btn_request" disabled>일정요청</button>
                             </div>
                         </div>
-                        
+
                         <p>새로운 원격협진을 생성하고 의료진에게 요청합니다.</p>
                     </div>
 
@@ -244,415 +247,22 @@
 
                             <div class="selectBox2 surgery_box">
                                 <button class="label surgery_label">협진 종류 선택</button>
-                                
+
                                 <ul class="optionList surgery_list">
                                     <li class="optionItem surgery_option real_time">실시간 원격 협진</li>
                                     <li class="optionItem surgery_option re_opinion">소견 요청 협진</li>
                                     <li class="optionItem surgery_option schedule_re">협진 일정 요청</li>
-                                </ul>                                  
+                                </ul>
                             </div>
                         </div>
+                        <div id="cooperation-section">
 
+                        </div>
                         <!-- 실시간 원격 협진 -->
-                        <div class="surgery_view rt_view">
-                            <div class="type">
-                                <label for="real" class="common_radio">
-                                    <input type="radio" name="remote" id="real" class="radio" checked>
-                                    <span>실시간 원격 협진</span>
-                                </label> 
-                                
-                                <label for="multi" class="common_radio">
-                                    <input type="radio" name="remote" id="multi" class="radio">
-                                    <span>다학제 통합 진료</span>
-                                </label>
-                            </div>
-
-                            <div class="rt_time">
-                                <h2>협진 시간 선택</h2>
-                                
-                                <div class="1123">
-                                    <div class="date">
-                                        <p>협진일자</p>
-     
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>월</p>
-                                        </div>
-
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>일</p>
-                                        </div>
-                                    </div>
-    
-                                    <div class="date_time">
-                                        <div>
-                                            <p>시작시간</p>
-                                            
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-    
-                                        <div>
-                                            <p>종료시간</p>
-                                            
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- 소견 요청 협진 -->
-                        <div class="surgery_view ro_view">
-                            <h2>협진 시간 선택</h2>
-                                
-                                <div>
-                                    <div class="date">
-                                        <div>
-                                            <p>소견요청 협진 시작일</p>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>월</p>
-                                            </div>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>일</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <p>소견요청 협진 마감일</p>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>월</p>
-                                            </div>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>일</p>
-                                            </div>
-                                        </div>                                        
-                                    </div>
-    
-                                    <div class="date_time">
-                                        <div>
-                                            <p>시작시간</p>
-                                            
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-    
-                                        <div>
-                                            <p>마감시간</p>
-                                            
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>시</p>
-                                            </div>
-    
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>분</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
 
                         <!-- 협진 가능시간 선택 -->
-                        <div class="surgery_view t_view">
-                            <h2>일정 요청 마감 일자</h2>
-
-                            <div class="type">
-                                <div class="date">
-                                    <div>
-                                        <p>마감일자</p>
- 
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>월</p>
-                                        </div>
-    
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>일</p>
-                                        </div>
-                                    </div>                                   
-                                </div>
-
-                                <div class="date_time">
-                                    <div>
-                                        <p>마감시간</p>
-                                        
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>시</p>
-                                        </div>
-
-                                        <div class="input_wrap">
-                                            <input type="text" placeholder="00">
-                                            <p>분</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h2>협진 가능시간 선택</h2>
-
-                            <div class="ut_wrap">
-                                <div class="up_box">
-                                    <button type="button" class="btn_delete_time">
-                                        시간삭제
-                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
-                                    </button>
-
-                                    <div class="up_time">
-                                        <div class="date">
-                                            <p>협진일자</p>
-             
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>월</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>일</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="date_time">
-                                            <div>
-                                                <p>시작시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-            
-                                            <div>
-                                                <p>종료시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <!-- 중복시 보여주세요 -->
-                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                                    </div>
-                                </div>
-    
-                                <div class="up_box">
-                                    <button type="button" class="btn_delete_time">
-                                        시간삭제
-                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
-                                    </button>
-                                    
-                                    <div class="up_time">
-                                        <div class="date">
-                                            <p>협진일자</p>
-             
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>월</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>일</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="date_time">
-                                            <div>
-                                                <p>시작시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-            
-                                            <div>
-                                                <p>종료시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <!-- 중복시 보여주세요 -->
-                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                                    </div>
-                                </div>
-    
-                                <div class="up_box">
-                                    <button type="button" class="btn_delete_time">
-                                        시간삭제
-                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
-                                    </button>
-                                    
-                                    <div class="up_time">
-                                        <div class="date">
-                                            <p>협진일자</p>
-             
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>월</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>일</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="date_time">
-                                            <div>
-                                                <p>시작시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-            
-                                            <div>
-                                                <p>종료시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <!-- 중복시 보여주세요 -->
-                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                                    </div>
-                                </div>
-    
-                                <div class="up_box">
-                                    <button type="button" class="btn_delete_time">
-                                        시간삭제
-                                        <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘"/>
-                                    </button>
-                                    
-                                    <div class="up_time">
-                                        <div class="date">
-                                            <p>협진일자</p>
-             
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>월</p>
-                                            </div>
-        
-                                            <div class="input_wrap">
-                                                <input type="text" placeholder="00">
-                                                <p>일</p>
-                                            </div>
-                                        </div>
-            
-                                        <div class="date_time">
-                                            <div>
-                                                <p>시작시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-            
-                                            <div>
-                                                <p>종료시간</p>
-                                                    
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>시</p>
-                                                </div>
-            
-                                                <div class="input_wrap">
-                                                    <input type="text" placeholder="00">
-                                                    <p>분</p>
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <!-- 중복시 보여주세요 -->
-                                        <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                                    </div>
-                                </div>
-
-                                <button type="button" class="btn_tadd">+ 시간추가</button>
-                            </div>                            
-                        </div>
 
                         <!-- 협진 내용 -->
                         <div class="content">
@@ -661,18 +271,18 @@
                             <button class="btn_case_delete">
                                 Case 삭제
                                 <div>
-                                    <img src="/H-Connect/img/icon/delete.svg" alt="케이스삭제 버튼 아이콘"/>
+                                    <img src="/H-Connect/img/icon/delete.svg" alt="케이스삭제 버튼 아이콘" />
                                 </div>
                             </button>
 
-                            <form>                               
+                            <form>
                                 <div class="case">
                                     <p>Case 명.</p>
 
                                     <div class="text_wrap">
                                         <textarea placeholder="case 명을 작성해주세요"></textarea>
                                     </div>
-                                   
+
                                     <!-- <input type="text" placeholder="case 명을 작성해주세요"> -->
                                 </div>
 
@@ -683,12 +293,12 @@
                                     <!-- 2. 검색 결과가 없을시 not_find 클래스를 붙여주세요-->
                                     <div class="search_container">
                                         <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
-                        
+
                                         <button type="button" class="btn_search">
                                             <img src="/H-Connect/img/header/search.svg" alt="검색표시">
                                         </button>
 
-                                         <!-- 환자 검색 -->
+                                        <!-- 환자 검색 -->
                                         <div class="pop remote_search">
                                             <div class="wrap_inner">
                                                 <p>
@@ -730,7 +340,7 @@
                                         </div>
                                     </div>
 
-                                    <span>환자명</span> 
+                                    <span>환자명</span>
                                 </div>
 
                                 <div class="contents">
@@ -749,42 +359,42 @@
                                     <h2>협진 참여자 정보</h2>
                                     <p>참여 요청 인원. <span>0명</span></p>
                                 </div>
-                               
+
                                 <div class="member">
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>다섯 글자자</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
-                                    </div>                                    
+                                    </div>
 
                                     <div class="mem">
                                         <p>다섯글자자</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
-                                    </div>                                    
+                                    </div>
 
                                     <div class="mem">
                                         <p>네 글자자</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
-                                    </div>                                    
+                                    </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
-                                    </div>                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -808,11 +418,11 @@
                             <button type="button" class="btn_week">
                                 <div>
                                     <img src="/H-Connect/img/icon/clock.svg" alt="시계 아이콘">
-                                </div> 
+                                </div>
 
-                                시간표 보기     
+                                시간표 보기
                             </button>
-                        </div>                       
+                        </div>
                     </div>
 
                     <div class="atten_inner">
@@ -832,7 +442,7 @@
                                                 <li class="optionItem year_option">2021 년</li>
                                                 <li class="optionItem year_option">2022 년</li>
                                             </ul>
-                                        </div>                                        
+                                        </div>
                                     </div>
 
                                     <!-- 달 선택 -->
@@ -871,22 +481,42 @@
                                         <button type="button" class="btn_four">4주 보기</button>
                                     </div>
                                 </div>
-                               
+
                                 <!-- <button type="button" class="btn_check">확인</button> -->
                             </div>
 
                             <!-- 시간 time -->
                             <div class="time">
-                                <div><p>09:00</p></div>
-                                <div><p>10:00</p></div>
-                                <div><p>11:00</p></div>
-                                <div><p>12:00</p></div>
-                                <div><p>13:00</p></div>
-                                <div><p>14:00</p></div>
-                                <div><p>15:00</p></div>
-                                <div><p>16:00</p></div>
-                                <div><p>17:00</p></div>
-                                <div><p>18:00</p></div>
+                                <div>
+                                    <p>09:00</p>
+                                </div>
+                                <div>
+                                    <p>10:00</p>
+                                </div>
+                                <div>
+                                    <p>11:00</p>
+                                </div>
+                                <div>
+                                    <p>12:00</p>
+                                </div>
+                                <div>
+                                    <p>13:00</p>
+                                </div>
+                                <div>
+                                    <p>14:00</p>
+                                </div>
+                                <div>
+                                    <p>15:00</p>
+                                </div>
+                                <div>
+                                    <p>16:00</p>
+                                </div>
+                                <div>
+                                    <p>17:00</p>
+                                </div>
+                                <div>
+                                    <p>18:00</p>
+                                </div>
                             </div>
 
                             <div class="inner">
@@ -908,13 +538,13 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>16  화 </p>
+                                        <p>16 화 </p>
                                     </div>
 
                                     <!-- 외래진료 -->
                                     <div class="plan ambul">
                                         <p>외래진료</p>
-                                    </div>  
+                                    </div>
 
                                     <!-- 협진요청 -->
                                     <div class="plan start">
@@ -924,7 +554,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>17  수</p>
+                                        <p>17 수</p>
                                     </div>
 
                                     <!-- 휴가 -->
@@ -935,7 +565,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>18  목</p>
+                                        <p>18 목</p>
                                     </div>
 
                                     <!-- 협진요청 -->
@@ -951,23 +581,23 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>19  금</p>
+                                        <p>19 금</p>
                                     </div>
-                                    
+
                                     <div class="plan holiday">
                                         <p>휴가</p>
-                                    </div>
-                                </div>
-                                    
-                                <div class="day weekend">
-                                    <div class="title">
-                                        <p>20  토</p>
                                     </div>
                                 </div>
 
                                 <div class="day weekend">
                                     <div class="title">
-                                        <p>21  일</p>
+                                        <p>20 토</p>
+                                    </div>
+                                </div>
+
+                                <div class="day weekend">
+                                    <div class="title">
+                                        <p>21 일</p>
                                     </div>
                                 </div>
 
@@ -975,7 +605,7 @@
                                     <div class="title">
                                         <p>15 월 </p>
                                     </div>
-                                  
+
                                     <div class="plan new create_op start">
                                         <p>소견요청<br>시작</p>
                                     </div>
@@ -986,7 +616,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>16  화 </p>
+                                        <p>16 화 </p>
                                     </div>
 
                                     <div class="plan new create_start">
@@ -999,7 +629,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>17  수</p>
+                                        <p>17 수</p>
                                     </div>
 
                                     <!-- 시작과 끝을 누르면 보이게 해주세요/H-Connect. /H-Connect. -->
@@ -1008,7 +638,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>18  목</p>
+                                        <p>18 목</p>
                                     </div>
 
                                     <!-- 시작과 끝을 누르면 보이게 해주세요/H-Connect. /H-Connect. -->
@@ -1017,7 +647,7 @@
 
                                 <div class="day">
                                     <div class="title">
-                                        <p>19  금</p>
+                                        <p>19 금</p>
                                     </div>
 
                                     <div class="plan new create_op end">
@@ -1027,16 +657,16 @@
                                     <!-- 시작과 끝을 누르면 보이게 해주세요/H-Connect. /H-Connect. -->
                                     <div class="plan new create_op line"></div>
                                 </div>
-                                    
+
                                 <div class="day weekend">
                                     <div class="title">
-                                        <p>20  토</p>
+                                        <p>20 토</p>
                                     </div>
                                 </div>
 
                                 <div class="day weekend">
                                     <div class="title">
-                                        <p>21  일</p>
+                                        <p>21 일</p>
                                     </div>
                                 </div>
 
@@ -1048,87 +678,87 @@
                                                 <p>15 월 </p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day">
                                             <div class="title">
-                                                <p>16  화 </p>
-                                            </div>                        
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>17  수</p>
+                                                <p>16 화 </p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day">
                                             <div class="title">
-                                                <p>18  목</p>
+                                                <p>17 수</p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day">
                                             <div class="title">
-                                                <p>19  금</p>
+                                                <p>18 목</p>
                                             </div>
                                         </div>
-            
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>19 금</p>
+                                            </div>
+                                        </div>
+
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>20  토</p>
+                                                <p>20 토</p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>21  일</p>
+                                                <p>21 일</p>
                                             </div>
-                                        </div>   
-                                        
+                                        </div>
+
                                         <div class="day">
                                             <div class="title">
                                                 <p>15 월 </p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day">
                                             <div class="title">
-                                                <p>16  화 </p>
-                                            </div>                            
-                                        </div>
-            
-                                        <div class="day">
-                                            <div class="title">
-                                                <p>17  수</p>
+                                                <p>16 화 </p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day">
                                             <div class="title">
-                                                <p>18  목</p>
+                                                <p>17 수</p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day">
                                             <div class="title">
-                                                <p>19  금</p>
+                                                <p>18 목</p>
                                             </div>
                                         </div>
-            
+
+                                        <div class="day">
+                                            <div class="title">
+                                                <p>19 금</p>
+                                            </div>
+                                        </div>
+
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>20  토</p>
+                                                <p>20 토</p>
                                             </div>
                                         </div>
-            
+
                                         <div class="day weekend">
                                             <div class="title">
-                                                <p>21  일</p>
+                                                <p>21 일</p>
                                             </div>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
 
                         <!-- 의료진 선택 -->
@@ -1147,42 +777,42 @@
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
                                     </div>
 
                                     <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘"/>
+                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
                                     </div>
                                 </div>
@@ -1191,7 +821,7 @@
                                 <!-- 2. 검색 결과가 없을시 not_find 클래스를 붙여주세요-->
                                 <div class="search_container">
                                     <input type="text" placeholder="환자명 혹은 환자번호를 입력해주세요.">
-                    
+
                                     <button type="button" class="btn_search">
                                         <img src="/H-Connect/img/header/search.svg" alt="검색표시">
                                     </button>
@@ -1202,119 +832,124 @@
                                 <!-- 즐겨찾기 -->
                                 <div class="favorite_list">
                                     <h2>즐겨찾기</h2>
-            
+
                                     <div>
                                         <div class="group">
                                             <div>
                                                 <div class="group_list on">
                                                     <p>외과그룹</p>
                                                 </div>
-            
+
                                                 <div class="group_list">
                                                     <p>세글자</p>
                                                 </div>
-            
+
                                                 <div class="group_list">
                                                     <p>3글자</p>
                                                 </div>
-            
+
                                                 <button type="button" class="btn_next">
                                                     <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표">
                                                 </button>
                                             </div>
-            
+
                                             <button type="button" class="btn_add">+ 추가</button>
                                         </div>
-            
-                                        <div class="group_container">        
+
+                                        <div class="group_container">
                                             <div>
                                                 <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check2" class="green_custom">
+                                                    <input type="checkbox" name="doctor" id="check2"
+                                                        class="green_custom">
                                                     <label for="check2"></label>
                                                     <label for="check2">
                                                         <span>강수술 교수님</span>
                                                         <span>일반외과</span>
-                                                    </label>                                        
+                                                    </label>
                                                 </div>
-                                            
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="favorite2" checked>
                                                     <label for="favorite2"></label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check3" class="green_custom">
+                                                    <input type="checkbox" name="doctor" id="check3"
+                                                        class="green_custom">
                                                     <label for="check3"></label>
                                                     <label for="check3">
                                                         <span>김협진 교수님</span>
                                                         <span>일반외과</span>
-                                                    </label>                                        
+                                                    </label>
                                                 </div>
-        
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="favorite3" checked>
                                                     <label for="favorite3"></label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check4" class="green_custom">
+                                                    <input type="checkbox" name="doctor" id="check4"
+                                                        class="green_custom">
                                                     <label for="check4"></label>
                                                     <label for="check4">
                                                         <span>김흉부 교수님</span>
                                                         <span>일반외과</span>
-                                                    </label>                                        
+                                                    </label>
                                                 </div>
-        
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="favorite4" checked>
                                                     <label for="favorite4"></label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check5" class="green_custom">
+                                                    <input type="checkbox" name="doctor" id="check5"
+                                                        class="green_custom">
                                                     <label for="check5"></label>
                                                     <label for="check5">
                                                         <span>박골절 교수님</span>
                                                         <span>일반외과</span>
-                                                    </label>                                        
+                                                    </label>
                                                 </div>
-        
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="favorite5" checked>
                                                     <label for="favorite5"></label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check6" class="green_custom">
+                                                    <input type="checkbox" name="doctor" id="check6"
+                                                        class="green_custom">
                                                     <label for="check6"></label>
                                                     <label for="check6">
                                                         <span>김두통 교수님</span>
                                                         <span>일반외과</span>
-                                                    </label>                                        
+                                                    </label>
                                                 </div>
-        
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="favorite6" checked>
                                                     <label for="favorite6"></label>
-                                                </div>  
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-            
+
                                 <!-- 의료진선택 -->
                                 <div class="select_doctor">
                                     <h2>의료진 선택</h2>
-            
+
                                     <div class="doctor_list">
                                         <div class="list_inner">
                                             <div>
@@ -1323,218 +958,218 @@
                                                     <label for="list_check"></label>
                                                     <label for="list_check">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite">
                                                     <label for="list_favorite">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check2" class="green_custom">
                                                     <label for="list_check2"></label>
                                                     <label for="list_check2">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite2">
                                                     <label for="list_favorite2">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check3" class="green_custom">
                                                     <label for="list_check3"></label>
                                                     <label for="list_check3">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite3">
                                                     <label for="list_favorite3">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check4" class="green_custom">
                                                     <label for="list_check4"></label>
                                                     <label for="list_check4">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite4">
                                                     <label for="list_favorite4">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check5" class="green_custom">
                                                     <label for="list_check5"></label>
                                                     <label for="list_check5">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite5">
                                                     <label for="list_favorite5">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check6" class="green_custom">
                                                     <label for="list_check6"></label>
                                                     <label for="list_check6">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite6">
                                                     <label for="list_favorite6">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check7" class="green_custom">
                                                     <label for="list_check7"></label>
                                                     <label for="list_check7">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite7">
                                                     <label for="list_favorite7">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check8" class="green_custom">
                                                     <label for="list_check8"></label>
                                                     <label for="list_check8">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite8">
                                                     <label for="list_favorite8">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check9" class="green_custom">
                                                     <label for="list_check9"></label>
                                                     <label for="list_check9">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite9">
                                                     <label for="list_favorite9">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check10" class="green_custom">
                                                     <label for="list_check10"></label>
                                                     <label for="list_check10">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite10">
                                                     <label for="list_favorite10">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
-        
+
                                             <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check11" class="green_custom">
                                                     <label for="list_check11"></label>
                                                     <label for="list_check11">
                                                         <span>강수술 교수님</span>
-        
+
                                                         <span>일반외과</span>
                                                     </label>
                                                 </div>
-                                                
-        
+
+
                                                 <div class="favorite_container">
                                                     <input type="checkbox" id="list_favorite11">
                                                     <label for="list_favorite11">
                                                         <span></span>
                                                     </label>
-                                                </div>  
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1550,7 +1185,7 @@
     <!--// end wrap-->
     <script>
         // fullcalendar library
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
@@ -1559,25 +1194,27 @@
                 // locale: "ko",
                 selectable: true,
 
-                header:{
+                header: {
                     center: 'title',
                     left: 'prev',
                     right: 'next today'
                 },
-                titleFormat: function(date){
+                titleFormat: function (date) {
                     return date.date.year + "." + (date.date.month + 1) + "월";
-                },          
-                events:[{
+                },
+                events: [{
                     title: '협진시작',
                     start: '2021-12-10T10:00:00',
                     constraint: 'businessHours'
                 },
-                { title: '협진시작',
+                {
+                    title: '협진시작',
                     start: '2021-12-15T10:00:00',
                     constraint: 'businessHours'
                 },
 
-                { title: '협진시작',
+                {
+                    title: '협진시작',
                     start: '2021-12-16T10:00:00',
                     constraint: 'businessHours'
                 },
@@ -1587,74 +1224,75 @@
         });
 
         //   협진 종류 선택
-            const surgeryLabel = document.querySelector('.surgery_label');
-            const surgeryOptions = document.querySelectorAll('.surgery_option');
+        const surgeryLabel = document.querySelector('.surgery_label');
+        const surgeryOptions = document.querySelectorAll('.surgery_option');
 
-            const surgerySelect = (item) => {
-                surgeryLabel.parentNode.classList.remove('active');
-                surgeryLabel.innerHTML = item.textContent;
-            }
+        const surgerySelect = (item) => {
+            surgeryLabel.parentNode.classList.remove('active');
+            surgeryLabel.innerHTML = item.textContent;
+        }
 
-            surgeryOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    surgerySelect(option);
-                    reset(surgeryOptions, 'active');
-                    option.classList.add('active');
-                });
-            })
+        surgeryOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                surgerySelect(option);
+                reset(surgeryOptions, 'active');
+                option.classList.add('active');
+            });
+        })
 
-            surgeryLabel.addEventListener('click', () => {
-                surgeryLabel.parentNode.classList.toggle('active');
-            })
+        surgeryLabel.addEventListener('click', () => {
+            surgeryLabel.parentNode.classList.toggle('active');
+        })
 
         //   년도 선택
-            const yearLabel = document.querySelector('.year_label');
-            const yearOptions = document.querySelectorAll('.year_option');
+        const yearLabel = document.querySelector('.year_label');
+        const yearOptions = document.querySelectorAll('.year_option');
 
-            const yearSelect = (item) => {
-                yearLabel.parentNode.classList.remove('active');
-                yearLabel.innerHTML = item.textContent;
-            }
+        const yearSelect = (item) => {
+            yearLabel.parentNode.classList.remove('active');
+            yearLabel.innerHTML = item.textContent;
+        }
 
-            yearOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    yearSelect(option);
-                    reset(yearOptions, 'active');
-                    option.classList.add('active');
-                });
-            })
+        yearOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                yearSelect(option);
+                reset(yearOptions, 'active');
+                option.classList.add('active');
+            });
+        })
 
-            yearLabel.addEventListener('click', () => {
-                yearLabel.parentNode.classList.toggle('active');
-            })
+        yearLabel.addEventListener('click', () => {
+            yearLabel.parentNode.classList.toggle('active');
+        })
 
         // 월 선택
-            const monthLabel = document.querySelector('.month_label');
-            const monthOptions = document.querySelectorAll('.month_option');
+        const monthLabel = document.querySelector('.month_label');
+        const monthOptions = document.querySelectorAll('.month_option');
 
-            const monthSelect = (item) => {
-                monthLabel.parentNode.classList.remove('active');
-                monthLabel.innerHTML = item.textContent;
-            }
+        const monthSelect = (item) => {
+            monthLabel.parentNode.classList.remove('active');
+            monthLabel.innerHTML = item.textContent;
+        }
 
-            monthOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    monthSelect(option);
-                    reset(monthOptions, 'active');
-                    option.classList.add('active');
-                });
-            })
+        monthOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                monthSelect(option);
+                reset(monthOptions, 'active');
+                option.classList.add('active');
+            });
+        })
 
-            monthLabel.addEventListener('click', () => {
-                monthLabel.parentNode.classList.toggle('active');
-            })
+        monthLabel.addEventListener('click', () => {
+            monthLabel.parentNode.classList.toggle('active');
+        })
 
-            // reset
-            function reset(content, className) {
-                Array.from(content).forEach((element) => {
-                    element.classList.remove(className);
-                });
-            }
+        // reset
+        function reset(content, className) {
+            Array.from(content).forEach((element) => {
+                element.classList.remove(className);
+            });
+        }
     </script>
-  </body>
+</body>
+
 </html>

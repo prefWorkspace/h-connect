@@ -253,6 +253,51 @@ const FILE_TREE = {
                 file_path: '/H-Connect/js/doctor/monitoring/',
             },
         },
+        remote: {
+            index: {
+                actions: {},
+                renders: {},
+                templates: {},
+            },
+            remoteNew: {
+                actions: {
+                    'cooperationSectionActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
+                },
+                renders: {
+                    'cooperationSectionRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                    },
+                },
+                templates: {
+                    'cooperationSectionsTmpl.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/templates/',
+                    },
+                },
+            },
+            common: {
+                actions: {
+                    'calendarActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/common/actions/',
+                    },
+                },
+                renders: {},
+                templates: {},
+            },
+        },
     },
     nurse: {
         common: {

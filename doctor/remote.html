@@ -11,6 +11,7 @@
     <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
     <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
     <script type='text/javascript' defer src='/H-Connect/js/fullcalendar.js'></script>
+    <!-- <script type="text/javascript" defer src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"></script> -->
 
     <!--css-->
     <link rel='stylesheet' href='/H-Connect/css/reset.css'>
@@ -529,7 +530,7 @@
                                 <div class="day">
                                     <div class="title">
                                         <p>16 화 </p>
-                                    </div>                            
+                                    </div>
                                 </div>
 
                                 <div class="day">
@@ -574,7 +575,7 @@
                                         <div class="day">
                                             <div class="title">
                                                 <p>16 화</p>
-                                            </div>                         
+                                            </div>
                                         </div>
 
                                         <div class="day">
@@ -616,7 +617,7 @@
                                         <div class="day">
                                             <div class="title">
                                                 <p>16 화 </p>
-                                            </div>                           
+                                            </div>
                                         </div>
 
                                         <div class="day">
@@ -2428,21 +2429,21 @@
                     return date.date.year + "년" + " " + (date.date.month + 1) + "월";
                 },
                 events: [{
-                        title: '원격협진',
-                        start: '2021-12-10T10:00:00',
-                        constraint: 'businessHours'
-                    },
-                    {
-                        title: '원격협진',
-                        start: '2021-12-15T10:00:00',
-                        constraint: 'businessHours'
-                    },
+                    title: '원격협진',
+                    start: '2021-12-10T10:00:00',
+                    constraint: 'businessHours'
+                },
+                {
+                    title: '원격협진',
+                    start: '2021-12-15T10:00:00',
+                    constraint: 'businessHours'
+                },
 
-                    {
-                        title: '원격협진',
-                        start: '2021-12-16T10:00:00',
-                        constraint: 'businessHours'
-                    },
+                {
+                    title: '원격협진',
+                    start: '2021-12-16T10:00:00',
+                    constraint: 'businessHours'
+                },
                 ]
             });
             calendar.render();
