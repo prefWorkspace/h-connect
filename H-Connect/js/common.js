@@ -991,15 +991,29 @@ $(function () {
     $('.doctor_main .btn_today').on('click', function () {
         $('.doctor .my_plan').hide();
         $('.doctor .now_section').show();
-        $('.doctor .waiting').show();
+        // $('.doctor .waiting').show();
         $('.doctor .schedule_list .row').removeClass('on');
+        $('.now_section .list .row').each((index, value) => {
+            if (index === 0) {
+                $(value).addClass('on');
+                const consultchannel = $(value).data('consultchannel');
+                $(`#consultChannel${consultchannel}`).show();
+            }
+        });
     });
 
     $('.remote_main .btn_today').on('click', function () {
         $('.doctor .remote_alarm').hide();
         $('.doctor .now_section').show();
-        $('.doctor .waiting').show();
+        // $('.doctor .waiting').show();
         $('.doctor .schedule_list .row').removeClass('on');
+        $('.now_section .list .row').each((index, value) => {
+            if (index === 0) {
+                $(value).addClass('on');
+                const consultchannel = $(value).data('consultchannel');
+                $(`#consultChannel${consultchannel}`).show();
+            }
+        });
     });
 
     // 선별진료실 리스트

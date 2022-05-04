@@ -374,8 +374,34 @@ const FILE_TREE = {
                             '/H-Connect/js/doctor/hworks/remoteHworks/actions/',
                     },
                 },
-                renders: {},
-                templates: {},
+                renders: {
+                    'myRemoteRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/',
+                    },
+                    'noCheckConsultRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/',
+                    },
+                },
+                templates: {
+                    'myRemoteTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/',
+                    },
+                    'noCheckConsultTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/',
+                    },
+                },
             },
         },
     },

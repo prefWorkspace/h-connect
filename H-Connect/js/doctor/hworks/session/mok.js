@@ -174,7 +174,7 @@ export const mok = [
     },
 ];
 
-export const consultAlarmList = [
+export const fakeConsultAlarmList = [
     {
         consultId: 'test2_2022-03-08T10:12:39.454',
         name: '내가보냄',
@@ -223,6 +223,7 @@ export const consultAlarmList = [
         consultConfirm: 'N',
         isentState: 0,
         replyCount: 1,
+        replyState: 'N',
         unconfirmedReplyCount: 1,
         memberInfoList: [
             {
@@ -250,5 +251,35 @@ export const consultAlarmList = [
                 remoteState: 'N',
             },
         ],
+    },
+];
+
+export const fakeOpinionConsultList = [
+    {
+        consultId: 'test2_2022-03-24T15:40:10.969',
+        orderNo: 1,
+        caseTitle: '김입원 환자의 대장암 수술 이후',
+        caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+        replyCount: 0,
+        startDatetime: '2022-03-10 00:00:00',
+        endDatetime: '2022-03-10 18:00:00',
+    },
+    {
+        consultId: 'ryan_2022-04-07T10:12:41.435',
+        orderNo: 1,
+        caseTitle: '김입원 환자의 대장암 수술 이후',
+        caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+        replyCount: 0,
+        startDatetime: '2022-04-15 00:00:00',
+        endDatetime: '2022-04-15 13:50:00',
+    },
+    {
+        consultId: 'test1_2022-03-28T13:14:52.086',
+        orderNo: 1,
+        caseTitle: '김입원 환자의 대장암 수술 이후',
+        caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+        replyCount: 0,
+        startDatetime: '2022-03-28 00:00:00',
+        endDatetime: '2022-03-28 19:50:00',
     },
 ];

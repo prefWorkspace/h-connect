@@ -1,6 +1,9 @@
 'use strict';
 
-const { selectRealTimeAndOpinionAndEmergencyConsultView } = await import(
+const {
+    selectRealTimeAndOpinionAndEmergencyConsultView,
+    selectScreeniungClinicView,
+} = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/actions/hWorksAPI.js')
 );
 
@@ -24,14 +27,16 @@ const { mok } = await import(
 // 세션클릭 이벤트.
 async function hworkListClick() {
     const consultId = $(this).data('consultid');
-    const reservationCode = $(this).data('reservationcode');
     const consultChannel = $(this).data('consultchannel');
+    const reservationCode = $(this).data('reservationcode');
+    const patientCode = $(this).data('patientcode');
 
     $('.now_section .list .row').removeClass('on');
     $(this).addClass('on');
     $('.section.right').hide();
     $(`#consultChannel${consultChannel}`).show();
 
+    // 소견협진요청, 실시간협진요청, 응급협진요청
     if (consultChannel === 3 || consultChannel === 2 || consultChannel === 5) {
         const { result, list } =
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
@@ -55,15 +60,24 @@ async function hworkListClick() {
         }
     }
 
+    // 선별진료
     if (consultChannel === 4) {
-        // api Doctor/SelectScreeniungClinicView 사용 하는 구간
+        const { result, list } = await selectScreeniungClinicView(
+            reservationCode,
+            patientCode
+        );
+
+        if (result) {
+            // 나중에 렌더링 처림
+        }
     }
 }
 
 // session List UI에 뿌리기
 export function hworkSessionList(_data) {
     let html = '';
-
+    console.log('_data==');
+    console.log(_data);
     if (_data.length === 0) {
         return;
     }
