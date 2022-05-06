@@ -1326,9 +1326,19 @@ $(function () {
     });
 
     // remote_alarm
-    $('.remote_request .list .row').on('click', function () {
+    $('body').on('click', '.remote_request .list .row', function () {
         $(this).addClass('on');
         $('.remote_request .list .row').not(this).removeClass('on');
+        const isentState = $(this).data('isentstate');
+        const consultConfirm = $(this).data('consultconfirm');
+        $('.section.right').hide();
+        $(`#isentstate${isentState}`).show();
+
+        // 수신받은 알림중에 회산하지 않음과 회신완료에 따른 분기처리
+        if (isentState === 0) {
+            const text = consultConfirm === 'Y' ? '회신완료' : '회신하기';
+            $('.section.ask_request .btn_reply').text(text);
+        }
     });
 
     // 4주보기
