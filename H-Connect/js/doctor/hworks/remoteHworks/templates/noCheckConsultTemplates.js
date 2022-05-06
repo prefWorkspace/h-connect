@@ -1,7 +1,7 @@
 'use strict';
 
 export function noCheckConsultTemplates(_data) {
-    const { orderNo, caseTitle } = _data;
+    const { orderNo, caseTitle, replyCount, endDatetime } = _data;
 
     return `
         <div
@@ -10,8 +10,8 @@ export function noCheckConsultTemplates(_data) {
         >
             <div>
                 <p class="time">
-                    <span>21.09.15</span>&nbsp;
-                    <span>18:00</span> 까지
+                    <span>${moment(endDatetime).format('YY.MM.DD')}</span>&nbsp;
+                    <span>${moment(endDatetime).format('HH:mm')}</span> 까지
                 </p>
 
                 <p class="case">Case ${orderNo}.</p>
@@ -22,12 +22,8 @@ export function noCheckConsultTemplates(_data) {
             </div>
 
             <p class="count">
-                <span>4</span> 개의 소견
+                <span>${replyCount}</span> 개의 소견
             </p>
         </div>
     `;
-}
-
-export function errorText() {
-    return `<p class="error_text">조회된 데이타가 없습니다</p>`;
 }

@@ -20,6 +20,10 @@ const { caseInfoListRender, remoteDoctorRender, emergencyTitleRender } =
         )
     );
 
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/errorText/errorText.js')
+);
+
 const { mok } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
 );
@@ -76,9 +80,9 @@ async function hworkListClick() {
 // session List UI에 뿌리기
 export function hworkSessionList(_data) {
     let html = '';
-    console.log('_data==');
-    console.log(_data);
     if (_data.length === 0) {
+        html = errorText();
+        $('.now_section .list').html(html);
         return;
     }
 

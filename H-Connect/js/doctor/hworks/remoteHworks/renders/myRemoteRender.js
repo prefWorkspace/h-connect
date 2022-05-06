@@ -1,11 +1,15 @@
 'use strict';
 
-const { isentRemoteAlarmTemplates, isentNotRemoteAlarmTemplates, errorText } =
+const { isentRemoteAlarmTemplates, isentNotRemoteAlarmTemplates } =
     await import(
         importVersion(
             '/H-Connect/js/doctor/hworks/remoteHworks/templates/myRemoteTemplates.js'
         )
     );
+
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/errorText/errorText.js')
+);
 
 export function remoteAlarmRender(list) {
     let html = '';

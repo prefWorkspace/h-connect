@@ -1,9 +1,13 @@
 'use strict';
 
-const { noCheckConsultTemplates, errorText } = await import(
+const { noCheckConsultTemplates } = await import(
     importVersion(
         '/H-Connect/js/doctor/hworks/remoteHworks/templates/noCheckConsultTemplates.js'
     )
+);
+
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/errorText/errorText.js')
 );
 
 export function noCheckConsultReder(list) {
