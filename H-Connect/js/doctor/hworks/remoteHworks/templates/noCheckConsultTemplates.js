@@ -1,12 +1,12 @@
 'use strict';
 
 export function noCheckConsultTemplates(_data) {
-    const { orderNo, caseTitle, replyCount, endDatetime } = _data;
+    const { consultId, orderNo, caseTitle, replyCount, endDatetime } = _data;
 
     return `
         <div
             class="row"
-            onclick="location.href='remote_check.html'"
+            onclick="location.href='remote_check.html?consultId=${consultId}'"
         >
             <div>
                 <p class="time">

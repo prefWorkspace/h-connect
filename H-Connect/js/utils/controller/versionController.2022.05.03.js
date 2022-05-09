@@ -309,7 +309,15 @@ const FILE_TREE = {
                             '/H-Connect/js/doctor/remote/common/actions/',
                     },
                 },
-                renders: {},
+                renders: {
+                    'countRender.js': {
+                        type: 'module',
+                        url_path:
+                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/common/renders/',
+                    },
+                },
                 templates: {},
             },
             remoteAlarm: {
@@ -335,6 +343,38 @@ const FILE_TREE = {
                         url_path: '/doctor/remote_alarm',
                         file_path:
                             '/H-Connect/js/doctor/remote/remoteAlarm/templates/',
+                    },
+                },
+            },
+            opinion: {
+                renders: {
+                    'opinionRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/renders/',
+                    },
+                },
+                actions: {
+                    'opinionHandle.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/actions/',
+                    },
+                },
+                templates: {
+                    'opinionTemplate.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/templates/',
+                    },
+                    'opinionDetailTemplate.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/templates/',
                     },
                 },
             },

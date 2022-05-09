@@ -4177,6 +4177,24 @@ p {
     color: #007a94;
 }
 
+.remote_request .wr,
+.remote_request .opinoin_list {
+    height: 550px;
+    overflow: scroll auto;
+}
+
+.remote_request .wr::-webkit-scrollbar,
+.remote_request .opinoin_list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.remote_request .wr::-webkit-scrollbar-thumb,
+.remote_request .opinoin_list::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
+}
+
 .remote_request .list .row {
     padding: 16px;
     border-radius: 4px;
@@ -5256,4 +5274,4 @@ p {
 .attendee .create_op.line {
     display: none;
     z-index: 1;
-}
+

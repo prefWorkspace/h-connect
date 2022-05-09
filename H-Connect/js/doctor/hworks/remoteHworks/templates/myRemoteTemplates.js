@@ -2,12 +2,18 @@
 
 // 내가 보냄 일정 요청
 export function isentRemoteAlarmTemplates(_data) {
-    const { deadlineDatetime, replyCount, unconfirmedReplyCount, name } = _data;
+    const {
+        consultId,
+        deadlineDatetime,
+        replyCount,
+        unconfirmedReplyCount,
+        name,
+    } = _data;
 
     return `
         <div
             class="row"
-            onclick="location.href='remote_alarm.html'"
+            onclick="location.href='remote_alarm.html?consultId=${consultId}'"
         >
             <p class="time">
                 <span>${moment(deadlineDatetime).format(
@@ -32,12 +38,12 @@ export function isentRemoteAlarmTemplates(_data) {
 
 // 수신받은 일정요청
 export function isentNotRemoteAlarmTemplates(_data) {
-    const { deadlineDatetime, replyState, name } = _data;
+    const { deadlineDatetime, replyState, name, consultId } = _data;
 
     return `
         <div
         class="row"
-        onclick="location.href='remote_alarm.html'"
+        onclick="location.href='remote_alarm.html?consultId=${consultId}'"
         >
             <p class="time">
                 <span>${moment(deadlineDatetime).format(
