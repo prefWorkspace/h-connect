@@ -72,7 +72,8 @@ export const serverController = {
             contentType: 'application/json;charset=UTF-8',
             success: function (data) {
                 if (data.error === 241) {
-                    history.linkTo('/index.html');
+                    session_renew(data);
+                    // history.linkTo('/index.html');
                     return alert('세션이 만료되었습니다');
                 }
                 if (callBack) callBack(data);
@@ -87,7 +88,7 @@ export const serverController = {
     },
 };
 
-export const session_renew = (res) => {
+export async function session_renew(res) {
     if (res.message !== 'session_renew') return;
 
     const req = JSON.stringify({
@@ -113,4 +114,4 @@ export const session_renew = (res) => {
             console.log(err);
         }
     );
-};
+}

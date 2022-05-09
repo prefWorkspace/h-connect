@@ -991,15 +991,29 @@ $(function () {
     $('.doctor_main .btn_today').on('click', function () {
         $('.doctor .my_plan').hide();
         $('.doctor .now_section').show();
-        $('.doctor .waiting').show();
+        // $('.doctor .waiting').show();
         $('.doctor .schedule_list .row').removeClass('on');
+        $('.now_section .list .row').each((index, value) => {
+            if (index === 0) {
+                $(value).addClass('on');
+                const consultchannel = $(value).data('consultchannel');
+                $(`#consultChannel${consultchannel}`).show();
+            }
+        });
     });
 
     $('.remote_main .btn_today').on('click', function () {
         $('.doctor .remote_alarm').hide();
         $('.doctor .now_section').show();
-        $('.doctor .waiting').show();
+        // $('.doctor .waiting').show();
         $('.doctor .schedule_list .row').removeClass('on');
+        $('.now_section .list .row').each((index, value) => {
+            if (index === 0) {
+                $(value).addClass('on');
+                const consultchannel = $(value).data('consultchannel');
+                $(`#consultChannel${consultchannel}`).show();
+            }
+        });
     });
 
     // 선별진료실 리스트
@@ -1312,9 +1326,25 @@ $(function () {
     });
 
     // remote_alarm
-    $('.remote_request .list .row').on('click', function () {
+    $('body').on('click', '.remote_request .list .row', function () {
         $(this).addClass('on');
         $('.remote_request .list .row').not(this).removeClass('on');
+        const {
+            location: { pathname },
+        } = window;
+
+        if (pathname.indexOf('remote_alarm.html') !== -1) {
+            const isentState = $(this).data('isentstate');
+            const consultConfirm = $(this).data('consultconfirm');
+            $('.section.right').hide();
+            $(`#isentstate${isentState}`).show();
+
+            // 수신받은 알림중에 회산하지 않음과 회신완료에 따른 분기처리
+            if (isentState === 0) {
+                const text = consultConfirm === 'Y' ? '회신완료' : '회신하기';
+                $('.section.ask_request .btn_reply').text(text);
+            }
+        }
     });
 
     // 4주보기

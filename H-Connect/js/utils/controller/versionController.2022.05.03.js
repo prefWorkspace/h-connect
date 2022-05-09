@@ -43,12 +43,12 @@ const FILE_TREE = {
                 'sockjs-1.5.0.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/socket/',
+                    file_path: '/H-Connect/js/lib/socket/library/',
                 },
                 'stomp-1.7.1.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/socket/',
+                    file_path: '/H-Connect/js/lib/socket/library/',
                 },
             },
         },
@@ -309,8 +309,74 @@ const FILE_TREE = {
                             '/H-Connect/js/doctor/remote/common/actions/',
                     },
                 },
-                renders: {},
+                renders: {
+                    'countRender.js': {
+                        type: 'module',
+                        url_path:
+                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/common/renders/',
+                    },
+                },
                 templates: {},
+            },
+            remoteAlarm: {
+                actions: {
+                    'remoteAlarmHandle.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_alarm',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteAlarm/actions/',
+                    },
+                },
+                renders: {
+                    'remoteAlarmRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_alarm',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteAlarm/renders/',
+                    },
+                },
+                templates: {
+                    'remoteAlarmTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_alarm',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteAlarm/templates/',
+                    },
+                },
+            },
+            opinion: {
+                renders: {
+                    'opinionRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/renders/',
+                    },
+                },
+                actions: {
+                    'opinionHandle.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/actions/',
+                    },
+                },
+                templates: {
+                    'opinionTemplate.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/templates/',
+                    },
+                    'opinionDetailTemplate.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/opinion/templates/',
+                    },
+                },
             },
         },
         hworks: {
@@ -374,8 +440,34 @@ const FILE_TREE = {
                             '/H-Connect/js/doctor/hworks/remoteHworks/actions/',
                     },
                 },
-                renders: {},
-                templates: {},
+                renders: {
+                    'myRemoteRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/',
+                    },
+                    'noCheckConsultRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/',
+                    },
+                },
+                templates: {
+                    'myRemoteTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/',
+                    },
+                    'noCheckConsultTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/my_remote',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/',
+                    },
+                },
             },
         },
     },
@@ -972,6 +1064,16 @@ const FILE_TREE = {
                         },
                     },
                 },
+            },
+        },
+    },
+    common: {
+        errorText: {
+            'errorText.js': {
+                type: 'module',
+                priority: 0,
+                url_path: '*',
+                file_path: '/H-Connect/js/common/errorText/',
             },
         },
     },

@@ -31,8 +31,10 @@ async function init() {
         $('#mySchedule').text(myScheduleCount);
         $('#withSchedule').text(consultCount);
         $('#noChecked').text(notConfirmCount);
+        $('#session_count').text(sessionCount);
 
         // 원활한 작업을 위해서 두개를 바꿨음
+        // 나중에 if랑 else랑 바꿀 것.
         if (sessionCount === 0) {
             $('.schedule .btn_today').addClass('active');
             await sessionListHandle();
@@ -45,10 +47,8 @@ async function init() {
 async function sessionListHandle() {
     const { result, list } = await selectRemoteSessionList();
     if (result && list.length !== 0) {
-        $('#session_count').text(list.length);
         hworkSessionList(list);
     } else {
-        $('#session_count').text(mok.length);
         hworkSessionList(mok);
     }
 }

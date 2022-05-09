@@ -1,5 +1,6 @@
 'use strict';
 
+// 세션 목록 더미
 export const mok = [
     {
         consultId: 'test2_2022-04-07T11:21:48.618',
@@ -174,7 +175,8 @@ export const mok = [
     },
 ];
 
-export const consultAlarmList = [
+//협진 일정요청 알림 목록 더미
+export const fakeConsultAlarmList = [
     {
         consultId: 'test2_2022-03-08T10:12:39.454',
         name: '내가보냄',
@@ -223,6 +225,7 @@ export const consultAlarmList = [
         consultConfirm: 'N',
         isentState: 0,
         replyCount: 1,
+        replyState: 'N',
         unconfirmedReplyCount: 1,
         memberInfoList: [
             {
@@ -248,6 +251,200 @@ export const consultAlarmList = [
                 doctorClass: 0,
                 doctorClassName: '일반외과',
                 remoteState: 'N',
+            },
+        ],
+    },
+];
+
+//확인하지 않은 소견 목록 더미
+export const fakeOpinionConsultList = [
+    {
+        consultId: 'test2_2022-03-24T15:40:10.969',
+        orderNo: 1,
+        caseTitle: '김입원 환자의 대장암 수술 이후',
+        caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+        replyCount: 0,
+        startDatetime: '2022-03-10 00:00:00',
+        endDatetime: '2022-03-10 18:00:00',
+        isentState: 1,
+    },
+    {
+        consultId: 'ryan_2022-04-07T10:12:41.435',
+        orderNo: 1,
+        caseTitle: '김입원 환자의 대장암 수술 이후',
+        caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+        replyCount: 0,
+        startDatetime: '2022-04-15 00:00:00',
+        endDatetime: '2022-04-15 13:50:00',
+        isentState: 0,
+    },
+    {
+        consultId: 'test1_2022-03-28T13:14:52.086',
+        orderNo: 1,
+        caseTitle: '김입원 환자의 대장암 수술 이후',
+        caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+        replyCount: 0,
+        startDatetime: '2022-03-28 00:00:00',
+        endDatetime: '2022-03-28 19:50:00',
+        isentState: 0,
+    },
+];
+
+// 소견협진 상세 데이터 더미
+export const fakeSelectRealTimeAndOpinionAndEmergencyConsultView = {
+    consultId: 'test2_2022-02-15T09:52:45.408',
+    createId: 'test2',
+    consultChannel: 3,
+    consultChannelName: '실시간 원격 협진',
+    startDatetime: '2022-02-18 04:50:00',
+    endDatetime: '2022-02-18 05:50:00',
+    caseInfoList: [
+        {
+            consultId: 'test2_2022-02-15T09:52:45.408',
+            orderNo: 1,
+            caseTitle: '김입원 환자의 대장암 수술 이후',
+            caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+            patientId: 'patient2',
+            patientName: '환자2',
+            patientAge: 53,
+            patientWard: '208',
+            patientWardRoom: '2308',
+            patientCondition: '2',
+            patientGender: 'M',
+            measurementCode: null,
+        },
+        {
+            consultId: 'test2_2022-02-15T09:52:45.408',
+            orderNo: 2,
+            caseTitle: '김입원 환자의 대장암 수술 이후',
+            caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+            patientId: 'patient2',
+            patientName: '환자2',
+            patientAge: 53,
+            patientWard: '208',
+            patientWardRoom: '2308',
+            patientCondition: '2',
+            patientGender: 'M',
+            measurementCode: null,
+        },
+        {
+            consultId: 'test2_2022-02-15T09:52:45.408',
+            orderNo: 3,
+            caseTitle: '김입원 환자의 대장암 수술 이후',
+            caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+            patientId: 'patient2',
+            patientName: '환자2',
+            patientAge: 53,
+            patientWard: '208',
+            patientWardRoom: '2308',
+            patientCondition: '2',
+            patientGender: 'M',
+            measurementCode: null,
+        },
+    ],
+    memberInfoList: [
+        {
+            consultId: 'test2_2022-02-15T09:52:45.408',
+            orderNo: 1,
+            doctorId: 'test1',
+            doctorName: '의사1',
+            doctorLevel: 0,
+            doctorLevelName: '교수님',
+            replyState: 'N',
+            doctorClass: 0,
+            doctorClassName: '일반외과',
+            remoteState: 'N',
+        },
+        {
+            consultId: 'test2_2022-02-15T09:52:45.408',
+            orderNo: 1,
+            doctorId: 'test2',
+            doctorName: '의사2',
+            doctorLevel: 0,
+            doctorLevelName: '교수님',
+            replyState: 'Y',
+            doctorClass: 0,
+            doctorClassName: '일반외과',
+            remoteState: 'N',
+        },
+        {
+            consultId: 'test2_2022-02-15T09:52:45.408',
+            orderNo: 1,
+            doctorId: 'test3',
+            doctorName: '의사3',
+            doctorLevel: 0,
+            doctorLevelName: '교수님',
+            replyState: 'N',
+            doctorClass: 0,
+            doctorClassName: '일반외과',
+            remoteState: 'N',
+        },
+        {
+            consultId: 'test2_2022-02-15T09:52:45.408',
+            orderNo: 1,
+            doctorId: 'test4',
+            doctorName: '의사4',
+            doctorLevel: 0,
+            doctorLevelName: '교수님',
+            replyState: 'Y',
+            doctorClass: 0,
+            doctorClassName: '일반외과',
+            remoteState: 'N',
+        },
+    ],
+};
+
+// 협진 일정 요청 상세 더미
+export const fakeSelectConsultView = [
+    {
+        consultId: 'test1_2022-02-15T09:38:48.515',
+        createId: 'test1',
+        consultChannel: 1,
+        consultChannelName: '협진 일정 요청',
+        deadlineDatetime: '2022-02-20 04:30:00',
+        caseInfoList: [
+            {
+                consultId: 'test1_2022-02-15T09:38:48.515',
+                orderNo: 1,
+                caseTitle: '김입원 환자의 대장암 수술 이후',
+                caseContents: '보건복지부장관은 전자의무기록이 효율적이고',
+                patientId: 'patient1',
+                patientName: '환자1',
+                patientAge: 63,
+                patientWard: '308',
+                patientWardRoom: '1308',
+                patientCondition: '3',
+                patientGender: 'M',
+                measurementCode: '추가필요',
+            },
+        ],
+        memberInfoList: [
+            {
+                consultId: 'test1_2022-02-15T09:38:48.515',
+                orderNo: 1,
+                doctorId: 'test2',
+                doctorName: '의사2',
+                doctorLevel: 0,
+                doctorLevelName: '교수님',
+                replyState: 'N',
+                doctorClass: 0,
+                doctorClassName: '일반외과',
+            },
+        ],
+        scheduleInfoList: [
+            {
+                consultId: 'test1_2022-02-15T09:38:48.515',
+                orderNo: 1,
+                consultStartDatetime: '2022-02-20 01:00:00',
+                consultEndDatetime: '2022-02-20 02:00:00',
+                scheduleCheck: '',
+            },
+            {
+                consultId: 'test1_2022-02-15T09:38:48.515',
+                orderNo: 2,
+                consultStartDatetime: '2022-02-20 04:00:00',
+                consultEndDatetime: '2022-02-20 05:00:00',
+                scheduleCheck: '',
             },
         ],
     },

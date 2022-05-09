@@ -123,3 +123,29 @@ export async function selectMyScheduleList(afterWeek = 2) {
         }
     );
 }
+
+// 선별진료
+export async function selectScreeniungClinicView(reservationCode, patientCode) {
+    const obj = {
+        requester,
+        userId,
+        organizationCode,
+        reservationCode,
+        patientCode,
+        ...commonRequest(),
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Doctor/SelectScreeningClinicView',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+}

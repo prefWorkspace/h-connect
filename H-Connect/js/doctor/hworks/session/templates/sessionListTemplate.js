@@ -79,9 +79,10 @@ export function sessionListTemplate(_data) {
             break;
         // 선별진료
         case 4:
-            const { patientName, patientAge, patientGender } = caseInfoList[0];
+            const { patientName, patientAge, patientGender, patientId } =
+                caseInfoList[0];
             html = `
-                <div data-consultchannel="${consultChannel}" class="row remote">
+                <div data-consultchannel="${consultChannel}" data-patientcode="${patientId}" class="row remote">
                     <div>
                         <div class="img_container">
                             <img
