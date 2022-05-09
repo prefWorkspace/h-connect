@@ -31,8 +31,12 @@ async function remoteAlarmClick() {
 
     if (result && list.length > 0) {
     } else {
-        console.log('fakeSelectConsultView===');
-        console.log(fakeSelectConsultView);
+        const {
+            caseInfoList,
+            memberInfoList,
+            scheduleInfoList,
+            deadlineDatetime,
+        } = fakeSelectConsultView;
     }
 }
 
