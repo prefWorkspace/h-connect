@@ -4672,13 +4672,17 @@ p {
     margin-bottom: 20px;
 }
 
-.new_remote .content > button {
+.new_remote .content button.btn_case_delete {
     margin-bottom: 8px;
     font-size: 12px;
     color: #940045;
     display: flex;
     align-items: center;
     float: right;
+}
+
+.new_remote .content .content-caseblock:not(:first-child) {
+    margin-top: 24px;
 }
 
 .new_remote .content > button:disabled {
@@ -4695,6 +4699,12 @@ p {
 }
 
 .new_remote .content form {
+    padding: 16px;
+    background: #eee;
+    border-radius: 4px;
+    clear: both;
+}
+.new_remote .content .content-caseform {
     padding: 16px;
     background: #eee;
     border-radius: 4px;
@@ -4747,6 +4757,19 @@ p {
     object-fit: cover; */
     /* filter: invert(10%) sepia(99998%) saturate(999%) hue-rotate(264deg) brightness(9999%) contrast(8%); */
     filter: none;
+}
+
+.new_remote .content .search_container .remote_search {
+    overflow-y: auto;
+}
+.new_remote .content .search_container .remote_search::-webkit-scrollbar {
+    width: 8px;
+}
+
+.new_remote .content .search_container .remote_search::-webkit-scrollbar-thumb {
+    height: auto;
+    border-radius: 10px;
+    background: #ccc;
 }
 
 /* .new_remote .content .search_container .btn_search.on img {

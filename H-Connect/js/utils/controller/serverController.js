@@ -10,7 +10,7 @@ const urlObj = {
         IP: 'https://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole/',
         SOCKET_IP:
             'wss://www.hconnect-test-api.mobicareconsole.com/mobiCAREConsole',
-        CLIENT: ['127.0.0.1', 'localhost', 'hconnect-test.mobicareconsole'], // 클라이언트 url 입력
+        CLIENT: ['127.0.0.1', 'localhost', 'hconnect-test.mobicareconsole.com'], // 클라이언트 url 입력
     },
     PRODUCTION: {
         IP: '',
