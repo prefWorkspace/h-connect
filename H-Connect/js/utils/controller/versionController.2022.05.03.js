@@ -276,7 +276,19 @@ const FILE_TREE = {
             },
             remoteNew: {
                 actions: {
+                    'attendeesSectionActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
                     'cooperationSectionActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
+                    'remoteNewAPI.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
@@ -284,6 +296,12 @@ const FILE_TREE = {
                     },
                 },
                 renders: {
+                    'attendeesSectionRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                    },
                     'cooperationSectionRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
@@ -292,7 +310,13 @@ const FILE_TREE = {
                     },
                 },
                 templates: {
-                    'cooperationSectionsTmpl.js': {
+                    'attendeesSectionTmpl.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/templates/',
+                    },
+                    'cooperationSectionTmpl.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
