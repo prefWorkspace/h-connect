@@ -21,7 +21,7 @@ const { caseInfoListRender, remoteDoctorRender, emergencyTitleRender } =
     );
 
 const { errorText } = await import(
-    importVersion('/H-Connect/js/common/errorText/errorText.js')
+    importVersion('/H-Connect/js/common/text/validationText.js')
 );
 
 const { mok } = await import(

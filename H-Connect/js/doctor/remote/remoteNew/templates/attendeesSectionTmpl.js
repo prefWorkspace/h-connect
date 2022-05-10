@@ -1,4 +1,5 @@
-const choiceDoctorItemTmpl = () => {
+export const choiceDoctorItemTmpl = (_data) => {
+    const {} = _data ?? {};
     // 선택 된 의료진 리스트 아이템
     return `
     <div class="mem">
@@ -10,23 +11,24 @@ const choiceDoctorItemTmpl = () => {
     `;
 };
 
-const doctorListItemTmpl = () => {
+export const doctorListItemTmpl = (_data) => {
     // 선택 될 의사 리스트 아이템
+    const { userId, userName, jikchek } = _data ?? {};
     return `
-    <div>
+    <div class='doctor-list-item' data-user-id='${userId}' data-user-name='${userName}' data-jikchek='${jikchek}'>
         <div class="input_wrap">
-            <input type="checkbox" name="doctor" id="check6"
+            <input type="checkbox" name="doctor" id="${'check' + userId}"
                 class="green_custom">
-            <label for="check6"></label>
-            <label for="check6">
-                <span>김두통 교수님</span>
-                <span>일반외과</span>
+            <label for="${'check' + userId}"></label>
+            <label for="${'check' + userId}">
+                <span>${userName} 교수님</span>
+                <span>${jikchek}</span>
             </label>
         </div>
 
         <div class="favorite_container">
-            <input type="checkbox" id="favorite6" checked>
-            <label for="favorite6"></label>
+            <input type="checkbox" id="${'tofavorite' + userId}">
+            <label for="${'tofavorite' + userId}"></label>
         </div>
     </div>
   `;

@@ -1,3 +1,6 @@
+const { errorText, loadingText } = await import(
+    importVersion('/H-Connect/js/common/text/validationText.js')
+);
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
@@ -25,7 +28,7 @@ new CreatePagination({
     },
 });
 
-// error 과 loading은 boolean값, string dom 값, { meassage : 'text' } 값을 받습니다.
+// error 과 loading은 boolean값, string dom 값, { msg : 'text', padding: 'padding값' } 값을 받습니다.
 
 */
 
@@ -102,8 +105,7 @@ export class CreatePagination {
     }
 
     calcLoading(_getLoading) {
-        const inintialLoading =
-            '<p class="loading_text">데이타를 불러오는 중입니다.</p>';
+        const inintialLoading = loadingText();
         if (_getLoading) {
             if (typeof _getLoading === 'boolean') {
                 return inintialLoading;
@@ -113,9 +115,18 @@ export class CreatePagination {
                 } else if (typeof _getLoading === 'function') {
                     return _getLoading();
                 } else if (typeof _getLoading === 'object') {
-                    if (_getLoading?.message) {
-                        return `<p class="loading_text">${_getLoading?.message}</p>`;
+                    let _msg = undefined;
+                    let _padding = undefined;
+                    if (_getLoading?.msg) {
+                        _msg = _getLoading.msg;
                     }
+                    if (_getLoading?.padding) {
+                        _padding = _getLoading.padding;
+                    }
+                    return loadingText({
+                        msg: _msg,
+                        padding: _padding,
+                    });
                 } else {
                     return inintialLoading;
                 }
@@ -126,8 +137,7 @@ export class CreatePagination {
     }
 
     calcError(_getError) {
-        const initialError =
-            '<p class="error_text">조회된 데이타가 없습니다</p>';
+        const initialError = errorText();
         if (_getError) {
             if (typeof _getError === 'boolean') {
                 return initialError;
@@ -137,9 +147,15 @@ export class CreatePagination {
                 } else if (typeof _getError === 'function') {
                     return _getError();
                 } else if (typeof _getError === 'object') {
-                    if (_getError?.message) {
-                        return `<p class="error_text">${_getError?.message}</p>`;
+                    let _msg = undefined;
+                    let _padding = undefined;
+                    if (_getError?.msg) {
+                        _msg = _getError.msg;
                     }
+                    if (_getError?.padding) {
+                        _padding = _getError.padding;
+                    }
+                    return errorText({ msg: _msg, padding: _padding });
                 } else {
                     return initialError;
                 }
