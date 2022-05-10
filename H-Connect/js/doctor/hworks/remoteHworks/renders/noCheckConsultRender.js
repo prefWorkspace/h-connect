@@ -7,7 +7,7 @@ const { noCheckConsultTemplates } = await import(
 );
 
 const { errorText } = await import(
-    importVersion('/H-Connect/js/common/errorText/errorText.js')
+    importVersion('/H-Connect/js/common/text/validationText.js')
 );
 
 export function noCheckConsultReder(list) {

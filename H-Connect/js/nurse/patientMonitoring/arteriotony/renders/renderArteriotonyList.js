@@ -25,8 +25,8 @@ const arteriotonyListPagination = new CreatePagination({
         pagination: '#wrap_content.arteriotony .table_page',
     },
     templates: {
-        loading: true,
-        error: true,
+        loading: { padding: '3%' },
+        error: { padding: '3%' },
         listItem: arteriotonyListItemTmpl,
     },
     link: {

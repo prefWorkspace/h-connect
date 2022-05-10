@@ -193,6 +193,14 @@ const FILE_TREE = {
         },
     },
     common: {
+        text: {
+            'validationText.js': {
+                type: 'module',
+                priority: 0,
+                url_path: '*',
+                file_path: '/H-Connect/js/common/text/',
+            },
+        },
         header: {
             actions: {
                 'accountPopupActions.js': {
@@ -1100,16 +1108,6 @@ const FILE_TREE = {
                         },
                     },
                 },
-            },
-        },
-    },
-    common: {
-        errorText: {
-            'errorText.js': {
-                type: 'module',
-                priority: 0,
-                url_path: '*',
-                file_path: '/H-Connect/js/common/errorText/',
             },
         },
     },

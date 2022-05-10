@@ -8,6 +8,10 @@ const {
         '/H-Connect/js/nurse/patientMonitoring/common/actions/patientMonitoringAPI.js'
     )
 );
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/text/validationText.js')
+);
+
 const { CustomD3 } = await import(
     importVersion('/H-Connect/js/lib/d3/custom/customD3.js')
 );
@@ -46,8 +50,8 @@ const createEventSimpleTabController = () => {
             pagination: '#event_table_wrap .table_page',
         },
         templates: {
-            loading: true,
-            error: true,
+            loading: { padding: '3%' },
+            error: { padding: '3%' },
             listItem: eventSimpleDataListTmpl,
         },
         afterRender: (_this) => {
@@ -189,9 +193,7 @@ const createEventSimpleTabController = () => {
                         });
                     } else {
                         // 데이터 없을때 처리
-                        const noDataHtml =
-                            '<p style="line-height:36px; vertical-align:middle; text-align:center; color:#aaa; font-size:14px;">조회된 데이타가 없습니다</p>';
-                        $(`#event-ecg-chart-${_getEventId}`).html(noDataHtml);
+                        $(`#event-ecg-chart-${_getEventId}`).html(errorText());
                     }
                     /* e: ecg 라인 그리기 */
                 }

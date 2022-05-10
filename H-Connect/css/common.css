@@ -1758,15 +1758,13 @@ textarea::-webkit-scrollbar-button {
 
 /* 데이터 핸들링 */
 .loading_text {
-    padding-top: 5%;
-    color: #aaa;
+    color: #aaa !important;
     text-align: center;
     font-size: 14px;
 }
 
 .error_text {
-    padding-top: 5%;
-    color: #aaa;
+    color: #aaa !important;
     text-align: center;
     font-size: 14px;
 }

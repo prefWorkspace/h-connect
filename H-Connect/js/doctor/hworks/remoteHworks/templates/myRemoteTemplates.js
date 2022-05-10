@@ -1,4 +1,7 @@
 'use strict';
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/text/validationText.js')
+);
 
 // 내가 보냄 일정 요청
 export function isentRemoteAlarmTemplates(_data) {
@@ -61,8 +64,4 @@ export function isentNotRemoteAlarmTemplates(_data) {
             <p class="name">${name}</p>
         </div> 
     `;
-}
-
-export function errorText() {
-    return `<p class="error_text">조회된 데이타가 없습니다</p>`;
 }
