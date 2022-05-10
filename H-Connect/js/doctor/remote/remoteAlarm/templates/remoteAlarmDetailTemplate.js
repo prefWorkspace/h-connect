@@ -1,5 +1,6 @@
 'use strict';
 
+// 협진내용 디테일 탬플릿
 export function remoteAlarmCaseInfoTemplate(_data) {
     const {
         caseContents,
@@ -56,5 +57,41 @@ export function remoteAlarmCaseInfoTemplate(_data) {
                 </div>
             </div>
         </div>
+    `;
+}
+
+// 협진 가능시간 탬플릿
+export function remoteAlarmTimeTemplate(_data) {
+    const { consultEndDatetime, consultStartDatetime, orderNo } = _data;
+
+    return `
+        <div>
+            <div class="check">
+                <input
+                    type="checkbox"
+                    id="check${orderNo}"
+                    class="green_custom"
+                />
+                <label for="check${orderNo}"></label>
+                <label for="check${orderNo}"
+                    >${moment(consultStartDatetime).format(
+                        'YY.MM.DD'
+                    )} 월요일 ${moment(consultStartDatetime).format('HH:mm')} ~
+                    ${moment(consultEndDatetime).format('HH:mm')}</label
+                >
+            </div>
+            <p class="dupli">
+                ※ 외래진료 일정과 중복됩니다.
+            </p>
+        </div>
+    `;
+}
+
+// 의사 리스트
+
+export function remoteAlarmDoctorTemplate(_data) {
+    const { doctorLevelName, doctorName } = _data;
+    return `
+        <p>${doctorName} ${doctorLevelName}</p>
     `;
 }
