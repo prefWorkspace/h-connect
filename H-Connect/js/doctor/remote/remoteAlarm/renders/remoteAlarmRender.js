@@ -20,23 +20,111 @@ const { selectConsultView } = await import(
     )
 );
 
+const {
+    remoteAlarmCaseInfoTemplate,
+    remoteAlarmTimeTemplate,
+    remoteAlarmDoctorTemplate,
+} = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteAlarm/templates/remoteAlarmDetailTemplate.js'
+    )
+);
+
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
 
-async function remoteAlarmClick() {
-    const consultId = $(this).data('consultid');
-    const isentState = $(this).data('isentstate');
+async function remoteAlarmClick(_consultid, _isentState) {
+    let caseInfoHTML = '';
+    let scheduleInfoHTML = '';
+    let replyDoctorHTML = '';
+    let noReplyDoctorHTML = '';
+    let reply_count = 0;
+    let noreply_count = 0;
+    const consultId = $(this).data('consultid') || _consultid;
+    const isentState =
+        $(this).data('isentstate') !== undefined
+            ? $(this).data('isentstate')
+            : _isentState;
+
     const { result, list } = await selectConsultView(consultId);
 
     if (result && list.length > 0) {
+        // 나중에 데이터 나오면 else의 내용을 여기에 적고 else 없애기
+        // 더미데이터 이름을 실데이터 이름으로 변경
     } else {
         const {
             caseInfoList,
             memberInfoList,
             scheduleInfoList,
             deadlineDatetime,
-        } = fakeSelectConsultView;
+        } = fakeSelectConsultView[0];
+
+        // 협진내용 탬플릿
+        for (let i = 0; i < caseInfoList.length; i++) {
+            caseInfoHTML += remoteAlarmCaseInfoTemplate(caseInfoList[i]);
+        }
+
+        // 협진 참여자 탬플릿
+        for (let i = 0; i < memberInfoList.length; i++) {
+            const { replyState } = memberInfoList[i];
+            if (replyState === 'Y') {
+                replyDoctorHTML += remoteAlarmDoctorTemplate(memberInfoList[i]);
+                reply_count++;
+            } else {
+                noReplyDoctorHTML += remoteAlarmDoctorTemplate(
+                    memberInfoList[i]
+                );
+                noreply_count++;
+            }
+        }
+
+        // 협진교수 제목 렌더링
+        if (isentState === 0) {
+            const { doctorLevelName, doctorName } = memberInfoList[0];
+            const length = memberInfoList.length;
+            const text = `${doctorName} ${doctorLevelName} ${
+                length > 1 ? `외 ${length - 1}명` : ''
+            }`;
+            $(`#isentstate${isentState} .member_count`).text(text);
+
+            // 협진 가능 시간 선택 탬플릿
+            for (let i = 0; i < scheduleInfoList.length; i++) {
+                scheduleInfoHTML += remoteAlarmTimeTemplate(
+                    scheduleInfoList[i]
+                );
+            }
+
+            // 협진 가능 시간 선택 렌더링
+            $(`#isentstate${isentState} #tab-1`).html(scheduleInfoHTML);
+        }
+
+        // 데드라인 렌더링
+        const time = moment(deadlineDatetime).format('YY.MM.DD  HH:mm');
+        $(`#isentstate${isentState} .deadlineTime`).text(time);
+
+        // 협진 내용 렌더링
+        $(`#isentstate${isentState} .collabor_wrap .cont .cont_list`).html(
+            caseInfoHTML
+        );
+
+        // 의사 리스트 렌더링
+        $(`#isentstate${isentState} .member .replydoctor div`).html(
+            replyDoctorHTML
+        );
+
+        // 미참여 의사 리스트 렌더링
+        $(`#isentstate${isentState} .member .noreplydoctor div`).html(
+            noReplyDoctorHTML
+        );
+
+        // 참여자 카운트 렌더링
+        $(`#isentstate${isentState} .member .reply_count`).text(reply_count);
+
+        // 미참여자 카운트 렌더링
+        $(`#isentstate${isentState} .member .noreply_count`).text(
+            noreply_count
+        );
     }
 }
 
@@ -59,22 +147,25 @@ export function remoteAlarmRender(_list) {
     $('.remote_request .list .wr .row').on('click', remoteAlarmClick);
 
     if (query !== '') {
-        $('.remote_request .list .wr .row').each((index, value) => {
+        $('.remote_request .list .wr .row').each(async (_, value) => {
             const consultId = $(value).data('consultid');
             if (consultId === query) {
                 $(value).addClass('on');
                 const isentState = $(value).data('isentstate');
                 $(`#isentstate${isentState}`).show();
+                await remoteAlarmClick(consultId, isentState);
             }
         });
         return;
     }
 
-    $('.remote_request .list .wr .row').each((index, value) => {
+    $('.remote_request .list .wr .row').each(async (index, value) => {
         if (index === 0) {
             $(value).addClass('on');
             const isentState = $(value).data('isentstate');
+            const consultId = $(value).data('consultid');
             $(`#isentstate${isentState}`).show();
+            await remoteAlarmClick(consultId, isentState);
             return;
         }
     });

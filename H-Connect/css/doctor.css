@@ -3526,7 +3526,7 @@ p {
     margin-bottom: 5px;
 }
 
-.doctor .time_select .list_view > :nth-child(3) .dupli {
+.doctor .time_select .list_view .dupli.on {
     display: block;
 }
 

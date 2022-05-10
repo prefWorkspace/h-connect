@@ -352,6 +352,12 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/remoteAlarm/actions/',
                     },
+                    'remoteAlarmAPI.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_alarm',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteAlarm/actions/',
+                    },
                 },
                 renders: {
                     'remoteAlarmRender.js': {
@@ -363,6 +369,12 @@ const FILE_TREE = {
                 },
                 templates: {
                     'remoteAlarmTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_alarm',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteAlarm/templates/',
+                    },
+                    'remoteAlarmDetailTemplate.js': {
                         type: 'module',
                         url_path: '/doctor/remote_alarm',
                         file_path:
