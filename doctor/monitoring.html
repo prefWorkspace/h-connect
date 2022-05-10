@@ -281,32 +281,129 @@
 
                 <div class="wrap_inner">
                     <!-- 새로운 환자 이벤트 -->
-                    <section class="section new_patient new"></section>
+                    <section class="section new_patient new">
+                        <div class="title">
+                            <div>
+                                <div class="img_container">
+                                    <img
+                                        src="/H-Connect/img/header/monitoring.svg"
+                                        alt="모니터 아이콘"
+                                    />
+                                </div>
+                                <h2>새로운 환자 이벤트</h2>
+                            </div>
+                            <p>
+                                새로 발생한 이벤트 및 확인하지 않은 이벤트
+                                목록입니다.
+                            </p>
+                        </div>
+                        <div class="alarm">
+                            <p>
+                                <span id="noCheck_count">-</span> 개의 확인하지
+                                않은 이벤트
+                            </p>
+                            <div>
+                                <button type="button" class="btn_new on">
+                                    신규 이벤트
+                                </button>
+                                <button type="button" class="btn_pre">
+                                    지난 이벤트
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ecglist"></div>
+                    </section>
 
                     <!-- 지난 알람 보기 -->
-                    <section class="section new_patient pre"></section>
+                    <section class="section new_patient pre">
+                        <div class="title">
+                            <div>
+                                <div class="img_container">
+                                    <img
+                                        src="/H-Connect/img/header/monitoring.svg"
+                                        alt="모니터 아이콘"
+                                    />
+                                </div>
+
+                                <h2>지난 이벤트 보기</h2>
+                            </div>
+
+                            <p>지난 이벤트를 확인 합니다.</p>
+                        </div>
+
+                        <div class="alarm">
+                            <div class="search_container">
+                                <input
+                                    type="text"
+                                    placeholder="환자명 혹은 환자번호"
+                                />
+
+                                <button type="button" class="btn_search">
+                                    <img
+                                        src="/H-Connect/img/header/search.svg"
+                                        alt="검색표시"
+                                    />
+                                </button>
+                            </div>
+
+                            <div>
+                                <button type="button" class="btn_new">
+                                    신규 이벤트
+                                </button>
+                                <button type="button" class="btn_pre on">
+                                    지난 이벤트
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ecglist"></div>
+                    </section>
 
                     <!-- 새로운 환자 그래프 -->
                     <section class="section rhythm new_rhythm">
-                        <div class="title title_head"></div>
+                        <div class="title title_head">
+                            <div>
+                                <h2>- (-. -)</h2>
+                                <p>-</p>
+                            </div>
+                            <button type="button" class="btn_monitor">
+                                <div class="img_container">
+                                    <img
+                                        src="/H-Connect/img/header/monitoring.svg"
+                                        alt="모니터 아이콘"
+                                    />
+                                </div>
+                                모니터링
+                            </button>
+                        </div>
 
                         <div class="event">
                             <div class="title title_newSection"></div>
                             <div class="event_inner"></div>
-                            
                         </div>
                     </section>
 
                     <!-- 지난 환자 그래프 -->
                     <section class="section rhythm pre_rhythm">
-                        <div class="title title_head"></div>
+                        <div class="title title_head">
+                            <div>
+                                <h2>- (-. -)</h2>
+                                <p>-</p>
+                            </div>
+                            <button type="button" class="btn_monitor">
+                                <div class="img_container">
+                                    <img
+                                        src="/H-Connect/img/header/monitoring.svg"
+                                        alt="모니터 아이콘"
+                                    />
+                                </div>
+                                모니터링
+                            </button>
+                        </div>
 
                         <div class="event">
                             <div class="title title_preSection"></div>
 
-                            <div class="event_inner">
-                                
-                            </div>
+                            <div class="event_inner"></div>
                         </div>
                     </section>
                 </div>

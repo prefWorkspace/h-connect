@@ -3,34 +3,15 @@
 export async function eventPatientInfo(_bse) {
     if (!_bse) {
         return `
-            <div>
-                <h2>NULL (null. null)</h2>
-                <p>null</p>
-            </div>
+            <h2>NULL (null. null)</h2>
+            <p>null</p>
         `;
     }
 
     const { name, age, gender, patientCode } = _bse;
     return `
-        <div>
-            <h2>${name} (${age}. ${gender & 1 ? '남' : '여'})</h2>
-            <p>${patientCode}</p>
-        </div>
-    `;
-}
-
-export async function monitoringButton() {
-    return `
-    <button type="button" class="btn_monitor">
-                
-        <div class="img_container">
-            <img
-                src="/H-Connect/img/header/monitoring.svg"
-                alt="모니터 아이콘"
-            />
-        </div>
-        모니터링
-    </button>
+        <h2>${name} (${age}. ${gender & 1 ? '남' : '여'})</h2>
+        <p>${patientCode}</p>
     `;
 }
 

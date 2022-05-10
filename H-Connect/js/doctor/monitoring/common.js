@@ -17,21 +17,8 @@ export let selectedEventId = null;
 export let searchKeyword = null;
 
 export function dateFormat(date) {
-    let year = date.getFullYear() ? String(date.getFullYear()) : '99999';
-    let month = date.getMonth() ? date.getMonth() + 1 : '99';
-    let day = date.getDate() ? date.getDate() : '99';
-    let hour = date.getHours();
-    let minute = date.getMinutes();
-    let second = date.getSeconds();
-
-    month = month >= 10 ? month : '0' + month;
-    day = day >= 10 ? day : '0' + day;
-    hour = hour >= 10 ? hour : '0' + hour;
-    minute = minute >= 10 ? minute : '0' + minute;
-    second = second >= 10 ? second : '0' + second;
-
-    let ymd = year.slice(2) + '.' + month + '.' + day;
-    let hms = hour + ':' + minute + ':' + second;
+    let ymd = moment(date).format('YY.MM.DD');
+    let hms = moment(date).format('HH:mm:ss');
     return {
         ymd,
         hms,
