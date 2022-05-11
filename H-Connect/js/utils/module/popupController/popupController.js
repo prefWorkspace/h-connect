@@ -39,10 +39,13 @@ export class PopupController {
         this.initData = _initData;
         this.payload = {};
         this.initEvent();
+        this.eventTarget = null;
     }
     initEvent() {
         const { target, templates, popupBtn } = this.initData || {};
-        $('body').on('click', `${target?.openButton}`, async () => {
+        let _this = this;
+        $('body').on('click', `${target?.openButton}`, async function () {
+            _this.eventTarget = this;
             const _getTemplate = await templates?.popup(); // 팝업의 템플릿 받아옴
             $(target?.appendWrap)
                 .html(_getTemplate)
@@ -57,13 +60,12 @@ export class PopupController {
                                 action: btnAction,
                                 close: btnClose,
                             } = objectValue || {};
-
                             $(target?.appendWrap)
                                 .find(btnTarget)
                                 .off()
-                                .on('click', async () => {
+                                .on('click', async function () {
                                     if (btnAction) {
-                                        await btnAction(this);
+                                        await btnAction(_this);
                                     }
                                     if (btnClose) {
                                         $(target?.appendWrap)
@@ -77,6 +79,15 @@ export class PopupController {
                     }
                 });
         });
+    }
+    closePopup() {
+        // close: false, 이고 팝업을 닫을 때 사용할 수 있습니다.
+        const { target } = this.initData || {};
+        $(target?.appendWrap)
+            .find('.overlay')
+            .fadeOut(() => {
+                $(target?.appendWrap).html('');
+            });
     }
     saveData(key, value) {
         // 데이터를 저장해둬서 action 또는 다른 곳에서 사용할 수 있습니다.

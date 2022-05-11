@@ -338,6 +338,12 @@ const FILE_TREE = {
             },
             remoteNew: {
                 actions: {
+                    'bookmarkActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
                     'attendeesSectionActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
@@ -358,6 +364,12 @@ const FILE_TREE = {
                     },
                 },
                 renders: {
+                    'bookmarkRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                    },
                     'attendeesSectionRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
@@ -372,6 +384,12 @@ const FILE_TREE = {
                     },
                 },
                 templates: {
+                    'bookmarkSectionTmpl.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/templates/',
+                    },
                     'attendeesSectionTmpl.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',

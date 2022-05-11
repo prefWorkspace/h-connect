@@ -4899,6 +4899,16 @@ p {
     align-items: center;
 }
 
+.doctor_new .favorite_list .group .favorite_list_wrap {
+    display: flex;
+}
+.doctor_new .favorite_list .group .favorite_list_wrap .group_list {
+    display: flex;
+}
+.doctor_new .favorite_list .group .favorite_list_wrap .group_list > p {
+    white-space: nowrap;
+}
+
 .doctor .attendee {
     width: 1132px;
     margin: 0 32px;
