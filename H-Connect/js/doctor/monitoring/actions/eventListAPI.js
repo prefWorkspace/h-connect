@@ -8,10 +8,6 @@ const { renderNewEventList } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/renders/renderNewEvents.js')
 );
 
-const { renderPreEventList } = await import(
-    importVersion('/H-Connect/js/doctor/monitoring/renders/renderPreEvents.js')
-);
-
 const { eventListItem } = await import(
     importVersion('/H-Connect/js/doctor/monitoring/templates/templateEvent.js')
 );
@@ -149,7 +145,7 @@ export async function insertPreEventList() {
         bioSignalEventCount
     );
     let eventList = res.bioSignalEventSimpleList;
-    await renderPreEventList(eventList);
+
     $('.section.new_patient.pre').ready(async function () {
         if (!eventList) {
             insertPreEventScreen(null);

@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>H-Connect</title>
-  <!--Import-->
-  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
-  
-  <!--css-->
-  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
-  <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/message.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>H-Connect</title>
+        <!--Import-->
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/common.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/index.js"
+        ></script>
 
-</head>
-  <body>
+        <!--css-->
+        <link rel="stylesheet" href="/H-Connect/css/reset.css" />
+        <link rel="stylesheet" href="/H-Connect/css/common.css" />
+        <link rel="stylesheet" href="/H-Connect/css/message.css" />
+    </head>
+    <body>
         <!-- 연결 종료 팝업 -->
         <div class="pop delete connect">
             <div class="overlay">
                 <div class="pop_cont">
                     <div>
-                        <img src="/H-Connect/img/logo.png" alt="로고">
+                        <img src="/H-Connect/img/logo.png" alt="로고" />
                     </div>
 
                     <h3>응급협진을 종료합니다.</h3>
@@ -30,338 +44,397 @@
 
                     <div class="btn_list">
                         <button type="button" class="btn_no">아니요</button>
-                        <button type="button" class="btn_delete">네, 종료합니다</button>
+                        <button type="button" class="btn_delete">
+                            네, 종료합니다
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
 
-    <div id="wrap">
-        <!--헤더 pc-->
-        <header id="header" class="pc_header doc_header">
-            <div class="header_inner">
-                <div>
-                    <h1 class="logo">
-                        <a class="link" href="index.html">
-                            <img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
-                        </a>
-                    </h1>
-        
-                    <div class="header_title">
-                        <h1>선별진료</h1>
-                        <h3>선별진료 요청을 확인하고 진료를 시작합니다.</h3>
-                    </div>
-                </div>
-        
-                <div>
-                    <div class="btn_list">            
-                        <button type="button" class="btn_logout">
-                            선별진료소 담당의
-                        </button>
-                    </div>                          
-                </div>
-            </div>
-
-            <!-- 로그아웃 팝업 -->
-            <div class="pop logout">
-                <div class="wrap_inner">
+        <div id="wrap">
+            <!--헤더 pc-->
+            <header id="header" class="pc_header doc_header">
+                <div class="header_inner">
                     <div>
-                        <p>선별진료소</p>
-                        <h3>선별진료소 담당의</h3>
+                        <h1 class="logo">
+                            <a class="link" href="index.html">
+                                <img
+                                    class="img"
+                                    src="/H-Connect/img/header/logo.png"
+                                    alt="로고"
+                                />
+                            </a>
+                        </h1>
+
+                        <div class="header_title">
+                            <h1>선별진료</h1>
+                            <h3>선별진료 요청을 확인하고 진료를 시작합니다.</h3>
+                        </div>
                     </div>
 
-                    <button type="button" class="btn_bye">로그아웃</button>  
+                    <div>
+                        <div class="btn_list">
+                            <button type="button" class="btn_logout">
+                                선별진료소 담당의
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 로그아웃 팝업 -->
+                <div class="pop logout">
+                    <div class="wrap_inner">
+                        <div>
+                            <p>선별진료소</p>
+                            <h3>선별진료소 담당의</h3>
+                        </div>
+
+                        <button type="button" class="btn_bye">로그아웃</button>
+                    </div>
+                </div>
+            </header>
+
+            <!--콘텐츠-->
+            <div id="wrap_content" class="message nurse_message screening_doc">
+                <nav class="nav" id="nav">
+                    <ul class="main_depth gnb">
+                        <li class="gnb_list off active">
+                            <a class="link" href="index.html"> 선별진료 </a>
+                        </li>
+
+                        <li class="gnb_list off">
+                            <a class="link" href="message.html"> 메세지 </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="wrap_inner">
+                    <!-- 선별진료 대기실 -->
+                    <section class="section left message_list">
+                        <div class="title">
+                            <div class="title_text">
+                                <div>
+                                    <img
+                                        src="/H-Connect/img/header/remote.svg"
+                                        alt="청진기 아이콘"
+                                    />
+                                </div>
+
+                                <h2>선별진료 대기실</h2>
+                            </div>
+
+                            <p>버튼을 클릭하여 선별진료를 시작합니다.</p>
+                        </div>
+
+                        <div class="waiting">
+                            <div class="row">
+                                <div>
+                                    <p>한선별(44. 여)</p>
+
+                                    <div class="img">
+                                        <!-- 휠체어를 타시는 환자만 보이게 해주세요 -->
+                                        <div
+                                            class="img_container handi"
+                                            style="opacity: 0"
+                                        >
+                                            <img
+                                                src="/H-Connect/img/icon/handicap.svg"
+                                                alt="휠체어 아이콘"
+                                            />
+                                        </div>
+
+                                        <!-- x-ray 검사를 하는 환자만 보이게 해주세요 -->
+                                        <div class="img_container xray">
+                                            <img
+                                                src="/H-Connect/img/icon/x-ray.svg"
+                                                alt="엑스레이 아이콘"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <p>접수시간 21.09.15 10:18:07</p>
+                                    <p class="progress">경과시간 : 7분 경과</p>
+                                </div>
+
+                                <button type="button" class="btn_treat">
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/H-Connect logo.png"
+                                            alt="로고"
+                                        />
+                                    </div>
+                                    진료시작
+                                </button>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <p>이선별(31. 여)</p>
+
+                                    <div class="img">
+                                        <!-- 휠체어를 타시는 환자만 보이게 해주세요 -->
+                                        <div
+                                            class="img_container handi"
+                                            style="opacity: 0"
+                                        >
+                                            <img
+                                                src="/H-Connect/img/icon/handicap.svg"
+                                                alt="휠체어 아이콘"
+                                            />
+                                        </div>
+
+                                        <!-- x-ray 검사를 하는 환자만 보이게 해주세요 -->
+                                        <div class="img_container xray">
+                                            <img
+                                                src="/H-Connect/img/icon/x-ray.svg"
+                                                alt="엑스레이 아이콘"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <p>접수시간 21.09.15 10:18:07</p>
+                                    <p class="progress">경과시간 : 7분 경과</p>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="btn_treat"
+                                    disabled
+                                >
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/H-Connect logo.png"
+                                            alt="로고"
+                                        />
+                                    </div>
+                                    진료시작
+                                </button>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <p>김발열(32. 남)</p>
+
+                                    <div class="img">
+                                        <!-- 휠체어를 타시는 환자만 보이게 해주세요 -->
+                                        <div class="img_container handi">
+                                            <img
+                                                src="/H-Connect/img/icon/handicap.svg"
+                                                alt="휠체어 아이콘"
+                                            />
+                                        </div>
+
+                                        <!-- x-ray 검사를 하는 환자만 보이게 해주세요 -->
+                                        <div class="img_container xray">
+                                            <img
+                                                src="/H-Connect/img/icon/x-ray.svg"
+                                                alt="엑스레이 아이콘"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <p>접수시간 21.09.15 10:18:07</p>
+                                    <p class="progress">경과시간 : 7분 경과</p>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="btn_treat"
+                                    disabled
+                                >
+                                    <div class="img_container">
+                                        <img
+                                            src="/H-Connect/img/H-Connect logo.png"
+                                            alt="로고"
+                                        />
+                                    </div>
+                                    진료시작
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 대화창 -->
+                    <section class="section right message_talk">
+                        <div class="title">
+                            <h2>선별진료소</h2>
+                            <p>
+                                마지막 메세지.
+                                <span>21.09.15</span>
+                                <span>09:48:43</span>
+                            </p>
+                        </div>
+
+                        <div class="search_container">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="대화 내용 검색"
+                                />
+
+                                <button type="button" class="btn_search">
+                                    <div>
+                                        <img
+                                            src="/H-Connect/img/header/search.svg"
+                                            alt="검색표시"
+                                        />
+                                    </div>
+                                </button>
+                            </div>
+
+                            <button type="button" class="btn_sort">
+                                <div>
+                                    <img
+                                        src="/H-Connect/img/icon/nurse/sorting.svg"
+                                        alt="정렬아이콘"
+                                    />
+                                </div>
+                            </button>
+
+                            <!-- 메세지 정렬 팝업 -->
+                            <div class="pop chat_sort">
+                                <div class="wrap_inner">
+                                    <p>전체 메세지 보기</p>
+                                    <p>진료 중 메세지 보기</p>
+                                    <p>진료 제외 메세지 보기</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat_container">
+                            <div class="timeLine">
+                                <a class="first" href="#first_taget"></a>
+                                <a class="second" href="#second_taget"></a>
+                                <a class="third" href="#third_taget"></a>
+                                <a class="fourth" href="#fourth_taget"></a>
+                                <a class="fifth" href="#fifth_taget"></a>
+                            </div>
+
+                            <div class="chat_inner">
+                                <!-- 상대방이 보낸 매세지 chat_you -->
+                                <div class="chat_you" id="second_taget">
+                                    <p>김심장 교수님</p>
+
+                                    <div class="bubble">
+                                        <p>박입원님 병상연결 부탁드립니다.</p>
+                                    </div>
+
+                                    <small>
+                                        <span>21.09.15</span>
+
+                                        <span>09:48:43</span>
+                                    </small>
+                                </div>
+
+                                <!-- 내가 보낸 메시지 chat_me -->
+                                <div class="chat_me" id="fifth_taget">
+                                    <div>
+                                        <div class="bubble">
+                                            <p>네 준비하겠습니다.</p>
+                                        </div>
+
+                                        <small>
+                                            <span>21.09.15</span>
+
+                                            <span>09:48:43</span>
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <div class="chat_me">
+                                    <div>
+                                        <div class="bubble">
+                                            <p>교수님 지금 연결하겠습니다.</p>
+                                        </div>
+
+                                        <small>
+                                            <span>21.09.15</span>
+
+                                            <span>09:48:43</span>
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <!-- 진료 시작 -->
+                                <div
+                                    class="start_clinic clinic"
+                                    id="fourth_taget"
+                                >
+                                    <p>박입원님. 진료가 시작되었습니다.</p>
+                                    <p>
+                                        <span>21.09.15</span>
+
+                                        <span>09:48:43</span>
+                                    </p>
+                                </div>
+
+                                <!-- 상대방이 보낸 매세지 chat_you -->
+                                <div class="chat_you">
+                                    <p>김심장 교수님</p>
+
+                                    <div class="bubble">
+                                        <p>환자 OOO 수치가 어떤가요?</p>
+                                    </div>
+
+                                    <small>
+                                        <span>21.09.15</span>
+
+                                        <span>09:48:43</span>
+                                    </small>
+                                </div>
+
+                                <!-- 내가 보낸 메시지 chat_me -->
+                                <div class="chat_me" id="first_taget">
+                                    <div>
+                                        <div class="bubble">
+                                            <p>
+                                                5분전에 쟀을때 ㅁㅁㅁ였습니다.
+                                            </p>
+                                        </div>
+
+                                        <small>
+                                            <span>21.09.15</span>
+
+                                            <span>09:48:43</span>
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <!-- 진료 종료 -->
+                                <div class="end_clinic clinic" id="third_taget">
+                                    <p>박입원님. 진료가 종료되었습니다.</p>
+                                    <p>
+                                        <span>21.09.15</span>
+
+                                        <span>09:48:43</span>
+                                    </p>
+                                </div>
+
+                                <div class="chat_me">
+                                    <div>
+                                        <div class="bubble">
+                                            <p>고생하셨습니다.</p>
+                                        </div>
+
+                                        <small>
+                                            <span>21.09.15</span>
+
+                                            <span>09:48:43</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat_window">
+                            <textarea placeholder="메세지 입력"></textarea>
+                            <button type="button" class="btn_send">전송</button>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </header>
-
-        <!--콘텐츠-->
-        <div id="wrap_content" class="message nurse_message screening_doc">
-            <nav class="nav" id="nav">
-                <ul class="main_depth gnb">
-                    <li class="gnb_list off active">
-                        <a class="link" href="index.html">
-                            선별진료
-                        </a>
-                    </li>
-
-                    <li class="gnb_list off">
-                        <a class="link" href="message.html">
-                            메세지
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="wrap_inner">
-                <!-- 선별진료 대기실 -->
-                <section class="section left message_list">
-                    <div class="title">
-                        <div class="title_text">
-                            <div>
-                                <img src="/H-Connect/img/header/remote.svg" alt="청진기 아이콘">
-                            </div>
-
-                            <h2>선별진료 대기실</h2>
-                        </div>
-                        
-                        <P>버튼을 클릭하여 선별진료를 시작합니다. </P>
-                    </div>
-
-                    <div class="waiting">
-                        <div class="row">
-                            <div>
-                                <p>한선별(44. 여)</p>
-
-                                <div class="img">
-                                    <!-- 휠체어를 타시는 환자만 보이게 해주세요 -->
-                                    <div class="img_container handi" style="opacity: 0;">
-                                        <img src="/H-Connect/img/icon/handicap.svg" alt="휠체어 아이콘">
-                                    </div>
-        
-                                    <!-- x-ray 검사를 하는 환자만 보이게 해주세요 -->
-                                    <div class="img_container xray">
-                                        <img src="/H-Connect/img/icon/x-ray.svg" alt="엑스레이 아이콘">
-                                    </div>
-                                </div>
-        
-                                <p>접수시간 21.09.15 10:18:07</p>
-                                <p class="progress">경과시간 : 7분 경과</p>
-                            </div>                        
-                            
-                            <button type="button" class="btn_treat">
-                                <div class="img_container">
-                                    <img src="/H-Connect/img/H-Connect logo.png" alt="로고">
-                                </div>
-                                진료시작
-                            </button>
-                        </div>
-
-                        <div class="row">
-                            <div>
-                                <p>이선별(31. 여)</p>
-
-                                <div class="img">
-                                    <!-- 휠체어를 타시는 환자만 보이게 해주세요 -->
-                                    <div class="img_container handi" style="opacity: 0;">
-                                        <img src="/H-Connect/img/icon/handicap.svg" alt="휠체어 아이콘">
-                                    </div>
-        
-                                    <!-- x-ray 검사를 하는 환자만 보이게 해주세요 -->
-                                    <div class="img_container xray">
-                                        <img src="/H-Connect/img/icon/x-ray.svg" alt="엑스레이 아이콘">
-                                    </div>
-                                </div>
-        
-                                <p>접수시간 21.09.15 10:18:07</p>
-                                <p class="progress">경과시간 : 7분 경과</p>
-                            </div>                       
-                            
-                            <button type="button" class="btn_treat" disabled>
-                                <div class="img_container">
-                                    <img src="/H-Connect/img/H-Connect logo.png" alt="로고">
-                                </div>
-                                진료시작
-                            </button>
-                        </div>
-
-                        <div class="row">
-                            <div>
-                                <p>김발열(32. 남)</p>
-
-                                <div class="img">
-                                    <!-- 휠체어를 타시는 환자만 보이게 해주세요 -->
-                                    <div class="img_container handi">
-                                        <img src="/H-Connect/img/icon/handicap.svg" alt="휠체어 아이콘">
-                                    </div>
-        
-                                    <!-- x-ray 검사를 하는 환자만 보이게 해주세요 -->
-                                    <div class="img_container xray">
-                                        <img src="/H-Connect/img/icon/x-ray.svg" alt="엑스레이 아이콘">
-                                    </div>
-                                </div>
-        
-                                <p>접수시간 21.09.15 10:18:07</p>
-                                <p class="progress">경과시간 : 7분 경과</p>
-                            </div>
-                            
-                            <button type="button" class="btn_treat" disabled>
-                                <div class="img_container">
-                                    <img src="/H-Connect/img/H-Connect logo.png" alt="로고">
-                                </div>
-                                진료시작
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 대화창 -->
-                <section class="section right message_talk">
-                    <div class="title">
-                        <h2>선별진료소</h2>
-                        <p>마지막 메세지.
-                            <span>21.09.15</span>
-                            <span>09:48:43</span>
-                        </p>
-                    </div>
-
-                    <div class="search_container">
-                        <div>
-                            <input type="text" placeholder="대화 내용 검색">
-
-                            <button type="button" class="btn_search">
-                                <div>
-                                    <img src="/H-Connect/img/header/search.svg" alt="검색표시">
-                                </div>                            
-                            </button>
-                        </div>
-
-                        <button type="button" class="btn_sort">
-                            <div>
-                                <img src="/H-Connect/img/icon/nurse/sorting.svg" alt="정렬아이콘">
-                            </div>
-                        </button>
-                        
-                        <!-- 메세지 정렬 팝업 -->
-                        <div class="pop chat_sort">
-                            <div class="wrap_inner">
-                                <p>전체 메세지 보기</p>
-                                <p>진료 중 메세지 보기</p>
-                                <p>진료 제외 메세지 보기</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="chat_container"> 
-                        <div class="timeLine">
-                            <a class="first" href="#first_taget"></a>
-                            <a class="second" href="#second_taget"></a>
-                            <a class="third" href="#third_taget"></a>
-                            <a class="fourth" href="#fourth_taget"></a>
-                            <a class="fifth" href="#fifth_taget"></a>
-                        </div>               
-
-                        <div class="chat_inner">
-                            <!-- 상대방이 보낸 매세지 chat_you -->
-                            <div class="chat_you" id="second_taget">
-                                <p>김심장 교수님</p>
-
-                                <div class="bubble">
-                                    <p>박입원님 병상연결 부탁드립니다.</p>
-                                </div>
-                                
-                                <small>
-                                    <span>21.09.15</span>
-                                    
-                                    <span>09:48:43</span>
-                                </small>
-                            </div>
-
-                            <!-- 내가 보낸 메시지 chat_me -->
-                            <div class="chat_me" id="fifth_taget">
-                                <div>
-                                    <div class="bubble">
-                                        <p>네 준비하겠습니다.</p>
-                                    </div>
-                                    
-                                    <small>
-                                        <span>21.09.15</span>
-                                        
-                                        <span>09:48:43</span>
-                                    </small>
-                                </div>                        
-                            </div>
-
-                            <div class="chat_me">
-                                <div>
-                                    <div class="bubble">
-                                        <p>교수님 지금 연결하겠습니다.</p>
-                                    </div>
-                                    
-                                    <small>
-                                        <span>21.09.15</span>
-                                        
-                                        <span>09:48:43</span>
-                                    </small>
-                                </div>                        
-                            </div>
-
-                            <!-- 진료 시작 -->
-                            <div class="start_clinic clinic" id="fourth_taget">
-                                <p>박입원님. 진료가 시작되었습니다.</p>
-                                <p>
-                                    <span>21.09.15</span>
-                                    
-                                    <span>09:48:43</span>
-                                </p>
-                            </div>
-
-                            <!-- 상대방이 보낸 매세지 chat_you -->
-                            <div class="chat_you">
-                                <p>김심장 교수님</p>
-
-                                <div class="bubble">
-                                    <p>환자 OOO 수치가 어떤가요?</p>
-                                </div>
-                                
-                                <small>
-                                    <span>21.09.15</span>
-                                    
-                                    <span>09:48:43</span>
-                                </small>
-                            </div>
-
-                            <!-- 내가 보낸 메시지 chat_me -->
-                            <div class="chat_me" id="first_taget">
-                                <div>
-                                    <div class="bubble">
-                                        <p>5분전에 쟀을때 ㅁㅁㅁ였습니다.</p>
-                                    </div>
-                                    
-                                    <small>
-                                        <span>21.09.15</span>
-                                        
-                                        <span>09:48:43</span>
-                                    </small>
-                                </div>                        
-                            </div>
-
-                            <!-- 진료 종료 -->
-                            <div class="end_clinic clinic" id="third_taget">
-                                <p>박입원님. 진료가 종료되었습니다.</p>
-                                <p>
-                                    <span>21.09.15</span>
-                                    
-                                    <span>09:48:43</span>
-                                </p>
-                            </div>
-                            
-
-                            <div class="chat_me">
-                                <div>
-                                    <div class="bubble">
-                                        <p>고생하셨습니다.</p>
-                                    </div>
-                                    
-                                    <small>
-                                        <span>21.09.15</span>
-                                        
-                                        <span>09:48:43</span>
-                                    </small>
-                                </div>                        
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="chat_window">
-                        <textarea placeholder="메세지 입력"></textarea>
-                        <button type="button" class="btn_send">전송</button>
-                    </div>
-                </section>
-            </div>
         </div>
-
-    </div>
-    <!--// end wrap-->
-  </body>
+        <!--// end wrap-->
+    </body>
 </html>

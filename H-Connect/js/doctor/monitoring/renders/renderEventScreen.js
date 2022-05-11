@@ -12,7 +12,6 @@ const { selectBioSignalEvent } = await import(
 
 const {
     eventPatientInfo,
-    monitoringButton,
     titleDate,
     eventBasicInfo,
     screenRightBtnList,
@@ -40,9 +39,8 @@ export async function renderPreEventScreen(_bse) {
 
 export async function renderNewEventScreenTitleHead(_bse) {
     const $sectionRhythm = $('.section.rhythm.new_rhythm');
-    $sectionRhythm.find('.title.title_head').html(`
+    $sectionRhythm.find('.title.title_head > div:nth-of-type(1)').html(`
         ${await eventPatientInfo(_bse)}
-        ${await monitoringButton()}
     `);
 
     $sectionRhythm
@@ -54,9 +52,8 @@ export async function renderNewEventScreenTitleHead(_bse) {
 
 export async function renderPreEventScreenTitleHead(_bse) {
     const $sectionRhythm = $('.section.rhythm.pre_rhythm');
-    $sectionRhythm.find('.title.title_head').html(`
+    $sectionRhythm.find('.title.title_head > div:nth-of-type(1)').html(`
         ${await eventPatientInfo(_bse)}
-        ${await monitoringButton()}
     `);
 
     $sectionRhythm

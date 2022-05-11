@@ -1,86 +1,115 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>H-Connect</title>
-  <!--Import-->
-  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
-  
-  <!--css-->
-  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
-  <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/wide.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>H-Connect</title>
+        <!--Import-->
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/common.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/index.js"
+        ></script>
 
-</head>
-  <body>
-    <div id="wrap">
-        <!--콘텐츠-->
-        <div id="wrap_content" class="wide">
-            <div class="wrap_inner">
-                <!-- 진료 대기 -->
-                <section class="section wait">
-                    <div class="img_container">
-                        <img src="/H-Connect/img/logo_white.png" alt="로고">
-                    </div>
-
-                    <h1>선별진료 준비중입니다.<br>
-                    잠시만 기다려 주세요.</h1>
-
-                    <div class="cam">
-                        <img src="/H-Connect/img/emergency/you.jpg" alt="내 화면">
-                    </div>
-                </section>
-
-                <!-- 진료 시작 -->
-                <section class="section start" style="display: none;">
-                    <div class="top">
+        <!--css-->
+        <link rel="stylesheet" href="/H-Connect/css/reset.css" />
+        <link rel="stylesheet" href="/H-Connect/css/common.css" />
+        <link rel="stylesheet" href="/H-Connect/css/wide.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <!--콘텐츠-->
+            <div id="wrap_content" class="wide">
+                <div class="wrap_inner">
+                    <!-- 진료 대기 -->
+                    <section class="section wait">
                         <div class="img_container">
-                            <img src="/H-Connect/img/logo_white.png" alt="로고">
+                            <img
+                                src="/H-Connect/img/logo_white.png"
+                                alt="로고"
+                            />
                         </div>
 
-                        <div class="textbox">
-                            <h1>선별진료소 <span>4</span>호실</h1>
-
-                            <div>
-                                <h2>
-                                    <span>김선별</span> 님
-                                    (<span>37.</span> 남)
-                                </h2>
-
-                                <h2>
-                                    <span>김한림 교수님</span>
-                                </h2>
-                            </div>
-
-                            <div>
-                                <h3>
-                                    <span>00:08:17</span> 경과
-                                </h3>
-
-                                <h3>
-                                    <span>담당의</span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bottom">
-                        <div class="doctor">
-                            <img src="/H-Connect/img/emergency/mycam.jpg" alt="의사 사진">
-                        </div>
+                        <h1>
+                            선별진료 준비중입니다.<br />
+                            잠시만 기다려 주세요.
+                        </h1>
 
                         <div class="cam">
-                            <img src="/H-Connect/img/emergency/you.jpg" alt="내 화면">
+                            <img
+                                src="/H-Connect/img/emergency/you.jpg"
+                                alt="내 화면"
+                            />
                         </div>
-                    </div>
-                </section>
+                    </section>
+
+                    <!-- 진료 시작 -->
+                    <section class="section start" style="display: none">
+                        <div class="top">
+                            <div class="img_container">
+                                <img
+                                    src="/H-Connect/img/logo_white.png"
+                                    alt="로고"
+                                />
+                            </div>
+
+                            <div class="textbox">
+                                <h1>선별진료소 <span>4</span>호실</h1>
+
+                                <div>
+                                    <h2>
+                                        <span>김선별</span> 님 (<span>37.</span>
+                                        남)
+                                    </h2>
+
+                                    <h2>
+                                        <span>김한림 교수님</span>
+                                    </h2>
+                                </div>
+
+                                <div>
+                                    <h3><span>00:08:17</span> 경과</h3>
+
+                                    <h3>
+                                        <span>담당의</span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom">
+                            <div class="doctor">
+                                <img
+                                    src="/H-Connect/img/emergency/mycam.jpg"
+                                    alt="의사 사진"
+                                />
+                            </div>
+
+                            <div class="cam">
+                                <img
+                                    src="/H-Connect/img/emergency/you.jpg"
+                                    alt="내 화면"
+                                />
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
-    <!--// end wrap-->
-  </body>
+        <!--// end wrap-->
+    </body>
 </html>
