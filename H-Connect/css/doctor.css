@@ -4877,7 +4877,8 @@ p {
 }
 
 .doctor_new.message .favorite_container input[type='checkbox']:checked + label {
-    filter: invert(42%) sepia(95%) saturate(7128%) hue-rotate(177deg) brightness(95%) contrast(101%);
+    filter: invert(42%) sepia(95%) saturate(7128%) hue-rotate(177deg)
+        brightness(95%) contrast(101%);
 }
 
 .doctor_new .green_custom[type='checkbox'] + label {
@@ -4896,6 +4897,16 @@ p {
     padding: 0;
     display: flex;
     align-items: center;
+}
+
+.doctor_new .favorite_list .group .favorite_list_wrap {
+    display: flex;
+}
+.doctor_new .favorite_list .group .favorite_list_wrap .group_list {
+    display: flex;
+}
+.doctor_new .favorite_list .group .favorite_list_wrap .group_list > p {
+    white-space: nowrap;
 }
 
 .doctor .attendee {
@@ -5297,4 +5308,4 @@ p {
 .attendee .create_op.line {
     display: none;
     z-index: 1;
-
+}

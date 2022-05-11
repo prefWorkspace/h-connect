@@ -8,8 +8,8 @@
     <title>H-Connect</title>
     <!--Import-->
     <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-    <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-    <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
+    <!-- <script type='text/javascript' defer src='/H-Connect/js/common.js'></script> -->
+    <!-- <script type='text/javascript' defer src='/H-Connect/js/index.js'></script> -->
     <script type='text/javascript' defer src='/H-Connect/js/fullcalendar.js'></script>
     <script type="text/javascript" defer src="/H-Connect/js/utils/controller/versionController.2022.05.03.js"></script>
 
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+    <div class="bookmark_popup_wrap"></div>
     <!-- 연결요청 -->
     <div class="pop connect connect_para connect_doctor">
         <div class="overlay">
@@ -310,7 +310,7 @@
                                         <button class="label year_label">2021 년<span></span></button>
 
                                         <div>
-                                            <ul class="optionList year_list">
+                                            <ul class="optionList year_list" style="width:94px !important;">
                                                 <li class="optionItem year_option">2020 년</li>
                                                 <li class="optionItem year_option">2021 년</li>
                                                 <li class="optionItem year_option">2022 년</li>
@@ -322,7 +322,7 @@
                                     <div class="selectBox2 month_box">
                                         <button class="label month_label">9 월<span></span></button>
 
-                                        <ul class="optionList month_list">
+                                        <ul class="optionList month_list" style="width:96px !important;">
                                             <li class="optionItem month_option">1 월</li>
                                             <li class="optionItem month_option">2 월</li>
                                             <li class="optionItem month_option">3 월</li>
@@ -647,47 +647,12 @@
 
                             <div class="choice">
                                 <div class="choice_member">
-                                    <div class="mem">
+                                    <!-- <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
                                             <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                                         </button>
-                                    </div>
-
-                                    <div class="mem">
-                                        <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                                        </button>
-                                    </div>
-
-                                    <div class="mem">
-                                        <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                                        </button>
-                                    </div>
-
-                                    <div class="mem">
-                                        <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                                        </button>
-                                    </div>
-
-                                    <div class="mem">
-                                        <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                                        </button>
-                                    </div>
-
-                                    <div class="mem">
-                                        <p>김협진 교수님</p>
-                                        <button type="button" class="btn_del">
-                                            <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                                        </button>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <!-- 1. 검색 결과가 없을시 placehoder="찾을 수 없습니다" 로 표시-->
@@ -709,16 +674,22 @@
                                     <div>
                                         <div class="group">
                                             <div>
-                                                <div class="group_list on">
-                                                    <p>외과그룹</p>
-                                                </div>
+                                                <div class='favorite_list_wrap'>
 
-                                                <div class="group_list">
-                                                    <p>세글자</p>
-                                                </div>
-
-                                                <div class="group_list">
-                                                    <p>3글자</p>
+                                                    <!-- <div class="group_list on">
+                                                        <p>외과그룹</p>
+                                                        <button type="button" class="btn_del">
+                                                            <img src="/H-Connect/img/icon/delete.svg"
+                                                                alt="의료진삭제버튼아이콘" />
+                                                        </button>
+                                                    </div>
+                                                    <div class="group_list on">
+                                                        <p>외과그룹</p>
+                                                        <button type="button" class="btn_del">
+                                                            <img src="/H-Connect/img/icon/delete.svg"
+                                                                alt="의료진삭제버튼아이콘" />
+                                                        </button>
+                                                    </div> -->
                                                 </div>
 
                                                 <button type="button" class="btn_next">
@@ -729,8 +700,8 @@
                                             <button type="button" class="btn_add">+ 추가</button>
                                         </div>
 
-                                        <div class="group_container">
-                                            <div>
+                                        <div class="group_container list_inner">
+                                            <!-- <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" name="doctor" id="check2"
                                                         class="green_custom">
@@ -746,75 +717,9 @@
                                                     <input type="checkbox" id="favorite2" checked>
                                                     <label for="favorite2"></label>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
-                                            <div>
-                                                <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check3"
-                                                        class="green_custom">
-                                                    <label for="check3"></label>
-                                                    <label for="check3">
-                                                        <span>김협진 교수님</span>
-                                                        <span>일반외과</span>
-                                                    </label>
-                                                </div>
 
-                                                <div class="favorite_container">
-                                                    <input type="checkbox" id="favorite3" checked>
-                                                    <label for="favorite3"></label>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check4"
-                                                        class="green_custom">
-                                                    <label for="check4"></label>
-                                                    <label for="check4">
-                                                        <span>김흉부 교수님</span>
-                                                        <span>일반외과</span>
-                                                    </label>
-                                                </div>
-
-                                                <div class="favorite_container">
-                                                    <input type="checkbox" id="favorite4" checked>
-                                                    <label for="favorite4"></label>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check5"
-                                                        class="green_custom">
-                                                    <label for="check5"></label>
-                                                    <label for="check5">
-                                                        <span>박골절 교수님</span>
-                                                        <span>일반외과</span>
-                                                    </label>
-                                                </div>
-
-                                                <div class="favorite_container">
-                                                    <input type="checkbox" id="favorite5" checked>
-                                                    <label for="favorite5"></label>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="input_wrap">
-                                                    <input type="checkbox" name="doctor" id="check6"
-                                                        class="green_custom">
-                                                    <label for="check6"></label>
-                                                    <label for="check6">
-                                                        <span>김두통 교수님</span>
-                                                        <span>일반외과</span>
-                                                    </label>
-                                                </div>
-
-                                                <div class="favorite_container">
-                                                    <input type="checkbox" id="favorite6" checked>
-                                                    <label for="favorite6"></label>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
