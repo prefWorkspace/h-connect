@@ -1,423 +1,416 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H-Connect</title>
-    <!--Import-->
-    <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-    <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-    <script type='text/javascript' defer src="/H-Connect/js/font.js"></script>
-    <script type='text/javascript' defer src="/H-Connect/js/modal.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>H-Connect</title>
+        <!--Import-->
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/common.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/font.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/modal.js"
+        ></script>
 
-    <!--css-->
-    <link rel="stylesheet" href="/H-Connect/css/reset.css">
-    <link rel="stylesheet" href="/H-Connect/css/common.css">
-    <link rel="stylesheet" href="/H-Connect/css/screening_care.css">
-
-</head>
-<body>
-   <div id="wrap">
-        <!-- header -->
-        <header id="header" class="pc_header doc_header">
-            <div class="header_inner">
-                <div>
-                    <h1 class="logo">
-                        <a class="link" href="index.html">
-                            <img class="img" src="/H-Connect/img/header/logo.png" alt="로고">
-                        </a>
-                    </h1>
-        
-                    <div class="header_title">
-                        <h1>선별진료소</h1>
-                        <h3>목록의 환자들을 선별진료소에 입장시킨 후 진료를 시작합니다.</h3>
-                    </div>
-                </div>
-        
-                <div>
-                    <div class="btn_list">            
-                        <button type="button" class="btn_logout">
-                            선별진료소
-                        </button>
-                    </div>                          
-                </div>
-            </div>
-
-            <!-- 로그아웃 팝업 -->
-            <div class="pop logout">
-                <div class="wrap_inner">
+        <!--css-->
+        <link rel="stylesheet" href="/H-Connect/css/reset.css" />
+        <link rel="stylesheet" href="/H-Connect/css/common.css" />
+        <link rel="stylesheet" href="/H-Connect/css/screening_care.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- header -->
+            <header id="header" class="pc_header doc_header">
+                <div class="header_inner">
                     <div>
-                        <p>선별진료소</p>
-                        <h3>선별진료소</h3>
+                        <h1 class="logo">
+                            <a class="link" href="index.html">
+                                <img
+                                    class="img"
+                                    src="/H-Connect/img/header/logo.png"
+                                    alt="로고"
+                                />
+                            </a>
+                        </h1>
+
+                        <div class="header_title">
+                            <h1>선별진료소</h1>
+                            <h3>
+                                목록의 환자들을 선별진료소에 입장시킨 후 진료를
+                                시작합니다.
+                            </h3>
+                        </div>
                     </div>
 
-                    <button type="button" class="btn_bye">로그아웃</button>  
+                    <div>
+                        <div class="btn_list">
+                            <button type="button" class="btn_logout">
+                                선별진료소
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>    
-        </header>
-        
-       <div id="contents_wrap" class="screening">
-           <!-- nav -->
-           <nav id="nav">
-                <ul class="gnb">
-                    <li class="gnb_list active">
-                        <a href="screening_care.html">선별진료</a>
-                    </li>
 
-                    <li class="gnb_list">
-                        <a href="screening_message.html">메세지</a>
-                    </li>
-
-                    <li class="gnb_list">
-                        <a href="screening_clinic.html">설정</a>
-                    </li>
-                </ul>
-           </nav>
-
-           <!-- main -->
-           <main id="main">
-               <section id="section">
-                    <!-- card1 -->
-                   <div class="card card1 care_card1">
-                        <div class="card_header">
-                            <div class="card_head_text first_card_title">
-                                <h2 class="card_title">대기목록</h2>
-                            </div>
-
-                            <button type="button" class="btn1 medi_regist_btn">진료등록</button>
-                        </div>
-                        
-                        <div class="table_box">
-                            <table class="waiting_list_table common_table">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <span></span>
-                                        </th>
-                                        <th>
-                                            <span>환자명</span>
-                                        </th>
-                                        <th>
-                                            <span>4호실</span>
-                                        </th>
-                                        <th>
-                                            <span>5호실</span>
-                                        </th>
-                                    </tr>
-                                </thead>
-
-                                <!-- checkbox가 하나씩 선택되어야함 -->
-                                <tbody>
-                                    <tr>
-                                        <td><span>1.</span></td>
-                                        <td><span>김환자 (45. 남)</span></td>
-                                        
-                                        <td>
-                                            <span>
-                                                <label for="room_1" class="common_radio">
-                                                    <input type="checkbox" name="room1" id="room_1" class="radio" onclick="one(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span>
-                                                <label for="room_2" class="common_radio">
-                                                    <input type="checkbox" name="room1" id="room_2" class="radio" onclick="one(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><span>2.</span></td>
-                                        <td><span>김환자 (45. 남)</span></td>
-                                        <td>
-                                            <span>
-                                                <label for="room_4" class="common_radio">
-                                                    <input type="checkbox" name="room2" id="room_4" class="radio" onclick="two(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span>
-                                                <label for="room_5" class="common_radio">
-                                                    <input type="checkbox" name="room2" id="room_5" class="radio" onclick="two(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><span>3.</span></td>
-                                        <td><span>김환자 (45. 남)</span></td>
-                                        <td>
-                                            <span>
-                                                <label for="room_4" class="common_radio">
-                                                    <input type="checkbox" name="room3" id="room_4" class="radio" onclick="three(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span>
-                                                <label for="room_5" class="common_radio">
-                                                    <input type="checkbox" name="room3" id="room_5" class="radio" onclick="three(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><span>4.</span></td>
-                                        <td><span>김환자 (45. 남)</span></td>
-                                        <td>
-                                            <span>
-                                                <label for="room_4" class="common_radio">
-                                                    <input type="checkbox" name="room4" id="room_4" class="radio" onclick="four(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span>
-                                                <label for="room_5" class="common_radio">
-                                                    <input type="checkbox" name="room4" id="room_5" class="radio" onclick="four(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><span>5.</span></td>
-                                        <td><span>김환자 (45. 남)</span></td>
-                                        <td>
-                                            <span>
-                                                <label for="room_4" class="common_radio">
-                                                    <input type="checkbox" name="room5" id="room_4" class="radio" onclick="five(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span>
-                                                <label for="room_5" class="common_radio">
-                                                    <input type="checkbox" name="room5" id="room_5" class="radio" onclick="five(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><span>6.</span></td>
-                                        <td><span>김환자 (45. 남)</span></td>
-                                        <td>
-                                            <span>
-                                                <label for="room_4" class="common_radio">
-                                                    <input type="checkbox" name="room6" id="room_4" class="radio" onclick="six(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span>
-                                                <label for="room_5" class="common_radio">
-                                                    <input type="checkbox" name="room6" id="room_5" class="radio" onclick="six(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><span>7.</span></td>
-                                        <td><span>김환자 (45. 남)</span></td>
-                                        <td>
-                                            <span>
-                                                <label for="room_4" class="common_radio">
-                                                    <input type="checkbox" name="room7" id="room_4" class="radio" onclick="seven(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span>
-                                                <label for="room_5" class="common_radio">
-                                                    <input type="checkbox" name="room7" id="room_5" class="radio" onclick="seven(this)">
-                                                </label>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <!-- 로그아웃 팝업 -->
+                <div class="pop logout">
+                    <div class="wrap_inner">
+                        <div>
+                            <p>선별진료소</p>
+                            <h3>선별진료소</h3>
                         </div>
 
-                        <ul class="page_box">
-                            <li class="page on">1.</li>
-                            <li class="page">2.</li>
-                        </ul>
-                   </div>
+                        <button type="button" class="btn_bye">로그아웃</button>
+                    </div>
+                </div>
+            </header>
 
-                   <!-- card2 -->
-                   <div class="card card2 care_card2">
-                       <!-- inner card1 -->
-                        <div class="inner_card room4_card">
-                            <div class="room_card_header">
-                                <h2 class="room_title">선별진료소 4호실</h2>
+            <div id="contents_wrap" class="screening">
+                <!-- nav -->
+                <nav id="nav">
+                    <ul class="gnb">
+                        <li class="gnb_list active">
+                            <a href="screening_care.html">선별진료</a>
+                        </li>
 
-                                <div class="room_radi_box">
-                                    <div class="radi_box">
-                                        <input type="radio" name="disinfection_4" id="disinfect_4">
-                                        <label for="disinfect_4" class="">소독중</label>
-                                    </div>
+                        <li class="gnb_list">
+                            <a href="screening_message.html">메세지</a>
+                        </li>
 
-                                    <div class="radi_box">
-                                        <input type="radio" name="disinfection_4" id="disinfectDone_4" checked>
-                                        <label for="disinfectDone_4" class="">사용가능</label>
-                                    </div>
+                        <li class="gnb_list">
+                            <a href="screening_clinic.html">설정</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- main -->
+                <main id="main">
+                    <section id="section">
+                        <!-- card1 -->
+                        <div class="card card1 care_card1">
+                            <div class="card_header">
+                                <div class="card_head_text first_card_title">
+                                    <h2 class="card_title">대기목록</h2>
                                 </div>
+
+                                <button
+                                    type="button"
+                                    class="btn1 medi_regist_btn"
+                                >
+                                    진료등록
+                                </button>
                             </div>
 
-                            <div class="room_cont_box">
-                                <div class="next_table_box">
-                                    <table class="card2_table common_table">
-                                        <thead>
-                                            <tr>
-                                                <th><span class="table_title">다음환자</span></th>
-                                                
-                                                <th>
-                                                    <span class="btn_thead">
+                            <div class="table_box">
+                                <table class="waiting_list_table common_table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <span></span>
+                                            </th>
+                                            <th>
+                                                <span>환자명</span>
+                                            </th>
+                                            <th>
+                                                <span>4호실</span>
+                                            </th>
+                                            <th>
+                                                <span>5호실</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
 
-                                                        <button type="button" class="btn1 call_btn">
-                                                            <span class="cancel">환자호출취소</span> 
-                                                            <span class="call">환자호출</span> 
-                                                        </button>
+                                    <!-- checkbox가 하나씩 선택되어야함 -->
+                                    <tbody>
+                                        <tr>
+                                            <td><span>1.</span></td>
+                                            <td>
+                                                <span>김환자 (45. 남)</span>
+                                            </td>
 
-                                                        <a href="screening_care_start.html" class="call_doc_btn"><span>의사호출</span></a>
-                                                    </span>
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_1"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room1"
+                                                            id="room_1"
+                                                            class="radio"
+                                                            onclick="one(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_2"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room1"
+                                                            id="room_2"
+                                                            class="radio"
+                                                            onclick="one(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                        </tr>
 
-                                        <tbody>
-                                            <tr>
-                                                <td><span class="next_patient">한선별 (44. 여)</span></td>
-                                                
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn">대기열로 이동</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        <tr>
+                                            <td><span>2.</span></td>
+                                            <td>
+                                                <span>김환자 (45. 남)</span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_4"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room2"
+                                                            id="room_4"
+                                                            class="radio"
+                                                            onclick="two(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_5"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room2"
+                                                            id="room_5"
+                                                            class="radio"
+                                                            onclick="two(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                        </tr>
 
-                                <div class="waiting_table_box">
-                                    <table class="card2_table bot_table common_table">
-                                        <thead>
-                                            <tr>
-                                                <th><span class="table_title">대기환자</span></th>
-                                                
-                                                <th>
-                                                    <span class="table_title wait">
-                                                       <span class="waut_num">10</span>명 대기중
-                                                    </span>
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                        <tr>
+                                            <td><span>3.</span></td>
+                                            <td>
+                                                <span>김환자 (45. 남)</span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_4"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room3"
+                                                            id="room_4"
+                                                            class="radio"
+                                                            onclick="three(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_5"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room3"
+                                                            id="room_5"
+                                                            class="radio"
+                                                            onclick="three(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                        </tr>
 
-                                        <tbody>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td><span>4.</span></td>
+                                            <td>
+                                                <span>김환자 (45. 남)</span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_4"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room4"
+                                                            id="room_4"
+                                                            class="radio"
+                                                            onclick="four(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_5"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room4"
+                                                            id="room_5"
+                                                            class="radio"
+                                                            onclick="four(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                        </tr>
 
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td><span>5.</span></td>
+                                            <td>
+                                                <span>김환자 (45. 남)</span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_4"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room5"
+                                                            id="room_4"
+                                                            class="radio"
+                                                            onclick="five(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_5"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room5"
+                                                            id="room_5"
+                                                            class="radio"
+                                                            onclick="five(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                        </tr>
 
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                               
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                               
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                               
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        <tr>
+                                            <td><span>6.</span></td>
+                                            <td>
+                                                <span>김환자 (45. 남)</span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_4"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room6"
+                                                            id="room_4"
+                                                            class="radio"
+                                                            onclick="six(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_5"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room6"
+                                                            id="room_5"
+                                                            class="radio"
+                                                            onclick="six(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><span>7.</span></td>
+                                            <td>
+                                                <span>김환자 (45. 남)</span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_4"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room7"
+                                                            id="room_4"
+                                                            class="radio"
+                                                            onclick="seven(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <label
+                                                        for="room_5"
+                                                        class="common_radio"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            name="room7"
+                                                            id="room_5"
+                                                            class="radio"
+                                                            onclick="seven(this)"
+                                                        />
+                                                    </label>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
 
                             <ul class="page_box">
@@ -426,352 +419,889 @@
                             </ul>
                         </div>
 
-                         <!-- inner card2 -->
-                        <div class="inner_card room5_card">
-                            <div class="room_card_header">
-                                <h2 class="room_title">선별진료소 5호실</h2>
+                        <!-- card2 -->
+                        <div class="card card2 care_card2">
+                            <!-- inner card1 -->
+                            <div class="inner_card room4_card">
+                                <div class="room_card_header">
+                                    <h2 class="room_title">선별진료소 4호실</h2>
 
-                                <div class="room_radi_box">
-                                    <div class="radi_box">
-                                        <input type="radio" name="disinfection_5" id="disinfect_5">
-                                        <label for="disinfect_5" class="">소독중</label>
-                                    </div>
-
-                                    <div class="radi_box">
-                                        <input type="radio" name="disinfection_5" id="disinfectDone_5" checked>
-                                        <label for="disinfectDone_5" class="">사용가능</label>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="room_cont_box">
-                                <div class="next_table_box">
-                                    <table class="card2_table common_table">
-                                        <thead>
-                                            <tr>
-                                                <th><span class="table_title">다음환자</span></th>
-                                                <th>
-                                                    <span class="btn_thead">
-                                                        <button type="button" class="btn1 call_btn">
-                                                            <span class="cancel">환자호출취소</span> 
-                                                            <span class="call">환자호출</span> 
-                                                        </button>
-                                                        <a href="screening_care_start.html" class="call_doc_btn"><span>의사호출</span></a>
-                                                    </span>
-                                                </th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td><span class="next_patient">황선별 (45. 남)</span></td>
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn">대기열로 이동</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <div class="waiting_table_box">
-                                    <table class="card2_table bot_table common_table">
-                                        <thead>
-                                            <tr>
-                                                <th><span class="table_title">대기환자</span></th>
-                                                <th>
-                                                    <span class="table_title wait">
-                                                       <span class="waut_num">4</span>명 대기중
-                                                    </span>
-                                                </th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>
-                                                    <span class="wait_name">한선별 (44. 여)</span> 
-                                                    <button type="button" class="up upDown"></button>
-                                                    <button type="button" class="down upDown"></button>
-                                                </span></td>
-                                                <td>
-                                                    <span>
-                                                        <button type="button" class="td_btn wait_cancel">대기취소</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                   </div>
-
-                   <!-- card3 -->
-                   <div class="card card3 care_card3">
-                        <div class="card_header">
-                            <div class="card_head_text">
-                                <h2 class="card_title">선별진료소 담당의</h2>
-                                <p class="card_ex_text">마지막 메세지. <span class="last_mess_time">21.09.15 09:48:43</span></p>
-                            </div>
-                        </div>
-
-                        <div class="messge_cont_box">
-                            <div class="mess_header">
-                                <label for="" class="search_box">
-                                    <input type="text" placeholder="메세지 내용을 입력해주세요">
-                                </label>
-
-                                <div class="filter_box">
-                                    <button type="button" class="filter_btn popup_btn">필터</button>
-                                    <div class="profile_popup mess_popup">
-                                        <button type="button" class="look_mess">전체 메세지 보기</button>
-                                        <button type="button" class="look_mess">진료 중 메세지 보기</button>
-                                        <button type="button" class="look_mess">진료 제외 메세지 보기</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="chat_container"> 
-                                <div class="timeLine">
-                                    <a class="first" href="#first_taget"></a>
-                                    <a class="second" href="#second_taget"></a>
-                                    <a class="third" href="#third_taget"></a>
-                                    <a class="fourth" href="#fourth_taget"></a>
-                                    <a class="fifth" href="#fifth_taget"></a>
-                                </div>               
-        
-                                <div class="chat_inner">
-                                    <!-- 상대방이 보낸 매세지 chat_you -->
-                                    <div class="chat_you" id="second_taget">
-                                        <p>김심장 교수님</p>
-        
-                                        <div class="bubble">
-                                            <p>박입원님 병상연결 부탁드립니다.</p>
+                                    <div class="room_radi_box">
+                                        <div class="radi_box">
+                                            <input
+                                                type="radio"
+                                                name="disinfection_4"
+                                                id="disinfect_4"
+                                            />
+                                            <label for="disinfect_4" class=""
+                                                >소독중</label
+                                            >
                                         </div>
-                                        
-                                        <small>
-                                            <span>21.09.15</span>                                            
-                                            <span>09:48:43</span>
-                                        </small>
-                                    </div>
-        
-                                    <!-- 내가 보낸 메시지 chat_me -->
-                                    <div class="chat_me" id="fifth_taget">
-                                        <div>
-                                            <div class="bubble">
-                                                <p>네 준비하겠습니다.</p>
-                                            </div>
-                                            
-                                            <small>
-                                                <span>21.09.15</span>
-                                                <span>09:48:43</span>
-                                            </small>
-                                        </div>                        
-                                    </div>
-        
-                                    <div class="chat_me">
-                                        <div>
-                                            <div class="bubble">
-                                                <p>교수님 지금 연결하겠습니다.</p>
-                                            </div>
-                                            
-                                            <small>
-                                                <span>21.09.15</span>
-                                                <span>09:48:43</span>
-                                            </small>
-                                        </div>                        
-                                    </div>
-        
-                                    <!-- 진료 시작 -->
-                                    <div class="start_clinic" id="fourth_taget">
-                                        <p>박입원님. 진료가 시작되었습니다.</p>
-                                        <p>
-                                            <span>21.09.15</span>
-                                            <span>09:48:43</span>
-                                        </p>
-                                    </div>
-        
-                                    <!-- 상대방이 보낸 매세지 chat_you -->
-                                    <div class="chat_you">
-                                        <p>김심장 교수님</p>
-        
-                                        <div class="bubble">
-                                            <p>환자 OOO 수치가 어떤가요?</p>
+
+                                        <div class="radi_box">
+                                            <input
+                                                type="radio"
+                                                name="disinfection_4"
+                                                id="disinfectDone_4"
+                                                checked
+                                            />
+                                            <label
+                                                for="disinfectDone_4"
+                                                class=""
+                                                >사용가능</label
+                                            >
                                         </div>
-                                        
-                                        <small>
-                                            <span>21.09.15</span>
-                                            <span>09:48:43</span>
-                                        </small>
-                                    </div>
-        
-                                    <!-- 내가 보낸 메시지 chat_me -->
-                                    <div class="chat_me" id="first_taget">
-                                        <div>
-                                            <div class="bubble">
-                                                <p>5분전에 쟀을때 ㅁㅁㅁ였습니다.</p>
-                                            </div>
-                                            
-                                            <small>
-                                                <span>21.09.15</span>
-                                                .
-                                                <span>09:48:43</span>
-                                            </small>
-                                        </div>                        
-                                    </div>
-        
-                                    <!-- 진료 종료 -->
-                                    <div class="end_clinic" id="third_taget">
-                                        <p>박입원님. 진료가 종료되었습니다.</p>
-                                        <p>
-                                            <span>21.09.15</span>
-                                            <span>09:48:43</span>
-                                        </p>
-                                    </div>
-                                    
-        
-                                    <div class="chat_me">
-                                        <div>
-                                            <div class="bubble">
-                                                <p>고생하셨습니다.</p>
-                                            </div>
-                                            
-                                            <small>
-                                                <span>21.09.15</span>
-                                                <span>09:48:43</span>
-                                            </small>
-                                        </div>                        
                                     </div>
                                 </div>
+
+                                <div class="room_cont_box">
+                                    <div class="next_table_box">
+                                        <table class="card2_table common_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <span
+                                                            class="table_title"
+                                                            >다음환자</span
+                                                        >
+                                                    </th>
+
+                                                    <th>
+                                                        <span class="btn_thead">
+                                                            <button
+                                                                type="button"
+                                                                class="btn1 call_btn"
+                                                            >
+                                                                <span
+                                                                    class="cancel"
+                                                                    >환자호출취소</span
+                                                                >
+                                                                <span
+                                                                    class="call"
+                                                                    >환자호출</span
+                                                                >
+                                                            </button>
+
+                                                            <a
+                                                                href="screening_care_start.html"
+                                                                class="call_doc_btn"
+                                                                ><span
+                                                                    >의사호출</span
+                                                                ></a
+                                                            >
+                                                        </span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span
+                                                            class="next_patient"
+                                                            >한선별 (44.
+                                                            여)</span
+                                                        >
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn"
+                                                            >
+                                                                대기열로 이동
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="waiting_table_box">
+                                        <table
+                                            class="card2_table bot_table common_table"
+                                        >
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <span
+                                                            class="table_title"
+                                                            >대기환자</span
+                                                        >
+                                                    </th>
+
+                                                    <th>
+                                                        <span
+                                                            class="table_title wait"
+                                                        >
+                                                            <span
+                                                                class="waut_num"
+                                                                >10</span
+                                                            >명 대기중
+                                                        </span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <ul class="page_box">
+                                    <li class="page on">1.</li>
+                                    <li class="page">2.</li>
+                                </ul>
                             </div>
 
-                            <div class="mess_send_box">
-                                <div class="my_send_text">
-                                    <textarea placeholder="메세지 입력"></textarea>
+                            <!-- inner card2 -->
+                            <div class="inner_card room5_card">
+                                <div class="room_card_header">
+                                    <h2 class="room_title">선별진료소 5호실</h2>
+
+                                    <div class="room_radi_box">
+                                        <div class="radi_box">
+                                            <input
+                                                type="radio"
+                                                name="disinfection_5"
+                                                id="disinfect_5"
+                                            />
+                                            <label for="disinfect_5" class=""
+                                                >소독중</label
+                                            >
+                                        </div>
+
+                                        <div class="radi_box">
+                                            <input
+                                                type="radio"
+                                                name="disinfection_5"
+                                                id="disinfectDone_5"
+                                                checked
+                                            />
+                                            <label
+                                                for="disinfectDone_5"
+                                                class=""
+                                                >사용가능</label
+                                            >
+                                        </div>
+                                    </div>
                                 </div>
-                                <button type="button" class="mess_send_btn">전송</button>
+
+                                <div class="room_cont_box">
+                                    <div class="next_table_box">
+                                        <table class="card2_table common_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <span
+                                                            class="table_title"
+                                                            >다음환자</span
+                                                        >
+                                                    </th>
+                                                    <th>
+                                                        <span class="btn_thead">
+                                                            <button
+                                                                type="button"
+                                                                class="btn1 call_btn"
+                                                            >
+                                                                <span
+                                                                    class="cancel"
+                                                                    >환자호출취소</span
+                                                                >
+                                                                <span
+                                                                    class="call"
+                                                                    >환자호출</span
+                                                                >
+                                                            </button>
+                                                            <a
+                                                                href="screening_care_start.html"
+                                                                class="call_doc_btn"
+                                                                ><span
+                                                                    >의사호출</span
+                                                                ></a
+                                                            >
+                                                        </span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span
+                                                            class="next_patient"
+                                                            >황선별 (45.
+                                                            남)</span
+                                                        >
+                                                    </td>
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn"
+                                                            >
+                                                                대기열로 이동
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="waiting_table_box">
+                                        <table
+                                            class="card2_table bot_table common_table"
+                                        >
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <span
+                                                            class="table_title"
+                                                            >대기환자</span
+                                                        >
+                                                    </th>
+                                                    <th>
+                                                        <span
+                                                            class="table_title wait"
+                                                        >
+                                                            <span
+                                                                class="waut_num"
+                                                                >4</span
+                                                            >명 대기중
+                                                        </span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <span
+                                                                class="wait_name"
+                                                                >한선별 (44.
+                                                                여)</span
+                                                            >
+                                                            <button
+                                                                type="button"
+                                                                class="up upDown"
+                                                            ></button>
+                                                            <button
+                                                                type="button"
+                                                                class="down upDown"
+                                                            ></button>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>
+                                                            <button
+                                                                type="button"
+                                                                class="td_btn wait_cancel"
+                                                            >
+                                                                대기취소
+                                                            </button>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                   </div>
 
-               </section>
-            </main>
-       </div>
-   </div>
+                        <!-- card3 -->
+                        <div class="card card3 care_card3">
+                            <div class="card_header">
+                                <div class="card_head_text">
+                                    <h2 class="card_title">
+                                        선별진료소 담당의
+                                    </h2>
+                                    <p class="card_ex_text">
+                                        마지막 메세지.
+                                        <span class="last_mess_time"
+                                            >21.09.15 09:48:43</span
+                                        >
+                                    </p>
+                                </div>
+                            </div>
 
-   <script>
-       function one(a){
-           var obj = document.getElementsByName("room1");
+                            <div class="messge_cont_box">
+                                <div class="mess_header">
+                                    <label for="" class="search_box">
+                                        <input
+                                            type="text"
+                                            placeholder="메세지 내용을 입력해주세요"
+                                        />
+                                    </label>
 
-           for(var i = 0; i < obj.length; i++){
-               if(obj[i] != a){
-                   obj[i].checked = false;
-               }
-           }
-       }
+                                    <div class="filter_box">
+                                        <button
+                                            type="button"
+                                            class="filter_btn popup_btn"
+                                        >
+                                            필터
+                                        </button>
+                                        <div class="profile_popup mess_popup">
+                                            <button
+                                                type="button"
+                                                class="look_mess"
+                                            >
+                                                전체 메세지 보기
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="look_mess"
+                                            >
+                                                진료 중 메세지 보기
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="look_mess"
+                                            >
+                                                진료 제외 메세지 보기
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
 
-       function two(a){
-           var tobj = document.getElementsByName("room2");
+                                <div class="chat_container">
+                                    <div class="timeLine">
+                                        <a
+                                            class="first"
+                                            href="#first_taget"
+                                        ></a>
+                                        <a
+                                            class="second"
+                                            href="#second_taget"
+                                        ></a>
+                                        <a
+                                            class="third"
+                                            href="#third_taget"
+                                        ></a>
+                                        <a
+                                            class="fourth"
+                                            href="#fourth_taget"
+                                        ></a>
+                                        <a
+                                            class="fifth"
+                                            href="#fifth_taget"
+                                        ></a>
+                                    </div>
 
-           for(var i = 0; i < tobj.length; i++){
-               if(tobj[i] != a){
-                    tobj[i].checked = false;
-               }
-           }
-       }
+                                    <div class="chat_inner">
+                                        <!-- 상대방이 보낸 매세지 chat_you -->
+                                        <div class="chat_you" id="second_taget">
+                                            <p>김심장 교수님</p>
 
-       function three(a){
-           var trobj = document.getElementsByName("room3");
+                                            <div class="bubble">
+                                                <p>
+                                                    박입원님 병상연결
+                                                    부탁드립니다.
+                                                </p>
+                                            </div>
 
-           for(var i = 0; i < trobj.length; i++){
-               if(trobj[i] != a){
-                    trobj[i].checked = false;
-               }
-           }
-       }
+                                            <small>
+                                                <span>21.09.15</span>
+                                                <span>09:48:43</span>
+                                            </small>
+                                        </div>
 
-       function four(a){
-           var fobj = document.getElementsByName("room4");
+                                        <!-- 내가 보낸 메시지 chat_me -->
+                                        <div class="chat_me" id="fifth_taget">
+                                            <div>
+                                                <div class="bubble">
+                                                    <p>네 준비하겠습니다.</p>
+                                                </div>
 
-           for(var i = 0; i < fobj.length; i++){
-               if(fobj[i] != a){
-                    fobj[i].checked = false;
-               }
-           }
-       }
+                                                <small>
+                                                    <span>21.09.15</span>
+                                                    <span>09:48:43</span>
+                                                </small>
+                                            </div>
+                                        </div>
 
+                                        <div class="chat_me">
+                                            <div>
+                                                <div class="bubble">
+                                                    <p>
+                                                        교수님 지금
+                                                        연결하겠습니다.
+                                                    </p>
+                                                </div>
 
-       function five(a){
-           var fiobj = document.getElementsByName("room5");
+                                                <small>
+                                                    <span>21.09.15</span>
+                                                    <span>09:48:43</span>
+                                                </small>
+                                            </div>
+                                        </div>
 
-           for(var i = 0; i < fiobj.length; i++){
-               if(fiobj[i] != a){
-                    fiobj[i].checked = false;
-               }
-           }
-       }
+                                        <!-- 진료 시작 -->
+                                        <div
+                                            class="start_clinic"
+                                            id="fourth_taget"
+                                        >
+                                            <p>
+                                                박입원님. 진료가 시작되었습니다.
+                                            </p>
+                                            <p>
+                                                <span>21.09.15</span>
+                                                <span>09:48:43</span>
+                                            </p>
+                                        </div>
 
+                                        <!-- 상대방이 보낸 매세지 chat_you -->
+                                        <div class="chat_you">
+                                            <p>김심장 교수님</p>
 
-       function six(a){
-           var sobj = document.getElementsByName("room6");
+                                            <div class="bubble">
+                                                <p>환자 OOO 수치가 어떤가요?</p>
+                                            </div>
 
-           for(var i = 0; i < sobj.length; i++){
-               if(sobj[i] != a){
-                   sobj[i].checked = false;
-               }
-           }
-       }
+                                            <small>
+                                                <span>21.09.15</span>
+                                                <span>09:48:43</span>
+                                            </small>
+                                        </div>
 
-       function seven(a){
-           var seobj = document.getElementsByName("room7");
+                                        <!-- 내가 보낸 메시지 chat_me -->
+                                        <div class="chat_me" id="first_taget">
+                                            <div>
+                                                <div class="bubble">
+                                                    <p>
+                                                        5분전에 쟀을때
+                                                        ㅁㅁㅁ였습니다.
+                                                    </p>
+                                                </div>
 
-           for(var i = 0; i < seobj.length; i++){
-               if(seobj[i] != a){
-                    seobj[i].checked = false;
-               }
-           }
-       }
+                                                <small>
+                                                    <span>21.09.15</span>
+                                                    .
+                                                    <span>09:48:43</span>
+                                                </small>
+                                            </div>
+                                        </div>
 
-   </script>
-</body>
+                                        <!-- 진료 종료 -->
+                                        <div
+                                            class="end_clinic"
+                                            id="third_taget"
+                                        >
+                                            <p>
+                                                박입원님. 진료가 종료되었습니다.
+                                            </p>
+                                            <p>
+                                                <span>21.09.15</span>
+                                                <span>09:48:43</span>
+                                            </p>
+                                        </div>
 
+                                        <div class="chat_me">
+                                            <div>
+                                                <div class="bubble">
+                                                    <p>고생하셨습니다.</p>
+                                                </div>
+
+                                                <small>
+                                                    <span>21.09.15</span>
+                                                    <span>09:48:43</span>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mess_send_box">
+                                    <div class="my_send_text">
+                                        <textarea
+                                            placeholder="메세지 입력"
+                                        ></textarea>
+                                    </div>
+                                    <button type="button" class="mess_send_btn">
+                                        전송
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <script>
+            function one(a) {
+                var obj = document.getElementsByName('room1');
+
+                for (var i = 0; i < obj.length; i++) {
+                    if (obj[i] != a) {
+                        obj[i].checked = false;
+                    }
+                }
+            }
+
+            function two(a) {
+                var tobj = document.getElementsByName('room2');
+
+                for (var i = 0; i < tobj.length; i++) {
+                    if (tobj[i] != a) {
+                        tobj[i].checked = false;
+                    }
+                }
+            }
+
+            function three(a) {
+                var trobj = document.getElementsByName('room3');
+
+                for (var i = 0; i < trobj.length; i++) {
+                    if (trobj[i] != a) {
+                        trobj[i].checked = false;
+                    }
+                }
+            }
+
+            function four(a) {
+                var fobj = document.getElementsByName('room4');
+
+                for (var i = 0; i < fobj.length; i++) {
+                    if (fobj[i] != a) {
+                        fobj[i].checked = false;
+                    }
+                }
+            }
+
+            function five(a) {
+                var fiobj = document.getElementsByName('room5');
+
+                for (var i = 0; i < fiobj.length; i++) {
+                    if (fiobj[i] != a) {
+                        fiobj[i].checked = false;
+                    }
+                }
+            }
+
+            function six(a) {
+                var sobj = document.getElementsByName('room6');
+
+                for (var i = 0; i < sobj.length; i++) {
+                    if (sobj[i] != a) {
+                        sobj[i].checked = false;
+                    }
+                }
+            }
+
+            function seven(a) {
+                var seobj = document.getElementsByName('room7');
+
+                for (var i = 0; i < seobj.length; i++) {
+                    if (seobj[i] != a) {
+                        seobj[i].checked = false;
+                    }
+                }
+            }
+        </script>
+    </body>
 </html>

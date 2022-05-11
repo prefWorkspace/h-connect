@@ -1,5 +1,6 @@
 /* 각 JS파일 버전을 관리합니다 */
-const NOW_URL_PATH = pathCalc();
+const { nowPath } = pathCalc();
+const NOW_URL_PATH = nowPath;
 /* s : path, version set */
 
 /**
@@ -18,8 +19,24 @@ const NOW_URL_PATH = pathCalc();
  * @property {version} : 스크립트가 적용될 버전을 명시해줍니다.
  */
 const VERSION = '2022.05.03.16.36';
+
 const FILE_TREE = {
     lib: {
+        jquery: {
+            custom: {},
+            library: {
+                // 'jquery-3.6.0.js': {
+                //     priority: 0,
+                //     url_path: '*',
+                //     file_path: '/H-Connect/js/lib/jquery/library/',
+                // },
+                // 'jquery-3.6.0.min.js': {
+                //     priority: 0,
+                //     url_path: '*',
+                //     file_path: '/H-Connect/js/lib/jquery/library/',
+                // },
+            },
+        },
         d3: {
             custom: {
                 'customD3.js': {
@@ -64,6 +81,43 @@ const FILE_TREE = {
                     priority: 0,
                     url_path: '*',
                     file_path: '/H-Connect/js/lib/moment/library/',
+                },
+            },
+        },
+
+        fullcalendar: {
+            library: {
+                'fullcalendar.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/fullcalendar/library/',
+                },
+                'main.min.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/fullcalendar/library/',
+                },
+            },
+            custom: {
+                'remotePage.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/fullcalendar/custom/',
+                },
+            },
+        },
+        swiper: {
+            custom: {},
+            library: {
+                'slide.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/swiper/library/',
+                },
+                'swiper-bundle.min.js': {
+                    priority: 0,
+                    url_path: '*',
+                    file_path: '/H-Connect/js/lib/swiper/library/',
                 },
             },
         },
@@ -468,7 +522,18 @@ const FILE_TREE = {
                     },
                 },
             },
-            mySchedule: {},
+            mySchedule: {
+                actions: {
+                    'calendarHandle.js': {
+                        type: 'module',
+                        url_path: '/doctor/index',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/mySchedule/actions/',
+                    },
+                },
+                renders: {},
+                templates: {},
+            },
             remoteHworks: {
                 actions: {
                     'myRemoteAPI.js': {
@@ -1111,28 +1176,39 @@ const FILE_TREE = {
             },
         },
     },
-    // 'common.js': {
-    //     priority: 0,
-    //     url_path: '*',
-    //     file_path: '/H-Connect/js/',
-    // },
 };
 
 /* s: settings function */
+// function pathCalc() {
+//     /**
+//      * 주소 path값을 반환하는 함수입니다.
+//      * 어떠한 환경에서 실행되는지를 명확히 알수가 없어
+//      * path값에서 .html을 제외하고 반환해줍니다.
+//      */
+//     const _getPath = location.pathname; // location의 path값을 반환합니다.
+//     let _resultPath = _getPath; // 반환될 path값을 설정해줍니다.
+
+//     if (_getPath.indexOf('.html') !== -1) {
+//         _resultPath = _getPath.split('.html')[0];
+//     }
+
+//     return _resultPath;
+// }
 function pathCalc() {
     /**
      * 주소 path값을 반환하는 함수입니다.
      * 어떠한 환경에서 실행되는지를 명확히 알수가 없어
      * path값에서 .html을 제외하고 반환해줍니다.
      */
-    const _getPath = location.pathname; // location의 path값을 반환합니다.
-    let _resultPath = _getPath; // 반환될 path값을 설정해줍니다.
+    const _pathname = location.pathname; // location의 path값을 반환합니다.
 
-    if (_getPath.indexOf('.html') !== -1) {
-        _resultPath = _getPath.split('.html')[0];
+    let _nowPath = _pathname; // 반환될 path값을 설정해줍니다.
+
+    if (_pathname.indexOf('.html') !== -1) {
+        _nowPath = _pathname.split('.html')[0];
     }
 
-    return _resultPath;
+    return { nowPath: _nowPath };
 }
 /* e: settings function */
 
@@ -1161,7 +1237,6 @@ function _findJsInVersion(_targetObj, filter) {
         _findJsInVersion(_targetObj[key], filter);
     }
 }
-
 function setScript() {
     // 스크립트를 생성해줍니다.
     _findJsInVersion(FILE_TREE, '.js');
@@ -1178,7 +1253,21 @@ function setScript() {
     해당 파일에서만 dom관련 함수를
     vanilla js로 작성
     */
-    for (let i = 0; i < SCRIPT_ARR.length; i++) {
+    const versionScriptSrc = `H-Connect/js/utils/controller/versionController.${VERSION}.js`;
+    const versionScriptEls = document.head.querySelectorAll('script');
+    let versionScriptTargetEl = null;
+
+    const scriptElsFregment = document.createDocumentFragment();
+
+    for (let i = 0, len = versionScriptEls.length; i < len; i++) {
+        const { src } = versionScriptEls[i] ?? {};
+        if (src.includes(versionScriptSrc)) {
+            versionScriptTargetEl = versionScriptEls[i];
+            break;
+        }
+    }
+
+    for (let i = 0, len = SCRIPT_ARR.length; i < len; i++) {
         const _arr = SCRIPT_ARR[i];
         const { file_path, file_name, type } = _arr;
         const scriptEl = document.createElement('script');
@@ -1186,8 +1275,13 @@ function setScript() {
         scriptEl.defer = true;
         scriptEl.async = false;
         scriptEl.src = file_path + file_name + '?v=' + VERSION;
-        document.head.append(scriptEl);
+
+        scriptElsFregment.append(scriptEl);
     }
+    document.head.insertBefore(
+        scriptElsFregment,
+        versionScriptTargetEl.nextSibling
+    );
 }
 
 setScript(); // 스크립트 생성해주는 함수

@@ -1,99 +1,116 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>H-Connect</title>
-  <!--Import-->
-  <script type='text/javascript' defer src='/H-Connect/js/jquery-3.6.0.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-  <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
-  
-  <!--css-->
-  <link rel='stylesheet' href='/H-Connect/css/reset.css'>
-  <link rel="stylesheet" href="/H-Connect/css/common.css">
-  <link rel="stylesheet" href="/H-Connect/css/wide.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>H-Connect</title>
+        <!--Import-->
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/common.js"
+        ></script>
+        <script
+            type="text/javascript"
+            defer
+            src="/H-Connect/js/index.js"
+        ></script>
 
-</head>
-  <body>
-    <div id="wrap">
-        <!--콘텐츠-->
-        <div id="wrap_content" class="wide">
-            <div class="wrap_inner">
+        <!--css-->
+        <link rel="stylesheet" href="/H-Connect/css/reset.css" />
+        <link rel="stylesheet" href="/H-Connect/css/common.css" />
+        <link rel="stylesheet" href="/H-Connect/css/wide.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <!--콘텐츠-->
+            <div id="wrap_content" class="wide">
+                <div class="wrap_inner">
+                    <!-- 외부 대기목록 -->
+                    <section class="section wait_list" style="display: none">
+                        <div class="top">
+                            <div class="img_container">
+                                <img
+                                    src="/H-Connect/img/logo_white.png"
+                                    alt="로고"
+                                />
+                            </div>
 
-                <!-- 외부 대기목록 -->
-                <section class="section wait_list" style="display: none;">
-                    <div class="top">
+                            <h2>
+                                선별진료소
+                                <span>4</span>호실
+                            </h2>
+                        </div>
+
+                        <div class="entry_call">
+                            <!-- 진료소에 입장 -->
+                            <div class="call">
+                                <h1><span>한선*</span>님.</h1>
+
+                                <h3>진료소에 입장해주세요.</h3>
+                            </div>
+
+                            <!-- 소독중 -->
+                            <div class="disinfection" style="display: none">
+                                <h1>소독중</h1>
+
+                                <h3>진료소를 소독하고 있습니다.</h3>
+                            </div>
+                        </div>
+
+                        <div class="list_view">
+                            <div class="row">
+                                <h4>다음진료. 1</h4>
+
+                                <h2><span>이선*</span> 님.</h2>
+                            </div>
+
+                            <div class="row">
+                                <h4>다음진료. 2</h4>
+
+                                <h2><span>김발*</span> 님.</h2>
+                            </div>
+
+                            <div class="row">
+                                <h4>다음진료. 3</h4>
+
+                                <h2><span>선별*</span> 님.</h2>
+                            </div>
+
+                            <div class="row">
+                                <h4>다음진료. 4</h4>
+
+                                <h2><span>환자*</span> 님.</h2>
+                            </div>
+
+                            <p>이후 <span>6</span>명 대기중</p>
+                        </div>
+                    </section>
+
+                    <!-- 대기목록 빈화면 -->
+                    <section class="section clear">
                         <div class="img_container">
-                            <img src="/H-Connect/img/logo_white.png" alt="로고">
+                            <img
+                                src="/H-Connect/img/logo_white.png"
+                                alt="로고"
+                            />
                         </div>
 
-                        <h2>
-                            선별진료소
-                            <span>4</span>호실
-                        </h2>
-                    </div>
-
-                    <div class="entry_call">
-                        <!-- 진료소에 입장 -->
-                        <div class="call">
-                            <h1>
-                                <span>한선*</span>님.
-                            </h1>
-    
-                            <h3>진료소에 입장해주세요.</h3>
-                        </div>
-                       
-                        <!-- 소독중 -->
-                        <div class="disinfection"  style="display: none;">
-                            <h1>소독중</h1>
-
-                            <h3>진료소를 소독하고 있습니다.</h3>
-                        </div>
-                    </div>
-
-                    <div class="list_view">
-                        <div class="row">
-                            <h4>다음진료. 1</h4>
-
-                            <h2><span>이선*</span> 님.</h2>
-                        </div>
-
-                        <div class="row">
-                            <h4>다음진료. 2</h4>
-
-                            <h2><span>김발*</span> 님.</h2>
-                        </div>
-
-                        <div class="row">
-                            <h4>다음진료. 3</h4>
-
-                            <h2><span>선별*</span> 님.</h2>
-                        </div>
-
-                        <div class="row">
-                            <h4>다음진료. 4</h4>
-
-                            <h2><span>환자*</span> 님.</h2>
-                        </div>
-                        
-                        <p>이후 <span>6</span>명 대기중</p>
-                    </div>
-                </section>
-
-                <!-- 대기목록 빈화면 -->
-                <section class="section clear">
-                    <div class="img_container">
-                        <img src="/H-Connect/img/logo_white.png" alt="로고">
-                    </div>
-
-                    <h1>선별진료소 <span>4</span>호실</h1>
-                    <h3>선별진료소 사용 가능합니다.</h3>
-                </section>
+                        <h1>선별진료소 <span>4</span>호실</h1>
+                        <h3>선별진료소 사용 가능합니다.</h3>
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
-    <!--// end wrap-->
-  </body>
+        <!--// end wrap-->
+    </body>
 </html>
