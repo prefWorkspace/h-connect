@@ -89,19 +89,19 @@ const FILE_TREE = {
             library: {
                 'fullcalendar.js': {
                     priority: 0,
-                    url_path: '*',
+                    url_path: '/doctor/remote||/doctor/remote_new',
                     file_path: '/H-Connect/js/lib/fullcalendar/library/',
                 },
                 'main.min.js': {
                     priority: 0,
-                    url_path: '*',
+                    url_path: '/doctor/remote||/doctor/remote_new',
                     file_path: '/H-Connect/js/lib/fullcalendar/library/',
                 },
             },
             custom: {
                 'remotePage.js': {
                     priority: 0,
-                    url_path: '*',
+                    url_path: '/doctor/remote||/doctor/remote_new',
                     file_path: '/H-Connect/js/lib/fullcalendar/custom/',
                 },
             },
@@ -548,9 +548,29 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/hworks/mySchedule/actions/',
                     },
+                    'myCalendarAPI.js': {
+                        type: 'module',
+                        url_path: '/doctor/index',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/mySchedule/actions/',
+                    },
                 },
-                renders: {},
-                templates: {},
+                renders: {
+                    'myCalendarRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/index',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/mySchedule/renders/',
+                    },
+                },
+                templates: {
+                    'myCalendarTemplate.js': {
+                        type: 'module',
+                        url_path: '/doctor/index',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/mySchedule/templates/',
+                    },
+                },
             },
             remoteHworks: {
                 actions: {

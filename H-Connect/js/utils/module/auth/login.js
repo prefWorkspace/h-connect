@@ -55,6 +55,8 @@ function Login_Fetch() {
                 apiServerinfoList,
                 message,
             } = res;
+            console.log('res====');
+            console.log(res);
             if (result) {
                 sessionController.setSession('accesToken', res.accessToken);
                 localStorageController.setLocalS('userData', userData);
