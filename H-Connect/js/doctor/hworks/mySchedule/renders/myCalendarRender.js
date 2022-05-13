@@ -71,11 +71,34 @@ async function dateInit() {
     await myScheduleInit();
 }
 
+async function positionHandle() {
+    const titleParent = $('.my_plan .weekly .day');
+    const obj = {};
+    // console.log('titleParent===');
+    // console.log(titleParent);
+
+    titleParent.each((index, value) => {
+        const child = $(value).find('.plan');
+        const childArr = [...child];
+        if (childArr.length > 1) {
+            const position = [];
+            for (let i = 0; i < childArr.length; i++) {
+                const top = $(childArr[i]).position().top;
+                const height = $(childArr[i]).height();
+                const obj = { top, height };
+                position.push(obj);
+            }
+
+            console.log('position==');
+            position.sort((a, b) => a.top - b.top);
+            console.log(position);
+        }
+    });
+}
+
 async function myScheduleInit() {
     const { result, list } = await selectMyScheduleList();
     let html = '';
-    console.log('list==');
-    console.log(list);
     if (!result) {
         for (let i = 0; i < list.length; i++) {
             const { startDatetime } = list[i];
@@ -86,11 +109,13 @@ async function myScheduleInit() {
     } else {
         for (let i = 0; i < selectMycalendar.length; i++) {
             const { startDatetime } = selectMycalendar[i];
-            console.log(startDatetime);
             const id = moment(startDatetime).format('YYYYMMDD');
             html = myCalendarTemplate(selectMycalendar[i]);
             $(`#${id} .title`).after(html);
         }
     }
+
+    await positionHandle();
 }
+
 await dateInit();
