@@ -3942,11 +3942,11 @@ p {
     color: #940045;
 }
 
-.doctor_remote .ask_request,
+/* .doctor_remote .ask_request,
 .doctor_remote .opinion_ing,
 .doctor_remote .me_request {
     display: none;
-}
+} */
 
 /* 전체협진일정보기 - 주간일정 보기 */
 .doctor_remote .week .title {

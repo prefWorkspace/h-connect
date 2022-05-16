@@ -8,6 +8,8 @@ export function sessionListTemplate(_data) {
         consultChannel,
         listCount,
         consultId,
+        endDatetime,
+        startDatetime,
     } = _data;
     let doctorLevelName, doctorName;
     if (memberInfoList !== null) {
@@ -28,12 +30,16 @@ export function sessionListTemplate(_data) {
                             />
                         </div>
 
-                        <p class="time">13:25 까지</p>
+                        <p class="time">${moment(endDatetime).format(
+                            'HH:mm'
+                        )} 까지</p>
                         <p class="place">${consultChannelName} 협진.</p>
                         <p class="wait">2일 21시간 30분 경과</p>
                     </div>
 
-                    <p>${doctorName} ${doctorLevelName} 외 ${memberInfoList.length}명</p>
+                    <p>${doctorName} ${doctorLevelName} 외 ${
+                memberInfoList.length
+            }명</p>
                 </div>`;
             break;
         //소견요청 협진
@@ -48,12 +54,16 @@ export function sessionListTemplate(_data) {
                             />
                         </div>
 
-                        <p class="time">13:25 까지</p>
+                        <p class="time">${moment(endDatetime).format(
+                            'HH:mm'
+                        )} 까지</p>
                         <p class="place">${consultChannelName} 협진.</p>
                         <p class="wait">2일 21시간 30분 경과</p>
                     </div>
 
-                    <p>${doctorName} ${doctorLevelName} 외 ${memberInfoList.length}명</p>
+                    <p>${doctorName} ${doctorLevelName} 외 ${
+                memberInfoList.length
+            }명</p>
                 </div>`;
             break;
 
@@ -69,11 +79,15 @@ export function sessionListTemplate(_data) {
                         />
                     </div>
 
-                        <p class="time">10:20</p>
+                        <p class="time">${moment(endDatetime).format(
+                            'HH:mm'
+                        )}</p>
                         <p class="place">${consultChannelName}.</p>
                         <p class="wait">5분 경과</p>
                 </div>
-                <p>${doctorName} ${doctorLevelName} 외 ${memberInfoList.length}명</p>
+                <p>${doctorName} ${doctorLevelName} 외 ${
+                memberInfoList.length
+            }명</p>
             </div>
                 `;
             break;
@@ -91,7 +105,9 @@ export function sessionListTemplate(_data) {
                             />
                         </div>
 
-                        <p class="time">10:23</p>
+                        <p class="time">${moment(startDatetime).format(
+                            'HH:mm'
+                        )}</p>
                         <p class="place">${consultChannelName}.</p>
                         <p class="wait">2분 경과</p>
                     </div>
@@ -112,7 +128,9 @@ export function sessionListTemplate(_data) {
                             />
                         </div>
 
-                        <p class="time">10:22</p>
+                        <p class="time">${moment(startDatetime).format(
+                            'HH:mm'
+                        )}</p>
                         <p class="place">${consultChannelName} 요청.</p>
                         <p class="wait">3분 경과</p>
                     </div>

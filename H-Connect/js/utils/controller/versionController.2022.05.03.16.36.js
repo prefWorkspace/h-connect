@@ -332,9 +332,28 @@ const FILE_TREE = {
         },
         remote: {
             index: {
-                actions: {},
-                renders: {},
-                templates: {},
+                actions: {
+                    'dateScheduleHandle.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path: '/H-Connect/js/doctor/remote/index/actions/',
+                    },
+                },
+                renders: {
+                    'dateScheduleRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path: '/H-Connect/js/doctor/remote/index/renders/',
+                    },
+                },
+                templates: {
+                    'dateScheduleTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/index/templates/',
+                    },
+                },
             },
             remoteNew: {
                 actions: {

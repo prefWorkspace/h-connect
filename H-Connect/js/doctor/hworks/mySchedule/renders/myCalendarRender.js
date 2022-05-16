@@ -88,10 +88,7 @@ async function positionHandle() {
                 const obj = { top, height };
                 position.push(obj);
             }
-
-            console.log('position==');
             position.sort((a, b) => a.top - b.top);
-            console.log(position);
         }
     });
 }

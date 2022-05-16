@@ -19,15 +19,22 @@ const {
     id: userId,
 } = JSON.parse(userData);
 
-export async function selectMyScheduleList() {
+export async function selectMyScheduleList(
+    startDatetime = null,
+    endDatetime = null
+) {
     const today = new Date();
 
     const obj = {
         requester,
         userId,
         organizationCode,
-        startDatetime: moment(today).format('YYYY-MM-DD 00:00:00'),
-        endDatetime: moment(today).format('YYYY-MM-DD 23:59:59'),
+        startDatetime: startDatetime
+            ? startDatetime
+            : moment(today).format('YYYY-MM-DD 00:00:00'),
+        endDatetime: endDatetime
+            ? endDatetime
+            : moment(today).format('YYYY-MM-DD 23:59:59'),
         ...commonRequest(),
     };
 
