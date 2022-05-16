@@ -4,9 +4,10 @@ export class CreateVitalLineD3 {
         this.init({
             _target: target,
             _data: data,
-            _measurementCode: measurementCode,
+            _measurementCode: measurementCode
         });
     }
+
     elementInit({ _target, _measurementCode }) {
         $(`#${_target}`).css('position', 'relative');
         this.elements = {
@@ -15,16 +16,17 @@ export class CreateVitalLineD3 {
             chart: {},
             size: {
                 width: $(`#${_target}`).width(),
-                height: $(`#${_target}`).height(),
-            },
+                height: $(`#${_target}`).height()
+            }
         };
     }
+
     dataInit({ _data }) {
         const initNum = 0;
         const anotherNum = initNum + 1;
         this.data = {
             currentId: this.idSelector(initNum),
-            list: {},
+            list: {}
         };
         this.data.list[this.idSelector(initNum)] = this.listSetting(_data);
         this.data.list[this.idSelector(anotherNum)] = this.listSetting([]);
@@ -33,39 +35,44 @@ export class CreateVitalLineD3 {
         //
         this.chartLineCreate(this.data.currentId);
     }
+
     listSetting(_list) {
         return {
             data: _list,
             minMax: {
                 value: {
                     min: this.getDataMinMax(_list, 'value')[0],
-                    max: this.getDataMinMax(_list, 'value')[1],
+                    max: this.getDataMinMax(_list, 'value')[1]
                 },
                 seconds: {
                     min: this.getDataMinMax(_list, 'seconds')[0],
-                    max: this.getDataMinMax(_list, 'seconds')[1],
-                },
+                    max: this.getDataMinMax(_list, 'seconds')[1]
+                }
             },
-            line: () => {},
+            line: () => {
+            }
         };
     }
+
     chartSvgCreate(_num) {
         const { wrap, size } = this.elements;
         $(`#${wrap}`).append(
-            `<svg id="${this.idSelector(_num)}" style="width:${
+            `<svg id='${this.idSelector(_num)}' style='width:${
                 size.width
             }px; height:${
                 size.height
-            }px; position:absolute; left:0; top:0; background:transparent;"></svg>`
+            }px; position:absolute; left:0; top:0; background:transparent;'></svg>`
         );
         this.elements.chart[this.idSelector(_num)] = d3.select(
             `#${wrap} svg#${this.idSelector(_num)}`
         );
         this.chartPathCreate(_num);
     }
+
     chartPathCreate(_num) {
         this.elements.chart[this.idSelector(_num)].append('path');
     }
+
     chartLineCreate(_id) {
         const targetData = this?.data.list[_id];
         this.lineGenerator(targetData);
@@ -79,6 +86,7 @@ export class CreateVitalLineD3 {
 
         this.lineTransition(_id);
     }
+
     chartUpdate(_data) {
         let remainId = null;
         for (const [key] of Object.entries(this.data.list)) {
@@ -87,7 +95,7 @@ export class CreateVitalLineD3 {
                 break;
             }
         }
-        this.lineErase(this.data.currentId);
+        // this.lineErase(this.data.currentId);
         this.data.currentId = remainId;
         this.data.list[this.data.currentId] = this.listSetting(_data);
         this.chartLineCreate(this.data.currentId);
@@ -98,9 +106,11 @@ export class CreateVitalLineD3 {
     idSelector(_num) {
         return `${this.elements.wrap}-${this.elements.measurementCode}-${_num}`;
     }
+
     pathSelector(_id) {
         return this.elements.chart[_id].select(`path`);
     }
+
     getDataMinMax(_list, _key) {
         return d3.extent(
             _list.map((_item) => {
@@ -114,14 +124,14 @@ export class CreateVitalLineD3 {
             .scaleLinear()
             .domain([
                 _targetData.minMax.seconds.min,
-                _targetData.minMax.seconds.max,
+                _targetData.minMax.seconds.max
             ])
             .range([0, this.elements?.size.width]);
         const yScale = d3
             .scaleLinear()
             .domain([
                 _targetData.minMax.value.min,
-                _targetData.minMax.value.max,
+                _targetData.minMax.value.max
             ])
             .range([0, this.elements?.size.height]);
 
@@ -145,6 +155,7 @@ export class CreateVitalLineD3 {
             .transition(transitionPath)
             .attr('stroke-dashoffset', 0);
     }
+
     lineErase(_currentId) {
         const _id = _currentId;
         const currentPath = this.pathSelector(_currentId);
@@ -162,6 +173,7 @@ export class CreateVitalLineD3 {
                 this.elements.chart[_id].attr('stroke-dashoffset', pathLength);
             });
     }
+
     /* e: function */
     init({ _target, _data, _measurementCode }) {
         this.elementInit({ _target, _measurementCode });
