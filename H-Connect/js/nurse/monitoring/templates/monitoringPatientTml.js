@@ -1,9 +1,10 @@
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
-);
+    );
 /* s : 모니터링 블록 */
 
 window._history = history;
+
 export function monitorBlock_have(_data) {
     const {
         measurementCode,
@@ -11,7 +12,7 @@ export function monitorBlock_have(_data) {
         name,
         bioSignalECGLastData,
         bioSignalSpO2LastData,
-        bioSignalTempLastData,
+        bioSignalTempLastData
     } = _data || {};
     // console.log(_data);
     /**
@@ -31,35 +32,41 @@ export function monitorBlock_have(_data) {
      * active yellow(노란색) : 장치 이상
      * active blue(파란색) : 시스템 이상
      */
+
+    /**
+     * id: measurementCode
+     * data-name: name
+     * data-patient-code: patientCode
+     */
     return `
-    <div class="patient_monitor" data-measurementCode=${measurementCode} onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${measurementCode}')">
-        <div class="patient_info">
+    <div class='patient_monitor' id='${measurementCode}' data-name='${name}' data-patient-code='${patientCode}' data-measurementCode='${measurementCode}' onclick="window._history.linkTo('/nurse/patient.html?measurement_code=${measurementCode}')">
+        <div class='patient_info'>
             <p>
                 <span>${patientCode}</span>.
                 <span>${name}</span>
             </p>
         </div>
-        <div class="vital_moniter">
-            <div class="ews">
+        <div class='vital_moniter'>
+            <div class='ews'>
                 <h3>EWS</h3>
                 <p>${ews || '-'}</p>
             </div>
-            <div class="hr">
+            <div class='hr'>
                 <h3>HR</h3>
                 <p>${heartRate || '-'}</p>
             </div>
 
-            <div class="sp">
+            <div class='sp'>
                 <h3>SP02</h3>
                 <p>${spO2 || '-'}</p>
             </div>
 
-            <div class="resp">
+            <div class='resp'>
                 <h3>RESP</h3>
                 <p>${resp || '-'}</p>
             </div>
 
-            <div class="temp">
+            <div class='temp'>
                 <h3>TEMP</h3>
                 <p>${temperature || '-'}</p>
             </div>
@@ -67,19 +74,20 @@ export function monitorBlock_have(_data) {
     </div>
     `;
 }
+
 export function monitorBlock_none(_data) {
     const { sickRoomCode, wardCode, sickBedCode } = _data || {};
     return `
-    <div class="patient_monitor empty_bed" data-wardCode=${wardCode} data-sickRoomCode=${sickRoomCode} data-sickBedCode=${sickBedCode}>
-        <div class="empty_bed">
+    <div class='patient_monitor empty_bed' data-wardCode='${wardCode}' data-sickRoomCode='${sickRoomCode}' data-sickBedCode='${sickBedCode}'>
+        <div class='empty_bed'>
             <p>empty_bed</p>
 
-            <div class="btn_default">
-                <img src="/H-Connect/img/icon/btn_add.png" alt="플러스 이미지">
+            <div class='btn_default'>
+                <img src='/H-Connect/img/icon/btn_add.png' alt='플러스 이미지'>
             </div>
 
-            <div class="btn_hover">
-                <img src="/H-Connect/img/icon/btn_add_hover.png" alt="플러스 이미지">
+            <div class='btn_hover'>
+                <img src='/H-Connect/img/icon/btn_add_hover.png' alt='플러스 이미지'>
             </div>
         </div>
     </div>
@@ -99,54 +107,54 @@ export function monitorRoomBlock(_data) {
         roomPatientCount, // 병실 환자수
         roomTotalSickBed, // 병동에 총 병상수
         roomSpareBedCount, // 여유 병상 수
-        wardCode,
+        wardCode
     } = sickRoomItem || {};
     return `
-    <section class="all_patient room_view">
-        <div class="container">
-            <div class="pateint_room">
-                <div class="room_num">
+    <section class='all_patient room_view'>
+        <div class='container'>
+            <div class='pateint_room'>
+                <div class='room_num'>
                 <p><span>${sickRoom}</span>호.</p>
 
                 <button
-                    type="button"
-                    class="btn_setting"
+                    type='button'
+                    class='btn_setting'
                     onclick="window._history.linkTo('index.html?wardCode=${wardCode}&sickRoomCode=${sickRoomCode}')"
                 >
                     <img
-                    src="/H-Connect/img/header/setting.svg"
-                    alt="톱니바퀴"
+                    src='/H-Connect/img/header/setting.svg'
+                    alt='톱니바퀴'
                     />
                 </button>
                 </div>
 
-                <div class="room_count">
+                <div class='room_count'>
                 <p><span>${roomTotalSickBed}</span>인실.</p>
                 &nbsp;
                 <p><span>${roomPatientCount}</span> monitoring.</p>
                 </div>
             </div>
 
-            <div class="monitor_wrap">
+            <div class='monitor_wrap'>
                 ${
-                    sickBedList?.htmlFor((_sickBedItem, _index) => {
-                        const findPatient_in_sickBedList = patientList?.find(
-                            (_patientItem) => {
-                                return (
-                                    _patientItem?.sickBedCode ===
-                                    _sickBedItem?.sickBedCode
-                                );
-                            }
-                        );
-                        if (findPatient_in_sickBedList) {
-                            return monitorBlock_have(
-                                findPatient_in_sickBedList
-                            );
-                        } else {
-                            return monitorBlock_none(_sickBedItem);
-                        }
-                    }) || ''
+        sickBedList?.htmlFor((_sickBedItem, _index) => {
+            const findPatient_in_sickBedList = patientList?.find(
+                (_patientItem) => {
+                    return (
+                        _patientItem?.sickBedCode ===
+                        _sickBedItem?.sickBedCode
+                    );
                 }
+            );
+            if (findPatient_in_sickBedList) {
+                return monitorBlock_have(
+                    findPatient_in_sickBedList
+                );
+            } else {
+                return monitorBlock_none(_sickBedItem);
+            }
+        }) || ''
+    }
             </div>
         </div>
     </section>  
