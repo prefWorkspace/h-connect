@@ -501,13 +501,19 @@
                             <!-- 협진 일정목록 -->
                             <div class="cal_list">
                                 <div class="title">
-                                    <h2>9월 15일 협진 일정목록</h2>
+                                    <h2>
+                                        <span id="d_day">9월 15일</span> 협진
+                                        일정목록
+                                    </h2>
 
-                                    <p><span>4</span> 개의 일정</p>
+                                    <p>
+                                        <span id="d_day_count">-</span> 개의
+                                        일정
+                                    </p>
                                 </div>
 
                                 <div class="schedule_list all_list">
-                                    <div class="row start_remote on">
+                                    <!-- <div class="row start_remote on">
                                         <div>
                                             <p>10:30</p>
                                             <p>원격협진</p>
@@ -541,7 +547,7 @@
                                         </div>
 
                                         <p class="me">내가 보냄</p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -816,7 +822,11 @@
                     </section>
 
                     <!-- 원격협진 -->
-                    <section class="section right collabor">
+                    <section
+                        id="consultChannel3"
+                        class="section right collabor"
+                        style="display: none"
+                    >
                         <div class="container">
                             <div class="title">
                                 <div>
@@ -1126,7 +1136,11 @@
                     </section>
 
                     <!-- 협진 일정 요청 -->
-                    <section class="section right ask_request">
+                    <section
+                        id="consultChannel1"
+                        class="section right ask_request"
+                        style="display: none"
+                    >
                         <div class="container">
                             <div class="title">
                                 <div>
@@ -1683,7 +1697,11 @@
                         </div>
                     </section>
                     <!-- 소견 요청 협진 진행중 -->
-                    <section class="section right opinion_ing">
+                    <section
+                        id="consultChannel2"
+                        style="display: none"
+                        class="section right opinion_ing"
+                    >
                         <div class="container">
                             <div class="title">
                                 <div>
@@ -2021,7 +2039,11 @@
                     </section>
 
                     <!-- 협진 일정 요청(내가 보냄) -->
-                    <section class="section right me_request">
+                    <section
+                        id="consultChannel0"
+                        style="display: none"
+                        class="section right me_request"
+                    >
                         <div class="container">
                             <div class="title">
                                 <div>

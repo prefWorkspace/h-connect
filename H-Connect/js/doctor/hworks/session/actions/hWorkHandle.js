@@ -23,7 +23,6 @@ const { mok } = await import(
 // 일정 및 알림 카운트 표시
 async function init() {
     const { result, list } = await selectScheduleCount();
-
     if (result) {
         const { sessionCount, myScheduleCount, consultCount, notConfirmCount } =
             list;

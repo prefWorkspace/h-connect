@@ -325,7 +325,7 @@ p {
 }
 
 .doctor .weekly .four > div {
-    display: flex;
+    /* display: flex; */
 }
 
 .doctor .my_plan .weekly .inner::-webkit-scrollbar {
@@ -387,11 +387,11 @@ p {
 }
 
 .doctor .my_plan .weekly .today {
-    width: 204px;
+    width: 48px;
 }
 
 .doctor .my_plan .weekly .today .title {
-    width: 204px;
+    /* width: 204px; */
     background: #007a94;
 }
 
@@ -429,7 +429,7 @@ p {
     margin: auto;
 }
 
-.doctor .my_plan .today :nth-child(2) {
+/* .doctor .my_plan .today :nth-child(2) {
     height: 74px;
     top: 111px;
 }
@@ -465,25 +465,25 @@ p {
 .doctor .my_plan .inner > :nth-child(2) :nth-child(3) {
     height: 143px;
     top: 232px;
-}
+} */
 
-.doctor .my_plan .inner > :nth-child(3),
+/* .doctor .my_plan .inner > :nth-child(3),
 .doctor .my_plan .inner > :nth-child(3) .title {
     width: 100px;
-}
+} */
 
-.doctor .my_plan .inner > :nth-child(3) :nth-child(2) {
+/* .doctor .my_plan .inner > :nth-child(3) :nth-child(2) {
     height: 63px;
     top: 41px;
-}
+} */
 
-.doctor .my_plan .inner > :nth-child(3) :nth-child(3) {
+/* .doctor .my_plan .inner > :nth-child(3) :nth-child(3) {
     height: 433px;
     top: 41px;
     left: 52px;
-}
+} */
 
-.doctor .my_plan .inner > :nth-child(4),
+/* .doctor .my_plan .inner > :nth-child(4),
 .doctor .my_plan .inner > :nth-child(4) .title {
     width: 100px;
 }
@@ -582,7 +582,7 @@ p {
 .doctor .my_plan .four .wrap > :nth-child(12) :nth-child(2) {
     height: 142px;
     top: 41px;
-}
+} */
 
 .doctor .select {
     margin: 8px 0;
@@ -3942,11 +3942,11 @@ p {
     color: #940045;
 }
 
-.doctor_remote .ask_request,
+/* .doctor_remote .ask_request,
 .doctor_remote .opinion_ing,
 .doctor_remote .me_request {
     display: none;
-}
+} */
 
 /* 전체협진일정보기 - 주간일정 보기 */
 .doctor_remote .week .title {

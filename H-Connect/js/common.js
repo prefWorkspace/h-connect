@@ -1109,7 +1109,8 @@ $(function () {
     });
 
     $('.doctor .btn_four').on('click', function () {
-        $('.doctor .four').show();
+        // $('.doctor .four').show();
+        $('.doctor .four').css('display', 'flex');
         $(this).addClass('on');
         $('.doctor .btn_two').removeClass('on');
     });
