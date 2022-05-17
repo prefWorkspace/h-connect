@@ -3,9 +3,28 @@ const { selectMeasurementInfoList } = await import(
         '/H-Connect/js/doctor/remote/remoteNew/actions/remoteNewAPI.js'
     )
 );
+const { validateCoopAll } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
+    )
+);
+const {
+    renderActivateCheckBox,
+    renderActivateChoiceDoctor,
+    renderActivateChoiceDoctorLength,
+} = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
+    )
+);
 const { renderCooperationSection } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/renders/cooperationSectionRenders.js'
+    )
+);
+const { renderChoiceDoctorValidation } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/renders/attendeesSectionRenders.js'
     )
 );
 const {
@@ -18,16 +37,26 @@ const {
 );
 
 function addSelectBoxAction() {
-    // 협진 종류 선택 select box
+    // 협진 종류 선택 select box action
+    const _$surgeryBox = $('.surgery_box');
     const _$surgeryLabel = $('.surgery_label');
     const _$surgeryOptions = $('.surgery_option');
 
     _$surgeryOptions.off().on('click', function () {
+        // 선택
         surgerySelect(this);
+
+        // 활성화 여부
         reset(_$surgeryOptions, 'active');
-        _$surgeryLabel.parent().removeClass('active');
         $(this).addClass('active');
+        _$surgeryLabel.parent().removeClass('active');
+
+        // 옵션 재설정
         const _optionRole = $(this).data('option-role');
+        // 박스 옵션 설정
+
+        _$surgeryBox.attr('data-option-role', _optionRole);
+        // 섹션 렌더링
         renderCooperationSection(_optionRole);
     });
 
@@ -49,9 +78,15 @@ function addSelectBoxAction() {
 
 function addCoopRealTimeRemoteAction() {
     // 실시간 원격 협진 액션
+    $('#cooperation-section #surgery-wrap').on('.rt_view input', function () {
+        const _checkValidateAll = validateCoopAll();
+    });
 }
 function addCoopOpinionAction() {
     // 소견 요청 협진 액션
+    $('#cooperation-section #surgery-wrap').on('.ro_view input', function () {
+        const _checkValidateAll = validateCoopAll();
+    });
 }
 function addCoopRequestScheduleAction() {
     // 협진 일정 요청 액션
@@ -60,15 +95,26 @@ function addCoopRequestScheduleAction() {
 function addCoopContentAction() {
     // 협진 내용 액션
 
-    function addContentCaseAction() {
+    (function checkValidateCoopContent() {
+        $('#cooperation-section #content-wrap').on(
+            'input',
+            '[data-key]',
+            function () {
+                const _checkValidateAll = validateCoopAll();
+            }
+        );
+    })();
+
+    (function addContentCaseAction() {
         // 협진 내용 > case 추가
         $('section.new_remote').on('click', '.btn_add', function () {
             const _$contentCaseWrapEl = $('.content .content-case-wrap');
             _$contentCaseWrapEl.append(coopContentCaseBlockTmpl);
+            const _checkValidateAll = validateCoopAll();
         });
-    }
+    })();
 
-    function deleteContentCaseAction() {
+    (function deleteContentCaseAction() {
         // 협진 내용 > case 삭제
         $('section.new_remote').on(
             'click',
@@ -85,9 +131,9 @@ function addCoopContentAction() {
                 _$contentCaseBlockEls.eq(_btnIndex).remove();
             }
         );
-    }
+    })();
 
-    function addSearchPatientForCaseAction() {
+    (function addSearchPatientForCaseAction() {
         function appendSearchPatientList(_containerEl, _searchList) {
             if (_searchList && _searchList.length > 0) {
                 const _searchListHtml = _searchList.htmlFor((_data) => {
@@ -98,6 +144,11 @@ function addCoopContentAction() {
                     .html(_searchListHtml);
                 _containerEl.find('.remote_search').fadeIn();
             } else {
+                // 찾을 수 없을 때
+                _containerEl.addClass('not_find');
+                const _$searchInputEl = _containerEl.find('.input_search');
+                _$searchInputEl.val('');
+                _$searchInputEl.attr('placeholder', '찾을 수 없습니다');
             }
         }
         async function handleSearchPatient(targetEl) {
@@ -130,14 +181,24 @@ function addCoopContentAction() {
         );
         // 검색 input change 시
         $('section.new_remote .content-case-wrap').on(
-            '.search_container input',
+            'input',
+            '.patient_select .search_container .input_search',
             function (e) {
+                const _$searchContainerEl =
+                    $(this).closest('.search_container');
+                if (_$searchContainerEl.hasClass('not_find')) {
+                    _$searchContainerEl.removeClass('not_find');
+                    $(this).attr(
+                        'placeholder',
+                        '이름 혹은 담당병과명을 입력해주세요.'
+                    );
+                }
                 // input의 길이가 0이되면 검색모드 종료
                 if ($(e.target).val().length <= 0) {
                     $(
                         'section.new_remote .content-case-wrap .search_patient .wrap_inner'
                     ).html('');
-                    $('.remote_search').fadeOut();
+                    $('.patient_select .remote_search').fadeOut();
                 }
             }
         );
@@ -156,21 +217,36 @@ function addCoopContentAction() {
                 for (const [key, value] of Object.entries(_dataListItems)) {
                     _$patientSelectNameEl.data(key, value);
                 }
-                const { name } = _dataListItems ?? {};
-                $('.remote_search').fadeOut();
-                _$patientSelectNameEl.text(name);
+                const { patientName } = _dataListItems ?? {};
+                $('.patient_select .remote_search').fadeOut();
+                _$patientSelectNameEl.text(patientName);
+                _$patientSelectNameEl.data(_dataListItems);
+
+                const _checkValidateAll = validateCoopAll();
             }
         );
-    }
+    })();
 
-    addContentCaseAction();
-    deleteContentCaseAction();
-    addSearchPatientForCaseAction();
+    (function deleteCollaboParticipantDoctorAction() {
+        // 협진 참여자 정보 삭제 액션
+
+        $('section.new_remote').on(
+            'click',
+            '.participant .mem .btn_del',
+            function () {
+                const _$listItemEl = $(this).closest('.mem');
+                const { userId } = _$listItemEl.data();
+                renderActivateCheckBox(userId, false);
+                renderActivateChoiceDoctor(userId);
+            }
+        );
+    })();
 }
 
 function initAddActions() {
     addSelectBoxAction();
 
     addCoopContentAction();
+    addCoopRealTimeRemoteAction();
 }
 initAddActions();

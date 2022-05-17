@@ -25,6 +25,7 @@
 
 <body>
     <div class="bookmark_popup_wrap"></div>
+    <div class="createCooperation_popup_wrap"></div>
     <!-- 연결요청 -->
     <div class="pop connect connect_para connect_doctor">
         <div class="overlay">
@@ -232,7 +233,8 @@
                                 <button type="button" class="btn_cancel">취소</button>
 
                                 <!-- 밑에 내용 전부 입력하면 활성화가 되게 해주세요 -->
-                                <button type="button" class="btn_creat" disabled>협진생성</button>
+                                <button id='create_cooperation_btn' type="button" class="btn_creat"
+                                    disabled>협진생성</button>
 
                                 <!-- 협진 일정 요청을 끝내면 활성화가 되게 해주세요 -->
                                 <button type="button" class="btn_creat btn_request" disabled>일정요청</button>
@@ -260,7 +262,10 @@
                             </div>
                         </div>
 
-                        <div id="cooperation-section"></div>
+                        <div id="cooperation-section">
+                            <div id="surgery-wrap"></div>
+                            <div id="content-wrap"></div>
+                        </div>
                         <!-- 실시간 원격 협진 -->
 
 
@@ -641,13 +646,14 @@
                                 <h2>의료진 선택</h2>
 
                                 <div>
-                                    <p><span>0</span> 명 선택</p>
-                                    <button type="button" class="btn_check">확인</button>
+                                    <p><span class="choice_doctor_length">0</span> 명 선택</p>
+                                    <!-- <button type="button" class="btn_check">확인</button> -->
                                 </div>
                             </div>
 
                             <div class="choice">
                                 <div class="choice_member">
+                                    <p class="error_text">선택된 의사가 없습니다</p>
                                     <!-- <div class="mem">
                                         <p>김협진 교수님</p>
                                         <button type="button" class="btn_del">
@@ -659,11 +665,16 @@
                                 <!-- 1. 검색 결과가 없을시 placehoder="찾을 수 없습니다" 로 표시-->
                                 <!-- 2. 검색 결과가 없을시 not_find 클래스를 붙여주세요-->
                                 <div class="search_container">
-                                    <input type="text" placeholder="이름 혹은 담당병과명을 입력해주세요.">
+                                    <input class="input_search" type="text" placeholder="이름 혹은 담당병과명을 입력해주세요.">
 
                                     <button type="button" class="btn_search">
                                         <img src="/H-Connect/img/header/search.svg" alt="검색표시">
                                     </button>
+
+                                    <div class="pop remote_search" style="width:100%">
+                                        <!-- 환자 리스트 -->
+                                        <div class="wrap_inner"></div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -676,7 +687,7 @@
                                         <div class="group">
                                             <div>
                                                 <div class='favorite_list_wrap'>
-
+                                                    <p class="loading_text">데이터를 불러오는 중입니다</p>
                                                     <!-- <div class="group_list on">
                                                         <p>외과그룹</p>
                                                         <button type="button" class="btn_del">
@@ -702,6 +713,7 @@
                                         </div>
 
                                         <div class="group_container list_inner">
+                                            <p class="loading_text">데이터를 불러오는 중입니다</p>
                                             <!-- <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" name="doctor" id="check2"
@@ -731,6 +743,7 @@
 
                                     <div class="doctor_list">
                                         <div class="list_inner">
+                                            <p class="loading_text">데이터를 불러오는 중입니다</p>
                                             <!-- <div>
                                                 <div class="input_wrap">
                                                     <input type="checkbox" id="list_check11" class="green_custom">
