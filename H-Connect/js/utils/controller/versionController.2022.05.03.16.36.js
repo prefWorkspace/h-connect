@@ -338,6 +338,11 @@ const FILE_TREE = {
                         url_path: '/doctor/remote',
                         file_path: '/H-Connect/js/doctor/remote/index/actions/',
                     },
+                    'dateScheduleAPI.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path: '/H-Connect/js/doctor/remote/index/actions/',
+                    },
                 },
                 renders: {
                     'dateScheduleRenders.js': {
@@ -348,6 +353,12 @@ const FILE_TREE = {
                 },
                 templates: {
                     'dateScheduleTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/index/templates/',
+                    },
+                    'dateScheduleDetailTemplates.js': {
                         type: 'module',
                         url_path: '/doctor/remote',
                         file_path:

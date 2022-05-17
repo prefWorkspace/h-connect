@@ -1,4 +1,5 @@
-console.log(1);
+'use strict';
+
 // fullcalendar library
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');

@@ -7,6 +7,7 @@ export function dataScheduleTemplates(_data) {
         consultChannel,
         startDatetime,
         memberInfoList,
+        consultId,
     } = _data;
 
     let html = '';
@@ -16,28 +17,40 @@ export function dataScheduleTemplates(_data) {
         doctorLevelName = memberInfoList[0].doctorLevelName;
         doctorName = memberInfoList[0].doctorName;
     }
+
     switch (consultChannel) {
         //협진일정 요청
         case 1:
-            html = `
-                <div data-isentstate="${isentState}" data-consultchannle="${consultChannel}" class="row remote_ask">
+            if (isentState === 1) {
+                html = `
+                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row request_remote">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
                     </div>
-                
+                    <p class="me">내가 보냄</p>
+                </div>
+                `;
+            } else {
+                html = `
+                <div data-consultid="${consultId}" data-isentstate="${isentState}" data-consultchannle="${consultChannel}" class="row remote_ask">
+                    <div>
+                        <p>${moment(startDatetime).format('HH:mm')}</p>
+                        <p>${consultChannelName}</p>
+                    </div>
                     <p>${doctorName} ${doctorLevelName} ${
-                memberInfoList && memberInfoList.length > 1
-                    ? `외 ${memberInfoList.length}`
-                    : ''
-            }</p>
+                    memberInfoList && memberInfoList.length > 1
+                        ? `외 ${memberInfoList.length}`
+                        : ''
+                }</p>
                 </div>
             `;
+            }
             break;
         //소견요청 협진
         case 2:
             html = `
-                <div data-consultchannle="${consultChannel}" class="row end_remote">
+                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row end_remote">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
@@ -55,7 +68,7 @@ export function dataScheduleTemplates(_data) {
         // 원격협진
         case 3:
             html = `
-                <div data-consultchannle="${consultChannel}" class="row start_remote on">
+                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row start_remote on">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>

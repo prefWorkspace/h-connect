@@ -10,7 +10,7 @@ const { selectMycalendar } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
 );
 
-const { dateScheduleRender } = await import(
+const { dateScheduleRender, dateScheduleDetailRender } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/renders/dateScheduleRenders.js'
     )
@@ -41,6 +41,7 @@ async function calendarHandle() {
 function myCalendarClickHandler() {
     const consultChannel = $(this).data('consultchannle');
     const isentState = +$(this).data('isentstate');
+    const consultId = $(this).data('consultid');
 
     $('.all_plan .cal_list .schedule_list .row').removeClass('on');
     $(this).addClass('on');
@@ -50,20 +51,24 @@ function myCalendarClickHandler() {
     } else {
         $(`#consultChannel${consultChannel}`).show();
     }
+
+    dateScheduleDetailRender(consultChannel, isentState, consultId);
 }
 
 async function init() {
     $('.all_plan .cal_list .schedule_list .row').each((index, value) => {
         if (index === 0) {
             $(value).addClass('on');
-            $('.section.right').hide();
-            const consultChannel = $(value).data('consultchannle');
+
             const isentState = +$(value).data('isentstate');
+            const consultId = $(value).data('consultid');
+            const consultChannel = $(value).data('consultchannle');
             if (isentState === 1) {
                 $(`#consultChannel0`).show();
             } else {
                 $(`#consultChannel${consultChannel}`).show();
             }
+            dateScheduleDetailRender(consultChannel, isentState, consultId);
         }
     });
 
