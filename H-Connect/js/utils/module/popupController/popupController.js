@@ -44,7 +44,7 @@ export class PopupController {
     initEvent() {
         const { target, templates, popupBtn } = this.initData || {};
         let _this = this;
-        $('body').on('click', `${target?.openButton}`, async function () {
+        $('body').on('click', `${target?.openButton}`, async function (e) {
             _this.eventTarget = this;
             const _getTemplate = await templates?.popup(); // 팝업의 템플릿 받아옴
             $(target?.appendWrap)

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         events: [
             {
                 title: '원격협진',
-                start: '2021-12-10T10:00:00',
+                start: '2022-05-17T10:00:00',
                 constraint: 'businessHours',
             },
             {
