@@ -314,6 +314,7 @@ p {
     width: 1158px;
     height: 495px;
     display: flex;
+    justify-content: space-between;
     top: 16px;
     left: 56px;
     position: absolute;

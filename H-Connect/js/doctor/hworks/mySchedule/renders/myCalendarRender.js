@@ -73,11 +73,10 @@ async function dateInit() {
 
 async function positionHandle() {
     const titleParent = $('.my_plan .weekly .day');
-    const obj = {};
     // console.log('titleParent===');
     // console.log(titleParent);
 
-    titleParent.each((index, value) => {
+    titleParent.each((_, value) => {
         const child = $(value).find('.plan');
         const childArr = [...child];
         if (childArr.length > 1) {

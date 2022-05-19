@@ -6,7 +6,7 @@ const { dataScheduleTemplates } = await import(
     )
 );
 
-const { dateScheduleCaseDetailTemplates } = await import(
+const { dateScheduleCaseDetailTemplates, doctorListTemplates } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/templates/dateScheduleDetailTemplates.js'
     )
@@ -76,50 +76,111 @@ export async function dateScheduleDetailRender(
     }
 
     // 이거는 더미 처리
-    const { memberInfoList, caseInfoList } = selectMycalendar.find(
-        (item) => item.consultId === consultId
+    // 밑에 내용 전부 함수 처리 시켜서 파라미터로 받아와서 처리
+    // const { memberInfoList, caseInfoList } = selectMycalendar.find(
+    //     (item) => item.consultId === consultId
+    // );
+    const {
+        memberInfoList,
+        caseInfoList,
+        deadlineDatetime,
+        endDatetime,
+        startDatetime,
+    } = selectMycalendar.find((item) => item.consultId === consultId);
+    const aaa = selectMycalendar.find((item) => item.consultId === consultId);
+    console.log('aaa===');
+    console.log(aaa);
+
+    const withMemberData = memberInfoList.filter(
+        (item) => item.remoteState !== 'N'
     );
 
-    // const withMemberData = memberInfoList.filter(
-    //     (item) => item.remoteState !== 'N'
-    // );
-    // const withOutMemberData = memberInfoList.filter(
-    //     (item) => item.remoteState === 'N'
-    // );
-    // if (!data || data.length === 0) {
-    //     return;
-    // }
+    const withOutMemberData = memberInfoList.filter(
+        (item) => item.remoteState === 'N'
+    );
 
-    // for (let i = 0; i < data.length; i++) {
-    //     html += caseInfoListTemplates(data[i], i + 1);
-    // }
+    for (let i = 0; i < withMemberData.length; i++) {
+        withMember += doctorListTemplates(withMemberData[i]);
+    }
 
-    // for (let i = 0; i < withMemberData.length; i++) {
-    //     withMember += doctorListTemplates(withMemberData[i]);
-    // }
+    for (let i = 0; i < withOutMemberData.length; i++) {
+        witOutMember += doctorListTemplates(withOutMemberData[i]);
+    }
 
-    // for (let i = 0; i < withOutMemberData.length; i++) {
-    //     witOutMember += doctorListTemplates(withOutMemberData[i]);
-    // }
+    for (let i = 0; i < caseInfoList.length; i++) {
+        html += dateScheduleCaseDetailTemplates(caseInfoList[i]);
+    }
 
-    // $(`#consultChannel${consultChannel} .collabor_wrap .cont .cont_list`).html(
-    //     html
-    // );
+    // caseInfo 및 참여자 정보
+    if (isentState === 1) {
+        $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
+            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
+        );
+        $(`#consultChannel0 .collabor_wrap .cont .case_list`).html(html);
+        $(`#consultChannel0 .collabor_wrap .member .withDoctor div`).html(
+            withMember
+        );
+        $(`#consultChannel0 .collabor_wrap .member .withOutDoctor div`).html(
+            witOutMember
+        );
 
-    // $(`#consultChannel${consultChannel} .member .cont_list .with`)
-    //     .parent()
-    //     .find('case_cont div')
-    //     .html(withMember);
+        // 카운팅
+        $(`#consultChannel0 .collabor_wrap .member .total_doctor_count`).text(
+            withMemberData.length + withOutMemberData.length
+        );
+        $(`#consultChannel0 .collabor_wrap .member .no_doctor_count`).text(
+            withOutMemberData.length
+        );
+        $(`#consultChannel0 .collabor_wrap .member .doctor_count`).text(
+            withMemberData.length
+        );
+    } else {
+        $(`#consultChannel${consultChannel} .collabor_wrap .case_list`).html(
+            html
+        );
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .withDoctor div`
+        ).html(withMember);
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .withOutDoctor div`
+        ).html(witOutMember);
 
-    // $(`#consultChannel${consultChannel} .member .cont_list .with .count`).text(
-    //     `${withMemberData.length}명`
-    // );
+        // 카운팅
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .total_doctor_count`
+        ).text(withMemberData.length + withOutMemberData.length);
 
-    // $(`#consultChannel${consultChannel} .member .cont_list .without`)
-    //     .parent()
-    //     .find('case_cont div')
-    //     .html(witOutMember);
-    // $(
-    //     `#consultChannel${consultChannel} .member .cont_list .without .count`
-    // ).text(`${withOutMemberData.length}명`);
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .no_doctor_count`
+        ).text(withOutMemberData.length);
+
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .doctor_count`
+        ).text(withMemberData.length);
+
+        // 시간 데이터 바인딩
+        if (consultChannel === 3) {
+            $(
+                `#consultChannel${consultChannel} .collabor_wrap .startDate`
+            ).text(moment(startDatetime).format('YY.MM.DD'));
+            $(
+                `#consultChannel${consultChannel} .collabor_wrap .startDetetime`
+            ).text(moment(startDatetime).format('HH:mm'));
+            $(
+                `#consultChannel${consultChannel} .collabor_wrap .endDetetime`
+            ).text(moment(endDatetime).format('HH:mm'));
+        }
+
+        $(`#consultChannel${consultChannel} .collabor_wrap .deadlineTime`).text(
+            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
+        );
+
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .startDatetime`
+        ).text(moment(startDatetime).format('YY.MM.DD HH:mm'));
+
+        $(`#consultChannel${consultChannel} .collabor_wrap .endDatetime`).text(
+            moment(endDatetime).format('YY.MM.DD HH:mm')
+        );
+    }
 }

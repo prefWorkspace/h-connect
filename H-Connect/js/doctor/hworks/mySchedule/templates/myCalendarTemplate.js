@@ -83,10 +83,6 @@ export function myCalendarTemplate(_data) {
     const topStart = start - 8 > 0 ? 42 + (start - 9) * 48 : 42;
     const topLength = end - start > 10 ? 48 * 9 : 48 * (end - start);
     const id = moment(startDatetime).format('YYYYMMDD');
-    const oldHeight = $(`#${id} .plan`).height();
-    // console.log($(`#${id} .plan`));
-    // console.log($(`#${id} .plan`).height());
-    // console.log($(`#${id} .plan`).position()?.top);
 
     switch (consultChannel) {
         case 1:
