@@ -405,6 +405,11 @@ p {
     cursor: pointer;
 }
 
+.doctor .remote {
+    background: rgba(0, 122, 148, 0.8);
+    cursor: pointer;
+}
+
 .doctor .ambul {
     background: rgba(53, 0, 57, 0.8);
     cursor: pointer;

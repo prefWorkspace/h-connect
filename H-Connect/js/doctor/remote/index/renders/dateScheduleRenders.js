@@ -55,41 +55,23 @@ export async function dateScheduleRender(_list) {
     $('.all_plan .cal_list .schedule_list').html(html);
 }
 
-export async function dateScheduleDetailRender(
-    consultChannel,
-    isentState,
-    consultId
-) {
+function dateSchduleDetailHandle(_scheduleData, isentState, consultId) {
     let html = '';
     let withMember = '';
     let witOutMember = '';
 
-    if (consultChannel === 1 && isentState === 1) {
-        const { result: confirmViewResult, list: confirmViewList } =
-            await selectConsultConfirmView(consultId);
-    } else if (consultChannel === 1 && isentState !== 1) {
-        const { result: consultViewResult, list: consultViewList } =
-            await selectConsultView(consultId);
-    } else {
-        const { result, list } =
-            await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
-    }
-
-    // 이거는 더미 처리
-    // 밑에 내용 전부 함수 처리 시켜서 파라미터로 받아와서 처리
-    // const { memberInfoList, caseInfoList } = selectMycalendar.find(
-    //     (item) => item.consultId === consultId
-    // );
     const {
         memberInfoList,
         caseInfoList,
         deadlineDatetime,
         endDatetime,
         startDatetime,
+        consultChannel,
     } = selectMycalendar.find((item) => item.consultId === consultId);
     const aaa = selectMycalendar.find((item) => item.consultId === consultId);
-    console.log('aaa===');
+    console.log('aaa==');
     console.log(aaa);
+    // _scheduleData[0];
 
     const withMemberData = memberInfoList.filter(
         (item) => item.remoteState !== 'N'
@@ -183,4 +165,28 @@ export async function dateScheduleDetailRender(
             moment(endDatetime).format('YY.MM.DD HH:mm')
         );
     }
+}
+
+export async function dateScheduleDetailRender(
+    consultChannel,
+    isentState,
+    consultId
+) {
+    let selectList = [];
+
+    if (consultChannel === 1 && isentState === 1) {
+        const { result: confirmViewResult, list: confirmViewList } =
+            await selectConsultConfirmView(consultId);
+        selectList = [...confirmViewList];
+    } else if (consultChannel === 1 && isentState !== 1) {
+        const { result: consultViewResult, list: consultViewList } =
+            await selectConsultView(consultId);
+        selectList = [...consultViewList];
+    } else {
+        const { result, list } =
+            await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
+        selectList = [...list];
+    }
+
+    dateSchduleDetailHandle(selectList, isentState, consultId);
 }

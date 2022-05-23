@@ -82,7 +82,6 @@ export function myCalendarTemplate(_data) {
             : +moment(endDatetime).format('HH');
     const topStart = start - 8 > 0 ? 42 + (start - 9) * 48 : 42;
     const topLength = end - start > 10 ? 48 * 9 : 48 * (end - start);
-    const id = moment(startDatetime).format('YYYYMMDD');
 
     switch (consultChannel) {
         case 1:
@@ -106,6 +105,17 @@ export function myCalendarTemplate(_data) {
                 >
                     <p>${consultChannelName}</p>
                 </div> 
+            `;
+        case 3:
+            // 실시간 협진 일정 요청
+            return `
+                <div
+                style="top: ${topStart}px; height: ${topLength}px"
+                class="plan remote"
+                onclick="location.href='remote.html'"
+                >
+                    <p>${consultChannelName}</p>
+                </div>
             `;
         case 6:
             // 외레

@@ -73,8 +73,6 @@ async function dateInit() {
 
 async function positionHandle() {
     const titleParent = $('.my_plan .weekly .day');
-    // console.log('titleParent===');
-    // console.log(titleParent);
 
     titleParent.each((_, value) => {
         const child = $(value).find('.plan');
@@ -95,12 +93,12 @@ async function positionHandle() {
 async function myScheduleInit() {
     const { result, list } = await selectMyScheduleList();
     let html = '';
-    if (!result) {
+    if (result) {
         for (let i = 0; i < list.length; i++) {
             const { startDatetime } = list[i];
             const id = moment(startDatetime).format('YYYYMMDD');
             html = myCalendarTemplate(list[i]);
-            $(`#${id}`).html(html);
+            $(`#${id} .title`).after(html);
         }
     } else {
         for (let i = 0; i < selectMycalendar.length; i++) {

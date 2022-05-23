@@ -36,7 +36,7 @@ export function dataScheduleTemplates(_data) {
             } else {
                 remote_member = `${doctorName} ${doctorLevelName} ${
                     memberInfoList && memberInfoList.length > 1
-                        ? `외 ${memberInfoList.length}`
+                        ? `외 ${memberInfoList.length - 1}`
                         : ''
                 }`;
 
@@ -55,7 +55,7 @@ export function dataScheduleTemplates(_data) {
         case 2:
             remote_member = `${doctorName} ${doctorLevelName} ${
                 memberInfoList && memberInfoList.length > 1
-                    ? `외 ${memberInfoList.length}`
+                    ? `외 ${memberInfoList.length - 1}`
                     : ''
             }`;
             html = `
@@ -73,7 +73,7 @@ export function dataScheduleTemplates(_data) {
         case 3:
             remote_member = `${doctorName} ${doctorLevelName} ${
                 memberInfoList && memberInfoList.length > 1
-                    ? `외 ${memberInfoList.length}`
+                    ? `외 ${memberInfoList.length - 1}`
                     : ''
             }`;
             html = `

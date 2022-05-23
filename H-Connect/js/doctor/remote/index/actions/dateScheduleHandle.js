@@ -29,13 +29,14 @@ async function calendarHandle() {
         `${moment(date).format('MM')}월 ${moment(date).format('DD')}일`
     );
 
-    // if (result) {
-    //     await dateScheduleRender(list);
-    // } else {
-    //     await dateScheduleRender([]);
-    await dateScheduleRender(selectMycalendar);
-    await init();
-    // }
+    if (!result) {
+        await dateScheduleRender(list);
+        await init();
+    } else {
+        // await dateScheduleRender([]);
+        await dateScheduleRender(selectMycalendar);
+        await init();
+    }
 }
 
 function myCalendarClickHandler() {

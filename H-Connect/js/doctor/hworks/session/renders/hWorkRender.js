@@ -44,16 +44,44 @@ async function hworkListClick() {
     if (consultChannel === 3 || consultChannel === 2 || consultChannel === 5) {
         const { result, list } =
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
-        if (result && list.length === 0) {
+        if (result && list.length > 0) {
             if (consultChannel === 2 || consultChannel === 3) {
-                const { caseInfoList, memberInfoList } = mok.find(
-                    (item) => item.consultId === consultId
-                );
+                // const { caseInfoList, memberInfoList } = mok.find(
+                //     (item) => item.consultId === consultId
+                // );
+                console.log('list[0]===');
+                console.log(list[0]);
+                const {
+                    caseInfoList,
+                    memberInfoList,
+                    startDatetime,
+                    endDatetime,
+                } = list[0];
                 caseInfoListRender(
                     caseInfoList,
                     memberInfoList,
                     consultChannel
                 );
+
+                if (consultChannel === 2) {
+                    $(`#consultChannel2 .collabor_wrap .startDatetime`).text(
+                        moment(startDatetime).format('YY.MM.DD HH:mm')
+                    );
+                    $(`#consultChannel2 .collabor_wrap .endDatetime`).text(
+                        moment(endDatetime).format('YY.MM.DD HH:mm')
+                    );
+                } else {
+                    $(`#consultChannel3 .collabor_wrap .dateTime`).text(
+                        moment(startDatetime).format('YY.MM.DD')
+                    );
+
+                    $(`#consultChannel3 .collabor_wrap .startDatetime`).text(
+                        moment(startDatetime).format('HH:mm')
+                    );
+                    $(`#consultChannel3 .collabor_wrap .endDatetime`).text(
+                        moment(endDatetime).format('HH:mm')
+                    );
+                }
             } else if (consultChannel === 5) {
                 const { memberInfoList, caseInfoList } = mok.find(
                     (item) => item.consultId === consultId
