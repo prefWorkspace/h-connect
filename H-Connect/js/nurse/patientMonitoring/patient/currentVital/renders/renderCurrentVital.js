@@ -35,8 +35,6 @@ client.connect(headers, function() {
             const { measurementCode, bioSignalData } = data || {};
             const { ecgDataList, spO2DataList, respDataList } = bioSignalData;
 
-            console.log(data);
-
             setUpdateTime(data.dateTime);
             ecgLine = chartCreateOrUpdate(ecgLine, 'vital-ecg-graph', ecgDataList, measurementCode, '#00FF19');
             spO2Line = chartCreateOrUpdate(spO2Line, 'vital-spO2-graph', spO2DataList, measurementCode, '#00FFFF');
