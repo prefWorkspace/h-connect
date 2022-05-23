@@ -369,6 +369,32 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/remoteNew/actions/',
                     },
+                    eachCooperationActions: {
+                        'realTimeActions.js': {
+                            type: 'module',
+                            url_path: '/doctor/remote_new',
+                            file_path:
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
+                        },
+                        'opinionActions.js': {
+                            type: 'module',
+                            url_path: '/doctor/remote_new',
+                            file_path:
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
+                        },
+                        'requestScheduleActions.js': {
+                            type: 'module',
+                            url_path: '/doctor/remote_new',
+                            file_path:
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
+                        },
+                        'contentActions.js': {
+                            type: 'module',
+                            url_path: '/doctor/remote_new',
+                            file_path:
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
+                        },
+                    },
                     'createCooperationActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
