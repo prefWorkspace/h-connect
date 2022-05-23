@@ -24,11 +24,12 @@ const {
 
 // 스케쥴 카운트 API
 export async function selectScheduleCount() {
+    const today = new Date();
     const obj = {
         ...commonRequest(),
         userId,
-        endDatetime: request_Date_Data(),
-        startDatetime: '2022-01-01 00:00:00',
+        endDatetime: moment(today).format('YYYY-MM-DD 23:59:59'),
+        startDatetime: moment(today).format('YYYY-MM-DD 00:00:00'),
     };
 
     return serverController.ajaxAwaitController(

@@ -54,3 +54,10 @@ export function dateScheduleCaseDetailTemplates(_data) {
     </div>
     `;
 }
+
+export function doctorListTemplates(_data) {
+    if (!_data) return;
+
+    const { doctorName } = _data;
+    return `<p>${doctorName}</p>`;
+}

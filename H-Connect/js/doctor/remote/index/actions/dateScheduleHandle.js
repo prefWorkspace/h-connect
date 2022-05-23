@@ -29,27 +29,33 @@ async function calendarHandle() {
         `${moment(date).format('MM')}월 ${moment(date).format('DD')}일`
     );
 
-    // if (result) {
-    //     await dateScheduleRender(list);
-    // } else {
-    // await dateScheduleRender([]);
-    await dateScheduleRender(selectMycalendar);
-    await init();
-    // }
+    if (!result) {
+        await dateScheduleRender(list);
+        await init();
+    } else {
+        // await dateScheduleRender([]);
+        await dateScheduleRender(selectMycalendar);
+        await init();
+    }
 }
 
 function myCalendarClickHandler() {
     const consultChannel = $(this).data('consultchannle');
     const isentState = +$(this).data('isentstate');
     const consultId = $(this).data('consultid');
+    const remote_member = $(this).find('.remote_member').text();
 
     $('.all_plan .cal_list .schedule_list .row').removeClass('on');
     $(this).addClass('on');
     $('.section.right').hide();
     if (isentState === 1) {
         $(`#consultChannel0`).show();
+        $(`#consultChannel0 .remote_member`).text(remote_member);
     } else {
         $(`#consultChannel${consultChannel}`).show();
+        $(`#consultChannel${consultChannel} .remote_member`).text(
+            remote_member
+        );
     }
 
     dateScheduleDetailRender(consultChannel, isentState, consultId);
@@ -63,10 +69,15 @@ async function init() {
             const isentState = +$(value).data('isentstate');
             const consultId = $(value).data('consultid');
             const consultChannel = $(value).data('consultchannle');
+            const remote_member = $(value).find('.remote_member').text();
             if (isentState === 1) {
                 $(`#consultChannel0`).show();
+                $(`#consultChannel0 .remote_member`).text(remote_member);
             } else {
                 $(`#consultChannel${consultChannel}`).show();
+                $(`#consultChannel${consultChannel} .remote_member`).text(
+                    remote_member
+                );
             }
             dateScheduleDetailRender(consultChannel, isentState, consultId);
         }
