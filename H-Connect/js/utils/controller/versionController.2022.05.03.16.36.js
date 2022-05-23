@@ -89,19 +89,19 @@ const FILE_TREE = {
             library: {
                 'fullcalendar.js': {
                     priority: 0,
-                    url_path: '*',
+                    url_path: '/doctor/remote||/doctor/remote_new',
                     file_path: '/H-Connect/js/lib/fullcalendar/library/',
                 },
                 'main.min.js': {
                     priority: 0,
-                    url_path: '*',
+                    url_path: '/doctor/remote||/doctor/remote_new',
                     file_path: '/H-Connect/js/lib/fullcalendar/library/',
                 },
             },
             custom: {
                 'remotePage.js': {
                     priority: 0,
-                    url_path: '*',
+                    url_path: '/doctor/remote||/doctor/remote_new',
                     file_path: '/H-Connect/js/lib/fullcalendar/custom/',
                 },
             },
@@ -332,9 +332,39 @@ const FILE_TREE = {
         },
         remote: {
             index: {
-                actions: {},
-                renders: {},
-                templates: {},
+                actions: {
+                    'dateScheduleHandle.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path: '/H-Connect/js/doctor/remote/index/actions/',
+                    },
+                    'dateScheduleAPI.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path: '/H-Connect/js/doctor/remote/index/actions/',
+                    },
+                },
+                renders: {
+                    'dateScheduleRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path: '/H-Connect/js/doctor/remote/index/renders/',
+                    },
+                },
+                templates: {
+                    'dateScheduleTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/index/templates/',
+                    },
+                    'dateScheduleDetailTemplates.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/index/templates/',
+                    },
+                },
             },
             remoteNew: {
                 actions: {
@@ -345,6 +375,12 @@ const FILE_TREE = {
                             '/H-Connect/js/doctor/remote/remoteNew/actions/',
                     },
                     'attendeesSectionActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
+                    'createCooperationActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
@@ -362,8 +398,26 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/remoteNew/actions/',
                     },
+                    'selector.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
+                    'dataActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
                 },
                 renders: {
+                    'commonRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                    },
                     'bookmarkRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
@@ -548,9 +602,29 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/hworks/mySchedule/actions/',
                     },
+                    'myCalendarAPI.js': {
+                        type: 'module',
+                        url_path: '/doctor/index',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/mySchedule/actions/',
+                    },
                 },
-                renders: {},
-                templates: {},
+                renders: {
+                    'myCalendarRender.js': {
+                        type: 'module',
+                        url_path: '/doctor/index',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/mySchedule/renders/',
+                    },
+                },
+                templates: {
+                    'myCalendarTemplate.js': {
+                        type: 'module',
+                        url_path: '/doctor/index',
+                        file_path:
+                            '/H-Connect/js/doctor/hworks/mySchedule/templates/',
+                    },
+                },
             },
             remoteHworks: {
                 actions: {

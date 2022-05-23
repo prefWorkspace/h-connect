@@ -1,3 +1,9 @@
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/text/validationText.js')
+);
+const { birthdayToAge } = await import(
+    importVersion('/H-Connect/js/utils/common/utils.js')
+);
 export function coopRealTimeRemoteSectionTmpl() {
     // 실시간 원격 협진
     return `
@@ -17,17 +23,17 @@ export function coopRealTimeRemoteSectionTmpl() {
         <div class="rt_time">
             <h2>협진 시간 선택</h2>
 
-            <div class="1123">
+            <div>
                 <div class="date">
                     <p>협진일자</p>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_start_month" data-keyType="input" type="text" placeholder="00">
                         <p>월</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_start_date" type="text" data-keyType="input" placeholder="00">
                         <p>일</p>
                     </div>
                 </div>
@@ -37,12 +43,12 @@ export function coopRealTimeRemoteSectionTmpl() {
                         <p>시작시간</p>
 
                         <div class="input_wrap">
-                            <input type="text" placeholder="00">
+                            <input data-key="rt_start_hours" data-keyType="input" type="text" placeholder="00">
                             <p>시</p>
                         </div>
 
                         <div class="input_wrap">
-                            <input type="text" placeholder="00">
+                            <input data-key="rt_start_minutes" data-keyType="input" type="text" placeholder="00">
                             <p>분</p>
                         </div>
                     </div>
@@ -51,12 +57,12 @@ export function coopRealTimeRemoteSectionTmpl() {
                         <p>종료시간</p>
 
                         <div class="input_wrap">
-                            <input type="text" placeholder="00">
+                            <input data-key="rt_end_hours" data-keyType="input" type="text" placeholder="00">
                             <p>시</p>
                         </div>
 
                         <div class="input_wrap">
-                            <input type="text" placeholder="00">
+                            <input data-key="rt_end_minutes" data-keyType="input" type="text" placeholder="00">
                             <p>분</p>
                         </div>
                     </div>
@@ -79,12 +85,12 @@ export function coopOpinionSectionTmpl() {
                     <p>소견요청 협진 시작일</p>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_start_month" data-keyType="input" type="text" placeholder="00">
                         <p>월</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_start_date" data-keyType="input" type="text" placeholder="00">
                         <p>일</p>
                     </div>
                 </div>
@@ -93,12 +99,12 @@ export function coopOpinionSectionTmpl() {
                     <p>소견요청 협진 마감일</p>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_end_month" data-keyType="input" type="text" placeholder="00">
                         <p>월</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_end_date" data-keyType="input" type="text" placeholder="00">
                         <p>일</p>
                     </div>
                 </div>
@@ -109,12 +115,12 @@ export function coopOpinionSectionTmpl() {
                     <p>시작시간</p>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_start_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_start_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -123,12 +129,12 @@ export function coopOpinionSectionTmpl() {
                     <p>마감시간</p>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_end_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-key="rt_end_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -414,17 +420,30 @@ export function coopSearchPatientBlock(_data) {
     const {
         measurementCode,
         name,
-        age,
+        birthday,
         gender,
         patientCode,
         ward,
         sickRoom,
         sickBed,
+        wardCode,
+        sickRoomCode,
+        sickBedCode,
     } = _data ?? {};
     return `
-    <p class='search-patient-list-item' data-name='${name}' data-patientCode='${patientCode}' data-measurementCode='${measurementCode}'>
+    <p class='search-patient-list-item' data-patient-name='${name}' data-patient-gender='${
+        gender === 1 ? 'M' : 'F'
+    }' data-patient-age='${birthdayToAge(
+        birthday
+    )}' data-patient-code='${patientCode}'
+    data-patient-ward='${wardCode}'
+    data-patient-ward-room='${sickRoomCode}'
+    data-patient-condition='${sickBedCode}'
+    >
         <span>${name}</span>
-        (<span>${age}</span>.<span>${gender === 1 ? '남자' : '여자'}</span>).
+        (<span>${birthdayToAge(birthday)}</span>.<span>${
+        gender === 1 ? '남자' : '여자'
+    }</span>).
         <span>${patientCode}</span>.
         <span>${ward ? ward : '-'}</span>.
         <span>${sickRoom ? sickRoom : '-'}</span>호실.
@@ -448,7 +467,7 @@ export function coopContentCaseBlockTmpl() {
                 <p>Case 명.</p>
 
                 <div class="text_wrap">
-                    <textarea placeholder="case 명을 작성해주세요"></textarea>
+                    <textarea data-key="caseTitle" data-keyType="input" placeholder="case 명을 작성해주세요"></textarea>
                 </div>
 
                 <!-- <input type="text" placeholder="case 명을 작성해주세요"> -->
@@ -473,14 +492,14 @@ export function coopContentCaseBlockTmpl() {
                     </div>
                 </div>
 
-                <span class='patient-select-name'>환자명</span>
+                <textarea style='margin-top:16px;' placeholder='환자명' readonly data-key="cont_patient_name" data-keyType="data[patient-name,patient-gender,patient-age,patient-code,patient-ward,patient-ward-room,patient-condition]" class='patient-select-name'></textarea>
             </div>
 
             <div class="contents">
                 <p>협진 내용</p>
 
                 <div class="text_wrap">
-                    <textarea placeholder="협진 내용을 입력해주세요"></textarea>
+                    <textarea data-key="caseContents" data-keyType="input" placeholder="협진 내용을 입력해주세요"></textarea>
                 </div>
             </div>
         </div>
@@ -503,44 +522,17 @@ export function coopContentSectionTmpl() {
       <div class="participant">
           <div class="title">
               <h2>협진 참여자 정보</h2>
-              <p>참여 요청 인원. <span>0명</span></p>
+              <p>참여 요청 인원. <span class='choice_doctor_length'>0명</span></p>
           </div>
 
-          <div class="member">
-              <div class="mem">
+          <div class="member choice_member">
+              <!-- <div class="mem">
                   <p>김협진 교수님</p>
                   <button type="button" class="btn_del">
                       <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
                   </button>
-              </div>
-
-              <div class="mem">
-                  <p>다섯 글자자</p>
-                  <button type="button" class="btn_del">
-                      <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                  </button>
-              </div>
-
-              <div class="mem">
-                  <p>다섯글자자</p>
-                  <button type="button" class="btn_del">
-                      <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                  </button>
-              </div>
-
-              <div class="mem">
-                  <p>네 글자자</p>
-                  <button type="button" class="btn_del">
-                      <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                  </button>
-              </div>
-
-              <div class="mem">
-                  <p>김협진 교수님</p>
-                  <button type="button" class="btn_del">
-                      <img src="/H-Connect/img/icon/delete.svg" alt="의료진삭제버튼아이콘" />
-                  </button>
-              </div>
+              </div> -->
+              ${errorText({ msg: '선택된 의사가 없습니다' })}
           </div>
       </div>
   </div>
