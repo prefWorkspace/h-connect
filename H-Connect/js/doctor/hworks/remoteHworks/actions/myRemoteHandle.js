@@ -30,7 +30,8 @@ const { noCheckConsultReder } = await import(
 async function init() {
     //협진 일정요청 알림 목록
     const { result: alarmResult, list } = await selectConsultAlarmsList();
-
+    console.log('list==');
+    console.log(list);
     //확인하지 않은 소견 목록
     const { result: opinionResult, opinionConsultList } =
         await selectOpinionConsultList();
@@ -39,10 +40,6 @@ async function init() {
     if (alarmResult && list.length > 0) {
         $('#alarm_count').text(list.length);
         remoteAlarmRender(list);
-    } else {
-        // 더미 데이터
-        $('#alarm_count').text(fakeConsultAlarmList.length);
-        remoteAlarmRender(fakeConsultAlarmList);
     }
 
     //확인하지 않은 소견 목록 렌더링 호출
