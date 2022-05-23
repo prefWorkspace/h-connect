@@ -18,6 +18,7 @@ export function caseInfoListRender(data, memberInfoList, consultChannel) {
     const withOutMemberData = memberInfoList.filter(
         (item) => item.remoteState === 'N'
     );
+
     if (!data || data.length === 0) {
         return;
     }
