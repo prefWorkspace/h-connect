@@ -6,21 +6,6 @@ const { errorText } = await import(
     importVersion('/H-Connect/js/common/text/validationText.js')
 );
 
-/* s : 유틸성 함수 */
-
-export function departmentDoctorListToBasicList(_departmentDoctorList) {
-    /* 각 과별 의사 목록 하나로 합치는 리스트 함수 */
-    let resultList = [];
-    if (!_departmentDoctorList) return [];
-    for (let i = 0, len = _departmentDoctorList.length; i < len; i++) {
-        const { doctorInfo } = _departmentDoctorList[i] ?? {};
-        resultList = resultList.concat(doctorInfo);
-    }
-    return resultList;
-}
-
-/* e : 유틸성 함수 */
-
 export function renderChoiceDoctorEmptyControll(_isEmpty) {
     // 선택된 의사 없을때 메세지 표시 여부 렌더 함수
     if (_isEmpty) {
@@ -34,6 +19,15 @@ export function renderChoiceDoctorEmptyControll(_isEmpty) {
         choiceDoctorSelector.wrapEl().children('.error_text').remove();
         coopParticipantInformSelector.wrapEl().children('.error_text').remove();
     }
+}
+
+export function renderResetCheckBox() {
+    // 의료진 선택 checkbox 동기화
+    /* 이름에 . 이 들어가서 vanilla js*/
+    const _$checkItemEls = $('.doctor-list-item .input_wrap input');
+    _$checkItemEls.each(function () {
+        $(this).prop('checked', false);
+    });
 }
 export function renderParticipantDoctorEmptyControll(_isEmpty) {
     // 콘텐츠 케이스 선택된 의사 없을때 메세지 표시 여부 렌더 함수
@@ -105,9 +99,26 @@ export function renderActivateBookmark(_targetClass, _checkBool) {
     });
 }
 
+// 협진 생성 버튼
 export function renderActivateCreateCoopBtn(_bool) {
     // 협진 생성 활성화 여부 컨트롤
     $('#create_cooperation_btn').attr('disabled', !_bool);
+}
+
+export function renderCreateCooperationText(_sectionType) {
+    let _btnText = '';
+    switch (_sectionType) {
+        case '실시간원격협진':
+            _btnText = '협진생성';
+            break;
+        case '소견요청협진':
+            _btnText = '협진생성';
+            break;
+        case '협진일정요청':
+            _btnText = '일정요청';
+            break;
+    }
+    $('#create_cooperation_btn').text(_btnText);
 }
 
 /* e : 동기화 함수 */

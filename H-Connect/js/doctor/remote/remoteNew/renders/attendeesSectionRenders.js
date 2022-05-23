@@ -6,13 +6,12 @@ const { selectHisDoctorList } = await import(
 const { choiceDoctorSelector, coopParticipantInformSelector } = await import(
     importVersion('/H-Connect/js/doctor/remote/remoteNew/actions/selector.js')
 );
-const { validateCoopAll } = await import(
+const { departmentDoctorListToBasicList, validateCoopAll } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
     )
 );
 const {
-    departmentDoctorListToBasicList,
     renderChoiceDoctorEmptyControll,
     renderActivateChoiceDoctorLength,
     renderChoiceDoctorValidation,
@@ -106,7 +105,7 @@ async function renderInit() {
         _getDepartmentDoctorList
     );
 
-    // 의사 리스트 데이터 렌더
+    /* 의사 리스트 데이터 렌더 */
     renderSelectDoctorList(_getDoctorList);
     /* 의사 리스트가 렌더링이 된 후 즐겨찾기 렌더링*/
     renderInitBookmark();
