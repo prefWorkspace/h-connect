@@ -4100,10 +4100,10 @@ p {
     color: #888;
 }
 
-.doctor_remote .all_plan .weekly .inner > :first-child,
+/* .doctor_remote .all_plan .weekly .inner > :first-child,
 .doctor_remote .all_plan .weekly .inner > :first-child .title {
     width: 204px;
-}
+} */
 
 .doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(2) {
     height: 74px;
@@ -4138,10 +4138,10 @@ p {
     top: 42px;
 }
 
-.doctor_remote .all_plan .weekly .inner > :nth-child(4),
+/* .doctor_remote .all_plan .weekly .inner > :nth-child(4),
 .doctor_remote .all_plan .weekly .inner > :nth-child(4) .title {
     width: 100px;
-}
+} */
 
 .doctor_remote .all_plan .weekly .inner > :nth-child(4) > :nth-child(2) {
     height: 74px;

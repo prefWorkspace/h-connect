@@ -24,19 +24,21 @@ async function calendarHandle() {
         startDatetime,
         endDatetime
     );
+    console.log('list===');
+    console.log(list);
     $('#d_day_count').text(list.length);
     $('#d_day').text(
         `${moment(date).format('MM')}월 ${moment(date).format('DD')}일`
     );
 
-    if (!result) {
+    if (result) {
         await dateScheduleRender(list);
-        await init();
-    } else {
-        // await dateScheduleRender([]);
-        await dateScheduleRender(selectMycalendar);
-        await init();
     }
+    //  else {
+    //     // await dateScheduleRender([]);
+    //     await dateScheduleRender(selectMycalendar);
+    // }
+    await init();
 }
 
 function myCalendarClickHandler() {
@@ -48,7 +50,7 @@ function myCalendarClickHandler() {
     $('.all_plan .cal_list .schedule_list .row').removeClass('on');
     $(this).addClass('on');
     $('.section.right').hide();
-    if (isentState === 1) {
+    if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0`).show();
         $(`#consultChannel0 .remote_member`).text(remote_member);
     } else {

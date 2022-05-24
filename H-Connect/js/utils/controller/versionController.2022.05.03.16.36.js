@@ -513,6 +513,13 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/common/renders/',
                     },
+                    'calendarRender.js': {
+                        type: 'module',
+                        url_path:
+                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/common/renders/',
+                    },
                 },
                 templates: {},
             },
