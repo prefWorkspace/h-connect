@@ -31,12 +31,13 @@ const { selectMycalendar } = await import(
 );
 
 export async function dateScheduleRender(_list) {
+    let html = '';
+
     if (_list.length === 0) {
         html = errorText();
         $('.all_plan .cal_list .schedule_list').html(html);
         return;
     }
-    let html = '';
 
     for (let i = 0; i < _list.length; i++) {
         const { consultChannel } = _list[i];
@@ -55,7 +56,7 @@ export async function dateScheduleRender(_list) {
     $('.all_plan .cal_list .schedule_list').html(html);
 }
 
-function dateSchduleDetailHandle(_scheduleData, isentState, consultId) {
+function dateSchduleDetailHandle(_scheduleData, isentState) {
     let html = '';
     let withMember = '';
     let witOutMember = '';
@@ -67,11 +68,9 @@ function dateSchduleDetailHandle(_scheduleData, isentState, consultId) {
         endDatetime,
         startDatetime,
         consultChannel,
-    } = selectMycalendar.find((item) => item.consultId === consultId);
-    const aaa = selectMycalendar.find((item) => item.consultId === consultId);
-    console.log('aaa==');
-    console.log(aaa);
-    // _scheduleData[0];
+    } = _scheduleData[0];
+
+    // selectMycalendar.find((item) => item.consultId === consultId);
 
     const withMemberData = memberInfoList.filter(
         (item) => item.remoteState !== 'N'
@@ -94,7 +93,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState, consultId) {
     }
 
     // caseInfo 및 참여자 정보
-    if (isentState === 1) {
+    if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
             moment(deadlineDatetime).format('YY.MM.DD HH:mm')
         );
@@ -188,5 +187,5 @@ export async function dateScheduleDetailRender(
         selectList = [...list];
     }
 
-    dateSchduleDetailHandle(selectList, isentState, consultId);
+    dateSchduleDetailHandle(selectList, isentState);
 }

@@ -36,21 +36,17 @@ async function init() {
         // 나중에 if랑 else랑 바꿀 것.
         if (sessionCount === 0) {
             $('.schedule .btn_section').addClass('active');
-            await sessionListHandle();
         } else {
             $('.schedule .btn_today').addClass('active');
-            await sessionListHandle();
         }
+        await sessionListHandle();
     }
 }
 
 async function sessionListHandle() {
     const { result, list } = await selectRemoteSessionList();
-
     if (result) {
         hworkSessionList(list);
-    } else {
-        hworkSessionList(mok);
     }
 }
 

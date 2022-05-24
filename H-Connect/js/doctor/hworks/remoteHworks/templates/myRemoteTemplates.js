@@ -54,9 +54,7 @@ export function isentNotRemoteAlarmTemplates(_data) {
                 )}</span>&nbsp;
                 <span>${moment(deadlineDatetime).format('HH:mm')}</span> 까지
             </p>
-            
             <p class="answer">협진일정 요청 수신</p>
-            
             <p class="reply">${
                 replyState === 'N' ? '회신하지 않음' : '회신완료'
             }</p>
