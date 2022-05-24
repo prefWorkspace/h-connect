@@ -101,7 +101,13 @@ const FILE_TREE = {
             custom: {
                 'remotePage.js': {
                     priority: 0,
-                    url_path: '/doctor/remote||/doctor/remote_new',
+                    url_path: '/doctor/remote',
+                    file_path: '/H-Connect/js/lib/fullcalendar/custom/',
+                },
+                'customFullcalendar.js': {
+                    type: 'module',
+                    priority: 0,
+                    url_path: '*',
                     file_path: '/H-Connect/js/lib/fullcalendar/custom/',
                 },
             },
@@ -368,6 +374,12 @@ const FILE_TREE = {
             },
             remoteNew: {
                 actions: {
+                    'calendarActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
                     'bookmarkActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',

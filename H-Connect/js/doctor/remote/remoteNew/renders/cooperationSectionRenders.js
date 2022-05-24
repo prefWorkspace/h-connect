@@ -3,11 +3,12 @@ const { validateCoopAll } = await import(
         '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
     )
 );
-const { scheduleCanBlockInputAction } = await import(
-    importVersion(
-        '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/requestScheduleActions.js'
-    )
-);
+const { scheduleCanBlockInputAction, scheduleCanBlockDeleteBtnCheck } =
+    await import(
+        importVersion(
+            '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/requestScheduleActions.js'
+        )
+    );
 const { renderCreateCooperationText } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
@@ -42,8 +43,13 @@ export function renderCooperationSection(_sectionType) {
     }
     $('#cooperation-section #content-wrap').html(coopContentSectionTmpl());
     $('#cooperation-section #surgery-wrap').html(_sectionTmpl);
+    afterRenderCooperationSection();
+}
+
+function afterRenderCooperationSection() {
     validateCoopAll();
     scheduleCanBlockInputAction();
+    scheduleCanBlockDeleteBtnCheck();
 }
 
 function settingBoxData(_sectionType) {

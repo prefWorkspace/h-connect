@@ -127,7 +127,7 @@ function dateMinMax(_dateValid) {
         case 'date':
             return ['1', '31'];
         case 'hours':
-            return ['0', '23'];
+            return ['0', '18'];
         case 'minutes':
             return ['0', '59'];
     }

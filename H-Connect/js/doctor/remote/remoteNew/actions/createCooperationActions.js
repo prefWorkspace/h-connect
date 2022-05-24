@@ -28,8 +28,10 @@ const {
         '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
     )
 );
-const { confirmTwoPopupTmpl } = await import(
-    importVersion('/H-Connect/js/common/popup/templates/commonPopupTmpl.js')
+const { createCooperationPopupTmpl, cancelCooperationPopupTmpl } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/templates/cooperationSectionTmpl.js'
+    )
 );
 
 function createCooperationAction() {
@@ -41,47 +43,16 @@ function createCooperationAction() {
             appendWrap: '.createCooperation_popup_wrap',
         },
         templates: {
-            popup: () => confirmTwoPopupTmpl({ type: 'confirm' }),
+            popup: createCooperationPopupTmpl,
         },
         popupBtn: {
-            cancelBtn: {
-                target: '.gr',
-                close: true,
-            },
             submitBtn: {
-                target: '.blf',
-                close: false,
-                action: async (_info) => {
-                    const _sendRemoteData = _info.payload.remoteData ?? {};
+                target: '.btn_check',
+                close: true,
+                action: (_info) => {
+                    _info.closePopup();
                     const _surgerySelected =
                         $('.surgery_box').attr('data-option-role');
-                    switch (_surgerySelected) {
-                        case '실시간원격협진':
-                            const { result: remoteResult } =
-                                (await insertRemoteConsult(_sendRemoteData)) ??
-                                {};
-
-                            if (remoteResult) {
-                                _info.closePopup();
-                            } else
-                                alert('실시간 원격 협진 생성에 실패했습니다.');
-                            break;
-                        case '소견요청협진':
-                            const { result: opinionResult } =
-                                (await insertOpinionConsult(_sendRemoteData)) ??
-                                {};
-                            if (opinionResult) {
-                                _info.closePopup();
-                            } else alert('소견 요청 협진 생성에 실패했습니다.');
-                            break;
-                        case '협진일정요청':
-                            const { result: requestScheduleResult } =
-                                (await insertConsult(_sendRemoteData)) ?? {};
-                            if (requestScheduleResult) {
-                                _info.closePopup();
-                            } else alert('협진 일정 요청에 실패했습니다.');
-                            break;
-                    }
                     renderCooperationSection(_surgerySelected);
                     renderChoiceDoctorEmptyControll(true);
                     renderActivateChoiceDoctorLength();
@@ -90,57 +61,130 @@ function createCooperationAction() {
             },
         },
     });
+
+    function calcSendData() {
+        let _sectionData = {};
+
+        const _surgerySelected = $('.surgery_box').attr('data-option-role');
+        switch (_surgerySelected) {
+            case '실시간원격협진':
+                const {
+                    startDatetime: rtStartDatetime,
+                    endDatetime: rtEndDatetime,
+                } = serviceData.realTime.date();
+                _sectionData = {
+                    remoteState: serviceData.realTime.type(),
+                    startDatetime: rtStartDatetime,
+                    endDatetime: rtEndDatetime,
+                };
+                break;
+            case '소견요청협진':
+                const {
+                    startDatetime: opiStartDatetime,
+                    endDatetime: opiEndDatetime,
+                } = serviceData.opinion.date();
+                _sectionData = {
+                    startDatetime: opiStartDatetime,
+                    endDatetime: opiEndDatetime,
+                };
+                break;
+            case '협진일정요청':
+                const { deadlineTime } =
+                    serviceData.requestSchedule.deadlineDate();
+                const { scheduleInfo } =
+                    serviceData.requestSchedule.scheduleCanDateList();
+                _sectionData = {
+                    deadline: deadlineTime,
+                    scheduleInfo: scheduleInfo,
+                };
+                break;
+        }
+
+        const _caseInfo = serviceData.content.caseList();
+        const _memberInfo = serviceData.content.doctorList();
+
+        return {
+            ..._sectionData,
+            caseInfo: _caseInfo,
+            memberInfo: _memberInfo,
+        };
+    }
+
+    async function fetchSendData(_remoteData) {
+        const _sendRemoteData = _remoteData ?? {};
+        const _surgerySelected = $('.surgery_box').attr('data-option-role');
+        switch (_surgerySelected) {
+            case '실시간원격협진':
+                const { result: remoteResult } =
+                    (await insertRemoteConsult(_sendRemoteData)) ?? {};
+
+                if (remoteResult) {
+                } else {
+                    _createCooperationPopup.closePopup();
+                    alert('실시간 원격 협진 생성에 실패했습니다.');
+                }
+                break;
+            case '소견요청협진':
+                const { result: opinionResult } =
+                    (await insertOpinionConsult(_sendRemoteData)) ?? {};
+                if (opinionResult) {
+                } else {
+                    _createCooperationPopup.closePopup();
+                    alert('소견 요청 협진 생성에 실패했습니다.');
+                }
+                break;
+            case '협진일정요청':
+                const { result: requestScheduleResult } =
+                    (await insertConsult(_sendRemoteData)) ?? {};
+                if (requestScheduleResult) {
+                } else {
+                    _createCooperationPopup.closePopup();
+                    alert('협진 일정 요청에 실패했습니다.');
+                }
+                break;
+        }
+    }
+
     $(_createCooperationBtnStr).on('click', async function () {
         // 협진 생성
         const _checkValidateAll = validateCoopAll();
 
         if (_checkValidateAll) {
-            let _sectionData = {};
-
-            const _surgerySelected = $('.surgery_box').attr('data-option-role');
-            switch (_surgerySelected) {
-                case '실시간원격협진':
-                    const {
-                        startDatetime: rtStartDatetime,
-                        endDatetime: rtEndDatetime,
-                    } = serviceData.realTime.date();
-                    _sectionData = {
-                        remoteState: serviceData.realTime.type(),
-                        startDatetime: rtStartDatetime,
-                        endDatetime: rtEndDatetime,
-                    };
-                    break;
-                case '소견요청협진':
-                    const {
-                        startDatetime: opiStartDatetime,
-                        endDatetime: opiEndDatetime,
-                    } = serviceData.opinion.date();
-                    _sectionData = {
-                        startDatetime: opiStartDatetime,
-                        endDatetime: opiEndDatetime,
-                    };
-                    break;
-                case '협진일정요청':
-                    const { deadlineTime } =
-                        serviceData.requestSchedule.deadlineDate();
-                    const { scheduleInfo } =
-                        serviceData.requestSchedule.scheduleCanDateList();
-                    _sectionData = {
-                        deadline: deadlineTime,
-                        scheduleInfo: scheduleInfo,
-                    };
-                    break;
-            }
-
-            const _caseInfo = serviceData.content.caseList();
-            const _memberInfo = serviceData.content.doctorList();
-
-            _createCooperationPopup.saveData('remoteData', {
-                ..._sectionData,
-                caseInfo: _caseInfo,
-                memberInfo: _memberInfo,
-            });
+            const _getSendData = calcSendData();
+            fetchSendData(_getSendData);
         }
     });
 }
-createCooperationAction();
+
+function cancelCooperationAction() {
+    const _cancelCooperationPopup = new PopupController({
+        /* 북마크 추가 팝업 생성 */
+        target: {
+            openButton: '.new_remote .btn_list .btn_cancel',
+            appendWrap: '.createCooperation_popup_wrap',
+        },
+        templates: {
+            popup: cancelCooperationPopupTmpl,
+        },
+        popupBtn: {
+            cancelBtn: {
+                target: '.btn_no',
+                close: true,
+            },
+            submitBtn: {
+                target: '.btn_cut',
+                close: true,
+                action: (_info) => {
+                    _info.closePopup();
+                    window.location.href = '/doctor/remote.html';
+                },
+            },
+        },
+    });
+}
+
+function initAction() {
+    createCooperationAction();
+    cancelCooperationAction();
+}
+initAction();
