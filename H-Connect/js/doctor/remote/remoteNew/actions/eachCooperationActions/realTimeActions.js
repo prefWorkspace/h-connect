@@ -26,9 +26,10 @@ function addCoopRealTimeRemoteAction() {
             .find('.rt_view input[data-key="rt_start_minutes"]')
             .val();
 
-        const _calcEndHours = (parseInt(_startHours, 10) + 1)
-            .toString()
-            .padStart(2, '0');
+        const _calcEndHours =
+            _startHours !== ''
+                ? (parseInt(_startHours, 10) + 1).toString().padStart(2, '0')
+                : '';
         $(this)
             .find('.rt_view input[data-key="rt_end_hours"]')
             .val(_calcEndHours);

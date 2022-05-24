@@ -378,3 +378,48 @@ export function coopContentSectionTmpl() {
   </div>
   `;
 }
+
+export function createCooperationPopupTmpl() {
+    return `
+    <div class="pop create_remote">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/H-Connect/img/logo.png" alt="로고">
+                </div>
+
+                <h2>
+                    <span>실시간 원격 협진</span> 이 생성 되었습니다.
+                </h2>
+
+                <div class="btn_list">
+                    <button type="button" class="btn blf btn_check">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+export function cancelCooperationPopupTmpl() {
+    return `
+    <div class="pop delete no_create">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/H-Connect/img/logo.png" alt="로고">
+                </div>
+
+                <h3>신규협진이 생성되지 않았습니다. 모든 설정이 취소됩니다.</h3>
+                <h2>취소 하시겠습니까?</h2>
+
+
+                <div class="btn_list">
+                    <button type="button" class="btn gr btn_no">아니요</button>
+                    <button type="button" class="btn_cut">네, 취소합니다</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+}
