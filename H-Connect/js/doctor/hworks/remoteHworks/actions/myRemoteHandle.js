@@ -30,8 +30,7 @@ const { noCheckConsultReder } = await import(
 async function init() {
     //협진 일정요청 알림 목록
     const { result: alarmResult, list } = await selectConsultAlarmsList();
-    console.log('list==');
-    console.log(list);
+
     //확인하지 않은 소견 목록
     const { result: opinionResult, opinionConsultList } =
         await selectOpinionConsultList();
