@@ -26,16 +26,10 @@ function addCoopRealTimeRemoteAction() {
             .find('.rt_view input[data-key="rt_start_minutes"]')
             .val();
 
-<<<<<<< HEAD
         const _calcEndHours =
             _startHours !== ''
                 ? (parseInt(_startHours, 10) + 1).toString().padStart(2, '0')
                 : '';
-=======
-        const _calcEndHours = (parseInt(_startHours, 10) + 1)
-            .toString()
-            .padStart(2, '0');
->>>>>>> 736ed0f (fix : 신규 협진 생성 > 실시간 원격 협진 , 소견 요청 협진 ,협진 일정요청 작업 / 날짜 수정중)
         $(this)
             .find('.rt_view input[data-key="rt_end_hours"]')
             .val(_calcEndHours);

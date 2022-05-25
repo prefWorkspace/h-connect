@@ -3,20 +3,12 @@ const { validateCoopAll } = await import(
         '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
     )
 );
-<<<<<<< HEAD
 const { scheduleCanBlockInputAction, scheduleCanBlockDeleteBtnCheck } =
     await import(
         importVersion(
             '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/requestScheduleActions.js'
         )
     );
-=======
-const { scheduleCanBlockInputAction } = await import(
-    importVersion(
-        '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/requestScheduleActions.js'
-    )
-);
->>>>>>> 736ed0f (fix : 신규 협진 생성 > 실시간 원격 협진 , 소견 요청 협진 ,협진 일정요청 작업 / 날짜 수정중)
 const { renderCreateCooperationText } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
@@ -57,10 +49,7 @@ export function renderCooperationSection(_sectionType) {
 function afterRenderCooperationSection() {
     validateCoopAll();
     scheduleCanBlockInputAction();
-<<<<<<< HEAD
     scheduleCanBlockDeleteBtnCheck();
-=======
->>>>>>> 736ed0f (fix : 신규 협진 생성 > 실시간 원격 협진 , 소견 요청 협진 ,협진 일정요청 작업 / 날짜 수정중)
 }
 
 function settingBoxData(_sectionType) {
