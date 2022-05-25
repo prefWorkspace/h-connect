@@ -6,7 +6,11 @@ const { dataScheduleTemplates } = await import(
     )
 );
 
-const { dateScheduleCaseDetailTemplates, doctorListTemplates } = await import(
+const {
+    dateScheduleCaseDetailTemplates,
+    doctorListTemplates,
+    canDateWithTemplates,
+} = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/templates/dateScheduleDetailTemplates.js'
     )
@@ -29,6 +33,25 @@ const {
 const { selectMycalendar } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
 );
+
+function loopHtml(_list, type) {
+    let html = '';
+    if (!_list) {
+        return `<></>`;
+    }
+
+    for (let i = 0; i < _list.length; i++) {
+        if (type === 1) {
+            html += doctorListTemplates(_list[i]);
+        } else if (type === 2) {
+            html += dateScheduleCaseDetailTemplates(_list[i]);
+        } else if (type === 3) {
+            html += canDateWithTemplates(_list[i]);
+        }
+    }
+
+    return html;
+}
 
 export async function dateScheduleRender(_list) {
     let html = '';
@@ -60,6 +83,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
     let html = '';
     let withMember = '';
     let witOutMember = '';
+    let canWithTime = '';
 
     const {
         memberInfoList,
@@ -68,6 +92,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         endDatetime,
         startDatetime,
         consultChannel,
+        scheduleInfoList,
     } = _scheduleData[0];
 
     // selectMycalendar.find((item) => item.consultId === consultId);
@@ -80,17 +105,10 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         (item) => item.remoteState === 'N'
     );
 
-    for (let i = 0; i < withMemberData.length; i++) {
-        withMember += doctorListTemplates(withMemberData[i]);
-    }
-
-    for (let i = 0; i < withOutMemberData.length; i++) {
-        witOutMember += doctorListTemplates(withOutMemberData[i]);
-    }
-
-    for (let i = 0; i < caseInfoList.length; i++) {
-        html += dateScheduleCaseDetailTemplates(caseInfoList[i]);
-    }
+    withMember = loopHtml(withMemberData, 1);
+    witOutMember = loopHtml(withOutMemberData, 1);
+    html = loopHtml(caseInfoList, 2);
+    canWithTime = loopHtml(scheduleInfoList, 3);
 
     // caseInfo 및 참여자 정보
     if (isentState === 1 && consultChannel === 1) {
@@ -104,6 +122,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $(`#consultChannel0 .collabor_wrap .member .withOutDoctor div`).html(
             witOutMember
         );
+        $('#metab-1').html(canWithTime);
 
         // 카운팅
         $(`#consultChannel0 .collabor_wrap .member .total_doctor_count`).text(
