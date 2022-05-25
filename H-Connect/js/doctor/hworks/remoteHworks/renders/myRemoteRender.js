@@ -22,6 +22,7 @@ export function remoteAlarmRender(list) {
 
     for (let i = 0; i < list.length; i++) {
         const { isentState } = list[i];
+
         if (isentState === 0) {
             html += isentNotRemoteAlarmTemplates(list[i]);
         } else if (isentState === 1) {

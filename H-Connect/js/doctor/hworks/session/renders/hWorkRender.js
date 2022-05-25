@@ -49,8 +49,6 @@ async function hworkListClick() {
                 // const { caseInfoList, memberInfoList } = mok.find(
                 //     (item) => item.consultId === consultId
                 // );
-                console.log('list[0]===');
-                console.log(list[0]);
                 const {
                     caseInfoList,
                     memberInfoList,

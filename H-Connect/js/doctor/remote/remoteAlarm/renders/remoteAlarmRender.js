@@ -48,17 +48,16 @@ async function remoteAlarmClick(_consultid, _isentState) {
             : _isentState;
 
     const { result, list } = await selectConsultView(consultId);
-
-    if (result && list.length > 0) {
-        // 나중에 데이터 나오면 else의 내용을 여기에 적고 else 없애기
-        // 더미데이터 이름을 실데이터 이름으로 변경
-    } else {
+    console.log('list==');
+    console.log(list);
+    if (result) {
         const {
             caseInfoList,
             memberInfoList,
             scheduleInfoList,
             deadlineDatetime,
-        } = fakeSelectConsultView[0];
+        } = list[0];
+        // fakeSelectConsultView[0];
 
         // 협진내용 탬플릿
         for (let i = 0; i < caseInfoList.length; i++) {

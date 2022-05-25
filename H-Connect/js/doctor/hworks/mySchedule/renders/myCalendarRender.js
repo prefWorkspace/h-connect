@@ -91,7 +91,13 @@ async function positionHandle() {
 }
 
 async function myScheduleInit() {
+    const today = new Date();
+    const nowHour = moment(today).format('HH');
     const { result, list } = await selectMyScheduleList();
+    console.log('list');
+    console.log(list);
+
+    $(`#${nowHour}`).addClass('active');
     let html = '';
     if (result) {
         for (let i = 0; i < list.length; i++) {
@@ -100,14 +106,15 @@ async function myScheduleInit() {
             html = myCalendarTemplate(list[i]);
             $(`#${id} .title`).after(html);
         }
-    } else {
-        for (let i = 0; i < selectMycalendar.length; i++) {
-            const { startDatetime } = selectMycalendar[i];
-            const id = moment(startDatetime).format('YYYYMMDD');
-            html = myCalendarTemplate(selectMycalendar[i]);
-            $(`#${id} .title`).after(html);
-        }
     }
+    // else {
+    //     for (let i = 0; i < selectMycalendar.length; i++) {
+    //         const { startDatetime } = selectMycalendar[i];
+    //         const id = moment(startDatetime).format('YYYYMMDD');
+    //         html = myCalendarTemplate(selectMycalendar[i]);
+    //         $(`#${id} .title`).after(html);
+    //     }
+    // }
 
     await positionHandle();
 }
