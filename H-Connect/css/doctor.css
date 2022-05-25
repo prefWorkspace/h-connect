@@ -309,6 +309,17 @@ p {
     width: 1176px;
     border-bottom: 1px solid #eee;
 }
+.doctor .my_plan .weekly .time p::before {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    content: '';
+    width: 1176px;
+    height: 48px;
+}
+.doctor .my_plan .weekly .time p.active::before {
+    background-color: #f8f8f8;
+}
 
 .doctor .my_plan .weekly .inner {
     width: 1158px;

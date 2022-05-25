@@ -34,7 +34,7 @@ export async function selectMyScheduleList(
             : moment(today).format('YYYY-MM-DD 00:00:00'),
         endDatetime: endDatetime
             ? endDatetime
-            : moment(today).format('YYYY-MM-DD 23:59:59'),
+            : moment(today).add('27', 'd').format('YYYY-MM-DD 23:59:59'),
         ...commonRequest(),
     };
 

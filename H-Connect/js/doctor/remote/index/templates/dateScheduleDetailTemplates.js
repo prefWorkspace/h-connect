@@ -61,3 +61,36 @@ export function doctorListTemplates(_data) {
     const { doctorName } = _data;
     return `<p>${doctorName}</p>`;
 }
+
+export function canDateWithTemplates(_data) {
+    const { consultEndDatetime, consultStartDatetime } = _data;
+
+    return `
+        <div>
+            <div class="check">
+                <div class="input_wrap">
+                    <input
+                        type="checkbox"
+                        id="time1"
+                        class="green_custom"
+                    />
+                    <label for="time1"></label>
+                    <label for="time1"
+                        >${moment(consultStartDatetime).format(
+                            'YY.MM.DD'
+                        )} 월요일 ${moment(consultStartDatetime).format(
+        'HH:mm'
+    )} ~
+                        ${moment(consultEndDatetime).format('HH:mm')}</label
+                    >
+                </div>
+
+                <span>-명 참석</span>
+            </div>
+
+            <div class="people">
+                
+            </div>
+        </div>
+    `;
+}
