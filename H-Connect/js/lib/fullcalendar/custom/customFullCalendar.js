@@ -1,52 +1,130 @@
 'use strict';
 
+/*
+
+{
+    selectBox: {
+        year: {
+            use: true,
+            target: '.year_box',
+            next: 2,
+        },
+        month: {
+            use: true,
+            target: '.month_box',
+        },
+    },
+    selectable: true,
+    select: function (arg) {
+        console.log('arg: ', arg);
+    캘린더에서 드래그로 이벤트를 생성할 수 있다.
+    var title = prompt('Event Title:');
+    if (title) {
+        calendar.addEvent({
+            title: title,
+            start: arg.start,
+            end: arg.end,
+            allDay: arg.allDay,
+        });
+    }
+    calendar.unselect();
+    },
+    events: [
+        {
+            title: '원격협진',
+            start: '2022-05-24',
+            constraint: 'businessHours',
+        },
+    ],
+}
+
+*/
+
 class CalendarSelectBox {
     constructor(_init) {
         this.info = _init ?? {};
+        this.renderSelectBox();
         this.addEventSelectBox();
     }
     selectBox = {
         yearBox: () => {
+            const { year } = this.info.init.options.selectBox ?? {};
+            const _nowYear = new Date().getFullYear();
             return `
-            <button class="label year_label">2021 년<span></span></button>
+            <button class="label year_label" data-value="${_nowYear}">${_nowYear} 년<span></span></button>
             <div>
                 <ul class="optionList year_list" style="width:94px !important;">
-                    <li class="optionItem year_option" data-value="2020">2020 년</li>
-                    <li class="optionItem year_option" data-value="2021">2021 년</li>
-                    <li class="optionItem year_option" data-value="2022">2022 년</li>
+                    ${
+                        year.prev
+                            ? Array(year.prev)
+                                  .fill('year')
+                                  .htmlFor((_item, _index) =>
+                                      this.selectBox.yearOptions(
+                                          _nowYear - (_index + 1)
+                                      )
+                                  )
+                            : ''
+                    }
+                    ${this.selectBox.yearOptions(_nowYear)}
+                    ${
+                        year.next
+                            ? Array(year.next)
+                                  .fill('year')
+                                  .htmlFor((_item, _index) =>
+                                      this.selectBox.yearOptions(
+                                          _nowYear + (_index + 1)
+                                      )
+                                  )
+                            : ''
+                    }
                 </ul>
             </div>
             `;
         },
-        yearOptions: () => {
+        yearOptions: (_value) => {
             return `
-            <li class="optionItem year_option" data-value="2020">2020 년</li>
+            <li class="optionItem year_option" data-date-value="${_value}">${_value} 년</li>
             `;
         },
         monthBox: () => {
+            const _nowMonth = new Date().getMonth() + 1;
             return `
-            <button class="label month_label">9 월<span></span></button>
+            <button class="label month_label" data-date-value="${_nowMonth}">${_nowMonth} 월<span></span></button>
             <ul class="optionList month_list" style="width:96px !important;">
                 ${Array(12)
                     .fill('month')
                     .htmlFor((_item, _index) =>
-                        this.selectBox.monthOptions(_index)
+                        this.selectBox.monthOptions(_index + 1)
                     )}
             </ul>
             `;
         },
         monthOptions: (_value) => {
             return `
-            <li class="optionItem month_option" data-value="${_value
+            <li class="optionItem month_option" data-date-value="${_value
                 .toString()
                 .padStart(2, '0')}">${_value} 월</li>
             `;
         },
     };
 
+    renderSelectBox() {
+        const { year, month } = this.info.init.options.selectBox ?? {};
+        const _selectBox = this.selectBox;
+        if (year.use) {
+            $(year.target).html(_selectBox.yearBox());
+        }
+
+        if (month.use) {
+            $(month.target).html(_selectBox.monthBox());
+        }
+    }
+
     handleSelectBoxOption(_item, _boxStr, _labelStr) {
         $(_item).closest(_boxStr).removeClass('active');
-        $(_item).closest(_boxStr).find(_labelStr).html(_item.textContent);
+        const _$findLabelEl = $(_item).closest(_boxStr).find(_labelStr);
+        _$findLabelEl.data($(_item).data('value'));
+        _$findLabelEl.html($(_item).text());
     }
     handleSelectBoxLabel(_item, _boxStr) {
         if ($(_item).closest(_boxStr).hasClass('active')) {
@@ -90,12 +168,13 @@ class CalendarSelectBox {
                         _yearLabelStr
                     );
 
-                    const _sbYear = $(this).data('value');
+                    const _sbYear = $(this).data('date-value');
                     const _sbMonth = $(
-                        `${_monthBoxStr} ${_monthOptionStr}`
-                    ).data('value');
+                        `${_monthBoxStr} ${_monthLabelStr}`
+                    ).data('date-value');
 
-                    _module.goToDate(_module.info.module);
+                    console.log('_sbMonth: ', _sbMonth);
+                    _module.goToDate(_module.info.module, _sbYear, _sbMonth);
                 }
             );
         }
@@ -117,6 +196,13 @@ class CalendarSelectBox {
                         _monthBoxStr,
                         _monthLabelStr
                     );
+
+                    const _sbYear = $(`${_yearBoxStr} ${_yearOptionStr}`).data(
+                        'date-value'
+                    );
+                    const _sbMonth = $(this).data('date-value');
+
+                    _module.goToDate(_module.info.module, _sbYear, _sbMonth);
                 }
             );
         }
