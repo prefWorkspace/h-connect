@@ -47,12 +47,48 @@ function createCooperationAction() {
         },
         popupBtn: {
             submitBtn: {
+<<<<<<< HEAD
                 target: '.btn_check',
                 close: true,
                 action: (_info) => {
                     _info.closePopup();
                     const _surgerySelected =
                         $('.surgery_box').attr('data-option-role');
+=======
+                target: '.blf',
+                close: false,
+                action: async (_info) => {
+                    const _sendRemoteData = _info.payload.remoteData ?? {};
+                    const _surgerySelected =
+                        $('.surgery_box').attr('data-option-role');
+                    switch (_surgerySelected) {
+                        case '실시간원격협진':
+                            const { result: remoteResult } =
+                                (await insertRemoteConsult(_sendRemoteData)) ??
+                                {};
+
+                            if (remoteResult) {
+                                _info.closePopup();
+                            } else
+                                alert('실시간 원격 협진 생성에 실패했습니다.');
+                            break;
+                        case '소견요청협진':
+                            const { result: opinionResult } =
+                                (await insertOpinionConsult(_sendRemoteData)) ??
+                                {};
+                            if (opinionResult) {
+                                _info.closePopup();
+                            } else alert('소견 요청 협진 생성에 실패했습니다.');
+                            break;
+                        case '협진일정요청':
+                            const { result: requestScheduleResult } =
+                                (await insertConsult(_sendRemoteData)) ?? {};
+                            if (requestScheduleResult) {
+                                _info.closePopup();
+                            } else alert('협진 일정 요청에 실패했습니다.');
+                            break;
+                    }
+>>>>>>> 736ed0f (fix : 신규 협진 생성 > 실시간 원격 협진 , 소견 요청 협진 ,협진 일정요청 작업 / 날짜 수정중)
                     renderCooperationSection(_surgerySelected);
                     renderChoiceDoctorEmptyControll(true);
                     renderActivateChoiceDoctorLength();
@@ -150,8 +186,56 @@ function createCooperationAction() {
         const _checkValidateAll = validateCoopAll();
 
         if (_checkValidateAll) {
+<<<<<<< HEAD
             const _getSendData = calcSendData();
             fetchSendData(_getSendData);
+=======
+            let _sectionData = {};
+
+            const _surgerySelected = $('.surgery_box').attr('data-option-role');
+            switch (_surgerySelected) {
+                case '실시간원격협진':
+                    const {
+                        startDatetime: rtStartDatetime,
+                        endDatetime: rtEndDatetime,
+                    } = serviceData.realTime.date();
+                    _sectionData = {
+                        remoteState: serviceData.realTime.type(),
+                        startDatetime: rtStartDatetime,
+                        endDatetime: rtEndDatetime,
+                    };
+                    break;
+                case '소견요청협진':
+                    const {
+                        startDatetime: opiStartDatetime,
+                        endDatetime: opiEndDatetime,
+                    } = serviceData.opinion.date();
+                    _sectionData = {
+                        startDatetime: opiStartDatetime,
+                        endDatetime: opiEndDatetime,
+                    };
+                    break;
+                case '협진일정요청':
+                    const { deadlineTime } =
+                        serviceData.requestSchedule.deadlineDate();
+                    const { scheduleInfo } =
+                        serviceData.requestSchedule.scheduleCanDateList();
+                    _sectionData = {
+                        deadline: deadlineTime,
+                        scheduleInfo: scheduleInfo,
+                    };
+                    break;
+            }
+
+            const _caseInfo = serviceData.content.caseList();
+            const _memberInfo = serviceData.content.doctorList();
+
+            _createCooperationPopup.saveData('remoteData', {
+                ..._sectionData,
+                caseInfo: _caseInfo,
+                memberInfo: _memberInfo,
+            });
+>>>>>>> 736ed0f (fix : 신규 협진 생성 > 실시간 원격 협진 , 소견 요청 협진 ,협진 일정요청 작업 / 날짜 수정중)
         }
     });
 }
