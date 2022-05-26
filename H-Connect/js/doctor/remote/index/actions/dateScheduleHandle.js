@@ -37,6 +37,7 @@ async function calendarHandle() {
     );
 
     if (result) {
+        $('.section.right').hide();
         await dateScheduleRender(list);
     }
     //  else {
@@ -86,7 +87,7 @@ async function init() {
                 const consultId = $(value).data('consultid');
                 const consultChannel = $(value).data('consultchannle');
                 const remote_member = $(value).find('.remote_member').text();
-                if (isentState === 1) {
+                if (isentState === 1 && consultChannel === 1) {
                     $(`#consultChannel0`).show();
                     $(`#consultChannel0 .remote_member`).text(remote_member);
                 } else {

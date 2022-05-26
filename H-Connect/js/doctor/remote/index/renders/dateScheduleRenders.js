@@ -10,6 +10,7 @@ const {
     dateScheduleCaseDetailTemplates,
     doctorListTemplates,
     canDateWithTemplates,
+    canDateWithTemplatesisentnot,
 } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/templates/dateScheduleDetailTemplates.js'
@@ -47,6 +48,8 @@ function loopHtml(_list, type) {
             html += dateScheduleCaseDetailTemplates(_list[i]);
         } else if (type === 3) {
             html += canDateWithTemplates(_list[i]);
+        } else if (type === 4) {
+            html += canDateWithTemplatesisentnot(_list[i]);
         }
     }
 
@@ -108,8 +111,10 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
     withMember = loopHtml(withMemberData, 1);
     witOutMember = loopHtml(withOutMemberData, 1);
     html = loopHtml(caseInfoList, 2);
-    canWithTime = loopHtml(scheduleInfoList, 3);
-
+    canWithTime =
+        isentState === 1
+            ? loopHtml(scheduleInfoList, 3)
+            : loopHtml(scheduleInfoList, 4);
     // caseInfo 및 참여자 정보
     if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
@@ -158,6 +163,18 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
             `#consultChannel${consultChannel} .collabor_wrap .member .doctor_count`
         ).text(withMemberData.length);
 
+        $(`#consultChannel${consultChannel} .collabor_wrap .deadlineTime`).text(
+            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
+        );
+
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .startDatetime`
+        ).text(moment(startDatetime).format('YY.MM.DD HH:mm'));
+
+        $(`#consultChannel${consultChannel} .collabor_wrap .endDatetime`).text(
+            moment(endDatetime).format('YY.MM.DD HH:mm')
+        );
+
         // 시간 데이터 바인딩
         if (consultChannel === 3) {
             $(
@@ -171,17 +188,11 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
             ).text(moment(endDatetime).format('HH:mm'));
         }
 
-        $(`#consultChannel${consultChannel} .collabor_wrap .deadlineTime`).text(
-            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
-        );
-
-        $(
-            `#consultChannel${consultChannel} .collabor_wrap .startDatetime`
-        ).text(moment(startDatetime).format('YY.MM.DD HH:mm'));
-
-        $(`#consultChannel${consultChannel} .collabor_wrap .endDatetime`).text(
-            moment(endDatetime).format('YY.MM.DD HH:mm')
-        );
+        if (consultChannel === 1) {
+            $(`#consultChannel${consultChannel} .time_select #tab-1`).html(
+                canWithTime
+            );
+        }
     }
 }
 
