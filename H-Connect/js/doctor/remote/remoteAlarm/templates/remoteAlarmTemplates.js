@@ -32,7 +32,7 @@ export function remoteAlarmTemplates(_data) {
                     </p>
                 </div>
 
-                <p class="who send_me">${name}</p>
+                <p class="who send_me">내가 보냄</p>
             </div>
         `;
     } else {

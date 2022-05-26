@@ -1,5 +1,9 @@
 'use strict';
 
+const { numToDay } = await import(
+    importVersion('/H-Connect/js/utils/common/utils.js')
+);
+
 // 협진내용 디테일 탬플릿
 export function remoteAlarmCaseInfoTemplate(_data) {
     const {
@@ -60,10 +64,10 @@ export function remoteAlarmCaseInfoTemplate(_data) {
     `;
 }
 
-// 협진 가능시간 탬플릿
+// 협진 가능시간 탬플릿 수신 받은 부분
 export function remoteAlarmTimeTemplate(_data) {
     const { consultEndDatetime, consultStartDatetime, orderNo } = _data;
-
+    const day = moment(consultEndDatetime).day();
     return `
         <div>
             <div class="check">
@@ -76,13 +80,48 @@ export function remoteAlarmTimeTemplate(_data) {
                 <label for="check${orderNo}"
                     >${moment(consultStartDatetime).format(
                         'YY.MM.DD'
-                    )} 월요일 ${moment(consultStartDatetime).format('HH:mm')} ~
+                    )} ${numToDay(day)}요일 ${moment(
+        consultStartDatetime
+    ).format('HH:mm')} ~
                     ${moment(consultEndDatetime).format('HH:mm')}</label
                 >
             </div>
             <p class="dupli">
                 ※ 외래진료 일정과 중복됩니다.
             </p>
+        </div>
+    `;
+}
+
+// 내가 보낸 일정 요청에서 협진 가능시간
+export function remoteAlarmTimeTemplateIsent(_data) {
+    const { consultEndDatetime, consultStartDatetime } = _data;
+    const day = moment(consultEndDatetime).day();
+    return `
+        <div>
+            <div class="check">
+                <div class="input_wrap">
+                    <input
+                        type="checkbox"
+                        id="time1"
+                        class="green_custom"
+                    />
+                    <label for="time1"></label>
+                    <label for="time1"
+                        >${moment(consultEndDatetime).format(
+                            'YY.MM.DD'
+                        )} ${numToDay(day)}요일 ${moment(
+        consultStartDatetime
+    ).format('HH:mm')} ~
+                        ${moment(consultEndDatetime).format('HH:mm')}</label
+                    >
+                </div>
+
+                <span>-명 참석</span>
+            </div>
+
+            <div class="people">
+            </div>
         </div>
     `;
 }

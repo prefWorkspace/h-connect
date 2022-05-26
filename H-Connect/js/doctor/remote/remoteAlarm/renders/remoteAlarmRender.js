@@ -24,6 +24,7 @@ const {
     remoteAlarmCaseInfoTemplate,
     remoteAlarmTimeTemplate,
     remoteAlarmDoctorTemplate,
+    remoteAlarmTimeTemplateIsent,
 } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteAlarm/templates/remoteAlarmDetailTemplate.js'
@@ -93,9 +94,21 @@ async function remoteAlarmClick(_consultid, _isentState) {
                     scheduleInfoList[i]
                 );
             }
+            console.log('scheduleInfoHTML==');
+            console.log(scheduleInfoHTML);
 
             // 협진 가능 시간 선택 렌더링
             $(`#isentstate${isentState} #tab-1`).html(scheduleInfoHTML);
+        }
+
+        if (isentState === 1) {
+            // 협진 가능 시간 선택 탬플릿
+            for (let i = 0; i < scheduleInfoList.length; i++) {
+                scheduleInfoHTML += remoteAlarmTimeTemplateIsent(
+                    scheduleInfoList[i]
+                );
+            }
+            $(`#isentstate${isentState} #metab-1`).html(scheduleInfoHTML);
         }
 
         // 데드라인 렌더링

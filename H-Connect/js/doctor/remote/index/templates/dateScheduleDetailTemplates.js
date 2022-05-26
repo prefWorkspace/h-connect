@@ -1,5 +1,9 @@
 'use strict';
 
+const { numToDay } = await import(
+    importVersion('/H-Connect/js/utils/common/utils.js')
+);
+
 export function dateScheduleCaseDetailTemplates(_data) {
     const {
         orderNo,
@@ -92,5 +96,31 @@ export function canDateWithTemplates(_data) {
                 
             </div>
         </div>
+    `;
+}
+export function canDateWithTemplatesisentnot(_data) {
+    const { consultEndDatetime, consultStartDatetime } = _data;
+    const dayNum = moment(consultEndDatetime).day();
+
+    return `
+    <div>
+        <div class="check">
+            <input
+                type="checkbox"
+                id="frist"
+                class="green_custom"
+            />
+            <label for="frist"></label>
+            <label for="frist"
+                >${moment(consultStartDatetime).format('YY.MM.DD')} ${numToDay(
+        dayNum
+    )} ${moment(consultStartDatetime).format('HH:mm')} ~
+                ${moment(consultEndDatetime).format('HH:mm')}</label
+            >
+        </div>
+        <p class="dupli">
+            ※ 외래진료 일정과 중복됩니다.
+        </p>
+    </div>
     `;
 }

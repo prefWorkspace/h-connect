@@ -1320,8 +1320,8 @@ $(function () {
     });
 
     $('.doctor .all_plan .title .btn_cal').on('click', function () {
-        $('.doctor_remote .cal_view').show();
-        $('.doctor_remote .week').hide();
+        $('.doctor_remote .cal_view').css('display', 'flex');
+        $('.doctor_remote .week').css('display', 'none');
         // $(this).addClass('on');
         // $('.doctor .all_plan> .title button').not(this).removeClass('on');
     });

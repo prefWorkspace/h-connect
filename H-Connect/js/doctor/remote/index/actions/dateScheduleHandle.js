@@ -16,8 +16,15 @@ const { dateScheduleRender, dateScheduleDetailRender } = await import(
     )
 );
 
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
+
+const { getParams } = history;
+
 async function calendarHandle() {
-    const date = $(this).data('date') || new Date();
+    const queryendDatetime = getParams('endDatetime');
+    const date = queryendDatetime || $(this).data('date') || new Date();
     const startDatetime = moment(date).format('YYYY-MM-DD 00:00:00');
     const endDatetime = moment(date).format('YYYY-MM-DD 23:59:59');
     const { result, list } = await selectMyScheduleList(
@@ -30,6 +37,7 @@ async function calendarHandle() {
     );
 
     if (result) {
+        $('.section.right').hide();
         await dateScheduleRender(list);
     }
     //  else {
@@ -62,6 +70,39 @@ function myCalendarClickHandler() {
 }
 
 async function init() {
+    const queryConsultId = getParams('consultId');
+
+    $('.all_plan .cal_list .schedule_list .row').on(
+        'click',
+        myCalendarClickHandler
+    );
+
+    if (queryConsultId !== '') {
+        $('.all_plan .cal_list .schedule_list .row').each((index, value) => {
+            const consultId = $(value).data('consultid');
+            if (queryConsultId === consultId) {
+                $(value).addClass('on');
+
+                const isentState = +$(value).data('isentstate');
+                const consultId = $(value).data('consultid');
+                const consultChannel = $(value).data('consultchannle');
+                const remote_member = $(value).find('.remote_member').text();
+                if (isentState === 1 && consultChannel === 1) {
+                    $(`#consultChannel0`).show();
+                    $(`#consultChannel0 .remote_member`).text(remote_member);
+                } else {
+                    $(`#consultChannel${consultChannel}`).show();
+                    $(`#consultChannel${consultChannel} .remote_member`).text(
+                        remote_member
+                    );
+                }
+                dateScheduleDetailRender(consultChannel, isentState, consultId);
+            }
+        });
+
+        return;
+    }
+
     $('.all_plan .cal_list .schedule_list .row').each((index, value) => {
         if (index === 0) {
             $(value).addClass('on');
@@ -82,11 +123,6 @@ async function init() {
             dateScheduleDetailRender(consultChannel, isentState, consultId);
         }
     });
-
-    $('.all_plan .cal_list .schedule_list .row').on(
-        'click',
-        myCalendarClickHandler
-    );
 }
 
 await calendarHandle();
