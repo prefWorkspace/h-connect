@@ -110,7 +110,7 @@ export function monitorRoomBlock(_data) {
         wardCode
     } = sickRoomItem || {};
     return `
-    <section class='all_patient room_view'>
+    <section id='${sickRoomCode}' class='all_patient room_view'>
         <div class='container'>
             <div class='pateint_room'>
                 <div class='room_num'>

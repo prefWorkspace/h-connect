@@ -41,6 +41,12 @@ client.connect(headers, function() {
             ecgLine = chartCreateOrUpdate(ecgLine, 'vital-ecg-graph', ecgDataList, measurementCode, '#00FF19');
             spO2Line = chartCreateOrUpdate(spO2Line, 'vital-spO2-graph', spO2DataList, measurementCode, '#00FFFF');
             respLine = chartCreateOrUpdate(respLine, 'vital-resp-graph', respDataList, measurementCode, '#EEFF00');
+
+            setVitalData('.ecg > .bell', bioSignalData.heartRateDataList);
+            setVitalData('.sp > .bell', bioSignalData.spO2DataList);
+            setVitalData('.resp > .bell', bioSignalData.respDataList);
+            setVitalData('.control > .temp', bioSignalData.tempDataList);
+            setVitalData('.control > .ews', bioSignalData.ewsDataList);
         }
     });
 });
@@ -68,8 +74,10 @@ const setUpdateTime = (dateString) => {
 };
 
 const setVitalData = (target, data) => {
+    if (!data) return false;
+
     const items = data.map(item => item.value);
-    const $target = $(`#${target}`).parent().parent();
+    const $target = $(`${target}`);
     const $min = $target.find('.minMax > p:first-child');
     const $max = $target.find('.minMax > p:last-child');
     const $last = $max.parent().next();
@@ -81,8 +89,6 @@ const setVitalData = (target, data) => {
 
 const chartCreateOrUpdate = (chart, target, data, measurementCode, color) => {
     if (data) {
-        setVitalData(target, data);
-
         if (chart) {
             chart.chartUpdate(data);
         } else {

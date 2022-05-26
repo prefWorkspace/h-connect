@@ -40,6 +40,93 @@
 
 */
 
+export class CustomFullcalendar {
+    constructor(_targetStr, _options) {
+        this.init = {
+            target: {
+                str: _targetStr ?? null,
+                element: null,
+            },
+            options: _options ?? {},
+        };
+        this.moduleSetting();
+        this.calendarSelectBox = new CalendarSelectBox(this);
+        this.render();
+    }
+
+    defaultOptions = {
+        titleFormat: function (date) {
+            return date.date.year + '년' + ' ' + (date.date.month + 1) + '월';
+        },
+    };
+
+    moduleSetting() {
+        const { target, options } = this.init ?? {};
+
+        const _moduleEl = document.querySelector(target.str);
+
+        this.init.target.element = _moduleEl;
+
+        const _this = this;
+        this.module = new FullCalendar.Calendar(_moduleEl, {
+            editable: true,
+            initialView: 'dayGridMonth',
+            timeZone: 'local',
+            selectable: options.selectable ?? false, //선택 할 수 있음
+
+            header: {
+                center: 'title',
+                left: 'prev',
+                right: 'next today',
+            },
+            titleFormat: (date) =>
+                typeof options.titleFormat === 'function'
+                    ? options.titleFormat(date)
+                    : this.defaultOptions.titleFormat(date),
+            events: options?.events ?? [],
+            unselectAuto: options.unselectAuto ?? true,
+            select: (selectData) => {
+                _this.selectData = selectData;
+                options.selectable &&
+                    $('.fc .fc-daygrid-day.fc-day-today').css(
+                        'background-color',
+                        'transparent'
+                    );
+                typeof options.select === 'function'
+                    ? options?.select(selectData)
+                    : null;
+            },
+            dateClick: (dateClickData) => {
+                typeof options.dateClick === 'function'
+                    ? options?.dateClick(dateClickData, this)
+                    : null;
+            },
+        });
+        $(this.init.target.element).data('calendarmodule', this.module);
+    }
+    resetTodaySelect() {
+        $('.fc .fc-daygrid-day.fc-day-today').removeClass('fc-day-today');
+    }
+    afterRender() {
+        const { target, options } = this.init ?? {};
+        const _this = this;
+
+        $(target.element)
+            .off()
+            .on('pointerdown', 'tbody', function () {
+                if (options.firstClickUnSelectToday === true) {
+                    _this.resetTodaySelect();
+                }
+            });
+    }
+    render() {
+        this.module.render();
+        if (this.module.isRendered === true) {
+            this.afterRender();
+        }
+    }
+}
+
 class CalendarSelectBox {
     constructor(_init) {
         this.info = _init ?? {};
@@ -206,62 +293,5 @@ class CalendarSelectBox {
                 }
             );
         }
-    }
-}
-export class CustomFullcalendar {
-    constructor(_targetStr, _options) {
-        this.init = {
-            target: {
-                str: _targetStr ?? null,
-                element: null,
-            },
-            options: _options ?? {},
-        };
-        this.moduleSetting();
-        this.render();
-        this.calendarSelectBox = new CalendarSelectBox(this);
-    }
-
-    defaultOptions = {
-        titleFormat: function (date) {
-            return date.date.year + '년' + ' ' + (date.date.month + 1) + '월';
-        },
-    };
-
-    moduleSetting() {
-        const { target, options } = this.init ?? {};
-
-        const _moduleEl = document.querySelector(target.str);
-
-        this.init.target.element = _moduleEl;
-
-        this.module = new FullCalendar.Calendar(_moduleEl, {
-            // nowIndicator: false,
-            editable: true,
-            initialView: 'dayGridMonth',
-            timeZone: 'local',
-            selectable: options.selectable ?? false, //선택 할 수 있음
-
-            header: {
-                center: 'title',
-                left: 'prev',
-                right: 'next today',
-            },
-            eventAfterAllRender: (e) => {
-                console.log(e);
-            },
-            titleFormat: (date) =>
-                typeof options.titleFormat === 'function'
-                    ? options.titleFormat(date)
-                    : this.defaultOptions.titleFormat(date),
-            events: options?.events ?? [],
-            select: (arg) =>
-                typeof options.select === 'function'
-                    ? options?.select(arg)
-                    : null,
-        });
-    }
-    render() {
-        this.module.render();
     }
 }
