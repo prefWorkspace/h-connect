@@ -24,6 +24,8 @@ async function calendarHandle() {
         startDatetime,
         endDatetime
     );
+    console.log('list===');
+    console.log(list);
     $('#d_day_count').text(list.length);
     $('#d_day').text(
         `${moment(date).format('MM')}월 ${moment(date).format('DD')}일`

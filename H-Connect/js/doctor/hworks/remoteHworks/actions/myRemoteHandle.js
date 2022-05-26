@@ -30,6 +30,10 @@ const { noCheckConsultReder } = await import(
 async function init() {
     //협진 일정요청 알림 목록
     const { result: alarmResult, list } = await selectConsultAlarmsList();
+<<<<<<< HEAD
+=======
+
+>>>>>>> edfc4b7 (원격 협진 탭에서 협진 일정 목록 더미 데이터 없애고 수정중.)
     //확인하지 않은 소견 목록
     const { result: opinionResult, opinionConsultList } =
         await selectOpinionConsultList();
