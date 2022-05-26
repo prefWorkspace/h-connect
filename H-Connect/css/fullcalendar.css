@@ -105,12 +105,13 @@
 }
 
 .fc .fc-daygrid-day-bg .fc-highlight {
-    width: 42px;
-    height: 42px;
     border-radius: 8px;
-    background-color: #ff8800;
+    background-color: rgba(255, 136, 0, 0.6);
 }
 
+.fc .fc-daygrid-day.-active {
+    background-color: rgba(255, 136, 0, 1);
+}
 /* --------------------------------------------------------------------------- */
 /* --------------------------- 기 본  U I ------------------------------------ */
 /* -------------------------------------------------------------------------- */
@@ -947,12 +948,6 @@ A HORIZONTAL event
     position: absolute;
     top: 0;
     bottom: 0;
-    background-color: rgba(255, 136, 0, 0.6);
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
 }
 .fc {
     /* bg content */
