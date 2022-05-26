@@ -5,13 +5,8 @@ const { errorText } = await import(
 
 // 내가 보냄 일정 요청
 export function isentRemoteAlarmTemplates(_data) {
-    const {
-        consultId,
-        deadlineDatetime,
-        replyCount,
-        unconfirmedReplyCount,
-        name,
-    } = _data;
+    const { consultId, deadlineDatetime, replyCount, unconfirmedReplyCount } =
+        _data;
 
     return `
         <div
@@ -34,7 +29,7 @@ export function isentRemoteAlarmTemplates(_data) {
                 >
             </p>
 
-            <p class="name my">${name}</p>
+            <p class="name my">내가 보냄</p>
         </div>
     `;
 }
