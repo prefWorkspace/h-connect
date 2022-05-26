@@ -504,6 +504,13 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/common/actions/',
                     },
+                    'sessionBanner.js': {
+                        type: 'module',
+                        url_path:
+                            '/doctor/remote||/doctor/remote_alarm||/doctor/remote_check',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/common/actions/',
+                    },
                 },
                 renders: {
                     'countRender.js': {
