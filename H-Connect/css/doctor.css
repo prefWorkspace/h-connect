@@ -3450,6 +3450,12 @@ p {
     color: #888;
 }
 
+.doctor .ask_request .title button.active {
+    background: linear-gradient(to right, #004f60, #350039);
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 60%);
+    color: #fff;
+}
+
 .doctor .time_select .tab-link div {
     width: 15px;
     height: 15px;
