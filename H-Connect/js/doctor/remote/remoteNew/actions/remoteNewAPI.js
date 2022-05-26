@@ -7,6 +7,15 @@ const { localStorageController } = await import(
 const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
+const { departmentDoctorListToBasicList } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
+    )
+);
+
+function getUserInfo() {
+    return JSON.parse(localStorageController.getLocalS('userData'));
+}
 
 export async function selectMeasurementInfoList(_searchVal) {
     /* 환자 검색 정보 리스트 불러오기 API */
@@ -28,7 +37,7 @@ export async function selectMeasurementInfoList(_searchVal) {
 
 export async function selectBookMarkList() {
     /* 북마크 탭 리스트 조회 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/SelectBookMarkList',
@@ -48,7 +57,7 @@ export async function selectBookMarkList() {
 
 export async function insertBookMark({ bookmarkName }) {
     /* 의료진 즐겨찾기 "탭" 추가 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/InsertBookMark',
@@ -66,7 +75,7 @@ export async function insertBookMark({ bookmarkName }) {
 }
 export async function deleteBookMark({ bookmarkId }) {
     /* 의료진 즐겨찾기 "탭" 삭제 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/DeleteBookMark',
@@ -88,7 +97,7 @@ export async function deleteBookMark({ bookmarkId }) {
 
 export async function selectBookMarkUserList({ bookmarkId }) {
     /* 북마크 유저 리스트 조회 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/SelectBookMarkUserList',
@@ -103,11 +112,8 @@ export async function selectBookMarkUserList({ bookmarkId }) {
     );
     if (res.result) {
         return res.bookmarkInfoList;
-    } else {
-        return false;
     }
 }
-selectBookMarkUserList({ bookmarkId: 'prefinc3_2022-05-11T16:19:30.129' });
 
 export async function insertBookMarkDetail({
     bookmarkId,
@@ -117,7 +123,7 @@ export async function insertBookMarkDetail({
     addUserDepartmentCode,
 }) {
     /* 의료진 즐겨찾기 탭 별 의사 리스트 추가 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/InsertBookMarkDetail',
@@ -138,7 +144,7 @@ export async function insertBookMarkDetail({
 }
 export async function deleteBookMarkDetail({ bookmarkId, delUserId }) {
     /* 의료진 즐겨찾기 탭별 의료진 제거 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/DeleteBookMarkDetail',
@@ -157,7 +163,7 @@ export async function deleteBookMarkDetail({ bookmarkId, delUserId }) {
 
 export async function selectHisDoctorList(_searchName) {
     /* 의사 리스트 불러오기 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/SelectHisDoctorList',
@@ -174,47 +180,41 @@ export async function selectHisDoctorList(_searchName) {
         return res.doctorInfoList;
     }
 }
-export async function selectHisDoctorHost() {
-    /* 의사 리스트 불러오기 API */
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
-    if (!id) return;
+export async function selectHisDoctorHost(_id) {
+    /* 호스트 정보 받아오기 API */
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/SelectHisDoctorList',
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            userId: id,
-            searchUserId: id,
+            userId: _id,
+            searchUserId: _id,
         }),
         (res) => {},
         (err) => console.log(err)
     );
-    console.log(res);
     if (res.result) {
-        return res.doctorInfoList;
+        return departmentDoctorListToBasicList(res.doctorInfoList)[0] ?? null;
     }
 }
 
-export async function insertRemoteConsult({
-    caseInfo,
-    memberInfo,
-    startDatetime,
-    endDatetime,
-    remoteState,
-}) {
-    /* 실시간 원격 협진 / 다학제 통합 진료 추가 */
+export async function insertRemoteConsult(_data) {
+    /* 실시간 원격 협진 / 다학제 통합 진료 협진 생성 */
+    const { caseInfo, memberInfo, startDatetime, endDatetime, remoteState } =
+        _data ?? {};
 
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
-    // const {} = await selectHisDoctorHost(); // 호스트 정보 받아오는 코드 작성 필요
+    const { userName, departmentCode, departmentName } =
+        (await selectHisDoctorHost(id)) ?? {}; // 호스트 정보 받아오기
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/InsertRemoteConsult',
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            hostName: 'ryan', // 임시 하드코딩
-            hostClass: '0', // 임시 하드코딩
-            hostClassName: '일반외과', // 임시 하드코딩
+            hostName: userName,
+            hostClass: departmentCode,
+            hostClassName: departmentName,
             caseInfo: caseInfo, // case info list
             memberInfo: memberInfo, // 협진 참여자 list
             startDatetime: startDatetime,
@@ -222,9 +222,82 @@ export async function insertRemoteConsult({
             remoteState: remoteState,
             userId: id,
         }),
-        (res) => {
-            console.log('res:', res);
-        },
+        (res) => {},
+        (err) => console.log(err)
+    );
+    return res;
+}
+export async function insertOpinionConsult(_data) {
+    /* 소견 요청 협진 생성 */
+    const { caseInfo, memberInfo, startDatetime, endDatetime } = _data ?? {};
+
+    const { id } = getUserInfo();
+    if (!id) return;
+    const { userName, departmentCode, departmentName } =
+        (await selectHisDoctorHost(id)) ?? {}; // 호스트 정보 받아오기
+    const res = await serverController.ajaxAwaitController(
+        'API/Doctor/InsertOpinionConsult',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            hostName: userName,
+            hostClass: departmentCode,
+            hostClassName: departmentName,
+            caseInfo: caseInfo, // case info list
+            memberInfo: memberInfo, // 협진 참여자 list
+            startDatetime: startDatetime,
+            endDatetime: endDatetime,
+            userId: id,
+        }),
+        (res) => {},
+        (err) => console.log(err)
+    );
+    return res;
+}
+export async function insertConsult(_data) {
+    /* 협진 일정 요청 생성 */
+    const { deadline, caseInfo, memberInfo, scheduleInfo } = _data ?? {};
+
+    const { id } = getUserInfo();
+    if (!id) return;
+    const { userName, departmentCode, departmentName } =
+        (await selectHisDoctorHost(id)) ?? {}; // 호스트 정보 받아오기
+    const res = await serverController.ajaxAwaitController(
+        'API/Doctor/InsertConsult',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            hostName: userName,
+            hostClass: departmentCode,
+            hostClassName: departmentName,
+            deadline: deadline,
+            caseInfo: caseInfo, // case info list
+            memberInfo: memberInfo, // 협진 참여자 list
+            scheduleInfo: scheduleInfo,
+            userId: id,
+        }),
+        (res) => {},
+        (err) => console.log(err)
+    );
+    return res;
+}
+
+export async function selectScheduleCheck(_data) {
+    /* 협진가능시간 선택에서 의사 일정과 중복인지 확인 하는 API */
+    const { checkDatetime } = _data ?? {};
+    console.log('checkDatetime: ', checkDatetime);
+
+    const { id } = getUserInfo();
+    if (!id) return;
+    const res = await serverController.ajaxAwaitController(
+        'API/Doctor/SelectScheduleCheck',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            userId: id,
+            checkDatetime: checkDatetime,
+        }),
+        (res) => {},
         (err) => console.log(err)
     );
     return res;
@@ -232,7 +305,7 @@ export async function insertRemoteConsult({
 export async function selectMyScheduleList() {
     /* 실시간 원격 협진 / 다학제 통합 진료 추가 */
 
-    const { id } = JSON.parse(localStorageController.getLocalS('userData'));
+    const { id } = getUserInfo();
     if (!id) return;
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/SelectMyScheduleList',
@@ -250,4 +323,4 @@ export async function selectMyScheduleList() {
     );
     return res;
 }
-// selectMyScheduleList();
+selectMyScheduleList();

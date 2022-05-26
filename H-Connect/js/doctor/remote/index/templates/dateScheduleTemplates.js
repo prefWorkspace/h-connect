@@ -11,6 +11,7 @@ export function dataScheduleTemplates(_data) {
     } = _data;
 
     let html = '';
+    let remote_member = '';
     let doctorLevelName = '-',
         doctorName = '-';
     if (memberInfoList !== null) {
@@ -18,34 +19,30 @@ export function dataScheduleTemplates(_data) {
         doctorName = memberInfoList[0].doctorName;
     }
 
+    if (isentState === 1) {
+        remote_member = '내가 보냄';
+    } else {
+        remote_member = `${doctorName} ${doctorLevelName} ${
+            memberInfoList && memberInfoList.length > 1
+                ? `외 ${memberInfoList.length - 1}`
+                : ''
+        }`;
+    }
+
     switch (consultChannel) {
         //협진일정 요청
         case 1:
-            if (isentState === 1) {
-                html = `
-                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row request_remote">
-                    <div>
-                        <p>${moment(startDatetime).format('HH:mm')}</p>
-                        <p>${consultChannelName}</p>
-                    </div>
-                    <p class="me">내가 보냄</p>
-                </div>
-                `;
-            } else {
-                html = `
+            html = `
                 <div data-consultid="${consultId}" data-isentstate="${isentState}" data-consultchannle="${consultChannel}" class="row remote_ask">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
                     </div>
-                    <p>${doctorName} ${doctorLevelName} ${
-                    memberInfoList && memberInfoList.length > 1
-                        ? `외 ${memberInfoList.length}`
-                        : ''
-                }</p>
+                    <p class="remote_member ${
+                        isentState === 1 ? 'me' : ''
+                    }">${remote_member}</p>
                 </div>
             `;
-            }
             break;
         //소견요청 협진
         case 2:
@@ -55,12 +52,9 @@ export function dataScheduleTemplates(_data) {
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
                     </div>
-                
-                    <p>${doctorName} ${doctorLevelName} ${
-                memberInfoList && memberInfoList.length > 1
-                    ? `외 ${memberInfoList.length}`
-                    : ''
-            }</p>
+                    <p class="remote_member ${
+                        isentState === 1 ? 'me' : ''
+                    }">${remote_member}</p>
                 </div>
             `;
             break;
@@ -68,15 +62,15 @@ export function dataScheduleTemplates(_data) {
         // 원격협진
         case 3:
             html = `
-                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row start_remote on">
+                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row start_remote">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
                     </div>
                 
-                    <p>${doctorName} ${doctorLevelName} ${
-                memberInfoList.length > 1 ? `외 ${memberInfoList.length}` : ''
-            }</p>
+                    <p class="remote_member ${
+                        isentState === 1 ? 'me' : ''
+                    }">${remote_member}</p>
                 </div>
             `;
             break;

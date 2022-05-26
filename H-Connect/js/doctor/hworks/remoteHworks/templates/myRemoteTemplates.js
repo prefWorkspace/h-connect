@@ -41,7 +41,7 @@ export function isentRemoteAlarmTemplates(_data) {
 
 // 수신받은 일정요청
 export function isentNotRemoteAlarmTemplates(_data) {
-    const { deadlineDatetime, replyState, name, consultId } = _data;
+    const { deadlineDatetime, replyState, createId, consultId } = _data;
 
     return `
         <div
@@ -54,14 +54,12 @@ export function isentNotRemoteAlarmTemplates(_data) {
                 )}</span>&nbsp;
                 <span>${moment(deadlineDatetime).format('HH:mm')}</span> 까지
             </p>
-            
             <p class="answer">협진일정 요청 수신</p>
-            
             <p class="reply">${
                 replyState === 'N' ? '회신하지 않음' : '회신완료'
             }</p>
             
-            <p class="name">${name}</p>
+            <p class="name">${createId}</p>
         </div> 
     `;
 }

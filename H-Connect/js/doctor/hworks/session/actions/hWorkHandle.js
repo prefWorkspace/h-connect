@@ -35,20 +35,18 @@ async function init() {
         // 원활한 작업을 위해서 두개를 바꿨음
         // 나중에 if랑 else랑 바꿀 것.
         if (sessionCount === 0) {
-            $('.schedule .btn_today').addClass('active');
-            await sessionListHandle();
-        } else {
             $('.schedule .btn_section').addClass('active');
+        } else {
+            $('.schedule .btn_today').addClass('active');
         }
+        await sessionListHandle();
     }
 }
 
 async function sessionListHandle() {
     const { result, list } = await selectRemoteSessionList();
-    if (result && list.length !== 0) {
+    if (result) {
         hworkSessionList(list);
-    } else {
-        hworkSessionList(mok);
     }
 }
 

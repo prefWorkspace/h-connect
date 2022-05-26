@@ -604,27 +604,27 @@
 
                                 <!-- 2주 보기 -->
                                 <div class="inner two">
-                                    <div class="day today">
+                                    <!-- <div class="day today">
                                         <div class="title">
                                             <p>15 월</p>
                                         </div>
 
-                                        <!-- 원격협진 -->
+                                        
                                         <div class="plan start active green">
                                             <p>원격협진</p>
                                         </div>
 
-                                        <!-- 협진일정요청 -->
+                                        
                                         <div class="plan request pink">
                                             <p>협진일정요청</p>
                                         </div>
 
-                                        <!-- 소견요청 -->
+                                        
                                         <div class="plan opinion orange">
                                             <p>소견요쳥</p>
                                         </div>
 
-                                        <!-- 협진일정요청 -->
+                                        
                                         <div class="plan request mepink">
                                             <p>협진일정요청</p>
                                         </div>
@@ -635,7 +635,7 @@
                                             <p>16 화</p>
                                         </div>
 
-                                        <!-- 원격협진 -->
+                                        
                                         <div class="plan start green">
                                             <p>원격협진</p>
                                         </div>
@@ -646,23 +646,23 @@
                                             <p>17 수</p>
                                         </div>
 
-                                        <!-- 소견요청 -->
+                                        
                                         <div class="plan opinion orange">
                                             <p>소견요쳥</p>
                                         </div>
-                                    </div>
-
+                                    </div> -->
+                                    <!-- 
                                     <div class="day">
                                         <div class="title">
                                             <p>18 목</p>
                                         </div>
 
-                                        <!-- 원격협진 -->
+                                        
                                         <div class="plan start green">
                                             <p>원격협진</p>
                                         </div>
 
-                                        <!-- 소견요청 -->
+                                        
                                         <div class="plan opinion orange">
                                             <p>소견요쳥</p>
                                         </div>
@@ -726,12 +726,12 @@
                                         <div class="title">
                                             <p>21 일</p>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- 4주 보기 -->
                                     <div class="four">
                                         <div class="wrap">
-                                            <div class="day">
+                                            <!-- <div class="day">
                                                 <div class="title">
                                                     <p>15 월</p>
                                                 </div>
@@ -813,7 +813,7 @@
                                                 <div class="title">
                                                     <p>21 일</p>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -831,7 +831,7 @@
                             <div class="title">
                                 <div>
                                     <h2>원격 협진</h2>
-                                    <p>박협진 교수님 외 5명</p>
+                                    <p class="remote_member">-</p>
                                 </div>
 
                                 <button type="button" class="btn_colla">
@@ -851,8 +851,9 @@
                                     <h2>협진 시간</h2>
 
                                     <p>
-                                        <span>21.09.15</span>
-                                        <span>10:30</span>~<span>12:00</span>
+                                        <span class="startDate">-</span>
+                                        <span class="startDetetime">-</span
+                                        >~<span class="endDetetime">-</span>
                                     </p>
                                 </div>
 
@@ -864,7 +865,7 @@
                                         <p>실시간 원격 협진</p>
                                     </div>
 
-                                    <div class="cont_list">
+                                    <div class="cont_list case_list">
                                         <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
@@ -953,7 +954,11 @@
                                         <div class="case">
                                             <div>
                                                 <p>현재 참석 인원.</p>
-                                                <p class="count">4명</p>
+                                                <p class="count">
+                                                    <span class="doctor_count"
+                                                        >-</span
+                                                    >명
+                                                </p>
                                             </div>
 
                                             <div>
@@ -969,12 +974,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="case_cont">
+                                        <div class="case_cont withDoctor">
                                             <div>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
+                                                <!-- <p>박협진 교수님</p> -->
                                             </div>
                                         </div>
                                     </div>
@@ -993,7 +995,7 @@
                             <div class="title">
                                 <div>
                                     <h2>협진 일정 요청</h2>
-                                    <p>박협진 교수님 외 5명</p>
+                                    <p class="remote_member">-</p>
                                 </div>
 
                                 <button type="button" class="btn_reply">
@@ -1006,7 +1008,9 @@
                                 <div class="time">
                                     <h2>일정 요청 마감일자</h2>
 
-                                    <p>21.09.15 11:00 까지</p>
+                                    <p>
+                                        <span class="deadlineTime">-</span> 까지
+                                    </p>
                                 </div>
 
                                 <!-- 협진 내용 -->
@@ -1017,7 +1021,7 @@
                                         <p>실시간 원격 협진</p>
                                     </div>
 
-                                    <div class="cont_list">
+                                    <div class="cont_list case_list">
                                         <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
@@ -1357,7 +1361,12 @@
                                                 <div class="case">
                                                     <div>
                                                         <p>현재 참석 인원.</p>
-                                                        <p class="count">4명</p>
+                                                        <p class="count">
+                                                            <span
+                                                                class="doctor_count"
+                                                                >-</span
+                                                            >명
+                                                        </p>
                                                     </div>
 
                                                     <div>
@@ -1377,7 +1386,9 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="case_cont">
+                                                <div
+                                                    class="case_cont withDoctor"
+                                                >
                                                     <div>
                                                         <p>박협진 교수님</p>
                                                         <p>박협진 교수님</p>
@@ -1402,7 +1413,7 @@
                             <div class="title">
                                 <div>
                                     <h2>소견 요청 협진 진행중</h2>
-                                    <p>김소견 교수님 외 4명</p>
+                                    <p class="remote_member">-</p>
                                 </div>
 
                                 <button type="button" class="btn_colla">
@@ -1422,8 +1433,14 @@
                                     <h2>소견요청 협진 기간</h2>
 
                                     <div>
-                                        <p>시작시간. 21.09.11 09:00</p>
-                                        <p>마감시간. 21.09.15 13:25</p>
+                                        <p>
+                                            시작시간.
+                                            <span class="startDatetime">-</span>
+                                        </p>
+                                        <p>
+                                            마감시간.
+                                            <span class="endDatetime">-</span>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -1435,7 +1452,7 @@
                                         <p>소견 요청 협진</p>
                                     </div>
 
-                                    <div class="cont_list">
+                                    <div class="cont_list case_list">
                                         <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
@@ -1518,7 +1535,12 @@
                                 <div class="member">
                                     <div class="title">
                                         <h2>협진 참여자 정보</h2>
-                                        <p>협진 참여 요청. <span>5명</span></p>
+                                        <p>
+                                            협진 참여 요청.
+                                            <span class="total_doctor_count"
+                                                >-</span
+                                            >명
+                                        </p>
                                     </div>
 
                                     <div class="cont_list">
@@ -1526,7 +1548,11 @@
                                         <div class="case">
                                             <div>
                                                 <p>참여 인원.</p>
-                                                <p class="count">4명</p>
+                                                <p class="count">
+                                                    <span class="doctor_count"
+                                                        >-</span
+                                                    >명
+                                                </p>
                                             </div>
 
                                             <div>
@@ -1542,7 +1568,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="case_cont">
+                                        <div class="case_cont withDoctor">
                                             <div>
                                                 <p>박협진 교수님</p>
                                                 <p>박협진 교수님</p>
@@ -1555,7 +1581,12 @@
                                         <div class="case">
                                             <div>
                                                 <p>미참여.</p>
-                                                <p class="count red">1명</p>
+                                                <p class="count red">
+                                                    <span
+                                                        class="no_doctor_count"
+                                                        >-</span
+                                                    >명
+                                                </p>
                                             </div>
 
                                             <div>
@@ -1571,7 +1602,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="case_cont">
+                                        <div class="case_cont withOutDoctor">
                                             <div>
                                                 <p>박협진 교수님</p>
                                             </div>
@@ -1617,7 +1648,9 @@
                                 <div class="time">
                                     <h2>일정 요청 마감일자</h2>
 
-                                    <p>21.09.15 11:00 까지</p>
+                                    <p>
+                                        <span class="deadlineTime">-</span> 까지
+                                    </p>
                                 </div>
 
                                 <!-- 협진 내용 -->
@@ -1628,7 +1661,7 @@
                                         <p>실시간 원격 협진</p>
                                     </div>
 
-                                    <div class="cont_list">
+                                    <div class="cont_list case_list">
                                         <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
@@ -1744,7 +1777,7 @@
                                         id="metab-1"
                                         class="tab-content list_view current"
                                     >
-                                        <div>
+                                        <!-- <div>
                                             <div class="check">
                                                 <div class="input_wrap">
                                                     <input
@@ -1767,358 +1800,7 @@
                                                 <p>김협진 교수님</p>
                                                 <p>박협진 교수님</p>
                                             </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time2"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time2"></label>
-                                                    <label for="time2"
-                                                        >21.09.22 월요일 10:00 ~
-                                                        11:00</label
-                                                    >
-                                                </div>
-
-                                                <span>4명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time3"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time3"></label>
-                                                    <label for="time3"
-                                                        >21.09.22 월요일 11:00 ~
-                                                        12:00</label
-                                                    >
-                                                </div>
-
-                                                <span>5명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time4"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time4"></label>
-                                                    <label for="time4"
-                                                        >21.09.22 화요일 13:00 ~
-                                                        15:00</label
-                                                    >
-                                                </div>
-
-                                                <span>6명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time5"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time5"></label>
-                                                    <label for="time5"
-                                                        >21.09.22 화요일 15:00 ~
-                                                        16:00</label
-                                                    >
-                                                </div>
-
-                                                <span>6명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time6"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time6"></label>
-                                                    <label for="time6"
-                                                        >21.09.22 화요일 16:00 ~
-                                                        17:00</label
-                                                    >
-                                                </div>
-
-                                                <span>7명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>장협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>장협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time7"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time7"></label>
-                                                    <label for="time7"
-                                                        >21.09.22 화요일 17:00 ~
-                                                        18:00</label
-                                                    >
-                                                </div>
-
-                                                <span>6명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>장협진 교수님</p>
-                                                <p>한협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time8"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time8"></label>
-                                                    <label for="time8"
-                                                        >21.09.22 목요일 17:00 ~
-                                                        18:00</label
-                                                    >
-                                                </div>
-
-                                                <span>6명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>장협진 교수님</p>
-                                                <p>한협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time9"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time9"></label>
-                                                    <label for="time9"
-                                                        >21.09.22 목요일 17:00 ~
-                                                        18:00</label
-                                                    >
-                                                </div>
-
-                                                <span>5명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>한협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time10"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time10"></label>
-                                                    <label for="time10"
-                                                        >21.09.22 금요일 13:00 ~
-                                                        14:00</label
-                                                    >
-                                                </div>
-
-                                                <span>6명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>한협진 교수님</p>
-                                                <p>강협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time11"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time11"></label>
-                                                    <label for="time11"
-                                                        >21.09.22 금요일 14:00 ~
-                                                        15:00</label
-                                                    >
-                                                </div>
-
-                                                <span>5명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                                <p>강협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time12"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time12"></label>
-                                                    <label for="time12"
-                                                        >21.09.22 금요일 15:00 ~
-                                                        16:00</label
-                                                    >
-                                                </div>
-
-                                                <span>4명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time13"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time13"></label>
-                                                    <label for="time13"
-                                                        >21.09.22 금요일 16:00 ~
-                                                        17:00</label
-                                                    >
-                                                </div>
-
-                                                <span>3명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                                <p>오협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="check">
-                                                <div class="input_wrap">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="time14"
-                                                        class="green_custom"
-                                                    />
-                                                    <label for="time14"></label>
-                                                    <label for="time14"
-                                                        >21.09.22 금요일 17:00 ~
-                                                        18:00</label
-                                                    >
-                                                </div>
-
-                                                <span>2명 참석</span>
-                                            </div>
-
-                                            <div class="people">
-                                                <p>강협진 교수님</p>
-                                                <p>김협진 교수님</p>
-                                            </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <!-- weekly로 보기 -->
@@ -2809,14 +2491,23 @@
                                     <div class="title">
                                         <h2>협진 참여자 정보</h2>
 
-                                        <p>협진 참여 요청. <span>8명</span></p>
+                                        <p>
+                                            협진 참여 요청.
+                                            <span class="total_doctor_count"
+                                                >-</span
+                                            >명
+                                        </p>
                                     </div>
 
                                     <div class="cont_list">
                                         <div class="case">
                                             <div>
                                                 <p>응답 인원</p>
-                                                <p class="count">7명</p>
+                                                <p class="count">
+                                                    <span class="doctor_count"
+                                                        >-</span
+                                                    >명
+                                                </p>
                                             </div>
 
                                             <div>
@@ -2832,7 +2523,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="case_cont">
+                                        <div class="case_cont withDoctor">
                                             <div>
                                                 <p>박협진 교수님</p>
                                                 <p>박협진 교수님</p>
@@ -2847,7 +2538,12 @@
                                         <div class="case">
                                             <div>
                                                 <p>미응답</p>
-                                                <p class="count red">1명</p>
+                                                <p class="count red">
+                                                    <span
+                                                        class="no_doctor_count"
+                                                        >-</span
+                                                    >명
+                                                </p>
                                             </div>
 
                                             <div>
@@ -2863,7 +2559,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="case_cont">
+                                        <div class="case_cont withOutDoctor">
                                             <div>
                                                 <p>박협진 교수님</p>
                                             </div>

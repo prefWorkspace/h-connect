@@ -6,7 +6,11 @@ const { dataScheduleTemplates } = await import(
     )
 );
 
-const { dateScheduleCaseDetailTemplates } = await import(
+const {
+    dateScheduleCaseDetailTemplates,
+    doctorListTemplates,
+    canDateWithTemplates,
+} = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/templates/dateScheduleDetailTemplates.js'
     )
@@ -30,13 +34,33 @@ const { selectMycalendar } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
 );
 
+function loopHtml(_list, type) {
+    let html = '';
+    if (!_list) {
+        return `<></>`;
+    }
+
+    for (let i = 0; i < _list.length; i++) {
+        if (type === 1) {
+            html += doctorListTemplates(_list[i]);
+        } else if (type === 2) {
+            html += dateScheduleCaseDetailTemplates(_list[i]);
+        } else if (type === 3) {
+            html += canDateWithTemplates(_list[i]);
+        }
+    }
+
+    return html;
+}
+
 export async function dateScheduleRender(_list) {
+    let html = '';
+
     if (_list.length === 0) {
         html = errorText();
         $('.all_plan .cal_list .schedule_list').html(html);
         return;
     }
-    let html = '';
 
     for (let i = 0; i < _list.length; i++) {
         const { consultChannel } = _list[i];
@@ -55,71 +79,132 @@ export async function dateScheduleRender(_list) {
     $('.all_plan .cal_list .schedule_list').html(html);
 }
 
+function dateSchduleDetailHandle(_scheduleData, isentState) {
+    let html = '';
+    let withMember = '';
+    let witOutMember = '';
+    let canWithTime = '';
+
+    const {
+        memberInfoList,
+        caseInfoList,
+        deadlineDatetime,
+        endDatetime,
+        startDatetime,
+        consultChannel,
+        scheduleInfoList,
+    } = _scheduleData[0];
+
+    // selectMycalendar.find((item) => item.consultId === consultId);
+
+    const withMemberData = memberInfoList.filter(
+        (item) => item.remoteState !== 'N'
+    );
+
+    const withOutMemberData = memberInfoList.filter(
+        (item) => item.remoteState === 'N'
+    );
+
+    withMember = loopHtml(withMemberData, 1);
+    witOutMember = loopHtml(withOutMemberData, 1);
+    html = loopHtml(caseInfoList, 2);
+    canWithTime = loopHtml(scheduleInfoList, 3);
+
+    // caseInfo 및 참여자 정보
+    if (isentState === 1 && consultChannel === 1) {
+        $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
+            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
+        );
+        $(`#consultChannel0 .collabor_wrap .cont .case_list`).html(html);
+        $(`#consultChannel0 .collabor_wrap .member .withDoctor div`).html(
+            withMember
+        );
+        $(`#consultChannel0 .collabor_wrap .member .withOutDoctor div`).html(
+            witOutMember
+        );
+        $('#metab-1').html(canWithTime);
+
+        // 카운팅
+        $(`#consultChannel0 .collabor_wrap .member .total_doctor_count`).text(
+            withMemberData.length + withOutMemberData.length
+        );
+        $(`#consultChannel0 .collabor_wrap .member .no_doctor_count`).text(
+            withOutMemberData.length
+        );
+        $(`#consultChannel0 .collabor_wrap .member .doctor_count`).text(
+            withMemberData.length
+        );
+    } else {
+        $(`#consultChannel${consultChannel} .collabor_wrap .case_list`).html(
+            html
+        );
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .withDoctor div`
+        ).html(withMember);
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .withOutDoctor div`
+        ).html(witOutMember);
+
+        // 카운팅
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .total_doctor_count`
+        ).text(withMemberData.length + withOutMemberData.length);
+
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .no_doctor_count`
+        ).text(withOutMemberData.length);
+
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .member .doctor_count`
+        ).text(withMemberData.length);
+
+        // 시간 데이터 바인딩
+        if (consultChannel === 3) {
+            $(
+                `#consultChannel${consultChannel} .collabor_wrap .startDate`
+            ).text(moment(startDatetime).format('YY.MM.DD'));
+            $(
+                `#consultChannel${consultChannel} .collabor_wrap .startDetetime`
+            ).text(moment(startDatetime).format('HH:mm'));
+            $(
+                `#consultChannel${consultChannel} .collabor_wrap .endDetetime`
+            ).text(moment(endDatetime).format('HH:mm'));
+        }
+
+        $(`#consultChannel${consultChannel} .collabor_wrap .deadlineTime`).text(
+            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
+        );
+
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .startDatetime`
+        ).text(moment(startDatetime).format('YY.MM.DD HH:mm'));
+
+        $(`#consultChannel${consultChannel} .collabor_wrap .endDatetime`).text(
+            moment(endDatetime).format('YY.MM.DD HH:mm')
+        );
+    }
+}
+
 export async function dateScheduleDetailRender(
     consultChannel,
     isentState,
     consultId
 ) {
-    let html = '';
-    let withMember = '';
-    let witOutMember = '';
+    let selectList = [];
 
     if (consultChannel === 1 && isentState === 1) {
         const { result: confirmViewResult, list: confirmViewList } =
             await selectConsultConfirmView(consultId);
+        selectList = [...confirmViewList];
     } else if (consultChannel === 1 && isentState !== 1) {
         const { result: consultViewResult, list: consultViewList } =
             await selectConsultView(consultId);
+        selectList = [...consultViewList];
     } else {
         const { result, list } =
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
+        selectList = [...list];
     }
 
-    // 이거는 더미 처리
-    const { memberInfoList, caseInfoList } = selectMycalendar.find(
-        (item) => item.consultId === consultId
-    );
-
-    // const withMemberData = memberInfoList.filter(
-    //     (item) => item.remoteState !== 'N'
-    // );
-    // const withOutMemberData = memberInfoList.filter(
-    //     (item) => item.remoteState === 'N'
-    // );
-    // if (!data || data.length === 0) {
-    //     return;
-    // }
-
-    // for (let i = 0; i < data.length; i++) {
-    //     html += caseInfoListTemplates(data[i], i + 1);
-    // }
-
-    // for (let i = 0; i < withMemberData.length; i++) {
-    //     withMember += doctorListTemplates(withMemberData[i]);
-    // }
-
-    // for (let i = 0; i < withOutMemberData.length; i++) {
-    //     witOutMember += doctorListTemplates(withOutMemberData[i]);
-    // }
-
-    // $(`#consultChannel${consultChannel} .collabor_wrap .cont .cont_list`).html(
-    //     html
-    // );
-
-    // $(`#consultChannel${consultChannel} .member .cont_list .with`)
-    //     .parent()
-    //     .find('case_cont div')
-    //     .html(withMember);
-
-    // $(`#consultChannel${consultChannel} .member .cont_list .with .count`).text(
-    //     `${withMemberData.length}명`
-    // );
-
-    // $(`#consultChannel${consultChannel} .member .cont_list .without`)
-    //     .parent()
-    //     .find('case_cont div')
-    //     .html(witOutMember);
-    // $(
-    //     `#consultChannel${consultChannel} .member .cont_list .without .count`
-    // ).text(`${withOutMemberData.length}명`);
+    dateSchduleDetailHandle(selectList, isentState);
 }

@@ -28,12 +28,12 @@ export function coopRealTimeRemoteSectionTmpl() {
                     <p>협진일자</p>
 
                     <div class="input_wrap">
-                        <input data-key="rt_start_month" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='month' data-key="rt_start_month" data-keyType="input" type="text" placeholder="00">
                         <p>월</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-key="rt_start_date" type="text" data-keyType="input" placeholder="00">
+                        <input data-validate='date' data-key="rt_start_date" type="text" data-keyType="input" placeholder="00">
                         <p>일</p>
                     </div>
                 </div>
@@ -43,12 +43,12 @@ export function coopRealTimeRemoteSectionTmpl() {
                         <p>시작시간</p>
 
                         <div class="input_wrap">
-                            <input data-key="rt_start_hours" data-keyType="input" type="text" placeholder="00">
+                            <input data-validate='hours' data-key="rt_start_hours" data-keyType="input" type="text" placeholder="00">
                             <p>시</p>
                         </div>
 
                         <div class="input_wrap">
-                            <input data-key="rt_start_minutes" data-keyType="input" type="text" placeholder="00">
+                            <input data-validate='minutes' data-key="rt_start_minutes" data-keyType="input" type="text" placeholder="00">
                             <p>분</p>
                         </div>
                     </div>
@@ -57,12 +57,12 @@ export function coopRealTimeRemoteSectionTmpl() {
                         <p>종료시간</p>
 
                         <div class="input_wrap">
-                            <input data-key="rt_end_hours" data-keyType="input" type="text" placeholder="00">
+                            <input data-validate='hours' data-key="rt_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
                             <p>시</p>
                         </div>
 
                         <div class="input_wrap">
-                            <input data-key="rt_end_minutes" data-keyType="input" type="text" placeholder="00">
+                            <input data-validate='minutes' data-key="rt_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
                             <p>분</p>
                         </div>
                     </div>
@@ -85,12 +85,12 @@ export function coopOpinionSectionTmpl() {
                     <p>소견요청 협진 시작일</p>
 
                     <div class="input_wrap">
-                        <input data-key="rt_start_month" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='month' data-key="op_start_month" data-keyType="input" type="text" placeholder="00">
                         <p>월</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-key="rt_start_date" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='date' data-key="op_start_date" data-keyType="input" type="text" placeholder="00">
                         <p>일</p>
                     </div>
                 </div>
@@ -99,12 +99,12 @@ export function coopOpinionSectionTmpl() {
                     <p>소견요청 협진 마감일</p>
 
                     <div class="input_wrap">
-                        <input data-key="rt_end_month" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='month' data-key="op_end_month" data-keyType="input" type="text" placeholder="00">
                         <p>월</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-key="rt_end_date" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='date' data-key="op_end_date" data-keyType="input" type="text" placeholder="00">
                         <p>일</p>
                     </div>
                 </div>
@@ -115,12 +115,12 @@ export function coopOpinionSectionTmpl() {
                     <p>시작시간</p>
 
                     <div class="input_wrap">
-                        <input data-key="rt_start_hours" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='hours' data-key="op_start_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-key="rt_start_minutes" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='minutes' data-key="op_start_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -129,12 +129,12 @@ export function coopOpinionSectionTmpl() {
                     <p>마감시간</p>
 
                     <div class="input_wrap">
-                        <input data-key="rt_end_hours" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='hours' data-key="op_end_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-key="rt_end_minutes" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='minutes' data-key="op_end_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -150,18 +150,18 @@ export function coopRequestScheduleSectionTmpl() {
     <div class="surgery_view t_view" style="display:block;">
         <h2>일정 요청 마감 일자</h2>
 
-        <div class="type">
+        <div class="type deadline_wrap">
             <div class="date">
                 <div>
                     <p>마감일자</p>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-validate='month' data-key="rqd_end_month" data-keyType="input" type="text" placeholder="00">
                         <p>월</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-validate='date' data-key="rqd_end_date" data-keyType="input" type="text" placeholder="00">
                         <p>일</p>
                     </div>
                 </div>
@@ -172,12 +172,12 @@ export function coopRequestScheduleSectionTmpl() {
                     <p>마감시간</p>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-validate='hours' data-key="rqd_end_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input type="text" placeholder="00">
+                        <input data-validate='minutes' data-key="rqd_end_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -187,228 +187,8 @@ export function coopRequestScheduleSectionTmpl() {
         <h2>협진 가능시간 선택</h2>
 
         <div class="ut_wrap">
-            <div class="up_box">
-                <button type="button" class="btn_delete_time">
-                    시간삭제
-                    <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘" />
-                </button>
-
-                <div class="up_time">
-                    <div class="date">
-                        <p>협진일자</p>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>월</p>
-                        </div>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>일</p>
-                        </div>
-                    </div>
-
-                    <div class="date_time">
-                        <div>
-                            <p>시작시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p>종료시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 중복시 보여주세요 -->
-                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                </div>
-            </div>
-
-            <div class="up_box">
-                <button type="button" class="btn_delete_time">
-                    시간삭제
-                    <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘" />
-                </button>
-
-                <div class="up_time">
-                    <div class="date">
-                        <p>협진일자</p>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>월</p>
-                        </div>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>일</p>
-                        </div>
-                    </div>
-
-                    <div class="date_time">
-                        <div>
-                            <p>시작시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p>종료시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 중복시 보여주세요 -->
-                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                </div>
-            </div>
-
-            <div class="up_box">
-                <button type="button" class="btn_delete_time">
-                    시간삭제
-                    <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘" />
-                </button>
-
-                <div class="up_time">
-                    <div class="date">
-                        <p>협진일자</p>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>월</p>
-                        </div>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>일</p>
-                        </div>
-                    </div>
-
-                    <div class="date_time">
-                        <div>
-                            <p>시작시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p>종료시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 중복시 보여주세요 -->
-                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                </div>
-            </div>
-
-            <div class="up_box">
-                <button type="button" class="btn_delete_time">
-                    시간삭제
-                    <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘" />
-                </button>
-
-                <div class="up_time">
-                    <div class="date">
-                        <p>협진일자</p>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>월</p>
-                        </div>
-
-                        <div class="input_wrap">
-                            <input type="text" placeholder="00">
-                            <p>일</p>
-                        </div>
-                    </div>
-
-                    <div class="date_time">
-                        <div>
-                            <p>시작시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p>종료시간</p>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>시</p>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input type="text" placeholder="00">
-                                <p>분</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 중복시 보여주세요 -->
-                    <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
-                </div>
+            <div class='ut_container'>
+                ${coopRequestScheduleBlockTmpl()}
             </div>
 
             <button type="button" class="btn_tadd">+ 시간추가</button>
@@ -416,6 +196,66 @@ export function coopRequestScheduleSectionTmpl() {
     </div>
     `;
 }
+export function coopRequestScheduleBlockTmpl() {
+    return `
+    <div class="up_box">
+        <button type="button" class="btn_delete_time">
+            시간삭제
+            <img src="/H-Connect/img/icon/delete.svg" alt="시간삭제 버튼아이콘" />
+        </button>
+
+        <div class="up_time">
+            <div class="date">
+                <p>협진일자</p>
+
+                <div class="input_wrap">
+                    <input data-validate='month' data-key="rqc_start_month" data-keyType="input" type="text" placeholder="00">
+                    <p>월</p>
+                </div>
+
+                <div class="input_wrap">
+                    <input data-validate='date' data-key="rqc_start_date" data-keyType="input" type="text" placeholder="00">
+                    <p>일</p>
+                </div>
+            </div>
+
+            <div class="date_time">
+                <div>
+                    <p>시작시간</p>
+
+                    <div class="input_wrap">
+                        <input data-validate='hours' data-key="rqc_start_hours" data-keyType="input" type="text" placeholder="00">
+                        <p>시</p>
+                    </div>
+
+                    <div class="input_wrap">
+                        <input data-validate='minutes' data-key="rqc_start_minutes" data-keyType="input" type="text" placeholder="00">
+                        <p>분</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p>종료시간</p>
+
+                    <div class="input_wrap">
+                        <input data-validate='hours' data-key="rqc_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
+                        <p>시</p>
+                    </div>
+
+                    <div class="input_wrap">
+                        <input data-validate='minutes' data-key="rqc_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
+                        <p>분</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 중복시 보여주세요 -->
+            <span class="repeat">※ 외래진료 일정과 중복됩니다.</span>
+        </div>
+    </div>
+    `;
+}
+
 export function coopSearchPatientBlock(_data) {
     const {
         measurementCode,
@@ -537,4 +377,49 @@ export function coopContentSectionTmpl() {
       </div>
   </div>
   `;
+}
+
+export function createCooperationPopupTmpl() {
+    return `
+    <div class="pop create_remote">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/H-Connect/img/logo.png" alt="로고">
+                </div>
+
+                <h2>
+                    <span>실시간 원격 협진</span> 이 생성 되었습니다.
+                </h2>
+
+                <div class="btn_list">
+                    <button type="button" class="btn blf btn_check">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+export function cancelCooperationPopupTmpl() {
+    return `
+    <div class="pop delete no_create">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/H-Connect/img/logo.png" alt="로고">
+                </div>
+
+                <h3>신규협진이 생성되지 않았습니다. 모든 설정이 취소됩니다.</h3>
+                <h2>취소 하시겠습니까?</h2>
+
+
+                <div class="btn_list">
+                    <button type="button" class="btn gr btn_no">아니요</button>
+                    <button type="button" class="btn_cut">네, 취소합니다</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
 }

@@ -1,5 +1,21 @@
 'use strict';
 
+function restDateHandle(startDatetime) {
+    const today = new Date();
+    const start = moment(startDatetime, 'YYYY-MM-DD HH:mm:ss');
+    const end = moment(today, 'YYYY-MM-DD HH:mm:ss');
+    const diffDay = moment.duration(end.diff(start)).asDays();
+    const diffHour = moment.duration(end.diff(start)).asHours();
+    const diffMin = moment.duration(end.diff(start)).asMinutes();
+    const restDay = parseInt(diffDay);
+    const restHour = parseInt(diffHour % 24);
+    const restMin = parseInt(diffMin % 60);
+
+    return `${restDay > 0 ? restDay + '일' : ''} ${
+        restHour > 0 ? restHour + '시간' : ''
+    } ${restMin > 0 ? restMin + '분' : ''}`;
+}
+
 export function sessionListTemplate(_data) {
     const {
         caseInfoList,
@@ -11,12 +27,15 @@ export function sessionListTemplate(_data) {
         endDatetime,
         startDatetime,
     } = _data;
+
     let doctorLevelName, doctorName;
     if (memberInfoList !== null) {
         doctorLevelName = memberInfoList[0].doctorLevelName;
         doctorName = memberInfoList[0].doctorName;
     }
     let html;
+    const rest = restDateHandle(startDatetime);
+
     switch (consultChannel) {
         //협진일정 요청
         case 1:
@@ -34,11 +53,11 @@ export function sessionListTemplate(_data) {
                             'HH:mm'
                         )} 까지</p>
                         <p class="place">${consultChannelName} 협진.</p>
-                        <p class="wait">2일 21시간 30분 경과</p>
+                        <p class="wait">${rest} 경과</p>
                     </div>
 
                     <p>${doctorName} ${doctorLevelName} 외 ${
-                memberInfoList.length
+                memberInfoList.length - 1
             }명</p>
                 </div>`;
             break;
@@ -58,11 +77,11 @@ export function sessionListTemplate(_data) {
                             'HH:mm'
                         )} 까지</p>
                         <p class="place">${consultChannelName} 협진.</p>
-                        <p class="wait">2일 21시간 30분 경과</p>
+                        <p class="wait">${rest} 경과</p>
                     </div>
 
                     <p>${doctorName} ${doctorLevelName} 외 ${
-                memberInfoList.length
+                memberInfoList.length - 1
             }명</p>
                 </div>`;
             break;
@@ -83,10 +102,10 @@ export function sessionListTemplate(_data) {
                             'HH:mm'
                         )}</p>
                         <p class="place">${consultChannelName}.</p>
-                        <p class="wait">5분 경과</p>
+                        <p class="wait">${rest} 경과</p>
                 </div>
                 <p>${doctorName} ${doctorLevelName} 외 ${
-                memberInfoList.length
+                memberInfoList.length - 1
             }명</p>
             </div>
                 `;
@@ -109,7 +128,7 @@ export function sessionListTemplate(_data) {
                             'HH:mm'
                         )}</p>
                         <p class="place">${consultChannelName}.</p>
-                        <p class="wait">2분 경과</p>
+                        <p class="wait">${rest} 경과</p>
                     </div>
                     <p>${patientName} 님 (${patientAge}. ${
                 patientGender === 'M' ? '남' : '여'
@@ -132,7 +151,7 @@ export function sessionListTemplate(_data) {
                             'HH:mm'
                         )}</p>
                         <p class="place">${consultChannelName} 요청.</p>
-                        <p class="wait">3분 경과</p>
+                        <p class="wait">${rest} 경과</p>
                     </div>
 
                     <p>응급상황실</p>

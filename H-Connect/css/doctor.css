@@ -309,11 +309,23 @@ p {
     width: 1176px;
     border-bottom: 1px solid #eee;
 }
+.doctor .my_plan .weekly .time p::before {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    content: '';
+    width: 1176px;
+    height: 48px;
+}
+.doctor .my_plan .weekly .time p.active::before {
+    background-color: #f8f8f8;
+}
 
 .doctor .my_plan .weekly .inner {
     width: 1158px;
     height: 495px;
     display: flex;
+    justify-content: space-between;
     top: 16px;
     left: 56px;
     position: absolute;
@@ -400,6 +412,11 @@ p {
 }
 
 .doctor .start {
+    background: rgba(0, 122, 148, 0.8);
+    cursor: pointer;
+}
+
+.doctor .remote {
     background: rgba(0, 122, 148, 0.8);
     cursor: pointer;
 }
@@ -4094,10 +4111,10 @@ p {
     color: #888;
 }
 
-.doctor_remote .all_plan .weekly .inner > :first-child,
+/* .doctor_remote .all_plan .weekly .inner > :first-child,
 .doctor_remote .all_plan .weekly .inner > :first-child .title {
     width: 204px;
-}
+} */
 
 .doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(2) {
     height: 74px;
@@ -4132,10 +4149,10 @@ p {
     top: 42px;
 }
 
-.doctor_remote .all_plan .weekly .inner > :nth-child(4),
+/* .doctor_remote .all_plan .weekly .inner > :nth-child(4),
 .doctor_remote .all_plan .weekly .inner > :nth-child(4) .title {
     width: 100px;
-}
+} */
 
 .doctor_remote .all_plan .weekly .inner > :nth-child(4) > :nth-child(2) {
     height: 74px;
@@ -4435,6 +4452,9 @@ p {
     background: #fff;
     border: 1px solid #ccc;
 }
+.new_remote .type .surgery_box:not(.active) {
+    overflow: hidden;
+}
 
 .new_remote .type .surgery_label {
     width: 184px;
@@ -4613,6 +4633,14 @@ p {
     display: flex;
     align-items: center;
 }
+.new_remote .up_box .btn_delete_time:disabled {
+    color: #ccc;
+}
+.new_remote .up_box .btn_delete_time:disabled img {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(84%)
+        contrast(90%);
+    opacity: 0.2;
+}
 
 .new_remote .up_box .btn_delete_time img {
     margin-left: 8px;
@@ -4637,10 +4665,14 @@ p {
 }
 
 .new_remote .up_time .repeat {
+    display: none;
     position: absolute;
     font-size: 12px;
     color: #940045;
     bottom: 23px;
+}
+.new_remote .up_time .repeat.active {
+    display: block;
 }
 
 .new_remote .surgery_box.active {
@@ -4685,6 +4717,14 @@ p {
     margin-top: 24px;
 }
 
+.new_remote .content .content-caseblock button:disabled {
+    color: #ccc;
+}
+.new_remote .content .content-caseblock button:disabled img {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(84%)
+        contrast(90%);
+    opacity: 0.2;
+}
 .new_remote .content > button:disabled {
     color: #ccc;
 }
@@ -4692,6 +4732,8 @@ p {
     filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(84%)
         contrast(90%);
     opacity: 0.2;
+    -webkit-filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(228deg)
+        brightness(84%);
 }
 
 .new_remote .content .btn_case_delete div {
