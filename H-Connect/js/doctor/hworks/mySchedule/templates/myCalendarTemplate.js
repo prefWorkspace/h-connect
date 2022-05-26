@@ -56,8 +56,6 @@ export function myCalendarTemplate(_data) {
         endDatetime,
         consultId,
     } = _data;
-    console.log('_data==');
-    console.log(_data);
 
     const { topStart, topLength } = dateTimeHanlder(startDatetime, endDatetime);
 
@@ -68,7 +66,9 @@ export function myCalendarTemplate(_data) {
                 <div
                 style="top: ${topStart}px; height: ${topLength}px"
                 class="plan request"
-                onclick="location.href='remote.html?consultId=${consultId}'"
+                onclick="location.href='remote.html?consultId=${consultId}&endDatetime=${moment(
+                endDatetime
+            ).format('YYYY-MM-DD')}'"
                 >
                     <p>${consultChannelName}</p>
                 </div>
@@ -79,7 +79,9 @@ export function myCalendarTemplate(_data) {
                 <div
                 style="top: ${topStart}px; height: ${topLength}px"
                     class="plan opinion"
-                    onclick="location.href='remote.html?consultId=${consultId}'"
+                    onclick="location.href='remote.html?consultId=${consultId}&endDatetime=${moment(
+                endDatetime
+            ).format('YYYY-MM-DD')}'"
                 >
                     <p>${consultChannelName}</p>
                 </div> 
@@ -90,7 +92,9 @@ export function myCalendarTemplate(_data) {
                 <div
                 style="top: ${topStart}px; height: ${topLength}px"
                 class="plan remote"
-                onclick="location.href='remote.html?consultId=${consultId}'"
+                onclick="location.href='remote.html?consultId=${consultId}&endDatetime=${moment(
+                endDatetime
+            ).format('YYYY-MM-DD')}'"
                 >
                     <p>${consultChannelName}</p>
                 </div>
