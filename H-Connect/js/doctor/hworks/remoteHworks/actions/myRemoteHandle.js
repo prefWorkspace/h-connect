@@ -31,9 +31,12 @@ async function init() {
     //협진 일정요청 알림 목록
     const { result: alarmResult, list } = await selectConsultAlarmsList();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> edfc4b7 (원격 협진 탭에서 협진 일정 목록 더미 데이터 없애고 수정중.)
+=======
+>>>>>>> dfadc8e (캘린더 부분 수정)
     //확인하지 않은 소견 목록
     const { result: opinionResult, opinionConsultList } =
         await selectOpinionConsultList();

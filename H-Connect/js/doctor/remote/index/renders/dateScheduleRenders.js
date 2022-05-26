@@ -93,9 +93,13 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         startDatetime,
         consultChannel,
 <<<<<<< HEAD
+<<<<<<< HEAD
         scheduleInfoList,
 =======
 >>>>>>> edfc4b7 (원격 협진 탭에서 협진 일정 목록 더미 데이터 없애고 수정중.)
+=======
+        scheduleInfoList,
+>>>>>>> dfadc8e (캘린더 부분 수정)
     } = _scheduleData[0];
 
     // selectMycalendar.find((item) => item.consultId === consultId);
