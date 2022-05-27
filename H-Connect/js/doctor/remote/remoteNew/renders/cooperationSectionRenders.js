@@ -28,10 +28,28 @@ export function renderCooperationSection(_sectionType) {
     // 협진 종류 선택 select box 렌더러
     // cooperationSectionActions에서 렌더시켜줍니다.
     settingBoxData(_sectionType);
+
+    const _calendarModule = $('#calendar').data('calendar-module');
+    _calendarModule.resetEventOptions();
+    _calendarModule.init.options.firstClickUnSelectToday = true;
+
     let _sectionTmpl = '';
     renderCreateCooperationText(_sectionType);
+
     switch (_sectionType) {
         case '실시간원격협진':
+            console.log(_calendarModule);
+            _calendarModule.init.options.dateClickActiveAble = true;
+            _calendarModule.init.options.dateClickActive = (_selectDate) => {
+                const _month = moment(_selectDate.dateStr).format('MM');
+                const _day = moment(_selectDate.dateStr).format('DD');
+                $(
+                    '.rt_time .date .input_wrap input[data-key="rt_start_month"]'
+                ).val(_month);
+                $(
+                    '.rt_time .date .input_wrap input[data-key="rt_start_date"]'
+                ).val(_day);
+            };
             _sectionTmpl = coopRealTimeRemoteSectionTmpl();
             break;
         case '소견요청협진':

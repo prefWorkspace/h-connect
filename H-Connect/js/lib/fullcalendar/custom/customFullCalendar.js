@@ -42,6 +42,7 @@
 
 export class CustomFullcalendar {
     constructor(_targetStr, _options) {
+        this.calendarState = {};
         this.init = {
             target: {
                 str: _targetStr ?? null,
@@ -59,6 +60,18 @@ export class CustomFullcalendar {
             return date.date.year + '년' + ' ' + (date.date.month + 1) + '월';
         },
     };
+
+    getCalendarState(key) {
+        if (key) {
+            return this.calendarState[key];
+        } else {
+            return this.calendarState[key];
+        }
+    }
+
+    setCalendarState(key, value) {
+        this.calendarState[key] = value;
+    }
 
     moduleSetting() {
         const { target, options } = this.init ?? {};
@@ -97,12 +110,112 @@ export class CustomFullcalendar {
                     : null;
             },
             dateClick: (dateClickData) => {
-                typeof options.dateClick === 'function'
-                    ? options?.dateClick(dateClickData, this)
-                    : null;
+                typeof options.dateClick === 'function' &&
+                    options?.dateClick(dateClickData, this);
+
+                options.sectionSelectAble === true &&
+                    this.sectionSelector(dateClickData, this);
+
+                options.dateClickActiveAble === true &&
+                    this.dateClickActiver(dateClickData, this);
             },
         });
-        $(this.init.target.element).data('calendarmodule', this.module);
+        $(this.init.target.element).data('calendar-module', this);
+    }
+    resetEventOptions() {
+        this.init.options.dateClickActiveAble = null;
+        this.init.options.dateClickActive = null;
+        this.init.options.sectionSelectAble = null;
+        this.init.options.sectionSelect = null;
+    }
+    dateClickActiver(selectData, _item) {
+        const { options } = _item.init ?? {};
+        const { dayEl, date, dateStr } = selectData;
+        this.selectDateCalendar({
+            dateStr: dateStr,
+        });
+        typeof options.dateClickActive === 'function' &&
+            options.dateClickActive(
+                {
+                    dateStr: dateStr,
+                },
+                this
+            );
+    }
+    sectionSelector(selectData, _item) {
+        const { dayEl, date, dateStr } = selectData;
+        const { module } = _item;
+        const { options } = _item.init ?? {};
+        const { element } = _item.init.target;
+
+        function getTimeFunc(_value) {
+            return new Date(_value).getTime();
+        }
+        let _getSavedDate = $(element).data('start-end-date') ?? [];
+        let _getClickDate = {
+            time: getTimeFunc(dateStr),
+            dateStr: dateStr,
+        };
+        let _tempDateArr = [_getClickDate];
+
+        if (_getSavedDate) {
+            _getSavedDate.forEach((_item) => {
+                _tempDateArr.push(_item);
+            });
+        }
+
+        _tempDateArr.sort((a, b) => {
+            return a['time'] - b['time'];
+        });
+        if (_tempDateArr.length > 2) {
+            _tempDateArr = [_getClickDate];
+        }
+
+        const _calcedDateArr = _tempDateArr;
+
+        $(element).data('start-end-date', _calcedDateArr);
+
+        const [startDate, endDate] = _calcedDateArr;
+
+        this.selectDateCalendar(startDate, endDate);
+
+        module.unselect();
+        if (startDate?.dateStr && endDate?.dateStr) {
+            const _minusOneDayEndDate = moment(endDate.dateStr, 'YYYY-MM-DD')
+                .add(1, 'days')
+                .format('YYYY-MM-DD');
+            module.select(startDate.dateStr, _minusOneDayEndDate);
+
+            typeof options.sectionSelect === 'function' &&
+                options.sectionSelect(
+                    {
+                        startDate: {
+                            dateStr: startDate.dateStr,
+                        },
+                        endDate: {
+                            dateStr: endDate.dateStr,
+                        },
+                    },
+                    this
+                );
+        }
+    }
+    selectDateCalendar(startDate, endDate) {
+        const dayGridStr = 'fc-daygrid-day';
+        const getDayGrid = $(`.${dayGridStr}`);
+        getDayGrid.each(function () {
+            if ($(this).hasClass('-active')) {
+                $(this).removeClass('-active');
+            }
+        });
+        startDate?.dateStr &&
+            $(`.${dayGridStr}[data-date="${startDate.dateStr}"]`).addClass(
+                '-active'
+            );
+        endDate?.dateStr &&
+            $(`.${dayGridStr}[data-date="${endDate.dateStr}"]`).addClass(
+                '-active'
+            );
     }
     resetTodaySelect() {
         $('.fc .fc-daygrid-day.fc-day-today').removeClass('fc-day-today');
