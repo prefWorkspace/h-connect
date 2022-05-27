@@ -117,15 +117,15 @@ function realTimeCalendarActions() {
         .on('input', '.rt_view input[data-key="rt_start_date"]', function () {
             validateDate($(this));
 
-            const { module, selectDateCalendar } = calendarData.module();
+            const _calendarModule = calendarData.module();
             const _year = calendarData.year();
             const _month = calendarData.month();
             const _day = $(this).val();
             if (!_year || !_month || !_day) return;
 
             const _dateStr = `${_year}-${_month}-${_day}`;
-            module.gotoDate(new Date(_dateStr));
-            selectDateCalendar({
+            _calendarModule.module.gotoDate(new Date(_dateStr));
+            _calendarModule.selectDateCalendar({
                 dateStr: _dateStr,
             });
         });
@@ -137,14 +137,14 @@ function opinionCalendarActions() {
         .on('input', '.ro_view input[data-key="op_start_month"]', function () {
             validateDate($(this));
 
-            const { module, selectDateCalendar } = calendarData.module();
+            const _calendarModule = calendarData.module();
             const _year = calendarData.year();
             const _month = $(this).val();
             const _day = calendarData.day();
             if (!_year || !_month || !_day) return;
 
             const _dateStr = `${_year}-${_month}-${_day}`;
-            module.gotoDate(new Date(_dateStr));
+            _calendarModule.module.gotoDate(new Date(_dateStr));
             // selectDateCalendar({
             //     dateStr: _dateStr,
             // });
@@ -152,33 +152,31 @@ function opinionCalendarActions() {
     coopSurgerySelector
         .wrapEl()
         .on('input', '.ro_view input[data-key="op_start_date"]', function () {
-            validateDate($(this));
-            const _calendarData = calendarData.module();
-
-            const _year = calendarData.year();
-            const _month = calendarData.month();
-            const _day = $(this).val();
-            if (!_year || !_month || !_day) return;
-
-            const _dateStr = `${_year}-${_month}-${_day}`;
-            _calendarData.module.gotoDate(new Date(_dateStr));
-            _calendarData.sectionSelector({
-                dateStr: _dateStr,
-            });
+            // validateDate($(this));
+            // const _calendarModule = calendarData.module();
+            // const _year = calendarData.year();
+            // const _month = calendarData.month();
+            // const _day = $(this).val();
+            // if (!_year || !_month || !_day) return;
+            // const _dateStr = `${_year}-${_month}-${_day}`;
+            // _calendarModule.module.gotoDate(new Date(_dateStr));
+            // _calendarModule.sectionSelector({
+            //     dateStr: _dateStr,
+            // });
         });
     coopSurgerySelector
         .wrapEl()
         .on('input', '.ro_view input[data-key="op_end_month"]', function () {
             validateDate($(this));
 
-            const { module, selectDateCalendar } = calendarData.module();
+            const _calendarModule = calendarData.module();
             const _year = calendarData.year();
             const _month = $(this).val();
             const _day = calendarData.day();
             if (!_year || !_month || !_day) return;
 
             const _dateStr = `${_year}-${_month}-${_day}`;
-            module.gotoDate(new Date(_dateStr));
+            _calendarModule.module.gotoDate(new Date(_dateStr));
             // selectDateCalendar({
             //     dateStr: _dateStr,
             // });
@@ -187,19 +185,17 @@ function opinionCalendarActions() {
     coopSurgerySelector
         .wrapEl()
         .on('input', '.ro_view input[data-key="op_end_date"]', function () {
-            validateDate($(this));
-
-            const { module, selectDateCalendar } = calendarData.module();
-            const _year = calendarData.year();
-            const _month = calendarData.month();
-            const _day = $(this).val();
-            if (!_year || !_month || !_day) return;
-
-            const _dateStr = `${_year}-${_month}-${_day}`;
-            module.gotoDate(new Date(_dateStr));
-            selectDateCalendar({
-                dateStr: _dateStr,
-            });
+            // validateDate($(this));
+            // const _calendarModule = calendarData.module();
+            // const _year = calendarData.year();
+            // const _month = calendarData.month();
+            // const _day = $(this).val();
+            // if (!_year || !_month || !_day) return;
+            // const _dateStr = `${_year}-${_month}-${_day}`;
+            // _calendarModule.module.gotoDate(new Date(_dateStr));
+            // _calendarModule.sectionSelector({
+            //     dateStr: _dateStr,
+            // });
         });
 }
 

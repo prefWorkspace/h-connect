@@ -145,7 +145,6 @@ export class CustomFullcalendar {
     }
     sectionSelector(selectDate) {
         const { dateStr } = selectDate;
-        console.log('this: ', this);
         const { module } = this;
         const { options } = this.init ?? {};
         const { element } = this.init.target;
@@ -154,6 +153,7 @@ export class CustomFullcalendar {
             return new Date(_value).getTime();
         }
         let _getSavedDate = $(element).data('start-end-date') ?? [];
+        console.log('_getSavedDate: ', _getSavedDate);
         let _getClickDate = {
             time: getTimeFunc(dateStr),
             dateStr: dateStr,

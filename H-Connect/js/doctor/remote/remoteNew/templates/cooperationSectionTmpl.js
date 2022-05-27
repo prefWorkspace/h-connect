@@ -380,6 +380,7 @@ export function coopContentSectionTmpl() {
 }
 
 export function createCooperationPopupTmpl() {
+    const requestStr = $('.surgery_box .surgery_label').text();
     return `
     <div class="pop create_remote">
         <div class="overlay">
@@ -389,7 +390,7 @@ export function createCooperationPopupTmpl() {
                 </div>
 
                 <h2>
-                    <span>실시간 원격 협진</span> 이 생성 되었습니다.
+                    <span>${requestStr}</span> 이 생성 되었습니다.
                 </h2>
 
                 <div class="btn_list">
@@ -402,6 +403,7 @@ export function createCooperationPopupTmpl() {
 }
 
 export function cancelCooperationPopupTmpl() {
+    const requestStr = $('.surgery_box .surgery_label').text();
     return `
     <div class="pop delete no_create">
         <div class="overlay">
@@ -410,7 +412,7 @@ export function cancelCooperationPopupTmpl() {
                     <img src="/H-Connect/img/logo.png" alt="로고">
                 </div>
 
-                <h3>신규협진이 생성되지 않았습니다. 모든 설정이 취소됩니다.</h3>
+                <h3>${requestStr}이 생성되지 않았습니다. 모든 설정이 취소됩니다.</h3>
                 <h2>취소 하시겠습니까?</h2>
 
 
