@@ -8,6 +8,7 @@ export function dataScheduleTemplates(_data) {
         startDatetime,
         memberInfoList,
         consultId,
+        confirmState,
     } = _data;
 
     let html = '';
@@ -33,7 +34,7 @@ export function dataScheduleTemplates(_data) {
         //협진일정 요청
         case 1:
             html = `
-                <div data-consultid="${consultId}" data-isentstate="${isentState}" data-consultchannle="${consultChannel}" class="row remote_ask">
+                <div data-confirmstate="${confirmState}" data-consultid="${consultId}" data-isentstate="${isentState}" data-consultchannle="${consultChannel}" class="row remote_ask">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
@@ -47,7 +48,7 @@ export function dataScheduleTemplates(_data) {
         //소견요청 협진
         case 2:
             html = `
-                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row end_remote">
+                <div data-confirmstate="${confirmState}" data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row end_remote">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
@@ -62,7 +63,7 @@ export function dataScheduleTemplates(_data) {
         // 원격협진
         case 3:
             html = `
-                <div data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row start_remote">
+                <div data-confirmstate="${confirmState}" data-isentstate="${isentState}" data-consultid="${consultId}" data-consultchannle="${consultChannel}" class="row start_remote">
                     <div>
                         <p>${moment(startDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>

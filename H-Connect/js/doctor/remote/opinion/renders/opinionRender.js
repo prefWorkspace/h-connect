@@ -86,7 +86,9 @@ export function opinionRender(_list) {
     }
 
     $('.remote_request .list .opinoin_list').html(html);
-    $('.remote_request .list .opinoin_list .row').on('click', opinionClick);
+    $('.remote_request .list .opinoin_list .row').on('click', () =>
+        opinionClick()
+    );
 
     if (queryConsultId !== '' && queryCaseNo !== '') {
         $('.remote_request .list .opinoin_list .row').each(

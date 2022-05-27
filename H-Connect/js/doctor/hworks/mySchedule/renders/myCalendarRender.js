@@ -98,6 +98,8 @@ async function myScheduleInit() {
     const today = new Date();
     const nowHour = moment(today).format('HH');
     const { result, list } = await selectMyScheduleList();
+    console.log('list===');
+    console.log(list);
 
     $(`#${nowHour}`).addClass('active');
     if (result) {
@@ -106,6 +108,10 @@ async function myScheduleInit() {
             const id = moment(startDatetime).format('YYYYMMDD');
             html = myCalendarTemplate(list[i]);
             $(`#${id} .title`).after(html);
+            // let width = $(`#${id} .title`).width();
+            // width *= 2;
+
+            // $(`#${id} .title`).width(width);
         }
     }
     // else {

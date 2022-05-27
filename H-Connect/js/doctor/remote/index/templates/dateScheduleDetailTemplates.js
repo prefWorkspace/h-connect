@@ -67,24 +67,26 @@ export function doctorListTemplates(_data) {
 }
 
 export function canDateWithTemplates(_data) {
-    const { consultEndDatetime, consultStartDatetime } = _data;
+    const { consultEndDatetime, consultStartDatetime, orderNo } = _data;
+    const dayNum = moment(consultEndDatetime).day();
 
     return `
         <div>
             <div class="check">
                 <div class="input_wrap">
                     <input
+                    data-caseno="${orderNo}"
                         type="checkbox"
-                        id="time1"
+                        id="time${orderNo}"
                         class="green_custom"
                     />
-                    <label for="time1"></label>
-                    <label for="time1"
+                    <label for="time${orderNo}"></label>
+                    <label for="time${orderNo}"
                         >${moment(consultStartDatetime).format(
                             'YY.MM.DD'
-                        )} 월요일 ${moment(consultStartDatetime).format(
-        'HH:mm'
-    )} ~
+                        )} ${numToDay(dayNum)}요일 ${moment(
+        consultStartDatetime
+    ).format('HH:mm')} ~
                         ${moment(consultEndDatetime).format('HH:mm')}</label
                     >
                 </div>
@@ -98,23 +100,26 @@ export function canDateWithTemplates(_data) {
         </div>
     `;
 }
-export function canDateWithTemplatesisentnot(_data) {
-    const { consultEndDatetime, consultStartDatetime } = _data;
-    const dayNum = moment(consultEndDatetime).day();
 
+export function canDateWithTemplatesisentnot(_data) {
+    const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
+        _data;
+    const dayNum = moment(consultEndDatetime).day();
     return `
     <div>
         <div class="check">
             <input
+                data-consultid="${consultId}"
+                data-caseno="${orderNo}"
                 type="checkbox"
-                id="frist"
+                id="frist${orderNo}"
                 class="green_custom"
             />
-            <label for="frist"></label>
-            <label for="frist"
+            <label for="frist${orderNo}"></label>
+            <label for="frist${orderNo}"
                 >${moment(consultStartDatetime).format('YY.MM.DD')} ${numToDay(
         dayNum
-    )} ${moment(consultStartDatetime).format('HH:mm')} ~
+    )}요일 ${moment(consultStartDatetime).format('HH:mm')} ~
                 ${moment(consultEndDatetime).format('HH:mm')}</label
             >
         </div>
