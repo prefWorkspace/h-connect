@@ -110,11 +110,12 @@ export class CustomFullcalendar {
                     : null;
             },
             dateClick: (dateClickData) => {
+                this.module.unselect();
                 typeof options.dateClick === 'function' &&
                     options?.dateClick(dateClickData, this);
 
                 options.sectionSelectAble === true &&
-                    this.sectionSelector(dateClickData, this);
+                    this.sectionSelector(dateClickData);
 
                 options.dateClickActiveAble === true &&
                     this.dateClickActiver(dateClickData, this);
@@ -142,11 +143,12 @@ export class CustomFullcalendar {
                 this
             );
     }
-    sectionSelector(selectData, _item) {
-        const { dayEl, date, dateStr } = selectData;
-        const { module } = _item;
-        const { options } = _item.init ?? {};
-        const { element } = _item.init.target;
+    sectionSelector(selectDate) {
+        const { dateStr } = selectDate;
+        console.log('this: ', this);
+        const { module } = this;
+        const { options } = this.init ?? {};
+        const { element } = this.init.target;
 
         function getTimeFunc(_value) {
             return new Date(_value).getTime();
@@ -179,7 +181,6 @@ export class CustomFullcalendar {
 
         this.selectDateCalendar(startDate, endDate);
 
-        module.unselect();
         if (startDate?.dateStr && endDate?.dateStr) {
             const _minusOneDayEndDate = moment(endDate.dateStr, 'YYYY-MM-DD')
                 .add(1, 'days')

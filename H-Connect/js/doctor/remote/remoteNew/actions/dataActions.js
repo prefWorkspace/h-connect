@@ -343,7 +343,9 @@ export function calcDataRealTimeDate() {
         rt_end_hours,
         rt_end_minutes,
     } = _tempObj ?? {};
-    const _fullYear = new Date().getFullYear();
+    const { module } = $('#calendar').data('calendar-module');
+    const _year = moment(module.getDate()).format('YYYY');
+    const _fullYear = getYearFromCalendar();
     return {
         startDatetime: `${_fullYear}-${rt_start_month}-${rt_start_date} ${rt_start_hours}:${rt_start_minutes}:00`,
         endDatetime: `${_fullYear}-${rt_start_month}-${rt_start_date} ${rt_end_hours}:${rt_end_minutes}:00`,
@@ -369,7 +371,7 @@ export function calcDataOpinionDate() {
         op_end_hours,
         op_end_minutes,
     } = _tempObj ?? {};
-    const _fullYear = new Date().getFullYear();
+    const _fullYear = getYearFromCalendar();
     return {
         startDatetime: `${_fullYear}-${op_start_month}-${op_start_date} ${op_start_hours}:${op_start_minutes}:00`,
         endDatetime: `${_fullYear}-${op_end_month}-${op_end_date} ${op_end_hours}:${op_end_minutes}:00`,
@@ -389,7 +391,7 @@ export function calcDataRequestScheduleDeadlineDate() {
 
     const { rqd_end_month, rqd_end_date, rqd_end_hours, rqd_end_minutes } =
         _tempObj ?? {};
-    const _fullYear = new Date().getFullYear();
+    const _fullYear = getYearFromCalendar();
     return {
         deadlineTime: `${_fullYear}-${rqd_end_month}-${rqd_end_date} ${rqd_end_hours}:${rqd_end_minutes}:00`,
     };
@@ -410,7 +412,7 @@ export function calcDataRequestScheduleCanDateItem(_info) {
         rqc_end_hours,
         rqc_end_minutes,
     } = _tempObj ?? {};
-    const _fullYear = new Date().getFullYear();
+    const _fullYear = getYearFromCalendar();
     return {
         startDatetime: `${_fullYear}-${rqc_start_month}-${rqc_start_date} ${rqc_start_hours}:${rqc_start_minutes}:00`,
         endDatetime: `${_fullYear}-${rqc_start_month}-${rqc_start_date} ${rqc_end_hours}:${rqc_end_minutes}:00`,
@@ -433,3 +435,38 @@ export function calcDataRequestScheduleCanDateList() {
 }
 
 /* e : server data service 정보 가공 */
+
+export const calendarData = {
+    module: getModuleFromCalendar,
+    year: getYearFromCalendar,
+    month: getMonthFromCalendar,
+    day: getDayFromCalendar,
+};
+function getModuleFromCalendar() {
+    return $('#calendar').data('calendar-module');
+}
+function getYearFromCalendar() {
+    const { module } = $('#calendar').data('calendar-module');
+    if (module) {
+        return moment(module.getDate()).format('YYYY');
+    } else {
+        return moment(new Date()).format('YYYY');
+    }
+}
+
+function getMonthFromCalendar() {
+    const { module } = $('#calendar').data('calendar-module');
+    if (module) {
+        return moment(module.getDate()).format('MM');
+    } else {
+        return moment(new Date()).format('MM');
+    }
+}
+function getDayFromCalendar() {
+    const { module } = $('#calendar').data('calendar-module');
+    if (module) {
+        return moment(module.getDate()).format('DD');
+    } else {
+        return moment(new Date()).format('DD');
+    }
+}
