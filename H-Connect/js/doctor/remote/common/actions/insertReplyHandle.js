@@ -12,8 +12,14 @@ export async function insertReplyHandle() {
             const _isChecked = $(value).is(':checked');
             isChecked = isChecked || _isChecked;
         });
+        console.log('isChecked===');
+        console.log(isChecked);
 
-        if (isChecked && buttonTitle === '회신하기') {
+        if (buttonTitle === '회신완료') {
+            return;
+        }
+
+        if (isChecked) {
             $('#consultChannel1 .btn_reply').attr('disabled', false);
             $('#consultChannel1 .btn_reply').addClass('active');
         }
@@ -37,12 +43,18 @@ $('#consultChannel1 .btn_reply').on('click', async function () {
             scheduleInfo.push(consultScheduleInfo);
         }
     });
+    console.log('scheduleInfo===');
+    console.log(scheduleInfo);
 
     const { result } = await insertConsultReply(consultId, scheduleInfo);
+    console.log('result===');
+    console.log(result);
 
     if (result) {
         $(this).text('회신완료');
         $(this).attr('disabled', true);
+    } else {
+        alert('회신에 실패하였습니다');
     }
 });
 
