@@ -31,7 +31,11 @@
 // 각 데이터안에 consultChannel로 분기처리
 
 function dateTimeHanlder(startDatetime, endDatetime) {
-    const start = +moment(startDatetime).format('HH');
+    const day = moment(startDatetime).format('DD');
+    const start =
+        +moment(startDatetime).format('HH') < 9
+            ? 9
+            : +moment(startDatetime).format('HH');
     const end =
         +moment(endDatetime).format('HH') > 18
             ? 18
@@ -41,6 +45,20 @@ function dateTimeHanlder(startDatetime, endDatetime) {
     const topStart =
         start - 8 > 0 ? 42 * (1 + minuteStart) + (start - 9) * 48 : 42;
     const topLength = end - start > 10 ? 48 * 9 : 48 * (end - start);
+    // console.log('end==');
+    // console.log(end);
+    // console.log('start==');
+    // console.log(start);
+    // console.log('topLength==');
+    // console.log(topLength);
+    if (day === '31') {
+        console.log('startDatetime==');
+        console.log(start);
+        console.log('endDatetime==');
+        console.log(end);
+        console.log('topLength==');
+        console.log(topLength);
+    }
 
     return {
         topStart,
@@ -56,6 +74,8 @@ export function myCalendarTemplate(_data) {
         endDatetime,
         consultId,
     } = _data;
+    // console.log('_data===');
+    // console.log(_data);
 
     const { topStart, topLength } = dateTimeHanlder(startDatetime, endDatetime);
 

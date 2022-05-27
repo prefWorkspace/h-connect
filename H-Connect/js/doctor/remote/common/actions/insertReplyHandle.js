@@ -7,12 +7,13 @@ const { insertConsultReply } = await import(
 export async function insertReplyHandle() {
     $('body').on('click', '#consultChannel1 #tab-1 .green_custom', function () {
         let isChecked = false;
+        const buttonTitle = $('#consultChannel1 .btn_reply').text();
         $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
             const _isChecked = $(value).is(':checked');
             isChecked = isChecked || _isChecked;
         });
 
-        if (isChecked) {
+        if (isChecked && buttonTitle === '회신하기') {
             $('#consultChannel1 .btn_reply').attr('disabled', false);
             $('#consultChannel1 .btn_reply').addClass('active');
         }
