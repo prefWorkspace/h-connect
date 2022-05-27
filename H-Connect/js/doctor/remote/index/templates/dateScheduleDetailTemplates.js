@@ -77,11 +77,11 @@ export function canDateWithTemplates(_data) {
                     <input
                     data-caseno="${orderNo}"
                         type="checkbox"
-                        id="time1"
+                        id="time${orderNo}"
                         class="green_custom"
                     />
-                    <label for="time1"></label>
-                    <label for="time1"
+                    <label for="time${orderNo}"></label>
+                    <label for="time${orderNo}"
                         >${moment(consultStartDatetime).format(
                             'YY.MM.DD'
                         )} ${numToDay(dayNum)}요일 ${moment(
@@ -100,6 +100,7 @@ export function canDateWithTemplates(_data) {
         </div>
     `;
 }
+
 export function canDateWithTemplatesisentnot(_data) {
     const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
         _data;

@@ -51,6 +51,7 @@ function myCalendarClickHandler() {
     const consultChannel = $(this).data('consultchannle');
     const isentState = +$(this).data('isentstate');
     const consultId = $(this).data('consultid');
+    const confirmState = $(this).data('confirmstate');
     const remote_member = $(this).find('.remote_member').text();
 
     $('.all_plan .cal_list .schedule_list .row').removeClass('on');
@@ -80,6 +81,7 @@ async function init() {
     if (queryConsultId !== '') {
         $('.all_plan .cal_list .schedule_list .row').each((index, value) => {
             const consultId = $(value).data('consultid');
+            const confirmState = $(value).data('confirmstate');
             if (queryConsultId === consultId) {
                 $(value).addClass('on');
 
@@ -94,6 +96,11 @@ async function init() {
                     $(`#consultChannel${consultChannel}`).show();
                     $(`#consultChannel${consultChannel} .remote_member`).text(
                         remote_member
+                    );
+                    const buttonTitle =
+                        confirmState === 'Y' ? '회신완료' : '회신하기';
+                    $(`#consultChannel${consultChannel} .btn_reply`).text(
+                        buttonTitle
                     );
                 }
                 dateScheduleDetailRender(consultChannel, isentState, consultId);
@@ -110,6 +117,7 @@ async function init() {
             const isentState = +$(value).data('isentstate');
             const consultId = $(value).data('consultid');
             const consultChannel = $(value).data('consultchannle');
+            const confirmState = $(value).data('confirmstate');
             const remote_member = $(value).find('.remote_member').text();
             if (isentState === 1) {
                 $(`#consultChannel0`).show();
@@ -118,6 +126,11 @@ async function init() {
                 $(`#consultChannel${consultChannel}`).show();
                 $(`#consultChannel${consultChannel} .remote_member`).text(
                     remote_member
+                );
+                const buttonTitle =
+                    confirmState === 'Y' ? '회신완료' : '회신하기';
+                $(`#consultChannel${consultChannel} .btn_reply`).text(
+                    buttonTitle
                 );
             }
             dateScheduleDetailRender(consultChannel, isentState, consultId);

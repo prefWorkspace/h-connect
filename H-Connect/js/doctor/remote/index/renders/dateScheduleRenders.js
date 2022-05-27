@@ -58,7 +58,6 @@ function loopHtml(_list, type) {
 
 export async function dateScheduleRender(_list) {
     let html = '';
-
     if (_list.length === 0) {
         html = errorText();
         $('.all_plan .cal_list .schedule_list').html(html);
@@ -223,6 +222,5 @@ export async function dateScheduleDetailRender(
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
         selectList = [...list];
     }
-
     dateSchduleDetailHandle(selectList, isentState);
 }
