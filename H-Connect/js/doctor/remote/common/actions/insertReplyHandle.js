@@ -34,10 +34,10 @@ $('#consultChannel1 .btn_reply').on('click', async function () {
     const scheduleInfo = [];
     $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
         const _isChecked = $(value).is(':checked');
-        const caseNo = $(value).data('caseno');
+        const orderNo = $(value).data('caseno');
         consultId = $(value).data('consultid');
         if (_isChecked) {
-            const consultScheduleInfo = { caseNo };
+            const consultScheduleInfo = { orderNo };
             scheduleInfo.push(consultScheduleInfo);
         }
     });
@@ -47,6 +47,10 @@ $('#consultChannel1 .btn_reply').on('click', async function () {
     if (result) {
         $(this).text('회신완료');
         $(this).attr('disabled', true);
+        $('#consultChannel1 .btn_reply').removeClass('active');
+        $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
+            $(value).attr('checked', false);
+        });
     } else {
         alert('회신에 실패하였습니다');
     }

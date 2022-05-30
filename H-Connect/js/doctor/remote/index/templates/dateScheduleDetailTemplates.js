@@ -67,8 +67,20 @@ export function doctorListTemplates(_data) {
 }
 
 export function canDateWithTemplates(_data) {
-    const { consultEndDatetime, consultStartDatetime, orderNo } = _data;
+    const {
+        consultEndDatetime,
+        consultStartDatetime,
+        orderNo,
+        memberInfoList,
+    } = _data;
     const dayNum = moment(consultEndDatetime).day();
+
+    let doctorListHTML = '';
+    if (!memberInfoList) {
+        for (let i = 0; i < memberInfoList.length; i++) {
+            doctorListHTML += `<p>${memberInfoList[i].doctorName} ${memberInfoList[i].doctorLevelName}</p>`;
+        }
+    }
 
     return `
         <div>
@@ -91,11 +103,13 @@ export function canDateWithTemplates(_data) {
                     >
                 </div>
 
-                <span>-명 참석</span>
+                <span>${
+                    memberInfoList ? memberInfoList.length : 0
+                }명 참석</span>
             </div>
 
             <div class="people">
-                
+                ${doctorListHTML}
             </div>
         </div>
     `;
