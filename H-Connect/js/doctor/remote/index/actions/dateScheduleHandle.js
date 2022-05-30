@@ -129,7 +129,7 @@ async function init() {
     const consultChannel = $(item).data('consultchannle');
     const confirmState = $(item).data('confirmstate');
     const remote_member = $(item).find('.remote_member').text();
-    if (isentState === 1) {
+    if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0`).show();
         $(`#consultChannel0 .remote_member`).text(remote_member);
     } else {

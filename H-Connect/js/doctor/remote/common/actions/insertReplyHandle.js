@@ -12,8 +12,6 @@ export async function insertReplyHandle() {
             const _isChecked = $(value).is(':checked');
             isChecked = isChecked || _isChecked;
         });
-        console.log('isChecked===');
-        console.log(isChecked);
 
         if (buttonTitle === '회신완료') {
             return;
@@ -43,12 +41,8 @@ $('#consultChannel1 .btn_reply').on('click', async function () {
             scheduleInfo.push(consultScheduleInfo);
         }
     });
-    console.log('scheduleInfo===');
-    console.log(scheduleInfo);
 
     const { result } = await insertConsultReply(consultId, scheduleInfo);
-    console.log('result===');
-    console.log(result);
 
     if (result) {
         $(this).text('회신완료');
