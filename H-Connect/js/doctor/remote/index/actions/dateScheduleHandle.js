@@ -54,6 +54,10 @@ function myCalendarClickHandler() {
     const isentState = +$(this).data('isentstate');
     const consultId = $(this).data('consultid');
     const remote_member = $(this).find('.remote_member').text();
+    const confirmState = $(this).data('confirmstate');
+    const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
+
+    $(`#consultChannel${consultChannel} .btn_reply`).text(buttonTitle);
 
     $('.all_plan .cal_list .schedule_list .row').removeClass('on');
     $(this).addClass('on');
