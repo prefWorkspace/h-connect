@@ -285,7 +285,6 @@ export async function insertConsult(_data) {
 export async function selectScheduleCheck(_data) {
     /* 협진가능시간 선택에서 의사 일정과 중복인지 확인 하는 API */
     const { checkDatetime } = _data ?? {};
-    console.log('checkDatetime: ', checkDatetime);
 
     const { id } = getUserInfo();
     if (!id) return;
@@ -302,25 +301,3 @@ export async function selectScheduleCheck(_data) {
     );
     return res;
 }
-export async function selectMyScheduleList() {
-    /* 실시간 원격 협진 / 다학제 통합 진료 추가 */
-
-    const { id } = getUserInfo();
-    if (!id) return;
-    const res = await serverController.ajaxAwaitController(
-        'API/Doctor/SelectMyScheduleList',
-        'POST',
-        JSON.stringify({
-            ...commonRequest(),
-            startDatetime: '2022-02-07 06:00:05',
-            endDatetime: '2023-07-07 06:00:05',
-            userId: id,
-        }),
-        (res) => {
-            console.log('res:', res);
-        },
-        (err) => console.log(err)
-    );
-    return res;
-}
-selectMyScheduleList();

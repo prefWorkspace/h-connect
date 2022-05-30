@@ -63,5 +63,3 @@ function settingBoxData(_sectionType) {
     const _$surgeryBox = $('.surgery_box');
     _$surgeryBox.attr('data-option-role', _sectionType);
 }
-
-// renderCooperationSection('협진일정요청'); // test : 추후 삭제

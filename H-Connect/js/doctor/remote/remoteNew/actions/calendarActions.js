@@ -2,7 +2,7 @@ const { CustomFullcalendar } = await import(
     importVersion('/H-Connect/js/lib/fullcalendar/custom/customFullCalendar.js')
 );
 
-const { validateCoopAll, validateDate, calendarData } = await import(
+const { validateDate, calendarData } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
     )
@@ -33,7 +33,7 @@ const calendarModule = new CustomFullcalendar('#calendar', {
     // dateClickActive: (_selectDate) => {
     //     console.log(_selectDate);
     // },
-    dateClick: function (selectData, _item) {},
+    // dateClick: function (selectData, _item) {},
 
     // events: [
     //     {
@@ -48,6 +48,7 @@ export function calendarActionControll(_sectionType) {
     const _calendarModule = calendarData.module();
     const { options: _calendarOptions } = _calendarModule.init ?? {};
     _calendarModule.resetEventOptions();
+    _calendarModule.resetSelectors();
     _calendarOptions.firstClickUnSelectToday = true;
 
     switch (_sectionType) {
@@ -90,6 +91,17 @@ export function calendarActionControll(_sectionType) {
             };
             break;
         case '협진일정요청':
+            _calendarOptions.dateClickActiveAble = true;
+            _calendarOptions.dateClickActive = (_selectDate) => {
+                const _month = moment(_selectDate.dateStr).format('MM');
+                const _day = moment(_selectDate.dateStr).format('DD');
+                $(
+                    '.t_view .deadline_wrap .date input[data-key="rqd_end_month"]'
+                ).val(_month);
+                $(
+                    '.t_view .deadline_wrap .date input[data-key="rqd_end_date"]'
+                ).val(_day);
+            };
             break;
     }
 }
@@ -100,17 +112,19 @@ function realTimeCalendarActions() {
         .on('input', '.rt_view input[data-key="rt_start_month"]', function () {
             validateDate($(this));
 
-            const { module, selectDateCalendar } = calendarData.module();
+            const _calendarModule = calendarData.module();
             const _year = calendarData.year();
             const _month = $(this).val();
             const _day = calendarData.day();
             if (!_year || !_month || !_day) return;
 
             const _dateStr = `${_year}-${_month}-${_day}`;
-            module.gotoDate(new Date(_dateStr));
-            selectDateCalendar({
+            _calendarModule.module.gotoDate(new Date(_dateStr));
+            _calendarModule.selectDateCalendar({
                 dateStr: _dateStr,
             });
+
+            _calendarModule.resetTodaySelect();
         });
     coopSurgerySelector
         .wrapEl()
@@ -128,6 +142,8 @@ function realTimeCalendarActions() {
             _calendarModule.selectDateCalendar({
                 dateStr: _dateStr,
             });
+
+            _calendarModule.resetTodaySelect();
         });
 }
 
@@ -148,6 +164,8 @@ function opinionCalendarActions() {
             // selectDateCalendar({
             //     dateStr: _dateStr,
             // });
+
+            _calendarModule.resetTodaySelect();
         });
     coopSurgerySelector
         .wrapEl()
@@ -163,6 +181,8 @@ function opinionCalendarActions() {
             // _calendarModule.sectionSelector({
             //     dateStr: _dateStr,
             // });
+
+            _calendarModule.resetTodaySelect();
         });
     coopSurgerySelector
         .wrapEl()
@@ -180,6 +200,8 @@ function opinionCalendarActions() {
             // selectDateCalendar({
             //     dateStr: _dateStr,
             // });
+
+            _calendarModule.resetTodaySelect();
         });
 
     coopSurgerySelector
@@ -196,12 +218,62 @@ function opinionCalendarActions() {
             // _calendarModule.sectionSelector({
             //     dateStr: _dateStr,
             // });
+
+            _calendarModule.resetTodaySelect();
         });
+}
+
+function requestScheduleCalendarActions() {
+    coopSurgerySelector
+        .wrapEl()
+        .on(
+            'input',
+            '.t_view .deadline_wrap .date input[data-key="rqd_end_month"]',
+            function () {
+                validateDate($(this));
+
+                const _calendarModule = calendarData.module();
+                const _year = calendarData.year();
+                const _month = $(this).val();
+                const _day = calendarData.day();
+                if (!_year || !_month || !_day) return;
+
+                const _dateStr = `${_year}-${_month}-${_day}`;
+                _calendarModule.module.gotoDate(new Date(_dateStr));
+                _calendarModule.selectDateCalendar({
+                    dateStr: _dateStr,
+                });
+
+                _calendarModule.resetTodaySelect();
+            }
+        );
+    coopSurgerySelector
+        .wrapEl()
+        .on(
+            'input',
+            '.t_view .deadline_wrap .date input[data-key="rqd_end_date"]',
+            function () {
+                validateDate($(this));
+
+                const _calendarModule = calendarData.module();
+                const _year = calendarData.year();
+                const _month = calendarData.month();
+                const _day = $(this).val();
+                if (!_year || !_month || !_day) return;
+
+                const _dateStr = `${_year}-${_month}-${_day}`;
+                _calendarModule.module.gotoDate(new Date(_dateStr));
+                _calendarModule.selectDateCalendar({
+                    dateStr: _dateStr,
+                });
+            }
+        );
 }
 
 function initActions() {
     realTimeCalendarActions();
     opinionCalendarActions();
+    requestScheduleCalendarActions();
 }
 
 initActions();
