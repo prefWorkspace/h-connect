@@ -43,12 +43,12 @@ export function coopRealTimeRemoteSectionTmpl() {
                         <p>시작시간</p>
 
                         <div class="input_wrap">
-                            <input data-validate='hours' data-key="rt_start_hours" data-keyType="input" type="text" placeholder="00">
+                            <input data-validate='[0, 17]' data-key="rt_start_hours" data-keyType="input" type="text" placeholder="00">
                             <p>시</p>
                         </div>
 
                         <div class="input_wrap">
-                            <input data-validate='minutes' data-key="rt_start_minutes" data-keyType="input" type="text" placeholder="00">
+                            <input data-validate='depend=rt_start_hours[17],range=[0, 59]' data-key="rt_start_minutes" data-keyType="input" type="text" placeholder="00">
                             <p>분</p>
                         </div>
                     </div>
@@ -57,12 +57,12 @@ export function coopRealTimeRemoteSectionTmpl() {
                         <p>종료시간</p>
 
                         <div class="input_wrap">
-                            <input data-validate='hours' data-key="rt_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
+                            <input data-validate='[0, 18]' data-key="rt_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
                             <p>시</p>
                         </div>
 
                         <div class="input_wrap">
-                            <input data-validate='minutes' data-key="rt_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
+                            <input data-validate='depend=rt_start_hours[18],range=[0, 59]' data-key="rt_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
                             <p>분</p>
                         </div>
                     </div>
@@ -115,12 +115,12 @@ export function coopOpinionSectionTmpl() {
                     <p>시작시간</p>
 
                     <div class="input_wrap">
-                        <input data-validate='hours' data-key="op_start_hours" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='[0, 17]' data-key="op_start_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-validate='minutes' data-key="op_start_minutes" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='depend=op_start_hours[17],range=[0, 59]' data-key="op_start_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -129,12 +129,12 @@ export function coopOpinionSectionTmpl() {
                     <p>마감시간</p>
 
                     <div class="input_wrap">
-                        <input data-validate='hours' data-key="op_end_hours" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='[0, 18]' data-key="op_end_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-validate='minutes' data-key="op_end_minutes" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='depend=op_end_hours[18],range=[0, 59]' data-key="op_end_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -197,6 +197,7 @@ export function coopRequestScheduleSectionTmpl() {
     `;
 }
 export function coopRequestScheduleBlockTmpl() {
+    // 협진 일정 요청
     return `
     <div class="up_box">
         <button type="button" class="btn_delete_time">
@@ -224,12 +225,12 @@ export function coopRequestScheduleBlockTmpl() {
                     <p>시작시간</p>
 
                     <div class="input_wrap">
-                        <input data-validate='hours' data-key="rqc_start_hours" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='[0, 17]' data-key="rqc_start_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-validate='minutes' data-key="rqc_start_minutes" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='depend=rqc_start_hours[17],range=[0, 59]' data-key="rqc_start_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -238,12 +239,12 @@ export function coopRequestScheduleBlockTmpl() {
                     <p>종료시간</p>
 
                     <div class="input_wrap">
-                        <input data-validate='hours' data-key="rqc_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
+                        <input data-validate='[0, 18]' data-key="rqc_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-validate='minutes' data-key="rqc_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
+                        <input data-validate='depend=rqc_end_hours[18],range=[0, 59]' data-key="rqc_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
                         <p>분</p>
                     </div>
                 </div>
