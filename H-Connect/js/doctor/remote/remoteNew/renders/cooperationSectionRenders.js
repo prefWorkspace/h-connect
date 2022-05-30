@@ -39,6 +39,18 @@ export function renderCooperationSection(_sectionType) {
     calendarActionControll(_sectionType);
     switch (_sectionType) {
         case '실시간원격협진':
+            console.log(_calendarModule);
+            _calendarModule.init.options.dateClickActiveAble = true;
+            _calendarModule.init.options.dateClickActive = (_selectDate) => {
+                const _month = moment(_selectDate.dateStr).format('MM');
+                const _day = moment(_selectDate.dateStr).format('DD');
+                $(
+                    '.rt_time .date .input_wrap input[data-key="rt_start_month"]'
+                ).val(_month);
+                $(
+                    '.rt_time .date .input_wrap input[data-key="rt_start_date"]'
+                ).val(_day);
+            };
             _sectionTmpl = coopRealTimeRemoteSectionTmpl();
             break;
         case '소견요청협진':

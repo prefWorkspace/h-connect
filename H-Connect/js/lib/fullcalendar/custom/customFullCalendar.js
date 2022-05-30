@@ -129,6 +129,19 @@ export class CustomFullcalendar {
         this.init.options.sectionSelectAble = null;
         this.init.options.sectionSelect = null;
     }
+    resetSelectors() {
+        this.module.unselect();
+        this.resetActiveSelector();
+    }
+    resetActiveSelector() {
+        const dayGridStr = 'fc-daygrid-day';
+        const getDayGrid = $(`.${dayGridStr}`);
+        getDayGrid.each(function () {
+            if ($(this).hasClass('-active')) {
+                $(this).removeClass('-active');
+            }
+        });
+    }
     dateClickActiver(selectData, _item) {
         const { options } = _item.init ?? {};
         const { dayEl, date, dateStr } = selectData;
@@ -153,7 +166,6 @@ export class CustomFullcalendar {
             return new Date(_value).getTime();
         }
         let _getSavedDate = $(element).data('start-end-date') ?? [];
-        console.log('_getSavedDate: ', _getSavedDate);
         let _getClickDate = {
             time: getTimeFunc(dateStr),
             dateStr: dateStr,
