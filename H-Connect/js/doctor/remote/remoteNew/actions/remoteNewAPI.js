@@ -285,7 +285,6 @@ export async function insertConsult(_data) {
 export async function selectScheduleCheck(_data) {
     /* 협진가능시간 선택에서 의사 일정과 중복인지 확인 하는 API */
     const { checkDatetime } = _data ?? {};
-    console.log('checkDatetime: ', checkDatetime);
 
     const { id } = getUserInfo();
     if (!id) return;
