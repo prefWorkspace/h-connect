@@ -302,25 +302,3 @@ export async function selectScheduleCheck(_data) {
     );
     return res;
 }
-export async function selectMyScheduleList() {
-    /* 실시간 원격 협진 / 다학제 통합 진료 추가 */
-
-    const { id } = getUserInfo();
-    if (!id) return;
-    const res = await serverController.ajaxAwaitController(
-        'API/Doctor/SelectMyScheduleList',
-        'POST',
-        JSON.stringify({
-            ...commonRequest(),
-            startDatetime: '2022-02-07 06:00:05',
-            endDatetime: '2023-07-07 06:00:05',
-            userId: id,
-        }),
-        (res) => {
-            console.log('res:', res);
-        },
-        (err) => console.log(err)
-    );
-    return res;
-}
-selectMyScheduleList();

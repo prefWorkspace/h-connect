@@ -37,12 +37,6 @@ function addCoopRealTimeRemoteAction() {
             .find('.rt_view input[data-key="rt_end_minutes"]')
             .val(_startMinutes);
     });
-    coopSurgerySelector
-        .wrapEl()
-        .on('.rt_view input[data-key="rt_start_month"]', function () {
-            const _calendarModule = $('#calendar').data('calendar-module');
-            // _calendarModule.selectDateCalendar()
-        });
 }
 
 function initAction() {
