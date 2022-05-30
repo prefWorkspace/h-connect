@@ -12,7 +12,7 @@ const { commonRequest } = await import(
     importVersion('/H-Connect/js/utils/controller/commonRequest.js')
 );
 
-$('#header .pop.logout .btn_bye').on('click', function () {
+function logoutHandle() {
     const req = JSON.stringify({
         ...commonRequest(),
     });
@@ -30,4 +30,6 @@ $('#header .pop.logout .btn_bye').on('click', function () {
             }
         }
     );
-});
+}
+
+$('#header .pop.logout .btn_bye').on('click', logoutHandle);
