@@ -161,18 +161,12 @@ async function myScheduleInit(endDatetime = null) {
     const today = new Date();
     const nowHour = moment(today).format('HH');
     const { result, list } = await selectMyScheduleList(null, endDatetime);
-    console.log('list==');
-    console.log(list);
     $(`#${nowHour}`).addClass('active');
     if (result) {
         for (let i = 0; i < list.length; i++) {
             const { startDatetime } = list[i];
             const id = moment(startDatetime).format('YYYYMMDD');
             html = myCalendarTemplate(list[i]);
-            console.log('html===');
-            console.log(html);
-            console.log('id===');
-            console.log(id);
             $(`#${id} .title`).after(html);
             if (pathname.indexOf('index') === -1) {
                 $(`#${id}detail .title`).after(html);
@@ -193,8 +187,6 @@ async function myScheduleInit(endDatetime = null) {
 
 if (pathname.indexOf('index') !== -1) {
     await dateInit();
-    console.log('index');
 } else {
     await detailSectionDateInit();
-    console.log('원격');
 }

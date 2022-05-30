@@ -30,7 +30,7 @@
 // 탬플릿 함수를 여러개 만들지 않고 하나로 통일했습니다.
 // 각 데이터안에 consultChannel로 분기처리
 
-function dateTimeHanlder(startDatetime, endDatetime) {
+export function dateTimeHanlder(startDatetime, endDatetime) {
     const day = moment(startDatetime).format('DD');
     const start =
         +moment(startDatetime).format('HH') < 9

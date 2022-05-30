@@ -26,7 +26,6 @@ const { history } = await import(
 const { getParams } = history;
 
 async function calendarHandle(_selectDate) {
-    console.log('_selectDate: ', _selectDate);
     const queryendDatetime = getParams('endDatetime');
     let date = queryendDatetime || new Date();
     if (_selectDate) {

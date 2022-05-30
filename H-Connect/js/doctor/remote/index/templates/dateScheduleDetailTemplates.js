@@ -4,6 +4,12 @@ const { numToDay } = await import(
     importVersion('/H-Connect/js/utils/common/utils.js')
 );
 
+const { dateTimeHanlder } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/hworks/mySchedule/templates/myCalendarTemplate.js'
+    )
+);
+
 export function dateScheduleCaseDetailTemplates(_data) {
     const {
         orderNo,
@@ -140,6 +146,65 @@ export function canDateWithTemplatesisentnot(_data) {
         <p class="dupli">
             ※ 외래진료 일정과 중복됩니다.
         </p>
+    </div>
+    `;
+}
+
+export function canDateWithDoctorListTemplates(_data) {
+    if (_data.length === 0) {
+        return;
+    }
+
+    let doctor = '';
+    let consultId = '';
+
+    for (let i = 0; i < _data.length; i++) {
+        doctor += `<p>${_data[i].doctorName} ${_data[i].doctorLevelName}</p>`;
+        consultId = _data[i].consultId;
+    }
+
+    return `
+        <div data-consultid="${consultId}">
+            <div class="num>${doctor.length}명</div>
+            <div class="select_info">
+                ${doctor}
+            </div>
+        </div>
+    `;
+}
+
+export function canDateWithScheduleTemplates(_data) {
+    const {
+        consultEndDatetime,
+        consultId,
+        consultStartDatetime,
+        memberInfoList,
+    } = _data;
+    const dayNum = moment(consultStartDatetime).day();
+    const today = new Date();
+
+    const isTody =
+        moment(today).format('YYYY-MM-DD') ===
+        moment(consultStartDatetime).format('YYYY-MM-DD');
+
+    const { topStart, topLength } = dateTimeHanlder(
+        consultStartDatetime,
+        consultEndDatetime
+    );
+
+    return `
+    <div class="day ${isTody ? 'today' : ''}">
+        <div class="title">
+            <p>${moment(consultStartDatetime).format('MM')}.${numToDay(
+        dayNum
+    )}</p>
+        </div>
+
+        <div style="top: ${topStart}px; height: ${topLength}px" class="plan start">
+            <div class="possible">
+                ${canDateWithDoctorListTemplates(memberInfoList)}
+            </div>
+        </div>
     </div>
     `;
 }
