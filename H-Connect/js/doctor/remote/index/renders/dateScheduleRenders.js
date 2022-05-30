@@ -31,10 +31,6 @@ const {
     )
 );
 
-const { selectMycalendar } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 function loopHtml(_list, type) {
     let html = '';
     if (!_list) {

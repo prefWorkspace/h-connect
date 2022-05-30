@@ -678,7 +678,7 @@ const FILE_TREE = {
                 renders: {
                     'myCalendarRender.js': {
                         type: 'module',
-                        url_path: '/doctor/index',
+                        url_path: '/doctor/index||/doctor/remote',
                         file_path:
                             '/H-Connect/js/doctor/hworks/mySchedule/renders/',
                     },

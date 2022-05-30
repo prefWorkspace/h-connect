@@ -20,6 +20,10 @@ const { selectMycalendar } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
 );
 
+const {
+    location: { pathname },
+} = window;
+
 // 오늘을 기준으로 4주간의 날짜 및 요일 계산 후 렌더링 함수
 async function dateInit() {
     const today = new Date();
@@ -30,6 +34,9 @@ async function dateInit() {
     let isToday = true;
     let dayNum = moment(today).day();
     let id = moment(today).format('YYYYMMDD');
+    const {
+        location: { pathname },
+    } = window;
 
     for (let i = 0; i < 28; i++) {
         if (dayNum === 0 || dayNum === 6) {
@@ -68,8 +75,56 @@ async function dateInit() {
             ${innerFourhtml}
         </div>
     `;
-    $('.my_plan .weekly .inner.two').html(innerTwohtml + divEl);
+    if (pathname.indexOf('index') !== -1) {
+        $('.my_plan .weekly .inner.two').html(innerTwohtml + divEl);
+        console.log('index');
+    } else {
+        // $('.my_plan .weekly .inner.two').html(innerTwohtml + divEl);
+        console.log('원격');
+    }
     await myScheduleInit();
+}
+
+async function detailSectionDateInit() {
+    const today = new Date();
+    let date = moment(today).format('DD');
+    let innerHTML = '';
+    let isWeekend = false;
+    let isToday = true;
+    let dayNum = moment(today).day();
+    let id = moment(today).format('YYYYMMDD');
+
+    for (let i = 0; i < 5; i++) {
+        if (dayNum === 0 || dayNum === 6) {
+            isWeekend = true;
+        }
+        let day = numToDay(dayNum);
+        const dayDate = {
+            date,
+            day,
+            isWeekend,
+            isToday,
+            id,
+        };
+
+        innerHTML += calendarDateTemplate(dayDate);
+
+        // 데이터 초기화
+        isToday = false;
+        isWeekend = false;
+        date = moment(today)
+            .add(i + 1, 'd')
+            .format('DD');
+        dayNum = moment(today)
+            .add(i + 1, 'd')
+            .day();
+        id = moment(today)
+            .add(i + 1, 'd')
+            .format('YYYYMMDD');
+    }
+
+    $('#tab-2 .inner').html(innerHTML);
+    // await myScheduleInit();
 }
 
 // 일정이 두세개 들어갔을 때 계산하기 위한 함수 (중단)
@@ -90,6 +145,11 @@ async function positionHandle() {
             position.sort((a, b) => a.top - b.top);
         }
     });
+
+    // let width = $(`#${id} .title`).width();
+    // width *= 2;
+
+    // $(`#${id} .title`).width(width);
 }
 
 // API로 받아온 나의 일정을 렌더링 하는 함수
@@ -98,8 +158,6 @@ async function myScheduleInit() {
     const today = new Date();
     const nowHour = moment(today).format('HH');
     const { result, list } = await selectMyScheduleList();
-    console.log('list===');
-    console.log(list);
 
     $(`#${nowHour}`).addClass('active');
     if (result) {
@@ -108,10 +166,6 @@ async function myScheduleInit() {
             const id = moment(startDatetime).format('YYYYMMDD');
             html = myCalendarTemplate(list[i]);
             $(`#${id} .title`).after(html);
-            // let width = $(`#${id} .title`).width();
-            // width *= 2;
-
-            // $(`#${id} .title`).width(width);
         }
     }
     // else {
@@ -126,4 +180,10 @@ async function myScheduleInit() {
     await positionHandle();
 }
 
-await dateInit();
+if (pathname.indexOf('index') !== -1) {
+    await dateInit();
+    console.log('index');
+} else {
+    await detailSectionDateInit();
+    console.log('원격');
+}

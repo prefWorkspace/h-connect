@@ -3666,7 +3666,8 @@ p {
     height: 495px;
     /* padding-bottom: 22px; */
     top: 10px;
-    left: 50px;
+    /* left: 50px; */
+    left: 40px;
     overflow: visible;
     display: flex;
     position: absolute;
@@ -3792,7 +3793,7 @@ p {
     line-height: normal;
     color: #000;
 }
-
+/* 
 .doctor_remote .time_select .possible .select_info p:nth-last-child(-n + 2) {
     margin: 0;
 }
@@ -3839,7 +3840,7 @@ p {
 }
 
 .doctor .time_select .inner > :nth-child(4) > :nth-child(2) {
-    /* height: 193px; */
+     height: 193px; 
     height: 145px;
     top: 41px;
 }
@@ -3859,7 +3860,7 @@ p {
     height: 242px;
     top: 231px;
     left: 0;
-}
+} */
 
 .doctor .me_request .btn_list {
     display: flex;
