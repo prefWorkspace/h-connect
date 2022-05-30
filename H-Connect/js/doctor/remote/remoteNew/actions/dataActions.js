@@ -130,6 +130,37 @@ function dateMinMax(_dateValid) {
             return ['0', '18'];
         case 'minutes':
             return ['0', '59'];
+        default:
+            const _isDepend = _dateValid.includes('depend');
+
+            if (_isDepend) {
+                const _depend = _dateValid.split(',')[0].split('depend=')[1];
+                const _dependKey = _depend.split('[')[0];
+                const _dependValue = parseInt(
+                    _depend.split('[')[1].split(']')[0],
+                    10
+                );
+
+                const _$dependEl = $(`input[data-key="${_dependKey}"]`);
+                const _dependElValue = parseInt(_$dependEl.val(), 10);
+                if (_dependElValue >= _dependValue) {
+                    return ['0', '00'];
+                } else {
+                    const [min, max] = _dateValid
+                        .split('range=[')[1]
+                        .split(']')[0]
+                        .replaceAll(' ', '')
+                        .split(',');
+                    return [min, max];
+                }
+            } else {
+                const [min, max] = _dateValid
+                    .split(']')[0]
+                    .split('[')[1]
+                    .replaceAll(' ', '')
+                    .split(',');
+                return [min, max];
+            }
     }
 }
 
