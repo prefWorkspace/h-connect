@@ -1,9 +1,7 @@
 'use strict';
 
 /*
-
-{
-    selectBox: {
+selectBox: {
         year: {
             use: true,
             target: '.year_box',
@@ -14,29 +12,25 @@
             target: '.month_box',
         },
     },
-    selectable: true,
-    select: function (arg) {
-        console.log('arg: ', arg);
-    캘린더에서 드래그로 이벤트를 생성할 수 있다.
-    var title = prompt('Event Title:');
-    if (title) {
-        calendar.addEvent({
-            title: title,
-            start: arg.start,
-            end: arg.end,
-            allDay: arg.allDay,
-        });
-    }
-    calendar.unselect();
-    },
-    events: [
-        {
-            title: '원격협진',
-            start: '2022-05-24',
-            constraint: 'businessHours',
-        },
-    ],
-}
+    // firstClickUnSelectToday: true,
+    unselectAuto: false,
+    // sectionSelectAble: true,
+    // sectionSelect: (_date) => {
+    //     // console.log(_date);
+    // },
+    // dateClickActiveAble: true,
+    // dateClickActive: (_selectDate) => {
+    //     console.log(_selectDate);
+    // },
+    // dateClick: function (selectData, _item) {},
+
+    // events: [
+    //     {
+    //         title: '원격협진',
+    //         start: '2022-05-24',
+    //         constraint: 'businessHours',
+    //     },
+    // ],
 
 */
 
@@ -176,7 +170,6 @@ export class CustomFullcalendar {
         const _calcedDateArr = _tempDateArr;
         $(element).data('calendar-module-section-date', _calcedDateArr);
         const [startDate, endDate] = _calcedDateArr;
-        console.log('start-end date: ', startDate, endDate);
         this.selectDateCalendar(startDate, endDate);
         if (startDate?.dateStr && endDate?.dateStr) {
             const _minusOneDayEndDate = moment(endDate.dateStr, 'YYYY-MM-DD')

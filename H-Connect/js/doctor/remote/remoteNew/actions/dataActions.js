@@ -94,17 +94,17 @@ export function validateCoopAll() {
 
             const _startMonth = _opinionInfo.filter(
                 (item) => item.key === 'op_start_month'
-            );
-            console.log('_startMonth: ', _startMonth.value);
+            )[0];
             const _startDay = _opinionInfo.filter(
                 (item) => item.key === 'op_start_date'
-            );
+            )[0];
+
             const _endMonth = _opinionInfo.filter(
                 (item) => item.key === 'op_end_month'
-            );
+            )[0];
             const _endDay = _opinionInfo.filter(
                 (item) => item.key === 'op_end_date'
-            );
+            )[0];
             if (_checkOpinionTime) {
                 const _startDate = new Date(
                     `${_year}-${_startMonth.value}-${_startDay.value}`
@@ -112,9 +112,7 @@ export function validateCoopAll() {
                 const _endDate = new Date(
                     `${_year}-${_endMonth.value}-${_endDay.value}`
                 ).getTime();
-                console.log(_startDate, _endDate);
                 _checkSectionData = _startDate > _endDate ? false : true;
-                console.log('_checkSectionData: ', _checkSectionData);
             } else {
                 _checkSectionData = false;
             }

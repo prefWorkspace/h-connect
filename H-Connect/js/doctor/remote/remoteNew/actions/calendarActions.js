@@ -23,25 +23,7 @@ const calendarModule = new CustomFullcalendar('#calendar', {
             target: '.month_box',
         },
     },
-    // firstClickUnSelectToday: true,
     unselectAuto: false,
-    // sectionSelectAble: true,
-    // sectionSelect: (_date) => {
-    //     // console.log(_date);
-    // },
-    // dateClickActiveAble: true,
-    // dateClickActive: (_selectDate) => {
-    //     console.log(_selectDate);
-    // },
-    // dateClick: function (selectData, _item) {},
-
-    // events: [
-    //     {
-    //         title: '원격협진',
-    //         start: '2022-05-24',
-    //         constraint: 'businessHours',
-    //     },
-    // ],
 });
 
 export function calendarActionControll(_sectionType) {
@@ -161,26 +143,26 @@ function opinionCalendarActions() {
 
             const _dateStr = `${_year}-${_month}-${_day}`;
             _calendarModule.module.gotoDate(new Date(_dateStr));
-            // selectDateCalendar({
-            //     dateStr: _dateStr,
-            // });
-
             _calendarModule.resetTodaySelect();
         });
     coopSurgerySelector
         .wrapEl()
         .on('input', '.ro_view input[data-key="op_start_date"]', function () {
-            // validateDate($(this));
-            // const _calendarModule = calendarData.module();
-            // const _year = calendarData.year();
-            // const _month = calendarData.month();
-            // const _day = $(this).val();
-            // if (!_year || !_month || !_day) return;
-            // const _dateStr = `${_year}-${_month}-${_day}`;
-            // _calendarModule.module.gotoDate(new Date(_dateStr));
-            // _calendarModule.sectionSelector({
-            //     dateStr: _dateStr,
-            // });
+            validateDate($(this));
+            const _calendarModule = calendarData.module();
+            const _year = calendarData.year();
+            const _month = calendarData.month();
+            const _day = $(this).val();
+            console.log('_day1: ', _day);
+            if (!_year || !_month || !_day) return;
+            const _dateStr = `${_year}-${_month}-${_day}`;
+            _calendarModule.module.gotoDate(new Date(_dateStr));
+            _calendarModule.pointSectionSelector(
+                {
+                    dateStr: _dateStr,
+                },
+                0
+            );
 
             _calendarModule.resetTodaySelect();
         });
@@ -197,27 +179,27 @@ function opinionCalendarActions() {
 
             const _dateStr = `${_year}-${_month}-${_day}`;
             _calendarModule.module.gotoDate(new Date(_dateStr));
-            // selectDateCalendar({
-            //     dateStr: _dateStr,
-            // });
-
             _calendarModule.resetTodaySelect();
         });
 
     coopSurgerySelector
         .wrapEl()
         .on('input', '.ro_view input[data-key="op_end_date"]', function () {
-            // validateDate($(this));
-            // const _calendarModule = calendarData.module();
-            // const _year = calendarData.year();
-            // const _month = calendarData.month();
-            // const _day = $(this).val();
-            // if (!_year || !_month || !_day) return;
-            // const _dateStr = `${_year}-${_month}-${_day}`;
-            // _calendarModule.module.gotoDate(new Date(_dateStr));
-            // _calendarModule.sectionSelector({
-            //     dateStr: _dateStr,
-            // });
+            validateDate($(this));
+            const _calendarModule = calendarData.module();
+            const _year = calendarData.year();
+            const _month = calendarData.month();
+            const _day = $(this).val();
+            console.log('_day2: ', _day);
+            if (!_year || !_month || !_day) return;
+            const _dateStr = `${_year}-${_month}-${_day}`;
+            _calendarModule.module.gotoDate(new Date(_dateStr));
+            _calendarModule.pointSectionSelector(
+                {
+                    dateStr: _dateStr,
+                },
+                1
+            );
 
             _calendarModule.resetTodaySelect();
         });
