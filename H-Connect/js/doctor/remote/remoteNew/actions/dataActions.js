@@ -85,8 +85,39 @@ export function validateCoopAll() {
             _checkSectionData = _checkRealTime;
             break;
         case '소견요청협진':
-            const { pass: _checkOpinionTime } = getDataOpinionDate();
-            _checkSectionData = _checkOpinionTime;
+            const { pass: _checkOpinionTime, info: _opinionInfo } =
+                getDataOpinionDate();
+
+            const { module } = $('#calendar').data('calendar-module');
+            const _year = moment(module.getDate()).format('YYYY');
+            console.log('_year: ', _year);
+
+            const _startMonth = _opinionInfo.filter(
+                (item) => item.key === 'op_start_month'
+            );
+            console.log('_startMonth: ', _startMonth.value);
+            const _startDay = _opinionInfo.filter(
+                (item) => item.key === 'op_start_date'
+            );
+            const _endMonth = _opinionInfo.filter(
+                (item) => item.key === 'op_end_month'
+            );
+            const _endDay = _opinionInfo.filter(
+                (item) => item.key === 'op_end_date'
+            );
+            if (_checkOpinionTime) {
+                const _startDate = new Date(
+                    `${_year}-${_startMonth.value}-${_startDay.value}`
+                ).getTime();
+                const _endDate = new Date(
+                    `${_year}-${_endMonth.value}-${_endDay.value}`
+                ).getTime();
+                console.log(_startDate, _endDate);
+                _checkSectionData = _startDate > _endDate ? false : true;
+                console.log('_checkSectionData: ', _checkSectionData);
+            } else {
+                _checkSectionData = false;
+            }
             break;
         case '협진일정요청':
             const { pass: _checkRqScheduleDeadline } =
