@@ -76,7 +76,7 @@ export function canDateWithTemplates(_data) {
     const dayNum = moment(consultEndDatetime).day();
 
     let doctorListHTML = '';
-    if (!memberInfoList) {
+    if (memberInfoList !== null) {
         for (let i = 0; i < memberInfoList.length; i++) {
             doctorListHTML += `<p>${memberInfoList[i].doctorName} ${memberInfoList[i].doctorLevelName}</p>`;
         }
