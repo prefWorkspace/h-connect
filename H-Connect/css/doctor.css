@@ -4131,7 +4131,7 @@ p {
     width: 204px;
 } */
 
-.doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(2) {
+/* .doctor_remote .all_plan .weekly .inner > :first-child > :nth-child(2) {
     height: 74px;
     top: 42px;
 }
@@ -4162,13 +4162,13 @@ p {
 .doctor_remote .all_plan .weekly .inner > :nth-child(3) > :nth-child(2) {
     height: 430px;
     top: 42px;
-}
+} */
 
 /* .doctor_remote .all_plan .weekly .inner > :nth-child(4),
 .doctor_remote .all_plan .weekly .inner > :nth-child(4) .title {
     width: 100px;
 } */
-
+/* 
 .doctor_remote .all_plan .weekly .inner > :nth-child(4) > :nth-child(2) {
     height: 74px;
     top: 42px;
@@ -4178,7 +4178,7 @@ p {
     height: 286px;
     top: 42px;
     left: 52px;
-}
+} */
 
 /* remote_request */
 .remote_request {
