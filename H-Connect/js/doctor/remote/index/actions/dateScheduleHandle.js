@@ -1,4 +1,7 @@
 'use strict';
+const { CustomFullcalendar } = await import(
+    importVersion('/H-Connect/js/lib/fullcalendar/custom/customFullCalendar.js')
+);
 
 const { selectMyScheduleList } = await import(
     importVersion(
@@ -22,9 +25,13 @@ const { history } = await import(
 
 const { getParams } = history;
 
-async function calendarHandle() {
+async function calendarHandle(_selectDate) {
+    console.log('_selectDate: ', _selectDate);
     const queryendDatetime = getParams('endDatetime');
-    const date = $(this).data('date') || queryendDatetime || new Date();
+    let date = queryendDatetime || new Date();
+    if (_selectDate) {
+        date = new Date(_selectDate.dateStr);
+    }
     const startDatetime = moment(date).format('YYYY-MM-DD 00:00:00');
     const endDatetime = moment(date).format('YYYY-MM-DD 23:59:59');
     const { result, list } = await selectMyScheduleList(
@@ -150,4 +157,23 @@ async function init() {
 }
 
 await calendarHandle();
-$('.fc-daygrid-day').on('click', calendarHandle);
+
+const calendarModule = new CustomFullcalendar('#calendar', {
+    selectBox: {
+        year: {
+            use: true,
+            target: '.year_box',
+            next: 2,
+        },
+        month: {
+            use: true,
+            target: '.month_box',
+        },
+    },
+    firstClickUnSelectToday: true,
+    dateClickActiveAble: true,
+    dateClickActive: (_selectDate) => {
+        calendarHandle(_selectDate);
+    },
+    unselectAuto: false,
+});

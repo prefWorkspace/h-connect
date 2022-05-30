@@ -99,11 +99,6 @@ const FILE_TREE = {
                 },
             },
             custom: {
-                'remotePage.js': {
-                    priority: 0,
-                    url_path: '/doctor/remote',
-                    file_path: '/H-Connect/js/lib/fullcalendar/custom/',
-                },
                 'customFullcalendar.js': {
                     type: 'module',
                     priority: 0,

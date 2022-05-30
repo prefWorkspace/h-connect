@@ -218,7 +218,6 @@ export class CustomFullcalendar {
         const _calcedDateArr = _tempDateArr;
         $(element).data('calendar-module-section-date', _calcedDateArr);
         const [startDate, endDate] = _calcedDateArr;
-        console.log('startDate, endDate: ', startDate, endDate);
         this.selectDateCalendar(startDate, endDate);
         if (startDate?.dateStr && endDate?.dateStr) {
             const _minusOneDayEndDate = moment(endDate.dateStr, 'YYYY-MM-DD')
