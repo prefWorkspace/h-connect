@@ -156,49 +156,82 @@ export class CustomFullcalendar {
                 this
             );
     }
-    sectionSelector(selectDate) {
+    pointSectionSelector(selectDate, pointIndex) {
         const { dateStr } = selectDate;
-        const { module } = this;
         const { options } = this.init ?? {};
         const { element } = this.init.target;
+        let _getSavedDate =
+            $(element).data('calendar-module-section-date') ?? [];
 
         function getTimeFunc(_value) {
             return new Date(_value).getTime();
         }
-        let _getSavedDate = $(element).data('start-end-date') ?? [];
+
+        let _tempDateArr = [..._getSavedDate];
+        _tempDateArr[pointIndex] = {
+            time: getTimeFunc(dateStr),
+            dateStr: dateStr,
+        };
+
+        const _calcedDateArr = _tempDateArr;
+        $(element).data('calendar-module-section-date', _calcedDateArr);
+        const [startDate, endDate] = _calcedDateArr;
+        console.log('start-end date: ', startDate, endDate);
+        this.selectDateCalendar(startDate, endDate);
+        if (startDate?.dateStr && endDate?.dateStr) {
+            const _minusOneDayEndDate = moment(endDate.dateStr, 'YYYY-MM-DD')
+                .add(1, 'days')
+                .format('YYYY-MM-DD');
+            this.module.select(startDate.dateStr, _minusOneDayEndDate);
+            typeof options.sectionSelect === 'function' &&
+                options.sectionSelect(
+                    {
+                        startDate: {
+                            dateStr: startDate.dateStr,
+                        },
+                        endDate: {
+                            dateStr: endDate.dateStr,
+                        },
+                    },
+                    this
+                );
+        }
+    }
+    sectionSelector(selectDate) {
+        const { dateStr } = selectDate;
+        const { options } = this.init ?? {};
+        const { element } = this.init.target;
+        function getTimeFunc(_value) {
+            return new Date(_value).getTime();
+        }
+        let _getSavedDate =
+            $(element).data('calendar-module-section-date') ?? [];
         let _getClickDate = {
             time: getTimeFunc(dateStr),
             dateStr: dateStr,
         };
         let _tempDateArr = [_getClickDate];
-
         if (_getSavedDate) {
             _getSavedDate.forEach((_item) => {
                 _tempDateArr.push(_item);
             });
         }
-
         _tempDateArr.sort((a, b) => {
             return a['time'] - b['time'];
         });
         if (_tempDateArr.length > 2) {
             _tempDateArr = [_getClickDate];
         }
-
         const _calcedDateArr = _tempDateArr;
-
-        $(element).data('start-end-date', _calcedDateArr);
-
+        $(element).data('calendar-module-section-date', _calcedDateArr);
         const [startDate, endDate] = _calcedDateArr;
-
+        console.log('startDate, endDate: ', startDate, endDate);
         this.selectDateCalendar(startDate, endDate);
-
         if (startDate?.dateStr && endDate?.dateStr) {
             const _minusOneDayEndDate = moment(endDate.dateStr, 'YYYY-MM-DD')
                 .add(1, 'days')
                 .format('YYYY-MM-DD');
-            module.select(startDate.dateStr, _minusOneDayEndDate);
-
+            this.module.select(startDate.dateStr, _minusOneDayEndDate);
             typeof options.sectionSelect === 'function' &&
                 options.sectionSelect(
                     {

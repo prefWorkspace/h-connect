@@ -172,12 +172,12 @@ export function coopRequestScheduleSectionTmpl() {
                     <p>마감시간</p>
 
                     <div class="input_wrap">
-                        <input data-validate='hours' data-key="rqd_end_hours" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='[0, 18]' data-key="rqd_end_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-validate='minutes' data-key="rqd_end_minutes" data-keyType="input" type="text" placeholder="00">
+                        <input data-validate='depend=rqd_end_hours[18],range=[0, 59]' data-key="rqd_end_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
