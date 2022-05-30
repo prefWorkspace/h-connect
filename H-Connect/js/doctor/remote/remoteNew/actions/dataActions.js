@@ -134,6 +134,7 @@ function dateMinMax(_dateValid) {
             const _isDepend = _dateValid.includes('depend');
 
             if (_isDepend) {
+                // 의존 validate 추가
                 const _depend = _dateValid.split(',')[0].split('depend=')[1];
                 const _dependKey = _depend.split('[')[0];
                 const _dependValue = parseInt(
