@@ -45,20 +45,6 @@ function dateTimeHanlder(startDatetime, endDatetime) {
     const topStart =
         start - 8 > 0 ? 42 * (1 + minuteStart) + (start - 9) * 48 : 42;
     const topLength = end - start > 10 ? 48 * 9 : 48 * (end - start);
-    // console.log('end==');
-    // console.log(end);
-    // console.log('start==');
-    // console.log(start);
-    // console.log('topLength==');
-    // console.log(topLength);
-    if (day === '31') {
-        console.log('startDatetime==');
-        console.log(start);
-        console.log('endDatetime==');
-        console.log(end);
-        console.log('topLength==');
-        console.log(topLength);
-    }
 
     return {
         topStart,

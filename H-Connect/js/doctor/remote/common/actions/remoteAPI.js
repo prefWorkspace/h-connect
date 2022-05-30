@@ -29,6 +29,9 @@ export async function insertConsultReply(consultId, scheduleInfo) {
         scheduleInfo,
     };
 
+    console.log('obj===');
+    console.log(obj);
+
     return serverController.ajaxAwaitController(
         'API/Doctor/InsertConsultReply',
         'POST',

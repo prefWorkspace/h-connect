@@ -13,19 +13,17 @@ export function dataScheduleTemplates(_data) {
 
     let html = '';
     let remote_member = '';
-    let doctorLevelName = '-',
-        doctorName = '-';
-    if (memberInfoList !== null) {
-        doctorLevelName = memberInfoList[0].doctorLevelName;
-        doctorName = memberInfoList[0].doctorName;
-    }
+
+    const { doctorLevelName, doctorName } = memberInfoList.find(
+        (item) => item.host === 'Y'
+    );
 
     if (isentState === 1) {
         remote_member = '내가 보냄';
     } else {
         remote_member = `${doctorName} ${doctorLevelName} ${
             memberInfoList && memberInfoList.length > 1
-                ? `외 ${memberInfoList.length - 1}`
+                ? `외 ${memberInfoList.length - 1}명`
                 : ''
         }`;
     }

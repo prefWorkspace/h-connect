@@ -49,8 +49,7 @@ async function remoteAlarmClick(_consultid, _isentState) {
             : _isentState;
 
     const { result, list } = await selectConsultView(consultId);
-    console.log('list==');
-    console.log(list);
+
     if (result) {
         const {
             caseInfoList,
@@ -94,8 +93,6 @@ async function remoteAlarmClick(_consultid, _isentState) {
                     scheduleInfoList[i]
                 );
             }
-            console.log('scheduleInfoHTML==');
-            console.log(scheduleInfoHTML);
 
             // 협진 가능 시간 선택 렌더링
             $(`#isentstate${isentState} #tab-1`).html(scheduleInfoHTML);

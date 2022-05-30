@@ -13,7 +13,11 @@ export async function insertReplyHandle() {
             isChecked = isChecked || _isChecked;
         });
 
-        if (isChecked && buttonTitle === '회신하기') {
+        if (buttonTitle === '회신완료') {
+            return;
+        }
+
+        if (isChecked) {
             $('#consultChannel1 .btn_reply').attr('disabled', false);
             $('#consultChannel1 .btn_reply').addClass('active');
         }
@@ -43,6 +47,8 @@ $('#consultChannel1 .btn_reply').on('click', async function () {
     if (result) {
         $(this).text('회신완료');
         $(this).attr('disabled', true);
+    } else {
+        alert('회신에 실패하였습니다');
     }
 });
 

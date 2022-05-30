@@ -18,14 +18,14 @@ const { fakeOpinionConsultList } = await import(
 
 async function init() {
     const { opinionConsultList, result } = await selectOpinionConsultList();
-
     $('#total_count').text(opinionConsultList.length);
 
-    if (result && opinionConsultList.length > 0) {
+    if (result) {
         opinionRender(opinionConsultList);
-    } else {
-        opinionRender(fakeOpinionConsultList);
     }
+    // else {
+    //     opinionRender(fakeOpinionConsultList);
+    // }
 }
 
 await init();

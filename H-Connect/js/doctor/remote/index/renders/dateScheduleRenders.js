@@ -95,16 +95,17 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         startDatetime,
         consultChannel,
         scheduleInfoList,
+        createId,
     } = _scheduleData[0];
 
     // selectMycalendar.find((item) => item.consultId === consultId);
 
     const withMemberData = memberInfoList.filter(
-        (item) => item.remoteState !== 'N'
+        (item) => item.replyState === 'Y' && createId !== item.doctorId
     );
 
     const withOutMemberData = memberInfoList.filter(
-        (item) => item.remoteState === 'N'
+        (item) => item.replyState === 'N' && createId !== item.doctorId
     );
 
     withMember = loopHtml(withMemberData, 1);
