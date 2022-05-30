@@ -92,7 +92,8 @@ async function detailSectionDateInit() {
     let isWeekend = false;
     let isToday = true;
     let dayNum = moment(today).day();
-    let id = moment(today).format('YYYYMMDD');
+    let id = moment(today).format('YYYYMMDD') + 'detail';
+    let endDatetime = '';
 
     for (let i = 0; i < 5; i++) {
         if (dayNum === 0 || dayNum === 6) {
@@ -118,13 +119,15 @@ async function detailSectionDateInit() {
         dayNum = moment(today)
             .add(i + 1, 'd')
             .day();
-        id = moment(today)
-            .add(i + 1, 'd')
-            .format('YYYYMMDD');
+        id =
+            moment(today)
+                .add(i + 1, 'd')
+                .format('YYYYMMDD') + 'detail';
     }
 
     $('#tab-2 .inner').html(innerHTML);
-    // await myScheduleInit();
+    endDatetime = moment(id).subtract(1, 'd').format('YYYY-MM-DD 23:59:59');
+    await myScheduleInit(endDatetime);
 }
 
 // 일정이 두세개 들어갔을 때 계산하기 위한 함수 (중단)
@@ -153,19 +156,27 @@ async function positionHandle() {
 }
 
 // API로 받아온 나의 일정을 렌더링 하는 함수
-async function myScheduleInit() {
+async function myScheduleInit(endDatetime = null) {
     let html = '';
     const today = new Date();
     const nowHour = moment(today).format('HH');
-    const { result, list } = await selectMyScheduleList();
-
+    const { result, list } = await selectMyScheduleList(null, endDatetime);
+    console.log('list==');
+    console.log(list);
     $(`#${nowHour}`).addClass('active');
     if (result) {
         for (let i = 0; i < list.length; i++) {
             const { startDatetime } = list[i];
             const id = moment(startDatetime).format('YYYYMMDD');
             html = myCalendarTemplate(list[i]);
+            console.log('html===');
+            console.log(html);
+            console.log('id===');
+            console.log(id);
             $(`#${id} .title`).after(html);
+            if (pathname.indexOf('index') === -1) {
+                $(`#${id}detail .title`).after(html);
+            }
         }
     }
     // else {

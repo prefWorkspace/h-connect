@@ -83,6 +83,10 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
     let witOutMember = '';
     let canWithTime = '';
 
+    if (_scheduleData.length === 0) {
+        return;
+    }
+
     const {
         memberInfoList,
         caseInfoList,
@@ -202,15 +206,15 @@ export async function dateScheduleDetailRender(
     if (consultChannel === 1 && isentState === 1) {
         const { result: confirmViewResult, list: confirmViewList } =
             await selectConsultConfirmView(consultId);
-        selectList = [...confirmViewList];
+        selectList = confirmViewResult ? [...confirmViewList] : [];
     } else if (consultChannel === 1 && isentState !== 1) {
         const { result: consultViewResult, list: consultViewList } =
             await selectConsultView(consultId);
-        selectList = [...consultViewList];
+        selectList = consultViewResult ? [...consultViewList] : [];
     } else {
         const { result, list } =
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
-        selectList = [...list];
+        selectList = result ? [...list] : [];
     }
 
     dateSchduleDetailHandle(selectList, isentState);
