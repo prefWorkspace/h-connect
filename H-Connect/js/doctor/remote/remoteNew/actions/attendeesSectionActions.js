@@ -6,11 +6,13 @@ const {
     importVersion('/H-Connect/js/doctor/remote/remoteNew/actions/selector.js')
 );
 
-const {
-    departmentDoctorListToBasicList,
-    renderActivateCheckBox,
-    renderActivateChoiceDoctor,
-} = await import(
+const { departmentDoctorListToBasicList } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
+    )
+);
+
+const { renderActivateCheckBox, renderActivateChoiceDoctor } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
     )
@@ -66,6 +68,7 @@ function removeChoiceDoctorListAction() {
 function searchDoctorAction() {
     // 의사 검색 액션
     function appendSearchDoctorList(_containerEl, _searchList) {
+        console.log('_searchList: ', _searchList);
         if (_searchList && _searchList.length > 0) {
             const _searchListHtml = _searchList.htmlFor((_data) => {
                 return searchDoctorBlock(_data);
