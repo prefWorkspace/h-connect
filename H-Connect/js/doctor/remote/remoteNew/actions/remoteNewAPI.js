@@ -262,6 +262,7 @@ export async function insertConsult(_data) {
     if (!id) return;
     const { userName, departmentCode, departmentName } =
         (await selectHisDoctorHost(id)) ?? {}; // 호스트 정보 받아오기
+    console.log('_data: ', _data);
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/InsertConsult',
         'POST',
@@ -276,7 +277,9 @@ export async function insertConsult(_data) {
             scheduleInfo: scheduleInfo,
             userId: id,
         }),
-        (res) => {},
+        (res) => {
+            console.log('res:', res);
+        },
         (err) => console.log(err)
     );
     return res;
@@ -300,4 +303,31 @@ export async function selectScheduleCheck(_data) {
         (err) => console.log(err)
     );
     return res;
+}
+
+// 협진 일정 요청 내가 보냄 상세조회 API
+export async function selectConsultConfirmView(_consultId) {
+    const { id } = getUserInfo();
+    if (!id) return;
+    const obj = {
+        ...commonRequest(),
+        consultId: _consultId,
+        userId: id,
+    };
+    const res = await serverController.ajaxAwaitController(
+        'API/Doctor/SelectConsultConfirmView',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+    if (res.result) {
+        return res.list[0] ?? [];
+    } else {
+        return null;
+    }
 }

@@ -196,7 +196,9 @@ export function coopRequestScheduleSectionTmpl() {
     </div>
     `;
 }
-export function coopRequestScheduleBlockTmpl() {
+export function coopRequestScheduleBlockTmpl(_data) {
+    const { canMonth, canDay, startHours, startMinutes, endHours, endMinutes } =
+        _data ?? {};
     // 협진 일정 요청
     return `
     <div class="up_box">
@@ -210,12 +212,16 @@ export function coopRequestScheduleBlockTmpl() {
                 <p>협진일자</p>
 
                 <div class="input_wrap">
-                    <input data-validate='month' data-key="rqc_start_month" data-keyType="input" type="text" placeholder="00">
+                    <input ${
+                        canMonth ? `value=${canMonth}` : ''
+                    } data-validate='month' data-key="rqc_start_month" data-keyType="input" type="text" placeholder="00">
                     <p>월</p>
                 </div>
 
                 <div class="input_wrap">
-                    <input data-validate='date' data-key="rqc_start_date" data-keyType="input" type="text" placeholder="00">
+                    <input ${
+                        canDay ? `value=${canDay}` : ''
+                    } data-validate='date' data-key="rqc_start_date" data-keyType="input" type="text" placeholder="00">
                     <p>일</p>
                 </div>
             </div>
@@ -225,12 +231,16 @@ export function coopRequestScheduleBlockTmpl() {
                     <p>시작시간</p>
 
                     <div class="input_wrap">
-                        <input data-validate='[0, 17]' data-key="rqc_start_hours" data-keyType="input" type="text" placeholder="00">
+                        <input ${
+                            startHours ? `value=${startHours}` : ''
+                        } data-validate='[0, 17]' data-key="rqc_start_hours" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-validate='depend=rqc_start_hours[17],range=[0, 59]' data-key="rqc_start_minutes" data-keyType="input" type="text" placeholder="00">
+                        <input ${
+                            startMinutes ? `value=${startMinutes}` : ''
+                        } data-validate='depend=rqc_start_hours[17],range=[0, 59]' data-key="rqc_start_minutes" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -239,12 +249,16 @@ export function coopRequestScheduleBlockTmpl() {
                     <p>종료시간</p>
 
                     <div class="input_wrap">
-                        <input data-validate='[0, 18]' data-key="rqc_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
+                        <input ${
+                            endHours ? `value=${endHours}` : ''
+                        } data-validate='[0, 18]' data-key="rqc_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
-                        <input data-validate='depend=rqc_end_hours[18],range=[0, 59]' data-key="rqc_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
+                        <input  ${
+                            endMinutes ? `value=${endMinutes}` : ''
+                        } data-validate='depend=rqc_end_hours[18],range=[0, 59]' data-key="rqc_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
                         <p>분</p>
                     </div>
                 </div>
@@ -292,7 +306,8 @@ export function coopSearchPatientBlock(_data) {
     </p>
     `;
 }
-export function coopContentCaseBlockTmpl() {
+export function coopContentCaseBlockTmpl(_data) {
+    const { caseTitle, patientName, caseContents } = _data ?? {};
     // 협진 내용 블록
     return `
       <div class='content-caseblock'>
@@ -308,7 +323,9 @@ export function coopContentCaseBlockTmpl() {
                 <p>Case 명.</p>
 
                 <div class="text_wrap">
-                    <textarea data-key="caseTitle" data-keyType="input" placeholder="case 명을 작성해주세요"></textarea>
+                    <textarea data-key="caseTitle" data-keyType="input" placeholder="case 명을 작성해주세요">${
+                        caseTitle ?? ''
+                    }</textarea>
                 </div>
 
                 <!-- <input type="text" placeholder="case 명을 작성해주세요"> -->
@@ -333,14 +350,18 @@ export function coopContentCaseBlockTmpl() {
                     </div>
                 </div>
 
-                <textarea style='margin-top:16px;' placeholder='환자명' readonly data-key="cont_patient_name" data-keyType="data[patient-name,patient-gender,patient-age,patient-code,patient-ward,patient-ward-room,patient-condition]" class='patient-select-name'></textarea>
+                <textarea style='margin-top:16px;' placeholder='환자명' readonly data-key="cont_patient_name" data-keyType="data[patientName,patientGender,patientAge,patientCode,patientWard,patientWardRoom,patientCondition]" class='patient-select-name'>${
+                    patientName ?? ''
+                }</textarea>
             </div>
 
             <div class="contents">
                 <p>협진 내용</p>
 
                 <div class="text_wrap">
-                    <textarea data-key="caseContents" data-keyType="input" placeholder="협진 내용을 입력해주세요"></textarea>
+                    <textarea data-key="caseContents" data-keyType="input" placeholder="협진 내용을 입력해주세요">${
+                        caseContents ?? ''
+                    }</textarea>
                 </div>
             </div>
         </div>

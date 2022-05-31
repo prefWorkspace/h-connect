@@ -26,7 +26,6 @@ const { history } = await import(
 const { getParams } = history;
 
 async function calendarHandle(_selectDate) {
-    console.log('_selectDate: ', _selectDate);
     const queryendDatetime = getParams('endDatetime');
     let date = queryendDatetime || new Date();
     if (_selectDate) {
@@ -141,6 +140,9 @@ async function init() {
     if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0`).show();
         $(`#consultChannel0 .remote_member`).text(remote_member);
+
+        /* Ji : 수정 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
+        scheduleModifyBtnEventControll(consultId);
     } else {
         $(`#consultChannel${consultChannel}`).show();
         $(`#consultChannel${consultChannel} .remote_member`).text(
@@ -156,6 +158,16 @@ async function init() {
 
 await calendarHandle();
 
+function scheduleModifyBtnEventControll(_consultId) {
+    const _baseLink = '/doctor/remote_new.html';
+    /* Ji : 협진 일정 요청 수정 버튼 이벤트 부여*/
+    $('.me_request .container .btn_modify')
+        .off()
+        .on('click', function () {
+            window.location.href = `${_baseLink}?modify=${_consultId}`;
+        });
+}
+/* Ji : 달력 모듈 */
 const calendarModule = new CustomFullcalendar('#calendar', {
     selectBox: {
         year: {

@@ -1,3 +1,7 @@
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
+
 const { selectMeasurementInfoList } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/actions/remoteNewAPI.js'
@@ -11,15 +15,6 @@ const { getDataWithTarget, validateCoopAll, validateDate, serviceData } =
     );
 const { coopSurgerySelector, coopContentSelector } = await import(
     importVersion('/H-Connect/js/doctor/remote/remoteNew/actions/selector.js')
-);
-const {
-    renderActivateCheckBox,
-    renderActivateChoiceDoctor,
-    renderActivateChoiceDoctorLength,
-} = await import(
-    importVersion(
-        '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
-    )
 );
 const { renderCooperationSection } = await import(
     importVersion(
@@ -78,6 +73,9 @@ function addSelectBoxAction() {
 }
 
 function initAction() {
+    const { getParams } = history;
+    const _modifyParam = getParams('modify');
+    if (_modifyParam) return;
     addSelectBoxAction();
 }
 initAction();

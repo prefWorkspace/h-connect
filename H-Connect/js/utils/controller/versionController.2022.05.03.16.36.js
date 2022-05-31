@@ -469,6 +469,12 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/remoteNew/renders/',
                     },
+                    'firstUpdateInformationRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                    },
                 },
                 templates: {
                     'bookmarkSectionTmpl.js': {

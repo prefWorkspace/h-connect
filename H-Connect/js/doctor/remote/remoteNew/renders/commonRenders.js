@@ -6,6 +6,12 @@ const { errorText } = await import(
     importVersion('/H-Connect/js/common/text/validationText.js')
 );
 
+const { validateCoopAll } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
+    )
+);
+
 export function renderChoiceDoctorEmptyControll(_isEmpty) {
     // 선택된 의사 없을때 메세지 표시 여부 렌더 함수
     if (_isEmpty) {
@@ -65,7 +71,7 @@ export function renderActivateChoiceDoctor(_targetData) {
 
     renderChoiceDoctorValidation();
     renderActivateChoiceDoctorLength();
-    const _checkValidateAll = coopValidateAll();
+    const _checkValidateAll = validateCoopAll();
 
     return { pass: _checkValidateAll };
 }

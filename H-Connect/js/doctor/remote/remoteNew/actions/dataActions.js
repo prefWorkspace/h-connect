@@ -1,11 +1,6 @@
 const { coopSurgerySelector, coopParticipantInformSelector } = await import(
     importVersion('/H-Connect/js/doctor/remote/remoteNew/actions/selector.js')
 );
-const { renderActivateCreateCoopBtn } = await import(
-    importVersion(
-        '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
-    )
-);
 
 export function departmentDoctorListToBasicList(_departmentDoctorList) {
     /* 각 과별 의사 목록 하나로 합치는 리스트 함수 */
@@ -90,7 +85,6 @@ export function validateCoopAll() {
 
             const { module } = $('#calendar').data('calendar-module');
             const _year = moment(module.getDate()).format('YYYY');
-            console.log('_year: ', _year);
 
             const _startMonth = _opinionInfo.filter(
                 (item) => item.key === 'op_start_month'
@@ -142,7 +136,7 @@ export function validateCoopAll() {
         _checkSectionData && _checkContentCaseData && _checkChoiceDoctorLenData
             ? true
             : false;
-    renderActivateCreateCoopBtn(_checkAllValidateData);
+    $('#create_cooperation_btn').attr('disabled', !_checkAllValidateData);
     return _checkAllValidateData;
 }
 
@@ -353,7 +347,12 @@ export function calcDataCaseContentList() {
                 _obj[key] = value;
             } else if (key === 'cont_patient_name') {
                 for (const [ptKey, ptValue] of Object.entries(value)) {
-                    _obj[ptKey] = ptValue;
+                    let _tempPtKey = ptKey;
+                    /* 예외 상황 변환 */
+                    if (_tempPtKey === 'patientCode') {
+                        _tempPtKey = 'patientId';
+                    }
+                    _obj[_tempPtKey] = ptValue;
                 }
             } else if (key === 'caseContents') {
                 _obj[key] = value;
@@ -405,7 +404,6 @@ export function calcDataRealTimeDate() {
         rt_end_minutes,
     } = _tempObj ?? {};
     const { module } = $('#calendar').data('calendar-module');
-    const _year = moment(module.getDate()).format('YYYY');
     const _fullYear = getYearFromCalendar();
     return {
         startDatetime: `${_fullYear}-${rt_start_month}-${rt_start_date} ${rt_start_hours}:${rt_start_minutes}:00`,

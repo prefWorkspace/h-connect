@@ -1,4 +1,4 @@
-const { validateCoopAll, calendarData } = await import(
+const { validateCoopAll } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
     )
