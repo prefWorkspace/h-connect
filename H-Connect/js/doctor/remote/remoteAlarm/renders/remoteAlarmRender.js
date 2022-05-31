@@ -10,10 +10,6 @@ const { remoteAlarmTemplates } = await import(
     )
 );
 
-const { fakeSelectConsultView } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 const { selectConsultView } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteAlarm/actions/remoteAlarmAPI.js'
@@ -28,6 +24,13 @@ const {
 } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteAlarm/templates/remoteAlarmDetailTemplate.js'
+    )
+);
+
+// 내가 보낸 협진 가능시간 시간표로 보기 탬플릿
+const { canDateWithScheduleTemplates } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/index/templates/dateScheduleDetailTemplates.js'
     )
 );
 
@@ -68,8 +71,6 @@ async function remoteAlarmClick(_consultid, _isentState) {
         }
 
         // 협진 참여자 탬플릿
-        console.log('memberInfoList====');
-        console.log(memberInfoList);
         for (let i = 0; i < memberInfoList.length; i++) {
             const { replyState } = memberInfoList[i];
             if (replyState === 'Y') {

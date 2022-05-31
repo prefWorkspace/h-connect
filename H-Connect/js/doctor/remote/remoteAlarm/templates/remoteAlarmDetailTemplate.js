@@ -130,7 +130,6 @@ export function remoteAlarmTimeTemplateIsent(_data) {
 }
 
 // 의사 리스트
-
 export function remoteAlarmDoctorTemplate(_data) {
     const { doctorLevelName, doctorName } = _data;
     return `

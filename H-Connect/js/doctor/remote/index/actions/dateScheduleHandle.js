@@ -170,14 +170,3 @@ const calendarModule = new CustomFullcalendar('#calendar', {
     },
     unselectAuto: false,
 });
-
-$('body').on('click', '.section.me_request #metab-2 .inner .num', function () {
-    const ORDERNO = $(this).data('orderno');
-    const list = $('#metab-1 > div');
-    const dateTimeList = [...list];
-    const clickedTime = dateTimeList.find(
-        (item) => $(item).data('orderno') === ORDERNO
-    );
-    $('#metab-2 .select_week').html(clickedTime);
-    $('#metab-2 .select_week > div').show();
-});
