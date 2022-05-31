@@ -3565,6 +3565,7 @@ p {
 .doctor .time_select .week_view {
     width: 384px;
     margin: 0 auto;
+    /* height: 700px; */
     height: 550px;
     /* padding-left: 36px; */
     /* display: flex; */
@@ -4243,13 +4244,13 @@ p {
 }
 
 .remote_request .list .row div {
-    /* width: 400px; */
+    width: 400px;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .remote_request .list .row div .time {
-    margin-right: 80px;
+    /* margin-right: 80px; */
 }
 
 .remote_request .list .row .you_or {

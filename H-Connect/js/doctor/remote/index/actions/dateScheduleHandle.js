@@ -9,10 +9,6 @@ const { selectMyScheduleList } = await import(
     )
 );
 
-const { selectMycalendar } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 const { dateScheduleRender, dateScheduleDetailRender } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/renders/dateScheduleRenders.js'
@@ -53,7 +49,7 @@ async function calendarHandle(_selectDate) {
     await init();
 }
 
-function myCalendarClickHandler() {
+export function myCalendarClickHandler() {
     const consultChannel = $(this).data('consultchannle');
     const isentState = +$(this).data('isentstate');
     const consultId = $(this).data('consultid');

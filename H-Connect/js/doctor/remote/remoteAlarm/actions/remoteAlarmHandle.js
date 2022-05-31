@@ -6,10 +6,6 @@ const { selectConsultAlarmsList, selectOpinionConsultList } = await import(
     )
 );
 
-const { fakeConsultAlarmList } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 const { remoteAlarmRender } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteAlarm/renders/remoteAlarmRender.js'

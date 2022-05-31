@@ -5,31 +5,30 @@ const { insertConsultReply } = await import(
 );
 
 export async function insertReplyHandle() {
-    $('body').on('click', '#consultChannel1 #tab-1 .green_custom', function () {
-        let isChecked = false;
-        const buttonTitle = $('#consultChannel1 .btn_reply').text();
-        $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
-            const _isChecked = $(value).is(':checked');
-            isChecked = isChecked || _isChecked;
-        });
-
-        if (buttonTitle === '회신완료') {
-            return;
-        }
-
-        if (isChecked) {
-            $('#consultChannel1 .btn_reply').attr('disabled', false);
-            $('#consultChannel1 .btn_reply').addClass('active');
-        }
-
-        if (!isChecked) {
-            $('#consultChannel1 .btn_reply').attr('disabled', true);
-            $('#consultChannel1 .btn_reply').removeClass('active');
-        }
+    // section right ask_request
+    let isChecked = false;
+    const buttonTitle = $('.section.ask_request .btn_reply').text();
+    $('.section.ask_request #tab-1 .green_custom').each((index, value) => {
+        const _isChecked = $(value).is(':checked');
+        isChecked = isChecked || _isChecked;
     });
+
+    if (buttonTitle === '회신완료') {
+        return;
+    }
+
+    if (isChecked) {
+        $('.section.ask_request .btn_reply').attr('disabled', false);
+        $('.section.ask_request .btn_reply').addClass('active');
+    }
+
+    if (!isChecked) {
+        $('.section.ask_request .btn_reply').attr('disabled', true);
+        $('.section.ask_request .btn_reply').removeClass('active');
+    }
 }
 
-$('#consultChannel1 .btn_reply').on('click', async function () {
+$('.section.ask_request .btn_reply').on('click', async function () {
     let consultId;
     const scheduleInfo = [];
     $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
@@ -55,5 +54,23 @@ $('#consultChannel1 .btn_reply').on('click', async function () {
         alert('회신에 실패하였습니다');
     }
 });
+
+$('body').on('click', '.section.me_request #metab-2 .inner .num', function () {
+    const ORDERNO = $(this).data('orderno');
+    const list = $('#metab-1 > div');
+    const dateTimeList = [...list];
+    const clickedTime = dateTimeList.find(
+        (item) => $(item).data('orderno') === ORDERNO
+    );
+    $('#metab-2 .select_week').html(clickedTime);
+    $('#metab-2 .select_week > div').show();
+    $('#metab-2').addClass('on');
+});
+
+$('body').on(
+    'click',
+    '.section.ask_request #tab-1 .green_custom',
+    async () => await insertReplyHandle()
+);
 
 await insertReplyHandle();

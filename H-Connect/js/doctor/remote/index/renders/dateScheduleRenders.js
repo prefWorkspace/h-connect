@@ -11,6 +11,7 @@ const {
     doctorListTemplates,
     canDateWithTemplates,
     canDateWithTemplatesisentnot,
+    canDateWithScheduleTemplates,
 } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/templates/dateScheduleDetailTemplates.js'
@@ -46,6 +47,8 @@ function loopHtml(_list, type) {
             html += canDateWithTemplates(_list[i]);
         } else if (type === 4) {
             html += canDateWithTemplatesisentnot(_list[i]);
+        } else if (type === 5) {
+            html += canDateWithScheduleTemplates(_list[i]);
         }
     }
 
@@ -82,6 +85,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
     let withMember = '';
     let witOutMember = '';
     let canWithTime = '';
+    let canWithTimeSchedule = '';
 
     if (_scheduleData.length === 0) {
         return;
@@ -98,6 +102,9 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         createId,
     } = _scheduleData[0];
 
+    // async function detailSectionIsentInit(){
+
+    // }
     // selectMycalendar.find((item) => item.consultId === consultId);
 
     const withMemberData = memberInfoList.filter(
@@ -115,6 +122,8 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         isentState === 1
             ? loopHtml(scheduleInfoList, 3)
             : loopHtml(scheduleInfoList, 4);
+    canWithTimeSchedule =
+        isentState === 1 ? loopHtml(scheduleInfoList, 5) : null;
     // caseInfo 및 참여자 정보
     if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
@@ -128,6 +137,10 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
             witOutMember
         );
         $('#metab-1').html(canWithTime);
+
+        if (canWithTimeSchedule !== null) {
+            $('#metab-2 .inner').html(canWithTimeSchedule);
+        }
 
         // 카운팅
         $(`#consultChannel0 .collabor_wrap .member .total_doctor_count`).text(
@@ -216,6 +229,5 @@ export async function dateScheduleDetailRender(
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
         selectList = result ? [...list] : [];
     }
-
     dateSchduleDetailHandle(selectList, isentState);
 }
