@@ -5,31 +5,38 @@ const { insertConsultReply } = await import(
 );
 
 export async function insertReplyHandle() {
-    $('body').on('click', '#consultChannel1 #tab-1 .green_custom', function () {
-        let isChecked = false;
-        const buttonTitle = $('#consultChannel1 .btn_reply').text();
-        $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
-            const _isChecked = $(value).is(':checked');
-            isChecked = isChecked || _isChecked;
-        });
+    // section right ask_request
+    $('body').on(
+        'click',
+        '.section.ask_request #tab-1 .green_custom',
+        function () {
+            let isChecked = false;
+            const buttonTitle = $('.section.ask_request .btn_reply').text();
+            $('.section.ask_request #tab-1 .green_custom').each(
+                (index, value) => {
+                    const _isChecked = $(value).is(':checked');
+                    isChecked = isChecked || _isChecked;
+                }
+            );
 
-        if (buttonTitle === '회신완료') {
-            return;
-        }
+            if (buttonTitle === '회신완료') {
+                return;
+            }
 
-        if (isChecked) {
-            $('#consultChannel1 .btn_reply').attr('disabled', false);
-            $('#consultChannel1 .btn_reply').addClass('active');
-        }
+            if (isChecked) {
+                $('.section.ask_request .btn_reply').attr('disabled', false);
+                $('.section.ask_request .btn_reply').addClass('active');
+            }
 
-        if (!isChecked) {
-            $('#consultChannel1 .btn_reply').attr('disabled', true);
-            $('#consultChannel1 .btn_reply').removeClass('active');
+            if (!isChecked) {
+                $('.section.ask_request .btn_reply').attr('disabled', true);
+                $('.section.ask_request .btn_reply').removeClass('active');
+            }
         }
-    });
+    );
 }
 
-$('#consultChannel1 .btn_reply').on('click', async function () {
+$('.section.ask_request .btn_reply').on('click', async function () {
     let consultId;
     const scheduleInfo = [];
     $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {

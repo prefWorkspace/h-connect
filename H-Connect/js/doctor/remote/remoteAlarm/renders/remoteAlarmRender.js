@@ -43,6 +43,9 @@ async function remoteAlarmClick(_consultid, _isentState) {
     let reply_count = 0;
     let noreply_count = 0;
     const consultId = $(this).data('consultid') || _consultid;
+    const confirmState = $(this).data('confirmstate');
+    const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
+
     const isentState =
         $(this).data('isentstate') !== undefined
             ? $(this).data('isentstate')
@@ -65,6 +68,8 @@ async function remoteAlarmClick(_consultid, _isentState) {
         }
 
         // 협진 참여자 탬플릿
+        console.log('memberInfoList====');
+        console.log(memberInfoList);
         for (let i = 0; i < memberInfoList.length; i++) {
             const { replyState } = memberInfoList[i];
             if (replyState === 'Y') {
@@ -80,7 +85,9 @@ async function remoteAlarmClick(_consultid, _isentState) {
 
         // 협진교수 제목 렌더링
         if (isentState === 0) {
-            const { doctorLevelName, doctorName } = memberInfoList[0];
+            const { doctorLevelName, doctorName } = memberInfoList.find(
+                (doctor) => doctor.host === 'Y'
+            );
             const length = memberInfoList.length;
             const text = `${doctorName} ${doctorLevelName} ${
                 length > 1 ? `외 ${length - 1}명` : ''
@@ -106,6 +113,7 @@ async function remoteAlarmClick(_consultid, _isentState) {
                 );
             }
             $(`#isentstate${isentState} #metab-1`).html(scheduleInfoHTML);
+            $(`isentstate${isentState} .btn_reply`).text(buttonTitle);
         }
 
         // 데드라인 렌더링

@@ -9,10 +9,6 @@ const { selectMyScheduleList } = await import(
     )
 );
 
-const { selectMycalendar } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 const { dateScheduleRender, dateScheduleDetailRender } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/index/renders/dateScheduleRenders.js'
@@ -53,7 +49,7 @@ async function calendarHandle(_selectDate) {
     await init();
 }
 
-function myCalendarClickHandler() {
+export function myCalendarClickHandler() {
     const consultChannel = $(this).data('consultchannle');
     const isentState = +$(this).data('isentstate');
     const consultId = $(this).data('consultid');
@@ -173,4 +169,15 @@ const calendarModule = new CustomFullcalendar('#calendar', {
         calendarHandle(_selectDate);
     },
     unselectAuto: false,
+});
+
+$('body').on('click', '.section.me_request #metab-2 .inner .num', function () {
+    const ORDERNO = $(this).data('orderno');
+    const list = $('#metab-1 > div');
+    const dateTimeList = [...list];
+    const clickedTime = dateTimeList.find(
+        (item) => $(item).data('orderno') === ORDERNO
+    );
+    $('#metab-2 .select_week').html(clickedTime);
+    $('#metab-2 .select_week > div').show();
 });

@@ -229,6 +229,5 @@ export async function dateScheduleDetailRender(
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
         selectList = result ? [...list] : [];
     }
-
     dateSchduleDetailHandle(selectList, isentState);
 }
