@@ -267,7 +267,7 @@ export class CustomFullcalendar {
     afterRender() {
         const { target, options } = this.init ?? {};
         const _this = this;
-
+        $(target.element).removeClass('_before_render');
         $(target.element)
             .off()
             .on('pointerdown', 'tbody', function () {
