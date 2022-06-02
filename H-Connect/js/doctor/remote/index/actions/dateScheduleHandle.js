@@ -30,6 +30,7 @@ const { PopupController } = await import(
         '/H-Connect/js/utils/module/popupController/popupController.js'
     )
 );
+
 const { confirmTwoPopupTmpl } = await import(
     importVersion('/H-Connect/js/common/popup/templates/commonPopupTmpl.js')
 );
@@ -131,6 +132,7 @@ export function myCalendarClickHandler() {
         $(`#consultChannel0 .remote_member`).text(remote_member);
         $('#consultChannel0 #metab-1').addClass('current');
         $('#consultChannel0 #metab-2').removeClass('current');
+        $('#consultChannel0 #metab-2').removeClass('on');
         $(`#consultChannel0 .tabs li[data-tab="metab-1"]`).addClass('current');
         $(`#consultChannel0 .tabs li[data-tab="metab-2"]`).removeClass(
             'current'

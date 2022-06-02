@@ -10,8 +10,7 @@ export function dataScheduleTemplates(_data) {
         consultId,
         confirmState,
     } = _data;
-    console.log('consultId===');
-    console.log(consultId);
+
     let html = '';
     let remote_member = '';
 

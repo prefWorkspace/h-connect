@@ -116,14 +116,15 @@ $('.section .btn_decide').on('click', async function (e) {
 // 시간표보기에서 가능 시간 클릭시 리스트 위에 나타내기
 $('body').on('click', '.section #metab-2 .inner .num', function () {
     const ORDERNO = $(this).data('orderno');
-    const list = $('#metab-1 > div');
-    const dateTimeList = [...list];
-    const clickedTime = dateTimeList.find(
-        (item) => $(item).data('orderno') === ORDERNO
-    );
-    $('#metab-2 .select_week').html(clickedTime);
-    $('#metab-2 .select_week > div').show();
-    $('#metab-2').addClass('on');
+    $('#metab-1 > div').each((index, value) => {
+        if ($(value).data('orderno') === ORDERNO) {
+            const clone = $(value).clone();
+            $('#metab-2 .select_week').html(clone);
+            $('#metab-2 .select_week > div').show();
+            $('#metab-2').addClass('on');
+            return;
+        }
+    });
 });
 
 // 체크 박스 핸들
