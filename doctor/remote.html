@@ -1,140 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>H-Connect</title>
-        <!--Import-->
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"
-        ></script>
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/common.js"
-        ></script>
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/index.js"
-        ></script>
-        <!-- <script
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H-Connect</title>
+    <!--Import-->
+    <script type="text/javascript" defer src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"></script>
+    <script type="text/javascript" defer src="/H-Connect/js/common.js"></script>
+    <script type="text/javascript" defer src="/H-Connect/js/index.js"></script>
+    <!-- <script
             type="text/javascript"
             defer
             src="/H-Connect/js/fullcalendar.js"
         ></script> -->
-        <!-- <script type="text/javascript" defer src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"></script> -->
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/utils/controller/versionController.2022.05.03.16.36.js"
-        ></script>
+    <!-- <script type="text/javascript" defer src="/H-Connect/js/utils/controller/versionController.2022.01.17.js"></script> -->
+    <script type="text/javascript" defer
+        src="/H-Connect/js/utils/controller/versionController.2022.05.03.16.36.js"></script>
 
-        <!--css-->
-        <link rel="stylesheet" href="/H-Connect/css/reset.css" />
-        <link rel="stylesheet" href="/H-Connect/css/common.css" />
-        <link rel="stylesheet" href="/H-Connect/css/fullcalendar.css" />
-        <link rel="stylesheet" href="/H-Connect/css/doctor.css" />
-    </head>
+    <!--css-->
+    <link rel="stylesheet" href="/H-Connect/css/reset.css" />
+    <link rel="stylesheet" href="/H-Connect/css/common.css" />
+    <link rel="stylesheet" href="/H-Connect/css/fullcalendar.css" />
+    <link rel="stylesheet" href="/H-Connect/css/doctor.css" />
+</head>
 
-    <body>
-        <!-- 연결요청 -->
-        <div class="pop connect connect_para connect_doctor">
-            <div class="overlay">
-                <div class="pop_cont">
-                    <div>
-                        <img
-                            src="/H-Connect/img/logo_white.png"
-                            alt="화이트 로고"
-                        />
+<body>
+    <!-- 연결요청 -->
+    <div class="pop connect connect_para connect_doctor">
+        <div class="overlay">
+            <div class="pop_cont">
+                <div>
+                    <img src="/H-Connect/img/logo_white.png" alt="화이트 로고" />
+                </div>
+
+                <h3>이연차 전공의로 부터 응급호출 요청을 받았습니다.</h3>
+                <h2>
+                    김환자 (63. 남) Patient ID. 심장병동. 1308호실. 3병상
+                </h2>
+                <h1>연결 하시겠습니까?</h1>
+
+                <div class="btn_list">
+                    <div class="con_btn refuse">
+                        <button type="button" class="btn_refuse">
+                            <img src="/H-Connect/img/emergency/refuse.svg" alt="통화거절 아이콘" />
+                        </button>
+
+                        <div class="layer refuse_layer">
+                            <p>대응불가</p>
+                        </div>
                     </div>
 
-                    <h3>이연차 전공의로 부터 응급호출 요청을 받았습니다.</h3>
-                    <h2>
-                        김환자 (63. 남) Patient ID. 심장병동. 1308호실. 3병상
-                    </h2>
-                    <h1>연결 하시겠습니까?</h1>
+                    <div class="con_btn mic">
+                        <button type="button" class="btn_mic">
+                            <img src="/H-Connect/img/emergency/mic.svg" alt="마이크 아이콘" />
+                        </button>
 
-                    <div class="btn_list">
-                        <div class="con_btn refuse">
-                            <button type="button" class="btn_refuse">
-                                <img
-                                    src="/H-Connect/img/emergency/refuse.svg"
-                                    alt="통화거절 아이콘"
-                                />
-                            </button>
-
-                            <div class="layer refuse_layer">
-                                <p>대응불가</p>
-                            </div>
+                        <div class="layer mic_layer">
+                            <p>마이크</p>
                         </div>
 
-                        <div class="con_btn mic">
-                            <button type="button" class="btn_mic">
-                                <img
-                                    src="/H-Connect/img/emergency/mic.svg"
-                                    alt="마이크 아이콘"
-                                />
-                            </button>
+                        <div class="toggle_layer mic_off">
+                            <img src="/H-Connect/img/icon/mic_off.svg" alt="마이크 끄는 아이콘" />
+                        </div>
+                    </div>
 
-                            <div class="layer mic_layer">
-                                <p>마이크</p>
-                            </div>
+                    <div class="con_btn webcam">
+                        <button type="button" class="btn_cam">
+                            <img src="/H-Connect/img/emergency/cam.svg" alt="화상카메라 아이콘" />
+                        </button>
 
-                            <div class="toggle_layer mic_off">
-                                <img
-                                    src="/H-Connect/img/icon/mic_off.svg"
-                                    alt="마이크 끄는 아이콘"
-                                />
-                            </div>
+                        <div class="layer cam_layer">
+                            <p>화상캠</p>
                         </div>
 
-                        <div class="con_btn webcam">
-                            <button type="button" class="btn_cam">
-                                <img
-                                    src="/H-Connect/img/emergency/cam.svg"
-                                    alt="화상카메라 아이콘"
-                                />
-                            </button>
-
-                            <div class="layer cam_layer">
-                                <p>화상캠</p>
-                            </div>
-
-                            <div class="toggle_layer cam_off">
-                                <img
-                                    src="/H-Connect/img/icon/cam_off.svg"
-                                    alt="캠끄는 아이콘"
-                                />
-                            </div>
+                        <div class="toggle_layer cam_off">
+                            <img src="/H-Connect/img/icon/cam_off.svg" alt="캠끄는 아이콘" />
                         </div>
+                    </div>
 
-                        <div class="con_btn accept">
-                            <button type="button" class="btn_accept">
-                                <img
-                                    src="/H-Connect/img/icon/call.svg"
-                                    alt="전화기 아이콘"
-                                />
-                            </button>
+                    <div class="con_btn accept">
+                        <button type="button" class="btn_accept">
+                            <img src="/H-Connect/img/icon/call.svg" alt="전화기 아이콘" />
+                        </button>
 
-                            <div class="layer accept_layer">
-                                <p>연결</p>
-                            </div>
+                        <div class="layer accept_layer">
+                            <p>연결</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- 요청한 일정 삭제 -->
-        <div id="delete_schedule_popupwrap"></div>
-        <!-- <div class="pop delete delete_schedule">
+    <!-- 요청한 일정 삭제 -->
+    <div id="delete_schedule_popupwrap"></div>
+    <!-- <div class="pop delete delete_schedule">
             <div class="overlay">
                 <div class="pop_cont">
                     <div>
@@ -154,367 +116,234 @@
             </div>
         </div> -->
 
-        <div id="wrap">
-            <!--헤더 pc-->
-            <header id="header" class="pc_header doc_header">
-                <div class="header_inner">
-                    <div>
-                        <h1 class="logo">
-                            <a class="link" href="index.html">
-                                <img
-                                    class="img"
-                                    src="/H-Connect/img/header/logo.png"
-                                    alt="로고"
-                                />
-                            </a>
-                        </h1>
+    <div id="wrap">
+        <!--헤더 pc-->
+        <header id="header" class="pc_header doc_header">
+            <div class="header_inner">
+                <div>
+                    <h1 class="logo">
+                        <a class="link" href="index.html">
+                            <img class="img" src="/H-Connect/img/header/logo.png" alt="로고" />
+                        </a>
+                    </h1>
 
-                        <div class="header_title">
-                            <h1>원격협진</h1>
-                            <h3>
-                                원격협진에 참석하고, 새로운 협진을 생성합니다.
-                            </h3>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="btn_list">
-                            <button type="button" class="btn_red">
-                                <div>
-                                    <img
-                                        src="/H-Connect/img/header/call_color.png"
-                                        alt="전화기 아이콘"
-                                    />
-                                </div>
-                                응급호출
-                            </button>
-
-                            <button type="button" class="btn_logout">
-                                김한림 교수님
-                            </button>
-
-                            <!-- 응급호출이 있을때 보이게 해주세요 -->
-                            <div class="red_alarm"></div>
-                        </div>
+                    <div class="header_title">
+                        <h1>원격협진</h1>
+                        <h3>
+                            원격협진에 참석하고, 새로운 협진을 생성합니다.
+                        </h3>
                     </div>
                 </div>
 
-                <!-- 로그아웃 팝업 -->
-                <div class="pop logout">
-                    <div class="wrap_inner">
-                        <div>
-                            <p>심장병동</p>
-                            <h3>김한림 교수님</h3>
-                        </div>
+                <div>
+                    <div class="btn_list">
+                        <button type="button" class="btn_red">
+                            <div>
+                                <img src="/H-Connect/img/header/call_color.png" alt="전화기 아이콘" />
+                            </div>
+                            응급호출
+                        </button>
 
-                        <button type="button" class="btn_bye">로그아웃</button>
+                        <button type="button" class="btn_logout">
+                            김한림 교수님
+                        </button>
+
+                        <!-- 응급호출이 있을때 보이게 해주세요 -->
+                        <div class="red_alarm"></div>
                     </div>
                 </div>
-            </header>
+            </div>
 
-            <!--콘텐츠-->
-            <div id="wrap_content" class="doctor doctor_remote">
-                <nav class="nav" id="nav">
-                    <ul class="main_depth gnb">
-                        <li class="gnb_list">
-                            <a class="link" href="index.html"> H-Works </a>
-                        </li>
-
-                        <li class="gnb_list clinic active">
-                            <a class="link" href="remote.html"> 원격협진 </a>
-                        </li>
-
-                        <li class="gnb_list off">
-                            <a class="link" href="monitoring.html">
-                                모니터링
-                            </a>
-                        </li>
-
-                        <li class="gnb_list off">
-                            <a class="link" href="screening.html"> 선별진료 </a>
-                        </li>
-
-                        <li class="gnb_list off">
-                            <a class="link" href="message.html"> 메세지 </a>
-                        </li>
-                    </ul>
-                </nav>
-
+            <!-- 로그아웃 팝업 -->
+            <div class="pop logout">
                 <div class="wrap_inner">
-                    <!-- 원격협진 현황 -->
-                    <section class="section status">
-                        <!-- 원격협진 진행중 -->
-                        <div class="status_label">
-                            <div class="img_container">
-                                <img
-                                    src="/H-Connect/img/header/clinic.svg"
-                                    alt="로고"
-                                />
-                            </div>
+                    <div>
+                        <p>심장병동</p>
+                        <h3>김한림 교수님</h3>
+                    </div>
 
-                            <h1 id="remote_going">원격협진이 진행중입니다.</h1>
+                    <button type="button" class="btn_bye">로그아웃</button>
+                </div>
+            </div>
+        </header>
+
+        <!--콘텐츠-->
+        <div id="wrap_content" class="doctor doctor_remote">
+            <nav class="nav" id="nav">
+                <ul class="main_depth gnb">
+                    <li class="gnb_list">
+                        <a class="link" href="index.html"> H-Works </a>
+                    </li>
+
+                    <li class="gnb_list clinic active">
+                        <a class="link" href="remote.html"> 원격협진 </a>
+                    </li>
+
+                    <li class="gnb_list off">
+                        <a class="link" href="monitoring.html">
+                            모니터링
+                        </a>
+                    </li>
+
+                    <li class="gnb_list off">
+                        <a class="link" href="screening.html"> 선별진료 </a>
+                    </li>
+
+                    <li class="gnb_list off">
+                        <a class="link" href="message.html"> 메세지 </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="wrap_inner">
+                <!-- 원격협진 현황 -->
+                <section class="section status">
+                    <!-- 원격협진 진행중 -->
+                    <div class="status_label">
+                        <div class="img_container">
+                            <img src="/H-Connect/img/header/clinic.svg" alt="로고" />
                         </div>
 
-                        <div class="container">
-                            <div class="title">
-                                <div>
-                                    <div class="text_box">
-                                        <div>
-                                            <img
-                                                src="/H-Connect/img/header/clinic.svg"
-                                                alt="로고"
-                                            />
-                                        </div>
+                        <h1 id="remote_going">원격협진이 진행중입니다.</h1>
+                    </div>
 
-                                        <h2>원격협진 현황</h2>
-                                    </div>
-
-                                    <button type="button" class="btn_new">
-                                        + 신규협진생성
-                                    </button>
-                                </div>
-
-                                <p>원격협진 일정을 확인합니다.</p>
-                            </div>
-
-                            <div class="schedule_list status_list">
-                                <div
-                                    class="row on"
-                                    onclick="location.href='remote.html'"
-                                >
-                                    <p>전체일정보기</p>
-
-                                    <div>
-                                        <div>
-                                            <img
-                                                src="/H-Connect/img/icon/btn_next_green.svg"
-                                                alt="오른쪽 화살표"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="row"
-                                    onclick="location.href='remote_alarm.html'"
-                                >
-                                    <p>협진 일정요청 알림</p>
-
-                                    <div>
-                                        <p>
-                                            <span id="remote_count">-</span>
-                                            개의 알림
-                                        </p>
-
-                                        <div>
-                                            <img
-                                                src="/H-Connect/img/icon/btn_next_green.svg"
-                                                alt="오른쪽 화살표"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="row"
-                                    onclick="location.href='remote_check.html'"
-                                >
-                                    <p>소견 협진</p>
-
-                                    <div>
-                                        <p>
-                                            <span id="opinion_count">-</span>
-                                            개의 소견요청 협진
-                                        </p>
-
-                                        <div>
-                                            <img
-                                                src="/H-Connect/img/icon/btn_next_green.svg"
-                                                alt="오른쪽 화살표"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 전체 협진 일정보기 -->
-                    <section class="section all_plan">
+                    <div class="container">
                         <div class="title">
-                            <h2>전체 협진 일정보기</h2>
+                            <div>
+                                <div class="text_box">
+                                    <div>
+                                        <img src="/H-Connect/img/header/clinic.svg" alt="로고" />
+                                    </div>
+
+                                    <h2>원격협진 현황</h2>
+                                </div>
+
+                                <button type="button" class="btn_new">
+                                    + 신규협진생성
+                                </button>
+                            </div>
+
+                            <p>원격협진 일정을 확인합니다.</p>
+                        </div>
+
+                        <div class="schedule_list status_list">
+                            <div class="row on" onclick="location.href='remote.html'">
+                                <p>전체일정보기</p>
+
+                                <div>
+                                    <div>
+                                        <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" onclick="location.href='remote_alarm.html'">
+                                <p>협진 일정요청 알림</p>
+
+                                <div>
+                                    <p>
+                                        <span id="remote_count">-</span>
+                                        개의 알림
+                                    </p>
+
+                                    <div>
+                                        <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" onclick="location.href='remote_check.html'">
+                                <p>소견 협진</p>
+
+                                <div>
+                                    <p>
+                                        <span id="opinion_count">-</span>
+                                        개의 소견요청 협진
+                                    </p>
+
+                                    <div>
+                                        <img src="/H-Connect/img/icon/btn_next_green.svg" alt="오른쪽 화살표" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 전체 협진 일정보기 -->
+                <section class="section all_plan">
+                    <div class="title">
+                        <h2>전체 협진 일정보기</h2>
+
+                        <div>
+                            <ul class="tab">
+                                <li class="tab-btn current btn_cal" data-tab="tab-01">
+                                    <div>
+                                        <img src="/H-Connect/img/doctor/list.svg" alt="리스트 아이콘" />
+                                    </div>
+                                    달력보기
+                                </li>
+
+                                <li class="tab-btn btn_week" data-tab="tab-02">
+                                    <div>
+                                        <img src="/H-Connect/img/icon/clock.svg" alt="시계 아이콘" />
+                                    </div>
+                                    시간표 보기
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 달력보기 -->
+                    <div id="tab-01" class="cal_view tab-cont current">
+                        <!-- 1280 아코디언 -->
+                        <div class="cal_container_top">
+                            <h2>날짜선택</h2>
 
                             <div>
-                                <ul class="tab">
-                                    <li
-                                        class="tab-btn current btn_cal"
-                                        data-tab="tab-01"
-                                    >
-                                        <div>
-                                            <img
-                                                src="/H-Connect/img/doctor/list.svg"
-                                                alt="리스트 아이콘"
-                                            />
-                                        </div>
-                                        달력보기
-                                    </li>
-
-                                    <li
-                                        class="tab-btn btn_week"
-                                        data-tab="tab-02"
-                                    >
-                                        <div>
-                                            <img
-                                                src="/H-Connect/img/icon/clock.svg"
-                                                alt="시계 아이콘"
-                                            />
-                                        </div>
-                                        시간표 보기
-                                    </li>
-                                </ul>
+                                <p class="open">달력열기</p>
+                                <p class="close">달력닫기</p>
                             </div>
                         </div>
 
-                        <!-- 달력보기 -->
-                        <div id="tab-01" class="cal_view tab-cont current">
-                            <!-- 1280 아코디언 -->
-                            <div class="cal_container_top">
-                                <h2>날짜선택</h2>
+                        <!-- 날짜선택 -->
+                        <div class="cal_container">
+                            <div class="title">
+                                <h2>날짜 선택</h2>
 
-                                <div>
-                                    <p class="open">달력열기</p>
-                                    <p class="close">달력닫기</p>
-                                </div>
-                            </div>
+                                <div class="select">
+                                    <!-- 년도 선택 -->
+                                    <div class="selectBox2 year_box">
 
-                            <!-- 날짜선택 -->
-                            <div class="cal_container">
-                                <div class="title">
-                                    <h2>날짜 선택</h2>
+                                    </div>
 
-                                    <div class="select">
-                                        <!-- 년도 선택 -->
-                                        <div class="selectBox2 year_box">
-                                            <button class="label year_label">
-                                                2021 년<span></span>
-                                            </button>
+                                    <!-- 달 선택 -->
+                                    <div class="selectBox2 month_box">
 
-                                            <div>
-                                                <ul
-                                                    class="optionList year_list"
-                                                >
-                                                    <li
-                                                        class="optionItem year_option"
-                                                    >
-                                                        2020 년
-                                                    </li>
-                                                    <li
-                                                        class="optionItem year_option"
-                                                    >
-                                                        2021 년
-                                                    </li>
-                                                    <li
-                                                        class="optionItem year_option"
-                                                    >
-                                                        2022 년
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!-- 달 선택 -->
-                                        <div class="selectBox2 month_box">
-                                            <button class="label month_label">
-                                                9 월
-                                                <span></span>
-                                            </button>
-
-                                            <ul class="optionList month_list">
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    1 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    2 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    3 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    4 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    5 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    6 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    7 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    8 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    9 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    10 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    11 월
-                                                </li>
-                                                <li
-                                                    class="optionItem month_option"
-                                                >
-                                                    12 월
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
-
-                                <!-- 날짜가 선택되어야 한대요..  -->
-                                <div class="calendar" id="calendar"></div>
                             </div>
 
-                            <!-- 협진 일정목록 -->
-                            <div class="cal_list">
-                                <div class="title">
-                                    <h2>
-                                        <span id="d_day">9월 15일</span> 협진
-                                        일정목록
-                                    </h2>
+                            <!-- 날짜가 선택되어야 한대요..  -->
+                            <div class="calendar _before_render" id="calendar"></div>
+                        </div>
 
-                                    <p>
-                                        <span id="d_day_count">-</span> 개의
-                                        일정
-                                    </p>
-                                </div>
+                        <!-- 협진 일정목록 -->
+                        <div class="cal_list">
+                            <div class="title">
+                                <h2>
+                                    <span id="d_day">-월 -일</span> 협진
+                                    일정목록
+                                </h2>
 
-                                <div class="schedule_list all_list">
-                                    <!-- <div class="row start_remote on">
+                                <p>
+                                    <span id="d_day_count">-</span> 개의
+                                    일정
+                                </p>
+                            </div>
+
+                            <div class="schedule_list all_list">
+                                <!-- <div class="row start_remote on">
                                         <div>
                                             <p>10:30</p>
                                             <p>원격협진</p>
@@ -549,63 +378,63 @@
 
                                         <p class="me">내가 보냄</p>
                                     </div> -->
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 시간표 보기 -->
+                    <div id="tab-02" class="week tab-cont">
+                        <div class="title">
+                            <h2>주간일정 보기</h2>
+
+                            <div class="btn_list">
+                                <button type="button" class="btn_two on">
+                                    2주 보기
+                                </button>
+                                <button type="button" class="btn_four">
+                                    4주 보기
+                                </button>
                             </div>
                         </div>
 
-                        <!-- 시간표 보기 -->
-                        <div id="tab-02" class="week tab-cont">
-                            <div class="title">
-                                <h2>주간일정 보기</h2>
-
-                                <div class="btn_list">
-                                    <button type="button" class="btn_two on">
-                                        2주 보기
-                                    </button>
-                                    <button type="button" class="btn_four">
-                                        4주 보기
-                                    </button>
+                        <div class="weekly">
+                            <!-- 시간 time -->
+                            <div class="time">
+                                <div>
+                                    <p id="09">09:00</p>
+                                </div>
+                                <div>
+                                    <p id="10">10:00</p>
+                                </div>
+                                <div>
+                                    <p id="11">11:00</p>
+                                </div>
+                                <div>
+                                    <p id="12">12:00</p>
+                                </div>
+                                <div>
+                                    <p id="13">13:00</p>
+                                </div>
+                                <div>
+                                    <p id="14">14:00</p>
+                                </div>
+                                <div>
+                                    <p id="15">15:00</p>
+                                </div>
+                                <div>
+                                    <p id="16">16:00</p>
+                                </div>
+                                <div>
+                                    <p id="17">17:00</p>
+                                </div>
+                                <div>
+                                    <p id="18">18:00</p>
                                 </div>
                             </div>
 
-                            <div class="weekly">
-                                <!-- 시간 time -->
-                                <div class="time">
-                                    <div>
-                                        <p id="09">09:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="10">10:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="11">11:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="12">12:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="13">13:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="14">14:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="15">15:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="16">16:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="17">17:00</p>
-                                    </div>
-                                    <div>
-                                        <p id="18">18:00</p>
-                                    </div>
-                                </div>
-
-                                <!-- 2주 보기 -->
-                                <div class="inner two">
-                                    <!-- <div class="day today">
+                            <!-- 2주 보기 -->
+                            <div class="inner two">
+                                <!-- <div class="day today">
                                         <div class="title">
                                             <p>15 월</p>
                                         </div>
@@ -652,7 +481,7 @@
                                             <p>소견요쳥</p>
                                         </div>
                                     </div> -->
-                                    <!-- 
+                                <!-- 
                                     <div class="day">
                                         <div class="title">
                                             <p>18 목</p>
@@ -729,10 +558,10 @@
                                         </div>
                                     </div> -->
 
-                                    <!-- 4주 보기 -->
-                                    <div class="four">
-                                        <div class="wrap">
-                                            <!-- <div class="day">
+                                <!-- 4주 보기 -->
+                                <div class="four">
+                                    <div class="wrap">
+                                        <!-- <div class="day">
                                                 <div class="title">
                                                     <p>15 월</p>
                                                 </div>
@@ -815,59 +644,51 @@
                                                     <p>21 일</p>
                                                 </div>
                                             </div> -->
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    <!-- 원격협진 -->
-                    <section
-                        id="consultChannel3"
-                        class="section right collabor"
-                        style="display: none"
-                    >
-                        <div class="container">
-                            <div class="title">
-                                <div>
-                                    <h2>원격 협진</h2>
-                                    <p class="remote_member">-</p>
-                                </div>
-
-                                <button type="button" class="btn_colla">
-                                    <div>
-                                        <img
-                                            src="/H-Connect/img/header/Hlogo_gray.svg"
-                                            alt="로고"
-                                        />
-                                    </div>
-                                    시작하기
-                                </button>
+                <!-- 원격협진 -->
+                <section id="consultChannel3" class="section right collabor" style="display: none">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>원격 협진</h2>
+                                <p class="remote_member">-</p>
                             </div>
 
-                            <div class="collabor_wrap">
-                                <!-- 협진 시간 -->
-                                <div class="time">
-                                    <h2>협진 시간</h2>
+                            <button type="button" class="btn_colla">
+                                <div>
+                                    <img src="/H-Connect/img/header/Hlogo_gray.svg" alt="로고" />
+                                </div>
+                                시작하기
+                            </button>
+                        </div>
 
-                                    <p>
-                                        <span class="startDate">-</span>
-                                        <span class="startDetetime">-</span
-                                        >~<span class="endDetetime">-</span>
-                                    </p>
+                        <div class="collabor_wrap">
+                            <!-- 협진 시간 -->
+                            <div class="time">
+                                <h2>협진 시간</h2>
+
+                                <p>
+                                    <span class="startDate">-</span>
+                                    <span class="startDetetime">-</span>~<span class="endDetetime">-</span>
+                                </p>
+                            </div>
+
+                            <!-- 협진 내용 -->
+                            <div class="cont">
+                                <div class="title">
+                                    <h2>협진 내용</h2>
+
+                                    <p>실시간 원격 협진</p>
                                 </div>
 
-                                <!-- 협진 내용 -->
-                                <div class="cont">
-                                    <div class="title">
-                                        <h2>협진 내용</h2>
-
-                                        <p>실시간 원격 협진</p>
-                                    </div>
-
-                                    <div class="cont_list case_list">
-                                        <!-- <div class="case">
+                                <div class="cont_list case_list">
+                                    <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
                                                 <p>
@@ -942,93 +763,79 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 협진 참여자 -->
+                            <div class="member">
+                                <div class="title">
+                                    <h2>협진 참여자 정보</h2>
                                 </div>
 
-                                <!-- 협진 참여자 -->
-                                <div class="member">
-                                    <div class="title">
-                                        <h2>협진 참여자 정보</h2>
-                                    </div>
-
-                                    <div class="cont_list">
-                                        <div class="case">
-                                            <div>
-                                                <p>현재 참석 인원.</p>
-                                                <p class="count">
-                                                    <span class="doctor_count"
-                                                        >-</span
-                                                    >명
-                                                </p>
-                                            </div>
-
-                                            <div>
-                                                <p class="more">자세히</p>
-                                                <p class="fold">접기</p>
-
-                                                <div class="img_container">
-                                                    <img
-                                                        src="/H-Connect/img/under_arrow.svg"
-                                                        alt="아래 화살표"
-                                                    />
-                                                </div>
-                                            </div>
+                                <div class="cont_list">
+                                    <div class="case">
+                                        <div>
+                                            <p>현재 참석 인원.</p>
+                                            <p class="count">
+                                                <span class="doctor_count">-</span>명
+                                            </p>
                                         </div>
 
-                                        <div class="case_cont withDoctor">
-                                            <div>
-                                                <!-- <p>박협진 교수님</p> -->
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표" />
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="case_cont withDoctor">
+                                        <div>
+                                            <!-- <p>박협진 교수님</p> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    <!-- 협진 일정 요청 -->
-                    <section
-                        id="consultChannel1"
-                        class="section right ask_request"
-                        style="display: none"
-                    >
-                        <div class="container">
-                            <div class="title">
-                                <div>
-                                    <h2>협진 일정 요청</h2>
-                                    <p class="remote_member">-</p>
-                                </div>
-
-                                <button
-                                    type="button"
-                                    data-isentstate="0"
-                                    class="btn_reply"
-                                    disabled
-                                >
-                                    회신하기
-                                </button>
+                <!-- 협진 일정 요청 -->
+                <section id="consultChannel1" class="section right ask_request" style="display: none">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>협진 일정 요청</h2>
+                                <p class="remote_member">-</p>
                             </div>
 
-                            <div class="collabor_wrap">
-                                <!-- 일정 요청 마감일자 -->
-                                <div class="time">
-                                    <h2>일정 요청 마감일자</h2>
+                            <button type="button" data-isentstate="0" class="btn_reply" disabled>
+                                회신하기
+                            </button>
+                        </div>
 
-                                    <p>
-                                        <span class="deadlineTime">-</span> 까지
-                                    </p>
+                        <div class="collabor_wrap">
+                            <!-- 일정 요청 마감일자 -->
+                            <div class="time">
+                                <h2>일정 요청 마감일자</h2>
+
+                                <p>
+                                    <span class="deadlineTime">-</span> 까지
+                                </p>
+                            </div>
+
+                            <!-- 협진 내용 -->
+                            <div class="cont">
+                                <div class="title">
+                                    <h2>협진 내용</h2>
+
+                                    <p>실시간 원격 협진</p>
                                 </div>
 
-                                <!-- 협진 내용 -->
-                                <div class="cont">
-                                    <div class="title">
-                                        <h2>협진 내용</h2>
-
-                                        <p>실시간 원격 협진</p>
-                                    </div>
-
-                                    <div class="cont_list case_list">
-                                        <!-- <div class="case">
+                                <div class="cont_list case_list">
+                                    <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
                                                 <p>
@@ -1103,47 +910,32 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 협진 가능시간 선택 -->
+                            <div class="time_select">
+                                <div class="title">
+                                    <h2>협진 가능시간 선택</h2>
+
+                                    <ul class="tabs">
+                                        <li class="tab-link current" data-tab="tab-1">
+                                            <div>
+                                                <img src="/H-Connect/img/doctor/list.svg" alt="리스트 아이콘" />
+                                            </div>
+                                        </li>
+
+                                        <li class="tab-link" data-tab="tab-2">
+                                            <div>
+                                                <img src="/H-Connect/img/icon/clock.svg" alt="시계 아이콘" />
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
 
-                                <!-- 협진 가능시간 선택 -->
-                                <div class="time_select">
-                                    <div class="title">
-                                        <h2>협진 가능시간 선택</h2>
-
-                                        <ul class="tabs">
-                                            <li
-                                                class="tab-link current"
-                                                data-tab="tab-1"
-                                            >
-                                                <div>
-                                                    <img
-                                                        src="/H-Connect/img/doctor/list.svg"
-                                                        alt="리스트 아이콘"
-                                                    />
-                                                </div>
-                                            </li>
-
-                                            <li
-                                                class="tab-link"
-                                                data-tab="tab-2"
-                                            >
-                                                <div>
-                                                    <img
-                                                        src="/H-Connect/img/icon/clock.svg"
-                                                        alt="시계 아이콘"
-                                                    />
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- 리스트로 보기 -->
-                                    <div
-                                        id="tab-1"
-                                        class="tab-content list_view current"
-                                    >
-                                        <!-- <div>
+                                <!-- 리스트로 보기 -->
+                                <div id="tab-1" class="tab-content list_view current">
+                                    <!-- <div>
                                             <div class="check">
                                                 <input
                                                     type="checkbox"
@@ -1161,49 +953,46 @@
                                                 ※ 외래진료 일정과 중복됩니다.
                                             </p>
                                         </div> -->
-                                    </div>
+                                </div>
 
-                                    <!-- weekly로 보기 -->
-                                    <div
-                                        id="tab-2"
-                                        class="tab-content week_view"
-                                    >
-                                        <!-- 시간 time -->
-                                        <div class="week_wrap">
-                                            <div class="time">
-                                                <div>
-                                                    <p id="09">09:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="10">10:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="11">11:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="12">12:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="13">13:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="14">14:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="15">15:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="16">16:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="17">17:00</p>
-                                                </div>
-                                                <div>
-                                                    <p id="18">18:00</p>
-                                                </div>
+                                <!-- weekly로 보기 -->
+                                <div id="tab-2" class="tab-content week_view">
+                                    <!-- 시간 time -->
+                                    <div class="week_wrap">
+                                        <div class="time">
+                                            <div>
+                                                <p id="09">09:00</p>
                                             </div>
-                                            <div class="inner">
-                                                <!-- <div class="day today">
+                                            <div>
+                                                <p id="10">10:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="11">11:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="12">12:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="13">13:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="14">14:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="15">15:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="16">16:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="17">17:00</p>
+                                            </div>
+                                            <div>
+                                                <p id="18">18:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="inner">
+                                            <!-- <div class="day today">
                                                     <div class="title">
                                                         <p>15 월</p>
                                                     </div>
@@ -1220,53 +1009,42 @@
                                                         <p>외래진료</p>
                                                     </div>
                                                 </div>  -->
-                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 협진 참여자 -->
+                                    <div class="member">
+                                        <div class="title">
+                                            <h2>협진 참여자 정보</h2>
                                         </div>
 
-                                        <!-- 협진 참여자 -->
-                                        <div class="member">
-                                            <div class="title">
-                                                <h2>협진 참여자 정보</h2>
-                                            </div>
-
-                                            <div class="cont_list">
-                                                <div class="case">
-                                                    <div>
-                                                        <p>현재 참석 인원.</p>
-                                                        <p class="count">
-                                                            <span
-                                                                class="doctor_count"
-                                                                >-</span
-                                                            >명
-                                                        </p>
-                                                    </div>
-
-                                                    <div>
-                                                        <p class="more">
-                                                            자세히
-                                                        </p>
-                                                        <p class="fold">접기</p>
-
-                                                        <div
-                                                            class="img_container"
-                                                        >
-                                                            <img
-                                                                src="/H-Connect/img/under_arrow.svg"
-                                                                alt="아래 화살표"
-                                                            />
-                                                        </div>
-                                                    </div>
+                                        <div class="cont_list">
+                                            <div class="case">
+                                                <div>
+                                                    <p>현재 참석 인원.</p>
+                                                    <p class="count">
+                                                        <span class="doctor_count">-</span>명
+                                                    </p>
                                                 </div>
 
-                                                <div
-                                                    class="case_cont withDoctor"
-                                                >
-                                                    <div>
-                                                        <p>박협진 교수님</p>
-                                                        <p>박협진 교수님</p>
-                                                        <p>박협진 교수님</p>
-                                                        <p>박협진 교수님</p>
+                                                <div>
+                                                    <p class="more">
+                                                        자세히
+                                                    </p>
+                                                    <p class="fold">접기</p>
+
+                                                    <div class="img_container">
+                                                        <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표" />
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="case_cont withDoctor">
+                                                <div>
+                                                    <p>박협진 교수님</p>
+                                                    <p>박협진 교수님</p>
+                                                    <p>박협진 교수님</p>
+                                                    <p>박협진 교수님</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1274,58 +1052,52 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <!-- 소견 요청 협진 진행중 -->
-                    <section
-                        id="consultChannel2"
-                        style="display: none"
-                        class="section right opinion_ing"
-                    >
-                        <div class="container">
-                            <div class="title">
-                                <div>
-                                    <h2>소견 요청 협진 진행중</h2>
-                                    <p class="remote_member">-</p>
-                                </div>
-
-                                <button type="button" class="btn_colla">
-                                    <div>
-                                        <img
-                                            src="/H-Connect/img/header/Hlogo_gray.svg"
-                                            alt="로고"
-                                        />
-                                    </div>
-                                    시작하기
-                                </button>
+                    </div>
+                </section>
+                <!-- 소견 요청 협진 진행중 -->
+                <section id="consultChannel2" style="display: none" class="section right opinion_ing">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>소견 요청 협진 진행중</h2>
+                                <p class="remote_member">-</p>
                             </div>
 
-                            <div class="collabor_wrap">
-                                <!-- 협진 시간 -->
-                                <div class="time">
-                                    <h2>소견요청 협진 기간</h2>
+                            <button type="button" class="btn_colla">
+                                <div>
+                                    <img src="/H-Connect/img/header/Hlogo_gray.svg" alt="로고" />
+                                </div>
+                                시작하기
+                            </button>
+                        </div>
 
-                                    <div>
-                                        <p>
-                                            시작시간.
-                                            <span class="startDatetime">-</span>
-                                        </p>
-                                        <p>
-                                            마감시간.
-                                            <span class="endDatetime">-</span>
-                                        </p>
-                                    </div>
+                        <div class="collabor_wrap">
+                            <!-- 협진 시간 -->
+                            <div class="time">
+                                <h2>소견요청 협진 기간</h2>
+
+                                <div>
+                                    <p>
+                                        시작시간.
+                                        <span class="startDatetime">-</span>
+                                    </p>
+                                    <p>
+                                        마감시간.
+                                        <span class="endDatetime">-</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- 협진 내용 -->
+                            <div class="cont">
+                                <div class="title">
+                                    <h2>협진 내용</h2>
+
+                                    <p>소견 요청 협진</p>
                                 </div>
 
-                                <!-- 협진 내용 -->
-                                <div class="cont">
-                                    <div class="title">
-                                        <h2>협진 내용</h2>
-
-                                        <p>소견 요청 협진</p>
-                                    </div>
-
-                                    <div class="cont_list case_list">
-                                        <!-- <div class="case">
+                                <div class="cont_list case_list">
+                                    <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
                                                 <p>
@@ -1400,142 +1172,120 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                    </div>
-                                </div>
-
-                                <!-- 협진 참여자 -->
-                                <div class="member">
-                                    <div class="title">
-                                        <h2>협진 참여자 정보</h2>
-                                        <p>
-                                            협진 참여 요청.
-                                            <span class="total_doctor_count"
-                                                >-</span
-                                            >명
-                                        </p>
-                                    </div>
-
-                                    <div class="cont_list">
-                                        <!-- 참여인원 -->
-                                        <div class="case">
-                                            <div>
-                                                <p>참여 인원.</p>
-                                                <p class="count">
-                                                    <span class="doctor_count"
-                                                        >-</span
-                                                    >명
-                                                </p>
-                                            </div>
-
-                                            <div>
-                                                <p class="more">자세히</p>
-                                                <p class="fold">접기</p>
-
-                                                <div class="img_container">
-                                                    <img
-                                                        src="/H-Connect/img/under_arrow.svg"
-                                                        alt="아래 화살표"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="case_cont withDoctor">
-                                            <div>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- 미참여 -->
-                                        <div class="case">
-                                            <div>
-                                                <p>미참여.</p>
-                                                <p class="count red">
-                                                    <span
-                                                        class="no_doctor_count"
-                                                        >-</span
-                                                    >명
-                                                </p>
-                                            </div>
-
-                                            <div>
-                                                <p class="more">자세히</p>
-                                                <p class="fold">접기</p>
-
-                                                <div class="img_container">
-                                                    <img
-                                                        src="/H-Connect/img/under_arrow.svg"
-                                                        alt="아래 화살표"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="case_cont withOutDoctor">
-                                            <div>
-                                                <p>박협진 교수님</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 협진 일정 요청(내가 보냄) -->
-                    <section
-                        id="consultChannel0"
-                        style="display: none"
-                        class="section right me_request"
-                    >
-                        <div class="container">
-                            <div class="title">
-                                <div>
-                                    <h2>협진 일정 요청</h2>
-                                    <p>내가 보냄</p>
-                                </div>
-
-                                <div class="btn_list">
-                                    <button type="button" class="btn_modify">
-                                        수정
-                                    </button>
-                                    <button type="button" class="btn_delete">
-                                        삭제
-                                    </button>
-                                    <button
-                                        type="button"
-                                        data-isentstate="1"
-                                        class="btn_decide"
-                                        disabled
-                                    >
-                                        일정확정
-                                    </button>
                                 </div>
                             </div>
 
-                            <div class="collabor_wrap">
-                                <!-- 일정 요청 마감일자 -->
-                                <div class="time">
-                                    <h2>일정 요청 마감일자</h2>
-
+                            <!-- 협진 참여자 -->
+                            <div class="member">
+                                <div class="title">
+                                    <h2>협진 참여자 정보</h2>
                                     <p>
-                                        <span class="deadlineTime">-</span> 까지
+                                        협진 참여 요청.
+                                        <span class="total_doctor_count">-</span>명
                                     </p>
                                 </div>
 
-                                <!-- 협진 내용 -->
-                                <div class="cont">
-                                    <div class="title">
-                                        <h2>협진 내용</h2>
+                                <div class="cont_list">
+                                    <!-- 참여인원 -->
+                                    <div class="case">
+                                        <div>
+                                            <p>참여 인원.</p>
+                                            <p class="count">
+                                                <span class="doctor_count">-</span>명
+                                            </p>
+                                        </div>
 
-                                        <p>실시간 원격 협진</p>
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표" />
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="cont_list case_list">
-                                        <!-- <div class="case">
+                                    <div class="case_cont withDoctor">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- 미참여 -->
+                                    <div class="case">
+                                        <div>
+                                            <p>미참여.</p>
+                                            <p class="count red">
+                                                <span class="no_doctor_count">-</span>명
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="case_cont withOutDoctor">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 협진 일정 요청(내가 보냄) -->
+                <section id="consultChannel0" style="display: none" class="section right me_request">
+                    <div class="container">
+                        <div class="title">
+                            <div>
+                                <h2>협진 일정 요청</h2>
+                                <p>내가 보냄</p>
+                            </div>
+
+                            <div class="btn_list">
+                                <button type="button" class="btn_modify">
+                                    수정
+                                </button>
+                                <button type="button" class="btn_delete">
+                                    삭제
+                                </button>
+                                <button type="button" data-isentstate="1" class="btn_decide" disabled>
+                                    일정확정
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="collabor_wrap">
+                            <!-- 일정 요청 마감일자 -->
+                            <div class="time">
+                                <h2>일정 요청 마감일자</h2>
+
+                                <p>
+                                    <span class="deadlineTime">-</span> 까지
+                                </p>
+                            </div>
+
+                            <!-- 협진 내용 -->
+                            <div class="cont">
+                                <div class="title">
+                                    <h2>협진 내용</h2>
+
+                                    <p>실시간 원격 협진</p>
+                                </div>
+
+                                <div class="cont_list case_list">
+                                    <!-- <div class="case">
                                             <div>
                                                 <p>Case 1.</p>
                                                 <p>
@@ -1610,47 +1360,32 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 협진 가능시간 선택 -->
+                            <div class="time_select">
+                                <div class="title">
+                                    <h2>협진 가능시간 선택</h2>
+
+                                    <ul class="tabs">
+                                        <li class="tab-link current" data-tab="metab-1">
+                                            <div>
+                                                <img src="/H-Connect/img/doctor/list.svg" alt="리스트 아이콘" />
+                                            </div>
+                                        </li>
+
+                                        <li class="tab-link" data-tab="metab-2">
+                                            <div>
+                                                <img src="/H-Connect/img/icon/clock.svg" alt="시계 아이콘" />
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
 
-                                <!-- 협진 가능시간 선택 -->
-                                <div class="time_select">
-                                    <div class="title">
-                                        <h2>협진 가능시간 선택</h2>
-
-                                        <ul class="tabs">
-                                            <li
-                                                class="tab-link current"
-                                                data-tab="metab-1"
-                                            >
-                                                <div>
-                                                    <img
-                                                        src="/H-Connect/img/doctor/list.svg"
-                                                        alt="리스트 아이콘"
-                                                    />
-                                                </div>
-                                            </li>
-
-                                            <li
-                                                class="tab-link"
-                                                data-tab="metab-2"
-                                            >
-                                                <div>
-                                                    <img
-                                                        src="/H-Connect/img/icon/clock.svg"
-                                                        alt="시계 아이콘"
-                                                    />
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- 리스트로 보기 -->
-                                    <div
-                                        id="metab-1"
-                                        class="tab-content list_view current"
-                                    >
-                                        <!-- <div>
+                                <!-- 리스트로 보기 -->
+                                <div id="metab-1" class="tab-content list_view current">
+                                    <!-- <div>
                                             <div class="check">
                                                 <div class="input_wrap">
                                                     <input
@@ -1674,16 +1409,13 @@
                                                 <p>박협진 교수님</p>
                                             </div>
                                         </div> -->
-                                    </div>
+                                </div>
 
-                                    <!-- weekly로 보기 -->
-                                    <div
-                                        id="metab-2"
-                                        class="tab-content week_view week_view2"
-                                    >
-                                        <!-- 협진 가능시간 클릭하면 선택한 시간의 정보가 보임 -->
-                                        <div class="select_week">
-                                            <!-- <div>
+                                <!-- weekly로 보기 -->
+                                <div id="metab-2" class="tab-content week_view week_view2">
+                                    <!-- 협진 가능시간 클릭하면 선택한 시간의 정보가 보임 -->
+                                    <div class="select_week">
+                                        <!-- <div>
                                                 <div class="check">
                                                     <div class="input_wrap">
                                                         <input
@@ -1709,187 +1441,174 @@
                                                     <p>오협진 교수님</p>
                                                 </div>
                                             </div> -->
+                                    </div>
+
+                                    <div class="week_wrap">
+                                        <!-- 시간 time -->
+                                        <div class="time">
+                                            <div>
+                                                <p>09:00</p>
+                                            </div>
+                                            <div>
+                                                <p>10:00</p>
+                                            </div>
+                                            <div>
+                                                <p>11:00</p>
+                                            </div>
+                                            <div>
+                                                <p>12:00</p>
+                                            </div>
+                                            <div>
+                                                <p>13:00</p>
+                                            </div>
+                                            <div>
+                                                <p>14:00</p>
+                                            </div>
+                                            <div>
+                                                <p>15:00</p>
+                                            </div>
+                                            <div>
+                                                <p>16:00</p>
+                                            </div>
+                                            <div>
+                                                <p>17:00</p>
+                                            </div>
+                                            <div>
+                                                <p>18:00</p>
+                                            </div>
                                         </div>
 
-                                        <div class="week_wrap">
-                                            <!-- 시간 time -->
-                                            <div class="time">
-                                                <div>
-                                                    <p>09:00</p>
+                                        <div class="inner">
+                                            <div class="day today">
+                                                <div class="title">
+                                                    <p>22.월</p>
                                                 </div>
-                                                <div>
-                                                    <p>10:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>11:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>12:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>13:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>14:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>15:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>16:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>17:00</p>
-                                                </div>
-                                                <div>
-                                                    <p>18:00</p>
-                                                </div>
-                                            </div>
 
-                                            <div class="inner">
-                                                <div class="day today">
-                                                    <div class="title">
-                                                        <p>22.월</p>
-                                                    </div>
-
-                                                    <!-- 협진요청 -->
-                                                    <div class="plan start">
-                                                        <div class="possible">
-                                                            <div>
-                                                                <div
-                                                                    class="num"
-                                                                >
-                                                                    3명
-                                                                </div>
-
-                                                                <div
-                                                                    class="select_info"
-                                                                >
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                </div>
+                                                <!-- 협진요청 -->
+                                                <div class="plan start">
+                                                    <div class="possible">
+                                                        <div>
+                                                            <div class="num">
+                                                                3명
                                                             </div>
 
-                                                            <div>
-                                                                <div
-                                                                    class="num"
-                                                                >
-                                                                    4명
-                                                                </div>
+                                                            <div class="select_info">
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
 
-                                                                <div
-                                                                    class="select_info"
-                                                                >
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                            </div>
+                                                        </div>
 
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                </div>
+                                                        <div>
+                                                            <div class="num">
+                                                                4명
                                                             </div>
 
-                                                            <div>
-                                                                <div
-                                                                    class="num"
-                                                                >
-                                                                    5명
-                                                                </div>
-                                                                <div
-                                                                    class="select_info"
-                                                                >
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
+                                                            <div class="select_info">
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
 
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                    <p>
-                                                                        김협진
-                                                                        교수님
-                                                                    </p>
-                                                                </div>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div>
+                                                            <div class="num">
+                                                                5명
+                                                            </div>
+                                                            <div class="select_info">
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
+                                                                <p>
+                                                                    김협진
+                                                                    교수님
+                                                                </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1898,97 +1617,86 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- 협진 참여자 -->
-                                <div class="member">
-                                    <div class="title">
-                                        <h2>협진 참여자 정보</h2>
+                            <!-- 협진 참여자 -->
+                            <div class="member">
+                                <div class="title">
+                                    <h2>협진 참여자 정보</h2>
 
-                                        <p>
-                                            협진 참여 요청.
-                                            <span class="total_doctor_count"
-                                                >-</span
-                                            >명
-                                        </p>
+                                    <p>
+                                        협진 참여 요청.
+                                        <span class="total_doctor_count">-</span>명
+                                    </p>
+                                </div>
+
+                                <div class="cont_list">
+                                    <div class="case">
+                                        <div>
+                                            <p>응답 인원</p>
+                                            <p class="count">
+                                                <span class="doctor_count">-</span>명
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표" />
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="cont_list">
-                                        <div class="case">
-                                            <div>
-                                                <p>응답 인원</p>
-                                                <p class="count">
-                                                    <span class="doctor_count"
-                                                        >-</span
-                                                    >명
-                                                </p>
-                                            </div>
+                                    <div class="case_cont withDoctor">
+                                        <div>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                            <p>박협진 교수님</p>
+                                        </div>
+                                    </div>
 
-                                            <div>
-                                                <p class="more">자세히</p>
-                                                <p class="fold">접기</p>
-
-                                                <div class="img_container">
-                                                    <img
-                                                        src="/H-Connect/img/under_arrow.svg"
-                                                        alt="아래 화살표"
-                                                    />
-                                                </div>
-                                            </div>
+                                    <div class="case">
+                                        <div>
+                                            <p>미응답</p>
+                                            <p class="count red">
+                                                <span class="no_doctor_count">-</span>명
+                                            </p>
                                         </div>
 
-                                        <div class="case_cont withDoctor">
-                                            <div>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
-                                                <p>박협진 교수님</p>
+                                        <div>
+                                            <p class="more">자세히</p>
+                                            <p class="fold">접기</p>
+
+                                            <div class="img_container">
+                                                <img src="/H-Connect/img/under_arrow.svg" alt="아래 화살표" />
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="case">
-                                            <div>
-                                                <p>미응답</p>
-                                                <p class="count red">
-                                                    <span
-                                                        class="no_doctor_count"
-                                                        >-</span
-                                                    >명
-                                                </p>
-                                            </div>
-
-                                            <div>
-                                                <p class="more">자세히</p>
-                                                <p class="fold">접기</p>
-
-                                                <div class="img_container">
-                                                    <img
-                                                        src="/H-Connect/img/under_arrow.svg"
-                                                        alt="아래 화살표"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="case_cont withOutDoctor">
-                                            <div>
-                                                <p>박협진 교수님</p>
-                                            </div>
+                                    <div class="case_cont withOutDoctor">
+                                        <div>
+                                            <p>박협진 교수님</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
-        <!--// end wrap-->
+    </div>
+    <!--// end wrap-->
 
-        <script>
+    <script>
             // fullcalendar library
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>

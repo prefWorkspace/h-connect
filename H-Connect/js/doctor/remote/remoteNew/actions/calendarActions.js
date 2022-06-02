@@ -153,7 +153,6 @@ function opinionCalendarActions() {
             const _year = calendarData.year();
             const _month = calendarData.month();
             const _day = $(this).val();
-            console.log('_day1: ', _day);
             if (!_year || !_month || !_day) return;
             const _dateStr = `${_year}-${_month}-${_day}`;
             _calendarModule.module.gotoDate(new Date(_dateStr));
@@ -190,7 +189,6 @@ function opinionCalendarActions() {
             const _year = calendarData.year();
             const _month = calendarData.month();
             const _day = $(this).val();
-            console.log('_day2: ', _day);
             if (!_year || !_month || !_day) return;
             const _dateStr = `${_year}-${_month}-${_day}`;
             _calendarModule.module.gotoDate(new Date(_dateStr));
