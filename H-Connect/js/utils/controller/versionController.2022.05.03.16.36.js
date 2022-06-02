@@ -413,7 +413,7 @@ const FILE_TREE = {
                                 '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
                         },
                     },
-                    'createCooperationActions.js': {
+                    'sendCooperationActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:

@@ -28,7 +28,7 @@ export async function selectMeasurementInfoList(_searchVal) {
             search: _searchVal,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     if (res.result) {
         return res.measurementInfoSimpleList;
@@ -48,7 +48,7 @@ export async function selectBookMarkList() {
             userId: id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     if (res.result) {
         return res.bookmarkInfoList;
@@ -69,7 +69,7 @@ export async function insertBookMark({ bookmarkName }) {
             userId: id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     return res;
 }
@@ -86,7 +86,7 @@ export async function deleteBookMark({ bookmarkId }) {
             userId: id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     if (res.result) {
         return true;
@@ -108,7 +108,7 @@ export async function selectBookMarkUserList({ bookmarkId }) {
             bookmarkId: bookmarkId ?? '',
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     if (res.result) {
         return res.bookmarkInfoList;
@@ -138,7 +138,7 @@ export async function insertBookMarkDetail({
             userId: id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     return res;
 }
@@ -156,7 +156,7 @@ export async function deleteBookMarkDetail({ bookmarkId, delUserId }) {
             userId: id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     return res;
 }
@@ -174,7 +174,7 @@ export async function selectHisDoctorList(_searchName) {
             searchName: _searchName,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     if (res.result) {
         return res.doctorInfoList;
@@ -191,7 +191,7 @@ export async function selectHisDoctorHost(_id) {
             searchUserId: _id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     if (res.result) {
         return departmentDoctorListToBasicList(res.doctorInfoList)[0] ?? null;
@@ -223,7 +223,7 @@ export async function insertRemoteConsult(_data) {
             userId: id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     return res;
 }
@@ -250,7 +250,7 @@ export async function insertOpinionConsult(_data) {
             userId: id,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     return res;
 }
@@ -262,7 +262,6 @@ export async function insertConsult(_data) {
     if (!id) return;
     const { userName, departmentCode, departmentName } =
         (await selectHisDoctorHost(id)) ?? {}; // 호스트 정보 받아오기
-    console.log('_data: ', _data);
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/InsertConsult',
         'POST',
@@ -277,10 +276,8 @@ export async function insertConsult(_data) {
             scheduleInfo: scheduleInfo,
             userId: id,
         }),
-        (res) => {
-            console.log('res:', res);
-        },
-        (err) => console.log(err)
+        (res) => {},
+        (err) => console.error(err)
     );
     return res;
 }
@@ -300,7 +297,7 @@ export async function selectScheduleCheck(_data) {
             checkDatetime: checkDatetime,
         }),
         (res) => {},
-        (err) => console.log(err)
+        (err) => console.error(err)
     );
     return res;
 }
@@ -323,7 +320,43 @@ export async function selectConsultConfirmView(_consultId) {
             } else {
             }
         },
-        (err) => console.log(err)
+        (err) => console.error(err)
+    );
+    if (res.result) {
+        return res.list[0] ?? [];
+    } else {
+        return null;
+    }
+}
+
+export async function updateConsult(_data) {
+    // 협진일정 요청 수정
+    const { deadline, caseInfo, memberInfo, scheduleInfo } = _data ?? {};
+
+    const { id } = getUserInfo();
+    if (!id) return;
+    const { userName, departmentCode, departmentName } =
+        (await selectHisDoctorHost(id)) ?? {}; // 호스트 정보 받아오기
+    const res = await serverController.ajaxAwaitController(
+        'API/Doctor/UpdateConsult',
+        'POST',
+        JSON.stringify({
+            ...commonRequest(),
+            hostName: userName,
+            hostClass: departmentCode,
+            hostClassName: departmentName,
+            deadline: deadline,
+            caseInfo: caseInfo, // case info list
+            memberInfo: memberInfo, // 협진 참여자 list
+            scheduleInfo: scheduleInfo,
+            userId: id,
+        }),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.error(err)
     );
     if (res.result) {
         return res.list[0] ?? [];

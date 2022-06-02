@@ -331,6 +331,20 @@ export const serviceData = {
     },
 };
 
+const dashToUpperCase = (str) => {
+    // - 감지 카멜케이스 변환
+    let _resultStr = '';
+
+    const _dashSplit = str.split('-');
+    _dashSplit.forEach((_eachStr, _index) => {
+        if (_index === 0) {
+            _resultStr = _eachStr;
+        } else {
+            _resultStr += _eachStr.charAt(0).toUpperCase() + _eachStr.slice(1);
+        }
+    });
+    return _resultStr;
+};
 /* 종류 : 공통 */
 // 콘텐츠 정보 가공
 export function calcDataCaseContentList() {
@@ -349,9 +363,10 @@ export function calcDataCaseContentList() {
                 for (const [ptKey, ptValue] of Object.entries(value)) {
                     let _tempPtKey = ptKey;
                     /* 예외 상황 변환 */
-                    if (_tempPtKey === 'patientCode') {
-                        _tempPtKey = 'patientId';
+                    if (_tempPtKey === 'patient-code') {
+                        _tempPtKey = 'patient-id';
                     }
+                    _tempPtKey = dashToUpperCase(_tempPtKey);
                     _obj[_tempPtKey] = ptValue;
                 }
             } else if (key === 'caseContents') {

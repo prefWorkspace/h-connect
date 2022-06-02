@@ -11,6 +11,11 @@ const { renderCooperationSection } = await import(
         '/H-Connect/js/doctor/remote/remoteNew/renders/cooperationSectionRenders.js'
     )
 );
+const { renderActivateChoiceDoctorLength } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/renders/commonRenders.js'
+    )
+);
 const { coopRequestScheduleBlockTmpl, coopContentCaseBlockTmpl } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/templates/cooperationSectionTmpl.js'
@@ -30,7 +35,7 @@ const {
 } = await import(
     importVersion('/H-Connect/js/doctor/remote/remoteNew/actions/selector.js')
 );
-const { calendarData } = await import(
+const { calendarData, validateCoopAll } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
     )
@@ -44,7 +49,7 @@ function selectRequestScheduleOption() {
 function deadlineTimeRender({ deadlineDatetime }) {
     const _deadMonth = moment(deadlineDatetime).format('MM');
     const _deadDay = moment(deadlineDatetime).format('DD');
-    const _deadHours = moment(deadlineDatetime).format('hh');
+    const _deadHours = moment(deadlineDatetime).format('kk');
     const _deadMinutes = moment(deadlineDatetime).format('mm');
 
     $('input[data-key="rqd_end_month"]').val(_deadMonth);
@@ -67,10 +72,10 @@ function scheduleInfoListRender({ scheduleInfoList }) {
         const canMonth = moment(consultStartDatetime).format('MM');
         const canDay = moment(consultStartDatetime).format('DD');
 
-        const startHours = moment(consultStartDatetime).format('hh');
+        const startHours = moment(consultStartDatetime).format('kk');
         const startMinutes = moment(consultStartDatetime).format('mm');
 
-        const endHours = moment(consultEndDatetime).format('hh');
+        const endHours = moment(consultEndDatetime).format('kk');
         const endMinutes = moment(consultEndDatetime).format('mm');
 
         return coopRequestScheduleBlockTmpl({
@@ -166,6 +171,10 @@ async function getCooperationInformationForUpdate(_consultId) {
     caseInfoListRender({ caseInfoList });
     /* 협진 참여자 정보 */
     memberInfoListRender({ memberInfoList });
+
+    // validation 처리
+    renderActivateChoiceDoctorLength();
+    validateCoopAll();
 }
 
 function initUpdateRender() {

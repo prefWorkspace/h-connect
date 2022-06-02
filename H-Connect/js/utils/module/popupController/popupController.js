@@ -42,43 +42,50 @@ export class PopupController {
         this.eventTarget = null;
     }
     initEvent() {
-        const { target, templates, popupBtn } = this.initData || {};
+        const { target, templates, popupBtn, openControll } =
+            this.initData || {};
         let _this = this;
         $('body').on('click', `${target?.openButton}`, async function (e) {
             _this.eventTarget = this;
-            const _getTemplate = await templates?.popup(); // 팝업의 템플릿 받아옴
-            $(target?.appendWrap)
-                .html(_getTemplate)
-                .find('.overlay')
-                .fadeIn(() => {
-                    if (popupBtn) {
-                        for (const [objectKey, objectValue] of Object.entries(
-                            popupBtn
-                        )) {
-                            const {
-                                target: btnTarget,
-                                action: btnAction,
-                                close: btnClose,
-                            } = objectValue || {};
-                            $(target?.appendWrap)
-                                .find(btnTarget)
-                                .off()
-                                .on('click', async function () {
-                                    if (btnAction) {
-                                        await btnAction(_this);
-                                    }
-                                    if (btnClose) {
-                                        $(target?.appendWrap)
-                                            .find('.overlay')
-                                            .fadeOut(() => {
-                                                $(target?.appendWrap).html('');
-                                            });
-                                    }
-                                });
-                        }
-                    }
-                });
+            if (openControll === true) return;
+            _this.openPopup();
         });
+    }
+    async openPopup() {
+        const { target, templates, popupBtn } = this.initData || {};
+        const _getTemplate = await templates?.popup(); // 팝업의 템플릿 받아옴
+        let _this = this;
+        $(target?.appendWrap)
+            .html(_getTemplate)
+            .find('.overlay')
+            .fadeIn(() => {
+                if (popupBtn) {
+                    for (const [objectKey, objectValue] of Object.entries(
+                        popupBtn
+                    )) {
+                        const {
+                            target: btnTarget,
+                            action: btnAction,
+                            close: btnClose,
+                        } = objectValue ?? {};
+                        $(target?.appendWrap)
+                            .find(btnTarget)
+                            .off()
+                            .on('click', async function () {
+                                if (btnAction) {
+                                    await btnAction(_this);
+                                }
+                                if (btnClose) {
+                                    $(target?.appendWrap)
+                                        .find('.overlay')
+                                        .fadeOut(() => {
+                                            $(target?.appendWrap).html('');
+                                        });
+                                }
+                            });
+                    }
+                }
+            });
     }
     closePopup() {
         // close: false, 이고 팝업을 닫을 때 사용할 수 있습니다.

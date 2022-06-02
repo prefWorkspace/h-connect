@@ -37,7 +37,7 @@ const { createCooperationPopupTmpl, cancelCooperationPopupTmpl } = await import(
 function createCooperationAction() {
     const _createCooperationBtnStr = '#create_cooperation_btn';
     const _createCooperationPopup = new PopupController({
-        /* 북마크 추가 팝업 생성 */
+        /* 협진 생성 팝업 생성 */
         target: {
             openButton: _createCooperationBtnStr,
             appendWrap: '.createCooperation_popup_wrap',
@@ -45,6 +45,7 @@ function createCooperationAction() {
         templates: {
             popup: createCooperationPopupTmpl,
         },
+        openControll: true,
         popupBtn: {
             submitBtn: {
                 target: '.btn_check',
@@ -119,6 +120,7 @@ function createCooperationAction() {
                     (await insertRemoteConsult(_sendRemoteData)) ?? {};
 
                 if (remoteResult) {
+                    _createCooperationPopup.openPopup();
                 } else {
                     _createCooperationPopup.closePopup();
                     alert('실시간 원격 협진 생성에 실패했습니다.');
@@ -128,6 +130,7 @@ function createCooperationAction() {
                 const { result: opinionResult } =
                     (await insertOpinionConsult(_sendRemoteData)) ?? {};
                 if (opinionResult) {
+                    _createCooperationPopup.openPopup();
                 } else {
                     _createCooperationPopup.closePopup();
                     alert('소견 요청 협진 생성에 실패했습니다.');
@@ -137,6 +140,7 @@ function createCooperationAction() {
                 const { result: requestScheduleResult } =
                     (await insertConsult(_sendRemoteData)) ?? {};
                 if (requestScheduleResult) {
+                    _createCooperationPopup.openPopup();
                 } else {
                     _createCooperationPopup.closePopup();
                     alert('협진 일정 요청에 실패했습니다.');
