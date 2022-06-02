@@ -335,16 +335,11 @@ export async function updateConsult(_data) {
 
     const { id } = getUserInfo();
     if (!id) return;
-    const { userName, departmentCode, departmentName } =
-        (await selectHisDoctorHost(id)) ?? {}; // 호스트 정보 받아오기
     const res = await serverController.ajaxAwaitController(
         'API/Doctor/UpdateConsult',
         'POST',
         JSON.stringify({
             ...commonRequest(),
-            hostName: userName,
-            hostClass: departmentCode,
-            hostClassName: departmentName,
             deadline: deadline,
             caseInfo: caseInfo, // case info list
             memberInfo: memberInfo, // 협진 참여자 list

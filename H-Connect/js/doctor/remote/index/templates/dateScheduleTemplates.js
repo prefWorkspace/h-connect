@@ -14,9 +14,8 @@ export function dataScheduleTemplates(_data) {
     let html = '';
     let remote_member = '';
 
-    const { doctorLevelName, doctorName } = memberInfoList.find(
-        (item) => item.host === 'Y'
-    );
+    const { doctorLevelName, doctorName } =
+        memberInfoList.find((item) => item.host === 'Y') ?? {};
 
     if (isentState === 1) {
         remote_member = '내가 보냄';

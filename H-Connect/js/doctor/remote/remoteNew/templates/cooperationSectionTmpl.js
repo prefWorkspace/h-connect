@@ -1,3 +1,6 @@
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
 const { errorText } = await import(
     importVersion('/H-Connect/js/common/text/validationText.js')
 );
@@ -402,7 +405,15 @@ export function coopContentSectionTmpl() {
 }
 
 export function createCooperationPopupTmpl() {
-    const requestStr = $('.surgery_box .surgery_label').text();
+    const _requestStr = $('.surgery_box .surgery_label').text();
+    let _resultStr = `${_requestStr}</span> 이 생성 되었습니다.`;
+
+    const { getParams } = history;
+    const _modifyParam = getParams('modify');
+
+    if (_modifyParam) {
+        _resultStr = '협진 일정 수정이 완료 되었습니다.';
+    }
     return `
     <div class="pop create_remote">
         <div class="overlay">
@@ -412,7 +423,7 @@ export function createCooperationPopupTmpl() {
                 </div>
 
                 <h2>
-                    <span>${requestStr}</span> 이 생성 되었습니다.
+                    <span>${_resultStr}</span> 이 생성 되었습니다.
                 </h2>
 
                 <div class="btn_list">
@@ -426,6 +437,15 @@ export function createCooperationPopupTmpl() {
 
 export function cancelCooperationPopupTmpl() {
     const requestStr = $('.surgery_box .surgery_label').text();
+
+    let _resultStr = `${requestStr}이 생성되지 않았습니다. 모든 설정이 취소됩니다.`;
+
+    const { getParams } = history;
+    const _modifyParam = getParams('modify');
+
+    if (_modifyParam) {
+        _resultStr = '협진 일정 수정이 취소됩니다.';
+    }
     return `
     <div class="pop delete no_create">
         <div class="overlay">
