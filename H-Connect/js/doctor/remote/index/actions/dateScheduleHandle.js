@@ -57,6 +57,8 @@ export function myCalendarClickHandler() {
     const confirmState = $(this).data('confirmstate');
     const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
 
+    console.log('here');
+
     $(`#consultChannel${consultChannel} .btn_reply`).text(buttonTitle);
 
     $('.all_plan .cal_list .schedule_list .row').removeClass('on');
@@ -65,11 +67,25 @@ export function myCalendarClickHandler() {
     if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0`).show();
         $(`#consultChannel0 .remote_member`).text(remote_member);
+        $('#consultChannel0 #metab-1').addClass('current');
+        $('#consultChannel0 #metab-2').removeClass('current');
+        $(`#consultChannel0 .tabs li[data-tab="metab-1"]`).addClass('current');
+        $(`#consultChannel0 .tabs li[data-tab="metab-2"]`).removeClass(
+            'current'
+        );
     } else {
         $(`#consultChannel${consultChannel}`).show();
         $(`#consultChannel${consultChannel} .remote_member`).text(
             remote_member
         );
+        $(`#consultChannel${consultChannel} #tab-1`).addClass('current');
+        $(`#consultChannel${consultChannel} #tab-2`).removeClass('current');
+        $(
+            `#consultChannel${consultChannel} .tabs li[data-tab="tab-1"]`
+        ).addClass('current');
+        $(
+            `#consultChannel${consultChannel} .tabs li[data-tab="tab-2"]`
+        ).removeClass('current');
     }
 
     dateScheduleDetailRender(consultChannel, isentState, consultId);
