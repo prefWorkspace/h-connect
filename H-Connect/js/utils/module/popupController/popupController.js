@@ -103,8 +103,20 @@ export class PopupController {
         this.payload = copyPayload;
         return this;
     }
-    getData() {
+    removeData(key) {
+        if (key) {
+            delete this.payload[key];
+        } else {
+            throw new Error(
+                `payload 에서 해당 key:${key} 를 찾는데 실패했습니다.`
+            );
+        }
+    }
+    getData(key) {
         // 저장해 둔 데이터를 사용합니다.
+        if (key) {
+            return this.payload[key];
+        }
         return this.payload;
     }
 }

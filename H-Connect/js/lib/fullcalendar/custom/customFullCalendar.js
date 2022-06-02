@@ -270,10 +270,16 @@ export class CustomFullcalendar {
                 }
             });
     }
+    afterClendarRender() {
+        if (typeof this.init.options.afterClendarRender === 'function') {
+            this.init.options.afterClendarRender();
+        }
+    }
     render() {
         this.module.render();
         if (this.module.isRendered === true) {
             this.afterRender();
+            this.afterClendarRender();
         }
     }
 }

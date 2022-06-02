@@ -1,4 +1,5 @@
 'use strict';
+
 const { CustomFullcalendar } = await import(
     importVersion('/H-Connect/js/lib/fullcalendar/custom/customFullCalendar.js')
 );
@@ -6,6 +7,11 @@ const { CustomFullcalendar } = await import(
 const { selectMyScheduleList } = await import(
     importVersion(
         '/H-Connect/js/doctor/hworks/mySchedule/actions/myCalendarAPI.js'
+    )
+);
+const { updateStatusDeleteConsult } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/index/actions/dateScheduleAPI.js'
     )
 );
 
@@ -19,14 +25,72 @@ const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
 
+const { PopupController } = await import(
+    importVersion(
+        '/H-Connect/js/utils/module/popupController/popupController.js'
+    )
+);
+const { confirmTwoPopupTmpl } = await import(
+    importVersion('/H-Connect/js/common/popup/templates/commonPopupTmpl.js')
+);
+
 const { getParams } = history;
+
+const _deleteSchedulePopup = new PopupController({
+    /* 협진 삭제 팝업 생성 */
+    target: {
+        openButton: '.me_request .btn_delete',
+        appendWrap: '#delete_schedule_popupwrap',
+    },
+    templates: {
+        popup: () => {
+            return confirmTwoPopupTmpl({
+                type: 'delete',
+                title: '요청한 일정 및 작성한 협진내용이 모두 삭제됩니다.',
+                message: '삭제 하시겠습니까?',
+            });
+        },
+    },
+    popupBtn: {
+        cancleBtn: {
+            target: '.btn.gr',
+            close: true,
+        },
+        submitBtn: {
+            target: '.btn.blf',
+            close: true,
+            action: async (_info) => {
+                const _getConsultId = _info.getData('consultId');
+                const _resDeleteConsult = await updateStatusDeleteConsult(
+                    _getConsultId
+                );
+                if (_resDeleteConsult?.result === true) {
+                    window.location.reload();
+                } else {
+                    alert('협진 일정 요청 삭제를 실패했습니다.');
+                }
+            },
+        },
+    },
+});
+
+function saveDeleteBtnConsulIdToPopup(_consultId) {
+    // 삭제 버튼 이벤트 추가
+    if (_consultId) {
+        _deleteSchedulePopup.saveData('consultId', _consultId);
+    } else {
+        _deleteSchedulePopup.removeData('consultId');
+    }
+}
 
 async function calendarHandle(_selectDate) {
     const queryendDatetime = getParams('endDatetime');
+
     let date = queryendDatetime || new Date();
     if (_selectDate) {
         date = new Date(_selectDate.dateStr);
     }
+
     const startDatetime = moment(date).format('YYYY-MM-DD 00:00:00');
     const endDatetime = moment(date).format('YYYY-MM-DD 23:59:59');
     const { result, list } = await selectMyScheduleList(
@@ -120,6 +184,10 @@ async function init() {
             if (isentState === 1 && consultChannel === 1) {
                 $(`#consultChannel0`).show();
                 $(`#consultChannel0 .remote_member`).text(remote_member);
+
+                /* Ji : 수정/삭제 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
+                scheduleModifyBtnEventControll(consultId);
+                saveDeleteBtnConsulIdToPopup(consultId);
             } else {
                 $(`#consultChannel${consultChannel}`).show();
                 $(`#consultChannel${consultChannel} .remote_member`).text(
@@ -151,8 +219,9 @@ async function init() {
         $(`#consultChannel0`).show();
         $(`#consultChannel0 .remote_member`).text(remote_member);
 
-        /* Ji : 수정 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
+        /* Ji : 수정/삭제 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
         scheduleModifyBtnEventControll(consultId);
+        saveDeleteBtnConsulIdToPopup(consultId);
     } else {
         $(`#consultChannel${consultChannel}`).show();
         $(`#consultChannel${consultChannel} .remote_member`).text(
@@ -169,12 +238,15 @@ async function init() {
 await calendarHandle();
 
 function scheduleModifyBtnEventControll(_consultId) {
+    // 수정 버튼 이벤트 추가
     const _baseLink = '/doctor/remote_new.html';
+    const _fromLink = window.location.pathname;
+    const _calcFromLink = _fromLink.split('/doctor/')[1].split('.html')[0];
     /* Ji : 협진 일정 요청 수정 버튼 이벤트 부여*/
     $('.me_request .container .btn_modify')
         .off()
         .on('click', function () {
-            window.location.href = `${_baseLink}?modify=${_consultId}`;
+            window.location.href = `${_baseLink}?modify=${_consultId}&from=${_calcFromLink}`;
         });
 }
 /* Ji : 달력 모듈 */
@@ -189,6 +261,17 @@ const calendarModule = new CustomFullcalendar('#calendar', {
             use: true,
             target: '.month_box',
         },
+    },
+    afterClendarRender: () => {
+        const queryendDatetime = getParams('endDatetime');
+        if (queryendDatetime) {
+            const _calendarModule = $('#calendar').data('calendar-module');
+            _calendarModule.module.gotoDate(new Date(queryendDatetime));
+            _calendarModule.selectDateCalendar({
+                dateStr: queryendDatetime,
+            });
+            _calendarModule.resetTodaySelect();
+        }
     },
     firstClickUnSelectToday: true,
     dateClickActiveAble: true,

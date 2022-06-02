@@ -499,12 +499,6 @@ const FILE_TREE = {
             },
             common: {
                 actions: {
-                    'calendarActions.js': {
-                        type: 'module',
-                        url_path: '/doctor/remote',
-                        file_path:
-                            '/H-Connect/js/doctor/remote/common/actions/',
-                    },
                     'sessionBanner.js': {
                         type: 'module',
                         url_path:

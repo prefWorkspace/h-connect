@@ -133,7 +133,8 @@
         </div>
 
         <!-- 요청한 일정 삭제 -->
-        <div class="pop delete delete_schedule">
+        <div id="delete_schedule_popupwrap"></div>
+        <!-- <div class="pop delete delete_schedule">
             <div class="overlay">
                 <div class="pop_cont">
                     <div>
@@ -151,7 +152,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div id="wrap">
             <!--헤더 pc-->
@@ -1000,8 +1001,8 @@
 
                                 <button
                                     type="button"
-                                    class="btn_reply"
                                     data-isentstate="0"
+                                    class="btn_reply"
                                     disabled
                                 >
                                     회신하기
@@ -1506,9 +1507,9 @@
                                     </button>
                                     <button
                                         type="button"
+                                        data-isentstate="1"
                                         class="btn_decide"
                                         disabled
-                                        data-isentstate="1"
                                     >
                                         일정확정
                                     </button>
