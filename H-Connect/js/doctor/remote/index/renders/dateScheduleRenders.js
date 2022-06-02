@@ -103,7 +103,6 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
     } = _scheduleData[0];
 
     // async function detailSectionIsentInit(){
-
     // }
     // selectMycalendar.find((item) => item.consultId === consultId);
 
