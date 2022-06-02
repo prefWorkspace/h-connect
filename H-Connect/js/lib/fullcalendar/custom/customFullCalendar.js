@@ -80,11 +80,17 @@ export class CustomFullcalendar {
             initialView: 'dayGridMonth',
             timeZone: 'local',
             selectable: options.selectable ?? false, //선택 할 수 있음
-
-            header: {
-                center: 'title',
-                left: 'prev',
-                right: 'next today',
+            customButtons: {
+                prev: {
+                    click: (evt) => {
+                        this.module.prev();
+                    },
+                },
+                next: {
+                    click: () => {
+                        this.module.next();
+                    },
+                },
             },
             titleFormat: (date) =>
                 typeof options.titleFormat === 'function'
