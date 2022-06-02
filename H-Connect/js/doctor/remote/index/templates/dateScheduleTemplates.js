@@ -10,12 +10,14 @@ export function dataScheduleTemplates(_data) {
         consultId,
         confirmState,
     } = _data;
-
+    console.log('consultId===');
+    console.log(consultId);
     let html = '';
     let remote_member = '';
 
-    const { doctorLevelName, doctorName } =
-        memberInfoList.find((item) => item.host === 'Y') ?? {};
+    const { doctorLevelName, doctorName } = memberInfoList.find(
+        (item) => item.host === 'Y'
+    ) ?? { doctorLevelName: '-', doctorName: '-' };
 
     if (isentState === 1) {
         remote_member = '내가 보냄';
