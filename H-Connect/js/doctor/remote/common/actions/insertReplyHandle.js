@@ -4,11 +4,12 @@ const { insertConsultReply } = await import(
     importVersion('/H-Connect/js/doctor/remote/common/actions/remoteAPI.js')
 );
 
+// 체크박스 유효성
 export async function insertReplyHandle() {
     // section right ask_request
     let isChecked = false;
-    const buttonTitle = $('.section.ask_request .btn_reply').text();
-    $('.section.ask_request #tab-1 .green_custom').each((index, value) => {
+    const buttonTitle = $('.section .btn_reply').text();
+    $('.section .tab-content .green_custom').each((index, value) => {
         const _isChecked = $(value).is(':checked');
         isChecked = isChecked || _isChecked;
     });
@@ -18,20 +19,28 @@ export async function insertReplyHandle() {
     }
 
     if (isChecked) {
-        $('.section.ask_request .btn_reply').attr('disabled', false);
-        $('.section.ask_request .btn_reply').addClass('active');
+        $('.section .btn_reply').attr('disabled', false);
+        $('.section .btn_reply').addClass('active');
+        $('.section .btn_decide').attr('disabled', false);
     }
 
     if (!isChecked) {
-        $('.section.ask_request .btn_reply').attr('disabled', true);
-        $('.section.ask_request .btn_reply').removeClass('active');
+        $('.section .btn_reply').attr('disabled', true);
+        $('.section .btn_reply').removeClass('active');
+        $('.section .btn_decide').attr('disabled', true);
     }
 }
 
-$('.section.ask_request .btn_reply').on('click', async function () {
+// 회신하기 및 일정 확인 버튼 이벤트
+async function checkButtonHandle(_target) {
     let consultId;
     const scheduleInfo = [];
-    $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
+    const isentState = $(_target).data('isentstate');
+    const consultChannel =
+        isentState === 1 ? 'consultChannel0' : 'consultChannel1';
+    const finishedButtonText = '확정완료';
+
+    $(`#${consultChannel} .tab-content .green_custom`).each((index, value) => {
         const _isChecked = $(value).is(':checked');
         const orderNo = $(value).data('caseno');
         consultId = $(value).data('consultid');
@@ -41,21 +50,71 @@ $('.section.ask_request .btn_reply').on('click', async function () {
         }
     });
 
+    if (scheduleInfo.length === 0) {
+        return;
+    }
+
     const { result } = await insertConsultReply(consultId, scheduleInfo);
 
     if (result) {
-        $(this).text('회신완료');
-        $(this).attr('disabled', true);
-        $('#consultChannel1 .btn_reply').removeClass('active');
-        $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
-            $(value).attr('checked', false);
-        });
+        $(_target).text(finishedButtonText);
+        $(_target).attr('disabled', true);
+        // $(`#${consultChannel} .btn_reply`).removeClass('active');
+        $(_target).removeClass('active');
+        $(`#${consultChannel} .tab-content .green_custom`).each(
+            (index, value) => {
+                $(value).attr('checked', false);
+            }
+        );
     } else {
         alert('회신에 실패하였습니다');
     }
+}
+
+// 회신하기 버튼 이벤트
+$('.section .btn_reply').on('click', async function (e) {
+    const { target } = e;
+    await checkButtonHandle(target);
+    // let consultId;
+    // const scheduleInfo = [];
+    // $('#consultChannel1 .tab-content .green_custom').each((index, value) => {
+    //     const _isChecked = $(value).is(':checked');
+    //     const orderNo = $(value).data('caseno');
+    //     consultId = $(value).data('consultid');
+    //     if (_isChecked) {
+    //         const consultScheduleInfo = { orderNo };
+    //         scheduleInfo.push(consultScheduleInfo);
+    //     }
+    // });
+
+    // if (scheduleInfo.length === 0) {
+    //     return;
+    // }
+
+    // const { result } = await insertConsultReply(consultId, scheduleInfo);
+
+    // if (result) {
+    //     $(this).text('회신완료');
+    //     $(this).attr('disabled', true);
+    //     $('#consultChannel1 .btn_reply').removeClass('active');
+    //     $('#consultChannel1 .tab-content .green_custom').each(
+    //         (index, value) => {
+    //             $(value).attr('checked', false);
+    //         }
+    //     );
+    // } else {
+    //     alert('회신에 실패하였습니다');
+    // }
 });
 
-$('body').on('click', '.section.me_request #metab-2 .inner .num', function () {
+// 일정 확정 버튼 이벤트
+$('.section .btn_decide').on('click', async function (e) {
+    const { target } = e;
+    await checkButtonHandle(target);
+});
+
+// 시간표보기에서 가능 시간 클릭시 리스트 위에 나타내기
+$('body').on('click', '.section #metab-2 .inner .num', function () {
     const ORDERNO = $(this).data('orderno');
     const list = $('#metab-1 > div');
     const dateTimeList = [...list];
@@ -67,10 +126,11 @@ $('body').on('click', '.section.me_request #metab-2 .inner .num', function () {
     $('#metab-2').addClass('on');
 });
 
+// 체크 박스 핸들
 $('body').on(
     'click',
-    '.section.ask_request #tab-1 .green_custom',
+    '.section .tab-content .green_custom',
     async () => await insertReplyHandle()
 );
 
-await insertReplyHandle();
+// await insertReplyHandle();

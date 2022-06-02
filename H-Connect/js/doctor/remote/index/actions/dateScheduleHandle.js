@@ -57,8 +57,6 @@ export function myCalendarClickHandler() {
     const confirmState = $(this).data('confirmstate');
     const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
 
-    console.log('here');
-
     $(`#consultChannel${consultChannel} .btn_reply`).text(buttonTitle);
 
     $('.all_plan .cal_list .schedule_list .row').removeClass('on');

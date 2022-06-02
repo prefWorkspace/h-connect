@@ -151,8 +151,6 @@ export function canDateWithTemplatesisentnot(_data) {
 }
 
 export function canDateWithDoctorListTemplates(_data) {
-    console.log('_data==');
-    console.log(_data);
     if (!_data || _data.length === 0) {
         return;
     }

@@ -133,6 +133,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $(`#consultChannel0 .collabor_wrap .member .withDoctor div`).html(
             withMember
         );
+
         $(`#consultChannel0 .collabor_wrap .member .withOutDoctor div`).html(
             witOutMember
         );
