@@ -154,13 +154,13 @@ function createCooperationAction() {
                 if (_modifyParam) {
                     // 일정 수정 시
                     // const { result: requestScheduleResult } =
-                    //     (await insertConsult(_sendRemoteData)) ?? {};
+                    //     (await updateConsult(_sendRemoteData)) ?? {};
                     // requestScheduleResultTemp = requestScheduleResult;
                     requestScheduleResultTemp = true;
                 } else {
                     // 일정 요청 시
                     const { result: requestScheduleResult } =
-                        (await updateConsult(_sendRemoteData)) ?? {};
+                        (await insertConsult(_sendRemoteData)) ?? {};
                     requestScheduleResultTemp = requestScheduleResult;
                 }
 
