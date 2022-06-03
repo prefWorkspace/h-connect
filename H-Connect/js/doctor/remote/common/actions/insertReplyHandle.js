@@ -1,6 +1,6 @@
 'use strict';
 
-const { insertConsultReply } = await import(
+const { insertConsultReply, updateConsultConfirm } = await import(
     importVersion('/H-Connect/js/doctor/remote/common/actions/remoteAPI.js')
 );
 
@@ -34,6 +34,8 @@ export async function insertReplyHandle() {
 // 회신하기 및 일정 확인 버튼 이벤트
 async function checkButtonHandle(_target) {
     let consultId;
+    let orderNoForAPI;
+    let resultAPI;
     const scheduleInfo = [];
     const isentState = $(_target).data('isentstate');
     const consultChannel =
@@ -45,6 +47,7 @@ async function checkButtonHandle(_target) {
         const orderNo = $(value).data('caseno');
         consultId = $(value).data('consultid');
         if (_isChecked) {
+            orderNoForAPI = orderNo;
             const consultScheduleInfo = { orderNo };
             scheduleInfo.push(consultScheduleInfo);
         }
@@ -54,9 +57,17 @@ async function checkButtonHandle(_target) {
         return;
     }
 
-    const { result } = await insertConsultReply(consultId, scheduleInfo);
+    if (isentState === 0) {
+        const { result } = await insertConsultReply(consultId, scheduleInfo);
+        resultAPI = result;
+    }
 
-    if (result) {
+    if (isentState === 1) {
+        const { result } = await updateConsultConfirm(consultId, orderNo);
+        resultAPI = result;
+    }
+
+    if (resultAPI) {
         $(_target).text(finishedButtonText);
         $(_target).attr('disabled', true);
         // $(`#${consultChannel} .btn_reply`).removeClass('active');
