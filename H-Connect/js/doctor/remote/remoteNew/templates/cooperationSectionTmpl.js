@@ -353,7 +353,7 @@ export function coopContentCaseBlockTmpl(_data) {
                     </div>
                 </div>
 
-                <textarea style='margin-top:16px;' placeholder='환자명' readonly data-key="cont_patient_name" data-keyType="data[patient-code,patient-name,patient-gender,patient-age,patient-ward]" class='patient-select-name'>${
+                <textarea style='margin-top:16px;' placeholder='환자명' readonly data-key="cont_patient_name" data-keyType="data[patient-code,patient-name,patient-gender,patient-age,patient-ward,patient-ward-room,patient-condition]" class='patient-select-name'>${
                     patientName ?? ''
                 }</textarea>
             </div>

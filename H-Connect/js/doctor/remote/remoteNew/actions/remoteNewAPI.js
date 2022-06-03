@@ -331,7 +331,8 @@ export async function selectConsultConfirmView(_consultId) {
 
 export async function updateConsult(_data) {
     // 협진일정 요청 수정
-    const { deadline, caseInfo, memberInfo, scheduleInfo } = _data ?? {};
+    const { consultId, deadline, caseInfo, memberInfo, scheduleInfo } =
+        _data ?? {};
 
     const { id } = getUserInfo();
     if (!id) return;
@@ -340,6 +341,7 @@ export async function updateConsult(_data) {
         'POST',
         JSON.stringify({
             ...commonRequest(),
+            consultId: consultId,
             deadline: deadline,
             caseInfo: caseInfo, // case info list
             memberInfo: memberInfo, // 협진 참여자 list
@@ -354,7 +356,7 @@ export async function updateConsult(_data) {
         (err) => console.error(err)
     );
     if (res.result) {
-        return res.list[0] ?? [];
+        return res;
     } else {
         return null;
     }

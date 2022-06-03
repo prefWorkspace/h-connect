@@ -183,13 +183,12 @@ async function init() {
             const consultId = $(item).data('consultid');
             const consultChannel = $(item).data('consultchannle');
             const remote_member = $(item).find('.remote_member').text();
+            /* Ji : 수정/삭제 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
+            scheduleModifyBtnEventControll(consultId);
+            saveDeleteBtnConsulIdToPopup(consultId);
             if (isentState === 1 && consultChannel === 1) {
                 $(`#consultChannel0`).show();
                 $(`#consultChannel0 .remote_member`).text(remote_member);
-
-                /* Ji : 수정/삭제 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
-                scheduleModifyBtnEventControll(consultId);
-                saveDeleteBtnConsulIdToPopup(consultId);
             } else {
                 $(`#consultChannel${consultChannel}`).show();
                 $(`#consultChannel${consultChannel} .remote_member`).text(
@@ -217,13 +216,12 @@ async function init() {
     const consultChannel = $(item).data('consultchannle');
     const confirmState = $(item).data('confirmstate');
     const remote_member = $(item).find('.remote_member').text();
+    /* Ji : 수정/삭제 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
+    scheduleModifyBtnEventControll(consultId);
+    saveDeleteBtnConsulIdToPopup(consultId);
     if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0`).show();
         $(`#consultChannel0 .remote_member`).text(remote_member);
-
-        /* Ji : 수정/삭제 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
-        scheduleModifyBtnEventControll(consultId);
-        saveDeleteBtnConsulIdToPopup(consultId);
     } else {
         $(`#consultChannel${consultChannel}`).show();
         $(`#consultChannel${consultChannel} .remote_member`).text(

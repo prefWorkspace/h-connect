@@ -100,6 +100,9 @@ function createCooperationAction() {
                 };
                 break;
             case '협진일정요청':
+                const { getParams } = history;
+                const _modifyParam = getParams('modify');
+
                 const { deadlineTime } =
                     serviceData.requestSchedule.deadlineDate();
                 const { scheduleInfo } =
@@ -108,6 +111,9 @@ function createCooperationAction() {
                     deadline: deadlineTime,
                     scheduleInfo: scheduleInfo,
                 };
+                if (_modifyParam) {
+                    _sectionData.consultId = _modifyParam;
+                }
                 break;
         }
 
@@ -153,10 +159,9 @@ function createCooperationAction() {
 
                 if (_modifyParam) {
                     // 일정 수정 시
-                    // const { result: requestScheduleResult } =
-                    //     (await updateConsult(_sendRemoteData)) ?? {};
-                    // requestScheduleResultTemp = requestScheduleResult;
-                    requestScheduleResultTemp = true;
+                    const { result: requestScheduleResult } =
+                        (await updateConsult(_sendRemoteData)) ?? {};
+                    requestScheduleResultTemp = requestScheduleResult;
                 } else {
                     // 일정 요청 시
                     const { result: requestScheduleResult } =
