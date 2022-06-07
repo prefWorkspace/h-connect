@@ -453,14 +453,15 @@ button {
     border-color: #007a94;
 }
 
-/* .green_custom[type='checkbox']:checked + label {
-    background: #007a94;
-    border: none;
-} */
-.tab-content label.active:nth-of-type(1) {
+.green_custom[type='checkbox']:checked + label {
     background: #007a94;
     border: none;
 }
+
+/* .tab-content label.active:nth-of-type(1) {
+    background: #007a94;
+    border: none;
+} */
 
 .green_custom[type='checkbox']:checked + label + label,
 .red_custom[type='checkbox']:checked + label + label {

@@ -136,7 +136,11 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $(`#consultChannel0 .collabor_wrap .member .withOutDoctor div`).html(
             witOutMember
         );
+
+        // 리스트로 보기
         $('#metab-1').html(canWithTime);
+
+        // 시간표로 보기
         $('#metab-2 .select_week').html(canWithTime);
 
         if (canWithTimeSchedule !== null) {

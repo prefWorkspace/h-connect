@@ -5,22 +5,27 @@ const { insertConsultReply, updateConsultConfirm } = await import(
 );
 
 // 체크박스 유효성
-export async function insertReplyHandle() {
-    // section right ask_request
+export async function insertReplyHandle(e) {
     // background: #007a94;
     let isChecked = false;
-
+    const $thisCaseNumber = $(e.target).data('caseno');
+    console.log('_this===');
+    console.log($thisCaseNumber);
     const buttonTitle = $('.section .btn_reply').text();
-    $('.section.me_request .tab-content .green_custom').each((index, value) => {
-        const _isChecked = $(value).is(':checked');
-        const labelElement = $(value).next();
-        if (_isChecked) {
-            labelElement.addClass('active');
-        } else {
-            labelElement.removeClass('active');
-        }
 
-        isChecked = isChecked || _isChecked;
+    $(`.section.me_request .tab-content .green_custom`).each((index, value) => {
+        // const _isChecked = $(value).is(':checked');
+        // isChecked = isChecked || _isChecked;
+        if (
+            $(value).data('caseno') === $thisCaseNumber &&
+            $(value).is(':checked')
+        ) {
+            isChecked = isChecked || $(value).is(':checked');
+            $(value).prop('checked', true);
+        } else {
+            isChecked = isChecked || $(value).is(':checked');
+            $(value).prop('checked', false);
+        }
     });
 
     if (buttonTitle === '회신완료') {
@@ -116,5 +121,5 @@ $('body').on('click', '.section #metab-2 .inner .num', function () {
 $('body').on(
     'click',
     '.section .tab-content .green_custom',
-    async () => await insertReplyHandle()
+    async (e) => await insertReplyHandle(e)
 );
