@@ -93,6 +93,7 @@ export function canDateWithTemplates(_data) {
             <div class="check">
                 <div class="input_wrap">
                     <input
+                    data-isentstate="1"
                     data-caseno="${orderNo}"
                         type="checkbox"
                         id="time${orderNo}"
@@ -130,6 +131,7 @@ export function canDateWithTemplatesisentnot(_data) {
         <div class="check">
             <input
                 data-consultid="${consultId}"
+                data-isentstate="0"
                 data-caseno="${orderNo}"
                 type="checkbox"
                 id="frist${orderNo}"

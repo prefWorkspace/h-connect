@@ -6,25 +6,31 @@ const { insertConsultReply, updateConsultConfirm } = await import(
 
 // 체크박스 유효성
 export async function insertReplyHandle(e) {
-    // background: #007a94;
     let isChecked = false;
     const $thisCaseNumber = $(e.target).data('caseno');
-    console.log('_this===');
-    console.log($thisCaseNumber);
+    const $isentState = $(e.target).data('isentstate');
+    const classTitle =
+        $isentState === 1
+            ? `.section.me_request .tab-content .green_custom`
+            : `.section.ask_request .tab-content .green_custom`;
     const buttonTitle = $('.section .btn_reply').text();
 
-    $(`.section.me_request .tab-content .green_custom`).each((index, value) => {
-        // const _isChecked = $(value).is(':checked');
-        // isChecked = isChecked || _isChecked;
-        if (
-            $(value).data('caseno') === $thisCaseNumber &&
-            $(value).is(':checked')
-        ) {
+    $(classTitle).each((index, value) => {
+        if ($isentState === 1) {
+            if (
+                $(value).data('caseno') === $thisCaseNumber &&
+                $(value).is(':checked')
+            ) {
+                isChecked = isChecked || $(value).is(':checked');
+                $(value).prop('checked', true);
+            } else {
+                isChecked = isChecked || $(value).is(':checked');
+                $(value).prop('checked', false);
+            }
+        }
+
+        if ($isentState === 0) {
             isChecked = isChecked || $(value).is(':checked');
-            $(value).prop('checked', true);
-        } else {
-            isChecked = isChecked || $(value).is(':checked');
-            $(value).prop('checked', false);
         }
     });
 
@@ -32,6 +38,8 @@ export async function insertReplyHandle(e) {
         return;
     }
 
+    console.log('isChecked===');
+    console.log(isChecked);
     if (isChecked) {
         $('.section .btn_reply').attr('disabled', false);
         $('.section .btn_reply').addClass('active');
