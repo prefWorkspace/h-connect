@@ -78,6 +78,60 @@ export function canDateWithTemplates(_data) {
         consultStartDatetime,
         orderNo,
         memberInfoList,
+        consultId,
+    } = _data;
+
+    const dayNum = moment(consultEndDatetime).day();
+
+    let doctorListHTML = '';
+    if (memberInfoList !== null) {
+        for (let i = 0; i < memberInfoList.length; i++) {
+            doctorListHTML += `<p>${memberInfoList[i].doctorName} ${memberInfoList[i].doctorLevelName}</p>`;
+        }
+    }
+
+    return `
+        <div data-orderno="${orderNo}">
+            <div class="check">
+                <div class="input_wrap">
+                    <input
+                    data-consultid="${consultId}"
+                    data-isentstate="1"
+                    data-caseno="${orderNo}"
+                        type="checkbox"
+                        id="time${orderNo}"
+                        class="green_custom"
+                    />
+                    <label for="time${orderNo}"></label>
+                    <label for="time${orderNo}"
+                        >${moment(consultStartDatetime).format(
+                            'YY.MM.DD'
+                        )} ${numToDay(dayNum)}요일 ${moment(
+        consultStartDatetime
+    ).format('HH:mm')} ~
+                        ${moment(consultEndDatetime).format('HH:mm')}</label
+                    >
+                </div>
+
+                <span>${
+                    memberInfoList ? memberInfoList.length : 0
+                }명 참석</span>
+            </div>
+
+            <div class="people">
+                ${doctorListHTML}
+            </div>
+        </div>
+    `;
+}
+
+export function canDateWithTemplatesMetab2(_data) {
+    const {
+        consultEndDatetime,
+        consultStartDatetime,
+        orderNo,
+        consultId,
+        memberInfoList,
     } = _data;
     const dayNum = moment(consultEndDatetime).day();
 
@@ -93,14 +147,15 @@ export function canDateWithTemplates(_data) {
             <div class="check">
                 <div class="input_wrap">
                     <input
+                    data-consultid="${consultId}"
                     data-isentstate="1"
                     data-caseno="${orderNo}"
                         type="checkbox"
-                        id="time${orderNo}"
+                        id="metab2time${orderNo}"
                         class="green_custom"
                     />
-                    <label for="time${orderNo}"></label>
-                    <label for="time${orderNo}"
+                    <label for="metab2time${orderNo}"></label>
+                    <label for="metab2time${orderNo}"
                         >${moment(consultStartDatetime).format(
                             'YY.MM.DD'
                         )} ${numToDay(dayNum)}요일 ${moment(

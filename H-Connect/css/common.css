@@ -458,10 +458,10 @@ button {
     border: none;
 }
 
-/* .tab-content label.active:nth-of-type(1) {
+#metab-2 .input_wrap label.active:nth-of-type(1) {
     background: #007a94;
     border: none;
-} */
+}
 
 .green_custom[type='checkbox']:checked + label + label,
 .red_custom[type='checkbox']:checked + label + label {

@@ -38,8 +38,6 @@ export async function insertReplyHandle(e) {
         return;
     }
 
-    console.log('isChecked===');
-    console.log(isChecked);
     if (isChecked) {
         $('.section .btn_reply').attr('disabled', false);
         $('.section .btn_reply').addClass('active');
