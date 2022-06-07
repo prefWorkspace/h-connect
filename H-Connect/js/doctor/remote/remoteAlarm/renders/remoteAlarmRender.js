@@ -10,11 +10,7 @@ const { remoteAlarmTemplates } = await import(
     )
 );
 
-const { fakeSelectConsultView } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
-const { selectConsultView } = await import(
+const { selectConsultView, updateStatusDeleteConsult } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteAlarm/actions/remoteAlarmAPI.js'
     )
@@ -31,9 +27,72 @@ const {
     )
 );
 
+// 내가 보낸 협진 가능시간 시간표로 보기 탬플릿
+const { canDateWithScheduleTemplates } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/index/templates/dateScheduleDetailTemplates.js'
+    )
+);
+
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
 );
+
+const { PopupController } = await import(
+    importVersion(
+        '/H-Connect/js/utils/module/popupController/popupController.js'
+    )
+);
+const { confirmTwoPopupTmpl } = await import(
+    importVersion('/H-Connect/js/common/popup/templates/commonPopupTmpl.js')
+);
+
+const _deleteSchedulePopup = new PopupController({
+    /* 협진 삭제 팝업 생성 */
+    target: {
+        openButton: '.me_request .btn_delete',
+        appendWrap: '#delete_schedule_popupwrap',
+    },
+    templates: {
+        popup: () => {
+            return confirmTwoPopupTmpl({
+                type: 'delete',
+                title: '요청한 일정 및 작성한 협진내용이 모두 삭제됩니다.',
+                message: '삭제 하시겠습니까?',
+            });
+        },
+    },
+    popupBtn: {
+        cancleBtn: {
+            target: '.btn.gr',
+            close: true,
+        },
+        submitBtn: {
+            target: '.btn.blf',
+            close: true,
+            action: async (_info) => {
+                const _getConsultId = _info.getData('consultId');
+                const _resDeleteConsult = await updateStatusDeleteConsult(
+                    _getConsultId
+                );
+                if (_resDeleteConsult?.result === true) {
+                    window.location.reload();
+                } else {
+                    alert('협진 일정 요청 삭제를 실패했습니다.');
+                }
+            },
+        },
+    },
+});
+
+function saveDeleteBtnConsulIdToPopup(_consultId) {
+    // 삭제 버튼 이벤트 추가
+    if (_consultId) {
+        _deleteSchedulePopup.saveData('consultId', _consultId);
+    } else {
+        _deleteSchedulePopup.removeData('consultId');
+    }
+}
 
 async function remoteAlarmClick(_consultid, _isentState) {
     let caseInfoHTML = '';
@@ -43,6 +102,9 @@ async function remoteAlarmClick(_consultid, _isentState) {
     let reply_count = 0;
     let noreply_count = 0;
     const consultId = $(this).data('consultid') || _consultid;
+    const confirmState = $(this).data('confirmstate');
+    const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
+
     const isentState =
         $(this).data('isentstate') !== undefined
             ? $(this).data('isentstate')
@@ -80,7 +142,9 @@ async function remoteAlarmClick(_consultid, _isentState) {
 
         // 협진교수 제목 렌더링
         if (isentState === 0) {
-            const { doctorLevelName, doctorName } = memberInfoList[0];
+            const { doctorLevelName, doctorName } = memberInfoList.find(
+                (doctor) => doctor.host === 'Y'
+            );
             const length = memberInfoList.length;
             const text = `${doctorName} ${doctorLevelName} ${
                 length > 1 ? `외 ${length - 1}명` : ''
@@ -106,6 +170,11 @@ async function remoteAlarmClick(_consultid, _isentState) {
                 );
             }
             $(`#isentstate${isentState} #metab-1`).html(scheduleInfoHTML);
+            $(`isentstate${isentState} .btn_reply`).text(buttonTitle);
+
+            /* Ji : 수정 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
+            scheduleModifyBtnEventControll(consultId);
+            saveDeleteBtnConsulIdToPopup(consultId);
         }
 
         // 데드라인 렌더링
@@ -178,4 +247,16 @@ export function remoteAlarmRender(_list) {
             return;
         }
     });
+}
+
+function scheduleModifyBtnEventControll(_consultId) {
+    const _baseLink = '/doctor/remote_new.html';
+    const _fromLink = window.location.pathname;
+    const _calcFromLink = _fromLink.split('/doctor/')[1].split('.html')[0];
+    /* Ji : 협진 일정 요청 수정 버튼 이벤트 부여*/
+    $('.me_request .container .btn_modify')
+        .off()
+        .on('click', function () {
+            window.location.href = `${_baseLink}?modify=${_consultId}&from=${_calcFromLink}`;
+        });
 }

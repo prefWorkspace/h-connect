@@ -9,6 +9,7 @@ export function dataScheduleTemplates(_data) {
         memberInfoList,
         consultId,
         confirmState,
+        deadlineDatetime,
     } = _data;
 
     let html = '';
@@ -16,7 +17,7 @@ export function dataScheduleTemplates(_data) {
 
     const { doctorLevelName, doctorName } = memberInfoList.find(
         (item) => item.host === 'Y'
-    );
+    ) ?? { doctorLevelName: '-', doctorName: '-' };
 
     if (isentState === 1) {
         remote_member = '내가 보냄';
@@ -34,7 +35,7 @@ export function dataScheduleTemplates(_data) {
             html = `
                 <div data-confirmstate="${confirmState}" data-consultid="${consultId}" data-isentstate="${isentState}" data-consultchannle="${consultChannel}" class="row remote_ask">
                     <div>
-                        <p>${moment(startDatetime).format('HH:mm')}</p>
+                        <p>${moment(deadlineDatetime).format('HH:mm')}</p>
                         <p>${consultChannelName}</p>
                     </div>
                     <p class="remote_member ${

@@ -1928,6 +1928,7 @@ $(document).ready(function () {
 
         $(this).addClass('current');
         $('#' + tab_id).addClass('current');
+        $('#consultChannel0 #metab-2').removeClass('on');
     });
 
     // 달력보기

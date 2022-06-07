@@ -41,3 +41,26 @@ export async function insertConsultReply(consultId, scheduleInfo) {
         (err) => console.log(err)
     );
 }
+
+export async function updateConsultConfirm(consultId, orderNo) {
+    const obj = {
+        ...commonRequest(),
+        requester,
+        userId,
+        consultId,
+        organizationCode,
+        orderNo,
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Doctor/UpdateConsultConfirm',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}

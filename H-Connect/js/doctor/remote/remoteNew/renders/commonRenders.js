@@ -1,9 +1,19 @@
+const { history } = await import(
+    importVersion('/H-Connect/js/utils/controller/historyController.js')
+);
+
 const { coopParticipantInformSelector, choiceDoctorSelector } = await import(
     importVersion('/H-Connect/js/doctor/remote/remoteNew/actions/selector.js')
 );
 
 const { errorText } = await import(
     importVersion('/H-Connect/js/common/text/validationText.js')
+);
+
+const { validateCoopAll } = await import(
+    importVersion(
+        '/H-Connect/js/doctor/remote/remoteNew/actions/dataActions.js'
+    )
 );
 
 export function renderChoiceDoctorEmptyControll(_isEmpty) {
@@ -65,7 +75,7 @@ export function renderActivateChoiceDoctor(_targetData) {
 
     renderChoiceDoctorValidation();
     renderActivateChoiceDoctorLength();
-    const _checkValidateAll = coopValidateAll();
+    const _checkValidateAll = validateCoopAll();
 
     return { pass: _checkValidateAll };
 }
@@ -106,6 +116,10 @@ export function renderActivateCreateCoopBtn(_bool) {
 }
 
 export function renderCreateCooperationText(_sectionType) {
+    // 버튼 텍스트 관리
+    const { getParams } = history;
+    const _modifyParam = getParams('modify');
+
     let _btnText = '';
     switch (_sectionType) {
         case '실시간원격협진':
@@ -115,7 +129,11 @@ export function renderCreateCooperationText(_sectionType) {
             _btnText = '협진생성';
             break;
         case '협진일정요청':
-            _btnText = '일정요청';
+            if (_modifyParam) {
+                _btnText = '일정수정';
+            } else {
+                _btnText = '일정요청';
+            }
             break;
     }
     $('#create_cooperation_btn').text(_btnText);

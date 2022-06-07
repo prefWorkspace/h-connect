@@ -387,6 +387,12 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/remoteNew/actions/',
                     },
+                    'scheduleCalendarControllActions.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                    },
                     eachCooperationActions: {
                         'realTimeActions.js': {
                             type: 'module',
@@ -413,7 +419,7 @@ const FILE_TREE = {
                                 '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
                         },
                     },
-                    'createCooperationActions.js': {
+                    'sendCooperationActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
@@ -469,6 +475,12 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/doctor/remote/remoteNew/renders/',
                     },
+                    'firstUpdateInformationRenders.js': {
+                        type: 'module',
+                        url_path: '/doctor/remote_new',
+                        file_path:
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                    },
                 },
                 templates: {
                     'bookmarkSectionTmpl.js': {
@@ -493,12 +505,6 @@ const FILE_TREE = {
             },
             common: {
                 actions: {
-                    'calendarActions.js': {
-                        type: 'module',
-                        url_path: '/doctor/remote',
-                        file_path:
-                            '/H-Connect/js/doctor/remote/common/actions/',
-                    },
                     'sessionBanner.js': {
                         type: 'module',
                         url_path:
@@ -673,7 +679,8 @@ const FILE_TREE = {
                 renders: {
                     'myCalendarRender.js': {
                         type: 'module',
-                        url_path: '/doctor/index||/doctor/remote',
+                        url_path:
+                            '/doctor/index||/doctor/remote||/doctor/remote_alarm',
                         file_path:
                             '/H-Connect/js/doctor/hworks/mySchedule/renders/',
                     },

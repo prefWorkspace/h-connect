@@ -89,7 +89,7 @@ export function canDateWithTemplates(_data) {
     }
 
     return `
-        <div>
+        <div data-orderno="${orderNo}">
             <div class="check">
                 <div class="input_wrap">
                     <input
@@ -151,21 +151,29 @@ export function canDateWithTemplatesisentnot(_data) {
 }
 
 export function canDateWithDoctorListTemplates(_data) {
-    if (_data.length === 0) {
-        return;
-    }
-
     let doctor = '';
     let consultId = '';
+    let orderNo;
+
+    if (!_data || _data.length === 0) {
+        return `
+            <div data-consultid="${consultId}">
+                <div data-orderno="${orderNo}" class="num">0명</div>
+                <div class="select_info">
+                </div>
+            </div>
+        `;
+    }
 
     for (let i = 0; i < _data.length; i++) {
         doctor += `<p>${_data[i].doctorName} ${_data[i].doctorLevelName}</p>`;
         consultId = _data[i].consultId;
+        orderNo = _data[i].orderNo;
     }
 
     return `
         <div data-consultid="${consultId}">
-            <div class="num>${doctor.length}명</div>
+            <div data-orderno="${orderNo}" class="num">${_data.length}명</div>
             <div class="select_info">
                 ${doctor}
             </div>
@@ -174,12 +182,7 @@ export function canDateWithDoctorListTemplates(_data) {
 }
 
 export function canDateWithScheduleTemplates(_data) {
-    const {
-        consultEndDatetime,
-        consultId,
-        consultStartDatetime,
-        memberInfoList,
-    } = _data;
+    const { consultEndDatetime, consultStartDatetime, memberInfoList } = _data;
     const dayNum = moment(consultStartDatetime).day();
     const today = new Date();
 

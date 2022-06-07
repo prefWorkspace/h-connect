@@ -66,12 +66,15 @@ export function remoteAlarmCaseInfoTemplate(_data) {
 
 // 협진 가능시간 탬플릿 수신 받은 부분
 export function remoteAlarmTimeTemplate(_data) {
-    const { consultEndDatetime, consultStartDatetime, orderNo } = _data;
+    const { consultEndDatetime, consultId, consultStartDatetime, orderNo } =
+        _data;
     const day = moment(consultEndDatetime).day();
     return `
         <div>
             <div class="check">
                 <input
+                    data-consultid="${consultId}"
+                    data-caseno="${orderNo}"
                     type="checkbox"
                     id="check${orderNo}"
                     class="green_custom"
@@ -127,7 +130,6 @@ export function remoteAlarmTimeTemplateIsent(_data) {
 }
 
 // 의사 리스트
-
 export function remoteAlarmDoctorTemplate(_data) {
     const { doctorLevelName, doctorName } = _data;
     return `

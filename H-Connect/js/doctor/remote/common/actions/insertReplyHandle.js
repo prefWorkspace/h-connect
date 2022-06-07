@@ -1,59 +1,120 @@
 'use strict';
 
-const { insertConsultReply } = await import(
+const { insertConsultReply, updateConsultConfirm } = await import(
     importVersion('/H-Connect/js/doctor/remote/common/actions/remoteAPI.js')
 );
 
+// 체크박스 유효성
 export async function insertReplyHandle() {
-    $('body').on('click', '#consultChannel1 #tab-1 .green_custom', function () {
-        let isChecked = false;
-        const buttonTitle = $('#consultChannel1 .btn_reply').text();
-        $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
-            const _isChecked = $(value).is(':checked');
-            isChecked = isChecked || _isChecked;
-        });
+    // section right ask_request
+    // background: #007a94;
+    let isChecked = false;
 
-        if (buttonTitle === '회신완료') {
-            return;
+    const buttonTitle = $('.section .btn_reply').text();
+    $('.section.me_request .tab-content .green_custom').each((index, value) => {
+        const _isChecked = $(value).is(':checked');
+        const labelElement = $(value).next();
+        if (_isChecked) {
+            labelElement.addClass('active');
+        } else {
+            labelElement.removeClass('active');
         }
 
-        if (isChecked) {
-            $('#consultChannel1 .btn_reply').attr('disabled', false);
-            $('#consultChannel1 .btn_reply').addClass('active');
-        }
-
-        if (!isChecked) {
-            $('#consultChannel1 .btn_reply').attr('disabled', true);
-            $('#consultChannel1 .btn_reply').removeClass('active');
-        }
+        isChecked = isChecked || _isChecked;
     });
+
+    if (buttonTitle === '회신완료') {
+        return;
+    }
+
+    if (isChecked) {
+        $('.section .btn_reply').attr('disabled', false);
+        $('.section .btn_reply').addClass('active');
+        $('.section .btn_decide').attr('disabled', false);
+    }
+
+    if (!isChecked) {
+        $('.section .btn_reply').attr('disabled', true);
+        $('.section .btn_reply').removeClass('active');
+        $('.section .btn_decide').attr('disabled', true);
+    }
 }
 
-$('#consultChannel1 .btn_reply').on('click', async function () {
+// 회신하기 및 일정 확인 버튼 이벤트
+async function checkButtonHandle(_target) {
     let consultId;
+    let orderNoForAPI;
+    let resultAPI;
     const scheduleInfo = [];
-    $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
+    const isentState = $(_target).data('isentstate');
+    const consultChannel =
+        isentState === 1 ? 'consultChannel0' : 'consultChannel1';
+    const finishedButtonText = '확정완료';
+
+    $(`#${consultChannel} .tab-content .green_custom`).each((index, value) => {
         const _isChecked = $(value).is(':checked');
         const orderNo = $(value).data('caseno');
         consultId = $(value).data('consultid');
         if (_isChecked) {
+            orderNoForAPI = orderNo;
             const consultScheduleInfo = { orderNo };
             scheduleInfo.push(consultScheduleInfo);
         }
     });
 
-    const { result } = await insertConsultReply(consultId, scheduleInfo);
+    if (scheduleInfo.length === 0) {
+        return;
+    }
 
-    if (result) {
-        $(this).text('회신완료');
-        $(this).attr('disabled', true);
-        $('#consultChannel1 .btn_reply').removeClass('active');
-        $('#consultChannel1 #tab-1 .green_custom').each((index, value) => {
-            $(value).attr('checked', false);
-        });
+    if (isentState === 0) {
+        const { result } = await insertConsultReply(consultId, scheduleInfo);
+        resultAPI = result;
+    }
+
+    if (isentState === 1) {
+        const { result } = await updateConsultConfirm(consultId, orderNoForAPI);
+        resultAPI = result;
+    }
+
+    if (resultAPI) {
+        $(_target).text(finishedButtonText);
+        $(_target).attr('disabled', true);
+        // $(`#${consultChannel} .btn_reply`).removeClass('active');
+        $(_target).removeClass('active');
+        $(`#${consultChannel} .tab-content .green_custom`).each(
+            (index, value) => {
+                $(value).attr('checked', false);
+            }
+        );
     } else {
         alert('회신에 실패하였습니다');
     }
+}
+
+// 회신하기 버튼 이벤트
+$('.section .btn_reply').on('click', async function (e) {
+    const { target } = e;
+    await checkButtonHandle(target);
 });
 
-await insertReplyHandle();
+// 일정 확정 버튼 이벤트
+$('.section .btn_decide').on('click', async function (e) {
+    const { target } = e;
+    await checkButtonHandle(target);
+});
+
+// 시간표보기에서 가능 시간 클릭시 리스트 위에 나타내기
+$('body').on('click', '.section #metab-2 .inner .num', function () {
+    const ORDERNO = $(this).data('orderno');
+    if (!ORDERNO) return;
+
+    $(`#metab-2 .select_week > div`).hide();
+    $(`#metab-2 .select_week div[data-orderno=${ORDERNO}]`).show();
+});
+
+// 체크 박스 핸들
+$('body').on(
+    'click',
+    '.section .tab-content .green_custom',
+    async () => await insertReplyHandle()
+);

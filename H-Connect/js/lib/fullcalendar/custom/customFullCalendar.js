@@ -80,11 +80,17 @@ export class CustomFullcalendar {
             initialView: 'dayGridMonth',
             timeZone: 'local',
             selectable: options.selectable ?? false, //선택 할 수 있음
-
-            header: {
-                center: 'title',
-                left: 'prev',
-                right: 'next today',
+            customButtons: {
+                prev: {
+                    click: (evt) => {
+                        this.module.prev();
+                    },
+                },
+                next: {
+                    click: () => {
+                        this.module.next();
+                    },
+                },
             },
             titleFormat: (date) =>
                 typeof options.titleFormat === 'function'
@@ -261,7 +267,7 @@ export class CustomFullcalendar {
     afterRender() {
         const { target, options } = this.init ?? {};
         const _this = this;
-
+        $(target.element).removeClass('_before_render');
         $(target.element)
             .off()
             .on('pointerdown', 'tbody', function () {
@@ -270,10 +276,16 @@ export class CustomFullcalendar {
                 }
             });
     }
+    afterClendarRender() {
+        if (typeof this.init.options.afterClendarRender === 'function') {
+            this.init.options.afterClendarRender();
+        }
+    }
     render() {
         this.module.render();
         if (this.module.isRendered === true) {
             this.afterRender();
+            this.afterClendarRender();
         }
     }
 }

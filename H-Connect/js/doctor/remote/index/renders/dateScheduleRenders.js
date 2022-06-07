@@ -103,7 +103,6 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
     } = _scheduleData[0];
 
     // async function detailSectionIsentInit(){
-
     // }
     // selectMycalendar.find((item) => item.consultId === consultId);
 
@@ -133,10 +132,12 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $(`#consultChannel0 .collabor_wrap .member .withDoctor div`).html(
             withMember
         );
+
         $(`#consultChannel0 .collabor_wrap .member .withOutDoctor div`).html(
             witOutMember
         );
         $('#metab-1').html(canWithTime);
+        $('#metab-2 .select_week').html(canWithTime);
 
         if (canWithTimeSchedule !== null) {
             $('#metab-2 .inner').html(canWithTimeSchedule);
@@ -228,7 +229,8 @@ export async function dateScheduleDetailRender(
         const { result, list } =
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
         selectList = result ? [...list] : [];
+        console.log('selectList===');
+        console.log(selectList);
     }
-
     dateSchduleDetailHandle(selectList, isentState);
 }

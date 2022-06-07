@@ -39,3 +39,19 @@ export async function selectConsultView(consultId) {
         (err) => console.log(err)
     );
 }
+
+// 협진 요청 상태 삭제상태로 변경 API
+export async function updateStatusDeleteConsult(_consultId) {
+    const obj = {
+        ...commonRequest(),
+        consultId: _consultId,
+        userId,
+    };
+    return serverController.ajaxAwaitController(
+        'API/Doctor/UpdateStatusDeleteConsult',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {},
+        (err) => console.log(err)
+    );
+}
