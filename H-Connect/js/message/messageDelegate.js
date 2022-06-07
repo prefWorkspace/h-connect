@@ -1,0 +1,456 @@
+export class MessageDelegate {
+    /**
+     * API 서버 주소.
+     * @type {string}
+     */
+    endpoint = 'https://chat-api.seers-visual-system.link';
+
+    /**
+     * 디버그
+     * @type {boolean}
+     */
+    debug = true;
+
+    /**
+     * access_token과 연계하여, Authorization Header를 만들때 사용
+     * @type {string}
+     */
+    grantType = '';
+    /**
+     * grant_type과 연계하여, Authorization Header를 만들때 사용
+     * @type {string}
+     */
+    accessToken = '';
+    /**
+     * access_token이 만료되었을 때, access_token을 재발급 받기 위해 사용
+     * @type {string}
+     */
+    refreshToken = '';
+    /**
+     * refresh_token의 유효기간을 의미 현재 설정은 10일
+     * @type {string}
+     */
+    refreshTokenExpirationTime = '';
+    /**
+     * 사용자 아이디
+     * @type {string}
+     */
+    userId = '';
+    /**
+     * 사용자 닉네임
+     * @type {string}
+     */
+    userNickname = '';
+    /**
+     * 사용자 권한
+     * @type {string}
+     */
+    userRole = '';
+
+    /**
+     * 생성자
+     * @param {string} endpoint API 주소
+     */
+    constructor(endpoint = '') {
+        if (endpoint) this.endpoint = endpoint;
+    }
+
+    /**
+     * 사용자 로그인
+     * @param {string} username
+     * @param {string} password
+     */
+    login(username, password) {
+        this._post('/user/login', { user_id: username, user_password: password }, (res) => {
+            this.grantType = res.grant_type;
+            this.accessToken = res.access_token;
+            this.refreshToken = res.refresh_token;
+            this.refreshTokenExpirationTime = res.refresh_token_expiration_time;
+            this.userId = res.user_id;
+            this.userNickname = res.user_nickname;
+            this.userRole = res.user_role;
+        });
+    }
+
+    /**
+     * 사용자 로그아웃
+     */
+    logout() {
+        this._post('/user/logout', { access_token: this.accessToken, refresh_token: this.refreshToken }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 토큰 리프레쉬
+     */
+    reissue() {
+        this._post('/user/reissue', { access_token: this.accessToken, refresh_token: this.refreshToken }, (res) => {
+            this.accessToken = res.access_token;
+            this.refreshToken = res.refresh_token;
+        });
+    }
+
+    /**
+     * 사용자 정보 얻기
+     * @param {string} username
+     */
+    findUser(username) {
+        this._get(`/user/${username}`, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 닉네임 변경
+     * @param {string} nickname
+     */
+    updateUser(nickname) {
+        this._post('/user/update', { user_nickname: nickname }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 채팅방 리스트
+     * @param {number} page 현재페이지
+     * @param {number} pageSize 한페이지 사이즈
+     * @returns {null}
+     */
+    getRoomList(page = 1, pageSize = 100) {
+        let rooms = null;
+        this._post('/chat/rooms', { page, page_size: pageSize }, (res) => {
+            rooms = {
+                currentPage: res.current_page,
+                totalCount: res.total_count,
+                totalPage: res.total_page,
+                roomList: res.room_list
+            };
+        });
+
+        return rooms;
+    }
+
+    /**
+     * 채팅방 생성
+     * @param {string} name
+     * @param {string} description
+     * @param {array} users
+     */
+    createRoom(name, description, users = []) {
+        this._post('/chat/room/create', {
+            room_name: name,
+            room_description: description,
+            room_users: users
+        }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 채팅방 수정
+     * @param {string} roomId
+     * @param {string} name
+     * @param {string} description
+     */
+    updateRoom(roomId, name, description) {
+        this._post('/chat/room/update', { room_id: roomId, room_name: name, room_description: description }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 채팅방의 사용자들
+     * @param {string} roomId
+     * @returns {null}
+     */
+    getRoomUserList(roomId) {
+        let userList = null;
+        this._post('/chat/room/users', { room_id: roomId }, (res) => {
+            userList = res.room_users;
+        });
+
+        return userList;
+    }
+
+    /**
+     * 채팅방에 사용자 초대하기
+     * @param {string} roomId
+     * @param {string} userId
+     */
+    inviteUserToRoom(roomId, userId) {
+        this._post('/chat/room/invite', { room_id: roomId, user_id: userId }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 채팅방 나가기
+     * @param {string} roomId
+     */
+    leaveUserFromRoom(roomId) {
+        this._post('/chat/room/leave', { room_id: roomId }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 채팅방의 메시지 리스트
+     * @param {string} roomId
+     * @param {number} page
+     * @param {number} pageSize
+     * @returns {null}
+     */
+    getMessageListFromRoom(roomId, page = 1, pageSize = 100) {
+        let messages = null;
+        this._post('/chat/messages', { room_id: roomId, page, page_size: pageSize }, (res) => {
+            messages = {
+                currentPage: res.current_page,
+                totalCount: res.total_count,
+                totalPage: res.total_page,
+                messageList: res.message_list
+            };
+        });
+
+        return messages;
+    }
+
+    /**
+     * 채팅방에 파일 업로드
+     * @param {string} roomId
+     * @param {string} userId
+     * @param {string} fileId 파일 오브젝트 아이디
+     */
+    uploadFileToRoom(roomId, userId, fileId) {
+        const formData = this._getFile(fileId);
+
+        formData.append('room_id', roomId);
+        formData.append('user_id', userId);
+
+        this._postFile('/chat/upload', formData, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 메시지의 코멘트로 채팅방에 파일 업로드
+     * @param {string} roomId
+     * @param {string} userId
+     * @param {string} parentMessageId 메시지 아이디
+     * @param {string} fileId 파일 오브젝트 아이디
+     */
+    uploadFileAsCommentRoom(roomId, userId, parentMessageId, fileId) {
+        const formData = this._getFile(fileId);
+
+        formData.append('room_id', roomId);
+        formData.append('user_id', userId);
+        formData.append('parent_message_id', parentMessageId);
+
+        this._postFile('/chat/upload/comment', formData, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 메시지 읽음 처리
+     * @param {string} roomId
+     * @param {string} messageId
+     */
+    markAsRead(roomId, messageId) {
+        this._post('/chat/message/read', { room_id: roomId, message_id: messageId }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 메시지 삭제
+     * @param {string} messageId
+     */
+    deleteMessage(messageId) {
+        this._post('/chat/message/delete', { message_id: messageId }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 관리자 - 사용자 추가
+     * @param {string} username
+     * @param {string} password
+     * @param {string} nickname
+     * @param {string} role user|admin
+     * @returns {boolean}
+     */
+    userSignup(username, password, nickname, role = 'user') {
+        if (this.userRole !== 'admin') return false;
+
+        this._post('/user/signup', {
+            user_id: username,
+            user_password: password,
+            user_nickname: nickname,
+            user_role: role
+        }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 채팅방들에 공지메시지 보내기
+     * @param {array} roomIds
+     * @param {string} type NOTI_START_SECTION : 진료 시작 NOTI_END_SECTION : 진료 종료 NOTI_PLAIN_MESSAGE : 진료 삭제
+     * @param {string} notification room_notification: 알림메시지입니다. “notification_type” 이 “NOTI_PLAIN_MESSAGE” 형태 일때만 값이 있습니다.
+     * @returns {boolean}
+     */
+    notifyToMultiRooms(roomIds = [], type = 'NOTI_PLAIN_MESSAGE', notification) {
+        if (this.userRole !== 'admin') return false;
+
+        this._post('/chat/room/notify', {
+            room_ids: roomIds,
+            notification_type: type,
+            room_notification: notification
+        }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 특정 방에 전달한 알림메시지 조회
+     * @param roomId
+     * @returns {boolean}
+     */
+    getNotificationListFromRoom(roomId) {
+        if (this.userRole !== 'admin') return false;
+
+        this._post('/chat/room/notifies', { room_id: roomId }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * 진료시작 및 종료사이의 모든 메시지를 삭제
+     * @param roomId
+     * @param messageId
+     * @returns {boolean}
+     */
+    deleteAllMessageBetweenStartAndEndOfSection(roomId, messageId) {
+        if (this.userRole !== 'admin') return false;
+
+        this._post('/chat/room/notifies', { room_id: roomId, message_id: messageId }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
+     * GET API
+     * @param {string} target
+     * @param {Object} data
+     * @param {function} callback
+     */
+    _get(target, data, callback) {
+        this._ajax('GET', target, data, callback);
+    }
+
+    /**
+     * POST API
+     * @param {string} target
+     * @param {Object} data
+     * @param {function} callback
+     */
+    _post(target, data, callback) {
+        this._ajax('POST', target, data, callback);
+    }
+
+    /**
+     * Ajax
+     * @param {string} method GET|POST
+     * @param {string} target
+     * @param {Object} data
+     * @param {function} callback
+     */
+    _ajax(method, target, data, callback) {
+        callback = typeof data === 'function' ? data : callback;
+
+        let headers = {};
+
+        if (this.accessToken) headers.Authorization = `${this.grantType} ${this.accessToken}`;
+
+        let options = {
+            method, async: false, success: (res) => {
+                if (res.code === 'CODE_SUCCESS') {
+                    if (typeof callback === 'function') callback(res);
+                } else {
+                    this.log(res.message);
+                }
+            }, headers, contentType: 'application/json;charset=UTF-8'
+        };
+
+        if (typeof data !== 'function') options.data = JSON.stringify(data);
+
+        $.ajax(`${this.endpoint}${target}`, options);
+    }
+
+    /**
+     * 파일 업로드
+     * @param {string} target
+     * @param {Object} data
+     * @param {function} callback
+     */
+    _postFile(target, data, callback) {
+        let headers = {};
+
+        if (this.accessToken) headers.Authorization = `${this.grantType} ${this.accessToken}`;
+
+        $.ajax(`${this.endpoint}${target}`, {
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            headers,
+            method: 'POST',
+            success: function(res) {
+                if (typeof callback === 'function') callback(res);
+            }
+        });
+    }
+
+    /**
+     * 파일 오브젝트
+     * @param {string} fileId
+     * @returns {FormData}
+     */
+    _getFile(fileId) {
+        const data = new FormData();
+        data.append('file', $(`#${fileId}`)[0].files[0]);
+
+        return data;
+    }
+
+    /**
+     * 로그
+     * @param {string} messages
+     */
+    log(messages) {
+        if (this.debug) console.log(messages);
+    }
+
+    static getDateFromTimestamp(timestamp) {
+        const date = new Date(timestamp * 1000);
+        const year = date.getFullYear(),
+            month = String(date.getMonth() + 1).padStart(2, '0'),
+            days = String(date.getDate()).padStart(2, '0'),
+            hours = String(date.getHours()).padStart(2, '0'),
+            minutes = String(date.getMinutes()).padStart(2, '0'),
+            seconds = String(date.getSeconds()).padStart(2, '0');
+
+        return {
+            year,
+            shortYear: String(year).substring(2, 4),
+            month,
+            days,
+            hours,
+            minutes,
+            seconds,
+            dateString: `${year}-${month}-${days}`,
+            timeString: `${hours}-${minutes}-${seconds}`
+        };
+    }
+}
