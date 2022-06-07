@@ -7,10 +7,19 @@ const { insertConsultReply, updateConsultConfirm } = await import(
 // 체크박스 유효성
 export async function insertReplyHandle() {
     // section right ask_request
+    // background: #007a94;
     let isChecked = false;
+
     const buttonTitle = $('.section .btn_reply').text();
-    $('.section .tab-content .green_custom').each((index, value) => {
+    $('.section.me_request .tab-content .green_custom').each((index, value) => {
         const _isChecked = $(value).is(':checked');
+        const labelElement = $(value).next();
+        if (_isChecked) {
+            labelElement.addClass('active');
+        } else {
+            labelElement.removeClass('active');
+        }
+
         isChecked = isChecked || _isChecked;
     });
 
@@ -63,7 +72,7 @@ async function checkButtonHandle(_target) {
     }
 
     if (isentState === 1) {
-        const { result } = await updateConsultConfirm(consultId, orderNo);
+        const { result } = await updateConsultConfirm(consultId, orderNoForAPI);
         resultAPI = result;
     }
 
@@ -86,36 +95,6 @@ async function checkButtonHandle(_target) {
 $('.section .btn_reply').on('click', async function (e) {
     const { target } = e;
     await checkButtonHandle(target);
-    // let consultId;
-    // const scheduleInfo = [];
-    // $('#consultChannel1 .tab-content .green_custom').each((index, value) => {
-    //     const _isChecked = $(value).is(':checked');
-    //     const orderNo = $(value).data('caseno');
-    //     consultId = $(value).data('consultid');
-    //     if (_isChecked) {
-    //         const consultScheduleInfo = { orderNo };
-    //         scheduleInfo.push(consultScheduleInfo);
-    //     }
-    // });
-
-    // if (scheduleInfo.length === 0) {
-    //     return;
-    // }
-
-    // const { result } = await insertConsultReply(consultId, scheduleInfo);
-
-    // if (result) {
-    //     $(this).text('회신완료');
-    //     $(this).attr('disabled', true);
-    //     $('#consultChannel1 .btn_reply').removeClass('active');
-    //     $('#consultChannel1 .tab-content .green_custom').each(
-    //         (index, value) => {
-    //             $(value).attr('checked', false);
-    //         }
-    //     );
-    // } else {
-    //     alert('회신에 실패하였습니다');
-    // }
 });
 
 // 일정 확정 버튼 이벤트
@@ -127,15 +106,10 @@ $('.section .btn_decide').on('click', async function (e) {
 // 시간표보기에서 가능 시간 클릭시 리스트 위에 나타내기
 $('body').on('click', '.section #metab-2 .inner .num', function () {
     const ORDERNO = $(this).data('orderno');
-    $('#metab-1 > div').each((index, value) => {
-        if ($(value).data('orderno') === ORDERNO) {
-            const clone = $(value).clone();
-            $('#metab-2 .select_week').html(clone);
-            $('#metab-2 .select_week > div').show();
-            $('#metab-2').addClass('on');
-            return;
-        }
-    });
+    if (!ORDERNO) return;
+
+    $(`#metab-2 .select_week > div`).hide();
+    $(`#metab-2 .select_week div[data-orderno=${ORDERNO}]`).show();
 });
 
 // 체크 박스 핸들
@@ -144,5 +118,3 @@ $('body').on(
     '.section .tab-content .green_custom',
     async () => await insertReplyHandle()
 );
-
-// await insertReplyHandle();

@@ -16,10 +16,6 @@ const { selectMyScheduleList } = await import(
     )
 );
 
-const { selectMycalendar } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 async function dateInit() {
     const today = new Date();
     let date = moment(today).format('DD');
@@ -101,14 +97,15 @@ async function myScheduleInit() {
             html = myCalendarTemplate(list[i]);
             $(`#${id} .title`).after(html);
         }
-    } else {
-        for (let i = 0; i < selectMycalendar.length; i++) {
-            const { startDatetime } = selectMycalendar[i];
-            const id = moment(startDatetime).format('YYYYMMDD');
-            html = myCalendarTemplate(selectMycalendar[i]);
-            $(`#${id} .title`).after(html);
-        }
     }
+    // else {
+    //     for (let i = 0; i < selectMycalendar.length; i++) {
+    //         const { startDatetime } = selectMycalendar[i];
+    //         const id = moment(startDatetime).format('YYYYMMDD');
+    //         html = myCalendarTemplate(selectMycalendar[i]);
+    //         $(`#${id} .title`).after(html);
+    //     }
+    // }
 
     await positionHandle();
 }

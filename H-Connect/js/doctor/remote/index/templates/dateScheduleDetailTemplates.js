@@ -151,13 +151,19 @@ export function canDateWithTemplatesisentnot(_data) {
 }
 
 export function canDateWithDoctorListTemplates(_data) {
-    if (!_data || _data.length === 0) {
-        return;
-    }
-
     let doctor = '';
     let consultId = '';
     let orderNo;
+
+    if (!_data || _data.length === 0) {
+        return `
+            <div data-consultid="${consultId}">
+                <div data-orderno="${orderNo}" class="num">0명</div>
+                <div class="select_info">
+                </div>
+            </div>
+        `;
+    }
 
     for (let i = 0; i < _data.length; i++) {
         doctor += `<p>${_data[i].doctorName} ${_data[i].doctorLevelName}</p>`;
