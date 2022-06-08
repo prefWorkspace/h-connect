@@ -1929,6 +1929,18 @@ $(document).ready(function () {
         $(this).addClass('current');
         $('#' + tab_id).addClass('current');
         $('#consultChannel0 #metab-2').removeClass('on');
+
+        console.log('tab_id===');
+        console.log(tab_id);
+        if (tab_id === 'metab-1' || tab_id === 'tab-2') {
+            $('#consultChannel0 #metab-2 .select_week > div').hide();
+            $('#isentstate1 #metab-2 .select_week > div').hide();
+            $('#consultChannel0 .collabor_wrap .member').css(
+                'margin-top',
+                '0px'
+            );
+            $('#isentstate1 .collabor_wrap .member').css('margin-top', '0px');
+        }
     });
 
     // 달력보기

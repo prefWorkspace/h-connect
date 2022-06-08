@@ -11,8 +11,6 @@ export function remoteAlarmTemplates(_data) {
         unconfirmedReplyCount,
         memberInfoList,
     } = _data;
-    console.log('_data==');
-    console.log(_data);
 
     if (isentState === 1) {
         return `
@@ -30,7 +28,9 @@ export function remoteAlarmTemplates(_data) {
                     <p class="you_or">협진일정 회신</p>
                     <p class="me_or">
                         <span class="green">회신 ${replyCount}명.</span>
-                        <span class="red">미회신 ${unconfirmedReplyCount}명.</span>
+                        <span class="red">미회신 ${
+                            unconfirmedReplyCount - 1
+                        }명.</span>
                     </p>
                 </div>
 

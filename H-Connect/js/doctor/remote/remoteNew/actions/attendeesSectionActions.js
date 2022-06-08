@@ -68,7 +68,6 @@ function removeChoiceDoctorListAction() {
 function searchDoctorAction() {
     // 의사 검색 액션
     function appendSearchDoctorList(_containerEl, _searchList) {
-        console.log('_searchList: ', _searchList);
         if (_searchList && _searchList.length > 0) {
             const _searchListHtml = _searchList.htmlFor((_data) => {
                 return searchDoctorBlock(_data);

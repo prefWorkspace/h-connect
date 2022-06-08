@@ -10,6 +10,7 @@ const { dateTimeHanlder } = await import(
     )
 );
 
+// 협진 내용 탬플릿
 export function dateScheduleCaseDetailTemplates(_data) {
     const {
         orderNo,
@@ -65,6 +66,7 @@ export function dateScheduleCaseDetailTemplates(_data) {
     `;
 }
 
+// 참여자 의사 탬플릿
 export function doctorListTemplates(_data) {
     if (!_data) return;
 
@@ -72,13 +74,16 @@ export function doctorListTemplates(_data) {
     return `<p>${doctorName}</p>`;
 }
 
+// 내가 보낸 일정 협진가능시간 리스트로 보기 탬플릿
 export function canDateWithTemplates(_data) {
     const {
         consultEndDatetime,
         consultStartDatetime,
         orderNo,
         memberInfoList,
+        consultId,
     } = _data;
+
     const dayNum = moment(consultEndDatetime).day();
 
     let doctorListHTML = '';
@@ -93,6 +98,8 @@ export function canDateWithTemplates(_data) {
             <div class="check">
                 <div class="input_wrap">
                     <input
+                    data-consultid="${consultId}"
+                    data-isentstate="1"
                     data-caseno="${orderNo}"
                         type="checkbox"
                         id="time${orderNo}"
@@ -121,6 +128,55 @@ export function canDateWithTemplates(_data) {
     `;
 }
 
+// 내가 보낸 일정 협진가능시간 시간표로 보기 클릭시 생기는 리스트 탬플릿
+export function canDateWithTemplatesMetab2(_data, memberInfoList) {
+    const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
+        _data;
+    const dayNum = moment(consultEndDatetime).day();
+
+    let doctorListHTML = '';
+    if (memberInfoList !== null) {
+        for (let i = 0; i < memberInfoList.length; i++) {
+            doctorListHTML += `<p>${memberInfoList[i].doctorName} ${memberInfoList[i].doctorLevelName}</p>`;
+        }
+    }
+
+    return `
+        <div data-orderno="${orderNo}">
+            <div class="check">
+                <div class="input_wrap">
+                    <input
+                    data-consultid="${consultId}"
+                    data-isentstate="1"
+                    data-caseno="${orderNo}"
+                        type="checkbox"
+                        id="metab2time${orderNo}"
+                        class="green_custom"
+                    />
+                    <label for="metab2time${orderNo}"></label>
+                    <label for="metab2time${orderNo}"
+                        >${moment(consultStartDatetime).format(
+                            'YY.MM.DD'
+                        )} ${numToDay(dayNum)}요일 ${moment(
+        consultStartDatetime
+    ).format('HH:mm')} ~
+                        ${moment(consultEndDatetime).format('HH:mm')}</label
+                    >
+                </div>
+
+                <span>${
+                    memberInfoList ? memberInfoList.length : 0
+                }명 참석</span>
+            </div>
+
+            <div class="people">
+                ${doctorListHTML}
+            </div>
+        </div>
+    `;
+}
+
+// 수신받은 협진 가능시간 탬플릿
 export function canDateWithTemplatesisentnot(_data) {
     const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
         _data;
@@ -130,6 +186,7 @@ export function canDateWithTemplatesisentnot(_data) {
         <div class="check">
             <input
                 data-consultid="${consultId}"
+                data-isentstate="0"
                 data-caseno="${orderNo}"
                 type="checkbox"
                 id="frist${orderNo}"
@@ -150,6 +207,7 @@ export function canDateWithTemplatesisentnot(_data) {
     `;
 }
 
+// 내가 보낸 일정 협진가능시간 시간표로 보기 클릭시 hover로 생기는 의사 리스트
 export function canDateWithDoctorListTemplates(_data) {
     let doctor = '';
     let consultId = '';
@@ -181,6 +239,7 @@ export function canDateWithDoctorListTemplates(_data) {
     `;
 }
 
+// 내가 보낸 일정 협진가능시간 시간표로 보기 탬플릿
 export function canDateWithScheduleTemplates(_data) {
     const { consultEndDatetime, consultStartDatetime, memberInfoList } = _data;
     const dayNum = moment(consultStartDatetime).day();

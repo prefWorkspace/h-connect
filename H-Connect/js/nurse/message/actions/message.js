@@ -67,7 +67,7 @@ $(async function() {
 
     let chatLoginResult = null;
     try {
-        chatLoginResult = await message.login('prefinc_chat2', 12345);
+        chatLoginResult = await message.login('prefinc_chat1', 1234);
     } catch (e) {
 
     }
