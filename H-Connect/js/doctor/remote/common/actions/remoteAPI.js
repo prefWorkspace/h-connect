@@ -52,6 +52,9 @@ export async function updateConsultConfirm(consultId, orderNo) {
         orderNo,
     };
 
+    console.log('obj===');
+    console.log(obj);
+
     return serverController.ajaxAwaitController(
         'API/Doctor/UpdateConsultConfirm',
         'POST',
