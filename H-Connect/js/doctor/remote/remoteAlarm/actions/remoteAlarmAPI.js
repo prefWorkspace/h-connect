@@ -55,3 +55,25 @@ export async function updateStatusDeleteConsult(_consultId) {
         (err) => console.log(err)
     );
 }
+
+// 협진 일정 요청 내가 보냄 상세조회 API
+export async function selectConsultConfirmView(_consultId) {
+    const obj = {
+        ...commonRequest(),
+        consultId: _consultId,
+        userId,
+        requester,
+        organizationCode,
+    };
+    return serverController.ajaxAwaitController(
+        'API/Doctor/SelectConsultConfirmView',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}

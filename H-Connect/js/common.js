@@ -1932,12 +1932,14 @@ $(document).ready(function () {
 
         console.log('tab_id===');
         console.log(tab_id);
-        if (tab_id === 'metab-1') {
+        if (tab_id === 'metab-1' || tab_id === 'tab-2') {
             $('#consultChannel0 #metab-2 .select_week > div').hide();
+            $('#isentstate1 #metab-2 .select_week > div').hide();
             $('#consultChannel0 .collabor_wrap .member').css(
                 'margin-top',
                 '0px'
             );
+            $('#isentstate1 .collabor_wrap .member').css('margin-top', '0px');
         }
     });
 

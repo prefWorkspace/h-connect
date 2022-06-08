@@ -118,7 +118,7 @@ export function remoteAlarmTimeTemplateIsent(_data, memberInfoList) {
                     data-caseno="${orderNo}"
                     data-isentstate="1"
                         type="checkbox"
-                        id="time1"
+                        id="time${orderNo}"
                         class="green_custom"
                     />
                     <label for="time${orderNo}"></label>
@@ -144,9 +144,61 @@ export function remoteAlarmTimeTemplateIsent(_data, memberInfoList) {
     `;
 }
 
+// 내가 보낸 일정 요청에서 협진 가능시간
+export function remoteAlarmTimeTemplateIsentmetab2(_data, memberInfoList) {
+    const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
+        _data;
+    const day = moment(consultEndDatetime).day();
+
+    let doctorListHTML = '';
+    if (!memberInfoList) {
+        for (let i = 0; i < memberInfoList.length; i++) {
+            doctorListHTML += `<p>${memberInfoList[i].doctorName} ${memberInfoList[i].doctorLevelName}</p>`;
+        }
+    }
+
+    return `
+        <div data-orderno="${orderNo}">
+            <div class="check">
+                <div class="input_wrap">
+                    <input
+                    data-consultid="${consultId}"
+                    data-caseno="${orderNo}"
+                    data-isentstate="1"
+                        type="checkbox"
+                        id="metab2time${orderNo}"
+                        class="green_custom"
+                    />
+                    <label for="metab2time${orderNo}"></label>
+                    <label for="metab2time${orderNo}"
+                        >${moment(consultEndDatetime).format(
+                            'YY.MM.DD'
+                        )} ${numToDay(day)}요일 ${moment(
+        consultStartDatetime
+    ).format('HH:mm')} ~
+                        ${moment(consultEndDatetime).format('HH:mm')}</label
+                    >
+                </div>
+
+                <span>${
+                    memberInfoList ? memberInfoList.length : 0
+                }명 참석</span>
+            </div>
+
+            <div class="people">
+            ${doctorListHTML}
+            </div>
+        </div>
+    `;
+}
+
 // 의사 리스트
 export function remoteAlarmDoctorTemplate(_data) {
-    const { doctorLevelName, doctorName } = _data;
+    const { doctorLevelName, doctorName, host } = _data;
+
+    if (host === 'Y') {
+        return '';
+    }
     return `
         <p>${doctorName} ${doctorLevelName}</p>
     `;

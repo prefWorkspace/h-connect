@@ -120,6 +120,7 @@ $('body').on('click', '.section #metab-2 .inner .num', function () {
     if (!ORDERNO) return;
 
     $('#consultChannel0 .collabor_wrap .member').css('margin-top', '100px');
+    $('#isentstate1 .collabor_wrap .member').css('margin-top', '100px');
     $(`#metab-2 .select_week > div`).hide();
     $(`#metab-2 .select_week div[data-orderno=${ORDERNO}]`).show();
 });
