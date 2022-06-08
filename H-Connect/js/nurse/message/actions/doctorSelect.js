@@ -15,6 +15,20 @@ const doctorSelectorOptions = {
         },
         departmentRender: true,
     },
-    bookmark: {},
+    bookmark: {
+        tab: {
+            target: {
+                container: '.favorite_list .group .group_list_inner',
+                button: '.favorite_list .group button.btn_add',
+            },
+        },
+        list: {
+            target: {
+                container: '.favorite_list .group_container',
+            },
+            allCheckRender: true,
+        },
+    },
 };
+
 const doctorSelectorModule = new DoctorSelector(doctorSelectorOptions);

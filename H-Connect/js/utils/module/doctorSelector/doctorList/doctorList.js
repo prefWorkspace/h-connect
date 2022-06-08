@@ -20,28 +20,10 @@ function getUserInfo() {
     return JSON.parse(localStorageController.getLocalS('userData'));
 }
 
-export class DoctorList {
+export class DoctorListModule {
     constructor(_initOptions) {
         this.options = _initOptions;
         this.initDoctorList();
-    }
-    async selectHisDoctorList() {
-        /* 의사 리스트 불러오기 API */
-        const { id } = getUserInfo();
-        if (!id) return;
-        const res = await serverController.ajaxAwaitController(
-            'API/Doctor/SelectHisDoctorList',
-            'POST',
-            JSON.stringify({
-                ...commonRequest(),
-                userId: id,
-            }),
-            (res) => {},
-            (err) => console.error(err)
-        );
-        if (res.result) {
-            return res.doctorInfoList;
-        }
     }
     renderDoctorList(_departmentDoctorList) {
         const { target, departmentRender } = this.options ?? {};
@@ -54,9 +36,13 @@ export class DoctorList {
         if (departmentRender === true && _getDoctorList.length > 0) {
             // department render 일시
 
-            _html = _departmentDoctorList.htmlFor((_data) =>
-                this.templates.departmentDoctorListTmpl(_data)
-            );
+            _html = _departmentDoctorList.htmlFor((_data) => {
+                if (_data?.doctorInfo && _data?.doctorInfo?.length > 0) {
+                    return this.templates.departmentDoctorListTmpl(_data);
+                } else {
+                    return '';
+                }
+            });
         } else if (departmentRender !== true && _getDoctorList.length > 0) {
             // doctor list render 일시
 
@@ -67,11 +53,38 @@ export class DoctorList {
 
         $(target.container).html(_html);
     }
-    async initDoctorList() {
-        let _getDepartmentDoctorList = await this.selectHisDoctorList();
-        this.renderDoctorList(_getDepartmentDoctorList);
+    addEventDoctorList() {
+        // 메세지 아코디언
+        $(document).on('click', '.message .medical_depart .title', (e) => {
+            $(e.currentTarget).toggleClass('active');
+            $(e.currentTarget).siblings().slideToggle(300);
+        });
     }
-
+    async initDoctorList() {
+        let _getDepartmentDoctorList = await this.API.selectHisDoctorList();
+        this.renderDoctorList(_getDepartmentDoctorList);
+        this.addEventDoctorList();
+    }
+    API = {
+        selectHisDoctorList: async () => {
+            /* 의사 리스트 불러오기 API */
+            const { id } = getUserInfo();
+            if (!id) return;
+            const res = await serverController.ajaxAwaitController(
+                'API/Doctor/SelectHisDoctorList',
+                'POST',
+                JSON.stringify({
+                    ...commonRequest(),
+                    userId: id,
+                }),
+                (res) => {},
+                (err) => console.error(err)
+            );
+            if (res.result) {
+                return res.doctorInfoList;
+            }
+        },
+    };
     templates = {
         doctorListTmpl: (_data) => {
             // 선택 될 의사 리스트 아이템
@@ -83,7 +96,12 @@ export class DoctorList {
                 departmentName,
             } = _data ?? {};
             return `
-            <div class='doctor-list-item' data-user-id='${userId}' data-user-name='${userName}' data-jikchek='${jikchek}' data-department-code='${departmentCode}' data-department-name='${departmentName}'>
+            <div class='doctor-list-item' 
+            data-user-id='${userId}' 
+            data-user-name='${userName}' 
+            data-jikchek='${jikchek}' 
+            data-department-code='${departmentCode}' 
+            data-department-name='${departmentName}'>
                 <div class="input_wrap">
                     <input type="checkbox" name="doctor" id="${
                         'check-doctor' + userId
@@ -106,17 +124,11 @@ export class DoctorList {
             `;
         },
         departmentDoctorListTmpl: (_data) => {
-            console.log('_data: ', _data);
-            const { doctorInfo, departmentName } = _data ?? {};
-            // const {
-            //     userId,
-            //     userName,
-            //     jikchek,
-            //     departmentCode,
-            //     departmentName,
-            // } = _data ?? {};
+            const { doctorInfo, departmentCode, departmentName } = _data ?? {};
             return `
-            <div class="medical_depart">
+            <div class="medical_depart" 
+            data-department-code='${departmentCode}' 
+            data-department-name='${departmentName}'>
               <div class="title">
                   ${departmentName}
               </div>
