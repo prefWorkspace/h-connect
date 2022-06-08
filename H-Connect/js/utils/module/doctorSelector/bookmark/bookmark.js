@@ -212,7 +212,7 @@ export class BookmarkModule {
 
                         if (_isDeleted) {
                             const _$bookmarkListWrapEl = $(
-                                list.target.container
+                                tab.target.container
                             );
 
                             if (_$tabTargetEl.hasClass('on')) {
