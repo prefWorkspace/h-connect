@@ -60,8 +60,8 @@ export class MessageDelegate {
      * @param {string} username
      * @param {string} password
      */
-    login(username, password) {
-        this._post('/user/login', { user_id: username, user_password: password }, (res) => {
+    async login(username, password) {
+        return await this._post('/user/login', { user_id: username, user_password: password }, (res) => {
             this.grantType = res.grant_type;
             this.accessToken = res.access_token;
             this.refreshToken = res.refresh_token;
@@ -75,8 +75,11 @@ export class MessageDelegate {
     /**
      * 사용자 로그아웃
      */
-    logout() {
-        this._post('/user/logout', { access_token: this.accessToken, refresh_token: this.refreshToken }, (res) => {
+    async logout() {
+        return await this._post('/user/logout', {
+            access_token: this.accessToken,
+            refresh_token: this.refreshToken
+        }, (res) => {
             this.log(res);
         });
     }
@@ -84,8 +87,11 @@ export class MessageDelegate {
     /**
      * 토큰 리프레쉬
      */
-    reissue() {
-        this._post('/user/reissue', { access_token: this.accessToken, refresh_token: this.refreshToken }, (res) => {
+    async reissue() {
+        return await this._post('/user/reissue', {
+            access_token: this.accessToken,
+            refresh_token: this.refreshToken
+        }, (res) => {
             this.accessToken = res.access_token;
             this.refreshToken = res.refresh_token;
         });
@@ -95,8 +101,8 @@ export class MessageDelegate {
      * 사용자 정보 얻기
      * @param {string} username
      */
-    findUser(username) {
-        this._get(`/user/${username}`, (res) => {
+    async findUser(username) {
+        return await this._get(`/user/${username}`, (res) => {
             this.log(res);
         });
     }
@@ -105,8 +111,8 @@ export class MessageDelegate {
      * 닉네임 변경
      * @param {string} nickname
      */
-    updateUser(nickname) {
-        this._post('/user/update', { user_nickname: nickname }, (res) => {
+    async updateUser(nickname) {
+        return await this._post('/user/update', { user_nickname: nickname }, (res) => {
             this.log(res);
         });
     }
@@ -117,16 +123,16 @@ export class MessageDelegate {
      * @param {number} pageSize 한페이지 사이즈
      * @returns {null}
      */
-    getRoomList(page = 1, pageSize = 100) {
+    async getRoomList(page = 1, pageSize = 100) {
         let rooms = null;
-        this._post('/chat/rooms', { page, page_size: pageSize }, (res) => {
-            rooms = {
-                currentPage: res.current_page,
-                totalCount: res.total_count,
-                totalPage: res.total_page,
-                roomList: res.room_list
-            };
-        });
+        const result = await this._post('/chat/rooms', { page, page_size: pageSize });
+
+        rooms = {
+            currentPage: result.current_page,
+            totalCount: result.total_count,
+            totalPage: result.total_page,
+            roomList: result.room_list
+        };
 
         return rooms;
     }
@@ -137,11 +143,22 @@ export class MessageDelegate {
      * @param {string} description
      * @param {array} users
      */
-    createRoom(name, description, users = []) {
-        this._post('/chat/room/create', {
+    async createRoom(name, description, users = []) {
+        return await this._post('/chat/room/create', {
             room_name: name,
             room_description: description,
             room_users: users
+        });
+
+    }
+
+    /**
+     * 채팅방들 삭제
+     * @param {string[]} rooms
+     */
+    async deleteRooms(rooms) {
+        return await this._post('/chat/room/delete', {
+            room_id: rooms
         }, (res) => {
             this.log(res);
         });
@@ -153,8 +170,12 @@ export class MessageDelegate {
      * @param {string} name
      * @param {string} description
      */
-    updateRoom(roomId, name, description) {
-        this._post('/chat/room/update', { room_id: roomId, room_name: name, room_description: description }, (res) => {
+    async updateRoom(roomId, name, description) {
+        return await this._post('/chat/room/update', {
+            room_id: roomId,
+            room_name: name,
+            room_description: description
+        }, (res) => {
             this.log(res);
         });
     }
@@ -164,13 +185,8 @@ export class MessageDelegate {
      * @param {string} roomId
      * @returns {null}
      */
-    getRoomUserList(roomId) {
-        let userList = null;
-        this._post('/chat/room/users', { room_id: roomId }, (res) => {
-            userList = res.room_users;
-        });
-
-        return userList;
+    async getRoomUserList(roomId) {
+        return await this._post('/chat/room/users', { room_id: roomId });
     }
 
     /**
@@ -178,8 +194,8 @@ export class MessageDelegate {
      * @param {string} roomId
      * @param {string} userId
      */
-    inviteUserToRoom(roomId, userId) {
-        this._post('/chat/room/invite', { room_id: roomId, user_id: userId }, (res) => {
+    async inviteUserToRoom(roomId, userId) {
+        return await this._post('/chat/room/invite', { room_id: roomId, user_id: userId }, (res) => {
             this.log(res);
         });
     }
@@ -188,8 +204,8 @@ export class MessageDelegate {
      * 채팅방 나가기
      * @param {string} roomId
      */
-    leaveUserFromRoom(roomId) {
-        this._post('/chat/room/leave', { room_id: roomId }, (res) => {
+    async leaveUserFromRoom(roomId) {
+        return await this._post('/chat/room/leave', { room_id: roomId }, (res) => {
             this.log(res);
         });
     }
@@ -201,16 +217,16 @@ export class MessageDelegate {
      * @param {number} pageSize
      * @returns {null}
      */
-    getMessageListFromRoom(roomId, page = 1, pageSize = 100) {
+    async getMessageListFromRoom(roomId, page = 1, pageSize = 100) {
         let messages = null;
-        this._post('/chat/messages', { room_id: roomId, page, page_size: pageSize }, (res) => {
-            messages = {
-                currentPage: res.current_page,
-                totalCount: res.total_count,
-                totalPage: res.total_page,
-                messageList: res.message_list
-            };
-        });
+        const result = await this._post('/chat/messages', { room_id: roomId, page, page_size: pageSize });
+
+        messages = {
+            currentPage: result.current_page,
+            totalCount: result.total_count,
+            totalPage: result.total_page,
+            messageList: result.message_list
+        };
 
         return messages;
     }
@@ -221,13 +237,13 @@ export class MessageDelegate {
      * @param {string} userId
      * @param {string} fileId 파일 오브젝트 아이디
      */
-    uploadFileToRoom(roomId, userId, fileId) {
+    async uploadFileToRoom(roomId, userId, fileId) {
         const formData = this._getFile(fileId);
 
         formData.append('room_id', roomId);
         formData.append('user_id', userId);
 
-        this._postFile('/chat/upload', formData, (res) => {
+        return await this._postFile('/chat/upload', formData, (res) => {
             this.log(res);
         });
     }
@@ -239,14 +255,14 @@ export class MessageDelegate {
      * @param {string} parentMessageId 메시지 아이디
      * @param {string} fileId 파일 오브젝트 아이디
      */
-    uploadFileAsCommentRoom(roomId, userId, parentMessageId, fileId) {
+    async uploadFileAsCommentRoom(roomId, userId, parentMessageId, fileId) {
         const formData = this._getFile(fileId);
 
         formData.append('room_id', roomId);
         formData.append('user_id', userId);
         formData.append('parent_message_id', parentMessageId);
 
-        this._postFile('/chat/upload/comment', formData, (res) => {
+        return await this._postFile('/chat/upload/comment', formData, (res) => {
             this.log(res);
         });
     }
@@ -256,8 +272,8 @@ export class MessageDelegate {
      * @param {string} roomId
      * @param {string} messageId
      */
-    markAsRead(roomId, messageId) {
-        this._post('/chat/message/read', { room_id: roomId, message_id: messageId }, (res) => {
+    async markAsRead(roomId, messageId) {
+        return await this._post('/chat/message/read', { room_id: roomId, message_id: messageId }, (res) => {
             this.log(res);
         });
     }
@@ -266,8 +282,8 @@ export class MessageDelegate {
      * 메시지 삭제
      * @param {string} messageId
      */
-    deleteMessage(messageId) {
-        this._post('/chat/message/delete', { message_id: messageId }, (res) => {
+    async deleteMessage(messageId) {
+        return await this._post('/chat/message/delete', { message_id: messageId }, (res) => {
             this.log(res);
         });
     }
@@ -280,10 +296,10 @@ export class MessageDelegate {
      * @param {string} role user|admin
      * @returns {boolean}
      */
-    userSignup(username, password, nickname, role = 'user') {
+    async userSignup(username, password, nickname, role = 'user') {
         if (this.userRole !== 'admin') return false;
 
-        this._post('/user/signup', {
+        return await this._post('/user/signup', {
             user_id: username,
             user_password: password,
             user_nickname: nickname,
@@ -300,10 +316,10 @@ export class MessageDelegate {
      * @param {string} notification room_notification: 알림메시지입니다. “notification_type” 이 “NOTI_PLAIN_MESSAGE” 형태 일때만 값이 있습니다.
      * @returns {boolean}
      */
-    notifyToMultiRooms(roomIds = [], type = 'NOTI_PLAIN_MESSAGE', notification) {
+    async notifyToMultiRooms(roomIds = [], type = 'NOTI_PLAIN_MESSAGE', notification) {
         if (this.userRole !== 'admin') return false;
 
-        this._post('/chat/room/notify', {
+        return await this._post('/chat/room/notify', {
             room_ids: roomIds,
             notification_type: type,
             room_notification: notification
@@ -317,10 +333,10 @@ export class MessageDelegate {
      * @param roomId
      * @returns {boolean}
      */
-    getNotificationListFromRoom(roomId) {
+    async getNotificationListFromRoom(roomId) {
         if (this.userRole !== 'admin') return false;
 
-        this._post('/chat/room/notifies', { room_id: roomId }, (res) => {
+        return await this._post('/chat/room/notifies', { room_id: roomId }, (res) => {
             this.log(res);
         });
     }
@@ -331,10 +347,10 @@ export class MessageDelegate {
      * @param messageId
      * @returns {boolean}
      */
-    deleteAllMessageBetweenStartAndEndOfSection(roomId, messageId) {
+    async deleteAllMessageBetweenStartAndEndOfSection(roomId, messageId) {
         if (this.userRole !== 'admin') return false;
 
-        this._post('/chat/room/notifies', { room_id: roomId, message_id: messageId }, (res) => {
+        return await this._post('/chat/room/notifies', { room_id: roomId, message_id: messageId }, (res) => {
             this.log(res);
         });
     }
@@ -345,8 +361,8 @@ export class MessageDelegate {
      * @param {Object} data
      * @param {function} callback
      */
-    _get(target, data, callback) {
-        this._ajax('GET', target, data, callback);
+    _get(target, data, callback = null) {
+        return this._ajax('GET', target, data, callback);
     }
 
     /**
@@ -355,8 +371,8 @@ export class MessageDelegate {
      * @param {Object} data
      * @param {function} callback
      */
-    _post(target, data, callback) {
-        this._ajax('POST', target, data, callback);
+    _post(target, data, callback = null) {
+        return this._ajax('POST', target, data, callback);
     }
 
     /**
@@ -366,7 +382,7 @@ export class MessageDelegate {
      * @param {Object} data
      * @param {function} callback
      */
-    _ajax(method, target, data, callback) {
+    _ajax(method, target, data, callback = null) {
         callback = typeof data === 'function' ? data : callback;
 
         let headers = {};
@@ -374,18 +390,27 @@ export class MessageDelegate {
         if (this.accessToken) headers.Authorization = `${this.grantType} ${this.accessToken}`;
 
         let options = {
-            method, async: false, success: (res) => {
+            method,
+            headers,
+            contentType: 'application/json;charset=UTF-8',
+            success: (res) => {
                 if (res.code === 'CODE_SUCCESS') {
                     if (typeof callback === 'function') callback(res);
                 } else {
                     this.log(res.message);
                 }
-            }, headers, contentType: 'application/json;charset=UTF-8'
+
+                return res;
+            },
+            error: (error) => {
+                this.log(error);
+                return error;
+            }
         };
 
         if (typeof data !== 'function') options.data = JSON.stringify(data);
 
-        $.ajax(`${this.endpoint}${target}`, options);
+        return $.ajax(`${this.endpoint}${target}`, options);
     }
 
     /**
@@ -399,7 +424,7 @@ export class MessageDelegate {
 
         if (this.accessToken) headers.Authorization = `${this.grantType} ${this.accessToken}`;
 
-        $.ajax(`${this.endpoint}${target}`, {
+        return $.ajax(`${this.endpoint}${target}`, {
             data: data,
             cache: false,
             contentType: false,
@@ -408,6 +433,11 @@ export class MessageDelegate {
             method: 'POST',
             success: function(res) {
                 if (typeof callback === 'function') callback(res);
+                return res;
+            },
+            error: (error) => {
+                this.log(error);
+                return error;
             }
         });
     }
@@ -429,11 +459,11 @@ export class MessageDelegate {
      * @param {string} messages
      */
     log(messages) {
-        if (this.debug) console.log(messages);
+        if (this.debug) console.log('Debug', messages);
     }
 
     static getDateFromTimestamp(timestamp) {
-        const date = new Date(timestamp * 1000);
+        const date = ['string', 'number'].includes(typeof timestamp) ? new Date(String(timestamp).substring(0, 10) * 1000) : timestamp;
         const year = date.getFullYear(),
             month = String(date.getMonth() + 1).padStart(2, '0'),
             days = String(date.getDate()).padStart(2, '0'),
