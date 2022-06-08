@@ -64,8 +64,6 @@ function loopHtml(_list, type) {
 
 export async function dateScheduleRender(_list) {
     let html = '';
-    console.log('_list===');
-    console.log(_list);
     if (_list.length === 0) {
         html = errorText();
         $('.all_plan .cal_list .schedule_list').html(html);
