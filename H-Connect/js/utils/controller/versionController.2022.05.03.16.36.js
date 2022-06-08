@@ -214,6 +214,15 @@ const FILE_TREE = {
                 },
             },
             doctorSelector: {
+                choiceDoctor: {
+                    'choiceDoctor.js': {
+                        type: 'module',
+                        url_path: '*',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/doctorSelector/choiceDoctor/',
+                    },
+                },
                 bookmark: {
                     'bookmark.js': {
                         type: 'module',

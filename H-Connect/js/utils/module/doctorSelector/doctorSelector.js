@@ -13,22 +13,35 @@ const { BookmarkModule } = await import(
         '/H-Connect/js/utils/module/doctorSelector/bookmark/bookmark.js'
     )
 );
+const { ChoiceDoctorModule } = await import(
+    importVersion(
+        '/H-Connect/js/utils/module/doctorSelector/choiceDoctor/choiceDoctor.js'
+    )
+);
 export class DoctorSelector {
     constructor(_initOptions) {
         this.options = _initOptions;
-        const { doctorSearch, doctorList, bookmark } = this.options ?? {};
-        this.doctorSearchSetting(doctorSearch);
-        this.doctorListSetting(doctorList);
-        this.bookmarkSetting(bookmark);
+        const { choiceDoctor, doctorSearch, doctorList, bookmark } =
+            this.options ?? {};
+        this.choiceDoctorSettingInit(choiceDoctor);
+        this.doctorSearchSettingInit(doctorSearch);
+        this.doctorListSettingInit(doctorList);
+        this.bookmarkSettingInit(bookmark);
     }
-
-    doctorSearchSetting(_doctorSearchOptions) {
+    choiceDoctorSettingInit(_choiceDoctorOptions) {
+        if (!_choiceDoctorOptions?.use) return;
+        this.choiceDoctorModule = new ChoiceDoctorModule(_choiceDoctorOptions);
+    }
+    doctorSearchSettingInit(_doctorSearchOptions) {
+        if (!_doctorSearchOptions?.use) return;
         this.doctorSearchModule = new DoctorSearchModule(_doctorSearchOptions);
     }
-    doctorListSetting(_doctorListOptions) {
+    doctorListSettingInit(_doctorListOptions) {
+        if (!_doctorListOptions?.use) return;
         this.doctorListModule = new DoctorListModule(_doctorListOptions);
     }
-    bookmarkSetting(_bookmarkOptions) {
+    bookmarkSettingInit(_bookmarkOptions) {
+        if (!_bookmarkOptions?.use) return;
         this.bookmarkModule = new BookmarkModule(_bookmarkOptions);
     }
 }
