@@ -5936,3 +5936,8 @@ textarea::-webkit-scrollbar-button {
     margin-left: 7px;
     border-radius: 50%;
 }
+
+.favorite_container input[type='checkbox']:checked + label {
+    filter: invert(42%) sepia(95%) saturate(7128%) hue-rotate(177deg)
+        brightness(95%) contrast(101%);
+}

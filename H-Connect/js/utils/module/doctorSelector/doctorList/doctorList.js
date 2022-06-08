@@ -8,9 +8,10 @@ const { localStorageController } = await import(
     importVersion('/H-Connect/js/utils/controller/localStorageController.js')
 );
 
-const { departmentDoctorListToBasicList } = await import(
-    importVersion('/H-Connect/js/utils/module/doctorSelector/utils.js')
-);
+const { departmentDoctorListToBasicList, renderActivateCheckBox } =
+    await import(
+        importVersion('/H-Connect/js/utils/module/doctorSelector/utils.js')
+    );
 
 const { errorText } = await import(
     importVersion('/H-Connect/js/common/text/validationText.js')
@@ -23,17 +24,22 @@ function getUserInfo() {
 export class DoctorListModule {
     constructor(_initOptions) {
         this.options = _initOptions;
-        this.initDoctorList();
+        this.renderInit();
+        this.actionInit();
+    }
+    async renderInit() {
+        let _getDepartmentDoctorList = await this.API.selectHisDoctorList();
+        this.renderDoctorList(_getDepartmentDoctorList);
     }
     renderDoctorList(_departmentDoctorList) {
-        const { target, departmentRender } = this.options ?? {};
+        const { doctorList } = this.options ?? {};
 
         let _getDoctorList = departmentDoctorListToBasicList(
             _departmentDoctorList
         );
         /* "의료진 리스트" 렌더 함수 */
         let _html = errorText();
-        if (departmentRender === true && _getDoctorList.length > 0) {
+        if (doctorList.departmentRender === true && _getDoctorList.length > 0) {
             // department render 일시
 
             _html = _departmentDoctorList.htmlFor((_data) => {
@@ -43,7 +49,10 @@ export class DoctorListModule {
                     return '';
                 }
             });
-        } else if (departmentRender !== true && _getDoctorList.length > 0) {
+        } else if (
+            doctorList.departmentRender !== true &&
+            _getDoctorList.length > 0
+        ) {
             // doctor list render 일시
 
             _html = _getDoctorList.htmlFor((_data) =>
@@ -51,20 +60,43 @@ export class DoctorListModule {
             );
         }
 
-        $(target.container).html(_html);
+        $(doctorList.target.container).html(_html);
     }
-    addEventDoctorList() {
+    async actionInit() {
+        this.actionDoctorDepartmentAccordion();
+        this.actionCheckboxDoctorList();
+    }
+    actionDoctorDepartmentAccordion() {
         // 메세지 아코디언
         $(document).on('click', '.message .medical_depart .title', (e) => {
             $(e.currentTarget).toggleClass('active');
             $(e.currentTarget).siblings().slideToggle(300);
         });
     }
-    async initDoctorList() {
-        let _getDepartmentDoctorList = await this.API.selectHisDoctorList();
-        this.renderDoctorList(_getDepartmentDoctorList);
-        this.addEventDoctorList();
+    actionCheckboxDoctorList() {
+        /* 의료진 선택 input 체크박스 변경시 선택된 의료진 list 에 넣기 */
+        // 즐겨찾기, 의료진 선택 모두 포함해서 의료진 선택에 입력합니다.
+        $(document).on('change', '.doctor-list-item .input_wrap input', (e) => {
+            const { choiceDoctorModule } = this.sharing ?? {};
+            const _isChecked = $(e.currentTarget).is(':checked');
+            const _$listItemEl = $(e.currentTarget).closest(
+                '.doctor-list-item'
+            );
+            const _listItemData = _$listItemEl.data();
+            renderActivateCheckBox(_listItemData.userId, _isChecked);
+
+            if (_isChecked) {
+                choiceDoctorModule.addChoiceDoctorList(_listItemData);
+            } else {
+                choiceDoctorModule.removeChoiceDoctorList(_listItemData);
+            }
+        });
     }
+
+    shareModule(_module) {
+        this.sharing = _module;
+    }
+
     API = {
         selectHisDoctorList: async () => {
             /* 의사 리스트 불러오기 API */

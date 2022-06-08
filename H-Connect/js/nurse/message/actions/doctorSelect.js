@@ -7,6 +7,8 @@ const doctorSelectorOptions = {
         target: {
             container: '.select_list',
         },
+        afterAddChoiceDoctor: () => {},
+        afterRemoveChoiceDoctor: () => {},
     },
     doctorSearch: {
         use: true,
@@ -15,6 +17,7 @@ const doctorSelectorOptions = {
             input: '.select_doctor .search_container input',
             searchBtn: '.select_doctor .search_container button.btn_search',
         },
+        afterSearchDoctor: () => {},
     },
     doctorList: {
         use: true,

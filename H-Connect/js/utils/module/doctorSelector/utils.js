@@ -8,3 +8,25 @@ export function departmentDoctorListToBasicList(_departmentDoctorList) {
     }
     return resultList;
 }
+
+export function renderActivateCheckBox(_targetClass, _checkBool) {
+    // 의료진 선택 checkbox 동기화
+    /* 이름에 . 이 들어가서 vanilla js*/
+    const _$checkItemEls = $(
+        document.getElementsByClassName(`check-${_targetClass}`)
+    );
+    _$checkItemEls.each(function () {
+        $(this).prop('checked', _checkBool);
+    });
+}
+
+export function renderActivateBookmark(_targetClass, _checkBool) {
+    // 즐겨찾기( bookmark ) 동기화
+    /* 이름에 . 이 들어가서 vanilla js*/
+    const _$checkItemEls = $(
+        document.getElementsByClassName(`favorite-${_targetClass}`)
+    );
+    _$checkItemEls.each(function () {
+        $(this).prop('checked', _checkBool);
+    });
+}

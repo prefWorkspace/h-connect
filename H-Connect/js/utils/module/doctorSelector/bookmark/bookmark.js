@@ -13,7 +13,7 @@ const { errorText, loadingText } = await import(
     importVersion('/H-Connect/js/common/text/validationText.js')
 );
 
-const { confirmTwoPopupTmpl, confirmOnePopupTmpl } = await import(
+const { confirmTwoPopupTmpl } = await import(
     importVersion('/H-Connect/js/common/popup/templates/commonPopupTmpl.js')
 );
 
@@ -23,7 +23,7 @@ const { PopupController } = await import(
     )
 );
 
-const { departmentDoctorListToBasicList } = await import(
+const { renderActivateCheckBox, renderActivateBookmark } = await import(
     importVersion('/H-Connect/js/utils/module/doctorSelector/utils.js')
 );
 
@@ -46,15 +46,15 @@ export class BookmarkModule {
         this.fetchBookmarkDoctorAndRender(_firstBookmarkId);
     }
     renderBookmarkTabList(_bookmarkTabList) {
-        const { tab } = this.options ?? {};
-        $(tab.target.container).html(loadingText());
+        const { bookmark } = this.options ?? {};
+        $(bookmark.tab.target.container).html(loadingText());
         if (_bookmarkTabList && _bookmarkTabList.length > 0) {
             let _html = _bookmarkTabList.htmlFor((_data, _index) =>
                 this.templates.bookmarkTabListItemTmpl(_data, _index)
             );
-            $(tab.target.container).html(_html);
+            $(bookmark.tab.target.container).html(_html);
         } else {
-            $(tab.target.container).html(
+            $(bookmark.tab.target.container).html(
                 errorText({ msg: '탭을 추가해주세요' })
             );
         }
@@ -66,52 +66,71 @@ export class BookmarkModule {
         this.renderBookmarkDoctorList(_getBookmarkDoctorList);
     }
     renderBookmarkDoctorList(_bookmarkDoctorList) {
-        const { list } = this.options ?? {};
+        const { bookmark } = this.options ?? {};
 
-        $(list.target.container).html(loadingText());
+        $(bookmark.list.target.container).html(loadingText());
         /* "북마크 리스트" 렌더 함수 */
         let _html = errorText();
         if (_bookmarkDoctorList && _bookmarkDoctorList.length > 0) {
-            _html = _bookmarkDoctorList.htmlFor((_data) =>
+            _html = '';
+            if (bookmark.list.allCheckRender === true) {
+                _html = this.templates.allCheckInputBlockTmpl();
+            }
+            _html += _bookmarkDoctorList.htmlFor((_data) =>
                 this.templates.bookmarkDoctorListItemTmpl(_data)
             );
         }
-        $(list.target.container).html(_html);
+        $(bookmark.list.target.container).html(_html);
 
-        /* check 된 의사 체크 활성화 */
-        // let _choiceDoctorList = [];
-        // $('.choice_staff .choice_member')
-        //     .children('.mem')
-        //     .each(function (_el) {
-        //         _choiceDoctorList.push($(this).data('user-id'));
-        //     });
-        // for (let i = 0, len = _choiceDoctorList.length; i < len; i++) {
-        //     const _targetClass = _choiceDoctorList[i];
-        //     renderActivateCheckBox(_targetClass, true);
-        // }
+        /* 동기화 */
+        this.syncCheckboxDoctorListWithChoice();
+        this.syncBookmarkIsChecked();
+    }
+    syncCheckboxDoctorListWithChoice() {
+        const { bookmark, choiceDoctor } = this.options ?? {};
+
+        let _choiceDoctorList = [];
+        $(choiceDoctor.target.container)
+            .children('.mem')
+            .each(function (_el) {
+                _choiceDoctorList.push($(this).data('user-id'));
+            });
+        for (let i = 0, len = _choiceDoctorList.length; i < len; i++) {
+            const _targetClass = _choiceDoctorList[i];
+            renderActivateCheckBox(_targetClass, true);
+        }
+    }
+    syncBookmarkIsChecked() {
+        const { bookmark, choiceDoctor } = this.options ?? {};
         // 만약 체크된 즐겨찾기 리스트를 찾을 수 없다면 의료진 목록 체크여부 전부 해제
-        // resetBookmarkChecked();
+        this.UTILS.resetBookmarkChecked();
         /* 기존 의사 체크박스 컨트롤 */
-        // bookmarkListSelector.itemEls().each(function () {
-        //     const _isChecked = $(this)
-        //         .find('.favorite_container input')
-        //         .is(':checked');
-        //     const { userId } = $(this).data();
-        //     renderActivateBookmark(userId, _isChecked);
-        // });
+        $(`${bookmark.list.target.container} .doctor-list-item`).each(
+            function () {
+                const _isChecked = $(this)
+                    .find('.favorite_container input')
+                    .is(':checked');
+                const { userId } = $(this).data();
+                renderActivateBookmark(userId, _isChecked);
+            }
+        );
     }
     actionInit() {
+        const { bookmark } = this.options ?? {};
         this.actionTabSwipe();
         this.actionAddBookmarkTabPopup();
         this.actionDeleteBookmarkTabPopup();
+        this.actionBookmarkCheckedChange();
+        if (bookmark.list.allCheckRender === true) {
+            this.actionBookmarkAllCheck();
+        }
     }
-    // sync
     actionTabSwipe() {
-        const { tab, list } = this.options ?? {};
+        const { bookmark } = this.options ?? {};
         // 탭 클릭 시 탭 리스트 렌더 기능
         $(document).on(
             'click',
-            `${tab.target.container} .group_list`,
+            `${bookmark.tab.target.container} .group_list`,
             async (e) => {
                 if (e.target.computedRole === 'img') return;
                 if ($(e.target).hasClass('on')) return;
@@ -119,11 +138,15 @@ export class BookmarkModule {
                 await this.fetchBookmarkDoctorAndRender(bookmarkId);
                 this.UTILS.resetTabClass();
                 $(e.currentTarget).addClass('on');
+
+                this.UTILS.syncAllCheckboxBookmark();
             }
         );
-        $(document).on('click', tab.target.nextBtn, async () => {
-            const _$tabEls = $(`${tab.target.container} .group_list`);
-            const _$tabOnEl = $(`${tab.target.container} .group_list.on`);
+        $(document).on('click', bookmark.tab.target.nextBtn, async () => {
+            const _$tabEls = $(`${bookmark.tab.target.container} .group_list`);
+            const _$tabOnEl = $(
+                `${bookmark.tab.target.container} .group_list.on`
+            );
             const _tabTargetIndex = _$tabEls.index(_$tabOnEl);
             this.UTILS.resetTabClass();
 
@@ -139,12 +162,12 @@ export class BookmarkModule {
         });
     }
     actionAddBookmarkTabPopup() {
-        const { tab, list, popup } = this.options ?? {};
+        const { bookmark } = this.options ?? {};
         this.addBookmarkTabPopup = new PopupController({
             /* 북마크 추가 팝업 생성 */
             target: {
-                openButton: tab.target.addBtn,
-                appendWrap: popup.target.container,
+                openButton: bookmark.tab.target.addBtn,
+                appendWrap: bookmark.popup.target.container,
             },
             templates: {
                 popup: this.templates.addBookmarkTabPopupTmpl,
@@ -181,12 +204,12 @@ export class BookmarkModule {
         });
     }
     actionDeleteBookmarkTabPopup() {
-        const { tab, list, popup } = this.options ?? {};
+        const { bookmark } = this.options ?? {};
         this.deleteBookmarkTabPopup = new PopupController({
             /* 북마크 탭 제거 팝업 생성 */
             target: {
-                openButton: tab.target.deleteBtn,
-                appendWrap: popup.target.container,
+                openButton: bookmark.tab.target.deleteBtn,
+                appendWrap: bookmark.popup.target.container,
             },
             templates: {
                 popup: () => confirmTwoPopupTmpl({ type: 'delete' }),
@@ -212,7 +235,7 @@ export class BookmarkModule {
 
                         if (_isDeleted) {
                             const _$bookmarkListWrapEl = $(
-                                tab.target.container
+                                bookmark.tab.target.container
                             );
 
                             if (_$tabTargetEl.hasClass('on')) {
@@ -224,6 +247,7 @@ export class BookmarkModule {
                                 const { bookmarkId } = _$tabFirstEl.data();
                                 this.fetchBookmarkDoctorAndRender(bookmarkId);
                             }
+
                             _$tabTargetEl.remove();
 
                             const _$bookmarkListTabEls =
@@ -241,20 +265,123 @@ export class BookmarkModule {
             },
         });
     }
+    actionBookmarkCheckedChange() {
+        const { bookmark } = this.options ?? {};
+        $(document).on(
+            'change',
+            '.doctor-list-item .favorite_container input',
+            async (e) => {
+                const _isChecked = $(e.currentTarget).is(':checked');
+                const { userId, userName, departmentName, departmentCode } = $(
+                    e.currentTarget
+                )
+                    .closest('.doctor-list-item')
+                    .data();
+                const { bookmarkId } = $(
+                    `${bookmark.tab.target.container} .group_list.on`
+                ).data();
+                renderActivateBookmark(userId, _isChecked);
+
+                if (_isChecked) {
+                    // 즐겨찾기 유저 추가
+                    const { result } = await this.API.insertBookMarkDetail({
+                        bookmarkId: bookmarkId,
+                        addUserId: userId,
+                        addUserName: userName,
+                        addUserDepartmentName: departmentName,
+                        addUserDepartmentCode: departmentCode,
+                    });
+                    /* 즐겨찾기 유저 추가 시 리패치 */
+                    result &&
+                        (await this.fetchBookmarkDoctorAndRender(bookmarkId));
+                    /* 의료진 체크여부 확인 후 즐겨찾기 체크에 표시 */
+                    const _isTargetChecked = $(e.currentTarget)
+                        .closest('.doctor-list-item')
+                        .find('.input_wrap input[type="checkbox"]')
+                        .is(':checked');
+                    renderActivateCheckBox(userId, _isTargetChecked);
+                } else {
+                    // 즐겨찾기 유저 제거
+                    const { result } = await this.API.deleteBookMarkDetail({
+                        bookmarkId: bookmarkId,
+                        delUserId: userId,
+                    });
+                    /* 즐겨찾기 유저 추가 시 리패치 */
+                    result &&
+                        (await this.fetchBookmarkDoctorAndRender(bookmarkId));
+                }
+            }
+        );
+    }
+    actionBookmarkAllCheck() {
+        // 모두 선택 기능
+        const { bookmark, choiceDoctor } = this.options ?? {};
+        $(document).on('change', '#all_checkbox_bookmark', (e) => {
+            const { choiceDoctorModule } = this.sharing ?? {};
+
+            const _allCheckboxBookmarkIsChecked = $(e.currentTarget).is(
+                ':checked'
+            );
+            $(
+                `${bookmark.list.target.container} .doctor-list-item .input_wrap input`
+            ).each(function () {
+                $(this).prop('checked', _allCheckboxBookmarkIsChecked);
+                const _getData = $(this).closest('.doctor-list-item').data();
+
+                renderActivateCheckBox(
+                    _getData.userId,
+                    _allCheckboxBookmarkIsChecked
+                );
+
+                if (_allCheckboxBookmarkIsChecked) {
+                    choiceDoctorModule.addChoiceDoctorList(_getData);
+                } else {
+                    choiceDoctorModule.removeChoiceDoctorList(_getData);
+                }
+            });
+        });
+        $(document).on('change', `.doctor-list-item .input_wrap input`, () => {
+            this.UTILS.syncAllCheckboxBookmark();
+        });
+        $(document).on(
+            'click',
+            `${choiceDoctor.target.container} .mem .btn_del`,
+            () => {
+                this.UTILS.syncAllCheckboxBookmark();
+            }
+        );
+    }
+
+    shareModule(_module) {
+        this.sharing = _module;
+    }
+
     UTILS = {
         resetBookmarkChecked: () => {
-            const { list } = this.options ?? {};
-            $(`${list.target.container} .favorite_container input`).each(
+            const { doctorList } = this.options ?? {};
+            $(`${doctorList.target.container} .favorite_container input`).each(
                 function () {
                     $(this).prop('checked', false);
                 }
             );
         },
         resetTabClass: () => {
-            const { tab } = this.options ?? {};
-            $(`${tab.target.container} .group_list`).each(function () {
+            const { bookmark } = this.options ?? {};
+            $(`${bookmark.tab.target.container} .group_list`).each(function () {
                 if ($(this).hasClass('on')) $(this).removeClass('on');
             });
+        },
+        syncAllCheckboxBookmark: () => {
+            const { bookmark } = this.options ?? {};
+            const _$bookmarkDoctorListEls = $(
+                `${bookmark.list.target.container} .doctor-list-item .input_wrap input`
+            );
+            let _isCheckedArr = [];
+            _$bookmarkDoctorListEls.each(function () {
+                _isCheckedArr.push($(this).is(':checked'));
+            });
+            let _isChecked = _isCheckedArr.some((_bool) => _bool === false);
+            $('#all_checkbox_bookmark').prop('checked', !_isChecked);
         },
     };
     API = {
@@ -335,6 +462,51 @@ export class BookmarkModule {
                 return false;
             }
         },
+        insertBookMarkDetail: async ({
+            bookmarkId,
+            addUserId,
+            addUserName,
+            addUserDepartmentName,
+            addUserDepartmentCode,
+        }) => {
+            /* 의료진 즐겨찾기 탭 별 의사 리스트 추가 API */
+            const { id } = getUserInfo();
+            if (!id) return;
+            const res = await serverController.ajaxAwaitController(
+                'API/Doctor/InsertBookMarkDetail',
+                'POST',
+                JSON.stringify({
+                    ...commonRequest(),
+                    bookmarkId: bookmarkId,
+                    addUserId: addUserId,
+                    addUserName: addUserName,
+                    addUserDepartmentName: addUserDepartmentName,
+                    addUserDepartmentCode: addUserDepartmentCode,
+                    userId: id,
+                }),
+                (res) => {},
+                (err) => console.error(err)
+            );
+            return res;
+        },
+        deleteBookMarkDetail: async ({ bookmarkId, delUserId }) => {
+            /* 의료진 즐겨찾기 탭별 의료진 제거 API */
+            const { id } = getUserInfo();
+            if (!id) return;
+            const res = await serverController.ajaxAwaitController(
+                'API/Doctor/DeleteBookMarkDetail',
+                'POST',
+                JSON.stringify({
+                    ...commonRequest(),
+                    bookmarkId: bookmarkId,
+                    delUserId: delUserId,
+                    userId: id,
+                }),
+                (res) => {},
+                (err) => console.error(err)
+            );
+            return res;
+        },
     };
     templates = {
         bookmarkTabListItemTmpl: (_data, _index) => {
@@ -380,7 +552,7 @@ export class BookmarkModule {
                 <div class="favorite_container">
                     <input class='favorite-${userId}' type="checkbox" id="${
                 'favorite-bookmark-' + userId
-            }" ${bookmarkState === 1 ? 'checked' : ''}>
+            }" ${bookmarkState === 1 ? 'checked' : ''}/>
                     <label for="${'favorite-bookmark-' + userId}"></label>
                 </div>
             </div>
@@ -416,6 +588,15 @@ export class BookmarkModule {
                         </div>
                     </div>
                 </div>
+            </div>
+          `;
+        },
+        allCheckInputBlockTmpl: () => {
+            return `
+            <div class="all_check input_wrap">
+                <input type="checkbox" name="selectall" id="all_checkbox_bookmark" class="green_custom all"/>
+                <label for="all_checkbox_bookmark"></label>
+                <label for="all_checkbox_bookmark">모두선택</label>
             </div>
           `;
         },
