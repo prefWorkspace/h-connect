@@ -16,35 +16,13 @@ function getUserInfo() {
     return JSON.parse(localStorageController.getLocalS('userData'));
 }
 
-export class DoctorSearch {
+export class DoctorSearchModule {
     constructor(_initOptions) {
         this.options = _initOptions;
 
         this.appendInitSearchListWrap();
 
         this.addEventDoctorSearch();
-    }
-    /* 환자 검색 정보 리스트 불러오기 API */
-    async doctorSearchAPI(_searchName) {
-        /* 의사 리스트 불러오기 API */
-        const { id } = getUserInfo();
-        if (!id) return;
-        const res = await serverController.ajaxAwaitController(
-            'API/Doctor/SelectHisDoctorList',
-            'POST',
-            JSON.stringify({
-                ...commonRequest(),
-                userId: id,
-                searchName: _searchName,
-            }),
-            (res) => {},
-            (err) => console.error(err)
-        );
-        if (res.result) {
-            return res.doctorInfoList;
-        } else {
-            return null;
-        }
     }
     /* 최초 search list wrapper 붙이기 */
     appendInitSearchListWrap() {
@@ -74,7 +52,7 @@ export class DoctorSearch {
     async handleDoctorSearch() {
         const { target } = this.options ?? {};
         const _searchInputVal = $(target.input).val();
-        const _getDepartmentDoctorList = await this.doctorSearchAPI(
+        const _getDepartmentDoctorList = await this.API.selectHisDoctorList(
             _searchInputVal
         );
         const _getDoctorList = departmentDoctorListToBasicList(
@@ -130,6 +108,30 @@ export class DoctorSearch {
             // renderActivateCheckBox(_dataListItems.userId, true);
         });
     }
+
+    API = {
+        selectHisDoctorList: async (_searchName) => {
+            /* 의사 리스트 불러오기 API */
+            const { id } = getUserInfo();
+            if (!id) return;
+            const res = await serverController.ajaxAwaitController(
+                'API/Doctor/SelectHisDoctorList',
+                'POST',
+                JSON.stringify({
+                    ...commonRequest(),
+                    userId: id,
+                    searchName: _searchName,
+                }),
+                (res) => {},
+                (err) => console.error(err)
+            );
+            if (res.result) {
+                return res.doctorInfoList;
+            } else {
+                return null;
+            }
+        },
+    };
 
     /* 템플릯 */
     templates = {

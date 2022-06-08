@@ -5916,3 +5916,23 @@ textarea::-webkit-scrollbar-button {
     /* border: 1px solid red; */
     right: 150px;
 }
+
+/* front end add */
+.favorite_list .group .group_list_inner {
+    display: flex;
+    overflow-y: auto;
+}
+
+.message .favorite_list .group > div {
+    width: calc(100% - 68px);
+}
+
+.favorite_list .group .group_list_inner .group_list {
+    display: flex;
+}
+.favorite_list .group .group_list_inner .group_list .btn_del {
+    width: 16px;
+    height: 16px;
+    margin-left: 7px;
+    border-radius: 50%;
+}
