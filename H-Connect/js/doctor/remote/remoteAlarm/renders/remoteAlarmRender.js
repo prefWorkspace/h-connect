@@ -119,6 +119,8 @@ async function remoteAlarmClick(_consultid, _isentState) {
             scheduleInfoList,
             deadlineDatetime,
         } = list[0];
+        console.log('list===');
+        console.log(list[0]);
         // fakeSelectConsultView[0];
 
         // 협진내용 탬플릿
@@ -166,7 +168,8 @@ async function remoteAlarmClick(_consultid, _isentState) {
             // 협진 가능 시간 선택 탬플릿
             for (let i = 0; i < scheduleInfoList.length; i++) {
                 scheduleInfoHTML += remoteAlarmTimeTemplateIsent(
-                    scheduleInfoList[i]
+                    scheduleInfoList[i],
+                    memberInfoList
                 );
             }
             $(`#isentstate${isentState} #metab-1`).html(scheduleInfoHTML);

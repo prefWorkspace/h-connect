@@ -97,20 +97,32 @@ export function remoteAlarmTimeTemplate(_data) {
 }
 
 // 내가 보낸 일정 요청에서 협진 가능시간
-export function remoteAlarmTimeTemplateIsent(_data) {
-    const { consultEndDatetime, consultStartDatetime } = _data;
+export function remoteAlarmTimeTemplateIsent(_data, memberInfoList) {
+    const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
+        _data;
     const day = moment(consultEndDatetime).day();
+
+    let doctorListHTML = '';
+    if (!memberInfoList) {
+        for (let i = 0; i < memberInfoList.length; i++) {
+            doctorListHTML += `<p>${memberInfoList[i].doctorName} ${memberInfoList[i].doctorLevelName}</p>`;
+        }
+    }
+
     return `
-        <div>
+        <div data-orderno="${orderNo}">
             <div class="check">
                 <div class="input_wrap">
                     <input
+                    data-consultid="${consultId}"
+                    data-caseno="${orderNo}"
+                    data-isentstate="1"
                         type="checkbox"
                         id="time1"
                         class="green_custom"
                     />
-                    <label for="time1"></label>
-                    <label for="time1"
+                    <label for="time${orderNo}"></label>
+                    <label for="time${orderNo}"
                         >${moment(consultEndDatetime).format(
                             'YY.MM.DD'
                         )} ${numToDay(day)}요일 ${moment(
@@ -120,10 +132,13 @@ export function remoteAlarmTimeTemplateIsent(_data) {
                     >
                 </div>
 
-                <span>-명 참석</span>
+                <span>${
+                    memberInfoList ? memberInfoList.length : 0
+                }명 참석</span>
             </div>
 
             <div class="people">
+            ${doctorListHTML}
             </div>
         </div>
     `;

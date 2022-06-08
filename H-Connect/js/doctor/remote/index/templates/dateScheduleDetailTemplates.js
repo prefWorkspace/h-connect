@@ -10,6 +10,7 @@ const { dateTimeHanlder } = await import(
     )
 );
 
+// 협진 내용 탬플릿
 export function dateScheduleCaseDetailTemplates(_data) {
     const {
         orderNo,
@@ -65,6 +66,7 @@ export function dateScheduleCaseDetailTemplates(_data) {
     `;
 }
 
+// 참여자 의사 탬플릿
 export function doctorListTemplates(_data) {
     if (!_data) return;
 
@@ -72,6 +74,7 @@ export function doctorListTemplates(_data) {
     return `<p>${doctorName}</p>`;
 }
 
+// 내가 보낸 일정 협진가능시간 리스트로 보기 탬플릿
 export function canDateWithTemplates(_data) {
     const {
         consultEndDatetime,
@@ -125,14 +128,10 @@ export function canDateWithTemplates(_data) {
     `;
 }
 
-export function canDateWithTemplatesMetab2(_data) {
-    const {
-        consultEndDatetime,
-        consultStartDatetime,
-        orderNo,
-        consultId,
-        memberInfoList,
-    } = _data;
+// 내가 보낸 일정 협진가능시간 시간표로 보기 클릭시 생기는 리스트 탬플릿
+export function canDateWithTemplatesMetab2(_data, memberInfoList) {
+    const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
+        _data;
     const dayNum = moment(consultEndDatetime).day();
 
     let doctorListHTML = '';
@@ -177,6 +176,7 @@ export function canDateWithTemplatesMetab2(_data) {
     `;
 }
 
+// 수신받은 협진 가능시간 탬플릿
 export function canDateWithTemplatesisentnot(_data) {
     const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
         _data;
@@ -207,6 +207,7 @@ export function canDateWithTemplatesisentnot(_data) {
     `;
 }
 
+// 내가 보낸 일정 협진가능시간 시간표로 보기 클릭시 hover로 생기는 의사 리스트
 export function canDateWithDoctorListTemplates(_data) {
     let doctor = '';
     let consultId = '';
@@ -238,6 +239,7 @@ export function canDateWithDoctorListTemplates(_data) {
     `;
 }
 
+// 내가 보낸 일정 협진가능시간 시간표로 보기 탬플릿
 export function canDateWithScheduleTemplates(_data) {
     const { consultEndDatetime, consultStartDatetime, memberInfoList } = _data;
     const dayNum = moment(consultStartDatetime).day();

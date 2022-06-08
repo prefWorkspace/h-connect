@@ -51,7 +51,11 @@ function loopHtml(_list, type) {
         } else if (type === 5) {
             html += canDateWithScheduleTemplates(_list[i]);
         } else if (type === 6) {
-            html += canDateWithTemplatesMetab2(_list[i]);
+            const { memberInfoList, scheduleInfoList } = _list[i];
+            html += canDateWithTemplatesMetab2(
+                scheduleInfoList,
+                memberInfoList
+            );
         }
     }
 
@@ -60,6 +64,8 @@ function loopHtml(_list, type) {
 
 export async function dateScheduleRender(_list) {
     let html = '';
+    console.log('_list===');
+    console.log(_list);
     if (_list.length === 0) {
         html = errorText();
         $('.all_plan .cal_list .schedule_list').html(html);
@@ -105,6 +111,8 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         scheduleInfoList,
         createId,
     } = _scheduleData[0];
+    console.log('_scheduleData[0]');
+    console.log(_scheduleData[0]);
 
     // async function detailSectionIsentInit(){
     // }
@@ -125,7 +133,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         isentState === 1
             ? loopHtml(scheduleInfoList, 3)
             : loopHtml(scheduleInfoList, 4);
-    canDateWithTemplatesMetab2 = loopHtml(scheduleInfoList, 6);
+    canDateWithTemplatesMetab2 = loopHtml(_scheduleData, 6);
     canWithTimeSchedule =
         isentState === 1 ? loopHtml(scheduleInfoList, 5) : null;
     // caseInfo 및 참여자 정보
@@ -238,8 +246,6 @@ export async function dateScheduleDetailRender(
         const { result, list } =
             await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
         selectList = result ? [...list] : [];
-        console.log('selectList===');
-        console.log(selectList);
     }
     dateSchduleDetailHandle(selectList, isentState);
 }

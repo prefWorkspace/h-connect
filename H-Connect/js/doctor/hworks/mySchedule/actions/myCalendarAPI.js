@@ -38,6 +38,9 @@ export async function selectMyScheduleList(
         ...commonRequest(),
     };
 
+    console.log('obj==');
+    console.log(obj);
+
     return serverController.ajaxAwaitController(
         'API/Doctor/SelectMyScheduleList',
         'POST',
