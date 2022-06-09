@@ -24,19 +24,13 @@ const { selectRealTimeAndOpinionAndEmergencyConsultView } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/actions/hWorksAPI.js')
 );
 
-const { fakeSelectRealTimeAndOpinionAndEmergencyConsultView } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
-async function opinionClick(_consultId = null, _unReplyCount = null) {
-    const consultId = _consultId || $(this).data('consultid');
+async function opinionClick(value = undefined, _unReplyCount = undefined) {
+    const consultId = $(value).data('consultid');
     const unReplyCount = String(_unReplyCount) || $(this).data('unreplycount');
-
     const { result, list } =
         await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
 
     if (result) {
-        // 데이터 나오면 밑에 else 처리를 이름만 바꿔서 복붙
         let html = '';
         const { caseInfoList, memberInfoList, startDatetime, endDatetime } =
             list[0];
@@ -86,9 +80,10 @@ export function opinionRender(_list) {
     }
 
     $('.remote_request .list .opinoin_list').html(html);
-    $('.remote_request .list .opinoin_list .row').on('click', () =>
-        opinionClick()
-    );
+    $('.remote_request .list .opinoin_list .row').on('click', function () {
+        const target = this;
+        opinionClick(target);
+    });
 
     if (queryConsultId !== '' && queryCaseNo !== '') {
         $('.remote_request .list .opinoin_list .row').each(
@@ -98,7 +93,7 @@ export function opinionRender(_list) {
                 const unReplyCount = $(value).data('unreplycount');
                 if (consultId === queryConsultId && caseNo === queryCaseNo) {
                     $(value).addClass('on');
-                    await opinionClick(consultId, unReplyCount);
+                    await opinionClick(value, unReplyCount);
                     // const isentState = $(value).data('isentstate');
                     // $(`#isentstate${isentState}`).show();
                 }
@@ -112,7 +107,7 @@ export function opinionRender(_list) {
             const consultId = $(value).data('consultid');
             const unReplyCount = $(value).data('unreplycount');
             $(value).addClass('on');
-            await opinionClick(consultId, unReplyCount);
+            await opinionClick(value, unReplyCount);
             // $(`#isentstate${isentState}`).show();
             return;
         }
