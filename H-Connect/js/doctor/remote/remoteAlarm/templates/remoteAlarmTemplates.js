@@ -4,7 +4,7 @@ export function remoteAlarmTemplates(_data) {
     const {
         consultId,
         confirmState,
-
+        consultConfirm,
         deadlineDatetime,
         isentState,
         name,
@@ -15,7 +15,7 @@ export function remoteAlarmTemplates(_data) {
 
     if (isentState === 1) {
         return `
-            <div data-consultid="${consultId}" data-isentstate="1" class="row my_return">
+            <div data-consultid="${consultId}" data-consultconfirm="${consultConfirm}" data-isentstate="1" class="row my_return">
                 <div>
                     <p class="time">
                         <span>${moment(deadlineDatetime).format(
@@ -40,7 +40,7 @@ export function remoteAlarmTemplates(_data) {
         `;
     } else {
         return `
-                <div data-consultid="${consultId}" data-confirmstate="${confirmState}" data-isentstate="0" class="row clear_return">
+                <div data-consultid="${consultId}" data-consultconfirm="${consultConfirm}" data-confirmstate="${confirmState}" data-isentstate="0" class="row clear_return">
                     <div>
                         <p class="time">
                             <span>${moment(deadlineDatetime).format(

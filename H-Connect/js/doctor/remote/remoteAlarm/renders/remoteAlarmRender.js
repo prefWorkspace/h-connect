@@ -112,7 +112,9 @@ async function remoteAlarmClick(value, _isentState) {
     const consultId = $(this).data('consultid') || $(value).data('consultid');
     const confirmState =
         $(this).data('confirmstate') || $(value).data('confirmstate');
-    const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
+    const consultConfirm =
+        $(this).data('consultconfirm') || $(value).data('consultconfirm');
+
     const isentState =
         $(this).data('isentstate') !== undefined
             ? $(this).data('isentstate')
@@ -169,9 +171,9 @@ async function remoteAlarmClick(value, _isentState) {
             }
 
             // 협진 가능 시간 선택 렌더링
+            const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
             $(`#isentstate${isentState} #tab-1`).html(scheduleInfoHTML);
             $(`#isentstate${isentState} .btn_reply`).text(buttonTitle);
-            $(`isentstate${isentState} .btn_reply`).text(buttonTitle);
         }
 
         if (isentState === 1) {
@@ -197,7 +199,11 @@ async function remoteAlarmClick(value, _isentState) {
             $(`#isentstate${isentState} #metab-2 .select_week`).html(
                 metabscheduleInfoHTML
             );
-            $(`#isentstate${isentState} .btn_reply`).text(buttonTitle);
+
+            const buttonTitle =
+                consultConfirm === 'Y' ? '일정확정' : '확정완료';
+            $(`#isentstate${isentState} .btn_decide`).text(buttonTitle);
+            $('#total_memebr_count').text(memberInfoList.length - 1);
 
             /* Ji : 수정 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
             scheduleModifyBtnEventControll(consultId);
