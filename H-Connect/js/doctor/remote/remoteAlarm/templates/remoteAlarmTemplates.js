@@ -3,7 +3,8 @@
 export function remoteAlarmTemplates(_data) {
     const {
         consultId,
-        consultConfirm,
+        confirmState,
+
         deadlineDatetime,
         isentState,
         name,
@@ -39,7 +40,7 @@ export function remoteAlarmTemplates(_data) {
         `;
     } else {
         return `
-                <div data-consultid="${consultId}" data-consultconfirm="${consultConfirm}" data-isentstate="0" class="row clear_return">
+                <div data-consultid="${consultId}" data-confirmstate="${confirmState}" data-isentstate="0" class="row clear_return">
                     <div>
                         <p class="time">
                             <span>${moment(deadlineDatetime).format(
@@ -52,9 +53,7 @@ export function remoteAlarmTemplates(_data) {
 
                         <p class="you_or">협진일정 요청 수신</p>
                         <p class="me_or done">${
-                            consultConfirm === 'Y'
-                                ? '회신완료'
-                                : '회신하지 않음'
+                            confirmState === 'Y' ? '회신완료' : '회신하지 않음'
                         }</p>
                     </div>
 

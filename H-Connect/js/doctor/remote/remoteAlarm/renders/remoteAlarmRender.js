@@ -99,7 +99,7 @@ function saveDeleteBtnConsulIdToPopup(_consultId) {
     }
 }
 
-async function remoteAlarmClick(_consultid, _isentState) {
+async function remoteAlarmClick(value, _isentState) {
     let caseInfoHTML = '';
     let scheduleInfoHTML = '';
     let metabscheduleInfoHTML = '';
@@ -109,10 +109,10 @@ async function remoteAlarmClick(_consultid, _isentState) {
     let reply_count = 0;
     let noreply_count = 0;
     let list = [];
-    const consultId = $(this).data('consultid') || _consultid;
-    const confirmState = $(this).data('confirmstate');
+    const consultId = $(this).data('consultid') || $(value).data('consultid');
+    const confirmState =
+        $(this).data('confirmstate') || $(value).data('confirmstate');
     const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
-
     const isentState =
         $(this).data('isentstate') !== undefined
             ? $(this).data('isentstate')
@@ -170,12 +170,13 @@ async function remoteAlarmClick(_consultid, _isentState) {
 
             // 협진 가능 시간 선택 렌더링
             $(`#isentstate${isentState} #tab-1`).html(scheduleInfoHTML);
+            $(`#isentstate${isentState} .btn_reply`).text(buttonTitle);
+            $(`isentstate${isentState} .btn_reply`).text(buttonTitle);
         }
 
         if (isentState === 1) {
             // 협진 가능 시간 선택 탬플릿
-            console.log('scheduleInfoList==');
-            console.log(scheduleInfoList);
+
             for (let i = 0; i < scheduleInfoList.length; i++) {
                 scheduleInfoHTML += remoteAlarmTimeTemplateIsent(
                     scheduleInfoList[i],
@@ -196,7 +197,7 @@ async function remoteAlarmClick(_consultid, _isentState) {
             $(`#isentstate${isentState} #metab-2 .select_week`).html(
                 metabscheduleInfoHTML
             );
-            $(`isentstate${isentState} .btn_reply`).text(buttonTitle);
+            $(`#isentstate${isentState} .btn_reply`).text(buttonTitle);
 
             /* Ji : 수정 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
             scheduleModifyBtnEventControll(consultId);
@@ -257,7 +258,7 @@ export function remoteAlarmRender(_list) {
                 $(value).addClass('on');
                 const isentState = $(value).data('isentstate');
                 $(`#isentstate${isentState}`).show();
-                await remoteAlarmClick(consultId, isentState);
+                await remoteAlarmClick(value, isentState);
             }
         });
         return;
@@ -269,9 +270,10 @@ export function remoteAlarmRender(_list) {
             const isentState = $(value).data('isentstate');
             const consultId = $(value).data('consultid');
             $(`#isentstate${isentState}`).show();
-            await remoteAlarmClick(consultId, isentState);
+            await remoteAlarmClick(value, isentState);
             return;
         }
+        ``;
     });
 }
 
