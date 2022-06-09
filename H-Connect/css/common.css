@@ -5918,7 +5918,6 @@ textarea::-webkit-scrollbar-button {
 }
 
 /* front end add */
-
 .container .favorite_list .group > div {
     width: calc(100% - 68px);
 }
