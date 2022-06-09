@@ -279,6 +279,24 @@ const FILE_TREE = {
                     file_path: '/H-Connect/js/utils/module/tabController/',
                 },
             },
+            whiteboard: {
+                example: {
+                    'whiteboardUse.js': {
+                        type: 'module',
+                        url_path:
+                            '/H-Connect/js/utils/module/whiteboard/example/whiteboard',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/whiteboard/example/',
+                    },
+                },
+                'whiteboard.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/whiteboard/',
+                },
+            },
             popupController: {
                 'popupController.js': {
                     type: 'module',
