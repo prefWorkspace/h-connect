@@ -107,17 +107,25 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         createId,
     } = _scheduleData[0];
 
-    // async function detailSectionIsentInit(){
-    // }
-    // selectMycalendar.find((item) => item.consultId === consultId);
+    const withMemberData = memberInfoList.filter((item) => {
+        const { replyState, host, remoteState } = item;
 
-    const withMemberData = memberInfoList.filter(
-        (item) => item.replyState === 'Y' && createId !== item.doctorId
-    );
+        if (host === 'Y') return;
 
-    const withOutMemberData = memberInfoList.filter(
-        (item) => item.replyState === 'N' && createId !== item.doctorId
-    );
+        if (consultChannel === 1 && replyState === 'Y') return item;
+
+        if (consultChannel !== 1 && remoteState === 'Y') return item;
+    });
+
+    const withOutMemberData = memberInfoList.filter((item) => {
+        const { replyState, host, remoteState } = item;
+
+        if (host === 'Y') return;
+
+        if (consultChannel === 1 && replyState === 'N') return item;
+
+        if (consultChannel !== 1 && remoteState === 'N') return item;
+    });
 
     withMember = loopHtml(withMemberData, 1);
     witOutMember = loopHtml(withOutMemberData, 1);
@@ -128,6 +136,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
             : loopHtml(scheduleInfoList, 4);
     canWithTimeSchedule =
         isentState === 1 ? loopHtml(scheduleInfoList, 5) : null;
+
     // caseInfo 및 참여자 정보
     if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
