@@ -13,7 +13,10 @@ export async function insertReplyHandle(e) {
         $isentState === 1
             ? `.section.me_request .tab-content .green_custom`
             : `.section.ask_request .tab-content .green_custom`;
-    const buttonTitle = $('.section .btn_reply').text();
+    const buttonTitle =
+        $isentState === 1
+            ? $('.section .btn_decide').text()
+            : $('.section .btn_reply').text();
 
     $(classTitle).each((index, value) => {
         if ($isentState === 1) {
@@ -34,7 +37,7 @@ export async function insertReplyHandle(e) {
         }
     });
 
-    if (buttonTitle === '회신완료') {
+    if (buttonTitle.indexOf('완료') !== -1) {
         return;
     }
 
@@ -60,20 +63,20 @@ async function checkButtonHandle(_target) {
     const isentState = $(_target).data('isentstate');
     const consultChannel =
         isentState === 1 ? 'consultChannel0' : 'consultChannel1';
-    const finishedButtonText = '확정완료';
+    const finishedButtonText = isentState === 1 ? '확정완료' : '회신완료';
 
-    $(`#${consultChannel} .tab-content .green_custom`).each((index, value) => {
+    $(`.section .tab-content .green_custom`).each((index, value) => {
         const _isChecked = $(value).is(':checked');
-        const orderNo = $(value).data('caseno');
-        consultId = $(value).data('consultid');
         if (_isChecked) {
+            const orderNo = $(value).data('caseno');
+            consultId = $(value).data('consultid');
             orderNoForAPI = orderNo;
             const consultScheduleInfo = { orderNo };
             scheduleInfo.push(consultScheduleInfo);
         }
     });
 
-    if (scheduleInfo.length === 0) {
+    if (scheduleInfo.length === 0 && !orderNoForAPI) {
         return;
     }
 
@@ -86,7 +89,6 @@ async function checkButtonHandle(_target) {
         const { result } = await updateConsultConfirm(consultId, orderNoForAPI);
         resultAPI = result;
     }
-
     if (resultAPI) {
         $(_target).text(finishedButtonText);
         $(_target).attr('disabled', true);

@@ -51,11 +51,8 @@ function loopHtml(_list, type) {
         } else if (type === 5) {
             html += canDateWithScheduleTemplates(_list[i]);
         } else if (type === 6) {
-            const { memberInfoList, scheduleInfoList } = _list[i];
-            html += canDateWithTemplatesMetab2(
-                scheduleInfoList,
-                memberInfoList
-            );
+            // const { memberInfoList, scheduleInfoList } = _list[i];
+            html += canDateWithTemplatesMetab2(_list[i]);
         }
     }
 
@@ -109,8 +106,6 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         scheduleInfoList,
         createId,
     } = _scheduleData[0];
-    console.log('_scheduleData[0]');
-    console.log(_scheduleData[0]);
 
     // async function detailSectionIsentInit(){
     // }
@@ -131,7 +126,6 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         isentState === 1
             ? loopHtml(scheduleInfoList, 3)
             : loopHtml(scheduleInfoList, 4);
-    canDateWithTemplatesMetab2 = loopHtml(_scheduleData, 6);
     canWithTimeSchedule =
         isentState === 1 ? loopHtml(scheduleInfoList, 5) : null;
     // caseInfo 및 참여자 정보
@@ -152,6 +146,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $('#metab-1').html(canWithTime);
 
         // 시간표로 보기
+        canDateWithTemplatesMetab2 = loopHtml(scheduleInfoList, 6);
         $('#metab-2 .select_week').html(canDateWithTemplatesMetab2);
 
         if (canWithTimeSchedule !== null) {
