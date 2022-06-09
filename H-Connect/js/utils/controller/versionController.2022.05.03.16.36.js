@@ -789,6 +789,17 @@ const FILE_TREE = {
                 },
             },
         },
+        message: {
+            actions: {
+                'doctorSelect.js': {
+                    type: 'module',
+                    url_path: '/doctor/message',
+                    file_path: '/H-Connect/js/doctor/message/actions/',
+                },
+            },
+            renders: {},
+            templates: {},
+        },
     },
     nurse: {
         common: {
