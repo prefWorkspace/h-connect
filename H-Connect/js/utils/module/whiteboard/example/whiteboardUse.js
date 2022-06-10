@@ -69,18 +69,25 @@ const whiteboardCreatorModule = new WhiteboardCreator(
     '#whiteboard',
     whiteboardCreatorOptions
 );
-const imgUrl =
-    'https://m.riposo.co.kr/web/product/big/202010/36e035793dc70f4d0c569ad1a07e87fb.jpg';
+
+// const imgUrl =
+//     'https://m.riposo.co.kr/web/product/big/202010/36e035793dc70f4d0c569ad1a07e87fb.jpg';
 // const imgUrl =
 //     'https://img.animalplanet.co.kr/news/2020/07/15/700/e05t9x1o0e3trklpwrr3.jpg';
 // const imgUrl =
 //     'https://interbalance.org/wp-content/uploads/2021/08/flouffy-VBkIK3qj3QE-unsplash-scaled-e1631077364762.jpg';
 // const imgUrl =
 //     'https://img7.yna.co.kr/mpic/YH/2022/01/03/MYH20220103010500534.jpg';
-// const imgUrl =
-//     'http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg';
+const imgUrl =
+    'http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg';
 // const imgUrl = '/H-Connect/img/remote/drawing.jpg';
+
 whiteboardCreatorModule.appendImageCanvas(imgUrl);
+$('.btn_clear').on('click', function () {
+    whiteboardCreatorModule.eraseAllDrawing();
+});
+
+//
 
 $('.selectBox2 .label').on('click', function () {
     $(this).parent().toggleClass('active');

@@ -1,3 +1,33 @@
+class CanvasLayer {
+    constructor() {
+        this.layerArray = [];
+    }
+    createLayer(createLayerKey, createLayerValue) {
+        const checkDuplicatedLayerKey = this.layerArray.filter(
+            (layerList) => layerList.layerKey === createLayerKey
+        );
+        if (checkDuplicatedLayerKey?.length) {
+            throw new Error('Duplicated LayerKey');
+        }
+        this.layerArray.push({
+            layerKey: createLayerKey,
+            layerValue: createLayerValue ?? null,
+        });
+    }
+    readLayer(readLayerKey) {
+        let findReadLayer = this.layerArray.filter(
+            (layerList) => layerList.layerKey === readLayerKey
+        )[0];
+        return findReadLayer ?? null;
+    }
+    updateLayer(getlayerInform) {
+        this.layerInformation = getlayerInform;
+
+        return this;
+    }
+    deleteLayer() {}
+}
+
 export class WhiteboardCreator {
     //state
     isDown = false;
@@ -32,9 +62,13 @@ export class WhiteboardCreator {
         this.canvas = {
             string: null,
             element: null,
-            ctx: null,
+            context: null,
             pixelRatio: null,
         };
+
+        // layer 생성
+        this.layer = new CanvasLayer();
+        this.layer.createLayer('drawing', []);
 
         this.options = initOptions;
 
@@ -44,8 +78,9 @@ export class WhiteboardCreator {
         // 캔버스 이벤트 등록
         this.addEventCanvas();
     }
+    // <레이어 세팅 메서드>
 
-    // 캔버스 세팅 메서드
+    // <캔버스 세팅 메서드>
 
     // 캔버스 생성
     createCanvas() {
@@ -64,20 +99,20 @@ export class WhiteboardCreator {
         const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
         //
-        this.canvas.ctx = this.canvas.element.getContext('2d');
+        this.canvas.context = this.canvas.element.getContext('2d');
         this.canvas.pixelRatio = pixelRatio;
 
         //
         this.canvas.element.width = this.stage.rect.width * pixelRatio;
         this.canvas.element.height = this.stage.rect.height * pixelRatio;
-        this.canvas.ctx.scale(pixelRatio, pixelRatio);
+        this.canvas.context.scale(pixelRatio, pixelRatio);
 
         //
-        this.canvas.ctx.strokeStyle =
+        this.canvas.context.strokeStyle =
             this.options.palette.initialColor ?? '#000000';
-        this.canvas.ctx.lineWidth = this.options.line.initialWidth ?? 1;
-        this.canvas.ctx.lineJoin = 'round';
-        this.canvas.ctx.lineCap = 'round';
+        this.canvas.context.lineWidth = this.options.line.initialWidth ?? 1;
+        this.canvas.context.lineJoin = 'round';
+        this.canvas.context.lineCap = 'round';
         return this;
     }
     // 캔버스 붙이기
@@ -88,8 +123,10 @@ export class WhiteboardCreator {
 
     // 캔버스 이미지 등록
     async appendImageCanvas(imageUrl) {
+        const blobImgUrl = await this.utils.fetchImageUrlToBlob(imageUrl);
+
         let baseImage = new Image();
-        baseImage.src = imageUrl;
+        baseImage.src = blobImgUrl;
         // baseImage.crossOrigin = 'Anonymous';
 
         baseImage.onload = (e) => {
@@ -145,17 +182,29 @@ export class WhiteboardCreator {
             imgCanvasPositionX = this.utils.toFixedFloat(imgCanvasPositionX, 4);
             imgCanvasPositionY = this.utils.toFixedFloat(imgCanvasPositionY, 4);
 
-            this.canvas.ctx.drawImage(
+            this.canvas.context.drawImage(
                 baseImage,
                 imgCanvasPositionX,
                 imgCanvasPositionY,
                 imgCanvasWidth,
                 imgCanvasHeight
             );
+
+            try {
+                const getImageData = this.canvas.context.getImageData(
+                    0,
+                    0,
+                    this.stage.rect.width,
+                    this.stage.rect.height
+                );
+                this.layer.createLayer('image', getImageData);
+            } catch {
+                throw new Error('Failed installl image inform');
+            }
         };
     }
 
-    // 이벤트 메소드
+    // <이벤트 메소드>
     onDown(e) {
         this.isDown = true;
         const { x, y } = this.utils.eventPosition(e);
@@ -175,7 +224,7 @@ export class WhiteboardCreator {
         this.points.move.y = y;
 
         this.drawCanvas(this.points.temp.x, this.points.temp.y, x, y);
-
+        this.canvas.context.save();
         // temp
         this.points.temp.x = x;
         this.points.temp.y = y;
@@ -252,37 +301,50 @@ export class WhiteboardCreator {
 
     // 드로잉 컬러 변경
     changeColorCanvas(color) {
-        const ctx = this.canvas.ctx;
-        if (!ctx) return;
+        const context = this.canvas.context;
+        if (!context) return;
 
-        ctx.strokeStyle = color;
+        context.strokeStyle = color;
     }
 
     // 드로잉 두께 변경
     changeLineWidthCanvas(width) {
-        const ctx = this.canvas.ctx;
-        if (!ctx) return;
+        const context = this.canvas.context;
+        if (!context) return;
 
-        ctx.lineWidth = width;
+        context.lineWidth = width;
     }
 
     // 드로잉
     drawCanvas(sx, sy, ex, ey) {
-        const ctx = this.canvas.ctx;
-        if (!ctx) return;
+        const context = this.canvas.context;
+        if (!context) return;
 
-        ctx.beginPath();
-        ctx.moveTo(sx, sy);
-        ctx.lineTo(ex, ey);
-        ctx.stroke();
+        context.beginPath();
+        context.moveTo(sx, sy);
+        context.lineTo(ex, ey);
+        context.stroke();
     }
 
-    // 지우기
+    // 지우기 : 필요하면 개발예정
     eraseCanvas() {
-        if (!this.isDown) return;
+        const context = this.canvas.context;
+        if (!context) return;
+        // context.globalCompositeOperation = 'destination-out';
+    }
 
-        // const ctx = this.canvas.ctx;
-        // ctx.globalCompositeOperation = 'destination-out';
+    // 드로잉 된 것 모두 지우기
+    eraseAllDrawing() {
+        this.eraseAllCanvas();
+        const imageLayer = this.layer.readLayer('image');
+        this.canvas.context.putImageData(imageLayer.layerValue, 0, 0);
+    }
+    // 캔바스 모두 지우기
+    eraseAllCanvas() {
+        const context = this.canvas.context;
+        if (!context) return;
+
+        context.clearRect(0, 0, this.stage.rect.width, this.stage.rect.height);
     }
 
     utils = {
@@ -291,6 +353,20 @@ export class WhiteboardCreator {
             const x = typeof e.offsetX !== 'undefined' ? e.offsetX : e.layerX;
             const y = typeof e.offsetY !== 'undefined' ? e.offsetY : e.layerY;
             return { x: x ?? 0, y: y ?? 0 };
+        },
+        fetchImageUrlToBlob: async (imageUrl) => {
+            try {
+                return fetch(imageUrl)
+                    .then((res) => res.blob())
+                    .then((blob) => {
+                        return URL.createObjectURL(blob);
+                    })
+                    .catch((error) => {
+                        throw new Error('failed url to blob');
+                    });
+            } catch {
+                throw new Error('failed url to blob');
+            }
         },
     };
 }
