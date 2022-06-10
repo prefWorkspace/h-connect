@@ -4250,11 +4250,12 @@ p {
 .remote_request .list .row div {
     width: 400px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .remote_request .list .row div .time {
     /* margin-right: 80px; */
+    width: 140px;
 }
 
 .remote_request .list .row .you_or {

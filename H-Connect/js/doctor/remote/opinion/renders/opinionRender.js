@@ -27,6 +27,7 @@ const { selectRealTimeAndOpinionAndEmergencyConsultView } = await import(
 async function opinionClick(value = undefined, _unReplyCount = undefined) {
     const consultId = $(value).data('consultid');
     const unReplyCount = String(_unReplyCount) || $(this).data('unreplycount');
+    const isentState = $(value).data('isentstate');
     const { result, list } =
         await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
 
@@ -40,9 +41,12 @@ async function opinionClick(value = undefined, _unReplyCount = undefined) {
             memberInfoList.length > 1
                 ? `외 ${memberInfoList.length - 1}명`
                 : '';
-        $('#opinion_member').text(
-            `${memberInfoList[0].doctorName} ${memberInfoList[0].doctorLevelName} ${doctorCount}`
-        );
+        const memberTitle =
+            isentState === 1
+                ? '내가 보냄'
+                : `${memberInfoList[0].doctorName} ${memberInfoList[0].doctorLevelName} ${doctorCount}`;
+
+        $('#opinion_member').text(memberTitle);
 
         $('#noCheck_unReplyCount').text(unReplyCount);
 
@@ -94,8 +98,6 @@ export function opinionRender(_list) {
                 if (consultId === queryConsultId && caseNo === queryCaseNo) {
                     $(value).addClass('on');
                     await opinionClick(value, unReplyCount);
-                    // const isentState = $(value).data('isentstate');
-                    // $(`#isentstate${isentState}`).show();
                 }
             }
         );
@@ -104,11 +106,9 @@ export function opinionRender(_list) {
 
     $('.remote_request .list .opinoin_list .row').each(async (index, value) => {
         if (index === 0) {
-            const consultId = $(value).data('consultid');
             const unReplyCount = $(value).data('unreplycount');
             $(value).addClass('on');
             await opinionClick(value, unReplyCount);
-            // $(`#isentstate${isentState}`).show();
             return;
         }
     });
