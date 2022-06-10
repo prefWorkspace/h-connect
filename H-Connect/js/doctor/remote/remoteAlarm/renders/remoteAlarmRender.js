@@ -201,7 +201,7 @@ async function remoteAlarmClick(value, _isentState) {
             );
 
             const buttonTitle =
-                consultConfirm === 'Y' ? '일정확정' : '확정완료';
+                consultConfirm === 'Y' ? '확정완료' : '일정확정';
             $(`#isentstate${isentState} .btn_decide`).text(buttonTitle);
             $('#total_memebr_count').text(memberInfoList.length - 1);
 

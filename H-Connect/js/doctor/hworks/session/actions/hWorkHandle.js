@@ -16,10 +16,6 @@ const { hworkSessionList } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/renders/hWorkRender.js')
 );
 
-const { mok } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 // 일정 및 알림 카운트 표시
 async function init() {
     const { result, list } = await selectScheduleCount();

@@ -51,11 +51,8 @@ function loopHtml(_list, type) {
         } else if (type === 5) {
             html += canDateWithScheduleTemplates(_list[i]);
         } else if (type === 6) {
-            const { memberInfoList, scheduleInfoList } = _list[i];
-            html += canDateWithTemplatesMetab2(
-                scheduleInfoList,
-                memberInfoList
-            );
+            // const { memberInfoList, scheduleInfoList } = _list[i];
+            html += canDateWithTemplatesMetab2(_list[i]);
         }
     }
 
@@ -109,20 +106,26 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         scheduleInfoList,
         createId,
     } = _scheduleData[0];
-    console.log('_scheduleData[0]');
-    console.log(_scheduleData[0]);
 
-    // async function detailSectionIsentInit(){
-    // }
-    // selectMycalendar.find((item) => item.consultId === consultId);
+    const withMemberData = memberInfoList.filter((item) => {
+        const { replyState, host, remoteState } = item;
 
-    const withMemberData = memberInfoList.filter(
-        (item) => item.replyState === 'Y' && createId !== item.doctorId
-    );
+        if (host === 'Y') return;
 
-    const withOutMemberData = memberInfoList.filter(
-        (item) => item.replyState === 'N' && createId !== item.doctorId
-    );
+        if (consultChannel === 1 && replyState === 'Y') return item;
+
+        if (consultChannel !== 1 && remoteState === 'Y') return item;
+    });
+
+    const withOutMemberData = memberInfoList.filter((item) => {
+        const { replyState, host, remoteState } = item;
+
+        if (host === 'Y') return;
+
+        if (consultChannel === 1 && replyState === 'N') return item;
+
+        if (consultChannel !== 1 && remoteState === 'N') return item;
+    });
 
     withMember = loopHtml(withMemberData, 1);
     witOutMember = loopHtml(withOutMemberData, 1);
@@ -131,9 +134,9 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         isentState === 1
             ? loopHtml(scheduleInfoList, 3)
             : loopHtml(scheduleInfoList, 4);
-    canDateWithTemplatesMetab2 = loopHtml(_scheduleData, 6);
     canWithTimeSchedule =
         isentState === 1 ? loopHtml(scheduleInfoList, 5) : null;
+
     // caseInfo 및 참여자 정보
     if (isentState === 1 && consultChannel === 1) {
         $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
@@ -152,6 +155,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $('#metab-1').html(canWithTime);
 
         // 시간표로 보기
+        canDateWithTemplatesMetab2 = loopHtml(scheduleInfoList, 6);
         $('#metab-2 .select_week').html(canDateWithTemplatesMetab2);
 
         if (canWithTimeSchedule !== null) {
