@@ -606,7 +606,7 @@ const FILE_TREE = {
                     'calendarRender.js': {
                         type: 'module',
                         url_path:
-                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote',
+                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote||/doctor/remote_new',
                         file_path:
                             '/H-Connect/js/doctor/remote/common/renders/',
                     },
