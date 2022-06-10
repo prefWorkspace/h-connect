@@ -129,9 +129,14 @@ export function canDateWithTemplates(_data) {
 }
 
 // 내가 보낸 일정 협진가능시간 시간표로 보기 클릭시 생기는 리스트 탬플릿
-export function canDateWithTemplatesMetab2(_data, memberInfoList) {
-    const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
-        _data;
+export function canDateWithTemplatesMetab2(_data) {
+    const {
+        consultEndDatetime,
+        memberInfoList,
+        consultStartDatetime,
+        orderNo,
+        consultId,
+    } = _data;
     const dayNum = moment(consultEndDatetime).day();
 
     let doctorListHTML = '';

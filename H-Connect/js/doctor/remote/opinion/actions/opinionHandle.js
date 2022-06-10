@@ -12,10 +12,6 @@ const { opinionRender } = await import(
     )
 );
 
-const { fakeOpinionConsultList } = await import(
-    importVersion('/H-Connect/js/doctor/hworks/session/mok.js')
-);
-
 async function init() {
     const { opinionConsultList, result } = await selectOpinionConsultList();
     $('#total_count').text(opinionConsultList.length);

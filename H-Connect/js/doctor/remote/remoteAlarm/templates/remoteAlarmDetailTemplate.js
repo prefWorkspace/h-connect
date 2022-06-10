@@ -68,6 +68,7 @@ export function remoteAlarmCaseInfoTemplate(_data) {
 export function remoteAlarmTimeTemplate(_data) {
     const { consultEndDatetime, consultId, consultStartDatetime, orderNo } =
         _data;
+
     const day = moment(consultEndDatetime).day();
     return `
         <div>
@@ -101,11 +102,18 @@ export function remoteAlarmTimeTemplateIsent(_data, memberInfoList) {
     const { consultEndDatetime, consultStartDatetime, orderNo, consultId } =
         _data;
     const day = moment(consultEndDatetime).day();
+    let attendCount = 0;
 
     let doctorListHTML = '';
-    if (!memberInfoList) {
+    if (memberInfoList.length > 0) {
         for (let i = 0; i < memberInfoList.length; i++) {
-            doctorListHTML += `<p>${memberInfoList[i].doctorName} ${memberInfoList[i].doctorLevelName}</p>`;
+            const { doctorName, doctorLevelName, replyState } =
+                memberInfoList[i];
+            if (replyState === 'N') {
+                continue;
+            }
+            doctorListHTML += `<p>${doctorName} ${doctorLevelName}</p>`;
+            attendCount++;
         }
     }
 
@@ -132,9 +140,7 @@ export function remoteAlarmTimeTemplateIsent(_data, memberInfoList) {
                     >
                 </div>
 
-                <span>${
-                    memberInfoList ? memberInfoList.length : 0
-                }명 참석</span>
+                <span>${attendCount}명 참석</span>
             </div>
 
             <div class="people">

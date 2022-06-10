@@ -5918,18 +5918,33 @@ textarea::-webkit-scrollbar-button {
 }
 
 /* front end add */
+.container .favorite_list .group > div {
+    width: calc(100% - 68px);
+}
+
 .favorite_list .group .group_list_inner {
     display: flex;
     overflow-y: auto;
 }
 
-.message .favorite_list .group > div {
-    width: calc(100% - 68px);
+.favorite_list .group .group_list_inner::-webkit-scrollbar {
+    height: 8px;
+}
+
+.favorite_list .group .group_list_inner::-webkit-scrollbar-thumb {
+    height: 17%;
+    border-radius: 10px;
+    background: #ccc;
 }
 
 .favorite_list .group .group_list_inner .group_list {
     display: flex;
 }
+
+.favorite_list .group .group_list_inner .group_list p {
+    white-space: nowrap;
+}
+
 .favorite_list .group .group_list_inner .group_list .btn_del {
     width: 16px;
     height: 16px;

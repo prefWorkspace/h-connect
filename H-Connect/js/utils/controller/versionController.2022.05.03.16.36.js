@@ -279,6 +279,24 @@ const FILE_TREE = {
                     file_path: '/H-Connect/js/utils/module/tabController/',
                 },
             },
+            whiteboard: {
+                example: {
+                    'whiteboardUse.js': {
+                        type: 'module',
+                        url_path:
+                            '/H-Connect/js/utils/module/whiteboard/example/whiteboard',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/whiteboard/example/',
+                    },
+                },
+                'whiteboard.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/whiteboard/',
+                },
+            },
             popupController: {
                 'popupController.js': {
                     type: 'module',
@@ -588,7 +606,7 @@ const FILE_TREE = {
                     'calendarRender.js': {
                         type: 'module',
                         url_path:
-                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote',
+                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote||/doctor/remote_new',
                         file_path:
                             '/H-Connect/js/doctor/remote/common/renders/',
                     },
@@ -788,6 +806,17 @@ const FILE_TREE = {
                     },
                 },
             },
+        },
+        message: {
+            actions: {
+                'doctorSelect.js': {
+                    type: 'module',
+                    url_path: '/doctor/message',
+                    file_path: '/H-Connect/js/doctor/message/actions/',
+                },
+            },
+            renders: {},
+            templates: {},
         },
     },
     nurse: {
