@@ -68,7 +68,9 @@ export async function createDevice() {
         serialNumber,
         deviceType: device_NameToType(device_name),
     });
+
     const reg = /^[A-Z0-9]{6,7}$/;
+
     if (!reg.test(serialNumber)) {
         $('.pop.regi_device small').addClass('active');
         return;
@@ -79,9 +81,8 @@ export async function createDevice() {
         'POST',
         req,
         (res) => {
-            console.log('res==');
-            console.log(res);
             if (res.result) {
+                $('#device_serial').val('');
                 select_device_unused(0, null);
                 select_device(0, null);
                 $('.pop.regi_device .overlay').fadeOut();
@@ -97,8 +98,9 @@ export async function createDevice() {
 
 //장치 삭제 API
 export async function delete_devive() {
-    const serialNumber = $(this).data('serialnumber');
-
+    const serialNumber = $(this).attr('data-serialnumber');
+    console.log('serialNumber===');
+    console.log(serialNumber);
     const req = JSON.stringify({
         ...commonRequest(),
         serialNumber,
@@ -109,7 +111,6 @@ export async function delete_devive() {
         'POST',
         req,
         (res) => {
-            console.log(res);
             if (res.result) {
                 select_device_unused(0, null);
                 select_device(0, null);
@@ -202,7 +203,6 @@ export async function select_device(deviceType = 0, search = null) {
         (res) => {
             if (res.result) {
                 select_device_list(res.deviceRegisterList); //신규장치 등록 모든 리스트 조회후 UI표현
-                console.log(res.deviceRegisterList);
                 // 장치 카운트
                 const { ECG_COUNT, TEMP_COUNT, SpO2_COUNT } = countingDevice(
                     res.deviceRegisterList
