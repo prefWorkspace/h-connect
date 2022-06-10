@@ -67,13 +67,14 @@ $(async function() {
 
     let chatLoginResult = null;
     try {
-        chatLoginResult = await message.login('prefinc_chat1', 1234);
+        // chatLoginResult = await message.login('prefinc_chat1', 1234);
+        chatLoginResult = await message.login(userData.id, 1234);
     } catch (e) {
 
     }
 
     // console.log(userData);
-    console.log(chatLoginResult);
+    // console.log(chatLoginResult);
     // message.findUser('prefinc_chat2');
     // message.updateUser('test111');
     // console.log(message.getRoomList());
@@ -112,6 +113,8 @@ $(async function() {
         if (roomList?.roomList.length) {
             let roomHtml = await Promise.all(roomList?.roomList.map(async room => await getRoomHtml(room)));
             html = roomHtml.join('');
+
+            roomList?.roomList.map(room => subscribeChatRoom(room.room_id));
         } else {
             html = '<div class="no_talk">메세지 함이 비어있습니다.</div>';
         }
@@ -131,17 +134,17 @@ $(async function() {
         const $target = $('.chat_inner');
         const messageListFromRoom = await message.getMessageListFromRoom(id);
         const messages = messageListFromRoom.messageList;
+        const unreadMessages = messages.filter(message => message.unread_user_id_list?.includes(userData.id));
         let html = '';
 
-        console.log(id);
+        await message.multipleMarkAsRead(id, unreadMessages.map(message => message.message_id));
+        $(this).find('.message_bell > img').css({ opacity: 0 });
 
         $(this).parent().find('.list').removeClass('on').addClass('off');
         $(this).removeClass('off').addClass('on');
 
         $target.data('id', id);
         messages.map(chat => html += getMessageHtml(chat));
-        await removeSubscribeAllChatRoom();
-        subscribeChatRoom(id);
         $target.parent().next().find('textarea').prop('disabled', false).val('');
 
         $target.empty().append(html).scrollTop(function() {
@@ -151,11 +154,11 @@ $(async function() {
 
     $('.chat_window .btn_send').click(function() {
         const id = $('.message.talk_list').find('.list.on').data('id');
-        const { Authorization } = headers;
-        chatClient.send(`/put/chat/message`, { Authorization }, {
+        chatClient.send(`/pub/chat/message`, headers, {
             type: 'MSG_TALK',
             room_id: id,
-            message: $(this).prev().val()
+            message: $(this).prev().val(),
+            parent_message_id: ''
         });
         $(this).prev().val('').keyup();
         $('.chat_window textarea').focus();
@@ -181,54 +184,86 @@ $(async function() {
     $('.send_message .btn_send').click(async function() {
         const $target = $('.message .talk_list');
         const text = $(this).parent().parent().find('textarea').val();
-        if (text) {
-            if (!message.userId) {
-                const req = JSON.stringify({
-                    ...commonRequest(),
-                    userId: userData.id,
-                    roomName: `${userData.name}의 채팅방`,
-                    description: `${userData.name}의 채팅방 설명`,
-                    participantsInfoList: [
-                        // { userId: 'userId', userName: 'userName' }
-                    ],
-                    grantType: 'Bearer',
-                    accessKey: LOGIN_TOKEN
-                });
-                await serverController.ajaxAwaitController(
-                    'API/Message/StaffCreateRoom',
-                    'POST',
-                    req,
-                    (res) => {
-                        if (res.result) {
-                        }
-                    },
-                    (err) => {
-                        console.log(err);
+        const participantsInfoList = [];
+        let createdRoom = null;
+        $('.doctor_list [name="doctor"]:checkbox:checked').each(function() {
+            const $doctor = $(this).parent().parent();
+            participantsInfoList.push({ userId: $doctor.data('userId'), userName: $doctor.data('userName') });
+        });
+
+        if (!text) {
+            alert('메시지를 입력하세요.');
+            return false;
+        }
+
+        if (!message.userId) {
+            const req = JSON.stringify({
+                ...commonRequest(),
+                userId: userData.id,
+                roomName: `${userData.name}의 채팅방`,
+                description: `${userData.name}의 채팅방 설명`,
+                participantsInfoList,
+                grantType: 'Bearer',
+                accessKey: LOGIN_TOKEN
+            });
+            createdRoom = await serverController.ajaxAwaitController(
+                'API/Message/StaffCreateRoom',
+                'POST',
+                req,
+                (res) => {
+                    if (res.result) {
                     }
-                );
-                message.login(userData.id, 1234);
-            }
+                },
+                (err) => {
+                    console.log(err);
+                }
+            );
+            message.login(userData.id, 1234);
+        } else {
             // 여기에서 초대 사용자 추가
-            const room = await message.createRoom('채팅방', '채팅방 설명', []);
+            createdRoom = await message.createRoom('채팅방', '채팅방 설명', participantsInfoList.map(user => user.userId));
             chatClient.send(`/put/chat/message`, headers, {
                 type: 'MSG_TALK',
-                room_id: room?.room_id,
+                room_id: createdRoom.room_id,
                 message: text
             });
-            $target.prepend(await getRoomHtml(room));
-            $target.find('.list').eq(0).click();
         }
+
+        const roomList = await message.getRoomList();
+        const room = roomList?.roomList.find(item => item.room_id === createdRoom.room_id);
+
+        $target.append(await getRoomHtml(room));
+        $target.find('.list:last-child').eq(0).click();
     });
 });
 
-const subscribeChatRoom = (room_id) => {
-    window.chatClient.addSubscribe(room_id, `/sub/chat/room/${room_id}`, (res) => {
+const subscribeChatRoom = (roomId) => {
+    window.chatClient.addSubscribe(roomId, `/sub/chat/room/${roomId}`, (res) => {
         const data = JSON.parse(res.body);
-        const html = getMessageHtml({ ...data, user_id: message.userId, created_time: new Date() });
         const $target = $('.chat_inner');
-        $target.append(html).scrollTop(function() {
-            return this.scrollHeight;
-        });
+        const $room = $(`.list[data-id="${roomId}"]`);
+        const messageDate = MessageDelegate.getDateFromTimestamp(String(data.created_time).substring(0, 10)) ?? '';
+        const name = data.user_info?.user_nickname ?? '';
+        const date = `${messageDate.shortYear}.${messageDate.month}.${messageDate.days}`;
+        const time = `${messageDate.hours}:${messageDate.minutes}:${messageDate.seconds}`;
+        const text = data.message ?? data.file_original_name;
+
+        $room.find('.talk_time > p:first-child').text(date);
+        $room.find('.talk_time > p:last-child').text(time);
+        $room.find('.talk_name > p').text(name);
+        $room.find('.preview > p').text(text);
+
+        console.log(data, userData.id, data.user_id, $room.hasClass('off'));
+        if (userData.id !== data.user_info?.user_id && $room.hasClass('off')) {
+            $room.find('.message_bell > img').css({ opacity: 1 });
+        }
+
+        if ($target.data('id') === roomId) {
+            const html = getMessageHtml(data);
+            $target.append(html).scrollTop(function() {
+                return this.scrollHeight;
+            });
+        }
     });
 };
 
@@ -238,22 +273,29 @@ const removeSubscribeAllChatRoom = async () => {
 };
 
 const getRoomHtml = async (room) => {
-    const messageListFromRoom = await message.getMessageListFromRoom(room.room_id);
-    const messages = messageListFromRoom.messageList;
-    let read = false, date = '', time = '', text = '', name = '';
+    let date = '', time = '', text = '', name = '';
+    const lastMessage = room.room_last_message;
+    const createdAt = lastMessage ? MessageDelegate.getDateFromTimestamp(String(lastMessage.created_time).substring(0, 10)) : '';
+    const read = room.room_unread_count > 0 ? 1 : 0;
 
-    if (messages.length) {
-        const lastMessage = messages[messages.length - 1];
-        const createdAt = MessageDelegate.getDateFromTimestamp(String(lastMessage.created_time).substring(0, 10));
-
-        read = messages.unread_user_id_list?.includes(message.userId) ? 1 : 0;
+    if (lastMessage) {
         date = `${createdAt.shortYear}.${createdAt.month}.${createdAt.days}`;
         time = `${createdAt.hours}:${createdAt.minutes}:${createdAt.seconds}`;
-        text = lastMessage.message ?? '';
+        text = lastMessage.message ?? lastMessage.file_original_name;
         name = lastMessage?.user_info?.user_nickname ?? '';
 
+        if (!text) {
+            switch (lastMessage.type) {
+                case 'MSG_ENTER':
+                    text = `${name}님이 입장하셨습니다.`;
+                    break;
+                case 'MSG_QUIT':
+                    text = `${name}님이 퇴장하셨습니다.`;
+                    break;
+            }
+        }
     } else {
-        text = '메시지가 없습니다.';
+        text = '';
     }
 
     return `
@@ -295,7 +337,7 @@ const getMessageHtml = (chat) => {
             html = `<div style='text-align: center; color: gray; font-size: 12px;'>${chat.user_info.user_nickname}님이 입장하셨습니다.</div>`;
             break;
         case 'MSG_QUIT':
-            html = `<div>${chat.user_info.user_nickname}님이 퇴장하셨습니다.</div>`;
+            html = `<div style='text-align: center; color: gray; font-size: 12px;'>${chat.user_info.user_nickname}님이 퇴장하셨습니다.</div>`;
             break;
         case 'MSG_TALK':
             if (message.userId === chat.user_id) {

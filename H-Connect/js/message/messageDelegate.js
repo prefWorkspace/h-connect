@@ -279,6 +279,18 @@ export class MessageDelegate {
     }
 
     /**
+     * 다중 메시지 읽음 처리
+     * @param {string} roomId
+     * @param {string[]} messageIds
+     * @returns {Promise<*>}
+     */
+    async multipleMarkAsRead(roomId, messageIds) {
+        return await this._post('/chat/message/mread', { room_id: roomId, message_ids: messageIds }, (res) => {
+            this.log(res);
+        });
+    }
+
+    /**
      * 메시지 삭제
      * @param {string} messageId
      */
@@ -462,6 +474,11 @@ export class MessageDelegate {
         if (this.debug) console.log('Debug', messages);
     }
 
+    /**
+     * 날짜 포멧 변경
+     * @param timestamp
+     * @returns {{hours: string, seconds: string, month: string, year: number, minutes: string, timeString: string, shortYear: string, days: string, dateString: string}}
+     */
     static getDateFromTimestamp(timestamp) {
         const date = ['string', 'number'].includes(typeof timestamp) ? new Date(String(timestamp).substring(0, 10) * 1000) : timestamp;
         const year = date.getFullYear(),
