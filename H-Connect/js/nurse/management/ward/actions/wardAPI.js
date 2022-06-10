@@ -50,6 +50,7 @@ export async function updateWardAPI(wardCode, orderNumber, deactivate) {
                 $('div').remove('.nurse .ward .cont');
                 $('.pop.update_ward .overlay').fadeOut();
                 selectWard();
+                console.log('11');
             } else {
                 alert('병동수정에 실패 하였습니다.');
             }
@@ -68,35 +69,33 @@ export async function deleteWard() {
         $('.pop.delete.delete_ward .overlay').fadeIn();
     });
 
-    $('.pop.delete_ward .btn_cut')
-        .off()
-        .on('click', function () {
-            const req = JSON.stringify({
-                requester,
-                organizationCode,
-                wardCode,
-                ...commonRequest(),
-            });
-            serverController.ajaxAwaitController(
-                'API/Manager/DeleteWard',
-                'POST',
-                req,
-                (res) => {
-                    if (res.result) {
-                        // $('.nurse .ward .cont .ward_list').hide();
-                        $('.pop.delete .overlay').fadeOut();
-                        $('div').remove('.nurse .ward .cont');
-                        $('div').remove('.hospital_room .container .ward_list');
-                        selectWard();
-                    } else {
-                        alert('병동삭제에 실패 하였습니다.');
-                    }
-                },
-                (err) => {
-                    console.log(err);
-                }
-            );
+    $(document).on('click', '.pop.delete_ward .btn_cut', function () {
+        const req = JSON.stringify({
+            requester,
+            organizationCode,
+            wardCode,
+            ...commonRequest(),
         });
+        serverController.ajaxAwaitController(
+            'API/Manager/DeleteWard',
+            'POST',
+            req,
+            (res) => {
+                if (res.result) {
+                    // $('.nurse .ward .cont .ward_list').hide();
+                    $('.pop.delete .overlay').fadeOut();
+                    $('div').remove('.nurse .ward .cont');
+                    $('div').remove('.hospital_room .container .ward_list');
+                    selectWard();
+                } else {
+                    alert('병동삭제에 실패 하였습니다.');
+                }
+            },
+            (err) => {
+                console.log(err);
+            }
+        );
+    });
     $('.pop.delete_ward .btn_no').on('click', function () {
         $('.pop.delete.delete_ward .overlay').fadeOut();
     });
@@ -127,6 +126,7 @@ export async function insertWard() {
             if (res.result) {
                 $('div').remove('.left.ward .container .cont');
                 $('.pop.new_ward .overlay').fadeOut();
+                $('.new_ward .content #ward_Name').val('');
                 selectWard();
             } else {
                 alert('병동생성에 실패 하였습니다.');
@@ -147,7 +147,6 @@ export async function selectWard() {
     }
     CONSTANT.wardList = wardList;
     Create_newWard(wardList);
-    updateWard(); //병동 수정 이벤트
     deleteWard(); //병동 삭제 이벤트
 }
 
@@ -156,9 +155,10 @@ export async function updateWard() {
     let _wardCode;
     let _orderNumber;
     let _deactivate;
-    $('.nurse .ward .cont .ward_list .btn_list .btn_modify')
-        .off()
-        .on('click', function () {
+    $(document).on(
+        'click',
+        '.nurse .ward .cont .ward_list .btn_list .btn_modify',
+        function () {
             $('.pop.update_ward .overlay').fadeIn();
             $('.nurse .hospital_room .title .btn_new_room').attr(
                 'disabled',
@@ -169,13 +169,17 @@ export async function updateWard() {
             _deactivate = $(this).data('deactivate');
             const ward = $(this).parent().parent().find('#ward').text();
             $('.pop.update_ward #ward_Name').val(ward);
-        });
+        }
+    );
+
     $('.update_ward .btn_list .btn_cancel').on('click', function () {
         $('.pop.update_ward .overlay').fadeOut();
     });
+
     $('.update_ward .btn_list #ward_update_Button').on('click', () =>
         updateWardAPI(_wardCode, _orderNumber, _deactivate)
     );
+
     //enter키 누를때 이벤트 발생
     $('.update_ward #ward_Name').keydown(function (e) {
         if (e.key === 'Enter') {
@@ -184,4 +188,6 @@ export async function updateWard() {
     });
 }
 
-selectWard();
+await selectWard();
+updateWard(); //병동 수정 이벤트
+// deleteWard(); //병동 삭제 이벤트
