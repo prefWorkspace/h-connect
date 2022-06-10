@@ -5,25 +5,39 @@ const { insertConsultReply, updateConsultConfirm } = await import(
 );
 
 // 체크박스 유효성
-export async function insertReplyHandle() {
-    // section right ask_request
-    // background: #007a94;
+export async function insertReplyHandle(e) {
     let isChecked = false;
+    const $thisCaseNumber = $(e.target).data('caseno');
+    const $isentState = $(e.target).data('isentstate');
+    const classTitle =
+        $isentState === 1
+            ? `.section.me_request .tab-content .green_custom`
+            : `.section.ask_request .tab-content .green_custom`;
+    const buttonTitle =
+        $isentState === 1
+            ? $('.section .btn_decide').text()
+            : $('.section .btn_reply').text();
 
-    const buttonTitle = $('.section .btn_reply').text();
-    $('.section.me_request .tab-content .green_custom').each((index, value) => {
-        const _isChecked = $(value).is(':checked');
-        const labelElement = $(value).next();
-        if (_isChecked) {
-            labelElement.addClass('active');
-        } else {
-            labelElement.removeClass('active');
+    $(classTitle).each((index, value) => {
+        if ($isentState === 1) {
+            if (
+                $(value).data('caseno') === $thisCaseNumber &&
+                $(value).is(':checked')
+            ) {
+                isChecked = isChecked || $(value).is(':checked');
+                $(value).prop('checked', true);
+            } else {
+                isChecked = isChecked || $(value).is(':checked');
+                $(value).prop('checked', false);
+            }
         }
 
-        isChecked = isChecked || _isChecked;
+        if ($isentState === 0) {
+            isChecked = isChecked || $(value).is(':checked');
+        }
     });
 
-    if (buttonTitle === '회신완료') {
+    if (buttonTitle.indexOf('완료') !== -1) {
         return;
     }
 
@@ -49,20 +63,20 @@ async function checkButtonHandle(_target) {
     const isentState = $(_target).data('isentstate');
     const consultChannel =
         isentState === 1 ? 'consultChannel0' : 'consultChannel1';
-    const finishedButtonText = '확정완료';
+    const finishedButtonText = isentState === 1 ? '확정완료' : '회신완료';
 
-    $(`#${consultChannel} .tab-content .green_custom`).each((index, value) => {
+    $(`.section .tab-content .green_custom`).each((index, value) => {
         const _isChecked = $(value).is(':checked');
-        const orderNo = $(value).data('caseno');
-        consultId = $(value).data('consultid');
         if (_isChecked) {
+            const orderNo = $(value).data('caseno');
+            consultId = $(value).data('consultid');
             orderNoForAPI = orderNo;
             const consultScheduleInfo = { orderNo };
             scheduleInfo.push(consultScheduleInfo);
         }
     });
 
-    if (scheduleInfo.length === 0) {
+    if (scheduleInfo.length === 0 && !orderNoForAPI) {
         return;
     }
 
@@ -75,7 +89,6 @@ async function checkButtonHandle(_target) {
         const { result } = await updateConsultConfirm(consultId, orderNoForAPI);
         resultAPI = result;
     }
-
     if (resultAPI) {
         $(_target).text(finishedButtonText);
         $(_target).attr('disabled', true);
@@ -108,6 +121,8 @@ $('body').on('click', '.section #metab-2 .inner .num', function () {
     const ORDERNO = $(this).data('orderno');
     if (!ORDERNO) return;
 
+    $('#consultChannel0 .collabor_wrap .member').css('margin-top', '100px');
+    $('#isentstate1 .collabor_wrap .member').css('margin-top', '100px');
     $(`#metab-2 .select_week > div`).hide();
     $(`#metab-2 .select_week div[data-orderno=${ORDERNO}]`).show();
 });
@@ -116,5 +131,5 @@ $('body').on('click', '.section #metab-2 .inner .num', function () {
 $('body').on(
     'click',
     '.section .tab-content .green_custom',
-    async () => await insertReplyHandle()
+    async (e) => await insertReplyHandle(e)
 );

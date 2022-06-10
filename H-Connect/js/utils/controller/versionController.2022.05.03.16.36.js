@@ -213,6 +213,56 @@ const FILE_TREE = {
                     file_path: '/H-Connect/js/utils/module/d3js/',
                 },
             },
+            doctorSelector: {
+                choiceDoctor: {
+                    'choiceDoctor.js': {
+                        type: 'module',
+                        url_path: '*',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/doctorSelector/choiceDoctor/',
+                    },
+                },
+                bookmark: {
+                    'bookmark.js': {
+                        type: 'module',
+                        url_path: '*',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/doctorSelector/bookmark/',
+                    },
+                },
+                doctorList: {
+                    'doctorList.js': {
+                        type: 'module',
+                        url_path: '*',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/doctorSelector/doctorList/',
+                    },
+                },
+                doctorSearch: {
+                    'doctorSearch.js': {
+                        type: 'module',
+                        url_path: '*',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/doctorSelector/doctorSearch/',
+                    },
+                },
+                'utils.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/doctorSelector/',
+                },
+                'doctorSelector.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/doctorSelector/',
+                },
+            },
             pagination: {
                 'pagination.js': {
                     type: 'module',
@@ -227,6 +277,24 @@ const FILE_TREE = {
                     url_path: '*',
                     priority: 0,
                     file_path: '/H-Connect/js/utils/module/tabController/',
+                },
+            },
+            whiteboard: {
+                example: {
+                    'whiteboardUse.js': {
+                        type: 'module',
+                        url_path:
+                            '/H-Connect/js/utils/module/whiteboard/example/whiteboard',
+                        priority: 0,
+                        file_path:
+                            '/H-Connect/js/utils/module/whiteboard/example/',
+                    },
+                },
+                'whiteboard.js': {
+                    type: 'module',
+                    url_path: '*',
+                    priority: 0,
+                    file_path: '/H-Connect/js/utils/module/whiteboard/',
                 },
             },
             popupController: {
@@ -538,7 +606,7 @@ const FILE_TREE = {
                     'calendarRender.js': {
                         type: 'module',
                         url_path:
-                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote',
+                            '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote||/doctor/remote_new',
                         file_path:
                             '/H-Connect/js/doctor/remote/common/renders/',
                     },
@@ -738,6 +806,17 @@ const FILE_TREE = {
                     },
                 },
             },
+        },
+        message: {
+            actions: {
+                'doctorSelect.js': {
+                    type: 'module',
+                    url_path: '/doctor/message',
+                    file_path: '/H-Connect/js/doctor/message/actions/',
+                },
+            },
+            renders: {},
+            templates: {},
         },
     },
     nurse: {
@@ -1036,6 +1115,11 @@ const FILE_TREE = {
         },
         message: {
             actions: {
+                'doctorSelect.js': {
+                    type: 'module',
+                    url_path: '/nurse/message',
+                    file_path: '/H-Connect/js/nurse/message/actions/',
+                },
                 'message.js': {
                     type: 'module',
                     url_path: '/nurse/message',

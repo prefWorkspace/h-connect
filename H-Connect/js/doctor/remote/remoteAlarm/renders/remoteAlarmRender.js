@@ -10,7 +10,11 @@ const { remoteAlarmTemplates } = await import(
     )
 );
 
-const { selectConsultView, updateStatusDeleteConsult } = await import(
+const {
+    selectConsultView,
+    updateStatusDeleteConsult,
+    selectConsultConfirmView,
+} = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteAlarm/actions/remoteAlarmAPI.js'
     )
@@ -21,6 +25,7 @@ const {
     remoteAlarmTimeTemplate,
     remoteAlarmDoctorTemplate,
     remoteAlarmTimeTemplateIsent,
+    remoteAlarmTimeTemplateIsentmetab2,
 } = await import(
     importVersion(
         '/H-Connect/js/doctor/remote/remoteAlarm/templates/remoteAlarmDetailTemplate.js'
@@ -94,32 +99,39 @@ function saveDeleteBtnConsulIdToPopup(_consultId) {
     }
 }
 
-async function remoteAlarmClick(_consultid, _isentState) {
+async function remoteAlarmClick(value, _isentState) {
     let caseInfoHTML = '';
     let scheduleInfoHTML = '';
+    let metabscheduleInfoHTML = '';
     let replyDoctorHTML = '';
     let noReplyDoctorHTML = '';
+    let canWithTime = '';
     let reply_count = 0;
     let noreply_count = 0;
-    const consultId = $(this).data('consultid') || _consultid;
-    const confirmState = $(this).data('confirmstate');
-    const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
+    let list = [];
+    const consultId = $(this).data('consultid') || $(value).data('consultid');
+    const confirmState =
+        $(this).data('confirmstate') || $(value).data('confirmstate');
+    const consultConfirm =
+        $(this).data('consultconfirm') || $(value).data('consultconfirm');
 
     const isentState =
         $(this).data('isentstate') !== undefined
             ? $(this).data('isentstate')
             : _isentState;
+    const { result: isentNotResult, list: isentNotConsultList } =
+        await selectConsultView(consultId);
+    const { result: isentResult, list: isentConsultList } =
+        await selectConsultConfirmView(consultId);
 
-    const { result, list } = await selectConsultView(consultId);
-
-    if (result) {
+    list = isentState === 0 ? [...isentNotConsultList] : [...isentConsultList];
+    if (isentNotResult || isentResult) {
         const {
             caseInfoList,
             memberInfoList,
             scheduleInfoList,
             deadlineDatetime,
         } = list[0];
-        // fakeSelectConsultView[0];
 
         // 협진내용 탬플릿
         for (let i = 0; i < caseInfoList.length; i++) {
@@ -159,18 +171,39 @@ async function remoteAlarmClick(_consultid, _isentState) {
             }
 
             // 협진 가능 시간 선택 렌더링
+            const buttonTitle = confirmState === 'Y' ? '회신완료' : '회신하기';
             $(`#isentstate${isentState} #tab-1`).html(scheduleInfoHTML);
+            $(`#isentstate${isentState} .btn_reply`).text(buttonTitle);
         }
 
         if (isentState === 1) {
             // 협진 가능 시간 선택 탬플릿
+
             for (let i = 0; i < scheduleInfoList.length; i++) {
                 scheduleInfoHTML += remoteAlarmTimeTemplateIsent(
+                    scheduleInfoList[i],
+                    memberInfoList
+                );
+                metabscheduleInfoHTML += remoteAlarmTimeTemplateIsentmetab2(
+                    scheduleInfoList[i],
+                    memberInfoList
+                );
+                canWithTime += canDateWithScheduleTemplates(
                     scheduleInfoList[i]
                 );
             }
+
+            $('#metab-2 .inner').html(canWithTime);
+
             $(`#isentstate${isentState} #metab-1`).html(scheduleInfoHTML);
-            $(`isentstate${isentState} .btn_reply`).text(buttonTitle);
+            $(`#isentstate${isentState} #metab-2 .select_week`).html(
+                metabscheduleInfoHTML
+            );
+
+            const buttonTitle =
+                consultConfirm === 'Y' ? '확정완료' : '일정확정';
+            $(`#isentstate${isentState} .btn_decide`).text(buttonTitle);
+            $('#total_memebr_count').text(memberInfoList.length - 1);
 
             /* Ji : 수정 버튼 이벤트 부여 ( 내가 보냈을 때 ) */
             scheduleModifyBtnEventControll(consultId);
@@ -201,7 +234,7 @@ async function remoteAlarmClick(_consultid, _isentState) {
 
         // 미참여자 카운트 렌더링
         $(`#isentstate${isentState} .member .noreply_count`).text(
-            noreply_count
+            noreply_count - 1
         );
     }
 }
@@ -231,7 +264,7 @@ export function remoteAlarmRender(_list) {
                 $(value).addClass('on');
                 const isentState = $(value).data('isentstate');
                 $(`#isentstate${isentState}`).show();
-                await remoteAlarmClick(consultId, isentState);
+                await remoteAlarmClick(value, isentState);
             }
         });
         return;
@@ -243,9 +276,10 @@ export function remoteAlarmRender(_list) {
             const isentState = $(value).data('isentstate');
             const consultId = $(value).data('consultid');
             $(`#isentstate${isentState}`).show();
-            await remoteAlarmClick(consultId, isentState);
+            await remoteAlarmClick(value, isentState);
             return;
         }
+        ``;
     });
 }
 

@@ -4128,9 +4128,9 @@ p {
     font-size: 10px;
 }
 
-.doctor_remote .all_plan .weekly .weekend p {
+/* .doctor_remote .all_plan .weekly .weekend p {
     color: #888;
-}
+} */
 
 /* .doctor_remote .all_plan .weekly .inner > :first-child,
 .doctor_remote .all_plan .weekly .inner > :first-child .title {
@@ -4250,11 +4250,12 @@ p {
 .remote_request .list .row div {
     width: 400px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .remote_request .list .row div .time {
     /* margin-right: 80px; */
+    width: 140px;
 }
 
 .remote_request .list .row .you_or {

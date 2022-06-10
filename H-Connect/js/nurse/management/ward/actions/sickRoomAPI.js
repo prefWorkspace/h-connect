@@ -207,8 +207,6 @@ export async function deleteSickRoom(_wardCode) {
 //병실 조회 api
 export async function selectSickRoom(_wardCode) {
     const { sickRoomList, result } = await selectSickRoomList(_wardCode);
-    console.log('sickRoomList===');
-    console.log(sickRoomList);
     if (!result) {
         alert('병실조회에 실패 하였습니다.');
         return;
