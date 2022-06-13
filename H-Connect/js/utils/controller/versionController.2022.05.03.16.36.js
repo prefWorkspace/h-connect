@@ -1386,18 +1386,6 @@ const FILE_TREE = {
                 },
                 currentVital: {
                     actions: {
-                        'fakeData.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
-                        },
-                        'fakeSocket.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
-                        },
                         'alarmSettingPopupActions.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
@@ -1405,12 +1393,6 @@ const FILE_TREE = {
                                 '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
                         },
                         'simpleDataAction.js': {
-                            type: 'module',
-                            url_path: '/nurse/patient',
-                            file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
-                        },
-                        'test.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:

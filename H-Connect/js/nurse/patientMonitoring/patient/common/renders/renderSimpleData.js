@@ -1,8 +1,3 @@
-const { fakeSoketBioSignalSimpleData } = await import(
-    importVersion(
-        '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/fakeSocket.js'
-    )
-);
 const {
     UpdateAlarmSettingMeasurement,
     SelectMeasurementInfoDetail,
@@ -14,25 +9,11 @@ const {
     )
 );
 
-/* s : bioSignal SimpleData */
-// 예상 simple data 소켓 fake data
-// const bioSignalSimplData = new fakeSoketBioSignalSimpleData();
-// bioSignalSimplData.update((_data) => {
-//     const { bioSignalSimpleData } = _data || {};
-//     const { hr, spo2, resp, ews, pulse, temp } = bioSignalSimpleData || {};
-//     simpleDataVal('hr', hr);
-//     simpleDataVal('sp', spo2);
-//     simpleDataVal('resp', resp);
-//     simpleDataVal('ews', ews);
-//     simpleDataVal('pulse', pulse);
-//     simpleDataVal('temp', temp);
-// });
-/* e : bioSignal SimpleData */
-
 export const vitalSimpleDataInit = async () => {
     // 기본 최초 데이터 렌더러 ( renderVital.js 에서 실행됨 )
     const _alarmSettingInfo = await SelectAlarmSettingMeasurement();
-    const [_bloodPressureLastData] = await SelectBloodPressurePage(1, 1);
+    const [_bloodPressureLastData] =
+        (await SelectBloodPressurePage(1, 1)) ?? [];
 
     currentHr(_alarmSettingInfo);
     currentSpo2(_alarmSettingInfo);
@@ -68,7 +49,13 @@ const currentEws = ({ ewsAlertAlarm }) => {
 const currentPulse = () => {
     simpleMinMax('pulse', [0, 0]); // 질문필요
 };
-const currentNBPmmHg = ({ recordDateTime, diastolic, systolic, pulse }) => {
+const currentNBPmmHg = (_data) => {
+    const {
+        recordDateTime = '-',
+        diastolic = '-',
+        systolic = '-',
+        pulse = '-',
+    } = _data ?? {};
     const _nbpmmhgValue = `${diastolic}/${systolic} (${pulse})`;
     simpleDataVal('mmhg', _nbpmmhgValue);
     targetDataVal('.mmhg .time .recordDateTime', recordDateTime);
