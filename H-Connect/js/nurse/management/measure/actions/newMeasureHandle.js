@@ -315,17 +315,8 @@ export async function newMeasurement() {
         $('.pop.arteriotony_regi h3 span:nth-of-type(3)').text(sickBed);
         $('.pop.arteriotony_regi .overlay').fadeIn();
 
-        // 등록 팝업 초기화
-        $('#ward_code').text('병동선택');
-        $('#sickroom_code').text('병동선택');
-        $('#sickbed_code').text('병동선택');
-        $('.pop.new_room_pop .hospital_patient .name_label').text(
-            '환자를 선택해 주세요.'
-        );
-        $('#birthday').val('');
-        $('#gender').val('');
-        $('#patient_MRN').val('');
-        await newSickBedPop_wardListSelectHandle();
+        // 팝업창 초기화
+        initialPopUpModal();
 
         // 측정 현황 리스트 조회
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
@@ -335,6 +326,21 @@ export async function newMeasurement() {
     }
 }
 
+// 팝업창 초기화
+async function initialPopUpModal() {
+    // 등록 팝업 초기화
+    $('#ward_code').text('병동선택');
+    $('#sickroom_code').text('병동선택');
+    $('#sickbed_code').text('병동선택');
+    $('.pop.new_room_pop .hospital_patient .name_label').text(
+        '환자를 선택해 주세요.'
+    );
+    $('#birthday').val('');
+    $('#gender').val('');
+    $('#patient_MRN').val('');
+    await newSickBedPop_wardListSelectHandle();
+}
+
 $('.pop.new_room_pop .new_room .name_list').on('click', patientSelectBoxHandle);
 $('.pop.new_room_pop .new_regi .btn_list .check').on('click', insertDevice);
 $('.pop.new_room_pop .new_room .btn_list .blf').on('click', newMeasurement);
@@ -342,5 +348,9 @@ $('.pop.new_room_pop .new_regi .btn_list .rd').on(
     'click',
     newSickBedPop_updateCancel
 );
+$('.pop.new_room_pop .overlay .new_room .rd').on('click', () => {
+    initialPopUpModal();
+    $('.pop.new_room_pop .overlay').hide();
+});
 
 await wardSelectBoxHandle();
