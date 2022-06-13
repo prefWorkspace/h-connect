@@ -80,9 +80,10 @@ export const SelectBloodPressurePage = async (page = 1, count = 10) => {
         })
     );
     if (!res?.bloodPressureList) {
-        throw new Error('조회된 데이타가 없습니다');
+        return null;
+    } else {
+        return res.bloodPressureList;
     }
-    return res.bloodPressureList;
 };
 
 //
