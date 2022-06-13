@@ -169,9 +169,8 @@ export const UpdateGlobalSetting = async (_trendSecond) => {
 };
 
 /* 생체 신호 알림 페이지 조회 */
+const mesurementInfoDetail = (await SelectMeasurementInfoDetail()) ?? {};
 export const SelectBioSignalEventSimplePage = async (_page) => {
-    const mesurementInfoDetail = (await SelectMeasurementInfoDetail()) ?? {};
-
     const startDateTime = moment(
         mesurementInfoDetail.measurementInfo.startDateTime
     ).format('YYYY-MM-DD HH:mm:ss');
