@@ -7,7 +7,7 @@ class CanvasLayer {
             (layerList) => layerList.layerKey === createLayerKey
         );
         if (checkDuplicatedLayerKey?.length) {
-            throw new Error('Duplicated LayerKey');
+            throw new Error(`Duplicated Layer Key : ${createLayerKey}`);
         }
         this.layerArray.push({
             layerKey: createLayerKey,
@@ -20,8 +20,16 @@ class CanvasLayer {
         )[0];
         return findReadLayer ?? null;
     }
-    updateLayer(getlayerInform) {
-        this.layerInformation = getlayerInform;
+    updateLayer(updateLayerKey, updateLayerInform) {
+        let findUpdateLayerIndex = this.layerArray.findIndex(
+            (layerList) => layerList.layerKey === updateLayerKey
+        );
+        if (findUpdateLayerIndex !== -1) {
+            this.layerArray[findUpdateLayerIndex].layerValue =
+                updateLayerInform;
+        } else {
+            throw new Error(`Can not find Update Layer : ${updateLayerKey}`);
+        }
 
         return this;
     }
@@ -49,8 +57,11 @@ export class WhiteboardCreator {
             y: 0,
         },
     };
+    tempMovements = [];
     constructor(stageStr, initOptions) {
         // 초기 세팅
+        this.options = initOptions;
+
         this.stage = {
             string: stageStr,
             element: null,
@@ -64,13 +75,17 @@ export class WhiteboardCreator {
             element: null,
             context: null,
             pixelRatio: null,
+            style: {
+                lineCap: 'round',
+                lineJoin: 'round',
+                lineWidth: this.options.line.initialWidth ?? 1,
+                strokeStyle: this.options.palette.initialColor ?? '#000000',
+            },
         };
 
         // layer 생성
         this.layer = new CanvasLayer();
         this.layer.createLayer('drawing', []);
-
-        this.options = initOptions;
 
         // 캔버스 생성
         this.createCanvas().settingsCanvas().appendCanvas();
@@ -107,12 +122,8 @@ export class WhiteboardCreator {
         this.canvas.element.height = this.stage.rect.height * pixelRatio;
         this.canvas.context.scale(pixelRatio, pixelRatio);
 
-        //
-        this.canvas.context.strokeStyle =
-            this.options.palette.initialColor ?? '#000000';
-        this.canvas.context.lineWidth = this.options.line.initialWidth ?? 1;
-        this.canvas.context.lineJoin = 'round';
-        this.canvas.context.lineCap = 'round';
+        this.setStyleCanvasWidthObject(this.canvas.style);
+        this.canvas.context.save();
         return this;
     }
     // 캔버스 붙이기
@@ -122,12 +133,13 @@ export class WhiteboardCreator {
     removeCanvas() {}
 
     // 캔버스 이미지 등록
-    async appendImageCanvas(imageUrl) {
+    async appendImageCanvas(imageUrl, appendImgCanvasOptions) {
+        const context = this.utils.contextValidate();
+
         const blobImgUrl = await this.utils.fetchImageUrlToBlob(imageUrl);
 
         let baseImage = new Image();
         baseImage.src = blobImgUrl;
-        // baseImage.crossOrigin = 'Anonymous';
 
         baseImage.onload = (e) => {
             // result
@@ -182,7 +194,25 @@ export class WhiteboardCreator {
             imgCanvasPositionX = this.utils.toFixedFloat(imgCanvasPositionX, 4);
             imgCanvasPositionY = this.utils.toFixedFloat(imgCanvasPositionY, 4);
 
-            this.canvas.context.drawImage(
+            if (
+                appendImgCanvasOptions &&
+                appendImgCanvasOptions.fitImageSize === true
+            ) {
+                // 캔버스 사이즈 이미지 사이즈에 맞춤
+                this.canvas.element.width =
+                    imgCanvasWidth * this.canvas.pixelRatio;
+                this.canvas.element.height =
+                    imgCanvasHeight * this.canvas.pixelRatio;
+
+                this.canvas.element.style.transform = `translate(${imgCanvasPositionX}px, ${imgCanvasPositionY}px)`;
+
+                imgCanvasPositionX = 0;
+                imgCanvasPositionY = 0;
+
+                this.setStyleCanvasWidthObject(this.canvas.style);
+            }
+
+            context.drawImage(
                 baseImage,
                 imgCanvasPositionX,
                 imgCanvasPositionY,
@@ -191,23 +221,37 @@ export class WhiteboardCreator {
             );
 
             try {
-                const getImageData = this.canvas.context.getImageData(
+                const getImageData = context.getImageData(
                     0,
                     0,
                     this.stage.rect.width,
                     this.stage.rect.height
                 );
-                this.layer.createLayer('image', getImageData);
+                if (!this.layer.readLayer('image')) {
+                    this.layer.createLayer('image', getImageData);
+                } else {
+                    this.layer.updateLayer('image', getImageData);
+                    this.layer.updateLayer('drawing', []);
+                }
             } catch {
                 throw new Error('Failed installl image inform');
             }
         };
     }
 
+    setStyleCanvasWidthObject(contextObjects) {
+        const context = this.utils.contextValidate();
+        for (const [contextKey, contextValue] of Object.entries(
+            contextObjects
+        )) {
+            context[contextKey] = contextValue;
+        }
+    }
+
     // <이벤트 메소드>
-    onDown(e) {
+    onPointerDown(e) {
         this.isDown = true;
-        const { x, y } = this.utils.eventPosition(e);
+        const { x, y } = this.utils.eventPointerPosition(e);
 
         this.points.down.x = x;
         this.points.down.y = y;
@@ -216,23 +260,41 @@ export class WhiteboardCreator {
         this.points.temp.x = x;
         this.points.temp.y = y;
     }
-    onMove(e) {
+    onPointerMove(e) {
         if (!this.isDown) return;
-        const { x, y } = this.utils.eventPosition(e);
+        const { x, y } = this.utils.eventPointerPosition(e);
 
         this.points.move.x = x;
         this.points.move.y = y;
 
         this.drawCanvas(this.points.temp.x, this.points.temp.y, x, y);
-        this.canvas.context.save();
+        // temp movements
+        this.tempMovements.push({
+            sx: this.points.temp.x,
+            sy: this.points.temp.y,
+            ex: x,
+            ey: y,
+        });
         // temp
         this.points.temp.x = x;
         this.points.temp.y = y;
     }
-    onUp(e) {
-        const { x, y } = this.utils.eventPosition(e);
+    onPointerUp(e) {
+        const { x, y } = this.utils.eventPointerPosition(e);
         this.points.up.x = x;
         this.points.up.y = y;
+
+        if (this.isDown && this.tempMovements.length > 0) {
+            let getDrawingLayer = [
+                ...this.layer.readLayer('drawing').layerValue,
+            ];
+            getDrawingLayer.push({
+                points: this.tempMovements,
+                style: { ...this.canvas.style },
+            });
+            this.layer.updateLayer('drawing', getDrawingLayer);
+            this.tempMovements = [];
+        }
 
         this.isDown = false;
     }
@@ -256,18 +318,18 @@ export class WhiteboardCreator {
         $(document).on(
             'pointerdown',
             `${this.stage.string} ${this.canvas.string}`,
-            this.onDown.bind(this)
+            this.onPointerDown.bind(this)
         );
 
         // move event
         $(document).on(
             'pointermove',
             `${this.stage.string} ${this.canvas.string}`,
-            this.onMove.bind(this)
+            this.onPointerMove.bind(this)
         );
 
         // up event
-        $(document).on('pointerup', this.onUp.bind(this));
+        $(document).on('pointerup', this.onPointerUp.bind(this));
 
         // change color event
         if (
@@ -301,24 +363,23 @@ export class WhiteboardCreator {
 
     // 드로잉 컬러 변경
     changeColorCanvas(color) {
-        const context = this.canvas.context;
-        if (!context) return;
+        const context = this.utils.contextValidate();
 
+        this.canvas.style.strokeStyle = color;
         context.strokeStyle = color;
     }
 
     // 드로잉 두께 변경
     changeLineWidthCanvas(width) {
-        const context = this.canvas.context;
-        if (!context) return;
+        const context = this.utils.contextValidate();
 
+        this.canvas.style.lineWidth = width;
         context.lineWidth = width;
     }
 
     // 드로잉
     drawCanvas(sx, sy, ex, ey) {
-        const context = this.canvas.context;
-        if (!context) return;
+        const context = this.utils.contextValidate();
 
         context.beginPath();
         context.moveTo(sx, sy);
@@ -326,30 +387,84 @@ export class WhiteboardCreator {
         context.stroke();
     }
 
-    // 지우기 : 필요하면 개발예정
+    // TODO : 지우기 : 필요하면 개발예정
     eraseCanvas() {
-        const context = this.canvas.context;
-        if (!context) return;
+        // const context = this.utils.contextValidate();
         // context.globalCompositeOperation = 'destination-out';
     }
 
     // 드로잉 된 것 모두 지우기
-    eraseAllDrawing() {
+    eraseAllDrawingCanvas() {
         this.eraseAllCanvas();
         const imageLayer = this.layer.readLayer('image');
         this.canvas.context.putImageData(imageLayer.layerValue, 0, 0);
     }
     // 캔바스 모두 지우기
     eraseAllCanvas() {
-        const context = this.canvas.context;
-        if (!context) return;
+        const context = this.utils.contextValidate();
 
         context.clearRect(0, 0, this.stage.rect.width, this.stage.rect.height);
     }
 
+    // <되돌리기>
+    // 드로잉 된 것 되돌리기
+    revertDrawingCanvas() {
+        let getDrawingLayer = [...this.layer.readLayer('drawing').layerValue];
+        getDrawingLayer.pop();
+        this.layer.updateLayer('drawing', getDrawingLayer);
+        this.eraseAllDrawingCanvas();
+
+        getDrawingLayer.forEach((stepInfo) => {
+            const { points, style } = stepInfo;
+            if (!points && points.length <= 0) return;
+            this.setStyleCanvasWidthObject(style);
+            points.forEach((drawingInfo) => {
+                const { sx, sy, ex, ey } = drawingInfo ?? {};
+                this.drawCanvas(sx, sy, ex, ey);
+            });
+        });
+        this.setStyleCanvasWidthObject(this.canvas.style);
+    }
+
+    // <캔버스 이미지 컨트롤>
+    // 캔버스 이미지 URL 로 변환
+    toDataUrlCanvas(type, quality) {
+        const context = this.utils.contextValidate();
+
+        const imgType = type ?? 'image/jpeg';
+        const imgQuality = quality ?? 1.0;
+        try {
+            const dataURL = this.canvas.element.toDataURL(imgType, imgQuality);
+            return {
+                url: dataURL,
+                type: imgType,
+                quality: imgQuality,
+            };
+        } catch {
+            throw new Error();
+        }
+    }
+    // 캔버스 이미지 다운로드
+    downloadImage(imgName, imgType, imgQuality) {
+        const { url, type } = this.toDataUrlCanvas(imgType, imgQuality);
+
+        try {
+            const imgExtension = type.toString().trim(' ').split('/')[1];
+
+            let link = document.createElement('a');
+            link.download = `${imgName ?? 'download'}.${imgExtension}`;
+            link.href = url;
+            link.click();
+
+            link = undefined;
+        } catch {
+            throw new Error('Failed to download img');
+        }
+    }
+
     utils = {
         toFixedFloat: (value, digit) => parseFloat(value.toFixed(digit) ?? 0),
-        eventPosition: (e) => {
+        eventPointerPosition: (e) => {
             const x = typeof e.offsetX !== 'undefined' ? e.offsetX : e.layerX;
             const y = typeof e.offsetY !== 'undefined' ? e.offsetY : e.layerY;
             return { x: x ?? 0, y: y ?? 0 };
@@ -366,6 +481,14 @@ export class WhiteboardCreator {
                     });
             } catch {
                 throw new Error('failed url to blob');
+            }
+        },
+        contextValidate: () => {
+            const context = this.canvas.context;
+            if (!context) {
+                throw new Error('Can Not Use Context');
+            } else {
+                return context;
             }
         },
     };
