@@ -422,6 +422,7 @@ function unpublishOwnFeed() {
 }
 
 function newRemoteFeed(id, display, audio, video) {
+	Janus.log("  -- newRemoteFeed");
 	// A new feed has been published, create a new plugin handle and attach to it as a subscriber
 	var remoteFeed = null;
 	janus.attach(
