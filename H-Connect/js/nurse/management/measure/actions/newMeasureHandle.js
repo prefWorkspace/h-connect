@@ -55,52 +55,58 @@ let deviceInfoList = [];
 //신규 병상 등록 팝업 ==========================
 //병상 셀렉트 박스 이벤트
 async function sickbedSelectBoxHandle() {
-    $(
-        '.pop.new_room_pop .overlay .new_room .selectBox2 .bed_option .bed_list'
-    ).on('click', function () {
-        const item = $(this).text();
-        $(this).addClass('active').siblings().removeClass('active');
-        const sickBedCode = $(this).data('sickbedcode');
-        $(this).parent().parent().find('.label').text(item);
-        $(this)
-            .parent()
-            .parent()
-            .find('.label')
-            .attr('data-sickbedcode', sickBedCode);
-        $(this).parent().parent().toggleClass('active');
-        $('.pop.new_room_pop .new_room .cont p span').text(1);
-    });
+    $('body').on(
+        'click',
+        '.pop.new_room_pop .overlay .new_room .selectBox2 .bed_option .bed_list',
+        function () {
+            const item = $(this).text();
+            $(this).addClass('active').siblings().removeClass('active');
+            const sickBedCode = $(this).data('sickbedcode');
+            $(this).parent().parent().find('.label').text(item);
+            $(this)
+                .parent()
+                .parent()
+                .find('.label')
+                .attr('data-sickbedcode', sickBedCode);
+            $(this).parent().parent().toggleClass('active');
+            $('.pop.new_room_pop .new_room .cont p span').text(1);
+        }
+    );
 }
 
 //병실 셀렉트 박스 이벤트
 async function sickRoomSelectBoxHandle(wardCode) {
-    $(
-        '.pop.new_room_pop .overlay .new_room .selectBox2 .room_option2 .room_list2'
-    ).on('click', async function () {
-        const item = $(this).find('p').text();
-        const sickRoomCode = $(this).data('sickroomcode');
-        const spareBed = $(this).data('sparebed');
-        $(this).addClass('active').siblings().removeClass('active');
-        $(this).parent().parent().find('.label').text(item);
+    $('body').on(
+        'click',
+        '.pop.new_room_pop .overlay .new_room .selectBox2 .room_option2 .room_list2',
+        async function () {
+            const item = $(this).find('p').text();
+            const sickRoomCode = $(this).data('sickroomcode');
+            const spareBed = $(this).data('sparebed');
+            $(this).addClass('active').siblings().removeClass('active');
+            $(this).parent().parent().find('.label').text(item);
 
-        $(this)
-            .parent()
-            .parent()
-            .find('.label')
-            .attr('data-sickroomcode', sickRoomCode);
-        $(this).parent().parent().toggleClass('active');
-        $('.pop.new_room_pop .new_room .cont > p > span').text(spareBed);
-        await newSickBedPop_sickBedListSelectHandle(wardCode, sickRoomCode);
-        await sickbedSelectBoxHandle();
-    });
+            $(this)
+                .parent()
+                .parent()
+                .find('.label')
+                .attr('data-sickroomcode', sickRoomCode);
+            $(this).parent().parent().toggleClass('active');
+            $('.pop.new_room_pop .new_room .cont > p > span').text(spareBed);
+            await newSickBedPop_sickBedListSelectHandle(wardCode, sickRoomCode);
+            await sickbedSelectBoxHandle();
+        }
+    );
 }
 
 //병동 셀렉트 박스 이벤트
 async function wardSelectBoxHandle() {
     await newSickBedPop_wardListSelectHandle();
-    $('.pop.new_room_pop .new_room .selectBox2 .ward_option2 .ward_list2').on(
+    $('body').on(
         'click',
+        '.pop.new_room_pop .new_room .selectBox2 .ward_option2 .ward_list2',
         async function () {
+            console.log('asdf');
             const item = $(this).find('p').text();
             const wardCode = $(this).data('wardcode');
             const spareBed = $(this).data('sparebed');
