@@ -2,10 +2,6 @@ const { WhiteboardCreator } = await import(
     importVersion('/H-Connect/js/utils/module/whiteboard/whiteboard.js')
 );
 
-const fakeImageAPI = async () => {
-    return;
-};
-
 const whiteboardCreatorOptions = {
     palette: {
         initialColor: '#ffffff',
@@ -42,7 +38,7 @@ const whiteboardCreatorOptions = {
         },
     },
     line: {
-        initialWidth: 10,
+        initialWidth: 4,
         width: [
             {
                 target: '.line_option.one',
@@ -69,19 +65,46 @@ const whiteboardCreatorModule = new WhiteboardCreator(
     '#whiteboard',
     whiteboardCreatorOptions
 );
-const imgUrl =
-    'https://m.riposo.co.kr/web/product/big/202010/36e035793dc70f4d0c569ad1a07e87fb.jpg';
-// const imgUrl =
-//     'https://img.animalplanet.co.kr/news/2020/07/15/700/e05t9x1o0e3trklpwrr3.jpg';
-// const imgUrl =
-//     'https://interbalance.org/wp-content/uploads/2021/08/flouffy-VBkIK3qj3QE-unsplash-scaled-e1631077364762.jpg';
-// const imgUrl =
-//     'https://img7.yna.co.kr/mpic/YH/2022/01/03/MYH20220103010500534.jpg';
-// const imgUrl =
-//     'http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg';
-// const imgUrl = '/H-Connect/img/remote/drawing.jpg';
-whiteboardCreatorModule.appendImageCanvas(imgUrl);
 
+async function getImgAppendToCanvas() {
+    // fakeImage parameter : 0 or 1
+    const fetchImgUrl = await fakeImageAPI(0);
+    whiteboardCreatorModule.appendImageCanvas(fetchImgUrl, {
+        fitImageSize: true,
+    });
+}
+// img 붙이기
+getImgAppendToCanvas();
+
+$('.btn_clear').on('click', function () {
+    // 드로잉 모두 지우기
+    whiteboardCreatorModule.eraseAllDrawingCanvas();
+});
+$('.btn_back').on('click', function () {
+    // 드로잉 되돌리기
+    whiteboardCreatorModule.revertDrawingCanvas();
+});
+
+// ! 다음 두 버튼은 해당 기능을 설명하기 위해 붙인 버튼 입니다.
+$('.btn_check').on('click', function () {
+    // 이미지 url 받아오기
+    const { url } = whiteboardCreatorModule.toDataUrlCanvas();
+    console.log('url: ', url);
+
+    // 이미지 다운로드 시
+    // whiteboardCreatorModule.downloadImage('이미지이름', 'image/jpeg');
+});
+
+$('.btn_no').on('click', async function () {
+    // fakeImage parameter : 0 or 1
+    // 이미지 변경시
+    const fetchImgUrl = await fakeImageAPI(1);
+    whiteboardCreatorModule.appendImageCanvas(fetchImgUrl, {
+        fitImageSize: true,
+    });
+});
+
+// 선 두께 select box 토글
 $('.selectBox2 .label').on('click', function () {
     $(this).parent().toggleClass('active');
 });
@@ -91,3 +114,31 @@ $('.selectBox2 .optionList li').on('click', function () {
     $('.selectBox2 .label').html(deviceName);
     $(this).parent().parent().toggleClass('active');
 });
+
+/*
+
+
+
+
+
+
+
+*/
+
+// fake img api
+async function fakeImageAPI(id) {
+    const timeoutSeconds = 250;
+    const promise = new Promise((resolve, reject) => {
+        let imgUrl = null;
+        if (id === 0) {
+            imgUrl =
+                'http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg';
+        } else if (id === 1) {
+            imgUrl = '/H-Connect/img/remote/drawing.jpg';
+        }
+        setTimeout(function () {
+            resolve(imgUrl);
+        }, timeoutSeconds);
+    }).then((success) => success);
+    return promise;
+}

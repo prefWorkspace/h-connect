@@ -1990,6 +1990,7 @@ textarea::-webkit-scrollbar-button {
     border-radius: 4px;
     background: #eee;
     cursor: pointer;
+    z-index: 1;
 }
 
 .selectBox2.active {
