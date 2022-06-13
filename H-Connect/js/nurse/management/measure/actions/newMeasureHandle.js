@@ -328,7 +328,7 @@ export async function newMeasurement() {
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 
         await createMeasureList(measurementInfoSimpleList);
-        await measureListhanlde();
+        // await measureListhanlde();
     }
 }
 

@@ -12,7 +12,7 @@ const { createMeasureList } = await import(
     )
 );
 
-const { measureListhanlde, initialUpdateInputForm } = await import(
+const { initialUpdateInputForm } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/measureHandle.js'
     )

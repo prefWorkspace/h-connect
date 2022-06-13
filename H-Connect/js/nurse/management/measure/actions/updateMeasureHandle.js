@@ -60,6 +60,23 @@ async function updateMeasurementHandle() {
     const measurementCode = $(this).attr('data-measurementcode');
     const API_ROUTE = $(this).attr('data-apiroute');
 
+    if (!measurementCode) {
+        alert('환자를 선택해주세요.');
+        return;
+    }
+    if (!wardCode) {
+        alert('병동을 선택해주세요.');
+        return;
+    }
+    if (!sickRoomCode) {
+        alert('병실을 선택해주세요.');
+        return;
+    }
+    if (!sickBedCode) {
+        alert('병상을 선택해주세요.');
+        return;
+    }
+
     const codeObj = {
         wardCode,
         sickRoomCode,
@@ -90,9 +107,9 @@ async function updateMeasurementHandle() {
     if (result) {
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
         await createMeasureList(measurementInfoSimpleList);
-        await measureListhanlde();
+        // await measureListhanlde();
         $(`.section.measure_status .status_list`).each((_, value) => {
-            if ($(value).data('sickbedcode') === sickBedCode) {
+            if ($(value).data('measurementcode') === measurementCode) {
                 $(value).addClass('on');
             }
         });
