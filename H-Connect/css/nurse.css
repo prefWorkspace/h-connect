@@ -3431,3 +3431,9 @@ s .monitoring_patient .patient .title {
 .ward_dashboard .no_bell {
     color: #444;
 }
+
+/* front end 추가 */
+.table_body .bloodPressure_item.active {
+    background: #007a94;
+    color: #ffffff;
+}
