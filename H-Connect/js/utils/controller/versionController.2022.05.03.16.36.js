@@ -99,7 +99,7 @@ const FILE_TREE = {
                 },
             },
             custom: {
-                'customFullcalendar.js': {
+                'customFullCalendar.js': {
                     type: 'module',
                     priority: 0,
                     url_path: '*',
@@ -397,6 +397,67 @@ const FILE_TREE = {
                 type: 'module',
                 url_path: '/doctor/monitoring',
                 file_path: '/H-Connect/js/doctor/monitoring/',
+            },
+        },
+        pacs: {
+            actions: {
+                'pacsAPI.js': {
+                    type: 'module',
+                    url_path: '/doctor/pacs',
+                    file_path: '/H-Connect/js/doctor/pacs/actions/',
+                },
+                'pacsHandle.js': {
+                    type: 'module',
+                    url_path: '/doctor/pacs',
+                    file_path: '/H-Connect/js/doctor/pacs/actions/',
+                },
+            },
+            templates: {
+                'pacsListTemplates.js': {
+                    type: 'module',
+                    url_path: '/doctor/pacs',
+                    file_path: '/H-Connect/js/doctor/pacs/templates/',
+                },
+            },
+            renders: {
+                'pacsListRender.js': {
+                    type: 'module',
+                    url_path: '/doctor/pacs',
+                    file_path: '/H-Connect/js/doctor/pacs/renders/',
+                },
+            },
+        },
+        patient: {
+            actions: {
+                'patientAPI.js': {
+                    type: 'module',
+                    url_path: '/doctor/patient',
+                    file_path: '/H-Connect/js/doctor/patient/actions/',
+                },
+                'patientHandle.js': {
+                    type: 'module',
+                    url_path: '/doctor/patient',
+                    file_path: '/H-Connect/js/doctor/patient/actions/',
+                },
+                'selectHisExinfos.js': {
+                    type: 'module',
+                    url_path: '/doctor/patient',
+                    file_path: '/H-Connect/js/doctor/patient/actions/',
+                },
+            },
+            templates: {
+                'patientTemplates.js': {
+                    type: 'module',
+                    url_path: '/doctor/patient',
+                    file_path: '/H-Connect/js/doctor/patient/templates/',
+                },
+            },
+            renders: {
+                'patientRender.js': {
+                    type: 'module',
+                    url_path: '/doctor/patient',
+                    file_path: '/H-Connect/js/doctor/patient/renders/',
+                },
             },
         },
         remote: {
