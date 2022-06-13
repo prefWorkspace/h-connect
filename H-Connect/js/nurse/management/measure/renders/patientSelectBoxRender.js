@@ -24,14 +24,14 @@ export function patientSelectBox() {
 
     if (!measurementInfoSimpleList || measurementInfoSimpleList.length === 0) {
         html += errorText();
-        $('.modifi_hospital .selectBox_name .name_option').html(html);
+        $('.selectBox_name .name_option').html(html);
         return;
     }
 
     for (let i = 0; i < measurementInfoSimpleList.length; i++) {
         html += patientList(measurementInfoSimpleList[i]);
     }
-    $('.select_name .name_option').html(html);
+    $('.modifi_hospital .select_name .name_option').html(html);
 }
 
 patientSelectBox();

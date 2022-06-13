@@ -15,7 +15,11 @@ const { request_Date_Data } = await import(
 );
 
 const userData = localStorageController.getLocalS('userData');
-const { userCode: requester, organizationCode } = JSON.parse(userData);
+const {
+    userCode: requester,
+    organizationCode,
+    id: userId,
+} = JSON.parse(userData);
 
 //모든 측정 데이터 리스트 select API
 export async function selectMeasurementInfoList(
@@ -243,6 +247,29 @@ export async function updateMeasurement_insertDevice(
 
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertDeviceInfo',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
+
+// HIS 환자 정보 검색
+export async function selectHisPatientList(patientName = null) {
+    const obj = {
+        requester,
+        userId,
+        organizationCode,
+        patientName,
+        ...commonRequest(),
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Doctor/SelectHisPatientList',
         'POST',
         JSON.stringify(obj),
         (res) => {
