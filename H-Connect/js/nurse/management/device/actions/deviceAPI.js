@@ -99,8 +99,6 @@ export async function createDevice() {
 //장치 삭제 API
 export async function delete_devive() {
     const serialNumber = $(this).attr('data-serialnumber');
-    console.log('serialNumber===');
-    console.log(serialNumber);
     const req = JSON.stringify({
         ...commonRequest(),
         serialNumber,

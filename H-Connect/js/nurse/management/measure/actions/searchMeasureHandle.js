@@ -14,12 +14,12 @@ const { createMeasureList } = await import(
 
 async function searchPatient() {
     const search = $('.section.measure_status .search_container input').val();
-    const { result, measurmentInfoSimpleList, totalCount } =
+    const { result, measurementInfoSimpleList, totalCount } =
         await selectMeasurementInfoList(null, null, null, search);
     if (result) {
         const { ward, wardCode, sickRoom, sickRoomCode } =
-            measurmentInfoSimpleList || {};
-        await createMeasureList(measurmentInfoSimpleList);
+            measurementInfoSimpleList || {};
+        await createMeasureList(measurementInfoSimpleList);
         $('.section.measure_status .selectBox2 .ward_label').text(ward);
         $('.section.measure_status .selectBox2 .ward_label').attr(
             'data-wardcode',

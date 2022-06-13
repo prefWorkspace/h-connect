@@ -253,6 +253,35 @@ export async function newMeasurement() {
     const sickRoom = $('#sickroom_code').text();
     const sickBed = $('#sickbed_code').text();
 
+    // validation
+    if (
+        name.replaceAll(' ', '').replaceAll('\n', '') === '환자를선택해주세요.'
+    ) {
+        alert('환자를 선택해주세요.');
+        return;
+    }
+    if (birthday === 0) {
+        alert('생년월일을 입력해주세요.');
+        return;
+    }
+    if (patientCode === '') {
+        alert('MRN code를 입력해주세요.');
+        return;
+    }
+
+    if (!wardCode) {
+        alert('병동을 선택해주세요');
+        return;
+    }
+    if (!sickRoomCode) {
+        alert('병실을 선택해주세요');
+        return;
+    }
+    if (!sickBedCode) {
+        alert('병상을 선택해주세요');
+        return;
+    }
+
     const codeObj = {
         wardCode,
         sickRoomCode,
@@ -277,18 +306,39 @@ export async function newMeasurement() {
 
     const { result } = await insertMeasurementInfo(codeObj, patientData);
     if (result) {
+        // 팝업 숨김
         $('.pop.new_room_pop .overlay').fadeOut();
+
+        // 완료 팝업
         $('.pop.arteriotony_regi h3 span:nth-of-type(1)').text(ward + ' ');
         $('.pop.arteriotony_regi h3 span:nth-of-type(2)').text(sickRoom);
         $('.pop.arteriotony_regi h3 span:nth-of-type(3)').text(sickBed);
-
         $('.pop.arteriotony_regi .overlay').fadeIn();
 
+        // 팝업창 초기화
+        initialPopUpModal();
+
+        // 측정 현황 리스트 조회
         const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 
         await createMeasureList(measurementInfoSimpleList);
         await measureListhanlde();
     }
+}
+
+// 팝업창 초기화
+async function initialPopUpModal() {
+    // 등록 팝업 초기화
+    $('#ward_code').text('병동선택');
+    $('#sickroom_code').text('병동선택');
+    $('#sickbed_code').text('병동선택');
+    $('.pop.new_room_pop .hospital_patient .name_label').text(
+        '환자를 선택해 주세요.'
+    );
+    $('#birthday').val('');
+    $('#gender').val('');
+    $('#patient_MRN').val('');
+    await newSickBedPop_wardListSelectHandle();
 }
 
 $('.pop.new_room_pop .new_room .name_list').on('click', patientSelectBoxHandle);
@@ -298,5 +348,9 @@ $('.pop.new_room_pop .new_regi .btn_list .rd').on(
     'click',
     newSickBedPop_updateCancel
 );
+$('.pop.new_room_pop .overlay .new_room .rd').on('click', () => {
+    initialPopUpModal();
+    $('.pop.new_room_pop .overlay').hide();
+});
 
 await wardSelectBoxHandle();
