@@ -43,7 +43,7 @@ export function measureList(data_List) {
     }
 
     return `
-        <div class="status_list" data-wardcode="${wardCode}" data-sickroomcode="${sickRoomCode}" data-sickbedcode="${sickBedCode}" >
+        <div class="status_list" data-measurementcode="${measurementCode}" data-wardcode="${wardCode}" data-sickroomcode="${sickRoomCode}" data-sickbedcode="${sickBedCode}" >
             <p>
                 <span>${ward}동</span>.
                 <span>${sickRoom}</span>. 
@@ -103,5 +103,31 @@ export function modifiDeviceList(item) {
                 </button>
             </div>
         </div>
+    `;
+}
+
+export function patientList(_data) {
+    const {
+        name,
+        gender,
+        ward,
+        sickRoom,
+        sickBed,
+        patientCode,
+        age,
+        birthday,
+        wardCode,
+        sickRoomCode,
+        sickBedCode,
+        measurementCode,
+    } = _data;
+
+    return `
+        <li data-measurementcode="${measurementCode}" class="optionItem name_list">
+            <span>${name}</span>
+            <span>${birthday.slice(0, 4)}</span>
+            <span>${gender === 1 ? '남' : '여'}</span>
+            <span>MRN code</span>
+        </li>
     `;
 }

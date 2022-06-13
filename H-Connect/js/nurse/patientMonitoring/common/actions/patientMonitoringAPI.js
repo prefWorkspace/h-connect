@@ -80,9 +80,10 @@ export const SelectBloodPressurePage = async (page = 1, count = 10) => {
         })
     );
     if (!res?.bloodPressureList) {
-        throw new Error('조회된 데이타가 없습니다');
+        return null;
+    } else {
+        return res.bloodPressureList;
     }
-    return res.bloodPressureList;
 };
 
 //
@@ -168,7 +169,13 @@ export const UpdateGlobalSetting = async (_trendSecond) => {
 };
 
 /* 생체 신호 알림 페이지 조회 */
+const mesurementInfoDetail = (await SelectMeasurementInfoDetail()) ?? {};
 export const SelectBioSignalEventSimplePage = async (_page) => {
+    const startDateTime = moment(
+        mesurementInfoDetail.measurementInfo.startDateTime
+    ).format('YYYY-MM-DD HH:mm:ss');
+    const endDateTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+
     const res = await serverController.ajaxAwaitController(
         'API/BioSignal/SelectBioSignalEventSimplePage',
         'POST',
@@ -177,6 +184,8 @@ export const SelectBioSignalEventSimplePage = async (_page) => {
             measurementCode: historyMeasurementCode,
             pageNumber: _page,
             count: 10,
+            endDateTime: endDateTime,
+            startDateTime: startDateTime,
         })
     );
     return {

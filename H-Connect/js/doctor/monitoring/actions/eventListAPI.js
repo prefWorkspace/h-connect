@@ -46,7 +46,6 @@ export async function insertNewEventList() {
         bioSignalEventCount
     );
     let eventList = res.bioSignalEventSimpleList;
-    console.log(eventList);
     await renderNewEventList(eventList);
     $('.section.new_patient.new').ready(async function () {
         if (!eventList) {

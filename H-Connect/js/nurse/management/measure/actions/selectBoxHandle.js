@@ -53,6 +53,7 @@ export async function updateMeasurement_sickRoomSelectBoxHandle(wardCode) {
                 'disabled',
                 false
             );
+            $('.modifi_hospital .selectBox2 .mbed_label').text('병상선택');
             await updateWard_sickBedListSelectHandle(wardCode, sickRoomCode);
             await updateMeasurement_sickBedSelectBoxHandle();
         }
@@ -79,6 +80,8 @@ export async function updateMeasurement_wardSelectBoxHandle() {
                 false
             );
             $(this).parent().parent().removeClass('active');
+            $('.modifi_hospital .selectBox2 .mroom_label').text('병실선택');
+            $('.modifi_hospital .selectBox2 .mbed_label').text('병상선택');
             await updateWard_sickroomListSelectHandle(wardCode);
             await updateMeasurement_sickRoomSelectBoxHandle(wardCode);
         }
