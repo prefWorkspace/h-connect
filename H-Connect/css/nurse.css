@@ -613,6 +613,9 @@
     height: 36px;
     margin-bottom: 16px;
 }
+.selectBox2.active {
+    z-index: 2;
+}
 .nurse_measure .select_name .label {
     color: #ccc;
 }
@@ -3427,4 +3430,10 @@ s .monitoring_patient .patient .title {
 
 .ward_dashboard .no_bell {
     color: #444;
+}
+
+/* front end 추가 */
+.table_body .bloodPressure_item.active {
+    background: #007a94;
+    color: #ffffff;
 }

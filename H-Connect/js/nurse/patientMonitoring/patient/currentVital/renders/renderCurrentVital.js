@@ -1,54 +1,79 @@
-const { socketGetPatientData } = await import(
-    importVersion('/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/fakeSocket.js')
-    );
 const { CreateVitalLineD3 } = await import(
     importVersion('/H-Connect/js/utils/module/d3js/d3Module.js')
-    );
+);
 const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
-    );
+);
 const { sessionController } = await import(
     importVersion('/H-Connect/js/utils/controller/sessionController.js')
-    );
+);
 const { localStorageController } = await import(
     importVersion('/H-Connect/js/utils/controller/localStorageController.js')
-    );
+);
 const { CustomSocket } = await import(
     importVersion('/H-Connect/js/lib/socket/custom/customSocket.js')
-    );
+);
 
 const LOGIN_TOKEN = sessionController.getSession('accesToken');
 const USER_CODE = localStorageController.getLocalS('userCode');
-const measurementCode = new URLSearchParams(location.search).get('measurement_code');
+const measurementCode = new URLSearchParams(location.search).get(
+    'measurement_code'
+);
 const headers = {
-    'SX-Auth-Token': LOGIN_TOKEN, deviceKind: 3, apiRoute: 'GWS-1', requester: USER_CODE
+    'SX-Auth-Token': LOGIN_TOKEN,
+    deviceKind: 3,
+    apiRoute: 'GWS-1',
+    requester: USER_CODE,
 };
 
 let ecgLine = null;
 let spO2Line = null;
 let respLine = null;
 const client = new CustomSocket();
-client.connect(headers, function() {
-    client.addSubscribe('bioSignalData', `/topic/public/bioSignalData/${measurementCode}`, function(res) {
-        if (res) {
-            const data = JSON.parse(res.body);
-            const { measurementCode, bioSignalData } = data || {};
-            const { ecgDataList, spO2DataList, respDataList } = bioSignalData;
+client.connect(headers, function () {
+    client.addSubscribe(
+        'bioSignalData',
+        `/topic/public/bioSignalData/${measurementCode}`,
+        function (res) {
+            if (res) {
+                const data = JSON.parse(res.body);
+                const { measurementCode, bioSignalData } = data || {};
+                const { ecgDataList, spO2DataList, respDataList } =
+                    bioSignalData;
 
-            console.log(data);
+                console.log(data);
 
-            setUpdateTime(data.dateTime);
-            ecgLine = chartCreateOrUpdate(ecgLine, 'vital-ecg-graph', ecgDataList, measurementCode, '#00FF19');
-            spO2Line = chartCreateOrUpdate(spO2Line, 'vital-spO2-graph', spO2DataList, measurementCode, '#00FFFF');
-            respLine = chartCreateOrUpdate(respLine, 'vital-resp-graph', respDataList, measurementCode, '#EEFF00');
+                setUpdateTime(data.dateTime);
+                ecgLine = chartCreateOrUpdate(
+                    ecgLine,
+                    'vital-ecg-graph',
+                    ecgDataList,
+                    measurementCode,
+                    '#00FF19'
+                );
+                spO2Line = chartCreateOrUpdate(
+                    spO2Line,
+                    'vital-spO2-graph',
+                    spO2DataList,
+                    measurementCode,
+                    '#00FFFF'
+                );
+                respLine = chartCreateOrUpdate(
+                    respLine,
+                    'vital-resp-graph',
+                    respDataList,
+                    measurementCode,
+                    '#EEFF00'
+                );
 
-            setVitalData('.ecg > .bell', bioSignalData.heartRateDataList);
-            setVitalData('.sp > .bell', bioSignalData.spO2DataList);
-            setVitalData('.resp > .bell', bioSignalData.respDataList);
-            setVitalData('.control > .temp', bioSignalData.tempDataList);
-            setVitalData('.control > .ews', bioSignalData.ewsDataList);
+                setVitalData('.ecg > .bell', bioSignalData.heartRateDataList);
+                setVitalData('.sp > .bell', bioSignalData.spO2DataList);
+                setVitalData('.resp > .bell', bioSignalData.respDataList);
+                setVitalData('.control > .temp', bioSignalData.tempDataList);
+                setVitalData('.control > .ews', bioSignalData.ewsDataList);
+            }
         }
-    });
+    );
 });
 
 const setUpdateTime = (dateString) => {
@@ -76,7 +101,7 @@ const setUpdateTime = (dateString) => {
 const setVitalData = (target, data) => {
     if (!data) return false;
 
-    const items = data.map(item => item.value);
+    const items = data.map((item) => item.value);
     const $target = $(`${target}`);
     const $min = $target.find('.minMax > p:first-child');
     const $max = $target.find('.minMax > p:last-child');
@@ -99,36 +124,11 @@ const chartCreateOrUpdate = (chart, target, data, measurementCode, color) => {
                 setting: {
                     strokeColor: color,
                     strokeWidth: 1,
-                    duration: 3000
-                }
+                    duration: 3000,
+                },
             });
         }
     }
 
     return chart;
 };
-
-/* s : ecg vital test */
-/* 예상 바이탈 사인 데이터 소켓 렌더링 -> 임시 주석처리 오류가 있어 추후 작업예정
-let vitalSignalLine = null;
-const ecgPatientdata = new socketGetPatientData();
-ecgPatientdata.update((_data) => {
-    const { measurementCode, bioSignalData } = _data || {};
-    const { ecgDataList } = bioSignalData;
-    if (!vitalSignalLine) {
-        vitalSignalLine = new CreateVitalLineD3({
-            target: 'vital-ecg-graph',
-            data: ecgDataList,
-            measurementCode: measurementCode,
-            setting: {
-                strokeColor: '#00FF19',
-                strokeWidth: 1,
-                duration: 3000,
-            },
-        });
-    } else {
-        vitalSignalLine.chartUpdate(ecgDataList);
-    }
-});
-*/
-/* e : ecg vital test */

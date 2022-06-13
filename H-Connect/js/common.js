@@ -236,23 +236,6 @@ $(function () {
         }
     );
 
-    // 모니터링 신규 병상등록
-    $('.pop.new_room_pop .new_room .selectBox2 .name_list').on(
-        'click',
-        function () {
-            const name = $(this).find('span:nth-of-type(1)').text();
-            const birthday = $(this).find('span:nth-of-type(2)').text();
-            const gender = $(this).find('span:nth-of-type(3)').text();
-            const patientCode = $(this).find('span:nth-of-type(4)').text();
-
-            $(this).parent().parent().find('.name_label').text(name);
-            $('.pop.new_room_pop .new_room #patient_birthday').val(birthday);
-            $('.pop.new_room_pop .new_room #patient_gender').val(gender);
-            $('.pop.new_room_pop .new_room #patient_MRN').val(patientCode);
-            $(this).parent().parent().removeClass('active');
-        }
-    );
-
     // $('.cont .resp .bell_num').on('click', function () {
     //     $('.pop.resp_set .overlay').fadeIn();
     // });
@@ -2065,6 +2048,20 @@ $('.pop.new_room_pop .overlay .btn_add').on('click', function () {
     $('.pop.new_room_pop .new_regi .input_wrap > span').removeClass('active');
     $('.pop.new_room_pop .new_regi input').val('');
     $('.pop.new_room_pop').addClass('active');
+    $('.pop.new_room_pop .new_regi .type_select .label').text('심전도 패치');
+    $('.pop.new_room_pop .new_regi .type_select .optionItem').each(
+        (index, value) => {
+            const valueText = $(value)
+                .text()
+                .replaceAll(' ', '')
+                .replaceAll('\n', '');
+            if (valueText === '심전도패치') {
+                $(value).addClass('active');
+            } else {
+                $(value).removeClass('active');
+            }
+        }
+    );
 });
 
 $('.pop.new_room_pop .overlay .rd').on('click', function () {
@@ -2100,9 +2097,9 @@ $('.pop.new_room_pop .overlay .new_room .sex_select .sex_option li').on(
 //     $('.pop.new_room_pop .overlay').hide();
 // });
 
-$('.pop.new_room_pop .overlay .new_room .rd').on('click', function () {
-    $('.pop.new_room_pop .overlay').hide();
-});
+// $('.pop.new_room_pop .overlay .new_room .rd').on('click', function () {
+//     $('.pop.new_room_pop .overlay').hide();
+// });
 
 //모니터링 화면 장치 추가 셀렉트 박스 이벤트
 $('.pop.new_room_pop .overlay .new_regi .selectBox2 .label').on(
@@ -2167,6 +2164,18 @@ $('.modifi_hospital .device_room .btn_add').on('click', function () {
         'data-measurementcode',
         measurementCode
     );
+    $('.pop.regi_device .selectBox2 .label').text('심전도 패치');
+    $('.pop.regi_device .selectBox2 .optionItem').each((index, value) => {
+        const valueText = $(value)
+            .text()
+            .replaceAll(' ', '')
+            .replaceAll('\n', '');
+        if (valueText === '심전도패치') {
+            $(value).addClass('active');
+        } else {
+            $(value).removeClass('active');
+        }
+    });
 });
 
 //측정현황 병동 셀렉트박스
