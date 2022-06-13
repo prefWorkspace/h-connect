@@ -1088,6 +1088,12 @@ const FILE_TREE = {
                         file_path:
                             '/H-Connect/js/nurse/management/measure/renders/',
                     },
+                    'patientSelectBoxRender.js': {
+                        type: 'module',
+                        url_path: '/nurse/measure',
+                        file_path:
+                            '/H-Connect/js/nurse/management/measure/renders/',
+                    },
                 },
                 templates: {
                     'measurList.js': {

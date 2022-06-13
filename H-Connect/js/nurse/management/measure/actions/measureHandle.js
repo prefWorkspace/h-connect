@@ -258,8 +258,6 @@ async function measurementInfoRenders(_, _measurementCode) {
     const sickRoomCode = $(this).data('sickroomcode');
     let html = '';
 
-    console.log('clickedMeasurementCode==');
-    console.log(clickedMeasurementCode);
     //클릭한 측정정보 찾기
     const measureData = measurementInfoSimpleList.find(
         (item) => item.measurementCode === clickedMeasurementCode
@@ -392,20 +390,6 @@ async function measurementInfoRenders(_, _measurementCode) {
     await updateSickBed_updateDevice();
 }
 
-//측정현황 리스트 클릭 이벤트
-export async function measureListhanlde() {
-    $('body').on(
-        'click',
-        '.wrap_inner .measure_status .status_list',
-        measurementInfoRenders
-    );
-
-    $('.wrap_inner .measure_status .status_list .btn_end').on(
-        'click',
-        recodingEndPopOpen
-    );
-}
-
 //측정 종료
 export async function recodingEndHandle() {
     const measureCode = $(this).attr('data-measurecode');
@@ -446,7 +430,7 @@ export async function selectBoxSickRoom() {
                 .attr('data-wardcode', sickRoomCode);
             $(this).parent().parent().removeClass('active');
             await createMeasureList(measurementInfoSimpleList); //측정현황 리스트 뿌리기
-            measureListhanlde(); //측정 현황 클릭이벤트
+            // measureListhanlde(); //측정 현황 클릭이벤트
         }
     );
 }
@@ -477,9 +461,39 @@ export async function selecBoxWard() {
             await sickRoomListSelectHandle(wardCode); //병실 셀렉트 박스 교체
             selectBoxSickRoom(); //병실 셀렉트 박스 이벤트
             await createMeasureList(measurementInfoSimpleList); //측정 현황 리스트 뿌리기
-            measureListhanlde(); //측정 현황 리스트 이벤트
+            // measureListhanlde(); //측정 현황 리스트 이벤트
         }
     );
+}
+
+async function patientSelectClickHandle() {
+    const parent = $(this).parent().parent().parent().parent();
+
+    // 병상 수정
+    if (parent.attr('class') !== 'cont') {
+        const measurementCode = $(this).data('measurementcode');
+        $(`.measure_status .status_list`).removeClass('on');
+        $(
+            `.measure_status .status_list[data-measurementcode="${measurementCode}"]`
+        ).addClass('on');
+        await measurementInfoRenders(null, measurementCode);
+    }
+
+    // 신규 병상 등록
+    if (parent.attr('class') === 'cont') {
+        const name = $(this).find('span:nth-of-type(1)').text();
+        const birthday = $(this).find('span:nth-of-type(2)').text();
+        const gender = $(this).find('span:nth-of-type(3)').text();
+        const patientCode = $(this).find('span:nth-of-type(4)').text();
+
+        $(this).parent().parent().find('.name_label').text(name);
+        $(parent).find('.patient_info .patient_age').val(birthday);
+        $(parent).find('.patient_info .patient_gender').val(gender);
+        $(parent).find('.patient_info .patient_mrn').val(patientCode);
+    }
+
+    // select 박스 닫기
+    $(this).parent().parent().removeClass('active');
 }
 
 //이벤트
@@ -492,5 +506,20 @@ $('.pop.regi_device .btn_list .btn_check').on(
 );
 
 //함수실행=====================
-measureListhanlde();
+
+//측정현황 리스트 클릭 이벤트
+$('body').on(
+    'click',
+    '.wrap_inner .measure_status .status_list',
+    measurementInfoRenders
+);
+
+$('body').on(
+    'click',
+    '.wrap_inner .measure_status .status_list .btn_end',
+    recodingEndPopOpen
+);
+
+$('body').on('click', '.select_name .name_list', patientSelectClickHandle);
+
 selecBoxWard();
