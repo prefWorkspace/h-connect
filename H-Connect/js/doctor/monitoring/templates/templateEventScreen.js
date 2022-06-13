@@ -69,14 +69,8 @@ export async function newScreenBody(_bse) {
                     </div>
 
                     <div class="graph_scroll">
-                        <div
-                            class="img_container right"
-                        >
-                            <img
-                                src="/H-Connect/img/graph/black.svg"
-                                alt="검은색 그래프"
-                                id="cur_graph"
-                                />
+                        <div class="img_container right" id="event-ecg-chart-${_bse.bioSignalEventId}">
+                            <div></div>
                         </div>
                     </div>
                 </div>
@@ -123,16 +117,8 @@ export async function preScreenBody(_bse) {
                     />
                 </div>
 
-                <div class="graph_scroll">
-                    <div
-                        class="img_container right"
-                    >
-                        <img
-                            src="/H-Connect/img/graph/black.svg"
-                            alt="검은색 그래프"
-                            id="cur_graph"
-                            />
-                    </div>
+                <div class="graph_scroll" id="cur_graph">
+                    <div class="img_container right" id="event-ecg-chart-one-${_bse.bioSignalEventId}"><!-- 그래프 들어감--></div>
                 </div>
             </div>
         </div>
@@ -167,15 +153,7 @@ export async function preScreenBody(_bse) {
                     </div>
 
                     <div class="graph_scroll">
-                        <div
-                            class="img_container right"
-                        >
-                            <img
-                                src="/H-Connect/img/graph/black.svg"
-                                alt="검은색 그래프"
-                                id="pre_graph"
-                                />
-                        </div>
+                        <div class="img_container right" id="event-ecg-chart-two-${_bse.bioSignalEventId}"><!-- 그래프 들어감--></div>
                     </div>
                 </div>
             </div>
