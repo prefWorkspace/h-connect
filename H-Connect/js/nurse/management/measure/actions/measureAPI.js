@@ -192,8 +192,6 @@ export async function updateMeasurement_updateDeviceInfo(deviceInfo) {
         ...deviceInfo,
     };
 
-    console.log('obj===');
-    console.log(obj);
     return serverController.ajaxAwaitController(
         'API/Measurement/UpdateDeviceInfo',
         'POST',
@@ -234,12 +232,12 @@ export async function updateMeasurement_deleteDeviceInfo(
 
 // 병상 정보 수정에서 장치 추가  API
 export async function updateMeasurement_insertDevice(
-    measureMentCode,
+    measurementCode,
     deviceInfoList
 ) {
     const obj = {
         ...commonRequest(),
-        measureMentCode,
+        measurementCode,
         deviceInfoList,
     };
 

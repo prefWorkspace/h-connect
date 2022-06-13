@@ -613,6 +613,9 @@
     height: 36px;
     margin-bottom: 16px;
 }
+.selectBox2.active {
+    z-index: 2;
+}
 .nurse_measure .select_name .label {
     color: #ccc;
 }
