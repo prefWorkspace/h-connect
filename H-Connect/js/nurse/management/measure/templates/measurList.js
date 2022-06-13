@@ -43,7 +43,7 @@ export function measureList(data_List) {
     }
 
     return `
-        <div class="status_list" data-wardcode="${wardCode}" data-sickroomcode="${sickRoomCode}" data-sickbedcode="${sickBedCode}" >
+        <div class="status_list" data-measurementcode="${measurementCode}" data-wardcode="${wardCode}" data-sickroomcode="${sickRoomCode}" data-sickbedcode="${sickBedCode}" >
             <p>
                 <span>${ward}동</span>.
                 <span>${sickRoom}</span>. 
