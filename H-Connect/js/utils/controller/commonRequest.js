@@ -23,7 +23,7 @@ export const request_Date_Data = (_date) => {
     //     '0'
     // )}`;
 
-    const res = moment(today).format('YYYY-MM-DD hh:mm:ss');
+    const res = moment(today).format('YYYY-MM-DD HH:mm:ss');
     return res;
 };
 
