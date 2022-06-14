@@ -9,8 +9,6 @@ export async function insertReplyHandle(e) {
     let isChecked = false;
     const $thisCaseNumber = $(e.target).data('caseno');
     const $isentState = $(e.target).data('isentstate');
-    console.log('isentState==');
-    console.log($isentState);
     const classTitle =
         $isentState === 1
             ? `.section.me_request .tab-content .green_custom`
@@ -39,13 +37,10 @@ export async function insertReplyHandle(e) {
         }
     });
 
-    console.log('asdaddd');
     if (buttonTitle.indexOf('완료') !== -1) {
         return;
     }
 
-    console.log('isChecked===');
-    console.log(isChecked);
     if (isChecked) {
         $('.section .btn_reply').attr('disabled', false);
         $('.section .btn_reply').addClass('active');
@@ -94,6 +89,7 @@ async function checkButtonHandle(_target) {
         const { result } = await updateConsultConfirm(consultId, orderNoForAPI);
         resultAPI = result;
     }
+
     if (resultAPI) {
         $(_target).text(finishedButtonText);
         $(_target).attr('disabled', true);
@@ -112,7 +108,7 @@ async function checkButtonHandle(_target) {
 // 회신하기 버튼 이벤트
 $('.section .btn_reply').on('click', async function (e) {
     const { target } = e;
-    await checkButtonHandle(target);
+    checkButtonHandle(target);
 });
 
 // 일정 확정 버튼 이벤트
