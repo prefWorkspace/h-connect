@@ -33,10 +33,14 @@ export class CustomSocket {
      * 종단 주소 설정 및 Stomp 클라이언트 설정.
      * @param {string} endpoint
      */
-    constructor(endpoint = '') {
+    constructor(endpoint = '', isHttp = true) {
         if (endpoint) this.endpoint = endpoint;
-        this.ws = SockJS(this.endpoint);
-        this.client = Stomp.over(this.ws);
+        if (isHttp) {
+            this.ws = SockJS(this.endpoint);
+            this.client = Stomp.over(this.ws);
+        } else {
+            this.client = Stomp.client(endpoint);
+        }
         this.client.debug = null;
     }
 
@@ -72,6 +76,16 @@ export class CustomSocket {
      * @param {string} name
      */
     removeSubscribe(name) {
-        this.subscribes[name].unsubscribe();
+        if (name in this.subscribes) this.subscribes[name].unsubscribe();
+    }
+
+    /**
+     * 데이터 전송
+     * @param {string} url
+     * @param {object} headers
+     * @param {object} data
+     */
+    send(url, headers, data) {
+        this.client.send(url, headers, JSON.stringify(data));
     }
 }
