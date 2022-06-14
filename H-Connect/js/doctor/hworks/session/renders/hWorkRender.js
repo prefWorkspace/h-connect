@@ -107,7 +107,7 @@ async function hworkListClick() {
 export function hworkSessionList(_data) {
     let html = '';
     if (_data.length === 0) {
-        html = errorText();
+        html = errorText({ padding: '20px 0' });
         $('.now_section .list').html(html);
         return;
     }

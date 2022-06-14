@@ -14,7 +14,7 @@ export function noCheckConsultReder(list) {
     let html = '';
 
     if (!list || list.length === 0) {
-        html = errorText();
+        html = errorText({ padding: '20px 0' });
         $('.remote_alarm .right .list').html(html);
         return;
     }

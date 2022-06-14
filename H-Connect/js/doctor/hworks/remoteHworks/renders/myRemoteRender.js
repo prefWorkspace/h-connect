@@ -15,15 +15,13 @@ export function remoteAlarmRender(list) {
     let html = '';
 
     if (!list || list.length === 0) {
-        html = errorText();
+        html = errorText({ padding: '20px 0' });
         $('.remote_alarm .left .list').html(html);
         return;
     }
 
     for (let i = 0; i < list.length; i++) {
         const { isentState } = list[i];
-        console.log('list[i]===');
-        console.log(isentState);
 
         if (isentState === 0) {
             html += isentNotRemoteAlarmTemplates(list[i]);

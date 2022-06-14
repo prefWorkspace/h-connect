@@ -62,7 +62,7 @@ function loopHtml(_list, type) {
 export async function dateScheduleRender(_list) {
     let html = '';
     if (_list.length === 0) {
-        html = errorText();
+        html = errorText({ padding: '20px 0' });
         $('.all_plan .cal_list .schedule_list').html(html);
         return;
     }
@@ -79,7 +79,7 @@ export async function dateScheduleRender(_list) {
     }
 
     if (html === '') {
-        html = errorText();
+        html = errorText({ padding: '20px 0' });
     }
     $('.all_plan .cal_list .schedule_list').html(html);
 }
