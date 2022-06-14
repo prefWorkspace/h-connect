@@ -64,8 +64,6 @@ async function dateInit() {
         </div>
     `;
 
-    console.log('here');
-    console.log($('.all_plan .weekly .inner.two'));
     $('.all_plan .weekly .inner.two').html(innerTwohtml + divEl);
     await myScheduleInit();
 }

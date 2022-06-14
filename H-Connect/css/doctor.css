@@ -775,6 +775,11 @@ p {
     margin-top: 13px;
 }
 
+.doctor .right .title button:disabled {
+    background: #ccc;
+    color: #888;
+}
+
 .doctor .right .title button {
     width: 120px;
     height: 40px;

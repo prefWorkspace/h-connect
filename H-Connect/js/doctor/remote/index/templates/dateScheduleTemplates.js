@@ -11,8 +11,6 @@ export function dataScheduleTemplates(_data) {
         confirmState,
         deadlineDatetime,
     } = _data;
-    console.log('_data===');
-    console.log(_data);
 
     let html = '';
     let remote_member = '';

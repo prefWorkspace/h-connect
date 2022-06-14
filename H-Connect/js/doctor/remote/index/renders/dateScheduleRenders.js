@@ -59,6 +59,29 @@ function loopHtml(_list, type) {
     return html;
 }
 
+function startButtonHandle(_endDateTime, _unReplyCount) {
+    const rightNow = new Date();
+    const endDateTime = new Date(_endDateTime);
+
+    if (rightNow.getTime() > endDateTime.getTime()) {
+        $('.find_request .btn_colla').text('마감');
+        $('.find_request .btn_colla').attr('disabled', true);
+        return;
+    }
+
+    if (_unReplyCount === 0) {
+        $('.find_request .btn_colla').text('시작하기');
+        $('.find_request .btn_colla').attr('disabled', false);
+        return;
+    }
+
+    if (_unReplyCount > 0) {
+        $('.find_request .btn_colla').text('확인하기');
+        $('.find_request .btn_colla').attr('disabled', false);
+        return;
+    }
+}
+
 export async function dateScheduleRender(_list) {
     let html = '';
     if (_list.length === 0) {
@@ -225,6 +248,10 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
             $(`#consultChannel${consultChannel} .time_select #tab-1`).html(
                 canWithTime
             );
+        }
+
+        if (consultChannel === 2) {
+            // startButtonHandle(_endDateTime, _unReplyCount)
         }
     }
 }
