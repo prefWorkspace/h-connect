@@ -98,6 +98,7 @@ async function calendarHandle(_selectDate) {
         startDatetime,
         endDatetime
     );
+
     $('#d_day_count').text(list.length);
     $('#d_day').text(
         `${moment(date).format('MM')}월 ${moment(date).format('DD')}일`
@@ -249,6 +250,7 @@ function scheduleModifyBtnEventControll(_consultId) {
             window.location.href = `${_baseLink}?modify=${_consultId}&from=${_calcFromLink}`;
         });
 }
+
 /* Ji : 달력 모듈 */
 const calendarModule = new CustomFullcalendar('#calendar', {
     selectBox: {

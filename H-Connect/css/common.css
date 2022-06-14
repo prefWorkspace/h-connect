@@ -2820,6 +2820,7 @@ textarea::-webkit-scrollbar-button {
     margin-bottom: 17px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #007a94;
 }
 
@@ -2828,9 +2829,9 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .doctor_select .favorite_list .group > div > div {
-    width: 72px;
-    height: 40px;
-    padding: 12px 0;
+    /* width: 72px; */
+    /* height: 40px; */
+    /* padding: 12px 0; */
 }
 
 .pop.send_doctor .doctor_select .favorite_list .group > div > div p {
@@ -2841,6 +2842,9 @@ textarea::-webkit-scrollbar-button {
 
 .pop.send_doctor .doctor_select .favorite_list .group .group_list {
     cursor: pointer;
+    margin-right: 4px;
+    padding: 7px 10px;
+    border-radius: 4px 4px 0 0;
 }
 
 .pop.send_doctor .doctor_select .favorite_list .group .group_list.on {
@@ -2853,18 +2857,18 @@ textarea::-webkit-scrollbar-button {
 }
 
 .pop.send_doctor .doctor_select .favorite_list .group button {
-    width: 36px;
-    height: 40px;
-    padding: 12px 0 0;
-    background: none;
+    /* width: 36px; */
+    /* height: 40px; */
+    /* padding: 12px 0 0; */
+    /* background: none; */
 }
 
 .pop.send_doctor .doctor_select .favorite_list .group > :last-child {
-    padding-top: 12px;
+    /* padding-top: 12px; */
     cursor: pointer;
 }
 
-.pop.send_doctor .doctor_select .favorite_list .group > div > p {
+.pop.send_doctor .doctor_select .favorite_list .group > button > p {
     font-size: 12px;
     color: #007a94;
 }
@@ -5925,7 +5929,7 @@ textarea::-webkit-scrollbar-button {
 
 .favorite_list .group .group_list_inner {
     display: flex;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .favorite_list .group .group_list_inner::-webkit-scrollbar {

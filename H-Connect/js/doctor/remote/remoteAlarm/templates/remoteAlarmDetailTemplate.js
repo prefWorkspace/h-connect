@@ -77,6 +77,7 @@ export function remoteAlarmTimeTemplate(_data) {
                     data-consultid="${consultId}"
                     data-caseno="${orderNo}"
                     type="checkbox"
+                    data-isentstate="0"
                     id="check${orderNo}"
                     class="green_custom"
                 />

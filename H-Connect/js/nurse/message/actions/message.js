@@ -67,25 +67,10 @@ $(async function() {
 
     let chatLoginResult = null;
     try {
-        // chatLoginResult = await message.login('prefinc_chat1', 1234);
         chatLoginResult = await message.login(userData.id, 1234);
     } catch (e) {
 
     }
-
-    // console.log(userData);
-    // console.log(chatLoginResult);
-    // message.findUser('prefinc_chat2');
-    // message.updateUser('test111');
-    // console.log(message.getRoomList());
-    // message.createRoom('채팅방', 'test chat room', ['prefinc_chat1']);
-    // message.updateRoom('5ed4bb94-678e-4e80-9c46-53e0fe0f2281', '업데이트 채팅방', 'update test chat room');
-    // message.getRoomUserList('5ed4bb94-678e-4e80-9c46-53e0fe0f2281');
-    // message.inviteUserToRoom('5ed4bb94-678e-4e80-9c46-53e0fe0f2281', 'prefinc_chat2');
-    // message.leaveUserFromRoom('5ed4bb94-678e-4e80-9c46-53e0fe0f2281');
-    // console.log(message.getMessageListFromRoom('5ed4bb94-678e-4e80-9c46-53e0fe0f2281'));
-    // message.reissue();
-    // message.logout();
 
     $('.message .no_message .chat_container>div').show();
 
@@ -222,10 +207,12 @@ $(async function() {
         } else {
             // 여기에서 초대 사용자 추가
             createdRoom = await message.createRoom('채팅방', '채팅방 설명', participantsInfoList.map(user => user.userId));
-            chatClient.send(`/put/chat/message`, headers, {
+            subscribeChatRoom(createdRoom.room_id);
+            chatClient.send(`/pub/chat/message`, headers, {
                 type: 'MSG_TALK',
                 room_id: createdRoom.room_id,
-                message: text
+                message: text,
+                parent_message_id: ''
             });
         }
 
@@ -233,6 +220,9 @@ $(async function() {
         const room = roomList?.roomList.find(item => item.room_id === createdRoom.room_id);
 
         $target.append(await getRoomHtml(room));
+        $target.scrollTop(function() {
+            return this.scrollHeight;
+        });
         $target.find('.list:last-child').eq(0).click();
     });
 });

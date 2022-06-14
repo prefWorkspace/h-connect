@@ -4,7 +4,9 @@ export function iMadeOpinionTemplate(_data) {
     const { consultId, orderNo, caseTitle, unReplyCount, endDatetime } = _data;
 
     return `
-        <div data-isentstate="1" data-consultid="${consultId}" data-caseno="${orderNo}" data-unreplycount="${unReplyCount}" class="row">
+        <div data-isentstate="1" data-enddatetime="${moment(endDatetime).format(
+            'YYYY-MM-DD HH:mm:ss'
+        )}" data-consultid="${consultId}" data-caseno="${orderNo}" data-unreplycount="${unReplyCount}" class="row">
             <div>
                 <p class="time">
                     <span>${moment(endDatetime).format('YY.MM.DD')}</span>
@@ -29,7 +31,9 @@ export function opinionTemplate(_data) {
     const { consultId, orderNo, caseTitle, unReplyCount, endDatetime } = _data;
 
     return `
-        <div data-isentstate="0" data-consultid="${consultId}" data-unreplycount="${unReplyCount}" data-caseno="${orderNo}" class="row">
+        <div data-isentstate="0" data-enddatetime="${moment(endDatetime).format(
+            'YYYY-MM-DD HH:mm:ss'
+        )}"  data-consultid="${consultId}" data-unreplycount="${unReplyCount}" data-caseno="${orderNo}" class="row">
             <div>
                 <p class="time">
                     <span>${moment(endDatetime).format('YY.MM.DD')}</span>

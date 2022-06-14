@@ -89,6 +89,7 @@ async function checkButtonHandle(_target) {
         const { result } = await updateConsultConfirm(consultId, orderNoForAPI);
         resultAPI = result;
     }
+
     if (resultAPI) {
         $(_target).text(finishedButtonText);
         $(_target).attr('disabled', true);
@@ -107,7 +108,7 @@ async function checkButtonHandle(_target) {
 // 회신하기 버튼 이벤트
 $('.section .btn_reply').on('click', async function (e) {
     const { target } = e;
-    await checkButtonHandle(target);
+    checkButtonHandle(target);
 });
 
 // 일정 확정 버튼 이벤트

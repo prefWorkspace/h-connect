@@ -24,18 +24,47 @@ const { selectRealTimeAndOpinionAndEmergencyConsultView } = await import(
     importVersion('/H-Connect/js/doctor/hworks/session/actions/hWorksAPI.js')
 );
 
-async function opinionClick(value = undefined, _unReplyCount = undefined) {
+function startButtonHandle(_endDateTime, _unReplyCount) {
+    const rightNow = new Date();
+    const endDateTime = new Date(_endDateTime);
+
+    if (rightNow.getTime() > endDateTime.getTime()) {
+        $('.find_request .btn_colla').text('마감');
+        $('.find_request .btn_colla').attr('disabled', true);
+        return;
+    }
+
+    if (_unReplyCount === 0) {
+        $('.find_request .btn_colla').text('시작하기');
+        $('.find_request .btn_colla').attr('disabled', false);
+        return;
+    }
+
+    if (_unReplyCount > 0) {
+        $('.find_request .btn_colla').text('확인하기');
+        $('.find_request .btn_colla').attr('disabled', false);
+        return;
+    }
+}
+
+async function opinionClick(
+    value = undefined,
+    _unReplyCount = null,
+    _endDateTime = null
+) {
     const consultId = $(value).data('consultid');
-    const unReplyCount = String(_unReplyCount) || $(this).data('unreplycount');
+    const unReplyCount = _unReplyCount ?? $(this).data('unreplycount');
+    const endDateTime = _endDateTime ?? $(this).data('enddatetime');
     const isentState = $(value).data('isentstate');
+
     const { result, list } =
         await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
-
     if (result) {
         let html = '';
         const { caseInfoList, memberInfoList, startDatetime, endDatetime } =
             list[0];
-        // fakeSelectRealTimeAndOpinionAndEmergencyConsultView;
+
+        startButtonHandle(endDateTime, unReplyCount);
 
         const doctorCount =
             memberInfoList.length > 1
@@ -95,9 +124,10 @@ export function opinionRender(_list) {
                 const consultId = $(value).data('consultid');
                 const caseNo = $(value).data('caseno') + '';
                 const unReplyCount = $(value).data('unreplycount');
+                const endDateTime = $(value).data('enddatetime');
                 if (consultId === queryConsultId && caseNo === queryCaseNo) {
                     $(value).addClass('on');
-                    await opinionClick(value, unReplyCount);
+                    await opinionClick(value, unReplyCount, endDateTime);
                 }
             }
         );
@@ -107,8 +137,9 @@ export function opinionRender(_list) {
     $('.remote_request .list .opinoin_list .row').each(async (index, value) => {
         if (index === 0) {
             const unReplyCount = $(value).data('unreplycount');
+            const endDateTime = $(value).data('enddatetime');
             $(value).addClass('on');
-            await opinionClick(value, unReplyCount);
+            await opinionClick(value, unReplyCount, endDateTime);
             return;
         }
     });
