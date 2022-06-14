@@ -92,7 +92,7 @@ $('.btn_check').on('click', function () {
     console.log('url: ', url);
 
     // 이미지 다운로드 시
-    // whiteboardCreatorModule.downloadImage('이미지이름', 'image/jpeg');
+    whiteboardCreatorModule.downloadImageCanvas('이미지이름', 'image/jpeg');
 });
 
 $('.btn_no').on('click', async function () {
