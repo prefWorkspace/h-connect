@@ -445,7 +445,7 @@ export class WhiteboardCreator {
         }
     }
     // 캔버스 이미지 다운로드
-    downloadImage(imgName, imgType, imgQuality) {
+    downloadImageCanvas(imgName, imgType, imgQuality) {
         const { url, type } = this.toDataUrlCanvas(imgType, imgQuality);
 
         try {

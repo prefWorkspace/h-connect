@@ -1301,6 +1301,16 @@ const FILE_TREE = {
                     },
                 },
             },
+            message: {
+                actions: {
+                    'doctorSelect.js': {
+                        type: 'module',
+                        url_path: '/nurse/patient||/nurse/arteriotony',
+                        file_path:
+                            '/H-Connect/js/nurse/patientMonitoring/message/actions/',
+                    },
+                },
+            },
             arteriotony: {
                 actions: {
                     'bloodPressureActions.js': {
