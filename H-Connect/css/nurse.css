@@ -1421,7 +1421,7 @@
 .patient_vital .all_patient {
     width: 1758px;
     height: fit-content;
-    max-height: 720px;
+    max-height: 768px;
     border-radius: 0;
     background: none;
     overflow-y: scroll;
@@ -1435,6 +1435,7 @@
 
 .patient_vital .all_patient .patient_monitor {
     background-color: #000;
+    min-width: 240px;
     width: 240px;
     height: 88px;
     margin-bottom: 8px;
@@ -1462,7 +1463,7 @@
 .patient_vital .all_patient .patient_monitor .vital_moniter {
     margin-top: 7px;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     color: #fff;
 }
 
@@ -1615,6 +1616,17 @@
     font-size: 24px;
     line-height: 35px;
     color: #fff;
+    max-width: 109px;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.patient_vital .room_view .room_num p::-webkit-scrollbar {
+    height: 8px;
+}
+
+.patient_vital .room_view .room_num p::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc;
 }
 .patient_vital .room_view .room_count {
     display: flex;
@@ -1644,7 +1656,17 @@
 .patient_vital .room_view .monitor_wrap {
     width: calc(100% - 188px);
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    overflow-y: auto;
+}
+
+.patient_vital .room_view .monitor_wrap::-webkit-scrollbar {
+    height: 8px;
+}
+
+.patient_vital .room_view .monitor_wrap::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc;
 }
 
 /* .patient_vital .room_view .patient_monitor{

@@ -1198,16 +1198,6 @@ const FILE_TREE = {
         },
         monitoring: {
             actions: {
-                'fakeData.js': {
-                    type: 'module',
-                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/actions/',
-                },
-                'fakeSocket.js': {
-                    type: 'module',
-                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/actions/',
-                },
                 'monitoringAPI.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
@@ -1233,11 +1223,6 @@ const FILE_TREE = {
                 'renderMonitoringRoom.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
-                },
-                'updateMonitoringPatient.js': {
-                    type: 'module',
-                    url_path: '/nurse/monitoring||/nurse/monitoring_room',
                     file_path: '/H-Connect/js/nurse/monitoring/renders/',
                 },
                 'addMonitoringEmptyBed.js': {
