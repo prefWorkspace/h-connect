@@ -30,7 +30,6 @@ async function opinionClick(value = undefined, _unReplyCount = undefined) {
     const isentState = $(value).data('isentstate');
     const { result, list } =
         await selectRealTimeAndOpinionAndEmergencyConsultView(consultId);
-
     if (result) {
         let html = '';
         const { caseInfoList, memberInfoList, startDatetime, endDatetime } =
