@@ -15,7 +15,6 @@ const { opinionRender } = await import(
 async function init() {
     const { opinionConsultList, result } = await selectOpinionConsultList();
     $('#total_count').text(opinionConsultList.length);
-
     if (result) {
         opinionRender(opinionConsultList);
     }
