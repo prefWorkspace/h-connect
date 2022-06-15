@@ -106,7 +106,6 @@ async function wardSelectBoxHandle() {
         'click',
         '.pop.new_room_pop .new_room .selectBox2 .ward_option2 .ward_list2',
         async function () {
-            console.log('asdf');
             const item = $(this).find('p').text();
             const wardCode = $(this).data('wardcode');
             const spareBed = $(this).data('sparebed');
