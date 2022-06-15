@@ -199,7 +199,7 @@ export function coopRequestScheduleSectionTmpl() {
     </div>
     `;
 }
-export function coopRequestScheduleBlockTmpl(_data) {
+export function coopRequestScheduleBlockTmpl(_data, id = 0) {
     const { canMonth, canDay, startHours, startMinutes, endHours, endMinutes } =
         _data ?? {};
     // 협진 일정 요청
@@ -229,21 +229,21 @@ export function coopRequestScheduleBlockTmpl(_data) {
                 </div>
             </div>
 
-            <div class="date_time">
+            <div class="date_time" data-id="${id}">
                 <div>
                     <p>시작시간</p>
 
                     <div class="input_wrap">
                         <input ${
                             startHours ? `value=${startHours}` : ''
-                        } data-validate='[0, 17]' data-key="rqc_start_hours" data-keyType="input" type="text" placeholder="00">
+                        } data-validate='[0, 17]' data-key="rqc_start_hours_${id}" data-keyType="input" type="text" placeholder="00">
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
                         <input ${
                             startMinutes ? `value=${startMinutes}` : ''
-                        } data-validate='depend=rqc_start_hours[17],range=[0, 59]' data-key="rqc_start_minutes" data-keyType="input" type="text" placeholder="00">
+                        } data-validate='depend=rqc_start_hours_${id}[17],range=[0, 59]' data-key="rqc_start_minutes_${id}" data-keyType="input" type="text" placeholder="00">
                         <p>분</p>
                     </div>
                 </div>
@@ -254,14 +254,14 @@ export function coopRequestScheduleBlockTmpl(_data) {
                     <div class="input_wrap">
                         <input ${
                             endHours ? `value=${endHours}` : ''
-                        } data-validate='[0, 18]' data-key="rqc_end_hours" data-keyType="input" type="text" placeholder="00" readonly>
+                        } data-validate='[0, 18]' data-key="rqc_end_hours_${id}" data-keyType="input" type="text" placeholder="00" readonly>
                         <p>시</p>
                     </div>
 
                     <div class="input_wrap">
                         <input  ${
                             endMinutes ? `value=${endMinutes}` : ''
-                        } data-validate='depend=rqc_end_hours[18],range=[0, 59]' data-key="rqc_end_minutes" data-keyType="input" type="text" placeholder="00" readonly>
+                        } data-validate='depend=rqc_end_hours_${id}[18],range=[0, 59]' data-key="rqc_end_minutes_${id}" data-keyType="input" type="text" placeholder="00" readonly>
                         <p>분</p>
                     </div>
                 </div>
