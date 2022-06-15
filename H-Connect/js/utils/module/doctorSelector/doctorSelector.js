@@ -45,6 +45,11 @@ const { ChoiceDoctorModule } = await import(
               container: '.doctor_list .list_inner',
           },
           departmentRender: true,
+          api: {
+            selectHisDoctorList: async () => {
+                // 의사 리스트 api 함수를 바꿀 수 있습니다.
+            },
+        },
       },
       bookmark: {
           use: true,
