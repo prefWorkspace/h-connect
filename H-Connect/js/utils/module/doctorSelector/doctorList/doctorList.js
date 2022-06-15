@@ -24,7 +24,6 @@ function getUserInfo() {
 export class DoctorListModule {
     constructor(_initOptions) {
         this.options = _initOptions;
-        console.log('this.options: ', this.options);
         this.renderInit();
         this.actionInit();
     }
@@ -101,7 +100,7 @@ export class DoctorListModule {
     API = {
         selectHisDoctorList: async () => {
             if (
-                typeof this.options.doctorList.api.selectHisDoctorList ===
+                typeof this.options?.doctorList?.api?.selectHisDoctorList ===
                 'function'
             ) {
                 return this.options.doctorList.api.selectHisDoctorList();
