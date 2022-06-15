@@ -250,6 +250,7 @@ function scheduleModifyBtnEventControll(_consultId) {
             window.location.href = `${_baseLink}?modify=${_consultId}&from=${_calcFromLink}`;
         });
 }
+
 /* Ji : 달력 모듈 */
 const calendarModule = new CustomFullcalendar('#calendar', {
     selectBox: {
