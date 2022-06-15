@@ -1464,6 +1464,20 @@ const FILE_TREE = {
             },
         },
     },
+    screening: {
+        doctor: {
+            message: {
+                actions: {
+                    'doctorSelect.js': {
+                        type: 'module',
+                        url_path: '/screening/doctor/message',
+                        file_path:
+                            '/H-Connect/js/screening/doctor/message/actions/',
+                    },
+                },
+            },
+        },
+    },
 };
 
 /* s: settings function */

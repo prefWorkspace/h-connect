@@ -24,6 +24,7 @@ function getUserInfo() {
 export class DoctorListModule {
     constructor(_initOptions) {
         this.options = _initOptions;
+        console.log('this.options: ', this.options);
         this.renderInit();
         this.actionInit();
     }
@@ -99,6 +100,13 @@ export class DoctorListModule {
 
     API = {
         selectHisDoctorList: async () => {
+            if (
+                typeof this.options.doctorList.api.selectHisDoctorList ===
+                'function'
+            ) {
+                return this.options.doctorList.api.selectHisDoctorList();
+            }
+
             /* 의사 리스트 불러오기 API */
             const { id } = getUserInfo();
             if (!id) return;

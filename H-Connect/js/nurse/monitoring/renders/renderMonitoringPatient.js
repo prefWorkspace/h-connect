@@ -37,8 +37,6 @@ const headers = {
 // 모니터링 > 전체환자 보기 렌더
 async function renderMonitoringPatientList() {
     const { sickBedList } = await selectSickBed(); // 병상 리스트
-    // const { measurementInfoSimpleList: patientList } =
-    //     await selectMeasurementInfoList(); // 환자 측정 리스트
     const { measurementInfoSimpleBioDataList: patientList } =
         await selectMeasurementInfoBioDataPage();
     const measurementCodes = [];
