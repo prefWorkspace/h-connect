@@ -1,10 +1,11 @@
 const ConnectContent = () => {
 
-    let video = null;
+    const [video, setVideo] = React.useState(null);
+    const [layerCSS, setLayerCSS] = React.useState('default');
 
     React.useEffect(() => {
         const userData = JSON.parse(localStorage.getItem('userData'));
-        video = new CustomJanus(1234, userData.name, {
+        setVideo(new CustomJanus(1234, userData.name, {
             join: () => {
                 $('.cam_inner').empty().append(`<div id='local-video'><p class='name'>${userData.name}</p></div>`);
                 $('#local-video').empty().append('<video class="rounded centered" id="local-stream" width="100%" height="100%" autoplay playsinline muted="muted"/>');
@@ -40,10 +41,12 @@ const ConnectContent = () => {
             cleanUp: (index) => {
                 // $(`#remote-video-${index}`).remove();
             }
-        });
-        video.init();
-
+        }));
     }, []);
+
+    React.useEffect(() => {
+        if (video) video.init();
+    }, [video]);
 
     const toggleShowVideo = (display) => {
         if (display) {
@@ -85,9 +88,33 @@ const ConnectContent = () => {
 
     };
 
+    function windowLayer(event) {
+        event.preventDefault();
+        setLayerCSS('default');
+        viewTab(event.target);
+    }
+
+    function tabLayer(event) {
+        event.preventDefault();
+        setLayerCSS('tab');
+        viewTab(event.target);
+    }
+
+    function scrollLayer(event) {
+        event.preventDefault();
+        setLayerCSS('scroll');
+        viewTab(event.target);
+    }
+
+    const viewTab = (target) => {
+        const $target = $(target).parent();
+        $target.siblings().removeClass('active');
+        $target.addClass('active');
+    };
+
 
     return (
-        <div id='wrap_content' className='remote remote_connect default'>
+        <div id='wrap_content' className={`remote remote_connect ${layerCSS}`}>
             <div className='wrap_inner'>
                 {/* 메세지 */}
                 <section className='section left emer_message message'>
@@ -616,7 +643,7 @@ const ConnectContent = () => {
 
                 {/* 오른쪽 화면 */}
                 <section className='section right patient_view'>
-                    <div className='title'>
+                    <div className='title' style={{ padding: '8px 16px' }}>
                         <div className='btn_list'>
                             <button type='button' className='btn_vital on'>
                                 모니터링
@@ -643,38 +670,32 @@ const ConnectContent = () => {
                                 <ul className='tabs'>
                                     <li
                                         className='link active'
-                                        onClick="location.href='connect.html'"
                                     >
-                                        <div>
-                                            <img
-                                                src='/H-Connect/img/emergency/several.svg'
-                                                alt='여러개 탭의 아이콘'
-                                            />
-                                        </div>
+                                        <img
+                                            src='/H-Connect/img/emergency/several.svg'
+                                            alt='여러개 탭의 아이콘'
+                                            onClick={windowLayer}
+                                        />
                                     </li>
 
                                     <li
                                         className='link'
-                                        onClick="location.href='connect_tab.html'"
                                     >
-                                        <div>
-                                            <img
-                                                src='/H-Connect/img/emergency/tab.svg'
-                                                alt='탭 아이콘'
-                                            />
-                                        </div>
+                                        <img
+                                            src='/H-Connect/img/emergency/tab.svg'
+                                            alt='탭 아이콘'
+                                            onClick={tabLayer}
+                                        />
                                     </li>
 
                                     <li
                                         className='link'
-                                        onClick="location.href='connect_scroll.html'"
                                     >
-                                        <div>
-                                            <img
-                                                src='/H-Connect/img/emergency/scroll.svg'
-                                                alt='스크롤되는 탭 아이콘'
-                                            />
-                                        </div>
+                                        <img
+                                            src='/H-Connect/img/emergency/scroll.svg'
+                                            alt='스크롤되는 탭 아이콘'
+                                            onClick={scrollLayer}
+                                        />
                                     </li>
                                 </ul>
                             </div>
@@ -682,7 +703,7 @@ const ConnectContent = () => {
                     </div>
 
                     {/* several */}
-                    <div className='several'>
+                    <div className={`several ${layerCSS === 'tab' && 'section'}`}>
                         {/* vital */}
                         <div className='vital'>
                             {/* 타이틀 */}

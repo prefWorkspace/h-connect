@@ -4,7 +4,9 @@ const reducer = (state, action) => {
         user: {},
         patient: {},
         caseList: [],
-        attendee: []
+        attendee: [],
+        socket: null,
+        chat: null
     };
 
     switch (action.type) {
@@ -20,7 +22,13 @@ const reducer = (state, action) => {
         case 'setCaseList':
             state = { ...state, caseList: action.data };
             break;
-        case 'TEST':
+        case 'setSocket':
+            state = { ...state, socket: action.data };
+            break;
+        case 'setChat':
+            state = { ...state, chat: action.data };
+            break;
+        default:
             break;
     }
 

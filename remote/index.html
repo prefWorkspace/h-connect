@@ -14,50 +14,37 @@
 
     <script src='https://unpkg.com/react@18/umd/react.production.min.js' crossorigin></script>
     <script src='https://unpkg.com/react-dom@18/umd/react-dom.production.min.js' crossorigin></script>
-
     <script src='https://unpkg.com/redux@4.2.0/dist/redux.js' crossorigin></script>
     <script src='https://unpkg.com/react-redux@8.0.2/dist/react-redux.js' crossorigin></script>
-
     <script src='https://unpkg.com/react-router@6.3.0/umd/react-router.production.min.js' crossorigin></script>
     <script src='https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.production.min.js' crossorigin></script>
 
     <script src='https://unpkg.com/swiper/swiper-bundle.min.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js'></script>
 
     <script type='text/javascript' src='/H-Connect/js/lib/jquery/library/jquery-3.6.0.js'></script>
     <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
     <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
 
-
     <script type='text/javascript' defer src='/H-Connect/js/utils/common/apiDelegate.js'></script>
     <script src='/H-Connect/js/remote/redux/reducer.js'></script>
+
+    <script src='/H-Connect/js/lib/socket/library/stomp-1.7.1.js'></script>
+    <script src='/H-Connect/js/lib/socket/library/sockjs-1.5.0.js'></script>
 
     <script src='/H-Connect/js/lib/janus/library/adapter.min.js'></script>
     <script src='/H-Connect/js/lib/janus/library/janus.js'></script>
     <!--    <script src='/H-Connect/js/lib/janus/custom/videoht.js'></script>-->
     <script src='/H-Connect/js/lib/janus/custom/customJanus.js'></script>
 
-    <script type='text/javascript'>
-        // (function($) {
-        //     const label = document.querySelector('.line_label');
-        //     const options = document.querySelectorAll('.line_option');
-        //
-        //     // 클릭한 옵션의 텍스트를 라벨 안에 넣음
-        //     const handleSelect = (item) => {
-        //         label.parentNode.classList.remove('active');
-        //         label.innerHTML = item.textContent;
-        //     };
-        //     // 옵션 클릭시 클릭한 옵션을 넘김
-        //     options.forEach((option) => {
-        //         option.addEventListener('click', () => handleSelect(option));
-        //     });
-        //
-        //     // 라벨을 클릭시 옵션 목록이 열림/닫힘
-        //     label.addEventListener('click', () => {
-        //         label.parentNode.classList.toggle('active');
-        //     });
-        // })(jQuery);
-    </script>
+    <!--    <script src='https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js'-->
+    <!--            data-main='/H-Connect/js/require.config'-->
+    <!--            integrity='sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=='-->
+    <!--            crossorigin='anonymous' referrerpolicy='no-referrer'></script>-->
+
+    <!--    <script-->
+    <!--        src='https://cdn.jsdelivr.net/npm/@babel/plugin-transform-modules-commonjs@7.18.2/lib/index.min.js'></script>-->
+
 
     <!--css-->
     <link rel='stylesheet' href='/H-Connect/css/reset.css' />
@@ -91,12 +78,15 @@
 <div id='wrap'></div>
 <!--// end wrap-->
 
+<script type='module' src='/H-Connect/js/remote/load.js'></script>
 <script type='text/babel' src='/H-Connect/js/remote/components/header.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/components/contents/case-content.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/pages/case-page.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/components/contents/connect-content.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/pages/connect-page.jsx'></script>
-<script type='text/babel' data-presets='react,env' data-type='module' src='/H-Connect/js/remote/index.js'></script>
+<script type='text/babel'
+        data-presets='react,env,stage-3'
+        src='/H-Connect/js/remote/index.js'></script>
 
 </body>
 </html>

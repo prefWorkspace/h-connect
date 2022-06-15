@@ -5,7 +5,32 @@ const Routes = ReactRouterDOM.Routes;
 const Route = ReactRouterDOM.Route;
 
 const App = () => {
+    const loginToken = sessionStorage.getItem('accesToken');
+    const user = JSON.parse(localStorage.getItem('userData'));
+
+    // 소켓
+    const headers = {
+        'SX-Auth-Token': loginToken,
+        deviceKind: 3,
+        apiRoute: 'GWS-1',
+        requester: user.userCode
+    };
+    const socket = new CustomSocket();
+    socket.connect(headers);
+
+    // 채팅
+    const message = new MessageDelegate();
+    const chatHeaders = {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: `${message.grantType} ${message.accessToken}`
+    };
+    const chat = new CustomSocket('https://chat-api.seers-visual-system.link/seers');
+    chat.connect(chatHeaders);
+
     store.dispatch({ type: 'setUser', data: JSON.parse(localStorage.getItem('userData')) });
+    store.dispatch({ type: 'setChat', data: chat });
+    store.dispatch({ type: 'setSocket', data: socket });
+
     return (
         <Routes>
             <Route path='/'>
