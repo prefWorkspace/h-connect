@@ -227,6 +227,7 @@ $(async function() {
             parent_message_id: ''
         });
 
+
         const roomList = await message.getRoomList();
         const room = roomList?.roomList.find(item => item.room_id === roomId);
 
