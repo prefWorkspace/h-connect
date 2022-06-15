@@ -50,7 +50,6 @@ export async function updateWardAPI(wardCode, orderNumber, deactivate) {
                 $('div').remove('.nurse .ward .cont');
                 $('.pop.update_ward .overlay').fadeOut();
                 selectWard();
-                console.log('11');
             } else {
                 alert('병동수정에 실패 하였습니다.');
             }
