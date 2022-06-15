@@ -149,8 +149,11 @@ $(async function() {
         $('.chat_window textarea').focus();
     });
 
-    $('.chat_window textarea').keyup(function() {
+    $('.chat_window textarea').keyup(function(event) {
         const value = $(this).val().trim();
+
+        console.log(event.ctrlKey);
+        console.log(event.keyCode);
 
         if (value) {
             $(this).next().css({
@@ -162,6 +165,13 @@ $(async function() {
                 color: '#888',
                 backgroundColor: '#ccc'
             });
+        }
+    }).keydown(function(event) {
+        if (event.ctrlKey && event.keyCode === 13) {
+            $(this).val($(this).val() + '\n');
+        } else if (!event.ctrlKey && event.keyCode === 13) {
+            $('.chat_window .btn_send').click();
+            return false;
         }
     });
 
@@ -204,20 +214,23 @@ $(async function() {
                 }
             );
             message.login(userData.id, 1234);
+            // console.log('StaffCreateRoom');
         } else {
-            // 여기에서 초대 사용자 추가
             createdRoom = await message.createRoom('채팅방', '채팅방 설명', participantsInfoList.map(user => user.userId));
-            subscribeChatRoom(createdRoom.room_id);
-            chatClient.send(`/pub/chat/message`, headers, {
-                type: 'MSG_TALK',
-                room_id: createdRoom.room_id,
-                message: text,
-                parent_message_id: ''
-            });
+            // console.log('In session');
         }
 
+        const roomId = createdRoom?.messageStruct?.roomId ?? createdRoom.room_id;
+        subscribeChatRoom(roomId);
+        chatClient.send(`/pub/chat/message`, headers, {
+            type: 'MSG_TALK',
+            room_id: roomId,
+            message: text,
+            parent_message_id: ''
+        });
+
         const roomList = await message.getRoomList();
-        const room = roomList?.roomList.find(item => item.room_id === createdRoom.room_id);
+        const room = roomList?.roomList.find(item => item.room_id === roomId);
 
         $target.append(await getRoomHtml(room));
         $target.scrollTop(function() {
@@ -243,7 +256,6 @@ const subscribeChatRoom = (roomId) => {
         $room.find('.talk_name > p').text(name);
         $room.find('.preview > p').text(text);
 
-        console.log(data, userData.id, data.user_id, $room.hasClass('off'));
         if (userData.id !== data.user_info?.user_id && $room.hasClass('off')) {
             $room.find('.message_bell > img').css({ opacity: 1 });
         }
@@ -334,7 +346,7 @@ const getMessageHtml = (chat) => {
                 html = `<div class='chat_me' id='fifth_taget'>
                             <div>
                                 <div class='bubble'>
-                                    <p>${chat.message}</p>
+                                    <p><pre>${chat.message}</pre></p>
                                 </div>
 
                                 <small>
@@ -348,7 +360,7 @@ const getMessageHtml = (chat) => {
                 html = `<div class='chat_you' id='fifth_taget'>
                             <div>
                                 <div class='bubble'>
-                                    <p>${chat.message}</p>
+                                    <p><pre>${chat.message}</pre></p>
                                 </div>
 
                                 <small>
