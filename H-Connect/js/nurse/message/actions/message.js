@@ -214,10 +214,8 @@ $(async function() {
                 }
             );
             message.login(userData.id, 1234);
-            // console.log('StaffCreateRoom');
         } else {
             createdRoom = await message.createRoom('채팅방', '채팅방 설명', participantsInfoList.map(user => user.userId));
-            // console.log('In session');
         }
 
         const roomId = createdRoom?.messageStruct?.roomId ?? createdRoom.room_id;
