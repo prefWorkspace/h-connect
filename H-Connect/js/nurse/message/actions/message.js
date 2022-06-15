@@ -69,7 +69,6 @@ $(async function() {
     try {
         chatLoginResult = await message.login(userData.id, 1234);
     } catch (e) {
-
     }
 
     $('.message .no_message .chat_container>div').show();
@@ -78,7 +77,6 @@ $(async function() {
     try {
         roomList = await message.getRoomList();
     } catch (e) {
-
     }
 
     const headers = {
