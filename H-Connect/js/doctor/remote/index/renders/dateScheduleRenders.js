@@ -61,7 +61,7 @@ function loopHtml(_list, type) {
 }
 
 // 소견협진 시작하기 버튼 분기처리
-function startButtonHandle(_endDateTime, _unReplyCount) {
+function opinionStartButtonHandle(_endDateTime, _unReplyCount) {
     const rightNow = new Date();
     const endDateTime = new Date(_endDateTime);
 
@@ -210,30 +210,30 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $(`#consultChannel${consultChannel} .collabor_wrap .endDatetime`).text(
             moment(endDatetime).format('YY.MM.DD HH:mm')
         );
+    }
 
-        // 시간 데이터 바인딩
-        if (consultChannel === 3) {
-            $(
-                `#consultChannel${consultChannel} .collabor_wrap .startDate`
-            ).text(moment(startDatetime).format('YY.MM.DD'));
-            $(
-                `#consultChannel${consultChannel} .collabor_wrap .startDetetime`
-            ).text(moment(startDatetime).format('HH:mm'));
-            $(
-                `#consultChannel${consultChannel} .collabor_wrap .endDetetime`
-            ).text(moment(endDatetime).format('HH:mm'));
-        }
+    // 시간 데이터 바인딩
+    if (consultChannel === 3) {
+        $(`#consultChannel${consultChannel} .collabor_wrap .startDate`).text(
+            moment(startDatetime).format('YY.MM.DD')
+        );
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .startDetetime`
+        ).text(moment(startDatetime).format('HH:mm'));
+        $(`#consultChannel${consultChannel} .collabor_wrap .endDetetime`).text(
+            moment(endDatetime).format('HH:mm')
+        );
+    }
 
-        // 내일정 시간표로 보기
-        if (consultChannel === 1) {
-            $(`#consultChannel${consultChannel} .time_select #tab-1`).html(
-                canWithTime
-            );
-        }
+    // 내일정 시간표로 보기
+    if (isentState !== 1 && consultChannel === 1) {
+        $(`#consultChannel${consultChannel} .time_select #tab-1`).html(
+            canWithTime
+        );
+    }
 
-        if (consultChannel === 2) {
-            // startButtonHandle(_endDateTime, _unReplyCount)
-        }
+    if (consultChannel === 2) {
+        // startButtonHandle(_endDateTime, _unReplyCount)
     }
 
     // 공통 시간 데이터
