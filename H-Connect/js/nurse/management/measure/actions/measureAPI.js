@@ -53,6 +53,43 @@ export async function selectMeasurementInfoList(
     );
 }
 
+export async function selectMeasurementInfoPage(
+    wardCode = null,
+    sickRoomCode = null,
+    sickBedCode = null,
+    search
+) {
+    const obj = {
+        ...commonRequest(),
+        requester,
+        organizationCode,
+        wardCode,
+        sickRoomCode,
+        sickBedCode,
+        measurementType: 'BM',
+        measurementStatusList: [1, 2],
+        includeDeviceStatus: true,
+        search,
+        startDateTime: null,
+        endDateTime: null,
+        pageNumber: 1,
+        count: 10000,
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Measurement/SelectMeasurementInfoPage',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            }
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+}
+
 //측정 추가 API
 export async function insertMeasurementInfo(codeObj, patientData) {
     const obj = {

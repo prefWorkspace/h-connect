@@ -1,6 +1,6 @@
 'use strict';
 
-const { selectMeasurementInfoList } = await import(
+const { selectMeasurementInfoList, selectMeasurementInfoPage } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/measureAPI.js'
     )
@@ -15,8 +15,8 @@ const { createMeasureList } = await import(
 async function searchPatient() {
     const search = $('.section.measure_status .search_container input').val();
     const { result, measurementInfoSimpleList, totalCount } =
-        await selectMeasurementInfoList(null, null, null, search);
-    console.log(measurementInfoSimpleList, totalCount);
+        await selectMeasurementInfoPage(null, null, null, search);
+
     if (result) {
         const { ward, wardCode, sickRoom, sickRoomCode } =
             measurementInfoSimpleList || {};
