@@ -228,12 +228,21 @@ export function patientSelectBoxHandle() {
     const birthday = $(this).find('span:nth-of-type(2)').text();
     const gender = $(this).find('span:nth-of-type(3)').text();
     const patientCode = $(this).find('span:nth-of-type(4)').text();
+    const wardName = $(this).data('wardname');
+    const roomName = $(this).data('roomname');
+    const sickBed = $(this).data('bedname');
 
     $('#birthday').val(birthday);
     $('#gender').val(gender);
     $('#patient_MRN').val(patientCode);
     $(this).parent().parent().find('.name_label').text(name);
     $(this).parent().parent().removeClass('active');
+
+    $('.new_room_pop #ward_code').text(wardName);
+    $('.new_room_pop #sickroom_code').text(roomName + ' 호실');
+    $('.new_room_pop #sickbed_code').text(sickBed + '번 병상');
+
+    $('#new_room_pop_restBedCount').text(1);
 }
 
 // 신규 병상 등록 이벤트
