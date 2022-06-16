@@ -107,11 +107,7 @@ export async function session_renew(res) {
         req,
         (res) => {
             if (res.result) {
-                cookieController.setCookie(
-                    'accesToken',
-                    res.accessToken,
-                    10 * 365
-                );
+                sessionController.setSession('accesToken', res.accessToken);
                 location.reload();
             }
         },
