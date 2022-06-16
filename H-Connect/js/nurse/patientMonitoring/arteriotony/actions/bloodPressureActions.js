@@ -80,7 +80,7 @@ async function initBloodPressureAction() {
                 // 병상 등록 성공시
                 $('#add_popup h3').text('혈압 수동입력이 등록되었습니다.');
                 $('#add_popup h1').text('등록 되었습니다.');
-                $('#add_popup').css('display', 'block');
+                $('#add_popup').fadeIn();
                 await renderArteriotonyList();
                 resetBloodPressue();
             }
@@ -97,11 +97,17 @@ async function initBloodPressureAction() {
                 // 병상 수정 성공시
                 $('#add_popup h3').text('혈압 수동입력이 수정되었습니다.');
                 $('#add_popup h1').text('수정 되었습니다.');
-                $('#add_popup').css('display', 'block');
+                $('#add_popup').fadeIn();
                 await renderArteriotonyList();
                 resetBloodPressue();
             }
         }
+
+        $('#add_popup .btn_check')
+            .off()
+            .on('click', function () {
+                $('#add_popup').fadeOut();
+            });
     };
 
     const onClickCancelBloodPressureBtn = () => {
