@@ -15,7 +15,7 @@ export function remoteAlarmRender(list) {
     let html = '';
 
     if (!list || list.length === 0) {
-        html = errorText({ padding: '20px 0' });
+        html = errorText({ padding: '50px 0' });
         $('.remote_alarm .left .list').html(html);
         return;
     }
