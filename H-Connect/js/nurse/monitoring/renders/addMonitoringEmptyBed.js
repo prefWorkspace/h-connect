@@ -1,4 +1,4 @@
-const { selectMeasurementInfoDetail } = await import(
+const { selectMeasurementInfoDetail, selectHisPatientList } = await import(
     importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringAPI.js')
 );
 
@@ -11,6 +11,41 @@ const { selectBoxSickBed, selectBoxSickRoom, selectBoxWard } = await import(
         '/H-Connect/js/nurse/monitoring/renders/addSickBedSelectBox.js'
     )
 );
+
+const { patientHISList } = await import(
+    importVersion(
+        '/H-Connect/js/nurse/monitoring/templates/selectBoxTemplate.js'
+    )
+);
+
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/text/validationText.js')
+);
+
+async function patientRenderForNewSickBedPop() {
+    const { result, patientInfo } = await selectHisPatientList();
+    let html = '';
+
+    if (result && patientInfo === null) {
+        html += errorText();
+        $('.pop.new_room_pop .select_name .name_option').html(html);
+        return;
+    }
+
+    if (result && patientInfo.length === 0) {
+        html += errorText();
+        $('.pop.new_room_pop .select_name .name_option').html(html);
+        return;
+    }
+
+    if (result) {
+        for (let i = 0; i < patientInfo.length; i++) {
+            html += patientHISList(patientInfo[i]);
+        }
+
+        $('.pop.new_room_pop .select_name .name_option').html(html);
+    }
+}
 
 export function addMonitoringEmptyBedClickEvent() {
     // 신규 병상 등록 취소 클릭 이벤트
@@ -100,5 +135,5 @@ function onClickNewSickBedCancleBtn() {
 }
 
 addMonitoringEmptyBedClickEvent();
-
+await patientRenderForNewSickBedPop();
 // $('.pop.new_regi_pop .overlay').css('display', 'block');
