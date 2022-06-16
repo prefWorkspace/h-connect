@@ -137,3 +137,27 @@ function onClickNewSickBedCancleBtn() {
 addMonitoringEmptyBedClickEvent();
 await patientRenderForNewSickBedPop();
 // $('.pop.new_regi_pop .overlay').css('display', 'block');
+$('body').on(
+    'click',
+    '.pop.new_room_pop .select_name .name_option .name_list',
+    function () {
+        const patientName = $(this).find('span:nth-of-type(1)').text();
+        const patientBirthYear = $(this).find('span:nth-of-type(2)').text();
+        const patientGender = $(this).find('span:nth-of-type(3)').text();
+        const patientCode = $(this).find('span:nth-of-type(4)').text();
+        const wardName = $(this).data('wardname');
+        const sickRoomName = $(this).data('roomname');
+        const sickBedName = $(this).data('bedname');
+
+        $('.pop.new_room_pop #patient_name').text(patientName);
+        $('.pop.new_room_pop #patient_birthday').val(patientBirthYear);
+        $('.pop.new_room_pop #patient_gender').val(patientGender);
+        $('.pop.new_room_pop #patient_MRN').val(patientCode);
+        $('.pop.new_room_pop #ward_code').text(wardName);
+        $('.pop.new_room_pop #sickroom_code').text(sickRoomName);
+        $('.pop.new_room_pop #sickbed_code').text(sickBedName);
+
+        $(this).parent().parent().removeClass('active');
+        $('.pop.new_room_pop #spare_Bed').text(1);
+    }
+);
