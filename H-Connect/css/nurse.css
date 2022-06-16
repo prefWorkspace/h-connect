@@ -2679,6 +2679,10 @@ s .monitoring_patient .patient .title {
     width: 568px;
 }
 
+.arteriotony .record_table .table_body {
+    height: 480px;
+}
+
 .arteriotony .table_title {
     width: 100%;
     height: 48px;
