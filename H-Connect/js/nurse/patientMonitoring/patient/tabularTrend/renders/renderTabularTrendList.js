@@ -21,6 +21,8 @@ const tabularTrendListPagination = new CreatePagination({
         pagination: '#tabular_table_wrap .table_page',
     },
     templates: {
+        loading: { padding: '3%' },
+        error: { padding: '3%' },
         listItem: tabularTrendListTmpl,
     },
     link: {
