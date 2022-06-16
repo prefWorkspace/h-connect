@@ -9,9 +9,9 @@ export function unusedDeviceList(item) {
             <p class="item_num">${item.serialNumber}</p>
             <p class="use_line">반납완료</p>
 
-            <button data-serialnumber=${item.serialNumber} data-type="${
-        item.deviceType
-    }" type="button" class="btn rd btn_cancel">
+            <button data-macaddress="${item.macAddress}" data-serialnumber=${
+        item.serialNumber
+    } data-type="${item.deviceType}" type="button" class="btn rd btn_cancel">
                 취소
             </button>
         </div>

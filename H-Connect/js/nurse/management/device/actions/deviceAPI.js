@@ -132,15 +132,44 @@ export async function cancel_device_unused() {
         deviceType,
     });
 
+    // serverController.ajaxAwaitController(
+    //     'API/Device/UpdateDeviceRegister',
+    //     'POST',
+    //     req,
+    //     (res) => {
+    //         console.log(res);
+    //         if (res.result) {
+    //             select_device_unused(0, null);
+    //             select_device(0, null);
+    //         }
+    //     },
+    //     (err) => {
+    //         console.log(err);
+    //     }
+    // );
+}
+
+// 반납 API
+export async function return_device_Api(serialNumber, deviceType, macAddress) {
+    const obj = {
+        ...commonRequest(),
+        serialNumber,
+        deviceType,
+        macAddress,
+        deviceReturnStatus: 1,
+    };
+
     serverController.ajaxAwaitController(
-        'API/Device/InsertDeviceRegister',
+        'API/Device/UpdateDeviceRegister',
         'POST',
-        req,
+        JSON.stringify(obj),
         (res) => {
-            console.log(res);
             if (res.result) {
                 select_device_unused(0, null);
                 select_device(0, null);
+                $('.pop.re_device .overlay').fadeOut();
+            } else {
+                alert('장치 반납에 실패하였습니다.');
             }
         },
         (err) => {

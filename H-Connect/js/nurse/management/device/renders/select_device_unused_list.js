@@ -37,4 +37,8 @@ function cancel_device_modal_action() {
         'data-type',
         $(this).data('type')
     );
+    $('.pop.delete_return .overlay .btn_list .btn_cut').attr(
+        'data-type',
+        $(this).data('macaddress')
+    );
 }

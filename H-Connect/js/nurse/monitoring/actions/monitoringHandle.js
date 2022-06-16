@@ -239,7 +239,7 @@ wardSelectBoxHandle();
 
 $('.pop.new_room_pop .new_room .btn_list .blf').on('click', insertSickBed);
 $('.pop.new_room_pop .overlay .new_regi .check').on('click', insertDevice);
-$('.pop.new_room_pop .overlay .btn_list .rd').on('click', function () {
+$('.pop.new_room_pop .new_room .btn_list .rd').on('click', function () {
     $('.new_room_pop .overlay').fadeOut();
 });
 $('.pop.new_room_pop .new_regi .btn_list .rd').on(

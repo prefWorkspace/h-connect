@@ -4,20 +4,22 @@ const { createDevice } = await import(
     importVersion('/H-Connect/js/nurse/management/device/actions/deviceAPI.js')
 );
 
-const { select_device } = await import(
+const {
+    select_device,
+    delete_devive,
+    return_device_Api,
+    select_device_unused,
+    cancel_device_unused,
+} = await import(
     importVersion('/H-Connect/js/nurse/management/device/actions/deviceAPI.js')
 );
 
-const { delete_devive } = await import(
-    importVersion('/H-Connect/js/nurse/management/device/actions/deviceAPI.js')
+const { device_NameToType } = await import(
+    importVersion('/H-Connect/js/utils/controller/deviceNameController.js')
 );
 
-const { select_device_unused } = await import(
-    importVersion('/H-Connect/js/nurse/management/device/actions/deviceAPI.js')
-);
-
-const { cancel_device_unused } = await import(
-    importVersion('/H-Connect/js/nurse/management/device/actions/deviceAPI.js')
+const { getMacaddress } = await import(
+    importVersion('/H-Connect/js/utils/custom/utils.js')
 );
 
 //장치 등록 이벤트=====================================================
@@ -61,6 +63,14 @@ $('.section.return_device .device_list .select_return .return_list').on(
         $(this).parent().parent().removeClass('active');
     }
 );
+
+$('.pop.re_device .btn_list .btn_check').on('click', async function () {
+    const deviceName = $('.pop.re_device .right_label').text();
+    const serialNo = $('.pop.re_device .content input').val();
+    const deviceType = device_NameToType(deviceName);
+    const macAddress = getMacaddress(deviceType, serialNo);
+    await return_device_Api(serialNo, deviceType, macAddress);
+});
 
 // 추가 장치 요청
 $('.section.new_device .btn_list .btn_add_device')
