@@ -157,10 +157,11 @@ export async function select_device_unused(deviceType = 0, search = null) {
         deviceType,
         pageNumber: 1,
         count: 1000,
+        deviceReturnStatus: 1,
     });
 
     serverController.ajaxAwaitController(
-        'API/Device/SelectDeviceRegisterUnusedPage',
+        'API/Device/SelectDeviceRegisterPage',
         'POST',
         req,
         (res) => {
@@ -192,6 +193,7 @@ export async function select_device(deviceType = 0, search = null) {
         deviceType,
         pageNumber: 1,
         count: 1000,
+        deviceReturnStatus: 0,
     });
 
     serverController.ajaxAwaitController(

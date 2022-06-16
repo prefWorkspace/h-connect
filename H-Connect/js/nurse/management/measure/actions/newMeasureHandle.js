@@ -223,7 +223,7 @@ export async function insertDevice() {
 }
 
 //환자 셀렉트 박스 이벤트, 병동 병실 선택시에만 가능하게 분기처리 해야함
-export function patientSelectBoxHandle() {
+export async function patientSelectBoxHandle() {
     const name = $(this).find('span:nth-of-type(1)').text();
     const birthday = $(this).find('span:nth-of-type(2)').text();
     const gender = $(this).find('span:nth-of-type(3)').text();
