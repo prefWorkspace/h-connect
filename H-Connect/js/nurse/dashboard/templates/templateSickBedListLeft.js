@@ -1,4 +1,9 @@
-import { getPatientList } from '../actions/getPatientList.js?v=2022.03.25.12.01';
+const { getPatientList } = await import(
+    importVersion('/H-Connect/js/nurse/dashboard/actions/getPatientList.js')
+);
+const { birthdayToAge } = await import(
+    importVersion('/H-Connect/js/utils/common/utils.js')
+);
 
 export const parseSickBedListLeft = async (sickRoomList, sickBedList) => {
     function findPatientBySickBedCode(_sickBedCode, _patientList) {
@@ -26,7 +31,7 @@ export const parseSickBedListLeft = async (sickRoomList, sickBedList) => {
         let sickBedsTmpl = `<div class="patient_info ${sickRoom.sickRoomCode}">`;
         sickRoomAndSickBed[`${sickRoom.sickRoomCode}`].forEach((sickBed) => {
             if (sickBed.measurementCode) {
-                const { patientCode, name, age, gender } =
+                const { patientCode, name, age, birthday, gender } =
                     findPatientBySickBedCode(sickBed.sickBedCode, patients);
                 sickBedsTmpl += `<div class="input_wrap">
                     <input
@@ -37,9 +42,9 @@ export const parseSickBedListLeft = async (sickRoomList, sickBedList) => {
                     />
                     <label for="${sickBed.sickBedCode}"></label>
                     <label for="${sickBed.sickBedCode}">
-                        <span>${sickBed.nickname},${name}(${age}.${
-                    gender === 1 ? '남' : '여'
-                }.${patientCode})</span></label>
+                        <span>${sickBed.nickname},${name}(${
+                    birthday ? birthdayToAge(birthday) : '-'
+                }.${gender === 1 ? '남' : '여'}.${patientCode})</span></label>
                 </div>`;
             } else {
                 sickBedsTmpl += `<div class="input_wrap">
@@ -71,7 +76,7 @@ export const parseSickBedListLeft = async (sickRoomList, sickBedList) => {
                     <label for="${sickRoom.sickRoomCode}"></label>
                     <label for="${sickRoom.sickRoomCode}">${
             sickRoom.sickRoom
-        }</label>
+        } 호실</label>
                 </div>
             </div>
             ${sickBedsTmpls[sickRoom.sickRoomCode]}
