@@ -51,3 +51,7 @@ export const numToDay = (num) => {
             return '토';
     }
 };
+
+export const toFixedFloat = (value, digit) => {
+    return parseFloat(value.toFixed(digit) ?? 0);
+};
