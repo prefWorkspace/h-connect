@@ -126,27 +126,31 @@ export async function cancel_device_unused() {
     const serialNumber = $(this).data('serialnumber');
     const deviceType = $(this).data('type');
 
+    console.log('serialNumber===');
+    console.log(serialNumber);
+    console.log('deviceType===');
+    console.log(deviceType);
     const req = JSON.stringify({
         ...commonRequest(),
         serialNumber,
         deviceType,
     });
 
-    serverController.ajaxAwaitController(
-        'API/Device/InsertDeviceRegister',
-        'POST',
-        req,
-        (res) => {
-            console.log(res);
-            if (res.result) {
-                select_device_unused(0, null);
-                select_device(0, null);
-            }
-        },
-        (err) => {
-            console.log(err);
-        }
-    );
+    // serverController.ajaxAwaitController(
+    //     'API/Device/InsertDeviceRegister',
+    //     'POST',
+    //     req,
+    //     (res) => {
+    //         console.log(res);
+    //         if (res.result) {
+    //             select_device_unused(0, null);
+    //             select_device(0, null);
+    //         }
+    //     },
+    //     (err) => {
+    //         console.log(err);
+    //     }
+    // );
 }
 
 //반납한 장치 등록 장치 조회 첫화면
