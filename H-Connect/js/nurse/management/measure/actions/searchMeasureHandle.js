@@ -16,6 +16,7 @@ async function searchPatient() {
     const search = $('.section.measure_status .search_container input').val();
     const { result, measurementInfoSimpleList, totalCount } =
         await selectMeasurementInfoList(null, null, null, search);
+    console.log(measurementInfoSimpleList, totalCount);
     if (result) {
         const { ward, wardCode, sickRoom, sickRoomCode } =
             measurementInfoSimpleList || {};

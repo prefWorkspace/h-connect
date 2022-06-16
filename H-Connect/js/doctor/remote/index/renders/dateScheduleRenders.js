@@ -241,7 +241,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         moment(deadlineDatetime).format('YY.MM.DD HH:mm')
     );
 
-    // 카운팅
+    // 공통 카운팅
     $(`.section.right .collabor_wrap .member .total_doctor_count`).text(
         withMemberData.length + withOutMemberData.length
     );
