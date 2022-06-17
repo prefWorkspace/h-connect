@@ -47,6 +47,7 @@ export async function selectMeasurementInfoList() {
             endDateTime: null,
             pageNumber: 1,
             count: 1000,
+            // measurementStatusList: [1, 2],
         }),
         (res) => {
             if (res.result) {
@@ -70,6 +71,7 @@ export async function selectMeasurementInfoBioDataPage() {
             endDateTime: null,
             pageNumber: 1,
             count: 1000,
+            measurementStatusList: [1, 2],
         }),
         (res) => {
             if (res.result) {
