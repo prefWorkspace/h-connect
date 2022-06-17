@@ -66,7 +66,6 @@ class CustomJanus {
     };
 
     constructor(room = '', username = '', local = null, remote = null) {
-        console.log(username);
         this.room = room;
         this.username = username;
         this.doSimulcast = (this.getQuery('simulcast') === 'yes' || this.getQuery('simulcast') === 'true');
