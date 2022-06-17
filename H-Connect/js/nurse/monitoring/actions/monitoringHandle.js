@@ -102,6 +102,7 @@ async function insertDevice() {
     const { result, deviceRegisterList } = await selectDeviceRegisterUnused(
         serialNumber
     );
+
     if (deviceRegisterList) {
         const obj = {
             deviceType,

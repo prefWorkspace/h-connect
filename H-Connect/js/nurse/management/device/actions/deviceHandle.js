@@ -33,7 +33,12 @@ $('.pop.delete_regi .overlay .btn_list .btn_cut').on('click', delete_devive);
 //장치 취소 이벤트====================================================
 $('.pop.delete_return .overlay .btn_list .btn_cut').on(
     'click',
-    cancel_device_unused
+    async function () {
+        const serialNumber = $(this).attr('data-serialnumber');
+        const deviceType = $(this).attr('data-type');
+        const macAddress = $(this).attr('data-macaddress');
+        await cancel_device_unused(serialNumber, deviceType, macAddress);
+    }
 );
 
 //셀렉트 박스 옵션 선택 했을 경우=======================================

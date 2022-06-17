@@ -122,31 +122,36 @@ export async function delete_devive() {
 }
 
 //반납 취소 API
-export async function cancel_device_unused() {
-    const serialNumber = $(this).data('serialnumber');
-    const deviceType = $(this).data('type');
-
+export async function cancel_device_unused(
+    serialNumber,
+    deviceType,
+    macAddress
+) {
     const req = JSON.stringify({
         ...commonRequest(),
         serialNumber,
         deviceType,
+        macAddress,
+        deviceReturnStatus: 0,
     });
 
-    // serverController.ajaxAwaitController(
-    //     'API/Device/UpdateDeviceRegister',
-    //     'POST',
-    //     req,
-    //     (res) => {
-    //         console.log(res);
-    //         if (res.result) {
-    //             select_device_unused(0, null);
-    //             select_device(0, null);
-    //         }
-    //     },
-    //     (err) => {
-    //         console.log(err);
-    //     }
-    // );
+    serverController.ajaxAwaitController(
+        'API/Device/UpdateDeviceRegister',
+        'POST',
+        req,
+        (res) => {
+            if (res.result) {
+                select_device_unused(0, null);
+                select_device(0, null);
+                $('.pop.delete_return .overlay').fadeOut();
+            } else {
+                alert('반납 취소에 실패하였습니다.');
+            }
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
 }
 
 // 반납 API

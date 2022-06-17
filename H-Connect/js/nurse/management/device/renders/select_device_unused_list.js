@@ -29,16 +29,22 @@ export function select_device_unused_list(deviceRegisterList) {
 
 function cancel_device_modal_action() {
     $('.pop.delete_return .overlay').fadeIn();
+
+    const serialNumber = $(this).data('serialnumber');
+
+    const deviceType = $(this).data('type');
+
+    const macAddress = $(this).data('macaddress');
+    $('.pop.delete_return .overlay .btn_list .btn_cut').attr(
+        'data-type',
+        deviceType
+    );
     $('.pop.delete_return .overlay .btn_list .btn_cut').attr(
         'data-serialNumber',
-        $(this).data('serialnumber')
+        serialNumber
     );
     $('.pop.delete_return .overlay .btn_list .btn_cut').attr(
-        'data-type',
-        $(this).data('type')
-    );
-    $('.pop.delete_return .overlay .btn_list .btn_cut').attr(
-        'data-type',
-        $(this).data('macaddress')
+        'data-macaddress',
+        macAddress
     );
 }
