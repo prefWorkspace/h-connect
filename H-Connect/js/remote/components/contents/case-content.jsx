@@ -1,5 +1,3 @@
-const Link = ReactRouterDOM.Link;
-
 const CaseContent = () => {
     const dispatch = ReactRedux.useDispatch();
     const data = ReactRedux.useSelector(state => state);
@@ -16,7 +14,7 @@ const CaseContent = () => {
     }, []);
 
     React.useEffect(() => {
-        dispatch({ type: 'setCaseList', data: opinion?.opinionConsultList });
+        if (opinion?.opinionConsultList?.length) dispatch({ type: 'setCaseList', data: opinion?.opinionConsultList });
     }, [opinion]);
 
     return (
@@ -34,7 +32,7 @@ const CaseContent = () => {
                     </div>
 
                     {opinion && opinion?.opinionConsultList &&
-                        <CaseList caseList={opinion.opinionConsultList ?? []} />}
+                        <CaseList caseList={data.caseList ?? []} />}
                 </section>
             </div>
         </div>
@@ -42,38 +40,43 @@ const CaseContent = () => {
 };
 
 const CaseItem = ({ number, data }) => {
-    return (
-        <Link to={`/connect`}>
-            <div className='row'>
-                <div className='left'>
-                    <div className='img_container'>
-                        <img src='/H-Connect/img/icon/document.svg' alt='문서 아이콘' />
-                    </div>
+    const dispatch = ReactRedux.useDispatch();
+    const navigate = ReactRouterDOM.useNavigate();
 
-                    <h3 className='count'>Case {number}.</h3>
-                    <h3>{data.caseTitle}</h3>
+    const connect = () => {
+        dispatch({ type: 'setCaseId', data: data?.id });
+        navigate('/connect');
+    };
+
+    return (
+        <div className='row' onClick={connect}>
+            <div className='left'>
+                <div className='img_container'>
+                    <img src='/H-Connect/img/icon/document.svg' alt='문서 아이콘' />
                 </div>
 
-                <div className='right'>
-                    <h3>협진시작</h3>
+                <h3 className='count'>Case {number}.</h3>
+                <h3>{data.caseTitle}</h3>
+            </div>
 
-                    <div className='img_container'>
-                        <img
-                            src='/H-Connect/img/right_arrow.svg'
-                            alt='오른쪽 화살표'
-                        />
-                    </div>
+            <div className='right'>
+                <h3>협진시작</h3>
+
+                <div className='img_container'>
+                    <img
+                        src='/H-Connect/img/right_arrow.svg'
+                        alt='오른쪽 화살표'
+                    />
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
 
 const CaseList = ({ caseList }) => {
-    caseList.push({ caseTitle: '' });
     return (
         <div className='case_list'>
-            {caseList?.map((item, index) => <CaseItem number={++index} data={item} />)}
+            {caseList?.map((item, index) => <CaseItem key={index} number={++index} data={item} />)}
         </div>
     );
 };

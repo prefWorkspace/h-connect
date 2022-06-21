@@ -200,7 +200,7 @@ $(async function() {
                 accessKey: LOGIN_TOKEN
             });
             createdRoom = await serverController.ajaxAwaitController(
-                'API/Message/StaffCreateRoom',
+                'API/ConnectMessage/StaffCreateRoom',
                 'POST',
                 req,
                 (res) => {

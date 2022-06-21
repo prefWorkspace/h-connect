@@ -3,13 +3,17 @@ const reducer = (state, action) => {
         consultId: '',
         user: {},
         patient: {},
-        caseList: [],
+        caseList: [{ caseTitle: 'test' }],
+        caseId: 'test-case-id-1123123sadfp',
         attendee: [],
         socket: null,
         chat: null
     };
 
     switch (action.type) {
+        case 'setConsultId':
+            state = { ...state, consultId: action.data };
+            break;
         case 'setName':
             state = { ...state, name: action.data };
             break;
@@ -21,6 +25,9 @@ const reducer = (state, action) => {
             break;
         case 'setCaseList':
             state = { ...state, caseList: action.data };
+            break;
+        case 'setCaseId':
+            state = { ...state, caseId: action.data };
             break;
         case 'setSocket':
             state = { ...state, socket: action.data };
@@ -34,10 +41,3 @@ const reducer = (state, action) => {
 
     return state;
 };
-
-function getQueryStringValue(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
-        results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}

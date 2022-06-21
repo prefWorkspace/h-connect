@@ -24,7 +24,7 @@
 
     <script type='text/javascript' src='/H-Connect/js/lib/jquery/library/jquery-3.6.0.js'></script>
     <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
-    <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
+    <!--    <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>-->
 
     <script type='text/javascript' defer src='/H-Connect/js/utils/common/apiDelegate.js'></script>
     <script src='/H-Connect/js/remote/redux/reducer.js'></script>
@@ -50,6 +50,23 @@
     <link rel='stylesheet' href='/H-Connect/css/reset.css' />
     <link rel='stylesheet' href='/H-Connect/css/common.css' />
     <link rel='stylesheet' href='/H-Connect/css/remote.css' />
+
+    <style>
+        .tab .several .inner {
+            display: block;
+        }
+
+        .scroll .patient_view .btn_list button.on {
+            color: #fff;
+            background: #007A94;
+        }
+
+        .patient_view .btn_list button.layer-close,
+        .patient_view .btn_list button.layer-close.on {
+            color: #888;
+            background: #666;
+        }
+    </style>
 </head>
 <body>
 <!-- 연결 종료 팝업 -->
@@ -82,11 +99,16 @@
 <script type='text/babel' src='/H-Connect/js/remote/components/header.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/components/contents/case-content.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/pages/case-page.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/remote/components/contents/connect/layers/emr-layer.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/remote/components/contents/connect/layers/lab-layer.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/remote/components/contents/connect/layers/monitoring-layer.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/remote/components/contents/connect/layers/ocs-layer.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/remote/components/contents/connect/layers/pacs-layer.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/remote/components/contents/connect/connect-message.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/remote/components/contents/connect/connect-video-screen.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/components/contents/connect-content.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/remote/pages/connect-page.jsx'></script>
-<script type='text/babel'
-        data-presets='react,env,stage-3'
-        src='/H-Connect/js/remote/index.js'></script>
+<script type='text/babel' data-presets='react,env,stage-3' src='/H-Connect/js/remote/index.js'></script>
 
 </body>
 </html>

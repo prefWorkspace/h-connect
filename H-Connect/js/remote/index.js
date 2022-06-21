@@ -7,6 +7,7 @@ const Route = ReactRouterDOM.Route;
 const App = () => {
     const loginToken = sessionStorage.getItem('accesToken');
     const user = JSON.parse(localStorage.getItem('userData'));
+    const [searchParams, setSearchParams] = ReactRouterDOM.useSearchParams();
 
     // 소켓
     const headers = {
@@ -27,6 +28,7 @@ const App = () => {
     const chat = new CustomSocket('https://chat-api.seers-visual-system.link/seers');
     chat.connect(chatHeaders);
 
+    store.dispatch({ type: 'setConsultId', data: searchParams.get('consultId') });
     store.dispatch({ type: 'setUser', data: JSON.parse(localStorage.getItem('userData')) });
     store.dispatch({ type: 'setChat', data: chat });
     store.dispatch({ type: 'setSocket', data: socket });

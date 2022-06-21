@@ -1393,7 +1393,7 @@ function Janus(gatewayCallbacks) {
 			request["session_id"] = sessionId;
 			request["handle_id"] = handleId;
 			transactions[transaction] = function(json) {
-				Janus.debug("Message sent!");
+				Janus.debug("ConnectMessage sent!");
 				Janus.debug(json);
 				if(json["janus"] === "success") {
 					// We got a success, must have been a synchronous transaction
@@ -1430,7 +1430,7 @@ function Janus(gatewayCallbacks) {
 			withCredentials: withCredentials,
 			body: request,
 			success: function(json) {
-				Janus.debug("Message sent!");
+				Janus.debug("ConnectMessage sent!");
 				Janus.debug(json);
 				if(json["janus"] === "success") {
 					// We got a success, must have been a synchronous transaction
