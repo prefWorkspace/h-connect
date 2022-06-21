@@ -99,6 +99,13 @@ export class DoctorListModule {
 
     API = {
         selectHisDoctorList: async () => {
+            if (
+                typeof this.options?.doctorList?.api?.selectHisDoctorList ===
+                'function'
+            ) {
+                return this.options.doctorList.api.selectHisDoctorList();
+            }
+
             /* 의사 리스트 불러오기 API */
             const { id } = getUserInfo();
             if (!id) return;

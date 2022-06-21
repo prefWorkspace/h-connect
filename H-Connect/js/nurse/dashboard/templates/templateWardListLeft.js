@@ -8,6 +8,7 @@ export const parseWardListLeft = async (wardList) => {
                 ${ward.ward}
             </li>`;
     });
+    template = template.replace('{{selectWard}}', wardList[0]?.ward);
     return template.replace(`{{wardList}}`, templateWardOptionList);
 };
 
@@ -25,7 +26,7 @@ const dashboardWardListTmpl = `
         </div>
 
         <div class="selectBox2 select_ward">
-            <button class="label ward_label"></button>
+            <button class="label ward_label">{{selectWard}}</button>
 
             <ul class="optionList ward_option">{{wardList}}</ul>
         </div>

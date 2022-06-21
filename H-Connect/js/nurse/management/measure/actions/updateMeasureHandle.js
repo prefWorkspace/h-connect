@@ -77,6 +77,26 @@ async function updateMeasurementHandle() {
         return;
     }
 
+    const {
+        result: findEmptyBedResult,
+        measurementInfoSimpleList: findEmptyBedList,
+    } = await selectMeasurementInfoList(wardCode, sickRoomCode, sickBedCode);
+    console.log('findEmptyBedList===');
+    console.log(findEmptyBedList);
+    const filterdWaitingAndRecording =
+        findEmptyBedList && findEmptyBedResult
+            ? findEmptyBedList.filter(
+                  (item) =>
+                      item.measurementStatus === 1 ||
+                      item.measurementStatus === 2
+              )
+            : [];
+
+    if (filterdWaitingAndRecording.length > 0) {
+        alert('해당 병상에 다른 측정 환자가 존재합니다.');
+        return;
+    }
+
     const codeObj = {
         wardCode,
         sickRoomCode,

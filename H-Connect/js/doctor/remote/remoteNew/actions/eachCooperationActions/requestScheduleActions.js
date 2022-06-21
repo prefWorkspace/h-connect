@@ -25,13 +25,14 @@ export function scheduleCanBlockInputAction() {
         .itemEls()
         .off()
         .on('keyup', async function () {
+            const _getId = $(this).find('.date_time').data('id');
             // 종료시간 설정
             const _startHours = $(this)
-                .find('input[data-key="rqc_start_hours"]')
+                .find(`input[data-key="rqc_start_hours_${_getId}"]`)
                 .val();
 
             const _startMinutes = $(this)
-                .find('input[data-key="rqc_start_minutes"]')
+                .find(`input[data-key="rqc_start_minutes_${_getId}"]`)
                 .val();
 
             const _calcEndHours =
@@ -40,9 +41,11 @@ export function scheduleCanBlockInputAction() {
                           .toString()
                           .padStart(2, '0')
                     : '';
-            $(this).find('input[data-key="rqc_end_hours"]').val(_calcEndHours);
             $(this)
-                .find('input[data-key="rqc_end_minutes"]')
+                .find(`input[data-key="rqc_end_hours_${_getId}"]`)
+                .val(_calcEndHours);
+            $(this)
+                .find(`input[data-key="rqc_end_minutes_${_getId}"]`)
                 .val(_startMinutes);
 
             const _getItem = getDataWithTarget(this);
@@ -89,14 +92,18 @@ function addCoopRequestScheduleAction() {
 
     (function addScheduleCanAction() {
         // 협진 가능시간 선택 시간 추가
+        let coopRequestScheduleId = 1;
         coopSurgerySelector.wrapEl().on('click', '.btn_tadd', function () {
             coopSurgerySelector.requestSchedule.scheduleCan
                 .wrapEl()
-                .append(coopRequestScheduleBlockTmpl);
+                .append(() =>
+                    coopRequestScheduleBlockTmpl(null, coopRequestScheduleId)
+                );
 
             scheduleCanBlockDeleteBtnCheck();
             scheduleCanBlockInputAction();
             const _checkValidateAll = validateCoopAll();
+            ++coopRequestScheduleId;
         });
     })();
     (function removeScheduleCanAction() {

@@ -14,6 +14,10 @@ const { CustomSocket } = await import(
     importVersion('/H-Connect/js/lib/socket/custom/customSocket.js')
 );
 
+const { toFixedFloat } = await import(
+    importVersion('/H-Connect/js/utils/common/utils.js')
+);
+
 const LOGIN_TOKEN = sessionController.getSession('accesToken');
 const USER_CODE = localStorageController.getLocalS('userCode');
 const measurementCode = new URLSearchParams(location.search).get(
@@ -41,7 +45,7 @@ client.connect(headers, function () {
                 const { ecgDataList, spO2DataList, respDataList } =
                     bioSignalData;
 
-                console.log(data);
+                // console.log(data);
 
                 setUpdateTime(data.dateTime);
                 ecgLine = chartCreateOrUpdate(
@@ -107,9 +111,15 @@ const setVitalData = (target, data) => {
     const $max = $target.find('.minMax > p:last-child');
     const $last = $max.parent().next();
 
-    $min.text(Math.min(...items));
-    $max.text(Math.max(...items));
-    $last.text(items[items.length - 1]);
+    let value = items[items.length - 1];
+    if (target === '.control > .temp') {
+        value = toFixedFloat(value, 1);
+    }
+    // INFO : min, max 가 의미하는게 받아온 데이터를 기반으로 min max 를 렌더하는것이 아닌듯합니다.
+    // 팝업을 통해서 설정한 값으로 min max가 설정됩니다.
+    // $min.text(Math.min(...items));
+    // $max.text(Math.max(...items));
+    $last.text(value);
 };
 
 const chartCreateOrUpdate = (chart, target, data, measurementCode, color) => {

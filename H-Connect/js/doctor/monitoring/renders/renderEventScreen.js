@@ -27,7 +27,7 @@ const { CustomD3 } = await import(
     importVersion('/H-Connect/js/lib/d3/custom/customD3.js')
 );
 
-const { errorText } = await import(
+const { errorText, loadingText } = await import(
     importVersion('/H-Connect/js/common/text/validationText.js')
 );
 
@@ -72,6 +72,7 @@ export async function renderPreEventScreenTitleHead(_bse) {
 }
 
 export async function renderNewEventScreenBodyTitle(_bse) {
+    $('.new_rhythm .event_inner').html(loadingText());
     const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_newSection');
     const _bseDetail = await selectBioSignalEvent(_bse ? _bse : null);
@@ -111,6 +112,7 @@ export async function renderNewEventScreenBodyTitle(_bse) {
 }
 
 export async function renderPreEventScreenBodyTitle(_bse) {
+    $('.pre_rhythm .event_inner').html(loadingText());
     const { ymd, hms } = dateFormat(new Date(_bse?.eventDateTime));
     const $titleNewSection = $('.event .title_preSection');
     const _bseDetail = await selectBioSignalEvent(_bse ? _bse : null);

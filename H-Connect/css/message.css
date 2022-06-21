@@ -15,8 +15,6 @@
     display: block !important;
 }
 
-
-
 /* messasge */
 .message .section {
     height: 720px;
@@ -35,7 +33,7 @@
     border: 0;
 }
 
-.message .message_title>div,
+.message .message_title > div,
 .message .title_text {
     display: flex;
     justify-content: space-between;
@@ -45,11 +43,11 @@
     display: initial;
 }
 
-.nurse_message .title_text{
+.nurse_message .title_text {
     justify-content: flex-start;
 }
 
-.message .message_list .title_text div{
+.message .message_list .title_text div {
     margin-right: 15px;
 }
 
@@ -78,7 +76,8 @@
 }
 
 .nurse_message .title_text div img {
-    filter: invert(54%) sepia(53%) saturate(7115%) hue-rotate(175deg) brightness(73%) contrast(58%);
+    filter: invert(54%) sepia(53%) saturate(7115%) hue-rotate(175deg)
+        brightness(73%) contrast(58%);
 }
 
 .message .title_text h2 {
@@ -99,7 +98,7 @@
 }
 
 .nurse_message .btn_message {
-    background: #007A94;
+    background: #007a94;
 }
 
 .nurse_message .title .btn_message p {
@@ -107,7 +106,8 @@
 }
 
 .nurse_message .btn_message img {
-    filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(104deg) brightness(112%) contrast(101%);
+    filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(104deg)
+        brightness(112%) contrast(101%);
 }
 
 .message .btn_message p {
@@ -189,7 +189,7 @@
     display: none;
 }
 
-.message .talk_list>div {
+.message .talk_list > div {
     height: 48px;
     padding: 18px;
     border-radius: 4px;
@@ -197,7 +197,7 @@
     cursor: pointer;
 }
 
-.message .talk_list>div:hover {
+.message .talk_list > div:hover {
     background: #eee;
 }
 
@@ -206,7 +206,7 @@
     font-size: 12px;
 }
 
-.message .talk_list>div,
+.message .talk_list > div,
 .message .talk_list .left,
 .message .talk_list .message_info {
     display: flex;
@@ -218,7 +218,8 @@
 }
 
 .message .talk_list .list.off .message_bell img {
-    filter: invert(68%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(93%) contrast(101%);
+    filter: invert(68%) sepia(90%) saturate(863%) hue-rotate(154deg)
+        brightness(93%) contrast(101%);
 }
 
 .message .talk_list .talk_time {
@@ -236,7 +237,7 @@
 }
 
 .nurse_message .talk_list .list.on {
-    background: #007A94;
+    background: #007a94;
 }
 
 .message .talk_list .list.on p {
@@ -264,17 +265,17 @@
     border: 0;
 }
 
-.nurse_message .message_talk .title> :first-child {
+.nurse_message .message_talk .title > :first-child {
     font-size: 16px;
     font-weight: 500;
-    color: #007A94;
+    color: #007a94;
 }
 
-.nurse_message .message_talk .title> :last-child {
+.nurse_message .message_talk .title > :last-child {
     color: #000;
 }
 
-.message .talk_title> :first-child {
+.message .talk_title > :first-child {
     font-size: 16px;
     font-weight: 500;
 }
@@ -290,7 +291,7 @@
     height: 48px;
     padding: 8px 32px;
     border-radius: 0;
-    background: linear-gradient(to right, #007A94, #003D4A);
+    background: linear-gradient(to right, #007a94, #003d4a);
     position: relative;
     display: flex;
     align-items: center;
@@ -303,12 +304,12 @@
     padding: 7px 56px 7px 8px;
     border-radius: 4px;
     background: #fff;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
 }
 
 .nurse_message .message_list .search_container input {
     height: 100%;
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
 }
 
 .message .message_talk .search_container input::placeholder {
@@ -354,7 +355,7 @@
 }
 
 .message_talk.no_message .search_container input {
-    background: #CCCCCC;
+    background: #cccccc;
 }
 
 /* group_talk */
@@ -375,7 +376,7 @@
     width: 360px;
     padding: 16px;
     border-radius: 4px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
     background: #fff;
     box-shadow: 3px 3px 6px rgba(0 0 0 /30%);
     z-index: 1;
@@ -391,7 +392,7 @@
 
 .message .group_talk .title .info h3 {
     font-size: 14px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .message .group_talk .title .info button {
@@ -440,8 +441,6 @@
     margin: 0;
 }
 
-
-
 /* 대화창 비어있음 no_message*/
 .message .no_talk {
     width: 968px;
@@ -484,7 +483,7 @@
 }
 
 .message .no_message .no_search input {
-    background: #CCC;
+    background: #ccc;
 }
 
 .message .no_message .no_search .btn_search {
@@ -493,14 +492,15 @@
 }
 
 .message .no_message .no_search button img {
-    filter: invert(57%) sepia(1%) saturate(0%) hue-rotate(43deg) brightness(94%) contrast(87%);
+    filter: invert(57%) sepia(1%) saturate(0%) hue-rotate(43deg) brightness(94%)
+        contrast(87%);
 }
 
 .message .no_message .no_search .btn_sort {
     background: #ccc;
 }
 
-.message .no_message .chat_container>div {
+.message .no_message .chat_container > div {
     display: none;
 }
 
@@ -513,14 +513,12 @@
     background: none;
 }
 
-
-
 /* 채팅 */
 .nurse_message .chat_container {
     height: 440px;
     display: flex;
     justify-content: space-between;
-    background: #C5D8DC;
+    background: #c5d8dc;
 }
 
 .nurse_message .timeLine {
@@ -534,15 +532,15 @@
 .nurse_message .timeLine a {
     width: 12px;
     margin-bottom: 8px;
-    background: #007A94;
+    background: #007a94;
     display: block;
 }
 
-.nurse_message .timeLine> :nth-child(2n-1) {
+.nurse_message .timeLine > :nth-child(2n-1) {
     background: #eee;
 }
 
-.nurse_message .timeLine> :last-child {
+.nurse_message .timeLine > :last-child {
     margin: 0;
 }
 
@@ -571,17 +569,16 @@
     flex: 1;
 }
 
-
 .message .chat_inner {
     height: 440px;
     padding: 8px 20px;
-    background: #E3DBE6;
+    background: #e3dbe6;
     overflow-y: scroll;
 }
 
 .nurse_message .chat_inner {
     width: calc(100% - 32px);
-    background: #C5D8DC;
+    background: #c5d8dc;
 }
 
 .message .chat_inner::-webkit-scrollbar {
@@ -597,7 +594,7 @@
 .nurse_message .chat_inner::-webkit-scrollbar-thumb {
     height: 17%;
     border-radius: 10px;
-    background: #007A94;
+    background: #007a94;
 }
 
 .message .chat_me {
@@ -619,7 +616,7 @@
     padding: 14px 16px;
     margin: 0 0 7px auto;
     background: #940045;
-    border-radius: .4em;
+    border-radius: 0.4em;
     color: #fff;
 }
 
@@ -638,7 +635,7 @@
 } */
 
 .nurse_message .chat_me .bubble {
-    background: #007A94;
+    background: #007a94;
 }
 
 /* .nurse_message .chat_me .bubble:after{
@@ -663,7 +660,7 @@
     width: 8px;
     height: 8px;
     margin-right: -8px;
-    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
+    background: url('../img/icon/bubble_triangle.svg') no-repeat center / 100%;
 }
 
 .message .chat_me small {
@@ -678,7 +675,7 @@
     margin-bottom: 16px;
 }
 
-.message .chat_you>p {
+.message .chat_you > p {
     font-size: 12px;
 }
 
@@ -688,7 +685,7 @@
     width: fit-content;
     padding: 14px 16px;
     background: #fff;
-    border-radius: .4em;
+    border-radius: 0.4em;
     color: #000;
 }
 
@@ -715,8 +712,9 @@
     height: 8px;
     margin-left: -8px;
     transform: rotate(180deg);
-    background: url("../img/icon/bubble_triangle.svg") no-repeat center / 100%;
-    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg) brightness(200%) contrast(100%);
+    background: url('../img/icon/bubble_triangle.svg') no-repeat center / 100%;
+    filter: invert(100%) sepia(57%) saturate(2%) hue-rotate(83deg)
+        brightness(200%) contrast(100%);
 }
 
 .message .chat_you small {
@@ -749,7 +747,7 @@
 }
 
 .nurse_message .chat_window .btn_send {
-    background: #007A94;
+    background: #007a94;
 }
 
 .nurse_message .start_clinic {
@@ -758,7 +756,7 @@
     padding: 14px 32px;
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to right, #007A94, #003D4A);
+    background: linear-gradient(to right, #007a94, #003d4a);
     border-radius: 4px;
     color: #fff;
 }
@@ -783,7 +781,6 @@
     font-weight: normal;
 }
 
-
 .message_list,
 .message_talk {
     display: block;
@@ -793,7 +790,6 @@
 .send_message {
     display: none;
 }
-
 
 /* 새로운 메세지 보내기 */
 .message .select_medi {
@@ -897,10 +893,10 @@
 }
 
 .nurse_message .group {
-    border-bottom: 1px solid #007A94;
+    border-bottom: 1px solid #007a94;
 }
 
-.message .group>div {
+.message .group > div {
     width: 204px;
     display: flex;
 }
@@ -923,9 +919,8 @@
     background: #940045;
 }
 
-
 .nurse_message .group .group_list.on {
-    background: #007A94;
+    background: #007a94;
 }
 
 .message .group .group_list.on p {
@@ -939,7 +934,8 @@
 }
 
 .nurse_message .group .btn_next img {
-    filter: invert(124%) sepia(100%) saturate(5863%) hue-rotate(154deg) brightness(48%) contrast(97%);
+    filter: invert(124%) sepia(100%) saturate(5863%) hue-rotate(154deg)
+        brightness(48%) contrast(97%);
 }
 
 .message .group .btn_add {
@@ -951,7 +947,7 @@
 .nurse_message .group .btn_add {
     padding: 0 4px;
     background: none;
-    color: #007A94;
+    color: #007a94;
 }
 
 .message .favorite_list input {
@@ -977,7 +973,7 @@
     border-radius: 10px;
 }
 
-.message .group_container>div {
+.message .group_container > div {
     height: 32px;
     padding: 7px 0;
     display: flex;
@@ -1032,7 +1028,7 @@
     /* filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg) brightness(90%) contrast(90%); */
 }
 
-.message .search_container input{
+.message .search_container input {
     width: 100%;
     height: 100%;
     padding: 0 45px 0 8px;
@@ -1041,11 +1037,11 @@
     background: transparent;
     font-size: 12px;
     font-weight: normal;
-    background: #EEEEEE;
-    border: 1px solid #007A94;
+    background: #eeeeee;
+    border: 1px solid #007a94;
 }
 
-.message .search_container input::placeholder{
+.message .search_container input::placeholder {
     font-weight: normal;
     color: #ccc;
 }
@@ -1056,8 +1052,8 @@
 
 /* 값 입력 됐을 때 */
 .message .search_container input:valid {
-    background: #FFFFFF;
-    border: 1px solid #007A94;
+    background: #ffffff;
+    border: 1px solid #007a94;
 }
 
 .message .search_container.red input:valid {
@@ -1065,9 +1061,9 @@
 }
 
 .message .search_container.red input:valid + .btn_search img {
-    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg) brightness(43%) contrast(100%);
+    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg)
+        brightness(43%) contrast(100%);
 }
-
 
 /* ====== 찾을 수 없습니다 일때 ======*/
 .message .search_container.not_find {
@@ -1076,16 +1072,17 @@
 }
 
 .message .search_container.not_find input {
-    background: #CCCCCC;
+    background: #cccccc;
     border: none;
 }
 
 .message .search_container.not_find input::placeholder {
-    color: #AAAAAA;
+    color: #aaaaaa;
 }
 
 .message .search_container.not_find .btn_search img {
-    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg) brightness(90%) contrast(90%);
+    filter: invert(76%) sepia(0%) saturate(0%) hue-rotate(283deg)
+        brightness(90%) contrast(90%);
 }
 /* =========================== */
 
@@ -1126,11 +1123,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg)
+        brightness(55%) contrast(113%);
 }
 
 .nurse_message .search_container .btn_search img {
-    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg)
+        brightness(52%) contrast(96%);
 }
 
 .message .list_inner {
@@ -1141,7 +1140,7 @@
 
 .message .list_inner::-webkit-scrollbar {
     width: 8px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .message .list_inner::-webkit-scrollbar-thumb {
@@ -1150,44 +1149,48 @@
     background: #ccc;
 }
 
-.message .list_inner .medical_depart{
+.message .list_inner .medical_depart {
     padding: 0;
     display: block;
 }
 
-.message .list_inner .medical_depart .title{
+.message .list_inner .medical_depart .title {
     padding: 7px 16px 8px;
     font-size: 12px;
     justify-content: flex-start;
     cursor: pointer;
 }
-.message .medical_depart .title::before{
+.message .medical_depart .title::before {
     content: '';
     width: 13px;
     height: 13px;
     margin-right: 11px;
-    background: url('/H-Connect/img/icon/accodian_plus.svg') no-repeat 0 0 / contain;
+    background: url('/H-Connect/img/icon/accodian_plus.svg') no-repeat 0 0 /
+        contain;
     display: block;
 }
 
-.message .medical_depart .title.active::before{
+.message .medical_depart .title.active::before {
     content: '';
     width: 13px;
     height: 13px;
     margin-right: 11px;
-    background: url('/H-Connect/img/icon/accodian_minus.svg') no-repeat 0 0 / contain;
+    background: url('/H-Connect/img/icon/accodian_minus.svg') no-repeat 0 0 /
+        contain;
     display: block;
 }
 
-.message .medical_depart .input_container{
+.message .medical_depart .input_container {
     display: none;
 }
 
-.message .medical_depart .input_container > div{
+.message .medical_depart .input_container > div {
     padding: 7px 16px 7px 32px;
 }
 
-.message .medical_depart .favorite_container{padding: 0;}
+.message .medical_depart .favorite_container {
+    padding: 0;
+}
 
 .message .list_inner div {
     display: flex;
@@ -1195,7 +1198,7 @@
     align-items: center;
 }
 
-.message .list_inner>div {
+.message .list_inner > div {
     padding: 7px 7px;
 }
 
@@ -1242,14 +1245,27 @@
     cursor: pointer;
 } */
 
-.message .list_inner .favorite_container input[type='checkbox']:checked+label span {
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg) brightness(60%) contrast(127%);
+.message
+    .list_inner
+    .favorite_container
+    input[type='checkbox']:checked
+    + label
+    span {
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px /
+        contain;
+    filter: invert(6%) sepia(88%) saturate(7217%) hue-rotate(307deg)
+        brightness(60%) contrast(127%);
 }
 
-.nurse_message .list_inner .favorite_container input[type='checkbox']:checked+label {
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+.nurse_message
+    .list_inner
+    .favorite_container
+    input[type='checkbox']:checked
+    + label {
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px /
+        contain;
+    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg)
+        brightness(52%) contrast(96%);
 }
 
 .message .send_message {
@@ -1276,7 +1292,7 @@
 .nurse_message .send_message .title h2 {
     margin-bottom: 13px;
     font-size: 16px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .message .send_message .title p {
@@ -1294,7 +1310,7 @@
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 4px;
-    border: 1px solid #A2A2A2;
+    border: 1px solid #a2a2a2;
 }
 
 .message .send_message form textarea::placeholder {
@@ -1326,8 +1342,8 @@
 }
 
 .message .send_message .btn_list .btn_send {
-    border: 1px solid #007A94;
-    color: #007A94;
+    border: 1px solid #007a94;
+    color: #007a94;
 }
 
 .nurse_message .send_message .btn_list .btn_send {
@@ -1336,10 +1352,9 @@
 }
 
 .nurse_message .send_message .btn_list .btn_send:hover {
-    background: #004F60;
-    transition: .3s;
+    background: #004f60;
+    transition: 0.3s;
 }
-
 
 /* 응급호출 */
 .doctor_message {
@@ -1369,7 +1384,7 @@
 
 .nurse_message .select_medi .title h2 {
     margin-bottom: 13px;
-    color: #007A94;
+    color: #007a94;
 }
 
 .message .list_inner label p {
@@ -1380,7 +1395,7 @@
     height: initial;
 }
 
-.doctor_message .send_message .title>div {
+.doctor_message .send_message .title > div {
     display: flex;
     justify-content: space-between;
 }
@@ -1395,16 +1410,16 @@
 }
 
 .doctor_message .send_message .title .btn_cancel:hover {
-    background: #F5EEF1;
+    background: #f5eef1;
 }
 
 .doctor_message .send_message .title .btn_call {
-    border: 1px solid #007A94;
-    color: #007A94;
+    border: 1px solid #007a94;
+    color: #007a94;
 }
 
 .doctor_message .send_message .title .btn_call:hover {
-    background: #C5D8DC;
+    background: #c5d8dc;
 }
 
 .doctor_message .send_message .patient_select {
@@ -1430,7 +1445,7 @@
 }
 
 .doctor_message .send_message .search_container.on input {
-    border: 1px solid #007A94;
+    border: 1px solid #007a94;
     background: #fff;
 }
 
@@ -1442,13 +1457,13 @@
     background: #fff;
 }
 
-
 .doctor_message .send_message .search_container.red.on input {
     border-color: #940045;
 }
 
 .doctor_message .send_message .search_container.red.on img {
-    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg) brightness(43%) contrast(100%);
+    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg)
+        brightness(43%) contrast(100%);
 }
 
 .doctor_message .send_message .btn_search {
@@ -1495,13 +1510,13 @@
     color: #000;
 }
 
-.doctor_message .connect>div {
+.doctor_message .connect > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.doctor_message .connect>div p {
+.doctor_message .connect > div p {
     margin-right: 15px;
     font-size: 12px;
 }
@@ -1520,7 +1535,7 @@
     color: #940045;
 }
 
-.doctor_message .connect>div>div {
+.doctor_message .connect > div > div {
     display: flex;
     align-items: center;
 }
@@ -1534,7 +1549,7 @@
     border: 1px solid #eee;
 } */
 
-.doctor_message .select_doctor .red_custom[type="checkbox"]:checked+label {
+.doctor_message .select_doctor .red_custom[type='checkbox']:checked + label {
     background: #940045;
 }
 
@@ -1560,7 +1575,7 @@
     border-bottom: 1px solid #eee;
 }
 
-.doc_screen .message_list .title>div {
+.doc_screen .message_list .title > div {
     display: flex;
     justify-content: space-between;
 }
@@ -1569,10 +1584,10 @@
     width: 100%;
     padding: 0 0 10px;
     justify-content: initial;
-    color: #007A94;
+    color: #007a94;
 }
 
-.doc_screen .title_text>div {
+.doc_screen .title_text > div {
     margin-right: 15px;
 }
 
@@ -1598,7 +1613,7 @@
     border-bottom: 1px solid #eee;
 }
 
-.doc_screen .waiting .row>div {
+.doc_screen .waiting .row > div {
     width: 500px;
     display: flex;
     justify-content: space-between;
@@ -1612,23 +1627,23 @@
     width: 40px;
 }
 
-.doc_screen .waiting .img> :first-child {
+.doc_screen .waiting .img > :first-child {
     width: 12px;
     height: 15px;
 }
 
-.doc_screen .waiting .img> :first-child img {
+.doc_screen .waiting .img > :first-child img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.doc_screen .waiting .img> :last-child {
+.doc_screen .waiting .img > :last-child {
     width: 16px;
     height: 16px;
 }
 
-.doc_screen .waiting .img> :last-child img {
+.doc_screen .waiting .img > :last-child img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1640,7 +1655,7 @@
     padding: 7px 24px;
     margin-left: 60px;
     border-radius: 4px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     font-size: 12px;
     color: #fff;
     display: flex;
@@ -1665,7 +1680,8 @@
 }
 
 .doc_screen .waiting .btn_treat:disabled img {
-    filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(181deg) brightness(96%) contrast(96%);
+    filter: invert(56%) sepia(0%) saturate(0%) hue-rotate(181deg)
+        brightness(96%) contrast(96%);
 }
 
 /* .screening .message_talk{
@@ -1695,14 +1711,13 @@
     justify-content: space-between;
 }
 
-.doc_screen .message_talk .search_container .btn_search{
+.doc_screen .message_talk .search_container .btn_search {
     left: 56%;
 }
 
 .doc_screen .message_talk .btn_sort {
     border-radius: 4px;
 }
-
 
 /* 의사 메세지 */
 .doc_screen .message_list .title .btn_message {
@@ -1719,7 +1734,7 @@
     margin-bottom: 13px;
     font-size: 16px;
     font-weight: 500;
-    color: #007A94;
+    color: #007a94;
 }
 
 .doc_screen .select_medi .title p {
@@ -1730,12 +1745,11 @@
 .doc_screen .select_list {
     /* width: 672px; */
     /* border: 1px solid #000; */
-    background: #EEEEEE;
-
+    background: #eeeeee;
 }
 
 .doc_screen .send_message .btn_list .btn_send {
-    background: #007A94;
+    background: #007a94;
     color: #fff;
 }
 
@@ -1771,7 +1785,7 @@
 }
 
 .doctor_new.message .group {
-    border-bottom: 1px solid #007A94;
+    border-bottom: 1px solid #007a94;
 }
 
 .doctor_new.message .group_container {
@@ -1779,7 +1793,7 @@
 }
 
 .doctor_new.message .group .group_list.on {
-    background: #007A94;
+    background: #007a94;
 }
 
 /* .doctor_new.message .group .btn_next img{
@@ -1787,7 +1801,7 @@
 } */
 
 .doctor_new.message .group .btn_add {
-    color: #007A94;
+    color: #007a94;
 }
 
 .doctor_new.message .select_doctor {
@@ -1800,7 +1814,7 @@
     overflow-y: hidden;
 }
 
-.doctor_new.message .list_inner>div {
+.doctor_new.message .list_inner > div {
     padding: 7px 0;
 }
 
@@ -1810,38 +1824,51 @@
     border-bottom: 1px solid #eee;
 }
 
-.doctor_new.message .favorite_container input[type="checkbox"]+label>span {
+.doctor_new.message .favorite_container input[type='checkbox'] + label > span {
     margin: 0;
 }
 
-.doctor_new.message .favorite_container input[type='checkbox']:checked+label span {
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter: invert(39%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(57%) contrast(85%);
+.doctor_new.message
+    .favorite_container
+    input[type='checkbox']:checked
+    + label
+    span {
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px /
+        contain;
+    filter: invert(39%) sepia(90%) saturate(863%) hue-rotate(154deg)
+        brightness(57%) contrast(85%);
 }
 
-.doctor_new.message .list_inner .favorite_container input[type='checkbox']:checked+label span {
-    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px / contain;
-    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg) brightness(52%) contrast(96%);
+.doctor_new.message
+    .list_inner
+    .favorite_container
+    input[type='checkbox']:checked
+    + label
+    span {
+    background: url('/H-Connect/img/emergency/favorite.svg') no-repeat 0 0px /
+        contain;
+    filter: invert(32%) sepia(90%) saturate(863%) hue-rotate(154deg)
+        brightness(52%) contrast(96%);
 }
 
-.doctor_new.message input[type="checkbox"]:checked+label>span {
-    filter: invert(58%) sepia(152%) saturate(863%) hue-rotate(154deg) brightness(60%) contrast(100%);
+.doctor_new.message input[type='checkbox']:checked + label > span {
+    filter: invert(58%) sepia(152%) saturate(863%) hue-rotate(154deg)
+        brightness(60%) contrast(100%);
 }
 
-.doc_screen .group_container .green_custom[type="checkbox"]:checked+label {
-    background: #007A94;
+.doc_screen .group_container .green_custom[type='checkbox']:checked + label {
+    background: #007a94;
     border: #eee;
 }
 
 /* all check */
-.doc_screen .group_container .all_check input[type="checkbox"]+label {
-    border: 1px solid #007A94;
+.doc_screen .group_container .all_check input[type='checkbox'] + label {
+    border: 1px solid #007a94;
 }
 
-.doc_screen .group_container .all_check input[type="checkbox"]+label+label {
-    color: #007A94;
+.doc_screen .group_container .all_check input[type='checkbox'] + label + label {
+    color: #007a94;
 }
-
 
 /* 선별진료실 -의사 */
 .screening_doc {
@@ -1853,10 +1880,10 @@
 }
 
 .screening_doc .wrap_inner {
-    width: 100%;
+    /* width: 100%;
     min-width: 1860px;
     min-height: calc(100vh - 80px);
-    background: #eee;
+    background: #eee; */
 }
 
 .screening_doc .message_list .title {
@@ -1864,7 +1891,7 @@
     border-bottom: 1px solid #eee;
 }
 
-.screening_doc .message_list .title>div {
+.screening_doc .message_list .title > div {
     justify-content: space-between;
 }
 
@@ -1873,7 +1900,7 @@
     align-items: center;
 }
 
-.screening_doc .message_list .title>div>div {
+.screening_doc .message_list .title > div > div {
     width: fit-content;
 }
 
@@ -1902,7 +1929,7 @@
 }
 
 .screening_doc .btn_message:hover {
-    background: #004F60;
+    background: #004f60;
 }
 
 .screening_doc .waiting {
@@ -1911,7 +1938,7 @@
 }
 
 .screening_doc .waiting .row,
-.screening_doc .waiting .row>div,
+.screening_doc .waiting .row > div,
 .screening_doc .waiting .row .img {
     display: flex;
     justify-content: space-between;
@@ -1943,7 +1970,7 @@
 .screening_doc .waiting .btn_treat {
     width: 120px;
     padding: 11px 20px;
-    background: linear-gradient(to right, #004F60, #350039);
+    background: linear-gradient(to right, #004f60, #350039);
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -1961,7 +1988,8 @@
 }
 
 .screening_doc .waiting .btn_treat:disabled img {
-    filter: invert(7%) sepia(2%) saturate(0%) hue-rotate(283deg) brightness(146%) contrast(8%);
+    filter: invert(7%) sepia(2%) saturate(0%) hue-rotate(283deg)
+        brightness(146%) contrast(8%);
 }
 
 .screening_doc .search_container {
@@ -1977,15 +2005,18 @@
     margin-bottom: 13px;
 }
 
-
 /* para_message */
 .para_message .section {
     height: 720px;
 }
 
-.para_message .search_container{border: none;}
+.para_message .search_container {
+    border: none;
+}
 
-.para_message .search_container input:valid{border: 1px solid #940045;}
+.para_message .search_container input:valid {
+    border: 1px solid #940045;
+}
 
 .para_message .title_text h2 {
     color: #940045;
@@ -1996,60 +2027,66 @@
 .para_message .doctor_list .input_wrap {
     margin: 0;
 }
-.para_message .message_talk .search_container input{border: 1px solid #940045;}
-
-.para_message .chat_me .bubble:after{
-    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg) brightness(60%) contrast(100%);
+.para_message .message_talk .search_container input {
+    border: 1px solid #940045;
 }
 
-.para_message .btn_message{
+.para_message .chat_me .bubble:after {
+    filter: invert(58%) sepia(81%) saturate(7091%) hue-rotate(329deg)
+        brightness(60%) contrast(100%);
+}
+
+.para_message .btn_message {
     background: #940045;
 }
 
-.para_message .btn_message:hover{
-    background: #4A0000;
+.para_message .btn_message:hover {
+    background: #4a0000;
 }
 
-.para_message .btn_message img{
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(287deg) brightness(106%) contrast(102%);
+.para_message .btn_message img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(287deg)
+        brightness(106%) contrast(102%);
 }
-.para_message .doctor_list .input_wrap{
+.para_message .doctor_list .input_wrap {
     margin: 0;
 }
-.para_message .message_list .search_container .btn_search img{
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+.para_message .message_list .search_container .btn_search img {
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg)
+        brightness(55%) contrast(113%);
 }
 
-.para_message .talk_list .list.off .message_bell img{
-    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg) brightness(55%) contrast(113%);
+.para_message .talk_list .list.off .message_bell img {
+    filter: invert(77%) sepia(105%) saturate(7178%) hue-rotate(-394deg)
+        brightness(55%) contrast(113%);
 }
 
-.para_message .message_talk .search_container{
+.para_message .message_talk .search_container {
     height: 48px;
     padding: 8px 32px;
     margin: 0;
     border-radius: 0;
-    background: linear-gradient(to right, #940045, #4A0000);
+    background: linear-gradient(to right, #940045, #4a0000);
     position: relative;
 }
-.para_message .emergency_title{
+.para_message .emergency_title {
     padding: 8px 16px;
     border: 0;
     color: #940045;
 }
-.para_message .emergency_title h2{
+.para_message .emergency_title h2 {
     color: #940045;
 }
-.para_message .favorite_list .input_wrap{
+.para_message .favorite_list .input_wrap {
     margin: 0;
 }
 
-.para_message .message_list .search_container .btn_search{
-    width: 20px; 
+.para_message .message_list .search_container .btn_search {
+    width: 20px;
     /* margin-right: 11px;s */
 }
 
-.para_message .chat_container{
+.para_message .chat_container {
     height: 440px;
-    background: #E3DBE6;
+    background: #e3dbe6;
 }

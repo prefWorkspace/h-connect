@@ -106,7 +106,6 @@ async function wardSelectBoxHandle() {
         'click',
         '.pop.new_room_pop .new_room .selectBox2 .ward_option2 .ward_list2',
         async function () {
-            console.log('asdf');
             const item = $(this).find('p').text();
             const wardCode = $(this).data('wardcode');
             const spareBed = $(this).data('sparebed');
@@ -224,17 +223,26 @@ export async function insertDevice() {
 }
 
 //환자 셀렉트 박스 이벤트, 병동 병실 선택시에만 가능하게 분기처리 해야함
-export function patientSelectBoxHandle() {
+export async function patientSelectBoxHandle() {
     const name = $(this).find('span:nth-of-type(1)').text();
     const birthday = $(this).find('span:nth-of-type(2)').text();
     const gender = $(this).find('span:nth-of-type(3)').text();
     const patientCode = $(this).find('span:nth-of-type(4)').text();
+    const wardName = $(this).data('wardname');
+    const roomName = $(this).data('roomname');
+    const sickBed = $(this).data('bedname');
 
     $('#birthday').val(birthday);
     $('#gender').val(gender);
     $('#patient_MRN').val(patientCode);
     $(this).parent().parent().find('.name_label').text(name);
     $(this).parent().parent().removeClass('active');
+
+    $('.new_room_pop #ward_code').text(wardName);
+    $('.new_room_pop #sickroom_code').text(roomName + ' 호실');
+    $('.new_room_pop #sickbed_code').text(sickBed + '번 병상');
+
+    $('#new_room_pop_restBedCount').text(1);
 }
 
 // 신규 병상 등록 이벤트

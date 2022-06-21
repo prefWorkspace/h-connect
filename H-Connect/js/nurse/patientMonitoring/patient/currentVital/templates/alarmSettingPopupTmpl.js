@@ -60,7 +60,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" data-key="heartRateMax" value="${heartRateMax}"/>
+                                <input placeholder="max" type="number" data-key="heartRateMax" value="${heartRateMax}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -80,7 +80,7 @@ export async function ecgAlarmPopupTmpl(_data, _classKey) {
                             </div>
 
                             <div class="num_wrap">
-                                <input type="number" data-key="heartRateMin" value="${heartRateMin}"/>
+                                <input placeholder="min" type="number" data-key="heartRateMin" value="${heartRateMin}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -291,7 +291,7 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" data-key="spo2Min" value="${spo2Min}"/>
+                                <input placeholder="min" type="number" data-key="spo2Min" value="${spo2Min}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -310,8 +310,9 @@ export async function spo2AlarmPopupTmpl(_data, _classKey) {
                                 </div>
                             </div>
 
-                            <!-- <div class="num_wrap">
-                                <input type="number" data-key="spo2Max" value="${spo2Max}"/>
+                            <!-- INFO : spo2Max 의 max 값은 임시 주석처리
+                             <div class="num_wrap">
+                                <input placeholder="max" type="number" data-key="spo2Max" value="${spo2Max}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -394,7 +395,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" data-key="respMax" value="${respMax}"/>
+                                <input placeholder="max" type="number" data-key="respMax" value="${respMax}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -414,7 +415,7 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                             </div>
 
                             <div class="num_wrap">
-                                <input type="number" data-key="respMin" value="${respMin}"/>
+                                <input placeholder="min" type="number" data-key="respMin" value="${respMin}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -435,7 +436,8 @@ export async function respAlarmPopupTmpl(_data, _classKey) {
                         </div>
                     </div>
 
-                    <!-- <div class="sweep">
+                    <!-- INFO : resp 에서 다음 해당하는 input은 우선 사용안하기로 함 주석처리 
+                    <div class="sweep">
                         <p>Sweep Speed</p>
 
                         <div class="container">
@@ -653,7 +655,7 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
 
                         <div class="container">
                             <div class="num_wrap">
-                                <input type="number" data-key="tempMax" value="${tempMax}" />
+                                <input placeholder="max" type="number" data-key="tempMax" value="${tempMax}" />
 
                                 <div class="num_control">
                                     <button type="button" class="up">
@@ -673,7 +675,7 @@ export async function tempAlarmPopupTmpl(_data, _classKey) {
                             </div>
 
                             <div class="num_wrap">
-                                <input type="number" data-key="tempMin" value="${tempMin}"/>
+                                <input placeholder="min" type="number" data-key="tempMin" value="${tempMin}"/>
 
                                 <div class="num_control">
                                     <button type="button" class="up">

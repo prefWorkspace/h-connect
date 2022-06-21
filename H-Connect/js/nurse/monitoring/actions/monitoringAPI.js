@@ -9,9 +9,11 @@ const { localStorageController } = await import(
 );
 
 //유저 데이터
-const { userCode: requester, organizationCode } = JSON.parse(
-    localStorageController.getLocalS('userData')
-);
+const {
+    userCode: requester,
+    organizationCode,
+    id: userId,
+} = JSON.parse(localStorageController.getLocalS('userData'));
 
 /* s: 환자 병상 갯수 확인 */
 export async function selectSickBed() {
@@ -45,6 +47,7 @@ export async function selectMeasurementInfoList() {
             endDateTime: null,
             pageNumber: 1,
             count: 1000,
+            // measurementStatusList: [1, 2],
         }),
         (res) => {
             if (res.result) {
@@ -68,6 +71,7 @@ export async function selectMeasurementInfoBioDataPage() {
             endDateTime: null,
             pageNumber: 1,
             count: 1000,
+            measurementStatusList: [1, 2],
         }),
         (res) => {
             if (res.result) {
@@ -159,6 +163,30 @@ export async function InsertMeasurementInfo(codeObj, patientData) {
     };
     return serverController.ajaxAwaitController(
         'API/Measurement/InsertMeasurementInfo',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}
+
+// 환자 조회
+// HIS 환자 정보 검색
+export async function selectHisPatientList(patientName = null) {
+    const obj = {
+        requester,
+        userId,
+        organizationCode,
+        patientName,
+        ...commonRequest(),
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Doctor/SelectHisPatientList',
         'POST',
         JSON.stringify(obj),
         (res) => {

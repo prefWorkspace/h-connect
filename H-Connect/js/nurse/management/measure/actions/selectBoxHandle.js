@@ -2,7 +2,6 @@
 const {
     updateWard_sickroomListSelectHandle,
     updateWard_sickBedListSelectHandle,
-    wardListSelectHandle,
     updateWard_wardListSelectHandle,
 } = await import(
     importVersion(

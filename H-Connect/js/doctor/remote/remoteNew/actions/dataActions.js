@@ -165,7 +165,8 @@ function dateMinMax(_dateValid) {
                     10
                 );
 
-                const _$dependEl = $(`input[data-key="${_dependKey}"]`);
+                let _$dependEl = $(`input[data-key="${_dependKey}"]`);
+
                 const _dependElValue = parseInt(_$dependEl.val(), 10);
                 if (_dependElValue >= _dependValue) {
                     return ['0', '00'];
@@ -475,7 +476,22 @@ export function calcDataRequestScheduleCanDateItem(_info) {
     let _tempObj = {};
     _info.forEach((_item) => {
         const { key, value } = _item;
-        _tempObj[key] = value.toString().padStart(2, '0');
+        let calcKey = key;
+        let splitKey = key.split('_');
+        if (!isNaN(splitKey[splitKey.length - 1])) {
+            splitKey.forEach((item, index, arr) => {
+                if (index === 0) {
+                    calcKey = item + '_';
+                } else if (index !== arr.length - 1) {
+                    if (index === arr.length - 2) {
+                        calcKey += item;
+                    } else {
+                        calcKey += item + '_';
+                    }
+                }
+            });
+        }
+        _tempObj[calcKey] = value.toString().padStart(2, '0');
     });
 
     const {

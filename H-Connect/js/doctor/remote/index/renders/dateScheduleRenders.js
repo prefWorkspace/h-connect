@@ -33,6 +33,7 @@ const {
     )
 );
 
+// channel에 맞게 탬플릿 반환
 function loopHtml(_list, type) {
     let html = '';
     if (!_list) {
@@ -59,7 +60,8 @@ function loopHtml(_list, type) {
     return html;
 }
 
-function startButtonHandle(_endDateTime, _unReplyCount) {
+// 소견협진 시작하기 버튼 분기처리
+function opinionStartButtonHandle(_endDateTime, _unReplyCount) {
     const rightNow = new Date();
     const endDateTime = new Date(_endDateTime);
 
@@ -82,6 +84,7 @@ function startButtonHandle(_endDateTime, _unReplyCount) {
     }
 }
 
+// 협진 일정 목록 조회 렌더링
 export async function dateScheduleRender(_list) {
     let html = '';
     if (_list.length === 0) {
@@ -107,6 +110,22 @@ export async function dateScheduleRender(_list) {
     $('.all_plan .cal_list .schedule_list').html(html);
 }
 
+//참여자 필터링 함수
+function filterAttendedDoctor(_list, consultChannel, isAttend) {
+    const filteredList = _list.filter((item) => {
+        const { replyState, host, remoteState } = item;
+
+        if (host === 'Y') return;
+
+        if (consultChannel === 1 && replyState === isAttend) return item;
+
+        if (consultChannel !== 1 && remoteState === isAttend) return item;
+    });
+
+    return filteredList;
+}
+
+// 협진 일정 상세 조회 렌더링
 function dateSchduleDetailHandle(_scheduleData, isentState) {
     let html = '';
     let withMember = '';
@@ -127,28 +146,19 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         startDatetime,
         consultChannel,
         scheduleInfoList,
-        createId,
     } = _scheduleData[0];
 
-    const withMemberData = memberInfoList.filter((item) => {
-        const { replyState, host, remoteState } = item;
+    const withMemberData = filterAttendedDoctor(
+        memberInfoList,
+        consultChannel,
+        'Y'
+    );
 
-        if (host === 'Y') return;
-
-        if (consultChannel === 1 && replyState === 'Y') return item;
-
-        if (consultChannel !== 1 && remoteState === 'Y') return item;
-    });
-
-    const withOutMemberData = memberInfoList.filter((item) => {
-        const { replyState, host, remoteState } = item;
-
-        if (host === 'Y') return;
-
-        if (consultChannel === 1 && replyState === 'N') return item;
-
-        if (consultChannel !== 1 && remoteState === 'N') return item;
-    });
+    const withOutMemberData = filterAttendedDoctor(
+        memberInfoList,
+        consultChannel,
+        'N'
+    );
 
     withMember = loopHtml(withMemberData, 1);
     witOutMember = loopHtml(withOutMemberData, 1);
@@ -162,9 +172,6 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
 
     // caseInfo 및 참여자 정보
     if (isentState === 1 && consultChannel === 1) {
-        $(`#consultChannel0 .collabor_wrap .deadlineTime`).text(
-            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
-        );
         $(`#consultChannel0 .collabor_wrap .cont .case_list`).html(html);
         $(`#consultChannel0 .collabor_wrap .member .withDoctor div`).html(
             withMember
@@ -184,17 +191,6 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         if (canWithTimeSchedule !== null) {
             $('#metab-2 .inner').html(canWithTimeSchedule);
         }
-
-        // 카운팅
-        $(`#consultChannel0 .collabor_wrap .member .total_doctor_count`).text(
-            withMemberData.length + withOutMemberData.length
-        );
-        $(`#consultChannel0 .collabor_wrap .member .no_doctor_count`).text(
-            withOutMemberData.length
-        );
-        $(`#consultChannel0 .collabor_wrap .member .doctor_count`).text(
-            withMemberData.length
-        );
     } else {
         $(`#consultChannel${consultChannel} .collabor_wrap .case_list`).html(
             html
@@ -206,23 +202,7 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
             `#consultChannel${consultChannel} .collabor_wrap .member .withOutDoctor div`
         ).html(witOutMember);
 
-        // 카운팅
-        $(
-            `#consultChannel${consultChannel} .collabor_wrap .member .total_doctor_count`
-        ).text(withMemberData.length + withOutMemberData.length);
-
-        $(
-            `#consultChannel${consultChannel} .collabor_wrap .member .no_doctor_count`
-        ).text(withOutMemberData.length);
-
-        $(
-            `#consultChannel${consultChannel} .collabor_wrap .member .doctor_count`
-        ).text(withMemberData.length);
-
-        $(`#consultChannel${consultChannel} .collabor_wrap .deadlineTime`).text(
-            moment(deadlineDatetime).format('YY.MM.DD HH:mm')
-        );
-
+        // 시간 데이터 바인딩
         $(
             `#consultChannel${consultChannel} .collabor_wrap .startDatetime`
         ).text(moment(startDatetime).format('YY.MM.DD HH:mm'));
@@ -230,30 +210,49 @@ function dateSchduleDetailHandle(_scheduleData, isentState) {
         $(`#consultChannel${consultChannel} .collabor_wrap .endDatetime`).text(
             moment(endDatetime).format('YY.MM.DD HH:mm')
         );
-
-        // 시간 데이터 바인딩
-        if (consultChannel === 3) {
-            $(
-                `#consultChannel${consultChannel} .collabor_wrap .startDate`
-            ).text(moment(startDatetime).format('YY.MM.DD'));
-            $(
-                `#consultChannel${consultChannel} .collabor_wrap .startDetetime`
-            ).text(moment(startDatetime).format('HH:mm'));
-            $(
-                `#consultChannel${consultChannel} .collabor_wrap .endDetetime`
-            ).text(moment(endDatetime).format('HH:mm'));
-        }
-
-        if (consultChannel === 1) {
-            $(`#consultChannel${consultChannel} .time_select #tab-1`).html(
-                canWithTime
-            );
-        }
-
-        if (consultChannel === 2) {
-            // startButtonHandle(_endDateTime, _unReplyCount)
-        }
     }
+
+    // 시간 데이터 바인딩
+    if (consultChannel === 3) {
+        $(`#consultChannel${consultChannel} .collabor_wrap .startDate`).text(
+            moment(startDatetime).format('YY.MM.DD')
+        );
+        $(
+            `#consultChannel${consultChannel} .collabor_wrap .startDetetime`
+        ).text(moment(startDatetime).format('HH:mm'));
+        $(`#consultChannel${consultChannel} .collabor_wrap .endDetetime`).text(
+            moment(endDatetime).format('HH:mm')
+        );
+    }
+
+    // 내일정 시간표로 보기
+    if (isentState !== 1 && consultChannel === 1) {
+        $(`#consultChannel${consultChannel} .time_select #tab-1`).html(
+            canWithTime
+        );
+    }
+
+    if (consultChannel === 2) {
+        // startButtonHandle(_endDateTime, _unReplyCount)
+    }
+
+    // 공통 시간 데이터
+    $(`.section.right .collabor_wrap .deadlineTime`).text(
+        moment(deadlineDatetime).format('YY.MM.DD HH:mm')
+    );
+
+    // 공통 카운팅
+    $(`.section.right .collabor_wrap .member .total_doctor_count`).text(
+        withMemberData.length + withOutMemberData.length
+    );
+
+    $(`.section.right .collabor_wrap .member .no_doctor_count`).text(
+        withOutMemberData.length
+    );
+
+    $(`.section.right .collabor_wrap .member .doctor_count`).text(
+        withMemberData.length
+    );
 }
 
 export async function dateScheduleDetailRender(
