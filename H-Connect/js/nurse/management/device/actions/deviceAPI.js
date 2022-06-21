@@ -122,25 +122,59 @@ export async function delete_devive() {
 }
 
 //반납 취소 API
-export async function cancel_device_unused() {
-    const serialNumber = $(this).data('serialnumber');
-    const deviceType = $(this).data('type');
-
+export async function cancel_device_unused(
+    serialNumber,
+    deviceType,
+    macAddress
+) {
     const req = JSON.stringify({
         ...commonRequest(),
         serialNumber,
         deviceType,
+        macAddress,
+        deviceReturnStatus: 0,
     });
 
     serverController.ajaxAwaitController(
-        'API/Device/InsertDeviceRegister',
+        'API/Device/UpdateDeviceRegister',
         'POST',
         req,
         (res) => {
-            console.log(res);
             if (res.result) {
                 select_device_unused(0, null);
                 select_device(0, null);
+                $('.pop.delete_return .overlay').fadeOut();
+            } else {
+                alert('반납 취소에 실패하였습니다.');
+            }
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+}
+
+// 반납 API
+export async function return_device_Api(serialNumber, deviceType, macAddress) {
+    const obj = {
+        ...commonRequest(),
+        serialNumber,
+        deviceType,
+        macAddress,
+        deviceReturnStatus: 1,
+    };
+
+    serverController.ajaxAwaitController(
+        'API/Device/UpdateDeviceRegister',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+                select_device_unused(0, null);
+                select_device(0, null);
+                $('.pop.re_device .overlay').fadeOut();
+            } else {
+                alert('장치 반납에 실패하였습니다.');
             }
         },
         (err) => {
@@ -157,10 +191,11 @@ export async function select_device_unused(deviceType = 0, search = null) {
         deviceType,
         pageNumber: 1,
         count: 1000,
+        deviceReturnStatus: 1,
     });
 
     serverController.ajaxAwaitController(
-        'API/Device/SelectDeviceRegisterUnusedPage',
+        'API/Device/SelectDeviceRegisterPage',
         'POST',
         req,
         (res) => {
@@ -192,6 +227,7 @@ export async function select_device(deviceType = 0, search = null) {
         deviceType,
         pageNumber: 1,
         count: 1000,
+        deviceReturnStatus: 0,
     });
 
     serverController.ajaxAwaitController(

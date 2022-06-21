@@ -1,12 +1,12 @@
 'use strict';
 
-const { patientList } = await import(
+const { patientList, patientHISList } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/templates/measurList.js'
     )
 );
 
-const { selectMeasurementInfoList } = await import(
+const { selectMeasurementInfoList, selectHisPatientList } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/measureAPI.js'
     )
@@ -17,14 +17,19 @@ const { errorText } = await import(
 );
 
 //측정 리스트 가져와서 렌더링
-const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 
-export function patientSelectBox() {
+export async function patientSelectBox() {
     let html = '';
+    const { result, measurementInfoSimpleList } =
+        await selectMeasurementInfoList();
 
-    if (!measurementInfoSimpleList || measurementInfoSimpleList.length === 0) {
+    if (
+        !result ||
+        !measurementInfoSimpleList ||
+        measurementInfoSimpleList.length === 0
+    ) {
         html += errorText();
-        $('.selectBox_name .name_option').html(html);
+        $('.modifi_hospital .select_name .name_option').html(html);
         return;
     }
 
@@ -34,4 +39,21 @@ export function patientSelectBox() {
     $('.modifi_hospital .select_name .name_option').html(html);
 }
 
-patientSelectBox();
+export async function patientSelectBoxForNewMeasurement() {
+    let html = '';
+    const { result, patientInfo } = await selectHisPatientList();
+
+    if (!result || patientInfo === null || patientInfo.length === 0) {
+        html += errorText();
+        $('.new_room_pop .select_name .name_option').html(html);
+        return;
+    }
+
+    for (let i = 0; i < patientInfo.length; i++) {
+        html += patientHISList(patientInfo[i]);
+    }
+    $('.new_room_pop .select_name .name_option').html(html);
+}
+
+await patientSelectBoxForNewMeasurement();
+await patientSelectBox();

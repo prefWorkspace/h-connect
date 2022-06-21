@@ -35,12 +35,5 @@ const arteriotonyListPagination = new CreatePagination({
 });
 
 export const renderArteriotonyList = async () => {
-    const fetchSelectBloodPressure = (await selectBloodPressurePage()) ?? [];
-
-    const _arteriotonyListHtml = fetchSelectBloodPressure.records.htmlFor(
-        (_item) => {
-            return arteriotonyListItemTmpl(_item);
-        }
-    );
-    $('#wrap_content.arteriotony .table_body').html(_arteriotonyListHtml);
+    arteriotonyListPagination.renderMain();
 };

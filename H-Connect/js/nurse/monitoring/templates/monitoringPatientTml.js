@@ -1,6 +1,6 @@
 const { history } = await import(
     importVersion('/H-Connect/js/utils/controller/historyController.js')
-    );
+);
 /* s : 모니터링 블록 */
 
 window._history = history;
@@ -12,9 +12,8 @@ export function monitorBlock_have(_data) {
         name,
         bioSignalECGLastData,
         bioSignalSpO2LastData,
-        bioSignalTempLastData
+        bioSignalTempLastData,
     } = _data || {};
-    // console.log(_data);
     /**
      * EWS : emergency warning system => 비상 경고 시스템
      * HR : heartRate => 심박수
@@ -107,7 +106,7 @@ export function monitorRoomBlock(_data) {
         roomPatientCount, // 병실 환자수
         roomTotalSickBed, // 병동에 총 병상수
         roomSpareBedCount, // 여유 병상 수
-        wardCode
+        wardCode,
     } = sickRoomItem || {};
     return `
     <section id='${sickRoomCode}' class='all_patient room_view'>
@@ -137,41 +136,28 @@ export function monitorRoomBlock(_data) {
 
             <div class='monitor_wrap'>
                 ${
-        sickBedList?.htmlFor((_sickBedItem, _index) => {
-            const findPatient_in_sickBedList = patientList?.find(
-                (_patientItem) => {
-                    return (
-                        _patientItem?.sickBedCode ===
-                        _sickBedItem?.sickBedCode
-                    );
+                    sickBedList?.htmlFor((_sickBedItem, _index) => {
+                        const findPatient_in_sickBedList = patientList?.find(
+                            (_patientItem) => {
+                                return (
+                                    _patientItem?.sickBedCode ===
+                                    _sickBedItem?.sickBedCode
+                                );
+                            }
+                        );
+                        if (findPatient_in_sickBedList) {
+                            return monitorBlock_have(
+                                findPatient_in_sickBedList
+                            );
+                        } else {
+                            return monitorBlock_none(_sickBedItem);
+                        }
+                    }) || ''
                 }
-            );
-            if (findPatient_in_sickBedList) {
-                return monitorBlock_have(
-                    findPatient_in_sickBedList
-                );
-            } else {
-                return monitorBlock_none(_sickBedItem);
-            }
-        }) || ''
-    }
             </div>
         </div>
     </section>  
     `;
 }
-
-// ${patientList?.htmlFor((_patient, _index) => {
-//     if (_patient?.sickRoomCode === sickRoomCode) {
-//         return monitorBlock_have(_patient);
-//     } else {
-//         return '';
-//     }
-// })}
-// ${Array(roomSpareBedCount > 0 ? roomSpareBedCount : 0)
-//     ?.fill('')
-//     .htmlFor(() => {
-//         return monitorBlock_none();
-//     })}
 
 /* e : 병실 블록 */

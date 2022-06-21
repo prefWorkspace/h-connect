@@ -108,6 +108,7 @@ const renderWardSelectBox = async () => {
         const templateWardSelect = await parseWardListLeft(_wardList);
         $('.taget_select').html(templateWardSelect);
         await addEventToWardSelectBox();
+        renderSelectedWardList(_wardList[0].wardCode);
     } catch (err) {
         console.log(err);
     }
@@ -167,6 +168,30 @@ const renderDashboardScreen = async () => {
     }
 };
 
+const renderSelectedWardList = (wardCode) => {
+    selectedWard = wardCode;
+    // 병동에 따른 병실 출력
+    $('.ward_block').css('display', 'none');
+    if (selectedWard) $(`.ward_block.${selectedWard}`).css('display', 'block');
+    // 병동 체크박스 이벤트 부여
+    addEventOnWardCheck(selectedWard);
+    //병동 바꿀 시 병동 선택되어 있으면 선택 해제
+    $('#ward_check').prop('checked', false);
+
+    //모니터랑 대상 병실 병상 체크 해제
+    $(`input[name=sickBed_no]`).prop('checked', false);
+    // 병동 변경시 펼쳐진 병실병상 리스트 접기
+    $('.ward_count.on').trigger('click');
+    //병실 체크박스 이벤트
+    addEventOnSickRoomCheck(selectedWard);
+    //병상 체크박스 이벤트부여
+    addEventOnSickBed(selectedWard);
+    // 병동 바꿀 시 체크된 병상들 체크 해제
+    $('input[name=sickBed_no]').prop('checked', false);
+    // 병동 바꿀 시 체크된 병실들 체크 해제
+    $('input[name=room_no]').prop('checked', false);
+};
+
 // Add Event Start
 // Add Event To Ward SelectBox
 async function addEventToWardSelectBox() {
@@ -187,31 +212,7 @@ async function addEventToWardSelectBox() {
             .on('click', () => {
                 const changeWard = wardSelect($(this));
                 if (changeWard != selectedWard) {
-                    selectedWard = changeWard;
-                    // 병동에 따른 병실 출력
-                    $('.ward_block').css('display', 'none');
-                    if (selectedWard)
-                        $(`.ward_block.${selectedWard}`).css(
-                            'display',
-                            'block'
-                        );
-                    // 병동 체크박스 이벤트 부여
-                    addEventOnWardCheck(selectedWard);
-                    //병동 바꿀 시 병동 선택되어 있으면 선택 해제
-                    $('#ward_check').prop('checked', false);
-
-                    //모니터랑 대상 병실 병상 체크 해제
-                    $(`input[name=sickBed_no]`).prop('checked', false);
-                    // 병동 변경시 펼쳐진 병실병상 리스트 접기
-                    $('.ward_count.on').trigger('click');
-                    //병실 체크박스 이벤트
-                    addEventOnSickRoomCheck(selectedWard);
-                    //병상 체크박스 이벤트부여
-                    addEventOnSickBed(selectedWard);
-                    // 병동 바꿀 시 체크된 병상들 체크 해제
-                    $('input[name=sickBed_no]').prop('checked', false);
-                    // 병동 바꿀 시 체크된 병실들 체크 해제
-                    $('input[name=room_no]').prop('checked', false);
+                    renderSelectedWardList(changeWard);
                 }
             });
     });
@@ -808,25 +809,17 @@ async function firstRender() {
 
     await displayInfoUpdate();
     selected_display = displayList[0].displayCode;
-    Object.keys(sickBedsByDisplay).forEach(display => {
-        sickBedsByDisplay[display].sort(
-            function (a, b) {
-                if (a.wardCode < b.wardCode)
-                    return 1;
-                if (a.wardCode > b.wardCode)
-                    return -1;
-                if (a.sickRoomCode < b.sickRoomCode)
-                    return 1;
-                if (a.sickRoomCode > b.sickRoomCode)
-                    return -1;
-                if (a.orderNumber > b.orderNumber)
-                    return 1;
-                if (a.orderNumber < b.orderNumber)
-                    return -1;
-                return 0;
-            }
-        );
-    })
+    Object.keys(sickBedsByDisplay).forEach((display) => {
+        sickBedsByDisplay[display].sort(function (a, b) {
+            if (a.wardCode < b.wardCode) return 1;
+            if (a.wardCode > b.wardCode) return -1;
+            if (a.sickRoomCode < b.sickRoomCode) return 1;
+            if (a.sickRoomCode > b.sickRoomCode) return -1;
+            if (a.orderNumber > b.orderNumber) return 1;
+            if (a.orderNumber < b.orderNumber) return -1;
+            return 0;
+        });
+    });
     await renderDisplayBtn();
     await renderDashboardScreen();
 

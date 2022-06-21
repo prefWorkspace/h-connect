@@ -53,6 +53,7 @@ export async function insertNewEventList() {
         }
 
         if (eventList) {
+            $('.section.new_patient.new .ecglist').html('');
             for await (const evt of eventList) {
                 insertNewEvent(evt);
             }
@@ -150,6 +151,7 @@ export async function insertPreEventList() {
             insertPreEventScreen(null);
         }
         if (eventList) {
+            $('.section.new_patient.pre .ecglist').html('');
             for await (const evt of eventList) {
                 insertPreEvent(evt);
             }

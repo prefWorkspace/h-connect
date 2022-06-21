@@ -14,11 +14,7 @@ const { sendDoctorListRender } = await import(
 
 async function selectDoctor() {
     const { doctorInfoList, result } = await selectHisDoctor();
-    console.log(doctorInfoList);
     if (result) {
         await sendDoctorListRender(doctorInfoList);
     }
 }
-
-// await selectDoctor();
-// const aa = await selectHusDoctorMedList();

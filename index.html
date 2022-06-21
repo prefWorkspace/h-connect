@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>H-Connect 로그인</title>
-        <!--Import-->
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"
-        ></script>
-        <script
-            type="text/javascript"
-            defer
-            src="/H-Connect/js/utils/controller/versionController.2022.05.03.16.36.js"
-        ></script>
-        <!-- <script
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H-Connect 로그인</title>
+    <!--Import-->
+    <script type="text/javascript" defer src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"></script>
+    <script type="text/javascript" defer
+        src="/H-Connect/js/utils/controller/versionController.2022.05.03.16.36.js"></script>
+    <!-- <script
             type="text/javascript"
             defer
             src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"
@@ -34,65 +25,60 @@
             defer
             src="/H-Connect/js/index.js"
         ></script> -->
-        <!-- <script type='module' defer src='/H-Connect/js/utils/module/auth/login.js'></script> -->
-        <!--css-->
-        <link rel="stylesheet" href="/H-Connect/css/reset.css" />
-        <link rel="stylesheet" href="/H-Connect/css/common.css" />
-        <link rel="stylesheet" href="/H-Connect/css/login.css" />
-    </head>
-    <body>
-        <div id="wrap">
-            <!--콘텐츠-->
-            <div id="wrap_content" class="main">
-                <div class="wrap_inner">
-                    <div class="logo">
-                        <a class="link" href="index.html">
-                            <img src="/H-Connect/img/logo.png" alt="로고" />
-                        </a>
+    <!-- <script type='module' defer src='/H-Connect/js/utils/module/auth/login.js'></script> -->
+
+    <!--css-->
+    <link rel="stylesheet" href="/H-Connect/css/reset.css" />
+    <link rel="stylesheet" href="/H-Connect/css/common.css" />
+    <link rel="stylesheet" href="/H-Connect/css/login.css" />
+</head>
+
+<body>
+    <div id="wrap">
+        <!--콘텐츠-->
+        <div id="wrap_content" class="main">
+            <div class="wrap_inner">
+                <div class="logo">
+                    <a class="link" href="index.html">
+                        <img src="/H-Connect/img/logo.png" alt="로고" />
+                    </a>
+                </div>
+
+                <form class="login">
+                    <div class="input_container">
+                        <input id="id" type="text" />
+                        <input id="pw" type="password" />
                     </div>
 
-                    <form class="login">
-                        <div class="input_container">
-                            <input id="id" type="text" />
-                            <input id="pw" type="password" />
+                    <div class="check">
+                        <div class="input_wrap">
+                            <input type="checkbox" id="id_save" class="green_custom" />
+                            <label for="id_save"></label>
+                            <label for="id_save">아이디 기억</label>
                         </div>
 
-                        <div class="check">
-                            <div class="input_wrap">
-                                <input
-                                    type="checkbox"
-                                    id="id_save"
-                                    class="green_custom"
-                                />
-                                <label for="id_save"></label>
-                                <label for="id_save">아이디 기억</label>
-                            </div>
-
-                            <div class="input_wrap">
-                                <input
-                                    type="checkbox"
-                                    id="auto_login"
-                                    class="green_custom"
-                                />
-                                <label for="auto_login"></label>
-                                <label for="auto_login">자동 로그인</label>
-                            </div>
+                        <div class="input_wrap">
+                            <input type="checkbox" id="auto_login" class="green_custom" />
+                            <label for="auto_login"></label>
+                            <label for="auto_login">자동 로그인</label>
                         </div>
+                    </div>
 
-                        <button id="login_button" type="button">로그인</button>
-                    </form>
-                </div>
+                    <button id="login_button" type="button">로그인</button>
+                </form>
             </div>
-
-            <!--푸터-->
-            <footer id="footer">
-                <div class="company_info">
-                    <p class="copyright">
-                        COPYRIGHT 2018 © Seers Technology. ALL RIGHTS RESERVED.
-                    </p>
-                </div>
-            </footer>
         </div>
-        <!--// end wrap-->
-    </body>
+
+        <!--푸터-->
+        <footer id="footer">
+            <div class="company_info">
+                <p class="copyright">
+                    COPYRIGHT 2018 © Seers Technology. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!--// end wrap-->
+</body>
+
 </html>

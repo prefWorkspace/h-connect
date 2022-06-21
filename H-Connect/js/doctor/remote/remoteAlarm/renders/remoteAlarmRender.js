@@ -245,7 +245,7 @@ export function remoteAlarmRender(_list) {
     const query = getParams('consultId');
 
     if (!_list || _list.length === 0) {
-        html = errorText();
+        html = errorText({ padding: '50px 0' });
         $('.remote_request .list .wr').html(html);
         return;
     }
