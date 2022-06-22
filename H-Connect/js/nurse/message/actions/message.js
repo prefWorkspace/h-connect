@@ -27,6 +27,14 @@ const userData = JSON.parse(localStorageController.getLocalS('userData'));
 const { userCode: requester, organization: organizationCode } = userData;
 const LOGIN_TOKEN = sessionController.getSession('accesToken');
 const USER_CODE = localStorageController.getLocalS('userCode');
+const now = new Date();
+const headers = {
+    'SX-Auth-Token': LOGIN_TOKEN,
+    deviceKind: 3,
+    apiRoute: 'GWS-1',
+    requester: USER_CODE,
+    requestDateTime: `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+};
 
 //모든 측정 데이터 리스트 select API
 export async function selectMeasurementInfoList(
@@ -79,13 +87,23 @@ $(async function() {
     } catch (e) {
     }
 
-    const headers = {
+    // 소켓 통신
+    window.client = new CustomSocket();
+    window.client.connect(
+        headers,
+        function() {
+            window.client.addSubscribe('messageCreate', `/topic/public/messageCreate/${userData.id}`, (res) => {
+                console.log(res);
+            });
+        });
+
+    const chatHeaders = {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: `${message.grantType} ${message.accessToken}`
     };
     // 소켓 통신
     window.chatClient = new CustomSocket('https://chat-api.seers-visual-system.link/seers');
-    window.chatClient.connect(headers, async function() {
+    window.chatClient.connect(chatHeaders, async function() {
         const $target = $('.message.talk_list');
         const $noTalk = $('.no_talk');
         let html = '';
@@ -137,7 +155,7 @@ $(async function() {
 
     $('.chat_window .btn_send').click(function() {
         const id = $('.message.talk_list').find('.list.on').data('id');
-        chatClient.send(`/pub/chat/message`, headers, {
+        chatClient.send(`/pub/chat/message`, chatHeaders, {
             type: 'MSG_TALK',
             room_id: id,
             message: $(this).prev().val(),
@@ -215,7 +233,7 @@ $(async function() {
 
         const roomId = createdRoom?.messageStruct?.roomId ?? createdRoom.room_id;
         subscribeChatRoom(roomId);
-        chatClient.send(`/pub/chat/message`, headers, {
+        chatClient.send(`/pub/chat/message`, chatHeaders, {
             type: 'MSG_TALK',
             room_id: roomId,
             message: text,
