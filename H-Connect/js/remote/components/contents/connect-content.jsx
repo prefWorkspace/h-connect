@@ -1,12 +1,27 @@
 const ConnectContent = () => {
 
+    const api = new ApiDelegate();
     const data = ReactRedux.useSelector(state => state);
     const [video, setVideo] = React.useState(null);
     const [layerCSS, setLayerCSS] = React.useState('default');
     const userData = JSON.parse(localStorage.getItem('userData'));
 
-    React.useEffect(() => {
-        setVideo(new CustomJanus(1234, userData.name, {
+    React.useEffect(async () => {
+
+        let roomId = data.roomId;
+
+        if (!roomId) {
+            const room = await api.post('/API/Room/CreateRoom', {
+                requester: userData.requester,
+                creatorId: userData.id
+            });
+            roomId = room.roomId;
+
+            console.log(room, roomId);
+        }
+
+
+        setVideo(new CustomJanus(roomId, userData.name, {
             join: () => {
                 $('.cam_inner').empty().append(`<div id='local-video'><p class='name'>${userData.name}</p></div>`);
                 $('#local-video').empty().append('<video class="rounded centered" id="local-stream" width="100%" height="100%" autoplay playsinline muted="muted"/>');
