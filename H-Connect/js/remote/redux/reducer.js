@@ -2,12 +2,21 @@ const reducer = (state, action) => {
     if (state === undefined) return {
         consultId: '',
         user: {},
-        patient: {},
-        caseList: [{ caseTitle: 'test' }],
-        caseId: 'test-case-id-1123123sadfp',
+        patient: {
+            id: '',
+            name: '',
+            condition: '',
+            gender: '',
+            ward: '',
+            wardRoom: ''
+        },
+        caseList: [],
+        currentCase: null,
+        roomId: '',
         attendee: [],
         socket: null,
-        chat: null
+        chat: null,
+        message: null
     };
 
     switch (action.type) {
@@ -26,14 +35,23 @@ const reducer = (state, action) => {
         case 'setCaseList':
             state = { ...state, caseList: action.data };
             break;
-        case 'setCaseId':
-            state = { ...state, caseId: action.data };
+        case 'setCurrentCase':
+            state = { ...state, currentCase: action.data };
+            break;
+        case 'setRoomId':
+            state = { ...state, roomId: action.data };
+            break;
+        case 'setAttendee':
+            state = { ...state, attendee: action.data };
             break;
         case 'setSocket':
             state = { ...state, socket: action.data };
             break;
         case 'setChat':
             state = { ...state, chat: action.data };
+            break;
+        case 'setMessage':
+            state = { ...state, message: action.data };
             break;
         default:
             break;

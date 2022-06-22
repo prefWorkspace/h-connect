@@ -969,7 +969,7 @@ $(function() {
     //---------------------- 의사 ----------------------//
     // 협진시작 버튼
     $('.doctor .btn_colla').on('click', function() {
-        const consultId = $('.opinoin_list > div.row.on').data('consultid');
+        const consultId = $('.opinoin_list > div.row.on').data('consultid') ?? $('.schedule_list.all_list > div.row.on').data('consultid');
         location.href = `/remote/index.html?consultId=${consultId}`;
     });
 

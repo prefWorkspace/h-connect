@@ -150,9 +150,6 @@ $(async function() {
     $('.chat_window textarea').keyup(function(event) {
         const value = $(this).val().trim();
 
-        console.log(event.ctrlKey);
-        console.log(event.keyCode);
-
         if (value) {
             $(this).next().css({
                 color: '#fff',

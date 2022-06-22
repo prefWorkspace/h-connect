@@ -1,4 +1,20 @@
 const MonitoringLayer = () => {
+
+    React.useEffect(() => {
+        $(function() {
+            $('.tabs').on('click', '.tab-link', function(event) {
+                event.preventDefault();
+                const tab = $(this).data('tab');
+                $('.tab-content').removeClass('current');
+                $(`#${tab}`).addClass('current');
+                $(this).parent().find('.tab-link').removeClass('current');
+                $(this).addClass('current');
+
+            });
+        });
+    }, []);
+
+
     return (
         <div className='vital'>
             {/* 타이틀 */}

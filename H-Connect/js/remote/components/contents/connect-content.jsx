@@ -14,14 +14,15 @@ const ConnectContent = () => {
                 return 'local-stream';
             },
             noWebcam: () => {
-                $('#local-video').empty().append(`No webcam<p class='name'>${userData.name}</p><video class='rounded centered' id='local-stream' width='100%' height='100%' autoplay playsinline muted='muted' style='display: none'/>`);
+                $('#local-video').empty().append(`<div style='background: black; display: flex; justify-content: center; align-items: center;'><img src='/H-Connect/img/emergency/profile.svg' alt='프로필 아이콘' style='width:100px; height:100px;'></div><p class='name'>${userData.name}</p><video class='rounded centered' id='local-stream' width='100%' height='100%' autoplay playsinline muted='muted' style='display: none'/>`);
             },
             cleanUp: () => {
 
             },
             events: {
                 unpublished: () => {
-                    $(`#remote-video-${index}`).empty().append(`Unpublished<p class='name'>${name}</p>`);
+                    // $(`#remote-video-${index}`).empty().append(`Unpublished<p class='name'>${name}</p>`);
+                    $(`#remote-video-${index}`).remove();
                 },
                 leaving: (index) => {
                     $(`#remote-video-${index}`).remove();
@@ -37,7 +38,7 @@ const ConnectContent = () => {
                 return `remote-stream-${index}`;
             },
             noWebcam: (index, name) => {
-                $(`#remote-video-${index}`).empty().append(`No webcam<p class='name'>${name}</p>`);
+                $(`#remote-video-${index}`).empty().append(`<div style='background: black; display: flex; justify-content: center; align-items: center;'><img src='/H-Connect/img/emergency/profile.svg' alt='프로필 아이콘' style='width:100px; height:100px;'></div><p class='name'>${name}</p><video class='rounded centered' id='local-stream' width='100%' height='100%' autoplay playsinline muted='muted' style='display: none'/>`);
             },
             cleanUp: (index) => {
                 // $(`#remote-video-${index}`).remove();

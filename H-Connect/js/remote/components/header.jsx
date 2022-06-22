@@ -1,9 +1,12 @@
 const HeaderLeft = () => {
+    const data = ReactRedux.useSelector(state => state);
+
     return (
         <div className='header_left'>
             <h4>실시간 원격 협진.</h4>
-            <h4>김환자(<span>63</span>.<span>남</span>)</h4>
-            <h4>Patient ID.</h4>
+            <h4>{data.patient.name}(<span>{data.patient.age}</span>.<span>{data.patient.gender === 'M' ? '남' : '여'}</span>)
+            </h4>
+            <h4>{data.patient.id}.</h4>
             <h4>심장병동. 1308호실. 3병상</h4>
         </div>
     );
