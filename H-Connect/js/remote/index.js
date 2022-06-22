@@ -36,8 +36,15 @@ const App = () => {
     store.dispatch({ type: 'setSocket', data: socket });
 
     React.useEffect(async () => {
-        const consult = await api.post('/API/Doctor/SelectRealTimeAndOpinionAndEmergencyConsultView', {
-            ...commonRequest(),
+        // const consult = await api.post('/API/Doctor/SelectRealTimeAndOpinionAndEmergencyConsultView', {
+        //     ...commonRequest(),
+        //     organizationCode: user.organizationCode,
+        //     requester: user.userCode,
+        //     userId: user.id,
+        //     consultId: consultId
+        // });
+        const consult = await api.post('/API/Doctor/SelectConsultView', {
+            // ...commonRequest(),
             organizationCode: user.organizationCode,
             requester: user.userCode,
             userId: user.id,
