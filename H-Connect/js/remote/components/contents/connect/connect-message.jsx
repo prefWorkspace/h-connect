@@ -1,6 +1,5 @@
 /* 메세지 */
-const ConnectMessage = ({ video }) => {
-
+const ConnectMessage = ({ video, messages }) => {
     const data = ReactRedux.useSelector(state => state);
 
     function toggleAudioMute(event) {
@@ -75,45 +74,18 @@ const ConnectMessage = ({ video }) => {
         });
     }, []);
 
+    React.useEffect(() => {
+        $(function() {
+            $('.data_inner').scrollTop(function() {
+                return this.scrollHeight;
+            });
+        });
+    });
+
     return (
         <section className='section left emer_message message'>
             {/* 공지 */}
-            <div className='notice'>
-                <div className='notice_wrap'>
-                    <div className='top case'>
-                        <h3>Case {data.currentCase?.orderNo}.</h3>
-
-                        <h3>{data.currentCase?.caseTitle}</h3>
-                    </div>
-
-                    <div className='info'>
-                        <h3>환자정보</h3>
-
-                        <h3>
-                            {data.patient.name} ({data.patient.age}. {data.patient.gender === 'M' ? '남' : '여'})
-                            {data.patient.id}. {data.patient.ward}. {data.patient.wardRoom}
-                        </h3>
-                    </div>
-
-                    <div className='content'>
-                        <h3>내용</h3>
-
-                        <div>
-                            <h3>
-                                <pre>{data.currentCase?.caseContents}</pre>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <button type='button' className='slide_notice'>
-                    <p className='more'>자세히</p>
-                </button>
-
-                <button type='button' className='slide_up'>
-                    <p className='hide'>숨기기</p>
-                </button>
-            </div>
+            <Notice data={data} />
 
             {/* 상단 버튼 */}
             <div className='title'>
@@ -250,198 +222,22 @@ const ConnectMessage = ({ video }) => {
                             <div className='mark start'>
                                 <p>
                                     원격 협진이 시작되었습니다. case
-                                    1.
+                                    {data.currentCase?.orderNo}.
                                 </p>
-                            </div>
-
-                            <div className='chatting'>
-                                <div className='top'>
-                                    <p>21.09.15</p>
-                                    &nbsp;
-                                    <p>10:36:47</p>
-                                    <p className='name'>
-                                        최협진 교수님
-                                    </p>
-                                </div>
-
-                                <div className='bottom'>
-                                    <p>
-                                        보건복지부장관은
-                                        전자의무기록이 효율적이고
-                                        통일적으로 관리 활용 될 수
-                                        있도록 기록의 작성
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className='chatting'>
-                                <div className='top'>
-                                    <p>21.09.15</p>
-                                    &nbsp;
-                                    <p>10:36:47</p>
-                                    <p className='name'>
-                                        최협진 교수님
-                                    </p>
-                                </div>
-
-                                <div className='bottom'>
-                                    <div className='file'>
-                                        <div>
-                                            <img
-                                                src='/H-Connect/img/remote/thumbs1.jpg'
-                                                alt='사진1'
-                                            />
-                                        </div>
-
-                                        <div>
-                                            <img
-                                                src='/H-Connect/img/remote/thumbs2.jpg'
-                                                alt='사진1'
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <p>
-                                        관리 및 보존에 필요한
-                                        전산정보처리시스템(이하 이
-                                        조에서
-                                        "전자의미기록시스템"이라
-                                        한다), 시설, 장비 및 기록
-                                        서식 등에 관한 표준을 정하여
-                                        고시
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* 내가 친 채팅 */}
-                            <div className='my_chat'>
-                                <div className='top'>
-                                    <div className='left'>
-                                        <p>21.09.15</p>
-                                        <p>10:36:47</p>
-                                        <p className='name'>내가작성</p>
-                                    </div>
-
-                                    <div className='right'>
-                                        <button type='button'>
-                                            <img
-                                                src='/H-Connect/img/icon/pen.svg'
-                                                alt='수정버튼 아이콘'
-                                            />
-                                        </button>
-
-                                        <button type='button'>
-                                            <img
-                                                src='/H-Connect/img/icon/trash.svg'
-                                                alt='삭제버튼 아이콘'
-                                            />
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className='bottom'>
-                                    <p>
-                                        효율적이고 통일적으로
-                                        관리ㆍ활용될 수 있도록
-                                        기록의 작성, 관리 및 보존에
-                                        필요한
-                                        전산정보처리시스템(이하 이
-                                        조에서
-                                        “전자의무기록시스템”이라
-                                        한다), 시설, 장비 및 기록
-                                        서식 등에 관한 표준을 정하여
-                                        고시하고
-                                        전자의무기록시스템을 제조
-                                    </p>
-                                </div>
                             </div>
 
                             <div className='mark no_read'>
                                 <p>여기까지 읽으셨습니다.</p>
                             </div>
 
-                            <div className='chatting no_check'>
-                                <div className='top'>
-                                    <p>21.09.15</p>
-                                    &nbsp;
-                                    <p>10:36:47</p>
-                                    <p className='name'>
-                                        최협진 교수님
-                                    </p>
-                                </div>
+                            {messages?.map(item => <Message message={item} />)}
 
-                                <div className='bottom'>
-                                    <p>□□□ 증상확인 요망.</p>
-                                </div>
-                            </div>
-
-                            <div className='chatting no_check'>
-                                <div className='top'>
-                                    <p>21.09.15</p>
-                                    &nbsp;
-                                    <p>10:36:47</p>
-                                    <p className='name'>
-                                        최협진 교수님
-                                    </p>
-                                </div>
-
-                                <div className='bottom'>
-                                    <p>□□□ 증상확인 요망.</p>
-                                </div>
-                            </div>
-
-                            <div className='chatting no_check'>
-                                <div className='top'>
-                                    <p>21.09.15</p>
-                                    &nbsp;
-                                    <p>10:36:47</p>
-                                    <p className='name'>
-                                        최협진 교수님
-                                    </p>
-                                </div>
-
-                                <div className='bottom'>
-                                    <p>□□□ 증상확인 요망.</p>
-                                </div>
-                            </div>
-
-                            <div className='chatting no_check'>
-                                <div className='top'>
-                                    <p>21.09.15</p>
-                                    &nbsp;
-                                    <p>10:36:47</p>
-                                    <p className='name'>
-                                        최협진 교수님
-                                    </p>
-                                </div>
-
-                                <div className='bottom'>
-                                    <p>□□□ 증상확인 요망.</p>
-                                </div>
-                            </div>
-
-                            <div className='chatting no_check'>
-                                <div className='top'>
-                                    <p>21.09.15</p>
-                                    &nbsp;
-                                    <p>10:36:47</p>
-                                    <p className='name'>
-                                        최협진 교수님
-                                    </p>
-                                </div>
-
-                                <div className='bottom'>
-                                    <p>□□□ 증상확인 요망.</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className='input_message'>
-                                <textarea
-                                    placeholder='소견 및 메세지 작성'
-                                ></textarea>
+                    <textarea placeholder='소견 및 메세지 작성'></textarea>
                     <button type='button' className='btn_send'>
                         전송
                     </button>
@@ -462,5 +258,107 @@ const ConnectMessage = ({ video }) => {
                 </button>
             </div>
         </section>
+    );
+};
+
+const Message = ({ message }) => {
+
+    const data = ReactRedux.useSelector(state => state);
+    const messageDate = MessageDelegate.getDateFromTimestamp(String(message.created_time).substring(0, 10)) ?? '';
+    const name = message.user_info?.user_nickname ?? '';
+    const date = `${messageDate.shortYear}.${messageDate.month}.${messageDate.days}`;
+    const time = `${messageDate.hours}:${messageDate.minutes}:${messageDate.seconds}`;
+    const text = message.message ?? message.file_original_name;
+
+    return (
+        <div className={data.user.id === message.user_id ? 'my_chat' : 'chatting'}>
+            {data.user.id === message.user_id ?
+                <div className='top'>
+                    <div className='left'>
+                        <p>{date}</p>
+                        <p>{time}</p>
+                        <p className='name'>내가작성</p>
+                    </div>
+
+                    <div className='right'>
+                        <button type='button'>
+                            <img src='/H-Connect/img/icon/pen.svg' alt='수정버튼 아이콘' />
+                        </button>
+
+                        <button type='button'>
+                            <img src='/H-Connect/img/icon/trash.svg' alt='삭제버튼 아이콘' />
+                        </button>
+                    </div>
+                </div>
+                : <div className='top'>
+                    <p>{date}</p>
+                    &nbsp;
+                    <p>{time}</p>
+                    <p className='name'>{name}</p>
+                </div>}
+
+            <div className='bottom'>
+                {/*<div className='file'>*/}
+                {/*    <div>*/}
+                {/*        <img*/}
+                {/*            src='/H-Connect/img/remote/thumbs1.jpg'*/}
+                {/*            alt='사진1'*/}
+                {/*        />*/}
+                {/*    </div>*/}
+
+                {/*    <div>*/}
+                {/*        <img*/}
+                {/*            src='/H-Connect/img/remote/thumbs2.jpg'*/}
+                {/*            alt='사진1'*/}
+                {/*        />*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+
+                <p>
+                    <pre>{text}</pre>
+                </p>
+            </div>
+        </div>
+    );
+};
+
+const Notice = ({ data }) => {
+    return (
+        <div className='notice'>
+            <div className='notice_wrap'>
+                <div className='top case'>
+                    <h3>Case {data.currentCase?.orderNo}.</h3>
+
+                    <h3>{data.currentCase?.caseTitle}</h3>
+                </div>
+
+                <div className='info'>
+                    <h3>환자정보</h3>
+
+                    <h3>
+                        {data.patient.name} ({data.patient.age}. {data.patient.gender === 'M' ? '남' : '여'})
+                        {data.patient.id}. {data.patient.ward}. {data.patient.wardRoom}
+                    </h3>
+                </div>
+
+                <div className='content'>
+                    <h3>내용</h3>
+
+                    <div>
+                        <h3>
+                            <pre>{data.currentCase?.caseContents}</pre>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <button type='button' className='slide_notice'>
+                <p className='more'>자세히</p>
+            </button>
+
+            <button type='button' className='slide_up'>
+                <p className='hide'>숨기기</p>
+            </button>
+        </div>
     );
 };

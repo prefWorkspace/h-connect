@@ -1,35 +1,72 @@
 const ConnectContent = () => {
 
     const api = new ApiDelegate();
+    const dispatch = ReactRedux.useDispatch();
     const data = ReactRedux.useSelector(state => state);
     const [video, setVideo] = React.useState(null);
+    const [messages, setMessages] = React.useState([]);
     const [layerCSS, setLayerCSS] = React.useState('default');
-    const userData = JSON.parse(localStorage.getItem('userData'));
+    // const userData = JSON.parse(localStorage.getItem('userData'));
+
+    console.log(data);
 
     React.useEffect(async () => {
 
         let roomId = data.roomId;
+        let chatId = data.chatId;
 
-        if (!roomId) {
+        // 화상방 생성
+        if (data.currentCase && !roomId) {
             const room = await api.post('/API/Room/CreateRoom', {
-                requester: userData.requester,
-                creatorId: userData.id
+                requester: data.user.userCode,
+                creatorId: data.user.id
             });
             roomId = room.roomId;
 
-            console.log(room, roomId);
+            await api.post('/API/Doctor/UpdateVroomId', {
+                requester: data.user.userCode,
+                userId: data.user.id,
+                organizationCode: data.user.organizationCode,
+                consultId: data.consultId,
+                caseOrderNo: data.currentCase.orderNo,
+                roomId: roomId,
+                password: ''
+            });
         }
+        dispatch({ type: 'setRoomId', data: roomId });
+
+        // 채팅방 생성
+        if (data.currentCase && !chatId) {
+            const chat = await api.post('/API/Message/ConsultCreateRoom', {
+                requester: data.user.userCode,
+                userId: data.user.id,
+                organizationCode: data.user.organizationCode,
+                roomName: `${data.currentCase.caseTitle} 채팅방`,
+                description: `${data.currentCase.caseTitle} 채팅방`,
+                participantsInfoList: data.attendee.map(item => ({
+                    userId: item.doctorId,
+                    userName: item.doctorName
+                })),
+                consultId: data.consultId,
+                orderNo: data.currentCase.orderNo,
+                grantType: data.message.grantType,
+                accessKey: data.message.accessToken
+            });
+            chatId = chat?.messageStruct?.roomId;
+        }
+        dispatch({ type: 'setChatId', data: chatId });
 
 
-        setVideo(new CustomJanus(roomId, userData.name, {
+        // 화상 연결 및 화면 연동
+        setVideo(new CustomJanus(roomId, data.user.name, {
             join: () => {
-                $('.cam_inner').empty().append(`<div id='local-video'><p class='name'>${userData.name}</p></div>`);
+                $('.cam_inner').empty().append(`<div id='local-video'><p class='name'>${data.user.name}</p></div>`);
                 $('#local-video').empty().append('<video class="rounded centered" id="local-stream" width="100%" height="100%" autoplay playsinline muted="muted"/>');
 
                 return 'local-stream';
             },
             noWebcam: () => {
-                $('#local-video').empty().append(`<div style='background: black; display: flex; justify-content: center; align-items: center;'><img src='/H-Connect/img/emergency/profile.svg' alt='프로필 아이콘' style='width:100px; height:100px;'></div><p class='name'>${userData.name}</p><video class='rounded centered' id='local-stream' width='100%' height='100%' autoplay playsinline muted='muted' style='display: none'/>`);
+                $('#local-video').empty().append(`<div style='background: black; display: flex; justify-content: center; align-items: center;'><img src='/H-Connect/img/emergency/profile.svg' alt='프로필 아이콘' style='width:100px; height:100px;'></div><p class='name'>${data.user.name}</p><video class='rounded centered' id='local-stream' width='100%' height='100%' autoplay playsinline muted='muted' style='display: none'/>`);
             },
             cleanUp: () => {
 
@@ -59,6 +96,17 @@ const ConnectContent = () => {
                 // $(`#remote-video-${index}`).remove();
             }
         }));
+
+
+        // 채팅 구독
+        data.chat.addSubscribe('chat', `/sub/chat/room/${chatId}`, (res) => {
+            console.log(res);
+        });
+
+
+        // 채팅 메시지
+        setMessages((await data.message.getMessageListFromRoom(roomId)).messageList);
+
 
         $(function() {
             $('.tabs > .link').click(function() {
@@ -134,6 +182,30 @@ const ConnectContent = () => {
             $('body').click(function() {
                 $('.pop.attendee').fadeOut();
             });
+
+            // 채팅 메시지 보내기
+            const chatHeaders = {
+                'Content-Type': 'application/json;charset=utf-8',
+                Authorization: `${data.message.grantType} ${data.message.accessToken}`
+            };
+            $('.input_message > .btn_send').click(function(event) {
+                event.preventDefault();
+                data.chat.send(`/pub/chat/message`, chatHeaders, {
+                    type: 'MSG_TALK',
+                    room_id: roomId,
+                    message: $(this).prev().val(),
+                    parent_message_id: ''
+                });
+                $(this).prev().val('').focus();
+            });
+            $('.input_message > textarea').keydown(function(event) {
+                if (event.ctrlKey && event.keyCode === 13) {
+                    $(this).val($(this).val() + '\n');
+                } else if (!event.ctrlKey && event.keyCode === 13) {
+                    $(this).next().click();
+                    return false;
+                }
+            });
         });
     }, []);
 
@@ -184,7 +256,7 @@ const ConnectContent = () => {
         <div id='wrap_content' className={`remote remote_connect default`}>
             <div className='wrap_inner'>
 
-                <ConnectMessage video={video} />
+                <ConnectMessage video={video} messages={messages} />
                 <ConnectVideoScreen />
 
                 {/* 오른쪽 화면 */}

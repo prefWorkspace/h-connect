@@ -20,37 +20,39 @@ const App = () => {
     const socket = new CustomSocket();
     socket.connect(headers);
 
-    // 채팅
-    const message = new MessageDelegate();
-    const chatHeaders = {
-        'Content-Type': 'application/json;charset=utf-8',
-        Authorization: `${message.grantType} ${message.accessToken}`
-    };
-    const chat = new CustomSocket('https://chat-api.seers-visual-system.link/seers');
-    chat.connect(chatHeaders);
-
+    store.dispatch({ type: 'setAccessKey', data: loginToken });
     store.dispatch({ type: 'setConsultId', data: consultId });
     store.dispatch({ type: 'setUser', data: JSON.parse(localStorage.getItem('userData')) });
-    store.dispatch({ type: 'setChat', data: chat });
-    store.dispatch({ type: 'setMessage', data: message });
     store.dispatch({ type: 'setSocket', data: socket });
 
     React.useEffect(async () => {
-        // const consult = await api.post('/API/Doctor/SelectRealTimeAndOpinionAndEmergencyConsultView', {
-        //     ...commonRequest(),
-        //     organizationCode: user.organizationCode,
-        //     requester: user.userCode,
-        //     userId: user.id,
-        //     consultId: consultId
-        // });
-        const consult = await api.post('/API/Doctor/SelectConsultView', {
-            // ...commonRequest(),
+        const consult = await api.post('/API/Doctor/SelectRealTimeAndOpinionAndEmergencyConsultView', {
+            ...commonRequest(),
             organizationCode: user.organizationCode,
             requester: user.userCode,
             userId: user.id,
             consultId: consultId
         });
+        // const consult = await api.post('/API/Doctor/SelectConsultView', {
+        //     // ...commonRequest(),
+        //     organizationCode: user.organizationCode,
+        //     requester: user.userCode,
+        //     userId: user.id,
+        //     consultId: consultId
+        // });
 
+        // 채팅
+        const message = new MessageDelegate();
+        await message.login(user.id, '1234');
+        const chatHeaders = {
+            'Content-Type': 'application/json;charset=utf-8',
+            Authorization: `${message.grantType} ${message.accessToken}`
+        };
+        const chat = new CustomSocket('https://chat-api.seers-visual-system.link/seers');
+        chat.connect(chatHeaders);
+
+        store.dispatch({ type: 'setMessage', data: message });
+        store.dispatch({ type: 'setChat', data: chat });
         store.dispatch({ type: 'setCaseList', data: consult?.list[0].caseInfoList });
         store.dispatch({ type: 'setAttendee', data: consult?.list[0].memberInfoList });
         store.dispatch({

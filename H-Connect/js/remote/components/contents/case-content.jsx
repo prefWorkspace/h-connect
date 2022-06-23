@@ -30,6 +30,7 @@ const CaseItem = ({ number, data }) => {
 
     const connect = () => {
         dispatch({ type: 'setRoomId', data: data?.vRoomId });
+        dispatch({ type: 'setChatId', data: data?.messageRoomId });
         dispatch({ type: 'setCurrentCase', data: data });
         navigate('/connect');
     };
