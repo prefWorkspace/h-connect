@@ -57,19 +57,15 @@ export class MessageDelegate {
 
     /**
      * 사용자 로그인
-     * @param {string} username
-     * @param {string} password
      */
-    async login(username, password) {
-        return await this._post('/user/login', { user_id: username, user_password: password }, (res) => {
-            this.grantType = res.grant_type;
-            this.accessToken = res.access_token;
-            this.refreshToken = res.refresh_token;
-            this.refreshTokenExpirationTime = res.refresh_token_expiration_time;
-            this.userId = res.user_id;
-            this.userNickname = res.user_nickname;
-            this.userRole = res.user_role;
-        });
+    async login(messageStruct) {
+        this.grantType = messageStruct.grantType;
+        this.accessToken = messageStruct.accessToken;
+        this.refreshToken = messageStruct.refreshToken;
+        this.refreshTokenExpirationTime = messageStruct.refreshTokenExpirationTime;
+        this.userId = messageStruct.userId;
+        this.userNickname = messageStruct.userNickname;
+        this.userRole = messageStruct.userRole;
     }
 
     /**
