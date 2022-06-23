@@ -72,10 +72,14 @@ const { measurementInfoSimpleList } = await selectMeasurementInfoList();
 const message = new MessageDelegate();
 
 $(async function() {
-
-    let chatLoginResult = null;
     try {
-        chatLoginResult = await message.login(userData.id, 1234);
+        const token = await serverController.ajaxAwaitController('API/Message/CreateToken', 'POST', JSON.stringify({
+            requester: USER_CODE,
+            userId: userData.id,
+            userName: userData.name,
+            organizationCode: userData.organizationCode
+        }));
+        message.login(token.messageStruct);
     } catch (e) {
     }
 
@@ -204,32 +208,7 @@ $(async function() {
             return false;
         }
 
-        if (!message.userId) {
-            const req = JSON.stringify({
-                ...commonRequest(),
-                userId: userData.id,
-                roomName: `${userData.name}의 채팅방`,
-                description: `${userData.name}의 채팅방 설명`,
-                participantsInfoList,
-                grantType: 'Bearer',
-                accessKey: LOGIN_TOKEN
-            });
-            createdRoom = await serverController.ajaxAwaitController(
-                'API/ConnectMessage/StaffCreateRoom',
-                'POST',
-                req,
-                (res) => {
-                    if (res.result) {
-                    }
-                },
-                (err) => {
-                    console.log(err);
-                }
-            );
-            message.login(userData.id, 1234);
-        } else {
-            createdRoom = await message.createRoom('채팅방', '채팅방 설명', participantsInfoList.map(user => user.userId));
-        }
+        createdRoom = await message.createRoom('채팅방', '채팅방 설명', participantsInfoList.map(user => user.userId));
 
         const roomId = createdRoom?.messageStruct?.roomId ?? createdRoom.room_id;
         subscribeChatRoom(roomId);
@@ -308,7 +287,7 @@ const getRoomHtml = async (room) => {
             }
         }
     } else {
-        text = '';
+        text = room.room_name;
     }
 
     return `
