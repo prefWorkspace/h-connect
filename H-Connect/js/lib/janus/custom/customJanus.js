@@ -1,6 +1,7 @@
 class CustomJanus {
 
-    debug = 'all';
+    // debug = 'all';
+    debug = false;
     janus = null;
     sfuTest = null;
     server = 'https://webrtc.seers-visual-system.link';
@@ -211,7 +212,7 @@ class CustomJanus {
                                                         this.feeds[remoteFeed.rfindex] = null;
                                                         remoteFeed.detach();
                                                     }
-                                                    if (typeof this.callbacks.local.events.leaving === 'function') this.callbacks.local.events.leaving();
+                                                    if (typeof this.callbacks.local.events.leaving === 'function') this.callbacks.local.events.leaving(remoteFeed.rfindex);
                                                 } else if (msg['unpublished']) {
                                                     // One of the publishers has unpublished?
                                                     const unpublished = msg['unpublished'];
@@ -443,6 +444,14 @@ class CustomJanus {
         return muted;
     }
 
+    audioMute() {
+        this.sfuTest.muteAudio();
+    }
+
+    audioUnmute() {
+        this.sfuTest.unmuteAudio();
+    }
+
     toggleVideoMute() {
         let muted = this.sfuTest.isVideoMuted();
         Janus.log((muted ? 'Unmuting' : 'Muting') + ' local stream...');
@@ -450,6 +459,14 @@ class CustomJanus {
         else this.sfuTest.muteVideo();
         muted = this.sfuTest.isVideoMuted();
         return muted;
+    }
+
+    videoMute() {
+        this.sfuTest.muteVideo();
+    }
+
+    videoUnmute() {
+        this.sfuTest.unmuteVideo();
     }
 
     unpublishOwnFeed() {
@@ -567,9 +584,10 @@ class CustomJanus {
                 let addButtons = false;
                 let target = '';
 
-                console.log(remoteFeed);
+                Janus.log(remoteFeed);
+
                 if (typeof this.callbacks.remote.join === 'function') {
-                    target = this.callbacks.remote.join(remoteFeed.rfindex);
+                    target = this.callbacks.remote.join(remoteFeed.rfindex, remoteFeed.rfdisplay);
                 } else {
                     Janus.log('There\'s no remote attach video function.');
                     return false;

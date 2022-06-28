@@ -43,7 +43,7 @@ class ApiDelegate {
                 if (res.result) {
                     if (typeof callback === 'function') callback(res);
                 } else {
-                    this.log(res.message);
+                    // this.log(res.message);
                 }
 
                 return res;

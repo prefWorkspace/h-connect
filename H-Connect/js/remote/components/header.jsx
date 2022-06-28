@@ -52,47 +52,48 @@ const NoAttendee = () => {
 };
 
 const Attendee = () => {
+    const data = ReactRedux.useSelector(state => state);
+
     return (
-        <div className='atten'>
+        <div className='atten' style={{ display: 'block' }}>
             <div className='count'>
                 <div>
                     {/* 참석하는 경우 attend를 넣어주세요 */}
-                    <p className='attend'>참석 : 5명</p>
+                    <p className='attend'>참석 : {data.attendee.filter(item => item.remoteState === 'Y').length}명</p>
 
                     {/* 미참석하는 경우 no_attend를 넣어주세요 */}
-                    <p className='no_attend'>미참석 : 1명</p>
+                    <p className='no_attend'>미참석 : {data.attendee.filter(item => item.remoteState === 'N').length}명</p>
 
                     {/* 대응불가인 경우 unrespon를 넣어주세요 */}
-                    <p className='unrespon'>대응불가 : 1명</p>
+                    <p className='unrespon'>대응불가 : {data.attendee.filter(item => item.replyState === 'N').length}명</p>
                 </div>
 
-                <p><span>5명</span> 참여중</p>
+                <p><span>{data.attendee.filter(item => item.remoteState === 'Y').length}명</span> 참여중</p>
             </div>
 
             <div className='name'>
-                <p>김응급 교수님</p>
-                <p>김한림 교수님</p>
-                <p>최협진 교수님</p>
-                <p>이연차 전공의</p>
-                <p>박협진 교수님</p>
+                {data.attendee.map(item => <p>{item.doctorName} {item.doctorLevelName}</p>)}
+                {/*<p>김응급 교수님</p>*/}
+                {/*<p>김한림 교수님</p>*/}
+                {/*<p>최협진 교수님</p>*/}
+                {/*<p>이연차 전공의</p>*/}
+                {/*<p>박협진 교수님</p>*/}
 
                 {/* 불참하는 인원에는 addClass on을 해주세요 */}
-                <p className='on'>박불참 교수님</p>
-                <p className='on'>권바쁨 교수님(대응불가)</p>
+                {/*<p className='on'>박불참 교수님</p>*/}
+                {/*<p className='on'>권바쁨 교수님(대응불가)</p>*/}
             </div>
         </div>
     );
 };
 
 const AttendeePopup = () => {
+    const data = ReactRedux.useSelector(state => state);
+
     return (
         <div className='pop attendee remote_attend'>
             <div className='wrap_inner'>
-                {/* 참석자 없을때 */}
-                <NoAttendee />
-
-                {/* 참석자 있을 때 */}
-                <Attendee />
+                {data.attendee.length === 0 ? <NoAttendee /> : <Attendee />}
             </div>
         </div>
     );

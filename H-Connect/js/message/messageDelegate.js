@@ -58,7 +58,7 @@ export class MessageDelegate {
     /**
      * 사용자 로그인
      */
-    async login(messageStruct) {
+    login(messageStruct) {
         this.grantType = messageStruct.grantType;
         this.accessToken = messageStruct.accessToken;
         this.refreshToken = messageStruct.refreshToken;

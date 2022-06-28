@@ -1,5 +1,13 @@
 const reducer = (state, action) => {
     if (state === undefined) return {
+        viewType: 'default',
+        transforms: {
+            monitoring: 'translate(0px, 0px)',
+            pacs: 'translate(0px, 0px)',
+            lab: 'translate(0px, 0px)',
+            emr: 'translate(0px, 0px)',
+            ocs: 'translate(0px, 0px)'
+        },
         accessKey: '',
         grantType: 'Bearer',
         consultId: '',
@@ -10,7 +18,8 @@ const reducer = (state, action) => {
             condition: '',
             gender: '',
             ward: '',
-            wardRoom: ''
+            wardRoom: '',
+            measurementCode: ''
         },
         caseList: [],
         currentCase: null,
@@ -23,6 +32,27 @@ const reducer = (state, action) => {
     };
 
     switch (action.type) {
+        case 'setViewType':
+            state = { ...state, viewType: action.data };
+            break;
+        case 'setTransforms':
+            state = { ...state, transforms: action.data };
+            break;
+        case 'setMonitoringTransform':
+            state = { ...state, transforms: { ...state.transforms, monitoring: action.data } };
+            break;
+        case 'setPACSTransform':
+            state = { ...state, transforms: { ...state.transforms, pacs: action.data } };
+            break;
+        case 'setLabTransform':
+            state = { ...state, transforms: { ...state.transforms, lab: action.data } };
+            break;
+        case 'setEMRTransform':
+            state = { ...state, transforms: { ...state.transforms, emr: action.data } };
+            break;
+        case 'setOCSTransform':
+            state = { ...state, transforms: { ...state.transforms, ocs: action.data } };
+            break;
         case 'setAccessKey':
             state = { ...state, accessKey: action.data };
             break;

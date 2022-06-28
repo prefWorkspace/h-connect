@@ -18,6 +18,8 @@
     <script src='https://unpkg.com/react-redux@8.0.2/dist/react-redux.js' crossorigin></script>
     <script src='https://unpkg.com/react-router@6.3.0/umd/react-router.production.min.js' crossorigin></script>
     <script src='https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.production.min.js' crossorigin></script>
+    <script src='https://unpkg.com/react-paginate@8.1.3/dist/react-paginate.js'></script>
+    <script src='https://unpkg.com/react-draggable@4.4.5/build/web/react-draggable.min.js'></script>
 
     <script src='https://unpkg.com/swiper/swiper-bundle.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js'></script>
@@ -68,6 +70,83 @@
             color: #888;
             background: #666;
         }
+
+        .tabular_table .table_page ul li {
+            margin: 0 2px;
+            cursor: pointer;
+        }
+
+        .cam .cam_inner > div {
+            background: black;
+        }
+
+        :root {
+            --left: 50px;
+            --progress-bar-color: #017994;
+        }
+
+        .modul input[type=range]::-moz-range-thumb {
+            width: 0;
+            height: 0;
+        }
+
+        /*
+        .modul input[type=range]::after {
+            position: absolute;
+            content: '';
+            width: 6px;
+            height: 8px;
+            background: url(/H-Connect/img/icon/down.svg) no-repeat;
+            filter: invert(18%) sepia(66%) saturate(5427%) hue-rotate(179deg) brightness(47%) contrast(101%);
+            transform: rotate(-45deg);
+            top: 23px;
+            left: var(--left);
+        }
+         */
+
+        .message .cam_control .volume:hover .modul {
+            width: 160px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 4px;
+            border-radius: 0;
+            background-size: 70% 100%;
+            background: rgba(255, 255, 255, 0.6) linear-gradient(var(--progress-bar-color), var(--progress-bar-color)) no-repeat;
+        }
+
+        /* Input Thumb */
+        input[type="range"]::-webkit-slider-thumb,
+        input[type="range"]::-moz-range-thumb,
+        input[type="range"]::-ms-thumb {
+            -webkit-appearance: none;
+            height: 4px;
+            width: 4px;
+            border-radius: 0;
+            background: var(--progress-bar-color);
+            cursor: pointer;
+            box-shadow: 0 0 2px 0 #555;
+            transition: background .3s ease-in-out;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover,
+        input[type="range"]::-moz-range-thumb:hover,
+        input[type="range"]::-ms-thumb:hover {
+            /*background: #ff0200;*/
+        }
+
+        /* Input Track */
+        input[type=range]::-webkit-slider-runnable-track,
+        input[type=range]::-moz-range-track,
+        input[type="range"]::-ms-track {
+            -webkit-appearance: none;
+            box-shadow: none;
+            border: none;
+            background: transparent;
+        }
+
     </style>
 </head>
 <body>

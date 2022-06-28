@@ -6,9 +6,6 @@ const ConnectContent = () => {
     const [video, setVideo] = React.useState(null);
     const [messages, setMessages] = React.useState([]);
     const [layerCSS, setLayerCSS] = React.useState('default');
-    // const userData = JSON.parse(localStorage.getItem('userData'));
-
-    console.log(data);
 
     React.useEffect(async () => {
 
@@ -61,7 +58,7 @@ const ConnectContent = () => {
         setVideo(new CustomJanus(roomId, data.user.name, {
             join: () => {
                 $('.cam_inner').empty().append(`<div id='local-video'><p class='name'>${data.user.name}</p></div>`);
-                $('#local-video').empty().append('<video class="rounded centered" id="local-stream" width="100%" height="100%" autoplay playsinline muted="muted"/>');
+                $('#local-video').empty().append('<video class="rounded centered" id="local-stream" width="100%" height="100%" autoplay playsinline muted="muted" />');
 
                 return 'local-stream';
             },
@@ -72,7 +69,7 @@ const ConnectContent = () => {
 
             },
             events: {
-                unpublished: () => {
+                unpublished: (index) => {
                     // $(`#remote-video-${index}`).empty().append(`Unpublished<p class='name'>${name}</p>`);
                     $(`#remote-video-${index}`).remove();
                 },
@@ -83,29 +80,44 @@ const ConnectContent = () => {
         }, {
             join: (index, name) => {
                 if ($(`.cam_inner > #remote-video-${index}`).length === 0) {
-                    $('.cam_inner').append(`<div id='remote-video-${index}'><p class='name'>${name}</p></div>`);
-                    $(`#remote-video-${index}`).append(`<video class='rounded centered' id='remote-stream-${index}' width='100%' height='100%' autoplay playsinline muted='muted'/>`);
+                    $('.cam_inner').append(`<div id='remote-video-${index}'><p class='name'>${name ?? ''}</p></div>`);
+                    $(`#remote-video-${index}`).append(`<video class='rounded centered' id='remote-stream-${index}' width='100%' height='100%' autoplay playsinline />`);
                 }
 
                 return `remote-stream-${index}`;
             },
             noWebcam: (index, name) => {
-                $(`#remote-video-${index}`).empty().append(`<div style='background: black; display: flex; justify-content: center; align-items: center;'><img src='/H-Connect/img/emergency/profile.svg' alt='프로필 아이콘' style='width:100px; height:100px;'></div><p class='name'>${name}</p><video class='rounded centered' id='local-stream' width='100%' height='100%' autoplay playsinline muted='muted' style='display: none'/>`);
+                $(`#remote-video-${index}`).empty().append(`<div style='background: black; display: flex; justify-content: center; align-items: center;'><img src='/H-Connect/img/emergency/profile.svg' alt='프로필 아이콘' style='width:100px; height:100px;'></div><p class='name'>${name ?? ''}</p><video class='rounded centered' id='remote-stream-${index}' width='100%' height='100%' autoplay playsinline style='display: none'/>`);
             },
             cleanUp: (index) => {
-                // $(`#remote-video-${index}`).remove();
+                $(`#remote-video-${index}`).remove();
             }
         }));
 
 
+        // 채팅 메시지
+        setMessages((await data.message?.getMessageListFromRoom(roomId))?.messageList);
+
         // 채팅 구독
-        data.chat.addSubscribe('chat', `/sub/chat/room/${chatId}`, (res) => {
-            console.log(res);
+        data.chat?.addSubscribe('chat', `/sub/chat/room/${roomId}`, async (res) => {
+            setMessages((await data.message?.getMessageListFromRoom(roomId))?.messageList);
         });
 
-
-        // 채팅 메시지
-        setMessages((await data.message.getMessageListFromRoom(roomId)).messageList);
+        // 환자 정보 세팅
+        if (data.currentCase) {
+            dispatch({
+                type: 'setPatient', data: {
+                    id: data.currentCase.patientId,
+                    name: data.currentCase.patientName,
+                    age: data.currentCase.patientAge,
+                    condition: data.currentCase.patientCondition,
+                    gender: data.currentCase.patientGender,
+                    ward: data.currentCase.patientWard,
+                    wardRoom: data.currentCase.patientWardRoom,
+                    measurementCode: data.currentCase.measurementCode ?? 'SEERS_2206221745_4H13'
+                }
+            });
+        }
 
 
         $(function() {
@@ -126,8 +138,13 @@ const ConnectContent = () => {
             // 창 사이즈 버튼 토글
             $('.several > div > .title > .btn_list > .btn_full').click(function(event) {
                 event.preventDefault();
-                event.stopPropagation();
-
+                const $layer = $(this).parent().parent().parent();
+                $layer.css({
+                    height: '100%',
+                    width: '100%',
+                    left: 0,
+                    top: 0
+                });
             });
 
             // 창 닫기버튼
@@ -186,11 +203,11 @@ const ConnectContent = () => {
             // 채팅 메시지 보내기
             const chatHeaders = {
                 'Content-Type': 'application/json;charset=utf-8',
-                Authorization: `${data.message.grantType} ${data.message.accessToken}`
+                Authorization: `${data.message?.grantType} ${data.message?.accessToken}`
             };
             $('.input_message > .btn_send').click(function(event) {
                 event.preventDefault();
-                data.chat.send(`/pub/chat/message`, chatHeaders, {
+                data.chat?.send(`/pub/chat/message`, chatHeaders, {
                     type: 'MSG_TALK',
                     room_id: roomId,
                     message: $(this).prev().val(),
@@ -205,6 +222,13 @@ const ConnectContent = () => {
                     $(this).next().click();
                     return false;
                 }
+            });
+
+            // 메시지 삭제
+            $('.chat').on('click', '.message-delete', async function(event) {
+                event.preventDefault();
+                const id = $(this).data('id');
+                await data.message.deleteMessage(id);
             });
         });
     }, []);
@@ -240,10 +264,13 @@ const ConnectContent = () => {
                 $buttons.find('button:last-child').show();
                 break;
         }
+        dispatch({ type: 'setViewType', data: layer });
     };
 
     const getTargetFromClass = (classes) => {
         return String(classes)
+            .replace('react-draggable', '')
+            .replace('react-draggable-dragged', '')
             .replace('layer-close', '')
             .replace('section', '')
             .replace('inner', '')

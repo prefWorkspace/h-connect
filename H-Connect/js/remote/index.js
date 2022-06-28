@@ -43,7 +43,13 @@ const App = () => {
 
         // 채팅
         const message = new MessageDelegate();
-        await message.login(user.id, '1234');
+        const token = await api.post('/API/Message/CreateToken', {
+            requester: user.userCode,
+            userId: user.id,
+            userName: user.name,
+            organizationCode: user.organizationCode
+        });
+        message.login(token.messageStruct);
         const chatHeaders = {
             'Content-Type': 'application/json;charset=utf-8',
             Authorization: `${message.grantType} ${message.accessToken}`
@@ -63,7 +69,8 @@ const App = () => {
                 condition: consult?.list[0].caseInfoList[0]?.patientCondition,
                 gender: consult?.list[0].caseInfoList[0]?.patientGender,
                 ward: consult?.list[0].caseInfoList[0]?.patientWard,
-                wardRoom: consult?.list[0].caseInfoList[0]?.patientWardRoom
+                wardRoom: consult?.list[0].caseInfoList[0]?.patientWardRoom,
+                measurementCode: consult?.list[0].caseInfoList[0]?.measurementCode
             }
         });
 
