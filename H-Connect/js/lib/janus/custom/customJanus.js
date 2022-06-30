@@ -100,7 +100,7 @@ class CustomJanus {
                                     success: (pluginHandle) => {
                                         this.sfuTest = pluginHandle;
                                         Janus.log('Plugin attached! (' + this.sfuTest.getPlugin() + ', id=' + this.sfuTest.getId() + ')');
-                                        Janus.log('  -- This is a publisher/manager');
+                                        Janus.log('  -- This is a publisher/manager', this.username);
                                         this.registerUsername(this.username);
                                     },
                                     error: function(error) {

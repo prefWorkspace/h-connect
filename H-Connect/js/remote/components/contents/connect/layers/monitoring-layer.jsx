@@ -42,7 +42,6 @@ const MonitoringLayer = () => {
 
     React.useEffect(() => {
         if (data.viewType !== 'default') {
-            console.log(nodeRef.current.style.transform);
             if (data.transforms.monitoring === 'translate(0px, 0px)') {
                 dispatch({
                     type: 'setMonitoringTransform',
@@ -51,7 +50,6 @@ const MonitoringLayer = () => {
             }
             nodeRef.current.style.transform = 'translate(0px, 0px)';
         } else {
-            console.log(data.transforms);
             nodeRef.current.style.transform = data.transforms.monitoring;
         }
 
