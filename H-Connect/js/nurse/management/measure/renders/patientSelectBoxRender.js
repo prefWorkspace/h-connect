@@ -42,9 +42,10 @@ export async function patientSelectBox() {
 export async function patientSelectBoxForNewMeasurement() {
     let html = '';
     const { result, patientInfo } = await selectHisPatientList();
+    console.log(patientInfo);
 
     if (!result || patientInfo === null || patientInfo.length === 0) {
-        html += errorText();
+        html += errorText({ textAlign: 'center' });
         $('.new_room_pop .select_name .name_option').html(html);
         return;
     }

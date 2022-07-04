@@ -77,9 +77,7 @@ export const serverController = {
             contentType: 'application/json;charset=UTF-8',
             success: function (data) {
                 if (data.error === 241) {
-                    session_renew(data);
-                    // history.linkTo('/index.html');
-                    return alert('세션이 만료되었습니다');
+                    history.linkTo('/');
                 }
                 if (callBack) callBack(data);
                 return data;

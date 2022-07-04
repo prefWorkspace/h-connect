@@ -4343,7 +4343,7 @@ textarea::-webkit-scrollbar-button {
     justify-content: space-between;
 }
 
-.pop.new_room_pop .cont p {
+.pop.new_room_pop .cont > p {
     margin-top: 12px;
     text-align: right;
     font-size: 12px;
@@ -5974,5 +5974,5 @@ textarea::-webkit-scrollbar-button {
 }
 
 .relative {
-    position:relative;
+    position: relative;
 }

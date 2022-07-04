@@ -3,6 +3,8 @@ const { CustomD3 } = await import(
 );
 export const eventSimpleDataListTmpl = async (_data) => {
     const { bioSignalEventId, eventDateTime, eventDetail } = _data || {};
+    console.log('_data===');
+    console.log(_data);
     return `
     <div class="table_wrap" data-eventid="${bioSignalEventId}">
       <div>
