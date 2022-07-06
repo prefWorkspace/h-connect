@@ -42,7 +42,6 @@ export async function patientSelectBox() {
 export async function patientSelectBoxForNewMeasurement() {
     let html = '';
     const { result, patientInfo } = await selectHisPatientList();
-    console.log(patientInfo);
 
     if (!result || patientInfo === null || patientInfo.length === 0) {
         html += errorText({ textAlign: 'center' });
@@ -56,5 +55,5 @@ export async function patientSelectBoxForNewMeasurement() {
     $('.new_room_pop .select_name .name_option').html(html);
 }
 
-await patientSelectBoxForNewMeasurement();
+// await patientSelectBoxForNewMeasurement();
 await patientSelectBox();

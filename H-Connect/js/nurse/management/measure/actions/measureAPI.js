@@ -319,14 +319,18 @@ export async function selectHisPatientList(patientName = null) {
 }
 
 // 신규 측정 등록 에서 환자 조회 API
-export async function selectSickRoomPatientList(patientName = null) {
+export async function selectSickRoomPatientList(
+    wardCode,
+    sickRoomCode,
+    sickBedCode
+) {
     const obj = {
         requester,
         organizationCode,
         ...commonRequest(),
-        wardCode: null,
-        sickRoomCode: null,
-        sickBedCode: null,
+        wardCode,
+        sickRoomCode,
+        sickBedCode,
     };
 
     return serverController.ajaxAwaitController(
@@ -341,7 +345,3 @@ export async function selectSickRoomPatientList(patientName = null) {
         (err) => console.log(err)
     );
 }
-
-const aaa = await selectSickRoomPatientList();
-console.log('aaa===');
-console.log(aaa);

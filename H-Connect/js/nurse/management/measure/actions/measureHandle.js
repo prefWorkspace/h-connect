@@ -5,6 +5,7 @@ const {
     updateMeasurement_deleteDeviceInfo,
     selectDeviceRegisterUnused,
     updateMeasurement_insertDevice,
+    selectSickRoomPatientList,
 } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/actions/measureAPI.js'
@@ -47,10 +48,14 @@ const { getMacaddress } = await import(
 );
 
 //병상 수정 디바이스 리스트
-const { modifiDeviceList } = await import(
+const { modifiDeviceList, patientHISList } = await import(
     importVersion(
         '/H-Connect/js/nurse/management/measure/templates/measurList.js'
     )
+);
+
+const { errorText } = await import(
+    importVersion('/H-Connect/js/common/text/validationText.js')
 );
 
 //측정 리스트 가져와서 렌더링
@@ -274,6 +279,7 @@ async function updateSickBed_insertDevice() {
     }
 }
 
+// 측정 환자 조회 화면에서 클릭시 데이터 바인딩
 async function measurementInfoRenders(_, _measurementCode) {
     const { measurementInfoSimpleList } = await selectMeasurementInfoList();
     $(this).addClass('on').siblings().removeClass('on');
@@ -493,6 +499,7 @@ export async function selecBoxWard() {
     );
 }
 
+// 신규 병상 등록 모달창에서 조회된 환자 클릭시 이벤트
 async function patientSelectClickHandle() {
     const parent = $(this).parent().parent().parent().parent();
 
@@ -510,13 +517,19 @@ async function patientSelectClickHandle() {
     if (parent.attr('class') === 'cont') {
         const name = $(this).find('span:nth-of-type(1)').text();
         const birthday = $(this).find('span:nth-of-type(2)').text();
+        const fullBirthday = $(this)
+            .find('span:nth-of-type(2)')
+            .data('birthday');
         const gender = $(this).find('span:nth-of-type(3)').text();
         const patientCode = $(this).find('span:nth-of-type(4)').text();
 
         $(this).parent().parent().find('.name_label').text(name);
-        $(parent).find('.patient_info .patient_age').val(birthday);
-        $(parent).find('.patient_info .patient_gender').val(gender);
-        $(parent).find('.patient_info .patient_mrn').val(patientCode);
+        $(parent).find('.patient_info #birthday').val(birthday);
+        $(parent)
+            .find('.patient_info #birthday')
+            .attr('data-birthday', fullBirthday);
+        $(parent).find('.patient_info #gender').val(gender);
+        $(parent).find('.patient_info #patient_MRN').val(patientCode);
     }
 
     // select 박스 닫기
@@ -530,6 +543,49 @@ $('.pop.delete_device .btn_list .btn_cut').on('click', deleteDevicePop);
 $('.pop.regi_device .btn_list .btn_check').on(
     'click',
     updateSickBed_insertDevice
+);
+
+// 신규 병상 모달창에서 환자 조회 클릭
+$('.pop.new_room_pop .new_room .select_name .label').on(
+    'click',
+    async function () {
+        const wardCode = $('.new_room_pop #ward_code').data('wardcode');
+        const sickRoomCode = $('.new_room_pop #sickroom_code').data(
+            'sickroomcode'
+        );
+        const sickBedCode = $('.new_room_pop #sickbed_code').data(
+            'sickbedcode'
+        );
+
+        if (!wardCode || !sickRoomCode) {
+            alert('병동 병실을 선택 해주세요.');
+            return;
+        }
+
+        const { result, sickRoomPatientList } = await selectSickRoomPatientList(
+            wardCode,
+            sickRoomCode,
+            sickBedCode
+        );
+
+        let html = '';
+        if (
+            !result ||
+            sickRoomPatientList === null ||
+            sickRoomPatientList.length === 0
+        ) {
+            html += errorText({ textAlign: 'center' });
+            $('.new_room_pop .select_name .name_option').html(html);
+            return;
+        }
+
+        for (let i = 0; i < sickRoomPatientList.length; i++) {
+            html += patientHISList(sickRoomPatientList[i]);
+        }
+
+        $('.new_room_pop .select_name .name_option').html(html);
+        $(this).parent().toggleClass('active');
+    }
 );
 
 //함수실행=====================

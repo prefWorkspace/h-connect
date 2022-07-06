@@ -250,7 +250,9 @@ export async function newMeasurement() {
     const name = $(
         '.pop.new_room_pop .new_room .selectBox2 .name_label'
     ).text();
-    const birthday = +$('.pop.new_room_pop .new_room #birthday').val();
+    const birthday = $('.pop.new_room_pop .new_room #birthday').attr(
+        'data-birthday'
+    );
     const gender =
         $('.pop.new_room_pop .new_room .patient_info .gender')
             .text()
@@ -274,7 +276,7 @@ export async function newMeasurement() {
         alert('환자를 선택해주세요.');
         return;
     }
-    if (birthday === 0) {
+    if (!birthday) {
         alert('생년월일을 입력해주세요.');
         return;
     }
@@ -306,7 +308,7 @@ export async function newMeasurement() {
         patientCode,
         name,
         gender,
-        birthday: birthday + '-01-01',
+        birthday,
         deviceInfoList,
         patientStatus: 3,
         ssn: null, //주민등록번호
