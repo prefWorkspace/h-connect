@@ -47,3 +47,4 @@ export function pacsListContentTemplates(_data) {
         </div>
     `;
 }
+
