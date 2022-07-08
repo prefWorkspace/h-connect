@@ -44,7 +44,7 @@ export async function patientSelectBoxForNewMeasurement() {
     const { result, patientInfo } = await selectHisPatientList();
 
     if (!result || patientInfo === null || patientInfo.length === 0) {
-        html += errorText();
+        html += errorText({ textAlign: 'center' });
         $('.new_room_pop .select_name .name_option').html(html);
         return;
     }
@@ -55,5 +55,5 @@ export async function patientSelectBoxForNewMeasurement() {
     $('.new_room_pop .select_name .name_option').html(html);
 }
 
-await patientSelectBoxForNewMeasurement();
+// await patientSelectBoxForNewMeasurement();
 await patientSelectBox();

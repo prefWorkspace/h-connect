@@ -43,22 +43,15 @@ export function sickBedListItem(item) {
 }
 
 export function patientHISList(_data) {
-    const {
-        patientNo,
-        bedNo,
-        gender,
-        patientName,
-        roomName,
-        wardName,
-        birthday,
-    } = _data;
+    const { patientCode, wardCode, sickroomCode, gender, name, birthday } =
+        _data;
 
     return `
-        <li data-bedname="${bedNo}" data-wardname="${wardName}" data-roomname="${roomName}" class="optionItem name_list">
-            <span>${patientName}</span>
-            <span>${birthday.slice(0, 4)}</span>
-            <span>${gender === 'M' ? '남' : '여'}</span>
-            <span>${patientNo}</span>
+        <li data-wardcode="${wardCode}" data-sickroomcode="${sickroomCode}" class="optionItem name_list">
+            <span>${name}</span>
+            <span data-birthday="${birthday}">${birthday.slice(0, 4)}</span>
+            <span>${gender === 1 ? '남' : '여'}</span>
+            <span>${patientCode}</span>
         </li>
     `;
 }

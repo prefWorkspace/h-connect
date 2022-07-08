@@ -62,6 +62,7 @@ export const updateSickBedDisplayCode = async (sickBedDisplayCodeList) => {
         ...commonRequest(),
         sickBedDisplayCodeList,
     });
+
     return await serverController.ajaxAwaitController(
         'API/Manager/UpdateSickBedDisplayCode',
         'POST',

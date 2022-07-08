@@ -98,6 +98,7 @@ async function Login_Fetch() {
         return;
     }
 
+    saved_Id();
     const loginResult = await loginHisAPI(id_Input, pw_Input);
 
     if (loginResult.result) {

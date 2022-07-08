@@ -1,4 +1,8 @@
-const { selectMeasurementInfoDetail, selectHisPatientList } = await import(
+const {
+    selectMeasurementInfoDetail,
+    selectHisPatientList,
+    selectSickRoomPatientList,
+} = await import(
     importVersion('/H-Connect/js/nurse/monitoring/actions/monitoringAPI.js')
 );
 
@@ -137,26 +141,71 @@ function onClickNewSickBedCancleBtn() {
 function newRoomPopDataBinding() {
     const patientName = $(this).find('span:nth-of-type(1)').text();
     const patientBirthYear = $(this).find('span:nth-of-type(2)').text();
+    const birthday = $(this).find('span:nth-of-type(2)').data('birthday');
     const patientGender = $(this).find('span:nth-of-type(3)').text();
     const patientCode = $(this).find('span:nth-of-type(4)').text();
-    const wardName = $(this).data('wardname');
-    const sickRoomName = $(this).data('roomname');
-    const sickBedName = $(this).data('bedname');
+    // const wardName = $(this).data('wardname');
+    // const sickRoomName = $(this).data('roomname');
+    // const sickBedName = $(this).data('bedname');
 
     $('.pop.new_room_pop #patient_name').text(patientName);
     $('.pop.new_room_pop #patient_birthday').val(patientBirthYear);
+    $('.pop.new_room_pop #patient_birthday').attr('data-birthday', birthday);
     $('.pop.new_room_pop #patient_gender').val(patientGender);
     $('.pop.new_room_pop #patient_MRN').val(patientCode);
-    $('.pop.new_room_pop #ward_code').text(wardName);
-    $('.pop.new_room_pop #sickroom_code').text(sickRoomName + '호실');
-    $('.pop.new_room_pop #sickbed_code').text(sickBedName + '번 병상');
+    // $('.pop.new_room_pop #ward_code').text(wardName);
+    // $('.pop.new_room_pop #sickroom_code').text(sickRoomName + '호실');
+    // $('.pop.new_room_pop #sickbed_code').text(sickBedName + '번 병상');
 
     $(this).parent().parent().removeClass('active');
     $('.pop.new_room_pop #spare_Bed').text(1);
 }
 
+// 신규 병상 모달창에서 환자 조회 클릭
+$('.pop.new_room_pop .new_room .select_name .label').on(
+    'click',
+    async function () {
+        const wardCode = $('.new_room_pop #ward_code').data('wardcode');
+        const sickRoomCode = $('.new_room_pop #sickroom_code').data(
+            'sickroomcode'
+        );
+        const sickBedCode = $('.new_room_pop #sickbed_code').data(
+            'sickbedcode'
+        );
+
+        if (!wardCode || !sickRoomCode) {
+            alert('병동 병실을 선택 해주세요.');
+            return;
+        }
+
+        const { result, sickRoomPatientList } = await selectSickRoomPatientList(
+            wardCode,
+            sickRoomCode,
+            sickBedCode
+        );
+
+        let html = '';
+        if (
+            !result ||
+            sickRoomPatientList === null ||
+            sickRoomPatientList.length === 0
+        ) {
+            html += errorText({ textAlign: 'center' });
+            $('.new_room_pop .select_name .name_option').html(html);
+            return;
+        }
+
+        for (let i = 0; i < sickRoomPatientList.length; i++) {
+            html += patientHISList(sickRoomPatientList[i]);
+        }
+
+        $('.new_room_pop .select_name .name_option').html(html);
+        $(this).parent().toggleClass('active');
+    }
+);
+
 addMonitoringEmptyBedClickEvent();
-await patientRenderForNewSickBedPop();
+// await patientRenderForNewSickBedPop();
 // $('.pop.new_regi_pop .overlay').css('display', 'block');
 $('body').on(
     'click',

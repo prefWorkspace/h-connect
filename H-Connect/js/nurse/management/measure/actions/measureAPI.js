@@ -317,3 +317,31 @@ export async function selectHisPatientList(patientName = null) {
         (err) => console.log(err)
     );
 }
+
+// 신규 측정 등록 에서 환자 조회 API
+export async function selectSickRoomPatientList(
+    wardCode,
+    sickRoomCode,
+    sickBedCode
+) {
+    const obj = {
+        requester,
+        organizationCode,
+        ...commonRequest(),
+        wardCode,
+        sickRoomCode,
+        sickBedCode,
+    };
+
+    return serverController.ajaxAwaitController(
+        'API/Measurement/SelectSickRoomPatientList',
+        'POST',
+        JSON.stringify(obj),
+        (res) => {
+            if (res.result) {
+            } else {
+            }
+        },
+        (err) => console.log(err)
+    );
+}

@@ -43,7 +43,7 @@ export async function insertDisplay(displayNumber, displayName = '') {
     );
 }
 
-export async function selectDisplay(pageNumber, count){
+export async function selectDisplay(pageNumber, count) {
     const req = JSON.stringify({
         requester,
         organization,
@@ -63,9 +63,9 @@ export async function selectDisplay(pageNumber, count){
             }
         }
     );
-};
+}
 
-export async function selectDisplaycodeList(pageNumber, count){
+export async function selectDisplaycodeList(pageNumber, count) {
     const req = JSON.stringify({
         requester,
         organization,
@@ -81,14 +81,16 @@ export async function selectDisplaycodeList(pageNumber, count){
         req,
         (res) => {
             if (res.result) {
-                res.displayInfoList.forEach(display => result.push(display.displayCode))
+                res.displayInfoList.forEach((display) =>
+                    result.push(display.displayCode)
+                );
             } else {
                 session_renew(res);
             }
         }
     );
     return result;
-};
+}
 
 export const selectDisplayDetail = async (displayCode) => {
     const req = JSON.stringify({
@@ -109,7 +111,8 @@ export const selectDisplayDetail = async (displayCode) => {
             }
         }
     );
-}
+};
+
 export const updateDisplayName = async (displayCode, displayName) => {
     const req = JSON.stringify({
         requester,
@@ -152,7 +155,7 @@ export const updateDisplayNumber = async (displayCode, displayNumber) => {
             }
         }
     );
-}
+};
 
 export const deleteDisplay = async (displayCode) => {
     const req = JSON.stringify({

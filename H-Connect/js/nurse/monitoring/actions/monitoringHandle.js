@@ -129,7 +129,9 @@ async function insertDevice() {
 //병상 추가
 async function insertSickBed() {
     const name = $('.pop.new_room_pop .new_room #patient_name').text();
-    const birthday = $('.pop.new_room_pop .new_room #patient_birthday').val();
+    const birthday = $('.pop.new_room_pop .new_room #patient_birthday').attr(
+        'data-birthday'
+    );
     const gender =
         $('.pop.new_room_pop .new_room .patient_info .sex_label')
             .text()
@@ -142,6 +144,35 @@ async function insertSickBed() {
     const sickRoomCode = $('#sickroom_code').data('sickroomcode');
     const sickBedCode = $('#sickbed_code').data('sickbedcode');
 
+    // validation
+    if (
+        name.replaceAll(' ', '').replaceAll('\n', '') === '환자를선택해주세요.'
+    ) {
+        alert('환자를 선택해주세요.');
+        return;
+    }
+    if (!birthday) {
+        alert('생년월일을 입력해주세요.');
+        return;
+    }
+    if (patientCode === '') {
+        alert('MRN code를 입력해주세요.');
+        return;
+    }
+
+    if (!wardCode) {
+        alert('병동을 선택해주세요');
+        return;
+    }
+    if (!sickRoomCode) {
+        alert('병실을 선택해주세요');
+        return;
+    }
+    if (!sickBedCode) {
+        alert('병상을 선택해주세요');
+        return;
+    }
+
     const codeObj = {
         wardCode,
         sickRoomCode,
@@ -152,7 +183,7 @@ async function insertSickBed() {
         patientCode,
         name,
         gender,
-        birthday: birthday + '-01-01',
+        birthday,
         deviceInfoList,
         patientStatus: 3,
         ssn: null, //주민등록번호
