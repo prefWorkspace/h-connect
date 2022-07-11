@@ -36,6 +36,8 @@ const headers = {
     requestDateTime: `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
 };
 
+const loadedMessages = [];
+
 //모든 측정 데이터 리스트 select API
 export async function selectMeasurementInfoList(
     wardCode = null,
@@ -119,7 +121,10 @@ $(async function() {
             let roomHtml = await Promise.all(roomList?.roomList.map(async room => await getRoomHtml(room)));
             html = roomHtml.join('');
 
-            roomList?.roomList.map(room => subscribeChatRoom(room.room_id));
+            roomList?.roomList.map(async room => {
+                subscribeChatRoom(room.room_id);
+                loadedMessages.push((await message.getMessageListFromRoom(room.room_id))?.messageList);
+            });
         } else {
             html = '<div class="no_talk">메세지 함이 비어있습니다.</div>';
         }
@@ -186,8 +191,10 @@ $(async function() {
     }).keydown(function(event) {
         if (event.ctrlKey && event.keyCode === 13) {
             $(this).val($(this).val() + '\n');
-        } else if (!event.ctrlKey && event.keyCode === 13) {
+        }
+        if (!event.ctrlKey && event.keyCode === 13) {
             $('.chat_window .btn_send').click();
+            event.preventDefault();
             return false;
         }
     });
@@ -228,6 +235,32 @@ $(async function() {
         });
         $target.find('.list:last-child').eq(0).click();
     });
+
+    $('.search_container > input:text').keyup(function(event) {
+        const keyword = $(this).val().trim();
+        const filteredMessages = loadedMessages.filter(room => {
+            const filteredRoom = room.filter(message => {
+                return String(message?.message).includes(keyword) ||
+                    String(message?.user_info?.user_id).includes(keyword) ||
+                    String(message?.user_info?.user_nickname).includes(keyword);
+            });
+
+            return filteredRoom.length > 0;
+        });
+
+        const filteredRooms = filteredMessages.map(room => room[0].room_id);
+        const $rooms = $('.message > .list');
+        $rooms.hide();
+        filteredRooms.map(roomId => {
+            $rooms.each(function() {
+                if ($(this).data('id') === roomId) {
+                    $(this).show();
+                }
+            });
+        });
+    });
+
+    $('.search_container').removeClass('not_find');
 });
 
 const subscribeChatRoom = (roomId) => {
