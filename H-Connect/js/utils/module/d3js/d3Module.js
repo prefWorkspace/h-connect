@@ -1,4 +1,6 @@
 export class CreateVitalLineD3 {
+    isDone = true;
+
     constructor({ target, data, measurementCode, setting }) {
         this.setting = setting;
         this.init({
@@ -145,6 +147,9 @@ export class CreateVitalLineD3 {
         const _id = _currentId;
         const currentPath = this.pathSelector(_currentId);
         const pathLength = currentPath.node().getTotalLength();
+
+        alert(pathLength);
+
         const transitionPath = d3
             .transition()
             .ease(d3.easeSin)
@@ -163,15 +168,15 @@ export class CreateVitalLineD3 {
         const transitionPath = d3
             .transition()
             .ease(d3.easeSin)
-            .duration(this.setting.duration);
+            .duration(this.setting.duration)
+            .each('end', () => {
+                this.elements.chart[_id].attr('stroke-dashoffset', pathLength);
+            });
 
         this.elements.chart[_currentId]
             .attr('stroke-dashoffset', pathLength)
             .transition(transitionPath)
-            .attr('stroke-dashoffset', -pathLength)
-            .on('end', () => {
-                this.elements.chart[_id].attr('stroke-dashoffset', pathLength);
-            });
+            .attr('stroke-dashoffset', -pathLength);
     }
 
     /* e: function */

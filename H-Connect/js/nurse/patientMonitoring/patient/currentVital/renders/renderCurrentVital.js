@@ -1,22 +1,26 @@
 const { CreateVitalLineD3 } = await import(
     importVersion('/H-Connect/js/utils/module/d3js/d3Module.js')
-);
+    );
 const { serverController } = await import(
     importVersion('/H-Connect/js/utils/controller/serverController.js')
-);
+    );
 const { sessionController } = await import(
     importVersion('/H-Connect/js/utils/controller/sessionController.js')
-);
+    );
 const { localStorageController } = await import(
     importVersion('/H-Connect/js/utils/controller/localStorageController.js')
-);
+    );
 const { CustomSocket } = await import(
     importVersion('/H-Connect/js/lib/socket/custom/customSocket.js')
-);
+    );
 
 const { toFixedFloat } = await import(
     importVersion('/H-Connect/js/utils/common/utils.js')
-);
+    );
+
+const { D3VitalLine } = await import(
+    importVersion('/H-Connect/js/utils/module/d3js/d3VitalLine.js')
+    );
 
 const LOGIN_TOKEN = sessionController.getSession('accesToken');
 const USER_CODE = localStorageController.getLocalS('userCode');
@@ -27,54 +31,70 @@ const headers = {
     'SX-Auth-Token': LOGIN_TOKEN,
     deviceKind: 3,
     apiRoute: 'GWS-1',
-    requester: USER_CODE,
+    requester: USER_CODE
 };
 
 let ecgLine = null;
 let spO2Line = null;
 let respLine = null;
+let lineProgress = {
+    esg: false,
+    spO2: false,
+    resp: false
+};
 const client = new CustomSocket();
-client.connect(headers, function () {
+client.connect(headers, function() {
     client.addSubscribe(
         'bioSignalData',
         `/topic/public/bioSignalData/${measurementCode}`,
-        function (res) {
+        function(res) {
             if (res) {
                 const data = JSON.parse(res.body);
                 const { measurementCode, bioSignalData } = data || {};
-                const { ecgDataList, spO2DataList, respDataList } =
-                    bioSignalData;
-
-                // console.log(data);
+                // const { ecgDataList, spO2DataList, respDataList } =
+                //     bioSignalData;
+                const ecgDataList = bioSignalData?.ecgDataList;
+                const spO2DataList = bioSignalData?.spO2DataList;
+                const respDataList = bioSignalData?.respDataList;
 
                 setUpdateTime(data.dateTime);
-                ecgLine = chartCreateOrUpdate(
-                    ecgLine,
-                    'vital-ecg-graph',
-                    ecgDataList,
-                    measurementCode,
-                    '#00FF19'
-                );
-                spO2Line = chartCreateOrUpdate(
-                    spO2Line,
-                    'vital-spO2-graph',
-                    spO2DataList,
-                    measurementCode,
-                    '#00FFFF'
-                );
-                respLine = chartCreateOrUpdate(
-                    respLine,
-                    'vital-resp-graph',
-                    respDataList,
-                    measurementCode,
-                    '#EEFF00'
-                );
 
-                setVitalData('.ecg > .bell', bioSignalData.heartRateDataList);
-                setVitalData('.sp > .bell', bioSignalData.spO2DataList);
-                setVitalData('.resp > .bell', bioSignalData.respDataList);
-                setVitalData('.control > .temp', bioSignalData.tempDataList);
-                setVitalData('.control > .ews', bioSignalData.ewsDataList);
+                lineProgress.esg = ecgLine?.inProgress;
+                if (!lineProgress.esg) {
+                    ecgLine = chartCreateOrUpdate(
+                        ecgLine,
+                        'vital-ecg-graph',
+                        ecgDataList,
+                        measurementCode,
+                        '#00FF19'
+                    );
+                }
+                lineProgress.spO2 = spO2Line?.inProgress;
+                if (!lineProgress.spO2) {
+                    spO2Line = chartCreateOrUpdate(
+                        spO2Line,
+                        'vital-spO2-graph',
+                        spO2DataList,
+                        measurementCode,
+                        '#00FFFF'
+                    );
+                }
+                lineProgress.resp = respLine?.inProgress;
+                if (!lineProgress.resp) {
+                    respLine = chartCreateOrUpdate(
+                        respLine,
+                        'vital-resp-graph',
+                        respDataList,
+                        measurementCode,
+                        '#EEFF00'
+                    );
+                }
+
+                setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
+                setVitalData('.sp > .bell', bioSignalData?.spO2DataList);
+                setVitalData('.resp > .bell', bioSignalData?.respDataList);
+                setVitalData('.control > .temp', bioSignalData?.tempDataList);
+                setVitalData('.control > .ews', bioSignalData?.ewsDataList);
             }
         }
     );
@@ -125,20 +145,21 @@ const setVitalData = (target, data) => {
 const chartCreateOrUpdate = (chart, target, data, measurementCode, color) => {
     if (data) {
         if (chart) {
-            chart.chartUpdate(data);
+            chart.update(data);
         } else {
-            chart = new CreateVitalLineD3({
+            chart = new D3VitalLine({
                 target,
                 data,
-                measurementCode: measurementCode,
+                measurementCode,
                 setting: {
                     strokeColor: color,
                     strokeWidth: 1,
-                    duration: 3000,
-                },
+                    duration: 10000
+                }
             });
         }
     }
 
     return chart;
 };
+
