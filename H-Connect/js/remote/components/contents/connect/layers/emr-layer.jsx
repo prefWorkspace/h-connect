@@ -6,7 +6,6 @@ const EMRLayer = () => {
 
     React.useEffect(() => {
         if (data.viewType !== 'default') {
-            console.log(nodeRef.current.style.transform);
             if (data.transforms.emr === 'translate(0px, 0px)') {
                 dispatch({
                     type: 'setEMRTransform',

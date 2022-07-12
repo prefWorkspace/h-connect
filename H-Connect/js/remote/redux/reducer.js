@@ -1,5 +1,6 @@
 const reducer = (state, action) => {
     if (state === undefined) return {
+        complete: false,
         viewType: 'default',
         transforms: {
             monitoring: 'translate(0px, 0px)',
@@ -28,10 +29,20 @@ const reducer = (state, action) => {
         attendee: [],
         socket: null,
         chat: null,
-        message: null
+        message: null,
+        headers: {
+            socket: null,
+            chat: null
+        }
     };
 
     switch (action.type) {
+        case 'setComplete':
+            state = { ...state, complete: action.data };
+            break;
+        case 'setState':
+            state = { ...action.data, socket: state.socket, chat: state.chat, message: state.message };
+            break;
         case 'setViewType':
             state = { ...state, viewType: action.data };
             break;
@@ -95,9 +106,17 @@ const reducer = (state, action) => {
         case 'setMessage':
             state = { ...state, message: action.data };
             break;
+        case 'setSocketHeaders':
+            state = { ...state, headers: { ...state.headers, socket: action.data } };
+            break;
+        case 'setChatHeaders':
+            state = { ...state, headers: { ...state.headers, chat: action.data } };
+            break;
         default:
             break;
     }
+
+    localStorage.setItem('state', JSON.stringify(state));
 
     return state;
 };

@@ -32,6 +32,12 @@ const CaseItem = ({ number, data }) => {
         dispatch({ type: 'setRoomId', data: data?.vRoomId });
         dispatch({ type: 'setChatId', data: data?.messageRoomId });
         dispatch({ type: 'setCurrentCase', data: data });
+        localStorage.setItem('state', JSON.stringify({
+            roomId: data?.vRoomId,
+            chatId: data?.messageRoomId,
+            currentCase: data
+        }));
+
         navigate('/connect');
     };
 

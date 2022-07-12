@@ -6,7 +6,7 @@ let ecgLineTabular = null;
 let ecgLineGraphic = null;
 let ecgLineEvent = null;
 
-const MonitoringLayer = () => {
+const MonitoringLayer = ({ socket }) => {
 
     const data = ReactRedux.useSelector(state => state);
     const dispatch = ReactRedux.useDispatch();
@@ -127,16 +127,16 @@ const MonitoringLayer = () => {
                         </ul>
 
                         {/* current vital */}
-                        <Vital />
+                        <Vital socket={socket} />
 
                         {/* Tabular Trend */}
-                        <TabularTrend />
+                        <TabularTrend socket={socket} />
 
                         {/* Graphical Trend */}
-                        <GraphicTrend />
+                        <GraphicTrend socket={socket} />
 
                         {/* Event */}
-                        <Event />
+                        <Event socket={socket} />
 
                     </div>
                 </div>
@@ -145,59 +145,61 @@ const MonitoringLayer = () => {
     );
 };
 
-const Vital = () => {
+const Vital = ({ socket }) => {
     const api = new ApiDelegate();
     const data = ReactRedux.useSelector(state => state);
 
-    React.useEffect(() => {
-        if (data.patient.measurementCode) {
-            data.socket.addSubscribe(
-                'bioSignalData',
-                `/topic/public/bioSignalData/${data.patient.measurementCode}`,
-                function(res) {
-                    if (res) {
-                        const bio = JSON.parse(res.body);
-                        const { measurementCode, bioSignalData } = bio || {};
-                        const { ecgDataList, spO2DataList, respDataList } =
-                        bioSignalData || {
-                            ecgDataList: null,
-                            spO2DataList: null,
-                            respDataList: null
-                        };
+    React.useEffect(async () => {
+        if (data.patient.measurementCode && socket) {
+            if (socket?.client.connected) {
+                socket.addSubscribe(
+                    'bioSignalData',
+                    `/topic/public/bioSignalData/${data.patient.measurementCode}`,
+                    function(res) {
+                        if (res) {
+                            const bio = JSON.parse(res.body);
+                            const { measurementCode, bioSignalData } = bio || {};
+                            const { ecgDataList, spO2DataList, respDataList } =
+                            bioSignalData || {
+                                ecgDataList: null,
+                                spO2DataList: null,
+                                respDataList: null
+                            };
 
-                        setUpdateTime(bio.dateTime);
-                        ecgLine = chartCreateOrUpdate(
-                            ecgLine,
-                            'vital-ecg-graph',
-                            ecgDataList,
-                            measurementCode,
-                            '#00FF19'
-                        );
-                        spO2Line = chartCreateOrUpdate(
-                            spO2Line,
-                            'vital-spO2-graph',
-                            spO2DataList,
-                            measurementCode,
-                            '#00FFFF'
-                        );
-                        respLine = chartCreateOrUpdate(
-                            respLine,
-                            'vital-resp-graph',
-                            respDataList,
-                            measurementCode,
-                            '#EEFF00'
-                        );
+                            setUpdateTime(bio.dateTime);
+                            ecgLine = chartCreateOrUpdate(
+                                ecgLine,
+                                'vital-ecg-graph',
+                                ecgDataList,
+                                measurementCode,
+                                '#00FF19'
+                            );
+                            spO2Line = chartCreateOrUpdate(
+                                spO2Line,
+                                'vital-spO2-graph',
+                                spO2DataList,
+                                measurementCode,
+                                '#00FFFF'
+                            );
+                            respLine = chartCreateOrUpdate(
+                                respLine,
+                                'vital-resp-graph',
+                                respDataList,
+                                measurementCode,
+                                '#EEFF00'
+                            );
 
-                        setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
-                        setVitalData('.sp > .bell', bioSignalData?.spO2DataList);
-                        setVitalData('.resp > .bell', bioSignalData?.respDataList);
-                        setVitalData('.control > .temp', bioSignalData?.tempDataList);
-                        setVitalData('.control > .ews', bioSignalData?.ewsDataList);
+                            setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
+                            setVitalData('.sp > .bell', bioSignalData?.spO2DataList);
+                            setVitalData('.resp > .bell', bioSignalData?.respDataList);
+                            setVitalData('.control > .temp', bioSignalData?.tempDataList);
+                            setVitalData('.control > .ews', bioSignalData?.ewsDataList);
+                        }
                     }
-                }
-            );
+                );
+            }
         }
-    }, [data.patient.measurementCode]);
+    }, [data.patient.measurementCode, socket?.client.connected]);
 
     return (
         <div id='tab-1' className='tab-content current'>
@@ -449,7 +451,7 @@ const Vital = () => {
     );
 };
 
-const TabularTrend = () => {
+const TabularTrend = ({ socket }) => {
     const api = new ApiDelegate();
     const data = ReactRedux.useSelector(state => state);
     const [tabular, setTabular] = React.useState([]);
@@ -459,37 +461,39 @@ const TabularTrend = () => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const [pageCount, setPageCount] = React.useState(0);
 
-    React.useEffect(() => {
-        if (data.patient.measurementCode) {
-            data.socket.addSubscribe(
-                'bioSignalDataTabular',
-                `/topic/public/bioSignalData/${data.patient.measurementCode}`,
-                function(res) {
-                    if (res) {
-                        const bio = JSON.parse(res.body);
-                        const { measurementCode, bioSignalData } = bio || {};
-                        const { ecgDataList, spO2DataList, respDataList } =
-                        bioSignalData || {
-                            ecgDataList: null,
-                            spO2DataList: null,
-                            respDataList: null
-                        };
+    React.useEffect(async () => {
+        if (data.patient.measurementCode && socket) {
+            if (socket?.client.connected) {
+                socket.addSubscribe(
+                    'bioSignalDataTabular',
+                    `/topic/public/bioSignalData/${data.patient.measurementCode}`,
+                    function(res) {
+                        if (res) {
+                            const bio = JSON.parse(res.body);
+                            const { measurementCode, bioSignalData } = bio || {};
+                            const { ecgDataList, spO2DataList, respDataList } =
+                            bioSignalData || {
+                                ecgDataList: null,
+                                spO2DataList: null,
+                                respDataList: null
+                            };
 
-                        setUpdateTime(bio.dateTime);
-                        ecgLineTabular = chartCreateOrUpdate(
-                            ecgLineTabular,
-                            'tabular-ecg-graph',
-                            ecgDataList,
-                            measurementCode,
-                            '#00FF19'
-                        );
+                            setUpdateTime(bio.dateTime);
+                            ecgLineTabular = chartCreateOrUpdate(
+                                ecgLineTabular,
+                                'tabular-ecg-graph',
+                                ecgDataList,
+                                measurementCode,
+                                '#00FF19'
+                            );
 
-                        setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
+                            setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
+                        }
                     }
-                }
-            );
+                );
+            }
         }
-    }, [data.patient.measurementCode]);
+    }, [data.patient.measurementCode, socket?.client.connected]);
 
     React.useEffect(() => {
         setPageCount(Math.ceil(itemLength / itemsPerPage));
@@ -623,12 +627,12 @@ const TabularItem = ({ tabular }) => {
     );
 };
 
-const GraphicTrend = () => {
+const GraphicTrend = ({ socket }) => {
     const api = new ApiDelegate();
     const data = ReactRedux.useSelector(state => state);
 
     React.useEffect(async () => {
-        if (data.patient.measurementCode) {
+        if (data.patient.measurementCode && socket) {
             const params = {
                 ...commonRequest(),
                 measurementCode: data.patient.measurementCode,
@@ -639,35 +643,37 @@ const GraphicTrend = () => {
 
             const trends = await api.post('/API/BioSignal/SelectBioSignalsGraphicalTrendDataList', params);
 
-            data.socket.addSubscribe(
-                'bioSignalDataGraphic',
-                `/topic/public/bioSignalData/${data.patient.measurementCode}`,
-                function(res) {
-                    if (res) {
-                        const bio = JSON.parse(res.body);
-                        const { measurementCode, bioSignalData } = bio || {};
-                        const { ecgDataList, spO2DataList, respDataList } =
-                        bioSignalData || {
-                            ecgDataList: null,
-                            spO2DataList: null,
-                            respDataList: null
-                        };
+            if (socket?.client.connected) {
+                socket.addSubscribe(
+                    'bioSignalDataGraphic',
+                    `/topic/public/bioSignalData/${data.patient.measurementCode}`,
+                    function(res) {
+                        if (res) {
+                            const bio = JSON.parse(res.body);
+                            const { measurementCode, bioSignalData } = bio || {};
+                            const { ecgDataList, spO2DataList, respDataList } =
+                            bioSignalData || {
+                                ecgDataList: null,
+                                spO2DataList: null,
+                                respDataList: null
+                            };
 
-                        setUpdateTime(bio.dateTime);
-                        ecgLineGraphic = chartCreateOrUpdate(
-                            ecgLineGraphic,
-                            'graphic-ecg-graph',
-                            ecgDataList,
-                            measurementCode,
-                            '#00FF19'
-                        );
+                            setUpdateTime(bio.dateTime);
+                            ecgLineGraphic = chartCreateOrUpdate(
+                                ecgLineGraphic,
+                                'graphic-ecg-graph',
+                                ecgDataList,
+                                measurementCode,
+                                '#00FF19'
+                            );
 
-                        setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
+                            setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
+                        }
                     }
-                }
-            );
+                );
+            }
         }
-    }, [data.patient.measurementCode]);
+    }, [data.patient.measurementCode, socket?.client.connected]);
 
     return (
         <div id='tab-3' className='tab-content'>
@@ -977,7 +983,7 @@ const GraphicTrend = () => {
     );
 };
 
-const Event = () => {
+const Event = ({ socket }) => {
     const api = new ApiDelegate();
     const data = ReactRedux.useSelector(state => state);
     const [events, setEvents] = React.useState([]);
@@ -987,7 +993,7 @@ const Event = () => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const [pageCount, setPageCount] = React.useState(0);
 
-    React.useEffect(() => {
+    React.useEffect(async () => {
         $(function() {
             $('.table_body').on('click', '.table_wrap', async function(event) {
                 const eventId = $(this).data('eventId');
@@ -1030,38 +1036,41 @@ const Event = () => {
         setPageCount(Math.ceil(itemLength / itemsPerPage));
     }, [itemsPerPage, itemLength]);
 
-    React.useEffect(() => {
-        if (data.patient.measurementCode) {
-            data.socket.addSubscribe(
-                'bioSignalDataEvent',
-                `/topic/public/bioSignalData/${data.patient.measurementCode}`,
-                function(res) {
-                    if (res) {
-                        const bio = JSON.parse(res.body);
-                        const { measurementCode, bioSignalData } = bio || {};
-                        const { ecgDataList, spO2DataList, respDataList } =
-                        bioSignalData || {
-                            ecgDataList: null,
-                            spO2DataList: null,
-                            respDataList: null
-                        };
+    React.useEffect(async () => {
+        $(function() {
+            if (data.patient.measurementCode && socket) {
+                if (socket?.client.connected) {
+                    socket.addSubscribe(
+                        'bioSignalDataEvent',
+                        `/topic/public/bioSignalData/${data.patient.measurementCode}`,
+                        function(res) {
+                            if (res) {
+                                const bio = JSON.parse(res.body);
+                                const { measurementCode, bioSignalData } = bio || {};
+                                const { ecgDataList, spO2DataList, respDataList } =
+                                bioSignalData || {
+                                    ecgDataList: null,
+                                    spO2DataList: null,
+                                    respDataList: null
+                                };
 
-                        setUpdateTime(bio.dateTime);
-                        ecgLineEvent = chartCreateOrUpdate(
-                            ecgLineEvent,
-                            'event-ecg-graph',
-                            ecgDataList,
-                            measurementCode,
-                            '#00FF19'
-                        );
+                                setUpdateTime(bio.dateTime);
+                                ecgLineEvent = chartCreateOrUpdate(
+                                    ecgLineEvent,
+                                    'event-ecg-graph',
+                                    ecgDataList,
+                                    measurementCode,
+                                    '#00FF19'
+                                );
 
-                        setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
-                    }
+                                setVitalData('.ecg > .bell', bioSignalData?.heartRateDataList);
+                            }
+                        }
+                    );
                 }
-            );
-
-        }
-    }, [data.patient.measurementCode]);
+            }
+        });
+    }, [data.patient.measurementCode, socket?.client.connected]);
 
     React.useEffect(async () => {
         const params = {

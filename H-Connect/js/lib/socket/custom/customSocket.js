@@ -67,7 +67,7 @@ export class CustomSocket {
     addSubscribe(name, url, callback = () => {
     }, headers = {}) {
         if (this.client) {
-            this.subscribes[name] = this.client.subscribe(url, callback, headers);
+            this.subscribes[name] = this.client.subscribe(url, callback, { ...headers, id: name });
         }
     }
 
@@ -87,5 +87,13 @@ export class CustomSocket {
      */
     send(url, headers, data) {
         this.client.send(url, headers, JSON.stringify(data));
+    }
+
+    getConnected() {
+        return this.client.connected;
+    }
+
+    getReadyState() {
+        return this.client.ws.readyState;
     }
 }

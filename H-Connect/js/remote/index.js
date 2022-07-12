@@ -5,27 +5,36 @@ const Routes = ReactRouterDOM.Routes;
 const Route = ReactRouterDOM.Route;
 
 const App = () => {
+    const data = ReactRedux.useSelector(state => state);
     const loginToken = sessionStorage.getItem('accesToken');
     const user = JSON.parse(localStorage.getItem('userData'));
     const consultId = String(location.search).replace('?consultId=', '');
     const api = new ApiDelegate();
 
-    // 소켓
-    const headers = {
-        'SX-Auth-Token': loginToken,
-        deviceKind: 3,
-        apiRoute: 'GWS-1',
-        requester: user.userCode
-    };
-    const socket = new CustomSocket();
-    socket.connect(headers);
-
-    store.dispatch({ type: 'setAccessKey', data: loginToken });
-    store.dispatch({ type: 'setConsultId', data: consultId });
-    store.dispatch({ type: 'setUser', data: JSON.parse(localStorage.getItem('userData')) });
-    store.dispatch({ type: 'setSocket', data: socket });
-
     React.useEffect(async () => {
+
+        const localData = JSON.parse(localStorage.getItem('state'));
+        console.log(localData);
+        if (!data.currentCase && localData?.user?.id && consultId === localData.consultId) {
+            console.log(localData);
+            store.dispatch({ type: 'setState', data: { ...localData, complete: false } });
+        }
+
+        // 소켓
+        const headers = {
+            'SX-Auth-Token': loginToken,
+            deviceKind: 3,
+            apiRoute: 'GWS-1',
+            requester: user.userCode
+        };
+        const socket = new CustomSocket();
+        socket.connect(headers);
+
+        store.dispatch({ type: 'setAccessKey', data: loginToken });
+        store.dispatch({ type: 'setConsultId', data: consultId });
+        store.dispatch({ type: 'setUser', data: JSON.parse(localStorage.getItem('userData')) });
+        store.dispatch({ type: 'setSocket', data: socket });
+
         const consult = await api.post('/API/Doctor/SelectRealTimeAndOpinionAndEmergencyConsultView', {
             ...commonRequest(),
             organizationCode: user.organizationCode,
@@ -75,6 +84,8 @@ const App = () => {
         });
 
         store.dispatch({ type: 'setCurrentCase', data: consult?.list[0].caseInfoList[0] });
+        store.dispatch({ type: 'setComplete', data: true });
+        console.log(data);
     }, []);
 
     return (
