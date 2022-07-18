@@ -148,7 +148,7 @@ export class CreateVitalLineD3 {
         const currentPath = this.pathSelector(_currentId);
         const pathLength = currentPath.node().getTotalLength();
 
-        alert(pathLength);
+        // alert(pathLength);
 
         const transitionPath = d3
             .transition()

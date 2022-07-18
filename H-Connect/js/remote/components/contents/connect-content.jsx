@@ -12,7 +12,8 @@ const ConnectContent = () => {
 
         if (data.complete) {
 
-            let roomId = data.roomId;
+            // let roomId = data.roomId;
+            let roomId = 356169861;
             let chatId = data.chatId;
 
             // 화상방 생성
@@ -218,8 +219,6 @@ const ConnectContent = () => {
                     await data.message.deleteMessage(id);
                 });
             });
-
-
         }
     }, [data.complete]);
 
@@ -228,6 +227,18 @@ const ConnectContent = () => {
             return this.scrollHeight;
         });
     });
+
+    React.useEffect(() => {
+        $(function() {
+            $('.btn_end').click(function(event) {
+                event.preventDefault();
+                if (window.confirm('연결을 종료하시겠습니까?')) {
+                    if (video) video.destroy();
+                    window.close();
+                }
+            });
+        });
+    }, []);
 
     React.useEffect(() => {
         if (video) video.init();

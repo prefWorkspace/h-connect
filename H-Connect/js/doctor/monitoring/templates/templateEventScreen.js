@@ -61,12 +61,12 @@ export async function newScreenBody(_bse) {
                 <p>rhythm title</p>
 
                 <div class="graph_wrap">
-                    <div class="img_container left">
-                        <img
-                            src="/H-Connect/img/graph/blue.svg"
-                            alt="파란색 아이콘"
-                        />
-                    </div>
+<!--                    <div class="img_container left">-->
+<!--                        <img-->
+<!--                            src="/H-Connect/img/graph/blue.svg"-->
+<!--                            alt="파란색 아이콘"-->
+<!--                        />-->
+<!--                    </div>-->
 
                     <div class="graph_scroll">
                         <div class="img_container right" id="event-ecg-chart-${_bse.bioSignalEventId}">
@@ -110,12 +110,12 @@ export async function preScreenBody(_bse) {
             <p>rhythm title</p>
 
             <div class="graph_wrap">
-                <div class="img_container left">
-                    <img
-                        src="/H-Connect/img/graph/blue.svg"
-                        alt="파란색 아이콘"
-                    />
-                </div>
+<!--                <div class="img_container left">-->
+<!--                    <img-->
+<!--                        src="/H-Connect/img/graph/blue.svg"-->
+<!--                        alt="파란색 아이콘"-->
+<!--                    />-->
+<!--                </div>-->
 
                 <div class="graph_scroll" id="cur_graph">
                     <div class="img_container right" id="event-ecg-chart-one-${_bse.bioSignalEventId}"><!-- 그래프 들어감--></div>
@@ -145,12 +145,12 @@ export async function preScreenBody(_bse) {
                 <p>rhythm title</p>
 
                 <div class="graph_wrap">
-                    <div class="img_container left">
-                        <img
-                            src="/H-Connect/img/graph/blue.svg"
-                            alt="파란색 아이콘"
-                        />
-                    </div>
+<!--                    <div class="img_container left">-->
+<!--                        <img-->
+<!--                            src="/H-Connect/img/graph/blue.svg"-->
+<!--                            alt="파란색 아이콘"-->
+<!--                        />-->
+<!--                    </div>-->
 
                     <div class="graph_scroll">
                         <div class="img_container right" id="event-ecg-chart-two-${_bse.bioSignalEventId}"><!-- 그래프 들어감--></div>

@@ -1,6 +1,17 @@
 const CaseContent = () => {
     const data = ReactRedux.useSelector(state => state);
 
+    React.useEffect(() => {
+        $(function() {
+            $('.btn_end').click(function(event) {
+                event.preventDefault();
+                if (window.confirm('연결을 종료하시겠습니까?')) {
+                    window.close();
+                }
+            });
+        });
+    }, []);
+
     return (
         <div id='wrap_content' className='remote main'>
             <div className='wrap_inner'>

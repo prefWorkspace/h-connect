@@ -9,6 +9,7 @@ export function birthdayToAge(_birth) {
     }
     return _age;
 }
+
 /* e: 생년월일으로 '만' 나이를 계산합니다. */
 
 export const dateFormat = (_date) => {
@@ -54,4 +55,15 @@ export const numToDay = (num) => {
 
 export const toFixedFloat = (value, digit) => {
     return parseFloat(value.toFixed(digit) ?? 0);
+};
+
+export const getQueryValue = (name) => {
+    let vars = [], hash;
+    let hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (let i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars[name];
 };

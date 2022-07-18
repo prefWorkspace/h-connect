@@ -1,7 +1,7 @@
 class CustomJanus {
 
-    // debug = 'all';
-    debug = false;
+    debug = 'all';
+    // debug = false;
     janus = null;
     sfuTest = null;
     server = 'https://webrtc.seers-visual-system.link';
@@ -74,7 +74,7 @@ class CustomJanus {
         this.aCodec = (this.getQuery('a-codec') !== '' ? this.getQuery('a-codec') : null);
         this.vCodec = (this.getQuery('v-codec') !== '' ? this.getQuery('v-codec') : null);
         this.subscriberMode = (this.getQuery('subscriber-mode') === 'yes' || this.getQuery('subscriber-mode') === 'true');
-        this.opaqueId = 'videoroom-' + Janus.randomString(12);
+        this.opaqueId = 'video-room-' + Janus.randomString(12);
         if (local) this.callbacks.local = { ...this.callbacks.local, ...local };
         if (remote) this.callbacks.remote = { ...this.callbacks.remote, ...remote };
     }
@@ -375,9 +375,6 @@ class CustomJanus {
     registerUsername(username) {
         if (username === '') {
             Janus.log('Please input username.');
-            return false;
-        }
-        if (/[^a-zA-Z\d]/.test(username)) {
             return false;
         }
 

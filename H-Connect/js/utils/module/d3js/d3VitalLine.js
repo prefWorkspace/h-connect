@@ -15,10 +15,6 @@ export class D3VitalLine {
         this.create();
     }
 
-    setProgress(progress) {
-        this.inProgress = progress;
-    }
-
     create(seq = 0) {
         this.inProgress = true;
         this.index = seq;
@@ -28,7 +24,7 @@ export class D3VitalLine {
     }
 
     update(data) {
-        this.erase();
+        // this.erase();
         this.data = data;
         this.create(this.index === 0 ? 1 : 0);
     }
@@ -39,7 +35,6 @@ export class D3VitalLine {
         this.chart.attr('stroke-dashoffset', pathLength)
             .transition()
             .ease(d3.easeSin)
-            .delay(0)
             .duration(this.setting.duration)
             .attr('stroke-dashoffset', -pathLength);
     }
@@ -123,9 +118,12 @@ export class D3VitalLine {
             .attr('stroke-dashoffset', pathLength)
             .transition()
             .ease(d3.easeSin)
-            .delay(0)
             .duration(this.setting.duration)
             .attr('stroke-dashoffset', 0)
+            .transition()
+            .ease(d3.easeSin)
+            .duration(this.setting.duration / 2)
+            .attr('stroke-dashoffset', -pathLength)
             .on('end', () => this.inProgress = false);
     }
 

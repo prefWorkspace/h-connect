@@ -14,9 +14,7 @@ const App = () => {
     React.useEffect(async () => {
 
         const localData = JSON.parse(localStorage.getItem('state'));
-        console.log(localData);
         if (!data.currentCase && localData?.user?.id && consultId === localData.consultId) {
-            console.log(localData);
             store.dispatch({ type: 'setState', data: { ...localData, complete: false } });
         }
 
@@ -85,7 +83,6 @@ const App = () => {
 
         store.dispatch({ type: 'setCurrentCase', data: consult?.list[0].caseInfoList[0] });
         store.dispatch({ type: 'setComplete', data: true });
-        console.log(data);
     }, []);
 
     return (

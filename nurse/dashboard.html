@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang='ko'>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
     <title>H-Connect</title>
     <!--Import-->
-    <script type="text/javascript" defer src="/H-Connect/js/lib/jquery/library/jquery-3.6.0.js"></script>
-    <script type="text/javascript" defer
-        src="/H-Connect/js/utils/controller/versionController.2022.05.03.16.36.js"></script>
+    <script type='text/javascript' defer src='/H-Connect/js/lib/jquery/library/jquery-3.6.0.js'></script>
+    <script type='text/javascript' defer
+            src='/H-Connect/js/utils/controller/versionController.2022.05.03.16.36.js'></script>
     <!-- <script
             type="module"
             defer
@@ -17,199 +17,199 @@
         ></script> -->
 
     <!--css-->
-    <link rel="stylesheet" href="/H-Connect/css/reset.css" />
-    <link rel="stylesheet" href="/H-Connect/css/common.css" />
-    <link rel="stylesheet" href="/H-Connect/css/nurse.css" />
+    <link rel='stylesheet' href='/H-Connect/css/reset.css' />
+    <link rel='stylesheet' href='/H-Connect/css/common.css' />
+    <link rel='stylesheet' href='/H-Connect/css/nurse.css' />
 </head>
 
 <body>
-    <!-- 병동이름설정 팝업 -->
-    <div class="pop dash_ward_name">
-        <div class="overlay">
-            <div class="pop_cont">
-                <div class="title">
-                    <h2>병동이름 설정</h2>
-                </div>
+<!-- 병동이름설정 팝업 -->
+<div class='pop dash_ward_name'>
+    <div class='overlay'>
+        <div class='pop_cont'>
+            <div class='title'>
+                <h2>병동이름 설정</h2>
+            </div>
 
-                <div class="content">
-                    <p>병동이름</p>
+            <div class='content'>
+                <p>병동이름</p>
 
-                    <input id="ward_Name" type="text" maxlength="64" />
-                </div>
+                <input id='ward_Name' type='text' maxlength='64' />
+            </div>
 
-                <div class="btn_list">
-                    <button type="button" class="btn rd btn_cancel">
-                        취소
-                    </button>
-                    <button type="button" class="btn blf btn_check">
-                        확인
-                    </button>
-                </div>
+            <div class='btn_list'>
+                <button type='button' class='btn rd btn_cancel'>
+                    취소
+                </button>
+                <button type='button' class='btn blf btn_check'>
+                    확인
+                </button>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- 병동화면삭제 -->
-    <div class="pop delete delete_ward_set">
-        <div class="overlay">
-            <div class="pop_cont"></div>
-        </div>
+<!-- 병동화면삭제 -->
+<div class='pop delete delete_ward_set'>
+    <div class='overlay'>
+        <div class='pop_cont'></div>
     </div>
+</div>
 
-    <div id="wrap">
-        <!--헤더 pc-->
-        <header id="header" class="pc_header">
-            <div class="header_inner">
-                <div>
-                    <h1 class="logo">
-                        <a class="link" href="index.html">
-                            <img class="img" src="/H-Connect/img/header/logo.png" alt="로고" />
-                        </a>
-                    </h1>
+<div id='wrap'>
+    <!--헤더 pc-->
+    <header id='header' class='pc_header'>
+        <div class='header_inner'>
+            <div>
+                <h1 class='logo'>
+                    <a class='link' href='index.html'>
+                        <img class='img' src='/H-Connect/img/header/logo.png' alt='로고' />
+                    </a>
+                </h1>
 
-                    <div class="header_title">
-                        <h1>대시보드</h1>
-                        <h3>
-                            담당 환자들을 대시보드에 등록하고 모니터링
-                            합니다.
-                        </h3>
-                    </div>
-                </div>
-
-                <div>
-                    <button type="button" class="btn_logout">-</button>
+                <div class='header_title'>
+                    <h1>대시보드</h1>
+                    <h3>
+                        담당 환자들을 대시보드에 등록하고 모니터링
+                        합니다.
+                    </h3>
                 </div>
             </div>
 
-            <!-- 로그아웃 팝업 -->
-            <div class="pop logout">
-                <div class="wrap_inner">
+            <div>
+                <button type='button' class='btn_logout'>-</button>
+            </div>
+        </div>
+
+        <!-- 로그아웃 팝업 -->
+        <div class='pop logout'>
+            <div class='wrap_inner'>
+                <div>
+                    <p>심장병동</p>
+                    <h3>심장병동 간호사실</h3>
+                </div>
+
+                <button type='button' class='btn_bye'>로그아웃</button>
+            </div>
+        </div>
+
+        <!-- 환자 검색 -->
+        <div class='pop search_patient'>
+            <div class='wrap_inner'>
+                <p>
+                    <span>김환자</span>
+                    (<span>63</span>.<span>남</span>).
+                    <span>patient ID</span>. <span>심장병동</span>.
+                    <span>1308</span>호실. <span>3</span>병상
+                </p>
+
+                <p>
+                    <span>김환장</span>
+                    (<span>74</span>.<span>여</span>).
+                    <span>patient ID</span>. <span>심장병동</span>.
+                    <span>1302</span>호실. <span>1</span>병상
+                </p>
+
+                <p>
+                    <span>김환정</span>
+                    (<span>68</span>.<span>남</span>).
+                    <span>patient ID</span>. <span>심장병동</span>.
+                    <span>1306</span>호실. <span>6</span>병상
+                </p>
+
+                <p>
+                    <span>김환재</span>
+                    (<span>59</span>.<span>남</span>).
+                    <span>patient ID</span>. <span>심장병동</span>.
+                    <span>1304</span>호실. <span>2</span>병상
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!--콘텐츠-->
+    <div id='wrap_content' class='nurse dashboard'>
+        <nav class='nav'>
+            <ul class='main_depth gnb'>
+                <li class='gnb_list'>
+                    <a class='link' href='monitoring.html'>
+                        모니터링
+                    </a>
+                </li>
+
+                <li class='gnb_list'>
+                    <a class='link' href='index.html'> 관리 </a>
+                </li>
+
+                <li class='gnb_list active'>
+                    <a class='link' href='dashboard.html'> 대시보드 </a>
+                </li>
+
+                <li class='gnb_list'>
+                    <a class='link' href='message.html'> 메세지 </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class='wrap_inner'>
+            <!-- 모니터링 대상 -->
+            <section class='section left taget_list'>
+                <div class='title'>
                     <div>
-                        <p>심장병동</p>
-                        <h3>심장병동 간호사실</h3>
-                    </div>
-
-                    <button type="button" class="btn_bye">로그아웃</button>
-                </div>
-            </div>
-
-            <!-- 환자 검색 -->
-            <div class="pop search_patient">
-                <div class="wrap_inner">
-                    <p>
-                        <span>김환자</span>
-                        (<span>63</span>.<span>남</span>).
-                        <span>patient ID</span>. <span>심장병동</span>.
-                        <span>1308</span>호실. <span>3</span>병상
-                    </p>
-
-                    <p>
-                        <span>김환장</span>
-                        (<span>74</span>.<span>여</span>).
-                        <span>patient ID</span>. <span>심장병동</span>.
-                        <span>1302</span>호실. <span>1</span>병상
-                    </p>
-
-                    <p>
-                        <span>김환정</span>
-                        (<span>68</span>.<span>남</span>).
-                        <span>patient ID</span>. <span>심장병동</span>.
-                        <span>1306</span>호실. <span>6</span>병상
-                    </p>
-
-                    <p>
-                        <span>김환재</span>
-                        (<span>59</span>.<span>남</span>).
-                        <span>patient ID</span>. <span>심장병동</span>.
-                        <span>1304</span>호실. <span>2</span>병상
-                    </p>
-                </div>
-            </div>
-        </header>
-
-        <!--콘텐츠-->
-        <div id="wrap_content" class="nurse dashboard">
-            <nav class="nav">
-                <ul class="main_depth gnb">
-                    <li class="gnb_list">
-                        <a class="link" href="monitoring.html">
-                            모니터링
-                        </a>
-                    </li>
-
-                    <li class="gnb_list">
-                        <a class="link" href="index.html"> 관리 </a>
-                    </li>
-
-                    <li class="gnb_list active">
-                        <a class="link" href="dashboard.html"> 대시보드 </a>
-                    </li>
-
-                    <li class="gnb_list">
-                        <a class="link" href="message.html"> 메세지 </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="wrap_inner">
-                <!-- 모니터링 대상 -->
-                <section class="section left taget_list">
-                    <div class="title">
                         <div>
-                            <div>
-                                <img src="/H-Connect/img/header/dashboard.svg" alt="대시보드 아이콘" />
-                            </div>
-
-                            <h2>모니터링 대상</h2>
+                            <img src='/H-Connect/img/header/dashboard.svg' alt='대시보드 아이콘' />
                         </div>
 
-                        <p>
-                            대시보드에 등록할 모니터링 대상자를 설정합니다.
-                        </p>
+                        <h2>모니터링 대상</h2>
                     </div>
 
-                    <div class="taget_select">
-                        <p class="loading_text" style="padding-top:20px;">데이터를 불러오는 중입니다</p>
-                    </div>
-                </section>
+                    <p>
+                        대시보드에 등록할 모니터링 대상자를 설정합니다.
+                    </p>
+                </div>
 
-                <!-- 추가, 제거 버튼 -->
-                <section class="section middle">
+                <div class='taget_select'>
+                    <p class='loading_text' style='padding-top:20px;'>데이터를 불러오는 중입니다</p>
+                </div>
+            </section>
+
+            <!-- 추가, 제거 버튼 -->
+            <section class='section middle'>
+                <div>
+                    <button type='button' class='btn bl btn_add'>
+                        추가
+                    </button>
+                    <button type='button' class='btn rd btn_delete' disabled>
+                        제거
+                    </button>
+                </div>
+            </section>
+
+            <!-- 대시보드 화면 -->
+            <section class='section right taget_view'>
+                <div class='title'>
                     <div>
-                        <button type="button" class="btn bl btn_add">
-                            추가
-                        </button>
-                        <button type="button" class="btn rd btn_delete" disabled>
-                            제거
-                        </button>
-                    </div>
-                </section>
+                        <h2>대시보드 화면</h2>
 
-                <!-- 대시보드 화면 -->
-                <section class="section right taget_view">
-                    <div class="title">
-                        <div>
-                            <h2>대시보드 화면</h2>
-
-                            <div class="btn_list btn_Viewlist"></div>
-                        </div>
-
-                        <button type="button" class="btn btn_state" onclick="window.open('ward_dashboard.html')">
-                            현재상태 적용
-                        </button>
+                        <div class='btn_list btn_Viewlist'></div>
                     </div>
-                    <!-- 대시보드 화면 부분 -->
-                    <div class="inpat relative">
-                        <p class="loading_text absolute_center">데이터를 불러오는
-                            중입니다</p>
-                    </div>
-                    <!-- test -->
-                </section>
-            </div>
+
+                    <button type='button' class='btn btn_state'>
+                        현재상태 적용
+                    </button>
+                </div>
+                <!-- 대시보드 화면 부분 -->
+                <div class='inpat relative'>
+                    <p class='loading_text absolute_center'>데이터를 불러오는
+                        중입니다</p>
+                </div>
+                <!-- test -->
+            </section>
         </div>
     </div>
-    <!--// end wrap-->
-    <script></script>
+</div>
+<!--// end wrap-->
+<script></script>
 </body>
 
 </html>

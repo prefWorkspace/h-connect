@@ -1218,9 +1218,9 @@ const EventItem = ({ event }) => {
 const chartCreateOrUpdate = (chart, target, data, measurementCode, color) => {
     if (data) {
         if (chart) {
-            chart.chartUpdate(data);
+            chart.update(data);
         } else {
-            chart = new CreateVitalLineD3({
+            chart = new D3VitalLine({
                 target,
                 data,
                 measurementCode: measurementCode,
