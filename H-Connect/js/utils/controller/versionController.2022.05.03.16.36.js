@@ -35,7 +35,7 @@ const FILE_TREE = {
                 //     url_path: '*',
                 //     file_path: '/H-Connect/js/lib/jquery/library/',
                 // },
-            },
+            }
         },
         d3: {
             custom: {
@@ -43,16 +43,16 @@ const FILE_TREE = {
                     type: 'module',
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/d3/custom/',
-                },
+                    file_path: '/H-Connect/js/lib/d3/custom/'
+                }
             },
             library: {
                 'd3-7.3.0.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/d3/library/',
-                },
-            },
+                    file_path: '/H-Connect/js/lib/d3/library/'
+                }
+            }
         },
         socket: {
             custom: {},
@@ -60,14 +60,14 @@ const FILE_TREE = {
                 'sockjs-1.5.0.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/socket/library/',
+                    file_path: '/H-Connect/js/lib/socket/library/'
                 },
                 'stomp-1.7.1.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/socket/library/',
-                },
-            },
+                    file_path: '/H-Connect/js/lib/socket/library/'
+                }
+            }
         },
         moment: {
             custom: {},
@@ -75,14 +75,14 @@ const FILE_TREE = {
                 'moment-2.29.3.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/moment/library/',
+                    file_path: '/H-Connect/js/lib/moment/library/'
                 },
                 'moment.min.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/moment/library/',
-                },
-            },
+                    file_path: '/H-Connect/js/lib/moment/library/'
+                }
+            }
         },
 
         fullcalendar: {
@@ -90,22 +90,22 @@ const FILE_TREE = {
                 'fullcalendar.js': {
                     priority: 0,
                     url_path: '/doctor/remote||/doctor/remote_new',
-                    file_path: '/H-Connect/js/lib/fullcalendar/library/',
+                    file_path: '/H-Connect/js/lib/fullcalendar/library/'
                 },
                 'main.min.js': {
                     priority: 0,
                     url_path: '/doctor/remote||/doctor/remote_new',
-                    file_path: '/H-Connect/js/lib/fullcalendar/library/',
-                },
+                    file_path: '/H-Connect/js/lib/fullcalendar/library/'
+                }
             },
             custom: {
                 'customFullCalendar.js': {
                     type: 'module',
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/fullcalendar/custom/',
-                },
-            },
+                    file_path: '/H-Connect/js/lib/fullcalendar/custom/'
+                }
+            }
         },
         swiper: {
             custom: {},
@@ -113,15 +113,15 @@ const FILE_TREE = {
                 'slide.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/swiper/library/',
+                    file_path: '/H-Connect/js/lib/swiper/library/'
                 },
                 'swiper-bundle.min.js': {
                     priority: 0,
                     url_path: '*',
-                    file_path: '/H-Connect/js/lib/swiper/library/',
-                },
-            },
-        },
+                    file_path: '/H-Connect/js/lib/swiper/library/'
+                }
+            }
+        }
     },
     utils: {
         common: {
@@ -129,58 +129,58 @@ const FILE_TREE = {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/common/',
+                file_path: '/H-Connect/js/utils/common/'
             },
             'arrayHandle.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/common/',
-            },
+                file_path: '/H-Connect/js/utils/common/'
+            }
         },
         controller: {
             'commonRequest.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/controller/',
+                file_path: '/H-Connect/js/utils/controller/'
             },
             'historyController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/controller/',
+                file_path: '/H-Connect/js/utils/controller/'
             },
             'cookieController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/controller/',
+                file_path: '/H-Connect/js/utils/controller/'
             },
             'localStorageController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/controller/',
+                file_path: '/H-Connect/js/utils/controller/'
             },
             'sessionController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/controller/',
+                file_path: '/H-Connect/js/utils/controller/'
             },
             'serverController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/controller/',
+                file_path: '/H-Connect/js/utils/controller/'
             },
             'deviceNameController.js': {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/utils/controller/',
-            },
+                file_path: '/H-Connect/js/utils/controller/'
+            }
         },
         module: {
             auth: {
@@ -188,30 +188,30 @@ const FILE_TREE = {
                     type: 'module',
                     priority: 0,
                     url_path: '/||/index',
-                    file_path: '/H-Connect/js/utils/module/auth/',
+                    file_path: '/H-Connect/js/utils/module/auth/'
                 },
                 'logout.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/auth/',
-                },
+                    file_path: '/H-Connect/js/utils/module/auth/'
+                }
             },
             select: {
                 'selectList.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/select/',
-                },
+                    file_path: '/H-Connect/js/utils/module/select/'
+                }
             },
             d3js: {
                 'd3Module.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/d3js/',
-                },
+                    file_path: '/H-Connect/js/utils/module/d3js/'
+                }
             },
             doctorSelector: {
                 choiceDoctor: {
@@ -220,8 +220,8 @@ const FILE_TREE = {
                         url_path: '*',
                         priority: 0,
                         file_path:
-                            '/H-Connect/js/utils/module/doctorSelector/choiceDoctor/',
-                    },
+                            '/H-Connect/js/utils/module/doctorSelector/choiceDoctor/'
+                    }
                 },
                 bookmark: {
                     'bookmark.js': {
@@ -229,8 +229,8 @@ const FILE_TREE = {
                         url_path: '*',
                         priority: 0,
                         file_path:
-                            '/H-Connect/js/utils/module/doctorSelector/bookmark/',
-                    },
+                            '/H-Connect/js/utils/module/doctorSelector/bookmark/'
+                    }
                 },
                 doctorList: {
                     'doctorList.js': {
@@ -238,8 +238,8 @@ const FILE_TREE = {
                         url_path: '*',
                         priority: 0,
                         file_path:
-                            '/H-Connect/js/utils/module/doctorSelector/doctorList/',
-                    },
+                            '/H-Connect/js/utils/module/doctorSelector/doctorList/'
+                    }
                 },
                 doctorSearch: {
                     'doctorSearch.js': {
@@ -247,37 +247,37 @@ const FILE_TREE = {
                         url_path: '*',
                         priority: 0,
                         file_path:
-                            '/H-Connect/js/utils/module/doctorSelector/doctorSearch/',
-                    },
+                            '/H-Connect/js/utils/module/doctorSelector/doctorSearch/'
+                    }
                 },
                 'utils.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/doctorSelector/',
+                    file_path: '/H-Connect/js/utils/module/doctorSelector/'
                 },
                 'doctorSelector.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/doctorSelector/',
-                },
+                    file_path: '/H-Connect/js/utils/module/doctorSelector/'
+                }
             },
             pagination: {
                 'pagination.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/pagination/',
-                },
+                    file_path: '/H-Connect/js/utils/module/pagination/'
+                }
             },
             tabController: {
                 'tabController.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/tabController/',
-                },
+                    file_path: '/H-Connect/js/utils/module/tabController/'
+                }
             },
             whiteboard: {
                 example: {
@@ -287,33 +287,33 @@ const FILE_TREE = {
                             '/H-Connect/js/utils/module/whiteboard/example/whiteboard',
                         priority: 0,
                         file_path:
-                            '/H-Connect/js/utils/module/whiteboard/example/',
-                    },
+                            '/H-Connect/js/utils/module/whiteboard/example/'
+                    }
                 },
                 'whiteboard.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/whiteboard/',
-                },
+                    file_path: '/H-Connect/js/utils/module/whiteboard/'
+                }
             },
             popupController: {
                 'popupController.js': {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/utils/module/popupController/',
-                },
-            },
+                    file_path: '/H-Connect/js/utils/module/popupController/'
+                }
+            }
         },
         custom: {
             'utils.js': {
                 type: 'module',
                 url_path: '*',
                 priority: 0,
-                file_path: '/H-Connect/js/utils/custom/',
-            },
-        },
+                file_path: '/H-Connect/js/utils/custom/'
+            }
+        }
     },
     common: {
         text: {
@@ -321,8 +321,8 @@ const FILE_TREE = {
                 type: 'module',
                 priority: 0,
                 url_path: '*',
-                file_path: '/H-Connect/js/common/text/',
-            },
+                file_path: '/H-Connect/js/common/text/'
+            }
         },
         header: {
             actions: {
@@ -330,9 +330,9 @@ const FILE_TREE = {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/common/header/actions/',
-                },
-            },
+                    file_path: '/H-Connect/js/common/header/actions/'
+                }
+            }
         },
         popup: {
             templates: {
@@ -340,10 +340,10 @@ const FILE_TREE = {
                     type: 'module',
                     url_path: '*',
                     priority: 0,
-                    file_path: '/H-Connect/js/common/popup/templates/',
-                },
-            },
-        },
+                    file_path: '/H-Connect/js/common/popup/templates/'
+                }
+            }
+        }
     },
     doctor: {
         monitoring: {
@@ -351,114 +351,114 @@ const FILE_TREE = {
                 'eventListAPI.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/'
                 },
                 'eventScreenAPI.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/'
                 },
                 'selectBioSignalEventActions.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/actions/',
-                },
+                    file_path: '/H-Connect/js/doctor/monitoring/actions/'
+                }
             },
             templates: {
                 'templateEvent.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/templates/',
+                    file_path: '/H-Connect/js/doctor/monitoring/templates/'
                 },
                 'templateEventScreen.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/templates/',
-                },
+                    file_path: '/H-Connect/js/doctor/monitoring/templates/'
+                }
             },
             renders: {
                 'renderNewEvents.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
+                    file_path: '/H-Connect/js/doctor/monitoring/renders/'
                 },
                 'renderPreEvents.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
+                    file_path: '/H-Connect/js/doctor/monitoring/renders/'
                 },
                 'renderEventScreen.js': {
                     type: 'module',
                     url_path: '/doctor/monitoring',
-                    file_path: '/H-Connect/js/doctor/monitoring/renders/',
-                },
+                    file_path: '/H-Connect/js/doctor/monitoring/renders/'
+                }
             },
             'common.js': {
                 type: 'module',
                 url_path: '/doctor/monitoring',
-                file_path: '/H-Connect/js/doctor/monitoring/',
-            },
+                file_path: '/H-Connect/js/doctor/monitoring/'
+            }
         },
         pacs: {
             actions: {
                 'pacsAPI.js': {
                     type: 'module',
                     url_path: '/doctor/pacs',
-                    file_path: '/H-Connect/js/doctor/pacs/actions/',
+                    file_path: '/H-Connect/js/doctor/pacs/actions/'
                 },
                 'pacsHandle.js': {
                     type: 'module',
                     url_path: '/doctor/pacs',
-                    file_path: '/H-Connect/js/doctor/pacs/actions/',
-                },
+                    file_path: '/H-Connect/js/doctor/pacs/actions/'
+                }
             },
             templates: {
                 'pacsListTemplates.js': {
                     type: 'module',
                     url_path: '/doctor/pacs',
-                    file_path: '/H-Connect/js/doctor/pacs/templates/',
-                },
+                    file_path: '/H-Connect/js/doctor/pacs/templates/'
+                }
             },
             renders: {
                 'pacsListRender.js': {
                     type: 'module',
                     url_path: '/doctor/pacs',
-                    file_path: '/H-Connect/js/doctor/pacs/renders/',
-                },
-            },
+                    file_path: '/H-Connect/js/doctor/pacs/renders/'
+                }
+            }
         },
         patient: {
             actions: {
                 'patientAPI.js': {
                     type: 'module',
                     url_path: '/doctor/patient',
-                    file_path: '/H-Connect/js/doctor/patient/actions/',
+                    file_path: '/H-Connect/js/doctor/patient/actions/'
                 },
                 'patientHandle.js': {
                     type: 'module',
                     url_path: '/doctor/patient',
-                    file_path: '/H-Connect/js/doctor/patient/actions/',
+                    file_path: '/H-Connect/js/doctor/patient/actions/'
                 },
                 'selectHisExinfos.js': {
                     type: 'module',
                     url_path: '/doctor/patient',
-                    file_path: '/H-Connect/js/doctor/patient/actions/',
-                },
+                    file_path: '/H-Connect/js/doctor/patient/actions/'
+                }
             },
             templates: {
                 'patientTemplates.js': {
                     type: 'module',
                     url_path: '/doctor/patient',
-                    file_path: '/H-Connect/js/doctor/patient/templates/',
-                },
+                    file_path: '/H-Connect/js/doctor/patient/templates/'
+                }
             },
             renders: {
                 'patientRender.js': {
                     type: 'module',
                     url_path: '/doctor/patient',
-                    file_path: '/H-Connect/js/doctor/patient/renders/',
-                },
-            },
+                    file_path: '/H-Connect/js/doctor/patient/renders/'
+                }
+            }
         },
         remote: {
             index: {
@@ -466,35 +466,35 @@ const FILE_TREE = {
                     'dateScheduleHandle.js': {
                         type: 'module',
                         url_path: '/doctor/remote',
-                        file_path: '/H-Connect/js/doctor/remote/index/actions/',
+                        file_path: '/H-Connect/js/doctor/remote/index/actions/'
                     },
                     'dateScheduleAPI.js': {
                         type: 'module',
                         url_path: '/doctor/remote',
-                        file_path: '/H-Connect/js/doctor/remote/index/actions/',
-                    },
+                        file_path: '/H-Connect/js/doctor/remote/index/actions/'
+                    }
                 },
                 renders: {
                     'dateScheduleRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote',
-                        file_path: '/H-Connect/js/doctor/remote/index/renders/',
-                    },
+                        file_path: '/H-Connect/js/doctor/remote/index/renders/'
+                    }
                 },
                 templates: {
                     'dateScheduleTemplates.js': {
                         type: 'module',
                         url_path: '/doctor/remote',
                         file_path:
-                            '/H-Connect/js/doctor/remote/index/templates/',
+                            '/H-Connect/js/doctor/remote/index/templates/'
                     },
                     'dateScheduleDetailTemplates.js': {
                         type: 'module',
                         url_path: '/doctor/remote',
                         file_path:
-                            '/H-Connect/js/doctor/remote/index/templates/',
-                    },
-                },
+                            '/H-Connect/js/doctor/remote/index/templates/'
+                    }
+                }
             },
             remoteNew: {
                 actions: {
@@ -502,135 +502,135 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     'bookmarkActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     'attendeesSectionActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     'scheduleCalendarControllActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     eachCooperationActions: {
                         'realTimeActions.js': {
                             type: 'module',
                             url_path: '/doctor/remote_new',
                             file_path:
-                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/'
                         },
                         'opinionActions.js': {
                             type: 'module',
                             url_path: '/doctor/remote_new',
                             file_path:
-                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/'
                         },
                         'requestScheduleActions.js': {
                             type: 'module',
                             url_path: '/doctor/remote_new',
                             file_path:
-                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/'
                         },
                         'contentActions.js': {
                             type: 'module',
                             url_path: '/doctor/remote_new',
                             file_path:
-                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/',
-                        },
+                                '/H-Connect/js/doctor/remote/remoteNew/actions/eachCooperationActions/'
+                        }
                     },
                     'sendCooperationActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     'cooperationSectionActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     'remoteNewAPI.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     'selector.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
                     },
                     'dataActions.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/actions/',
-                    },
+                            '/H-Connect/js/doctor/remote/remoteNew/actions/'
+                    }
                 },
                 renders: {
                     'commonRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/'
                     },
                     'bookmarkRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/'
                     },
                     'attendeesSectionRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/'
                     },
                     'cooperationSectionRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/'
                     },
                     'firstUpdateInformationRenders.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/renders/',
-                    },
+                            '/H-Connect/js/doctor/remote/remoteNew/renders/'
+                    }
                 },
                 templates: {
                     'bookmarkSectionTmpl.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/templates/',
+                            '/H-Connect/js/doctor/remote/remoteNew/templates/'
                     },
                     'attendeesSectionTmpl.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/templates/',
+                            '/H-Connect/js/doctor/remote/remoteNew/templates/'
                     },
                     'cooperationSectionTmpl.js': {
                         type: 'module',
                         url_path: '/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteNew/templates/',
-                    },
-                },
+                            '/H-Connect/js/doctor/remote/remoteNew/templates/'
+                    }
+                }
             },
             common: {
                 actions: {
@@ -639,22 +639,22 @@ const FILE_TREE = {
                         url_path:
                             '/doctor/remote||/doctor/remote_alarm||/doctor/remote_check',
                         file_path:
-                            '/H-Connect/js/doctor/remote/common/actions/',
+                            '/H-Connect/js/doctor/remote/common/actions/'
                     },
                     'insertReplyHandle.js': {
                         type: 'module',
                         url_path:
                             '/doctor/remote||/doctor/remote_alarm||/doctor/remote_check',
                         file_path:
-                            '/H-Connect/js/doctor/remote/common/actions/',
+                            '/H-Connect/js/doctor/remote/common/actions/'
                     },
                     'remoteAPI.js': {
                         type: 'module',
                         url_path:
                             '/doctor/remote||/doctor/remote_alarm||/doctor/remote_check',
                         file_path:
-                            '/H-Connect/js/doctor/remote/common/actions/',
-                    },
+                            '/H-Connect/js/doctor/remote/common/actions/'
+                    }
                 },
                 renders: {
                     'countRender.js': {
@@ -662,17 +662,17 @@ const FILE_TREE = {
                         url_path:
                             '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote',
                         file_path:
-                            '/H-Connect/js/doctor/remote/common/renders/',
+                            '/H-Connect/js/doctor/remote/common/renders/'
                     },
                     'calendarRender.js': {
                         type: 'module',
                         url_path:
                             '/doctor/remote_check||/doctor/remote_alarm||/doctor/remote||/doctor/remote_new',
                         file_path:
-                            '/H-Connect/js/doctor/remote/common/renders/',
-                    },
+                            '/H-Connect/js/doctor/remote/common/renders/'
+                    }
                 },
-                templates: {},
+                templates: {}
             },
             remoteAlarm: {
                 actions: {
@@ -680,37 +680,37 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/doctor/remote_alarm',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteAlarm/actions/',
+                            '/H-Connect/js/doctor/remote/remoteAlarm/actions/'
                     },
                     'remoteAlarmAPI.js': {
                         type: 'module',
                         url_path: '/doctor/remote_alarm',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteAlarm/actions/',
-                    },
+                            '/H-Connect/js/doctor/remote/remoteAlarm/actions/'
+                    }
                 },
                 renders: {
                     'remoteAlarmRender.js': {
                         type: 'module',
                         url_path: '/doctor/remote_alarm',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteAlarm/renders/',
-                    },
+                            '/H-Connect/js/doctor/remote/remoteAlarm/renders/'
+                    }
                 },
                 templates: {
                     'remoteAlarmTemplates.js': {
                         type: 'module',
                         url_path: '/doctor/remote_alarm',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteAlarm/templates/',
+                            '/H-Connect/js/doctor/remote/remoteAlarm/templates/'
                     },
                     'remoteAlarmDetailTemplate.js': {
                         type: 'module',
                         url_path: '/doctor/remote_alarm',
                         file_path:
-                            '/H-Connect/js/doctor/remote/remoteAlarm/templates/',
-                    },
-                },
+                            '/H-Connect/js/doctor/remote/remoteAlarm/templates/'
+                    }
+                }
             },
             opinion: {
                 renders: {
@@ -718,32 +718,32 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/doctor/remote_check',
                         file_path:
-                            '/H-Connect/js/doctor/remote/opinion/renders/',
-                    },
+                            '/H-Connect/js/doctor/remote/opinion/renders/'
+                    }
                 },
                 actions: {
                     'opinionHandle.js': {
                         type: 'module',
                         url_path: '/doctor/remote_check',
                         file_path:
-                            '/H-Connect/js/doctor/remote/opinion/actions/',
-                    },
+                            '/H-Connect/js/doctor/remote/opinion/actions/'
+                    }
                 },
                 templates: {
                     'opinionTemplate.js': {
                         type: 'module',
                         url_path: '/doctor/remote_check',
                         file_path:
-                            '/H-Connect/js/doctor/remote/opinion/templates/',
+                            '/H-Connect/js/doctor/remote/opinion/templates/'
                     },
                     'opinionDetailTemplate.js': {
                         type: 'module',
                         url_path: '/doctor/remote_check',
                         file_path:
-                            '/H-Connect/js/doctor/remote/opinion/templates/',
-                    },
-                },
-            },
+                            '/H-Connect/js/doctor/remote/opinion/templates/'
+                    }
+                }
+            }
         },
         hworks: {
             session: {
@@ -752,43 +752,43 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/session/actions/',
+                            '/H-Connect/js/doctor/hworks/session/actions/'
                     },
                     'hWorkHandle.js': {
                         type: 'module',
                         url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/session/actions/',
-                    },
+                            '/H-Connect/js/doctor/hworks/session/actions/'
+                    }
                 },
                 renders: {
                     'hWorkRender.js': {
                         type: 'module',
                         url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/session/renders/',
+                            '/H-Connect/js/doctor/hworks/session/renders/'
                     },
                     'caseInfoListRender.js': {
                         type: 'module',
                         url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/session/renders/',
-                    },
+                            '/H-Connect/js/doctor/hworks/session/renders/'
+                    }
                 },
                 templates: {
                     'sessionListTemplate.js': {
                         type: 'module',
                         url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/session/templates/',
+                            '/H-Connect/js/doctor/hworks/session/templates/'
                     },
                     'caseInfoListTemplates.js': {
                         type: 'module',
                         url_path: '/doctor/index||/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/session/templates/',
-                    },
-                },
+                            '/H-Connect/js/doctor/hworks/session/templates/'
+                    }
+                }
             },
             mySchedule: {
                 actions: {
@@ -796,14 +796,14 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/doctor/index',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/mySchedule/actions/',
+                            '/H-Connect/js/doctor/hworks/mySchedule/actions/'
                     },
                     'myCalendarAPI.js': {
                         type: 'module',
                         url_path: '/doctor/index',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/mySchedule/actions/',
-                    },
+                            '/H-Connect/js/doctor/hworks/mySchedule/actions/'
+                    }
                 },
                 renders: {
                     'myCalendarRender.js': {
@@ -811,17 +811,17 @@ const FILE_TREE = {
                         url_path:
                             '/doctor/index||/doctor/remote||/doctor/remote_alarm',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/mySchedule/renders/',
-                    },
+                            '/H-Connect/js/doctor/hworks/mySchedule/renders/'
+                    }
                 },
                 templates: {
                     'myCalendarTemplate.js': {
                         type: 'module',
                         url_path: '/doctor/index',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/mySchedule/templates/',
-                    },
-                },
+                            '/H-Connect/js/doctor/hworks/mySchedule/templates/'
+                    }
+                }
             },
             remoteHworks: {
                 actions: {
@@ -829,56 +829,61 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/remoteHworks/actions/',
+                            '/H-Connect/js/doctor/hworks/remoteHworks/actions/'
                     },
                     'myRemoteHandle.js': {
                         type: 'module',
                         url_path: '/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/remoteHworks/actions/',
-                    },
+                            '/H-Connect/js/doctor/hworks/remoteHworks/actions/'
+                    }
                 },
                 renders: {
                     'myRemoteRender.js': {
                         type: 'module',
                         url_path: '/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/',
+                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/'
                     },
                     'noCheckConsultRender.js': {
                         type: 'module',
                         url_path: '/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/',
-                    },
+                            '/H-Connect/js/doctor/hworks/remoteHworks/renders/'
+                    }
                 },
                 templates: {
                     'myRemoteTemplates.js': {
                         type: 'module',
                         url_path: '/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/',
+                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/'
                     },
                     'noCheckConsultTemplates.js': {
                         type: 'module',
                         url_path: '/doctor/my_remote',
                         file_path:
-                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/',
-                    },
-                },
-            },
+                            '/H-Connect/js/doctor/hworks/remoteHworks/templates/'
+                    }
+                }
+            }
         },
         message: {
             actions: {
                 'doctorSelect.js': {
                     type: 'module',
                     url_path: '/doctor/message',
-                    file_path: '/H-Connect/js/doctor/message/actions/',
+                    file_path: '/H-Connect/js/doctor/message/actions/'
                 },
+                'message.js': {
+                    type: 'module',
+                    url_path: '/doctor/message',
+                    file_path: '/H-Connect/js/doctor/message/actions/'
+                }
             },
             renders: {},
-            templates: {},
-        },
+            templates: {}
+        }
     },
     nurse: {
         common: {
@@ -888,16 +893,16 @@ const FILE_TREE = {
                         type: 'module',
                         url_path:
                             '/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
-                        file_path: '/H-Connect/js/nurse/common/header/actions/',
-                    },
+                        file_path: '/H-Connect/js/nurse/common/header/actions/'
+                    }
                 },
                 renders: {
                     'searchPatientRender.js': {
                         type: 'module',
                         url_path:
                             '/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
-                        file_path: '/H-Connect/js/nurse/common/header/renders/',
-                    },
+                        file_path: '/H-Connect/js/nurse/common/header/renders/'
+                    }
                 },
                 templates: {
                     'searchPatientTmpl.js': {
@@ -905,73 +910,73 @@ const FILE_TREE = {
                         url_path:
                             '/nurse/monitoring||/nurse/patient||/nurse/arteriotony||/nurse/patient_warning||/nurse/index||/nurse/device_management||/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/common/header/templates/',
-                    },
-                },
-            },
+                            '/H-Connect/js/nurse/common/header/templates/'
+                    }
+                }
+            }
         },
         dashboard: {
             actions: {
                 'getDisplayList.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/actions/',
+                    file_path: '/H-Connect/js/nurse/dashboard/actions/'
                 },
                 'getPatientList.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/actions/',
+                    file_path: '/H-Connect/js/nurse/dashboard/actions/'
                 },
                 'getWardList.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/actions/',
+                    file_path: '/H-Connect/js/nurse/dashboard/actions/'
                 },
                 'displayActions.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/actions/',
+                    file_path: '/H-Connect/js/nurse/dashboard/actions/'
                 },
                 'sickBedActions.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/actions/',
-                },
+                    file_path: '/H-Connect/js/nurse/dashboard/actions/'
+                }
             },
             renders: {
                 'renderDashboard.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/renders/',
-                },
+                    file_path: '/H-Connect/js/nurse/dashboard/renders/'
+                }
             },
             templates: {
                 'templateWardListLeft.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/'
                 },
                 'templateSickBedListLeft.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/'
                 },
                 'templateDisplayBtn.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/'
                 },
                 'templateDashboardScreen.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/'
                 },
                 'templateDisplayDeletePop.js': {
                     type: 'module',
                     url_path: '/nurse/dashboard',
-                    file_path: '/H-Connect/js/nurse/dashboard/templates/',
-                },
-            },
+                    file_path: '/H-Connect/js/nurse/dashboard/templates/'
+                }
+            }
         },
         management: {
             device: {
@@ -980,49 +985,49 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
-                            '/H-Connect/js/nurse/management/device/actions/',
+                            '/H-Connect/js/nurse/management/device/actions/'
                     },
                     'deviceAPI.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
-                            '/H-Connect/js/nurse/management/device/actions/',
+                            '/H-Connect/js/nurse/management/device/actions/'
                     },
                     'deviceHandle.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
-                            '/H-Connect/js/nurse/management/device/actions/',
-                    },
+                            '/H-Connect/js/nurse/management/device/actions/'
+                    }
                 },
                 renders: {
                     'select_device_list.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
-                            '/H-Connect/js/nurse/management/device/renders/',
+                            '/H-Connect/js/nurse/management/device/renders/'
                     },
                     'select_device_unused_list.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
-                            '/H-Connect/js/nurse/management/device/renders/',
-                    },
+                            '/H-Connect/js/nurse/management/device/renders/'
+                    }
                 },
                 templates: {
                     'deviceList.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
-                            '/H-Connect/js/nurse/management/device/templates/',
+                            '/H-Connect/js/nurse/management/device/templates/'
                     },
                     'unusedDeviceList.js': {
                         type: 'module',
                         url_path: '/nurse/device_management',
                         file_path:
-                            '/H-Connect/js/nurse/management/device/templates/',
-                    },
-                },
+                            '/H-Connect/js/nurse/management/device/templates/'
+                    }
+                }
             },
             measure: {
                 actions: {
@@ -1030,91 +1035,91 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/actions/',
+                            '/H-Connect/js/nurse/management/measure/actions/'
                     },
                     'measureHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/actions/',
+                            '/H-Connect/js/nurse/management/measure/actions/'
                     },
                     'updateMeasureHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/actions/',
+                            '/H-Connect/js/nurse/management/measure/actions/'
                     },
                     'deleteMeasureHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/actions/',
+                            '/H-Connect/js/nurse/management/measure/actions/'
                     },
                     'newMeasureHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/actions/',
+                            '/H-Connect/js/nurse/management/measure/actions/'
                     },
                     'searchMeasureHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/actions/',
+                            '/H-Connect/js/nurse/management/measure/actions/'
                     },
                     'selectBoxHandle.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/actions/',
-                    },
+                            '/H-Connect/js/nurse/management/measure/actions/'
+                    }
                 },
                 renders: {
                     'createMeasureList.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/renders/',
+                            '/H-Connect/js/nurse/management/measure/renders/'
                     },
                     'selectBoxRender.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/renders/',
+                            '/H-Connect/js/nurse/management/measure/renders/'
                     },
                     'newSickBedPopDeviceList.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/renders/',
+                            '/H-Connect/js/nurse/management/measure/renders/'
                     },
                     'patientSelectBoxRender.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/renders/',
-                    },
+                            '/H-Connect/js/nurse/management/measure/renders/'
+                    }
                 },
                 templates: {
                     'measurList.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/templates/',
+                            '/H-Connect/js/nurse/management/measure/templates/'
                     },
                     'deviceList.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/templates/',
+                            '/H-Connect/js/nurse/management/measure/templates/'
                     },
                     'selectBoxItem.js': {
                         type: 'module',
                         url_path: '/nurse/measure',
                         file_path:
-                            '/H-Connect/js/nurse/management/measure/templates/',
-                    },
-                },
+                            '/H-Connect/js/nurse/management/measure/templates/'
+                    }
+                }
             },
             ward: {
                 actions: {
@@ -1122,26 +1127,26 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
+                            '/H-Connect/js/nurse/management/ward/actions/'
                     },
                     'wardEvent.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
+                            '/H-Connect/js/nurse/management/ward/actions/'
                     },
                     'sickRoomAPI.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
+                            '/H-Connect/js/nurse/management/ward/actions/'
                     },
                     'sickRoomEvent.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/actions/',
-                    },
+                            '/H-Connect/js/nurse/management/ward/actions/'
+                    }
                 },
                 renders: {
                     'constant.js': {
@@ -1149,115 +1154,115 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/renders/',
+                            '/H-Connect/js/nurse/management/ward/renders/'
                     },
                     'insertWardList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/renders/',
+                            '/H-Connect/js/nurse/management/ward/renders/'
                     },
                     'insertRoomList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/renders/',
-                    },
+                            '/H-Connect/js/nurse/management/ward/renders/'
+                    }
                 },
                 templates: {
                     'sickRoomList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/templates/',
+                            '/H-Connect/js/nurse/management/ward/templates/'
                     },
                     'wardList.js': {
                         type: 'module',
                         url_path: '/nurse/index',
                         file_path:
-                            '/H-Connect/js/nurse/management/ward/templates/',
-                    },
-                },
-            },
+                            '/H-Connect/js/nurse/management/ward/templates/'
+                    }
+                }
+            }
         },
         message: {
             actions: {
                 'doctorSelect.js': {
                     type: 'module',
                     url_path: '/nurse/message',
-                    file_path: '/H-Connect/js/nurse/message/actions/',
+                    file_path: '/H-Connect/js/nurse/message/actions/'
                 },
                 'message.js': {
                     type: 'module',
                     url_path: '/nurse/message',
-                    file_path: '/H-Connect/js/nurse/message/actions/',
-                },
+                    file_path: '/H-Connect/js/nurse/message/actions/'
+                }
             },
             renders: {},
-            templates: {},
+            templates: {}
         },
         monitoring: {
             actions: {
                 'monitoringAPI.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/actions/',
+                    file_path: '/H-Connect/js/nurse/monitoring/actions/'
                 },
                 'streamingMonitoring.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/actions/',
+                    file_path: '/H-Connect/js/nurse/monitoring/actions/'
                 },
                 'monitoringHandle.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/actions/',
-                },
+                    file_path: '/H-Connect/js/nurse/monitoring/actions/'
+                }
             },
             renders: {
                 'renderMonitoringPatient.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring',
-                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/'
                 },
                 'renderMonitoringRoom.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/'
                 },
                 'addMonitoringEmptyBed.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/'
                 },
                 'addDeviceList.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/'
                 },
                 'addSickBedSelectBox.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/renders/',
-                },
+                    file_path: '/H-Connect/js/nurse/monitoring/renders/'
+                }
             },
             templates: {
                 'monitoringPatientTml.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/templates/',
+                    file_path: '/H-Connect/js/nurse/monitoring/templates/'
                 },
                 'deviceTemplate.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/templates/',
+                    file_path: '/H-Connect/js/nurse/monitoring/templates/'
                 },
                 'selectBoxTemplate.js': {
                     type: 'module',
                     url_path: '/nurse/monitoring||/nurse/monitoring_room',
-                    file_path: '/H-Connect/js/nurse/monitoring/templates/',
-                },
-            },
+                    file_path: '/H-Connect/js/nurse/monitoring/templates/'
+                }
+            }
         },
         patientMonitoring: {
             common: {
@@ -1266,25 +1271,25 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/nurse/patient||/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/common/actions/',
-                    },
+                            '/H-Connect/js/nurse/patientMonitoring/common/actions/'
+                    }
                 },
                 renders: {
                     'renderPatientInfo.js': {
                         type: 'module',
                         url_path: '/nurse/patient||/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/common/renders/',
-                    },
+                            '/H-Connect/js/nurse/patientMonitoring/common/renders/'
+                    }
                 },
                 templates: {
                     'pateintInfoTmpl.js': {
                         type: 'module',
                         url_path: '/nurse/patient||/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/common/templates/',
-                    },
-                },
+                            '/H-Connect/js/nurse/patientMonitoring/common/templates/'
+                    }
+                }
             },
             message: {
                 actions: {
@@ -1292,9 +1297,9 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/nurse/patient||/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/message/actions/',
-                    },
-                },
+                            '/H-Connect/js/nurse/patientMonitoring/message/actions/'
+                    }
+                }
             },
             arteriotony: {
                 actions: {
@@ -1302,49 +1307,49 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/'
                     },
                     'sendDoctorHandle.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/'
                     },
                     'bloodPressureAPI.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/',
-                    },
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/actions/'
+                    }
                 },
                 renders: {
                     'renderArteriotonyList.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/'
                     },
                     'sendDoctorListRender.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/',
-                    },
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/renders/'
+                    }
                 },
                 templates: {
                     'arteriotonyTmpl.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/'
                     },
                     'sendDoctorList.js': {
                         type: 'module',
                         url_path: '/nurse/arteriotony',
                         file_path:
-                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/',
-                    },
-                },
+                            '/H-Connect/js/nurse/patientMonitoring/arteriotony/templates/'
+                    }
+                }
             },
             patient: {
                 common: {
@@ -1353,37 +1358,37 @@ const FILE_TREE = {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/',
-                        },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/actions/'
+                        }
                     },
                     renders: {
                         'renderSimpleData.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/'
                         },
                         'renderVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/',
-                        },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/renders/'
+                        }
                     },
                     templates: {
                         'vitalHeaderTmpl.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/'
                         },
                         'globalSettingPopupTmpl.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/',
-                        },
-                    },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/common/templates/'
+                        }
+                    }
                 },
                 currentVital: {
                     actions: {
@@ -1391,31 +1396,31 @@ const FILE_TREE = {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/'
                         },
                         'simpleDataAction.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/',
-                        },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/actions/'
+                        }
                     },
                     renders: {
                         'renderCurrentVital.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/renders/',
-                        },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/renders/'
+                        }
                     },
                     templates: {
                         'alarmSettingPopupTmpl.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/templates/',
-                        },
-                    },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/currentVital/templates/'
+                        }
+                    }
                 },
                 tabularTrend: {
                     actions: {},
@@ -1424,17 +1429,17 @@ const FILE_TREE = {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/tabularTrend/renders/',
-                        },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/tabularTrend/renders/'
+                        }
                     },
                     templates: {
                         'tabularTrendTmpl.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/tabularTrend/templates/',
-                        },
-                    },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/tabularTrend/templates/'
+                        }
+                    }
                 },
                 event: {
                     actions: {},
@@ -1443,26 +1448,26 @@ const FILE_TREE = {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/event/renders/',
-                        },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/event/renders/'
+                        }
                     },
                     templates: {
                         'eventSimpleTmpl.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/',
+                                '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/'
                         },
                         'eventDeletePopupTmpl.js': {
                             type: 'module',
                             url_path: '/nurse/patient',
                             file_path:
-                                '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/',
-                        },
-                    },
-                },
-            },
-        },
+                                '/H-Connect/js/nurse/patientMonitoring/patient/event/templates/'
+                        }
+                    }
+                }
+            }
+        }
     },
     screening: {
         doctor: {
@@ -1472,12 +1477,12 @@ const FILE_TREE = {
                         type: 'module',
                         url_path: '/screening/doctor/message',
                         file_path:
-                            '/H-Connect/js/screening/doctor/message/actions/',
-                    },
-                },
-            },
-        },
-    },
+                            '/H-Connect/js/screening/doctor/message/actions/'
+                    }
+                }
+            }
+        }
+    }
 };
 
 /* s: settings function */
@@ -1512,10 +1517,12 @@ function pathCalc() {
 
     return { nowPath: _nowPath };
 }
+
 /* e: settings function */
 
 /* e : path, version set */
 let SCRIPT_ARR = [];
+
 function _findJsInVersion(_targetObj, filter) {
     // 재귀를 통한 스크립트 오브젝트 배열 세팅 함수
     if (typeof _targetObj !== 'object') {
@@ -1539,6 +1546,7 @@ function _findJsInVersion(_targetObj, filter) {
         _findJsInVersion(_targetObj[key], filter);
     }
 }
+
 function setScript() {
     // 스크립트를 생성해줍니다.
     _findJsInVersion(FILE_TREE, '.js');
@@ -1549,9 +1557,9 @@ function setScript() {
             return 1;
         }
     });
-    /* 
+    /*
     jquery 라이브러리 붙이기 전에
-    versionController를 로드하기 때문에 
+    versionController를 로드하기 때문에
     해당 파일에서만 dom관련 함수를
     vanilla js로 작성
     */
@@ -1589,6 +1597,7 @@ function setScript() {
 setScript(); // 스크립트 생성해주는 함수
 
 /* s : 파일 버전별 임포트 */
+
 /*
 사용 방법
 const { serverController } = await import( importVersion('/H-Connect/js/utils/controller/serverController.js') );
@@ -1598,4 +1607,5 @@ const { serverController } = await import( importVersion('/H-Connect/js/utils/co
 function importVersion(_path) {
     return _path + '?v=' + VERSION;
 }
+
 /* e : 파일 버전별 임포트 */
