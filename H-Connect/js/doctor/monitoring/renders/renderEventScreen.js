@@ -54,7 +54,7 @@ export async function renderNewEventScreenTitleHead(_bse) {
     $sectionRhythm
         .find('.title.title_head .btn_monitor')
         .on('click', function() {
-            location.href = '/doctor/patient.html';
+            location.href = `/doctor/patient.html?measurementCode=${_bse.measurementCode}&patientCode=${_bse.patientCode}&bioSignalEventId=${_bse.bioSignalEventId}`;
         });
 }
 

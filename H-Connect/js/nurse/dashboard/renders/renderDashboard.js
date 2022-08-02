@@ -101,7 +101,7 @@ async function displayInfoUpdate() {
     });
 }
 
-// Rendering Monitoring Target Ward Select Box
+// Rendering MonitoringPage Target Ward Select Box
 const renderWardSelectBox = async () => {
     try {
         _wardList = (await selectWardList()).wardList;
