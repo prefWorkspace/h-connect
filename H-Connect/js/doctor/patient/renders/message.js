@@ -130,7 +130,6 @@ $(async function() {
 
     $('.chat_window .btn_send').click(function() {
         const id = $('.message.talk_list').find('.list.on').data('id');
-        console.log('message');
         chatClient.send(`/pub/chat/message`, chatHeaders, {
             type: 'MSG_TALK',
             room_id: id,

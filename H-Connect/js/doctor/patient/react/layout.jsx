@@ -39,6 +39,8 @@ const Layout = ({ children }) => {
                     {children}
                 </div>
             </div>
+
+            <MessageLayer />
         </React.Fragment>
     );
 };

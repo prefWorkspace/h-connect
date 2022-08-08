@@ -33,12 +33,22 @@
     <script type='text/javascript' defer src='/H-Connect/js/lib/socket/library/stomp-1.7.1.js'></script>
     <script src='/H-Connect/js/lib/moment/library/moment.min.js'></script>
 
+    <script type='text/javascript' defer src='/H-Connect/js/utils/custom/utils.js'></script>
+
     <script type='text/javascript' defer src='/H-Connect/js/common.js'></script>
     <script type='text/javascript' defer src='/H-Connect/js/index.js'></script>
     <!--css-->
     <link rel='stylesheet' href='/H-Connect/css/reset.css' />
     <link rel='stylesheet' href='/H-Connect/css/common.css' />
     <link rel='stylesheet' href='/H-Connect/css/doctor.css' />
+
+    <style>
+        .pop.nurse_view {
+            top: 0;
+            left: 0;
+            transform: 0;
+        }
+    </style>
 </head>
 <body>
 <!-- RESP setting menu -->
@@ -62,7 +72,7 @@
 <div id='wrap'></div>
 
 
-<script type='module' src='/H-Connect/js/react/load.js'></script>
+<script type='module' src='/H-Connect/js/react/load.js' defer></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/header.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/left-menu.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/message-layer.jsx'></script>
@@ -78,6 +88,10 @@
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/popups/spo2-setting.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/popups/temp-setting.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/popups/vital-save.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/messages/enter.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/messages/notification.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/messages/quit.jsx'></script>
+<script type='text/babel' src='/H-Connect/js/doctor/patient/react/components/messages/talk.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/layout.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/monitoring-page.jsx'></script>
 <script type='text/babel' src='/H-Connect/js/doctor/patient/react/pacs-page.jsx'></script>

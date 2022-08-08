@@ -51,7 +51,7 @@ export class CustomSocket {
      * @param {function} error
      * @returns null
      */
-    connect(headers, success = () => {
+    async connect(headers, success = () => {
     }, error = () => {
     }) {
         this.client.connect(headers, success, error);

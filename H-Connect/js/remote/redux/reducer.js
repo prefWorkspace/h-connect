@@ -16,6 +16,7 @@ const reducer = (state, action) => {
         patient: {
             id: '',
             name: '',
+            age: 0,
             condition: '',
             gender: '',
             ward: '',

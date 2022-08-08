@@ -12,26 +12,44 @@ const ConnectContent = () => {
 
         if (data.complete) {
 
-            // let roomId = data.roomId;
-            let roomId = 356169861;
+            let roomId = data.roomId;
+            // let roomId = 356169861;
             let chatId = data.chatId;
 
             // 화상방 생성
-            if (data.currentCase && !roomId) {
+            if (!roomId) {
                 const room = await api.post('/API/Room/CreateRoom', {
                     requester: data.user.userCode, creatorId: data.user.id
                 });
                 roomId = room.roomId;
 
-                await api.post('/API/Doctor/UpdateVroomId', {
-                    requester: data.user.userCode,
-                    userId: data.user.id,
-                    organizationCode: data.user.organizationCode,
-                    consultId: data.consultId,
-                    caseOrderNo: data.currentCase.orderNo,
-                    roomId: roomId,
-                    password: ''
-                });
+                if (data.currentCase) {
+                    await api.post('/API/Doctor/UpdateVroomId', {
+                        requester: data.user.userCode,
+                        userId: data.user.id,
+                        organizationCode: data.user.organizationCode,
+                        consultId: data.consultId,
+                        caseOrderNo: data.currentCase.orderNo,
+                        roomId: roomId,
+                        password: ''
+                    });
+                } else {
+                    if (data.patient.measurementCode) {
+                        const condition = await api.post('/API/Doctor/ConnectCondition', {
+                            ...commonRequest(),
+                            serviceCode: 1,
+                            department: '',
+                            patientCode: data.patient.id,
+                            patientName: data.patient.name,
+                            patientAge: data.patient.age,
+                            patientGender: data.patient.gender,
+                            vRoomId: data.roomId,
+
+                        });
+
+                    }
+                }
+
             }
             dispatch({ type: 'setRoomId', data: roomId });
 

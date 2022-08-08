@@ -1,11 +1,23 @@
 const LeftMenu = () => {
     const data = ReactRedux.useSelector(state => state);
-    const dispatch = ReactRedux.useDispatch();
     const navigate = ReactRouterDOM.useNavigate();
 
+    React.useEffect(() => {
+        $(function() {
+            $('.popup_message').click(function() {
+                $('.nurse_view').show();
+            });
+        });
+    }, []);
+
     const goLink = (path) => {
-        dispatch({ type: 'setActiveMenu', data: path });
         navigate(`/${path}`);
+    };
+
+    const goRemote = (event) => {
+        event.preventDefault();
+
+        window.open(`/remote/index.html#/connect?measurementCode=${data.patient.measurementCode}&chatId=${data.chatId}`);
     };
 
     return (
@@ -15,9 +27,9 @@ const LeftMenu = () => {
                 <div className='title'>
                     <div>
                         <h2>
-                            <span>김환자</span>
-                            (<span>63</span>.
-                            <span>남</span>)
+                            <span>{data.patient.name}</span>
+                            (<span>{data.patient.age}</span>.
+                            <span>{data.patient.gender === 1 ? '남' : '여'}</span>)
                         </h2>
 
                         <p>
@@ -26,7 +38,7 @@ const LeftMenu = () => {
                         </p>
                     </div>
 
-                    <button type='button'>
+                    <button type='button' onClick={goRemote}>
                         <div className='img_container'>
                             <img
                                 src='/H-Connect/img/H-Connect logo.png'
@@ -39,8 +51,8 @@ const LeftMenu = () => {
 
                 <div className='management_list'>
                     <div
-                        className={'list ' + (data.activeMenu === '/' ? 'on' : '')}
-                        onClick={() => goLink('/')}
+                        className={'list ' + (data.activeMenu === '' ? 'on' : '')}
+                        onClick={() => goLink('')}
                     >
                         <p>환자 모니터링</p>
 
@@ -81,7 +93,7 @@ const LeftMenu = () => {
                         </div>
                     </div>
 
-                    <div className='list doctor_send nurse_send'>
+                    <div className='list doctor_send nurse_send popup_message'>
                         <p>담당의에게 메세지 보내기</p>
 
                         <div>

@@ -111,6 +111,7 @@ export class D3VitalLine {
     }
 
     drawChart(chart) {
+        if (!chart.select('path').node()) return false;
         const pathLength = chart.select('path').node().getTotalLength();
 
         chart
